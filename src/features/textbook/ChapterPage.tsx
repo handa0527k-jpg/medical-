@@ -51,9 +51,9 @@ export function ChapterPage() {
     <>
       <section className="chero play" key={id}>
         <div className="bgnum" aria-hidden="true">{String(id).padStart(2, '0')}</div>
-        <div className="meta">第{id}章　／　工場でいうと：{ch.role}　／　スライド {ch.slides[0]}〜{ch.slides[ch.slides.length - 1]}</div>
+        <div className="meta">第{id}章　／　{course.metaphorLabel?.in ?? '工場でいうと'}：{ch.role}　／　スライド {ch.slides[0]}〜{ch.slides[ch.slides.length - 1]}</div>
         <h1>{ch.name}</h1>
-        <div className="role">比喩：{ch.role}</div>
+        <div className="role">{course.metaphorLabel?.name ?? '比喩'}：{ch.role}</div>
         <nav className="jump-nav" aria-label="章内ジャンプ">
           {[['s-ov', 'OVERVIEW'], ['s-tb', 'TEXTBOOK'], ...(ch.figures.length ? [['s-fig', 'FIGURE']] : []), ...(ch.animations.length ? [['s-anim', 'ANIMATION']] : []), ['s-ep', 'EXAM POINT'], ['s-ck', 'CHECK'], ['s-qz', '5-CHOICE']].map(([k, l]) => (
             <a key={k} href={`#${k}`} onClick={(e) => { e.preventDefault(); document.getElementById(k)?.scrollIntoView({ behavior: 'smooth', block: 'start' }); }}>{l}</a>

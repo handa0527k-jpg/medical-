@@ -14,6 +14,17 @@ const LETTER = 'エー ビー シー ディー イー エフ ジー エイチ �
 const RULES: Rule[] = [
   [/マンノース-6-リン酸[（(]M-6-P[）)]/g, 'マンノース6リン酸'],
   [/\s*\b(Endocytosis|Organelles|Endomembrane System|Ribosome|Endoplasmic reticulum|apparatus|Lysosome|Mitochondria|Peroxysome|microtubules|Axonema of cilia|Globular|Filament|caveola|freeze fracture|integral membrane proteins|peripheral membrane proteins|inner leaflet|outer leaflet|coated pit|depression left by P-face protein)\b/gi, ''],
+  // genetics
+  [/miRNA/g, 'マイクロアールエヌエー'], [/lncRNA|lincRNA|lncNA/g, 'ロングノンコーディングアールエヌエー'], [/snoRNA/g, 'スノーアールエヌエー'], [/ncRNA/g, 'ノンコーディングアールエヌエー'],
+  [/dNTP/g, 'ディーエヌティーピー'], [/NTP/g, 'エヌティーピー'], [/NMP/g, 'エヌエムピー'], [/NDP/g, 'エヌディーピー'], [/cAMP/g, 'サイクリックエーエムピー'],
+  [/ALDH2?/g, (m: string) => 'エーエルディーエイチ' + (m.endsWith('2') ? 'ツー' : '')], [/ADH([123])?/g, (_m: string, d?: string) => 'エーディーエイチ' + (d ? ['', 'ワン', 'ツー', 'スリー'][Number(d)] : '')],
+  [/HDAC/g, 'エイチダック'], [/\bHAT\b/g, 'ハット'], [/PGC-1α/g, 'ピージーシーワンアルファ'], [/PGC-1/g, 'ピージーシーワン'], [/\bUTR\b/g, 'ユーティーアール'], [/non-LTR/g, 'ノンエルティーアール'], [/\bOH\b/g, 'オーエイチ'], [/(?<![A-Za-z])XY(?![A-Za-z])/g, 'エックスワイ'], [/(?<![A-Za-z])XX(?![A-Za-z])/g, 'エックスエックス'],
+  [/(?<=[ぁ-んァ-ヶ一-龥0-9])p(?![A-Za-z])/g, 'ピー'], [/(?<=[ぁ-んァ-ヶ一-龥0-9])q(?![A-Za-z])/g, 'キュー'], [/TFAM/g, 'ティーファム'], [/PPAR-δ/g, 'ピーパーデルタ'],
+  [/LINE-1/g, 'ラインワン'], [/\bAlu\b/g, 'アルー'], [/\bSVA\b/g, 'エスブイエー'], [/HERV/g, 'ハーブ'], [/\bLTR\b/g, 'エルティーアール'],
+  [/TCOF1/g, 'ティーコフワン'], [/Lamin A\/C/g, 'ラミンエーシー'], [/\bSNP\b/g, 'スニップ'], [/\bHP1\b/g, 'エイチピーワン'], [/CpG/g, 'シーピージー'],
+  [/H2A/g, 'エイチツーエー'], [/H2B/g, 'エイチツービー'], [/\bH([1-4])\b/g, (_m: string, d: string) => 'エイチ' + ['', 'ワン', 'ツー', 'スリー', 'フォー'][Number(d)]],
+  [/(\d+),XY/g, '$1エックスワイ'], [/(\d+),XX/g, '$1エックスエックス'], [/XXY/g, 'エックスエックスワイ'], [/5p-/g, 'ごピーマイナス'], [/5q-/g, 'ごキューマイナス'],
+  [/(\d)'/g, '$1ダッシュ'],
   [/tRNA/g, 'ティーアールエヌエー'],
   [/mRNA/g, 'メッセンジャーアールエヌエー'],
   [/rRNA/g, 'リボソームアールエヌエー'],
@@ -49,6 +60,8 @@ const RULES: Rule[] = [
   [/＋端/g, 'プラス端'], [/[−-]端/g, 'マイナス端'],
   [/\bOK\b/g, 'オーケー'], [/\bNG\b/g, 'エヌジー'], [/BEFORE/g, 'ビフォー'], [/AFTER/g, 'アフター'],
   [/STEP\s*/g, 'ステップ'],
+  // codons / base sequences (AUG, GCU, AT…) are spelled out letter by letter
+  [/(?<![A-Za-z])[AUGCT]{2,4}(?![A-Za-z])/g, (m: string) => [...m].map((c) => ({ A: 'エー', U: 'ユー', G: 'ジー', C: 'シー', T: 'ティー' })[c as 'A']).join('')],
 ];
 
 /** Kana readings for terms Japanese TTS engines frequently misread. */
@@ -59,6 +72,10 @@ export const READINGS: [RegExp, string][] = [
   [/残余小体/g, 'ざんよしょうたい'], [/細網線維/g, 'さいもうせんい'], [/画分/g, 'かくぶん'], [/軸糸/g, 'じくし'],
   [/(?<![水浴])槽/g, 'そう'], [/終末扇/g, 'しゅうまつせん'], [/動原体/g, 'どうげんたい'], [/天疱瘡/g, 'てんぽうそう'],
   [/類天疱瘡/g, 'るいてんぽうそう'], [/糸状仮足/g, 'しじょうかそく'], [/仮足/g, 'かそく'], [/星状体/g, 'せいじょうたい'],
+  // genetics
+  [/短腕/g, 'たんわん'], [/長腕/g, 'ちょうわん'], [/対合/g, 'ついごう'], [/鋳型/g, 'いがた'], [/猫鳴き/g, 'ねこなき'], [/一塩基多型/g, 'いちえんきたけい'],
+  [/五炭糖/g, 'ごたんとう'], [/六炭糖/g, 'ろくたんとう'], [/八量体/g, 'はちりょうたい'], [/異数体/g, 'いすうたい'], [/姉妹染色分体/g, 'しまいせんしょくぶんたい'],
+  [/(?<=[のに])斑/g, 'まだら'], [/遺伝型/g, 'いでんがた'], [/表現型/g, 'ひょうげんがた'], [/核型/g, 'かくがた'], [/染色質/g, 'せんしょくしつ'],
 ];
 
 export function toSpeech(html: string): string {

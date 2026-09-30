@@ -12,7 +12,7 @@ export function FiguresPage() {
       <section className="page-h">
         <div className="kick">INTERACTIVE FIGURES</div>
         <h1>図解</h1>
-        <p>構造をタップすると、医学名 → 工場での役割 → 実際の機能 → 出典スライドの順に表示されます。</p>
+        <p>{course.intros?.figures ?? '構造をタップすると、医学名 → 工場での役割 → 実際の機能 → 出典スライドの順に表示されます。'}</p>
       </section>
       <div className="grid cols-auto gal" style={{ marginTop: 16 }}>
         {Object.values(course.figures).map((f) => {

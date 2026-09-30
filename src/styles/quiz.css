@@ -51,3 +51,7 @@
 .qsel small { display: block; color: var(--mute); font-size: 13px; line-height: 1.6; }
 .qsel .bar { margin-top: 10px; }
 .filters { display: flex; gap: 6px; flex-wrap: wrap; margin: 6px 0 12px; }
+.qres .why { margin-top: 10px; border: 1px dashed color-mix(in srgb, var(--warn) 60%, transparent); border-radius: 12px; padding: 10px 12px; display: grid; gap: 3px; }
+.qres .why span { font-size: 11.5px; font-weight: 800; color: var(--warn); letter-spacing: 0.05em; }
+.qres .why b { font-size: 15px; }
+.qres .why small { color: var(--mute); line-height: 1.6; }

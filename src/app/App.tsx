@@ -24,6 +24,8 @@ const LecturesPage = lazy(() => import('../features/lecture/LecturesPage'));
 const LecturePage = lazy(() => import('../features/lecture/LecturePage'));
 const AnimationsPage = lazy(() => import('../features/animations/AnimationsPage'));
 const AnimationPage = lazy(() => import('../features/animations/AnimationPage'));
+const BoardViewerPage = lazy(() => import('../features/lecture/BoardViewerPage'));
+const QuickReviewPage = lazy(() => import('../features/review/QuickReviewPage'));
 
 function ScrollToTop() {
   const { pathname, search } = useLocation();
@@ -49,6 +51,7 @@ function ThemeSync() {
 export function App() {
   const [course] = useState(selectedCourse);
   const store = useMemo(() => new ProgressStore(new LocalStorageRepository(), course.id), [course.id]);
+  useEffect(() => { document.title = `MED·STUDY ${course.title}`; }, [course]);
   useEffect(() => {
     const f = () => store.flush();
     window.addEventListener('pagehide', f);
@@ -69,6 +72,8 @@ export function App() {
                 <Route path="/chapter/:id" element={<ChapterPage />} />
                 <Route path="/lectures" element={<LecturesPage />} />
                 <Route path="/lecture/:id" element={<LecturePage />} />
+                <Route path="/lecture/:id/board" element={<BoardViewerPage />} />
+                <Route path="/review5/:id" element={<QuickReviewPage />} />
                 <Route path="/figures" element={<FiguresPage />} />
                 <Route path="/figures/:id" element={<FigurePage />} />
                 <Route path="/animations" element={<AnimationsPage />} />

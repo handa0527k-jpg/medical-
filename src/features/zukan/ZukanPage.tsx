@@ -15,7 +15,7 @@ export function ZukanPage() {
       <section className="page-h">
         <div className="kick">ENCYCLOPEDIA</div>
         <h1>役割図鑑</h1>
-        <p>工場の部屋と装置を、たとえつきで一枚ずつ。膜の枚数も確認しよう。</p>
+        <p>{course.intros?.zukan ?? '工場の部屋と装置を、たとえつきで一枚ずつ。膜の枚数も確認しよう。'}</p>
       </section>
       <div className="filters" role="group" aria-label="章で絞り込み" style={{ marginTop: 14 }}>
         <button className={'chip' + (!ch ? ' on' : '')} onClick={() => setCh(0)}>すべて</button>
@@ -27,7 +27,7 @@ export function ZukanPage() {
             <div className="top">
               <div className="ic" aria-hidden="true">{z.icon}</div>
               <div><h3>{z.name}</h3><span className="as">{z.metaphor}</span></div>
-              <div className="mb">膜：{z.membranes}</div>
+              {z.membranes && <div className="mb">{course.zukanTag ?? '膜'}：{z.membranes}</div>}
             </div>
             <Rich as="div" className="an" html={z.analogy} />
             <h4>役割</h4>

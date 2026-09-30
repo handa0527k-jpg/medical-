@@ -17,6 +17,16 @@ export interface CourseMeta {
   subject: string;
   lecture: { label: string; number: number; slideRange: [number, number] };
   metaphor: string;
+  /** how the metaphor is labelled in the UI (default: 工場メタファー / FACTORY / 工場での役割) */
+  metaphorLabel?: { name: string; en: string; role: string; in: string };
+  /** emphasised tail of the subtitle on the home hero (e.g. 工場。) */
+  subtitleEm?: string;
+  /** home-screen map: section title and legend */
+  map?: { title: string; legend: { label: string; color: string }[] };
+  /** intro lines for the figure / zukan pages */
+  intros?: { figures?: string; zukan?: string };
+  /** label of ZukanEntry.membranes (default 膜) */
+  zukanTag?: string;
   chapters: Chapter[];
 }
 
@@ -93,7 +103,20 @@ export interface QOption {
   text: RichText;
   explanation: RichText;
   correct: boolean;
+  /** for wrong options: the kind of mistake choosing it reveals (used by 弱点分析) */
+  trap?: TrapKind;
 }
+
+/** Why a wrong option is tempting — the reasoning error it catches. */
+export type TrapKind = 'swap' | 'reverse' | 'number' | 'scope' | 'mechanism' | 'fact';
+export const TRAP_LABEL: Record<TrapKind, { name: string; advice: string }> = {
+  swap: { name: '用語・概念の取り違え', advice: '似た用語（転写/翻訳、ヌクレオシド/ヌクレオチドなど）を対にして、違いを一言で言えるようにしましょう。' },
+  reverse: { name: '向き・順序・大小の逆転', advice: '矢印の向き（5\'→3\'、DNA→RNA）や順番・大小関係を、図を描いて確認しましょう。' },
+  number: { name: '数値・個数の取り違え', advice: '数値は「何の数か」とセットで覚え直しましょう（46本、23対、37遺伝子、約1.3%など）。' },
+  scope: { name: '範囲・例外の見落とし', advice: '「すべて」「〜だけ」「必ず」などの言い切りに注意し、例外を思い出す習慣をつけましょう。' },
+  mechanism: { name: '因果・機序の誤解', advice: '「なぜそうなるのか」を一文で説明できるか確認しましょう。授業の該当場面に戻るのが近道です。' },
+  fact: { name: '記載と異なる事実', advice: '講義資料（スライド）の記載そのものを確認しましょう。赤シートで隠して言えるかを試すのが効果的です。' },
+};
 
 /** “Choose all true / all false” among 5 statements (A–E). */
 export interface JudgementQuestion {

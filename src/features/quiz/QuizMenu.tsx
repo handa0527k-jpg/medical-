@@ -28,7 +28,7 @@ export function QuizMenu() {
         <Link className="card" to="/quiz/play?filter=new"><b>未回答</b><small>{unanswered}問</small></Link>
         <Link className="card" to="/quiz/play?filter=wrong"><b>間違えた問題</b><small>{wrong}問</small></Link>
         <Link className="card" to="/review"><b>🎯 弱点復習</b><small>間違い・苦手テーマ・関連問題</small></Link>
-        <Link className="card" to="/quiz/judge"><b>正誤5択</b><small>{course.judgements.length}問・正しいもの／誤っているものをすべて選ぶ</small></Link>
+        {course.judgements.length > 0 && <Link className="card" to="/quiz/judge"><b>正誤5択</b><small>{course.judgements.length}問・正しいもの／誤っているものをすべて選ぶ</small></Link>}
       </div>
       <div className="sec-h"><span className="en">BY CHAPTER</span><h2>章を選ぶ</h2></div>
       <div className="qsel">

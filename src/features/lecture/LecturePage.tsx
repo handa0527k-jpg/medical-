@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useParams, useSearchParams } from 'react-router-dom';
 import { useCourse } from '../../app/course';
 import { NotFound } from '../../app/NotFound';
 import type { Lecture } from '../../engine/lecture/types';
@@ -9,6 +9,8 @@ import { LecturePlayer } from './LecturePlayer';
 export default function LecturePage() {
   const course = useCourse();
   const id = Number(useParams().id);
+  const [sp] = useSearchParams();
+  const startAt = sp.get('t') ? Number(sp.get('t')) : undefined;
   const ch = course.chapters.find((c) => c.id === id);
   const [lec, setLec] = useState<Lecture | null>(null);
   const [err, setErr] = useState(false);
@@ -28,7 +30,7 @@ export default function LecturePage() {
         <Link className="btn sm" to="/lectures" style={{ flex: '0 0 auto' }}>← 授業一覧</Link>
         <Link className="btn sm" to={`/chapter/${id}`} style={{ flex: '0 0 auto' }}>第{id}章の教科書</Link>
       </div>
-      {lec ? <LecturePlayer key={id} lecture={lec} chapter={id} /> : <div className="empty">授業を読み込み中…</div>}
+      {lec ? <LecturePlayer key={id} lecture={lec} chapter={id} startAt={startAt} /> : <div className="empty">授業を読み込み中…</div>}
     </>
   );
 }

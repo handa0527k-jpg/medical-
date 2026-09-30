@@ -40,6 +40,11 @@ async function mockSpeech(page: Page) {
   });
 }
 
+// these tests exercise the histology course; the genetics course has its own spec
+test.beforeEach(async ({ page }) => {
+  await page.addInitScript(() => localStorage.setItem('medstudy:course', JSON.stringify('histology-cytoplasm')));
+});
+
 const ROUTES = ['/', '/book', '/chapter/1', '/chapter/8', '/lectures', '/lecture/1', '/figures', '/figures/cell', '/animations', '/animations/sec', '/zukan', '/quiz', '/quiz/play?chapter=1', '/quiz/judge?chapter=2', '/review', '/stats', '/settings'];
 
 test('every screen renders without errors or horizontal scrolling', async ({ page }) => {

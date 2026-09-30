@@ -32,3 +32,9 @@ python3 scripts/generate-audio.py histology-cytoplasm --voice ja-JP-KeitaNeural
 読み上げるのは各キューの `speech`（医学用語の読みを補正済みのテキスト）です。別のTTS（Google Cloud TTS、Azure、VOICEVOX など）を使う場合は `synthesize()` だけを書き換えてください。
 
 同梱の音声は `ja-JP-NanamiNeural`・話速 -3% で生成しました（全9講・1,468文・約143分・約50MB）。合成済みの文は `.audio-cache/` に保存されるので、台本の一部を直したときは変更された文だけが再合成されます。
+
+遺伝子の基礎（`genetics-basics`）は、授業の長さを5〜15分に収めるため話速 **+5%** で収録しています：
+
+```bash
+python3 scripts/generate-audio.py genetics-basics --rate=+5%   # 全6講・約690文・約32MB
+```

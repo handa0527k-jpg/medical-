@@ -32,8 +32,11 @@ import type { ChalkMark, ChalkRow, Lecture, LectureCue, LectureShot, LectureVisu
 import type { CourseMeta, Figure, SingleQuestion, Slide } from '../../src/content/types';
 import type { AnimScript } from '../../src/engine/animation/types';
 import { estimateDuration, toSpeech } from '../../src/engine/speech/reading';
+import { BoardBuilder } from './board-script';
 
+/** bump to invalidate recorded audio; blackboard lectures carry their own version */
 export const SCRIPT_VERSION = 3;
+export const BOARD_SCRIPT_VERSION = 4;
 
 export interface ScriptContext {
   course: CourseMeta;
@@ -67,22 +70,37 @@ export function parseScript(src: string, ctx: ScriptContext): Lecture {
   let pendingRows: Omit<ChalkRow, 'at'>[] = [];
   let pendingMarks: Omit<ChalkMark, 'at'>[] = [];
   let curQuiz: { qid: string; variant: 'check' | 'typical' | 'final' } | null = null;
+  let curRef: string[] | undefined;
   let lineNo = 0;
+  let digest = false;
+  const keyPoints: NonNullable<Lecture['keyPoints']> = [];
+  let keyTarget = false;
 
   const fail = (msg: string): never => { throw new Error(`lecture ${chapter} line ${lineNo}: ${msg}`); };
+  const bb = new BoardBuilder(fail);
   const cur = () => shots[shots.length - 1];
   const cueCountIn = (si: number) => cues.filter((c) => c.shot === si).length;
+  /** a silent moment of chalk work (">~", or leftover board actions before the scene changes) */
+  const silentCue = () => {
+    const secs = bb.pendingTime;
+    const si = shots.length - 1;
+    const write = bb.flush(cues.length);
+    cues.push({ id: `c${String(chapter).padStart(2, '0')}-${String(cues.length + 1).padStart(4, '0')}`, shot: si, text: '', speech: '', dur: +secs.toFixed(2), gap: 0.2, write: +write.toFixed(2), ...(digest ? { dig: 1 as const } : {}) });
+  };
   const open = (visual: LectureVisual) => {
     if (section < 0) fail('a section (## …) must come before the first visual');
+    if (bb.hasPending && shots.length && cur().visual.kind === 'bb') silentCue();
     shots.push({ section, visual });
     listTarget = null;
+    keyTarget = false;
     tableTarget = null;
   };
   const slideOk = (n: number) => { if (!ctx.slides[String(n)]) fail(`unknown slide ${n}`); };
   const qOk = (id: string) => ctx.questions.find((q) => q.id === id) || fail(`unknown question ${id}`);
 
-  const pushCue = (rawText: string, focus: string | undefined) => {
+  const pushCue = (rawText: string, focus: string | undefined, important = false) => {
     if (!shots.length) fail('speech before any visual');
+    if (bb.hasPending && cur().visual.kind !== 'bb') fail('board actions must be followed by a line on the blackboard (@bb)');
     let text = rawText.trim();
     let tail = 0;
     if (/\(間\)$/.test(text)) { text = text.replace(/\s*\(間\)$/, ''); tail = GAP.long; }
@@ -104,6 +122,7 @@ export function parseScript(src: string, ctx: ScriptContext): Lecture {
       let gap = /[？?]$/.test(plainEnd) ? GAP.question : /[、,]$/.test(plainEnd) ? GAP.comma : GAP.sentence;
       if (ell) gap = GAP.dramatic;
       if (isLastPart && tail) gap = tail;
+      const write = pi === 0 && v.kind === 'bb' ? bb.flush(cues.length) : 0;
       cues.push({
         id: `c${String(chapter).padStart(2, '0')}-${String(cues.length + 1).padStart(4, '0')}`,
         shot: si,
@@ -112,6 +131,8 @@ export function parseScript(src: string, ctx: ScriptContext): Lecture {
         dur: +estimateDuration(speech).toFixed(2),
         gap,
         ...(focus !== undefined ? { focus: /^\d+$/.test(focus) ? Number(focus) - 1 : focus } : {}),
+        ...(write ? { write: +write.toFixed(2) } : {}),
+        ...(important || digest ? { dig: 1 as const } : {}),
       });
     });
   };
@@ -120,13 +141,26 @@ export function parseScript(src: string, ctx: ScriptContext): Lecture {
   let inFront = false;
   for (const raw of lines) {
     lineNo++;
-    const line = raw.trim();
+    let line = raw.trim();
     if (!line || line.startsWith('//')) continue;
     if (line === '---') { inFront = !inFront; continue; }
     if (inFront) { const m = /^title:\s*(.+)$/.exec(line); if (m) title = m[1]; continue; }
 
     if (line.startsWith('## ')) { sections.push(line.slice(3).trim()); section = sections.length - 1; continue; }
-    if (line.startsWith('- ') && listTarget) { listTarget.push(shown(line.slice(2))); continue; }
+    if (line.startsWith('- ') && listTarget) {
+      let item = line.slice(2);
+      let ref: string[] | undefined;
+      const rm = /\s+@([\w,-]+)$/.exec(item);
+      if (rm) { ref = rm[1].split(','); item = item.slice(0, rm.index); }
+      listTarget.push(shown(item));
+      if (keyTarget) keyPoints.push({ text: shown(item), ...(ref ? { ref } : {}) });
+      continue;
+    }
+    // blackboard lines
+    if ((line.startsWith('+') || /^!(o|oo|\[\]|u|uu|v|x|p)\s/.test(line)) && cur()?.visual.kind === 'bb') {
+      bb.line(line);
+      continue;
+    }
     if (line.startsWith('|') && tableTarget) {
       tableTarget.push(line.replace(/^\||\|$/g, '').split('|').map((c) => shown(c.trim())));
       continue;
@@ -147,7 +181,14 @@ export function parseScript(src: string, ctx: ScriptContext): Lecture {
       continue;
     }
 
+    if (line === '>~') {
+      if (cur()?.visual.kind !== 'bb') fail('>~ (silent writing) only on the blackboard');
+      silentCue();
+      continue;
+    }
     if (line.startsWith('>')) {
+      const important = line.startsWith('>!');
+      if (important) line = '>' + line.slice(2);
       const m = /^>(?:\[([^\]]+)\])?\s*(.*)$/.exec(line)!;
       let focus: string | undefined = m[1];
       const v = cur()?.visual;
@@ -170,7 +211,7 @@ export function parseScript(src: string, ctx: ScriptContext): Lecture {
       }
       if (v?.kind === 'figure' && focus && !ctx.figures[v.figure].svg.includes(`data-k="${focus}"`)) fail(`figure ${v.figure} has no structure ${focus}`);
       if (v?.kind === 'quiz' && focus && !/^(q|ok|[A-E])$/.test(focus)) fail(`quiz focus must be q, ok or A–E (got ${focus})`);
-      pushCue(m[2], focus);
+      pushCue(m[2], focus, important);
       continue;
     }
 
@@ -199,6 +240,19 @@ export function parseScript(src: string, ctx: ScriptContext): Lecture {
       }
       case 'cellmap': open({ kind: 'cellmap', chapter: Number(arg) || ch.id }); break;
       case 'board': open({ kind: 'chalk', title: shown(arg), rows: [], marks: [] }); pendingRows = []; pendingMarks = []; break;
+      case 'bb': {
+        if (cur()?.visual.kind !== 'bb') open({ kind: 'bb' });
+        bb.ensureCam(cues.length);
+        if (arg) bb.cam(arg);
+        break;
+      }
+      case 'cam': bb.cam(arg); break;
+      case 'in': bb.in(arg); break;
+      case 'at': bb.at(arg); break;
+      case 'gap': bb.gap(arg); break;
+      case 'over': bb.over(arg); break;
+      case 'digest': digest = arg !== 'off'; break;
+      case 'keys': { const items: string[] = []; open({ kind: 'list', title: arg || '今日の重要ポイント', items, style: 'sum' }); listTarget = items; keyTarget = true; break; }
       case 'slide': slideOk(Number(arg)); open({ kind: 'slide', slide: Number(arg) }); break;
       case 'figure': if (!ctx.figures[arg]) fail(`unknown figure ${arg}`); open({ kind: 'figure', figure: arg, key: null }); break;
       case 'anim': if (!ctx.animScripts[arg]) fail(`unknown animation ${arg}`); open({ kind: 'anim', anim: arg, step: 0 }); break;
@@ -208,11 +262,13 @@ export function parseScript(src: string, ctx: ScriptContext): Lecture {
       case 'memo': card('memo', '覚え方'); break;
       case 'example': card('example', '具体例'); break;
       case 'quiz': {
-        const [qid, variant = 'typical'] = rest;
+        const [qid, variant = 'typical', refArg] = rest;
         qOk(qid);
         if (!['check', 'typical', 'final'].includes(variant)) fail(`quiz variant ${variant}`);
         curQuiz = { qid, variant: variant as 'check' | 'typical' | 'final' };
-        open({ kind: 'quiz', qid, phase: 'ask', variant: curQuiz.variant });
+        const ref = refArg && refArg.startsWith('ref=') ? refArg.slice(4).split(',') : undefined;
+        curRef = ref;
+        open({ kind: 'quiz', qid, phase: 'ask', variant: curQuiz.variant, ...(ref ? { ref } : {}) });
         quizzes.push({ qid, section, variant: curQuiz.variant });
         break;
       }
@@ -223,7 +279,7 @@ export function parseScript(src: string, ctx: ScriptContext): Lecture {
         cues.push({ id: `c${String(chapter).padStart(2, '0')}-${String(cues.length + 1).padStart(4, '0')}`, shot: shots.length - 1, text: '（考える時間）', speech: '', dur: secs, gap: 0.3 });
         break;
       }
-      case 'explain': if (!curQuiz) fail('@explain without @quiz'); open({ kind: 'quiz', qid: curQuiz!.qid, phase: 'explain', variant: curQuiz!.variant }); break;
+      case 'explain': if (!curQuiz) fail('@explain without @quiz'); open({ kind: 'quiz', qid: curQuiz!.qid, phase: 'explain', variant: curQuiz!.variant, ...(curRef ? { ref: curRef } : {}) }); break;
       default: fail(`unknown command @${cmd}`);
     }
   }
@@ -244,8 +300,10 @@ export function parseScript(src: string, ctx: ScriptContext): Lecture {
     sections: sections.map((name, index) => ({ index, name })),
     shots,
     cues,
-    version: SCRIPT_VERSION,
+    version: bb.board() ? BOARD_SCRIPT_VERSION : SCRIPT_VERSION,
     quizzes,
     authored: true,
+    ...(bb.board() ? { board: bb.board() } : {}),
+    ...(keyPoints.length ? { keyPoints } : {}),
   };
 }
