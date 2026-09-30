@@ -1,0 +1,72 @@
+<svg viewBox="0 0 1000 680" role="img" aria-label="細胞を工場に見立てた見取り図">
+<defs>
+<marker id="ae" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0L10 5L0 10z" fill="var(--eosin)"/></marker>
+<marker id="ah" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0L10 5L0 10z" fill="var(--hema2)"/></marker>
+</defs>
+<!-- cell -->
+<rect x="40" y="60" width="920" height="580" rx="150" fill="var(--cell)" stroke="var(--hema2)" stroke-width="6"/>
+<rect x="58" y="78" width="884" height="544" rx="134" fill="none" stroke="var(--eosin)" stroke-opacity=".45" stroke-width="3" stroke-dasharray="2 7" stroke-linecap="round"/>
+<!-- microtubules -->
+<g stroke="var(--hema2)" stroke-opacity=".35" stroke-width="2.5" fill="none">
+<path d="M540 470 L900 560"/><path d="M540 470 L930 330"/><path d="M540 470 L560 630"/><path d="M540 470 L760 640"/><path d="M540 470 L680 70"/><path d="M540 470 L380 630"/>
+</g>
+<!-- intermediate filaments -->
+<g stroke="var(--hema)" stroke-opacity=".25" stroke-width="2" fill="none">
+<path d="M215 380 C170 390 140 430 80 440"/><path d="M230 440 C200 490 170 520 120 560"/><path d="M250 260 C220 210 190 170 150 120"/>
+</g>
+<!-- nucleus -->
+<circle cx="330" cy="360" r="112" fill="var(--hemat)" stroke="var(--hema2)" stroke-width="4" stroke-dasharray="26 6"/>
+<circle cx="350" cy="340" r="26" fill="var(--hema2)" opacity=".55"/>
+<text x="330" y="420" text-anchor="middle" font-size="20" fill="var(--hema)" font-weight="700" font-family="Zen Kaku Gothic New">核</text>
+<!-- rER -->
+<g fill="none" stroke-linecap="round">
+<path d="M378 218 A150 150 0 0 1 480 380" stroke="var(--hema2)" stroke-width="7"/>
+<path d="M385 198 A170 170 0 0 1 500 385" stroke="var(--hema2)" stroke-width="7"/>
+<path d="M392 178 A190 190 0 0 1 520 390" stroke="var(--hema2)" stroke-width="7"/>
+<path d="M378 218 A150 150 0 0 1 480 380" stroke="var(--hema)" stroke-width="11" stroke-dasharray="0 12" opacity=".8"/>
+<path d="M385 198 A170 170 0 0 1 500 385" stroke="var(--hema)" stroke-width="11" stroke-dasharray="0 12" opacity=".8"/>
+<path d="M392 178 A190 190 0 0 1 520 390" stroke="var(--hema)" stroke-width="11" stroke-dasharray="0 12" opacity=".8"/>
+</g>
+<!-- sER -->
+<g fill="none" stroke="var(--hema2)" stroke-width="7" stroke-linecap="round" opacity=".75">
+<path d="M110 300 C140 280 160 320 190 300"/><path d="M100 340 C130 330 150 360 185 345"/><path d="M150 300 C150 320 140 330 150 345"/>
+</g>
+<text x="100" y="385" font-size="15" fill="var(--mute)" font-family="Zen Kaku Gothic New">滑面小胞体</text>
+<!-- Golgi -->
+<g fill="none" stroke="var(--eosin)" stroke-width="9" stroke-linecap="round">
+<path d="M605 255 Q640 330 605 405"/><path d="M628 262 Q660 330 628 398"/><path d="M651 270 Q680 330 651 390"/><path d="M674 280 Q700 330 674 380"/>
+</g>
+<!-- secretory granules -->
+<g fill="var(--eosin)" opacity=".85"><circle cx="730" cy="245" r="14"/><circle cx="760" cy="185" r="12"/><circle cx="790" cy="130" r="13"/></g>
+<path d="M800 64 a20 20 0 0 1 40 0" fill="var(--eosin)" opacity=".85"/>
+<!-- endocytosis pit, endosome, lysosome -->
+<path d="M680 640 q20 -40 40 0" fill="var(--paper)" stroke="var(--hema2)" stroke-width="6"/>
+<circle cx="700" cy="560" r="20" fill="none" stroke="var(--hema2)" stroke-width="5"/>
+<circle cx="615" cy="545" r="26" fill="var(--hema)" opacity=".85"/>
+<!-- mitochondria -->
+<g transform="translate(200,175) rotate(-18)"><ellipse rx="62" ry="28" fill="var(--glass)" stroke="var(--hema2)" stroke-width="5"/><path d="M-45 0 l10 -18 l10 36 l10 -36 l10 36 l10 -36 l10 36 l10 -36 l10 18" fill="none" stroke="var(--hema2)" stroke-width="3"/></g>
+<g transform="translate(860,420) rotate(72)"><ellipse rx="55" ry="25" fill="var(--glass)" stroke="var(--hema2)" stroke-width="5"/><path d="M-38 0 l9 -16 l9 32 l9 -32 l9 32 l9 -32 l9 32 l9 -32 l5 16" fill="none" stroke="var(--hema2)" stroke-width="3"/></g>
+<!-- peroxisome -->
+<circle cx="400" cy="560" r="18" fill="var(--glass)" stroke="var(--hema2)" stroke-width="4"/><rect x="393" y="553" width="14" height="14" fill="var(--hema2)"/>
+<!-- centrosome -->
+<g transform="translate(540,470)"><rect x="-14" y="-5" width="28" height="10" rx="3" fill="var(--hema)"/><rect x="-5" y="-14" width="10" height="28" rx="3" fill="var(--hema)" opacity=".7"/></g>
+<!-- flows -->
+<path class="flow sec draw" d="M500 300 C545 300 565 330 598 330" marker-end="url(#ae)"/>
+<path class="flow sec draw" d="M690 310 C715 280 780 200 815 90" marker-end="url(#ae)" style="animation-delay:.5s"/>
+<path class="flow endo draw" d="M700 625 L700 588" marker-end="url(#ah)" style="animation-delay:1s"/>
+<path class="flow endo draw" d="M680 556 L648 550" marker-end="url(#ah)" style="animation-delay:1.3s"/>
+<g font-family="Zen Kaku Gothic New" font-size="15" fill="var(--mute)">
+<text x="604" y="240">ゴルジ装置</text><text x="752" y="252">分泌顆粒</text><text x="508" y="208">粗面小胞体</text>
+<text x="583" y="552" text-anchor="end">リソソーム</text><text x="728" y="566">エンドソーム</text><text x="148" y="128">ミトコンドリア</text>
+<text x="400" y="530" text-anchor="middle">ペルオキシソーム</text><text x="492" y="468" text-anchor="end">中心体</text><text x="840" y="170">細胞膜</text></g>
+<!-- chapter zones -->
+<g class="z" data-c="1" tabindex="0" role="button" aria-label="1 入口と取り込み"><rect class="hit" x="600" y="590" width="200" height="90"/><g class="tag" transform="translate(760,648)"><rect x="0" y="-22" width="212" height="36" rx="18"/><text x="14" y="4" class="n">1</text><text x="38" y="3">入口と取り込み</text></g></g>
+<g class="z" data-c="2" tabindex="0" role="button" aria-label="2 全体の地図"><g class="tag" transform="translate(40,26)"><rect x="0" y="-22" width="176" height="36" rx="18"/><text x="14" y="4" class="n">2</text><text x="38" y="3">全体の地図</text></g></g>
+<g class="z" data-c="3" tabindex="0" role="button" aria-label="3 蛋白工場"><path class="hit" d="M370 170 A200 200 0 0 1 530 400 L470 400 A140 140 0 0 0 370 230z"/><g class="tag" transform="translate(420,150)"><rect x="0" y="-22" width="206" height="36" rx="18"/><text x="14" y="4" class="n">3</text><text x="38" y="3">蛋白工場（rER）</text></g></g>
+<g class="z" data-c="4" tabindex="0" role="button" aria-label="4 加工と仕分け"><rect class="hit" x="590" y="240" width="120" height="180"/><g class="tag" transform="translate(585,428)"><rect x="0" y="-22" width="190" height="36" rx="18"/><text x="14" y="4" class="n">4</text><text x="38" y="3">加工と仕分け</text></g></g>
+<g class="z" data-c="5" tabindex="0" role="button" aria-label="5 消化と分解"><circle class="hit" cx="620" cy="545" r="40"/><g class="tag" transform="translate(440,610)"><rect x="0" y="-22" width="176" height="36" rx="18"/><text x="14" y="4" class="n">5</text><text x="38" y="3">消化と分解</text></g></g>
+<g class="z" data-c="6" tabindex="0" role="button" aria-label="6 エネルギーと解毒"><rect class="hit" x="130" y="130" width="150" height="90"/><rect class="hit" x="800" y="350" width="120" height="150"/><g class="tag" transform="translate(120,240)"><rect x="0" y="-22" width="210" height="36" rx="18"/><text x="14" y="4" class="n">6</text><text x="38" y="3">エネルギーと解毒</text></g></g>
+<g class="z" data-c="7" tabindex="0" role="button" aria-label="7 骨組み アクチンと中間径"><g class="tag" transform="translate(70,480)"><rect x="0" y="-22" width="226" height="36" rx="18"/><text x="14" y="4" class="n">7</text><text x="38" y="3">骨組み（膜の直下）</text></g></g>
+<g class="z" data-c="8" tabindex="0" role="button" aria-label="8 骨組み 微小管"><circle class="hit" cx="540" cy="470" r="34"/><g class="tag" transform="translate(470,500)"><rect x="0" y="-22" width="176" height="36" rx="18"/><text x="14" y="4" class="n">8</text><text x="38" y="3">道路（微小管）</text></g></g>
+<g class="z" data-c="9" tabindex="0" role="button" aria-label="9 すき間を満たすもの"><g class="tag" transform="translate(760,290)"><rect x="0" y="-22" width="150" height="36" rx="18"/><text x="14" y="4" class="n">9</text><text x="38" y="3">サイトゾル</text></g></g>
+</svg>

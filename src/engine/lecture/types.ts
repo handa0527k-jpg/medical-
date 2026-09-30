@@ -1,0 +1,89 @@
+/**
+ * Lecture data model. A lecture is a sequence of shots (what is on screen)
+ * each containing cues (one spoken sentence each). The narration generator
+ * (scripts/build-narration.ts) writes these as JSON under
+ * src/content/courses/<id>/narrations/lecture-NN.json.
+ *
+ * Timing: `dur` is an estimate from the reading length. When recorded audio
+ * exists (public/courses/<id>/audio/lecture-NN/manifest.json), the player
+ * re-times every cue from the real audio durations.
+ */
+import type { RichText } from '../../content/types';
+
+export type LectureVisual =
+  | { kind: 'title'; chapter: number; name: string; role: string; slides: number[] }
+  | { kind: 'end'; chapter: number; name: string }
+  | { kind: 'head'; no: number; text: RichText }
+  | { kind: 'board'; title: RichText; html: RichText; style?: 'lead' | 'ng' | 'ana' | 'col' | 'sup'; sentences: RichText[] }
+  | { kind: 'list'; title: RichText; items: RichText[]; style?: 'goal' | 'sum' | 'exam' }
+  | { kind: 'flow'; title: RichText; items: RichText[]; move?: boolean }
+  | { kind: 'table'; title: RichText; rows: RichText[][] }
+  | { kind: 'cast'; items: [RichText, RichText, RichText][] }
+  /** slide image; camera pans across `masks` (highlight boxes) in order */
+  | { kind: 'slide'; slide: number }
+  /** interactive figure; `key` = highlighted structure (null = whole figure) */
+  | { kind: 'figure'; figure: string; key: string | null }
+  /** mechanism animation step, driven by lecture time */
+  | { kind: 'anim'; anim: string; step: number; hold?: boolean };
+
+export interface LecturePause {
+  tag: string;
+  q?: RichText;
+  a?: RichText;
+  list?: RichText[];
+  html?: RichText;
+}
+
+export interface LectureCue {
+  id: string;
+  shot: number;
+  /** subtitle (rich text, as displayed) */
+  text: RichText;
+  /** what the voice says — kana readings for easily misread terms, no symbols */
+  speech: string;
+  /** estimated duration in seconds at 1× */
+  dur: number;
+  /** highlighted item in the visual (sentence / list row / flow node); 'terms' = key terms */
+  focus?: number | 'terms';
+  /** stop here (auto pause) and show a check card */
+  pause?: LecturePause;
+  /** extra silence after the cue (seconds) — natural breathing between ideas */
+  gap: number;
+}
+
+export interface LectureShot {
+  section: number;
+  visual: LectureVisual;
+  /** minimum on-screen time (s), e.g. to let the camera visit each highlight */
+  min?: number;
+}
+
+export interface LectureSection { index: number; name: string }
+
+export interface Lecture {
+  chapter: number;
+  title: string;
+  sections: LectureSection[];
+  shots: LectureShot[];
+  cues: LectureCue[];
+  /** generator version, bump to invalidate recorded audio */
+  version: number;
+}
+
+/** Recorded narration: one audio file per cue. */
+export interface AudioManifest {
+  voice: string;
+  version: number;
+  cues: Record<string, { src: string; duration: number }>;
+}
+
+/* ---------- runtime timing ---------- */
+export interface TimedCue extends LectureCue { t0: number; t1: number; d: number }
+export interface TimedShot extends LectureShot { index: number; t0: number; t1: number; cues: TimedCue[] }
+export interface TimedLecture {
+  lecture: Lecture;
+  shots: TimedShot[];
+  cues: TimedCue[];
+  total: number;
+  chapters: { index: number; name: string; t0: number }[];
+}

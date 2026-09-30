@@ -1,0 +1,4402 @@
+[
+ {
+  "id": "q001",
+  "slide": 2,
+  "chapter": 1,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "凍結割断法（freeze fracture）で観察される面について正しいのはどれか。",
+  "options": [
+   {
+    "text": "膜は内葉と外葉の境界ではなく、細胞質側の表面で割れる",
+    "explanation": "割れるのは脂質二重層の内葉と外葉の間",
+    "correct": false
+   },
+   {
+    "text": "細胞外側の葉の割断面をP面という",
+    "explanation": "細胞外側はE面（Extracellular）",
+    "correct": false
+   },
+   {
+    "text": "P面には膜蛋白質の粒子が多く観察される",
+    "explanation": "細胞質側の葉（P面）に粒子が多い",
+    "correct": true
+   },
+   {
+    "text": "E面には膜蛋白質の粒子がP面より多く残る",
+    "explanation": "E面にはP面蛋白の抜けた窪みが残る",
+    "correct": false
+   },
+   {
+    "text": "凍結割断法は光学顕微鏡で膜蛋白を観察する方法である",
+    "explanation": "電子顕微鏡の技法",
+    "correct": false
+   }
+  ],
+  "explanation": "凍結割断法は凍らせた膜を脂質二重層の<b>内葉と外葉の間</b>で割り、膜内部を電顕で見る方法。細胞質側（inner leaflet）の割断面が<b>P面</b>、細胞外側（outer leaflet）の割断面が<b>E面</b>で、膜蛋白の粒子はP面に多く、E面には“depression left by P-face protein”が残る（スライド2の図b・c）。",
+  "point": "P＝Protoplasmic（細胞質側）、E＝Extracellular（外側）。粒が多いのはP面。",
+  "tags": [
+   "細胞膜蛋白質の観察"
+  ]
+ },
+ {
+  "id": "q002",
+  "slide": 2,
+  "chapter": 1,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "スライド2の模式図aの膜蛋白質の配置から言えることとして正しいのはどれか。",
+  "options": [
+   {
+    "text": "表在性膜蛋白質は脂質二重層を貫通している",
+    "explanation": "貫通するのは内在性膜蛋白質",
+    "correct": false
+   },
+   {
+    "text": "膜の糖鎖は細胞質側に突き出している",
+    "explanation": "図では外葉側（細胞外）に突き出す",
+    "correct": false
+   },
+   {
+    "text": "内在性膜蛋白質は脂質二重層に埋め込まれ、割断すると一方の面に粒子として残る",
+    "explanation": "だから割断面に粒子が見える",
+    "correct": true
+   },
+   {
+    "text": "脂質二重層は1層の脂質からなる",
+    "explanation": "内葉と外葉の2層",
+    "correct": false
+   },
+   {
+    "text": "P面は外葉の割断面である",
+    "explanation": "P面は内葉（細胞質側）",
+    "correct": false
+   }
+  ],
+  "explanation": "図aでは、二重層を貫く<b>内在性膜蛋白質（integral membrane proteins）</b>と、膜表面に付く<b>表在性膜蛋白質（peripheral membrane proteins）</b>が描かれる。内在性蛋白は二重層の中に埋まっているため、割断すると一方の面（主にP面）に粒子として残る。糖鎖は外葉（outer leaflet）側に出ている。",
+  "point": "「内在性＝貫通」「表在性＝表面」。糖鎖は外向き。",
+  "tags": [
+   "細胞膜蛋白質の観察"
+  ]
+ },
+ {
+  "id": "q003",
+  "slide": 3,
+  "chapter": 1,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "スライド3で「膜を通過する移動（拡散）」として示されているものの組み合わせはどれか。",
+  "options": [
+   {
+    "text": "単純拡散・エンドサイトーシス・輸送体",
+    "explanation": "エンドサイトーシスは膜に包まれた移動",
+    "correct": false
+   },
+   {
+    "text": "イオンチャネル・エクソサイトーシス・単純拡散",
+    "explanation": "エクソサイトーシスは膜に包まれた移動",
+    "correct": false
+   },
+   {
+    "text": "単純拡散・イオンチャネル・輸送体",
+    "explanation": "図の3つ",
+    "correct": true
+   },
+   {
+    "text": "エンドサイトーシス・エクソサイトーシス・輸送体",
+    "explanation": "前2つは膜に包まれた移動",
+    "correct": false
+   },
+   {
+    "text": "イオンチャネル・エンドサイトーシス・エクソサイトーシス",
+    "explanation": "後2つは膜に包まれた移動",
+    "correct": false
+   }
+  ],
+  "explanation": "スライド3は移動を2つに分ける。1）<b>膜を通過する移動（拡散 diffusion）</b>：図の単純拡散・イオンチャネル・輸送体。2）<b>膜に包まれた移動</b>：エンドサイトーシスとエクソサイトーシス。",
+  "point": "輸送体は荷物を抱えるが“膜で包む”わけではない＝通過組。",
+  "tags": [
+   "細胞膜を介した物質の移動"
+  ]
+ },
+ {
+  "id": "q004",
+  "slide": 3,
+  "chapter": 1,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "膜を通過する移動と膜に包まれた移動の比較として正しいのはどれか。",
+  "options": [
+   {
+    "text": "エクソサイトーシスは膜を通過する移動に分類される",
+    "explanation": "膜に包まれた移動",
+    "correct": false
+   },
+   {
+    "text": "膜に包まれた移動では膜の移行は起こらない",
+    "explanation": "小胞の膜と細胞膜の移行がある（スライド4）",
+    "correct": false
+   },
+   {
+    "text": "蛋白質などの高分子は主に膜に包まれた移動で輸送される",
+    "explanation": "スライド4「高分子（蛋白質など）を輸送」",
+    "correct": true
+   },
+   {
+    "text": "イオンチャネルは小胞を形成して物質を運ぶ",
+    "explanation": "チャネルは膜を通過させる経路",
+    "correct": false
+   },
+   {
+    "text": "輸送体による移動は小胞性輸送の一種である",
+    "explanation": "輸送体は膜を通過する移動",
+    "correct": false
+   }
+  ],
+  "explanation": "スライド3と4をつなぐ問題。膜を通過するのは小さな物質（単純拡散・チャネル・輸送体）。膜に包まれた移動（<b>小胞性輸送</b>）は、小胞の膜と細胞膜の移行を伴い、<b>高分子（蛋白質など）</b>を運ぶ。",
+  "point": "「大きい物は包む」。包む＝エンド／エクソサイトーシス。",
+  "tags": [
+   "細胞膜を介した物質の移動"
+  ]
+ },
+ {
+  "id": "q005",
+  "slide": 4,
+  "chapter": 1,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "小胞性輸送について正しいのはどれか。",
+  "options": [
+   {
+    "text": "エンドサイトーシスの和名は開口分泌である",
+    "explanation": "開口分泌はエクソサイトーシス",
+    "correct": false
+   },
+   {
+    "text": "エクソサイトーシスの和名は飲作用である",
+    "explanation": "飲み込み・飲作用はエンドサイトーシス",
+    "correct": false
+   },
+   {
+    "text": "小胞性輸送は主に低分子を輸送する",
+    "explanation": "高分子（蛋白質など）",
+    "correct": false
+   },
+   {
+    "text": "小胞の膜と細胞膜の間に膜の移行がある",
+    "explanation": "スライド4の記載",
+    "correct": true
+   },
+   {
+    "text": "小胞の内部はサイトゾルと連続している",
+    "explanation": "細胞外部と連続",
+    "correct": false
+   }
+  ],
+  "explanation": "スライド4：エンドサイトーシス＝<b>飲み込み・飲作用</b>、エクソサイトーシス＝<b>開口分泌</b>。特徴は①小胞の膜と細胞膜の<b>移行あり</b>、②<b>高分子</b>を輸送、③小胞の内部は<b>細胞外部と連続</b>することに注意。",
+  "point": "「エンド＝内へ（飲み込み）」「エクソ＝外へ（開口分泌）」。",
+  "tags": [
+   "膜に包まれた物質輸送（小胞性輸送）"
+  ]
+ },
+ {
+  "id": "q006",
+  "slide": 4,
+  "chapter": 1,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "スライド4の「小胞の内部は細胞外部と連続することに注意」から導かれる考えとして最も適切なのはどれか。",
+  "options": [
+   {
+    "text": "小胞の内容物はサイトゾルに直接放出されて分泌される",
+    "explanation": "内容物はサイトゾルに出ない",
+    "correct": false
+   },
+   {
+    "text": "小胞に包まれた物質は、細胞内にあっても膜で囲まれた“外側と同じ空間”にある",
+    "explanation": "小胞内腔＝細胞外と位相的に同じ",
+    "correct": true
+   },
+   {
+    "text": "小胞の膜は細胞膜とは無関係に新生される",
+    "explanation": "膜は細胞膜と移行する",
+    "correct": false
+   },
+   {
+    "text": "エクソサイトーシスでは小胞膜は分解されて消える",
+    "explanation": "小胞膜は細胞膜に移行する",
+    "correct": false
+   },
+   {
+    "text": "小胞の内部は核と連続している",
+    "explanation": "細胞外部と連続",
+    "correct": false
+   }
+  ],
+  "explanation": "小胞は細胞膜がくびれてできるので、その内側は元の細胞膜の外側にあたる。したがって小胞の内腔は<b>細胞外と連続</b>した空間とみなせる。この考え方はスライド11「膜性小器官の内腔は細胞外と機能的に連続する」につながる。",
+  "point": "小胞の中＝“持ち運べる外の世界”。",
+  "tags": [
+   "膜に包まれた物質輸送（小胞性輸送）"
+  ]
+ },
+ {
+  "id": "q007",
+  "slide": 5,
+  "chapter": 1,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "高分子粒子の細胞内取り込みについて正しいのはどれか。",
+  "options": [
+   {
+    "text": "食作用（ファゴサイトーシス）は光顕レベルで観察され、非特異的である",
+    "explanation": "スライド5の記載",
+    "correct": true
+   },
+   {
+    "text": "飲作用（ピノサイトーシス）は光顕レベルで観察され、特異的である",
+    "explanation": "電顕レベル・非特異的",
+    "correct": false
+   },
+   {
+    "text": "受容体仲介エンドサイトーシスは食作用の特別な形式である",
+    "explanation": "飲作用の特別な形式",
+    "correct": false
+   },
+   {
+    "text": "受容体仲介エンドサイトーシスは非特異的である",
+    "explanation": "特異的",
+    "correct": false
+   },
+   {
+    "text": "3つの取り込みはいずれも光顕レベルの現象である",
+    "explanation": "光顕は食作用のみ",
+    "correct": false
+   }
+  ],
+  "explanation": "スライド5：<b>食作用</b>＝光顕レベル・非特異的、<b>飲作用</b>＝電顕レベル・非特異的、<b>受容体仲介エンドサイトーシス</b>＝飲作用の特別な形式・電顕レベル・<b>特異的</b>。図ではクラスリンと受容体、被覆陥凹・被覆小胞が示される。",
+  "point": "光顕は食作用だけ、特異的は受容体仲介だけ。",
+  "tags": [
+   "高分子粒子の細胞内取り込み（Endocytosis）"
+  ]
+ },
+ {
+  "id": "q008",
+  "slide": 5,
+  "chapter": 1,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "ある細胞が、細胞外に多数存在する物質のうち受容体に結合したものだけを小さな小胞で取り込んだ。この取り込みの特徴として正しい組み合わせはどれか。",
+  "options": [
+   {
+    "text": "光顕レベル・非特異的",
+    "explanation": "食作用の特徴",
+    "correct": false
+   },
+   {
+    "text": "電顕レベル・非特異的",
+    "explanation": "飲作用の特徴",
+    "correct": false
+   },
+   {
+    "text": "電顕レベル・特異的",
+    "explanation": "受容体仲介エンドサイトーシス",
+    "correct": true
+   },
+   {
+    "text": "光顕レベル・特異的",
+    "explanation": "該当する取り込みはない",
+    "correct": false
+   },
+   {
+    "text": "クラスリンを必要としない",
+    "explanation": "受容体仲介はクラスリンで被覆",
+    "correct": false
+   }
+  ],
+  "explanation": "受容体に結合したものだけを取り込むのは<b>受容体仲介エンドサイトーシス</b>（飲作用の特別な形式）で、<b>電顕レベル・特異的</b>。受容体はクラスリンで裏打ちされ、被覆陥凹→被覆小胞を形成する（スライド5・6）。",
+  "point": "「選ぶ＝受容体仲介＝特異的＝クラスリン」をセットで。",
+  "tags": [
+   "高分子粒子の細胞内取り込み（Endocytosis）"
+  ]
+ },
+ {
+  "id": "q009",
+  "slide": 6,
+  "chapter": 1,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "受容体仲介エンドサイトーシスについて正しいのはどれか。",
+  "options": [
+   {
+    "text": "受容体の裏打ち蛋白質はカベオリンである",
+    "explanation": "クラスリン",
+    "correct": false
+   },
+   {
+    "text": "クラスリンにより被覆陥凹（coated pit）と被覆小胞（coated vesicle）が形成される",
+    "explanation": "スライド6の記載",
+    "correct": true
+   },
+   {
+    "text": "受容体に結合しないリガンドも同時に大量に取り込む",
+    "explanation": "結合するリガンドのみ特異的に",
+    "correct": false
+   },
+   {
+    "text": "クラスリンのかごを構成する単位はコネクソンである",
+    "explanation": "トリスケリオン（図C）",
+    "correct": false
+   },
+   {
+    "text": "被覆小胞は光学顕微鏡で観察される",
+    "explanation": "電顕像（図A）",
+    "correct": false
+   }
+  ],
+  "explanation": "スライド6：受容体の<b>裏打ち蛋白質であるクラスリン</b>により、<b>被覆陥凹</b>、<b>被覆小胞</b>を形成し、受容体に結合するリガンドのみを<b>特異的</b>に取り込む。図Cのかごの単位は<b>トリスケリオン（Triskelion）</b>。",
+  "point": "クラスリン＝被覆、カベオリン＝カベオラ。",
+  "tags": [
+   "受容体仲介エンドサイトーシス"
+  ]
+ },
+ {
+  "id": "q010",
+  "slide": 6,
+  "chapter": 1,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "スライド6の図A（1→4）が示す過程として正しいのはどれか。",
+  "options": [
+   {
+    "text": "分泌顆粒が細胞膜と融合して内容物を放出する過程",
+    "explanation": "エクソサイトーシスではない",
+    "correct": false
+   },
+   {
+    "text": "被覆陥凹が深くくびれ、細胞膜から離れて被覆小胞になる過程",
+    "explanation": "1→4の電顕像",
+    "correct": true
+   },
+   {
+    "text": "ミトコンドリアが二分裂する過程",
+    "explanation": "無関係",
+    "correct": false
+   },
+   {
+    "text": "カベオラがトランスサイトーシスを行う過程",
+    "explanation": "クラスリン被覆の過程",
+    "correct": false
+   },
+   {
+    "text": "リソソームが食胞と融合する過程",
+    "explanation": "無関係",
+    "correct": false
+   }
+  ],
+  "explanation": "図Aの電顕像1〜4は、クラスリンで裏打ちされたくぼみ（被覆陥凹）が次第に深くなり、くびれて細胞膜から離れ、<b>被覆小胞</b>になる過程を示す。図Bではリガンド-受容体複合体とクラスリンの位置関係が示される。",
+  "point": "“くぼみ→くびれ→小胞”の順番。",
+  "tags": [
+   "受容体仲介エンドサイトーシス"
+  ]
+ },
+ {
+  "id": "q011",
+  "slide": 7,
+  "chapter": 1,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "カベオラ（caveola）について正しいのはどれか。",
+  "options": [
+   {
+    "text": "クラスリンで被覆された陥凹である",
+    "explanation": "クラスリンをもたない",
+    "correct": false
+   },
+   {
+    "text": "平滑筋細胞や血管内皮細胞などに存在する",
+    "explanation": "スライド7の記載",
+    "correct": true
+   },
+   {
+    "text": "裏打ち蛋白質はトリスケリオンである",
+    "explanation": "図ではカベオリン",
+    "correct": false
+   },
+   {
+    "text": "リソソームの一種である",
+    "explanation": "細胞膜の陥凹・小胞",
+    "correct": false
+   },
+   {
+    "text": "光学顕微鏡でのみ観察できる",
+    "explanation": "電顕レベルの小さな陥凹",
+    "correct": false
+   }
+  ],
+  "explanation": "スライド7：カベオラは<b>クラスリンをもたない陥凹、小胞</b>で、<b>平滑筋細胞、血管内皮細胞</b>などに存在する。図では<b>カベオリン</b>が裏打ちし、ポトサイトーシス・トランスサイトーシス・情報伝達（二次メッセンジャー）が示される。",
+  "point": "「カベオラ＝クラスリンなし＝カベオリン」。",
+  "tags": [
+   "カベオラ caveola"
+  ]
+ },
+ {
+  "id": "q012",
+  "slide": 7,
+  "chapter": 1,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "スライド7の図に示されるカベオラの働きの組み合わせとして正しいのはどれか。",
+  "options": [
+   {
+    "text": "食作用・飲作用・開口分泌",
+    "explanation": "スライド5・4の用語",
+    "correct": false
+   },
+   {
+    "text": "ポトサイトーシス・トランスサイトーシス・情報伝達",
+    "explanation": "図の3つのパネル",
+    "correct": true
+   },
+   {
+    "text": "受容体仲介エンドサイトーシス・自食作用・分泌",
+    "explanation": "該当しない",
+    "correct": false
+   },
+   {
+    "text": "二分裂・出芽・融合",
+    "explanation": "該当しない",
+    "correct": false
+   },
+   {
+    "text": "酸化的解毒・β酸化・窒素代謝",
+    "explanation": "ペルオキシソームの機能",
+    "correct": false
+   }
+  ],
+  "explanation": "スライド7の図は3つのパネルで、<b>ポトサイトーシス</b>（小分子の取り込み）、<b>トランスサイトーシス</b>（小胞が細胞を横切って反対側へ運ばれる）、<b>情報伝達</b>（リガンド→レセプター→二次メッセンジャー）を示す。",
+  "point": "トランスサイトーシス＝“細胞を横断する輸送”。",
+  "tags": [
+   "カベオラ caveola"
+  ]
+ },
+ {
+  "id": "q013",
+  "slide": 8,
+  "chapter": 2,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "細胞の構成要素について、スライド8の分類として正しいのはどれか。",
+  "options": [
+   {
+    "text": "リボソームは膜性小器官に分類される",
+    "explanation": "非膜性小器官",
+    "correct": false
+   },
+   {
+    "text": "細胞骨格は非膜性小器官に分類される",
+    "explanation": "リボソームとともに非膜性",
+    "correct": true
+   },
+   {
+    "text": "封入体は膜性小器官に分類される",
+    "explanation": "細胞小器官とは別の項目",
+    "correct": false
+   },
+   {
+    "text": "細胞内膜系は非膜性小器官の総称である",
+    "explanation": "膜性小器官（Endomembrane system）",
+    "correct": false
+   },
+   {
+    "text": "核は細胞質に含まれる",
+    "explanation": "核は細胞質とは別に挙げられている",
+    "correct": false
+   }
+  ],
+  "explanation": "スライド8：細胞＝<b>細胞膜（形質膜）・細胞質・核</b>。細胞質は<b>細胞小器官</b>（膜性小器官＝細胞内膜系、非膜性小器官＝<b>リボソーム・細胞骨格</b>）、<b>封入体</b>、<b>細胞質基質（サイトゾル）</b>からなる。",
+  "point": "非膜性は「リボソーム」「細胞骨格」の2つ。",
+  "tags": [
+   "細胞の構成要素"
+  ]
+ },
+ {
+  "id": "q014",
+  "slide": 8,
+  "chapter": 2,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "次の組み合わせのうち、スライド8の分類上「同じ区分」に入るものはどれか。",
+  "options": [
+   {
+    "text": "リボソームと滑面小胞体",
+    "explanation": "非膜性と膜性",
+    "correct": false
+   },
+   {
+    "text": "細胞骨格とゴルジ装置",
+    "explanation": "非膜性と膜性",
+    "correct": false
+   },
+   {
+    "text": "リボソームと細胞骨格",
+    "explanation": "どちらも非膜性小器官",
+    "correct": true
+   },
+   {
+    "text": "封入体とリボソーム",
+    "explanation": "封入体は小器官ではない",
+    "correct": false
+   },
+   {
+    "text": "細胞質基質と細胞内膜系",
+    "explanation": "別の区分",
+    "correct": false
+   }
+  ],
+  "explanation": "スライド8の階層：細胞質→細胞小器官（膜性小器官／非膜性小器官）・封入体・細胞質基質。<b>非膜性小器官はリボソームと細胞骨格</b>。膜性小器官（小胞体・ゴルジなど）はまとめて細胞内膜系と呼ぶ。",
+  "point": "まず「膜があるか」で分ける。",
+  "tags": [
+   "細胞の構成要素"
+  ]
+ },
+ {
+  "id": "q015",
+  "slide": 9,
+  "chapter": 2,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "細胞小器官について、スライド9の記述として正しいのはどれか。",
+  "options": [
+   {
+    "text": "細胞小器官はすべて膜性である",
+    "explanation": "膜性と非膜性がある",
+    "correct": false
+   },
+   {
+    "text": "核膜は袋状で、一種の膜性の小器官である",
+    "explanation": "スライド9の記載",
+    "correct": true
+   },
+   {
+    "text": "核自体も細胞小器官と呼ぶ",
+    "explanation": "核自体は小器官とは呼ばない",
+    "correct": false
+   },
+   {
+    "text": "核膜は非膜性小器官である",
+    "explanation": "膜性",
+    "correct": false
+   },
+   {
+    "text": "細胞小器官には非膜性のものは存在しない",
+    "explanation": "リボソーム・細胞骨格がある",
+    "correct": false
+   }
+  ],
+  "explanation": "スライド9：「細胞小器官には膜性のものと非膜性のものがある。<b>核膜は袋状で、一種の膜性の小器官</b>である。<b>核自体は小器官とは呼ばない</b>。」",
+  "point": "核膜はOK、核はNG。定番のひっかけ。",
+  "tags": [
+   "細胞小器官 Organelles"
+  ]
+ },
+ {
+  "id": "q016",
+  "slide": 9,
+  "chapter": 2,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "スライド9の図に描かれている構造のうち、膜をもたない（非膜性の）ものはどれか。",
+  "options": [
+   {
+    "text": "ミトコンドリア",
+    "explanation": "膜性",
+    "correct": false
+   },
+   {
+    "text": "粗面小胞体",
+    "explanation": "膜性",
+    "correct": false
+   },
+   {
+    "text": "リソソーム",
+    "explanation": "膜性",
+    "correct": false
+   },
+   {
+    "text": "微小管",
+    "explanation": "細胞骨格＝非膜性",
+    "correct": true
+   },
+   {
+    "text": "ゴルジ装置",
+    "explanation": "膜性",
+    "correct": false
+   }
+  ],
+  "explanation": "図にはミトコンドリア・粗面／滑面小胞体・ゴルジ装置・リソソーム・分泌顆粒（膜性）と、中心小体・微小管・マイクロフィラメント（非膜性）が描かれる。スライド8の分類と組み合わせて判断する。",
+  "point": "細胞骨格（微小管・マイクロフィラメント）とリボソームは膜なし。",
+  "tags": [
+   "細胞小器官 Organelles"
+  ]
+ },
+ {
+  "id": "q017",
+  "slide": 10,
+  "chapter": 2,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "超遠心法による細胞小器官の分画について正しいのはどれか。",
+  "options": [
+   {
+    "text": "1,000×gの沈殿には核が含まれる",
+    "explanation": "スライド10",
+    "correct": true
+   },
+   {
+    "text": "1万×gの沈殿にはミクロゾームが含まれる",
+    "explanation": "1万×gはミトコンドリア・リソソーム",
+    "correct": false
+   },
+   {
+    "text": "10万×gの沈殿はサイトゾルである",
+    "explanation": "10万×gの上清がサイトゾル",
+    "correct": false
+   },
+   {
+    "text": "ミクロゾームは主にミトコンドリアの断片である",
+    "explanation": "主に小胞体",
+    "correct": false
+   },
+   {
+    "text": "この分画法は1990年代に確立された",
+    "explanation": "1950年代",
+    "correct": false
+   }
+  ],
+  "explanation": "スライド10：細胞を破壊した<b>ホモジネート</b>を遠心。<b>1,000×g沈殿→核</b>、<b>1万×g沈殿→ミトコンドリア・リソソーム</b>、<b>10万×g沈殿→ミクロゾーム（主に小胞体）</b>、<b>10万×g上清→サイトゾル</b>。各分画の生化学的性質と形態的特徴を比較して小器官の機能が解明された（1950年代）。",
+  "point": "遠心力が大きいほど小さいものが沈む。上清＝サイトゾル。",
+  "tags": [
+   "超遠心法による細胞小器官の分画（1950年代）"
+  ]
+ },
+ {
+  "id": "q018",
+  "slide": 10,
+  "chapter": 2,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "ホモジネートを1万×gで遠心して得た沈殿から、酸性条件で働く加水分解酵素の活性が検出された。この結果を説明する小器官として最も適切なのはどれか。",
+  "options": [
+   {
+    "text": "核",
+    "explanation": "1,000×gで沈殿",
+    "correct": false
+   },
+   {
+    "text": "リソソーム",
+    "explanation": "1万×gで沈殿し、酸性加水分解酵素をもつ",
+    "correct": true
+   },
+   {
+    "text": "ミクロゾーム",
+    "explanation": "10万×gで沈殿",
+    "correct": false
+   },
+   {
+    "text": "リボソーム",
+    "explanation": "酸性加水分解酵素の袋ではない",
+    "correct": false
+   },
+   {
+    "text": "サイトゾル",
+    "explanation": "10万×gの上清",
+    "correct": false
+   }
+  ],
+  "explanation": "1万×gの沈殿は<b>ミトコンドリア・リソソーム</b>（スライド10）。酸性条件で働く加水分解酵素群をもつのは<b>リソソーム</b>（スライド25）。このように分画の“中身”と“生化学的性質”を照合して機能が解明された。",
+  "point": "分画（スライド10）と機能（スライド25）をつなげる問題。",
+  "tags": [
+   "超遠心法による細胞小器官の分画（1950年代）"
+  ]
+ },
+ {
+  "id": "q019",
+  "slide": 11,
+  "chapter": 2,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "細胞内膜系について正しいのはどれか。",
+  "options": [
+   {
+    "text": "膜性小器官の膜は形質膜とは異なる特殊な構造をもつ",
+    "explanation": "形質膜と同じ単位膜構造",
+    "correct": false
+   },
+   {
+    "text": "内膜系は形質膜と連続しない",
+    "explanation": "小胞性輸送により連続する",
+    "correct": false
+   },
+   {
+    "text": "膜性小器官の内腔は細胞外と機能的に連続する",
+    "explanation": "スライド11",
+    "correct": true
+   },
+   {
+    "text": "細胞内膜系は非膜性小器官を含む",
+    "explanation": "膜性小器官の膜の総称",
+    "correct": false
+   },
+   {
+    "text": "内膜系はミトコンドリアの膜だけを指す",
+    "explanation": "該当しない",
+    "correct": false
+   }
+  ],
+  "explanation": "スライド11：細胞内膜系は<b>膜性小器官の膜の総称</b>で、<b>形質膜と同じ単位膜構造</b>。<b>小胞性輸送により形質膜と連続</b>し、膜性小器官の<b>内腔は細胞外と機能的に連続</b>する。",
+  "point": "「内腔＝外」はスライド4の「小胞の内部＝外」と同じ発想。",
+  "tags": [
+   "細胞内膜系 Endomembrane System"
+  ]
+ },
+ {
+  "id": "q020",
+  "slide": 11,
+  "chapter": 2,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "スライド11の図で、粗面小胞体からゴルジへ向かう小胞と、ゴルジから粗面小胞体へ戻る小胞の被覆の組み合わせとして正しいのはどれか。",
+  "options": [
+   {
+    "text": "行き：COP-II、戻り：COP-I",
+    "explanation": "図でrER近くにCOP-II、ゴルジ側のrecyclingにCOP-I",
+    "correct": true
+   },
+   {
+    "text": "行き：COP-I、戻り：COP-II",
+    "explanation": "逆",
+    "correct": false
+   },
+   {
+    "text": "行き：クラスリン、戻り：COP-I",
+    "explanation": "クラスリンはTGN付近",
+    "correct": false
+   },
+   {
+    "text": "行き：カベオリン、戻り：クラスリン",
+    "explanation": "図に該当しない",
+    "correct": false
+   },
+   {
+    "text": "行き・戻りともクラスリン",
+    "explanation": "該当しない",
+    "correct": false
+   }
+  ],
+  "explanation": "スライド11の図では、rERから出る小胞に<b>COP-II-coated vesicles</b>、ゴルジから戻る（recycling）小胞に<b>COP-I-coated vesicles</b>、TGNからの小胞に<b>clathrin-coated vesicles</b>が描かれている。",
+  "point": "「ツー（II）で行って、ワン（I）で戻る」。",
+  "tags": [
+   "細胞内膜系 Endomembrane System"
+  ]
+ },
+ {
+  "id": "q021",
+  "slide": 12,
+  "chapter": 2,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "主な膜性小器官のうち、蛋白質の合成・輸送・分泌の系と連続性がないとされるものはどれか。",
+  "options": [
+   {
+    "text": "ゴルジ装置",
+    "explanation": "連続性あり",
+    "correct": false
+   },
+   {
+    "text": "リソソーム",
+    "explanation": "連続性あり",
+    "correct": false
+   },
+   {
+    "text": "核膜",
+    "explanation": "連続性あり",
+    "correct": false
+   },
+   {
+    "text": "ペルオキシソーム",
+    "explanation": "ミトコンドリアとともに連続性なし",
+    "correct": true
+   },
+   {
+    "text": "エンドソーム",
+    "explanation": "連続性あり",
+    "correct": false
+   }
+  ],
+  "explanation": "スライド12：小胞体・ゴルジ装置・分泌小胞・リソソーム・エンドソーム（輸送小胞）・<b>核膜</b>は機能的な連続性があり、蛋白質の合成・輸送・分泌と関係が深い。<b>ペルオキシソーム・ミトコンドリア</b>は上記のグループと連続性がない。",
+  "point": "核膜は“連続グループ”に入る。",
+  "tags": [
+   "主な膜性小器官"
+  ]
+ },
+ {
+  "id": "q022",
+  "slide": 12,
+  "chapter": 2,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "スライド12の2つのグループの違いを、後のスライドの内容から説明したものとして最も適切なのはどれか。",
+  "options": [
+   {
+    "text": "ミトコンドリアはゴルジ装置から出芽して生じるため連続性がない",
+    "explanation": "rER-Golgi由来ではない（スライド32）",
+    "correct": false
+   },
+   {
+    "text": "ミトコンドリアやペルオキシソームの蛋白質はrER-ゴルジを経ずに遊離リボソームで合成されて取り込まれる",
+    "explanation": "スライド32・34",
+    "correct": true
+   },
+   {
+    "text": "リソソームはゴルジと無関係に生じる",
+    "explanation": "ゴルジ由来（スライド25・27）",
+    "correct": false
+   },
+   {
+    "text": "核膜は小胞体と連続していない",
+    "explanation": "粗面小胞体は核膜と移行（スライド16）",
+    "correct": false
+   },
+   {
+    "text": "ペルオキシソームは分泌小胞から生じる",
+    "explanation": "ゴルジ装置由来でない（スライド34）",
+    "correct": false
+   }
+  ],
+  "explanation": "連続グループは小胞性輸送でつながる。一方、ミトコンドリアの蛋白の多くは核遺伝子由来で<b>遊離リボソーム</b>で合成され（スライド32）、ペルオキシソームの膜蛋白・酵素も<b>rER由来ではなく遊離リボソーム</b>で作られる（スライド34）。だから連続性がない。",
+  "point": "“別棟”の2つは遊離リボソームから直接納品。",
+  "tags": [
+   "主な膜性小器官"
+  ]
+ },
+ {
+  "id": "q023",
+  "slide": 13,
+  "chapter": 3,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "蛋白質合成と分泌のセントラルドグマ（スライド13）で示される分泌蛋白質の経路として正しいのはどれか。",
+  "options": [
+   {
+    "text": "ゴルジ装置 → 粗面小胞体 → 分泌小胞",
+    "explanation": "順番が逆",
+    "correct": false
+   },
+   {
+    "text": "粗面小胞体 → ゴルジ装置 → 分泌小胞",
+    "explanation": "スライド13",
+    "correct": true
+   },
+   {
+    "text": "滑面小胞体 → リソソーム → 分泌小胞",
+    "explanation": "該当しない",
+    "correct": false
+   },
+   {
+    "text": "遊離リボソーム → サイトゾル → 細胞膜",
+    "explanation": "分泌蛋白は内膜系の内腔を通る",
+    "correct": false
+   },
+   {
+    "text": "粗面小胞体 → ミトコンドリア → 分泌小胞",
+    "explanation": "ミトコンドリアは経路外",
+    "correct": false
+   }
+  ],
+  "explanation": "スライド13：粗面小胞体（rER）→ゴルジ装置→分泌小胞。真核細胞では翻訳された分泌蛋白質は<b>内膜系の内腔に移行して細胞膜に運ばれる</b>。1960年代<b>Palade</b>が発見（1974 Nobel医学生理学賞）。",
+  "point": "分泌蛋白はサイトゾルに出ない。",
+  "tags": [
+   "蛋白質合成と分泌のセントラルドグマ"
+  ]
+ },
+ {
+  "id": "q024",
+  "slide": 13,
+  "chapter": 3,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "分泌蛋白質の輸送に関する記述として、スライド13に基づき正しいのはどれか。",
+  "options": [
+   {
+    "text": "分泌蛋白質はサイトゾルを通って細胞膜に運ばれる",
+    "explanation": "内膜系の内腔",
+    "correct": false
+   },
+   {
+    "text": "分泌蛋白質は内膜系の内腔を通って細胞膜へ運ばれる",
+    "explanation": "スライド13",
+    "correct": true
+   },
+   {
+    "text": "この経路は1898年にGolgiが明らかにした",
+    "explanation": "1960年代Palade",
+    "correct": false
+   },
+   {
+    "text": "Paladeは1906年にノーベル賞を受賞した",
+    "explanation": "1974年（1906年はGolgi）",
+    "correct": false
+   },
+   {
+    "text": "分泌蛋白質は原核細胞でのみこの経路をとる",
+    "explanation": "真核細胞",
+    "correct": false
+   }
+  ],
+  "explanation": "真核細胞では翻訳された分泌蛋白質は内膜系の<b>内腔</b>に移行して細胞膜へ運ばれる。スライド11「内腔は細胞外と機能的に連続」と合わせると、分泌蛋白は最初から“外側の空間”を移動していると理解できる。",
+  "point": "年号：Golgi 1898・受賞1906／Palade 1960年代・受賞1974。",
+  "tags": [
+   "蛋白質合成と分泌のセントラルドグマ"
+  ]
+ },
+ {
+  "id": "q025",
+  "slide": 14,
+  "chapter": 3,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "小胞体について正しいのはどれか。",
+  "options": [
+   {
+    "text": "1953年にGolgiが光学顕微鏡で発見した",
+    "explanation": "Porterが電顕で発見",
+    "correct": false
+   },
+   {
+    "text": "滑面小胞体は表面にリボソームが付着している",
+    "explanation": "付着しない",
+    "correct": false
+   },
+   {
+    "text": "粗面小胞体の機能は分泌蛋白質・膜蛋白質の合成（翻訳）と修飾である",
+    "explanation": "スライド14",
+    "correct": true
+   },
+   {
+    "text": "滑面小胞体は層板状・網状の嚢（cistern）からなる",
+    "explanation": "小胞状・管状の嚢。層板状はrER",
+    "correct": false
+   },
+   {
+    "text": "粗面小胞体は核膜と移行しない",
+    "explanation": "核膜と移行する",
+    "correct": false
+   }
+  ],
+  "explanation": "スライド14：1953年<b>Porter</b>が電顕により発見（原意は形質網）。<b>粗面小胞体</b>：層板状・網状に広がる嚢、表面にリボソーム、核膜と移行、機能は<b>分泌蛋白質・膜蛋白質の合成と修飾</b>。<b>滑面小胞体</b>：小胞状・管状の嚢、リボソームなし、粗面と移行、機能は<b>脂質・コレステロールの合成と解毒</b>。",
+  "point": "形：rER＝層板状、sER＝小胞状・管状。",
+  "tags": [
+   "小胞体 Endoplasmic reticulum（ER）"
+  ]
+ },
+ {
+  "id": "q026",
+  "slide": 14,
+  "chapter": 3,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "膜の新生について、スライド14の記述と合致するものはどれか。",
+  "options": [
+   {
+    "text": "膜の新生はゴルジ装置で起こる",
+    "explanation": "小胞体で起こる",
+    "correct": false
+   },
+   {
+    "text": "脂質成分の膜への付加は主に粗面小胞体で行われる",
+    "explanation": "主にsER",
+    "correct": false
+   },
+   {
+    "text": "膜蛋白質の膜への組み込みは滑面小胞体で行われる",
+    "explanation": "rER",
+    "correct": false
+   },
+   {
+    "text": "脂質成分の付加は主にsER、膜蛋白質の組み込みはrERで行われる",
+    "explanation": "スライド14",
+    "correct": true
+   },
+   {
+    "text": "膜の新生はミトコンドリアで起こる",
+    "explanation": "小胞体",
+    "correct": false
+   }
+  ],
+  "explanation": "スライド14：<b>膜の新生は小胞体で起こる</b>。脂質成分の膜への付加：<b>主にsER</b>、膜蛋白質の膜への組み込み：<b>rER</b>。sERの機能（脂質合成）、rERの機能（膜蛋白合成）と対応させると覚えやすい。",
+  "point": "脂質↔sER、蛋白↔rER。逆にするひっかけが多い。",
+  "tags": [
+   "小胞体 Endoplasmic reticulum（ER）"
+  ]
+ },
+ {
+  "id": "q027",
+  "slide": 15,
+  "chapter": 3,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "リボソームについて正しいのはどれか。",
+  "options": [
+   {
+    "text": "膜性小器官である",
+    "explanation": "非膜性小器官",
+    "correct": false
+   },
+   {
+    "text": "直径は約250 nmである",
+    "explanation": "約25 nm",
+    "correct": false
+   },
+   {
+    "text": "蛋白質とrRNAからなる",
+    "explanation": "スライド15",
+    "correct": true
+   },
+   {
+    "text": "遊離リボソームは分泌蛋白質を合成する",
+    "explanation": "サイトゾル蛋白質",
+    "correct": false
+   },
+   {
+    "text": "粗面小胞体付着リボソームはサイトゾル蛋白質を合成する",
+    "explanation": "分泌蛋白と膜蛋白",
+    "correct": false
+   }
+  ],
+  "explanation": "スライド15：リボソームは<b>小と大の亜粒子（サブユニット）</b>からなる<b>非膜性小器官（直径約25 nm）</b>。<b>蛋白質とrRNA</b>（mRNAとは異なる）からなる。<b>遊離リボソーム</b>：サイトゾル蛋白質の合成、<b>粗面小胞体付着リボソーム</b>：分泌蛋白質と膜蛋白質の合成。",
+  "point": "rRNA≠mRNA。遊離＝サイトゾル、付着＝分泌・膜。",
+  "tags": [
+   "リボソーム Ribosome"
+  ]
+ },
+ {
+  "id": "q028",
+  "slide": 15,
+  "chapter": 3,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "ある細胞で、細胞膜に組み込まれる受容体蛋白質が新たに合成された。この蛋白質の合成と輸送の説明として最も適切なのはどれか。",
+  "options": [
+   {
+    "text": "遊離リボソームで合成され、サイトゾルを通って細胞膜へ運ばれた",
+    "explanation": "膜蛋白は付着リボソーム",
+    "correct": false
+   },
+   {
+    "text": "粗面小胞体付着リボソームで合成され、内膜系を経て細胞膜に至った",
+    "explanation": "スライド15・17",
+    "correct": true
+   },
+   {
+    "text": "ミトコンドリアで合成された",
+    "explanation": "該当しない",
+    "correct": false
+   },
+   {
+    "text": "滑面小胞体に付着したリボソームで合成された",
+    "explanation": "sERにはリボソームが付着しない",
+    "correct": false
+   },
+   {
+    "text": "核内で合成された",
+    "explanation": "翻訳はリボソーム",
+    "correct": false
+   }
+  ],
+  "explanation": "膜蛋白質は<b>粗面小胞体付着リボソーム</b>で合成される（スライド15）。スライド17の図のように、膜蛋白質は小胞の膜に組み込まれたまま運ばれ、小胞が細胞膜と融合すると細胞膜の蛋白質になる。",
+  "point": "膜蛋白も“分泌蛋白と同じルート”。",
+  "tags": [
+   "リボソーム Ribosome"
+  ]
+ },
+ {
+  "id": "q029",
+  "slide": 16,
+  "chapter": 3,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "小胞体とリボソームの関係について正しいのはどれか。",
+  "options": [
+   {
+    "text": "（滑面）小胞体＋（遊離）リボソーム＝粗面小胞体と表される",
+    "explanation": "スライド16",
+    "correct": true
+   },
+   {
+    "text": "粗面小胞体は細胞膜とのみ連続する",
+    "explanation": "核膜と移行する",
+    "correct": false
+   },
+   {
+    "text": "粗面小胞体のリボソームは遊離リボソームとは別の種類である",
+    "explanation": "リボソームは同じ（スライド17）",
+    "correct": false
+   },
+   {
+    "text": "リボソームは小胞体の内腔にある",
+    "explanation": "小胞体の表面（サイトゾル側）",
+    "correct": false
+   },
+   {
+    "text": "リボソームは単一のサブユニットからなる",
+    "explanation": "小・大サブユニット",
+    "correct": false
+   }
+  ],
+  "explanation": "スライド16：<b>（滑面）小胞体＋（遊離）リボソーム＝粗面小胞体</b>。<b>粗面小胞体は核膜と移行する</b>。図では小サブユニット＋大サブユニット→リボソーム（25 nm）が示される。",
+  "point": "rERは“リボソームのくっついた小胞体”にすぎない。",
+  "tags": [
+   "小胞体とリボソームの関係"
+  ]
+ },
+ {
+  "id": "q030",
+  "slide": 16,
+  "chapter": 3,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "スライド16の図の内容から考えて正しいのはどれか。",
+  "options": [
+   {
+    "text": "リボソームはmRNAに結合せずに蛋白を合成する",
+    "explanation": "mRNA上で働く",
+    "correct": false
+   },
+   {
+    "text": "核膜孔は小胞体に存在する",
+    "explanation": "核膜孔は核膜の孔",
+    "correct": false
+   },
+   {
+    "text": "粗面小胞体は核膜と連続しており、両者は同じ膜系に属する",
+    "explanation": "核膜と移行",
+    "correct": true
+   },
+   {
+    "text": "滑面小胞体と粗面小胞体は連続しない",
+    "explanation": "移行する（スライド14）",
+    "correct": false
+   },
+   {
+    "text": "リボソームの直径は約2.5 μmである",
+    "explanation": "約25 nm",
+    "correct": false
+   }
+  ],
+  "explanation": "図では<b>核膜</b>から粗面小胞体がつながり、その先に滑面小胞体が続く。遊離リボソームがmRNAに結合し、小胞体に付着すると粗面小胞体となる。核膜→rER→sERが一続きの膜系である。",
+  "point": "核膜・rER・sERは連続。",
+  "tags": [
+   "小胞体とリボソームの関係"
+  ]
+ },
+ {
+  "id": "q031",
+  "slide": 17,
+  "chapter": 3,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "遊離リボソームと粗面小胞体付着リボソームの区別を決めるものはどれか。",
+  "options": [
+   {
+    "text": "リボソームの大きさの違い",
+    "explanation": "リボソーム自体は同じ",
+    "correct": false
+   },
+   {
+    "text": "リボソームのrRNAの種類の違い",
+    "explanation": "リボソームの性質ではない",
+    "correct": false
+   },
+   {
+    "text": "リボソームに結合したmRNAがシグナル配列をもつか否か",
+    "explanation": "スライド17",
+    "correct": true
+   },
+   {
+    "text": "細胞膜からの距離",
+    "explanation": "該当しない",
+    "correct": false
+   },
+   {
+    "text": "ミトコンドリアとの結合の有無",
+    "explanation": "該当しない",
+    "correct": false
+   }
+  ],
+  "explanation": "スライド17：「遊離リボソームと粗面小胞体の区別は<b>リボソームの性質ではなく</b>、そのリボソームに結合した<b>mRNAがシグナル配列を持つか否か</b>で決まる。」",
+  "point": "最頻出のひっかけ：「リボソームの性質で決まる」は誤り。",
+  "tags": [
+   "分泌蛋白質／膜蛋白質とサイトゾル蛋白質"
+  ]
+ },
+ {
+  "id": "q032",
+  "slide": 17,
+  "chapter": 3,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "シグナル配列をもたないmRNAを翻訳しているリボソームで合成される蛋白質として、スライド17の図に基づき最も適切なのはどれか。",
+  "options": [
+   {
+    "text": "分泌蛋白質",
+    "explanation": "rER付着リボソームで合成",
+    "correct": false
+   },
+   {
+    "text": "膜蛋白質",
+    "explanation": "rER付着リボソームで合成",
+    "correct": false
+   },
+   {
+    "text": "サイトゾル蛋白質",
+    "explanation": "遊離リボソームのまま",
+    "correct": true
+   },
+   {
+    "text": "分泌顆粒の内容物",
+    "explanation": "分泌蛋白",
+    "correct": false
+   },
+   {
+    "text": "リソソームの膜蛋白",
+    "explanation": "内膜系の蛋白",
+    "correct": false
+   }
+  ],
+  "explanation": "シグナル配列がなければリボソームは遊離のままで、<b>サイトゾル蛋白質</b>を作る（スライド15・17）。シグナル配列があるとrERに付着し、<b>分泌蛋白質・膜蛋白質</b>を作る。",
+  "point": "札（シグナル配列）なし＝社内用（サイトゾル）。",
+  "tags": [
+   "分泌蛋白質／膜蛋白質とサイトゾル蛋白質"
+  ]
+ },
+ {
+  "id": "q033",
+  "slide": 18,
+  "chapter": 4,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "ゴルジ装置について、スライド18の記述として正しいのはどれか。",
+  "options": [
+   {
+    "text": "1953年にPorterが記載した",
+    "explanation": "1898年Golgi",
+    "correct": false
+   },
+   {
+    "text": "鍍銀法により染色される細胞質内の網状構造として記載された",
+    "explanation": "スライド18",
+    "correct": true
+   },
+   {
+    "text": "電子顕微鏡の登場後に初めて存在が推定された",
+    "explanation": "光顕時代から推定、電顕で確定",
+    "correct": false
+   },
+   {
+    "text": "Camillo Golgiは1974年にノーベル賞を受賞した",
+    "explanation": "1906年",
+    "correct": false
+   },
+   {
+    "text": "鍍銀法では構造物が赤く染まる",
+    "explanation": "銀が沈着し黒く見える",
+    "correct": false
+   }
+  ],
+  "explanation": "スライド18：1898年<b>Golgi</b>が記載。<b>鍍銀法</b>により染色される細胞質内の網状構造。光学顕微鏡時代から存在が推定されていた小器官の一つ（他にミトコンドリア、中心小体など）、<b>電子顕微鏡により存在が確定</b>。Camillo Golgi：Nobel賞（<b>1906</b>）。",
+  "point": "1898記載・1906受賞。",
+  "tags": [
+   "ゴルジ装置 Golgi apparatus"
+  ]
+ },
+ {
+  "id": "q034",
+  "slide": 18,
+  "chapter": 4,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "鍍銀法（silver impregnation）について正しいのはどれか。",
+  "options": [
+   {
+    "text": "酸性フクシンで構造を赤く染める方法である",
+    "explanation": "ミトコンドリアの特殊染色（スライド29）",
+    "correct": false
+   },
+   {
+    "text": "硝酸銀などが還元されて銀が析出し、微細構造に沈着して黒く見える",
+    "explanation": "スライド18",
+    "correct": true
+   },
+   {
+    "text": "ゴルジ装置だけを特異的に染める",
+    "explanation": "グリア・神経線維・細網線維なども",
+    "correct": false
+   },
+   {
+    "text": "電顕的オートラジオグラフィーの一種である",
+    "explanation": "別の手法（スライド22）",
+    "correct": false
+   },
+   {
+    "text": "結合組織の膠原線維を青く染める方法である",
+    "explanation": "細網線維などを黒く",
+    "correct": false
+   }
+  ],
+  "explanation": "スライド18：硝酸銀などが還元され銀が析出→微細な構造物に沈着して黒く見せる。細胞内の<b>ゴルジ装置</b>、神経系の<b>グリア細胞</b>、<b>神経線維</b>、結合組織の<b>細網線維</b>などを染める。",
+  "point": "鍍銀法＝黒。細網線維も染まる。",
+  "tags": [
+   "ゴルジ装置 Golgi apparatus"
+  ]
+ },
+ {
+  "id": "q035",
+  "slide": 19,
+  "chapter": 4,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "ゴルジ装置の構造と膜の輸送について正しいのはどれか。",
+  "options": [
+   {
+    "text": "ゴルジ装置は表面にリボソームをもつ槽の重なりである",
+    "explanation": "リボソームを持たない",
+    "correct": false
+   },
+   {
+    "text": "粗面小胞体からの出芽にはクラスリンが関与する",
+    "explanation": "クラスリンなし",
+    "correct": false
+   },
+   {
+    "text": "形成面はシス面、成熟面はトランス面である",
+    "explanation": "スライド19",
+    "correct": true
+   },
+   {
+    "text": "TGNはシス面の手前にある",
+    "explanation": "トランス面の先",
+    "correct": false
+   },
+   {
+    "text": "分泌小胞はシス面から直接出芽する",
+    "explanation": "TGNから",
+    "correct": false
+   }
+  ],
+  "explanation": "スライド19：ゴルジは<b>リボソームを持たない膜による槽（cistern）の重なり（層板stacks）</b>。粗面小胞体→出芽（<b>クラスリンなし</b>）→輸送小胞（ゴルジ小胞）→<b>形成面（シス面）</b>→<b>成熟面（トランス面）</b>→<b>TGN</b>→出芽（<b>クラスリンあり</b>）→分泌小胞（ゴルジ空胞）→細胞膜。",
+  "point": "入口シス・出口トランス。rERからはクラスリンなし。",
+  "tags": [
+   "ゴルジ装置の構造と膜の輸送"
+  ]
+ },
+ {
+  "id": "q036",
+  "slide": 19,
+  "chapter": 4,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "スライド19の流れで、「クラスリンあり」の出芽が起こる場所として正しいのはどれか。",
+  "options": [
+   {
+    "text": "粗面小胞体",
+    "explanation": "クラスリンなし",
+    "correct": false
+   },
+   {
+    "text": "シス面",
+    "explanation": "該当しない",
+    "correct": false
+   },
+   {
+    "text": "ゴルジ層板の中央",
+    "explanation": "該当しない",
+    "correct": false
+   },
+   {
+    "text": "トランスゴルジネットワーク（TGN）",
+    "explanation": "TGN→分泌小胞",
+    "correct": true
+   },
+   {
+    "text": "細胞膜からの分泌小胞形成",
+    "explanation": "分泌小胞は細胞膜へ向かう",
+    "correct": false
+   }
+  ],
+  "explanation": "スライド19ではrERからの出芽は<b>クラスリンなし</b>、<b>TGNからの出芽はクラスリンあり</b>。スライド24ではさらに、構造的分泌はTGNからクラスリンなしで出芽、調節的分泌はクラスリン被覆で出芽、と分けて説明される。",
+  "point": "同じTGNでも経路で違う（スライド24）。",
+  "tags": [
+   "ゴルジ装置の構造と膜の輸送"
+  ]
+ },
+ {
+  "id": "q037",
+  "slide": 20,
+  "chapter": 4,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "ゴルジ装置の機能としてスライド20に挙げられているものはどれか。",
+  "options": [
+   {
+    "text": "脂質・コレステロールの合成と解毒",
+    "explanation": "sERの機能",
+    "correct": false
+   },
+   {
+    "text": "切断による活性化と糖付加（ペプチドの修飾）",
+    "explanation": "スライド20",
+    "correct": true
+   },
+   {
+    "text": "ATP産生",
+    "explanation": "ミトコンドリア",
+    "correct": false
+   },
+   {
+    "text": "過酸化水素の分解",
+    "explanation": "ペルオキシソーム",
+    "correct": false
+   },
+   {
+    "text": "mRNAの翻訳",
+    "explanation": "リボソーム",
+    "correct": false
+   }
+  ],
+  "explanation": "スライド20：ゴルジの機能は<b>1）ペプチドの修飾（切断による活性化と糖付加）</b>、<b>2）蛋白質の選別</b>（→構造的分泌経路、→調節的分泌経路（分泌小胞形成）、→リソソーム経路）。",
+  "point": "修飾＋選別の2本柱。",
+  "tags": [
+   "Golgi装置の機能"
+  ]
+ },
+ {
+  "id": "q038",
+  "slide": 20,
+  "chapter": 4,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "スライド20の図で、ゴルジ装置の区画と糖鎖修飾の組み合わせとして正しいのはどれか。",
+  "options": [
+   {
+    "text": "CGN：ライソソーム蛋白質オリゴ糖のリン酸化",
+    "explanation": "図の記載",
+    "correct": true
+   },
+   {
+    "text": "CGN：Gal・NANAの付加",
+    "explanation": "TGN",
+    "correct": false
+   },
+   {
+    "text": "TGN：マンノースの切除",
+    "explanation": "中間",
+    "correct": false
+   },
+   {
+    "text": "中間：ライソソーム蛋白質オリゴ糖のリン酸化",
+    "explanation": "CGN",
+    "correct": false
+   },
+   {
+    "text": "中間：選別",
+    "explanation": "TGNで選別",
+    "correct": false
+   }
+  ],
+  "explanation": "図：<b>CGN</b>＝ライソソーム蛋白質オリゴ糖のリン酸化、<b>中間</b>＝マンノースの切除・GlcNAcの付加、<b>TGN</b>＝Galの付加・NANAの付加、そして選別。CGNでのリン酸化はM-6-P（スライド27）につながる。",
+  "point": "入口でリソソームの荷札、出口で仕上げと選別。",
+  "tags": [
+   "Golgi装置の機能"
+  ]
+ },
+ {
+  "id": "q039",
+  "slide": 21,
+  "chapter": 4,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "ゴルジ装置のTEM像（スライド21）で、粗面小胞体（rER）に面している部位はどれか。",
+  "options": [
+   {
+    "text": "cis面",
+    "explanation": "rER側",
+    "correct": true
+   },
+   {
+    "text": "trans面",
+    "explanation": "分泌顆粒側",
+    "correct": false
+   },
+   {
+    "text": "TGN",
+    "explanation": "trans面の先",
+    "correct": false
+   },
+   {
+    "text": "分泌顆粒",
+    "explanation": "TGN付近",
+    "correct": false
+   },
+   {
+    "text": "細胞膜",
+    "explanation": "該当しない",
+    "correct": false
+   }
+  ],
+  "explanation": "TEM像ではrERに近い側が<b>cis面</b>、反対側が<b>trans面</b>、その先に<b>TGN</b>と<b>分泌顆粒</b>が見える（スライド21）。スライド19の模式図と対応。",
+  "point": "写真でも“rER側＝シス”。",
+  "tags": [
+   "ゴルジ装置のTEM像"
+  ]
+ },
+ {
+  "id": "q040",
+  "slide": 21,
+  "chapter": 4,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "スライド21のTEM像の読み取りとして正しいのはどれか。",
+  "options": [
+   {
+    "text": "分泌顆粒はcis面側に集まっている",
+    "explanation": "trans面・TGN側",
+    "correct": false
+   },
+   {
+    "text": "TGNはrERとcis面の間にある",
+    "explanation": "trans面の先",
+    "correct": false
+   },
+   {
+    "text": "rER → cis面 → trans面 → TGN・分泌顆粒の順に並ぶ",
+    "explanation": "写真の配置",
+    "correct": true
+   },
+   {
+    "text": "ゴルジ装置の槽にはリボソームが付着して見える",
+    "explanation": "持たない",
+    "correct": false
+   },
+   {
+    "text": "分泌顆粒は小さく電子密度が低い",
+    "explanation": "大きく電子密度が高い丸い構造",
+    "correct": false
+   }
+  ],
+  "explanation": "TEM像はスライド19の流れ（rER→シス→トランス→TGN→分泌小胞）を実物で示す。分泌顆粒はtrans側で丸い電子密度の高い構造として見える。",
+  "point": "模式図と写真を対応させるのが試験の定番。",
+  "tags": [
+   "ゴルジ装置のTEM像"
+  ]
+ },
+ {
+  "id": "q041",
+  "slide": 22,
+  "chapter": 4,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "分泌蛋白質・膜蛋白質の輸送経路の解明に用いられた方法として正しいのはどれか。",
+  "options": [
+   {
+    "text": "凍結割断法",
+    "explanation": "膜の観察法（スライド2）",
+    "correct": false
+   },
+   {
+    "text": "鍍銀法",
+    "explanation": "ゴルジの発見（スライド18）",
+    "correct": false
+   },
+   {
+    "text": "電顕的オートラジオグラフィー",
+    "explanation": "スライド22",
+    "correct": true
+   },
+   {
+    "text": "超遠心法",
+    "explanation": "小器官の分画（スライド10）",
+    "correct": false
+   },
+   {
+    "text": "免疫蛍光染色",
+    "explanation": "スライドに記載なし",
+    "correct": false
+   }
+  ],
+  "explanation": "スライド22：1960年代<b>Palade</b>による<b>電顕的オートラジオグラフィー</b>。膵臓の培養細胞に<b>³H-leucine</b>を投与→時間を追って固定し電顕切片に<b>写真乳剤</b>→長期間露出後に現像→<b>β線</b>により析出した銀粒子の位置（新規蛋白質の移動先）を見る。",
+  "point": "手法と発見をセットで：凍結割断＝膜、鍍銀＝ゴルジ、遠心＝分画、ARG＝経路。",
+  "tags": [
+   "分泌蛋白質・膜蛋白質の輸送経路の解明"
+  ]
+ },
+ {
+  "id": "q042",
+  "slide": 22,
+  "chapter": 4,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "この実験で³H-leucineを用いる理由として最も適切なのはどれか。",
+  "options": [
+   {
+    "text": "脂質を標識するため",
+    "explanation": "アミノ酸なので蛋白質",
+    "correct": false
+   },
+   {
+    "text": "新たに合成される蛋白質に取り込まれ、その位置を追跡できるため",
+    "explanation": "合成された蛋白質への取り込み",
+    "correct": true
+   },
+   {
+    "text": "ゴルジ装置を黒く染めるため",
+    "explanation": "鍍銀法の話",
+    "correct": false
+   },
+   {
+    "text": "リボソームを破壊するため",
+    "explanation": "該当しない",
+    "correct": false
+   },
+   {
+    "text": "α線で銀粒子を析出させるため",
+    "explanation": "β線",
+    "correct": false
+   }
+  ],
+  "explanation": "³H-leucineは放射性のアミノ酸で、<b>合成された蛋白質に取り込まれる</b>。時間を追って固定すれば、新しく作られた蛋白質の位置を銀粒子として追跡できる（スライド22）。",
+  "point": "放射線はβ線。",
+  "tags": [
+   "分泌蛋白質・膜蛋白質の輸送経路の解明"
+  ]
+ },
+ {
+  "id": "q043",
+  "slide": 23,
+  "chapter": 4,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "スライド23で示された、³H-leucine投与後の標識蛋白質の局在の時間経過として正しいのはどれか。",
+  "options": [
+   {
+    "text": "分泌顆粒（5分）→Golgi（7-8分）→rER（12分）",
+    "explanation": "逆",
+    "correct": false
+   },
+   {
+    "text": "rER（5分）→Golgi（7-8分）→分泌顆粒（12分）",
+    "explanation": "スライド23",
+    "correct": true
+   },
+   {
+    "text": "Golgi（5分）→rER（7-8分）→分泌顆粒（12分）",
+    "explanation": "順序が誤り",
+    "correct": false
+   },
+   {
+    "text": "rER（1分）→Golgi（2分）→分泌顆粒（3分）",
+    "explanation": "時間が誤り",
+    "correct": false
+   },
+   {
+    "text": "rER（12分）→Golgi（20分）→分泌顆粒（60分）",
+    "explanation": "時間が誤り",
+    "correct": false
+   }
+  ],
+  "explanation": "スライド23：投与後、<b>rER（5 min）→Golgi（7-8 min）→分泌顆粒（12 min）</b>の順に移動して分泌されることがわかった（<b>蛋白分泌のセントラルドグマの確立</b>）。G.E. Palade：Nobel医学生理学賞（1974）。",
+  "point": "5 → 7〜8 → 12。",
+  "tags": [
+   "オートラジオグラフィーの結果"
+  ]
+ },
+ {
+  "id": "q044",
+  "slide": 23,
+  "chapter": 4,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "スライド23の実験結果の意義として最も適切なのはどれか。",
+  "options": [
+   {
+    "text": "リソソームの存在が初めて示された",
+    "explanation": "De Duve（スライド25）",
+    "correct": false
+   },
+   {
+    "text": "ゴルジ装置が光学顕微鏡で初めて観察された",
+    "explanation": "Golgi（スライド18）",
+    "correct": false
+   },
+   {
+    "text": "分泌蛋白がrER→ゴルジ→分泌顆粒の順に運ばれるという経路（セントラルドグマ）が確立した",
+    "explanation": "スライド23",
+    "correct": true
+   },
+   {
+    "text": "ミトコンドリアが蛋白を分泌することが示された",
+    "explanation": "該当しない",
+    "correct": false
+   },
+   {
+    "text": "分泌蛋白がサイトゾルを通ることが示された",
+    "explanation": "内膜系を通る",
+    "correct": false
+   }
+  ],
+  "explanation": "時間を追った標識の移動により、スライド13の「rER→ゴルジ→分泌小胞」が実験的に証明され、<b>蛋白分泌のセントラルドグマ</b>が確立した。",
+  "point": "Paladeの業績＝経路の“証明”。",
+  "tags": [
+   "オートラジオグラフィーの結果"
+  ]
+ },
+ {
+  "id": "q045",
+  "slide": 24,
+  "chapter": 4,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "構造的分泌経路と調節的分泌経路について正しいのはどれか。",
+  "options": [
+   {
+    "text": "構造的分泌ではTGNからクラスリンなしで出芽し、輸送小胞としてすぐに分泌される",
+    "explanation": "スライド24",
+    "correct": true
+   },
+   {
+    "text": "調節的分泌ではTGNからクラスリンなしで出芽する",
+    "explanation": "クラスリン被覆",
+    "correct": false
+   },
+   {
+    "text": "構造的分泌では分泌顆粒として貯蔵される",
+    "explanation": "すぐに分泌",
+    "correct": false
+   },
+   {
+    "text": "調節的分泌は細胞外シグナルがなくても常に分泌される",
+    "explanation": "細胞外シグナルで分泌",
+    "correct": false
+   },
+   {
+    "text": "調節的分泌は粗面小胞体から直接出芽する",
+    "explanation": "TGNから",
+    "correct": false
+   }
+  ],
+  "explanation": "スライド24：<b>構造的分泌経路</b>：TGNからクラスリンなしで出芽→輸送小胞として<b>すぐに分泌</b>。<b>調節的分泌経路</b>：TGNから<b>クラスリン被覆</b>で出芽→分泌小胞（分泌顆粒）として<b>貯蔵</b>→<b>細胞外シグナル</b>により分泌。",
+  "point": "ためる方がクラスリンあり。",
+  "tags": [
+   "構造的分泌と調節的分泌"
+  ]
+ },
+ {
+  "id": "q046",
+  "slide": 24,
+  "chapter": 4,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "細胞外からのシグナルを受けたときにだけ内容物を放出する分泌について、正しい組み合わせはどれか。",
+  "options": [
+   {
+    "text": "構造的分泌・クラスリンなし・すぐに分泌",
+    "explanation": "構造的分泌の特徴",
+    "correct": false
+   },
+   {
+    "text": "調節的分泌・クラスリン被覆で出芽・分泌顆粒として貯蔵",
+    "explanation": "スライド24",
+    "correct": true
+   },
+   {
+    "text": "構造的分泌・クラスリン被覆・貯蔵",
+    "explanation": "組み合わせの誤り",
+    "correct": false
+   },
+   {
+    "text": "調節的分泌・rERから出芽・すぐに分泌",
+    "explanation": "TGNから出芽し貯蔵",
+    "correct": false
+   },
+   {
+    "text": "リソソーム経路・M-6-P・分泌",
+    "explanation": "リソソームは分泌されない",
+    "correct": false
+   }
+  ],
+  "explanation": "シグナル依存の分泌は<b>調節的分泌</b>。図では細胞外シグナル→受容体→シグナル伝達で分泌小胞が細胞膜と融合する。構造的分泌は常に行われる。",
+  "point": "“合図待ち”＝調節的＝貯蔵＝クラスリン。",
+  "tags": [
+   "構造的分泌と調節的分泌"
+  ]
+ },
+ {
+  "id": "q047",
+  "slide": 25,
+  "chapter": 5,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "リソソームについて正しいのはどれか。",
+  "options": [
+   {
+    "text": "1955年にPaladeが発見した",
+    "explanation": "De Duve",
+    "correct": false
+   },
+   {
+    "text": "単位膜2枚で包まれる",
+    "explanation": "単位膜1枚",
+    "correct": false
+   },
+   {
+    "text": "酸性フォスファターゼがマーカーである",
+    "explanation": "スライド25",
+    "correct": true
+   },
+   {
+    "text": "ゴルジ由来であり、内容物は細胞外へ常に分泌される",
+    "explanation": "ゴルジ由来だが分泌されない",
+    "correct": false
+   },
+   {
+    "text": "内部は低電子密度で均一である",
+    "explanation": "高電子密度、多様な構造物を含む",
+    "correct": false
+   }
+  ],
+  "explanation": "スライド25：1955年<b>De Duve</b>が発見（1974年Nobel賞）。直径0.2〜1.0 μm、<b>単位膜1枚</b>、内部は<b>高電子密度</b>で多様な構造物を含む。<b>ゴルジ由来だが分泌されない</b>。酸性条件で働く<b>加水分解酵素群</b>をもつ（<b>酸性フォスファターゼがマーカー</b>）→細胞内消化機能。",
+  "point": "マーカーは“酸性”フォスファターゼ。",
+  "tags": [
+   "リソソーム Lysosome"
+  ]
+ },
+ {
+  "id": "q048",
+  "slide": 25,
+  "chapter": 5,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "リソソームの性質と機能の組み合わせとして正しいのはどれか。",
+  "options": [
+   {
+    "text": "中性条件で働く酸化酵素をもつ → 解毒",
+    "explanation": "ペルオキシソームとの混同",
+    "correct": false
+   },
+   {
+    "text": "酸性条件で働く加水分解酵素群をもつ → 細胞内消化",
+    "explanation": "スライド25",
+    "correct": true
+   },
+   {
+    "text": "ATP合成酵素をもつ → エネルギー産生",
+    "explanation": "ミトコンドリア",
+    "correct": false
+   },
+   {
+    "text": "リボソームをもつ → 蛋白質合成",
+    "explanation": "rER",
+    "correct": false
+   },
+   {
+    "text": "カタラーゼをもつ → H₂O₂の分解",
+    "explanation": "ペルオキシソーム",
+    "correct": false
+   }
+  ],
+  "explanation": "リソソームは<b>酸性条件で働く加水分解酵素群</b>をもち、<b>細胞内消化</b>を担う（スライド25）。酸性環境はH⁺ポンプで作られる（スライド26）。",
+  "point": "リソソーム＝酸性・加水分解・消化。",
+  "tags": [
+   "リソソーム Lysosome"
+  ]
+ },
+ {
+  "id": "q049",
+  "slide": 26,
+  "chapter": 5,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "細胞膜側からのリソソーム形成過程におけるpHの変化として正しいのはどれか。",
+  "options": [
+   {
+    "text": "初期エンドソーム pH 5 → 後期エンドソーム pH 6 → リソソーム pH 7",
+    "explanation": "逆で値も誤り",
+    "correct": false
+   },
+   {
+    "text": "初期エンドソーム pH 6 → 後期エンドソーム pH 5.5 → リソソーム pH < 5",
+    "explanation": "スライド26",
+    "correct": true
+   },
+   {
+    "text": "初期エンドソーム pH 7.4 → 後期エンドソーム pH 7 → リソソーム pH 6",
+    "explanation": "該当しない",
+    "correct": false
+   },
+   {
+    "text": "いずれの段階もpH 7で一定である",
+    "explanation": "次第に低下",
+    "correct": false
+   },
+   {
+    "text": "初期エンドソーム pH 4 → リソソーム pH 6",
+    "explanation": "該当しない",
+    "correct": false
+   }
+  ],
+  "explanation": "スライド26：受容体介在性エンドサイトーシス→<b>初期エンドソーム（pH 6）</b>→膜と受容体はエクソサイトーシスでリサイクル→<b>後期エンドソーム（pH 5.5）</b>→膜の<b>H⁺ポンプ</b>によるpH低下・加水分解酵素の活性化→<b>リソソーム（pH < 5）</b>。",
+  "point": "6 → 5.5 → 5未満（だんだん酸っぱく）。",
+  "tags": [
+   "リソソームの形成（細胞膜側からのルート）"
+  ]
+ },
+ {
+  "id": "q050",
+  "slide": 26,
+  "chapter": 5,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "受容体介在性エンドサイトーシスで取り込まれた受容体の行方として、スライド26に基づき正しいのはどれか。",
+  "options": [
+   {
+    "text": "リソソームで必ず分解される",
+    "explanation": "リサイクルされる",
+    "correct": false
+   },
+   {
+    "text": "初期エンドソームから膜とともにエクソサイトーシスで細胞膜にリサイクルされる",
+    "explanation": "スライド26",
+    "correct": true
+   },
+   {
+    "text": "核へ運ばれる",
+    "explanation": "該当しない",
+    "correct": false
+   },
+   {
+    "text": "ミトコンドリアに取り込まれる",
+    "explanation": "該当しない",
+    "correct": false
+   },
+   {
+    "text": "後期エンドソームでH⁺ポンプに変化する",
+    "explanation": "該当しない",
+    "correct": false
+   }
+  ],
+  "explanation": "初期エンドソームで<b>膜と受容体はエクソサイトーシスでリサイクル</b>され、内容物はさらに後期エンドソーム→リソソームへ進む。受容体は細胞膜に戻って再び利用される。",
+  "point": "受容体は“回収トラック”。荷物だけ奥へ。",
+  "tags": [
+   "リソソームの形成（細胞膜側からのルート）"
+  ]
+ },
+ {
+  "id": "q051",
+  "slide": 27,
+  "chapter": 5,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "ゴルジからのリソソーム形成ルートで、水解酵素に付加される目印はどれか。",
+  "options": [
+   {
+    "text": "グルコース-6-リン酸",
+    "explanation": "該当しない",
+    "correct": false
+   },
+   {
+    "text": "マンノース-6-リン酸（M-6-P）",
+    "explanation": "スライド27",
+    "correct": true
+   },
+   {
+    "text": "シアル酸（NANA）",
+    "explanation": "TGNで付加される糖（スライド20）",
+    "correct": false
+   },
+   {
+    "text": "シグナル配列",
+    "explanation": "rERへの付着に関わる",
+    "correct": false
+   },
+   {
+    "text": "ユビキチン",
+    "explanation": "スライドに記載なし",
+    "correct": false
+   }
+  ],
+  "explanation": "スライド27：ゴルジ槽内における水解酵素への<b>マンノース-6-リン酸（M-6-P）</b>の付加→<b>TGNの膜のM-6-P受容体</b>に結合→<b>クラスリン被覆で出芽</b>（一種の受容体介在性エンドサイトーシス）→初期または後期エンドソームに融合→水解酵素の蓄積・活性化→リソソーム。",
+  "point": "“マンノース”。グルコースではない。",
+  "tags": [
+   "リソソームの形成（ゴルジからのルート）"
+  ]
+ },
+ {
+  "id": "q052",
+  "slide": 27,
+  "chapter": 5,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "M-6-P受容体の働きが失われた場合に予想されることとして、スライド27の経路から最も適切なのはどれか。",
+  "options": [
+   {
+    "text": "分泌蛋白質の粗面小胞体への移行ができなくなる",
+    "explanation": "シグナル配列の問題",
+    "correct": false
+   },
+   {
+    "text": "水解酵素がTGNでリソソーム行きに選別されにくくなる",
+    "explanation": "受容体がM-6-Pを認識して選別",
+    "correct": true
+   },
+   {
+    "text": "ミトコンドリアの二分裂が止まる",
+    "explanation": "無関係",
+    "correct": false
+   },
+   {
+    "text": "初期エンドソームのpHが中性になる",
+    "explanation": "H⁺ポンプの問題",
+    "correct": false
+   },
+   {
+    "text": "クラスリンがカベオリンに置き換わる",
+    "explanation": "無関係",
+    "correct": false
+   }
+  ],
+  "explanation": "M-6-P受容体はTGN膜でM-6-Pの付いた水解酵素に結合し、クラスリン被覆小胞でエンドソームへ運ぶ（スライド27）。受容体が働かなければ、酵素はリソソーム行きとして選別されない。<br><span class=\"sup\">［補足・授業資料外］M-6-Pを付ける酵素の欠損はI細胞病として知られる。</span>",
+  "point": "荷札（M-6-P）と、荷札を読む係（受容体・TGN）をセットで。",
+  "tags": [
+   "リソソームの形成（ゴルジからのルート）"
+  ]
+ },
+ {
+  "id": "q053",
+  "slide": 28,
+  "chapter": 5,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "食作用とリソソームについて正しいのはどれか。",
+  "options": [
+   {
+    "text": "自食胞は細胞外から取り込んだ細菌を包んだ小胞である",
+    "explanation": "自己の成分を包む",
+    "correct": false
+   },
+   {
+    "text": "食胞・自食胞が一次リソソームと融合して二次リソソームになる",
+    "explanation": "スライド28",
+    "correct": true
+   },
+   {
+    "text": "二次リソソームは必ず細胞内に残る",
+    "explanation": "分泌または残余小体",
+    "correct": false
+   },
+   {
+    "text": "一次リソソームは食作用を行っているものを指す",
+    "explanation": "行っていないもの",
+    "correct": false
+   },
+   {
+    "text": "残余小体は分解産物をすべて細胞外へ出した後の空の膜である",
+    "explanation": "消化しきれずに残る",
+    "correct": false
+   }
+  ],
+  "explanation": "スライド28：食胞・自食胞（多胞体も含む）→<b>一次リソソームと融合</b>→<b>二次リソソーム（phagolysosome）</b>→細胞膜と融合して分解産物を水解酵素とともに細胞外に分泌するか、<b>残余小体</b>として残る。",
+  "point": "二次＝融合後。一次＝食作用前。",
+  "tags": [
+   "食作用とリソソーム"
+  ]
+ },
+ {
+  "id": "q054",
+  "slide": 28,
+  "chapter": 5,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "スライド28の「一次リソソーム」についての説明として正しいのはどれか。",
+  "options": [
+   {
+    "text": "ゴルジ装置で完成し、形が変化しない固定した構造である",
+    "explanation": "動的な存在",
+    "correct": false
+   },
+   {
+    "text": "エンドソームにゴルジ装置由来の小胞が融合した動的な存在である",
+    "explanation": "スライド28",
+    "correct": true
+   },
+   {
+    "text": "ミトコンドリアから分裂して生じる",
+    "explanation": "該当しない",
+    "correct": false
+   },
+   {
+    "text": "光学顕微鏡的に食作用を行っているものを指す",
+    "explanation": "行っていないもの",
+    "correct": false
+   },
+   {
+    "text": "粗面小胞体の断片である",
+    "explanation": "ミクロゾームとの混同",
+    "correct": false
+   }
+  ],
+  "explanation": "スライド28：一次リソソームは光学顕微鏡的に食作用を行っていないものを指すが、電子顕微鏡的な飲作用の結果としての<b>エンドソームにゴルジ装置由来の小胞が融合した動的な存在</b>である。スライド26（膜側）とスライド27（ゴルジ側）の2つのルートが合流する場所と理解できる。",
+  "point": "2つのルートの合流点。",
+  "tags": [
+   "食作用とリソソーム"
+  ]
+ },
+ {
+  "id": "q055",
+  "slide": 29,
+  "chapter": 6,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "ミトコンドリアについて正しいのはどれか。",
+  "options": [
+   {
+    "text": "電子顕微鏡の登場後に初めて発見された",
+    "explanation": "光学顕微鏡時代に発見",
+    "correct": false
+   },
+   {
+    "text": "鉄ヘマトキシリンで赤く染まる",
+    "explanation": "青（酸性フクシンが赤）",
+    "correct": false
+   },
+   {
+    "text": "最大の特徴は2枚の単位膜とクリステである",
+    "explanation": "スライド29",
+    "correct": true
+   },
+   {
+    "text": "肝細胞では1細胞あたり数個しかない",
+    "explanation": "500個以上",
+    "correct": false
+   },
+   {
+    "text": "大きさは長径10〜100 μmである",
+    "explanation": "長径0.1〜10 μm",
+    "correct": false
+   }
+  ],
+  "explanation": "スライド29：1894年Altman、1897年Benda、1900年Michaelis等が、特殊染色（<b>酸性フクシン：赤、鉄ヘマトキシリン：青</b>）や超生体染色により<b>光学顕微鏡時代に発見</b>。大きさは長径0.1〜10 μm、短径0.1〜1 μm。数は多い場合<b>500個以上（肝細胞）</b>。最大の特徴：<b>2枚の単位膜とクリステ</b>。",
+  "point": "染色の色：フクシン赤・ヘマトキシリン青。",
+  "tags": [
+   "ミトコンドリア Mitochondria"
+  ]
+ },
+ {
+  "id": "q056",
+  "slide": 29,
+  "chapter": 6,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "スライド29に挙げられたミトコンドリアの機能に含まれないものはどれか。",
+  "options": [
+   {
+    "text": "ATP産生",
+    "explanation": "機能に含まれる",
+    "correct": false
+   },
+   {
+    "text": "β酸化",
+    "explanation": "含まれる",
+    "correct": false
+   },
+   {
+    "text": "アポトーシスの制御",
+    "explanation": "含まれる",
+    "correct": false
+   },
+   {
+    "text": "ステロイドホルモンの合成",
+    "explanation": "含まれる",
+    "correct": false
+   },
+   {
+    "text": "分泌蛋白質への糖付加",
+    "explanation": "これはゴルジ装置の機能",
+    "correct": true
+   }
+  ],
+  "explanation": "スライド29：機能は<b>好気的なエネルギー（ATP）産生、β酸化、アポトーシスの制御、ステロイドホルモンの合成、Caの貯蔵</b>など。糖付加はゴルジ装置の機能（スライド20）。",
+  "point": "「含まれないもの」を選ぶ問題は、他の小器官の機能が紛れ込む。",
+  "tags": [
+   "ミトコンドリア Mitochondria"
+  ]
+ },
+ {
+  "id": "q057",
+  "slide": 30,
+  "chapter": 6,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "ミトコンドリアの構造について正しいのはどれか。",
+  "options": [
+   {
+    "text": "外膜の厚さは約20 nmで細胞膜より厚い",
+    "explanation": "約6 nmで細胞膜より薄い",
+    "correct": false
+   },
+   {
+    "text": "膜間腔は約8 nmで、アポトーシスに関連するシトクロムcがある",
+    "explanation": "スライド30",
+    "correct": true
+   },
+   {
+    "text": "TCA回路の酵素は外膜にある",
+    "explanation": "基質",
+    "correct": false
+   },
+   {
+    "text": "電子伝達系は膜間腔に溶けている",
+    "explanation": "内膜の膜貫通蛋白",
+    "correct": false
+   },
+   {
+    "text": "クリステは外膜の突起である",
+    "explanation": "内膜の層板状突起",
+    "correct": false
+   }
+  ],
+  "explanation": "スライド30：<b>外膜</b>6 nm（細胞膜より薄い）、<b>膜間腔</b>8 nm（アポトーシスに関連するシトクロムc）、<b>内膜</b>6 nm（細胞膜より薄い）、<b>クリステ</b>＝内膜の層板状突起（電子伝達系とATP合成の膜貫通蛋白質）。<b>基質</b>：基質顆粒（Ca²⁺・Mg²⁺結合）、TCA回路など、独自のDNA・mRNA・リボソーム。",
+  "point": "6・8・6。20 nmは3層の合計。",
+  "tags": [
+   "ミトコンドリアの構造"
+  ]
+ },
+ {
+  "id": "q058",
+  "slide": 30,
+  "chapter": 6,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "ミトコンドリアの各区画とその内容の組み合わせとして正しいのはどれか。",
+  "options": [
+   {
+    "text": "外膜 ― TCA回路",
+    "explanation": "基質",
+    "correct": false
+   },
+   {
+    "text": "膜間腔 ― 独自のDNA",
+    "explanation": "基質",
+    "correct": false
+   },
+   {
+    "text": "内膜（クリステ） ― 電子伝達系とATP合成",
+    "explanation": "スライド30",
+    "correct": true
+   },
+   {
+    "text": "基質 ― シトクロムc",
+    "explanation": "膜間腔",
+    "correct": false
+   },
+   {
+    "text": "基質顆粒 ― K⁺の貯蔵",
+    "explanation": "Ca²⁺・Mg²⁺",
+    "correct": false
+   }
+  ],
+  "explanation": "区画ごとに整理：外膜／膜間腔（シトクロムc）／<b>内膜・クリステ（電子伝達系・ATP合成）</b>／基質（TCA回路、基質顆粒 Ca²⁺・Mg²⁺、DNA・mRNA・リボソーム）。",
+  "point": "“発電装置は内膜”、“燃焼炉（TCA）は基質”。",
+  "tags": [
+   "ミトコンドリアの構造"
+  ]
+ },
+ {
+  "id": "q059",
+  "slide": 31,
+  "chapter": 6,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "ミトコンドリアのTEM像（スライド31）で、基質中に見える電子密度の高い小さな粒はどれか。",
+  "options": [
+   {
+    "text": "クリステ",
+    "explanation": "内膜のひだ",
+    "correct": false
+   },
+   {
+    "text": "基質顆粒",
+    "explanation": "スライド31",
+    "correct": true
+   },
+   {
+    "text": "リボソーム付着部",
+    "explanation": "該当しない",
+    "correct": false
+   },
+   {
+    "text": "ペルオキシソーム",
+    "explanation": "別の小器官",
+    "correct": false
+   },
+   {
+    "text": "外膜",
+    "explanation": "外周の膜",
+    "correct": false
+   }
+  ],
+  "explanation": "スライド31のTEM像には、外膜・内膜・クリステ・基質・<b>基質顆粒</b>（電子密度の高い粒）と、隣接する<b>ペルオキシソーム</b>が示されている。基質顆粒はCa²⁺・Mg²⁺を結合する（スライド30）。",
+  "point": "写真での同定問題。",
+  "tags": [
+   "ミトコンドリアのTEM像"
+  ]
+ },
+ {
+  "id": "q060",
+  "slide": 31,
+  "chapter": 6,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "スライド31のTEM像でミトコンドリアの隣に写るペルオキシソームとミトコンドリアの違いとして正しいのはどれか。",
+  "options": [
+   {
+    "text": "ペルオキシソームは単位膜2枚、ミトコンドリアは1枚",
+    "explanation": "逆",
+    "correct": false
+   },
+   {
+    "text": "ペルオキシソームは単位膜1枚でクリステがなく、ミトコンドリアは2枚の膜とクリステをもつ",
+    "explanation": "スライド29・33",
+    "correct": true
+   },
+   {
+    "text": "両者とも独自のDNAをもつ",
+    "explanation": "ペルオキシソームはもたない（スライド34）",
+    "correct": false
+   },
+   {
+    "text": "両者ともゴルジ装置由来である",
+    "explanation": "どちらもゴルジ由来ではない",
+    "correct": false
+   },
+   {
+    "text": "ペルオキシソームはクリステをもつ",
+    "explanation": "もたない",
+    "correct": false
+   }
+  ],
+  "explanation": "ミトコンドリア：<b>2枚の単位膜とクリステ</b>、独自のDNA。ペルオキシソーム：<b>単位膜1枚</b>、結晶構造の芯、独自の遺伝子やリボソームはもたない（スライド33・34）。",
+  "point": "膜の枚数とDNAの有無で区別。",
+  "tags": [
+   "ミトコンドリアのTEM像"
+  ]
+ },
+ {
+  "id": "q061",
+  "slide": 32,
+  "chapter": 6,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "ミトコンドリアの原核細胞的特徴として正しいのはどれか。",
+  "options": [
+   {
+    "text": "rER-Golgi由来の小胞から形成される",
+    "explanation": "二分裂で増殖",
+    "correct": false
+   },
+   {
+    "text": "マトリックス内に独自の環状DNA、mRNA、リボソーム、tRNAをもつ",
+    "explanation": "スライド32",
+    "correct": true
+   },
+   {
+    "text": "全蛋白質の約50%を自ら合成する",
+    "explanation": "約5%",
+    "correct": false
+   },
+   {
+    "text": "その他の蛋白質はrER付着リボソームで合成される",
+    "explanation": "遊離リボソーム",
+    "correct": false
+   },
+   {
+    "text": "ミトコンドリア膜の脂質はゴルジ装置から運ばれる",
+    "explanation": "細胞質から運ばれ外膜の酵素で組み込み",
+    "correct": false
+   }
+  ],
+  "explanation": "スライド32：1）<b>二分裂</b>による増殖（rER-Golgi由来ではない）、2）マトリックス内に<b>独自の環状DNA・mRNA・リボソーム・tRNA</b>→全蛋白質の<b>5%</b>を合成、3）その他の蛋白質は核の遺伝子由来だが<b>遊離リボソーム</b>で合成（ミトコンドリア移行シグナル）、4）膜の脂質も<b>細胞質から</b>運ばれ外膜の酵素で組み込まれる。",
+  "point": "5%。残りは遊離リボソーム。",
+  "tags": [
+   "ミトコンドリアの原核細胞的特徴"
+  ]
+ },
+ {
+  "id": "q062",
+  "slide": 32,
+  "chapter": 6,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "核遺伝子由来のミトコンドリア蛋白質がミトコンドリアに届く仕組みとして、スライド32に基づき正しいのはどれか。",
+  "options": [
+   {
+    "text": "rERで合成されゴルジ装置を経て運ばれる",
+    "explanation": "rER-Golgi由来ではない",
+    "correct": false
+   },
+   {
+    "text": "遊離リボソームで合成され、ミトコンドリア移行シグナルにより外膜・内膜を通過する",
+    "explanation": "スライド32",
+    "correct": true
+   },
+   {
+    "text": "ミトコンドリア自身のリボソームで全て合成される",
+    "explanation": "自前は5%のみ",
+    "correct": false
+   },
+   {
+    "text": "リソソームを経由して運ばれる",
+    "explanation": "該当しない",
+    "correct": false
+   },
+   {
+    "text": "分泌顆粒に詰められて運ばれる",
+    "explanation": "該当しない",
+    "correct": false
+   }
+  ],
+  "explanation": "その他の蛋白質は核の遺伝子由来だが<b>遊離リボソームで合成</b>され（rER-Golgi由来ではない）、<b>ミトコンドリア移行シグナル</b>を持って外膜・内膜を通過する（スライド32）。これがスライド12で「連続性がない」とされる理由。",
+  "point": "シグナル配列（rER行き）と移行シグナル（ミトコンドリア行き）を混同しない。",
+  "tags": [
+   "ミトコンドリアの原核細胞的特徴"
+  ]
+ },
+ {
+  "id": "q063",
+  "slide": 33,
+  "chapter": 6,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "ペルオキシソームについて正しいのはどれか。",
+  "options": [
+   {
+    "text": "単位膜2枚で包まれる",
+    "explanation": "1枚",
+    "correct": false
+   },
+   {
+    "text": "直径は20〜50 μmである",
+    "explanation": "0.2〜2.0 μm",
+    "correct": false
+   },
+   {
+    "text": "内腔にオキシダーゼとカタラーゼをもつ",
+    "explanation": "スライド33",
+    "correct": true
+   },
+   {
+    "text": "心筋と骨格筋の細胞に特に多い",
+    "explanation": "肝臓・腎臓に多い",
+    "correct": false
+   },
+   {
+    "text": "クリステをもつ",
+    "explanation": "結晶構造の芯をもつ",
+    "correct": false
+   }
+  ],
+  "explanation": "スライド33：直径<b>0.2〜2.0 μm</b>、<b>結晶構造の芯</b>、<b>単位膜は1枚</b>、内腔に<b>オキシダーゼとカタラーゼ</b>、<b>肝臓・腎臓</b>の細胞に多い。",
+  "point": "膜1枚・結晶の芯・肝腎。",
+  "tags": [
+   "ペルオキシソーム Peroxysome"
+  ]
+ },
+ {
+  "id": "q064",
+  "slide": 33,
+  "chapter": 6,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "ペルオキシソームにおける過酸化水素（H₂O₂）の扱いとして正しいのはどれか。",
+  "options": [
+   {
+    "text": "カタラーゼがH₂O₂を産生し、オキシダーゼが分解する",
+    "explanation": "逆",
+    "correct": false
+   },
+   {
+    "text": "オキシダーゼがH₂O₂を産生し、カタラーゼが分解する",
+    "explanation": "スライド33",
+    "correct": true
+   },
+   {
+    "text": "H₂O₂はミトコンドリアでのみ分解される",
+    "explanation": "該当しない",
+    "correct": false
+   },
+   {
+    "text": "H₂O₂はリソソームの加水分解酵素で分解される",
+    "explanation": "該当しない",
+    "correct": false
+   },
+   {
+    "text": "ペルオキシソームはH₂O₂の代謝に関与しない",
+    "explanation": "主要な機能",
+    "correct": false
+   }
+  ],
+  "explanation": "スライド33の機能：<b>過酸化水素の産生：オキシダーゼ</b>による、<b>過酸化水素の分解：カタラーゼ</b>による、カタラーゼによる有害物質の酸化的解毒、脂肪酸のβ酸化（エネルギー産生）、窒素化合物の代謝。",
+  "point": "「オキて作って、カタ付ける」。",
+  "tags": [
+   "ペルオキシソーム Peroxysome"
+  ]
+ },
+ {
+  "id": "q065",
+  "slide": 34,
+  "chapter": 6,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "ペルオキシソームの生成の特徴として正しいのはどれか。",
+  "options": [
+   {
+    "text": "ゴルジ装置のTGNから出芽して生じる",
+    "explanation": "ゴルジ装置由来でない",
+    "correct": false
+   },
+   {
+    "text": "膜蛋白質・内部の酵素は遊離リボソームで作られる",
+    "explanation": "スライド34",
+    "correct": true
+   },
+   {
+    "text": "独自の遺伝子とリボソームをもつ",
+    "explanation": "もたない",
+    "correct": false
+   },
+   {
+    "text": "膜の脂質はrERからの小胞で運ばれる",
+    "explanation": "細胞質から輸送されるリン脂質",
+    "correct": false
+   },
+   {
+    "text": "ミトコンドリアから分裂して生じる",
+    "explanation": "既存のペルオキシソームの分裂または小胞体由来の小胞",
+    "correct": false
+   }
+  ],
+  "explanation": "スライド34：<b>ゴルジ装置由来でなく</b>、既存のペルオキシソームの分裂による生成と、小胞体由来の小胞より生成の説がある。膜蛋白質・内部の酵素ともに<b>rER由来ではなく遊離リボソームで作られ</b>、膜に組み込まれたり膜を通過する。膜の脂質も細胞質から輸送されるリン脂質に由来。ミトコンドリアに似ているが<b>独自の遺伝子やリボソームは持たない</b>。",
+  "point": "ミトコンドリアとの違い＝DNAなし。",
+  "tags": [
+   "ペルオキシソームの生成の特徴"
+  ]
+ },
+ {
+  "id": "q066",
+  "slide": 34,
+  "chapter": 6,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "ミトコンドリアとペルオキシソームに共通する性質として正しいのはどれか。",
+  "options": [
+   {
+    "text": "どちらも単位膜2枚をもつ",
+    "explanation": "ペルオキシソームは1枚",
+    "correct": false
+   },
+   {
+    "text": "どちらも独自のDNAをもつ",
+    "explanation": "ペルオキシソームはもたない",
+    "correct": false
+   },
+   {
+    "text": "どちらも蛋白質の多くを遊離リボソームで作られたものとして取り込み、rER-Golgi由来ではない",
+    "explanation": "スライド32・34",
+    "correct": true
+   },
+   {
+    "text": "どちらも酸性フォスファターゼをマーカーとする",
+    "explanation": "リソソームのマーカー",
+    "correct": false
+   },
+   {
+    "text": "どちらもクリステをもつ",
+    "explanation": "ミトコンドリアのみ",
+    "correct": false
+   }
+  ],
+  "explanation": "両者は、蛋白質が<b>遊離リボソームで合成され取り込まれる</b>、<b>rER-Golgi由来ではない</b>、脂質も細胞質から運ばれる、という点で共通する（スライド32・34）。これがスライド12で「上記グループと連続性がない」とされる理由。相違点は膜の枚数・DNAの有無・クリステ。",
+  "point": "共通点と相違点を表にして覚える。",
+  "tags": [
+   "ペルオキシソームの生成の特徴"
+  ]
+ },
+ {
+  "id": "q067",
+  "slide": 35,
+  "chapter": 7,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "細胞骨格の3種類とその直径の組み合わせとして正しいのはどれか。",
+  "options": [
+   {
+    "text": "アクチンフィラメント 5〜7 nm、中間径フィラメント 10 nm、微小管 25 nm",
+    "explanation": "スライド35",
+    "correct": true
+   },
+   {
+    "text": "アクチンフィラメント 25 nm、中間径フィラメント 10 nm、微小管 5〜7 nm",
+    "explanation": "アクチンと微小管が逆",
+    "correct": false
+   },
+   {
+    "text": "アクチンフィラメント 10 nm、中間径フィラメント 25 nm、微小管 5〜7 nm",
+    "explanation": "該当しない",
+    "correct": false
+   },
+   {
+    "text": "アクチンフィラメント 15 nm、中間径フィラメント 10 nm、微小管 50 nm",
+    "explanation": "15 nmはミオシンフィラメント",
+    "correct": false
+   },
+   {
+    "text": "3種ともおよそ10 nmである",
+    "explanation": "太さが異なる",
+    "correct": false
+   }
+  ],
+  "explanation": "スライド35：非膜性小器官（細胞骨格）は1）<b>アクチンフィラメント：5〜7 nm</b>（マイクロフィラメント）、2）<b>中間径フィラメント：10 nm</b>、3）<b>微小管：25 nm</b>。",
+  "point": "ゴーナナ・ジュウ・ニコ。",
+  "tags": [
+   "非膜性小器官（細胞骨格）"
+  ]
+ },
+ {
+  "id": "q068",
+  "slide": 35,
+  "chapter": 7,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "スライド35の上皮細胞の模式図の読み取りとして正しいのはどれか。",
+  "options": [
+   {
+    "text": "微絨毛の芯をつくるのは微小管である",
+    "explanation": "アクチン",
+    "correct": false
+   },
+   {
+    "text": "中間径フィラメントは核の周囲から細胞全体に網状に広がる",
+    "explanation": "図の青",
+    "correct": true
+   },
+   {
+    "text": "微小管は細胞膜直下の細胞皮質にのみ存在する",
+    "explanation": "頂部から基底へ縦に並ぶ",
+    "correct": false
+   },
+   {
+    "text": "アクチンフィラメントは膜性小器官である",
+    "explanation": "非膜性",
+    "correct": false
+   },
+   {
+    "text": "マイクロフィラメントは微小管の別名である",
+    "explanation": "アクチンの別名",
+    "correct": false
+   }
+  ],
+  "explanation": "図では、ピンク：<b>アクチン</b>（頂部の微絨毛など）、青：<b>中間径フィラメント</b>（核周囲から網状）、緑：<b>微小管</b>（頂部から基底へ）。アクチンフィラメントの別名は<b>マイクロフィラメント</b>。",
+  "point": "マイクロフィラメント＝アクチン、マイクロチューブル＝微小管。",
+  "tags": [
+   "非膜性小器官（細胞骨格）"
+  ]
+ },
+ {
+  "id": "q069",
+  "slide": 36,
+  "chapter": 7,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "アクチンフィラメントの分布として、スライド36に挙げられていないものはどれか。",
+  "options": [
+   {
+    "text": "細胞質辺縁部（細胞皮質）",
+    "explanation": "挙げられている",
+    "correct": false
+   },
+   {
+    "text": "微絨毛",
+    "explanation": "挙げられている",
+    "correct": false
+   },
+   {
+    "text": "糸状仮足",
+    "explanation": "挙げられている",
+    "correct": false
+   },
+   {
+    "text": "細胞接着部（カドヘリン・インテグリンと結合）",
+    "explanation": "挙げられている",
+    "correct": false
+   },
+   {
+    "text": "中心体から放射状に伸びる紡錘糸",
+    "explanation": "これは微小管",
+    "correct": true
+   }
+  ],
+  "explanation": "スライド36：分布は<b>細胞質辺縁部（細胞皮質）</b>、<b>細胞質突起部（微絨毛・糸状仮足）</b>、<b>細胞接着部（カドヘリン・インテグリンと結合）</b>。機能は<b>細胞の形態保持、細胞運動（筋収縮を含む）、小器官の移動</b>。紡錘糸は微小管（スライド44・52）。",
+  "point": "「中心体から放射状」は微小管のキーワード。",
+  "tags": [
+   "アクチンフィラメント（分布・機能）"
+  ]
+ },
+ {
+  "id": "q070",
+  "slide": 36,
+  "chapter": 7,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "アクチンフィラメントの機能として、スライド36の記述に合うものはどれか。",
+  "options": [
+   {
+    "text": "張力に耐え核の位置を保持する",
+    "explanation": "中間径フィラメント（スライド41）",
+    "correct": false
+   },
+   {
+    "text": "細胞の形態保持、筋収縮を含む細胞運動、小器官の移動",
+    "explanation": "スライド36",
+    "correct": true
+   },
+   {
+    "text": "染色体の移動（紡錘糸）",
+    "explanation": "微小管",
+    "correct": false
+   },
+   {
+    "text": "線毛運動のモーター",
+    "explanation": "ダイニンと微小管",
+    "correct": false
+   },
+   {
+    "text": "過酸化水素の分解",
+    "explanation": "ペルオキシソーム",
+    "correct": false
+   }
+  ],
+  "explanation": "アクチンの機能は<b>形態保持・細胞運動（筋収縮を含む）・小器官の移動</b>（スライド36）。中間径は“張力”、微小管は“紡錘糸・線毛・輸送のレール”と分けて覚える。",
+  "point": "3種の骨格の機能を1語ずつ：アクチン＝動き、中間径＝張力、微小管＝輸送路。",
+  "tags": [
+   "アクチンフィラメント（分布・機能）"
+  ]
+ },
+ {
+  "id": "q071",
+  "slide": 37,
+  "chapter": 7,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "アクチンフィラメントの構造について正しいのはどれか。",
+  "options": [
+   {
+    "text": "線維状の単量体が逆向きに並んだ4量体からなる",
+    "explanation": "中間径フィラメントの説明",
+    "correct": false
+   },
+   {
+    "text": "球状のG-actinが重合して二重らせんのF-actinを形成する",
+    "explanation": "スライド37",
+    "correct": true
+   },
+   {
+    "text": "プラス端で脱重合し、マイナス端で重合する",
+    "explanation": "プラス端で重合、マイナス端で脱重合",
+    "correct": false
+   },
+   {
+    "text": "極性をもたない",
+    "explanation": "F-actinは極性をもつ",
+    "correct": false
+   },
+   {
+    "text": "13本のプロトフィラメントからなる管である",
+    "explanation": "微小管の説明",
+    "correct": false
+   }
+  ],
+  "explanation": "スライド37：アクチンは<b>球状分子（G-actin）</b>→重合して<b>二重らせんのフィラメント（F-actin）</b>。F-actinの極性：<b>プラス端で重合、マイナス端で脱重合</b>。",
+  "point": "“G＝Globular（球）、F＝Filament”。",
+  "tags": [
+   "アクチンフィラメントの構造"
+  ]
+ },
+ {
+  "id": "q072",
+  "slide": 37,
+  "chapter": 7,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "細胞の遊走におけるアクチンの働きとして、スライド37の記述に合うものはどれか。",
+  "options": [
+   {
+    "text": "突起の基部で重合し、先端で脱重合する",
+    "explanation": "先端で重合",
+    "correct": false
+   },
+   {
+    "text": "脱重合によるGアクチンの流動→突起（仮足）の先端での重合→新たな細胞-基質間接着の形成",
+    "explanation": "スライド37",
+    "correct": true
+   },
+   {
+    "text": "アクチンは細胞の運動とは関係しない",
+    "explanation": "関係する",
+    "correct": false
+   },
+   {
+    "text": "遊走の力はダイニンと微小管の滑りで生まれる",
+    "explanation": "線毛の話",
+    "correct": false
+   },
+   {
+    "text": "細胞-基質間接着はカドヘリンによる",
+    "explanation": "図ではfocal contacts（インテグリンを含む）",
+    "correct": false
+   }
+  ],
+  "explanation": "スライド37：アクチンは細胞の運動と関係。細胞の遊走では<b>脱重合によるGアクチンの流動→突起（仮足）の先端での重合→新たな細胞-基質間接着の形成</b>。図のfocal contactsにはインテグリンが含まれる。",
+  "point": "“前で積んで後ろで崩す”。",
+  "tags": [
+   "アクチンフィラメントの構造"
+  ]
+ },
+ {
+  "id": "q073",
+  "slide": 38,
+  "chapter": 7,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "アクチン結合蛋白質について正しいのはどれか。",
+  "options": [
+   {
+    "text": "ミオシンはアクチンのプラス端からマイナス端へ移動する",
+    "explanation": "マイナス端からプラス端",
+    "correct": false
+   },
+   {
+    "text": "ミオシンはATPを消費しながらアクチンフィラメントに結合して動く",
+    "explanation": "スライド38",
+    "correct": true
+   },
+   {
+    "text": "筋細胞で働くミオシンはⅠ型である",
+    "explanation": "Ⅱ型",
+    "correct": false
+   },
+   {
+    "text": "キネシンはアクチン上を動くモーター蛋白質である",
+    "explanation": "微小管上",
+    "correct": false
+   },
+   {
+    "text": "ミオシンは微小管関連蛋白質（MAPs）である",
+    "explanation": "アクチン結合蛋白質",
+    "correct": false
+   }
+  ],
+  "explanation": "スライド38：多数のアクチン結合蛋白質のうち、モーター蛋白質として働くのが<b>ミオシン</b>。アクチンの<b>マイナス端からプラス端へ</b>移動する。<b>ATPを消費</b>しながらアクチンに結合して動き、膜の動き・小器官の動き・細胞の収縮を起こす。筋細胞以外の例：<b>Ⅰ型</b>、筋細胞：<b>Ⅱ型</b>。",
+  "point": "アクチン上＝ミオシン、微小管上＝キネシン・ダイニン。",
+  "tags": [
+   "アクチン結合蛋白質"
+  ]
+ },
+ {
+  "id": "q074",
+  "slide": 38,
+  "chapter": 7,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "スライド38の図の内容と合致するものはどれか。",
+  "options": [
+   {
+    "text": "Ⅰ型ミオシンは2頭が逆向きに並んで双極性のフィラメントをつくる",
+    "explanation": "図のⅡ型の特徴",
+    "correct": false
+   },
+   {
+    "text": "筋細胞以外ではⅠ型ミオシンが小胞などをアクチンに沿って運ぶ例がある",
+    "explanation": "図(B)(C)",
+    "correct": true
+   },
+   {
+    "text": "Ⅱ型ミオシンは小胞を運ぶモーターとしてのみ働く",
+    "explanation": "筋でフィラメントを引き寄せる",
+    "correct": false
+   },
+   {
+    "text": "ミオシンの運動にATPは不要である",
+    "explanation": "ATPを消費",
+    "correct": false
+   },
+   {
+    "text": "アクチンフィラメントに極性はない",
+    "explanation": "＋端・−端がある",
+    "correct": false
+   }
+  ],
+  "explanation": "図(B)では<b>Ⅰ型ミオシン</b>が小胞を運び、(C)では膜に固定されたⅠ型ミオシンがアクチンを動かす。筋細胞の<b>Ⅱ型ミオシン</b>は双極性に並び、両側のアクチンを引き寄せる。",
+  "point": "Ⅰ型＝運搬、Ⅱ型＝筋収縮。",
+  "tags": [
+   "アクチン結合蛋白質"
+  ]
+ },
+ {
+  "id": "q075",
+  "slide": 39,
+  "chapter": 7,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "アクチン-ミオシン相互作用について正しいのはどれか。",
+  "options": [
+   {
+    "text": "骨格筋ではアクチンが重合して直径15 nmのフィラメントをつくる",
+    "explanation": "ミオシンが15 nm",
+    "correct": false
+   },
+   {
+    "text": "骨格筋ではミオシンが重合してミオシンフィラメント（直径15 nm）を形成する",
+    "explanation": "スライド39",
+    "correct": true
+   },
+   {
+    "text": "筋収縮はフィラメント自体が短縮して起こる",
+    "explanation": "すべりによる",
+    "correct": false
+   },
+   {
+    "text": "アクチンは細胞膜に固定されていない",
+    "explanation": "スライドに「アクチンは細胞膜に固定されている」",
+    "correct": false
+   },
+   {
+    "text": "太いフィラメントはアクチン、細いフィラメントはミオシンである",
+    "explanation": "逆",
+    "correct": false
+   }
+  ],
+  "explanation": "スライド39：<b>骨格筋細胞では、ミオシンが重合してミオシンフィラメント（直径15 nm）を形成</b>→<b>アクチンとミオシンのすべり</b>により筋が収縮。＊アクチンは細胞膜に固定されている。図では太いフィラメント（ミオシン）と細いフィラメント（アクチン）、Z盤、サルコメア。",
+  "point": "太い＝ミオシン15 nm、細い＝アクチン。",
+  "tags": [
+   "アクチン-ミオシン相互作用"
+  ]
+ },
+ {
+  "id": "q076",
+  "slide": 39,
+  "chapter": 7,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "筋が収縮したときのサルコメアの変化として、スライド39の図から正しいのはどれか。",
+  "options": [
+   {
+    "text": "ミオシンフィラメントとアクチンフィラメントがともに短くなる",
+    "explanation": "長さは変わらない",
+    "correct": false
+   },
+   {
+    "text": "フィラメントの長さは変わらず、アクチンとミオシンの重なりが増してZ盤間が短くなる",
+    "explanation": "すべり",
+    "correct": true
+   },
+   {
+    "text": "Z盤どうしが離れる",
+    "explanation": "近づく",
+    "correct": false
+   },
+   {
+    "text": "アクチンフィラメントが脱重合して消失する",
+    "explanation": "該当しない",
+    "correct": false
+   },
+   {
+    "text": "ミオシンフィラメントが微小管に置き換わる",
+    "explanation": "該当しない",
+    "correct": false
+   }
+  ],
+  "explanation": "図(A)→(B)の収縮では、Z盤に固定されたアクチンがミオシンに引き寄せられて<b>重なりが増え</b>、サルコメア（Z盤間）が短くなる。フィラメント自体の長さは変わらない＝<b>すべり</b>による収縮。",
+  "point": "“伸び縮み”ではなく“すべり”。",
+  "tags": [
+   "アクチン-ミオシン相互作用"
+  ]
+ },
+ {
+  "id": "q077",
+  "slide": 40,
+  "chapter": 7,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "形態保持に働くアクチンフィラメントとしてスライド40に挙げられていないものはどれか。",
+  "options": [
+   {
+    "text": "細胞質表層のアクチンフィラメント（細胞皮質）",
+    "explanation": "挙げられている",
+    "correct": false
+   },
+   {
+    "text": "接着帯を裏打ちするアクチンフィラメント",
+    "explanation": "挙げられている",
+    "correct": false
+   },
+   {
+    "text": "微絨毛の芯にあるアクチンフィラメント",
+    "explanation": "挙げられている",
+    "correct": false
+   },
+   {
+    "text": "終末扇（terminal web）",
+    "explanation": "挙げられている",
+    "correct": false
+   },
+   {
+    "text": "線毛の軸糸",
+    "explanation": "微小管の構造（スライド53）",
+    "correct": true
+   }
+  ],
+  "explanation": "スライド40：1. 細胞質表層のアクチン（<b>細胞皮質</b>）、2. <b>接着帯</b>（細胞間結合装置の1種）を裏打ちするアクチン、3. <b>微絨毛の芯</b>にあるアクチン、4. 2)と3)が交差する部分：<b>終末扇</b>。線毛の芯は微小管。",
+  "point": "微絨毛＝アクチン、線毛＝微小管。",
+  "tags": [
+   "形態保持に働くアクチンフィラメント"
+  ]
+ },
+ {
+  "id": "q078",
+  "slide": 40,
+  "chapter": 7,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "終末扇（terminal web）の説明として正しいのはどれか。",
+  "options": [
+   {
+    "text": "中心体から伸びる微小管が交差する部分",
+    "explanation": "アクチンの構造",
+    "correct": false
+   },
+   {
+    "text": "接着帯を裏打ちするアクチンと微絨毛の芯のアクチンが交差する部分",
+    "explanation": "スライド40",
+    "correct": true
+   },
+   {
+    "text": "デスモゾームの中間径フィラメントが集まる部分",
+    "explanation": "アクチンの構造",
+    "correct": false
+   },
+   {
+    "text": "線毛の基底小体が並ぶ部分",
+    "explanation": "該当しない",
+    "correct": false
+   },
+   {
+    "text": "基底膜とヘミデスモゾームの接着部",
+    "explanation": "該当しない",
+    "correct": false
+   }
+  ],
+  "explanation": "スライド40：終末扇は「<b>2）接着帯を裏打ちするアクチンと3）微絨毛の芯にあるアクチンが交差する部分</b>」。図では接着帯の接着分子として<b>カドヘリン</b>が示される。",
+  "point": "終末扇＝アクチンの交差点。",
+  "tags": [
+   "形態保持に働くアクチンフィラメント"
+  ]
+ },
+ {
+  "id": "q079",
+  "slide": 41,
+  "chapter": 7,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "中間径フィラメントについて正しいのはどれか。",
+  "options": [
+   {
+    "text": "中心体から放射状に伸びる",
+    "explanation": "微小管の分布",
+    "correct": false
+   },
+   {
+    "text": "細胞質全体に存在し、核膜から細胞膜へ放射状に走行することが多い",
+    "explanation": "スライド41",
+    "correct": true
+   },
+   {
+    "text": "主な機能は筋収縮である",
+    "explanation": "アクチン-ミオシン",
+    "correct": false
+   },
+   {
+    "text": "細胞接着装置には付着しない",
+    "explanation": "付着する",
+    "correct": false
+   },
+   {
+    "text": "核膜直下には存在しない",
+    "explanation": "核膜直下にもある",
+    "correct": false
+   }
+  ],
+  "explanation": "スライド41：分布は<b>細胞質全体</b>、<b>核膜→細胞膜への放射状</b>に走行することが多い、<b>細胞接着装置に付着</b>、<b>核膜直下</b>にもある。機能は<b>細胞の形態保持、張力に耐える、核の位置の保持</b>。",
+  "point": "中間径＝張力と核の位置。",
+  "tags": [
+   "中間径フィラメント（分布・機能）"
+  ]
+ },
+ {
+  "id": "q080",
+  "slide": 41,
+  "chapter": 7,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "細胞を強く引っ張る力が繰り返しかかる組織で、細胞の変形・破綻を防ぐうえで最も重要と考えられる細胞骨格はどれか。",
+  "options": [
+   {
+    "text": "アクチンフィラメント",
+    "explanation": "主に形態保持・運動",
+    "correct": false
+   },
+   {
+    "text": "中間径フィラメント",
+    "explanation": "張力に耐える（スライド41）",
+    "correct": true
+   },
+   {
+    "text": "微小管",
+    "explanation": "主に輸送・分裂",
+    "correct": false
+   },
+   {
+    "text": "リボソーム",
+    "explanation": "細胞骨格ではない",
+    "correct": false
+   },
+   {
+    "text": "分泌顆粒",
+    "explanation": "細胞骨格ではない",
+    "correct": false
+   }
+  ],
+  "explanation": "スライド41：中間径フィラメントは<b>張力に耐える</b>。さらに細胞接着装置（デスモゾーム・ヘミデスモゾーム）に付着して組織全体で力を分散する（スライド43）。",
+  "point": "“引っ張り”＝中間径。",
+  "tags": [
+   "中間径フィラメント（分布・機能）"
+  ]
+ },
+ {
+  "id": "q081",
+  "slide": 42,
+  "chapter": 7,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "中間径フィラメントの構造について正しいのはどれか。",
+  "options": [
+   {
+    "text": "球状蛋白質が重合してできる",
+    "explanation": "線維状蛋白質",
+    "correct": false
+   },
+   {
+    "text": "13本のプロトフィラメントが集まって10 nmのフィラメントになる",
+    "explanation": "8本",
+    "correct": false
+   },
+   {
+    "text": "線維状蛋白質の単量体→2量体→反対方向に並んだ4量体→プロトフィラメント→8本集まって10 nm",
+    "explanation": "スライド42",
+    "correct": true
+   },
+   {
+    "text": "4量体は2量体が同じ方向に並んでできる",
+    "explanation": "反対方向",
+    "correct": false
+   },
+   {
+    "text": "細胞の種類によらず同一の蛋白質からなる",
+    "explanation": "細胞種により異なる",
+    "correct": false
+   }
+  ],
+  "explanation": "スライド42：A) <b>線維状蛋白質</b>の1量体、B) 2量体、C) <b>（反対方向に並んだ）4量体</b>→<b>プロトフィラメント</b>→<b>8本集まって10 nm</b>のフィラメント。",
+  "point": "8本で10 nm（中間径）、13本で25 nm（微小管）。",
+  "tags": [
+   "中間径フィラメントの構造"
+  ]
+ },
+ {
+  "id": "q082",
+  "slide": 42,
+  "chapter": 7,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "中間径フィラメントの種類と細胞の組み合わせとして正しいのはどれか。",
+  "options": [
+   {
+    "text": "上皮細胞 ― ビメンチン",
+    "explanation": "ケラチン",
+    "correct": false
+   },
+   {
+    "text": "線維芽細胞 ― デスミン",
+    "explanation": "ビメンチン",
+    "correct": false
+   },
+   {
+    "text": "筋細胞 ― ケラチン",
+    "explanation": "デスミン",
+    "correct": false
+   },
+   {
+    "text": "神経細胞 ― ニューロフィラメント",
+    "explanation": "スライド42",
+    "correct": true
+   },
+   {
+    "text": "筋細胞 ― ニューロフィラメント",
+    "explanation": "デスミン",
+    "correct": false
+   }
+  ],
+  "explanation": "スライド42：中間径フィラメントは細胞<b>種</b>により種類が異なる。<b>上皮細胞：ケラチン</b>、<b>線維芽細胞：ビメンチン</b>、<b>筋細胞：デスミン</b>、<b>神経細胞：ニューロフィラメント</b>。<br><span class=\"sup\">［補足・授業資料外］病理診断で腫瘍の由来を推定するのに利用される。</span>",
+  "point": "「ケラケラ上皮、ビメン線維芽、筋肉です、神経ニュー」。",
+  "tags": [
+   "中間径フィラメントの構造"
+  ]
+ },
+ {
+  "id": "q083",
+  "slide": 43,
+  "chapter": 7,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "上皮細胞間の結合装置と中間径フィラメントについて正しいのはどれか。",
+  "options": [
+   {
+    "text": "デスモゾームとヘミデスモゾームで、細胞質側に中間径フィラメントがヘアピン状に付着する",
+    "explanation": "スライド43",
+    "correct": true
+   },
+   {
+    "text": "接着帯には中間径フィラメントがヘアピン状に付着する",
+    "explanation": "接着帯はマイクロフィラメント（アクチン）",
+    "correct": false
+   },
+   {
+    "text": "ヘミデスモゾームは細胞間の結合装置である",
+    "explanation": "細胞-基質間",
+    "correct": false
+   },
+   {
+    "text": "デスモゾームに付く中間径フィラメントはビメンチンである",
+    "explanation": "ケラチン",
+    "correct": false
+   },
+   {
+    "text": "密着帯（タイト結合）は中間径フィラメントの付着部である",
+    "explanation": "該当しない",
+    "correct": false
+   }
+  ],
+  "explanation": "スライド43：細胞間の結合装置（<b>デスモゾーム</b>）および細胞-基質間の結合装置（<b>ヘミデスモゾーム</b>）で、細胞質側に中間径フィラメント（<b>ケラチンフィラメント</b>）が<b>ヘアピン状</b>に付着する。図では密着帯（タイト結合）・接着帯（アドヘレンス結合）・デスモゾーム・ギャップ結合・ヘミデスモゾームが示される。",
+  "point": "デスモ系＝中間径、接着帯＝アクチン。",
+  "tags": [
+   "上皮細胞間の結合装置"
+  ]
+ },
+ {
+  "id": "q084",
+  "slide": 43,
+  "chapter": 7,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "スライド43の図に示される結合装置と構成要素の組み合わせとして正しいのはどれか。",
+  "options": [
+   {
+    "text": "ヘミデスモゾーム ― カドヘリン",
+    "explanation": "接着分子はインテグリン",
+    "correct": false
+   },
+   {
+    "text": "ギャップ結合 ― コネクソン（1.5 nmのチャネル）",
+    "explanation": "図の記載",
+    "correct": true
+   },
+   {
+    "text": "接着帯 ― ケラチンフィラメント",
+    "explanation": "マイクロフィラメント",
+    "correct": false
+   },
+   {
+    "text": "デスモゾーム ― 基底膜との結合",
+    "explanation": "細胞間の結合",
+    "correct": false
+   },
+   {
+    "text": "ギャップ結合 ― 細胞間隙20〜40 nm",
+    "explanation": "2〜4 nm",
+    "correct": false
+   }
+  ],
+  "explanation": "図：<b>ギャップ結合</b>は2〜4 nmのギャップ、<b>1.5 nmのチャネル</b>、<b>コネクソン</b>。<b>ヘミデスモゾーム</b>は接着分子（<b>インテグリン</b>）で基底膜に結合。<b>接着帯</b>は接着分子（カドヘリン）とマイクロフィラメント。<b>デスモゾーム</b>は接着分子（カドヘリン）と中間径フィラメント。",
+  "point": "ヘミ＝インテグリン、デスモ＝カドヘリン。",
+  "tags": [
+   "上皮細胞間の結合装置"
+  ]
+ },
+ {
+  "id": "q085",
+  "slide": 44,
+  "chapter": 8,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "微小管の分布と機能として、スライド44の記述に合うものはどれか。",
+  "options": [
+   {
+    "text": "細胞膜直下の細胞皮質に網状に分布する",
+    "explanation": "アクチンの分布",
+    "correct": false
+   },
+   {
+    "text": "核の近くの中心体（中心小体）から放射状に出る",
+    "explanation": "スライド44",
+    "correct": true
+   },
+   {
+    "text": "主な機能は張力に耐えることである",
+    "explanation": "中間径",
+    "correct": false
+   },
+   {
+    "text": "細胞分裂には関与しない",
+    "explanation": "紡錘糸として関与",
+    "correct": false
+   },
+   {
+    "text": "細胞接着装置にヘアピン状に付着する",
+    "explanation": "中間径",
+    "correct": false
+   }
+  ],
+  "explanation": "スライド44：分布は<b>核の近くの中心体（中心小体）central bodyから放射状に出る</b>。機能は<b>細胞の形態維持、細胞運動（線毛など）、小器官の移動、細胞分裂（紡錘糸として）</b>。",
+  "point": "“中心体から放射状”＝微小管。",
+  "tags": [
+   "微小管 microtubules（分布・機能）"
+  ]
+ },
+ {
+  "id": "q086",
+  "slide": 44,
+  "chapter": 8,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "微小管の機能に含まれないものはどれか。",
+  "options": [
+   {
+    "text": "細胞の形態維持",
+    "explanation": "含まれる",
+    "correct": false
+   },
+   {
+    "text": "線毛などによる細胞運動",
+    "explanation": "含まれる",
+    "correct": false
+   },
+   {
+    "text": "小器官の移動",
+    "explanation": "含まれる",
+    "correct": false
+   },
+   {
+    "text": "紡錘糸としての細胞分裂への関与",
+    "explanation": "含まれる",
+    "correct": false
+   },
+   {
+    "text": "骨格筋のアクチンとのすべりによる筋収縮",
+    "explanation": "これはアクチン-ミオシン",
+    "correct": true
+   }
+  ],
+  "explanation": "スライド44の4機能（形態維持・細胞運動（線毛など）・小器官の移動・細胞分裂）。筋収縮はアクチンとミオシンのすべり（スライド39）。",
+  "point": "筋収縮＝アクチン・ミオシン。",
+  "tags": [
+   "微小管 microtubules（分布・機能）"
+  ]
+ },
+ {
+  "id": "q087",
+  "slide": 45,
+  "chapter": 8,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "微小管の構造について正しいのはどれか。",
+  "options": [
+   {
+    "text": "チュブリンは線維状蛋白質である",
+    "explanation": "球状蛋白",
+    "correct": false
+   },
+   {
+    "text": "9本のプロトフィラメントが直径25 nmの管をつくる",
+    "explanation": "13本",
+    "correct": false
+   },
+   {
+    "text": "αとβのチュブリンが二量体をつくり、縦に重合してプロトフィラメントとなる",
+    "explanation": "スライド45",
+    "correct": true
+   },
+   {
+    "text": "マイナス端で重合と脱重合を行う",
+    "explanation": "プラス端",
+    "correct": false
+   },
+   {
+    "text": "プラス端は中心体に固定されている",
+    "explanation": "マイナス端が中心体に固定",
+    "correct": false
+   }
+  ],
+  "explanation": "スライド45：チュブリン（分子量<b>50 kD</b>の球状蛋白）の<b>αとβ</b>のサブユニットが結合して二量体→縦に重合して<b>プロトフィラメント</b>→<b>13本</b>が直径<b>25 nm</b>の管を形成。方向性：<b>プラス端で重合＋脱重合</b>、<b>マイナス端は中心体に固定</b>。",
+  "point": "13本・25 nm・−端は中心体。",
+  "tags": [
+   "微小管の構造"
+  ]
+ },
+ {
+  "id": "q088",
+  "slide": 45,
+  "chapter": 8,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "アクチンフィラメントと微小管に共通する性質として正しいのはどれか。",
+  "options": [
+   {
+    "text": "どちらも線維状蛋白質の単量体からなる",
+    "explanation": "どちらも球状蛋白",
+    "correct": false
+   },
+   {
+    "text": "どちらも極性をもち、一方の端で重合が起こる",
+    "explanation": "アクチン＋端、微小管＋端（スライド37・45）",
+    "correct": true
+   },
+   {
+    "text": "どちらも直径25 nmである",
+    "explanation": "アクチン5〜7 nm",
+    "correct": false
+   },
+   {
+    "text": "どちらも13本のプロトフィラメントからなる",
+    "explanation": "微小管のみ",
+    "correct": false
+   },
+   {
+    "text": "どちらも中心体に一端が固定される",
+    "explanation": "微小管のみ",
+    "correct": false
+   }
+  ],
+  "explanation": "アクチン：G-actin（球状）→F-actin、<b>＋端で重合、−端で脱重合</b>（スライド37）。微小管：チュブリン（球状）→プロトフィラメント、<b>＋端で重合・脱重合、−端は中心体に固定</b>（スライド45）。中間径は線維状蛋白で逆向き4量体。",
+  "point": "“球状＋極性あり”＝アクチンと微小管、“線維状”＝中間径。",
+  "tags": [
+   "微小管の構造"
+  ]
+ },
+ {
+  "id": "q089",
+  "slide": 46,
+  "chapter": 8,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "微小管とその構造物の分布（スライド46）について正しいのはどれか。",
+  "options": [
+   {
+    "text": "線毛上皮細胞では中心体が線毛の先端にある",
+    "explanation": "基底小体（MTOC）が線毛の基部",
+    "correct": false
+   },
+   {
+    "text": "赤血球では辺縁に微小管の束があり、極性が混在している",
+    "explanation": "図の記載",
+    "correct": true
+   },
+   {
+    "text": "神経細胞には微小管が存在しない",
+    "explanation": "中心体（MTOC）から軸索・樹状突起へ",
+    "correct": false
+   },
+   {
+    "text": "分裂中の細胞では中心体は1つのままである",
+    "explanation": "2つになり両極へ",
+    "correct": false
+   },
+   {
+    "text": "赤血球の微小管はすべて同じ向きに並ぶ",
+    "explanation": "極性が混在",
+    "correct": false
+   }
+  ],
+  "explanation": "スライド46：神経細胞（中心体＝MTOC、軸索・樹状突起）、線毛上皮細胞（<b>基底小体＝MTOC</b>、頂部）、赤血球（<b>辺縁にある微小管の束、極性が混在</b>）、分裂中の細胞（間期→前期→中期、中心体が両極へ）。",
+  "point": "線毛上皮のMTOC＝基底小体。",
+  "tags": [
+   "微小管とその構造物の分布"
+  ]
+ },
+ {
+  "id": "q090",
+  "slide": 46,
+  "chapter": 8,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "スライド46で「MTOC」として示されている構造の組み合わせとして正しいのはどれか。",
+  "options": [
+   {
+    "text": "神経細胞の軸索終末・線毛上皮の線毛先端",
+    "explanation": "該当しない",
+    "correct": false
+   },
+   {
+    "text": "神経細胞の中心体・線毛上皮細胞の基底小体",
+    "explanation": "図の記載",
+    "correct": true
+   },
+   {
+    "text": "赤血球の辺縁微小管・分裂期の動原体",
+    "explanation": "該当しない",
+    "correct": false
+   },
+   {
+    "text": "線毛上皮の基底膜・神経細胞の樹状突起",
+    "explanation": "該当しない",
+    "correct": false
+   },
+   {
+    "text": "中期の染色体・線毛の軸糸",
+    "explanation": "該当しない",
+    "correct": false
+   }
+  ],
+  "explanation": "図では神経細胞の<b>中心体（MTOC）</b>、線毛上皮細胞の<b>基底小体（MTOC）</b>、分裂中期の<b>中心体（MTOC）</b>が示される。MTOCは微小管形成中心で、マイナス端が集まる（スライド48）。",
+  "point": "MTOC＝微小管の“起点（−端）”。",
+  "tags": [
+   "微小管とその構造物の分布"
+  ]
+ },
+ {
+  "id": "q091",
+  "slide": 47,
+  "chapter": 8,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "微小管関連蛋白質（MAPs）のモーター蛋白質について正しいのはどれか。",
+  "options": [
+   {
+    "text": "キネシンはミトコンドリアなどをマイナス端に輸送する",
+    "explanation": "ダイニンの説明",
+    "correct": false
+   },
+   {
+    "text": "キネシンは分泌小胞などをプラス端に輸送する",
+    "explanation": "スライド47",
+    "correct": true
+   },
+   {
+    "text": "ダイニンは分泌小胞などをプラス端に輸送する",
+    "explanation": "マイナス端",
+    "correct": false
+   },
+   {
+    "text": "キネシンとダイニンはアクチンフィラメント上を動く",
+    "explanation": "微小管上",
+    "correct": false
+   },
+   {
+    "text": "ミオシンは代表的なMAPsである",
+    "explanation": "アクチン結合蛋白",
+    "correct": false
+   }
+  ],
+  "explanation": "スライド47：多数のMAPsのうちモーター蛋白として働くのが<b>キネシン</b>と<b>ダイニン</b>。<b>キネシン：分泌小胞などをプラス端に輸送</b>、<b>ダイニン：ミトコンドリアなどをマイナス端に輸送</b>。図では重鎖・軽鎖・荷物が示される。",
+  "point": "「ダイニンはダウン（−端＝中心へ）」。",
+  "tags": [
+   "微小管関連蛋白質（MAPs）"
+  ]
+ },
+ {
+  "id": "q092",
+  "slide": 47,
+  "chapter": 8,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "中心体付近から細胞膜方向へ分泌小胞を運ぶ場合に主に働くモーター蛋白質と向きの組み合わせとして正しいのはどれか。",
+  "options": [
+   {
+    "text": "ダイニン・マイナス端へ",
+    "explanation": "中心体方向",
+    "correct": false
+   },
+   {
+    "text": "キネシン・プラス端へ",
+    "explanation": "スライド47・48",
+    "correct": true
+   },
+   {
+    "text": "ミオシン・マイナス端へ",
+    "explanation": "アクチン上",
+    "correct": false
+   },
+   {
+    "text": "ダイニン・プラス端へ",
+    "explanation": "ダイニンは−端へ",
+    "correct": false
+   },
+   {
+    "text": "キネシン・マイナス端へ",
+    "explanation": "キネシンは＋端へ",
+    "correct": false
+   }
+  ],
+  "explanation": "微小管の<b>マイナス端は中心体</b>、<b>プラス端は細胞膜側</b>（スライド45・48）。細胞膜方向＝プラス端方向の輸送は<b>キネシン</b>（スライド47）。",
+  "point": "−端の位置（中心体）から向きを決める。",
+  "tags": [
+   "微小管関連蛋白質（MAPs）"
+  ]
+ },
+ {
+  "id": "q093",
+  "slide": 48,
+  "chapter": 8,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "膜性小器官と微小管系の関係について正しいのはどれか。",
+  "options": [
+   {
+    "text": "微小管は細胞膜から中心体へ向かって放射状に伸びる",
+    "explanation": "中心体から放射状",
+    "correct": false
+   },
+   {
+    "text": "微小管は輸送小胞等の細胞小器官の移動のためのレールとして使われる",
+    "explanation": "スライド48",
+    "correct": true
+   },
+   {
+    "text": "移動の方向に関係なく常にキネシンが使われる",
+    "explanation": "方向でキネシン・ダイニンを使い分け",
+    "correct": false
+   },
+   {
+    "text": "中心体はMTOCとは呼ばれない",
+    "explanation": "MTOC（微小管形成中心）",
+    "correct": false
+   },
+   {
+    "text": "ゴルジ装置は微小管と無関係に配置される",
+    "explanation": "図ではMTOC付近",
+    "correct": false
+   }
+  ],
+  "explanation": "スライド48：微小管系は<b>中心体（central body）から放射状に伸び</b>、輸送小胞等の細胞小器官の移動のための<b>レール</b>として使われる。<b>移動の方向によって、キネシンやダイニンが使われる</b>。中心体は<b>微小管形成中心（MTOC）</b>とも呼ばれる。",
+  "point": "レール＝微小管、運転手＝キネシン／ダイニン。",
+  "tags": [
+   "膜性小器官と微小管系の関係"
+  ]
+ },
+ {
+  "id": "q094",
+  "slide": 48,
+  "chapter": 8,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "スライド48の図から読み取れる内容として正しいのはどれか。",
+  "options": [
+   {
+    "text": "ゴルジ装置のシス側から細胞膜へ直接ダイニンで運ばれる",
+    "explanation": "細胞膜方向はキネシン",
+    "correct": false
+   },
+   {
+    "text": "MTOCを中心に微小管が伸び、ゴルジ装置や粗面小胞体からの小胞がその上を運ばれる",
+    "explanation": "図",
+    "correct": true
+   },
+   {
+    "text": "粗面小胞体は微小管の外側に独立して存在し小胞を出さない",
+    "explanation": "小胞を出す",
+    "correct": false
+   },
+   {
+    "text": "微小管の＋端はMTOCにある",
+    "explanation": "−端がMTOC",
+    "correct": false
+   },
+   {
+    "text": "トランス側からの輸送にはミオシンが使われる",
+    "explanation": "図ではキネシン",
+    "correct": false
+   }
+  ],
+  "explanation": "図では<b>MTOC</b>から放射状の微小管が伸び、粗面小胞体→ゴルジ（シス側→トランス側）→細胞膜への輸送に<b>キネシン</b>、中心方向への輸送に<b>ダイニン</b>が描かれる。第3〜4章の分泌経路はこのレール上で起きている。",
+  "point": "分泌経路（第4章）と微小管（第8章）をつなぐ問題。",
+  "tags": [
+   "膜性小器官と微小管系の関係"
+  ]
+ },
+ {
+  "id": "q095",
+  "slide": 49,
+  "chapter": 8,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "微小管の存在様式について正しいのはどれか。",
+  "options": [
+   {
+    "text": "線毛の軸糸の周辺微小管は三連×9本である",
+    "explanation": "二連×9本",
+    "correct": false
+   },
+   {
+    "text": "中心子は三連微小管×9本からなる",
+    "explanation": "スライド49",
+    "correct": true
+   },
+   {
+    "text": "線毛の中心微小管は二連×2本である",
+    "explanation": "単体×2本",
+    "correct": false
+   },
+   {
+    "text": "二連微小管と三連微小管ではプロトフィラメントは共有されない",
+    "explanation": "一部が共有される",
+    "correct": false
+   },
+   {
+    "text": "中心子の中央には単体微小管が2本ある",
+    "explanation": "中央に微小管はない",
+    "correct": false
+   }
+  ],
+  "explanation": "スライド49：a. 単体微小管（singlet）、b. 二連微小管（doublet）、c. 三連微小管（triplet）。二連と三連では<b>プロトフィラメントの一部が共有</b>される。<b>線毛の軸糸</b>：周辺微小管 <b>二連×9本＋ダイニン</b>、中心微小管 <b>単体×2本</b>。<b>中心子</b>：<b>三連×9本</b>。",
+  "point": "線毛＝9＋2、中心子＝9×3。",
+  "tags": [
+   "微小管の存在様式"
+  ]
+ },
+ {
+  "id": "q096",
+  "slide": 49,
+  "chapter": 8,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "線毛の軸糸と中心子の比較として正しいのはどれか。",
+  "options": [
+   {
+    "text": "どちらも中央に単体微小管2本をもつ",
+    "explanation": "中心子にはない",
+    "correct": false
+   },
+   {
+    "text": "どちらも周辺に二連微小管9本をもつ",
+    "explanation": "中心子は三連",
+    "correct": false
+   },
+   {
+    "text": "軸糸は周辺に二連×9と中心に単体×2、中心子は三連×9をもつ",
+    "explanation": "スライド49",
+    "correct": true
+   },
+   {
+    "text": "軸糸には運動に関わるモーター蛋白は存在しない",
+    "explanation": "ダイニン",
+    "correct": false
+   },
+   {
+    "text": "中心子は線毛の先端に存在する",
+    "explanation": "基底小体は線毛の底部",
+    "correct": false
+   }
+  ],
+  "explanation": "線毛の軸糸：<b>9 doublets＋2 singlets</b>（ダイニンあり）。中心子：<b>9 triplets</b>。基底小体は線毛の底部にあり中心子と同じ構造（スライド50）。",
+  "point": "“動く軸糸”にはダイニン、“土台の中心子”は三連。",
+  "tags": [
+   "微小管の存在様式"
+  ]
+ },
+ {
+  "id": "q097",
+  "slide": 50,
+  "chapter": 8,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "中心体（中心小体）と基底小体について正しいのはどれか。",
+  "options": [
+   {
+    "text": "中心体は平行に並ぶ2本の中心子からなる",
+    "explanation": "直交する2本",
+    "correct": false
+   },
+   {
+    "text": "基底小体は線毛の底部にあり、中心子の一本と同じ構造である",
+    "explanation": "スライド50",
+    "correct": true
+   },
+   {
+    "text": "中心子周辺物質にはαチュブリンのみが含まれる",
+    "explanation": "γチュブリンを含む",
+    "correct": false
+   },
+   {
+    "text": "γチュブリンには紡錘糸のプラス端が着く",
+    "explanation": "マイナス端",
+    "correct": false
+   },
+   {
+    "text": "基底小体は線毛の先端にある",
+    "explanation": "底部",
+    "correct": false
+   }
+  ],
+  "explanation": "スライド50：<b>基底小体</b>：線毛の底部にある、<b>中心子の一本と同じ構造</b>。<b>中心体</b>：<b>直交する2本の中心子</b>、<b>中心子周辺物質</b>、<b>γチュブリンを含む→紡錘糸のマイナス端が着く</b>。",
+  "point": "γチュブリン＝−端の足場。",
+  "tags": [
+   "中心体と基底小体"
+  ]
+ },
+ {
+  "id": "q098",
+  "slide": 50,
+  "chapter": 8,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "紡錘糸のマイナス端が中心体に着く仕組みとして、スライド50に基づき正しいのはどれか。",
+  "options": [
+   {
+    "text": "中心子の三連微小管に直接プラス端が結合する",
+    "explanation": "マイナス端",
+    "correct": false
+   },
+   {
+    "text": "中心子周辺物質に含まれるγチュブリンに紡錘糸のマイナス端が着く",
+    "explanation": "スライド50",
+    "correct": true
+   },
+   {
+    "text": "基底小体のダイニンがマイナス端を捕まえる",
+    "explanation": "該当しない",
+    "correct": false
+   },
+   {
+    "text": "動原体にマイナス端が着く",
+    "explanation": "動原体にはプラス端（スライド52）",
+    "correct": false
+   },
+   {
+    "text": "中間径フィラメントがマイナス端を固定する",
+    "explanation": "該当しない",
+    "correct": false
+   }
+  ],
+  "explanation": "中心子周辺物質（pericentriolar material）に含まれる<b>γチュブリン</b>が、紡錘糸（微小管）の<b>マイナス端</b>の足場となる（スライド50）。一方、プラス端は染色体の動原体に結合する（スライド52）。",
+  "point": "−端＝中心体（γチュブリン）、＋端＝動原体。",
+  "tags": [
+   "中心体と基底小体"
+  ]
+ },
+ {
+  "id": "q099",
+  "slide": 51,
+  "chapter": 8,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "中心子の構造と複製について正しいのはどれか。",
+  "options": [
+   {
+    "text": "中心子は二連微小管9本からなる",
+    "explanation": "三連9本",
+    "correct": false
+   },
+   {
+    "text": "直交する中心子は細胞分裂の時に半保存的に自己複製して2つの中心小体をつくる",
+    "explanation": "スライド51",
+    "correct": true
+   },
+   {
+    "text": "複製された中心子は細胞の中央に集まる",
+    "explanation": "細胞の両端に移動",
+    "correct": false
+   },
+   {
+    "text": "中心子は分裂時以外には複製されない",
+    "explanation": "分裂時以外にも複製され基底小体になる",
+    "correct": false
+   },
+   {
+    "text": "中心子は膜性小器官である",
+    "explanation": "微小管からなる非膜性の構造",
+    "correct": false
+   }
+  ],
+  "explanation": "スライド51：<b>9 triplets（9本の三連微小管）</b>。直交する中心子は細胞分裂の時に<b>半保存的に自己複製</b>して2つの中心小体をつくり、<b>細胞の両端に移動</b>する。細胞分裂時以外にも、複製された中心子の一本が線毛の基部に移動して<b>基底小体</b>となる。",
+  "point": "半保存的・両端へ。",
+  "tags": [
+   "中心子の構造"
+  ]
+ },
+ {
+  "id": "q100",
+  "slide": 51,
+  "chapter": 8,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "線毛上皮細胞の基底小体の由来として、スライド51に基づき最も適切なのはどれか。",
+  "options": [
+   {
+    "text": "ゴルジ装置からの出芽による",
+    "explanation": "該当しない",
+    "correct": false
+   },
+   {
+    "text": "中間径フィラメントの集合による",
+    "explanation": "該当しない",
+    "correct": false
+   },
+   {
+    "text": "複製された中心子の一本が線毛の基部に移動したもの",
+    "explanation": "スライド51",
+    "correct": true
+   },
+   {
+    "text": "ミトコンドリアの分裂による",
+    "explanation": "該当しない",
+    "correct": false
+   },
+   {
+    "text": "粗面小胞体の断片による",
+    "explanation": "該当しない",
+    "correct": false
+   }
+  ],
+  "explanation": "スライド51：細胞分裂時以外にも、<b>複製された中心子の一本が線毛の基部に移動して基底小体</b>となる。だから基底小体は中心子と同じ構造（スライド50）をもつ。",
+  "point": "基底小体＝移設された中心子。",
+  "tags": [
+   "中心子の構造"
+  ]
+ },
+ {
+  "id": "q101",
+  "slide": 52,
+  "chapter": 8,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "細胞分裂時の微小管について正しいのはどれか。",
+  "options": [
+   {
+    "text": "中心体から伸びた紡錘糸のプラス端が染色体の動原体に結合する",
+    "explanation": "スライド52",
+    "correct": true
+   },
+   {
+    "text": "紡錘糸のマイナス端が動原体に結合する",
+    "explanation": "プラス端",
+    "correct": false
+   },
+   {
+    "text": "染色体の移動にはチュブリンの重合・脱重合は関与しない",
+    "explanation": "関与する",
+    "correct": false
+   },
+   {
+    "text": "染色体の移動はアクチンとミオシンのすべりのみで起こる",
+    "explanation": "チュブリンの重合・脱重合とモーター蛋白",
+    "correct": false
+   },
+   {
+    "text": "分裂時には中心体は1つのみ存在する",
+    "explanation": "両極に2つ",
+    "correct": false
+   }
+  ],
+  "explanation": "スライド52：細胞分裂の時は、中心体から伸びた微小管（紡錘糸 spindle）の<b>プラス端が染色体の動原体に結合</b>する→<b>チュブリンの重合・脱重合とモーター蛋白質の働き</b>により染色体を移動させる。図では動原体微小管・極微小管・星状体微小管が示される。",
+  "point": "動原体には＋端。",
+  "tags": [
+   "細胞分裂時の微小管"
+  ]
+ },
+ {
+  "id": "q102",
+  "slide": 52,
+  "chapter": 8,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "スライド52の図に示される紡錘体の微小管の組み合わせとして正しいのはどれか。",
+  "options": [
+   {
+    "text": "単体微小管・二連微小管・三連微小管",
+    "explanation": "存在様式（スライド49）",
+    "correct": false
+   },
+   {
+    "text": "動原体微小管・極微小管・星状体微小管",
+    "explanation": "図の記載",
+    "correct": true
+   },
+   {
+    "text": "細胞皮質・接着帯・終末扇",
+    "explanation": "アクチン（スライド40）",
+    "correct": false
+   },
+   {
+    "text": "シス面・トランス面・TGN",
+    "explanation": "ゴルジ装置",
+    "correct": false
+   },
+   {
+    "text": "外膜・内膜・クリステ",
+    "explanation": "ミトコンドリア",
+    "correct": false
+   }
+  ],
+  "explanation": "図には、動原体に結合する<b>動原体微小管</b>、両極から伸びて重なる<b>極微小管</b>、中心体から周辺へ伸びる<b>星状体微小管</b>が描かれ、プラス端でチュブリンサブユニットを獲得し失う様子が示される。",
+  "point": "紡錘体の3種を名前で区別。",
+  "tags": [
+   "細胞分裂時の微小管"
+  ]
+ },
+ {
+  "id": "q103",
+  "slide": 53,
+  "chapter": 8,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "線毛の軸糸（Axonema of cilia）について正しいのはどれか。",
+  "options": [
+   {
+    "text": "9 triplets＋2 singletsの構造である",
+    "explanation": "9 doublets＋2 singlets",
+    "correct": false
+   },
+   {
+    "text": "隣接する周辺微小管のA環とB環の間にモーター蛋白質のダイニンがある",
+    "explanation": "スライド53",
+    "correct": true
+   },
+   {
+    "text": "線毛運動のモーター蛋白質はキネシンである",
+    "explanation": "ダイニン",
+    "correct": false
+   },
+   {
+    "text": "中心微小管は二連である",
+    "explanation": "単体（singlet）",
+    "correct": false
+   },
+   {
+    "text": "軸糸は中間径フィラメントからなる",
+    "explanation": "微小管",
+    "correct": false
+   }
+  ],
+  "explanation": "スライド53：<b>9 doublets＋2 singlets</b>構造の微小管。隣接する周辺微小管の<b>A環とB環の間にモーター蛋白質のダイニン</b>がある→線毛運動。図ではネキシンの連結蛋白、放射状スポーク、中心鞘突起などが示される。",
+  "point": "線毛のモーター＝ダイニン。",
+  "tags": [
+   "線毛の軸糸 Axonema of cilia"
+  ]
+ },
+ {
+  "id": "q104",
+  "slide": 53,
+  "chapter": 8,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "線毛運動が起こるための要素の組み合わせとして、スライド53・54から最も適切なのはどれか。",
+  "options": [
+   {
+    "text": "キネシン・単体微小管・カドヘリン",
+    "explanation": "該当しない",
+    "correct": false
+   },
+   {
+    "text": "ミオシン・アクチン・Z盤",
+    "explanation": "骨格筋の収縮",
+    "correct": false
+   },
+   {
+    "text": "ダイニン・二連微小管・連結蛋白（ネキシン）",
+    "explanation": "スライド53・54",
+    "correct": true
+   },
+   {
+    "text": "γチュブリン・中心子・動原体",
+    "explanation": "分裂の要素",
+    "correct": false
+   },
+   {
+    "text": "ケラチン・デスモゾーム・インテグリン",
+    "explanation": "結合装置",
+    "correct": false
+   }
+  ],
+  "explanation": "軸糸では<b>二連微小管</b>の間に<b>ダイニン</b>があり、<b>ネキシン（連結蛋白）</b>で隣どうしがつながる（スライド53）。ダイニンによる滑りが連結により曲がりに変わる（スライド54）。",
+  "point": "滑り（ダイニン）＋連結（ネキシン）＝屈曲。",
+  "tags": [
+   "線毛の軸糸 Axonema of cilia"
+  ]
+ },
+ {
+  "id": "q105",
+  "slide": 54,
+  "chapter": 8,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "ダイニンと微小管の滑りによる軸糸の運動について正しいのはどれか。",
+  "options": [
+   {
+    "text": "線毛の軸糸はキネシンと単体微小管の滑りで曲がる",
+    "explanation": "ダイニンと二連微小管",
+    "correct": false
+   },
+   {
+    "text": "線毛や鞭毛の軸糸は、モーター蛋白質ダイニンと2連微小管との滑りにより曲がる",
+    "explanation": "スライド54",
+    "correct": true
+   },
+   {
+    "text": "単離した二連微小管にATPを加えると曲がるが滑らない",
+    "explanation": "滑る",
+    "correct": false
+   },
+   {
+    "text": "軸糸の運動にATPは不要である",
+    "explanation": "+ATP",
+    "correct": false
+   },
+   {
+    "text": "微小管の滑りはアクチンによって起こる",
+    "explanation": "ダイニン",
+    "correct": false
+   }
+  ],
+  "explanation": "スライド54：「線毛や鞭毛の軸糸は、モーター蛋白質<b>ダイニン</b>と<b>2連微小管</b>との<b>滑り</b>により曲がる」。図(A)単離した二連微小管ではダイニンが<b>微小管の滑り</b>を起こし（+ATP）、図(B)正常な鞭毛では<b>linking proteins</b>により滑りが<b>屈曲</b>に変わる。",
+  "point": "単離＝滑る、正常＝曲がる。",
+  "tags": [
+   "ダイニンと微小管の滑りによる軸糸の運動"
+  ]
+ },
+ {
+  "id": "q106",
+  "slide": 54,
+  "chapter": 8,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "スライド54の図(A)と(B)の違いを生む要因として最も適切なのはどれか。",
+  "options": [
+   {
+    "text": "(A)ではATPが存在せず、(B)ではATPが存在する",
+    "explanation": "どちらもダイニンが働く",
+    "correct": false
+   },
+   {
+    "text": "(B)では微小管どうしが連結蛋白（linking proteins）でつながっている",
+    "explanation": "図(B)",
+    "correct": true
+   },
+   {
+    "text": "(A)ではキネシン、(B)ではダイニンが働く",
+    "explanation": "どちらもダイニン",
+    "correct": false
+   },
+   {
+    "text": "(A)は三連微小管、(B)は単体微小管である",
+    "explanation": "どちらも二連",
+    "correct": false
+   },
+   {
+    "text": "(B)ではアクチンが微小管を曲げる",
+    "explanation": "該当しない",
+    "correct": false
+   }
+  ],
+  "explanation": "図(A)（IN ISOLATED DOUBLET MICROTUBULES）ではダイニンが微小管を<b>滑らせる</b>だけだが、図(B)（IN NORMAL FLAGELLUM）では<b>linking proteins</b>でつながれているため、滑りが<b>屈曲（bend）</b>になる。<br><span class=\"sup\">［補足・授業資料外］ダイニン腕の異常は原発性線毛運動不全症（Kartagener症候群）の原因となる。</span>",
+  "point": "“つながれているから曲がる”。",
+  "tags": [
+   "ダイニンと微小管の滑りによる軸糸の運動"
+  ]
+ },
+ {
+  "id": "q107",
+  "slide": 55,
+  "chapter": 9,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "細胞小器官以外の細胞質成分について正しいのはどれか。",
+  "options": [
+   {
+    "text": "封入体は細胞小器官の一種である",
+    "explanation": "小器官以外の成分",
+    "correct": false
+   },
+   {
+    "text": "封入体には脂肪滴、グリコーゲン顆粒、メラニン顆粒などの色素が含まれる",
+    "explanation": "スライド55",
+    "correct": true
+   },
+   {
+    "text": "細胞質基質は電子顕微鏡で明瞭な構造を示す",
+    "explanation": "無構造",
+    "correct": false
+   },
+   {
+    "text": "サイトゾルは1,000×g遠心の沈殿である",
+    "explanation": "10万×g遠心の上清",
+    "correct": false
+   },
+   {
+    "text": "サイトゾル蛋白質は粗面小胞体付着リボソームで産生される",
+    "explanation": "遊離リボソーム",
+    "correct": false
+   }
+  ],
+  "explanation": "スライド55：<b>封入体</b>：細胞の一時的な代謝産物等（<b>脂肪滴、グリコーゲン顆粒、色素（メラニン顆粒など）</b>）。<b>細胞質基質</b>：電子顕微鏡像でも<b>無構造</b>の部分（生化学的には<b>サイトゾル：10万g遠心の上清</b>）。サイトゾル蛋白質は<b>遊離リボソーム</b>で産生、種々の酵素蛋白質、脱重合した細胞骨格蛋白質等、種々の塩類・イオン（浸透圧・pHの恒常性を決定）、H₂O。",
+  "point": "サイトゾル＝10万g上清（スライド10とつながる）。",
+  "tags": [
+   "細胞小器官以外の細胞質成分"
+  ]
+ },
+ {
+  "id": "q108",
+  "slide": 55,
+  "chapter": 9,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "サイトゾルに含まれるものとしてスライド55に挙げられていないものはどれか。",
+  "options": [
+   {
+    "text": "遊離リボソームで産生されたサイトゾル蛋白質",
+    "explanation": "挙げられている",
+    "correct": false
+   },
+   {
+    "text": "種々の酵素蛋白質",
+    "explanation": "挙げられている",
+    "correct": false
+   },
+   {
+    "text": "脱重合した細胞骨格蛋白質",
+    "explanation": "挙げられている",
+    "correct": false
+   },
+   {
+    "text": "浸透圧・pHの恒常性を決める塩類・イオン",
+    "explanation": "挙げられている",
+    "correct": false
+   },
+   {
+    "text": "ミトコンドリアの基質顆粒",
+    "explanation": "ミトコンドリアの内部（スライド30）",
+    "correct": true
+   }
+  ],
+  "explanation": "スライド55のサイトゾルの内容：サイトゾル蛋白質（遊離リボソームで産生）、種々の酵素蛋白質、脱重合した細胞骨格蛋白質、種々の塩類・イオン、H₂O。基質顆粒はミトコンドリアの基質にある。",
+  "point": "“膜の中”にあるものはサイトゾルではない。",
+  "tags": [
+   "細胞小器官以外の細胞質成分"
+  ]
+ },
+ {
+  "id": "q109",
+  "slide": 56,
+  "chapter": 9,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "スライド56の電子顕微鏡像で「グリコーゲン顆粒」として示されている構造の分類として正しいのはどれか。",
+  "options": [
+   {
+    "text": "膜性小器官",
+    "explanation": "膜に包まれない",
+    "correct": false
+   },
+   {
+    "text": "非膜性小器官（細胞骨格）",
+    "explanation": "該当しない",
+    "correct": false
+   },
+   {
+    "text": "封入体",
+    "explanation": "スライド55の分類",
+    "correct": true
+   },
+   {
+    "text": "ミトコンドリアの基質顆粒",
+    "explanation": "別の構造",
+    "correct": false
+   },
+   {
+    "text": "分泌顆粒",
+    "explanation": "該当しない",
+    "correct": false
+   }
+  ],
+  "explanation": "グリコーゲン顆粒は、スライド55で<b>封入体</b>（細胞の一時的な代謝産物等）の例として挙げられている。スライド56の電顕像では細胞質に集まる顆粒として示されている。",
+  "point": "封入体の3例：脂肪滴・グリコーゲン・メラニン。",
+  "tags": [
+   "電子顕微鏡像（細胞質成分）"
+  ]
+ },
+ {
+  "id": "q110",
+  "slide": 56,
+  "chapter": 9,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "スライド56の電顕像で、細胞頂部の細胞間に示されている構造はどれか。",
+  "options": [
+   {
+    "text": "ヘミデスモゾーム＋ギャップ結合",
+    "explanation": "図の表示と異なる",
+    "correct": false
+   },
+   {
+    "text": "タイト結合＋接着帯",
+    "explanation": "スライド56の表示",
+    "correct": true
+   },
+   {
+    "text": "終末扇＋基底小体",
+    "explanation": "該当しない",
+    "correct": false
+   },
+   {
+    "text": "シス面＋トランス面",
+    "explanation": "ゴルジ装置",
+    "correct": false
+   },
+   {
+    "text": "クリステ＋基質顆粒",
+    "explanation": "ミトコンドリア",
+    "correct": false
+   }
+  ],
+  "explanation": "スライド56の電顕像には<b>グリコーゲン顆粒</b>と<b>タイト結合＋接着帯</b>が示されている。スライド43の上皮細胞間の結合装置の図で、頂部側から密着帯（タイト結合）・接着帯と並ぶことと対応する。",
+  "point": "頂部の結合は「タイト→接着帯」の順。",
+  "tags": [
+   "電子顕微鏡像（細胞質成分）"
+  ]
+ }
+]

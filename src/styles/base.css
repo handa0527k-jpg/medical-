@@ -1,0 +1,46 @@
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; scroll-padding-top: calc(var(--header-h) + var(--safe-t) + 12px); }
+
+body {
+  margin: 0;
+  min-height: 100dvh;
+  background: var(--paper);
+  background-image:
+    radial-gradient(1100px 520px at 85% -10%, var(--glow-h), transparent 62%),
+    radial-gradient(900px 480px at -10% 8%, var(--glow-e), transparent 60%);
+  background-attachment: fixed;
+  color: var(--hema);
+  font-family: var(--f-sans);
+  font-size: 16.5px;
+  line-height: 1.8;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-font-smoothing: antialiased;
+  overscroll-behavior-y: none;
+}
+
+button { font: inherit; color: inherit; border: 0; background: none; cursor: pointer; padding: 0; touch-action: manipulation; }
+a { color: inherit; }
+img { max-width: 100%; }
+button:focus-visible, a:focus-visible, [tabindex]:focus-visible, select:focus-visible, input:focus-visible {
+  outline: 2px solid var(--eosin);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+sup, sub { font-size: 0.7em; line-height: 0; }
+.visually-hidden { position: absolute !important; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+.wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 var(--gutter); }
+.muted { color: var(--mute); }
+.en { font-family: var(--f-hud); letter-spacing: 0.16em; }
+.num { font-family: var(--f-num); font-style: italic; font-weight: 400; }
+.kick { font-family: var(--f-hud); letter-spacing: 0.3em; font-size: 12.5px; color: var(--eosin); text-transform: uppercase; }
+
+main.app-main { padding-top: 24px; padding-bottom: calc(90px + var(--safe-b)); min-height: 60vh; }
+@media (max-width: 899px) { main.app-main { padding-bottom: calc(var(--tabbar-h) + 40px + var(--safe-b)); } }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; scroll-behavior: auto !important; }
+}

@@ -1,0 +1,53 @@
+.qwrap { max-width: 900px; margin: 0 auto; }
+.qhead { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; margin-bottom: 14px; }
+.qhead .bar { flex: 1; min-width: 140px; }
+.qhead .en { font-size: 14px; color: var(--mute); }
+.qcard { padding: clamp(16px, 3vw, 24px); }
+.qmeta { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; margin-bottom: 10px; }
+.qmeta .en { font-size: 13px; color: var(--eosin); letter-spacing: 0.2em; }
+.qmeta .typ { font-size: 12px; border: 1px solid var(--line2); border-radius: 6px; padding: 1px 8px; color: var(--mute); }
+.qstem { font-size: clamp(17px, 2vw, 19px); font-weight: 700; line-height: 1.7; margin: 0 0 16px; }
+.qstem em { font-style: normal; color: var(--eosin); border-bottom: 2px solid var(--eosin); }
+.opts { display: flex; flex-direction: column; gap: 9px; }
+.op { display: grid; grid-template-columns: 40px 1fr; gap: 12px; text-align: left; border: 1.5px solid var(--line2); border-radius: 13px; padding: 13px 14px; background: var(--paper); transition: border-color 0.15s, background 0.15s; align-items: start; min-height: 56px; width: 100%; }
+.op:hover:not(:disabled) { border-color: var(--hema2); }
+.op:disabled { cursor: default; }
+.op .L { font-family: var(--f-hud); font-weight: 700; font-size: 20px; width: 40px; height: 34px; border-radius: 9px; display: flex; align-items: center; justify-content: center; border: 1px solid var(--line2); color: var(--mute); }
+.op .tx { font-size: 16px; line-height: 1.65; padding-top: 3px; display: block; }
+.op .nt { display: block; font-size: 13.5px; margin-top: 4px; color: var(--mute); }
+.op.sel { border-color: var(--hema); } .op.sel .L { background: var(--hema); color: var(--paper); border-color: var(--hema); }
+.op.cor { border-color: var(--ok); background: var(--okt); } .op.cor .L { background: var(--ok); color: #04130c; border-color: var(--ok); }
+.op.wr { border-color: var(--eosin); background: var(--eosint); } .op.wr .L { background: var(--eosin); color: #fff; border-color: var(--eosin); }
+.op.miss { border-color: var(--ok); border-style: dashed; }
+.qres { margin-top: 18px; animation: fade 0.25s both; }
+.verdict { font-family: var(--f-hud); font-size: 34px; font-weight: 700; letter-spacing: 0.14em; }
+.verdict.ok { color: var(--ok); text-shadow: 0 0 20px color-mix(in srgb, var(--ok) 50%, transparent); }
+.verdict.ng { color: var(--eosin); text-shadow: 0 0 20px var(--glow-e); }
+.verdict small { font-family: var(--f-sans); font-size: 15px; letter-spacing: 0; color: var(--mute); margin-left: 12px; }
+.xpl { margin-top: 12px; border: 1px solid var(--line2); border-radius: 14px; padding: 14px 16px; background: var(--paper); line-height: 1.95; font-size: 15.5px; }
+.xpl > span:first-child { display: block; font-size: 12px; letter-spacing: 0.2em; color: var(--hema2); font-weight: 900; }
+.xpl b { color: var(--eosin); }
+.trap { margin-top: 10px; border: 1px solid color-mix(in srgb, var(--eosin) 50%, transparent); border-radius: 12px; padding: 10px 14px; font-size: 15px; }
+.trap > span:first-child { font-size: 12px; letter-spacing: 0.14em; color: var(--eosin); font-weight: 900; margin-right: 8px; }
+.qnav { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 16px; }
+.qnav .btn { flex: 1 1 150px; }
+
+/* judgement (choose all) */
+.jc .op { grid-template-columns: 40px 1fr; }
+.jc .ex { font-size: 13.5px; margin-top: 4px; display: block; }
+.jc .ex .t { color: var(--ok); font-weight: 700; }
+.jc .ex .f { color: var(--eosin); font-weight: 700; }
+
+/* results */
+.cbars { display: grid; gap: 12px; margin-top: 10px; }
+.cbar { display: grid; grid-template-columns: 30px 1fr 68px; gap: 12px; align-items: center; font-size: 14px; }
+.cbar .n { font-family: var(--f-num); font-style: italic; color: var(--eosin); font-size: 22px; }
+.cbar .nm { font-size: 13.5px; }
+.cbar .pc { text-align: right; font-family: var(--f-hud); font-size: 18px; }
+.cbar .bar { margin-top: 4px; height: 6px; }
+.qsel { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 220px), 1fr)); gap: 10px; }
+.qsel > * { padding: 16px 18px; min-height: 96px; }
+.qsel b { display: block; font-size: 16.5px; }
+.qsel small { display: block; color: var(--mute); font-size: 13px; line-height: 1.6; }
+.qsel .bar { margin-top: 10px; }
+.filters { display: flex; gap: 6px; flex-wrap: wrap; margin: 6px 0 12px; }
