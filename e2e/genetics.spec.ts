@@ -77,6 +77,8 @@ test('blackboard lecture: quiz explanation shows the matching place on the board
   await page.locator('.lscr summary').click();
   await page.locator('.lsl2 button', { hasText: '正解はBの転写です' }).first().click();
   await expect(page.locator('.qpanel')).toBeVisible();
+  // on phones the stage is too small for an inset; it is shown from tablet width up
+  test.skip(page.viewportSize()!.width < 700, 'inset hidden on phones');
   await expect(page.locator('.qboard canvas')).toBeVisible();
   await page.waitForTimeout(400);
   expect(await chalkShare(page, '.qboard canvas')).toBeGreaterThan(0.002);

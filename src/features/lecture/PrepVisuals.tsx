@@ -166,8 +166,9 @@ export function StageQuiz({ v, shot, cue }: { v: V<'quiz'>; shot: TimedShot; cue
     if (num.current) num.current.textContent = String(Math.ceil(left));
   });
 
+  const inset = explain && !!board && !!v.ref && seen.size > 0;
   return (
-    <div className="ly lqz">
+    <div className={'ly lqz' + (inset ? ' has-board' : '')}>
       <div className={`qpanel ${v.phase}`}>
         <div className="qtop">
           <span className={`qtag ${v.variant}`}>{VARIANT[v.variant]}</span>
@@ -210,7 +211,7 @@ export function StageQuiz({ v, shot, cue }: { v: V<'quiz'>; shot: TimedShot; cue
           )}
         </div>
       </div>
-      {explain && board && v.ref && seen.size > 0 && (
+      {inset && board && v.ref && (
         <div className="qboard" aria-label="黒板の該当箇所">
           <span>黒板のここ</span>
           <BoardSnapshot r={board.r} T={shot.t0} focus={v.ref} highlight={v.ref} label="黒板の該当箇所" />
