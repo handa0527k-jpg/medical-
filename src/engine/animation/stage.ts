@@ -35,8 +35,8 @@ export class AnimationStage {
     const root = document.createElement('div');
     root.className = 'stage-rig';
     root.innerHTML =
-      '<svg class="stage-main" viewBox="0 0 1200 675" preserveAspectRatio="xMidYMid slice" aria-hidden="true"></svg>' +
-      '<svg class="stage-macro" viewBox="0 0 1200 675" preserveAspectRatio="xMidYMid slice" aria-hidden="true"></svg>' +
+      '<svg class="stage-main" viewBox="0 0 1200 675" preserveAspectRatio="xMidYMid meet" aria-hidden="true"></svg>' +
+      '<svg class="stage-macro" viewBox="0 0 1200 675" preserveAspectRatio="xMidYMid meet" aria-hidden="true"></svg>' +
       '<div class="stage-split">' +
       [0, 1].map(() => '<div class="sp"><svg viewBox="0 0 1200 675" preserveAspectRatio="xMidYMid meet" aria-hidden="true"></svg><div class="spl"><em></em><b></b></div></div>').join('') +
       '</div>';
@@ -112,7 +112,7 @@ export class AnimationStage {
 
     // markers are sized in screen pixels regardless of camera zoom
     const W = this.root.clientWidth || 800, H = this.root.clientHeight || 450;
-    const u = 1 / Math.max(W / vb[2], H / vb[3]);
+    const u = 1 / Math.min(W / vb[2], H / vb[3]);
     this.marks.forEach((o, j) => {
       const a = CL((p * s.d - 0.4 - j * 0.7) / 0.5), [x, y] = o.k, pu = Math.sin(T * 4 + j) * 0.5 + 0.5;
       o.g.setAttribute('opacity', String(a));

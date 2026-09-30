@@ -56,6 +56,9 @@ interface COp {
   rows?: { y0: number; y1: number; x0: number; x1: number }[];
 }
 
+/** board height a lecture view always shows: a full panel column (y 220–1300) plus margin */
+const MIN_VIEW_H = 1240;
+
 export interface DrawOptions {
   /** draw the lecturer's hand / chalk / eraser */
   hand?: boolean;
@@ -63,6 +66,8 @@ export interface DrawOptions {
   highlight?: string[];
   /** pixel ratio cap */
   dpr?: number;
+  /** lecture playback: never crop a column vertically (see MIN_VIEW_H) */
+  fitColumn?: boolean;
 }
 
 /* ---------- geometry helpers ---------- */
@@ -509,10 +514,13 @@ export class BoardRenderer {
 
     // camera → transform (keep the view on the board)
     let [cx, cy, w] = cam;
-    // the whole board must fit even when the stage is wider than 16:9
+    // the camera frames a 16:9 box; on a wider stage widen the view so that
+    // box's full height stays visible, and never zoom out past the whole board
     const maxW = Math.max(BOARD_W, BOARD_H * (cw / ch));
+    w = Math.max(w, w * (9 / 16) * (cw / ch));
+    // always show a whole column (panel top to bottom) so earlier lines stay in view
+    if (opt.fitColumn) w = Math.max(w, MIN_VIEW_H * (cw / ch));
     w = Math.min(w >= BOARD_W * 0.99 ? maxW : w, maxW);
-    if (w * (ch / cw) > BOARD_H && w < maxW) w = BOARD_H * (cw / ch);
     const hh = w * (ch / cw);
     cx = w >= BOARD_W ? BOARD_W / 2 : Math.max(w / 2, Math.min(BOARD_W - w / 2, cx));
     cy = hh >= BOARD_H ? BOARD_H / 2 : Math.max(hh / 2, Math.min(BOARD_H - hh / 2, cy));
