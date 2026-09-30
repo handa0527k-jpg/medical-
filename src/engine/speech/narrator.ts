@@ -23,32 +23,64 @@ export interface Narrator {
 }
 
 /* ---------------- recorded audio ---------------- */
+/** Friendly names for neural voices used by scripts/generate-audio.py. */
+const VOICE_NAMES: Record<string, string> = { 'ja-JP-NanamiNeural': 'Nanami（ニューラル音声）', 'ja-JP-KeitaNeural': 'Keita（ニューラル音声）' };
+
 export class AudioFileNarrator implements Narrator {
   readonly kind = 'audio' as const;
   readonly label: string;
   private el = new Audio();
   private done: ((ok: boolean) => void) | null = null;
+  private data: ArrayBuffer | null = null;
+  private urls = new Map<string, string>();
+  /** @param base URL of the folder holding manifest.json */
   constructor(private manifest: AudioManifest, private base: string) {
-    this.label = `収録音声（${manifest.voice}）`;
+    this.label = `収録音声：${VOICE_NAMES[manifest.voice] || manifest.voice}`;
     this.el.preload = 'auto';
     this.el.onended = () => this.finish(true);
     this.el.onerror = () => this.finish(false);
   }
-  has(cueId: string) { return !!this.manifest.cues[cueId]; }
+  /** Download the lecture file once (single-file manifests). Resolves false on failure. */
+  async load(): Promise<boolean> {
+    if (!this.manifest.file) return true;
+    try {
+      const r = await fetch(new URL(this.manifest.file, new URL(this.base, location.href)).href);
+      if (!r.ok) return false;
+      this.data = await r.arrayBuffer();
+      return true;
+    } catch {
+      return false;
+    }
+  }
+  private urlFor(id: string): string | null {
+    const rec = this.manifest.cues[id];
+    if (!rec) return null;
+    if (rec.src) return this.base + rec.src;
+    if (!this.data || rec.byteStart === undefined || rec.byteLength === undefined) return null;
+    let u = this.urls.get(id);
+    if (!u) {
+      // whole CBR frames → the slice is a playable MP3 on its own
+      u = URL.createObjectURL(new Blob([this.data.slice(rec.byteStart, rec.byteStart + rec.byteLength)], { type: 'audio/mpeg' }));
+      this.urls.set(id, u);
+      if (this.urls.size > 24) { const [k, v] = this.urls.entries().next().value!; URL.revokeObjectURL(v); this.urls.delete(k); }
+    }
+    return u;
+  }
   private finish(ok: boolean) { const d = this.done; this.done = null; d?.(ok); }
   speak(cue: LectureCue, { rate, volume }: { rate: number; volume: number }, onEnd: (ok: boolean) => void) {
     this.stop();
-    const rec = this.manifest.cues[cue.id];
-    if (!rec) { onEnd(false); return; }
+    const url = this.urlFor(cue.id);
+    if (!url) { onEnd(false); return; }
     this.done = onEnd;
-    this.el.src = this.base + rec.src;
+    this.el.src = url;
     this.el.playbackRate = rate;
+    (this.el as HTMLAudioElement & { preservesPitch?: boolean }).preservesPitch = true;
     this.el.volume = volume;
     this.el.play().catch(() => this.finish(false));
   }
   stop() { if (!this.el.paused) this.el.pause(); this.finish(false); }
   setVolume(v: number) { this.el.volume = v; }
-  dispose() { this.stop(); this.el.removeAttribute('src'); }
+  dispose() { this.stop(); this.el.removeAttribute('src'); this.urls.forEach((u) => URL.revokeObjectURL(u)); this.urls.clear(); }
 }
 
 /* ---------------- device speech synthesis ---------------- */

@@ -70,11 +70,15 @@ export interface Lecture {
   version: number;
 }
 
-/** Recorded narration: one audio file per cue. */
+/**
+ * Recorded narration. Either one file per cue (`src`), or — preferred — one
+ * file per lecture (`file`, relative to the manifest) with each cue's byte range.
+ */
 export interface AudioManifest {
   voice: string;
   version: number;
-  cues: Record<string, { src: string; duration: number }>;
+  file?: string;
+  cues: Record<string, { duration: number; src?: string; byteStart?: number; byteLength?: number }>;
 }
 
 /* ---------- runtime timing ---------- */

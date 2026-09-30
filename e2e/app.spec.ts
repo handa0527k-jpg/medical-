@@ -157,7 +157,23 @@ test('animation player: play, pause, speed, jump to key point, check quiz', asyn
   expect(errs).toEqual([]);
 });
 
+test('lecture: recorded neural narration is used and drives the timeline', async ({ page }) => {
+  const errs = watchErrors(page);
+  await page.goto('/#/lecture/1');
+  await expect(page.locator('.voice-src.audio')).toContainText('Nanami', { timeout: 20_000 });
+  // timeline uses the real recording lengths (lecture 1 ≈ 16 min + pauses)
+  const total = (await page.locator('.tm').textContent())!.split('/')[1].trim();
+  expect(Number(total.split(':')[0])).toBeGreaterThanOrEqual(15);
+  await page.getByRole('button', { name: /授業を始める/ }).click();
+  await expect(page.locator('.lsub .s')).toContainText('第1講');
+  await page.waitForTimeout(6000);
+  expect(await page.locator('.tm').textContent()).not.toMatch(/^00:0[0-2] /);
+  await expect(page.locator('.lsub .s')).not.toContainText('を始めます');
+  expect(errs).toEqual([]);
+});
+
 test('lecture: narration drives subtitles and timeline (device voice)', async ({ page }) => {
+  await page.route('**/audio/**', (r) => r.abort());
   await mockSpeech(page);
   const errs = watchErrors(page);
   await page.goto('/#/lecture/1');
@@ -190,6 +206,7 @@ test('lecture: narration drives subtitles and timeline (device voice)', async ({
 });
 
 test('lecture without any speech engine says so and runs on subtitles', async ({ page }) => {
+  await page.route('**/audio/**', (r) => r.abort());
   await page.addInitScript(() => {
     Object.defineProperty(window, 'speechSynthesis', { value: undefined, configurable: true });
     delete (window as unknown as Record<string, unknown>).speechSynthesis;

@@ -26,9 +26,18 @@ export function LecturePlayer({ lecture, chapter }: { lecture: Lecture; chapter:
 
   /* ---------- audio source (honest) ---------- */
   const [manifest, setManifest] = useState<AudioManifest | null | undefined>(undefined);
+  const [recorded, setRecorded] = useState<AudioFileNarrator | null>(null);
   useEffect(() => {
     let live = true;
-    loadAudioManifest(`${course.assetBase}audio/lecture-${String(chapter).padStart(2, '0')}/manifest.json`).then((m) => { if (live) setManifest(m && m.version === lecture.version ? m : null); });
+    const dir = `${course.assetBase}audio/lecture-${String(chapter).padStart(2, '0')}/`;
+    loadAudioManifest(`${dir}manifest.json`).then(async (m) => {
+      if (!live) return;
+      if (!m || m.version !== lecture.version) { setManifest(null); return; }
+      const n = new AudioFileNarrator(m, dir);
+      const ok = await n.load();
+      if (!live) { n.dispose(); return; }
+      if (ok) { setRecorded(n); setManifest(m); } else { n.dispose(); setManifest(null); }
+    });
     return () => { live = false; };
   }, [course, chapter, lecture.version]);
   const [voices, setVoices] = useState<SpeechSynthesisVoice[]>(() => japaneseVoices());
@@ -40,10 +49,10 @@ export function LecturePlayer({ lecture, chapter }: { lecture: Lecture; chapter:
   }, []);
   const narrator: Narrator | null = useMemo(() => {
     if (manifest === undefined) return null;
-    if (manifest) return new AudioFileNarrator(manifest, `${course.assetBase}audio/lecture-${String(chapter).padStart(2, '0')}/`);
+    if (manifest && recorded) return recorded;
     if (webSpeechAvailable()) return new WebSpeechNarrator(voices.find((v) => v.voiceURI === settings.voiceURI) || voices[0] || null);
     return null;
-  }, [manifest, voices, settings.voiceURI, course, chapter]);
+  }, [manifest, recorded, voices, settings.voiceURI]);
   useEffect(() => () => narrator?.dispose(), [narrator]);
 
   const tl = useMemo(() => timeLecture(lecture, manifest || null), [lecture, manifest]);
@@ -233,7 +242,7 @@ export function LecturePlayer({ lecture, chapter }: { lecture: Lecture; chapter:
         <div><div className="kick">LECTURE {String(chapter).padStart(2, '0')}</div><b>第{chapter}講　{ch.name}</b></div>
         <span className={'voice-src ' + srcKind} title="ナレーションの音源">
           <span className={'lsp' + (playing && narr && srcKind !== 'none' ? ' on' : '')}><i /><i /><i /><i /></span>
-          {manifest === undefined ? '音声を確認中…' : srcLabel}
+          {manifest === undefined ? '音声を読み込み中…' : srcLabel}
         </span>
       </div>
 
@@ -254,10 +263,10 @@ export function LecturePlayer({ lecture, chapter }: { lecture: Lecture; chapter:
           <div className="aov on"><div className="box neutral">
             <div className="kick">LECTURE {String(chapter).padStart(2, '0')}</div>
             <b className="bt">第{chapter}講　{ch.name}</b>
-            <p>約{Math.round(total / 60)}分・{chapters.length}パート構成。{srcKind === 'audio' ? '収録音声のナレーション付きです。' : srcKind === 'device' ? '端末の音声合成でナレーションします（音量を上げてください）。' : 'この端末では音声が使えないため、字幕で進行します。'}</p>
+            <p>約{Math.round(total / 60)}分・{chapters.length}パート構成。{manifest === undefined ? '音声を読み込んでいます…' : srcKind === 'audio' ? '収録した自然な音声（ニューラル音声）でナレーションします。' : srcKind === 'device' ? '端末の音声合成でナレーションします（音量を上げてください）。' : 'この端末では音声が使えないため、字幕で進行します。'}</p>
             <div className="bb">
-              {resumeAt > 0 && <button className="btn eosin" onClick={() => { R.current.T = resumeAt; R.current.cue = -1; render(); start(); }}>▶ 続きから（{fm2(resumeAt)}）</button>}
-              <button className={'btn' + (resumeAt ? '' : ' eosin')} onClick={() => { R.current.T = 0; R.current.cue = -1; start(); }}>▶ {resumeAt ? '最初から' : '授業を始める'}</button>
+              {resumeAt > 0 && <button className="btn eosin" disabled={manifest === undefined} onClick={() => { R.current.T = resumeAt; R.current.cue = -1; render(); start(); }}>▶ 続きから（{fm2(resumeAt)}）</button>}
+              <button className={'btn' + (resumeAt ? '' : ' eosin')} disabled={manifest === undefined} onClick={() => { R.current.T = 0; R.current.cue = -1; start(); }}>{manifest === undefined ? '音声を読み込み中…' : `▶ ${resumeAt ? '最初から' : '授業を始める'}`}</button>
             </div>
           </div></div>
         )}
@@ -355,7 +364,7 @@ export function LecturePlayer({ lecture, chapter }: { lecture: Lecture; chapter:
           </div>
         </details>
         <p className="lvh">
-          {srcKind === 'audio' && '収録済みの講義音声を再生しています。'}
+          {srcKind === 'audio' && 'ニューラル音声合成（Microsoft Nanami）で事前に収録した講義音声を再生しています。'}
           {srcKind === 'device' && '音声はこの端末の音声合成で生成しています（収録音声ではありません）。声の質は端末にインストールされている日本語音声によって変わります。'}
           {srcKind === 'none' && 'この環境では音声を再生できません。台本・字幕・タイムスタンプで授業が進行します。'}
           　キーボード：スペース 再生／停止・←→ 10秒・C 字幕・M 音声
