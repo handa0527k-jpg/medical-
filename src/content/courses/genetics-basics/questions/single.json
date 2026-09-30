@@ -1,0 +1,5479 @@
+[
+ {
+  "id": "g10a",
+  "slide": 10,
+  "chapter": 1,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "スライド10「生体の階層性」で、最も小さい（下位の）階層から順に正しく並べたものはどれか。",
+  "options": [
+   {
+    "text": "個体 → 組織 → 細胞 → 分子 → 遺伝子",
+    "explanation": "大きい順に並んでいる。問われているのは小さい順",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "遺伝子 → 分子 → 細胞 → 組織 → 個体",
+    "explanation": "遺伝子を出発点に、分子・細胞・組織・個体と積み上がる",
+    "correct": true
+   },
+   {
+    "text": "細胞 → 遺伝子 → 分子 → 組織 → 個体",
+    "explanation": "細胞は分子より上位の階層",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "分子 → 組織 → 細胞 → 個体 → 遺伝子",
+    "explanation": "組織は細胞の集まり。細胞より上位",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "遺伝子 → 細胞 → 分子 → 個体 → 組織",
+    "explanation": "分子と細胞、個体と組織の順序が逆",
+    "correct": false,
+    "trap": "reverse"
+   }
+  ],
+  "explanation": "スライド冒頭の見出しは「遺伝子・分子・細胞・組織・個体・疾患」。遺伝子を出発点に階層が積み上がり、うまくいかないとき最上位に現れるのが<b>疾患</b>である。",
+  "point": "遺伝子 → 分子 → 細胞 → 組織 → 個体 →（疾患）。",
+  "tags": [
+   "生体の階層性"
+  ]
+ },
+ {
+  "id": "g10b",
+  "slide": 10,
+  "chapter": 1,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "スライド10「生命の単位としての細胞」の記載として正しいのはどれか。",
+  "options": [
+   {
+    "text": "個体の継承は体細胞の増殖によって行われる",
+    "explanation": "個体の継承は<b>生殖細胞</b>による",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "個体の機能は生殖細胞によって支えられている",
+    "explanation": "個体の機能を支えるのは<b>構成細胞の増殖</b>",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "細胞は分裂・増殖して子孫の細胞を残す",
+    "explanation": "スライドの記載どおり",
+    "correct": true
+   },
+   {
+    "text": "原核細胞には細胞膜がない",
+    "explanation": "スライドの模式図で原核細胞（細菌）にも細胞膜がある",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "生命の単位はオルガネラである",
+    "explanation": "生命の単位は<b>細胞</b>。オルガネラは細胞の一部",
+    "correct": false,
+    "trap": "swap"
+   }
+  ],
+  "explanation": "生命の単位は<b>細胞</b>で、細胞は分裂・増殖して子孫の細胞を残す。個体を次世代に継承するのは<b>生殖細胞</b>、個体の機能を支えるのは<b>構成細胞の増殖</b>。",
+  "point": "継承＝生殖細胞、機能＝構成細胞の増殖。役割を入れ替えた選択肢に注意。",
+  "tags": [
+   "生体の階層性"
+  ]
+ },
+ {
+  "id": "g11a",
+  "slide": 11,
+  "chapter": 1,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "スライド11で「遺伝子の実体」と記されている分子はどれか。",
+  "options": [
+   {
+    "text": "タンパク質",
+    "explanation": "「生物らしさの発揮」と記されている",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "RNA",
+    "explanation": "DNAとタンパク質をつなぐ中間の分子",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "DNA",
+    "explanation": "DNA＝遺伝子の実体",
+    "correct": true
+   },
+   {
+    "text": "アミノ酸",
+    "explanation": "タンパク質の構成単位",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "脂質",
+    "explanation": "遺伝情報を担わない",
+    "correct": false,
+    "trap": "fact"
+   }
+  ],
+  "explanation": "スライド11は「DNA（遺伝子の実体）→ RNA → タンパク質（生物らしさの発揮）」。",
+  "point": "DNA＝遺伝子の実体、タンパク質＝生物らしさの発揮。",
+  "tags": [
+   "セントラルドグマ"
+  ]
+ },
+ {
+  "id": "g11b",
+  "slide": 11,
+  "chapter": 1,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "DNAからRNAを作る過程を何と呼ぶか。",
+  "options": [
+   {
+    "text": "複製",
+    "explanation": "DNAからDNAを作る過程",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "転写",
+    "explanation": "DNAの情報をRNAに写し取る過程",
+    "correct": true
+   },
+   {
+    "text": "翻訳",
+    "explanation": "RNAの情報からタンパク質を作る過程。矢印が一つずれている",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "逆転写",
+    "explanation": "RNAからDNAを作る逆向きの過程",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "スプライシング",
+    "explanation": "RNAからイントロンを除く加工（第4講）",
+    "correct": false,
+    "trap": "swap"
+   }
+  ],
+  "explanation": "DNA →（<b>転写</b>）→ RNA →（<b>翻訳</b>）→ タンパク質。DNA → DNA は複製、RNA → DNA は逆転写。",
+  "point": "写す＝転写、別の言語（アミノ酸）に置き換える＝翻訳。",
+  "tags": [
+   "セントラルドグマ"
+  ]
+ },
+ {
+  "id": "g12a",
+  "slide": 12,
+  "chapter": 1,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "ダウン症候群の原因として、スライド12に記されているのはどれか。",
+  "options": [
+   {
+    "text": "Lamin A/C遺伝子の変異",
+    "explanation": "ハッチンソン・ギルフォード・プロジェリア症候群の原因",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "TCOF1遺伝子の変異",
+    "explanation": "トリーチャー・コリンズ症候群の原因",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "21番染色体の数的異常",
+    "explanation": "21トリソミー＝21番染色体が1本多い",
+    "correct": true
+   },
+   {
+    "text": "21番染色体の部分欠失",
+    "explanation": "数的異常（本数の増加）であり、欠失ではない",
+    "correct": false,
+    "trap": "mechanism"
+   },
+   {
+    "text": "X染色体の数的異常",
+    "explanation": "性染色体ではなく常染色体（21番）",
+    "correct": false,
+    "trap": "fact"
+   }
+  ],
+  "explanation": "ダウン症候群＝<b>21番染色体の数的異常</b>（21トリソミー）。第3講で、なぜ13・18・21番のトリソミーだけが生まれてくるのかを扱う。",
+  "point": "ダウン症候群は「染色体の数」、プロジェリアは「1つの遺伝子」の異常。",
+  "tags": [
+   "遺伝子と疾患",
+   "染色体異常"
+  ]
+ },
+ {
+  "id": "g12b",
+  "slide": 12,
+  "chapter": 1,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "ハッチンソン・ギルフォード・プロジェリア症候群について、スライド12の内容と合うのはどれか。",
+  "options": [
+   {
+    "text": "21番染色体が1本多い",
+    "explanation": "ダウン症候群の説明",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "Lamin A/Cという1つの遺伝子の変異で起こる",
+    "explanation": "スライドの記載どおり",
+    "correct": true
+   },
+   {
+    "text": "複数の遺伝子と環境要因が同程度に関わる多因子疾患である",
+    "explanation": "スライドでは単一の遺伝子（Lamin A/C）の変異",
+    "correct": false,
+    "trap": "mechanism"
+   },
+   {
+    "text": "TCOF1遺伝子の変異で起こる",
+    "explanation": "トリーチャー・コリンズ症候群",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "ミトコンドリアDNAの変異で起こる",
+    "explanation": "記載はLamin A/C遺伝子",
+    "correct": false,
+    "trap": "fact"
+   }
+  ],
+  "explanation": "プロジェリア（早老症）は<b>Lamin A/C遺伝子</b>という1つの遺伝子の変異。遺伝子という最下層の変化が、個体レベル（老化の加速）まで届く例である。",
+  "point": "「たった1つの遺伝子」の変化が個体全体に現れる。",
+  "tags": [
+   "遺伝子と疾患"
+  ]
+ },
+ {
+  "id": "g13a",
+  "slide": 13,
+  "chapter": 1,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "トリーチャー・コリンズ症候群の原因として、スライド13に記されている遺伝子はどれか。",
+  "options": [
+   {
+    "text": "TCOF1",
+    "explanation": "スライドの記載どおり（TCOF1遺伝子の変異等）",
+    "correct": true
+   },
+   {
+    "text": "Lamin A/C",
+    "explanation": "プロジェリアの原因遺伝子",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "ALDH2",
+    "explanation": "アセトアルデヒド脱水素酵素（第5講）",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "ADH2",
+    "explanation": "アルコール脱水素酵素（第5講）",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "BRCA1",
+    "explanation": "講義資料の遺伝医学の必要性（がんゲノム医療）で挙がる遺伝子。この症候群ではない",
+    "correct": false,
+    "trap": "swap"
+   }
+  ],
+  "explanation": "トリーチャー・コリンズ症候群＝<b>TCOF1</b>遺伝子の変異など。",
+  "point": "疾患名と原因遺伝子はセットで。",
+  "tags": [
+   "遺伝子と疾患"
+  ]
+ },
+ {
+  "id": "g13b",
+  "slide": 13,
+  "chapter": 1,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "スライド10〜13で示された疾患を「原因の階層」で分類したとき、組合せとして正しいのはどれか。",
+  "options": [
+   {
+    "text": "ダウン症候群 ― 1つの遺伝子の変異",
+    "explanation": "ダウン症候群は染色体の数的異常",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "プロジェリア ― 染色体の数的異常",
+    "explanation": "プロジェリアはLamin A/C遺伝子の変異",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "トリーチャー・コリンズ症候群 ― TCOF1遺伝子の変異など",
+    "explanation": "正しい組合せ",
+    "correct": true
+   },
+   {
+    "text": "トリーチャー・コリンズ症候群 ― 21番染色体の数的異常",
+    "explanation": "21番はダウン症候群",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "ダウン症候群 ― Lamin A/C遺伝子の変異",
+    "explanation": "Lamin A/Cはプロジェリア",
+    "correct": false,
+    "trap": "swap"
+   }
+  ],
+  "explanation": "染色体の<b>数</b>の異常（ダウン症候群）と、<b>1つの遺伝子</b>の変異（プロジェリア：Lamin A/C、トリーチャー・コリンズ：TCOF1）を区別する。",
+  "point": "「染色体の数」か「1つの遺伝子」か。",
+  "tags": [
+   "遺伝子と疾患"
+  ]
+ },
+ {
+  "id": "g14a",
+  "slide": 14,
+  "chapter": 1,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "エイブリーの実験（1944年）で、R株をS株に変化させた成分はどれか。",
+  "options": [
+   {
+    "text": "タンパク質",
+    "explanation": "加えてもR株のまま",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "RNA",
+    "explanation": "加えてもR株のまま",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "DNA",
+    "explanation": "DNAを加えたときだけS株に変化した",
+    "correct": true
+   },
+   {
+    "text": "脂質",
+    "explanation": "加えてもR株のまま",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "炭水化物",
+    "explanation": "加えてもR株のまま",
+    "correct": false,
+    "trap": "fact"
+   }
+  ],
+  "explanation": "S株から取り出したDNA・RNA・脂質・タンパク質・炭水化物をそれぞれR株に加えると、S株に変化（<b>形質転換</b>）したのは<b>DNA</b>を加えたときだけだった。",
+  "point": "形質転換を起こしたのはDNAだけ。",
+  "tags": [
+   "遺伝子の本体"
+  ]
+ },
+ {
+  "id": "g14b",
+  "slide": 14,
+  "chapter": 1,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "肺炎球菌のS株から取り出した各成分をR株に加えたところ、DNAを加えたときだけR株がS株に変化した。この実験結果から導かれる結論として最も適切なのはどれか。",
+  "options": [
+   {
+    "text": "遺伝形質を伝える物質の本体はタンパク質である",
+    "explanation": "タンパク質では形質転換は起きていない",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "RNAがあれば形質転換が起こる",
+    "explanation": "RNAではR株のままだった",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "遺伝形質を伝える物質の本体はDNAである",
+    "explanation": "DNAだけが形質を変えた → 遺伝の本体はDNA",
+    "correct": true
+   },
+   {
+    "text": "病原性があるのはR株で、S株は被膜をもたない",
+    "explanation": "逆。S株が被膜(+)・病原性あり、R株が被膜(-)・非病原性",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "炭水化物の被膜そのものが遺伝情報を担う",
+    "explanation": "炭水化物では形質転換しない",
+    "correct": false,
+    "trap": "mechanism"
+   }
+  ],
+  "explanation": "「何を加えたら、何が変わったか」を整理すると、<b>DNAだけ</b>がR株をS株に変えた。したがって<b>遺伝を司る物質的な本体はDNA</b>である。",
+  "point": "結果（DNAだけで形質転換）と結論（遺伝の本体＝DNA）を区別して読む。",
+  "tags": [
+   "遺伝子の本体"
+  ]
+ },
+ {
+  "id": "g16a",
+  "slide": 16,
+  "chapter": 2,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "スライド16（大腸菌の例）で、細胞の構成成分として重量比が最も大きいものはどれか。",
+  "options": [
+   {
+    "text": "タンパク質",
+    "explanation": "16%で2番目",
+    "correct": false,
+    "trap": "number"
+   },
+   {
+    "text": "水",
+    "explanation": "約70%で最も多い",
+    "correct": true
+   },
+   {
+    "text": "核酸・多糖などの高分子",
+    "explanation": "10%",
+    "correct": false,
+    "trap": "number"
+   },
+   {
+    "text": "脂質",
+    "explanation": "1%",
+    "correct": false,
+    "trap": "number"
+   },
+   {
+    "text": "無機イオン",
+    "explanation": "1%",
+    "correct": false,
+    "trap": "number"
+   }
+  ],
+  "explanation": "細胞の構成成分は<b>水が約70%</b>、次いでタンパク質16%、核酸・多糖などの他の高分子10%。",
+  "point": "水70%、タンパク質16%。",
+  "tags": [
+   "生命をつくる分子"
+  ]
+ },
+ {
+  "id": "g16b",
+  "slide": 16,
+  "chapter": 2,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "水の性質についてスライド16の記載と合うのはどれか。",
+  "options": [
+   {
+    "text": "非極性分子なので、イオンを溶かしにくい",
+    "explanation": "水は極性分子で、多くのイオンや極性分子を溶かす",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "低分子なので、融点・沸点は他の低分子化合物より低い",
+    "explanation": "水素結合のため、低分子の割に融点・沸点が高い",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "水素結合で分子どうしが結合しており、融点・沸点が高い",
+    "explanation": "スライドの記載どおり",
+    "correct": true
+   },
+   {
+    "text": "脂質は水との親和性が最も高い生体分子である",
+    "explanation": "脂質を除く生体分子が水との親和性が高い",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "核酸は摂取しないと体内で不足する",
+    "explanation": "核酸は体内で糖質やアミノ酸から合成・供給される",
+    "correct": false,
+    "trap": "fact"
+   }
+  ],
+  "explanation": "水は<b>極性分子</b>で、多くのイオンや極性分子を溶かす。低分子なのに<b>水素結合</b>で分子どうしが結合しているため融点・沸点が高く、地球表面の温度で安定な生命の形成に有利だったと考えられる。",
+  "point": "水の特徴＝極性・水素結合・高い融点沸点。",
+  "tags": [
+   "生命をつくる分子"
+  ]
+ },
+ {
+  "id": "g17a",
+  "slide": 17,
+  "chapter": 2,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "核酸の構成単位（building block）はどれか。",
+  "options": [
+   {
+    "text": "糖",
+    "explanation": "多糖の構成単位",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "脂肪酸",
+    "explanation": "脂肪・脂質・膜の構成単位",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "アミノ酸",
+    "explanation": "タンパク質の構成単位",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "ヌクレオチド",
+    "explanation": "核酸（DNA・RNA）の構成単位",
+    "correct": true
+   },
+   {
+    "text": "ヌクレオシド",
+    "explanation": "リン酸を持たない。核酸の単位はヌクレオチド",
+    "correct": false,
+    "trap": "swap"
+   }
+  ],
+  "explanation": "糖→多糖、脂肪酸→脂肪・脂質・膜、アミノ酸→タンパク質、<b>ヌクレオチド→核酸</b>。",
+  "point": "核酸の単位はヌクレオチド。",
+  "tags": [
+   "ヌクレオチド"
+  ]
+ },
+ {
+  "id": "g17b",
+  "slide": 17,
+  "chapter": 2,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "細胞内の小有機分子とそれからできる大きな単位の組合せで誤っているのはどれか。",
+  "options": [
+   {
+    "text": "糖 ― 多糖",
+    "explanation": "正しい組合せ",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "脂肪酸 ― 膜",
+    "explanation": "正しい組合せ（脂肪・脂質・膜）",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "アミノ酸 ― 核酸",
+    "explanation": "アミノ酸からできるのはタンパク質。核酸はヌクレオチドから",
+    "correct": true
+   },
+   {
+    "text": "ヌクレオチド ― 核酸",
+    "explanation": "正しい組合せ",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "アミノ酸 ― タンパク質",
+    "explanation": "正しい組合せ",
+    "correct": false,
+    "trap": "fact"
+   }
+  ],
+  "explanation": "スライド17の4つの対応：糖→多糖、脂肪酸→脂肪・脂質・膜、アミノ酸→タンパク質、ヌクレオチド→核酸。",
+  "point": "building blocks と larger units の対応。",
+  "tags": [
+   "ヌクレオチド"
+  ]
+ },
+ {
+  "id": "g18a",
+  "slide": 18,
+  "chapter": 2,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "DNAを構成する糖はどれか。",
+  "options": [
+   {
+    "text": "グルコース",
+    "explanation": "六炭糖",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "リボース",
+    "explanation": "RNAの糖",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "2-デオキシリボース",
+    "explanation": "DNA＝デオキシリボ核酸の糖",
+    "correct": true
+   },
+   {
+    "text": "フルクトース",
+    "explanation": "六炭糖",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "ガラクトース",
+    "explanation": "六炭糖",
+    "correct": false,
+    "trap": "fact"
+   }
+  ],
+  "explanation": "核酸の糖は五炭糖（ペントース）。<b>RNA＝リボース</b>、<b>DNA＝2-デオキシリボース</b>（2'炭素のOHがHになっている）。",
+  "point": "DNAの「D」はデオキシ（酸素が1つ少ない）。",
+  "tags": [
+   "ヌクレオチド"
+  ]
+ },
+ {
+  "id": "g18b",
+  "slide": 18,
+  "chapter": 2,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "リボースと2-デオキシリボースの違いとして正しいのはどれか。",
+  "options": [
+   {
+    "text": "炭素の数が異なる",
+    "explanation": "どちらも五炭糖（炭素5つ）",
+    "correct": false,
+    "trap": "number"
+   },
+   {
+    "text": "2'位のヒドロキシ基（OH）の有無が異なる",
+    "explanation": "2-デオキシリボースは2'位のOHがH",
+    "correct": true
+   },
+   {
+    "text": "リボースはDNAに、デオキシリボースはRNAに使われる",
+    "explanation": "逆。リボース＝RNA、デオキシリボース＝DNA",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "2-デオキシリボースは六炭糖である",
+    "explanation": "五炭糖",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "どちらもグルコースの一種である",
+    "explanation": "グルコースは六炭糖",
+    "correct": false,
+    "trap": "fact"
+   }
+  ],
+  "explanation": "どちらも五炭糖。<b>2'位</b>がOHならリボース（RNA）、Hなら2-デオキシリボース（DNA）。",
+  "point": "「デオキシ」＝2'のOHが取れている。",
+  "tags": [
+   "ヌクレオチド"
+  ]
+ },
+ {
+  "id": "g19a",
+  "slide": 19,
+  "chapter": 2,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "塩基と五炭糖が結合した化合物を何というか。",
+  "options": [
+   {
+    "text": "ヌクレオチド",
+    "explanation": "ヌクレオシドにリン酸が付いたもの",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "ヌクレオシド",
+    "explanation": "塩基＋五炭糖",
+    "correct": true
+   },
+   {
+    "text": "核酸",
+    "explanation": "ヌクレオチドの重合体",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "プリン",
+    "explanation": "塩基の骨格の名前",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "ヒストン",
+    "explanation": "DNAが巻き付くタンパク質",
+    "correct": false,
+    "trap": "swap"
+   }
+  ],
+  "explanation": "塩基＋五炭糖＝<b>ヌクレオシド</b>。糖のヒドロキシ基にリン酸が付くと<b>ヌクレオチド</b>。",
+  "point": "シド（-side）＝リン酸なし、チド（-tide）＝リン酸あり。",
+  "tags": [
+   "ヌクレオチド"
+  ]
+ },
+ {
+  "id": "g19b",
+  "slide": 19,
+  "chapter": 2,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "ヌクレオシドとヌクレオチドについて正しいのはどれか。",
+  "options": [
+   {
+    "text": "ヌクレオシドは塩基・五炭糖・リン酸からなる",
+    "explanation": "それはヌクレオチド",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "ヌクレオチドは塩基と五炭糖だけからなる",
+    "explanation": "それはヌクレオシド",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "ヌクレオシドの糖のヒドロキシ基にリン酸が付いたものがヌクレオチドである",
+    "explanation": "スライドの記載どおり",
+    "correct": true
+   },
+   {
+    "text": "核酸はヌクレオシドが重合したものである",
+    "explanation": "核酸はヌクレオチドの重合体",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "ヌクレオチドには窒素を含む塩基は含まれない",
+    "explanation": "塩基は必須の構成要素",
+    "correct": false,
+    "trap": "fact"
+   }
+  ],
+  "explanation": "核酸は塩基・五炭糖・リン酸からなる高分子で、単位としての<b>ヌクレオチドが重合</b>したもの。リン酸がないものがヌクレオシド。",
+  "point": "ヌクレオシド＋リン酸＝ヌクレオチド。",
+  "tags": [
+   "ヌクレオチド"
+  ]
+ },
+ {
+  "id": "g20a",
+  "slide": 20,
+  "chapter": 2,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "プリン塩基の組合せはどれか。",
+  "options": [
+   {
+    "text": "アデニン・グアニン",
+    "explanation": "プリン塩基（環が2つ）",
+    "correct": true
+   },
+   {
+    "text": "シトシン・チミン",
+    "explanation": "ピリミジン塩基",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "アデニン・チミン",
+    "explanation": "Tはピリミジン",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "グアニン・シトシン",
+    "explanation": "Cはピリミジン",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "チミン・ウラシル",
+    "explanation": "どちらもピリミジン",
+    "correct": false,
+    "trap": "swap"
+   }
+  ],
+  "explanation": "プリン塩基＝<b>A・G</b>、ピリミジン塩基＝<b>C・T・U</b>。",
+  "point": "「プリン（大きい）はAG」。",
+  "tags": [
+   "ヌクレオチド"
+  ]
+ },
+ {
+  "id": "g20b",
+  "slide": 20,
+  "chapter": 2,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "RNAには含まれるがDNAには含まれない塩基はどれか。",
+  "options": [
+   {
+    "text": "アデニン",
+    "explanation": "DNAにもRNAにも含まれる",
+    "correct": false,
+    "trap": "scope"
+   },
+   {
+    "text": "グアニン",
+    "explanation": "DNAにもRNAにも含まれる",
+    "correct": false,
+    "trap": "scope"
+   },
+   {
+    "text": "シトシン",
+    "explanation": "DNAにもRNAにも含まれる",
+    "correct": false,
+    "trap": "scope"
+   },
+   {
+    "text": "チミン",
+    "explanation": "DNAのみ（RNAではUに置き換わる）",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "ウラシル",
+    "explanation": "RNAではチミンの代わりにウラシルが使われる",
+    "correct": true
+   }
+  ],
+  "explanation": "天然の核酸中の主な塩基は5種類。<b>RNAではチミンの代わりにウラシル</b>が使われる。",
+  "point": "DNA：A・G・C・T、RNA：A・G・C・U。",
+  "tags": [
+   "ヌクレオチド"
+  ]
+ },
+ {
+  "id": "g21a",
+  "slide": 21,
+  "chapter": 2,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "細胞内でエネルギーの供給に働くヌクレオチドはどれか。",
+  "options": [
+   {
+    "text": "cAMP",
+    "explanation": "シグナル伝達経路で働く",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "ATP",
+    "explanation": "アデノシン三リン酸：エネルギー供給",
+    "correct": true
+   },
+   {
+    "text": "dTMP",
+    "explanation": "DNAの材料（チミンのデオキシヌクレオチド）",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "UMP",
+    "explanation": "RNAの材料",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "GMP",
+    "explanation": "一リン酸",
+    "correct": false,
+    "trap": "fact"
+   }
+  ],
+  "explanation": "機能するヌクレオチドの例：エネルギー供給の<b>ATP</b>、シグナル伝達の<b>cAMP</b>。",
+  "point": "ATP＝エネルギー、cAMP＝シグナル。",
+  "tags": [
+   "ヌクレオチド"
+  ]
+ },
+ {
+  "id": "g21b",
+  "slide": 21,
+  "chapter": 2,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "スライド21の表の読み方として正しいのはどれか。",
+  "options": [
+   {
+    "text": "dUTPはDNAの材料となる主要な三リン酸である",
+    "explanation": "DNAの表ではウラシルではなくチミン（dTTP）",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "リボヌクレオチドの表ではチミンの代わりにウラシルが並ぶ",
+    "explanation": "RNA（リボヌクレオチド）ではU",
+    "correct": true
+   },
+   {
+    "text": "NMPはリン酸を3つ持つ",
+    "explanation": "NMPは一リン酸。三リン酸はNTP",
+    "correct": false,
+    "trap": "number"
+   },
+   {
+    "text": "体内のヌクレオチドは3'にリン酸が付くものが最も多い",
+    "explanation": "体内では5'-リン酸が多い",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "ATPはデオキシリボヌクレオチドである",
+    "explanation": "ATPはリボヌクレオチド（dATPがデオキシ）",
+    "correct": false,
+    "trap": "swap"
+   }
+  ],
+  "explanation": "リン酸の数で一・二・三リン酸（NMP・NDP・NTP）。リボヌクレオチド（RNA）ではU、デオキシリボヌクレオチド（DNA）ではT。体内にあるのは5'-リン酸が多い。",
+  "point": "表は「糖（RNA/DNA）×塩基×リン酸の数」。",
+  "tags": [
+   "ヌクレオチド"
+  ]
+ },
+ {
+  "id": "g22a",
+  "slide": 22,
+  "chapter": 2,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "プリン塩基の最終的な代謝産物として排泄されるのはどれか。",
+  "options": [
+   {
+    "text": "アンモニア",
+    "explanation": "ピリミジン塩基の代謝産物",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "二酸化炭素",
+    "explanation": "ピリミジン塩基の代謝産物",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "尿酸",
+    "explanation": "プリン塩基は尿酸として排泄される",
+    "correct": true
+   },
+   {
+    "text": "尿素",
+    "explanation": "スライドの記載ではない",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "ペントースリン酸",
+    "explanation": "小腸で核酸が分解されてできる成分",
+    "correct": false,
+    "trap": "swap"
+   }
+  ],
+  "explanation": "吸収されたピリミジン塩基は<b>アンモニアと二酸化炭素</b>に代謝され、プリン塩基は<b>尿酸</b>として排泄される。",
+  "point": "プリン→尿酸（痛風）。",
+  "tags": [
+   "ヌクレオチド"
+  ]
+ },
+ {
+  "id": "g22b",
+  "slide": 22,
+  "chapter": 2,
+  "kind": "応用・症例",
+  "difficulty": 2,
+  "stem": "40歳の男性。夜間に足の親指の付け根に激しい痛みと腫れが出現した。血液検査で尿酸値の上昇を認める。この病態に最も関係する代謝として正しいのはどれか。",
+  "options": [
+   {
+    "text": "ピリミジン塩基がアンモニアと二酸化炭素に代謝される過程",
+    "explanation": "ピリミジンの代謝は尿酸にならない",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "プリン塩基が尿酸として排泄される過程",
+    "explanation": "尿酸はプリン塩基の代謝産物。尿酸は関節に沈着しやすく痛風の原因となる",
+    "correct": true
+   },
+   {
+    "text": "食事由来の核酸がそのまま自分のDNAに組み込まれる過程",
+    "explanation": "吸収した核酸を自らのDNA/RNAとして利用することはない",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "ATPがcAMPに変換される過程",
+    "explanation": "シグナル伝達の話で、尿酸とは無関係",
+    "correct": false,
+    "trap": "mechanism"
+   },
+   {
+    "text": "リボースがデオキシリボースに変わる過程",
+    "explanation": "尿酸とは無関係",
+    "correct": false,
+    "trap": "mechanism"
+   }
+  ],
+  "explanation": "尿酸は<b>プリン塩基</b>の代謝産物で、関節に沈着しやすいため、血中尿酸値が高いと関節炎を起こす<b>痛風</b>の原因となる（スライド22）。",
+  "point": "痛風＝尿酸＝プリン塩基の代謝。",
+  "tags": [
+   "ヌクレオチド",
+   "遺伝子と疾患"
+  ]
+ },
+ {
+  "id": "g23a",
+  "slide": 23,
+  "chapter": 2,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "DNA鎖でヌクレオチドどうしをつなぐ結合はどれか。",
+  "options": [
+   {
+    "text": "水素結合",
+    "explanation": "2本の鎖の塩基どうしをつなぐ結合",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "ペプチド結合",
+    "explanation": "アミノ酸どうしの結合",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "ホスホジエステル結合",
+    "explanation": "3'炭素と次の5'リン酸の結合",
+    "correct": true
+   },
+   {
+    "text": "グリコシド結合",
+    "explanation": "糖どうし（や糖と塩基）の結合。スライドの記載ではない",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "ジスルフィド結合",
+    "explanation": "タンパク質の結合",
+    "correct": false,
+    "trap": "swap"
+   }
+  ],
+  "explanation": "先頭の5'リン酸はそのまま、3'炭素は次のヌクレオチドの5'リン酸と結合する。これが<b>ホスホジエステル（リン酸ジエステル）結合</b>で、5'→3'方向へ鎖状につながる。",
+  "point": "鎖の中＝ホスホジエステル結合、鎖と鎖の間＝水素結合。",
+  "tags": [
+   "DNAの構造"
+  ]
+ },
+ {
+  "id": "g23b",
+  "slide": 23,
+  "chapter": 2,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "DNAの構造について正しいのはどれか。",
+  "options": [
+   {
+    "text": "2本のDNA鎖は同じ向きに並んでいる",
+    "explanation": "逆向き",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "2本の鎖は塩基どうしの水素結合で結びついている",
+    "explanation": "スライドの記載どおり",
+    "correct": true
+   },
+   {
+    "text": "鎖は3'→5'方向へ伸びる",
+    "explanation": "5'→3'方向",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "二重らせんの幅は約3.4 nmである",
+    "explanation": "3.4 nmは1回転の長さ。幅は2 nm",
+    "correct": false,
+    "trap": "number"
+   },
+   {
+    "text": "鎖の中のヌクレオチドは水素結合でつながる",
+    "explanation": "鎖の中はホスホジエステル結合",
+    "correct": false,
+    "trap": "swap"
+   }
+  ],
+  "explanation": "DNAの特徴は<b>2本のDNA鎖が逆向きに結合した二重らせん</b>で、2本の鎖はそれぞれの<b>塩基が水素結合</b>することでできる。幅2 nm、1回転3.4 nm。",
+  "point": "「逆向き」「水素結合」「5'→3'」。",
+  "tags": [
+   "DNAの構造"
+  ]
+ },
+ {
+  "id": "g24a",
+  "slide": 24,
+  "chapter": 2,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "G-C塩基対を結ぶ水素結合の数はどれか。",
+  "options": [
+   {
+    "text": "1本",
+    "explanation": "誤り",
+    "correct": false,
+    "trap": "number"
+   },
+   {
+    "text": "2本",
+    "explanation": "A-T塩基対の本数",
+    "correct": false,
+    "trap": "number"
+   },
+   {
+    "text": "3本",
+    "explanation": "G≡C",
+    "correct": true
+   },
+   {
+    "text": "4本",
+    "explanation": "誤り",
+    "correct": false,
+    "trap": "number"
+   },
+   {
+    "text": "0本（共有結合で結ばれる）",
+    "explanation": "塩基対は水素結合",
+    "correct": false,
+    "trap": "mechanism"
+   }
+  ],
+  "explanation": "<b>A=T は2本、G≡C は3本</b>の水素結合。",
+  "point": "GCは3本（Great Connection）。",
+  "tags": [
+   "DNAの構造"
+  ]
+ },
+ {
+  "id": "g24b",
+  "slide": 24,
+  "chapter": 2,
+  "kind": "応用・症例",
+  "difficulty": 3,
+  "stem": "同じ長さの2種類の二本鎖DNA、X（G-C対が70%）とY（A-T対が70%）がある。2本鎖を1本ずつに引き離すのに必要なエネルギーがより大きいのはどちらか。スライド24の知識をもとに考えよ。",
+  "options": [
+   {
+    "text": "Y。A-T対のほうが水素結合が多いから",
+    "explanation": "A-T対は2本で少ない",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "X。G-C対は水素結合が3本でA-T対（2本）より多いから",
+    "explanation": "G-C対の割合が高いほど水素結合の総数が多い",
+    "correct": true
+   },
+   {
+    "text": "どちらも同じ。塩基対の幅はどれも1.08 nmだから",
+    "explanation": "幅が同じでも水素結合の数は違う",
+    "correct": false,
+    "trap": "mechanism"
+   },
+   {
+    "text": "Y。A-T対はホスホジエステル結合で結ばれるから",
+    "explanation": "塩基対は水素結合",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "比較できない。水素結合は2本鎖の結合に関与しないから",
+    "explanation": "2本の鎖は塩基どうしの水素結合で結びつく",
+    "correct": false,
+    "trap": "mechanism"
+   }
+  ],
+  "explanation": "2本の鎖は塩基どうしの水素結合で結びつき、<b>G≡Cは3本、A=Tは2本</b>。G-C対が多いDNAほど水素結合の総数が多く、引き離すのにより大きなエネルギーが要る。（考え方の応用。資料の記載は水素結合の本数まで）",
+  "point": "本数の違い → 安定性の違い、と一段深く考える。",
+  "tags": [
+   "DNAの構造"
+  ]
+ },
+ {
+  "id": "g25a",
+  "slide": 25,
+  "chapter": 3,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "DNAが巻き付いてヌクレオソームを形成するタンパク質はどれか。",
+  "options": [
+   {
+    "text": "ヒストン",
+    "explanation": "塩基性タンパク質。DNAが巻き付く",
+    "correct": true
+   },
+   {
+    "text": "チューブリン",
+    "explanation": "微小管のタンパク質",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "RNAポリメラーゼ",
+    "explanation": "転写を行う酵素",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "ラミン",
+    "explanation": "核膜を裏打ちするタンパク質（Lamin A/C）",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "逆転写酵素",
+    "explanation": "RNA→DNA",
+    "correct": false,
+    "trap": "swap"
+   }
+  ],
+  "explanation": "DNAは<b>ヒストン</b>（塩基性タンパク質）に巻き付きヌクレオソームを形成し、折りたたまれてクロマチン、染色体になる。",
+  "point": "ヒストン＝糸巻き。",
+  "tags": [
+   "染色体の構造"
+  ]
+ },
+ {
+  "id": "g25b",
+  "slide": 25,
+  "chapter": 3,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "DNAが染色体になるまでの順序として正しいのはどれか。",
+  "options": [
+   {
+    "text": "DNA → クロマチン → ヌクレオソーム → 染色体",
+    "explanation": "ヌクレオソームとクロマチンが逆",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "DNA → ヌクレオソーム → クロマチン → 染色体",
+    "explanation": "スライド25の順",
+    "correct": true
+   },
+   {
+    "text": "ヌクレオソーム → DNA → 染色体 → クロマチン",
+    "explanation": "順序がばらばら",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "DNA → 染色体 → クロマチン → ヌクレオソーム",
+    "explanation": "凝縮の順が逆",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "DNA → ヒストン → 染色体 → ヌクレオソーム",
+    "explanation": "ヒストンは構造ではなくタンパク質",
+    "correct": false,
+    "trap": "swap"
+   }
+  ],
+  "explanation": "DNA → ヌクレオソーム（ヒストンに巻き付く）→ 染色質（クロマチン）→ 染色体（クロモゾーム）。",
+  "point": "小さい構造から順に。",
+  "tags": [
+   "染色体の構造"
+  ]
+ },
+ {
+  "id": "g26a",
+  "slide": 26,
+  "chapter": 3,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "正常男性の核型の表記として正しいのはどれか。",
+  "options": [
+   {
+    "text": "46,XX",
+    "explanation": "正常女性",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "46,XY",
+    "explanation": "正常男性",
+    "correct": true
+   },
+   {
+    "text": "47,XXY",
+    "explanation": "クラインフェルター症候群",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "45,X",
+    "explanation": "ターナー症候群",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "23,XY",
+    "explanation": "23本は配偶子（一倍体）の数",
+    "correct": false,
+    "trap": "number"
+   }
+  ],
+  "explanation": "ヒトの染色体は46本。男性はXY、女性はXX。",
+  "point": "核型＝本数,性染色体。",
+  "tags": [
+   "染色体の構造"
+  ]
+ },
+ {
+  "id": "g26b",
+  "slide": 26,
+  "chapter": 3,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "ヒトの染色体の番号の付け方として正しいのはどれか。",
+  "options": [
+   {
+    "text": "発見された順に1〜22番",
+    "explanation": "長さの順",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "長い方から1〜22番",
+    "explanation": "スライド26・27の記載どおり",
+    "correct": true
+   },
+   {
+    "text": "短い方から1〜22番",
+    "explanation": "逆",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "遺伝子数の多い順に1〜22番",
+    "explanation": "遺伝子数の順ではない（スライド30：21番は22番より長いが遺伝子は少ない）",
+    "correct": false,
+    "trap": "mechanism"
+   },
+   {
+    "text": "性染色体を1番とする",
+    "explanation": "性染色体はX・Y",
+    "correct": false,
+    "trap": "fact"
+   }
+  ],
+  "explanation": "常染色体は<b>長い方から</b>1〜22番と名付けられている。",
+  "point": "番号＝長さの順（遺伝子数の順ではない）。",
+  "tags": [
+   "染色体の構造"
+  ]
+ },
+ {
+  "id": "g27a",
+  "slide": 27,
+  "chapter": 3,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "ヒトの体細胞がもつ染色体について正しいのはどれか。",
+  "options": [
+   {
+    "text": "常染色体は23種類ある",
+    "explanation": "常染色体は22種類（1〜22番）",
+    "correct": false,
+    "trap": "number"
+   },
+   {
+    "text": "男女とも合計23対である",
+    "explanation": "常染色体2セット＋性染色体で23対",
+    "correct": true
+   },
+   {
+    "text": "父親から46本を受け継ぐ",
+    "explanation": "父母から各23本",
+    "correct": false,
+    "trap": "number"
+   },
+   {
+    "text": "女性の性染色体はXYである",
+    "explanation": "女性はXX",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "染色体数（2N）はすべての真核生物で46である",
+    "explanation": "生物で異なる（イヌ78、ショウジョウバエ8など）",
+    "correct": false,
+    "trap": "scope"
+   }
+  ],
+  "explanation": "常染色体22種と性染色体X・Y。男性は常染色体2セット＋XY、女性は常染色体2セット＋XX、どちらも<b>23対</b>。父と母から<b>各23本</b>を受け継ぐ。",
+  "point": "22種＋性染色体＝23対＝46本。",
+  "tags": [
+   "染色体の構造"
+  ]
+ },
+ {
+  "id": "g27b",
+  "slide": 27,
+  "chapter": 3,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "スライド27の「真核生物の染色体数（2N）」の表から言えることとして最も適切なのはどれか。",
+  "options": [
+   {
+    "text": "染色体数が多い生物ほど高等である",
+    "explanation": "イヌ78はヒト46より多い",
+    "correct": false,
+    "trap": "mechanism"
+   },
+   {
+    "text": "染色体数は生物種によって異なる",
+    "explanation": "ヒト46、ラット42、イヌ78、ショウジョウバエ8、ジャガイモ48、酵母34",
+    "correct": true
+   },
+   {
+    "text": "植物は動物より染色体数が少ない",
+    "explanation": "ジャガイモ48はヒト46より多い",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "ヒトの染色体数が最も多い",
+    "explanation": "イヌ（78）が多い",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "単細胞の酵母は染色体をもたない",
+    "explanation": "酵母は34",
+    "correct": false,
+    "trap": "fact"
+   }
+  ],
+  "explanation": "染色体数は生物種ごとに異なり、体の複雑さとは単純に対応しない。",
+  "point": "数の大小と高等さは無関係。",
+  "tags": [
+   "染色体の構造"
+  ]
+ },
+ {
+  "id": "g28a",
+  "slide": 28,
+  "chapter": 3,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "ヒトの染色体に存在しない型はどれか。",
+  "options": [
+   {
+    "text": "メタセントリック染色体",
+    "explanation": "1・3・16・19・20番",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "サブメタセントリック染色体",
+    "explanation": "2・4〜12・17・18・X",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "アクロセントリック染色体",
+    "explanation": "13・14・15・21・22・Y",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "テロセントリック染色体",
+    "explanation": "ヒト染色体にはない",
+    "correct": true
+   },
+   {
+    "text": "短腕と長腕をもつ染色体",
+    "explanation": "ほとんどの染色体がp・qをもつ",
+    "correct": false,
+    "trap": "fact"
+   }
+  ],
+  "explanation": "セントロメアの位置で分類。<b>テロセントリック（末端）はヒトにない</b>。アクロセントリックは13・14・15・21・22・Yの6本、メタセントリックは1・3・16・19・20の5本。",
+  "point": "テロ＝ヒトにない。",
+  "tags": [
+   "染色体の構造"
+  ]
+ },
+ {
+  "id": "g28b",
+  "slide": 28,
+  "chapter": 3,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "アクロセントリック染色体の組合せとして正しいのはどれか。",
+  "options": [
+   {
+    "text": "1・3・16・19・20番",
+    "explanation": "メタセントリック",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "13・14・15・21・22番とY",
+    "explanation": "アクロセントリック",
+    "correct": true
+   },
+   {
+    "text": "2・4・5・6・7番",
+    "explanation": "サブメタセントリック",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "XとY",
+    "explanation": "Xはサブメタ、Yはアクロ",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "18・X",
+    "explanation": "サブメタセントリック",
+    "correct": false,
+    "trap": "swap"
+   }
+  ],
+  "explanation": "アクロセントリック＝セントロメアが端に近い（短腕が非常に短い）：<b>13・14・15・21・22・Y</b>。",
+  "point": "ダウン症候群の21番もアクロセントリック。",
+  "tags": [
+   "染色体の構造"
+  ]
+ },
+ {
+  "id": "g30a",
+  "slide": 30,
+  "chapter": 3,
+  "kind": "重要事項",
+  "difficulty": 2,
+  "stem": "スライド30で、遺伝子数が特に少ないとして○で示された常染色体の組合せはどれか。",
+  "options": [
+   {
+    "text": "1・2・3番",
+    "explanation": "最も多い側",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "13・18・21番",
+    "explanation": "○印の染色体",
+    "correct": true
+   },
+   {
+    "text": "X・Y",
+    "explanation": "性染色体",
+    "correct": false,
+    "trap": "scope"
+   },
+   {
+    "text": "16・17・19番",
+    "explanation": "遺伝子数は比較的多い",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "4・5・6番",
+    "explanation": "塩基対数は大きい",
+    "correct": false,
+    "trap": "fact"
+   }
+  ],
+  "explanation": "遺伝子数（個）のグラフで<b>13・18・21番</b>が○で囲まれている。これらは遺伝子数が少ない。",
+  "point": "13・18・21＝遺伝子が少ない＝トリソミーで生まれてくる3つ。",
+  "tags": [
+   "染色体の構造",
+   "染色体異常"
+  ]
+ },
+ {
+  "id": "g30b",
+  "slide": 30,
+  "chapter": 3,
+  "kind": "理解・統合",
+  "difficulty": 3,
+  "stem": "常染色体の完全トリソミーで出生に至るのが13・18・21番に限られることについて、スライド30の遺伝子数のデータと合わせた考え方として最も適切なのはどれか。",
+  "options": [
+   {
+    "text": "これらの染色体は最も長いので、余分にあっても影響が薄まる",
+    "explanation": "13・18・21番は短い部類",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "これらの染色体は遺伝子数が少ないため、1本多くても影響が比較的小さく、致死を免れうる",
+    "explanation": "遺伝子数が少ない＝過剰な遺伝子量の影響が相対的に小さい",
+    "correct": true
+   },
+   {
+    "text": "これらの染色体には遺伝子が存在しない",
+    "explanation": "少ないが存在する",
+    "correct": false,
+    "trap": "scope"
+   },
+   {
+    "text": "これらはすべて性染色体である",
+    "explanation": "常染色体",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "これらの染色体はメタセントリックである",
+    "explanation": "13・21はアクロセントリック、18はサブメタ",
+    "correct": false,
+    "trap": "fact"
+   }
+  ],
+  "explanation": "多くのトリソミーは致死的で早期に流産すると考えられている（スライド31）。遺伝子数の少ない13・18・21番は、余分な1本の影響が比較的小さいため出生しうる、と読み取れる（データからの考察）。",
+  "point": "データ（遺伝子数）と臨床（出生しうるトリソミー）をつなげる。",
+  "tags": [
+   "染色体異常"
+  ]
+ },
+ {
+  "id": "g31a",
+  "slide": 31,
+  "chapter": 3,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "18トリソミーの症候群はどれか。",
+  "options": [
+   {
+    "text": "ダウン症候群",
+    "explanation": "21トリソミー",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "エドワーズ症候群",
+    "explanation": "18トリソミー",
+    "correct": true
+   },
+   {
+    "text": "ペイトー（パトウ）症候群",
+    "explanation": "13トリソミー",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "ターナー症候群",
+    "explanation": "性染色体モノソミー（45,X）",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "猫鳴き症候群",
+    "explanation": "5p-（5番短腕の部分欠損）",
+    "correct": false,
+    "trap": "swap"
+   }
+  ],
+  "explanation": "常染色体の完全トリソミー：13番（ペイトー）、<b>18番（エドワーズ）</b>、21番（ダウン）。",
+  "point": "13パトウ・18エドワーズ・21ダウン。",
+  "tags": [
+   "染色体異常"
+  ]
+ },
+ {
+  "id": "g31b",
+  "slide": 31,
+  "chapter": 3,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "異数体（数的異常）について、スライド31の記載として正しいのはどれか。",
+  "options": [
+   {
+    "text": "Y染色体のモノソミーは生存しうる",
+    "explanation": "Yのモノソミーは存在しない（Xに重要な遺伝子）",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "性染色体のトリソミーは、常染色体のトリソミーより症状が重い",
+    "explanation": "不活性化のため一般に軽い",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "性染色体のモノソミーはターナー症候群（X, XO）しか存在しない",
+    "explanation": "スライドの記載どおり",
+    "correct": true
+   },
+   {
+    "text": "5p-症候群は5番染色体長腕の欠損である",
+    "explanation": "5pは短腕",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "4本になる状態をトリソミーという",
+    "explanation": "4本はテトラソミー",
+    "correct": false,
+    "trap": "number"
+   }
+  ],
+  "explanation": "X染色体には重要な遺伝子が含まれるため、Y染色体のモノソミーは存在せず、性染色体モノソミーは<b>ターナー症候群</b>のみ。性染色体の過剰は不活性化のため常染色体の過剰より症状は一般に軽い（クラインフェルター症候群XXYなど）。",
+  "point": "性染色体：過剰は軽い、モノソミーはターナーだけ。",
+  "tags": [
+   "染色体異常"
+  ]
+ },
+ {
+  "id": "g32a",
+  "slide": 32,
+  "chapter": 3,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "ヒトの精子・卵子がもつ染色体について正しいのはどれか。",
+  "options": [
+   {
+    "text": "46本・二倍体",
+    "explanation": "体細胞",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "23本・一倍体",
+    "explanation": "生殖細胞",
+    "correct": true
+   },
+   {
+    "text": "23本・二倍体",
+    "explanation": "23本は一倍体",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "46本・一倍体",
+    "explanation": "誤り",
+    "correct": false,
+    "trap": "number"
+   },
+   {
+    "text": "92本・四倍体",
+    "explanation": "DNA複製後の量と混同",
+    "correct": false,
+    "trap": "number"
+   }
+  ],
+  "explanation": "体細胞は46本の<b>二倍体</b>、精子と卵子は23本の<b>一倍体</b>。",
+  "point": "体細胞2n＝46、配偶子n＝23。",
+  "tags": [
+   "減数分裂"
+  ]
+ },
+ {
+  "id": "g32b",
+  "slide": 32,
+  "chapter": 3,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "減数分裂について正しいのはどれか。",
+  "options": [
+   {
+    "text": "1回の分裂で二倍体が一倍体になる",
+    "explanation": "2回の分裂",
+    "correct": false,
+    "trap": "number"
+   },
+   {
+    "text": "減数第1分裂と減数第2分裂からなる",
+    "explanation": "スライドの記載どおり",
+    "correct": true
+   },
+   {
+    "text": "体細胞の分裂を減数分裂という",
+    "explanation": "体細胞の分裂は体細胞分裂",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "減数分裂で染色体数は2倍になる",
+    "explanation": "半減する",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "体細胞の46本はすべて母親に由来する",
+    "explanation": "一方は母親、もう一方は父親に由来",
+    "correct": false,
+    "trap": "fact"
+   }
+  ],
+  "explanation": "生殖細胞の分裂は減数分裂と呼び、<b>2回</b>の分裂（第1・第2）を通して二倍体が一倍体に半減する。",
+  "point": "2回で半分。",
+  "tags": [
+   "減数分裂"
+  ]
+ },
+ {
+  "id": "g33a",
+  "slide": 33,
+  "chapter": 3,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "卵子形成過程で長期間停止している時期はどれか。",
+  "options": [
+   {
+    "text": "減数第1分裂前期",
+    "explanation": "スライドの記載どおり",
+    "correct": true
+   },
+   {
+    "text": "減数第2分裂後期",
+    "explanation": "停止時期ではない",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "体細胞分裂の間期",
+    "explanation": "誤り",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "思春期前の精原細胞期",
+    "explanation": "精子形成の話",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "受精後の第1卵割",
+    "explanation": "誤り",
+    "correct": false,
+    "trap": "fact"
+   }
+  ],
+  "explanation": "卵子形成過程は<b>減数第1分裂前期で停止</b>しているため、加齢による染色体の不分離を起こしやすい。",
+  "point": "停止＝第1分裂前期。",
+  "tags": [
+   "減数分裂",
+   "染色体異常"
+  ]
+ },
+ {
+  "id": "g33b",
+  "slide": 33,
+  "chapter": 3,
+  "kind": "応用・症例",
+  "difficulty": 2,
+  "stem": "38歳の妊婦が、胎児の染色体の数的異常について相談に来た。スライド33の内容に基づく説明として最も適切なのはどれか。",
+  "options": [
+   {
+    "text": "母親の年齢は染色体の数的異常の頻度に影響しない",
+    "explanation": "年齢とともに発生率は上がる",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "卵子は減数第1分裂前期で長く停止しているため、加齢で不分離が起こりやすい",
+    "explanation": "スライド33の記載どおり",
+    "correct": true
+   },
+   {
+    "text": "卵子形成では加齢でDNA複製エラーが増え、塩基レベルの変異が主に増える",
+    "explanation": "それは精子形成の特徴",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "35歳でのダウン症候群の発生率は約30人に1人である",
+    "explanation": "35歳は約350人に1人（約30人に1人は45歳）",
+    "correct": false,
+    "trap": "number"
+   },
+   {
+    "text": "ダウン症候群の発生率は20歳が最も高い",
+    "explanation": "20歳で約1,500人に1人と最も低い",
+    "correct": false,
+    "trap": "reverse"
+   }
+  ],
+  "explanation": "卵子は減数第1分裂前期で停止しているため加齢で<b>不分離</b>を起こしやすい。ダウン症候群の発生率は20歳約1/1,500、35歳約1/350、40歳約1/100、45歳約1/30。精子形成は加齢でDNA複製エラー（塩基レベルの新生突然変異）。",
+  "point": "母の加齢＝不分離、父の加齢＝点変異。",
+  "tags": [
+   "減数分裂",
+   "染色体異常"
+  ]
+ },
+ {
+  "id": "g34a",
+  "slide": 34,
+  "chapter": 3,
+  "kind": "重要事項",
+  "difficulty": 2,
+  "stem": "減数第2分裂で不分離が起こったとき、分かれ損なうのはどれか。",
+  "options": [
+   {
+    "text": "相同染色体",
+    "explanation": "第1分裂で分かれるもの",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "姉妹染色分体",
+    "explanation": "第2分裂で分かれるもの",
+    "correct": true
+   },
+   {
+    "text": "ヒストン八量体",
+    "explanation": "染色体の分配とは無関係",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "セントロメアとテロメア",
+    "explanation": "構造の部位",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "核小体",
+    "explanation": "無関係",
+    "correct": false,
+    "trap": "fact"
+   }
+  ],
+  "explanation": "第1分裂では<b>相同染色体</b>、第2分裂では<b>姉妹染色分体</b>が分かれる。どちらでも不分離は起こりうる。",
+  "point": "第1＝相同、第2＝姉妹。",
+  "tags": [
+   "減数分裂"
+  ]
+ },
+ {
+  "id": "g34b",
+  "slide": 34,
+  "chapter": 3,
+  "kind": "理解・統合",
+  "difficulty": 3,
+  "stem": "減数第1分裂で21番染色体の不分離が起きた卵子（21番を2本もつ）が、正常な精子と受精した。受精卵の21番染色体の本数と核型で正しいのはどれか。",
+  "options": [
+   {
+    "text": "1本 ― 45,XX,-21",
+    "explanation": "0本の卵子の場合",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "2本 ― 46,XX",
+    "explanation": "正常の場合",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "3本 ― 47,XX,+21（ダウン症候群）",
+    "explanation": "卵子2本＋精子1本＝3本（トリソミー）",
+    "correct": true
+   },
+   {
+    "text": "4本 ― テトラソミー",
+    "explanation": "精子は1本",
+    "correct": false,
+    "trap": "number"
+   },
+   {
+    "text": "3本 ― 69,XXX（三倍体）",
+    "explanation": "1本だけ多い異数体で、三倍体ではない",
+    "correct": false,
+    "trap": "swap"
+   }
+  ],
+  "explanation": "不分離で21番を2本もつ卵子に、1本もつ精子が受精すると<b>3本（トリソミー）</b>。47,XX,+21（女児の例）＝ダウン症候群。",
+  "point": "配偶子の本数＋相手の本数＝受精卵の本数。",
+  "tags": [
+   "減数分裂",
+   "染色体異常"
+  ]
+ },
+ {
+  "id": "g35a",
+  "slide": 35,
+  "chapter": 3,
+  "kind": "重要事項",
+  "difficulty": 2,
+  "stem": "【119E-17】最も多くの遺伝子を含む染色体はどれか。",
+  "options": [
+   {
+    "text": "1番染色体",
+    "explanation": "スライド36で○。塩基対数も遺伝子数も最大",
+    "correct": true
+   },
+   {
+    "text": "16番染色体",
+    "explanation": "誤り",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "18番染色体",
+    "explanation": "遺伝子数が特に少ない側",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "21番染色体",
+    "explanation": "遺伝子数が特に少ない側",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "X染色体",
+    "explanation": "1番より少ない",
+    "correct": false,
+    "trap": "fact"
+   }
+  ],
+  "explanation": "遺伝子数のグラフ（スライド30・36）で最大は<b>1番染色体</b>。国家試験の正答率は61.3%。",
+  "point": "「1番が最大」。",
+  "tags": [
+   "染色体の構造"
+  ]
+ },
+ {
+  "id": "g35b",
+  "slide": 35,
+  "chapter": 3,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "スライド30・35・36の遺伝子数のグラフの読み方として正しいのはどれか。",
+  "options": [
+   {
+    "text": "番号が大きい染色体ほど必ず遺伝子数が少ない",
+    "explanation": "19番や17番は比較的多い",
+    "correct": false,
+    "trap": "scope"
+   },
+   {
+    "text": "Y染色体は遺伝子数が最も少ない部類である",
+    "explanation": "グラフでYは最も少ない",
+    "correct": true
+   },
+   {
+    "text": "X染色体は1番染色体より遺伝子数が多い",
+    "explanation": "1番が最大",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "21番染色体は22番より遺伝子数が多い",
+    "explanation": "21番は22番より少ない",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "13番は遺伝子数が最も多い常染色体である",
+    "explanation": "少ない側（○）",
+    "correct": false,
+    "trap": "reverse"
+   }
+  ],
+  "explanation": "遺伝子数は1番が最大、13・18・21番は少なく、Yは最も少ない部類。番号（長さ）と遺伝子数は必ずしも比例しない。",
+  "point": "グラフは「傾向」と「例外」を読む。",
+  "tags": [
+   "染色体の構造"
+  ]
+ },
+ {
+  "id": "g38a",
+  "slide": 38,
+  "chapter": 3,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "1つのヌクレオソームのコアに巻き付くDNAの長さとして、スライド38に記されているのはどれか。",
+  "options": [
+   {
+    "text": "約20塩基対",
+    "explanation": "スペーサーの下限",
+    "correct": false,
+    "trap": "number"
+   },
+   {
+    "text": "約60塩基対",
+    "explanation": "スペーサーの上限",
+    "correct": false,
+    "trap": "number"
+   },
+   {
+    "text": "約140塩基対",
+    "explanation": "コアに巻き付く長さ",
+    "correct": true
+   },
+   {
+    "text": "約1400塩基対",
+    "explanation": "1400は染色体の幅（nm）",
+    "correct": false,
+    "trap": "number"
+   },
+   {
+    "text": "約3×10⁹塩基対",
+    "explanation": "ゲノム全体",
+    "correct": false,
+    "trap": "number"
+   }
+  ],
+  "explanation": "DNAはヒストンに<b>約140塩基対</b>巻き付き（ヌクレオソーム、11 nm）、スペーサーは<b>20〜60塩基対</b>。",
+  "point": "140が巻き付き、20–60がつなぎ。",
+  "tags": [
+   "染色体の構造"
+  ]
+ },
+ {
+  "id": "g38b",
+  "slide": 38,
+  "chapter": 3,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "DNAの収納の各段階と大きさの組合せで正しいのはどれか。",
+  "options": [
+   {
+    "text": "DNA二重らせん ― 11 nm",
+    "explanation": "11 nmはヌクレオソーム",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "ヌクレオソーム ― 2 nm",
+    "explanation": "2 nmはDNA",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "ヌクレオソーム ― 11 nm",
+    "explanation": "正しい",
+    "correct": true
+   },
+   {
+    "text": "染色体 ― 140 nm",
+    "explanation": "染色体は約1400 nm",
+    "correct": false,
+    "trap": "number"
+   },
+   {
+    "text": "DNA二重らせん ― 1400 nm",
+    "explanation": "1400 nmは染色体",
+    "correct": false,
+    "trap": "swap"
+   }
+  ],
+  "explanation": "DNA 2 nm → ヌクレオソーム 11 nm → クロマチン → 染色体 1400 nm。",
+  "point": "2・11・1400。",
+  "tags": [
+   "染色体の構造"
+  ]
+ },
+ {
+  "id": "g39a",
+  "slide": 39,
+  "chapter": 3,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "コアヒストン八量体に含まれないヒストンはどれか。",
+  "options": [
+   {
+    "text": "H1",
+    "explanation": "スペーサー領域でDNAと結合（コアではない）",
+    "correct": true
+   },
+   {
+    "text": "H2A",
+    "explanation": "コア",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "H2B",
+    "explanation": "コア",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "H3",
+    "explanation": "コア",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "H4",
+    "explanation": "コア",
+    "correct": false,
+    "trap": "fact"
+   }
+  ],
+  "explanation": "コアヒストンは<b>H2A・H2B・H3・H4が各2個</b>の八量体。<b>H1</b>はヌクレオソーム間のスペーサー領域に存在し、各ヌクレオソームの辺縁でDNAと結合する。",
+  "point": "H1だけ外側。",
+  "tags": [
+   "染色体の構造"
+  ]
+ },
+ {
+  "id": "g39b",
+  "slide": 39,
+  "chapter": 3,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "ヒストンについてスライド39の記載と合うのはどれか。",
+  "options": [
+   {
+    "text": "ヒストンは化学修飾を受けず、すべての細胞で同じ組み合わせである",
+    "explanation": "化学修飾を受け、組み合わせは細胞ごとに異なる",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "ヒストンの化学修飾はヌクレオソームの性質を変え、遺伝子発現の制御に関わる",
+    "explanation": "スライドの記載どおり",
+    "correct": true
+   },
+   {
+    "text": "特殊なヒストンはH1とH4に取って代わる",
+    "explanation": "H3とH2Aに取って代わる",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "ヒストンは酸性タンパク質である",
+    "explanation": "塩基性タンパク質（スライド25）",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "コアは各1個ずつの四量体である",
+    "explanation": "各2個の八量体",
+    "correct": false,
+    "trap": "number"
+   }
+  ],
+  "explanation": "多くの特殊なヒストンがH3とH2Aに取って代わり、ゲノムの特定部位に一定の特性を与える。ヒストンは<b>化学修飾</b>を受け、ヌクレオソームの性質を変化させ、DNAの収納のされ方と<b>遺伝子発現の制御</b>に関わる（第6講エピゲノムへ）。",
+  "point": "ヒストン修飾＝発現制御の入口。",
+  "tags": [
+   "染色体の構造",
+   "エピゲノム"
+  ]
+ },
+ {
+  "id": "g40a",
+  "slide": 40,
+  "chapter": 6,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "凝集して遺伝子転写が抑制されているクロマチンを何というか。",
+  "options": [
+   {
+    "text": "ユークロマチン",
+    "explanation": "緩んだクロマチン（転写ON）",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "ヘテロクロマチン",
+    "explanation": "凝集したクロマチン（転写OFF）",
+    "correct": true
+   },
+   {
+    "text": "ヌクレオソーム",
+    "explanation": "クロマチンの単位",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "セントロメア",
+    "explanation": "染色体のくびれ",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "テロメア",
+    "explanation": "染色体の末端",
+    "correct": false,
+    "trap": "swap"
+   }
+  ],
+  "explanation": "凝集したクロマチン＝<b>ヘテロクロマチン</b>（転写抑制）、緩んだクロマチン＝<b>ユークロマチン</b>（転写活性化）。この切り替えがクロマチンリモデリング。",
+  "point": "ヘテロ＝閉じた本、ユー＝開いた本。",
+  "tags": [
+   "エピゲノム"
+  ]
+ },
+ {
+  "id": "g40b",
+  "slide": 40,
+  "chapter": 6,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "クロマチンの状態と転写の関係として正しいのはどれか。",
+  "options": [
+   {
+    "text": "凝集したクロマチンでは転写が活性化する",
+    "explanation": "抑制される",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "緩んだクロマチンでは転写が抑制される",
+    "explanation": "活性化する",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "緩んだクロマチンでは転写が活性化する",
+    "explanation": "ユークロマチン＝転写ON",
+    "correct": true
+   },
+   {
+    "text": "クロマチンの状態は一度決まると変化しない",
+    "explanation": "リモデリングで可逆的に変化（⇄）",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "ヘテロクロマチンはヒストンを含まない",
+    "explanation": "ヌクレオソームが凝集した状態",
+    "correct": false,
+    "trap": "fact"
+   }
+  ],
+  "explanation": "図の⇄のように、凝集（OFF）と緩み（ON）は<b>可逆的</b>に切り替わる（クロマチンリモデリング）。",
+  "point": "凝集＝OFF、緩み＝ON。",
+  "tags": [
+   "エピゲノム"
+  ]
+ },
+ {
+  "id": "g41a",
+  "slide": 41,
+  "chapter": 4,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "転写された前駆体RNAからイントロンを除き、エクソンどうしをつなぐ過程はどれか。",
+  "options": [
+   {
+    "text": "複製",
+    "explanation": "DNA→DNA",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "転写",
+    "explanation": "DNA→RNA",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "スプライシング",
+    "explanation": "イントロンを除いてエクソンをつなぐ",
+    "correct": true
+   },
+   {
+    "text": "翻訳",
+    "explanation": "RNA→タンパク質",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "逆転写",
+    "explanation": "RNA→DNA",
+    "correct": false,
+    "trap": "swap"
+   }
+  ],
+  "explanation": "転写 → <b>スプライシング</b>（イントロン除去）→ 翻訳。スライド41の流れ。",
+  "point": "除かれるのはイントロン、残るのはエクソン。",
+  "tags": [
+   "遺伝子の構造",
+   "転写・翻訳"
+  ]
+ },
+ {
+  "id": "g41b",
+  "slide": 41,
+  "chapter": 4,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "スライド41のヒト遺伝子の構造について正しいのはどれか。",
+  "options": [
+   {
+    "text": "イントロンは成熟mRNAに残り、翻訳される",
+    "explanation": "スプライシングで除かれる",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "5'非翻訳領域（UTR）はアミノ酸に翻訳される",
+    "explanation": "非翻訳領域は翻訳されない",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "プロモーターは転写されてmRNAの先頭になる",
+    "explanation": "プロモーターは転写開始を決める領域",
+    "correct": false,
+    "trap": "mechanism"
+   },
+   {
+    "text": "DNA上の開始コドンATGは、mRNAではAUGになる",
+    "explanation": "TがUに置き換わる（A G C T → U C G A）",
+    "correct": true
+   },
+   {
+    "text": "ポリアデニル化シグナルは遺伝子の5'側にある",
+    "explanation": "3'側（下流）にある",
+    "correct": false,
+    "trap": "reverse"
+   }
+  ],
+  "explanation": "DNAで使われる文字はA・G・C・T、転写後のRNAではU・C・G・A。開始コドンATGはAUG、終止コドンTGAはUGA。",
+  "point": "DNAのTはRNAではU。",
+  "tags": [
+   "遺伝子の構造",
+   "転写・翻訳"
+  ]
+ },
+ {
+  "id": "g42a",
+  "slide": 42,
+  "chapter": 4,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "スライド42における「遺伝子」の定義として正しいのはどれか。",
+  "options": [
+   {
+    "text": "DNAのうちタンパク質のアミノ酸配列を決める領域だけ",
+    "explanation": "非翻訳RNAの構造を決める領域も含む",
+    "correct": false,
+    "trap": "scope"
+   },
+   {
+    "text": "DNAの中でタンパク質の一次構造または非翻訳RNAの構造を決定する情報を持った領域",
+    "explanation": "スライドの定義どおり",
+    "correct": true
+   },
+   {
+    "text": "染色体そのもの",
+    "explanation": "染色体はDNAとタンパク質の複合体",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "核ゲノム全体の約31億塩基対すべて",
+    "explanation": "ゲノム全体のうち遺伝子に関わるのは約25%",
+    "correct": false,
+    "trap": "scope"
+   },
+   {
+    "text": "ヒストンのアミノ酸配列",
+    "explanation": "遺伝子の産物の一例にすぎない",
+    "correct": false,
+    "trap": "swap"
+   }
+  ],
+  "explanation": "遺伝子とは、高分子DNAの中で<b>タンパク質の一次構造（アミノ酸配列）あるいは非翻訳RNAの構造（塩基配列）</b>を決定する情報を持った領域。",
+  "point": "遺伝子にはタンパク質を作らないもの（ncRNA遺伝子）も含まれる。",
+  "tags": [
+   "遺伝子の構造",
+   "ncRNA"
+  ]
+ },
+ {
+  "id": "g42b",
+  "slide": 42,
+  "chapter": 4,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "「遺伝情報」がDNAに書き込んでいる内容として、スライド42に含まれないのはどれか。",
+  "options": [
+   {
+    "text": "どのようなタンパク質を作るか",
+    "explanation": "含まれる",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "どの細胞が作るか",
+    "explanation": "含まれる",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "どのような環境下でどれだけの量作るか",
+    "explanation": "含まれる",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "作られたタンパク質が運ばれる場所や分解速度",
+    "explanation": "含まれる",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "その人が将来どの病院を受診するか",
+    "explanation": "遺伝情報の内容ではない",
+    "correct": true
+   }
+  ],
+  "explanation": "遺伝情報は、どのタンパク質をどの細胞がどの環境下でどれだけ作るか、さらに運ばれる場所や分解速度までを指令する。",
+  "point": "設計図は「何を・どこで・どれだけ・いつまで」まで決めている。",
+  "tags": [
+   "遺伝子の構造"
+  ]
+ },
+ {
+  "id": "g43a",
+  "slide": 43,
+  "chapter": 4,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "ヒト核ゲノムのうち、アミノ酸を指定する配列の占める割合（スライドの値）はどれか。",
+  "options": [
+   {
+    "text": "約1.3%",
+    "explanation": "スライドの値",
+    "correct": true
+   },
+   {
+    "text": "約24%",
+    "explanation": "アミノ酸非指定配列（遺伝子に関わるDNA内）",
+    "correct": false,
+    "trap": "number"
+   },
+   {
+    "text": "約25.3%",
+    "explanation": "遺伝子に関わるDNA全体",
+    "correct": false,
+    "trap": "number"
+   },
+   {
+    "text": "約48%",
+    "explanation": "繰り返し配列",
+    "correct": false,
+    "trap": "number"
+   },
+   {
+    "text": "約74.7%",
+    "explanation": "非遺伝子DNA",
+    "correct": false,
+    "trap": "number"
+   }
+  ],
+  "explanation": "遺伝子に関わるDNA約25.3%のうち、<b>アミノ酸指定配列は約1.3%</b>、アミノ酸非指定配列（転写調節配列・イントロン・rRNA/tRNAなど）が約24%。",
+  "point": "タンパク質をコードするのはゲノムのわずか1%強。",
+  "tags": [
+   "ゲノムの構成"
+  ]
+ },
+ {
+  "id": "g43b",
+  "slide": 43,
+  "chapter": 4,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "ヒト核ゲノムの構成について、スライド43の図から正しく読み取れるのはどれか。",
+  "options": [
+   {
+    "text": "非遺伝子DNAより遺伝子に関わるDNAのほうが多い",
+    "explanation": "非遺伝子DNA 74.7% ＞ 25.3%",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "非遺伝子DNAで最も多いのは偽遺伝子である",
+    "explanation": "偽遺伝子は約0.4%。最多は繰り返し配列（約48%）",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "リボソームRNAやtRNAの配列は、遺伝子に関わるDNAのうちアミノ酸非指定配列に含まれる",
+    "explanation": "図の分類どおり",
+    "correct": true
+   },
+   {
+    "text": "イントロンは非遺伝子DNAに分類される",
+    "explanation": "遺伝子に関わるDNA（アミノ酸非指定配列）",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "タンパク質合成に至らないRNAは存在しない",
+    "explanation": "低分子RNA（miRNA）・高分子RNA（lncRNA）などが存在",
+    "correct": false,
+    "trap": "fact"
+   }
+  ],
+  "explanation": "遺伝子に関わるDNA（約25.3%）＝アミノ酸指定配列（約1.3%）＋アミノ酸非指定配列（約24%：転写調節配列・イントロン・非翻訳配列・rRNA・tRNAなど）。非遺伝子DNA（約74.7%）＝偽遺伝子0.4%・その他26.3%・繰り返し配列48%。",
+  "point": "図の枝分かれを正確に。",
+  "tags": [
+   "ゲノムの構成"
+  ]
+ },
+ {
+  "id": "g45a",
+  "slide": 45,
+  "chapter": 4,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "スライド45で、遺伝子（DNA）から転写されるが翻訳されずに細胞機能の制御に働くものはどれか。",
+  "options": [
+   {
+    "text": "メッセンジャーRNA",
+    "explanation": "翻訳されてタンパク質になる",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "ノンコーディングRNA",
+    "explanation": "翻訳されずに機能する",
+    "correct": true
+   },
+   {
+    "text": "タンパク質",
+    "explanation": "翻訳産物",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "ヒストン",
+    "explanation": "タンパク質",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "DNAポリメラーゼ",
+    "explanation": "記載なし",
+    "correct": false,
+    "trap": "fact"
+   }
+  ],
+  "explanation": "遺伝子からは、<b>メッセンジャーRNA</b>（翻訳→タンパク質）と<b>ノンコーディングRNA</b>（RNAのまま様々な細胞機能を制御）ができる。",
+  "point": "RNAのまま働くのがノンコーディングRNA。",
+  "tags": [
+   "ncRNA"
+  ]
+ },
+ {
+  "id": "g45b",
+  "slide": 45,
+  "chapter": 4,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "スライド45の図で、翻訳が行われる場所として描かれているのはどれか。",
+  "options": [
+   {
+    "text": "核の中",
+    "explanation": "転写は核内",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "細胞の外",
+    "explanation": "誤り",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "細胞質（核の外）",
+    "explanation": "mRNAが核から出て翻訳される",
+    "correct": true
+   },
+   {
+    "text": "核膜の内側の染色体上",
+    "explanation": "誤り",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "ノンコーディングRNAの中",
+    "explanation": "誤り",
+    "correct": false,
+    "trap": "fact"
+   }
+  ],
+  "explanation": "図では、核内で転写されたメッセンジャーRNAが核の外に出て<b>翻訳</b>され、タンパク質（▲）ができる。",
+  "point": "転写＝核、翻訳＝細胞質。",
+  "tags": [
+   "転写・翻訳"
+  ]
+ },
+ {
+  "id": "g46a",
+  "slide": 46,
+  "chapter": 4,
+  "kind": "重要事項",
+  "difficulty": 2,
+  "stem": "miRNAについて正しいのはどれか。",
+  "options": [
+   {
+    "text": "数千塩基の非常に長いncRNAである",
+    "explanation": "それはlncRNA。miRNAは約22塩基",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "標的mRNAに結合し、その翻訳を抑制する",
+    "explanation": "スライドの記載どおり",
+    "correct": true
+   },
+   {
+    "text": "アミノ酸を運んで翻訳に直接関わる",
+    "explanation": "それはtRNA",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "rRNAの修飾に関わる",
+    "explanation": "それはsnoRNA",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "これまでに10個程度しか同定されていない",
+    "explanation": "1,000以上が同定",
+    "correct": false,
+    "trap": "number"
+   }
+  ],
+  "explanation": "miRNAは<b>約22塩基</b>の短いncRNAで、標的遺伝子のmRNAに結合して<b>翻訳を抑制</b>する。1,000以上が同定され、全タンパク質コード遺伝子の30%以上の活性を抑制すると推測される。",
+  "point": "miRNA＝短い・翻訳抑制。",
+  "tags": [
+   "ncRNA"
+  ]
+ },
+ {
+  "id": "g46b",
+  "slide": 46,
+  "chapter": 4,
+  "kind": "応用・症例",
+  "difficulty": 3,
+  "stem": "肥満、性腺機能低下、認知障害を特徴とする症候群で、15番染色体のsnoRNA遺伝子群の欠失によって起こるものはどれか。",
+  "options": [
+   {
+    "text": "フェインゴールド症候群",
+    "explanation": "13番染色体のmiRNA遺伝子群の欠失（小頭症・低身長・手指の奇形）",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "プラダー・ウィリー症候群",
+    "explanation": "15番染色体のsnoRNA遺伝子群の欠失",
+    "correct": true
+   },
+   {
+    "text": "ダウン症候群",
+    "explanation": "21番染色体のトリソミー",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "猫鳴き症候群",
+    "explanation": "5番染色体短腕の部分欠損",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "ターナー症候群",
+    "explanation": "性染色体モノソミー",
+    "correct": false,
+    "trap": "swap"
+   }
+  ],
+  "explanation": "ncRNA遺伝子は幅広いヒト疾患に関与。<b>15番のsnoRNA遺伝子群の欠失 → プラダー・ウィリー症候群</b>、<b>13番のmiRNA遺伝子群の欠失 → フェインゴールド症候群</b>。",
+  "point": "タンパク質を作らない遺伝子の欠失でも病気になる。",
+  "tags": [
+   "ncRNA",
+   "遺伝子と疾患"
+  ]
+ },
+ {
+  "id": "g47a",
+  "slide": 47,
+  "chapter": 6,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "遺伝子発現の多段階調節で、「生活環境因子により徐々に蓄積する変化」として位置づけられている層はどれか。",
+  "options": [
+   {
+    "text": "ゲノム",
+    "explanation": "生まれつき（遺伝型）",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "エピゲノム",
+    "explanation": "DNAやヒストンの化学修飾",
+    "correct": true
+   },
+   {
+    "text": "トランスクリプトーム",
+    "explanation": "RNA",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "プロテオーム",
+    "explanation": "タンパク質（症状と直結）",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "メタボローム",
+    "explanation": "代謝物（症状と直結）",
+    "correct": false,
+    "trap": "swap"
+   }
+  ],
+  "explanation": "ゲノム（生まれつき）→ <b>エピゲノム（DNAやヒストンの化学修飾：徐々に蓄積・生活環境因子）</b>→ トランスクリプトーム → プロテオーム → メタボローム（表現型）。",
+  "point": "環境が書き込む層＝エピゲノム。",
+  "tags": [
+   "エピゲノム"
+  ]
+ },
+ {
+  "id": "g47b",
+  "slide": 47,
+  "chapter": 6,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "「遺伝型（genotype）」と「表現型（phenotype）」の位置づけとして、スライド47に合うのはどれか。",
+  "options": [
+   {
+    "text": "遺伝型＝メタボローム、表現型＝ゲノム",
+    "explanation": "逆",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "遺伝型＝ゲノム（DNA）、表現型＝プロテオーム・メタボローム側",
+    "explanation": "記載どおり",
+    "correct": true
+   },
+   {
+    "text": "遺伝型＝エピゲノム、表現型＝トランスクリプトーム",
+    "explanation": "誤り",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "遺伝型と表現型は常に1対1で対応する",
+    "explanation": "間に多段階の調節がある",
+    "correct": false,
+    "trap": "mechanism"
+   },
+   {
+    "text": "Non-coding RNAは表現型に影響しない",
+    "explanation": "翻訳効率を調整する",
+    "correct": false,
+    "trap": "fact"
+   }
+  ],
+  "explanation": "上端のゲノム（DNA）が<b>遺伝型</b>、下端の代謝物（メタボローム）までが<b>表現型</b>。その間にエピゲノム・トランスクリプトーム・プロテオームの多段階の調節があり、Non-coding RNAは翻訳効率を調整する。",
+  "point": "遺伝型→（多段階）→表現型。",
+  "tags": [
+   "エピゲノム"
+  ]
+ },
+ {
+  "id": "g48a",
+  "slide": 48,
+  "chapter": 1,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "スライド48のセントラルドグマの図で、RNAからタンパク質が合成される過程はどれか。",
+  "options": [
+   {
+    "text": "複製",
+    "explanation": "DNA → DNA",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "転写",
+    "explanation": "DNA → RNA（RNA合成）",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "翻訳",
+    "explanation": "RNA → タンパク質（タンパク質合成）",
+    "correct": true
+   },
+   {
+    "text": "修復",
+    "explanation": "DNAの傷を直す過程",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "遺伝的組換え",
+    "explanation": "DNAどうしの組換え",
+    "correct": false,
+    "trap": "swap"
+   }
+  ],
+  "explanation": "図では「RNA合成（転写）」「タンパク質合成（翻訳）」と記される。DNAの上の曲がった矢印は、DNA複製・DNA修復・遺伝的組換え。",
+  "point": "タンパク質合成＝翻訳。",
+  "tags": [
+   "セントラルドグマ"
+  ]
+ },
+ {
+  "id": "g48b",
+  "slide": 48,
+  "chapter": 1,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "分子生物学のセントラルドグマについて正しいのはどれか。",
+  "options": [
+   {
+    "text": "真核生物の細胞だけに当てはまる原理である",
+    "explanation": "細菌からヒトに至るすべての細胞に当てはまる",
+    "correct": false,
+    "trap": "scope"
+   },
+   {
+    "text": "RNAからタンパク質を合成する過程を転写という",
+    "explanation": "RNA → タンパク質は翻訳",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "タンパク質を鋳型にしてRNAが合成される",
+    "explanation": "向きが逆。DNA → RNA → タンパク質",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "細菌からヒトに至るすべての細胞は、遺伝情報をDNA → RNA → タンパク質の向きで発現する",
+    "explanation": "スライドの記載どおり（普遍的な原理）",
+    "correct": true
+   },
+   {
+    "text": "すべてのRNAは最終的にタンパク質に翻訳される",
+    "explanation": "miRNAやlncRNAなど、タンパク質にならないRNAがある",
+    "correct": false,
+    "trap": "scope"
+   }
+  ],
+  "explanation": "セントラルドグマ＝DNA →（転写）→ RNA →（翻訳）→ タンパク質。<b>細菌からヒトまで</b>すべての細胞に共通の普遍的原理。ただしタンパク質にならないRNA（miRNA・lncRNA）の存在と意義も明らかになってきた。",
+  "point": "「〜だけ」「すべての〜」という言い切りに注意。",
+  "tags": [
+   "セントラルドグマ",
+   "ncRNA"
+  ]
+ },
+ {
+  "id": "g49a",
+  "slide": 49,
+  "chapter": 4,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "ヒトゲノムプロジェクトの完了が宣言された年はどれか。",
+  "options": [
+   {
+    "text": "1944年",
+    "explanation": "エイブリーの実験",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "1983年",
+    "explanation": "マクリントックのノーベル賞",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "2003年",
+    "explanation": "約10年・4000億円で完了",
+    "correct": true
+   },
+   {
+    "text": "2009年",
+    "explanation": "記載なし",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "2022年",
+    "explanation": "完全解読（残り8%）",
+    "correct": false,
+    "trap": "swap"
+   }
+  ],
+  "explanation": "<b>2003年</b>ゲノムプロジェクト完了（約10年、4000億円）。2022年に残り約8%を含む完全解読。",
+  "point": "2003年＝完了宣言、2022年＝完全解読。",
+  "tags": [
+   "ゲノムの構成"
+  ]
+ },
+ {
+  "id": "g49b",
+  "slide": 49,
+  "chapter": 4,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "ヒトゲノムの大きさについて、スライド49の説明と合うのはどれか。",
+  "options": [
+   {
+    "text": "解読された約28.8億塩基対がゲノムの全てである",
+    "explanation": "未解読部分とヘテロクロマチンを加えて約31億",
+    "correct": false,
+    "trap": "scope"
+   },
+   {
+    "text": "未解読部分とヘテロクロマチン領域を加えると約31億塩基対と予想される",
+    "explanation": "スライドの記載どおり",
+    "correct": true
+   },
+   {
+    "text": "ヒトゲノムは約31億個の遺伝子からなる",
+    "explanation": "遺伝子は約25,000",
+    "correct": false,
+    "trap": "number"
+   },
+   {
+    "text": "非遺伝子DNAは全体の約25%である",
+    "explanation": "非遺伝子DNAは約74.7%",
+    "correct": false,
+    "trap": "number"
+   },
+   {
+    "text": "ヘテロクロマチン領域は最初に解読された",
+    "explanation": "解読が難しかった部分",
+    "correct": false,
+    "trap": "reverse"
+   }
+  ],
+  "explanation": "解読された領域の総塩基数は<b>28億8000万塩基対</b>。未解読の部分とヘテロクロマチン領域を加えて<b>約31億塩基対</b>程度（予想）。",
+  "point": "塩基対の数と遺伝子の数を混同しない。",
+  "tags": [
+   "ゲノムの構成"
+  ]
+ },
+ {
+  "id": "g50a",
+  "slide": 50,
+  "chapter": 4,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "2003年の完了宣言時に解読困難として残っていたヒトゲノムの割合（スライドの値）はどれか。",
+  "options": [
+   {
+    "text": "約1.3%",
+    "explanation": "アミノ酸指定配列の割合",
+    "correct": false,
+    "trap": "number"
+   },
+   {
+    "text": "約8%",
+    "explanation": "スライドの値",
+    "correct": true
+   },
+   {
+    "text": "約25%",
+    "explanation": "遺伝子に関わるDNA",
+    "correct": false,
+    "trap": "number"
+   },
+   {
+    "text": "約45%",
+    "explanation": "トランスポゾン関連配列",
+    "correct": false,
+    "trap": "number"
+   },
+   {
+    "text": "約74.7%",
+    "explanation": "非遺伝子DNA",
+    "correct": false,
+    "trap": "number"
+   }
+  ],
+  "explanation": "当時の技術では解読困難な部分が<b>約8%</b>残っていた。原因は染色体の末端や中央の配列に繰り返しが多いことなど。",
+  "point": "8%＝繰り返し配列の壁。",
+  "tags": [
+   "ゲノムの構成"
+  ]
+ },
+ {
+  "id": "g50b",
+  "slide": 50,
+  "chapter": 4,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "ヒトゲノムの一部が長く解読困難だった理由として、スライド50に書かれているのはどれか。",
+  "options": [
+   {
+    "text": "その部分にはDNAが存在しなかったから",
+    "explanation": "DNAは存在する",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "染色体の末端や中央の配列に繰り返しが多いことなど",
+    "explanation": "スライドの記載どおり",
+    "correct": true
+   },
+   {
+    "text": "その部分はRNAでできているから",
+    "explanation": "誤り",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "プロジェクトが途中で中止されたから",
+    "explanation": "誤り",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "遺伝子が密集していたから",
+    "explanation": "繰り返し配列が原因",
+    "correct": false,
+    "trap": "mechanism"
+   }
+  ],
+  "explanation": "染色体の末端（テロメア）や中央（セントロメア）には<b>繰り返し配列</b>が多く、当時の技術では並び順を決められなかった。新手法で解読され2022年に完全解読。",
+  "point": "繰り返し＝読みにくい。",
+  "tags": [
+   "ゲノムの構成"
+  ]
+ },
+ {
+  "id": "g51a",
+  "slide": 51,
+  "chapter": 4,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "スライド51（遺伝子構造の空欄図）で、転写の向きを決め、遺伝子の最も上流（左端）にある枠に入る語句はどれか。",
+  "options": [
+   {
+    "text": "エクソン",
+    "explanation": "タンパク質をコードする部分",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "イントロン",
+    "explanation": "エクソンの間",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "プロモーター",
+    "explanation": "転写の開始と向きを決める",
+    "correct": true
+   },
+   {
+    "text": "ポリアデニル化シグナル",
+    "explanation": "3'末端側",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "終止コドン",
+    "explanation": "最後のエクソン内",
+    "correct": false,
+    "trap": "swap"
+   }
+  ],
+  "explanation": "遺伝子の最初の部分にある<b>プロモーター</b>が転写の開始点と向きを決める（スライド52）。",
+  "point": "一番左＝プロモーター、一番右＝poly(A)シグナル。",
+  "tags": [
+   "遺伝子の構造"
+  ]
+ },
+ {
+  "id": "g51b",
+  "slide": 51,
+  "chapter": 4,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "ヒト遺伝子の構造について、上流（5'側）から下流（3'側）への並びとして正しいのはどれか。",
+  "options": [
+   {
+    "text": "ポリアデニル化シグナル → 3'UTR → 終止コドン → 開始コドン → プロモーター",
+    "explanation": "逆順",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "プロモーター → 5'UTR → 開始コドン → （エクソン/イントロン） → 終止コドン → 3'UTR → ポリアデニル化シグナル",
+    "explanation": "スライド41・51の並び",
+    "correct": true
+   },
+   {
+    "text": "プロモーター → 終止コドン → 5'UTR → 開始コドン → 3'UTR",
+    "explanation": "開始と終止の位置が逆",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "5'UTR → プロモーター → 開始コドン → 3'UTR → 終止コドン",
+    "explanation": "UTRとプロモーター、終止コドンの位置が誤り",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "開始コドン → プロモーター → イントロン → 5'UTR → ポリアデニル化シグナル",
+    "explanation": "順序が誤り",
+    "correct": false,
+    "trap": "reverse"
+   }
+  ],
+  "explanation": "プロモーター → 5'UTR → 開始コドン(ATG) → エクソンとイントロン → 終止コドン(TGA) → 3'UTR → ポリアデニル化シグナル。",
+  "point": "「読み始めの印 → 前置き → 本文 → 後書き → 終わりの印」。",
+  "tags": [
+   "遺伝子の構造"
+  ]
+ },
+ {
+  "id": "g52a",
+  "slide": 52,
+  "chapter": 4,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "スライド52の記載で、ヒトのゲノムに存在する遺伝子のおよその数はどれか。",
+  "options": [
+   {
+    "text": "約2,500",
+    "explanation": "誤り",
+    "correct": false,
+    "trap": "number"
+   },
+   {
+    "text": "約25,000",
+    "explanation": "スライドの記載",
+    "correct": true
+   },
+   {
+    "text": "約250,000",
+    "explanation": "誤り",
+    "correct": false,
+    "trap": "number"
+   },
+   {
+    "text": "約31億",
+    "explanation": "塩基対の数",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "約37",
+    "explanation": "ミトコンドリアゲノムの遺伝子数",
+    "correct": false,
+    "trap": "swap"
+   }
+  ],
+  "explanation": "ヒトのゲノムは約31億の塩基対でできており、<b>約25,000</b>の遺伝子が存在すると言われている。",
+  "point": "31億は塩基対、2.5万は遺伝子。",
+  "tags": [
+   "ゲノムの構成"
+  ]
+ },
+ {
+  "id": "g52b",
+  "slide": 52,
+  "chapter": 4,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "転写の方向について、スライド52の記載と合うのはどれか。",
+  "options": [
+   {
+    "text": "すべての遺伝子は同じDNA鎖を鋳型にする",
+    "explanation": "遺伝子によって鋳型にする鎖が異なる",
+    "correct": false,
+    "trap": "scope"
+   },
+   {
+    "text": "転写の方向を決めるのは、各遺伝子の最初の部分にあるプロモーターである",
+    "explanation": "スライドの記載どおり",
+    "correct": true
+   },
+   {
+    "text": "転写の方向は終止コドンが決める",
+    "explanation": "プロモーターが決める",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "1つの遺伝子は両方の鎖から同時に転写される",
+    "explanation": "一方の鎖を鋳型に転写",
+    "correct": false,
+    "trap": "mechanism"
+   },
+   {
+    "text": "遺伝子は染色体上にランダムに1塩基ずつ散らばっている",
+    "explanation": "区域ごとに存在",
+    "correct": false,
+    "trap": "fact"
+   }
+  ],
+  "explanation": "DNA鎖の一方を鋳型として転写される遺伝子と、もう一方から転写される遺伝子がある。転写の方向を決めるのは<b>プロモーター</b>（図のP）。",
+  "point": "Pの向きに矢印が伸びる。",
+  "tags": [
+   "遺伝子の構造",
+   "転写・翻訳"
+  ]
+ },
+ {
+  "id": "g54a",
+  "slide": 54,
+  "chapter": 4,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "タンパク質合成が始まるコドンはどれか。",
+  "options": [
+   {
+    "text": "AUG",
+    "explanation": "開始コドン（メチオニン）",
+    "correct": true
+   },
+   {
+    "text": "UAG",
+    "explanation": "終止コドン",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "UGA",
+    "explanation": "終止コドン",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "GCU",
+    "explanation": "アラニン",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "GUU",
+    "explanation": "バリン",
+    "correct": false,
+    "trap": "swap"
+   }
+  ],
+  "explanation": "(1)特定の<b>開始コドン（AUG）</b>から合成が始まり、(2)途中のコドンでアミノ酸配列が決まり、(3)<b>終止コドン</b>で終了する。",
+  "point": "AUG＝Met＝スタート。",
+  "tags": [
+   "転写・翻訳"
+  ]
+ },
+ {
+  "id": "g54b",
+  "slide": 54,
+  "chapter": 4,
+  "kind": "応用・症例",
+  "difficulty": 3,
+  "stem": "mRNA「5'-AUAUGGCUGUUUAGGC-3'」が翻訳されたときに合成されるペプチドはどれか。",
+  "options": [
+   {
+    "text": "Met-Ala-Val",
+    "explanation": "AUG(Met)-GCU(Ala)-GUU(Val)-UAG(終止)",
+    "correct": true
+   },
+   {
+    "text": "Ile-Trp-Leu",
+    "explanation": "5'端のAUAから3文字ずつ読んだ誤り。開始コドンAUGから読む",
+    "correct": false,
+    "trap": "mechanism"
+   },
+   {
+    "text": "Met-Ala-Val-Ala",
+    "explanation": "UAGで終了するので、その後は翻訳されない",
+    "correct": false,
+    "trap": "scope"
+   },
+   {
+    "text": "Val-Ala-Met",
+    "explanation": "3'側から読んだ誤り",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "Met",
+    "explanation": "終止コドンを取り違えている",
+    "correct": false,
+    "trap": "fact"
+   }
+  ],
+  "explanation": "翻訳は<b>開始コドンAUG</b>から3塩基ずつ：AUG(Met)・GCU(Ala)・GUU(Val)・<b>UAG(終止)</b>。5'側のAUと3'側のGCはコードしない部分。",
+  "point": "まずAUGを探す → 3つずつ区切る → 終止コドンで止める。",
+  "tags": [
+   "転写・翻訳"
+  ]
+ },
+ {
+  "id": "g55a",
+  "slide": 55,
+  "chapter": 5,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "終止コドンへの置換を何というか。",
+  "options": [
+   {
+    "text": "ミスセンス変異",
+    "explanation": "異なるアミノ酸への置換",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "ナンセンス変異",
+    "explanation": "終止コドンへの置換",
+    "correct": true
+   },
+   {
+    "text": "サイレント変異",
+    "explanation": "アミノ酸が変わらない置換",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "センス変異",
+    "explanation": "終止コドンから別のアミノ酸への置換（逆向き）",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "欠失",
+    "explanation": "置換ではない",
+    "correct": false,
+    "trap": "swap"
+   }
+  ],
+  "explanation": "<b>ナンセンス変異</b>＝終止コドンへの置換。逆に終止コドンがアミノ酸のコドンに変わるのが<b>センス変異</b>。",
+  "point": "ナンセンス＝「意味がなくなる（止まる）」。",
+  "tags": [
+   "変異"
+  ]
+ },
+ {
+  "id": "g55b",
+  "slide": 55,
+  "chapter": 5,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "アスパラギン酸のコドンGACがGAAに変わると、グルタミン酸が指定される。この変異の分類として最も適切なのはどれか。",
+  "options": [
+   {
+    "text": "サイレント変異",
+    "explanation": "アミノ酸が変わっている",
+    "correct": false,
+    "trap": "mechanism"
+   },
+   {
+    "text": "ナンセンス変異",
+    "explanation": "終止コドンにはなっていない",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "ミスセンス変異（保存的置換）",
+    "explanation": "性質の似たアミノ酸（Asp→Glu）への置換",
+    "correct": true
+   },
+   {
+    "text": "ミスセンス変異（非保存的置換）",
+    "explanation": "Asp→Gluは似た性質（酸性アミノ酸どうし）",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "センス変異",
+    "explanation": "終止コドンからの置換ではない",
+    "correct": false,
+    "trap": "swap"
+   }
+  ],
+  "explanation": "スライド55：保存的置換の例＝<b>アスパラギン酸(GAC・GAT)とグルタミン酸(GAA・GAG)</b>。非保存的置換の例＝アルギニンCGA→グリシンGGA、プロリンCCC→ヒスチジンCAC。",
+  "point": "「似た性質どうし」＝保存的。",
+  "tags": [
+   "変異"
+  ]
+ },
+ {
+  "id": "g56a",
+  "slide": 56,
+  "chapter": 5,
+  "kind": "重要事項",
+  "difficulty": 2,
+  "stem": "スライド56の個人ゲノム解読結果で、1人のゲノムに見つかった変化として最も数が多いものはどれか。",
+  "options": [
+   {
+    "text": "コピー数変化",
+    "explanation": "23〜62か所",
+    "correct": false,
+    "trap": "number"
+   },
+   {
+    "text": "タンパク質コード領域の挿入・欠失",
+    "explanation": "345〜863",
+    "correct": false,
+    "trap": "number"
+   },
+   {
+    "text": "一塩基多型",
+    "explanation": "約320万〜350万か所",
+    "correct": true
+   },
+   {
+    "text": "アミノ酸置換を伴う一塩基多型",
+    "explanation": "約6千〜1万",
+    "correct": false,
+    "trap": "number"
+   },
+   {
+    "text": "挿入",
+    "explanation": "約6.6万",
+    "correct": false,
+    "trap": "number"
+   }
+  ],
+  "explanation": "標準配列と比べた違いは<b>一塩基多型（SNP）</b>が圧倒的に多い（ワトソン博士3,470,669、ベンター博士3,213,401）。",
+  "point": "個人差の主役はSNP。",
+  "tags": [
+   "遺伝子多型"
+  ]
+ },
+ {
+  "id": "g56b",
+  "slide": 56,
+  "chapter": 5,
+  "kind": "理解・統合",
+  "difficulty": 3,
+  "stem": "ワトソン博士のゲノムの一塩基多型（約347万）のうち、アミノ酸置換を伴うもの（約1万）の割合からいえることとして最も適切なのはどれか。",
+  "options": [
+   {
+    "text": "一塩基多型のほとんどはアミノ酸を変える",
+    "explanation": "約0.3%にすぎない",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "一塩基多型の大部分はアミノ酸配列を変えない",
+    "explanation": "アミノ酸置換を伴うのはごく一部",
+    "correct": true
+   },
+   {
+    "text": "一塩基多型はすべて病気の原因になる",
+    "explanation": "大部分は個人差（多型）",
+    "correct": false,
+    "trap": "scope"
+   },
+   {
+    "text": "アミノ酸置換を伴う一塩基多型は存在しない",
+    "explanation": "約1万存在する",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "一塩基多型はタンパク質コード領域にしか存在しない",
+    "explanation": "アミノ酸指定配列はゲノムの約1.3%",
+    "correct": false,
+    "trap": "fact"
+   }
+  ],
+  "explanation": "10,569 / 3,470,669 ≈ 0.3%。アミノ酸を指定する配列がゲノムの約1.3%であることとも合わせ、多くのSNPはアミノ酸を変えない（考察）。",
+  "point": "数字を割合に直して考える。",
+  "tags": [
+   "遺伝子多型",
+   "ゲノムの構成"
+  ]
+ },
+ {
+  "id": "g57a",
+  "slide": 57,
+  "chapter": 5,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "スライド57で、塩基レベルの変異として示されていないものはどれか。",
+  "options": [
+   {
+    "text": "置換",
+    "explanation": "示されている",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "挿入",
+    "explanation": "示されている",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "欠失",
+    "explanation": "示されている",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "メチル化",
+    "explanation": "塩基配列を変えないエピジェネティックな変化（第6講）",
+    "correct": true
+   },
+   {
+    "text": "染色体異常",
+    "explanation": "より大きな変化として示されている",
+    "correct": false,
+    "trap": "fact"
+   }
+  ],
+  "explanation": "変異：置換・挿入・欠失、さらに染色体異常（数的・構造的）。メチル化は塩基配列を変えない<b>エピジェネティック</b>な変化。",
+  "point": "変異＝配列が変わる。",
+  "tags": [
+   "変異",
+   "エピゲノム"
+  ]
+ },
+ {
+  "id": "g57b",
+  "slide": 57,
+  "chapter": 5,
+  "kind": "理解・統合",
+  "difficulty": 3,
+  "stem": "mRNA「AUG GCU GUU UAG」の2番目のコドンの前に1塩基Cが挿入された。起こりうる変化として最も適切なのはどれか（補足：読み枠の考え方）。",
+  "options": [
+   {
+    "text": "Met以外のアミノ酸は変わらない",
+    "explanation": "挿入以降のコドンの区切りがずれる",
+    "correct": false,
+    "trap": "mechanism"
+   },
+   {
+    "text": "挿入以降のコドンの読み枠がずれ、アミノ酸配列が大きく変わる",
+    "explanation": "AUG|CGC|UGU|UUA|G…と区切りがずれる",
+    "correct": true
+   },
+   {
+    "text": "1塩基の挿入はサイレント変異になる",
+    "explanation": "読み枠がずれる",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "開始コドンが消失する",
+    "explanation": "AUGは残る",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "挿入された塩基だけがアミノ酸1個に翻訳される",
+    "explanation": "コドンは3塩基",
+    "correct": false,
+    "trap": "number"
+   }
+  ],
+  "explanation": "3の倍数でない挿入・欠失では、それ以降のコドンの区切り（読み枠）がずれる（フレームシフト：補足）。AUG|CGC|UGU|UUA|G…",
+  "point": "挿入・欠失は「区切り」を壊す。",
+  "tags": [
+   "変異"
+  ]
+ },
+ {
+  "id": "g58a",
+  "slide": 58,
+  "chapter": 5,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "アセトアルデヒドを酢酸に分解する酵素はどれか。",
+  "options": [
+   {
+    "text": "アルコール脱水素酵素（ADH）",
+    "explanation": "アルコール→アセトアルデヒド",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "アセトアルデヒド脱水素酵素（ALDH）",
+    "explanation": "アセトアルデヒド→酢酸",
+    "correct": true
+   },
+   {
+    "text": "逆転写酵素",
+    "explanation": "無関係",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "RNAポリメラーゼ",
+    "explanation": "無関係",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "ヒストン脱アセチル化酵素",
+    "explanation": "無関係",
+    "correct": false,
+    "trap": "fact"
+   }
+  ],
+  "explanation": "アルコール →(<b>ADH</b>)→ アセトアルデヒド →(<b>ALDH</b>)→ 酢酸 → 二酸化炭素と水。",
+  "point": "A→AはADH、A→酢はALDH。",
+  "tags": [
+   "遺伝子多型"
+  ]
+ },
+ {
+  "id": "g58b",
+  "slide": 58,
+  "chapter": 5,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "ADH遺伝子についてスライド58の記載と合うのはどれか。",
+  "options": [
+   {
+    "text": "ADH1は日本人で個人差が大きい",
+    "explanation": "ADH1は個人差も人種差もない",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "ADH2には日本人を含め個人差（遺伝子多型）がある",
+    "explanation": "記載どおり",
+    "correct": true
+   },
+   {
+    "text": "ADH3は日本人で個人差がある",
+    "explanation": "白人に個人差があり、日本人にはない",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "日本人ではADH2*1/ADH2*1が最も多い",
+    "explanation": "最も多いのはADH2*2/ADH2*2（約60%）",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "ADH2*2/ADH2*2の酵素活性はADH2*1/ADH2*1より低い",
+    "explanation": "100倍高い",
+    "correct": false,
+    "trap": "reverse"
+   }
+  ],
+  "explanation": "ADH1は個人差・人種差なし、<b>ADH2は日本人を含め個人差あり</b>、ADH3は白人に個人差。ADH2*2/*2は日本人の60%で活性100倍。",
+  "point": "ADH2＝日本人の多型。",
+  "tags": [
+   "遺伝子多型"
+  ]
+ },
+ {
+  "id": "g59a",
+  "slide": 59,
+  "chapter": 5,
+  "kind": "重要事項",
+  "difficulty": 2,
+  "stem": "ALDH遺伝子の多型で「お酒が飲めないタイプ」の遺伝子型はどれか。",
+  "options": [
+   {
+    "text": "GG",
+    "explanation": "お酒が強いタイプ（白人・黒人はすべてGG）",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "AG",
+    "explanation": "お酒が弱いタイプ（モンゴロイドの45%）",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "AA",
+    "explanation": "お酒が飲めないタイプ（モンゴロイドの5%）",
+    "correct": true
+   },
+   {
+    "text": "ADH2*2/ADH2*2",
+    "explanation": "ADHの遺伝子型",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "ADH1",
+    "explanation": "個人差のない遺伝子",
+    "correct": false,
+    "trap": "swap"
+   }
+  ],
+  "explanation": "ALDHは487番目のアミノ酸を決める塩基の違いで3型：<b>GG（強い）・AG（弱い）・AA（飲めない）</b>。487番目がグルタミン酸→リシンに置き換わる。",
+  "point": "Aが増えるほど弱い。",
+  "tags": [
+   "遺伝子多型"
+  ]
+ },
+ {
+  "id": "g59b",
+  "slide": 59,
+  "chapter": 5,
+  "kind": "理解・統合",
+  "difficulty": 3,
+  "stem": "ALDHの活性が弱く、ADHの活性が強い人で起こることとして、スライド59の記載に合うのはどれか。",
+  "options": [
+   {
+    "text": "すぐにアルコールを代謝するので酔わずに飲める",
+    "explanation": "それはALDHもADHも強いタイプ",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "アルコールがすぐにアセトアルデヒドに変化して蓄積し、お酒が苦手",
+    "explanation": "記載どおり",
+    "correct": true
+   },
+   {
+    "text": "アルコールの状態が長く続き、ほろ酔い気分が続く",
+    "explanation": "ADH活性が弱いタイプ",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "アセトアルデヒドがすぐに酢酸になるので顔が赤くならない",
+    "explanation": "ALDHが弱いので蓄積する",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "アルコールの代謝が止まり、アルコールが蓄積する",
+    "explanation": "ADHが強いのでアセトアルデヒドができる",
+    "correct": false,
+    "trap": "mechanism"
+   }
+  ],
+  "explanation": "ADH強＝アルコールがすぐアセトアルデヒドになる。ALDH弱＝アセトアルデヒドが分解されにくい → <b>アセトアルデヒドが蓄積</b>し、ほろ酔いにもなれずお酒が苦手。",
+  "point": "どちらの酵素が「入口」で、どちらが「出口」かで考える。",
+  "tags": [
+   "遺伝子多型"
+  ]
+ },
+ {
+  "id": "g60a",
+  "slide": 60,
+  "chapter": 5,
+  "kind": "応用・症例",
+  "difficulty": 2,
+  "stem": "20歳の女性。初めてビールを約50 mL飲んだ直後から、顔面紅潮、頭痛、動悸が出現した。「父方の祖父、父と姉は全く飲酒できない、父方の祖母、母と兄は少しは飲めるが普段は飲まない」。患者への説明で正しいのはどれか。",
+  "options": [
+   {
+    "text": "エタノールの代謝が速い",
+    "explanation": "症状の原因はアセトアルデヒドの蓄積。エタノールの代謝の速さでは説明できない",
+    "correct": false,
+    "trap": "mechanism"
+   },
+   {
+    "text": "アセトアルデヒドの代謝が速い",
+    "explanation": "逆。ALDH活性が低く代謝が遅い",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "訓練しても飲めるようにはならない",
+    "explanation": "ALDHの遺伝子型で決まる体質（正解c）",
+    "correct": true
+   },
+   {
+    "text": "アルコール依存症になりやすい",
+    "explanation": "飲めない体質で、大量飲酒に至りにくい（補足）",
+    "correct": false,
+    "trap": "mechanism"
+   },
+   {
+    "text": "生活環境の関与が大きい",
+    "explanation": "家族歴からも遺伝要因が大きい",
+    "correct": false,
+    "trap": "mechanism"
+   }
+  ],
+  "explanation": "少量で顔面紅潮・頭痛・動悸、家族にも飲めない人が多い → <b>ALDH活性の低い遺伝子型</b>（AA／AG）。アセトアルデヒドを分解できず蓄積する体質は遺伝的に決まっており、<b>訓練しても飲めるようにはならない</b>。",
+  "point": "症状（アセトアルデヒド）→ 酵素（ALDH）→ 遺伝子型（変えられない）。",
+  "tags": [
+   "遺伝子多型",
+   "遺伝子と疾患"
+  ]
+ },
+ {
+  "id": "g60b",
+  "slide": 60,
+  "chapter": 5,
+  "kind": "理解・統合",
+  "difficulty": 3,
+  "stem": "スライド60の患者について、症状の直接の原因物質と、その原因となる酵素の組合せとして正しいのはどれか。",
+  "options": [
+   {
+    "text": "エタノール ― ADH活性の低下",
+    "explanation": "エタノールの蓄積ではない",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "アセトアルデヒド ― ALDH活性の低下",
+    "explanation": "アセトアルデヒドが分解されず蓄積",
+    "correct": true
+   },
+   {
+    "text": "酢酸 ― ALDH活性の亢進",
+    "explanation": "酢酸は毒性の主因ではない",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "アセトアルデヒド ― ADH活性の欠損",
+    "explanation": "ADHが欠損するとアセトアルデヒドはできにくい",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "二酸化炭素 ― 逆転写酵素",
+    "explanation": "無関係",
+    "correct": false,
+    "trap": "fact"
+   }
+  ],
+  "explanation": "アセトアルデヒドの半数致死量は0.3 gと毒性が強く、顔が赤くなったり気持ちが悪くなる原因。<b>ALDH</b>の活性が低いと分解されず蓄積する。",
+  "point": "原因物質はアセトアルデヒド。",
+  "tags": [
+   "遺伝子多型"
+  ]
+ },
+ {
+  "id": "g62a",
+  "slide": 62,
+  "chapter": 5,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "プロセッシングを受けた偽遺伝子の特徴として正しいのはどれか。",
+  "options": [
+   {
+    "text": "イントロンを含む",
+    "explanation": "イントロンを欠く",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "元の遺伝子と同じ染色体の隣に並ぶ",
+    "explanation": "元の遺伝子と同じ染色体には挿入されない",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "イントロンを欠く",
+    "explanation": "mRNAを鋳型にしたDNAコピーのため",
+    "correct": true
+   },
+   {
+    "text": "DNA断片が直接切り貼りされて生じる",
+    "explanation": "レトロ転移（逆転写）で生じる",
+    "correct": false,
+    "trap": "mechanism"
+   },
+   {
+    "text": "活発にタンパク質を作る",
+    "explanation": "機能を持たない",
+    "correct": false,
+    "trap": "fact"
+   }
+  ],
+  "explanation": "プロセッシングを受けた偽遺伝子は、転写後に逆転写がおこり、プロセッシングを受けた<b>mRNAを鋳型としたDNAコピー</b>がゲノムに再挿入されたもの（<b>レトロ転移</b>）。<b>イントロンを欠き</b>、元の遺伝子と同じ染色体には挿入されない。",
+  "point": "mRNA由来＝イントロンなし。",
+  "tags": [
+   "トランスポゾン"
+  ]
+ },
+ {
+  "id": "g62b",
+  "slide": 62,
+  "chapter": 5,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "2種類の偽遺伝子の組合せとして正しいのはどれか。",
+  "options": [
+   {
+    "text": "プロセッシングを受けない偽遺伝子 ― レトロ転移で生じた",
+    "explanation": "レトロ転移で生じるのはプロセッシングを受けた偽遺伝子",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "プロセッシングを受けない偽遺伝子 ― 重要なコード配列や調節配列の変異で不活性化した遺伝子",
+    "explanation": "記載どおり",
+    "correct": true
+   },
+   {
+    "text": "プロセッシングを受けた偽遺伝子 ― 変異で不活性化した元の遺伝子そのもの",
+    "explanation": "それはプロセッシングを受けない偽遺伝子",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "どちらもイントロンを含む",
+    "explanation": "プロセッシングを受けたものはイントロンを欠く",
+    "correct": false,
+    "trap": "scope"
+   },
+   {
+    "text": "偽遺伝子はゲノム上に数個しかない",
+    "explanation": "何万にも及ぶ",
+    "correct": false,
+    "trap": "number"
+   }
+  ],
+  "explanation": "プロセッシングを<b>受けない</b>偽遺伝子＝かつて機能していたが変異で不活性化した進化の副産物。プロセッシングを<b>受けた</b>偽遺伝子＝レトロ転移で生じる。",
+  "point": "「受けた」＝mRNA経由。",
+  "tags": [
+   "トランスポゾン"
+  ]
+ },
+ {
+  "id": "g63a",
+  "slide": 63,
+  "chapter": 5,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "トランスポゾンを発見した研究者と材料の組合せで正しいのはどれか。",
+  "options": [
+   {
+    "text": "エイブリー ― 肺炎球菌",
+    "explanation": "DNAが遺伝の本体であることを示した",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "マクリントック ― トウモロコシ",
+    "explanation": "実の斑（まだら）に着目",
+    "correct": true
+   },
+   {
+    "text": "ワトソン ― ショウジョウバエ",
+    "explanation": "誤り",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "マクリントック ― 肺炎球菌",
+    "explanation": "材料が誤り",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "エイブリー ― トウモロコシ",
+    "explanation": "誤り",
+    "correct": false,
+    "trap": "swap"
+   }
+  ],
+  "explanation": "バーバラ・<b>マクリントック</b>は<b>トウモロコシ</b>の実の斑がトランスポゾンの転移によることを証明。DNA構造解明前の先駆的な発見で、1983年に81歳でノーベル賞。",
+  "point": "エイブリー＝肺炎球菌、マクリントック＝トウモロコシ。",
+  "tags": [
+   "トランスポゾン"
+  ]
+ },
+ {
+  "id": "g63b",
+  "slide": 63,
+  "chapter": 5,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "トランスポゾンについて、スライド63の記載と合うのはどれか。",
+  "options": [
+   {
+    "text": "ゲノム上の位置を変えることのできない配列である",
+    "explanation": "位置を転移できる",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "DNA断片が直接転移するDNA型と、転写と逆転写を経るRNA型がある",
+    "explanation": "記載どおり",
+    "correct": true
+   },
+   {
+    "text": "狭義のトランスポゾンはRNA型を指す",
+    "explanation": "狭義はDNA型、RNA型はレトロポゾン",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "マクリントックの発見は発表直後から高く評価された",
+    "explanation": "先駆的過ぎて無視されていた",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "トランスポゾンは細菌にしか存在しない",
+    "explanation": "ヒトゲノムの約45%が関連配列",
+    "correct": false,
+    "trap": "scope"
+   }
+  ],
+  "explanation": "トランスポゾン＝ゲノム上の位置を<b>転移</b>できる配列。DNA型（直接転移）とRNA型（転写・逆転写を経る＝<b>レトロポゾン</b>）。狭義のトランスポゾンはDNA型のみ。",
+  "point": "RNA型＝レトロ（逆転写）。",
+  "tags": [
+   "トランスポゾン"
+  ]
+ },
+ {
+  "id": "g64a",
+  "slide": 64,
+  "chapter": 5,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "ヒトゲノムに占めるトランスポゾン関連配列の割合（スライドの値）はどれか。",
+  "options": [
+   {
+    "text": "約1.3%",
+    "explanation": "アミノ酸指定配列",
+    "correct": false,
+    "trap": "number"
+   },
+   {
+    "text": "約8%",
+    "explanation": "2003年に未解読だった部分",
+    "correct": false,
+    "trap": "number"
+   },
+   {
+    "text": "約25%",
+    "explanation": "遺伝子に関わるDNA",
+    "correct": false,
+    "trap": "number"
+   },
+   {
+    "text": "約45%",
+    "explanation": "スライド64の値",
+    "correct": true
+   },
+   {
+    "text": "約74.7%",
+    "explanation": "非遺伝子DNA",
+    "correct": false,
+    "trap": "number"
+   }
+  ],
+  "explanation": "ヒトゲノムの約<b>45%</b>がトランスポゾン関連配列（LINE-1、Alu、SVA、LTR型、DNA型など）。",
+  "point": "ゲノムの半分近くは「動く配列」の名残。",
+  "tags": [
+   "トランスポゾン",
+   "ゲノムの構成"
+  ]
+ },
+ {
+  "id": "g64b",
+  "slide": 64,
+  "chapter": 5,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "ヒトゲノムの構成について正しいのはどれか。",
+  "options": [
+   {
+    "text": "アミノ酸指定配列はトランスポゾン関連配列より多い",
+    "explanation": "1.3% vs 45%",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "トランスポゾン関連配列はゲノムの半分近くを占める",
+    "explanation": "約45%",
+    "correct": true
+   },
+   {
+    "text": "トランスポゾン関連配列はゲノムに存在しない",
+    "explanation": "約45%存在",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "トランスポゾン関連配列はすべて現在も転移している",
+    "explanation": "転移活性があるのはLINE-1・Alu・SVAなど一部",
+    "correct": false,
+    "trap": "scope"
+   },
+   {
+    "text": "Aluはトランスポゾンではない",
+    "explanation": "non-LTR型レトロトランスポゾン",
+    "correct": false,
+    "trap": "fact"
+   }
+  ],
+  "explanation": "スライド64：Transposon-related sequences <b>45%</b>。アミノ酸指定配列（約1.3%）よりはるかに多い。",
+  "point": "1.3%と45%の対比。",
+  "tags": [
+   "トランスポゾン",
+   "ゲノムの構成"
+  ]
+ },
+ {
+  "id": "g65a",
+  "slide": 65,
+  "chapter": 5,
+  "kind": "重要事項",
+  "difficulty": 2,
+  "stem": "現在のヒトゲノムで転移活性をもつトランスポゾンはどれか。",
+  "options": [
+   {
+    "text": "DNA型トランスポゾン",
+    "explanation": "霊長類進化の初期に活動、現在のヒトでは不活性",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "LINE-1",
+    "explanation": "non-LTR型：現在も転移活性あり",
+    "correct": true
+   },
+   {
+    "text": "HERV（LTR型）",
+    "explanation": "転移活性（-）で自身は動かない",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "プロセッシングを受けない偽遺伝子",
+    "explanation": "転移しない",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "ミトコンドリアDNA",
+    "explanation": "トランスポゾンではない",
+    "correct": false,
+    "trap": "swap"
+   }
+  ],
+  "explanation": "<b>non-LTR型（LINE-1・Alu・SVA）</b>が現在のヒトゲノムで転移活性をもつ。DNA型は現在不活性、LTR型（HERV）は自身は動かない。",
+  "point": "今も動く＝LINE-1・Alu・SVA。",
+  "tags": [
+   "トランスポゾン"
+  ]
+ },
+ {
+  "id": "g65b",
+  "slide": 65,
+  "chapter": 5,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "トランスポゾンの動き方の組合せとして正しいのはどれか。",
+  "options": [
+   {
+    "text": "DNA型 ― コピー＆ペースト",
+    "explanation": "DNA型はカット＆ペースト",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "レトロトランスポゾン ― カット＆ペースト",
+    "explanation": "コピー＆ペースト",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "DNA型 ― カット＆ペースト",
+    "explanation": "記載どおり",
+    "correct": true
+   },
+   {
+    "text": "レトロトランスポゾン ― コピー数は増えない",
+    "explanation": "コピー＆ペーストで数が増える",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "DNA型 ― 逆転写を必要とする",
+    "explanation": "逆転写はRNA型",
+    "correct": false,
+    "trap": "swap"
+   }
+  ],
+  "explanation": "DNA型＝<b>カット＆ペースト</b>（移動するだけ）、レトロトランスポゾン＝<b>コピー＆ペースト</b>（コピー数が増える）。",
+  "point": "レトロは増える。",
+  "tags": [
+   "トランスポゾン"
+  ]
+ },
+ {
+  "id": "g66a",
+  "slide": 66,
+  "chapter": 5,
+  "kind": "重要事項",
+  "difficulty": 2,
+  "stem": "LINE-1がコードし、レトロ転移に使われる酵素はどれか。",
+  "options": [
+   {
+    "text": "逆転写酵素",
+    "explanation": "RNAをDNAに写す",
+    "correct": true
+   },
+   {
+    "text": "RNAポリメラーゼⅢ",
+    "explanation": "Aluが利用するプロモーターの種類",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "ALDH",
+    "explanation": "アセトアルデヒド脱水素酵素",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "ヒストンアセチル化酵素",
+    "explanation": "エピゲノムの酵素",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "DNAリガーゼ",
+    "explanation": "記載なし",
+    "correct": false,
+    "trap": "fact"
+   }
+  ],
+  "explanation": "LINE-1はRNA結合タンパク質と<b>逆転写酵素</b>をコードする。約50万コピーのうち、完全で機能するのは約100コピー。",
+  "point": "LINE-1は「自前の逆転写酵素」をもつ。",
+  "tags": [
+   "トランスポゾン"
+  ]
+ },
+ {
+  "id": "g66b",
+  "slide": 66,
+  "chapter": 5,
+  "kind": "理解・統合",
+  "difficulty": 3,
+  "stem": "non-LTR型レトロトランスポゾンについて、スライド66の記載と合うのはどれか。",
+  "options": [
+   {
+    "text": "LINE-1は約50万コピーすべてが機能をもつ",
+    "explanation": "機能するのは約100コピー",
+    "correct": false,
+    "trap": "number"
+   },
+   {
+    "text": "Aluは約100万コピーあり、約20出生に1回の新規挿入がある",
+    "explanation": "記載どおり",
+    "correct": true
+   },
+   {
+    "text": "SVAは独自の強力なプロモーターをもつ",
+    "explanation": "Lacking promoter（プロモーターを欠く）",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "これらの新規挿入は体細胞にしか起こらない",
+    "explanation": "生殖系列での変異",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "LINE-1の新規挿入は1万出生に1回以下である",
+    "explanation": "1/20〜200出生",
+    "correct": false,
+    "trap": "number"
+   }
+  ],
+  "explanation": "LINE-1：〜50万コピー、機能約100、1/20〜200出生。Alu：〜100万コピー、RNAPⅢプロモーター、1/20出生。SVA：〜3,000コピー、プロモーター欠如、1/900出生。<b>生殖系列</b>での変異。",
+  "point": "数字の比較（どれが最多・最頻か）。",
+  "tags": [
+   "トランスポゾン"
+  ]
+ },
+ {
+  "id": "g67a",
+  "slide": 67,
+  "chapter": 5,
+  "kind": "重要事項",
+  "difficulty": 2,
+  "stem": "生殖系列でのレトロ転移について、スライド67の記載と合うのはどれか。",
+  "options": [
+   {
+    "text": "遺伝性疾患の原因となった例は報告されていない",
+    "explanation": "少なくとも65例",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "少なくとも65例で遺伝性疾患の原因となっている",
+    "explanation": "記載どおり",
+    "correct": true
+   },
+   {
+    "text": "挿入はヘテロクロマチンに起こりやすい",
+    "explanation": "ユークロマチン（転写活性↑）に挿入されやすい",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "挿入はもう起こっていない",
+    "explanation": "Insertions continue to accumulate",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "遺伝子発現には影響しない",
+    "explanation": "スプライシングや発現量に影響する",
+    "correct": false,
+    "trap": "fact"
+   }
+  ],
+  "explanation": "挿入変異誘発・ゲノム再編成・発現調節の変化・新しい遺伝子の形成など。<b>少なくとも65例</b>で遺伝性疾患（血友病、嚢胞性線維症、デュシェンヌ型筋ジストロフィー、βサラセミアなど）。<b>ユークロマチン</b>に挿入されやすい。",
+  "point": "動く配列は今も病気の原因になる。",
+  "tags": [
+   "トランスポゾン",
+   "遺伝子と疾患"
+  ]
+ },
+ {
+  "id": "g67b",
+  "slide": 67,
+  "chapter": 5,
+  "kind": "理解・統合",
+  "difficulty": 3,
+  "stem": "レトロトランスポゾンの新規挿入がユークロマチンに起こりやすいことから考えられる影響として最も適切なのはどれか。",
+  "options": [
+   {
+    "text": "発現していない領域に入るので、影響はほとんどない",
+    "explanation": "ユークロマチンは転写活性の高い（発現している）領域",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "転写活性の高い領域に入るため、遺伝子の働きを壊して疾患の原因になりうる",
+    "explanation": "記載（転写活性↑の部位に挿入されやすい）からの考察",
+    "correct": true
+   },
+   {
+    "text": "挿入された配列はすぐに除去される",
+    "explanation": "記載なし",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "ユークロマチンはDNAを含まない",
+    "explanation": "クロマチンの一状態",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "挿入は減数分裂を止める",
+    "explanation": "記載なし",
+    "correct": false,
+    "trap": "fact"
+   }
+  ],
+  "explanation": "ユークロマチン＝緩んで転写が活発な領域（第6講）。そこに挿入されやすいため、遺伝子の機能やスプライシング・発現量に影響し、疾患の原因になりうる（考察）。",
+  "point": "ユークロマチン＝読まれている場所。",
+  "tags": [
+   "トランスポゾン",
+   "エピゲノム"
+  ]
+ },
+ {
+  "id": "g68a",
+  "slide": 68,
+  "chapter": 6,
+  "kind": "理解・統合",
+  "difficulty": 1,
+  "stem": "スライド68の双子（同じゲノム）で外観に差が生じた主な要因として考えられるのはどれか。",
+  "options": [
+   {
+    "text": "ゲノムの塩基配列が大きく異なるため",
+    "explanation": "一卵性の双子は同じゲノム",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "生活習慣などの環境要因の違い",
+    "explanation": "環境因子（例：喫煙）で表現型が変わる",
+    "correct": true
+   },
+   {
+    "text": "染色体数が異なるため",
+    "explanation": "双子で染色体数は同じ",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "ミトコンドリアDNAが父親由来であるため",
+    "explanation": "ミトコンドリアDNAは母系遺伝",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "トランスポゾンがすべて失われたため",
+    "explanation": "誤り",
+    "correct": false,
+    "trap": "fact"
+   }
+  ],
+  "explanation": "遺伝的要因（ゲノム）が同じでも、<b>環境的要因</b>の違いが外観（表現型）の差として現れる。その仲立ちをするのがエピゲノム。",
+  "point": "同じ設計図でも、付箋（エピゲノム）が違う。",
+  "tags": [
+   "エピゲノム"
+  ]
+ },
+ {
+  "id": "g68b",
+  "slide": 68,
+  "chapter": 6,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "遺伝的要因と環境的要因の関係について、スライド68・70から最も適切に言えるのはどれか。",
+  "options": [
+   {
+    "text": "表現型は遺伝的要因だけで決まる",
+    "explanation": "環境要因も影響",
+    "correct": false,
+    "trap": "scope"
+   },
+   {
+    "text": "表現型は環境的要因だけで決まる",
+    "explanation": "遺伝的要因も影響",
+    "correct": false,
+    "trap": "scope"
+   },
+   {
+    "text": "同じ遺伝型でも、環境によるエピゲノムの変化などを通じて表現型が変わりうる",
+    "explanation": "多段階調節の考え方",
+    "correct": true
+   },
+   {
+    "text": "環境はDNAの塩基配列を必ず書き換える",
+    "explanation": "エピゲノムの変化は塩基配列を変えない",
+    "correct": false,
+    "trap": "mechanism"
+   },
+   {
+    "text": "双子の外観の差は染色体異常による",
+    "explanation": "記載なし",
+    "correct": false,
+    "trap": "fact"
+   }
+  ],
+  "explanation": "遺伝型（生まれつき）と表現型（症状と直結）の間に、生活環境因子で徐々に蓄積するエピゲノムがある。",
+  "point": "「遺伝か環境か」ではなく「遺伝×環境」。",
+  "tags": [
+   "エピゲノム"
+  ]
+ },
+ {
+  "id": "g69a",
+  "slide": 69,
+  "chapter": 6,
+  "kind": "重要事項",
+  "difficulty": 2,
+  "stem": "70歳以上の双子1826人の研究（BMJ 2009）の結果として、スライド69に記されているのはどれか。",
+  "options": [
+   {
+    "text": "見た目年齢は健康寿命を予見できなかった",
+    "explanation": "予見できた",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "見た目年齢は、実年齢・性・生活習慣で補正しても健康寿命を予見できた",
+    "explanation": "記載どおり",
+    "correct": true
+   },
+   {
+    "text": "見た目年齢はテロメア長と無関係だった",
+    "explanation": "白血球テロメア長と関連した",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "評価者の年齢によって評価が大きく異なった",
+    "explanation": "差はなかった",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "見た目年齢は認知機能と逆相関しなかった",
+    "explanation": "認知機能と関連した",
+    "correct": false,
+    "trap": "fact"
+   }
+  ],
+  "explanation": "①補正後も見た目年齢は健康寿命を予見できた、②白血球テロメア長・行動機能・認知機能と関連した、③評価者の年齢・性・経験による差はなかった。",
+  "point": "見た目年齢は健康の指標になりうる。",
+  "tags": [
+   "エピゲノム"
+  ]
+ },
+ {
+  "id": "g69b",
+  "slide": 69,
+  "chapter": 6,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "スライド69の研究で、見た目年齢と関連した指標に含まれないのはどれか。",
+  "options": [
+   {
+    "text": "白血球テロメア長",
+    "explanation": "関連した",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "行動（身体）機能",
+    "explanation": "関連した",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "認知機能",
+    "explanation": "関連した",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "健康寿命",
+    "explanation": "予見できた",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "ALDH2の遺伝子型",
+    "explanation": "研究の指標ではない",
+    "correct": true
+   }
+  ],
+  "explanation": "見た目年齢は健康寿命を予見し、白血球テロメア長・行動機能・認知機能と関連した。ALDH2遺伝子型は第5講の内容で、この研究とは無関係。",
+  "point": "研究の「結果」をそのまま読む。",
+  "tags": [
+   "エピゲノム"
+  ]
+ },
+ {
+  "id": "g70a",
+  "slide": 70,
+  "chapter": 6,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "遺伝情報の流れの多段階調節で、DNAやヒストンタンパク質の化学修飾に相当する層はどれか。",
+  "options": [
+   {
+    "text": "ゲノム",
+    "explanation": "塩基配列",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "エピゲノム",
+    "explanation": "化学修飾",
+    "correct": true
+   },
+   {
+    "text": "トランスクリプトーム",
+    "explanation": "RNA",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "プロテオーム",
+    "explanation": "タンパク質",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "メタボローム",
+    "explanation": "代謝物",
+    "correct": false,
+    "trap": "swap"
+   }
+  ],
+  "explanation": "エピゲノム＝<b>DNAやヒストンタンパク質の化学修飾</b>（生活環境因子で徐々に蓄積する変化）。",
+  "point": "epi-（上に）＋genome。",
+  "tags": [
+   "エピゲノム"
+  ]
+ },
+ {
+  "id": "g70b",
+  "slide": 70,
+  "chapter": 6,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "「症状と直結する変化」として位置づけられている層の組合せはどれか。",
+  "options": [
+   {
+    "text": "ゲノム・エピゲノム",
+    "explanation": "生まれつき・徐々に蓄積",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "プロテオーム・メタボローム",
+    "explanation": "タンパク質・代謝物＝表現型",
+    "correct": true
+   },
+   {
+    "text": "ゲノム・トランスクリプトーム",
+    "explanation": "誤り",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "エピゲノムのみ",
+    "explanation": "誤り",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "ゲノムのみ",
+    "explanation": "生まれつき",
+    "correct": false,
+    "trap": "swap"
+   }
+  ],
+  "explanation": "プロテオーム（タンパク質）・メタボローム（代謝物）が症状と直結する変化（表現型）。",
+  "point": "下流ほど症状に近い。",
+  "tags": [
+   "エピゲノム"
+  ]
+ },
+ {
+  "id": "g72a",
+  "slide": 72,
+  "chapter": 6,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "DNAの高メチル化によって起こる変化として正しいのはどれか。",
+  "options": [
+   {
+    "text": "クロマチン構造が緩み、遺伝子発現が増加する",
+    "explanation": "それは低メチル化",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "クロマチン構造が凝集し、遺伝子発現が低下する",
+    "explanation": "記載どおり",
+    "correct": true
+   },
+   {
+    "text": "DNAの塩基配列が変わる",
+    "explanation": "塩基配列は変わらない",
+    "correct": false,
+    "trap": "mechanism"
+   },
+   {
+    "text": "ヒストンがアセチル化される",
+    "explanation": "メチル化とアセチル化は別",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "遺伝子発現には影響しない",
+    "explanation": "発現が低下",
+    "correct": false,
+    "trap": "fact"
+   }
+  ],
+  "explanation": "<b>DNA高メチル化 → クロマチン構造の凝集 → 遺伝子発現の低下</b>。DNA低メチル化 → 緩み → 発現の増加。",
+  "point": "メチル化↑＝閉じる＝OFF。",
+  "tags": [
+   "エピゲノム"
+  ]
+ },
+ {
+  "id": "g72b",
+  "slide": 72,
+  "chapter": 6,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "ヒストンテールの修飾とクロマチン構造の関係として、スライド72の説明に合うのはどれか。",
+  "options": [
+   {
+    "text": "ヒストンテールのメチル化が除去され、アセチル化されると、DNAに緩みが生じる",
+    "explanation": "記載どおり",
+    "correct": true
+   },
+   {
+    "text": "ヒストンテールがアセチル化されると、クロマチンが凝集する",
+    "explanation": "緩む",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "ヒストンテールの修飾は塩基配列を変化させる",
+    "explanation": "変化させない",
+    "correct": false,
+    "trap": "mechanism"
+   },
+   {
+    "text": "DNAの低メチル化は遺伝子発現を低下させる",
+    "explanation": "増加させる",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "アセチル化はDNAそのものにだけ起こる",
+    "explanation": "ヒストンテールに起こる",
+    "correct": false,
+    "trap": "fact"
+   }
+  ],
+  "explanation": "ヒストンテールのメチル化が除去され、<b>アセチル化</b>されると、ヒストンテールの構造変化が生じ、その結果、<b>DNAに緩み</b>が生じる（→発現増加）。",
+  "point": "アセチル化＝開く。",
+  "tags": [
+   "エピゲノム"
+  ]
+ },
+ {
+  "id": "g73a",
+  "slide": 73,
+  "chapter": 6,
+  "kind": "重要事項",
+  "difficulty": 2,
+  "stem": "発現していない遺伝子のDNAで、特にメチル化されている配列はどれか。",
+  "options": [
+   {
+    "text": "5'-AT-3'のA",
+    "explanation": "誤り",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "5'-CG-3'のC",
+    "explanation": "70%以上のCがメチル化",
+    "correct": true
+   },
+   {
+    "text": "5'-TA-3'のT",
+    "explanation": "誤り",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "5'-GC-3'のG",
+    "explanation": "誤り",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "RNAのU",
+    "explanation": "DNAの修飾の話",
+    "correct": false,
+    "trap": "fact"
+   }
+  ],
+  "explanation": "発現することのない遺伝子のDNAでは、シトシン（C）が高度にメチル化されている。特に<b>5'-CG-3'</b>の箇所では70%以上のCがメチル化。",
+  "point": "CpGのC。",
+  "tags": [
+   "エピゲノム"
+  ]
+ },
+ {
+  "id": "g73b",
+  "slide": 73,
+  "chapter": 6,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "エピジェネティックな変化について正しいのはどれか。",
+  "options": [
+   {
+    "text": "DNAの塩基配列が変化する突然変異の一種である",
+    "explanation": "塩基配列の変化はない",
+    "correct": false,
+    "trap": "mechanism"
+   },
+   {
+    "text": "塩基配列の変化を伴わずに遺伝子発現を調節する",
+    "explanation": "記載どおり",
+    "correct": true
+   },
+   {
+    "text": "発現している遺伝子部分はメチル化の程度が高い",
+    "explanation": "低い（ユークロマチン）",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "メチル化Cを認識する複合体はヒストンを脱メチル化する",
+    "explanation": "ヒストンメチル化酵素がヒストンをメチル化する",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "構成的ヘテロクロマチンは緩んだ状態である",
+    "explanation": "強く凝集した状態",
+    "correct": false,
+    "trap": "reverse"
+   }
+  ],
+  "explanation": "DNAの塩基配列の変化（Geneticな変化：突然変異）に対して、<b>塩基配列の変化はない</b>ものをエピジェネティックな変化といい、こうした発現調節をエピジェネティック制御という。",
+  "point": "配列はそのまま、読み方が変わる。",
+  "tags": [
+   "エピゲノム"
+  ]
+ },
+ {
+  "id": "g74a",
+  "slide": 74,
+  "chapter": 6,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "ヒストンのアセチル基を外して遺伝子発現を抑制する酵素はどれか。",
+  "options": [
+   {
+    "text": "ヒストンアセチル化酵素",
+    "explanation": "アセチル化して発現を促進",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "ヒストン脱アセチル化酵素",
+    "explanation": "アセチル基をはずしてヌクレオソーム構造に戻す",
+    "correct": true
+   },
+   {
+    "text": "RNAポリメラーゼ",
+    "explanation": "RNAを合成",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "逆転写酵素",
+    "explanation": "RNA→DNA",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "アルコール脱水素酵素",
+    "explanation": "無関係",
+    "correct": false,
+    "trap": "swap"
+   }
+  ],
+  "explanation": "発現抑制には<b>ヒストン脱アセチル化酵素（HDAC）</b>が働いてアセチル基をはずし、ヌクレオソーム構造に戻す。",
+  "point": "HAT＝ON、HDAC＝OFF。",
+  "tags": [
+   "エピゲノム"
+  ]
+ },
+ {
+  "id": "g74b",
+  "slide": 74,
+  "chapter": 6,
+  "kind": "理解・統合",
+  "difficulty": 3,
+  "stem": "ヒストンがアセチル化されると転写が起こりやすくなる理由として、スライド74の説明に合うのはどれか。",
+  "options": [
+   {
+    "text": "ヒストンの塩基性が高まり、DNAとの結合が強くなるから",
+    "explanation": "逆。塩基性は低下し結合は弱くなる",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "ヒストンの塩基性が低下してDNAとの結合が弱まり、プロモーターが露出してRNAポリメラーゼが結合しやすくなるから",
+    "explanation": "記載どおり",
+    "correct": true
+   },
+   {
+    "text": "DNAの塩基配列が変わり、新しいプロモーターができるから",
+    "explanation": "配列は変わらない",
+    "correct": false,
+    "trap": "mechanism"
+   },
+   {
+    "text": "RNAポリメラーゼがヒストンを分解するから",
+    "explanation": "記載なし",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "アセチル化されたヒストンがRNAを合成するから",
+    "explanation": "RNAを合成するのはRNAポリメラーゼ",
+    "correct": false,
+    "trap": "swap"
+   }
+  ],
+  "explanation": "ヒストンアセチル化酵素がヒストンのアミノ基をアセチル化 → <b>塩基性が低下</b>しDNA（負電荷）との結合能が弱まる → ヒストンとDNAの解離が進みプロモーターが露出 → RNAポリメラーゼ複合体が結合しやすくなる。",
+  "point": "正電荷が減る → 手放す → 開く。",
+  "tags": [
+   "エピゲノム"
+  ]
+ },
+ {
+  "id": "g78a",
+  "slide": 78,
+  "chapter": 4,
+  "kind": "重要事項",
+  "difficulty": 2,
+  "stem": "遺伝子から数百〜数千bp離れた位置にあって転写を促進する調節配列はどれか。",
+  "options": [
+   {
+    "text": "エンハンサー",
+    "explanation": "遠位調節要素。転写を促進",
+    "correct": true
+   },
+   {
+    "text": "サイレンサー",
+    "explanation": "転写を抑制",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "TATAボックス",
+    "explanation": "プロモーター内（近位）",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "イントロン",
+    "explanation": "転写調節配列ではない",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "終止コドン",
+    "explanation": "翻訳の終了",
+    "correct": false,
+    "trap": "swap"
+   }
+  ],
+  "explanation": "遺伝子から数百〜数千bp離れた上流（または下流）にある<b>エンハンサー</b>、<b>サイレンサー</b>、その他の応答配列が、各細胞での調節的発現に関与する。",
+  "point": "エンハンサー＝促進、サイレンサー＝抑制。",
+  "tags": [
+   "遺伝子の構造"
+  ]
+ },
+ {
+  "id": "g78b",
+  "slide": 78,
+  "chapter": 4,
+  "kind": "理解・統合",
+  "difficulty": 3,
+  "stem": "真核生物の転写調節配列について、スライド78の図と合うのはどれか。",
+  "options": [
+   {
+    "text": "エンハンサーは必ずプロモーターのすぐ隣にある",
+    "explanation": "数百〜数千bp離れた上流または下流",
+    "correct": false,
+    "trap": "scope"
+   },
+   {
+    "text": "基礎的発現にはプロモーター（TATAなど）と近位調節要素（GC/CAATなど）が関わる",
+    "explanation": "図の右側（基礎的発現）の内容",
+    "correct": true
+   },
+   {
+    "text": "サイレンサーは転写を促進する",
+    "explanation": "抑制する",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "調節的発現には遠位の調節要素は関わらない",
+    "explanation": "エンハンサー・サイレンサーなど遠位要素が調節的発現に関わる",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "転写の開始点（+1）はエンハンサーの中にある",
+    "explanation": "+1はプロモーターの下流",
+    "correct": false,
+    "trap": "fact"
+   }
+  ],
+  "explanation": "<b>調節的発現</b>＝遠位調節要素（エンハンサー／サイレンサー・応答配列）。<b>基礎的発現</b>＝近位調節要素（GC/CAATなど、上流プロモーター要素）＋プロモーター（TATA、Inr）。",
+  "point": "遠位＝調節、近位＋プロモーター＝基礎。",
+  "tags": [
+   "遺伝子の構造"
+  ]
+ },
+ {
+  "id": "g79a",
+  "slide": 79,
+  "chapter": 6,
+  "kind": "重要事項",
+  "difficulty": 2,
+  "stem": "スライド79の図で、筋収縮シグナルによってリン酸化され核から出ていく（転写抑制が解除される）因子はどれか。",
+  "options": [
+   {
+    "text": "HDAC",
+    "explanation": "リン酸化されて核外へ（MEF2の抑制が解除）",
+    "correct": true
+   },
+   {
+    "text": "PGC-1α",
+    "explanation": "活性化されて転写を促進する側",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "MyoD",
+    "explanation": "筋分化の転写因子",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "VEGF",
+    "explanation": "血管新生の標的",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "mtDNA",
+    "explanation": "ミトコンドリアのDNA",
+    "correct": false,
+    "trap": "swap"
+   }
+  ],
+  "explanation": "筋収縮シグナルで<b>HDAC</b>がリン酸化されて核外へ出ることで、MEF2などの転写が進み、PGC-1αなどを介してミトコンドリア生合成・代謝・血管新生の遺伝子が発現する。",
+  "point": "運動 → HDACが出ていく → 発現ON。",
+  "tags": [
+   "エピゲノム"
+  ]
+ },
+ {
+  "id": "g79b",
+  "slide": 79,
+  "chapter": 6,
+  "kind": "理解・統合",
+  "difficulty": 3,
+  "stem": "運動で骨格筋の遺伝子発現が変わるしくみについて、スライド79–81から最も適切に言えるのはどれか。",
+  "options": [
+   {
+    "text": "運動はDNAの塩基配列を書き換えて筋を変える",
+    "explanation": "塩基配列は変わらない",
+    "correct": false,
+    "trap": "mechanism"
+   },
+   {
+    "text": "運動によるシグナルがヒストン修飾酵素やプロモーターのメチル化を変え、代謝関連遺伝子の発現を高める",
+    "explanation": "HDACの核外移行・プロモーター低メチル化・発現増加",
+    "correct": true
+   },
+   {
+    "text": "運動はミトコンドリアDNAを父親由来に変える",
+    "explanation": "誤り",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "運動はHDACを核内に集めて発現を抑える",
+    "explanation": "核内のHDACは減少",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "運動の効果はトランスポゾンの転移による",
+    "explanation": "記載なし",
+    "correct": false,
+    "trap": "fact"
+   }
+  ],
+  "explanation": "運動 → HDACの核外移行（スライド79・80）、PGC-1α・TFAMなどのプロモーターの低メチル化と発現増加（スライド81）。<b>生活（環境）でエピゲノムが変わる</b>具体例。",
+  "point": "エピゲノム＝生活で書き換わる付箋。",
+  "tags": [
+   "エピゲノム"
+  ]
+ },
+ {
+  "id": "g80a",
+  "slide": 80,
+  "chapter": 6,
+  "kind": "重要事項",
+  "difficulty": 3,
+  "stem": "スライド80（J Physiol 2009）で、運動後の骨格筋の核内で量が減少したと示されているのはどれか。",
+  "options": [
+   {
+    "text": "HDAC4・HDAC5",
+    "explanation": "運動後に核内で減少",
+    "correct": true
+   },
+   {
+    "text": "ヒストンH3",
+    "explanation": "比較の基準（量は変わらない）",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "リン酸化AMPK",
+    "explanation": "増加",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "リン酸化CaMKII",
+    "explanation": "増加",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "PDH",
+    "explanation": "核ではなく全体抽出の対照",
+    "correct": false,
+    "trap": "fact"
+   }
+  ],
+  "explanation": "運動後、核内の<b>HDAC4・HDAC5が減少</b>し（核外へ）、AMPKやCaMKIIのリン酸化が増加した。",
+  "point": "運動でHDACが核から出る。",
+  "tags": [
+   "エピゲノム"
+  ]
+ },
+ {
+  "id": "g80b",
+  "slide": 80,
+  "chapter": 6,
+  "kind": "理解・統合",
+  "difficulty": 3,
+  "stem": "スライド80の結果から考えられる、運動後の骨格筋の核内の変化として最も適切なのはどれか。",
+  "options": [
+   {
+    "text": "HDACが減るため、ヒストンのアセチル化が保たれやすく、遺伝子発現が促進されやすい",
+    "explanation": "HDAC減少 → 脱アセチル化が減る（考察）",
+    "correct": true
+   },
+   {
+    "text": "HDACが増えるため、遺伝子発現が抑制される",
+    "explanation": "HDACは減少",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "AMPKのリン酸化が減少し、代謝が低下する",
+    "explanation": "リン酸化は増加",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "ヒストンH3が消失する",
+    "explanation": "H3は対照として検出されている",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "DNAの塩基配列が変わる",
+    "explanation": "変わらない",
+    "correct": false,
+    "trap": "mechanism"
+   }
+  ],
+  "explanation": "HDAC（アセチル基を外して発現を抑える酵素）が核から減る → アセチル化が保たれやすく、代謝関連遺伝子の発現が高まりやすい（第6講の知識からの考察）。",
+  "point": "酵素の役割 × 量の変化 → 結果を推論。",
+  "tags": [
+   "エピゲノム"
+  ]
+ },
+ {
+  "id": "g81a",
+  "slide": 81,
+  "chapter": 6,
+  "kind": "重要事項",
+  "difficulty": 2,
+  "stem": "急性運動後の骨格筋で、PGC-1αなどのプロモーターのメチル化とmRNA発現はどう変化したか。",
+  "options": [
+   {
+    "text": "メチル化↑・発現↑",
+    "explanation": "メチル化は低下",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "メチル化↓・発現↑",
+    "explanation": "記載どおり",
+    "correct": true
+   },
+   {
+    "text": "メチル化↓・発現↓",
+    "explanation": "発現は増加",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "メチル化↑・発現↓",
+    "explanation": "逆",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "どちらも変化しない",
+    "explanation": "変化した",
+    "correct": false,
+    "trap": "fact"
+   }
+  ],
+  "explanation": "急性運動（高強度）で<b>PGC-1α・TFAM・PPAR-δ</b>などのプロモーターの<b>メチル化が低下</b>し、<b>発現が増加</b>した（Cell Metab 2012）。低メチル化 → 発現増加という第6講の原則どおり。",
+  "point": "メチル化↓ ⇒ 発現↑。",
+  "tags": [
+   "エピゲノム"
+  ]
+ },
+ {
+  "id": "g81b",
+  "slide": 81,
+  "chapter": 6,
+  "kind": "理解・統合",
+  "difficulty": 3,
+  "stem": "スライド81の結果がエピジェネティクスの考え方と合致する点として最も適切なのはどれか。",
+  "options": [
+   {
+    "text": "DNA低メチル化が遺伝子発現の増加と対応している",
+    "explanation": "スライド72の原則と一致",
+    "correct": true
+   },
+   {
+    "text": "運動で塩基配列が変わり発現が増えた",
+    "explanation": "塩基配列は変わらない",
+    "correct": false,
+    "trap": "mechanism"
+   },
+   {
+    "text": "メチル化が増えるほど発現が増えた",
+    "explanation": "逆",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "エピゲノムは生まれつき固定で変化しない",
+    "explanation": "運動で変化した",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "ミトコンドリアDNAのメチル化だけが変化した",
+    "explanation": "プロモーター（核遺伝子）のメチル化",
+    "correct": false,
+    "trap": "fact"
+   }
+  ],
+  "explanation": "DNA低メチル化 → クロマチンの緩み → 発現増加（スライド72）。エピゲノムは生活（運動）で変化しうる。",
+  "point": "原則（72）を具体例（81）に当てはめる。",
+  "tags": [
+   "エピゲノム"
+  ]
+ },
+ {
+  "id": "g82a",
+  "slide": 82,
+  "chapter": 6,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "ミトコンドリアゲノムについて正しいのはどれか。",
+  "options": [
+   {
+    "text": "コードする遺伝子は約25,000個である",
+    "explanation": "37個",
+    "correct": false,
+    "trap": "number"
+   },
+   {
+    "text": "父親から伝わる",
+    "explanation": "母系遺伝",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "細胞あたり1コピーだけ存在する",
+    "explanation": "10³〜10⁴コピー",
+    "correct": false,
+    "trap": "number"
+   },
+   {
+    "text": "コードする遺伝子は37個で、ミトコンドリア内で機能する",
+    "explanation": "記載どおり",
+    "correct": true
+   },
+   {
+    "text": "ミトコンドリア内のタンパク質はすべてミトコンドリアDNAにコードされる",
+    "explanation": "大部分は核遺伝子の産物",
+    "correct": false,
+    "trap": "scope"
+   }
+  ],
+  "explanation": "ミトコンドリアゲノム：<b>37遺伝子</b>（呼吸鎖の構成やミトコンドリア翻訳系など）、細胞あたり<b>10³〜10⁴コピー</b>、変異は<b>母系遺伝</b>。ミトコンドリア内のタンパク質の大部分は<b>核遺伝子</b>の産物。",
+  "point": "37・10³〜10⁴・母系・大部分は核。",
+  "tags": [
+   "ミトコンドリアゲノム"
+  ]
+ },
+ {
+  "id": "g82b",
+  "slide": 82,
+  "chapter": 6,
+  "kind": "応用・症例",
+  "difficulty": 2,
+  "stem": "ミトコンドリア遺伝子の変異による疾患をもつ母親と、健康な父親の間の子どもについて、スライド82の内容から最も適切な説明はどれか。",
+  "options": [
+   {
+    "text": "変異は息子にだけ伝わる",
+    "explanation": "母系遺伝：子どもは性別にかかわらず母親から受け継ぐ",
+    "correct": false,
+    "trap": "scope"
+   },
+   {
+    "text": "変異は子どもに伝わらない",
+    "explanation": "母系遺伝で伝わる",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "変異は母親から子どもに伝わりうる（母系遺伝）",
+    "explanation": "記載どおり",
+    "correct": true
+   },
+   {
+    "text": "父親が健康なら子どもは必ず健康である",
+    "explanation": "ミトコンドリアDNAは母親由来",
+    "correct": false,
+    "trap": "mechanism"
+   },
+   {
+    "text": "変異は核のゲノムと同じく父母から半分ずつ伝わる",
+    "explanation": "核ゲノムは両親から1セットずつだが、ミトコンドリアは母系",
+    "correct": false,
+    "trap": "swap"
+   }
+  ],
+  "explanation": "核のゲノムは両親から1セットずつ伝わるが、<b>ミトコンドリア遺伝子の変異は母系遺伝</b>を示す。",
+  "point": "ミトコンドリア＝母から。",
+  "tags": [
+   "ミトコンドリアゲノム",
+   "遺伝子と疾患"
+  ]
+ }
+]

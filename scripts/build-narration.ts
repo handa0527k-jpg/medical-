@@ -3,6 +3,7 @@
  *
  *   npm run build:narration              # all courses
  *   npm run build:narration -- <course>  # one course
+ *   npm run build:narration -- <course> 3  # one lecture
  *
  * Re-run whenever textbook, slide or animation content changes.
  */
@@ -24,6 +25,7 @@ const tokenizer = await new Promise<kuromoji.Tokenizer<kuromoji.IpadicFeatures>>
 const polite = makePolite(tokenizer);
 
 const only = process.argv[2];
+const onlyChapter = process.argv[3] ? Number(process.argv[3]) : null;
 for (const id of readdirSync(COURSES)) {
   if (only && id !== only) continue;
   const dir = resolve(COURSES, id);
@@ -43,6 +45,7 @@ for (const id of readdirSync(COURSES)) {
   mkdirSync(resolve(dir, 'narrations'), { recursive: true });
   let total = 0, cues = 0;
   for (const ch of course.chapters) {
+    if (onlyChapter && ch.id !== onlyChapter) continue;
     // hand-written prep-school script wins; otherwise generate from the content
     const script = resolve(dir, 'lessons', `lecture-${String(ch.id).padStart(2, '0')}.md`);
     const lec = existsSync(script)

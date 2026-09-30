@@ -9,6 +9,7 @@
  * re-times every cue from the real audio durations.
  */
 import type { RichText } from '../../content/types';
+import type { Board } from '../board/types';
 
 export type LectureVisual =
   | { kind: 'title'; chapter: number; name: string; role: string; slides: number[] }
@@ -35,7 +36,9 @@ export type LectureVisual =
   | { kind: 'compare'; title: RichText; header: RichText[]; rows: RichText[][] }
   | { kind: 'card'; variant: 'point' | 'pitfall' | 'memo' | 'example'; label: RichText; html: RichText }
   /** 5-choice question on stage: ask → think (countdown, student may answer) → explain */
-  | { kind: 'quiz'; qid: string; phase: 'ask' | 'think' | 'explain'; variant: 'check' | 'typical' | 'final'; think?: number };
+  | { kind: 'quiz'; qid: string; phase: 'ask' | 'think' | 'explain'; variant: 'check' | 'typical' | 'final'; think?: number; ref?: string[] }
+  /** the lecture's persistent blackboard (Lecture.board); camera and chalk follow lecture time */
+  | { kind: 'bb' };
 
 export interface ChalkRow {
   /** text; "→" segments are joined with drawn arrows; "A | B" is a two-column comparison */
@@ -69,6 +72,10 @@ export interface LectureCue {
   pause?: LecturePause;
   /** extra silence after the cue (seconds) — natural breathing between ideas */
   gap: number;
+  /** seconds of chalk work that belong to this cue; the cue lasts at least this long */
+  write?: number;
+  /** part of the "important points only" digest */
+  dig?: 1;
 }
 
 export interface LectureShot {
@@ -92,6 +99,10 @@ export interface Lecture {
   quizzes?: { qid: string; section: number; variant: 'check' | 'typical' | 'final' }[];
   /** true when written by hand (scripts/lessons) rather than generated */
   authored?: boolean;
+  /** blackboard lecture: every chalk action of the class */
+  board?: Board;
+  /** key points shown at the end and in the 5-minute review; `ref` = board ids to highlight */
+  keyPoints?: { text: RichText; ref?: string[] }[];
 }
 
 /**
