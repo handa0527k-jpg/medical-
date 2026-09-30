@@ -111,4 +111,4 @@
   .astage .cap { bottom: 8%; }
 }
 /* keep controls visible on short (landscape) screens: the stage crops (SVG uses "slice") */
-@media (min-width: 600px) { .astage { max-height: calc(100dvh - var(--header-h) - 200px); min-height: 300px; width: 100%; } }
+@media (min-width: 600px) { .astage { width: 100%; max-width: max(535px, calc((100dvh - var(--header-h) - 200px) * 16 / 9)); margin-inline: auto; } }

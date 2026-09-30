@@ -37,12 +37,12 @@ export function BlackboardShot() {
   const cv = useRef<HTMLCanvasElement>(null);
   useFrame((T) => {
     if (!ctx || !cv.current) return;
-    ctx.r.draw(cv.current, T, ctx.r.camAt(T), { hand: true });
+    ctx.r.draw(cv.current, T, ctx.r.camAt(T), { hand: true, fitColumn: true });
   });
   useEffect(() => {
     const el = cv.current;
     if (!el || !ctx) return;
-    const ro = new ResizeObserver(() => ctx.r.draw(el, ctx.T(), ctx.r.camAt(ctx.T()), { hand: true }));
+    const ro = new ResizeObserver(() => ctx.r.draw(el, ctx.T(), ctx.r.camAt(ctx.T()), { hand: true, fitColumn: true }));
     ro.observe(el);
     return () => ro.disconnect();
   }, [ctx]);
