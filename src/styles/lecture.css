@@ -93,6 +93,9 @@
 /* chrome on the stage */
 .lsec { position: absolute; left: 3%; top: 5%; z-index: 7; font-size: clamp(11px, 1.4vw, 14px); font-weight: 700; padding: 4px 12px; border: 1px solid #2f3548; border-radius: 99px; background: rgba(5, 7, 11, 0.8); }
 .lsec span { color: var(--st-red); margin-right: 6px; }
+/* the section name introduces a section, then gets out of the way of the board / quiz */
+.lsec { animation: lsecOut 0.6s 4s ease forwards; pointer-events: none; }
+@keyframes lsecOut { to { opacity: 0; transform: translateY(-6px); } }
 .lpt { position: absolute; right: 3%; top: 5%; z-index: 7; font-size: 13px; font-weight: 900; padding: 4px 12px; border-radius: 99px; background: var(--st-red); color: #fff; letter-spacing: 0.1em; animation: blink 1.2s infinite; }
 .lsub { position: absolute; left: 0; right: 0; bottom: 5%; z-index: 7; text-align: center; padding: 0 5%; pointer-events: none; }
 .lsub span.s { display: inline; background: rgba(0, 0, 0, 0.8); padding: 0.18em 0.5em; line-height: 1.8; font-size: clamp(13px, 1.9vw, 21px); font-weight: 700; border-radius: 6px; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
@@ -187,4 +190,10 @@
 .ly.lqz.has-board .qpanel { width: 100%; }
 .ly.lqz.has-board .qst { font-size: clamp(12px, 1.45vw, 16px); }
 .ly.lqz.has-board .qop { font-size: clamp(11px, 1.25vw, 14px); }
+/* phones: a 5-choice question does not fit a 4:3 frame, so the frame grows to fit it */
+@media (max-width: 599px) {
+  .lstage.is-quiz { aspect-ratio: auto; min-height: 75vw; }
+  .lstage.is-quiz .ly.lqz { position: relative; inset: auto; min-height: 75vw; padding: 44px 3% 84px; }
+  .lstage.is-quiz .qpanel { max-height: none; overflow: visible; }
+}
 @media (max-width: 700px) { .ly.lqz.has-board { padding-right: 6%; } .qboard { display: none; } }

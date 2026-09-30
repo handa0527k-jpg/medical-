@@ -5,6 +5,7 @@ import { parseScript, type ScriptContext } from '../scripts/lib/lesson-script';
 import { timeLecture } from '../src/engine/lecture/timing';
 import type { Lecture } from '../src/engine/lecture/types';
 import { BOARD_H, BOARD_W } from '../src/engine/board/types';
+import { fitView, uncutView, writingBox } from '../src/engine/board/render';
 import { toSpeech } from '../src/engine/speech/reading';
 import { errorProfile, quickReviewSet } from '../src/state/analytics';
 import { emptyProgress } from '../src/state/types';
@@ -94,6 +95,25 @@ describe('genetics lectures (blackboard)', () => {
       for (const k of l.keyPoints ?? []) for (const r of k.ref ?? []) expect(ids.has(r), `key point ref ${r}`).toBe(true);
       for (const s of l.shots) if (s.visual.kind === 'quiz') for (const r of s.visual.ref ?? []) expect(ids.has(r), `quiz ref ${r}`).toBe(true);
       for (const c of l.board!.cams) expect(c.cue).toBeLessThan(l.cues.length);
+    }
+  });
+  it('never slices a written line at the frame edge on a phone-size stage, and always shows the line being written', () => {
+    for (const l of lectures) {
+      const tl = timeLecture(l);
+      const ops = l.board!.ops.map((o) => { const t0 = tl.cues[o.cue].t0 + o.off; return { op: o, box: o.box, t0, t1: t0 + o.dur }; });
+      for (let i = 0; i < l.cues.length; i++) {
+        if (l.shots[l.cues[i].shot].visual.kind !== 'bb') continue;
+        const T = tl.cues[i].t0 + 0.5, ar = 4 / 3;
+        const cam = [...l.board!.cams].reverse().find((c) => c.cue <= i)?.c ?? [BOARD_W / 2, BOARD_H / 2, BOARD_W];
+        const written = ops.filter((c) => c.op.k === 'draw' && c.t0 <= T).map((c) => c.box);
+        const keep = writingBox(ops, T);
+        const [cx, cy, w] = uncutView(fitView(cam, ar, { column: true, keep }), ar, written);
+        const x0 = cx - w / 2, x1 = cx + w / 2, y0 = cy - w / ar / 2, y1 = cy + w / ar / 2;
+        const inside = ([x, y, bw, bh]: number[]) => x >= x0 - 4 && y >= y0 - 4 && x + bw <= x1 + 4 && y + bh <= y1 + 4;
+        const outside = ([x, y, bw, bh]: number[]) => x + bw <= x0 + 4 || x >= x1 - 4 || y + bh <= y0 + 4 || y >= y1 - 4;
+        for (const b of written) expect(inside(b) || outside(b), `lecture ${l.title} cue ${i}`).toBe(true);
+        if (keep) expect(inside(keep), `lecture ${l.title} cue ${i} writing`).toBe(true);
+      }
     }
   });
   it('uses the four chalk colours with meaning (white most, red for the few most important)', () => {

@@ -92,7 +92,7 @@
 .qtimer circle.fg { stroke: #ffc15e; stroke-dasharray: 1; stroke-linecap: round; }
 .qtimer span { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-family: var(--f-hud); font-size: clamp(13px, 1.6vw, 17px); color: #ffc15e; }
 .qst { margin: 0 0 clamp(6px, 1vw, 12px); font-weight: 700; font-size: clamp(13px, 1.75vw, 19px); line-height: 1.6; border-radius: 8px; transition: .35s; }
-.qst.hl { background: rgba(255,209,102,.14); box-shadow: 0 0 0 2px rgba(255,209,102,.6); padding: 2px 8px; }
+.qst.hl { position: static; border: 0; background: rgba(255,209,102,.14); box-shadow: 0 0 0 2px rgba(255,209,102,.6); padding: 2px 8px; }
 .qops { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(5px, .8vw, 9px); }
 .qop { display: flex; gap: 10px; align-items: flex-start; text-align: left; padding: clamp(6px, .9vw, 10px) 10px; border-radius: 11px; border: 1px solid #2f3548; background: #141925; color: #dfe3ec; font-size: clamp(11.5px, 1.45vw, 16px); line-height: 1.5; transition: .3s; min-height: 44px; }
 .qop:not(:disabled):hover { border-color: #8fd6ff; }

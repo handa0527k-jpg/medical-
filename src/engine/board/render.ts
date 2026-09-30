@@ -59,6 +59,68 @@ interface COp {
 /** board height a lecture view always shows: a full panel column (y 220–1300) plus margin */
 const MIN_VIEW_H = 1240;
 
+/**
+ * Visible board rectangle for a camera on a stage of aspect `ar` (w / h):
+ * the camera frames a 16:9 box, so a wider stage widens the view to keep that
+ * box's height; `column` keeps a whole panel column in view; `keep` is a box
+ * that must be fully visible (the line being written). Returns [cx, cy, w].
+ */
+export function fitView(cam: BoardCam, ar: number, o: { column?: boolean; keep?: Box | null } = {}): BoardCam {
+  let [cx, cy, w] = cam;
+  const maxW = Math.max(BOARD_W, BOARD_H * ar);
+  w = Math.max(w, w * (9 / 16) * ar);
+  if (o.column) w = Math.max(w, MIN_VIEW_H * ar);
+  const k = o.keep, M = 60;
+  if (k) w = Math.max(w, k[2] + 2 * M, (k[3] + 2 * M) * ar);
+  w = Math.min(w >= BOARD_W * 0.99 ? maxW : w, maxW);
+  const hh = w / ar;
+  if (k) {
+    cx = Math.max(k[0] + k[2] + M - w / 2, Math.min(k[0] - M + w / 2, cx));
+    cy = Math.max(k[1] + k[3] + M - hh / 2, Math.min(k[1] - M + hh / 2, cy));
+  }
+  return clampView(cx, cy, w, ar);
+}
+
+function clampView(cx: number, cy: number, w: number, ar: number): BoardCam {
+  w = Math.min(w, Math.max(BOARD_W, BOARD_H * ar));
+  const hh = w / ar;
+  cx = w >= BOARD_W ? BOARD_W / 2 : Math.max(w / 2, Math.min(BOARD_W - w / 2, cx));
+  cy = hh >= BOARD_H ? BOARD_H / 2 : Math.max(hh / 2, Math.min(BOARD_H - hh / 2, cy));
+  return [cx, cy, w];
+}
+
+/**
+ * Widen a view until no written line is sliced by its edge: every box ends up
+ * either fully inside or fully outside (at worst the whole board).
+ */
+export function uncutView(v: BoardCam, ar: number, boxes: Box[]): BoardCam {
+  let [cx, cy, w] = v;
+  for (let it = 0; it < 12; it++) {
+    const hh = w / ar;
+    let x0 = cx - w / 2, x1 = cx + w / 2, y0 = cy - hh / 2, y1 = cy + hh / 2, hit = false;
+    for (const [bx, by, bw, bh] of boxes) {
+      const inside = bx >= x0 - 4 && by >= y0 - 4 && bx + bw <= x1 + 4 && by + bh <= y1 + 4;
+      const outside = bx + bw <= x0 + 4 || bx >= x1 - 4 || by + bh <= y0 + 4 || by >= y1 - 4;
+      if (inside || outside) continue;
+      hit = true;
+      x0 = Math.min(x0, bx - 30); x1 = Math.max(x1, bx + bw + 30); y0 = Math.min(y0, by - 30); y1 = Math.max(y1, by + bh + 30);
+    }
+    if (!hit) break;
+    [cx, cy, w] = clampView((x0 + x1) / 2, (y0 + y1) / 2, Math.max(x1 - x0, (y1 - y0) * ar), ar);
+  }
+  return [cx, cy, w];
+}
+
+/** stage width (CSS px) from which a lecture shows the whole board: ordinary writing stays ≥ ~13 px */
+export const WHOLE_BOARD_MIN_PX = 640;
+
+/** union of the writing that is happening at T or starts within the next moment */
+export function writingBox(ops: { t0: number; t1: number; box: Box; op: { k: string } }[], T: number): Box | null {
+  const bs: Box[] = [];
+  for (const c of ops) if (c.op.k !== 'point' && c.t0 - 0.8 <= T && T <= c.t1 + 0.4) bs.push(c.box);
+  return bs.length ? union(bs) : null;
+}
+
 export interface DrawOptions {
   /** draw the lecturer's hand / chalk / eraser */
   hand?: boolean;
@@ -223,6 +285,14 @@ export class BoardRenderer {
   }
 
   /** call after web fonts load: character widths change */
+  private writtenBoxes(T: number): Box[] {
+    const out: Box[] = [];
+    for (const c of this.ops) if (c.op.k === 'draw' && c.t0 <= T && !c.erasedBy.some((e) => e.t1 <= T)) out.push(c.box);
+    return out;
+  }
+
+  private lastView: { T: number; at: number; v: BoardCam } | null = null;
+
   recompile() { this.compile(); if (this.cueTimes.length) this.attach(this.cueTimes); }
 
   private measure(ch: string, s: number): number {
@@ -513,17 +583,20 @@ export class BoardRenderer {
     const g = canvas.getContext('2d')!;
 
     // camera → transform (keep the view on the board)
-    let [cx, cy, w] = cam;
-    // the camera frames a 16:9 box; on a wider stage widen the view so that
-    // box's full height stays visible, and never zoom out past the whole board
-    const maxW = Math.max(BOARD_W, BOARD_H * (cw / ch));
-    w = Math.max(w, w * (9 / 16) * (cw / ch));
-    // always show a whole column (panel top to bottom) so earlier lines stay in view
-    if (opt.fitColumn) w = Math.max(w, MIN_VIEW_H * (cw / ch));
-    w = Math.min(w >= BOARD_W * 0.99 ? maxW : w, maxW);
-    const hh = w * (ch / cw);
-    cx = w >= BOARD_W ? BOARD_W / 2 : Math.max(w / 2, Math.min(BOARD_W - w / 2, cx));
-    cy = hh >= BOARD_H ? BOARD_H / 2 : Math.max(hh / 2, Math.min(BOARD_H - hh / 2, cy));
+    // lectures: the whole board on ordinary screens; on phones the smallest
+    // view that keeps the line being written and slices no line at the edge
+    let [cx, cy, w] = !opt.fitColumn ? fitView(cam, cw / ch)
+      : cw >= WHOLE_BOARD_MIN_PX ? fitView([BOARD_W / 2, BOARD_H / 2, BOARD_W], cw / ch)
+      : uncutView(fitView(cam, cw / ch, { column: true, keep: writingBox(this.ops, T) }), cw / ch, this.writtenBoxes(T));
+    if (opt.fitColumn) {
+      // glide instead of jumping when the view has to widen for a line; snap after a seek
+      const now = performance.now(), L = this.lastView;
+      if (L && Math.abs(T - L.T) < 0.6 && now - L.at < 250) {
+        const u = 1 - Math.exp(-(now - L.at) / 180);
+        cx = L.v[0] + (cx - L.v[0]) * u; cy = L.v[1] + (cy - L.v[1]) * u; w = L.v[2] + (w - L.v[2]) * u;
+      }
+      this.lastView = { T, at: now, v: [cx, cy, w] };
+    }
     const k = PW / w, ox = PW / 2 - cx * k, oy = PH / 2 - cy * k;
 
     // board
