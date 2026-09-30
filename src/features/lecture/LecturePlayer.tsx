@@ -10,6 +10,8 @@ import { AudioFileNarrator, WebSpeechNarrator, japaneseVoices, loadAudioManifest
 import { CL } from '../../engine/svg';
 import { useProgress, useStore } from '../../state/hooks';
 import { FrameContext, Visual, type FrameFn } from './Visuals';
+import { QuizContext, type LectureQuizApi } from './PrepVisuals';
+import { LectureReport } from './LectureReport';
 
 const SPEEDS = [0.5, 0.75, 1, 1.25, 1.5, 2];
 const LSN = ['①', '②', '③', '④', '⑤', '⑥', '⑦', '⑧'];
@@ -83,7 +85,7 @@ export function LecturePlayer({ lecture, chapter }: { lecture: Lecture; chapter:
 
   const speak = useCallback((c: TimedCue) => {
     const r = R.current, n = cfg.current.narrator;
-    if (!cfg.current.narr || !n) return;
+    if (!cfg.current.narr || !n || !c.speech) return; // silent cue (thinking time)
     r.speaking = true; r.spoken = c.id;
     const started = performance.now();
     n.speak(c, { rate: cfg.current.speed, volume: cfg.current.volume }, (ok) => {
@@ -189,6 +191,9 @@ export function LecturePlayer({ lecture, chapter }: { lecture: Lecture; chapter:
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [tl]);
 
+  // a newly mounted visual registers its frame callback after commit: draw it once even while paused
+  useEffect(() => { const id = requestAnimationFrame(() => frame.current?.(R.current.T)); return () => cancelAnimationFrame(id); }, [cue]);
+
   // re-speak on speed change; live volume for recorded audio
   useEffect(() => { const r = R.current; if (r.play && cfg.current.narr) speak(cues[Math.max(0, r.cue)]); }, [speed, speak, cues]);
   useEffect(() => { narrator?.setVolume(volume); }, [volume, narrator]);
@@ -229,6 +234,23 @@ export function LecturePlayer({ lecture, chapter }: { lecture: Lecture; chapter:
     return () => window.removeEventListener('keydown', h);
   }, [pause, start, jump]);
 
+  /* ---------- in-lecture questions ---------- */
+  const [answers, setAnswers] = useState<Record<string, number>>({});
+  const quizApi: LectureQuizApi = useMemo(() => ({
+    answerOf: (qid) => answers[qid],
+    answer: (qid, k) => {
+      if (answers[qid] !== undefined) return;
+      const q = course.questions.find((x) => x.id === qid);
+      if (!q) return;
+      setAnswers((a) => ({ ...a, [qid]: k }));
+      store.answer(qid, 'single', q.options[k].correct, [k]);
+    },
+    toExplanation: () => {
+      const i = shots.findIndex((s, j) => j > cues[Math.max(0, R.current.cue)].shot && s.visual.kind === 'quiz' && s.visual.phase === 'explain');
+      if (i >= 0) jump(shots[i].t0 + 0.001);
+    },
+  }), [answers, course, store, shots, cues, jump]);
+
   const shot = shots[cue.shot];
   const v = shot.visual;
   const key = v.kind === 'anim' ? `anim:${v.anim}` : v.kind === 'figure' ? `fig:${v.figure}` : `shot:${cue.shot}`;
@@ -248,7 +270,9 @@ export function LecturePlayer({ lecture, chapter }: { lecture: Lecture; chapter:
 
       <div className={'lstage' + (playing ? ' cine' : '')} ref={stageRef}>
         <FrameContext.Provider value={frame}>
-          <Visual key={key} shot={shot} cue={cue} />
+          <QuizContext.Provider value={quizApi}>
+            <Visual key={key} shot={shot} cue={cue} />
+          </QuizContext.Provider>
         </FrameContext.Provider>
         <div className="lsec"><span>{LSN[shot.section]}</span>{lecture.sections[shot.section]?.name}</div>
         {P && <div className="lpt">{P.tag}</div>}
@@ -291,12 +315,12 @@ export function LecturePlayer({ lecture, chapter }: { lecture: Lecture; chapter:
           </div></div>
         )}
         {overlay === 'end' && (
-          <div className="aov on"><div className="box">
+          <div className="aov on lend"><div className="box">
             <div className="kick">END OF LECTURE</div>
             <b className="bt">第{chapter}講はここまでです</b>
-            <p>この講義の範囲から5択問題を出題します。間違えた問題は、弱点復習から該当スライドに戻れます。</p>
+            <LectureReport lecture={lecture} chapter={chapter} answers={answers} sectionStart={(i) => chapters.find((c) => c.index === i)?.t0 ?? 0} onJump={(t) => jump(t + 0.001)} />
             <div className="bb">
-              <Link className="btn eosin" to={`/quiz/play?chapter=${chapter}`}>5択確認問題へ ▶</Link>
+              <Link className="btn eosin" to={`/quiz/play?chapter=${chapter}`}>この章の5択問題へ ▶</Link>
               <button className="btn" onClick={() => { R.current.T = 0; R.current.done.clear(); R.current.cue = -1; start(); }}>↻ もう一度見る</button>
               {chapter < course.chapters.length && <Link className="btn" to={`/lecture/${chapter + 1}`}>第{chapter + 1}講へ</Link>}
             </div>

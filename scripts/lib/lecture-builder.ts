@@ -166,7 +166,7 @@ export function buildLecture(input: BuildInput, chapterId: number): Lecture {
     } else if (b.type === 'slide') {
       const s = slides[String(b.slide)];
       const nb = s.masks.length;
-      shot({ kind: 'slide', slide: s.n }, [
+      shot({ kind: 'slide', slide: s.n, tour: true }, [
         P.pick('slide', [
           `では、スライド${s.n}、「${s.title}」を見てください。`,
           `ここでスライド${s.n}を見てみましょう。テーマは「${s.title}」です。`,

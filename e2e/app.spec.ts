@@ -198,10 +198,45 @@ test('lecture: narration drives subtitles and timeline (device voice)', async ({
   // jump to a slide scene via the script and check the slide camera is active
   await page.getByRole('button', { name: '一時停止', exact: true }).click();
   await page.locator('.lscr summary').click();
-  await page.locator('.lsl2 button', { hasText: /スライド2、/ }).first().click();
+  await page.locator('.lsl2 button', { hasText: /スライド3で確認/ }).first().click();
   await expect(page.locator('.lsw img')).toBeVisible();
   // chapters on the timeline
   expect(await page.locator('.lctl .atl .tick').count()).toBeGreaterThanOrEqual(5);
+  expect(errs).toEqual([]);
+});
+
+test('lecture: on-stage 5-choice check with thinking time, explanation and end report', async ({ page }) => {
+  await page.route('**/audio/**', (r) => r.abort());
+  await mockSpeech(page);
+  const errs = watchErrors(page);
+  await page.goto('/#/lecture/1');
+  await page.getByRole('button', { name: /授業を始める/ }).click();
+  await page.getByRole('button', { name: '一時停止', exact: true }).click();
+  await page.locator('.lscr summary').click();
+  // jump to the check question: options are tappable, the answer is not shown yet
+  await page.locator('.lsl2 button', { hasText: /ここまで大丈夫ですか？では/ }).first().click();
+  const panel = page.locator('.qpanel');
+  await expect(panel).toBeVisible();
+  await expect(panel.locator('.qops button')).toHaveCount(5);
+  await expect(panel.getByText('正解です')).toHaveCount(0);
+  await page.locator('.lsl2 button', { hasText: '考える時間' }).first().click();
+  await expect(page.locator('.qtimer')).toBeVisible();
+  await panel.locator('.qops button').nth(2).click(); // C
+  await page.locator('.qgo').click();
+  await expect(panel.getByText('解説で確かめましょう')).toBeVisible();
+  await expect(panel.getByText('◎ 正解です')).toHaveCount(0);
+  // the verdict appears only once the lecturer reaches the correct option
+  await page.locator('.lsl2 button', { hasText: '正解はCです' }).first().click();
+  await expect(panel.getByText('◎ 正解です')).toBeVisible();
+  // seek to the end → report with understanding, accuracy and review links
+  await page.locator('.lctl .atl').scrollIntoViewIfNeeded();
+  const box = await page.locator('.lctl .atl').boundingBox();
+  await page.mouse.click(box!.x + box!.width - 1, box!.y + box!.height / 2);
+  await page.getByRole('button', { name: '再生', exact: true }).click();
+  await expect(page.locator('.lrep')).toBeVisible({ timeout: 20_000 });
+  await expect(page.locator('.lrep')).toContainText('理解度');
+  await expect(page.locator('.lrep-list li').first()).toBeVisible();
+  await expect(page.locator('.lrep').getByText('解き直す').first()).toBeVisible();
   expect(errs).toEqual([]);
 });
 

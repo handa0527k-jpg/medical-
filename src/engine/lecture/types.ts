@@ -19,12 +19,32 @@ export type LectureVisual =
   | { kind: 'flow'; title: RichText; items: RichText[]; move?: boolean }
   | { kind: 'table'; title: RichText; rows: RichText[][] }
   | { kind: 'cast'; items: [RichText, RichText, RichText][] }
-  /** slide image; camera pans across `masks` (highlight boxes) in order */
-  | { kind: 'slide'; slide: number }
+  /** slide image; `tour` = camera visits every mask in order, otherwise it follows the cue focus ("m2") */
+  | { kind: 'slide'; slide: number; tour?: boolean }
   /** interactive figure; `key` = highlighted structure (null = whole figure) */
   | { kind: 'figure'; figure: string; key: string | null }
   /** mechanism animation step, driven by lecture time */
-  | { kind: 'anim'; anim: string; step: number; hold?: boolean };
+  | { kind: 'anim'; anim: string; step: number; hold?: boolean }
+  /* ---- prep-school lecture visuals (authored scripts) ---- */
+  /** chalkboard that fills in cue by cue: rows are written, then boxed / underlined */
+  | { kind: 'chalk'; title: RichText; rows: ChalkRow[]; marks: ChalkMark[] }
+  /** the course's cell map with one chapter's zone highlighted (cue focus may move it) */
+  | { kind: 'cellmap'; chapter: number }
+  /** learning map of today's topics; `current` highlights where we are */
+  | { kind: 'roadmap'; title: RichText; items: RichText[]; current?: number }
+  | { kind: 'compare'; title: RichText; header: RichText[]; rows: RichText[][] }
+  | { kind: 'card'; variant: 'point' | 'pitfall' | 'memo' | 'example'; label: RichText; html: RichText }
+  /** 5-choice question on stage: ask → think (countdown, student may answer) → explain */
+  | { kind: 'quiz'; qid: string; phase: 'ask' | 'think' | 'explain'; variant: 'check' | 'typical' | 'final'; think?: number };
+
+export interface ChalkRow {
+  /** text; "→" segments are joined with drawn arrows; "A | B" is a two-column comparison */
+  text: RichText;
+  style: 'row' | 'em' | 'down' | 'vs';
+  /** index of the cue (within the shot) at which the row is written */
+  at: number;
+}
+export interface ChalkMark { row: number; type: 'box' | 'under'; at: number }
 
 export interface LecturePause {
   tag: string;
@@ -44,7 +64,7 @@ export interface LectureCue {
   /** estimated duration in seconds at 1× */
   dur: number;
   /** highlighted item in the visual (sentence / list row / flow node); 'terms' = key terms */
-  focus?: number | 'terms';
+  focus?: number | string;
   /** stop here (auto pause) and show a check card */
   pause?: LecturePause;
   /** extra silence after the cue (seconds) — natural breathing between ideas */
@@ -68,6 +88,10 @@ export interface Lecture {
   cues: LectureCue[];
   /** generator version, bump to invalidate recorded audio */
   version: number;
+  /** questions asked during the lecture (for the end-of-lecture report) */
+  quizzes?: { qid: string; section: number; variant: 'check' | 'typical' | 'final' }[];
+  /** true when written by hand (scripts/lessons) rather than generated */
+  authored?: boolean;
 }
 
 /**

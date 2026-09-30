@@ -8,16 +8,29 @@ const dir = resolve(__dirname, '../src/content/courses/histology-cytoplasm/narra
 const lectures: Lecture[] = readdirSync(dir).map((f) => JSON.parse(readFileSync(resolve(dir, f), 'utf8')));
 
 describe('lecture narration', () => {
-  it('exists for all 9 chapters with all 8 sections', () => {
+  it('exists for all 9 chapters as authored lessons (goals → map → themes → summary → final problem)', () => {
     expect(lectures).toHaveLength(9);
-    for (const l of lectures) expect(new Set(l.shots.map((s) => s.section)).size).toBe(8);
+    for (const l of lectures) {
+      expect(l.authored).toBe(true);
+      const kinds = l.shots.map((s) => s.visual.kind);
+      expect(kinds).toContain('roadmap');
+      expect(kinds).toContain('chalk');
+      expect(l.quizzes?.some((q) => q.variant === 'final')).toBe(true);
+      expect(l.quizzes?.some((q) => q.variant === 'typical')).toBe(true);
+    }
+  });
+  it('gives thinking time before every explanation and never shows the answer on the question screen', () => {
+    for (const l of lectures) for (const q of l.quizzes ?? []) {
+      const phases = l.shots.filter((s) => s.visual.kind === 'quiz' && s.visual.qid === q.qid).map((s) => (s.visual as { phase: string }).phase);
+      expect(phases).toEqual(['ask', 'think', 'explain']);
+    }
   });
   it('has unique cue ids, speech text for every cue and no raw symbols in speech', () => {
     const ids = new Set<string>();
     for (const l of lectures) for (const c of l.cues) {
       expect(ids.has(c.id)).toBe(false);
       ids.add(c.id);
-      expect(c.speech.length).toBeGreaterThan(0);
+      if (c.text !== '（考える時間）') expect(c.speech.length).toBeGreaterThan(0);
       expect(c.speech).not.toMatch(/[<>→⇒（）()「」“”＝／]/);
     }
   });

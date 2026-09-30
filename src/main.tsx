@@ -7,6 +7,7 @@ import './styles/components.css';
 import './styles/learn.css';
 import './styles/player.css';
 import './styles/lecture.css';
+import './styles/prep.css';
 import './styles/quiz.css';
 import './styles/app.css';
 

@@ -12,6 +12,7 @@ import { resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { makePolite } from './lib/polite';
 import { buildLecture } from './lib/lecture-builder';
+import { parseScript } from './lib/lesson-script';
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const COURSES = resolve(ROOT, 'src/content/courses');
@@ -42,12 +43,16 @@ for (const id of readdirSync(COURSES)) {
   mkdirSync(resolve(dir, 'narrations'), { recursive: true });
   let total = 0, cues = 0;
   for (const ch of course.chapters) {
-    const lec = buildLecture(input, ch.id);
+    // hand-written prep-school script wins; otherwise generate from the content
+    const script = resolve(dir, 'lessons', `lecture-${String(ch.id).padStart(2, '0')}.md`);
+    const lec = existsSync(script)
+      ? parseScript(readFileSync(script, 'utf8'), { course, chapter: ch.id, slides: input.slides, questions: input.questions, figures: input.figures, animScripts: input.animScripts })
+      : buildLecture(input, ch.id);
     const file = resolve(dir, 'narrations', `lecture-${String(ch.id).padStart(2, '0')}.json`);
     writeFileSync(file, JSON.stringify(lec, null, 1) + '\n');
     const sec = lec.cues.reduce((a, c) => a + c.dur + c.gap, 0);
     total += sec; cues += lec.cues.length;
-    console.log(`${id} lecture ${ch.id}: ${lec.shots.length} shots, ${lec.cues.length} cues, ~${Math.round(sec / 60)} min`);
+    console.log(`${id} lecture ${ch.id}${lec.authored ? ' (script)' : ''}: ${lec.shots.length} shots, ${lec.cues.length} cues, ~${Math.round(sec / 60)} min`);
   }
   console.log(`${id}: ${cues} cues, ~${Math.round(total / 60)} min total`);
 }

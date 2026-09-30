@@ -1,4 +1,7 @@
-import { createContext, useContext, useEffect, useLayoutEffect, useRef } from 'react';
+import { useEffect, useLayoutEffect, useRef } from 'react';
+import { useFrame } from './frame';
+import { CellMap, Chalk, Card, Compare, Roadmap, StageQuiz } from './PrepVisuals';
+export { FrameContext, type FrameFn } from './frame';
 import { useCourse } from '../../app/course';
 import { Rich } from '../../components/Rich';
 import { slideSrc } from '../../components/Slide';
@@ -6,21 +9,6 @@ import { AnimationStage } from '../../engine/animation/stage';
 import { CL, EZ, L, lerpC } from '../../engine/svg';
 import type { TimedCue, TimedShot } from '../../engine/lecture/types';
 import { sentences } from '../../engine/speech/reading';
-
-/** Per-frame callbacks registered by the active visual (camera moves, animation). */
-export type FrameFn = (T: number) => void;
-export const FrameContext = createContext<{ current: FrameFn | null }>({ current: null });
-
-function useFrame(fn: FrameFn) {
-  const reg = useContext(FrameContext);
-  const f = useRef(fn);
-  f.current = fn;
-  useEffect(() => {
-    const call: FrameFn = (T) => f.current(T);
-    reg.current = call;
-    return () => { if (reg.current === call) reg.current = null; };
-  }, [reg]);
-}
 
 interface VP { shot: TimedShot; cue: TimedCue }
 
@@ -99,7 +87,19 @@ export function Visual({ shot, cue }: VP) {
       );
     }
     case 'slide':
-      return <SlideShot shot={shot} n={v.slide} />;
+      return <SlideShot shot={shot} n={v.slide} tour={v.tour === true} focus={typeof cue.focus === 'string' && /^m\d+$/.test(cue.focus) ? Number(cue.focus.slice(1)) - 1 : -1} cueT0={cue.t0} />;
+    case 'chalk':
+      return <Chalk v={v} shot={shot} cue={cue} />;
+    case 'cellmap':
+      return <CellMap v={v} shot={shot} cue={cue} />;
+    case 'roadmap':
+      return <Roadmap v={v} cue={cue} />;
+    case 'compare':
+      return <Compare v={v} cue={cue} />;
+    case 'card':
+      return <Card v={v} />;
+    case 'quiz':
+      return <StageQuiz v={v} shot={shot} cue={cue} />;
     case 'figure':
       return <FigureShot shot={shot} figure={v.figure} fkey={v.key} />;
     case 'anim':
@@ -108,12 +108,13 @@ export function Visual({ shot, cue }: VP) {
 }
 
 /** Slide with a camera that visits each highlight box in turn, then pulls back. */
-function SlideShot({ shot, n }: { shot: TimedShot; n: number }) {
+function SlideShot({ shot, n, tour, focus, cueT0 }: { shot: TimedShot; n: number; tour: boolean; focus: number; cueT0: number }) {
   const course = useCourse();
   const s = course.slides[n];
   const host = useRef<HTMLDivElement>(null);
   const win = useRef<HTMLDivElement>(null);
   const img = useRef<HTMLImageElement>(null);
+  const camRef = useRef<{ key: number; from: [number, number, number]; cur: [number, number, number]; t0: number }>({ key: -1, from: [1, 0.5, 0.5], cur: [1, 0.5, 0.5], t0: 0 });
   useFrame((T) => {
     const el = host.current, w = win.current, im = img.current;
     if (!el || !w || !im) return;
@@ -122,6 +123,19 @@ function SlideShot({ shot, n }: { shot: TimedShot; n: number }) {
     const iw = Math.min(W * 0.96, H * 0.92 * a), ih = iw / a;
     w.style.width = iw + 'px'; w.style.height = ih + 'px';
     const B = s.masks;
+    if (!tour) {
+      // authored lecture: glide to the mask the lecturer is talking about
+      const cam = camRef.current;
+      const target: [number, number, number] = focus >= 0 && B[focus] ? (() => { const r = B[focus], bw = (r[2] - r[0]) * iw, bh = (r[3] - r[1]) * ih; return [Math.max(1.35, Math.min(2.1, (W * 0.42) / bw, (H * 0.34) / bh)), (r[0] + r[2]) / 2, (r[1] + r[3]) / 2] as [number, number, number]; })() : [1, 0.5, 0.5];
+      if (cam.key !== focus) { cam.from = cam.cur.slice() as [number, number, number]; cam.key = focus; cam.t0 = cueT0; }
+      const u = EZ(CL((T - cam.t0) / 0.9));
+      const z = L(cam.from[0], target[0], u), cx = L(cam.from[1], target[1], u), cy = L(cam.from[2], target[2], u);
+      cam.cur = [z, cx, cy];
+      const tx = z <= 1.001 ? (W - iw) / 2 : W / 2 - cx * iw * z, ty = z <= 1.001 ? (H - ih) / 2 : H / 2 - cy * ih * z;
+      w.style.transform = `translate(${tx}px,${ty}px) scale(${z})`;
+      w.querySelectorAll('i').forEach((b, j) => { b.classList.toggle('on', j === focus); b.classList.remove('v'); });
+      return;
+    }
     // the camera tour starts after the introductory sentence
     const ts = shot.cues[0]?.t1 ?? shot.t0, tp = CL((T - ts) / Math.max(0.1, shot.t1 - ts));
     let z = 1, cx = 0.5, cy = 0.5, act = -1;

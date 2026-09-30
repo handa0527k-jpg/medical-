@@ -45,6 +45,15 @@ components that highlight according to the current cue's `focus`; the ones that
 move continuously (slide camera tour over the highlight boxes, figure zoom,
 animation) register a per-frame callback through `FrameContext`.
 
+Authored lectures (`lessons/lecture-NN.md`, see [LECTURE_SCRIPT.md](LECTURE_SCRIPT.md))
+add prep-school visuals in `features/lecture/PrepVisuals.tsx`: chalkboard written row by
+row (boxes / underlines), cell map, learning roadmap, comparison table, point / pitfall /
+memo / example cards, and on-stage 5-choice questions. A question runs as three shots —
+`ask` → `think` (silent countdown, answer by tapping) → `explain` (options are judged in
+the order the lecturer mentions them). Answers go through `ProgressStore.answer`, so
+they count in analytics and review, and `LectureReport` shows understanding, accuracy,
+missed questions and jump links back into the lecture when it ends.
+
 ## Persistence and a future backend
 
 `LocalStorageRepository` stores one versioned JSON document per course
