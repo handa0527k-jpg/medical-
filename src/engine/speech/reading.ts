@@ -71,6 +71,9 @@ const RULES: Rule[] = [
 
 /** Kana readings for terms Japanese TTS engines frequently misread. */
 export const READINGS: [RegExp, string][] = [
+  // 的 after kanji is read まと by the voice when it ends a phrase (特異的 → とくいまと)
+  [/目的/g, 'もくてき'], [/標的/g, 'ひょうてき'], [/(?<=[一-龥])的/g, 'てき'],
+  [/槽内/g, 'そうない'],
   [/膜間腔/g, 'まくかんくう'], [/内腔/g, 'ないくう'], [/被覆陥凹/g, 'ひふくかんおう'], [/陥凹/g, 'かんおう'],
   [/上清/g, 'じょうせい'], [/出芽/g, 'しゅつが'], [/鍍銀/g, 'とぎん'], [/微絨毛/g, 'びじゅうもう'], [/線毛/g, 'せんもう'],
   [/嚢/g, 'のう'], [/側の葉/g, '側のよう'], [/中心子/g, 'ちゅうしんし'], [/脂肪滴/g, 'しぼうてき'], [/自食/g, 'じしょく'],

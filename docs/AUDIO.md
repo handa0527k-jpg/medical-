@@ -38,3 +38,14 @@ python3 scripts/generate-audio.py histology-cytoplasm --voice ja-JP-KeitaNeural
 ```bash
 python3 scripts/generate-audio.py genetics-basics --rate=+5%   # 全6講・約690文・約32MB
 ```
+
+## 読み間違いの確認（音声認識）
+
+```bash
+pip install faster-whisper pykakasi
+python3 scripts/check-audio.py histology-nucleus        # 全講（1講あたり約3分）
+```
+
+収録音声を1文ずつオフラインの音声認識で書き起こし、意図した読みと比べます。一致率0.8未満の文を一覧にするので、
+「音が違う」ものだけを `src/engine/speech/reading.ts` の読みで直して録り直します（多くは同音の別漢字で、問題ありません）。
+これまでに見つかって直したもの：蛋白質（たんしろしつ）、膜貫通（まくかんとう）、〜的（特異的→とくいまと）、槽内（そううち）、5Sだけ外（がい）。
