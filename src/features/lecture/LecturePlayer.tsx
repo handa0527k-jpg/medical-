@@ -287,7 +287,7 @@ export function LecturePlayer({ lecture, chapter, startAt }: { lecture: Lecture;
         </span>
       </div>
 
-      <div className={'lstage' + (playing ? ' cine' : '')} ref={stageRef}>
+      <div className={'lstage' + (playing ? ' cine' : '') + (shot.visual.kind === 'quiz' ? ' is-quiz' : '')} ref={stageRef}>
         <FrameContext.Provider value={frame}>
           <QuizContext.Provider value={quizApi}>
             <BoardContext.Provider value={boardCtx}>
@@ -295,7 +295,7 @@ export function LecturePlayer({ lecture, chapter, startAt }: { lecture: Lecture;
             </BoardContext.Provider>
           </QuizContext.Provider>
         </FrameContext.Provider>
-        <div className="lsec"><span>{LSN[shot.section]}</span>{lecture.sections[shot.section]?.name}</div>
+        <div className="lsec" key={'sec' + shot.section}><span>{LSN[shot.section]}</span>{lecture.sections[shot.section]?.name}</div>
         {P && <div className="lpt">{P.tag}</div>}
         {digest && <div className="ldig">重要ポイントだけ再生中</div>}
         {subs && cue.text && (
