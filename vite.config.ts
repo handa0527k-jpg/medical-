@@ -5,6 +5,7 @@ import react from '@vitejs/plugin-react';
 export default defineConfig({
   base: process.env.BASE_PATH || '/',
   plugins: [react()],
-  build: { target: 'es2022', chunkSizeWarningLimit: 900 },
+  // every course's content is bundled eagerly (registry.ts); lectures are split per chapter
+  build: { target: 'es2022', chunkSizeWarningLimit: 1100 },
   test: { include: ['tests/**/*.test.ts'], environment: 'node' },
 });

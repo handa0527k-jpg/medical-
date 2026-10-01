@@ -1,9 +1,18 @@
-# MED·STUDY — 組織学｜細胞質
+# MED·STUDY — 組織学
 
 講義資料（PDF）を一次資料にした、医学部生向けのインタラクティブ学習Webアプリです。
 **授業を受ける → 図とアニメーションで仕組みを見る → 5択で確かめる → 間違いを復習する → 弱点を確認する** までを一つのアプリで完結できます。iPad（縦・横）を最優先に、PC・スマートフォンでも崩れないように作っています。
 
 プロトタイプだった2つのClaude Artifact（「細胞質｜見取り図から学ぶ」と「組織学｜細胞質 インタラクティブ医学教科書」）を設計図として、React + TypeScript で本番アプリとして再構築しました。
+
+## 教材
+
+| 教材 | 一次資料 | 章・授業 | 問題 |
+|---|---|---|---|
+| 組織学｜細胞質（細胞＝工場） | 講義資料02（スライド2–56） | 9章・9講 | 5択110問・正誤77問 |
+| 組織学｜核・細胞周期（核＝本社） | 講義PDF「核、細胞周期」（24スライド、うち内容18枚） | 6章・6講 | 5択36問・正誤18問 |
+
+教材は 設定 → 教材 で切り替えます（進捗は教材ごとに保存）。
 
 ## 機能
 
@@ -21,13 +30,13 @@
 
 ## 音声について
 
-授業のナレーションは **ニューラル音声合成（Microsoft Nanami）で事前に収録した音声** を同梱しています（全9講・1,272文・約139分）。再生中は音源が画面に表示されます。
+授業のナレーションは **ニューラル音声合成（Microsoft Nanami）で事前に収録した音声** を同梱しています（細胞質9講・1,272文・約139分、核・細胞周期6講・628文・約69分）。再生中は音源が画面に表示されます。
 
 1. **収録音声**（標準）：`public/courses/<id>/audio/lecture-NN.mp3` と `lecture-NN/manifest.json`。1講義＝1ファイルで、文ごとの位置を manifest に記録。台本のタイミングは実際の音声の長さで再計算されるので、字幕・ハイライト・アニメが声に同期します
 2. **端末の音声合成**（収録音声が読み込めないとき）：Web Speech API
 3. **音声なし**：字幕・台本・タイムスタンプで進行し、「音声なし（字幕で進行）」と表示
 
-台本を変えたら `npm run build:narration` → `python3 scripts/generate-audio.py histology-cytoplasm` で録り直します（変更された文だけ再合成。[docs/AUDIO.md](docs/AUDIO.md)）。
+台本を変えたら `npm run build:narration` → `python3 scripts/generate-audio.py <教材ID>` で録り直します（変更された文だけ再合成。[docs/AUDIO.md](docs/AUDIO.md)）。
 
 授業は **予備校の講義スタイルの台本**（`src/content/courses/<id>/lessons/lecture-NN.md`）から作られます。各講は「今日押さえてほしい3つ → 全体図と学習マップ → テーマごとに板書（結論→理由→仕組み）・スライドの根拠・比較表・混同注意／覚え方カード・アニメ → 確認問題と典型問題（考える時間 → 正解の根拠・問題文の見どころ・他の選択肢が違う理由・解き方）→ まとめ → 本番問題 → 終了レポート（理解度・正答率・間違えた問題・復習リンク）」の流れです。講師はオリジナルのキャラクターで、内容はPDFに書かれていることに限ります。書き方は [docs/LECTURE_SCRIPT.md](docs/LECTURE_SCRIPT.md)。
 
@@ -65,12 +74,13 @@ src/
     types.ts      教材データの型
     registry.ts   教材フォルダを自動登録
     courses/histology-cytoplasm/
+    courses/histology-nucleus/
       course.json  textbook.json  slides.json  zukan.json  map.svg
       questions/   single.json（5択） judgement.json（正誤5択）
       figures/     figures.json details.json
       animations/  meta.json scripts.json（台本） defs.ts（描画コード）
       narrations/  lecture-01.json … lecture-09.json（台本・字幕・タイミング）
-public/courses/histology-cytoplasm/slides/  スライド画像
+public/courses/<id>/slides/  スライド画像
 scripts/          教材の取り込み・新規教材の雛形・ナレーション生成・音声生成・検証
 ```
 

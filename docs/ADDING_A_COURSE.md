@@ -18,7 +18,7 @@ npm run new:course -- histology-epithelium 上皮組織.pdf --title "組織学�
 
 | ファイル | 書くこと |
 |---|---|
-| `course.json` | 章立て（章名・比喩・担当スライド・学習目標・全体像） |
+| `course.json` | 章立て（章名・比喩・担当スライド・学習目標・全体像）。`metaphor` は「細胞＝工場」「核＝本社」の形で書くと、画面の「〇〇でいうと」に使われます |
 | `slides.json` | スライドごとのタイトル・「つまり」の要点・赤シートの位置（`masks`：0〜1の矩形）・確認Q&A |
 | `textbook.json` | 本文ブロック（`lead` `heading` `paragraph` `slide` `steps` `table` `analogy` `misconception` `column`）。授業資料にない知識は必ず `supplement`（画面に「補足（授業資料外の知識）」と表示） |
 | `questions/single.json` | **内容のあるスライド1枚につき2問、すべて5択（A〜E）・正解は1つ**。各選択肢の解説、全体の解説、重要ポイント、出典スライド、難易度（1基本/2標準/3発展）、関連テーマ |
@@ -32,6 +32,8 @@ npm run build:narration -- histology-epithelium
 ```
 
 教科書・スライド要点・図解・アニメ台本から、講義口調の台本・字幕・タイミングを作ります。
+`lessons/lecture-NN.md`（予備校スタイルの授業台本、[LECTURE_SCRIPT.md](LECTURE_SCRIPT.md)）があればそちらが優先されます。`histology-nucleus` は、PDFから台本まで一通りそろえた例です。
+音声合成が読み間違える用語は `src/engine/speech/reading.ts` の `READINGS` に読みを追加します。
 
 ## 4. 検証
 

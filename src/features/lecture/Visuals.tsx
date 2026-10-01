@@ -3,6 +3,7 @@ import { useFrame } from './frame';
 import { CellMap, Chalk, Card, Compare, Roadmap, StageQuiz } from './PrepVisuals';
 export { FrameContext, type FrameFn } from './frame';
 import { useCourse } from '../../app/course';
+import { metaphorWord } from '../../content/registry';
 import { Rich } from '../../components/Rich';
 import { slideSrc } from '../../components/Slide';
 import { AnimationStage } from '../../engine/animation/stage';
@@ -15,6 +16,7 @@ interface VP { shot: TimedShot; cue: TimedCue }
 const focusOf = (cue: TimedCue) => cue.focus;
 
 export function Visual({ shot, cue }: VP) {
+  const word = metaphorWord(useCourse());
   const v = shot.visual;
   switch (v.kind) {
     case 'title':
@@ -80,7 +82,7 @@ export function Visual({ shot, cue }: VP) {
       return (
         <div className="ly in">
           <div className="lbd">
-            <div className="lbt">図解：工場の役割で見る登場人物</div>
+            <div className="lbt">図解：{word}の役割で見る登場人物</div>
             <div className="lcs">{v.items.map((x, i) => <div key={i} className={(i <= f ? 'show' : '') + (i === f ? ' cur' : '')}><Rich as="b" html={x[0]} /><Rich html={x[1]} /><Rich as="small" html={x[2]} /></div>)}</div>
           </div>
         </div>

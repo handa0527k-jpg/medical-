@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useCourse } from '../../app/course';
+import { metaphorWord } from '../../content/registry';
 import { Rich } from '../../components/Rich';
 import { Icon } from '../../components/Icon';
 import { SourceChips } from '../../components/Slide';
@@ -213,7 +214,7 @@ export default function AnimationPlayer({ id, compact }: { id: string; compact?:
           <span className="spd" role="group" aria-label="再生速度">
             {SPEEDS.map((v) => <button key={v} className={v === speed ? 'on' : ''} onClick={() => setSpeed(v)} aria-pressed={v === speed}>{v}×</button>)}
           </span>
-          <button className={'fct' + (fac ? ' on' : '')} onClick={() => setFac((f) => !f)} aria-pressed={fac}>工場メタファー</button>
+          <button className={'fct' + (fac ? ' on' : '')} onClick={() => setFac((f) => !f)} aria-pressed={fac}>{metaphorWord(course)}のたとえ</button>
           <span className="tm" ref={tmRef}>0:00 / {fmtT(total)}</span>
         </div>
         <div className="achips" role="group" aria-label="重要ポイントへジャンプ">

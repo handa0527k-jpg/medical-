@@ -1,6 +1,7 @@
 import { lazy, Suspense, useEffect, useMemo, useState } from 'react';
 import { Link, useParams, useSearchParams } from 'react-router-dom';
 import { useCourse } from '../../app/course';
+import { metaphorWord } from '../../content/registry';
 import { Rich } from '../../components/Rich';
 import { InteractiveFigure } from '../../components/InteractiveFigure';
 import { NotFound } from '../../app/NotFound';
@@ -51,7 +52,7 @@ export function ChapterPage() {
     <>
       <section className="chero play" key={id}>
         <div className="bgnum" aria-hidden="true">{String(id).padStart(2, '0')}</div>
-        <div className="meta">第{id}章　／　工場でいうと：{ch.role}　／　スライド {ch.slides[0]}〜{ch.slides[ch.slides.length - 1]}</div>
+        <div className="meta">第{id}章　／　{metaphorWord(course)}でいうと：{ch.role}　／　スライド {ch.slides[0]}〜{ch.slides[ch.slides.length - 1]}</div>
         <h1>{ch.name}</h1>
         <div className="role">比喩：{ch.role}</div>
         <nav className="jump-nav" aria-label="章内ジャンプ">

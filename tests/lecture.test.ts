@@ -4,12 +4,16 @@ import { resolve } from 'node:path';
 import { cueAt, timeLecture } from '../src/engine/lecture/timing';
 import type { Lecture } from '../src/engine/lecture/types';
 
-const dir = resolve(__dirname, '../src/content/courses/histology-cytoplasm/narrations');
-const lectures: Lecture[] = readdirSync(dir).map((f) => JSON.parse(readFileSync(resolve(dir, f), 'utf8')));
+const root = resolve(__dirname, '../src/content/courses');
+const byCourse: Record<string, Lecture[]> = Object.fromEntries(
+  readdirSync(root).map((id) => [id, readdirSync(resolve(root, id, 'narrations')).map((f) => JSON.parse(readFileSync(resolve(root, id, 'narrations', f), 'utf8')))]),
+);
+const lectures: Lecture[] = Object.values(byCourse).flat();
+const chapters = (id: string) => JSON.parse(readFileSync(resolve(root, id, 'course.json'), 'utf8')).chapters.length as number;
 
 describe('lecture narration', () => {
-  it('exists for all 9 chapters as authored lessons (goals → map → themes → summary → final problem)', () => {
-    expect(lectures).toHaveLength(9);
+  it('exists for every chapter of every course as authored lessons (goals → map → themes → summary → final problem)', () => {
+    for (const [id, ls] of Object.entries(byCourse)) expect(ls).toHaveLength(chapters(id));
     for (const l of lectures) {
       expect(l.authored).toBe(true);
       const kinds = l.shots.map((s) => s.visual.kind);
@@ -25,11 +29,12 @@ describe('lecture narration', () => {
       expect(phases).toEqual(['ask', 'think', 'explain']);
     }
   });
-  it('has unique cue ids, speech text for every cue and no raw symbols in speech', () => {
-    const ids = new Set<string>();
+  it('has unique cue ids within a course, speech text for every cue and no raw symbols in speech', () => {
+    for (const ls of Object.values(byCourse)) {
+      const ids = new Set<string>();
+      for (const l of ls) for (const c of l.cues) { expect(ids.has(c.id)).toBe(false); ids.add(c.id); }
+    }
     for (const l of lectures) for (const c of l.cues) {
-      expect(ids.has(c.id)).toBe(false);
-      ids.add(c.id);
       if (c.text !== '（考える時間）') expect(c.speech.length).toBeGreaterThan(0);
       expect(c.speech).not.toMatch(/[<>→⇒（）()「」“”＝／]/);
     }

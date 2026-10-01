@@ -20,3 +20,6 @@ export function selectedCourse(): Course {
 export function selectCourse(id: string) {
   try { localStorage.setItem(KEY, JSON.stringify(id)); } catch { /* ignore */ }
 }
+
+/** The course metaphor's word ("細胞＝工場" → "工場"), used in UI copy. */
+export const metaphorWord = (c: { metaphor: string }) => c.metaphor.split('＝').pop() || c.metaphor;

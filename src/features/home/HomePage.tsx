@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useCourse } from '../../app/course';
+import { metaphorWord } from '../../content/registry';
 import { useProgress, useStudyPage } from '../../state/hooks';
 import { mastery, overall, studyTime, todaysPlan, weakSlides, wrongQuestions } from '../../state/analytics';
 import { ChapterList } from '../textbook/ChapterList';
@@ -42,7 +43,7 @@ export function HomePage() {
         <div className="kick">{course.subject} · {course.lecture.label}</div>
         <div className="rule" />
         <div className="en-title">MEDICAL STUDY — INTERACTIVE LECTURE</div>
-        <h1>{course.subtitle.replace('工場。', '')}<em>工場。</em></h1>
+        <h1>{course.subtitle.replace(metaphorWord(course) + '。', '')}<em>{metaphorWord(course)}。</em></h1>
         <p className="sub">{course.title}（スライド{course.lecture.slideRange[0]}–{course.lecture.slideRange[1]}）。授業を受け、図とアニメーションで仕組みを見て、5択で確かめ、間違いを復習する——ひとつのアプリで完結します。</p>
         <div className="rule" />
         <div className="btnrow">

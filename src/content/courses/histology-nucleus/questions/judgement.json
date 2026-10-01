@@ -1,0 +1,650 @@
+[
+ {
+  "id": "j001",
+  "slide": 3,
+  "chapter": 1,
+  "topic": "核の構成",
+  "ask": "true",
+  "statements": [
+   {
+    "text": "核膜は粗面小胞体と連続している",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "核膜は非膜性小器官である",
+    "isTrue": false,
+    "note": "膜性小器官"
+   },
+   {
+    "text": "染色質には正染色質と異染色質がある",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "核膜孔は核小体に開いた孔である",
+    "isTrue": false,
+    "note": "核膜に開く"
+   },
+   {
+    "text": "核小体は核の構成要素である",
+    "isTrue": true,
+    "note": ""
+   }
+  ],
+  "boxes": [],
+  "figureBoxes": []
+ },
+ {
+  "id": "j002",
+  "slide": 5,
+  "chapter": 1,
+  "topic": "核の染色性",
+  "ask": "false",
+  "statements": [
+   {
+    "text": "ヘマトキシリンは酸性基と結合する",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "エオジンはDNAと結合する",
+    "isTrue": false,
+    "note": "塩基性基（蛋白質）と結合"
+   },
+   {
+    "text": "メチルグリーンはDNA（二本鎖）と結合する",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "MP染色で核小体は緑に染まる",
+    "isTrue": false,
+    "note": "RNAが多くピロニン（ピンク）"
+   },
+   {
+    "text": "HE染色では染色質も核小体もヘマトキシリンで染まる",
+    "isTrue": true,
+    "note": ""
+   }
+  ],
+  "boxes": [],
+  "figureBoxes": []
+ },
+ {
+  "id": "j003",
+  "slide": 7,
+  "chapter": 1,
+  "topic": "核の電顕像",
+  "ask": "true",
+  "statements": [
+   {
+    "text": "核膜は外核膜・核周囲腔・内核膜からなる",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "核周囲腔は核膜槽ともいう",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "異染色質は核膜下と核小体付随に見られる",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "核小体は線維中心・線維部・顆粒部からなる",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "核膜は1枚の膜である",
+    "isTrue": false,
+    "note": "2枚（外核膜と内核膜）"
+   }
+  ],
+  "boxes": [],
+  "figureBoxes": []
+ },
+ {
+  "id": "j004",
+  "slide": 8,
+  "chapter": 2,
+  "topic": "核膜孔複合体",
+  "ask": "false",
+  "statements": [
+   {
+    "text": "細胞質リングには細胞質フィラメントが着く",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "核質リングには核バスケットが着く",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "中間リングは8個の表層膜蛋白質からなる",
+    "isTrue": false,
+    "note": "8個の膜貫通蛋白質"
+   },
+   {
+    "text": "中央のチャネルは9 nmである",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "核膜孔全体の直径は1 nmである",
+    "isTrue": false,
+    "note": "30〜100 nm"
+   }
+  ],
+  "boxes": [],
+  "figureBoxes": []
+ },
+ {
+  "id": "j005",
+  "slide": 9,
+  "chapter": 2,
+  "topic": "核膜孔を介した物質移動",
+  "ask": "true",
+  "statements": [
+   {
+    "text": "ヒストンは細胞質から核へ移動する",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "リボソーム亜粒子は核から細胞質へ移動する",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "mRNAは細胞質から核へ移動する",
+    "isTrue": false,
+    "note": "核→細胞質"
+   },
+   {
+    "text": "リボソーム蛋白質は核から細胞質へ移動する",
+    "isTrue": false,
+    "note": "細胞質→核"
+   },
+   {
+    "text": "tRNAは核から細胞質へ移動する",
+    "isTrue": true,
+    "note": ""
+   }
+  ],
+  "boxes": [],
+  "figureBoxes": []
+ },
+ {
+  "id": "j006",
+  "slide": 10,
+  "chapter": 2,
+  "topic": "核質と核ラミナ",
+  "ask": "false",
+  "statements": [
+   {
+    "text": "核ラミナは核膜直下にある",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "核ラミナの蛋白質はラミンである",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "核ラミナは微小管でできている",
+    "isTrue": false,
+    "note": "中間径フィラメント"
+   },
+   {
+    "text": "核ラミナには染色質が付着する",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "核マトリックスは核膜孔の別名である",
+    "isTrue": false,
+    "note": "核質の同義語、または核ラミナなどの線維状構造"
+   }
+  ],
+  "boxes": [],
+  "figureBoxes": []
+ },
+ {
+  "id": "j007",
+  "slide": 11,
+  "chapter": 3,
+  "topic": "染色質の構造",
+  "ask": "true",
+  "statements": [
+   {
+    "text": "低張処理で展開したクロマチンは10 nmの「ビーズとひも」に見える",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "ヌクレアーゼ処理で200塩基対の倍数の断片ができる",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "ヌクレオソームはDNAがコア蛋白質に結合した構造である",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "染色質の構造は1990年代に解明された",
+    "isTrue": false,
+    "note": "1970年代"
+   },
+   {
+    "text": "ヌクレアーゼ処理ではDNAは切断されない",
+    "isTrue": false,
+    "note": "切断される"
+   }
+  ],
+  "boxes": [],
+  "figureBoxes": []
+ },
+ {
+  "id": "j008",
+  "slide": 12,
+  "chapter": 3,
+  "topic": "染色質の凝縮",
+  "ask": "false",
+  "statements": [
+   {
+    "text": "ヌクレオソーム構造は10 nmである",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "H1ヒストンの結合で30 nmの線維になる",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "ループ構造は異染色質に多い",
+    "isTrue": false,
+    "note": "正染色質に多い"
+   },
+   {
+    "text": "高次らせんは正染色質に多い",
+    "isTrue": false,
+    "note": "異染色質に多い"
+   },
+   {
+    "text": "分裂時には染色体まで凝縮する",
+    "isTrue": true,
+    "note": ""
+   }
+  ],
+  "boxes": [],
+  "figureBoxes": []
+ },
+ {
+  "id": "j009",
+  "slide": 13,
+  "chapter": 3,
+  "topic": "正染色質と異染色質",
+  "ask": "true",
+  "statements": [
+   {
+    "text": "正染色質は転写が可能である",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "異染色質は転写的に不活性である",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "構造的異染色質は動原体部分に多い",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "Barr小体は構造的異染色質である",
+    "isTrue": false,
+    "note": "X染色体の不活性化は条件的異染色質"
+   },
+   {
+    "text": "Barr小体は男性の体細胞に見られる",
+    "isTrue": false,
+    "note": "女性の体細胞"
+   }
+  ],
+  "boxes": [],
+  "figureBoxes": []
+ },
+ {
+  "id": "j010",
+  "slide": 15,
+  "chapter": 4,
+  "topic": "核小体",
+  "ask": "false",
+  "statements": [
+   {
+    "text": "³H-ウリジンの標識は線維中心→線維部→顆粒部→核質と移動する",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "rRNAは細胞の全RNAの90%以上を占める",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "線維中心は核小体形成領域である",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "核小体ではリボソーム蛋白質が翻訳される",
+    "isTrue": false,
+    "note": "細胞質で翻訳され運ばれてくる"
+   },
+   {
+    "text": "標識は顆粒部から線維中心へ移動する",
+    "isTrue": false,
+    "note": "線維中心→線維部→顆粒部"
+   }
+  ],
+  "boxes": [],
+  "figureBoxes": []
+ },
+ {
+  "id": "j011",
+  "slide": 16,
+  "chapter": 4,
+  "topic": "リボソーム亜粒子形成",
+  "ask": "true",
+  "statements": [
+   {
+    "text": "rRNA遺伝子は5対の染色体上にある",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "顆粒部でリボソーム亜粒子が形成される",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "5S rRNAは核小体外で作られる",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "核小体のrRNA合成はRNAポリメラーゼⅢによる",
+    "isTrue": false,
+    "note": "RNAポリメラーゼⅠ"
+   },
+   {
+    "text": "線維部でリボソーム蛋白質が翻訳される",
+    "isTrue": false,
+    "note": "線維部ではrRNAが転写"
+   }
+  ],
+  "boxes": [],
+  "figureBoxes": []
+ },
+ {
+  "id": "j012",
+  "slide": 17,
+  "chapter": 4,
+  "topic": "リボソームの形成",
+  "ask": "false",
+  "statements": [
+   {
+    "text": "リボソーム蛋白質は細胞質で翻訳される",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "rRNAは核小体で転写される",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "亜粒子の状態で核膜孔を通る",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "リボソームは核小体で完成する",
+    "isTrue": false,
+    "note": "細胞質で完成"
+   },
+   {
+    "text": "細胞質ではまず大亜粒子にmRNAが結合する",
+    "isTrue": false,
+    "note": "小亜粒子にmRNAが結合"
+   }
+  ],
+  "boxes": [],
+  "figureBoxes": []
+ },
+ {
+  "id": "j013",
+  "slide": 18,
+  "chapter": 5,
+  "topic": "染色体",
+  "ask": "true",
+  "statements": [
+   {
+    "text": "ヒトの染色体数は46本（23対）である",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "1956年にTjioとLevanが決定した",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "動原体はセントロメアにある",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "複製された2本を相同染色体という",
+    "isTrue": false,
+    "note": "娘染色体（染色分体）"
+   },
+   {
+    "text": "性染色体は22対ある",
+    "isTrue": false,
+    "note": "常染色体が22対"
+   }
+  ],
+  "boxes": [],
+  "figureBoxes": []
+ },
+ {
+  "id": "j014",
+  "slide": 19,
+  "chapter": 5,
+  "topic": "有糸分裂",
+  "ask": "false",
+  "statements": [
+   {
+    "text": "前期に核小体が消失する",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "前中期に核膜が消失する",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "中期に染色体が赤道板上に並ぶ",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "後期に核が再生する",
+    "isTrue": false,
+    "note": "終期"
+   },
+   {
+    "text": "終期に中心体が分離する",
+    "isTrue": false,
+    "note": "前期"
+   }
+  ],
+  "boxes": [],
+  "figureBoxes": []
+ },
+ {
+  "id": "j015",
+  "slide": 20,
+  "chapter": 5,
+  "topic": "染色体と紡錘糸",
+  "ask": "true",
+  "statements": [
+   {
+    "text": "紡錘糸は動原体に結合する",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "動原体に結合する微小管を動原体微小管という",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "後期Aでは染色体が極に向かって移動する",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "後期Bでは染色体が赤道板に集まる",
+    "isTrue": false,
+    "note": "極と極が離れる"
+   },
+   {
+    "text": "染色体の分離には1種類の動きしか関与しない",
+    "isTrue": false,
+    "note": "2種類（後期A・B）"
+   }
+  ],
+  "boxes": [],
+  "figureBoxes": []
+ },
+ {
+  "id": "j016",
+  "slide": 21,
+  "chapter": 5,
+  "topic": "中期の電顕像",
+  "ask": "false",
+  "statements": [
+   {
+    "text": "中期の電顕像には染色体が見られる",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "中期の電顕像には紡錘糸が見られる",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "中期の電顕像には中心子が見られる",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "中期には核小体がはっきり見える",
+    "isTrue": false,
+    "note": "核小体は前期に消失"
+   },
+   {
+    "text": "中期には核膜が保たれている",
+    "isTrue": false,
+    "note": "核膜は前中期に消失"
+   }
+  ],
+  "boxes": [],
+  "figureBoxes": []
+ },
+ {
+  "id": "j017",
+  "slide": 22,
+  "chapter": 6,
+  "topic": "細胞集団の分類",
+  "ask": "true",
+  "statements": [
+   {
+    "text": "表皮は更新性細胞集団である",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "心筋細胞は静止性細胞集団である",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "肝細胞は拡張性細胞集団である",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "前駆細胞は自己複製する",
+    "isTrue": false,
+    "note": "自己複製なしの増殖と分化"
+   },
+   {
+    "text": "造血系は静止性細胞集団である",
+    "isTrue": false,
+    "note": "更新性"
+   }
+  ],
+  "boxes": [],
+  "figureBoxes": []
+ },
+ {
+  "id": "j018",
+  "slide": 24,
+  "chapter": 6,
+  "topic": "小腸上皮の細胞更新",
+  "ask": "false",
+  "statements": [
+   {
+    "text": "幹細胞は陰窩の底部にある",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "分化した細胞は絨毛を上昇する",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "BrdUはチミジンの類似体である",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "小腸上皮は約48日で更新される",
+    "isTrue": false,
+    "note": "約48時間"
+   },
+   {
+    "text": "細胞は陰窩の底部から剥離する",
+    "isTrue": false,
+    "note": "絨毛の先端部から剥離"
+   }
+  ],
+  "boxes": [],
+  "figureBoxes": []
+ }
+]

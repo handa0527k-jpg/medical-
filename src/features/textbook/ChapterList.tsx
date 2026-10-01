@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useCourse } from '../../app/course';
+import { metaphorWord } from '../../content/registry';
 import { Rich } from '../../components/Rich';
 import { useProgress } from '../../state/hooks';
 import { byChapter } from '../../state/analytics';
@@ -18,7 +19,7 @@ export function ChapterList({ to = (id: number) => `/chapter/${id}` }: { to?: (i
           <Link key={c.id} to={to(c.id)} className={'card' + (s.read[c.id] ? ' read' : '')}>
             <span className="no num">{c.id}</span>
             <b>{c.name}</b>
-            <small>工場でいうと：{c.role}　／　スライド {c.slides[0]}–{c.slides[c.slides.length - 1]}</small>
+            <small>{metaphorWord(course)}でいうと：{c.role}　／　スライド {c.slides[0]}–{c.slides[c.slides.length - 1]}</small>
             <span className="st">
               {s.read[c.id] && <span className="pill">✓ 読了</span>}
               {lec?.completed ? <span className="pill ok">授業 視聴済</span> : lec ? <span className="pill warn">授業 {Math.round((lec.maxPosition / Math.max(1, lec.total)) * 100)}%</span> : null}

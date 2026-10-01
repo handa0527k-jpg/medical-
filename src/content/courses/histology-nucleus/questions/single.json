@@ -1,0 +1,1442 @@
+[
+ {
+  "id": "q001",
+  "slide": 3,
+  "chapter": 1,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "核の構成要素について正しいのはどれか。",
+  "options": [
+   {
+    "text": "核膜は非膜性小器官である",
+    "explanation": "核膜は膜性小器官",
+    "correct": false
+   },
+   {
+    "text": "核膜は粗面小胞体（rER）と連続した膜性小器官である",
+    "explanation": "スライド3",
+    "correct": true
+   },
+   {
+    "text": "核膜孔は核小体の表面に開いている",
+    "explanation": "核膜孔は核膜に開く",
+    "correct": false
+   },
+   {
+    "text": "染色質は正染色質のみからなる",
+    "explanation": "正染色質と異染色質がある",
+    "correct": false
+   },
+   {
+    "text": "核小体は核膜の外側にある",
+    "explanation": "核の内部の構造",
+    "correct": false
+   }
+  ],
+  "explanation": "核は<b>染色質</b>（正染色質・異染色質）、<b>核小体</b>、<b>核質</b>、<b>核膜</b>、<b>核膜孔</b>からなる。核膜は<b>粗面小胞体と連続した膜性小器官</b>である（スライド3）。",
+  "point": "核膜の外膜は粗面小胞体へそのままつながる。",
+  "tags": [
+   "核の構成"
+  ]
+ },
+ {
+  "id": "q002",
+  "slide": 3,
+  "chapter": 1,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "スライド3の模式図の読み取りとして正しいのはどれか。",
+  "options": [
+   {
+    "text": "核膜は1枚の膜でできている",
+    "explanation": "外膜と内膜の2枚",
+    "correct": false
+   },
+   {
+    "text": "核ラミナは核膜の外側（細胞質側）にある",
+    "explanation": "核膜の内側（核質側）",
+    "correct": false
+   },
+   {
+    "text": "粗面小胞体は核膜とは独立して存在する",
+    "explanation": "核膜と連続している",
+    "correct": false
+   },
+   {
+    "text": "核膜孔は外膜と内膜が合わさった部分に開いている",
+    "explanation": "図の核膜孔",
+    "correct": true
+   },
+   {
+    "text": "核小体は核膜孔の中に存在する",
+    "explanation": "核小体は核質の中",
+    "correct": false
+   }
+  ],
+  "explanation": "模式図では、核膜は<b>外膜と内膜</b>の2枚で、その間が核膜内腔。外膜は粗面小胞体へつながり、内膜の内側に<b>核ラミナ</b>がある。<b>核膜孔</b>は2枚の膜が合わさった部分に開く。",
+  "point": "核膜＝2枚の膜。外膜はrERへ、内膜の内側に核ラミナ。",
+  "tags": [
+   "核の構成"
+  ]
+ },
+ {
+  "id": "q003",
+  "slide": 5,
+  "chapter": 1,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "HE染色とメチルグリーン・ピロニン（MP）染色について正しいのはどれか。",
+  "options": [
+   {
+    "text": "ヘマトキシリンは塩基性基と結合する",
+    "explanation": "酸性基（DNA, RNA）と結合",
+    "correct": false
+   },
+   {
+    "text": "エオジンはDNAと結合する",
+    "explanation": "塩基性基（蛋白質）と結合",
+    "correct": false
+   },
+   {
+    "text": "メチルグリーンはDNA（二本鎖）と結合して緑に染める",
+    "explanation": "スライド5",
+    "correct": true
+   },
+   {
+    "text": "ピロニンはDNA（二本鎖）と結合してピンクに染める",
+    "explanation": "ピロニンはRNA（一本鎖）",
+    "correct": false
+   },
+   {
+    "text": "MP染色ではDNAとRNAを区別できない",
+    "explanation": "MGとPYで区別できる",
+    "correct": false
+   }
+  ],
+  "explanation": "HE染色：<b>ヘマトキシリン</b>（青〜紫）は<b>酸性基</b>（DNA, RNA）、<b>エオジン</b>（ピンク）は<b>塩基性基</b>（蛋白質）と結合する。MP染色：<b>メチルグリーン</b>（緑）は<b>DNA（二本鎖）</b>、<b>ピロニン</b>（ピンク）は<b>RNA（一本鎖）</b>と結合する。",
+  "point": "MP染色は「DNAか、RNAか」を見分ける染色。",
+  "tags": [
+   "核の染色性"
+  ]
+ },
+ {
+  "id": "q004",
+  "slide": 5,
+  "chapter": 1,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "核小体と染色質を染め分けられる染色法と、そのときの色の組み合わせとして正しいのはどれか。",
+  "options": [
+   {
+    "text": "HE染色：染色質＝ヘマトキシリン、核小体＝エオジン",
+    "explanation": "HEではどちらもヘマトキシリン",
+    "correct": false
+   },
+   {
+    "text": "HE染色：染色質＝エオジン、核小体＝ヘマトキシリン",
+    "explanation": "HEではどちらもヘマトキシリン",
+    "correct": false
+   },
+   {
+    "text": "MP染色：染色質＝ピロニン、核小体＝メチルグリーン",
+    "explanation": "逆",
+    "correct": false
+   },
+   {
+    "text": "MP染色：染色質と核小体はともにメチルグリーン",
+    "explanation": "核小体はRNAが多くピロニン",
+    "correct": false
+   },
+   {
+    "text": "MP染色：染色質＝メチルグリーン、核小体＝ピロニン",
+    "explanation": "スライド5の表",
+    "correct": true
+   }
+  ],
+  "explanation": "染色質はDNAが多く、核小体はRNAが多い。HE染色ではDNAもRNAも酸性基をもつため、どちらもヘマトキシリン（H）で染まり区別できない。MP染色では<b>染色質＝メチルグリーン（MG）</b>、<b>核小体＝ピロニン（PY）</b>と染め分けられる。細胞質はHEでE、MPでPY。",
+  "point": "表：染色質 H／MG、核小体 H／PY、細胞質 E／PY。",
+  "tags": [
+   "核の染色性"
+  ]
+ },
+ {
+  "id": "q005",
+  "slide": 7,
+  "chapter": 1,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "電子顕微鏡で見た核膜の構造について正しいのはどれか。",
+  "options": [
+   {
+    "text": "外核膜（外葉）と内核膜（内葉）の間を核周囲腔（核膜槽）という",
+    "explanation": "スライド7",
+    "correct": true
+   },
+   {
+    "text": "核膜は1枚の単位膜からなる",
+    "explanation": "外核膜と内核膜の2枚",
+    "correct": false
+   },
+   {
+    "text": "核周囲腔は核膜孔の中央チャネルのことである",
+    "explanation": "2枚の膜の間の腔",
+    "correct": false
+   },
+   {
+    "text": "内核膜は細胞質に面している",
+    "explanation": "内核膜は核質側",
+    "correct": false
+   },
+   {
+    "text": "核膜孔は外核膜だけを貫く",
+    "explanation": "2枚の膜が合わさった部分に開く",
+    "correct": false
+   }
+  ],
+  "explanation": "核膜は外側から<b>外核膜（外葉）</b>、<b>核周囲腔（核膜槽）</b>、<b>内核膜（内葉）</b>。2枚の膜が合わさる部分に<b>核膜孔</b>が開く（スライド7）。",
+  "point": "外核膜 → 核周囲腔（核膜槽）→ 内核膜。",
+  "tags": [
+   "核の電顕像"
+  ]
+ },
+ {
+  "id": "q006",
+  "slide": 7,
+  "chapter": 1,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "スライド7の核の電子顕微鏡像で、異染色質が見られる場所として正しいのはどれか。",
+  "options": [
+   {
+    "text": "核膜孔の中央",
+    "explanation": "核膜孔は物質の通り道",
+    "correct": false
+   },
+   {
+    "text": "核周囲腔の中",
+    "explanation": "2枚の膜の間には染色質はない",
+    "correct": false
+   },
+   {
+    "text": "線維中心の内部のみ",
+    "explanation": "線維中心は核小体の区画",
+    "correct": false
+   },
+   {
+    "text": "核膜の下と、核小体に付随する部分",
+    "explanation": "スライド7の記載",
+    "correct": true
+   },
+   {
+    "text": "細胞質の粗面小胞体の周囲",
+    "explanation": "染色質は核の中",
+    "correct": false
+   }
+  ],
+  "explanation": "電顕では、染色質は明るい<b>正染色質</b>と電子密度の高い<b>異染色質</b>に分かれ、異染色質は<b>核膜下</b>と<b>核小体付随</b>に見られる。核小体は線維中心・線維部・顆粒部に分かれる。",
+  "point": "異染色質＝核膜下・核小体付随。",
+  "tags": [
+   "核の電顕像"
+  ]
+ },
+ {
+  "id": "q007",
+  "slide": 8,
+  "chapter": 2,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "核膜孔複合体について正しいのはどれか。",
+  "options": [
+   {
+    "text": "細胞質リングには核バスケットが着く",
+    "explanation": "核バスケットは核質リング",
+    "correct": false
+   },
+   {
+    "text": "核質リングは8個の表層膜蛋白質からなり、核バスケットが着く",
+    "explanation": "スライド8",
+    "correct": true
+   },
+   {
+    "text": "中間リングは8個の表層膜蛋白質からなる",
+    "explanation": "中間リングは膜貫通蛋白質",
+    "correct": false
+   },
+   {
+    "text": "中央のチャネルの直径は30〜100 nmである",
+    "explanation": "30〜100 nmは全体。チャネルは9 nm",
+    "correct": false
+   },
+   {
+    "text": "核膜孔はリングをもたない単純な穴である",
+    "explanation": "3つのリングからなる複合体",
+    "correct": false
+   }
+  ],
+  "explanation": "<b>細胞質リング</b>：8個の表層膜蛋白質→<b>細胞質フィラメント</b>。<b>核質リング</b>：8個の表層膜蛋白質→<b>核バスケット</b>。<b>中間リング</b>：8個の<b>膜貫通蛋白質</b>、内側は<b>輸送体サブユニット</b>。全体の直径は<b>30〜100 nm</b>、中央のチャネルは<b>9 nm</b>。",
+  "point": "外＝フィラメント、内＝バスケット、中間＝膜貫通。",
+  "tags": [
+   "核膜孔複合体"
+  ]
+ },
+ {
+  "id": "q008",
+  "slide": 8,
+  "chapter": 2,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "核膜孔複合体の大きさの組み合わせとして正しいのはどれか。",
+  "options": [
+   {
+    "text": "全体 9 nm、中央チャネル 30〜100 nm",
+    "explanation": "逆",
+    "correct": false
+   },
+   {
+    "text": "全体 10 nm、中央チャネル 2 nm",
+    "explanation": "該当しない",
+    "correct": false
+   },
+   {
+    "text": "全体 30〜100 nm、中央チャネル 9 nm",
+    "explanation": "スライド8",
+    "correct": true
+   },
+   {
+    "text": "全体 200 nm、中央チャネル 50 nm",
+    "explanation": "該当しない",
+    "correct": false
+   },
+   {
+    "text": "全体 25 nm、中央チャネル 13 nm",
+    "explanation": "25 nmは微小管の太さ",
+    "correct": false
+   }
+  ],
+  "explanation": "核膜孔全体の直径は<b>30〜100 nm</b>、中央のチャネルは<b>9 nm</b>である（スライド8）。",
+  "point": "全体30〜100、真ん中9。",
+  "tags": [
+   "核膜孔複合体"
+  ]
+ },
+ {
+  "id": "q009",
+  "slide": 9,
+  "chapter": 2,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "核膜孔を介して核から細胞質へ移動するものはどれか。",
+  "options": [
+   {
+    "text": "ヒストン",
+    "explanation": "細胞質→核",
+    "correct": false
+   },
+   {
+    "text": "ヌクレオチド",
+    "explanation": "細胞質→核",
+    "correct": false
+   },
+   {
+    "text": "リボソーム蛋白質",
+    "explanation": "細胞質→核",
+    "correct": false
+   },
+   {
+    "text": "核の酵素",
+    "explanation": "細胞質→核",
+    "correct": false
+   },
+   {
+    "text": "リボソーム亜粒子",
+    "explanation": "スライド9：核→細胞質",
+    "correct": true
+   }
+  ],
+  "explanation": "<b>細胞質→核</b>：ヌクレオチド、蛋白質（ヒストン、酵素、リボソーム蛋白質など）。<b>核→細胞質</b>：mRNA、tRNA、<b>リボソーム亜粒子</b>（rRNA＋蛋白質）。",
+  "point": "蛋白質は入り、RNAと亜粒子は出る。",
+  "tags": [
+   "核膜孔の物質移動"
+  ]
+ },
+ {
+  "id": "q010",
+  "slide": 9,
+  "chapter": 2,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "リボソームに関係する物質の、核膜孔を通る向きの組み合わせとして正しいのはどれか。",
+  "options": [
+   {
+    "text": "リボソーム蛋白質は細胞質→核、リボソーム亜粒子は核→細胞質",
+    "explanation": "スライド9・17",
+    "correct": true
+   },
+   {
+    "text": "リボソーム蛋白質は核→細胞質、リボソーム亜粒子は細胞質→核",
+    "explanation": "逆",
+    "correct": false
+   },
+   {
+    "text": "リボソーム蛋白質もリボソーム亜粒子も細胞質→核",
+    "explanation": "亜粒子は核から出る",
+    "correct": false
+   },
+   {
+    "text": "完成したリボソームが核→細胞質へ出る",
+    "explanation": "完成は細胞質で（亜粒子の状態で出る）",
+    "correct": false
+   },
+   {
+    "text": "rRNAは細胞質で転写されて核へ入る",
+    "explanation": "rRNAは核小体で転写",
+    "correct": false
+   }
+  ],
+  "explanation": "リボソーム蛋白質は細胞質で翻訳されて<b>核へ入り</b>、核小体でrRNAと結合して亜粒子となり、<b>亜粒子の状態で</b>核膜孔から<b>細胞質へ出る</b>。リボソームが完成するのは細胞質である。",
+  "point": "部品は入って、半完成品（亜粒子）が出る。",
+  "tags": [
+   "核膜孔の物質移動"
+  ]
+ },
+ {
+  "id": "q011",
+  "slide": 10,
+  "chapter": 2,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "核ラミナについて正しいのはどれか。",
+  "options": [
+   {
+    "text": "核膜の外側（細胞質側）にある微小管の網である",
+    "explanation": "核膜直下の中間径フィラメント",
+    "correct": false
+   },
+   {
+    "text": "アクチンフィラメントでできている",
+    "explanation": "中間径フィラメント",
+    "correct": false
+   },
+   {
+    "text": "核小体の中にある線維状構造である",
+    "explanation": "核膜直下",
+    "correct": false
+   },
+   {
+    "text": "核膜直下にある中間径フィラメント（ラミン）の網状構造である",
+    "explanation": "スライド10",
+    "correct": true
+   },
+   {
+    "text": "染色質とは結合しない",
+    "explanation": "染色質が付着する",
+    "correct": false
+   }
+  ],
+  "explanation": "<b>核ラミナ</b>は<b>核膜直下</b>にある<b>中間径フィラメント</b>（蛋白質は<b>ラミン</b>）の網状構造で、<b>核の形態を保持</b>し、<b>染色質が付着</b>する（スライド10）。",
+  "point": "核ラミナ＝ラミン＝中間径。",
+  "tags": [
+   "核質と核ラミナ"
+  ]
+ },
+ {
+  "id": "q012",
+  "slide": 10,
+  "chapter": 2,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "核質・核マトリックスという用語について、スライド10の記述に合うものはどれか。",
+  "options": [
+   {
+    "text": "核質は核小体だけを指す用語である",
+    "explanation": "核小体以外を指すことが多い",
+    "correct": false
+   },
+   {
+    "text": "核質は広義には核膜で細胞質から区画された全領域を指す",
+    "explanation": "スライド10",
+    "correct": true
+   },
+   {
+    "text": "核マトリックスは核膜孔の別名である",
+    "explanation": "核質の同義語、または核ラミナなどの線維状構造",
+    "correct": false
+   },
+   {
+    "text": "核マトリックスは細胞質の線維状構造を指す",
+    "explanation": "核の中の線維状構造",
+    "correct": false
+   },
+   {
+    "text": "核質と核マトリックスは常に厳密に区別される",
+    "explanation": "同義語に使われることもある",
+    "correct": false
+   }
+  ],
+  "explanation": "<b>核質</b>：広義には核膜で細胞質から区画された全領域。核小体以外、または核小体と染色質以外を指すことが多い。<b>核マトリックス</b>：核質と同義語に使われることもあり、核ラミナなどの線維状構造を指すこともある。",
+  "point": "用語には幅がある――広義の核質＝核膜の内側すべて。",
+  "tags": [
+   "核質と核ラミナ"
+  ]
+ },
+ {
+  "id": "q013",
+  "slide": 11,
+  "chapter": 3,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "染色質の構造の解明について正しいのはどれか。",
+  "options": [
+   {
+    "text": "高張処理でクロマチンを展開すると直径30 nmの線維が見えた",
+    "explanation": "低張処理で10 nmのビーズとひも",
+    "correct": false
+   },
+   {
+    "text": "ヌクレアーゼ処理で100塩基対の倍数のDNA断片ができた",
+    "explanation": "200塩基対の倍数",
+    "correct": false
+   },
+   {
+    "text": "低張処理で展開したクロマチンは直径10 nmの「ビーズとひも」に見えた",
+    "explanation": "スライド11",
+    "correct": true
+   },
+   {
+    "text": "解明されたのは1950年代である",
+    "explanation": "1970年代",
+    "correct": false
+   },
+   {
+    "text": "DNAはコア蛋白質に結合しないことが判明した",
+    "explanation": "コア蛋白質に結合したヌクレオソーム",
+    "correct": false
+   }
+  ],
+  "explanation": "<b>1970年代</b>、①核の<b>低張処理</b>でクロマチンを展開すると直径<b>10 nm</b>の「<b>ビーズとひも</b>」、②<b>ヌクレアーゼ処理</b>でDNAを切断すると<b>200塩基対の倍数</b>の断片、という結果から、DNAが<b>コア蛋白質</b>に結合した<b>ヌクレオソーム</b>構造が判明した。",
+  "point": "10 nmのビーズ、200塩基対のはしご。",
+  "tags": [
+   "染色質の構造"
+  ]
+ },
+ {
+  "id": "q014",
+  "slide": 11,
+  "chapter": 3,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "クロマチンをヌクレアーゼ処理し、DNAをゲル電気泳動すると200塩基対の倍数の断片が並んだ。この結果が示すこととして最も適切なのはどれか。",
+  "options": [
+   {
+    "text": "DNAが一定の間隔でコア蛋白質に結合している（ヌクレオソーム）",
+    "explanation": "スライド11",
+    "correct": true
+   },
+   {
+    "text": "DNAがすべて一本鎖である",
+    "explanation": "該当しない",
+    "correct": false
+   },
+   {
+    "text": "クロマチンには蛋白質が含まれない",
+    "explanation": "コア蛋白質を含む",
+    "correct": false
+   },
+   {
+    "text": "DNAが核膜孔を通って細胞質へ出る",
+    "explanation": "該当しない",
+    "correct": false
+   },
+   {
+    "text": "DNAが30 nmの管の中に収まっている",
+    "explanation": "30 nmはクロマチン基本線維",
+    "correct": false
+   }
+  ],
+  "explanation": "断片の長さが200塩基対の倍数にそろうのは、DNAが一定の間隔で<b>コア蛋白質</b>に結合した<b>ヌクレオソーム</b>の繰り返し構造をとるため。電顕の「ビーズとひも」と合わせて、ヌクレオソーム構造が判明した。",
+  "point": "実験結果 → ヌクレオソームの結論、の対応。",
+  "tags": [
+   "染色質の構造"
+  ]
+ },
+ {
+  "id": "q015",
+  "slide": 12,
+  "chapter": 3,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "染色質の凝縮の段階について正しいのはどれか。",
+  "options": [
+   {
+    "text": "ヌクレオソーム構造の太さは30 nmである",
+    "explanation": "10 nm",
+    "correct": false
+   },
+   {
+    "text": "クロマチン基本線維は10 nmである",
+    "explanation": "30 nm",
+    "correct": false
+   },
+   {
+    "text": "H1ヒストンの結合でループ構造ができる",
+    "explanation": "H1で密ならせん（30 nm線維）",
+    "correct": false
+   },
+   {
+    "text": "H1ヒストンの結合による密ならせん形成で、クロマチン基本線維（30 nm）になる",
+    "explanation": "スライド12",
+    "correct": true
+   },
+   {
+    "text": "染色体は分散した状態の染色質である",
+    "explanation": "最も凝縮した状態",
+    "correct": false
+   }
+  ],
+  "explanation": "DNA → <b>ヌクレオソーム構造（10 nm）</b> →（<b>H1ヒストン</b>結合による密ならせん形成）→ <b>クロマチン基本線維（30 nm）</b> → ループ構造 → 高次らせん → さらに高次のらせん形成 → <b>染色体（分裂時）</b>。",
+  "point": "10 nm → H1 → 30 nm。",
+  "tags": [
+   "染色質の凝縮"
+  ]
+ },
+ {
+  "id": "q016",
+  "slide": 12,
+  "chapter": 3,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "ループ構造と高次らせんについて、スライド12の記述に合うものはどれか。",
+  "options": [
+   {
+    "text": "ループ構造は異染色質に多い",
+    "explanation": "正染色質に多い",
+    "correct": false
+   },
+   {
+    "text": "ループ構造は正染色質に多く、高次らせんは異染色質に多い",
+    "explanation": "スライド12",
+    "correct": true
+   },
+   {
+    "text": "高次らせんは正染色質に多い",
+    "explanation": "異染色質に多い",
+    "correct": false
+   },
+   {
+    "text": "ループ構造も高次らせんも分裂期の染色体にしか見られない",
+    "explanation": "間期の正・異染色質に多い",
+    "correct": false
+   },
+   {
+    "text": "ループ構造はヌクレオソームより細い",
+    "explanation": "ヌクレオソームが畳まれたもの",
+    "correct": false
+   }
+  ],
+  "explanation": "<b>ループ構造</b>は<b>正染色質</b>に多く、<b>高次らせん</b>は<b>異染色質</b>に多い。さらに高次のらせん形成で<b>染色体（分裂時）</b>になる（スライド12）。",
+  "point": "ゆるい＝正（ループ）、固い＝異（高次らせん）。",
+  "tags": [
+   "染色質の凝縮"
+  ]
+ },
+ {
+  "id": "q017",
+  "slide": 13,
+  "chapter": 3,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "正染色質と異染色質について正しいのはどれか。",
+  "options": [
+   {
+    "text": "正染色質は高度に凝縮していて転写的に不活性である",
+    "explanation": "それは異染色質",
+    "correct": false
+   },
+   {
+    "text": "異染色質ではゆるいループ構造が多い",
+    "explanation": "それは正染色質",
+    "correct": false
+   },
+   {
+    "text": "構造的異染色質は本来遺伝子として働く部分が不活性化したものである",
+    "explanation": "それは条件的異染色質",
+    "correct": false
+   },
+   {
+    "text": "条件的異染色質は反復配列からなり、動原体部分に多い",
+    "explanation": "それは構造的異染色質",
+    "correct": false
+   },
+   {
+    "text": "異染色質の不活性化にはDNAのメチル化やヒストンの修飾が関与すると考えられている",
+    "explanation": "スライド13",
+    "correct": true
+   }
+  ],
+  "explanation": "<b>正染色質</b>：ゆるいループ構造→<b>転写が可能</b>。<b>異染色質</b>：高度の凝縮→<b>転写的に不活性</b>、<b>DNAのメチル化</b>や<b>ヒストンの修飾</b>が関与すると考えられている。<b>構造的</b>異染色質は反復配列など遺伝子として働かない部分（<b>動原体部分</b>に多い）、<b>条件的</b>異染色質は本来働く部分が条件的に不活性化したもの。",
+  "point": "構造的＝もともと働かない、条件的＝条件で止めた。",
+  "tags": [
+   "正染色質と異染色質"
+  ]
+ },
+ {
+  "id": "q018",
+  "slide": 13,
+  "chapter": 3,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "女性の体細胞の核膜下に見られるBarr小体について正しいのはどれか。",
+  "options": [
+   {
+    "text": "構造的異染色質の代表例である",
+    "explanation": "条件的異染色質の例",
+    "correct": false
+   },
+   {
+    "text": "母親由来のX染色体だけが不活性化されたものである",
+    "explanation": "父親由来・母親由来のどちらかがランダムに",
+    "correct": false
+   },
+   {
+    "text": "発生初期にランダムに不活性化されたX染色体が、異染色質の塊として見えるものである",
+    "explanation": "スライド13",
+    "correct": true
+   },
+   {
+    "text": "男性の体細胞に特徴的に見られる",
+    "explanation": "女性の体細胞（図の♀）",
+    "correct": false
+   },
+   {
+    "text": "転写が活発な正染色質の集まりである",
+    "explanation": "不活性な異染色質",
+    "correct": false
+   }
+  ],
+  "explanation": "<b>Barr小体（sex chromatin）</b>：女性の体細胞では父親由来または母親由来のX染色体が<b>発生初期にランダムに不活性化</b>され、<b>核膜下に異染色質の塊</b>として見える。X染色体の不活性化は<b>条件的異染色質</b>の例である。",
+  "point": "Barr小体＝条件的異染色質＝ランダムに止めたX。",
+  "tags": [
+   "正染色質と異染色質"
+  ]
+ },
+ {
+  "id": "q019",
+  "slide": 15,
+  "chapter": 4,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "³H-ウリジンをRNAに取り込ませ、電顕オートラジオグラフィーで核小体を追跡したときの標識の移動の順として正しいのはどれか。",
+  "options": [
+   {
+    "text": "顆粒部 → 線維部 → 線維中心 → 核質",
+    "explanation": "逆",
+    "correct": false
+   },
+   {
+    "text": "線維中心 → 線維部 → 顆粒部 → 核質",
+    "explanation": "スライド15",
+    "correct": true
+   },
+   {
+    "text": "線維部 → 線維中心 → 顆粒部 → 核質",
+    "explanation": "線維中心が先",
+    "correct": false
+   },
+   {
+    "text": "核質 → 線維中心 → 線維部 → 顆粒部",
+    "explanation": "核質は最後",
+    "correct": false
+   },
+   {
+    "text": "線維中心 → 顆粒部 → 線維部 → 核質",
+    "explanation": "線維部が先",
+    "correct": false
+   }
+  ],
+  "explanation": "³H-ウリジンの標識は<b>線維中心 → 線維部 → 顆粒部 → 核質</b>と移動する。rRNAが転写され（線維中心・線維部）、リボソーム蛋白質と結合して亜粒子となり（顆粒部）、核質へ出ていく流れを示す。",
+  "point": "「中から外へ」：中心 → 線維部 → 顆粒部 → 核質。",
+  "tags": [
+   "核小体"
+  ]
+ },
+ {
+  "id": "q020",
+  "slide": 15,
+  "chapter": 4,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "核小体について、スライド15の記述に合うものはどれか。",
+  "options": [
+   {
+    "text": "核小体では主にmRNAが転写される",
+    "explanation": "rRNA",
+    "correct": false
+   },
+   {
+    "text": "リボソーム蛋白質は核小体で翻訳される",
+    "explanation": "細胞質から運ばれる",
+    "correct": false
+   },
+   {
+    "text": "rRNAは細胞の全RNAの10%程度にすぎない",
+    "explanation": "90%以上",
+    "correct": false
+   },
+   {
+    "text": "細胞の全RNAの90%以上を占めるrRNAが転写され、リボソーム亜粒子が形成される",
+    "explanation": "スライド15",
+    "correct": true
+   },
+   {
+    "text": "線維中心は核小体形成領域とは別の構造である",
+    "explanation": "線維中心＝核小体形成領域",
+    "correct": false
+   }
+  ],
+  "explanation": "核小体は、細胞の全RNAの<b>90%以上</b>を占める<b>リボソームRNA（rRNA）</b>が転写され、細胞質から運ばれた<b>リボソーム蛋白質</b>と結合して<b>リボソーム亜粒子</b>が形成される部分である。線維中心は核小体形成領域（nucleolar-organizing region）。",
+  "point": "核小体＝rRNAの工場、全RNAの90%以上。",
+  "tags": [
+   "核小体"
+  ]
+ },
+ {
+  "id": "q021",
+  "slide": 16,
+  "chapter": 4,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "核小体の区画とその内容の組み合わせとして正しいのはどれか。",
+  "options": [
+   {
+    "text": "線維中心 ― 5対の染色体上にあるrRNA遺伝子のDNA",
+    "explanation": "スライド16",
+    "correct": true
+   },
+   {
+    "text": "線維部 ― リボソーム亜粒子の形成",
+    "explanation": "それは顆粒部",
+    "correct": false
+   },
+   {
+    "text": "顆粒部 ― rRNA遺伝子のDNA",
+    "explanation": "それは線維中心",
+    "correct": false
+   },
+   {
+    "text": "線維中心 ― リボソーム蛋白質の翻訳",
+    "explanation": "翻訳は細胞質",
+    "correct": false
+   },
+   {
+    "text": "顆粒部 ― mRNAの転写",
+    "explanation": "該当しない",
+    "correct": false
+   }
+  ],
+  "explanation": "<b>線維中心</b>（核小体形成域）：<b>5対の染色体</b>上にあるrRNA遺伝子のDNA。<b>線維部</b>：遺伝子から<b>rRNAが転写</b>。<b>顆粒部</b>：細胞質から来たリボソーム蛋白質とrRNAが結合して<b>リボソーム亜粒子を形成</b>。※転写は線維中心と線維部の両方で行われている可能性がある。",
+  "point": "中心＝遺伝子、線維部＝転写、顆粒部＝組立。",
+  "tags": [
+   "リボソーム亜粒子形成"
+  ]
+ },
+ {
+  "id": "q022",
+  "slide": 16,
+  "chapter": 4,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "rRNAの合成について、スライド16の記述に合うものはどれか。",
+  "options": [
+   {
+    "text": "5S rRNAは核小体で作られる",
+    "explanation": "5Sは核小体外",
+    "correct": false
+   },
+   {
+    "text": "18S rRNAは核小体の外で作られる",
+    "explanation": "18Sは核小体",
+    "correct": false
+   },
+   {
+    "text": "核小体のrRNA合成はRNAポリメラーゼⅡによる",
+    "explanation": "RNAポリメラーゼⅠ",
+    "correct": false
+   },
+   {
+    "text": "rRNA遺伝子は1対の染色体上にのみ存在する",
+    "explanation": "5対の染色体",
+    "correct": false
+   },
+   {
+    "text": "18S・28S・5.8S rRNAが核小体で作られ、5Sは核小体外で作られる",
+    "explanation": "スライド16",
+    "correct": true
+   }
+  ],
+  "explanation": "rRNAは<b>RNAポリメラーゼⅠ</b>により合成され、<b>18S・28S・5.8S</b>が核小体で、<b>5S</b>は<b>核小体外</b>で作られる。rRNA遺伝子は<b>5対の染色体</b>上にある。",
+  "point": "5Sだけ核小体の外。",
+  "tags": [
+   "リボソーム亜粒子形成"
+  ]
+ },
+ {
+  "id": "q023",
+  "slide": 17,
+  "chapter": 4,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "リボソームの形成について正しいのはどれか。",
+  "options": [
+   {
+    "text": "リボソーム蛋白質は核小体で翻訳される",
+    "explanation": "細胞質で翻訳",
+    "correct": false
+   },
+   {
+    "text": "リボソームは核小体で完成し、核膜孔から出る",
+    "explanation": "完成は細胞質",
+    "correct": false
+   },
+   {
+    "text": "大小の亜粒子は核小体の顆粒部で形成され、亜粒子の状態で核膜孔を通る",
+    "explanation": "スライド17",
+    "correct": true
+   },
+   {
+    "text": "rRNAは細胞質で転写される",
+    "explanation": "核小体で転写",
+    "correct": false
+   },
+   {
+    "text": "細胞質ではまず大亜粒子にmRNAが結合する",
+    "explanation": "小亜粒子にmRNA",
+    "correct": false
+   }
+  ],
+  "explanation": "リボソーム蛋白質は<b>細胞質で翻訳</b>、rRNAは<b>核小体で転写</b>（線維中心→線維部）。核小体で蛋白質とrRNAから<b>大小の亜粒子</b>が形成され（<b>顆粒部</b>）、<b>亜粒子の状態で核膜孔</b>を通り細胞質へ。細胞質で<b>小亜粒子にmRNA</b>が結合し、さらに<b>大亜粒子</b>が結合してリボソームが完成する。",
+  "point": "完成は細胞質。出ていくのは亜粒子。",
+  "tags": [
+   "リボソームの形成"
+  ]
+ },
+ {
+  "id": "q024",
+  "slide": 17,
+  "chapter": 4,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "リボソームができるまでの順序として正しいのはどれか。",
+  "options": [
+   {
+    "text": "rRNAの転写 → 細胞質でリボソーム完成 → 核膜孔を通過",
+    "explanation": "完成は核膜孔を通った後",
+    "correct": false
+   },
+   {
+    "text": "リボソーム蛋白質の翻訳（核小体）→ 亜粒子形成 → 核膜孔通過",
+    "explanation": "翻訳は細胞質",
+    "correct": false
+   },
+   {
+    "text": "小亜粒子と大亜粒子が核内で結合 → mRNAが核内で結合 → 核膜孔通過",
+    "explanation": "結合は細胞質で",
+    "correct": false
+   },
+   {
+    "text": "rRNAの転写（線維中心→線維部）→ 亜粒子形成（顆粒部）→ 核膜孔通過 → 細胞質で小亜粒子＋mRNA＋大亜粒子",
+    "explanation": "スライド17",
+    "correct": true
+   },
+   {
+    "text": "亜粒子形成（線維中心）→ rRNAの転写（顆粒部）→ 核膜孔通過",
+    "explanation": "区画の役割が逆",
+    "correct": false
+   }
+  ],
+  "explanation": "rRNAの転写（線維中心→線維部）→ 細胞質から来たリボソーム蛋白質と結合して亜粒子形成（顆粒部）→ 亜粒子の状態で核膜孔を通過 → 細胞質で小亜粒子にmRNAが結合し、さらに大亜粒子が結合して完成。",
+  "point": "転写 → 組立 → 出荷 → 現場で完成。",
+  "tags": [
+   "リボソームの形成"
+  ]
+ },
+ {
+  "id": "q025",
+  "slide": 18,
+  "chapter": 5,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "染色体について正しいのはどれか。",
+  "options": [
+   {
+    "text": "ヒトの染色体数は48本（24対）である",
+    "explanation": "46本（23対）",
+    "correct": false
+   },
+   {
+    "text": "1956年、Tjio と Levan がヒトの染色体数を46本（23対）と決定した",
+    "explanation": "スライド18",
+    "correct": true
+   },
+   {
+    "text": "動原体は長腕の先端にある",
+    "explanation": "セントロメアにある",
+    "correct": false
+   },
+   {
+    "text": "複製された2本の染色体を相同染色体という",
+    "explanation": "娘染色体（染色分体）",
+    "correct": false
+   },
+   {
+    "text": "性染色体は22対ある",
+    "explanation": "常染色体が22対、性染色体はX・Y",
+    "correct": false
+   }
+  ],
+  "explanation": "<b>1956年 Tjio & Levan</b>：ヒトの染色体数<b>46本（23対）</b>を決定。染色体には<b>短腕・長腕</b>があり、<b>セントロメア</b>に紡錘糸が結合する<b>動原体</b>がある。複製された2本は<b>娘染色体（染色分体）</b>。染色体は<b>常染色体</b>と<b>性染色体</b>に分けられ、対になるものを<b>相同染色体</b>という。",
+  "point": "46本・23対、1956年。",
+  "tags": [
+   "染色体"
+  ]
+ },
+ {
+  "id": "q026",
+  "slide": 18,
+  "chapter": 5,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "「娘染色体（染色分体）」と「相同染色体」の区別として正しいのはどれか。",
+  "options": [
+   {
+    "text": "娘染色体は複製された同じ染色体の2本、相同染色体は対になる2本の染色体",
+    "explanation": "スライド18の用語",
+    "correct": true
+   },
+   {
+    "text": "娘染色体と相同染色体は同じ意味である",
+    "explanation": "別の用語",
+    "correct": false
+   },
+   {
+    "text": "相同染色体はセントロメアでつながった2本である",
+    "explanation": "それは娘染色体（染色分体）",
+    "correct": false
+   },
+   {
+    "text": "娘染色体は性染色体だけに使う用語である",
+    "explanation": "該当しない",
+    "correct": false
+   },
+   {
+    "text": "相同染色体は動原体の別名である",
+    "explanation": "該当しない",
+    "correct": false
+   }
+  ],
+  "explanation": "スライド18の図の中期染色体は複製されたもので、セントロメアでつながる2本が<b>娘染色体（染色分体）</b>。核型の1〜22番・X・Yのように、対になる染色体どうしが<b>相同染色体</b>である。",
+  "point": "同じものの複製＝染色分体、対の相手＝相同染色体。",
+  "tags": [
+   "染色体"
+  ]
+ },
+ {
+  "id": "q027",
+  "slide": 19,
+  "chapter": 5,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "有糸分裂の時期と起こることの組み合わせとして、スライド19の記述に合うものはどれか。",
+  "options": [
+   {
+    "text": "前期 ― 染色体が赤道板上に並ぶ",
+    "explanation": "中期",
+    "correct": false
+   },
+   {
+    "text": "中期 ― 染色分体の娘細胞への分離",
+    "explanation": "後期",
+    "correct": false
+   },
+   {
+    "text": "後期 ― 細胞質分離、核の再生",
+    "explanation": "終期",
+    "correct": false
+   },
+   {
+    "text": "前中期 ― 紡錘糸と染色体の結合、核膜消失",
+    "explanation": "スライド19",
+    "correct": true
+   },
+   {
+    "text": "終期 ― 染色質凝縮、核小体消失",
+    "explanation": "前期",
+    "correct": false
+   }
+  ],
+  "explanation": "<b>前期</b>：染色質凝縮、核小体消失、中心体分離、紡錘糸形成。<b>前中期</b>：紡錘糸と染色体の結合、核膜消失。<b>中期</b>：赤道板上に並ぶ。<b>後期</b>：染色分体の娘細胞への分離。<b>終期</b>：細胞質分離、核の再生。",
+  "point": "核小体は前期、核膜は前中期に消える。",
+  "tags": [
+   "有糸分裂"
+  ]
+ },
+ {
+  "id": "q028",
+  "slide": 19,
+  "chapter": 5,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "前期に起こることとして、スライド19に挙げられていないものはどれか。",
+  "options": [
+   {
+    "text": "染色質凝縮",
+    "explanation": "前期",
+    "correct": false
+   },
+   {
+    "text": "核小体消失",
+    "explanation": "前期",
+    "correct": false
+   },
+   {
+    "text": "中心体分離",
+    "explanation": "前期",
+    "correct": false
+   },
+   {
+    "text": "紡錘糸形成",
+    "explanation": "前期",
+    "correct": false
+   },
+   {
+    "text": "核膜消失",
+    "explanation": "前中期",
+    "correct": true
+   }
+  ],
+  "explanation": "スライド19では、前期に<b>染色質凝縮・核小体消失・中心体分離・紡錘糸形成</b>、前中期に<b>紡錘糸と染色体の結合・核膜消失</b>が置かれている。",
+  "point": "核膜消失は前中期。",
+  "tags": [
+   "有糸分裂"
+  ]
+ },
+ {
+  "id": "q029",
+  "slide": 20,
+  "chapter": 5,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "染色体と紡錘糸の結合について正しいのはどれか。",
+  "options": [
+   {
+    "text": "紡錘糸は染色体の長腕の先端に結合する",
+    "explanation": "セントロメアの動原体",
+    "correct": false
+   },
+   {
+    "text": "紡錘糸は核小体に結合する",
+    "explanation": "核小体は前期に消失",
+    "correct": false
+   },
+   {
+    "text": "紡錘糸はセントロメアにある動原体に結合する（動原体微小管）",
+    "explanation": "スライド20",
+    "correct": true
+   },
+   {
+    "text": "動原体はアクチンフィラメントでできている",
+    "explanation": "紡錘糸（動原体微小管）が結合する部位",
+    "correct": false
+   },
+   {
+    "text": "紡錘糸は染色体と結合しない",
+    "explanation": "結合する",
+    "correct": false
+   }
+  ],
+  "explanation": "スライド20：染色体の<b>セントロメア</b>にある<b>動原体</b>に、紡錘糸（<b>動原体微小管</b>）が結合する。",
+  "point": "紡錘糸がつかむ取っ手＝動原体。",
+  "tags": [
+   "染色体と紡錘糸"
+  ]
+ },
+ {
+  "id": "q030",
+  "slide": 20,
+  "chapter": 5,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "染色体の分離に関与する2種類の動きの組み合わせとして正しいのはどれか。",
+  "options": [
+   {
+    "text": "後期A：極と極が離れる移動、後期B：染色体が極に向かって移動",
+    "explanation": "逆",
+    "correct": false
+   },
+   {
+    "text": "後期A：染色体が極に向かって移動、後期B：極と極が離れる移動",
+    "explanation": "スライド20",
+    "correct": true
+   },
+   {
+    "text": "後期A：核膜の消失、後期B：核小体の消失",
+    "explanation": "前期・前中期の出来事",
+    "correct": false
+   },
+   {
+    "text": "後期A：染色体が赤道板へ移動、後期B：細胞質分離",
+    "explanation": "中期・終期の出来事",
+    "correct": false
+   },
+   {
+    "text": "後期A・Bとも染色体が赤道板に集まる動き",
+    "explanation": "該当しない",
+    "correct": false
+   }
+  ],
+  "explanation": "染色体の分離には2種類の動きが関与する。<b>後期A</b>：染色体が<b>極に向かって</b>移動。<b>後期B</b>：<b>極と極が離れる</b>移動（スライド20）。",
+  "point": "A＝染色体が動く、B＝極が動く。",
+  "tags": [
+   "染色体と紡錘糸"
+  ]
+ },
+ {
+  "id": "q031",
+  "slide": 21,
+  "chapter": 5,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "スライド21の細胞分裂（中期）の電子顕微鏡像に示されている構造の組み合わせとして正しいのはどれか。",
+  "options": [
+   {
+    "text": "染色体・紡錘糸・中心子",
+    "explanation": "スライド21",
+    "correct": true
+   },
+   {
+    "text": "核膜・核膜孔・核小体",
+    "explanation": "中期には核膜・核小体は消失している",
+    "correct": false
+   },
+   {
+    "text": "核小体・線維中心・顆粒部",
+    "explanation": "核小体は前期に消失",
+    "correct": false
+   },
+   {
+    "text": "クリステ・基質・外膜",
+    "explanation": "ミトコンドリアの構造",
+    "correct": false
+   },
+   {
+    "text": "陰窩・絨毛・幹細胞",
+    "explanation": "小腸上皮（スライド24）",
+    "correct": false
+   }
+  ],
+  "explanation": "中期の電顕像には、<b>染色体</b>・<b>紡錘糸</b>・<b>中心子</b>が示されている。中期には核膜（前中期）・核小体（前期）はすでに消失している。",
+  "point": "中期：核膜も核小体もない。",
+  "tags": [
+   "中期の電顕像"
+  ]
+ },
+ {
+  "id": "q032",
+  "slide": 21,
+  "chapter": 5,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "中期の細胞に見られないものとして、スライド19・21から最も適切なのはどれか。",
+  "options": [
+   {
+    "text": "染色体",
+    "explanation": "見られる",
+    "correct": false
+   },
+   {
+    "text": "紡錘糸",
+    "explanation": "見られる",
+    "correct": false
+   },
+   {
+    "text": "中心子",
+    "explanation": "見られる",
+    "correct": false
+   },
+   {
+    "text": "核小体",
+    "explanation": "前期に消失",
+    "correct": true
+   },
+   {
+    "text": "赤道板付近に集まった染色体",
+    "explanation": "中期の特徴",
+    "correct": false
+   }
+  ],
+  "explanation": "核小体は<b>前期</b>に消失し、核膜は<b>前中期</b>に消失する。中期の電顕像（スライド21）では染色体・紡錘糸・中心子が見られる。",
+  "point": "中期には核小体がない。",
+  "tags": [
+   "中期の電顕像"
+  ]
+ },
+ {
+  "id": "q033",
+  "slide": 22,
+  "chapter": 6,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "増殖性による細胞集団の分類と例の組み合わせとして正しいのはどれか。",
+  "options": [
+   {
+    "text": "更新性細胞集団 ― 心筋細胞",
+    "explanation": "静止性",
+    "correct": false
+   },
+   {
+    "text": "静止性細胞集団 ― 消化管上皮",
+    "explanation": "更新性",
+    "correct": false
+   },
+   {
+    "text": "拡張性細胞集団 ― 肝・腎・線維芽細胞",
+    "explanation": "スライド22",
+    "correct": true
+   },
+   {
+    "text": "静止性細胞集団 ― 造血系",
+    "explanation": "更新性",
+    "correct": false
+   },
+   {
+    "text": "拡張性細胞集団 ― 中枢神経系の神経細胞",
+    "explanation": "静止性",
+    "correct": false
+   }
+  ],
+  "explanation": "<b>更新性</b>：増殖と分化をくりかえす（表皮・消化管上皮・造血系・造精細胞系）。<b>静止性</b>：分化した後は増殖しない（中枢神経系の神経細胞・心筋細胞）。<b>拡張性</b>：分化した細胞が増殖能を保つ（G₀期）（肝・腎・線維芽細胞など、肝再生などで同調的に増殖）。",
+  "point": "更新＝入れ替わる、静止＝増えない、拡張＝待機して増える。",
+  "tags": [
+   "細胞集団の分類"
+  ]
+ },
+ {
+  "id": "q034",
+  "slide": 22,
+  "chapter": 6,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "幹細胞・前駆細胞・終細胞について、スライド22の図に合うものはどれか。",
+  "options": [
+   {
+    "text": "前駆細胞は自己複製する",
+    "explanation": "自己複製なしの増殖と分化",
+    "correct": false
+   },
+   {
+    "text": "終細胞は幹細胞を生み出す",
+    "explanation": "幹細胞→前駆細胞→終細胞",
+    "correct": false
+   },
+   {
+    "text": "幹細胞は自己複製しない",
+    "explanation": "自己複製する",
+    "correct": false
+   },
+   {
+    "text": "分化した後は増殖しない集団を拡張性細胞集団という",
+    "explanation": "それは静止性",
+    "correct": false
+   },
+   {
+    "text": "幹細胞は自己複製し、前駆細胞は自己複製なしに増殖と分化をして終細胞になる",
+    "explanation": "スライド22",
+    "correct": true
+   }
+  ],
+  "explanation": "<b>幹細胞</b>（stem cell）は<b>自己複製</b>する。<b>前駆細胞</b>（progenitor cell）は<b>自己複製なしの増殖と分化</b>を行い、<b>終細胞</b>（end cell）になる。",
+  "point": "自己複製するのは幹細胞だけ。",
+  "tags": [
+   "細胞集団の分類"
+  ]
+ },
+ {
+  "id": "q035",
+  "slide": 24,
+  "chapter": 6,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "小腸上皮の細胞更新について正しいのはどれか。",
+  "options": [
+   {
+    "text": "幹細胞は絨毛の先端にある",
+    "explanation": "陰窩の底部",
+    "correct": false
+   },
+   {
+    "text": "陰窩の底部の幹細胞から生じた細胞が増殖・分化して絨毛を上昇し、先端部から剥離する",
+    "explanation": "スライド24",
+    "correct": true
+   },
+   {
+    "text": "細胞の更新には約48日かかる",
+    "explanation": "約48時間",
+    "correct": false
+   },
+   {
+    "text": "分化した細胞は陰窩へ向かって下降する",
+    "explanation": "絨毛を上昇",
+    "correct": false
+   },
+   {
+    "text": "小腸上皮は静止性細胞集団である",
+    "explanation": "更新性（消化管上皮）",
+    "correct": false
+   }
+  ],
+  "explanation": "<b>陰窩の底部</b>に幹細胞があり、陰窩の中で<b>前駆細胞</b>として増殖（BrdUを取り込む）→ 分化して<b>絨毛を上昇</b> → <b>先端部から剥離</b>（<b>約48時間</b>での細胞更新）。Leblondらによる1960年代の研究。",
+  "point": "底で生まれて、上って、先端で落ちる。約48時間。",
+  "tags": [
+   "小腸上皮の細胞更新"
+  ]
+ },
+ {
+  "id": "q036",
+  "slide": 24,
+  "chapter": 6,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "増殖中の細胞を検出するために用いるBrdUについて正しいのはどれか。",
+  "options": [
+   {
+    "text": "アクチンの類似体である",
+    "explanation": "チミジンの類似体",
+    "correct": false
+   },
+   {
+    "text": "分化を終えた終細胞にだけ取り込まれる",
+    "explanation": "増殖中の細胞が取り込む",
+    "correct": false
+   },
+   {
+    "text": "検出には電子顕微鏡が必須である",
+    "explanation": "抗体で検出できる",
+    "correct": false
+   },
+   {
+    "text": "チミジンの類似体で、抗体で検出できる",
+    "explanation": "スライド24",
+    "correct": true
+   },
+   {
+    "text": "BrdU以外に増殖細胞を標識する物質はない",
+    "explanation": "EdUや³H-チミジンなど",
+    "correct": false
+   }
+  ],
+  "explanation": "<b>BrdU（ブロモデオキシウリジン）</b>は<b>チミジンの類似体</b>で、<b>抗体で検出可能</b>。ほかに<b>EdU</b>や<b>³H-チミジン</b>などがある。投与直後（0時間）は陰窩の底部が標識され、48時間後には標識細胞が絨毛を上昇している。",
+  "point": "BrdU＝チミジンの仲間、抗体で見える。",
+  "tags": [
+   "小腸上皮の細胞更新"
+  ]
+ }
+]
