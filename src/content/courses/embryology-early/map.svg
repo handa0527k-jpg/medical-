@@ -1,0 +1,28 @@
+<svg viewBox="0 0 1000 680" role="img" aria-label="ヒトの発生を生命史の旅に見立てた地図">
+<rect x="20" y="40" width="440" height="600" rx="40" fill="var(--cell)" stroke="var(--hema2)" stroke-width="4"/>
+<rect x="500" y="40" width="480" height="600" rx="40" fill="var(--cell)" stroke="var(--hema2)" stroke-width="4"/>
+<text x="240" y="90" text-anchor="middle" font-size="22" fill="var(--eosin)" font-weight="700" font-family="Zen Kaku Gothic New">個体発生</text>
+<text x="740" y="90" text-anchor="middle" font-size="22" fill="var(--hema)" font-weight="700" font-family="Zen Kaku Gothic New">系統発生</text>
+<!-- individual development: XY, egg+sperm, blastocyst, layers -->
+<g fill="none" stroke-linecap="round">
+<path d="M120 170 C200 230 280 260 360 330 C380 400 300 470 240 520" stroke="var(--eosin)" stroke-width="5" stroke-dasharray="8 8" opacity=".7"/>
+</g>
+<text x="120" y="160" font-size="34" fill="var(--hema)" font-family="Zen Kaku Gothic New" font-weight="700">XY</text>
+<circle cx="350" cy="320" r="44" fill="var(--hemat)" stroke="var(--hema2)" stroke-width="5"/><circle cx="350" cy="320" r="30" fill="var(--eosin)" opacity=".35"/>
+<path d="M270 300 q20 -10 40 4" stroke="var(--hema2)" stroke-width="3" fill="none"/><ellipse cx="312" cy="306" rx="7" ry="5" fill="var(--hema2)"/>
+<circle cx="230" cy="420" r="36" fill="none" stroke="var(--hema2)" stroke-width="5"/><ellipse cx="248" cy="420" rx="10" ry="18" fill="var(--hema)"/>
+<g><rect x="120" y="520" width="240" height="16" rx="6" fill="var(--hema)"/><rect x="120" y="540" width="240" height="16" rx="6" fill="var(--eosin)" opacity=".8"/><rect x="120" y="560" width="240" height="14" rx="6" fill="var(--hema2)" opacity=".7"/></g>
+<!-- phylogeny: timeline arrow with stations -->
+<path d="M560 590 C620 470 640 360 760 300 C860 250 900 170 930 120" fill="none" stroke="var(--hema)" stroke-width="6" stroke-linecap="round"/>
+<g fill="var(--hema2)"><circle cx="575" cy="560" r="9"/><circle cx="640" cy="430" r="9"/><circle cx="700" cy="340" r="9"/><circle cx="820" cy="270" r="9"/><circle cx="900" cy="170" r="9"/></g>
+<g font-family="Zen Kaku Gothic New" font-size="14" fill="var(--mute)">
+<text x="590" y="575">脊索動物</text><text x="655" y="445">魚類→両生類</text><text x="715" y="355">爬虫類</text><text x="835" y="285">哺乳類</text><text x="915" y="160">ヒト</text>
+<text x="380" y="300">受精</text><text x="275" y="470">胚盤胞</text><text x="370" y="600">3層性胚盤</text></g>
+<g class="z" data-c="1" tabindex="0" role="button" aria-label="1 性の決定"><rect class="hit" x="90" y="110" width="120" height="70"/><g class="tag" transform="translate(40,200)"><rect x="0" y="-22" width="150" height="36" rx="18"/><text x="14" y="4" class="n">1</text><text x="38" y="3">性の決定</text></g></g>
+<g class="z" data-c="2" tabindex="0" role="button" aria-label="2 胎齢と受精"><circle class="hit" cx="350" cy="320" r="50"/><g class="tag" transform="translate(250,240)"><rect x="0" y="-22" width="170" height="36" rx="18"/><text x="14" y="4" class="n">2</text><text x="38" y="3">胎齢と受精</text></g></g>
+<g class="z" data-c="3" tabindex="0" role="button" aria-label="3 卵割から3層性胚盤へ"><rect class="hit" x="110" y="380" width="260" height="200"/><g class="tag" transform="translate(40,630)"><rect x="0" y="-22" width="246" height="36" rx="18"/><text x="14" y="4" class="n">3</text><text x="38" y="3">卵割から3層性胚盤へ</text></g></g>
+<g class="z" data-c="4" tabindex="0" role="button" aria-label="4 個体発生と系統発生"><rect class="hit" x="520" y="100" width="200" height="80"/><g class="tag" transform="translate(520,140)"><rect x="0" y="-22" width="230" height="36" rx="18"/><text x="14" y="4" class="n">4</text><text x="38" y="3">個体発生と系統発生</text></g></g>
+<g class="z" data-c="5" tabindex="0" role="button" aria-label="5 生命の系統樹"><circle class="hit" cx="575" cy="560" r="40"/><g class="tag" transform="translate(620,620)"><rect x="0" y="-22" width="180" height="36" rx="18"/><text x="14" y="4" class="n">5</text><text x="38" y="3">生命の系統樹</text></g></g>
+<g class="z" data-c="6" tabindex="0" role="button" aria-label="6 魚類から爬虫類へ"><rect class="hit" x="620" y="320" width="120" height="140"/><g class="tag" transform="translate(760,420)"><rect x="0" y="-22" width="206" height="36" rx="18"/><text x="14" y="4" class="n">6</text><text x="38" y="3">魚類から爬虫類へ</text></g></g>
+<g class="z" data-c="7" tabindex="0" role="button" aria-label="7 哺乳類からヒトへ"><rect class="hit" x="800" y="140" width="160" height="150"/><g class="tag" transform="translate(760,225)"><rect x="0" y="-22" width="206" height="36" rx="18"/><text x="14" y="4" class="n">7</text><text x="38" y="3">哺乳類からヒトへ</text></g></g>
+</svg>

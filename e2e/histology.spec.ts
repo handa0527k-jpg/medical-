@@ -83,6 +83,30 @@ test('second course (核・細胞周期): every screen renders, with its own met
   expect(errs).toEqual([]);
 });
 
+const EMB_ROUTES = ['/', '/book', '/chapter/2', '/chapter/5', '/lectures', '/figures', '/figures/egg', '/figures/bila', '/figures/phylo', '/figures/heart', '/animations', '/animations/fert', '/animations/cleave', '/animations/gast', '/zukan', '/quiz/play?chapter=6', '/quiz/judge?chapter=3', '/stats'];
+
+test('third course (初期発生と系統発生): every screen renders, with its own metaphor and recorded lectures', async ({ page }) => {
+  await page.addInitScript(() => localStorage.setItem('medstudy:course', JSON.stringify('embryology-early')));
+  const errs = watchErrors(page);
+  for (const r of EMB_ROUTES) {
+    await page.goto('/#' + r);
+    await expect(page.locator('main')).not.toBeEmpty();
+    await page.waitForTimeout(250);
+    const overflow = await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth);
+    expect(overflow, `horizontal overflow on ${r}`).toBeLessThanOrEqual(1);
+  }
+  await page.goto('/#/');
+  await expect(page.locator('h1')).toContainText('生命の歴史');
+  await expect(page.locator('h1')).not.toContainText('工場');
+  await page.goto('/#/quiz/play?chapter=6');
+  await expect(page.locator('.opts .op')).toHaveCount(5);
+  await page.goto('/#/lecture/6');
+  await expect(page.locator('.voice-src.audio')).toContainText('Nanami', { timeout: 20_000 });
+  await page.getByRole('button', { name: /授業を始める/ }).click();
+  await expect(page.locator('.lsub .s')).toContainText('第6講');
+  expect(errs).toEqual([]);
+});
+
 test('5-choice question: A–E, explanations, persistence, review', async ({ page }) => {
   const errs = watchErrors(page);
   await page.goto('/#/quiz/play?chapter=1');

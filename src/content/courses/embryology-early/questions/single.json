@@ -1,0 +1,3522 @@
+[
+ {
+  "id": "q001",
+  "slide": 5,
+  "chapter": 1,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "ヒトの性の決定について、スライド5の記述に合うものはどれか。",
+  "options": [
+   {
+    "text": "XXで♂、XYで♀になる",
+    "explanation": "逆",
+    "correct": false
+   },
+   {
+    "text": "常染色体の数で性が決まる",
+    "explanation": "性染色体の組合せ",
+    "correct": false
+   },
+   {
+    "text": "性染色体の組合せによって性が決まり、XYで♂、XXで♀になる",
+    "explanation": "スライド5",
+    "correct": true
+   },
+   {
+    "text": "性は孵化の温度で決まる",
+    "explanation": "爬虫類の性決定",
+    "correct": false
+   },
+   {
+    "text": "ZZで♂、ZWで♀になる",
+    "explanation": "鳥類",
+    "correct": false
+   }
+  ],
+  "explanation": "哺乳類では<b>性染色体の組合せ</b>で性が決まり、<b>XYで♂、XXで♀</b>になる。",
+  "point": "XY＝♂、XX＝♀。",
+  "tags": [
+   "性の決定"
+  ]
+ },
+ {
+  "id": "q002",
+  "slide": 5,
+  "chapter": 1,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "スライド5の核型（1〜22番とX・Y）について正しい読み取りはどれか。",
+  "options": [
+   {
+    "text": "性染色体がXYなので♂の核型である",
+    "explanation": "スライド5",
+    "correct": true
+   },
+   {
+    "text": "性染色体がXXなので♀の核型である",
+    "explanation": "XとYが並ぶ",
+    "correct": false
+   },
+   {
+    "text": "常染色体が23対ある",
+    "explanation": "常染色体は22対（1〜22番）",
+    "correct": false
+   },
+   {
+    "text": "Y染色体はX染色体より大きい",
+    "explanation": "図ではYが小さい",
+    "correct": false
+   },
+   {
+    "text": "性染色体は存在しない",
+    "explanation": "XとYがある",
+    "correct": false
+   }
+  ],
+  "explanation": "核型の最後の対がXとYなので♂。1〜22番が常染色体。",
+  "point": "核型の最後の対を見る。",
+  "tags": [
+   "性の決定"
+  ]
+ },
+ {
+  "id": "q003",
+  "slide": 6,
+  "chapter": 1,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "性決定遺伝子Sryについて正しいのはどれか。",
+  "options": [
+   {
+    "text": "X染色体の長腕にある",
+    "explanation": "Y染色体の短腕の末端",
+    "correct": false
+   },
+   {
+    "text": "マウスにはなく、ヒトにのみ存在する",
+    "explanation": "ヒト、マウスとも",
+    "correct": false
+   },
+   {
+    "text": "Sryがあると♀化が起こる",
+    "explanation": "♂化",
+    "correct": false
+   },
+   {
+    "text": "Y染色体の短腕の末端にあり、♂化を起こす",
+    "explanation": "スライド6",
+    "correct": true
+   },
+   {
+    "text": "常染色体上にある",
+    "explanation": "Y染色体上",
+    "correct": false
+   }
+  ],
+  "explanation": "<b>Y染色体の短腕の末端</b>にある<b>性決定遺伝子（Sry）</b>により♂化が起こる（ヒト、マウスとも）。",
+  "point": "Sry＝Y短腕の末端、♂化のスイッチ。",
+  "tags": [
+   "Sry"
+  ]
+ },
+ {
+  "id": "q004",
+  "slide": 6,
+  "chapter": 1,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "1991年のNature誌に報告された実験（XX＋Sryのマウス）が示したこととして最も適切なのはどれか。",
+  "options": [
+   {
+    "text": "Y染色体全体がなければ♂にはならない",
+    "explanation": "Sryだけで♂になった",
+    "correct": false
+   },
+   {
+    "text": "Y染色体上の一つの遺伝子（Sry）があれば、XXでも♂になる",
+    "explanation": "スライド6",
+    "correct": true
+   },
+   {
+    "text": "Sryは♀化の遺伝子である",
+    "explanation": "♂化",
+    "correct": false
+   },
+   {
+    "text": "性は環境で決まる",
+    "explanation": "爬虫類の話",
+    "correct": false
+   },
+   {
+    "text": "XXのマウスは必ず♀になる",
+    "explanation": "Sryで♂になった",
+    "correct": false
+   }
+  ],
+  "explanation": "XXのマウスにSryを入れると♂になった。♂化に必要なのはY染色体全体ではなくSry。",
+  "point": "XX＋Sry＝♂。",
+  "tags": [
+   "Sry"
+  ]
+ },
+ {
+  "id": "q005",
+  "slide": 7,
+  "chapter": 1,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "精巣から産生されるホルモンとその作用の組み合わせとして正しいのはどれか。",
+  "options": [
+   {
+    "text": "テストステロン ― 外生殖器・前立腺の発達",
+    "explanation": "それはジヒドロテストステロン",
+    "correct": false
+   },
+   {
+    "text": "ジヒドロテストステロン ― 内生殖器の発達",
+    "explanation": "それはテストステロン",
+    "correct": false
+   },
+   {
+    "text": "ミュラー管抑制物質 ― ミュラー管の発達",
+    "explanation": "退縮",
+    "correct": false
+   },
+   {
+    "text": "エストロゲン ― ミュラー管の退縮",
+    "explanation": "卵巣から、ミュラー管の発達",
+    "correct": false
+   },
+   {
+    "text": "ミュラー管抑制物質 ― ミュラー管の退縮",
+    "explanation": "スライド7",
+    "correct": true
+   }
+  ],
+  "explanation": "精巣：<b>テストステロン→内生殖器</b>、<b>ジヒドロテストステロン→外生殖器・前立腺</b>、<b>ミュラー管抑制物質→ミュラー管の退縮</b>。卵巣：エストロゲン→ミュラー管の発達・外生殖器の発達。",
+  "point": "T＝内、DHT＝外、抑制物質＝ミュラー管を消す。",
+  "tags": [
+   "性腺のホルモン"
+  ]
+ },
+ {
+  "id": "q006",
+  "slide": 7,
+  "chapter": 1,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "性腺の決定について、スライド7の記述に合うものはどれか。",
+  "options": [
+   {
+    "text": "SRYが働くと体細胞が雌化する",
+    "explanation": "雄化",
+    "correct": false
+   },
+   {
+    "text": "デフォルトは雄型と考えられている",
+    "explanation": "雌型",
+    "correct": false
+   },
+   {
+    "text": "精巣に入った始原生殖細胞は造精細胞に、卵巣に入った細胞は卵祖細胞に分化する",
+    "explanation": "スライド7",
+    "correct": true
+   },
+   {
+    "text": "性ホルモンは脳の分化には関与しない",
+    "explanation": "脳の雌雄の分化も起こる",
+    "correct": false
+   },
+   {
+    "text": "卵巣からはミュラー管抑制物質が出る",
+    "explanation": "精巣から",
+    "correct": false
+   }
+  ],
+  "explanation": "SRYが働くと体細胞が雄化し、<b>デフォルトは雌型</b>。始原生殖細胞は精巣で<b>造精細胞</b>、卵巣で<b>卵祖細胞</b>に分化。性ホルモンで脳の雌雄の分化も起こる。",
+  "point": "何もしなければ雌型。",
+  "tags": [
+   "性腺の決定"
+  ]
+ },
+ {
+  "id": "q007",
+  "slide": 8,
+  "chapter": 1,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "男性ホルモン受容体（AR）欠損マウス（ARKO）について、スライド8から正しいのはどれか。",
+  "options": [
+   {
+    "text": "ARKOの♂の外生殖器は正常♂と同じである",
+    "explanation": "正常♀に近い",
+    "correct": false
+   },
+   {
+    "text": "ARKOの♂の外生殖器は正常♂ではなく正常♀に近い形をしている",
+    "explanation": "スライド8",
+    "correct": true
+   },
+   {
+    "text": "ARはエストロゲンの受容体である",
+    "explanation": "男性ホルモンの受容体",
+    "correct": false
+   },
+   {
+    "text": "ARKOでは精巣決定遺伝子Sryが欠損している",
+    "explanation": "欠損しているのはAR",
+    "correct": false
+   },
+   {
+    "text": "ARKOは♀にのみ影響する",
+    "explanation": "♂の外生殖器が雄化しない",
+    "correct": false
+   }
+  ],
+  "explanation": "男性ホルモン受容体（Androgen receptor）を欠損すると、♂でも外生殖器が雄化しない。",
+  "point": "ホルモンは受け取れないと働かない。",
+  "tags": [
+   "AR"
+  ]
+ },
+ {
+  "id": "q008",
+  "slide": 8,
+  "chapter": 1,
+  "kind": "理解・統合",
+  "difficulty": 3,
+  "stem": "XYの個体で精巣が形成されていても、外生殖器が雄化しない原因として、スライド7・8から最も考えられるのはどれか。",
+  "options": [
+   {
+    "text": "Sryの過剰",
+    "explanation": "Sryがあれば精巣はできる",
+    "correct": false
+   },
+   {
+    "text": "エストロゲン受容体の欠損",
+    "explanation": "雄化とは別",
+    "correct": false
+   },
+   {
+    "text": "ミュラー管抑制物質の過剰",
+    "explanation": "ミュラー管の退縮に関わる",
+    "correct": false
+   },
+   {
+    "text": "男性ホルモン受容体の欠損",
+    "explanation": "スライド7・8",
+    "correct": true
+   },
+   {
+    "text": "卵祖細胞の増加",
+    "explanation": "該当しない",
+    "correct": false
+   }
+  ],
+  "explanation": "精巣からテストステロン・DHTが出ても、受け取る<b>男性ホルモン受容体</b>がなければ外生殖器は雄化しない（ARKOマウス、スライド7の写真）。",
+  "point": "染色体→性腺→ホルモン→受容体。",
+  "tags": [
+   "AR"
+  ]
+ },
+ {
+  "id": "q009",
+  "slide": 9,
+  "chapter": 1,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "爬虫類の性決定について正しいのはどれか。",
+  "options": [
+   {
+    "text": "孵化の温度により性が決定する",
+    "explanation": "スライド9",
+    "correct": true
+   },
+   {
+    "text": "ZZで♂、ZWで♀になる",
+    "explanation": "鳥類",
+    "correct": false
+   },
+   {
+    "text": "XYで♂、XXで♀になる",
+    "explanation": "哺乳類",
+    "correct": false
+   },
+   {
+    "text": "環境の影響を受けない",
+    "explanation": "受けやすい",
+    "correct": false
+   },
+   {
+    "text": "性転換は起こらない",
+    "explanation": "魚類で性転換の例",
+    "correct": false
+   }
+  ],
+  "explanation": "爬虫類は<b>孵化の温度</b>で性が決まる。魚類は性決定がゆるやかで性転換が起こるものもいる。どちらも環境の影響を受けやすい。",
+  "point": "爬虫類＝温度。",
+  "tags": [
+   "爬虫類の性決定"
+  ]
+ },
+ {
+  "id": "q010",
+  "slide": 9,
+  "chapter": 1,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "スライド9のグラフ（横軸：温度、縦軸：♂の生まれる割合）の読み取りとして正しいのはどれか。",
+  "options": [
+   {
+    "text": "どの種も温度に関係なく♂が50%生まれる",
+    "explanation": "温度で大きく変わる",
+    "correct": false
+   },
+   {
+    "text": "すべての種で高温ほど♂が多い",
+    "explanation": "種によって異なる",
+    "correct": false
+   },
+   {
+    "text": "すべての種で低温ほど♂が多い",
+    "explanation": "種によって異なる",
+    "correct": false
+   },
+   {
+    "text": "温度は性比に影響しない",
+    "explanation": "影響する",
+    "correct": false
+   },
+   {
+    "text": "種ごとに、温度によって♂の生まれる割合が大きく変わる",
+    "explanation": "グラフ",
+    "correct": true
+   }
+  ],
+  "explanation": "グラフでは、カメやワニの種ごとに、ある温度帯で♂の割合が0%近くから100%近くまで変化する。",
+  "point": "種ごとに温度と性比の関係が違う。",
+  "tags": [
+   "爬虫類の性決定"
+  ]
+ },
+ {
+  "id": "q011",
+  "slide": 10,
+  "chapter": 1,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "鳥類の性決定について正しいのはどれか。",
+  "options": [
+   {
+    "text": "XYで♂、XXで♀になる",
+    "explanation": "哺乳類",
+    "correct": false
+   },
+   {
+    "text": "ZWで♂、ZZで♀になる",
+    "explanation": "逆",
+    "correct": false
+   },
+   {
+    "text": "ZZで♂、ZWで♀になる",
+    "explanation": "スライド10",
+    "correct": true
+   },
+   {
+    "text": "孵化の温度で決まる",
+    "explanation": "爬虫類",
+    "correct": false
+   },
+   {
+    "text": "性決定遺伝子はSryである",
+    "explanation": "鳥類は不明",
+    "correct": false
+   }
+  ],
+  "explanation": "鳥類の性染色体は哺乳類と異なり、<b>ZZで♂、ZWで♀</b>。性決定遺伝子・様式は不明。",
+  "point": "鳥類は♀がヘテロ（ZW）。",
+  "tags": [
+   "鳥類の性決定"
+  ]
+ },
+ {
+  "id": "q012",
+  "slide": 10,
+  "chapter": 1,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "鳥類のZ染色体と哺乳類のX染色体の関係について、スライド10の記述に合うものはどれか。",
+  "options": [
+   {
+    "text": "Z染色体はX染色体と同じ起源である",
+    "explanation": "起源は異なる",
+    "correct": false
+   },
+   {
+    "text": "相同性はなく、両者の性染色体の起源は異なる",
+    "explanation": "スライド10",
+    "correct": true
+   },
+   {
+    "text": "Z染色体にはSryがある",
+    "explanation": "不明",
+    "correct": false
+   },
+   {
+    "text": "Z染色体はY染色体と相同である",
+    "explanation": "記載なし",
+    "correct": false
+   },
+   {
+    "text": "鳥類の性染色体は哺乳類と同じである",
+    "explanation": "異なる",
+    "correct": false
+   }
+  ],
+  "explanation": "鳥類のZ染色体は哺乳類のX染色体と<b>相同性はなく</b>、性染色体の起源は異なる。",
+  "point": "似た役割でも起源は別。",
+  "tags": [
+   "鳥類の性決定"
+  ]
+ },
+ {
+  "id": "q013",
+  "slide": 12,
+  "chapter": 2,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "胎齢と妊娠齢について正しいのはどれか。",
+  "options": [
+   {
+    "text": "胎齢は最終月経の初日を0とする",
+    "explanation": "妊娠齢の起点",
+    "correct": false
+   },
+   {
+    "text": "妊娠齢は受精の日を0とする",
+    "explanation": "胎齢の起点",
+    "correct": false
+   },
+   {
+    "text": "受精の日は妊娠齢0週にあたる",
+    "explanation": "妊娠2週",
+    "correct": false
+   },
+   {
+    "text": "出生は胎齢38週、出産予定日は妊娠40週にあたる",
+    "explanation": "スライド12",
+    "correct": true
+   },
+   {
+    "text": "胎齢と妊娠齢は同じ数え方である",
+    "explanation": "2週ずれる",
+    "correct": false
+   }
+  ],
+  "explanation": "胎齢（発生）は<b>受精</b>を0、妊娠齢は<b>最終月経の初日</b>を0として数える。受精＝妊娠2週、出生＝胎齢38週＝妊娠40週。",
+  "point": "妊娠齢＝胎齢＋2週。",
+  "tags": [
+   "胎齢と妊娠齢"
+  ]
+ },
+ {
+  "id": "q014",
+  "slide": 12,
+  "chapter": 2,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "器官形成期（敏感期・臨界期）にあたる時期として、スライド12で示されているのはどれか。",
+  "options": [
+   {
+    "text": "発生（胎齢）3〜8週",
+    "explanation": "スライド12",
+    "correct": true
+   },
+   {
+    "text": "発生0〜2週",
+    "explanation": "器官形成期の前",
+    "correct": false
+   },
+   {
+    "text": "発生9〜38週",
+    "explanation": "胎児期",
+    "correct": false
+   },
+   {
+    "text": "妊娠0〜2週",
+    "explanation": "受精前を含む",
+    "correct": false
+   },
+   {
+    "text": "妊娠38〜40週",
+    "explanation": "出産前後",
+    "correct": false
+   }
+  ],
+  "explanation": "器官形成期＝敏感期・臨界期は<b>発生3〜8週</b>。発生8週までが胚子、9週からが胎児。",
+  "point": "3〜8週＝器官形成期。",
+  "tags": [
+   "器官形成期"
+  ]
+ },
+ {
+  "id": "q015",
+  "slide": 14,
+  "chapter": 2,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "配偶子の大きさについて、スライド14の記述に合うものはどれか。",
+  "options": [
+   {
+    "text": "卵子は約20 μmである",
+    "explanation": "200 μm",
+    "correct": false
+   },
+   {
+    "text": "精子の頭部は60 μmである",
+    "explanation": "頭部5 μm",
+    "correct": false
+   },
+   {
+    "text": "精子は頭部5 μm、鞭毛60 μm、卵子は200 μmである",
+    "explanation": "スライド14",
+    "correct": true
+   },
+   {
+    "text": "精子と卵子はほぼ同じ大きさである",
+    "explanation": "大きく異なる",
+    "correct": false
+   },
+   {
+    "text": "精子の鞭毛は5 μmである",
+    "explanation": "60 μm",
+    "correct": false
+   }
+  ],
+  "explanation": "精子：<b>頭部5 μm、鞭毛60 μm</b>。卵子：<b>200 μm</b>。",
+  "point": "5・60・200。",
+  "tags": [
+   "配偶子"
+  ]
+ },
+ {
+  "id": "q016",
+  "slide": 14,
+  "chapter": 2,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "卵（Egg）の構造について、スライド14の図に合うものはどれか。",
+  "options": [
+   {
+    "text": "放線冠は卵母細胞の核の中にある",
+    "explanation": "いちばん外側",
+    "correct": false
+   },
+   {
+    "text": "透明帯は放線冠の外側にある",
+    "explanation": "放線冠の内側",
+    "correct": false
+   },
+   {
+    "text": "囲卵腔は卵母細胞の核と細胞質の間の腔である",
+    "explanation": "透明帯と卵母細胞の間",
+    "correct": false
+   },
+   {
+    "text": "極体は放線冠の外にある",
+    "explanation": "囲卵腔の中",
+    "correct": false
+   },
+   {
+    "text": "外側から放線冠・透明帯・囲卵腔・卵母細胞の順に並ぶ",
+    "explanation": "図の配置",
+    "correct": true
+   }
+  ],
+  "explanation": "卵は外側から<b>放線冠</b>、<b>透明帯</b>、<b>囲卵腔</b>（極体が見える）、<b>卵母細胞</b>（細胞質と核）。",
+  "point": "外から：放線冠→透明帯→囲卵腔→卵。",
+  "tags": [
+   "配偶子"
+  ]
+ },
+ {
+  "id": "q017",
+  "slide": 15,
+  "chapter": 2,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "受精と着床について正しいのはどれか。",
+  "options": [
+   {
+    "text": "受精は子宮内腔で起こる",
+    "explanation": "卵管膨大部",
+    "correct": false
+   },
+   {
+    "text": "受精は卵管膨大部で起こり、着床は受精後約5〜6日である",
+    "explanation": "スライド15",
+    "correct": true
+   },
+   {
+    "text": "着床は受精直後に起こる",
+    "explanation": "約5〜6日後",
+    "correct": false
+   },
+   {
+    "text": "卵割は着床後に始まる",
+    "explanation": "卵管を下りながら",
+    "correct": false
+   },
+   {
+    "text": "排卵された卵は卵巣内で受精する",
+    "explanation": "卵管膨大部",
+    "correct": false
+   }
+  ],
+  "explanation": "受精は<b>卵管膨大部</b>、卵割しながら卵管を下り、<b>受精後約5〜6日</b>で着床する。",
+  "point": "受精＝膨大部、着床＝5〜6日。",
+  "tags": [
+   "受精と着床"
+  ]
+ },
+ {
+  "id": "q018",
+  "slide": 15,
+  "chapter": 2,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "スライド15の図で、排卵から着床までの順序として正しいのはどれか。",
+  "options": [
+   {
+    "text": "着床 → 受精 → 卵割 → 排卵",
+    "explanation": "逆",
+    "correct": false
+   },
+   {
+    "text": "卵割 → 排卵 → 受精 → 着床",
+    "explanation": "卵割は受精後",
+    "correct": false
+   },
+   {
+    "text": "受精 → 排卵 → 着床 → 卵割",
+    "explanation": "排卵が先",
+    "correct": false
+   },
+   {
+    "text": "排卵 → 卵管采 → 卵管膨大部で受精 → 卵割 → 着床",
+    "explanation": "図の流れ",
+    "correct": true
+   },
+   {
+    "text": "排卵 → 着床 → 受精 → 卵割",
+    "explanation": "受精が先",
+    "correct": false
+   }
+  ],
+  "explanation": "排卵された卵は卵管采から卵管に入り、卵管膨大部で受精し、卵割しながら子宮へ進み、着床する。",
+  "point": "排卵→受精→卵割→着床。",
+  "tags": [
+   "受精と着床"
+  ]
+ },
+ {
+  "id": "q019",
+  "slide": 16,
+  "chapter": 2,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "透明帯について正しいのはどれか。",
+  "options": [
+   {
+    "text": "ヒトの透明帯は2種類の糖蛋白質からなる",
+    "explanation": "4種類",
+    "correct": false
+   },
+   {
+    "text": "透明帯は精子が産生する",
+    "explanation": "卵母細胞（卵子）",
+    "correct": false
+   },
+   {
+    "text": "先体反応はZP2単独の作用で生じる",
+    "explanation": "ZP1、ZP3、ZP4の複合作用",
+    "correct": false
+   },
+   {
+    "text": "透明帯反応は精子を通りやすくする",
+    "explanation": "通過できなくなる",
+    "correct": false
+   },
+   {
+    "text": "ZP1〜ZP4の4種類の糖蛋白質からなり、卵母細胞が産生する",
+    "explanation": "スライド16",
+    "correct": true
+   }
+  ],
+  "explanation": "ヒトの透明帯は<b>ZP1〜ZP4</b>の4種類の糖蛋白質で、<b>卵母細胞（卵子）が産生</b>する。先体反応は透明帯への結合で生じ、ZP1・ZP3・ZP4が複合作用する。",
+  "point": "ZP1〜4、卵が作る。",
+  "tags": [
+   "透明帯"
+  ]
+ },
+ {
+  "id": "q020",
+  "slide": 16,
+  "chapter": 2,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "透明帯反応（Zona reaction）について、スライド16の記述に合うものはどれか。",
+  "options": [
+   {
+    "text": "精子の先体から放出された酵素で透明帯が溶ける反応である",
+    "explanation": "表層顆粒の酵素",
+    "correct": false
+   },
+   {
+    "text": "表層顆粒から放出された蛋白分解酵素で透明帯の構造・性質が変化し、多精が防がれる",
+    "explanation": "スライド16",
+    "correct": true
+   },
+   {
+    "text": "透明帯が厚くなって卵子が保護される反応である",
+    "explanation": "記載なし",
+    "correct": false
+   },
+   {
+    "text": "精子が透明帯に結合する反応である",
+    "explanation": "それは先体反応の前段階",
+    "correct": false
+   },
+   {
+    "text": "多精を促進する反応である",
+    "explanation": "防ぐ",
+    "correct": false
+   }
+  ],
+  "explanation": "表層顆粒の<b>蛋白分解酵素</b>で透明帯が変化 → 精子は通過できなくなり<b>多精が防がれる</b>。",
+  "point": "透明帯反応＝閉門。",
+  "tags": [
+   "透明帯反応"
+  ]
+ },
+ {
+  "id": "q021",
+  "slide": 17,
+  "chapter": 2,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "受精の過程の順序として正しいのはどれか。",
+  "options": [
+   {
+    "text": "先体反応 → 放線冠への貫入 → 細胞膜の融合 → 透明帯への貫入 → 精子核の進入",
+    "explanation": "順序が違う",
+    "correct": false
+   },
+   {
+    "text": "透明帯への貫入 → 先体反応 → 放線冠への貫入 → 細胞膜の融合 → 精子核の進入",
+    "explanation": "順序が違う",
+    "correct": false
+   },
+   {
+    "text": "放線冠への貫入 → 先体反応 → 透明帯への貫入 → 細胞膜の融合 → 精子核の進入",
+    "explanation": "スライド17",
+    "correct": true
+   },
+   {
+    "text": "細胞膜の融合 → 放線冠への貫入 → 先体反応 → 透明帯への貫入 → 精子核の進入",
+    "explanation": "順序が違う",
+    "correct": false
+   },
+   {
+    "text": "精子核の進入 → 細胞膜の融合 → 透明帯への貫入 → 先体反応 → 放線冠への貫入",
+    "explanation": "逆",
+    "correct": false
+   }
+  ],
+  "explanation": "受精は卵管膨大部で：①放線冠への貫入 ②先体反応 ③透明帯への貫入 ④細胞膜の融合（→表層反応→透明帯反応） ⑤精子核の進入（男性前核に）。",
+  "point": "外側から順に。",
+  "tags": [
+   "受精"
+  ]
+ },
+ {
+  "id": "q022",
+  "slide": 17,
+  "chapter": 2,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "精子と卵子の細胞膜が融合した直後に起こる反応の連鎖として、スライド17に合うものはどれか。",
+  "options": [
+   {
+    "text": "表層顆粒の放出（表層反応）→ 透明帯反応 → 多精子受精の防止",
+    "explanation": "スライド17",
+    "correct": true
+   },
+   {
+    "text": "先体反応 → 放線冠への貫入 → 透明帯への貫入",
+    "explanation": "融合より前",
+    "correct": false
+   },
+   {
+    "text": "透明帯反応 → 表層反応 → 多精子受精の促進",
+    "explanation": "順序と結果が違う",
+    "correct": false
+   },
+   {
+    "text": "二次極体の放出 → 着床 → 卵割",
+    "explanation": "別の段階",
+    "correct": false
+   },
+   {
+    "text": "精子鞭毛の伸長 → 精子の増殖",
+    "explanation": "該当しない",
+    "correct": false
+   }
+  ],
+  "explanation": "細胞膜の融合 → 表層顆粒の放出（表層反応）→ 透明帯反応（透明帯の性質の変化）→ 多精子受精の防止。",
+  "point": "融合→表層→透明帯→多精防止。",
+  "tags": [
+   "受精"
+  ]
+ },
+ {
+  "id": "q023",
+  "slide": 18,
+  "chapter": 2,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "表層反応について正しいのはどれか。",
+  "options": [
+   {
+    "text": "表層顆粒は一種のペルオキシソームである",
+    "explanation": "一種のライソゾーム",
+    "correct": false
+   },
+   {
+    "text": "Caイオンは精子から供給される",
+    "explanation": "卵子のsERに貯蔵",
+    "correct": false
+   },
+   {
+    "text": "囲卵腔は透明帯と放線冠の間の空隙である",
+    "explanation": "卵母細胞と透明帯の間",
+    "correct": false
+   },
+   {
+    "text": "卵子は活性化してsERに貯蔵されたCaイオンを放出する（カルシウムオシレーション）",
+    "explanation": "スライド18",
+    "correct": true
+   },
+   {
+    "text": "表層反応は透明帯反応を抑制する",
+    "explanation": "透明帯反応が生じる",
+    "correct": false
+   }
+  ],
+  "explanation": "精子と卵子が結合すると卵子は活性化し、<b>sERに貯蔵されたCaイオン</b>を放出（<b>カルシウムオシレーション</b>）。表層顆粒は<b>一種のライソゾーム</b>で、表層反応により透明帯反応が生じる。",
+  "point": "sERのCa → 表層顆粒 → 透明帯反応。",
+  "tags": [
+   "表層反応"
+  ]
+ },
+ {
+  "id": "q024",
+  "slide": 18,
+  "chapter": 2,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "Caイオンの放出によって順次起こることとして、スライド18に挙げられていないものはどれか。",
+  "options": [
+   {
+    "text": "減数分裂の完了",
+    "explanation": "挙げられている",
+    "correct": false
+   },
+   {
+    "text": "表層顆粒の放出",
+    "explanation": "挙げられている",
+    "correct": false
+   },
+   {
+    "text": "精子鞭毛の分離",
+    "explanation": "挙げられている",
+    "correct": false
+   },
+   {
+    "text": "精子中心小体の放出",
+    "explanation": "挙げられている",
+    "correct": false
+   },
+   {
+    "text": "胚盤胞腔の出現",
+    "explanation": "卵割後の第4日ごろ",
+    "correct": true
+   }
+  ],
+  "explanation": "Caイオンにより、減数分裂の完了・表層顆粒の放出・精子鞭毛の分離・精子中心小体の放出が順次起こる。",
+  "point": "Caは受精直後の4つを起こす。",
+  "tags": [
+   "表層反応"
+  ]
+ },
+ {
+  "id": "q025",
+  "slide": 19,
+  "chapter": 2,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "受精後の卵子の活性化について正しいのはどれか。",
+  "options": [
+   {
+    "text": "卵子の第1減数分裂が始まる",
+    "explanation": "第2減数分裂の再開",
+    "correct": false
+   },
+   {
+    "text": "第2減数分裂が再開し、二次極体が放出される",
+    "explanation": "スライド19",
+    "correct": true
+   },
+   {
+    "text": "男性前核と女性前核が融合して1個の核になる",
+    "explanation": "核膜が消失して分裂",
+    "correct": false
+   },
+   {
+    "text": "DNA量は半減する",
+    "explanation": "倍加",
+    "correct": false
+   },
+   {
+    "text": "受精卵を胚盤胞という",
+    "explanation": "接合子",
+    "correct": false
+   }
+  ],
+  "explanation": "受精卵＝接合子。①第2減数分裂の再開・二次極体 ②女性前核 ③男性前核 ④両前核が接近し核膜消失 ⑤DNA量の倍加 ⑥染色体が両極へ。",
+  "point": "両前核は融合しない。",
+  "tags": [
+   "卵子の活性化"
+  ]
+ },
+ {
+  "id": "q026",
+  "slide": 19,
+  "chapter": 2,
+  "kind": "理解・統合",
+  "difficulty": 3,
+  "stem": "スライド19の「注意」の内容として正しいのはどれか。",
+  "options": [
+   {
+    "text": "受精卵は必ず1個の核をもつ1細胞の時期を経る",
+    "explanation": "存在しない",
+    "correct": false
+   },
+   {
+    "text": "男性前核だけが分裂する",
+    "explanation": "両方",
+    "correct": false
+   },
+   {
+    "text": "女性前核は形成されない",
+    "explanation": "形成される",
+    "correct": false
+   },
+   {
+    "text": "1個の核をもった1細胞というのは存在せず、分裂すると2細胞になる",
+    "explanation": "スライド19",
+    "correct": true
+   },
+   {
+    "text": "DNAは倍加しない",
+    "explanation": "倍加する",
+    "correct": false
+   }
+  ],
+  "explanation": "両前核が接近して核膜が消失し、染色体が両極へ移動して2細胞になる。「1個の核をもった1細胞」の時期はない。",
+  "point": "前核は融合せず、そのまま2細胞へ。",
+  "tags": [
+   "卵子の活性化"
+  ]
+ },
+ {
+  "id": "q027",
+  "slide": 20,
+  "chapter": 3,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "卵割の時期として正しいのはどれか。",
+  "options": [
+   {
+    "text": "発生30時間で2細胞期、40時間で4細胞期",
+    "explanation": "スライド20",
+    "correct": true
+   },
+   {
+    "text": "発生3時間で2細胞期",
+    "explanation": "30時間",
+    "correct": false
+   },
+   {
+    "text": "発生第10日に桑実胚",
+    "explanation": "3〜4日",
+    "correct": false
+   },
+   {
+    "text": "発生第1日に胚盤胞",
+    "explanation": "4.5日",
+    "correct": false
+   },
+   {
+    "text": "発生第4.5日に2細胞期",
+    "explanation": "30時間",
+    "correct": false
+   }
+  ],
+  "explanation": "30時間：2細胞期、40時間：4細胞期、第3〜4日：桑実胚、第4日ごろ：ハッチング・胚盤胞腔、第4.5日：胚盤胞。",
+  "point": "30h・40h・3〜4日・4.5日。",
+  "tags": [
+   "卵割"
+  ]
+ },
+ {
+  "id": "q028",
+  "slide": 20,
+  "chapter": 3,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "内細胞塊（ICM）と外細胞塊（OCM）の将来の組み合わせとして正しいのはどれか。",
+  "options": [
+   {
+    "text": "ICM → 胎盤、OCM → 胎児",
+    "explanation": "逆",
+    "correct": false
+   },
+   {
+    "text": "ICM → 栄養膜、OCM → 胚結節",
+    "explanation": "逆",
+    "correct": false
+   },
+   {
+    "text": "ICM → 胎児（ES細胞の由来）・胚結節、OCM → 胎盤・栄養膜",
+    "explanation": "スライド20",
+    "correct": true
+   },
+   {
+    "text": "ICM・OCMとも胎盤になる",
+    "explanation": "違う",
+    "correct": false
+   },
+   {
+    "text": "ICMは消失する",
+    "explanation": "胎児になる",
+    "correct": false
+   }
+  ],
+  "explanation": "<b>ICM</b>→将来の胎児・ES細胞の由来・<b>胚結節</b>。<b>OCM</b>→将来の胎盤・<b>栄養膜</b>。",
+  "point": "内は胎児、外は胎盤。",
+  "tags": [
+   "卵割"
+  ]
+ },
+ {
+  "id": "q029",
+  "slide": 21,
+  "chapter": 3,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "着床について正しいのはどれか。",
+  "options": [
+   {
+    "text": "発生第1日に起こる",
+    "explanation": "5.5〜6日",
+    "correct": false
+   },
+   {
+    "text": "子宮頸部で生じることが多い",
+    "explanation": "子宮体部の後壁",
+    "correct": false
+   },
+   {
+    "text": "卵管膨大部で起こる",
+    "explanation": "受精の場所",
+    "correct": false
+   },
+   {
+    "text": "ICMと反対側の栄養膜が侵入する",
+    "explanation": "ICMのある側",
+    "correct": false
+   },
+   {
+    "text": "発生第5.5〜6日に、子宮体部の後壁で生じることが多い",
+    "explanation": "スライド21",
+    "correct": true
+   }
+  ],
+  "explanation": "着床は<b>発生第5.5〜6日</b>、<b>子宮体部の後壁</b>で生じることが多い。<b>ICMのある側の栄養膜</b>が子宮内膜に侵入を始める。",
+  "point": "5.5〜6日・後壁・ICM側。",
+  "tags": [
+   "着床"
+  ]
+ },
+ {
+  "id": "q030",
+  "slide": 21,
+  "chapter": 3,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "着床時に子宮内膜に侵入を始めるものとして、スライド21に合うものはどれか。",
+  "options": [
+   {
+    "text": "ICMと反対側の栄養膜",
+    "explanation": "ICMのある側",
+    "correct": false
+   },
+   {
+    "text": "ICMのある側の栄養膜",
+    "explanation": "スライド21",
+    "correct": true
+   },
+   {
+    "text": "透明帯",
+    "explanation": "ハッチングで消失",
+    "correct": false
+   },
+   {
+    "text": "羊膜",
+    "explanation": "まだない",
+    "correct": false
+   },
+   {
+    "text": "放線冠",
+    "explanation": "受精前の構造",
+    "correct": false
+   }
+  ],
+  "explanation": "着床では<b>ICMのある側の栄養膜</b>が子宮内膜に侵入を始める。",
+  "point": "胎児側（ICM側）から根を下ろす。",
+  "tags": [
+   "着床"
+  ]
+ },
+ {
+  "id": "q031",
+  "slide": 22,
+  "chapter": 3,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "発生第8日のできごととして正しいのはどれか。",
+  "options": [
+   {
+    "text": "胚盤葉下層から羊膜芽細胞が分化する",
+    "explanation": "胚盤葉上層から",
+    "correct": false
+   },
+   {
+    "text": "原始線条が出現する",
+    "explanation": "第3週",
+    "correct": false
+   },
+   {
+    "text": "胚結節から胚盤葉上層と胚盤葉下層が分化し、上層から羊膜芽細胞が分化して羊膜腔が出現する",
+    "explanation": "スライド22",
+    "correct": true
+   },
+   {
+    "text": "胚外体腔が形成される",
+    "explanation": "第12日",
+    "correct": false
+   },
+   {
+    "text": "内胚葉が形成される",
+    "explanation": "第15〜16日",
+    "correct": false
+   }
+  ],
+  "explanation": "第8日：胚結節→<b>胚盤葉上層（epiblast）・胚盤葉下層（hypoblast）</b>。<b>上層</b>から羊膜芽細胞→<b>羊膜腔</b>。",
+  "point": "上層→羊膜。",
+  "tags": [
+   "2層性胚盤"
+  ]
+ },
+ {
+  "id": "q032",
+  "slide": 22,
+  "chapter": 3,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "2層性胚盤が形成される時期として正しいのはどれか。",
+  "options": [
+   {
+    "text": "発生第2週",
+    "explanation": "スライド22",
+    "correct": true
+   },
+   {
+    "text": "発生第1日",
+    "explanation": "受精直後",
+    "correct": false
+   },
+   {
+    "text": "発生第3週",
+    "explanation": "3層性",
+    "correct": false
+   },
+   {
+    "text": "発生第8週",
+    "explanation": "器官形成期の終わり",
+    "correct": false
+   },
+   {
+    "text": "発生第38週",
+    "explanation": "出生",
+    "correct": false
+   }
+  ],
+  "explanation": "2層性胚盤は<b>発生第2週</b>（第8〜13日）。第3週に3層性胚盤。",
+  "point": "2週＝2層、3週＝3層。",
+  "tags": [
+   "2層性胚盤"
+  ]
+ },
+ {
+  "id": "q033",
+  "slide": 23,
+  "chapter": 3,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "発生第9日のできごととして正しいのはどれか。",
+  "options": [
+   {
+    "text": "胚盤葉上層からヒューザー膜が分化する",
+    "explanation": "下層から",
+    "correct": false
+   },
+   {
+    "text": "二次卵黄嚢が形成される",
+    "explanation": "第13日の記載",
+    "correct": false
+   },
+   {
+    "text": "原始線条が出現する",
+    "explanation": "第3週",
+    "correct": false
+   },
+   {
+    "text": "胚盤葉下層からヒューザー膜が分化し、原始胚外体腔（原始卵黄嚢）が出現する",
+    "explanation": "スライド23",
+    "correct": true
+   },
+   {
+    "text": "羊膜腔が消失する",
+    "explanation": "該当しない",
+    "correct": false
+   }
+  ],
+  "explanation": "第9日：<b>胚盤葉下層</b>から<b>胚外体腔膜（ヒューザー膜）</b>が分化し、<b>原始胚外体腔（原始卵黄嚢）</b>が出現。",
+  "point": "下層→ヒューザー膜→原始卵黄嚢。",
+  "tags": [
+   "2層性胚盤"
+  ]
+ },
+ {
+  "id": "q034",
+  "slide": 23,
+  "chapter": 3,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "羊膜腔と原始卵黄嚢の由来の組み合わせとして正しいのはどれか。",
+  "options": [
+   {
+    "text": "羊膜腔は胚盤葉下層、原始卵黄嚢は胚盤葉上層から",
+    "explanation": "逆",
+    "correct": false
+   },
+   {
+    "text": "羊膜腔は胚盤葉上層（羊膜芽細胞）、原始卵黄嚢は胚盤葉下層（ヒューザー膜）から",
+    "explanation": "スライド22・23",
+    "correct": true
+   },
+   {
+    "text": "どちらも栄養膜から",
+    "explanation": "該当しない",
+    "correct": false
+   },
+   {
+    "text": "どちらも胚盤葉上層から",
+    "explanation": "原始卵黄嚢は下層",
+    "correct": false
+   },
+   {
+    "text": "どちらも子宮内膜から",
+    "explanation": "該当しない",
+    "correct": false
+   }
+  ],
+  "explanation": "上層→羊膜芽細胞→羊膜腔（第8日）、下層→ヒューザー膜→原始卵黄嚢（第9日）。",
+  "point": "上は羊膜、下は卵黄嚢。",
+  "tags": [
+   "2層性胚盤"
+  ]
+ },
+ {
+  "id": "q035",
+  "slide": 24,
+  "chapter": 3,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "発生第12日に形成される胚外体腔は、将来何になるか。",
+  "options": [
+   {
+    "text": "羊膜腔",
+    "explanation": "第8日",
+    "correct": false
+   },
+   {
+    "text": "原始卵黄嚢",
+    "explanation": "第9日",
+    "correct": false
+   },
+   {
+    "text": "胚盤胞腔",
+    "explanation": "第4日ごろ",
+    "correct": false
+   },
+   {
+    "text": "二次卵黄嚢",
+    "explanation": "第13日の記載",
+    "correct": false
+   },
+   {
+    "text": "絨毛膜腔",
+    "explanation": "スライド24",
+    "correct": true
+   }
+  ],
+  "explanation": "第12日：胚外中胚葉が形成され、すきまが癒合して<b>胚外体腔</b>（将来の<b>絨毛膜腔</b>）となる。",
+  "point": "胚外体腔＝将来の絨毛膜腔。",
+  "tags": [
+   "2層性胚盤"
+  ]
+ },
+ {
+  "id": "q036",
+  "slide": 24,
+  "chapter": 3,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "胚外中胚葉が形成される場所として、スライド24の記述に合うものはどれか。",
+  "options": [
+   {
+    "text": "羊膜腔の内部",
+    "explanation": "該当しない",
+    "correct": false
+   },
+   {
+    "text": "胚盤葉上層と下層の間",
+    "explanation": "3層性胚盤の中胚葉の話",
+    "correct": false
+   },
+   {
+    "text": "栄養膜細胞層と原始卵黄嚢の間",
+    "explanation": "スライド24",
+    "correct": true
+   },
+   {
+    "text": "卵管膨大部",
+    "explanation": "受精の場所",
+    "correct": false
+   },
+   {
+    "text": "透明帯の中",
+    "explanation": "該当しない",
+    "correct": false
+   }
+  ],
+  "explanation": "卵黄嚢の細胞が<b>栄養膜細胞層と原始卵黄嚢の間</b>に侵入し、胚外中胚葉が形成される。",
+  "point": "胚外中胚葉は胚の外側に。",
+  "tags": [
+   "2層性胚盤"
+  ]
+ },
+ {
+  "id": "q037",
+  "slide": 25,
+  "chapter": 3,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "発生第13日について、スライド25の記述に合うものはどれか。",
+  "options": [
+   {
+    "text": "胚外体腔（絨毛膜腔）によって胚外中胚葉が臓側層と壁側層に分けられる",
+    "explanation": "スライド25",
+    "correct": true
+   },
+   {
+    "text": "壁側層は羊膜になる",
+    "explanation": "絨毛膜板",
+    "correct": false
+   },
+   {
+    "text": "臓側層は絨毛膜板になる",
+    "explanation": "壁側層",
+    "correct": false
+   },
+   {
+    "text": "胚外中胚葉は3層に分かれる",
+    "explanation": "2層",
+    "correct": false
+   },
+   {
+    "text": "この時期に3層性胚盤が完成する",
+    "explanation": "第3週",
+    "correct": false
+   }
+  ],
+  "explanation": "第13日：胚外体腔（絨毛膜腔）により胚外中胚葉が<b>臓側層</b>と<b>壁側層</b>に分けられる。臓側層は羊膜腔と二次卵黄嚢を包み、壁側層は<b>絨毛膜板</b>になる。",
+  "point": "壁側層→絨毛膜板。",
+  "tags": [
+   "2層性胚盤"
+  ]
+ },
+ {
+  "id": "q038",
+  "slide": 25,
+  "chapter": 3,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "壁側層が将来なるものとして正しいのはどれか。",
+  "options": [
+   {
+    "text": "羊膜",
+    "explanation": "記載なし",
+    "correct": false
+   },
+   {
+    "text": "内胚葉",
+    "explanation": "3層性胚盤",
+    "correct": false
+   },
+   {
+    "text": "原始線条",
+    "explanation": "第3週",
+    "correct": false
+   },
+   {
+    "text": "絨毛膜の一部（絨毛膜板）",
+    "explanation": "スライド25",
+    "correct": true
+   },
+   {
+    "text": "卵黄嚢",
+    "explanation": "臓側層が包む",
+    "correct": false
+   }
+  ],
+  "explanation": "壁側層は<b>絨毛膜の一部（絨毛膜板）</b>になる。",
+  "point": "壁側＝絨毛膜板。",
+  "tags": [
+   "2層性胚盤"
+  ]
+ },
+ {
+  "id": "q039",
+  "slide": 26,
+  "chapter": 3,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "発生第3週に起こることとして正しいのはどれか。",
+  "options": [
+   {
+    "text": "着床が始まる",
+    "explanation": "5.5〜6日",
+    "correct": false
+   },
+   {
+    "text": "原始結節と原始線条が出現し、胚盤葉上層の細胞が原始線条から陥入を始める",
+    "explanation": "スライド26",
+    "correct": true
+   },
+   {
+    "text": "胚盤葉下層の細胞が原始線条から陥入する",
+    "explanation": "上層",
+    "correct": false
+   },
+   {
+    "text": "2細胞期になる",
+    "explanation": "30時間",
+    "correct": false
+   },
+   {
+    "text": "ヒューザー膜が分化する",
+    "explanation": "第9日",
+    "correct": false
+   }
+  ],
+  "explanation": "第3週：<b>原始結節・原始線条</b>が出現し、<b>胚盤葉上層</b>の細胞が原始線条から<b>陥入</b>を開始。",
+  "point": "陥入するのは上層。",
+  "tags": [
+   "3層性胚盤"
+  ]
+ },
+ {
+  "id": "q040",
+  "slide": 26,
+  "chapter": 3,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "スライド26の図（15日・16日）で、16日の断面に示されている3つの層の組み合わせとして正しいのはどれか。",
+  "options": [
+   {
+    "text": "羊膜・絨毛膜・卵黄嚢",
+    "explanation": "胚外の膜",
+    "correct": false
+   },
+   {
+    "text": "栄養膜・胚結節・胚盤胞腔",
+    "explanation": "第4.5日",
+    "correct": false
+   },
+   {
+    "text": "放線冠・透明帯・囲卵腔",
+    "explanation": "卵の構造",
+    "correct": false
+   },
+   {
+    "text": "臓側層・壁側層・絨毛膜板",
+    "explanation": "胚外中胚葉",
+    "correct": false
+   },
+   {
+    "text": "外胚葉・胚内中胚葉・内胚葉",
+    "explanation": "16日の図",
+    "correct": true
+   }
+  ],
+  "explanation": "16日の断面では、原始線条から陥入した細胞によって<b>外胚葉・胚内中胚葉・内胚葉</b>が示されている。",
+  "point": "16日＝3胚葉。",
+  "tags": [
+   "3層性胚盤"
+  ]
+ },
+ {
+  "id": "q041",
+  "slide": 27,
+  "chapter": 3,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "3胚葉の形成について正しいのはどれか。",
+  "options": [
+   {
+    "text": "内胚葉は胚盤葉下層がそのまま分化したものである",
+    "explanation": "上層の細胞が下層を置換",
+    "correct": false
+   },
+   {
+    "text": "中胚葉は陥入せずに上層に残った細胞である",
+    "explanation": "それは外胚葉",
+    "correct": false
+   },
+   {
+    "text": "陥入した上層の細胞が下層を置換して内胚葉に、置換しなかった細胞が中胚葉に、残った細胞が外胚葉になる",
+    "explanation": "スライド27",
+    "correct": true
+   },
+   {
+    "text": "外胚葉は胚盤葉下層から生じる",
+    "explanation": "上層に残った細胞",
+    "correct": false
+   },
+   {
+    "text": "3胚葉は栄養膜から生じる",
+    "explanation": "胚盤葉上層から",
+    "correct": false
+   }
+  ],
+  "explanation": "陥入→<b>置換</b>＝内胚葉、陥入→置換せず＝中胚葉、陥入せず残る＝外胚葉。この過程が<b>原腸形成</b>。",
+  "point": "3胚葉はすべて上層由来。",
+  "tags": [
+   "原腸形成"
+  ]
+ },
+ {
+  "id": "q042",
+  "slide": 27,
+  "chapter": 3,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "原腸形成（gastrulation）の定義として正しいのはどれか。",
+  "options": [
+   {
+    "text": "原始線条から胚盤葉上層の細胞が陥入することにより3胚葉が形成される過程",
+    "explanation": "スライド27",
+    "correct": true
+   },
+   {
+    "text": "胚盤胞が子宮内膜に侵入する過程",
+    "explanation": "着床",
+    "correct": false
+   },
+   {
+    "text": "受精卵が分裂して桑実胚になる過程",
+    "explanation": "卵割",
+    "correct": false
+   },
+   {
+    "text": "胚盤葉上層から羊膜芽細胞が分化する過程",
+    "explanation": "第8日",
+    "correct": false
+   },
+   {
+    "text": "精子が透明帯を通過する過程",
+    "explanation": "受精",
+    "correct": false
+   }
+  ],
+  "explanation": "原始線条から胚盤葉上層の細胞が陥入して3胚葉ができる過程を<b>原腸形成</b>と呼ぶ。",
+  "point": "原腸形成＝3胚葉をつくる陥入。",
+  "tags": [
+   "原腸形成"
+  ]
+ },
+ {
+  "id": "q043",
+  "slide": 29,
+  "chapter": 4,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "個体発生と系統発生について正しいのはどれか。",
+  "options": [
+   {
+    "text": "個体発生は生物の種の進化の歴史を指す",
+    "explanation": "それは系統発生",
+    "correct": false
+   },
+   {
+    "text": "個体発生は一個体の一生、系統発生は生物の種の進化の歴史を指す",
+    "explanation": "スライド29",
+    "correct": true
+   },
+   {
+    "text": "系統発生は受精から出生までを指す",
+    "explanation": "個体発生",
+    "correct": false
+   },
+   {
+    "text": "個体発生と系統発生は同じ意味である",
+    "explanation": "異なる",
+    "correct": false
+   },
+   {
+    "text": "系統発生は体細胞の死を指す",
+    "explanation": "該当しない",
+    "correct": false
+   }
+  ],
+  "explanation": "<b>個体発生</b>：受精卵→成体→配偶子→次世代、という一個体の一生。<b>系統発生</b>：生物の種の進化の歴史。",
+  "point": "個体＝一生、系統＝進化。",
+  "tags": [
+   "個体発生と系統発生"
+  ]
+ },
+ {
+  "id": "q044",
+  "slide": 29,
+  "chapter": 4,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "スライド29で、次世代への伝達（遺伝）を担うものとして示されているのはどれか。",
+  "options": [
+   {
+    "text": "体細胞",
+    "explanation": "個体とともに死ぬ",
+    "correct": false
+   },
+   {
+    "text": "ホムンクルス",
+    "explanation": "前成説",
+    "correct": false
+   },
+   {
+    "text": "成体（2n）",
+    "explanation": "配偶子をつくる側",
+    "correct": false
+   },
+   {
+    "text": "精子と卵子",
+    "explanation": "スライド29",
+    "correct": true
+   },
+   {
+    "text": "接合子の体細胞分裂",
+    "explanation": "個体の成長",
+    "correct": false
+   }
+  ],
+  "explanation": "個体や体細胞はいずれ死ぬが、<b>精子と卵子</b>が次世代へ遺伝情報を伝える。",
+  "point": "次世代へ渡すのは配偶子。",
+  "tags": [
+   "個体発生と系統発生"
+  ]
+ },
+ {
+  "id": "q045",
+  "slide": 30,
+  "chapter": 4,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "リンネの分類について正しいのはどれか。",
+  "options": [
+   {
+    "text": "19世紀に二名法を提唱した",
+    "explanation": "18世紀",
+    "correct": false
+   },
+   {
+    "text": "学名には英語を使う",
+    "explanation": "ラテン語",
+    "correct": false
+   },
+   {
+    "text": "ヒトを霊長類とは別の独立した群に分類した",
+    "explanation": "霊長類に分類",
+    "correct": false
+   },
+   {
+    "text": "二名法は科名と属名で命名する",
+    "explanation": "属名と種名",
+    "correct": false
+   },
+   {
+    "text": "属名と種名による二名法を提唱し、ヒトを霊長類に分類した",
+    "explanation": "スライド30",
+    "correct": true
+   }
+  ],
+  "explanation": "18世紀のリンネ：<b>二名法</b>（<b>属名と種名</b>、Homo sapiens）、ラテン語、ヒトを<b>霊長類（Primates）</b>に分類。",
+  "point": "二名法＝属名＋種名。",
+  "tags": [
+   "リンネ"
+  ]
+ },
+ {
+  "id": "q046",
+  "slide": 30,
+  "chapter": 4,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "学名が現在もラテン語で書かれる理由として、スライド30の記述に合うものはどれか。",
+  "options": [
+   {
+    "text": "学名は固有名詞であるため",
+    "explanation": "スライド30",
+    "correct": true
+   },
+   {
+    "text": "ラテン語が最も新しい言語であるため",
+    "explanation": "該当しない",
+    "correct": false
+   },
+   {
+    "text": "ダーウィンが決めたため",
+    "explanation": "リンネ",
+    "correct": false
+   },
+   {
+    "text": "分子系統解析に必要なため",
+    "explanation": "該当しない",
+    "correct": false
+   },
+   {
+    "text": "英語では二名法が書けないため",
+    "explanation": "該当しない",
+    "correct": false
+   }
+  ],
+  "explanation": "学名は<b>固有名詞</b>のため、現在もラテン語を使用している。",
+  "point": "学名＝固有名詞。",
+  "tags": [
+   "リンネ"
+  ]
+ },
+ {
+  "id": "q047",
+  "slide": 31,
+  "chapter": 4,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "ダーウィンの種の起源について正しいのはどれか。",
+  "options": [
+   {
+    "text": "1959年に出版された",
+    "explanation": "1859年",
+    "correct": false
+   },
+   {
+    "text": "獲得した形質がそのまま遺伝するという説である",
+    "explanation": "自然選択",
+    "correct": false
+   },
+   {
+    "text": "自然選択により環境に適応するように変化し、種が分化して多様な種が生じる",
+    "explanation": "スライド31",
+    "correct": true
+   },
+   {
+    "text": "生物には個体間の違いがないことを前提とする",
+    "explanation": "違いがある",
+    "correct": false
+   },
+   {
+    "text": "人類のヨーロッパ起源説を唱えた",
+    "explanation": "アフリカ起源説",
+    "correct": false
+   }
+  ],
+  "explanation": "1859年『種の起源』：<b>自然選択</b>により環境に適応して変化し、種が分化する。人類のアフリカ起源説も唱えた。",
+  "point": "1859年・自然選択。",
+  "tags": [
+   "ダーウィン"
+  ]
+ },
+ {
+  "id": "q048",
+  "slide": 31,
+  "chapter": 4,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "自然選択の考え方の前提としてスライド31に挙げられていないものはどれか。",
+  "options": [
+   {
+    "text": "生物の性質には個体間の違いがある",
+    "explanation": "挙げられている",
+    "correct": false
+   },
+   {
+    "text": "個体間の違いは親から子へ伝わる",
+    "explanation": "挙げられている",
+    "correct": false
+   },
+   {
+    "text": "より環境に適応する個体が生存する",
+    "explanation": "挙げられている",
+    "correct": false
+   },
+   {
+    "text": "個体発生は系統発生を繰り返す",
+    "explanation": "ヘッケルの反復説",
+    "correct": true
+   },
+   {
+    "text": "生存をめぐる争いで種は系統を分岐する",
+    "explanation": "挙げられている",
+    "correct": false
+   }
+  ],
+  "explanation": "自然選択の3つ：個体差、親から子への伝達、適応した個体の生存。「個体発生は系統発生を繰り返す」はヘッケル。",
+  "point": "人物と説を取り違えない。",
+  "tags": [
+   "ダーウィン"
+  ]
+ },
+ {
+  "id": "q049",
+  "slide": 32,
+  "chapter": 4,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "「個体発生は系統発生を繰り返す」という反復説を唱えたのは誰か。",
+  "options": [
+   {
+    "text": "リンネ",
+    "explanation": "二名法",
+    "correct": false
+   },
+   {
+    "text": "ヘッケル",
+    "explanation": "スライド32",
+    "correct": true
+   },
+   {
+    "text": "ダーウィン",
+    "explanation": "自然選択",
+    "correct": false
+   },
+   {
+    "text": "Tjio と Levan",
+    "explanation": "染色体数",
+    "correct": false
+   },
+   {
+    "text": "Leblond",
+    "explanation": "細胞更新",
+    "correct": false
+   }
+  ],
+  "explanation": "Ernst <b>Haeckel</b>（1834–1919）：「個体発生は系統発生を繰り返す」（<b>反復説</b>）。",
+  "point": "ヘッケル＝反復説。",
+  "tags": [
+   "反復説"
+  ]
+ },
+ {
+  "id": "q050",
+  "slide": 32,
+  "chapter": 4,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "ヘッケルの原文「Die Ontogenesis ist eine kurze schnelle Rekapitulation der Phylogenesis.」の意味として、スライド32に合うものはどれか。",
+  "options": [
+   {
+    "text": "系統発生は個体発生の長くゆっくりした繰り返しである",
+    "explanation": "逆",
+    "correct": false
+   },
+   {
+    "text": "個体発生と系統発生は無関係である",
+    "explanation": "関係づけた",
+    "correct": false
+   },
+   {
+    "text": "系統発生は個体の死である",
+    "explanation": "該当しない",
+    "correct": false
+   },
+   {
+    "text": "個体発生は自然選択の結果である",
+    "explanation": "ダーウィン",
+    "correct": false
+   },
+   {
+    "text": "個体発生は系統発生の短く早い繰り返しである",
+    "explanation": "スライド32",
+    "correct": true
+   }
+  ],
+  "explanation": "Ontogenesis＝個体発生、kurze＝短い、schnelle＝早い、Rekapitulation＝繰り返し、Phylogenesis＝系統発生。",
+  "point": "個体発生＝系統発生の短く早い繰り返し。",
+  "tags": [
+   "反復説"
+  ]
+ },
+ {
+  "id": "q051",
+  "slide": 33,
+  "chapter": 4,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "系統樹について正しいのはどれか。",
+  "options": [
+   {
+    "text": "ヘッケルの系統樹は現在の系統樹と同じである",
+    "explanation": "異なる",
+    "correct": false
+   },
+   {
+    "text": "系統樹は生物を大きさの順に並べた図である",
+    "explanation": "進化の関係",
+    "correct": false
+   },
+   {
+    "text": "共通の祖先をもつと考えられる生物種間の進化の関係を樹状に表現した図である",
+    "explanation": "スライド33",
+    "correct": true
+   },
+   {
+    "text": "系統樹は全生物が別々の祖先をもつことを前提とする",
+    "explanation": "共通の祖先",
+    "correct": false
+   },
+   {
+    "text": "ヘッケルの系統樹は2008年に描かれた",
+    "explanation": "1874年",
+    "correct": false
+   }
+  ],
+  "explanation": "系統樹＝<b>共通の祖先</b>をもつと考えられる生物種間の進化の関係を<b>樹状</b>に表した図。ヘッケルの系統樹（1874年）は現在のものとは異なる。",
+  "point": "系統樹＝共通祖先からの枝分かれ。",
+  "tags": [
+   "系統樹"
+  ]
+ },
+ {
+  "id": "q052",
+  "slide": 33,
+  "chapter": 4,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "分子系統解析で用いるものとして、スライド33の記述に合うものはどれか。",
+  "options": [
+   {
+    "text": "アミノ酸配列や遺伝子配列",
+    "explanation": "スライド33",
+    "correct": true
+   },
+   {
+    "text": "化石の大きさだけ",
+    "explanation": "記載なし",
+    "correct": false
+   },
+   {
+    "text": "体の色",
+    "explanation": "記載なし",
+    "correct": false
+   },
+   {
+    "text": "孵化の温度",
+    "explanation": "爬虫類の性決定",
+    "correct": false
+   },
+   {
+    "text": "学名のアルファベット順",
+    "explanation": "該当しない",
+    "correct": false
+   }
+  ],
+  "explanation": "分子系統解析は、<b>アミノ酸配列や遺伝子配列</b>を用いて生物種間の進化的道筋を解析する。",
+  "point": "配列で系統を読む。",
+  "tags": [
+   "分子系統解析"
+  ]
+ },
+ {
+  "id": "q053",
+  "slide": 34,
+  "chapter": 5,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "生物全体の系統関係について、スライド34の年代として正しいのはどれか。",
+  "options": [
+   {
+    "text": "地球の誕生は約38億年前",
+    "explanation": "約46億年前",
+    "correct": false
+   },
+   {
+    "text": "生物の出現は約46億年前",
+    "explanation": "約38億年前",
+    "correct": false
+   },
+   {
+    "text": "動物の出現は約20億年前",
+    "explanation": "約12億年前",
+    "correct": false
+   },
+   {
+    "text": "真核生物の出現は約20億年前、動物の出現は約12億年前",
+    "explanation": "スライド34",
+    "correct": true
+   },
+   {
+    "text": "脊索動物の出現は約12億年前",
+    "explanation": "約6億年前",
+    "correct": false
+   }
+  ],
+  "explanation": "地球約46億年前、生物約38億年前、真核生物約20億年前、動物約12億年前、脊索動物約6億年前。",
+  "point": "46・38・20・12・6。",
+  "tags": [
+   "系統関係"
+  ]
+ },
+ {
+  "id": "q054",
+  "slide": 34,
+  "chapter": 5,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "生物の大きなグループとその例の組み合わせとして、スライド34に合うものはどれか。",
+  "options": [
+   {
+    "text": "古細菌 ― 納豆菌、大腸菌",
+    "explanation": "真性細菌",
+    "correct": false
+   },
+   {
+    "text": "真性細菌 ― 納豆菌、大腸菌、根粒菌",
+    "explanation": "スライド34",
+    "correct": true
+   },
+   {
+    "text": "真核生物 ― 好熱細菌",
+    "explanation": "古細菌",
+    "correct": false
+   },
+   {
+    "text": "植物 ― キノコとカビ",
+    "explanation": "真菌類",
+    "correct": false
+   },
+   {
+    "text": "節足動物 ― ミミズ",
+    "explanation": "環形動物",
+    "correct": false
+   }
+  ],
+  "explanation": "真性細菌（納豆菌、大腸菌、根粒菌）、古細菌（好熱細菌、高温細菌の一種）、真核生物（原生生物・植物・真菌類・動物）。",
+  "point": "細菌は2群、ほかは真核生物。",
+  "tags": [
+   "系統関係"
+  ]
+ },
+ {
+  "id": "q055",
+  "slide": 35,
+  "chapter": 5,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "スライド35の系統について正しいのはどれか。",
+  "options": [
+   {
+    "text": "脊椎動物の出現は約6億年前",
+    "explanation": "約5億年前",
+    "correct": false
+   },
+   {
+    "text": "羊膜類には両生類が含まれる",
+    "explanation": "爬虫類・鳥類・哺乳類",
+    "correct": false
+   },
+   {
+    "text": "哺乳類の出現は約4億年前",
+    "explanation": "約2億年前",
+    "correct": false
+   },
+   {
+    "text": "単孔類は有胎盤哺乳類に含まれる",
+    "explanation": "別の群",
+    "correct": false
+   },
+   {
+    "text": "脊椎動物は約5億年前、羊膜類は約4億年前、哺乳類は約2億年前に出現した",
+    "explanation": "スライド35",
+    "correct": true
+   }
+  ],
+  "explanation": "脊索動物（約6億）→脊椎動物（約5億）→羊膜類（約4億）→哺乳類（約2億）→有胎盤哺乳類（約1.5億）。",
+  "point": "5・4・2・1.5。",
+  "tags": [
+   "脊索動物の系統"
+  ]
+ },
+ {
+  "id": "q056",
+  "slide": 35,
+  "chapter": 5,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "羊膜類に含まれないものはどれか。",
+  "options": [
+   {
+    "text": "両生類",
+    "explanation": "脊椎動物だが羊膜類ではない",
+    "correct": true
+   },
+   {
+    "text": "爬虫類",
+    "explanation": "羊膜類",
+    "correct": false
+   },
+   {
+    "text": "鳥類",
+    "explanation": "羊膜類",
+    "correct": false
+   },
+   {
+    "text": "単孔類",
+    "explanation": "哺乳類（羊膜類）",
+    "correct": false
+   },
+   {
+    "text": "有袋類",
+    "explanation": "哺乳類（羊膜類）",
+    "correct": false
+   }
+  ],
+  "explanation": "スライド35では、羊膜類の下に爬虫類・鳥類・哺乳類（単孔類・有袋類・有胎盤哺乳類）が並ぶ。両生類は羊膜類の外。",
+  "point": "羊膜類＝爬虫類・鳥類・哺乳類。",
+  "tags": [
+   "脊索動物の系統"
+  ]
+ },
+ {
+  "id": "q057",
+  "slide": 36,
+  "chapter": 5,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "有胎盤哺乳類以降の年代として、スライド36に合うものはどれか。",
+  "options": [
+   {
+    "text": "霊長目の出現は約3000万年前",
+    "explanation": "約1億年前",
+    "correct": false
+   },
+   {
+    "text": "真猿の出現は約2000万年前",
+    "explanation": "約6000万年前",
+    "correct": false
+   },
+   {
+    "text": "霊長目は約1億年前、真猿は約6000万年前、狭鼻猿は約3000万年前、ヒト上科は約2000万年前",
+    "explanation": "スライド36",
+    "correct": true
+   },
+   {
+    "text": "ヒト上科の出現は約1億年前",
+    "explanation": "約2000万年前",
+    "correct": false
+   },
+   {
+    "text": "有胎盤哺乳類の出現は約6億年前",
+    "explanation": "約1.5億年前",
+    "correct": false
+   }
+  ],
+  "explanation": "有胎盤哺乳類1.5億→霊長目1億→真猿6000万→狭鼻猿3000万→ヒト上科2000万年前。",
+  "point": "1億・6000万・3000万・2000万。",
+  "tags": [
+   "有胎盤哺乳類の系統"
+  ]
+ },
+ {
+  "id": "q058",
+  "slide": 36,
+  "chapter": 5,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "動物と目（もく）の組み合わせとして、スライド36に合うものはどれか。",
+  "options": [
+   {
+    "text": "クジラ ― 食肉目",
+    "explanation": "偶蹄鯨目",
+    "correct": false
+   },
+   {
+    "text": "ウマ ― 偶蹄鯨目",
+    "explanation": "奇蹄目",
+    "correct": false
+   },
+   {
+    "text": "ネズミ ― 食虫目",
+    "explanation": "齧歯目",
+    "correct": false
+   },
+   {
+    "text": "ゾウ・ジュゴン ― アフリカ獣目",
+    "explanation": "スライド36",
+    "correct": true
+   },
+   {
+    "text": "ナマケモノ ― 霊長目",
+    "explanation": "貧歯目",
+    "correct": false
+   }
+  ],
+  "explanation": "貧歯目（ナマケモノ）、アフリカ獣目（ゾウ・ジュゴン・ツチブタ）、偶蹄鯨目（ウシ…クジラ・イルカ）、奇蹄目（ウマ・バク）、食肉目、食虫目（モグラ）、齧歯目（ネズミ）。",
+  "point": "クジラは偶蹄鯨目。",
+  "tags": [
+   "有胎盤哺乳類の系統"
+  ]
+ },
+ {
+  "id": "q059",
+  "slide": 37,
+  "chapter": 5,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "ヒト上科について、スライド37に合うものはどれか。",
+  "options": [
+   {
+    "text": "ヒト上科はヒト科のみからなる",
+    "explanation": "テナガザル科もある",
+    "correct": false
+   },
+   {
+    "text": "ヒト上科はテナガザル科とヒト科からなる",
+    "explanation": "スライド37",
+    "correct": true
+   },
+   {
+    "text": "オランウータン属はテナガザル科に含まれる",
+    "explanation": "ヒト科",
+    "correct": false
+   },
+   {
+    "text": "ゴリラ属はヒト属に含まれる",
+    "explanation": "別の属",
+    "correct": false
+   },
+   {
+    "text": "アウストラロピテクス属はテナガザル科に含まれる",
+    "explanation": "ヒト科",
+    "correct": false
+   }
+  ],
+  "explanation": "ヒト上科＝<b>テナガザル科</b>＋<b>ヒト科</b>（オランウータン属・ゴリラ属・チンパンジー属・アルディピテクス属・アウストラロピテクス属・ヒト属）。",
+  "point": "ヒト科にゴリラもチンパンジーも入る。",
+  "tags": [
+   "ヒト上科"
+  ]
+ },
+ {
+  "id": "q060",
+  "slide": 37,
+  "chapter": 5,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "スライド37でヒト属に含まれるものとして挙げられていないものはどれか。",
+  "options": [
+   {
+    "text": "ハビリス",
+    "explanation": "ヒト属",
+    "correct": false
+   },
+   {
+    "text": "エレクトス",
+    "explanation": "ヒト属",
+    "correct": false
+   },
+   {
+    "text": "ハイデルベルゲンシス",
+    "explanation": "ヒト属",
+    "correct": false
+   },
+   {
+    "text": "フローレシエンシス",
+    "explanation": "ヒト属",
+    "correct": false
+   },
+   {
+    "text": "アウストラロピテクス",
+    "explanation": "ヒト科の別の属",
+    "correct": true
+   }
+  ],
+  "explanation": "ヒト属：ハビリス、エレクトス、ハイデルベルゲンシス、フローレシエンシス、ヒト（Homo sapiens）。アウストラロピテクスは別の属。",
+  "point": "属のレベルを区別する。",
+  "tags": [
+   "ヒト上科"
+  ]
+ },
+ {
+  "id": "q061",
+  "slide": 38,
+  "chapter": 5,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "スライド38の時間軸で、両生類の出現（四肢の獲得）は何年前か。",
+  "options": [
+   {
+    "text": "6億年前",
+    "explanation": "脊索動物",
+    "correct": false
+   },
+   {
+    "text": "5億年前",
+    "explanation": "魚類",
+    "correct": false
+   },
+   {
+    "text": "4億年前",
+    "explanation": "スライド38",
+    "correct": true
+   },
+   {
+    "text": "2億年前",
+    "explanation": "哺乳類",
+    "correct": false
+   },
+   {
+    "text": "1億年前",
+    "explanation": "霊長類",
+    "correct": false
+   }
+  ],
+  "explanation": "6億 脊索動物（脊椎動物の原型）、5億 魚類、<b>4億 両生類（四肢の獲得）</b>、3.5億 爬虫類、2億 哺乳類、1億 霊長類、2千万 類人猿、7百万 人類、20万 新人。",
+  "point": "4億＝四肢。",
+  "tags": [
+   "時間軸"
+  ]
+ },
+ {
+  "id": "q062",
+  "slide": 38,
+  "chapter": 5,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "出現の年代の組み合わせとして、スライド38に合うものはどれか。",
+  "options": [
+   {
+    "text": "人類 ― 7百万年前、新人 ― 20万年前",
+    "explanation": "スライド38",
+    "correct": true
+   },
+   {
+    "text": "類人猿 ― 20万年前",
+    "explanation": "2千万年前",
+    "correct": false
+   },
+   {
+    "text": "爬虫類 ― 5億年前",
+    "explanation": "3.5億年前",
+    "correct": false
+   },
+   {
+    "text": "哺乳類 ― 1億年前",
+    "explanation": "2億年前",
+    "correct": false
+   },
+   {
+    "text": "霊長類 ― 7百万年前",
+    "explanation": "1億年前",
+    "correct": false
+   }
+  ],
+  "explanation": "類人猿2千万年前、人類7百万年前、新人20万年前。",
+  "point": "2千万・7百万・20万。",
+  "tags": [
+   "時間軸"
+  ]
+ },
+ {
+  "id": "q063",
+  "slide": 39,
+  "chapter": 5,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "現存する脊索動物について、スライド39に合うものはどれか。",
+  "options": [
+   {
+    "text": "頭索類はホヤの幼生である",
+    "explanation": "ナメクジウオ",
+    "correct": false
+   },
+   {
+    "text": "尾索類はナメクジウオである",
+    "explanation": "ホヤの幼生",
+    "correct": false
+   },
+   {
+    "text": "脊索動物は二心房二心室をもつ",
+    "explanation": "多小心",
+    "correct": false
+   },
+   {
+    "text": "頭索類のナメクジウオと尾索類のホヤの幼生がある",
+    "explanation": "スライド39",
+    "correct": true
+   },
+   {
+    "text": "脊索動物には神経管がない",
+    "explanation": "神経管と筋",
+    "correct": false
+   }
+  ],
+  "explanation": "現存する脊索動物：<b>頭索類ナメクジウオ</b>、<b>尾索類ホヤの幼生</b>。脊索・神経管と筋・消化管・前腎と生殖巣・多小心。",
+  "point": "頭索＝ナメクジウオ、尾索＝ホヤ。",
+  "tags": [
+   "脊索動物"
+  ]
+ },
+ {
+  "id": "q064",
+  "slide": 39,
+  "chapter": 5,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "脊索動物のからだの構造として、スライド39に挙げられていないものはどれか。",
+  "options": [
+   {
+    "text": "脊索",
+    "explanation": "挙げられている",
+    "correct": false
+   },
+   {
+    "text": "神経管と筋",
+    "explanation": "挙げられている",
+    "correct": false
+   },
+   {
+    "text": "四肢",
+    "explanation": "両生類で獲得",
+    "correct": true
+   },
+   {
+    "text": "前腎と生殖巣",
+    "explanation": "挙げられている",
+    "correct": false
+   },
+   {
+    "text": "多小心",
+    "explanation": "挙げられている",
+    "correct": false
+   }
+  ],
+  "explanation": "脊索動物＝二重の筒の原形・脊索・神経管と筋・消化管・前腎と生殖巣・多小心。四肢は両生類から。",
+  "point": "原型には四肢はない。",
+  "tags": [
+   "脊索動物"
+  ]
+ },
+ {
+  "id": "q065",
+  "slide": 40,
+  "chapter": 5,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "2008年のナメクジウオのゲノム解読（スライド40）の結果として正しいのはどれか。",
+  "options": [
+   {
+    "text": "ホヤ類が脊椎動物の祖先であることが確定した",
+    "explanation": "覆した",
+    "correct": false
+   },
+   {
+    "text": "脊索動物の中でナメクジウオが最も原始的であることが分かった",
+    "explanation": "スライド40",
+    "correct": true
+   },
+   {
+    "text": "ナメクジウオには遺伝子が見つからなかった",
+    "explanation": "約2万1600個",
+    "correct": false
+   },
+   {
+    "text": "ナメクジウオは脊索をもたない",
+    "explanation": "脊索動物",
+    "correct": false
+   },
+   {
+    "text": "ヒトとは比較されなかった",
+    "explanation": "ホヤ、ヒトと比較",
+    "correct": false
+   }
+  ],
+  "explanation": "約2万1600個の遺伝子を発見、ホヤ・ヒトと比較して<b>ナメクジウオが最も原始的</b>。脊椎動物がナメクジウオ類から直接進化したことを裏付け、ホヤ祖先説を覆した。",
+  "point": "祖先はホヤではなくナメクジウオの仲間。",
+  "tags": [
+   "ナメクジウオ"
+  ]
+ },
+ {
+  "id": "q066",
+  "slide": 40,
+  "chapter": 5,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "スライド40の記事で、それまで脊椎動物の祖先と考えられていたものはどれか。",
+  "options": [
+   {
+    "text": "肺魚",
+    "explanation": "記載なし",
+    "correct": false
+   },
+   {
+    "text": "ヤツメウナギ",
+    "explanation": "記載なし",
+    "correct": false
+   },
+   {
+    "text": "シーラカンス",
+    "explanation": "記載なし",
+    "correct": false
+   },
+   {
+    "text": "ナメクジウオ",
+    "explanation": "新しい結論",
+    "correct": false
+   },
+   {
+    "text": "ホヤ類",
+    "explanation": "スライド40",
+    "correct": true
+   }
+  ],
+  "explanation": "これまでは<b>ホヤ類</b>が祖先と考えられていたが、ナメクジウオの仲間であることが分かった。",
+  "point": "旧説＝ホヤ、新説＝ナメクジウオ。",
+  "tags": [
+   "ナメクジウオ"
+  ]
+ },
+ {
+  "id": "q067",
+  "slide": 41,
+  "chapter": 6,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "無顎類について正しいのはどれか。",
+  "options": [
+   {
+    "text": "現存する無顎類は円口類（ヤツメウナギ、メクラウナギ）で、顎が無く咽頭が丸く開いている",
+    "explanation": "スライド41",
+    "correct": true
+   },
+   {
+    "text": "内耳は三半規管である",
+    "explanation": "二半規管",
+    "correct": false
+   },
+   {
+    "text": "胸鰭・腹鰭をもつ",
+    "explanation": "ない",
+    "correct": false
+   },
+   {
+    "text": "泌尿器系は後腎である",
+    "explanation": "前腎＋中腎",
+    "correct": false
+   },
+   {
+    "text": "心臓は二心房二心室である",
+    "explanation": "記載なし（哺乳類）",
+    "correct": false
+   }
+  ],
+  "explanation": "無顎類：円口類（ヤツメウナギ）、顎なし、咽頭が丸く開く、胸鰭・腹鰭なし、<b>二半規管</b>（2次元）、<b>前腎＋中腎</b>。",
+  "point": "無顎類＝二半規管。",
+  "tags": [
+   "無顎類"
+  ]
+ },
+ {
+  "id": "q068",
+  "slide": 41,
+  "chapter": 6,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "無顎類の内耳が二半規管であることについて、スライド41で添えられている説明はどれか。",
+  "options": [
+   {
+    "text": "水中で呼吸するため",
+    "explanation": "記載なし",
+    "correct": false
+   },
+   {
+    "text": "3次元で生活するため",
+    "explanation": "有顎類",
+    "correct": false
+   },
+   {
+    "text": "顎がないため",
+    "explanation": "別の特徴",
+    "correct": false
+   },
+   {
+    "text": "2次元で生活するため",
+    "explanation": "スライド41",
+    "correct": true
+   },
+   {
+    "text": "陸上で生活するため",
+    "explanation": "両生類以降",
+    "correct": false
+   }
+  ],
+  "explanation": "内耳は二半規管＝<b>2次元で生活</b>。有顎類で三半規管となり<b>3次元へ</b>。",
+  "point": "2つの管で2次元、3つの管で3次元。",
+  "tags": [
+   "無顎類"
+  ]
+ },
+ {
+  "id": "q069",
+  "slide": 42,
+  "chapter": 6,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "有顎類（魚類）の特徴として、スライド42に合うものはどれか。",
+  "options": [
+   {
+    "text": "二心房一心室",
+    "explanation": "両生類",
+    "correct": false
+   },
+   {
+    "text": "二半規管",
+    "explanation": "無顎類",
+    "correct": false
+   },
+   {
+    "text": "一心房一心室、三半規管、中腎、卵生",
+    "explanation": "スライド42",
+    "correct": true
+   },
+   {
+    "text": "後腎",
+    "explanation": "爬虫類",
+    "correct": false
+   },
+   {
+    "text": "胎生",
+    "explanation": "哺乳類",
+    "correct": false
+   }
+  ],
+  "explanation": "有顎類：二重の筒＋頭＋顎＋鰭、<b>一心房一心室</b>、胸鰭・腹鰭（四肢へ）、<b>三半規管</b>、<b>中腎</b>、卵生。",
+  "point": "魚類の心臓は1つずつ。",
+  "tags": [
+   "有顎類"
+  ]
+ },
+ {
+  "id": "q070",
+  "slide": 42,
+  "chapter": 6,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "魚類の分類と例の組み合わせとして、スライド42に合うものはどれか。",
+  "options": [
+   {
+    "text": "軟骨魚類 ― シーラカンス",
+    "explanation": "肉鰭類",
+    "correct": false
+   },
+   {
+    "text": "条鰭類 ― サメ、エイ",
+    "explanation": "板鰭類",
+    "correct": false
+   },
+   {
+    "text": "肉鰭類 ― タイ、ニシン",
+    "explanation": "条鰭類",
+    "correct": false
+   },
+   {
+    "text": "腕鰭類 ― 肺魚",
+    "explanation": "肉鰭類",
+    "correct": false
+   },
+   {
+    "text": "肉鰭類 ― 肺魚・シーラカンス",
+    "explanation": "スライド42",
+    "correct": true
+   }
+  ],
+  "explanation": "軟骨魚類：板鰭類（サメ、エイ）。硬骨魚類：条鰭類（タイ、ニシン）、腕鰭類（ポリプテルス）、<b>肉鰭類（肺魚・シーラカンス）</b>。",
+  "point": "肉鰭類が陸への橋。",
+  "tags": [
+   "有顎類"
+  ]
+ },
+ {
+  "id": "q071",
+  "slide": 43,
+  "chapter": 6,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "両生類の特徴として、スライド43に合うものはどれか。",
+  "options": [
+   {
+    "text": "一心房一心室",
+    "explanation": "魚類",
+    "correct": false
+   },
+   {
+    "text": "二心房一心室、肺の形成、鼓膜・鼓室の形成",
+    "explanation": "スライド43",
+    "correct": true
+   },
+   {
+    "text": "二心房不完全二心室",
+    "explanation": "爬虫類",
+    "correct": false
+   },
+   {
+    "text": "後腎",
+    "explanation": "爬虫類",
+    "correct": false
+   },
+   {
+    "text": "殻付き卵",
+    "explanation": "爬虫類",
+    "correct": false
+   }
+  ],
+  "explanation": "両生類：鰭→四肢、変態、<b>二心房一心室</b>、鼓膜・鼓室、<b>肺</b>、鼻腔が口腔に通じる、幼生は前腎・成体は中腎、卵生。",
+  "point": "両生類＝2心房1心室。",
+  "tags": [
+   "両生類"
+  ]
+ },
+ {
+  "id": "q072",
+  "slide": 43,
+  "chapter": 6,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "両生類の泌尿器系について、スライド43に合うものはどれか。",
+  "options": [
+   {
+    "text": "一生を通じて前腎のみ",
+    "explanation": "成体は中腎",
+    "correct": false
+   },
+   {
+    "text": "一生を通じて後腎",
+    "explanation": "爬虫類以降",
+    "correct": false
+   },
+   {
+    "text": "幼生は後腎、成体は前腎",
+    "explanation": "逆・後腎ではない",
+    "correct": false
+   },
+   {
+    "text": "幼生は前腎、成体は中腎",
+    "explanation": "スライド43",
+    "correct": true
+   },
+   {
+    "text": "腎臓をもたない",
+    "explanation": "もつ",
+    "correct": false
+   }
+  ],
+  "explanation": "両生類は<b>幼生が前腎、成体が中腎</b>。爬虫類で後腎になる。",
+  "point": "前腎→中腎→後腎の順。",
+  "tags": [
+   "両生類"
+  ]
+ },
+ {
+  "id": "q073",
+  "slide": 44,
+  "chapter": 6,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "爬虫類の特徴として、スライド44に合うものはどれか。",
+  "options": [
+   {
+    "text": "二心房不完全二心室、交接器（体内受精）、尿膜、後腎、殻付き卵",
+    "explanation": "スライド44",
+    "correct": true
+   },
+   {
+    "text": "一心房一心室",
+    "explanation": "魚類",
+    "correct": false
+   },
+   {
+    "text": "幼生は水中で生活する",
+    "explanation": "両生類",
+    "correct": false
+   },
+   {
+    "text": "泌尿器系は中腎",
+    "explanation": "両生類・魚類",
+    "correct": false
+   },
+   {
+    "text": "体外受精",
+    "explanation": "交接器で体内受精",
+    "correct": false
+   }
+  ],
+  "explanation": "爬虫類：完全陸上生活、<b>二心房不完全二心室</b>（心室中隔膜性部欠損症に似る）、交接器（体内受精）、尿膜、<b>後腎</b>、殻付き卵。",
+  "point": "爬虫類＝不完全な2心室・後腎。",
+  "tags": [
+   "爬虫類"
+  ]
+ },
+ {
+  "id": "q074",
+  "slide": 44,
+  "chapter": 6,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "爬虫類の系統で、哺乳類につながるものはどれか。",
+  "options": [
+   {
+    "text": "無弓類",
+    "explanation": "カメ",
+    "correct": false
+   },
+   {
+    "text": "二弓類",
+    "explanation": "ムカシトカゲ・恐竜・ワニ",
+    "correct": false
+   },
+   {
+    "text": "単弓類",
+    "explanation": "スライド44",
+    "correct": true
+   },
+   {
+    "text": "広弓類",
+    "explanation": "絶滅",
+    "correct": false
+   },
+   {
+    "text": "迷歯類",
+    "explanation": "両生類（古竜類）",
+    "correct": false
+   }
+  ],
+  "explanation": "迷歯類→無弓類（カメ）、<b>単弓類（絶滅）→哺乳類</b>、広弓類（絶滅）、二弓類（ムカシトカゲ・恐竜・ワニ）。",
+  "point": "単弓類→哺乳類。",
+  "tags": [
+   "爬虫類"
+  ]
+ },
+ {
+  "id": "q075",
+  "slide": 45,
+  "chapter": 7,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "哺乳類の特徴として、スライド45に合うものはどれか。",
+  "options": [
+   {
+    "text": "二心房一心室",
+    "explanation": "両生類",
+    "correct": false
+   },
+   {
+    "text": "変温",
+    "explanation": "恒温",
+    "correct": false
+   },
+   {
+    "text": "四肢が胴体の横に張り出す",
+    "explanation": "胴体の下に入る",
+    "correct": false
+   },
+   {
+    "text": "尿生殖路と糞道が共通",
+    "explanation": "別",
+    "correct": false
+   },
+   {
+    "text": "二心房二心室、恒温、乳腺、毛、尿生殖路と糞道が別",
+    "explanation": "スライド45",
+    "correct": true
+   }
+  ],
+  "explanation": "哺乳類：<b>二心房二心室</b>、<b>恒温</b>、四肢が胴体の下、口蓋＋頬、<b>乳腺</b>、<b>毛</b>、尿生殖路と糞道が別。",
+  "point": "2心房2心室・恒温・乳腺・毛。",
+  "tags": [
+   "哺乳類"
+  ]
+ },
+ {
+  "id": "q076",
+  "slide": 45,
+  "chapter": 7,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "哺乳類の分類と例の組み合わせとして、スライド45に合うものはどれか。",
+  "options": [
+   {
+    "text": "単孔類 ― オポッサム、ワラビー",
+    "explanation": "有袋類",
+    "correct": false
+   },
+   {
+    "text": "単孔類 ― ハリモグラ、カモノハシ",
+    "explanation": "スライド45",
+    "correct": true
+   },
+   {
+    "text": "有袋類 ― カモノハシ",
+    "explanation": "単孔類",
+    "correct": false
+   },
+   {
+    "text": "真獣類 ― ハリモグラ",
+    "explanation": "単孔類",
+    "correct": false
+   },
+   {
+    "text": "異獣類 ― 現存する有胎盤類",
+    "explanation": "絶滅",
+    "correct": false
+   }
+  ],
+  "explanation": "原獣類＝<b>単孔類（ハリモグラ・カモノハシ）</b>、獣類＝全獣類（絶滅）・<b>有袋類（オポッサム・ワラビー）</b>・真獣類（有胎盤類）。",
+  "point": "単孔類＝卵を産む哺乳類。",
+  "tags": [
+   "哺乳類"
+  ]
+ },
+ {
+  "id": "q077",
+  "slide": 46,
+  "chapter": 7,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "乳腺の進化について、スライド46に合うものはどれか。",
+  "options": [
+   {
+    "text": "乳腺は皮脂腺から派生したと推測される",
+    "explanation": "汗腺",
+    "correct": false
+   },
+   {
+    "text": "エクリン汗腺は蛋白質・脂質・糖質を分泌する",
+    "explanation": "水と電解質",
+    "correct": false
+   },
+   {
+    "text": "アポクリン腺はヒトだけがもつ",
+    "explanation": "多くの哺乳類が全身にもつ",
+    "correct": false
+   },
+   {
+    "text": "乳腺は汗腺から派生したと推測され、汗腺にはエクリン汗腺とアポクリン汗腺がある",
+    "explanation": "スライド46",
+    "correct": true
+   },
+   {
+    "text": "カモノハシは乳頭から授乳する",
+    "explanation": "皮膚の表面の乳腺から",
+    "correct": false
+   }
+  ],
+  "explanation": "乳腺は<b>汗腺から派生</b>したと推測。エクリン（水と電解質）、アポクリン（蛋白質・脂質・糖質）。",
+  "point": "乳腺の祖先＝汗腺。",
+  "tags": [
+   "乳腺"
+  ]
+ },
+ {
+  "id": "q078",
+  "slide": 46,
+  "chapter": 7,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "カモノハシ・ハリモグラの授乳の方法として、スライド46に合うものはどれか。",
+  "options": [
+   {
+    "text": "皮膚の表面に存在する乳腺から乳汁を分泌して子どもに舐めさせる",
+    "explanation": "スライド46",
+    "correct": true
+   },
+   {
+    "text": "乳頭から子が吸う",
+    "explanation": "記載と異なる",
+    "correct": false
+   },
+   {
+    "text": "胎盤を通じて栄養を与える",
+    "explanation": "有胎盤類",
+    "correct": false
+   },
+   {
+    "text": "卵黄だけで育てる",
+    "explanation": "記載なし",
+    "correct": false
+   },
+   {
+    "text": "授乳しない",
+    "explanation": "授乳する",
+    "correct": false
+   }
+  ],
+  "explanation": "単孔類は<b>皮膚の表面</b>の乳腺から乳汁を分泌し、子に舐めさせる。",
+  "point": "単孔類は乳頭なし。",
+  "tags": [
+   "乳腺"
+  ]
+ },
+ {
+  "id": "q079",
+  "slide": 47,
+  "chapter": 7,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "乳腺の位置と動物の組み合わせとして、スライド47に合うものはどれか。",
+  "options": [
+   {
+    "text": "鼠径部 ― ヒト、象",
+    "explanation": "腋窩・胸部",
+    "correct": false
+   },
+   {
+    "text": "腋窩・胸部 ― 牛、馬",
+    "explanation": "鼠径部",
+    "correct": false
+   },
+   {
+    "text": "腋窩・胸部 ― ヒト、象、ジュゴン",
+    "explanation": "スライド47",
+    "correct": true
+   },
+   {
+    "text": "腋窩〜鼠径部 ― クジラ",
+    "explanation": "鼠径部",
+    "correct": false
+   },
+   {
+    "text": "鼠径部 ― 犬、猫",
+    "explanation": "腋窩〜鼠径部",
+    "correct": false
+   }
+  ],
+  "explanation": "①腋窩・胸部：ヒト、象、ジュゴン ②腋窩〜鼠径部：豚、犬、猫、ネズミ ③鼠径部：牛、馬、ヤギ、羊、キリン、クジラ。",
+  "point": "ヒト・象・ジュゴンは胸。",
+  "tags": [
+   "乳腺の位置"
+  ]
+ },
+ {
+  "id": "q080",
+  "slide": 47,
+  "chapter": 7,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "スライド47について正しいのはどれか。",
+  "options": [
+   {
+    "text": "乳頭数は常に奇数である",
+    "explanation": "対をなす",
+    "correct": false
+   },
+   {
+    "text": "乳頭数の最大はヒトである",
+    "explanation": "アカハラジネズミオポッサム",
+    "correct": false
+   },
+   {
+    "text": "ジュゴンと象は遠縁である",
+    "explanation": "近縁（海牛目と象）",
+    "correct": false
+   },
+   {
+    "text": "ヒトには副乳腺は生じない",
+    "explanation": "副乳腺の位置の図",
+    "correct": false
+   },
+   {
+    "text": "乳頭は対をなし、計2〜18個である",
+    "explanation": "スライド47",
+    "correct": true
+   }
+  ],
+  "explanation": "乳頭数は<b>対をなし計2〜18個</b>、最大はアカハラジネズミオポッサムの25個。海牛目のジュゴンと象は近縁。",
+  "point": "2〜18個、対。",
+  "tags": [
+   "乳腺の位置"
+  ]
+ },
+ {
+  "id": "q081",
+  "slide": 48,
+  "chapter": 7,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "胎盤の出現について、スライド48に合うものはどれか。",
+  "options": [
+   {
+    "text": "胎盤は魚類で最初に形成された",
+    "explanation": "記載なし",
+    "correct": false
+   },
+   {
+    "text": "爬虫類・鳥類の卵の血管の発達から胎盤の形成へつながった",
+    "explanation": "スライド48",
+    "correct": true
+   },
+   {
+    "text": "爬虫類の卵には血管がない",
+    "explanation": "血管の発達",
+    "correct": false
+   },
+   {
+    "text": "胎盤は卵殻が変化したものである",
+    "explanation": "記載なし",
+    "correct": false
+   },
+   {
+    "text": "鳥類は胎盤をもつ",
+    "explanation": "卵",
+    "correct": false
+   }
+  ],
+  "explanation": "爬虫類・鳥類の卵（羊膜・尿膜・漿膜・卵黄嚢）の<b>血管の発達</b>が、哺乳類の<b>胎盤の形成</b>へとつながった。",
+  "point": "血管の発達→胎盤。",
+  "tags": [
+   "胎盤"
+  ]
+ },
+ {
+  "id": "q082",
+  "slide": 48,
+  "chapter": 7,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "スライド48の爬虫類・鳥類の卵の図で、胚の栄養源として示されているものはどれか。",
+  "options": [
+   {
+    "text": "羊膜腔",
+    "explanation": "胚を包む腔",
+    "correct": false
+   },
+   {
+    "text": "卵殻",
+    "explanation": "外側の殻",
+    "correct": false
+   },
+   {
+    "text": "尿膜",
+    "explanation": "膜の一つ",
+    "correct": false
+   },
+   {
+    "text": "卵黄",
+    "explanation": "スライド48",
+    "correct": true
+   },
+   {
+    "text": "卵白",
+    "explanation": "記載はあるが栄養の矢印ではない",
+    "correct": false
+   }
+  ],
+  "explanation": "図では<b>卵黄</b>が「栄養」として示されている。",
+  "point": "卵の栄養＝卵黄。",
+  "tags": [
+   "胎盤"
+  ]
+ },
+ {
+  "id": "q083",
+  "slide": 49,
+  "chapter": 7,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "霊長類の分類について、スライド49に合うものはどれか。",
+  "options": [
+   {
+    "text": "ヒトは狭鼻猿類に含まれる",
+    "explanation": "スライド49",
+    "correct": true
+   },
+   {
+    "text": "ヒトは広鼻猿類に含まれる",
+    "explanation": "狭鼻猿類",
+    "correct": false
+   },
+   {
+    "text": "新世界ザルは狭鼻猿類である",
+    "explanation": "広鼻猿類",
+    "correct": false
+   },
+   {
+    "text": "ゴリラは広鼻猿類である",
+    "explanation": "狭鼻猿類",
+    "correct": false
+   },
+   {
+    "text": "旧世界ザルは原猿類である",
+    "explanation": "狭鼻猿類",
+    "correct": false
+   }
+  ],
+  "explanation": "真猿類は<b>広鼻猿類</b>（新世界ザル）と<b>狭鼻猿類</b>（旧世界ザル・テナガザル・オランウータン・ゴリラ・チンパンジー・ヒト）。",
+  "point": "ヒトは狭鼻猿類。",
+  "tags": [
+   "霊長類"
+  ]
+ },
+ {
+  "id": "q084",
+  "slide": 49,
+  "chapter": 7,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "広鼻猿類にあたるものとして、スライド36・49に合うものはどれか。",
+  "options": [
+   {
+    "text": "旧世界ザル",
+    "explanation": "狭鼻猿類",
+    "correct": false
+   },
+   {
+    "text": "チンパンジー",
+    "explanation": "狭鼻猿類",
+    "correct": false
+   },
+   {
+    "text": "新世界ザル",
+    "explanation": "スライド36・49",
+    "correct": true
+   },
+   {
+    "text": "ヒト",
+    "explanation": "狭鼻猿類",
+    "correct": false
+   },
+   {
+    "text": "オランウータン",
+    "explanation": "狭鼻猿類",
+    "correct": false
+   }
+  ],
+  "explanation": "広鼻猿＝<b>新世界猿</b>（リスザル、クモザルなど）。",
+  "point": "広鼻＝新世界。",
+  "tags": [
+   "霊長類"
+  ]
+ },
+ {
+  "id": "q085",
+  "slide": 50,
+  "chapter": 7,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "類人猿とヒトの違いとして、ヒトの直立に関わる特徴でスライド50に合うものはどれか。",
+  "options": [
+   {
+    "text": "脊柱が頭蓋骨の後方に位置する",
+    "explanation": "直下に位置",
+    "correct": false
+   },
+   {
+    "text": "脊柱のカーブがC状である",
+    "explanation": "S状",
+    "correct": false
+   },
+   {
+    "text": "足の母指が他の指と向かい合う",
+    "explanation": "同じ前を向く",
+    "correct": false
+   },
+   {
+    "text": "頭蓋骨の直下に脊柱が位置し、脊柱のカーブがS状である",
+    "explanation": "スライド50",
+    "correct": true
+   },
+   {
+    "text": "胸郭が左右に扁平である",
+    "explanation": "前後に扁平",
+    "correct": false
+   }
+  ],
+  "explanation": "直立：頭蓋骨の<b>直下</b>に脊柱、脊柱が<b>S状</b>、脊柱起立筋・大殿筋・下腿三頭筋の発達、骨盤が頑丈、胸・腹が正面、母指が他の指と同じ前、土踏まず、胸郭が前後に扁平。",
+  "point": "真下に脊柱、S字。",
+  "tags": [
+   "類人猿とヒト"
+  ]
+ },
+ {
+  "id": "q086",
+  "slide": 50,
+  "chapter": 7,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "ヒトの母指の筋について、スライド50に合うものはどれか。",
+  "options": [
+   {
+    "text": "長母指屈筋は短母指屈筋から独立した",
+    "explanation": "深指屈筋から",
+    "correct": false
+   },
+   {
+    "text": "長母指屈筋は深指屈筋から、短母指屈筋は長母指外転筋から独立した",
+    "explanation": "スライド50",
+    "correct": true
+   },
+   {
+    "text": "短母指屈筋は深指屈筋から独立した",
+    "explanation": "長母指外転筋から",
+    "correct": false
+   },
+   {
+    "text": "ヒトには長母指屈筋がない",
+    "explanation": "ある",
+    "correct": false
+   },
+   {
+    "text": "母指の筋は類人猿と同じである",
+    "explanation": "独立した筋",
+    "correct": false
+   }
+  ],
+  "explanation": "<b>長母指屈筋</b>（深指屈筋から独立）と<b>短母指屈筋</b>（長母指外転筋から独立）。",
+  "point": "どこから独立したかをセットで。",
+  "tags": [
+   "類人猿とヒト"
+  ]
+ },
+ {
+  "id": "q087",
+  "slide": 51,
+  "chapter": 7,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "スライド51で「人類の特徴」として挙げられているものはどれか。",
+  "options": [
+   {
+    "text": "二心房二心室",
+    "explanation": "哺乳類の特徴",
+    "correct": false
+   },
+   {
+    "text": "乳腺と哺乳の構造",
+    "explanation": "哺乳類の特徴",
+    "correct": false
+   },
+   {
+    "text": "前を向いた両眼",
+    "explanation": "霊長類の特徴",
+    "correct": false
+   },
+   {
+    "text": "手足の発達",
+    "explanation": "霊長類の特徴",
+    "correct": false
+   },
+   {
+    "text": "直立二足歩行、脳容量の増加",
+    "explanation": "スライド51",
+    "correct": true
+   }
+  ],
+  "explanation": "ヒトの特徴＝哺乳類の特徴（二心房二心室・乳腺と哺乳・胎生）＋霊長類の特徴（前を向いた両眼・手足の発達）＋<b>人類の特徴（直立二足歩行・脳容量の増加）</b>。",
+  "point": "3段重ねで考える。",
+  "tags": [
+   "ヒトらしさ"
+  ]
+ },
+ {
+  "id": "q088",
+  "slide": 51,
+  "chapter": 7,
+  "kind": "理解・統合",
+  "difficulty": 3,
+  "stem": "ヒトのもつ特徴とその由来（どの段階で獲得したか）の組み合わせとして、スライド51に合うものはどれか。",
+  "options": [
+   {
+    "text": "前を向いた両眼 ― 哺乳類の特徴",
+    "explanation": "霊長類",
+    "correct": false
+   },
+   {
+    "text": "胎生 ― 人類の特徴",
+    "explanation": "哺乳類",
+    "correct": false
+   },
+   {
+    "text": "二心房二心室 ― 哺乳類の特徴",
+    "explanation": "スライド51",
+    "correct": true
+   },
+   {
+    "text": "直立二足歩行 ― 霊長類の特徴",
+    "explanation": "人類",
+    "correct": false
+   },
+   {
+    "text": "脳容量の増加 ― 哺乳類の特徴",
+    "explanation": "人類",
+    "correct": false
+   }
+  ],
+  "explanation": "二心房二心室・乳腺と哺乳・胎生＝哺乳類、前を向いた両眼・手足＝霊長類、直立二足歩行・脳容量の増加＝人類。",
+  "point": "特徴を獲得した段階に戻す。",
+  "tags": [
+   "ヒトらしさ"
+  ]
+ }
+]

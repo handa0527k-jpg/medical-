@@ -1,0 +1,1586 @@
+[
+ {
+  "id": "j001",
+  "slide": 5,
+  "chapter": 1,
+  "topic": "性の決定",
+  "ask": "true",
+  "statements": [
+   {
+    "text": "XYで♂になる",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "XXで♀になる",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "常染色体の数で性が決まる",
+    "isTrue": false,
+    "note": "性染色体の組合せ"
+   },
+   {
+    "text": "スライド5の核型は♂である",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "XYで♀になる",
+    "isTrue": false,
+    "note": "♂"
+   }
+  ],
+  "boxes": [],
+  "figureBoxes": []
+ },
+ {
+  "id": "j002",
+  "slide": 6,
+  "chapter": 1,
+  "topic": "Sry",
+  "ask": "false",
+  "statements": [
+   {
+    "text": "SryはY染色体の短腕の末端にある",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "XX＋Sryのマウスは♂になった",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "Sryは♀化を起こす",
+    "isTrue": false,
+    "note": "♂化"
+   },
+   {
+    "text": "Sryによる♂化はヒト、マウスとも起こる",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "SryはX染色体の長腕にある",
+    "isTrue": false,
+    "note": "Y染色体の短腕の末端"
+   }
+  ],
+  "boxes": [],
+  "figureBoxes": []
+ },
+ {
+  "id": "j003",
+  "slide": 7,
+  "chapter": 1,
+  "topic": "性腺のホルモン",
+  "ask": "true",
+  "statements": [
+   {
+    "text": "テストステロンは内生殖器を発達させる",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "ジヒドロテストステロンは外生殖器・前立腺を発達させる",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "ミュラー管抑制物質はミュラー管を退縮させる",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "エストロゲンはミュラー管を退縮させる",
+    "isTrue": false,
+    "note": "ミュラー管の発達"
+   },
+   {
+    "text": "デフォルトは雄型と考えられている",
+    "isTrue": false,
+    "note": "雌型"
+   }
+  ],
+  "boxes": [],
+  "figureBoxes": []
+ },
+ {
+  "id": "j004",
+  "slide": 8,
+  "chapter": 1,
+  "topic": "AR欠損",
+  "ask": "false",
+  "statements": [
+   {
+    "text": "ARは男性ホルモン受容体である",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "ARKOの♂の外生殖器は正常♂と同じ",
+    "isTrue": false,
+    "note": "正常♀に近い"
+   },
+   {
+    "text": "ARKOは研究室データとして示されている",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "ARはエストロゲンを受け取る",
+    "isTrue": false,
+    "note": "男性ホルモン"
+   },
+   {
+    "text": "受容体がないとホルモンは作用できない",
+    "isTrue": true,
+    "note": ""
+   }
+  ],
+  "boxes": [],
+  "figureBoxes": []
+ },
+ {
+  "id": "j005",
+  "slide": 9,
+  "chapter": 1,
+  "topic": "爬虫類の性決定",
+  "ask": "true",
+  "statements": [
+   {
+    "text": "爬虫類は孵化の温度で性が決まる",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "魚類には性転換が容易に起こるものもいる",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "爬虫類・魚類の性決定は環境の影響を受けやすい",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "爬虫類はXYで♂になる",
+    "isTrue": false,
+    "note": "温度"
+   },
+   {
+    "text": "温度は性比に影響しない",
+    "isTrue": false,
+    "note": "影響する"
+   }
+  ],
+  "boxes": [],
+  "figureBoxes": []
+ },
+ {
+  "id": "j006",
+  "slide": 10,
+  "chapter": 1,
+  "topic": "鳥類の性決定",
+  "ask": "false",
+  "statements": [
+   {
+    "text": "鳥類はZZで♂になる",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "鳥類はZWで♀になる",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "鳥類のZ染色体は哺乳類のX染色体と相同である",
+    "isTrue": false,
+    "note": "相同性はない"
+   },
+   {
+    "text": "鳥類の性決定遺伝子はSryである",
+    "isTrue": false,
+    "note": "不明"
+   },
+   {
+    "text": "鳥類と哺乳類の性染色体の起源は異なる",
+    "isTrue": true,
+    "note": ""
+   }
+  ],
+  "boxes": [],
+  "figureBoxes": []
+ },
+ {
+  "id": "j007",
+  "slide": 12,
+  "chapter": 2,
+  "topic": "胎齢と妊娠齢",
+  "ask": "true",
+  "statements": [
+   {
+    "text": "胎齢は受精を0として数える",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "妊娠齢は最終月経の初日を0として数える",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "器官形成期は発生3〜8週である",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "受精は妊娠0週にあたる",
+    "isTrue": false,
+    "note": "妊娠2週"
+   },
+   {
+    "text": "出産予定日は妊娠38週である",
+    "isTrue": false,
+    "note": "40週"
+   }
+  ],
+  "boxes": [],
+  "figureBoxes": []
+ },
+ {
+  "id": "j008",
+  "slide": 14,
+  "chapter": 2,
+  "topic": "配偶子",
+  "ask": "false",
+  "statements": [
+   {
+    "text": "卵子の大きさは200 μmである",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "精子の頭部は5 μmである",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "精子の鞭毛は5 μmである",
+    "isTrue": false,
+    "note": "60 μm"
+   },
+   {
+    "text": "透明帯は放線冠の外側にある",
+    "isTrue": false,
+    "note": "内側"
+   },
+   {
+    "text": "囲卵腔は透明帯と卵母細胞の間にある",
+    "isTrue": true,
+    "note": ""
+   }
+  ],
+  "boxes": [],
+  "figureBoxes": []
+ },
+ {
+  "id": "j009",
+  "slide": 15,
+  "chapter": 2,
+  "topic": "受精と着床",
+  "ask": "true",
+  "statements": [
+   {
+    "text": "受精は卵管膨大部で起こる",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "着床は受精後約5〜6日である",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "排卵された卵は卵管采に取り込まれる",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "受精は子宮内腔で起こる",
+    "isTrue": false,
+    "note": "卵管膨大部"
+   },
+   {
+    "text": "卵割は着床後に始まる",
+    "isTrue": false,
+    "note": "卵管内で"
+   }
+  ],
+  "boxes": [],
+  "figureBoxes": []
+ },
+ {
+  "id": "j010",
+  "slide": 16,
+  "chapter": 2,
+  "topic": "透明帯",
+  "ask": "false",
+  "statements": [
+   {
+    "text": "ヒトの透明帯はZP1〜ZP4からなる",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "透明帯は卵母細胞が産生する",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "透明帯は精子が産生する",
+    "isTrue": false,
+    "note": "卵母細胞"
+   },
+   {
+    "text": "透明帯反応で多精が起こりやすくなる",
+    "isTrue": false,
+    "note": "防がれる"
+   },
+   {
+    "text": "先体反応ではZP1・ZP3・ZP4が複合作用する",
+    "isTrue": true,
+    "note": ""
+   }
+  ],
+  "boxes": [],
+  "figureBoxes": []
+ },
+ {
+  "id": "j011",
+  "slide": 17,
+  "chapter": 2,
+  "topic": "受精の過程",
+  "ask": "true",
+  "statements": [
+   {
+    "text": "受精はまず放線冠への貫入から始まる",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "先体反応は透明帯蛋白質により誘導される",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "侵入した精子核は男性前核になる",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "先体反応は細胞膜の融合の後に起こる",
+    "isTrue": false,
+    "note": "前"
+   },
+   {
+    "text": "表層反応は多精子受精を促進する",
+    "isTrue": false,
+    "note": "防止"
+   }
+  ],
+  "boxes": [],
+  "figureBoxes": []
+ },
+ {
+  "id": "j012",
+  "slide": 18,
+  "chapter": 2,
+  "topic": "表層反応",
+  "ask": "false",
+  "statements": [
+   {
+    "text": "囲卵腔は卵母細胞と透明帯の間の空隙である",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "卵子はsERに貯蔵されたCaイオンを放出する",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "表層顆粒は一種のペルオキシソームである",
+    "isTrue": false,
+    "note": "ライソゾーム"
+   },
+   {
+    "text": "Caイオンは精子から放出される",
+    "isTrue": false,
+    "note": "卵子のsERから"
+   },
+   {
+    "text": "表層反応により透明帯反応が生じる",
+    "isTrue": true,
+    "note": ""
+   }
+  ],
+  "boxes": [],
+  "figureBoxes": []
+ },
+ {
+  "id": "j013",
+  "slide": 19,
+  "chapter": 2,
+  "topic": "卵子の活性化",
+  "ask": "true",
+  "statements": [
+   {
+    "text": "受精卵を接合子という",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "受精により第2減数分裂が再開する",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "DNA量が倍加する",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "男性前核と女性前核は融合して1個の核になる",
+    "isTrue": false,
+    "note": "核膜が消失して2細胞へ"
+   },
+   {
+    "text": "二次極体は放出されない",
+    "isTrue": false,
+    "note": "放出される"
+   }
+  ],
+  "boxes": [],
+  "figureBoxes": []
+ },
+ {
+  "id": "j014",
+  "slide": 20,
+  "chapter": 3,
+  "topic": "卵割",
+  "ask": "false",
+  "statements": [
+   {
+    "text": "発生30時間で2細胞期になる",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "ICMは将来の胎児になる",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "OCMはES細胞の由来である",
+    "isTrue": false,
+    "note": "ICM"
+   },
+   {
+    "text": "胚盤胞は発生第1日にできる",
+    "isTrue": false,
+    "note": "4.5日"
+   },
+   {
+    "text": "ハッチングで透明帯が消失する",
+    "isTrue": true,
+    "note": ""
+   }
+  ],
+  "boxes": [],
+  "figureBoxes": []
+ },
+ {
+  "id": "j015",
+  "slide": 21,
+  "chapter": 3,
+  "topic": "着床",
+  "ask": "true",
+  "statements": [
+   {
+    "text": "着床は発生5.5〜6日に起こる",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "着床は子宮体部の後壁で生じることが多い",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "ICMのある側の栄養膜が子宮内膜に侵入する",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "着床は卵管膨大部で起こる",
+    "isTrue": false,
+    "note": "子宮"
+   },
+   {
+    "text": "着床は子宮頸部で起こることが多い",
+    "isTrue": false,
+    "note": "子宮体部の後壁"
+   }
+  ],
+  "boxes": [],
+  "figureBoxes": []
+ },
+ {
+  "id": "j016",
+  "slide": 22,
+  "chapter": 3,
+  "topic": "第8日",
+  "ask": "false",
+  "statements": [
+   {
+    "text": "胚結節から胚盤葉上層と下層が分化する",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "胚盤葉上層から羊膜芽細胞が分化する",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "羊膜腔は胚盤葉下層から生じる",
+    "isTrue": false,
+    "note": "上層（羊膜芽細胞）"
+   },
+   {
+    "text": "2層性胚盤は発生第3週である",
+    "isTrue": false,
+    "note": "第2週"
+   },
+   {
+    "text": "第8日に羊膜腔が出現する",
+    "isTrue": true,
+    "note": ""
+   }
+  ],
+  "boxes": [],
+  "figureBoxes": []
+ },
+ {
+  "id": "j017",
+  "slide": 23,
+  "chapter": 3,
+  "topic": "第9日",
+  "ask": "true",
+  "statements": [
+   {
+    "text": "ヒューザー膜は胚外体腔膜ともいう",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "ヒューザー膜は胚盤葉下層から分化する",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "第9日に原始卵黄嚢が出現する",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "ヒューザー膜は胚盤葉上層から分化する",
+    "isTrue": false,
+    "note": "下層"
+   },
+   {
+    "text": "第9日に3層性胚盤が完成する",
+    "isTrue": false,
+    "note": "第3週"
+   }
+  ],
+  "boxes": [],
+  "figureBoxes": []
+ },
+ {
+  "id": "j018",
+  "slide": 24,
+  "chapter": 3,
+  "topic": "第12日",
+  "ask": "false",
+  "statements": [
+   {
+    "text": "第12日に胚外中胚葉が形成される",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "胚外体腔は将来の絨毛膜腔である",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "胚外体腔は将来の羊膜腔である",
+    "isTrue": false,
+    "note": "絨毛膜腔"
+   },
+   {
+    "text": "胚外中胚葉は羊膜腔の内部にできる",
+    "isTrue": false,
+    "note": "栄養膜細胞層と原始卵黄嚢の間"
+   },
+   {
+    "text": "すきまが癒合して胚外体腔となる",
+    "isTrue": true,
+    "note": ""
+   }
+  ],
+  "boxes": [],
+  "figureBoxes": []
+ },
+ {
+  "id": "j019",
+  "slide": 25,
+  "chapter": 3,
+  "topic": "第13日",
+  "ask": "true",
+  "statements": [
+   {
+    "text": "胚外中胚葉は臓側層と壁側層に分けられる",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "壁側層は絨毛膜板になる",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "二次卵黄嚢が形成されている",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "臓側層は絨毛膜板になる",
+    "isTrue": false,
+    "note": "壁側層"
+   },
+   {
+    "text": "胚外中胚葉は3層に分かれる",
+    "isTrue": false,
+    "note": "2層"
+   }
+  ],
+  "boxes": [],
+  "figureBoxes": []
+ },
+ {
+  "id": "j020",
+  "slide": 26,
+  "chapter": 3,
+  "topic": "第3週",
+  "ask": "false",
+  "statements": [
+   {
+    "text": "原始結節と原始線条が出現する",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "胚盤葉上層の細胞が陥入を始める",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "胚盤葉下層の細胞が陥入する",
+    "isTrue": false,
+    "note": "上層"
+   },
+   {
+    "text": "原始線条は第1週に出現する",
+    "isTrue": false,
+    "note": "第3週"
+   },
+   {
+    "text": "陥入は原始線条から起こる",
+    "isTrue": true,
+    "note": ""
+   }
+  ],
+  "boxes": [],
+  "figureBoxes": []
+ },
+ {
+  "id": "j021",
+  "slide": 27,
+  "chapter": 3,
+  "topic": "3胚葉",
+  "ask": "true",
+  "statements": [
+   {
+    "text": "陥入して下層を置換した細胞が内胚葉になる",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "陥入して置換しなかった細胞が中胚葉になる",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "上層に残った細胞が外胚葉になる",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "内胚葉は胚盤葉下層がそのまま分化したものである",
+    "isTrue": false,
+    "note": "置換"
+   },
+   {
+    "text": "3胚葉が形成される過程を着床という",
+    "isTrue": false,
+    "note": "原腸形成"
+   }
+  ],
+  "boxes": [],
+  "figureBoxes": []
+ },
+ {
+  "id": "j022",
+  "slide": 29,
+  "chapter": 4,
+  "topic": "個体発生と系統発生",
+  "ask": "false",
+  "statements": [
+   {
+    "text": "個体発生は一個体の一生である",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "系統発生は生物の進化の歴史である",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "前成説は自然選択の説である",
+    "isTrue": false,
+    "note": "ホムンクルス"
+   },
+   {
+    "text": "体細胞が次世代へ遺伝情報を伝える",
+    "isTrue": false,
+    "note": "精子と卵子"
+   },
+   {
+    "text": "ホムンクルスは前成説で唱えられた",
+    "isTrue": true,
+    "note": ""
+   }
+  ],
+  "boxes": [],
+  "figureBoxes": []
+ },
+ {
+  "id": "j023",
+  "slide": 30,
+  "chapter": 4,
+  "topic": "リンネ",
+  "ask": "true",
+  "statements": [
+   {
+    "text": "リンネは二名法を提唱した",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "二名法は属名と種名で命名する",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "リンネはヒトを霊長類に分類した",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "リンネは19世紀の人物である",
+    "isTrue": false,
+    "note": "18世紀"
+   },
+   {
+    "text": "学名には英語を使う",
+    "isTrue": false,
+    "note": "ラテン語"
+   }
+  ],
+  "boxes": [],
+  "figureBoxes": []
+ },
+ {
+  "id": "j024",
+  "slide": 31,
+  "chapter": 4,
+  "topic": "ダーウィン",
+  "ask": "false",
+  "statements": [
+   {
+    "text": "種の起源は1859年に出版された",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "自然選択により種が分化する",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "ダーウィンは反復説を唱えた",
+    "isTrue": false,
+    "note": "ヘッケル"
+   },
+   {
+    "text": "ダーウィンは人類のヨーロッパ起源説を唱えた",
+    "isTrue": false,
+    "note": "アフリカ起源説"
+   },
+   {
+    "text": "個体間の違いは親から子へ伝わる",
+    "isTrue": true,
+    "note": ""
+   }
+  ],
+  "boxes": [],
+  "figureBoxes": []
+ },
+ {
+  "id": "j025",
+  "slide": 32,
+  "chapter": 4,
+  "topic": "反復説",
+  "ask": "true",
+  "statements": [
+   {
+    "text": "反復説はヘッケルが唱えた",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "個体発生は系統発生を繰り返す",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "スライド32では生命誕生の歴史を35億年としている",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "反復説はリンネが唱えた",
+    "isTrue": false,
+    "note": "ヘッケル"
+   },
+   {
+    "text": "系統発生は個体発生を繰り返す",
+    "isTrue": false,
+    "note": "逆"
+   }
+  ],
+  "boxes": [],
+  "figureBoxes": []
+ },
+ {
+  "id": "j026",
+  "slide": 33,
+  "chapter": 4,
+  "topic": "系統樹",
+  "ask": "false",
+  "statements": [
+   {
+    "text": "系統樹は進化の関係を樹状に表した図である",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "分子系統解析はアミノ酸配列や遺伝子配列を用いる",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "ヘッケルの系統樹は現在の系統樹と同じである",
+    "isTrue": false,
+    "note": "異なる"
+   },
+   {
+    "text": "系統樹は全生物が別々の祖先をもつことを前提とする",
+    "isTrue": false,
+    "note": "共通の祖先"
+   },
+   {
+    "text": "ヘッケルの系統樹は1874年である",
+    "isTrue": true,
+    "note": ""
+   }
+  ],
+  "boxes": [],
+  "figureBoxes": []
+ },
+ {
+  "id": "j027",
+  "slide": 34,
+  "chapter": 5,
+  "topic": "生物全体の系統関係",
+  "ask": "true",
+  "statements": [
+   {
+    "text": "地球の誕生は約46億年前である",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "生物の出現は約38億年前である",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "動物の出現は約12億年前である",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "真核生物の出現は約6億年前である",
+    "isTrue": false,
+    "note": "約20億年前"
+   },
+   {
+    "text": "納豆菌は古細菌である",
+    "isTrue": false,
+    "note": "真性細菌"
+   }
+  ],
+  "boxes": [],
+  "figureBoxes": []
+ },
+ {
+  "id": "j028",
+  "slide": 35,
+  "chapter": 5,
+  "topic": "脊索動物の系統",
+  "ask": "false",
+  "statements": [
+   {
+    "text": "脊椎動物は約5億年前に出現した",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "羊膜類は約4億年前に出現した",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "両生類は羊膜類に含まれる",
+    "isTrue": false,
+    "note": "含まれない"
+   },
+   {
+    "text": "哺乳類は約4億年前に出現した",
+    "isTrue": false,
+    "note": "約2億年前"
+   },
+   {
+    "text": "頭索動物はナメクジウオである",
+    "isTrue": true,
+    "note": ""
+   }
+  ],
+  "boxes": [],
+  "figureBoxes": []
+ },
+ {
+  "id": "j029",
+  "slide": 36,
+  "chapter": 5,
+  "topic": "有胎盤哺乳類の系統",
+  "ask": "true",
+  "statements": [
+   {
+    "text": "霊長目は約1億年前に出現した",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "広鼻猿は新世界猿である",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "ヒト上科は約2000万年前に出現した",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "クジラは食肉目である",
+    "isTrue": false,
+    "note": "偶蹄鯨目"
+   },
+   {
+    "text": "ゾウは奇蹄目である",
+    "isTrue": false,
+    "note": "アフリカ獣目"
+   }
+  ],
+  "boxes": [],
+  "figureBoxes": []
+ },
+ {
+  "id": "j030",
+  "slide": 37,
+  "chapter": 5,
+  "topic": "ヒト上科",
+  "ask": "false",
+  "statements": [
+   {
+    "text": "ヒト上科はテナガザル科とヒト科からなる",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "ゴリラ属はヒト科に含まれる",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "オランウータン属はテナガザル科に含まれる",
+    "isTrue": false,
+    "note": "ヒト科"
+   },
+   {
+    "text": "アウストラロピテクスはヒト属である",
+    "isTrue": false,
+    "note": "別の属"
+   },
+   {
+    "text": "ヒトの学名はHomo sapiensである",
+    "isTrue": true,
+    "note": ""
+   }
+  ],
+  "boxes": [],
+  "figureBoxes": []
+ },
+ {
+  "id": "j031",
+  "slide": 38,
+  "chapter": 5,
+  "topic": "時間軸",
+  "ask": "true",
+  "statements": [
+   {
+    "text": "脊索動物の出現は6億年前である",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "両生類の出現（四肢の獲得）は4億年前である",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "新人の出現は20万年前である",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "哺乳類の出現は1億年前である",
+    "isTrue": false,
+    "note": "2億年前"
+   },
+   {
+    "text": "人類の出現は2千万年前である",
+    "isTrue": false,
+    "note": "7百万年前"
+   }
+  ],
+  "boxes": [],
+  "figureBoxes": []
+ },
+ {
+  "id": "j032",
+  "slide": 39,
+  "chapter": 5,
+  "topic": "脊索動物",
+  "ask": "false",
+  "statements": [
+   {
+    "text": "頭索類はナメクジウオである",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "尾索類はホヤの幼生である",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "脊索動物は二心房二心室をもつ",
+    "isTrue": false,
+    "note": "多小心"
+   },
+   {
+    "text": "脊索動物は四肢をもつ",
+    "isTrue": false,
+    "note": "四肢は両生類"
+   },
+   {
+    "text": "脊索動物は脊椎動物の原型である",
+    "isTrue": true,
+    "note": ""
+   }
+  ],
+  "boxes": [],
+  "figureBoxes": []
+ },
+ {
+  "id": "j033",
+  "slide": 40,
+  "chapter": 5,
+  "topic": "ナメクジウオ",
+  "ask": "true",
+  "statements": [
+   {
+    "text": "ナメクジウオは脊索動物の中で最も原始的とされた",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "約2万1600個の遺伝子が見つかった",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "ホヤ類を祖先とする従来の説を覆した",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "ホヤ類が脊椎動物の祖先と確定した",
+    "isTrue": false,
+    "note": "覆した"
+   },
+   {
+    "text": "ナメクジウオには脊索がない",
+    "isTrue": false,
+    "note": "脊索動物"
+   }
+  ],
+  "boxes": [],
+  "figureBoxes": []
+ },
+ {
+  "id": "j034",
+  "slide": 41,
+  "chapter": 6,
+  "topic": "無顎類",
+  "ask": "false",
+  "statements": [
+   {
+    "text": "現存する無顎類は円口類である",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "無顎類の内耳は二半規管である",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "無顎類は胸鰭・腹鰭をもつ",
+    "isTrue": false,
+    "note": "ない"
+   },
+   {
+    "text": "無顎類の泌尿器系は後腎である",
+    "isTrue": false,
+    "note": "前腎＋中腎"
+   },
+   {
+    "text": "無顎類は咽頭が丸く開いている",
+    "isTrue": true,
+    "note": ""
+   }
+  ],
+  "boxes": [],
+  "figureBoxes": []
+ },
+ {
+  "id": "j035",
+  "slide": 42,
+  "chapter": 6,
+  "topic": "有顎類",
+  "ask": "true",
+  "statements": [
+   {
+    "text": "有顎類の心臓は一心房一心室である",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "有顎類の内耳は三半規管である",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "肉鰭類には肺魚・シーラカンスが含まれる",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "サメは硬骨魚類である",
+    "isTrue": false,
+    "note": "軟骨魚類"
+   },
+   {
+    "text": "有顎類の泌尿器系は後腎である",
+    "isTrue": false,
+    "note": "中腎"
+   }
+  ],
+  "boxes": [],
+  "figureBoxes": []
+ },
+ {
+  "id": "j036",
+  "slide": 43,
+  "chapter": 6,
+  "topic": "両生類",
+  "ask": "false",
+  "statements": [
+   {
+    "text": "両生類は肉鰭類から生じた",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "両生類の心臓は二心房一心室である",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "両生類の成体は前腎をもつ",
+    "isTrue": false,
+    "note": "中腎"
+   },
+   {
+    "text": "両生類は殻付き卵を産む",
+    "isTrue": false,
+    "note": "爬虫類"
+   },
+   {
+    "text": "両生類で肺が形成される",
+    "isTrue": true,
+    "note": ""
+   }
+  ],
+  "boxes": [],
+  "figureBoxes": []
+ },
+ {
+  "id": "j037",
+  "slide": 44,
+  "chapter": 6,
+  "topic": "爬虫類",
+  "ask": "true",
+  "statements": [
+   {
+    "text": "爬虫類の心臓は二心房不完全二心室である",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "爬虫類の泌尿器系は後腎である",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "単弓類から哺乳類が生じた",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "カメは二弓類である",
+    "isTrue": false,
+    "note": "無弓類"
+   },
+   {
+    "text": "爬虫類は体外受精である",
+    "isTrue": false,
+    "note": "交接器で体内受精"
+   }
+  ],
+  "boxes": [],
+  "figureBoxes": []
+ },
+ {
+  "id": "j038",
+  "slide": 45,
+  "chapter": 7,
+  "topic": "哺乳類",
+  "ask": "false",
+  "statements": [
+   {
+    "text": "哺乳類の心臓は二心房二心室である",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "カモノハシは単孔類である",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "オポッサムは単孔類である",
+    "isTrue": false,
+    "note": "有袋類"
+   },
+   {
+    "text": "哺乳類は尿生殖路と糞道が共通である",
+    "isTrue": false,
+    "note": "別"
+   },
+   {
+    "text": "哺乳類は恒温である",
+    "isTrue": true,
+    "note": ""
+   }
+  ],
+  "boxes": [],
+  "figureBoxes": []
+ },
+ {
+  "id": "j039",
+  "slide": 46,
+  "chapter": 7,
+  "topic": "乳腺の進化",
+  "ask": "true",
+  "statements": [
+   {
+    "text": "乳腺は汗腺から派生したと推測される",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "エクリン汗腺は水と電解質を分泌する",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "アポクリン腺は多くの哺乳類が全身にもつ",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "エクリン汗腺は蛋白質・脂質・糖質を分泌する",
+    "isTrue": false,
+    "note": "アポクリン"
+   },
+   {
+    "text": "カモノハシは乳頭から授乳する",
+    "isTrue": false,
+    "note": "皮膚の表面"
+   }
+  ],
+  "boxes": [],
+  "figureBoxes": []
+ },
+ {
+  "id": "j040",
+  "slide": 47,
+  "chapter": 7,
+  "topic": "乳腺の位置",
+  "ask": "false",
+  "statements": [
+   {
+    "text": "ヒトの乳腺は腋窩・胸部に位置する",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "乳頭は対をなす",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "牛の乳腺は腋窩・胸部にある",
+    "isTrue": false,
+    "note": "鼠径部"
+   },
+   {
+    "text": "ジュゴンと象は遠縁である",
+    "isTrue": false,
+    "note": "近縁"
+   },
+   {
+    "text": "乳頭数の最大は25個である",
+    "isTrue": true,
+    "note": ""
+   }
+  ],
+  "boxes": [],
+  "figureBoxes": []
+ },
+ {
+  "id": "j041",
+  "slide": 48,
+  "chapter": 7,
+  "topic": "胎盤",
+  "ask": "true",
+  "statements": [
+   {
+    "text": "卵の膜の血管の発達が胎盤の形成につながった",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "爬虫類・鳥類の胚は卵黄から栄養を得る",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "哺乳類は胎盤をもつ",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "鳥類は胎盤をもつ",
+    "isTrue": false,
+    "note": "卵"
+   },
+   {
+    "text": "胎盤は卵殻が変化したものである",
+    "isTrue": false,
+    "note": "卵の膜の血管の発達から"
+   }
+  ],
+  "boxes": [],
+  "figureBoxes": []
+ },
+ {
+  "id": "j042",
+  "slide": 49,
+  "chapter": 7,
+  "topic": "霊長類",
+  "ask": "false",
+  "statements": [
+   {
+    "text": "ヒトは狭鼻猿類に含まれる",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "新世界ザルは広鼻猿類である",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "ゴリラは広鼻猿類である",
+    "isTrue": false,
+    "note": "狭鼻猿類"
+   },
+   {
+    "text": "旧世界ザルは広鼻猿類である",
+    "isTrue": false,
+    "note": "狭鼻猿類"
+   },
+   {
+    "text": "スライド49には脳の容積の変化が示されている",
+    "isTrue": true,
+    "note": ""
+   }
+  ],
+  "boxes": [],
+  "figureBoxes": []
+ },
+ {
+  "id": "j043",
+  "slide": 50,
+  "chapter": 7,
+  "topic": "類人猿とヒトの違い",
+  "ask": "true",
+  "statements": [
+   {
+    "text": "ヒトでは頭蓋骨の直下に脊柱が位置する",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "ヒトの脊柱のカーブはS状である",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "ヒトでは土踏まずが形成される",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "ヒトの胸郭は左右に扁平である",
+    "isTrue": false,
+    "note": "前後に扁平"
+   },
+   {
+    "text": "長母指屈筋は短母指屈筋から独立した",
+    "isTrue": false,
+    "note": "深指屈筋から"
+   }
+  ],
+  "boxes": [],
+  "figureBoxes": []
+ },
+ {
+  "id": "j044",
+  "slide": 51,
+  "chapter": 7,
+  "topic": "ヒトらしさ",
+  "ask": "false",
+  "statements": [
+   {
+    "text": "直立二足歩行は人類の特徴である",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "前を向いた両眼は霊長類の特徴である",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "胎生は人類だけの特徴である",
+    "isTrue": false,
+    "note": "哺乳類の特徴"
+   },
+   {
+    "text": "二心房二心室は霊長類の特徴である",
+    "isTrue": false,
+    "note": "哺乳類の特徴"
+   },
+   {
+    "text": "脳容量の増加は人類の特徴である",
+    "isTrue": true,
+    "note": ""
+   }
+  ],
+  "boxes": [],
+  "figureBoxes": []
+ }
+]
