@@ -24,6 +24,7 @@ def kana(t):
     return ''.join(x['hira'] for x in kks.convert(t))
 m = WhisperModel('small', device='cpu', compute_type='int8', cpu_threads=4)
 base = f'public/courses/{course}/audio'
+OUT = os.environ.get('CHECK_OUT') or f'.audio-check/{course}.json'
 out = []
 for L in lecs:
     man = json.load(open(f'{base}/lecture-{L}/manifest.json'))
@@ -33,7 +34,7 @@ for L in lecs:
     t0 = time.time()
     for cid, c in man['cues'].items():
         if 'byteStart' not in c: continue
-        p = '/tmp/cue.mp3'; open(p, 'wb').write(data[c['byteStart']:c['byteStart'] + c['byteLength']])
+        p = f'/tmp/cue-{os.getpid()}.mp3'; open(p, 'wb').write(data[c['byteStart']:c['byteStart'] + c['byteLength']])
         segs, _ = m.transcribe(p, language='ja', beam_size=5, vad_filter=False, condition_on_previous_text=False)
         heard = ''.join(s.text for s in segs)
         exp = speech.get(cid, '')
@@ -44,7 +45,8 @@ for L in lecs:
             if r2 > r: heard, r = h2, r2
         out.append({'lec': L, 'id': cid, 'ratio': round(r, 3), 'expected': exp, 'heard': heard})
     print(L, len(man['cues']), 'cues', round(time.time() - t0), 's', flush=True)
-os.makedirs('.audio-check', exist_ok=True)
-json.dump(out, open(f'.audio-check/{course}.json', 'w'), ensure_ascii=False, indent=0)
+    # save after every lecture so an interrupted run keeps what it has checked
+    os.makedirs('.audio-check', exist_ok=True)
+    json.dump(out, open(OUT, 'w'), ensure_ascii=False, indent=0)
 for x in sorted(out, key=lambda x: x['ratio']):
     if x['ratio'] < 0.8: print(f"{x['lec']} {x['ratio']:.2f} | {x['expected'][:50]} | {x['heard'][:50]}")
