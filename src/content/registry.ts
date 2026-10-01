@@ -1,21 +1,42 @@
 /**
- * Course registry. Every folder in ./courses with an index.ts default-exporting
- * a Course is picked up automatically — adding a lecture never touches app code.
+ * Course registry. Every folder in ./courses with a course.json and an index.ts
+ * default-exporting a Course is picked up automatically — adding a lecture never
+ * touches app code.
+ *
+ * Only the small course.json files are bundled eagerly (for the course picker);
+ * each course's content (textbook, questions, figures, animations) is a separate
+ * chunk that is loaded when that course is opened.
  */
-import type { Course } from './types';
+import type { Course, CourseMeta } from './types';
 
-const modules = import.meta.glob<{ default: Course }>('./courses/*/index.ts', { eager: true });
+const metas = import.meta.glob<CourseMeta>('./courses/*/course.json', { eager: true, import: 'default' });
+const loaders = import.meta.glob<{ default: Course }>('./courses/*/index.ts');
 
-export const COURSES: Course[] = Object.values(modules)
-  .map((m) => m.default)
-  .sort((a, b) => a.lecture.number - b.lecture.number);
+const dirOf = (path: string) => path.split('/')[2];
 
-export const getCourse = (id: string) => COURSES.find((c) => c.id === id);
-export const DEFAULT_COURSE = COURSES[0];
+/** Lightweight descriptions of every course, in lecture order. */
+export const COURSES: CourseMeta[] = Object.values(metas).sort((a, b) => a.lecture.number - b.lecture.number);
+export const DEFAULT_COURSE_ID = COURSES[0].id;
+
+const loaderById: Record<string, () => Promise<{ default: Course }>> = Object.fromEntries(
+  Object.entries(loaders).map(([path, load]) => [metas[`./courses/${dirOf(path)}/course.json`]?.id ?? dirOf(path), load]),
+);
+
+/** Load one course's full content. */
+export async function loadCourse(id: string): Promise<Course> {
+  const load = loaderById[id] ?? loaderById[DEFAULT_COURSE_ID];
+  return (await load()).default;
+}
 
 const KEY = 'medstudy:course';
-export function selectedCourse(): Course {
-  try { return getCourse(JSON.parse(localStorage.getItem(KEY) || 'null')) ?? DEFAULT_COURSE; } catch { return DEFAULT_COURSE; }
+/** The course the learner picked last (falls back to the first course). */
+export function selectedCourseId(): string {
+  try {
+    const id = JSON.parse(localStorage.getItem(KEY) || 'null');
+    return typeof id === 'string' && loaderById[id] ? id : DEFAULT_COURSE_ID;
+  } catch {
+    return DEFAULT_COURSE_ID;
+  }
 }
 export function selectCourse(id: string) {
   try { localStorage.setItem(KEY, JSON.stringify(id)); } catch { /* ignore */ }

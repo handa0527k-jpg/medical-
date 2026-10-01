@@ -44,3 +44,6 @@ main.app-main { padding-top: 24px; padding-bottom: calc(90px + var(--safe-b)); m
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; scroll-behavior: auto !important; }
 }
+
+/* shown in #root while the selected course's content chunk loads */
+.boot-msg { margin: 30vh auto 0; text-align: center; color: var(--mute); font-family: var(--f-sans); }

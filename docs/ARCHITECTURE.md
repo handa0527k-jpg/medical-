@@ -9,8 +9,10 @@ content (JSON + draw code)  →  engine (framework-free)  →  features (React s
 ```
 
 - **content/** — everything a course teaches is data typed by `src/content/types.ts`.
-  `registry.ts` globs `courses/*/index.ts`, so a new folder is a new course. Lecture
-  narrations are code-split (`loadLecture`) because they are the largest files.
+  `registry.ts` globs `courses/*/course.json` (eager, for the course picker) and
+  `courses/*/index.ts` (lazy), so a new folder is a new course and each course's
+  content is its own chunk: `main.tsx` loads only the selected course before
+  rendering. Lecture narrations are further split per chapter (`loadLecture`).
 - **engine/** — no React:
   - `animation/stage.ts` builds the SVG scene of a mechanism animation once and
     redraws it for `(step, progress)`: camera (viewBox) moves, macro tissue overlay,

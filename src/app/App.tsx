@@ -1,6 +1,6 @@
-import { lazy, Suspense, useEffect, useMemo, useState } from 'react';
+import { lazy, Suspense, useEffect, useMemo } from 'react';
 import { HashRouter, Route, Routes, useLocation } from 'react-router-dom';
-import { selectedCourse } from '../content/registry';
+import type { Course } from '../content/types';
 import { CourseContext } from './course';
 import { StoreContext, useProgress } from '../state/hooks';
 import { ProgressStore } from '../state/store';
@@ -48,8 +48,7 @@ function ThemeSync() {
   return null;
 }
 
-export function App() {
-  const [course] = useState(selectedCourse);
+export function App({ course }: { course: Course }) {
   const store = useMemo(() => new ProgressStore(new LocalStorageRepository(), course.id), [course.id]);
   useEffect(() => { document.title = `MED·STUDY ${course.title}`; }, [course]);
   useEffect(() => {

@@ -86,7 +86,7 @@ src/
   state/          学習履歴ストア（Repositoryで保存先を差し替え可能）と分析関数
   content/
     types.ts      教材データの型
-    registry.ts   教材フォルダを自動登録
+    registry.ts   教材フォルダを自動登録（選んだ教材だけを読み込む）
     courses/genetics-basics/   遺伝子の基礎（黒板授業：lessons/lecture-01〜06.md）
     courses/histology-cytoplasm/
     courses/histology-nucleus/
