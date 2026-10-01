@@ -1,7 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useCourse } from '../../app/course';
-import { metaphorWord } from '../../content/registry';
 import { Rich } from '../../components/Rich';
 import { Icon } from '../../components/Icon';
 import { SourceChips } from '../../components/Slide';
@@ -17,7 +16,7 @@ const pad = (n: number) => String(n).padStart(2, '0');
 type Overlay = 'start' | 'ask' | 'end' | null;
 
 /** Scripted mechanism animation with full playback controls. */
-export default function AnimationPlayer({ id, compact }: { id: string; compact?: boolean }) {
+export default function AnimationPlayer({ id, compact, startAt }: { id: string; compact?: boolean; startAt?: number }) {
   const course = useCourse();
   const store = useStore();
   const A = course.animations[id];
@@ -117,7 +116,8 @@ export default function AnimationPlayer({ id, compact }: { id: string; compact?:
   useEffect(() => {
     const host = stageRef.current!;
     P.current.stage = new AnimationStage(host, A.def, A.script, course.macroSvg(), A.meta.modes);
-    P.current.T = 0; P.current.cur = -1;
+    P.current.T = startAt !== undefined ? CL(startAt / total) * total : 0; P.current.cur = -1;
+    if (startAt !== undefined) setOverlay(null);
     render();
     const ro = new ResizeObserver(() => { if (!P.current.play) render(); });
     ro.observe(host);
@@ -125,7 +125,7 @@ export default function AnimationPlayer({ id, compact }: { id: string; compact?:
     io.observe(host);
     const p = P.current;
     return () => { ro.disconnect(); io.disconnect(); cancelAnimationFrame(p.raf); p.play = false; p.stage = null; host.innerHTML = ''; };
-  }, [A, course, render, pause]);
+  }, [A, course, render, pause, startAt, total]);
 
   useEffect(() => { P.current.speed = speed; }, [speed]);
 
@@ -214,7 +214,7 @@ export default function AnimationPlayer({ id, compact }: { id: string; compact?:
           <span className="spd" role="group" aria-label="再生速度">
             {SPEEDS.map((v) => <button key={v} className={v === speed ? 'on' : ''} onClick={() => setSpeed(v)} aria-pressed={v === speed}>{v}×</button>)}
           </span>
-          <button className={'fct' + (fac ? ' on' : '')} onClick={() => setFac((f) => !f)} aria-pressed={fac}>{metaphorWord(course)}のたとえ</button>
+          <button className={'fct' + (fac ? ' on' : '')} onClick={() => setFac((f) => !f)} aria-pressed={fac}>{course.metaphorLabel?.name ?? '工場メタファー'}</button>
           <span className="tm" ref={tmRef}>0:00 / {fmtT(total)}</span>
         </div>
         <div className="achips" role="group" aria-label="重要ポイントへジャンプ">
@@ -230,7 +230,7 @@ export default function AnimationPlayer({ id, compact }: { id: string; compact?:
         <div className="ah1"><span className="an">[{pad(cur.gn)}] {cur.g}</span><Rich as="b" html={cur.t} /></div>
         <div className={'afac' + (fac ? '' : ' off')}>
           <div><span>MEDICAL</span><Rich as="p" html={cur.tx} /></div>
-          <div className="ff"><span>FACTORY</span><Rich as="p" html={cur.fac || ''} /></div>
+          <div className="ff"><span>{course.metaphorLabel?.en ?? 'FACTORY'}</span><Rich as="p" html={cur.fac || ''} /></div>
         </div>
         {cur.xp && <ul className="axp">{cur.xp.map((x, i) => <Rich as="li" key={i} html={x} />)}</ul>}
       </div>

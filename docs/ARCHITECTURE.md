@@ -54,6 +54,35 @@ the order the lecturer mentions them). Answers go through `ProgressStore.answer`
 they count in analytics and review, and `LectureReport` shows understanding, accuracy,
 missed questions and jump links back into the lecture when it ends.
 
+## Blackboard lectures
+
+`engine/board/` draws the lecture's persistent chalkboard on a canvas (no React per frame):
+
+- `types.ts` — the op list (`draw` / `mark` / `erase` / `point`, each tied to a cue with an offset
+  and a duration), camera keyframes, and the cost model shared with the script builder
+  (writing speed per character class, chalk travel speed).
+- `render.ts` — `BoardRenderer` compiles ops once (after the web font loads it re-measures every
+  glyph), then `draw(canvas, T, camera)` renders the board at any lecture time: slate texture
+  with old erasure smears and an aluminium frame/chalk tray, handwritten characters revealed in
+  1–3 left-to-right passes with per-character tilt/size/pressure, wobbling chalk strokes and
+  arrowheads, circles/boxes/underlines around measured text, erasing with a ghost, a grain
+  texture punched out of the chalk layer, falling chalk dust, and the lecturer's hand holding
+  chalk or an eraser (or pointing). Because the board is a pure function of T, the same renderer
+  serves the live lecture, scrubbing, the finished-board viewer, the 5-minute review and the
+  small board insets in quiz explanations.
+- `scripts/lib/board-script.ts` — the `@bb` script directives → ops, with panel layout, sketches
+  (helix, ladder, nucleotide, chromosome, gene, mRNA, nucleosome) and build-time checks for
+  overflow and overlap. A cue's `write` time keeps it on screen until its chalk work is done;
+  the player never fast-forwards through writing.
+
+The lecture player adds a digest mode (plays only cues marked `dig`), and links to
+`/lecture/:id/board` (finished board: pan/zoom, panels, key points, replay in write order) and
+`/review5/:id` (board → key points → figure → 5 questions → mistakes).
+
+Wrong options carry a `trap` (swap / reverse / number / scope / mechanism / fact); the
+analytics page groups wrong answers by trap to show *why* answers were wrong, next to
+accuracy per topic tag.
+
 ## Persistence and a future backend
 
 `LocalStorageRepository` stores one versioned JSON document per course

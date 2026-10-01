@@ -5,8 +5,9 @@ import { cueAt, timeLecture } from '../src/engine/lecture/timing';
 import type { Lecture } from '../src/engine/lecture/types';
 
 const root = resolve(__dirname, '../src/content/courses');
+// prep-school style courses (the genetics course uses the blackboard format and has its own tests)
 const byCourse: Record<string, Lecture[]> = Object.fromEntries(
-  readdirSync(root).map((id) => [id, readdirSync(resolve(root, id, 'narrations')).map((f) => JSON.parse(readFileSync(resolve(root, id, 'narrations', f), 'utf8')))]),
+  readdirSync(root).filter((id) => id.startsWith('histology-')).map((id) => [id, readdirSync(resolve(root, id, 'narrations')).map((f) => JSON.parse(readFileSync(resolve(root, id, 'narrations', f), 'utf8')))]),
 );
 const lectures: Lecture[] = Object.values(byCourse).flat();
 const chapters = (id: string) => JSON.parse(readFileSync(resolve(root, id, 'course.json'), 'utf8')).chapters.length as number;

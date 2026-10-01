@@ -1,5 +1,5 @@
 /** Pure, testable derivations over ProgressState + course content. */
-import type { Course, SingleQuestion } from '../content/types';
+import type { Course, SingleQuestion, TrapKind } from '../content/types';
 import type { ProgressState } from './types';
 import { dayKey } from './store';
 
@@ -112,4 +112,48 @@ export function todaysPlan(c: Course, s: ProgressState): Suggestion[] {
   const quizCh = c.chapters.find((ch) => c.questions.some((q) => q.chapter === ch.id && !s.questions[q.id]));
   if (quizCh && out.length < 3) out.push({ kind: 'quiz', chapter: quizCh.id, title: `第${quizCh.id}章の5択問題`, detail: `未回答 ${c.questions.filter((q) => q.chapter === quizCh.id && !s.questions[q.id]).length}問`, to: `/quiz/play?chapter=${quizCh.id}` });
   return out.slice(0, 3);
+}
+
+/**
+ * Why were answers wrong? Every wrong single-answer attempt is classified by
+ * the trap of the option chosen (swap / reverse / number / scope / mechanism
+ * / fact). Recent attempts weigh more: the last 200 answers are used.
+ */
+export function errorProfile(c: Course, s: ProgressState) {
+  const qs = new Map(c.questions.map((q) => [q.id, q]));
+  const counts = new Map<TrapKind, number>();
+  const examples = new Map<TrapKind, { q: SingleQuestion; choice: number; at: number }[]>();
+  let wrong = 0;
+  for (const a of s.answers.slice(-200)) {
+    if (a.correct || a.type !== 'single') continue;
+    const q = qs.get(a.qid);
+    if (!q) continue;
+    wrong++;
+    const trap = q.options[a.choice[0]]?.trap;
+    if (!trap) continue;
+    counts.set(trap, (counts.get(trap) || 0) + 1);
+    const ex = examples.get(trap) || [];
+    if (!ex.some((e) => e.q.id === q.id)) ex.unshift({ q, choice: a.choice[0], at: a.at });
+    examples.set(trap, ex.slice(0, 3));
+  }
+  const kinds = [...counts.entries()].sort((a, b) => b[1] - a[1]).map(([kind, n]) => ({ kind, n, pct: Math.round((n / Math.max(1, wrong)) * 100), examples: examples.get(kind) || [] }));
+  return { wrong, kinds };
+}
+
+/** accuracy per topic tag (only tags with answers), weakest first */
+export function byTag(c: Course, s: ProgressState) {
+  const tags = new Map<string, string[]>();
+  for (const q of c.questions) for (const t of q.tags) { if (!tags.has(t)) tags.set(t, []); tags.get(t)!.push(q.id); }
+  return [...tags.entries()].map(([tag, ids]) => ({ tag, ...rate(ids, s) })).filter((x) => x.answered > 0).sort((a, b) => (a.pct! - b.pct!) || b.answered - a.answered);
+}
+
+/** 5-minute review: up to n questions of one chapter — wrong first, then unanswered, then the oldest answered */
+export function quickReviewSet(c: Course, s: ProgressState, chapter: number, n = 5, shuffle: <T>(a: T[]) => T[] = (a) => a): SingleQuestion[] {
+  const qs = c.questions.filter((q) => q.chapter === chapter);
+  const wrong = qs.filter((q) => s.questions[q.id] && !s.questions[q.id].lastCorrect);
+  const fresh = qs.filter((q) => !s.questions[q.id]);
+  const old = qs.filter((q) => s.questions[q.id]?.lastCorrect).sort((a, b) => s.questions[a.id].lastAt - s.questions[b.id].lastAt);
+  const out: SingleQuestion[] = [];
+  for (const q of [...shuffle(wrong), ...shuffle(fresh), ...old]) { if (!out.includes(q)) out.push(q); if (out.length >= n) break; }
+  return out;
 }

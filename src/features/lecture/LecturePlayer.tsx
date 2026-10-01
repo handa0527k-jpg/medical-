@@ -12,14 +12,15 @@ import { useProgress, useStore } from '../../state/hooks';
 import { FrameContext, Visual, type FrameFn } from './Visuals';
 import { QuizContext, type LectureQuizApi } from './PrepVisuals';
 import { LectureReport } from './LectureReport';
+import { BoardContext, useBoard } from './Blackboard';
 
-const SPEEDS = [0.5, 0.75, 1, 1.25, 1.5, 2];
+const SPEEDS = [0.75, 1, 1.25, 1.5, 2];
 const LSN = ['①', '②', '③', '④', '⑤', '⑥', '⑦', '⑧'];
 export const fm2 = (s: number) => { s = Math.max(0, Math.floor(s + 0.001)); return `${String(Math.floor(s / 60)).padStart(2, '0')}:${String(s % 60).padStart(2, '0')}`; };
 
 type Overlay = 'start' | 'pause' | 'end' | null;
 
-export function LecturePlayer({ lecture, chapter }: { lecture: Lecture; chapter: number }) {
+export function LecturePlayer({ lecture, chapter, startAt }: { lecture: Lecture; chapter: number; startAt?: number }) {
   const course = useCourse();
   const store = useStore();
   const progress = useProgress();
@@ -59,6 +60,8 @@ export function LecturePlayer({ lecture, chapter }: { lecture: Lecture; chapter:
 
   const tl = useMemo(() => timeLecture(lecture, manifest || null), [lecture, manifest]);
   const { shots, cues, total, chapters } = tl;
+  const { r: board, version: boardVersion } = useBoard(lecture, tl);
+  const hasDigest = useMemo(() => cues.some((c) => c.dig), [cues]);
 
   /* ---------- UI state ---------- */
   const [cue, setCue] = useState<TimedCue>(cues[0]);
@@ -72,6 +75,7 @@ export function LecturePlayer({ lecture, chapter }: { lecture: Lecture; chapter:
   const [volume, setVolume] = useState(settings.volume);
   const [note, setNote] = useState('');
   const [theater, setTheater] = useState(false);
+  const [digest, setDigest] = useState(false);
   const saved = progress.lectures[chapter];
   const resumeAt = saved && !saved.completed && saved.position > 10 && saved.position < total - 10 ? saved.position : 0;
 
@@ -80,8 +84,11 @@ export function LecturePlayer({ lecture, chapter }: { lecture: Lecture; chapter:
   const tlApi = useRef<{ set: (f: number) => void } | null>(null);
   const tmRef = useRef<HTMLSpanElement>(null);
   const R = useRef({ T: 0, play: false, last: 0, raf: 0, cue: -1, speaking: false, spoken: '', spEnd: 0, done: new Set<string>(), watched: 0, savedAt: 0 });
-  const cfg = useRef({ speed, narr, autoPause, volume, narrator });
-  cfg.current = { speed, narr: narr && !!narrator, autoPause, volume, narrator };
+  const cfg = useRef({ speed, narr, autoPause, volume, narrator, digest });
+  cfg.current = { speed, narr: narr && !!narrator, autoPause, volume, narrator, digest };
+  const boardCtx = useMemo(() => (board ? { r: board, T: () => R.current.T, version: boardVersion } : null), [board, boardVersion]);
+  /** digest mode: the next "important" cue at or after t (null = none left) */
+  const nextDig = useCallback((t: number) => cues.find((c) => c.dig && c.t1 > t + 0.02) || null, [cues]);
 
   const speak = useCallback((c: TimedCue) => {
     const r = R.current, n = cfg.current.narrator;
@@ -138,13 +145,23 @@ export function LecturePlayer({ lecture, chapter }: { lecture: Lecture; chapter:
       if (r.speaking) nT = Math.min(nT, x.t1 - 0.05);
       else {
         // speech finished early → skip ahead to where the pause begins, then breathe for `gap`
+        // (but never hurry the chalk: the board work of this cue plays at normal speed)
         const speechEnd = x.t1 - x.gap;
-        if (nT < speechEnd) nT = Math.min(speechEnd, r.T + dt * sp * 5);
+        const chalkEnd = x.t0 + (x.write || 0);
+        if (nT < speechEnd && r.T >= chalkEnd) nT = Math.min(speechEnd, r.T + dt * sp * 5);
         if (nT >= x.t1 - 0.05 && (performance.now() - r.spEnd) / 1000 < x.gap / Math.sqrt(sp)) nT = x.t1 - 0.05;
       }
     }
     if (x.pause && cfg.current.autoPause && !r.done.has(x.id) && nT >= x.t1 - 0.05 && !(cfg.current.narr && r.speaking)) {
       r.T = x.t1 - 0.06; render(); pause(); r.done.add(x.id); setReveal(false); setOverlay('pause'); return;
+    }
+    if (cfg.current.digest) {
+      const c = cueAt(tl, Math.min(total, nT));
+      if (!c.dig) {
+        const n = nextDig(nT);
+        if (!n) nT = total;
+        else { hush(); nT = Math.max(nT, n.t0 + 0.001); }
+      }
     }
     r.watched += dt;
     r.T = Math.min(total, nT);
@@ -157,12 +174,13 @@ export function LecturePlayer({ lecture, chapter }: { lecture: Lecture; chapter:
       return;
     }
     r.raf = requestAnimationFrame(loop);
-  }, [cues, total, render, pause, saveProgress, store, chapter]);
+  }, [cues, total, render, pause, saveProgress, store, chapter, tl, nextDig, hush]);
 
   const start = useCallback(() => {
     const r = R.current;
     setOverlay(null);
     if (r.T >= total - 0.01) { r.T = 0; r.done.clear(); r.cue = -1; }
+    if (cfg.current.digest && !cueAt(tl, r.T).dig) { const n = nextDig(r.T); if (n) { r.T = n.t0 + 0.001; r.cue = -1; } }
     const c = cueAt(tl, r.T);
     // resuming mid-sentence: restart that sentence so voice and subtitles stay in sync
     if (cfg.current.narr) r.T = Math.max(r.T - 0.001, c.t0 + 0.001);
@@ -171,7 +189,7 @@ export function LecturePlayer({ lecture, chapter }: { lecture: Lecture; chapter:
     render();
     if (cfg.current.narr) speak(c);
     r.raf = requestAnimationFrame(loop);
-  }, [total, tl, cues, render, speak, loop]);
+  }, [total, tl, cues, render, speak, loop, nextDig]);
 
   const jump = useCallback((t: number, keep = true) => {
     const r = R.current, was = r.play;
@@ -184,12 +202,13 @@ export function LecturePlayer({ lecture, chapter }: { lecture: Lecture; chapter:
 
   // initial frame / resume position
   useEffect(() => {
-    R.current.T = 0; R.current.cue = -1;
+    R.current.T = startAt !== undefined ? CL(startAt / total) * total : 0; R.current.cue = -1;
+    if (startAt !== undefined) setOverlay(null);
     render();
     const r = R.current;
     return () => { r.play = false; cancelAnimationFrame(r.raf); cfg.current.narrator?.stop(); };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [tl]);
+  }, [tl, startAt]);
 
   // a newly mounted visual registers its frame callback after commit: draw it once even while paused
   useEffect(() => { const id = requestAnimationFrame(() => frame.current?.(R.current.T)); return () => cancelAnimationFrame(id); }, [cue]);
@@ -253,7 +272,7 @@ export function LecturePlayer({ lecture, chapter }: { lecture: Lecture; chapter:
 
   const shot = shots[cue.shot];
   const v = shot.visual;
-  const key = v.kind === 'anim' ? `anim:${v.anim}` : v.kind === 'figure' ? `fig:${v.figure}` : `shot:${cue.shot}`;
+  const key = v.kind === 'bb' ? 'bb' : v.kind === 'anim' ? `anim:${v.anim}` : v.kind === 'figure' ? `fig:${v.figure}` : `shot:${cue.shot}`;
   const srcKind = manifest ? 'audio' : narrator ? 'device' : 'none';
   const srcLabel = manifest ? narrator?.label : narrator ? narrator.label : '音声なし（字幕で進行）';
   const P = cue.pause;
@@ -268,15 +287,18 @@ export function LecturePlayer({ lecture, chapter }: { lecture: Lecture; chapter:
         </span>
       </div>
 
-      <div className={'lstage' + (playing ? ' cine' : '')} ref={stageRef}>
+      <div className={'lstage' + (playing ? ' cine' : '') + (shot.visual.kind === 'quiz' ? ' is-quiz' : '')} ref={stageRef}>
         <FrameContext.Provider value={frame}>
           <QuizContext.Provider value={quizApi}>
-            <Visual key={key} shot={shot} cue={cue} />
+            <BoardContext.Provider value={boardCtx}>
+              <Visual key={key} shot={shot} cue={cue} />
+            </BoardContext.Provider>
           </QuizContext.Provider>
         </FrameContext.Provider>
-        <div className="lsec"><span>{LSN[shot.section]}</span>{lecture.sections[shot.section]?.name}</div>
+        <div className="lsec" key={'sec' + shot.section}><span>{LSN[shot.section]}</span>{lecture.sections[shot.section]?.name}</div>
         {P && <div className="lpt">{P.tag}</div>}
-        {subs && (
+        {digest && <div className="ldig">重要ポイントだけ再生中</div>}
+        {subs && cue.text && (
           <div className={'lsub in'} key={cue.id} aria-live="polite">
             <span className="s"><Rich html={cue.text} />{note && <> <small className="lnote">（{note}）</small></>}</span>
           </div>
@@ -351,6 +373,9 @@ export function LecturePlayer({ lecture, chapter }: { lecture: Lecture; chapter:
             <input type="range" min={0} max={1} step={0.05} value={volume} disabled={!narrator} onChange={(e) => { const x = Number(e.target.value); setVolume(x); store.setSettings({ volume: x }); }} aria-label="音量" />
           </label>
           <button className={'fct' + (autoPause ? ' on' : '')} aria-pressed={autoPause} onClick={() => { setAutoPause(!autoPause); store.setSettings({ autoPause: !autoPause }); }}>自動一時停止</button>
+          {hasDigest && <button className={'fct' + (digest ? ' on' : '')} aria-pressed={digest} onClick={() => setDigest(!digest)}>重要ポイントだけ</button>}
+          {board && <Link className="fct" to={`/lecture/${chapter}/board`}>板書だけを見る</Link>}
+          {board && <Link className="fct" to={`/review5/${chapter}`}>5分復習</Link>}
         </div>
         {srcKind === 'device' && voices.length > 1 && (
           <div className="lvrow">

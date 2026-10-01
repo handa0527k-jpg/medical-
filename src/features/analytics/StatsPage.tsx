@@ -1,7 +1,8 @@
 import { Link } from 'react-router-dom';
 import { useCourse } from '../../app/course';
 import { useProgress, useStudyPage } from '../../state/hooks';
-import { attemptAccuracy, byChapter, bySlide, lectureSummary, mastery, overall, studyTime, weakChapters, wrongQuestions } from '../../state/analytics';
+import { attemptAccuracy, byChapter, bySlide, byTag, errorProfile, lectureSummary, mastery, overall, studyTime, weakChapters, wrongQuestions } from '../../state/analytics';
+import { TRAP_LABEL } from '../../content/types';
 import { Rich } from '../../components/Rich';
 
 export const fmtDur = (sec: number) => {
@@ -24,6 +25,8 @@ export function StatsPage() {
   const lec = lectureSummary(course, s);
   const maxDay = Math.max(600, ...st.days.map((d) => d.seconds));
   const reviewAnswers = s.answers.filter((a) => a.review).length;
+  const why = errorProfile(course, s);
+  const tags = byTag(course, s);
 
   return (
     <>
@@ -74,6 +77,42 @@ export function StatsPage() {
         </div>
         {weak.length > 0 && <p style={{ margin: '14px 0 0' }}>いちばん苦手：<b style={{ color: 'var(--eosin)' }}>第{weak[0].chapter.id}章 {weak[0].chapter.name}（{weak[0].pct}%）</b></p>}
       </div>
+
+      <div className="sec-h"><span className="en">WHY WRONG</span><h2>なぜ間違えたのか（誤答のタイプ）</h2></div>
+      {why.kinds.length ? (
+        <div className="grid cols-2">
+          {why.kinds.map((k) => (
+            <div key={k.kind} className="card why-card">
+              <div className="why-top"><b>{TRAP_LABEL[k.kind].name}</b><span className="en">{k.n}回・{k.pct}%</span></div>
+              <div className="bar low"><i style={{ width: `${k.pct}%` }} /></div>
+              <p className="muted">{TRAP_LABEL[k.kind].advice}</p>
+              {k.examples.map((e) => (
+                <Link key={e.q.id} className="why-ex" to={`/quiz/play?ids=${e.q.id}&label=${encodeURIComponent('解き直し')}&review=1`}>
+                  <small>あなたの答え：<Rich html={e.q.options[e.choice].text} /></small>
+                  <small className="muted">正しくは：<Rich html={e.q.options.find((o) => o.correct)!.text} /></small>
+                </Link>
+              ))}
+            </div>
+          ))}
+        </div>
+      ) : <p className="muted">誤答のタイプは、間違えた選択肢から分析します（{why.wrong ? 'この教材の問題にはタイプ情報がありません' : 'まだ誤答がありません'}）。</p>}
+
+      {tags.length > 0 && (
+        <>
+          <div className="sec-h"><span className="en">BY TOPIC</span><h2>テーマ別の理解度（弱い順）</h2></div>
+          <div className="card">
+            <div className="cbars">
+              {tags.map((t) => (
+                <div className="cbar" key={t.tag}>
+                  <span className="n" style={{ fontSize: 12 }}>{t.pct}%</span>
+                  <div><div className="nm">{t.tag}</div><div className={'bar ' + ((t.pct ?? 0) < 60 ? 'low' : 'ok')}><i style={{ width: `${t.pct}%` }} /></div></div>
+                  <span className="pc">{t.correct}/{t.answered}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </>
+      )}
 
       <div className="sec-h"><span className="en">BY SLIDE</span><h2>スライド別正答率</h2></div>
       <div className="card chart-card">

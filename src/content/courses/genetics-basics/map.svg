@@ -1,0 +1,45 @@
+<svg viewBox="0 0 1000 680" role="img" aria-label="遺伝情報の見取り図：核の中の染色体とDNA、遺伝子から転写・翻訳されてタンパク質ができるまで">
+<defs>
+<marker id="gae" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0L10 5L0 10z" fill="var(--eosin)"/></marker>
+<marker id="gah" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0L10 5L0 10z" fill="var(--hema2)"/></marker>
+</defs>
+<!-- cell -->
+<rect x="30" y="60" width="940" height="590" rx="140" fill="var(--cell)" stroke="var(--hema2)" stroke-width="6"/>
+<!-- nucleus -->
+<ellipse cx="360" cy="360" rx="290" ry="230" fill="var(--hemat)" stroke="var(--hema2)" stroke-width="4" stroke-dasharray="26 8"/>
+<text x="110" y="200" font-size="20" fill="var(--hema)" font-weight="700" font-family="Zen Kaku Gothic New">核</text>
+<!-- chromosome (X) -->
+<g stroke="var(--hema2)" stroke-width="22" stroke-linecap="round" opacity=".9">
+<path d="M150 260 L205 350 M260 260 L215 350"/><path d="M205 370 L150 470 M215 370 L265 470"/>
+</g>
+<circle cx="210" cy="360" r="12" fill="var(--eosin)"/>
+<!-- chromatin → nucleosomes → DNA -->
+<path d="M270 470 C320 520 360 470 400 500" fill="none" stroke="var(--hema2)" stroke-width="6" opacity=".7"/>
+<g fill="var(--hema)" opacity=".85"><circle cx="330" cy="505" r="11"/><circle cx="370" cy="492" r="11"/><circle cx="410" cy="505" r="11"/></g>
+<path d="M420 505 q15 -15 30 0 t30 0 t30 0" fill="none" stroke="#f5c542" stroke-width="4"/>
+<path d="M420 505 q15 15 30 0 t30 0 t30 0" fill="none" stroke="#3fb6ff" stroke-width="4"/>
+<!-- gene on DNA -->
+<line x1="330" y1="300" x2="610" y2="300" stroke="var(--hema)" stroke-width="4"/>
+<rect x="345" y="288" width="40" height="24" fill="none" stroke="#ff922b" stroke-width="3" stroke-dasharray="5 4"/>
+<rect x="395" y="286" width="36" height="28" fill="#51cf66"/><rect x="470" y="286" width="36" height="28" fill="#51cf66"/><rect x="545" y="286" width="46" height="28" fill="#51cf66"/>
+<!-- epigenetic tags on DNA -->
+<polygon points="440,270 452,270 446,282" fill="#f783ac"/><circle cx="520" cy="272" r="7" fill="#3bc9db"/>
+<!-- transcription & translation flow -->
+<path d="M470 260 C520 190 620 160 700 170" fill="none" stroke="var(--eosin)" stroke-width="4" marker-end="url(#gae)"/>
+<path d="M705 170 q20 -18 40 0 t40 0" fill="none" stroke="var(--eosin)" stroke-width="6"/>
+<path d="M790 190 C820 240 830 290 820 330" fill="none" stroke="var(--eosin)" stroke-width="4" marker-end="url(#gae)"/>
+<g fill="var(--eosin)"><circle cx="800" cy="370" r="14"/><circle cx="830" cy="380" r="14"/><circle cx="860" cy="370" r="14"/><circle cx="890" cy="385" r="14"/></g>
+<!-- mutation mark -->
+<g transform="translate(600,420)"><circle r="20" fill="none" stroke="#ffc15e" stroke-width="3"/><text y="7" text-anchor="middle" font-size="20" fill="#ffc15e" font-weight="700">✕</text></g>
+<!-- mitochondrion -->
+<ellipse cx="820" cy="545" rx="90" ry="45" fill="none" stroke="#3ddc97" stroke-width="4"/>
+<circle cx="820" cy="545" r="16" fill="none" stroke="#3ddc97" stroke-width="3"/>
+<text x="730" y="610" font-size="16" fill="#3ddc97" font-family="Zen Kaku Gothic New">ミトコンドリアDNA</text>
+<!-- chapter tags -->
+<g class="z" data-c="1" tabindex="0" role="button" aria-label="1 遺伝子とは何か"><rect class="hit" x="690" y="130" width="240" height="280"/><g class="tag" transform="translate(700,112)"><rect x="0" y="-22" width="206" height="36" rx="18"/><text x="14" y="4" class="n">1</text><text x="38" y="3">遺伝子とは何か</text></g></g>
+<g class="z" data-c="2" tabindex="0" role="button" aria-label="2 核酸の化学とDNAの二重らせん"><rect class="hit" x="410" y="480" width="120" height="50"/><g class="tag" transform="translate(420,558)"><rect x="0" y="-22" width="206" height="36" rx="18"/><text x="14" y="4" class="n">2</text><text x="38" y="3">核酸と二重らせん</text></g></g>
+<g class="z" data-c="3" tabindex="0" role="button" aria-label="3 染色体"><rect class="hit" x="130" y="240" width="160" height="250"/><g class="tag" transform="translate(66,238)"><rect x="0" y="-22" width="120" height="36" rx="18"/><text x="14" y="4" class="n">3</text><text x="38" y="3">染色体</text></g></g>
+<g class="z" data-c="4" tabindex="0" role="button" aria-label="4 遺伝子の構造と遺伝情報の発現"><rect class="hit" x="330" y="280" width="290" height="40"/><g class="tag" transform="translate(360,356)"><rect x="0" y="-22" width="170" height="36" rx="18"/><text x="14" y="4" class="n">4</text><text x="38" y="3">遺伝子の構造</text></g></g>
+<g class="z" data-c="5" tabindex="0" role="button" aria-label="5 ゲノムの変異・多型と動く遺伝子"><rect class="hit" x="570" y="390" width="70" height="70"/><g class="tag" transform="translate(560,470)"><rect x="0" y="-22" width="150" height="36" rx="18"/><text x="14" y="4" class="n">5</text><text x="38" y="3">変異と多型</text></g></g>
+<g class="z" data-c="6" tabindex="0" role="button" aria-label="6 エピゲノムとミトコンドリアゲノム"><rect class="hit" x="420" y="250" width="120" height="40"/><g class="tag" transform="translate(430,226)"><rect x="0" y="-22" width="190" height="36" rx="18"/><text x="14" y="4" class="n">6</text><text x="38" y="3">エピゲノム・mtDNA</text></g></g>
+</svg>

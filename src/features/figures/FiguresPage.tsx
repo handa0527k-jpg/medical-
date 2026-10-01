@@ -1,6 +1,5 @@
 import { Link, useParams } from 'react-router-dom';
 import { useCourse } from '../../app/course';
-import { metaphorWord } from '../../content/registry';
 import { InteractiveFigure } from '../../components/InteractiveFigure';
 import { NotFound } from '../../app/NotFound';
 import { useStudyPage } from '../../state/hooks';
@@ -13,7 +12,7 @@ export function FiguresPage() {
       <section className="page-h">
         <div className="kick">INTERACTIVE FIGURES</div>
         <h1>図解</h1>
-        <p>構造をタップすると、医学名 → {metaphorWord(course)}での役割 → 実際の機能 → 出典スライドの順に表示されます。</p>
+        <p>{course.intros?.figures ?? '構造をタップすると、医学名 → 工場での役割 → 実際の機能 → 出典スライドの順に表示されます。'}</p>
       </section>
       <div className="grid cols-auto gal" style={{ marginTop: 16 }}>
         {Object.values(course.figures).map((f) => {

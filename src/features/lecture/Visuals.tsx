@@ -1,9 +1,9 @@
 import { useEffect, useLayoutEffect, useRef } from 'react';
 import { useFrame } from './frame';
 import { CellMap, Chalk, Card, Compare, Roadmap, StageQuiz } from './PrepVisuals';
+import { BlackboardShot } from './Blackboard';
 export { FrameContext, type FrameFn } from './frame';
 import { useCourse } from '../../app/course';
-import { metaphorWord } from '../../content/registry';
 import { Rich } from '../../components/Rich';
 import { slideSrc } from '../../components/Slide';
 import { AnimationStage } from '../../engine/animation/stage';
@@ -16,11 +16,11 @@ interface VP { shot: TimedShot; cue: TimedCue }
 const focusOf = (cue: TimedCue) => cue.focus;
 
 export function Visual({ shot, cue }: VP) {
-  const word = metaphorWord(useCourse());
+  const course = useCourse();
   const v = shot.visual;
   switch (v.kind) {
     case 'title':
-      return <div className="ly in"><div className="lt"><div className="kick">LECTURE {String(v.chapter).padStart(2, '0')} ／ SLIDE {v.slides[0]}–{v.slides[v.slides.length - 1]}</div><div className="ln">第{v.chapter}講</div><h2>{v.name}</h2><p>比喩：{v.role}</p><i className="lline" /></div></div>;
+      return <div className="ly in"><div className="lt"><div className="kick">LECTURE {String(v.chapter).padStart(2, '0')} ／ SLIDE {v.slides[0]}–{v.slides[v.slides.length - 1]}</div><div className="ln">第{v.chapter}講</div><h2>{v.name}</h2><p>{course.metaphorLabel ? `${course.metaphorLabel.name}：` : '比喩：'}{v.role}</p><i className="lline" /></div></div>;
     case 'end':
       return <div className="ly in"><div className="lt"><div className="kick">END OF LECTURE</div><div className="ln">第{v.chapter}講</div><h2>{v.name}</h2><p>次は5択確認問題です</p><i className="lline" /></div></div>;
     case 'head':
@@ -43,7 +43,7 @@ export function Visual({ shot, cue }: VP) {
         <div className="ly in">
           <div className={'lls ' + (v.style || '')}>
             <Rich className="lbt" as="div" html={v.title} />
-            <ol>{v.items.map((x, i) => <Rich as="li" key={i} className={(i <= f || cue.pause ? 'show' : '') + (i === f ? ' cur' : '')} html={x} />)}</ol>
+            <ol>{v.items.map((x, i) => <li key={i} className={(i <= f || cue.pause ? 'show' : '') + (i === f ? ' cur' : '')}><Rich html={x} /></li>)}</ol>
           </div>
         </div>
       );
@@ -82,7 +82,7 @@ export function Visual({ shot, cue }: VP) {
       return (
         <div className="ly in">
           <div className="lbd">
-            <div className="lbt">図解：{word}の役割で見る登場人物</div>
+            <div className="lbt">図解：{course.metaphorLabel?.role ?? '工場の役割'}で見る登場人物</div>
             <div className="lcs">{v.items.map((x, i) => <div key={i} className={(i <= f ? 'show' : '') + (i === f ? ' cur' : '')}><Rich as="b" html={x[0]} /><Rich html={x[1]} /><Rich as="small" html={x[2]} /></div>)}</div>
           </div>
         </div>
@@ -104,6 +104,8 @@ export function Visual({ shot, cue }: VP) {
       return <StageQuiz v={v} shot={shot} cue={cue} />;
     case 'figure':
       return <FigureShot shot={shot} figure={v.figure} fkey={v.key} />;
+    case 'bb':
+      return <BlackboardShot />;
     case 'anim':
       return <AnimShot shot={shot} id={v.anim} step={v.step} hold={!!v.hold} />;
   }

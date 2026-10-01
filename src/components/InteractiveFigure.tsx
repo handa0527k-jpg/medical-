@@ -61,7 +61,7 @@ export function InteractiveFigure({ id, onExplore }: { id: string; onExplore?: (
         ) : (
           <>
             <Rich className="m1" html={d.name} as="div" />
-            <div className="arrow">▼ 工場での役割</div>
+            <div className="arrow">▼ {course.metaphorLabel?.role ?? '工場での役割'}</div>
             <Rich className="m2" html={d.role} />
             <div className="arrow">▼ 実際の医学的機能</div>
             <Rich className="m3" html={d.text} as="div" />

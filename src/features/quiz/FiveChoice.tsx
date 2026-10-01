@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState, type ReactNode } from 'react';
 import { Rich } from '../../components/Rich';
+import { TRAP_LABEL, type TrapKind } from '../../content/types';
 
 export const LETTERS = ['A', 'B', 'C', 'D', 'E'] as const;
 
@@ -9,7 +10,7 @@ export const shuffle = <T,>(a: T[]): T[] => {
   return r;
 };
 
-export interface ChoiceOption { text: string; correct: boolean; explanation: string }
+export interface ChoiceOption { text: string; correct: boolean; explanation: string; trap?: TrapKind }
 
 /**
  * One-best-answer card, always five options A–E (display order shuffled).
@@ -78,6 +79,9 @@ export function FiveChoice({ qid, label, meta, stem, options, explanation, point
           <div className={'verdict ' + (ok ? 'ok' : 'ng')}>{ok ? 'CORRECT' : 'INCORRECT'}<small>正解は {LETTERS[ansPos]}</small></div>
           {explanation && <div className="xpl"><span>解説</span><Rich html={explanation} /></div>}
           {point && <div className="trap"><span>重要ポイント</span><Rich html={point} /></div>}
+          {!ok && options[pick!].trap && (
+            <div className="why"><span>つまずきのタイプ</span><b>{TRAP_LABEL[options[pick!].trap!].name}</b><small>{TRAP_LABEL[options[pick!].trap!].advice}</small></div>
+          )}
           {after}
         </div>
       )}

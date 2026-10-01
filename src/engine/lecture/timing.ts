@@ -10,7 +10,7 @@ export function timeLecture(lecture: Lecture, audio?: AudioManifest | null): Tim
   const byShot = new Map<number, TimedCue[]>();
   for (const c of lecture.cues) {
     const rec = audio && audio.version === lecture.version ? audio.cues[c.id] : undefined;
-    const d = (rec ? rec.duration : c.dur) + c.gap;
+    const d = Math.max(rec ? rec.duration : c.dur, c.write || 0) + c.gap;
     const tc: TimedCue = { ...c, t0: 0, t1: 0, d };
     if (!byShot.has(c.shot)) byShot.set(c.shot, []);
     byShot.get(c.shot)!.push(tc);

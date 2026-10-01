@@ -1,7 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useCourse } from '../../app/course';
-import { metaphorWord } from '../../content/registry';
 import { useProgress, useStudyPage } from '../../state/hooks';
 import { mastery, overall, studyTime, todaysPlan, weakSlides, wrongQuestions } from '../../state/analytics';
 import { ChapterList } from '../textbook/ChapterList';
@@ -27,6 +26,7 @@ export function HomePage() {
   const readN = Object.keys(s.read).length;
   const lecDone = Object.values(s.lectures).filter((l) => l.completed).length;
   const next = plan[0];
+  const em = course.subtitleEm ?? (course.subtitle.endsWith('工場。') ? '工場。' : '');
 
   // cell map: chapter zones are <g class="z" data-c="n">; keep "read" state in sync
   useEffect(() => {
@@ -43,7 +43,7 @@ export function HomePage() {
         <div className="kick">{course.subject} · {course.lecture.label}</div>
         <div className="rule" />
         <div className="en-title">MEDICAL STUDY — INTERACTIVE LECTURE</div>
-        <h1>{course.subtitle.replace(metaphorWord(course) + '。', '')}<em>{metaphorWord(course)}。</em></h1>
+        <h1>{em && course.subtitle.endsWith(em) ? <>{course.subtitle.slice(0, -em.length)}<em>{em}</em></> : course.subtitle}</h1>
         <p className="sub">{course.title}（スライド{course.lecture.slideRange[0]}–{course.lecture.slideRange[1]}）。授業を受け、図とアニメーションで仕組みを見て、5択で確かめ、間違いを復習する——ひとつのアプリで完結します。</p>
         <div className="rule" />
         <div className="btnrow">
@@ -51,6 +51,8 @@ export function HomePage() {
           <Link className="btn" to="/book">教科書を開く</Link>
         </div>
       </section>
+
+      <TodayLecture />
 
       <div className="sec-h"><span className="en">TODAY</span><h2>今日の学習</h2></div>
       <div className="plan">
@@ -72,7 +74,7 @@ export function HomePage() {
         <div className="card stat"><h3>要復習</h3><div className="bignum" style={{ color: wrong ? 'var(--eosin)' : undefined }}>{wrong}<small>問</small></div><small><Link to="/review">弱点復習へ →</Link></small></div>
       </div>
 
-      <div className="sec-h"><span className="en">CELL MAP</span><h2>見取り図から学ぶ</h2></div>
+      <div className="sec-h"><span className="en">MAP</span><h2>{course.map?.title ?? '見取り図から学ぶ'}</h2></div>
       <div className="mapgrid">
         <div className="mapwrap">
           <div
@@ -81,7 +83,9 @@ export function HomePage() {
             onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openZone(e.target); } }}
             dangerouslySetInnerHTML={{ __html: course.mapSvg }}
           />
-          <div className="legend"><span><i className="ln" style={{ color: 'var(--eosin)' }} />作った蛋白を外へ出す流れ</span><span><i className="ln" style={{ color: 'var(--hema2)' }} />外から取り込んで分解する流れ</span></div>
+          <div className="legend">
+            {(course.map?.legend ?? [{ label: '作った蛋白を外へ出す流れ', color: 'var(--eosin)' }, { label: '外から取り込んで分解する流れ', color: 'var(--hema2)' }]).map((l) => <span key={l.label}><i className="ln" style={{ color: l.color }} />{l.label}</span>)}
+          </div>
         </div>
         <div>
           <h3 className="muted" style={{ fontSize: 13, margin: '0 0 8px', letterSpacing: '.1em' }}>最近学習したテーマ</h3>
@@ -102,5 +106,35 @@ export function HomePage() {
       <div className="sec-h"><span className="en">CHAPTERS</span><h2>章一覧</h2></div>
       <ChapterList />
     </>
+  );
+}
+
+/** 今日の授業: the next lecture to take, with its board / 5-minute review shortcuts. */
+function TodayLecture() {
+  const course = useCourse();
+  const s = useProgress();
+  const ch = course.chapters.find((c) => !s.lectures[c.id]?.completed) ?? course.chapters[course.chapters.length - 1];
+  const l = s.lectures[ch.id];
+  const pct = l ? Math.round(Math.min(1, l.maxPosition / Math.max(1, l.total)) * 100) : 0;
+  const done = course.chapters.filter((c) => s.lectures[c.id]?.completed).length;
+  return (
+    <section className="today-lec" aria-label="今日の授業">
+      <div className="tl-board" aria-hidden="true">
+        <span className="tl-chalk">第{ch.id}講</span>
+        <span className="tl-chalk big">{ch.name}</span>
+        <span className="tl-chalk y">{ch.overview.flow.slice(0, 3).join(' → ')}</span>
+      </div>
+      <div className="tl-body">
+        <div className="kick">TODAY'S LECTURE ・ {done}/{course.chapters.length}講 修了</div>
+        <h2>今日の授業：第{ch.id}講　{ch.name}</h2>
+        <p>{ch.overview.one}</p>
+        {pct > 0 && <div className="bar" style={{ margin: '8px 0 4px' }}><i style={{ width: `${pct}%` }} /></div>}
+        <div className="btnrow">
+          <Link className="btn eosin" to={`/lecture/${ch.id}`}>▶ {pct > 3 && pct < 100 ? '続きから受ける' : '授業を受ける'}</Link>
+          <Link className="btn" to={`/lecture/${ch.id}/board`}>板書だけを見る</Link>
+          <Link className="btn" to={`/review5/${ch.id}`}>5分復習</Link>
+        </div>
+      </div>
+    </section>
   );
 }
