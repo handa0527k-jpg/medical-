@@ -53,6 +53,10 @@ export interface Face {
   mouth?: number;
   brow?: number;
   smile?: number;
+  /** eyes opened wide (surprise, fear) 0..1 */
+  wide?: number;
+  /** inner brow ends lifted (sadness, worry) 0..1 */
+  sad?: number;
 }
 
 export interface Pose extends Face {
@@ -174,7 +178,7 @@ export function drawHead(look: Look, cx: number, cy: number, h: number, f: Face,
     if (!near && ay > 0.85) return;
     const sx = near ? 1 : 1 - ay * 0.5;
     const ex = fx + k * sep * (near ? 1 + ay * 0.04 : 1 - ay * 0.6);
-    const ew = h * (look.fem ? 0.078 : 0.072) * sx, eh = h * (look.fem ? 0.05 : 0.045), open = 1 - blink * 0.94;
+    const ew = h * (look.fem ? 0.078 : 0.072) * sx, eh = h * (look.fem ? 0.05 : 0.045) * (1 + CL(f.wide ?? 0) * 0.32), open = 1 - blink * 0.94;
     g.save(); g.translate(ex, eyeY);
     // eye white and iris, clipped by the lids
     if (open > 0.1) {
@@ -200,7 +204,9 @@ export function drawHead(look: Look, cx: number, cy: number, h: number, f: Face,
     // brow: thin and tapered, inner end lifts with worry/surprise
     g.strokeStyle = look.brows; g.lineWidth = lw * 1.6;
     const inner = -k * sd >= 0 ? -1 : 1; void inner;
-    g.beginPath(); g.moveTo(-ew * 1.1, -h * 0.088 - br * h * 0.035); g.quadraticCurveTo(0, -h * 0.112 - br * h * 0.05, ew * 1.15, -h * 0.092 - br * h * 0.02); g.stroke();
+    const sad = CL(f.sad ?? 0) * h, wd = CL(f.wide ?? 0) * h * 0.02;
+    const yIn = (x: number) => (k < 0 ? (x > 0 ? 1 : 0) : (x < 0 ? 1 : 0)); // inner end of this brow
+    g.beginPath(); g.moveTo(-ew * 1.1, -h * 0.088 - br * h * 0.035 - wd - (yIn(-1) ? sad * 0.04 : -sad * 0.012)); g.quadraticCurveTo(0, -h * 0.112 - br * h * 0.05 - wd - sad * 0.006, ew * 1.15, -h * 0.092 - br * h * 0.02 - wd - (yIn(1) ? sad * 0.04 : -sad * 0.012)); g.stroke();
     g.restore();
   });
 

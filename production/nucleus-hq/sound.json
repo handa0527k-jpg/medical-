@@ -1,0 +1,23 @@
+{
+  "_doc": "Sound cues for 「午前二時の本社ビル」. Anchors: <scene>.start/.end, <scene>#<n>.start/.end (n-th line), <scene>+s. gain in dB.",
+  "events": {},
+  "bgm": [
+    { "file": "production/nucleus-hq/audio/bgm/Almost New.mp3", "from": "gate+0.4", "to": "gate.end", "offset": 0, "gain": -11, "fadeIn": 2.5, "fadeOut": 2.5 }
+  ],
+  "ambience": [
+    { "file": "production/nucleus-hq/audio/se/synth/amb_street_night.wav", "from": "gate.start", "to": "gate.end", "gain": -17, "fadeIn": 0.8, "fadeOut": 1.0 }
+  ],
+  "sfx": [
+    { "at": "gate-0.75", "repeat": 8, "every": 0.716, "file": "production/nucleus-hq/audio/se/kenney/footstep_concrete_000.ogg", "gain": -14, "pan": -0.3 },
+    { "at": "gate-0.39", "repeat": 7, "every": 0.716, "file": "production/nucleus-hq/audio/se/kenney/footstep_concrete_003.ogg", "gain": -15, "pan": -0.25 },
+    { "at": "gate#1.start+2.0", "file": "production/nucleus-hq/audio/se/kenney/cloth2.ogg", "gain": -12 },
+    { "at": "gate#1.start+2.8", "file": "production/nucleus-hq/audio/se/kenney/bookPlace1.ogg", "gain": -16 },
+    { "at": "gate#2.start-0.2", "file": "production/nucleus-hq/audio/se/kenney/bookFlip1.ogg", "gain": -14 },
+    { "at": "gate#3.start+1.2", "file": "production/nucleus-hq/audio/se/kenney/glass_002.ogg", "gain": -22 },
+    { "at": "gate#4.start-0.2", "file": "production/nucleus-hq/audio/se/kenney/bookFlip2.ogg", "gain": -14 },
+    { "at": "gate#7.start+2.4", "file": "production/nucleus-hq/audio/se/kenney/cloth1.ogg", "gain": -14 },
+    { "at": "gate#8.start-0.25", "file": "production/nucleus-hq/audio/se/kenney/bookFlip1.ogg", "gain": -14 },
+    { "at": "gate#9.start+0.62", "repeat": 3, "every": 0.9, "file": "production/nucleus-hq/audio/se/kenney/footstep_carpet_002.ogg", "gain": -13, "pan": 0.3 },
+    { "at": "gate#9.end+0.5", "repeat": 5, "every": 0.716, "file": "production/nucleus-hq/audio/se/kenney/footstep_concrete_001.ogg", "gain": -16 }
+  ]
+}

@@ -49,7 +49,10 @@ function headquarters(cx: number, cy: number, r: number, t: number, mode: 'night
 }
 
 /* ---------- scenes ---------- */
+import { gate } from './scenes/gate';
+
 export const DRAW: Record<string, SceneDraw> = {
+  gate,
   hq(t) {
     sky('#121a33', '#22305a', '#3b3f6a'); stars(t, 90); moon(1120, 110, 34);
     // sleeping town
@@ -70,7 +73,7 @@ export const DRAW: Record<string, SceneDraw> = {
     label('核 ＝ 細胞の本社', t - 18, '#d57f45');
     vignette(0.4);
   },
-  gate(t) {
+  gateOld(t) {
     sky('#1b2244', '#2a3563', '#3c4778');
     // cross-section: cytoplasm above, the double membrane, nucleus below
     g.fillStyle = '#e6dcef'; g.fillRect(0, 380, W, 340);

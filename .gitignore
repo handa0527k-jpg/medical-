@@ -8,3 +8,8 @@ playwright-report
 .audio-cache
 .tmp/
 .audio-check/
+.cache
+production/*/audio/bgm/*.mp3
+production/*/audio/se/synth/
+production/*/scenes/*/*.wav
+production/*/**/*.wav
