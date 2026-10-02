@@ -200,346 +200,346 @@
 },
 "c06-0041": {
 "byteStart": 1711008,
-"byteLength": 31104,
-"duration": 5.184
+"byteLength": 31248,
+"duration": 5.208
 },
 "c06-0042": {
-"byteStart": 1742112,
+"byteStart": 1742256,
 "byteLength": 28080,
 "duration": 4.68
 },
 "c06-0043": {
-"byteStart": 1770192,
+"byteStart": 1770336,
 "byteLength": 12960,
 "duration": 2.16
 },
 "c06-0044": {
-"byteStart": 1783152,
+"byteStart": 1783296,
 "byteLength": 11808,
 "duration": 1.968
 },
 "c06-0045": {
-"byteStart": 1794960,
+"byteStart": 1795104,
 "byteLength": 17136,
 "duration": 2.856
 },
 "c06-0046": {
-"byteStart": 1812096,
+"byteStart": 1812240,
 "byteLength": 21312,
 "duration": 3.552
 },
 "c06-0047": {
-"byteStart": 1833408,
+"byteStart": 1833552,
 "byteLength": 14256,
 "duration": 2.376
 },
 "c06-0048": {
-"byteStart": 1847664,
+"byteStart": 1847808,
 "byteLength": 19872,
 "duration": 3.312
 },
 "c06-0049": {
-"byteStart": 1867536,
+"byteStart": 1867680,
 "byteLength": 20592,
 "duration": 3.432
 },
 "c06-0050": {
-"byteStart": 1888128,
+"byteStart": 1888272,
 "byteLength": 12528,
 "duration": 2.088
 },
 "c06-0051": {
-"byteStart": 1900656,
+"byteStart": 1900800,
 "byteLength": 33120,
 "duration": 5.52
 },
 "c06-0053": {
-"byteStart": 1933776,
+"byteStart": 1933920,
 "byteLength": 21744,
 "duration": 3.624
 },
 "c06-0054": {
-"byteStart": 1955520,
+"byteStart": 1955664,
 "byteLength": 27936,
 "duration": 4.656
 },
 "c06-0055": {
-"byteStart": 1983456,
+"byteStart": 1983600,
 "byteLength": 39600,
 "duration": 6.6
 },
 "c06-0056": {
-"byteStart": 2023056,
+"byteStart": 2023200,
 "byteLength": 32544,
 "duration": 5.424
 },
 "c06-0057": {
-"byteStart": 2055600,
+"byteStart": 2055744,
 "byteLength": 22752,
 "duration": 3.792
 },
 "c06-0058": {
-"byteStart": 2078352,
+"byteStart": 2078496,
 "byteLength": 24768,
 "duration": 4.128
 },
 "c06-0059": {
-"byteStart": 2103120,
+"byteStart": 2103264,
 "byteLength": 33408,
 "duration": 5.568
 },
 "c06-0061": {
-"byteStart": 2136528,
+"byteStart": 2136672,
 "byteLength": 65376,
 "duration": 10.896
 },
 "c06-0062": {
-"byteStart": 2201904,
+"byteStart": 2202048,
 "byteLength": 49680,
 "duration": 8.28
 },
 "c06-0063": {
-"byteStart": 2251584,
+"byteStart": 2251728,
 "byteLength": 32976,
 "duration": 5.496
 },
 "c06-0064": {
-"byteStart": 2284560,
+"byteStart": 2284704,
 "byteLength": 32112,
 "duration": 5.352
 },
 "c06-0065": {
-"byteStart": 2316672,
+"byteStart": 2316816,
 "byteLength": 33264,
 "duration": 5.544
 },
 "c06-0066": {
-"byteStart": 2349936,
+"byteStart": 2350080,
 "byteLength": 38736,
 "duration": 6.456
 },
 "c06-0067": {
-"byteStart": 2388672,
+"byteStart": 2388816,
 "byteLength": 22032,
 "duration": 3.672
 },
 "c06-0068": {
-"byteStart": 2410704,
+"byteStart": 2410848,
 "byteLength": 25632,
 "duration": 4.272
 },
 "c06-0069": {
-"byteStart": 2436336,
+"byteStart": 2436480,
 "byteLength": 208512,
 "duration": 34.752
 },
 "c06-0070": {
-"byteStart": 2644848,
+"byteStart": 2644992,
 "byteLength": 23760,
 "duration": 3.96
 },
 "c06-0071": {
-"byteStart": 2668608,
+"byteStart": 2668752,
 "byteLength": 49680,
 "duration": 8.28
 },
 "c06-0072": {
-"byteStart": 2718288,
+"byteStart": 2718432,
 "byteLength": 42048,
 "duration": 7.008
 },
 "c06-0073": {
-"byteStart": 2760336,
+"byteStart": 2760480,
 "byteLength": 45648,
 "duration": 7.608
 },
 "c06-0074": {
-"byteStart": 2805984,
+"byteStart": 2806128,
 "byteLength": 31104,
 "duration": 5.184
 },
 "c06-0075": {
-"byteStart": 2837088,
+"byteStart": 2837232,
 "byteLength": 81504,
 "duration": 13.584
 },
 "c06-0076": {
-"byteStart": 2918592,
+"byteStart": 2918736,
 "byteLength": 21456,
 "duration": 3.576
 },
 "c06-0077": {
-"byteStart": 2940048,
+"byteStart": 2940192,
 "byteLength": 26928,
 "duration": 4.488
 },
 "c06-0078": {
-"byteStart": 2966976,
+"byteStart": 2967120,
 "byteLength": 21024,
 "duration": 3.504
 },
 "c06-0079": {
-"byteStart": 2988000,
+"byteStart": 2988144,
 "byteLength": 23472,
 "duration": 3.912
 },
 "c06-0080": {
-"byteStart": 3011472,
+"byteStart": 3011616,
 "byteLength": 26784,
 "duration": 4.464
 },
 "c06-0081": {
-"byteStart": 3038256,
+"byteStart": 3038400,
 "byteLength": 30960,
 "duration": 5.16
 },
 "c06-0082": {
-"byteStart": 3069216,
+"byteStart": 3069360,
 "byteLength": 33696,
 "duration": 5.616
 },
 "c06-0083": {
-"byteStart": 3102912,
+"byteStart": 3103056,
 "byteLength": 19728,
 "duration": 3.288
 },
 "c06-0084": {
-"byteStart": 3122640,
+"byteStart": 3122784,
 "byteLength": 12528,
 "duration": 2.088
 },
 "c06-0085": {
-"byteStart": 3135168,
+"byteStart": 3135312,
 "byteLength": 20448,
 "duration": 3.408
 },
 "c06-0087": {
-"byteStart": 3155616,
+"byteStart": 3155760,
 "byteLength": 41040,
 "duration": 6.84
 },
 "c06-0088": {
-"byteStart": 3196656,
+"byteStart": 3196800,
 "byteLength": 27360,
 "duration": 4.56
 },
 "c06-0089": {
-"byteStart": 3224016,
+"byteStart": 3224160,
 "byteLength": 23472,
 "duration": 3.912
 },
 "c06-0090": {
-"byteStart": 3247488,
+"byteStart": 3247632,
 "byteLength": 24912,
 "duration": 4.152
 },
 "c06-0091": {
-"byteStart": 3272400,
+"byteStart": 3272544,
 "byteLength": 27072,
 "duration": 4.512
 },
 "c06-0092": {
-"byteStart": 3299472,
+"byteStart": 3299616,
 "byteLength": 25920,
 "duration": 4.32
 },
 "c06-0093": {
-"byteStart": 3325392,
+"byteStart": 3325536,
 "byteLength": 40896,
 "duration": 6.816
 },
 "c06-0094": {
-"byteStart": 3366288,
+"byteStart": 3366432,
 "byteLength": 33120,
 "duration": 5.52
 },
 "c06-0095": {
-"byteStart": 3399408,
+"byteStart": 3399552,
 "byteLength": 27504,
 "duration": 4.584
 },
 "c06-0096": {
-"byteStart": 3426912,
+"byteStart": 3427056,
 "byteLength": 19152,
 "duration": 3.192
 },
 "c06-0097": {
-"byteStart": 3446064,
+"byteStart": 3446208,
 "byteLength": 18864,
 "duration": 3.144
 },
 "c06-0098": {
-"byteStart": 3464928,
+"byteStart": 3465072,
 "byteLength": 29952,
 "duration": 4.992
 },
 "c06-0099": {
-"byteStart": 3494880,
+"byteStart": 3495024,
 "byteLength": 25920,
 "duration": 4.32
 },
 "c06-0100": {
-"byteStart": 3520800,
+"byteStart": 3520944,
 "byteLength": 27648,
 "duration": 4.608
 },
 "c06-0101": {
-"byteStart": 3548448,
+"byteStart": 3548592,
 "byteLength": 21888,
 "duration": 3.648
 },
 "c06-0102": {
-"byteStart": 3570336,
+"byteStart": 3570480,
 "byteLength": 33120,
 "duration": 5.52
 },
 "c06-0103": {
-"byteStart": 3603456,
+"byteStart": 3603600,
 "byteLength": 30816,
 "duration": 5.136
 },
 "c06-0105": {
-"byteStart": 3634272,
+"byteStart": 3634416,
 "byteLength": 70128,
 "duration": 11.688
 },
 "c06-0106": {
-"byteStart": 3704400,
+"byteStart": 3704544,
 "byteLength": 58320,
 "duration": 9.72
 },
 "c06-0107": {
-"byteStart": 3762720,
+"byteStart": 3762864,
 "byteLength": 35568,
 "duration": 5.928
 },
 "c06-0108": {
-"byteStart": 3798288,
+"byteStart": 3798432,
 "byteLength": 49824,
 "duration": 8.304
 },
 "c06-0109": {
-"byteStart": 3848112,
+"byteStart": 3848256,
 "byteLength": 41904,
 "duration": 6.984
 },
 "c06-0110": {
-"byteStart": 3890016,
+"byteStart": 3890160,
 "byteLength": 25632,
 "duration": 4.272
 },
 "c06-0111": {
-"byteStart": 3915648,
+"byteStart": 3915792,
 "byteLength": 38016,
 "duration": 6.336
 },
 "c06-0112": {
-"byteStart": 3953664,
+"byteStart": 3953808,
 "byteLength": 33552,
 "duration": 5.592
 },
 "c06-0113": {
-"byteStart": 3987216,
+"byteStart": 3987360,
 "byteLength": 101088,
 "duration": 16.848
 }
