@@ -107,6 +107,31 @@ test('third course (初期発生と系統発生): every screen renders, with its
   expect(errs).toEqual([]);
 });
 
+const EPI_ROUTES = ['/', '/course', '/category/histology', '/book', '/chapter/3', '/chapter/6', '/lectures', '/figures', '/figures/pol', '/figures/junc', '/figures/tric', '/figures/cls', '/animations', '/animations/barrier', '/animations/junc', '/animations/trans', '/zukan', '/quiz/play?chapter=4', '/quiz/judge?chapter=5', '/stats'];
+
+test('fourth course (上皮組織): every screen renders, with its own metaphor and recorded lectures', async ({ page }) => {
+  await page.addInitScript(() => localStorage.setItem('medstudy:course', JSON.stringify('histology-epithelium')));
+  const errs = watchErrors(page);
+  for (const r of EPI_ROUTES) {
+    await page.goto('/#' + r);
+    await expect(page.locator('main')).not.toBeEmpty();
+    await page.waitForTimeout(250);
+    const overflow = await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth);
+    expect(overflow, `horizontal overflow on ${r}`).toBeLessThanOrEqual(1);
+  }
+  await page.goto('/#/course');
+  await expect(page.locator('h1')).toContainText('国境線');
+  // no blackboard lectures in this course: the course home offers the textbook and quiz instead
+  await expect(page.locator('.today-lec')).not.toContainText('板書だけを見る');
+  await page.goto('/#/quiz/play?chapter=4');
+  await expect(page.locator('.opts .op')).toHaveCount(5);
+  await page.goto('/#/lecture/3');
+  await expect(page.locator('.voice-src.audio')).toContainText('Nanami', { timeout: 20_000 });
+  await page.getByRole('button', { name: /授業を始める/ }).click();
+  await expect(page.locator('.lsub .s')).toContainText('第3講');
+  expect(errs).toEqual([]);
+});
+
 test('5-choice question: A–E, explanations, persistence, review', async ({ page }) => {
   const errs = watchErrors(page);
   await page.goto('/#/quiz/play?chapter=1');

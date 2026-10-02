@@ -1,0 +1,974 @@
+[
+ {
+  "id": "j001",
+  "slide": 3,
+  "chapter": 1,
+  "topic": "組織",
+  "ask": "true",
+  "statements": [
+   {
+    "text": "増殖は細胞の数を増加させることである",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "分化は少しずつ性質の異なる細胞に変化することである",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "組織は細胞だけからなる",
+    "isTrue": false,
+    "note": "細胞と細胞間質から形成"
+   },
+   {
+    "text": "組織は同様な形と機能をもつ分化した細胞の集団である",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "細胞間質は細胞の内部にある物質である",
+    "isTrue": false,
+    "note": "細胞の周囲にある物質"
+   }
+  ],
+  "boxes": [],
+  "figureBoxes": []
+ },
+ {
+  "id": "j002",
+  "slide": 5,
+  "chapter": 1,
+  "topic": "4大組織",
+  "ask": "false",
+  "statements": [
+   {
+    "text": "上皮組織は4大組織の一つである",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "支持組織と結合組織は別の組織である",
+    "isTrue": false,
+    "note": "支持組織（結合組織）は同じ"
+   },
+   {
+    "text": "筋組織は4大組織の一つである",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "腺組織は4大組織の一つである",
+    "isTrue": false,
+    "note": "4大組織は上皮・支持・筋・神経"
+   },
+   {
+    "text": "神経組織は4大組織の一つである",
+    "isTrue": true,
+    "note": ""
+   }
+  ],
+  "boxes": [],
+  "figureBoxes": []
+ },
+ {
+  "id": "j003",
+  "slide": 7,
+  "chapter": 1,
+  "topic": "上皮組織と支持組織の比較",
+  "ask": "true",
+  "statements": [
+   {
+    "text": "上皮組織は自由表面を覆う",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "上皮組織は細胞間質が多い",
+    "isTrue": false,
+    "note": "少ない"
+   },
+   {
+    "text": "上皮組織には血管がある",
+    "isTrue": false,
+    "note": "血管（−）"
+   },
+   {
+    "text": "上皮組織には極性がある",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "支持組織は他の組織の間を埋める",
+    "isTrue": true,
+    "note": ""
+   }
+  ],
+  "boxes": [],
+  "figureBoxes": []
+ },
+ {
+  "id": "j004",
+  "slide": 8,
+  "chapter": 1,
+  "topic": "上皮組織（上皮と腺）",
+  "ask": "false",
+  "statements": [
+   {
+    "text": "広義の上皮は、狭義の上皮と腺からなる",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "上皮と支持組織の間には何もない",
+    "isTrue": false,
+    "note": "基底膜がある"
+   },
+   {
+    "text": "上皮は体の内と外の境界をつくる細胞層である",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "腺は分泌物の色で外分泌腺と内分泌腺に分類される",
+    "isTrue": false,
+    "note": "分泌の方向性"
+   },
+   {
+    "text": "腺は上皮が支持組織内に落ち込んで形成されることがある",
+    "isTrue": true,
+    "note": ""
+   }
+  ],
+  "boxes": [],
+  "figureBoxes": []
+ },
+ {
+  "id": "j005",
+  "slide": 9,
+  "chapter": 1,
+  "topic": "上皮の機能",
+  "ask": "true",
+  "statements": [
+   {
+    "text": "保護の例は皮膚の表皮である",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "毛細血管内皮は透過性が小さい",
+    "isTrue": false,
+    "note": "透過性大"
+   },
+   {
+    "text": "吸収の例は小腸上皮と腎臓の尿細管上皮である",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "感覚の例は気道上皮である",
+    "isTrue": false,
+    "note": "嗅上皮"
+   },
+   {
+    "text": "運動は表面の物質を移動させる機能である",
+    "isTrue": true,
+    "note": ""
+   }
+  ],
+  "boxes": [],
+  "figureBoxes": []
+ },
+ {
+  "id": "j006",
+  "slide": 11,
+  "chapter": 2,
+  "topic": "上皮細胞の極性",
+  "ask": "false",
+  "statements": [
+   {
+    "text": "極性とは上皮細胞に上下横方向の区別があることである",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "下面を頂上面という",
+    "isTrue": false,
+    "note": "基底面"
+   },
+   {
+    "text": "側面を外側面という",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "極性により細胞小器官の配置が決まる",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "極性は細胞膜の構造には関係しない",
+    "isTrue": false,
+    "note": "各面に特徴的な構造"
+   }
+  ],
+  "boxes": [],
+  "figureBoxes": []
+ },
+ {
+  "id": "j007",
+  "slide": 12,
+  "chapter": 2,
+  "topic": "面の極性を示す構造",
+  "ask": "true",
+  "statements": [
+   {
+    "text": "刷子縁は電顕で微絨毛である",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "閉鎖堤は基底面に見られる",
+    "isTrue": false,
+    "note": "外側面の頂上近く"
+   },
+   {
+    "text": "基底線条は電顕で基底陥入である",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "ヘミデスモゾームは頂上面にある",
+    "isTrue": false,
+    "note": "基底面"
+   },
+   {
+    "text": "上皮基底面と結合組織の間には基底膜がある",
+    "isTrue": true,
+    "note": ""
+   }
+  ],
+  "boxes": [],
+  "figureBoxes": []
+ },
+ {
+  "id": "j008",
+  "slide": 14,
+  "chapter": 2,
+  "topic": "微絨毛",
+  "ask": "false",
+  "statements": [
+   {
+    "text": "微絨毛は長さ1 μm×幅0.1 μmである",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "微絨毛の芯は微小管である",
+    "isTrue": false,
+    "note": "アクチンフィラメント"
+   },
+   {
+    "text": "微絨毛の表面には糖衣がある",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "終末扇は微絨毛の基底部にある",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "刷子縁は気道上皮に特徴的である",
+    "isTrue": false,
+    "note": "小腸や近位尿細管"
+   }
+  ],
+  "boxes": [],
+  "figureBoxes": []
+ },
+ {
+  "id": "j009",
+  "slide": 15,
+  "chapter": 2,
+  "topic": "線毛",
+  "ask": "true",
+  "statements": [
+   {
+    "text": "線毛の芯の微小管は9 doublets＋2 singletsである",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "基底小体は9 doubletsからなる",
+    "isTrue": false,
+    "note": "9 triplets"
+   },
+   {
+    "text": "基底小体は中心子由来である",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "線毛は小腸の吸収上皮細胞に特徴的である",
+    "isTrue": false,
+    "note": "気道・卵管・精巣輸出管"
+   },
+   {
+    "text": "基底小体のtripletのA、Bが伸びて線毛のdoubletになる",
+    "isTrue": true,
+    "note": ""
+   }
+  ],
+  "boxes": [],
+  "figureBoxes": []
+ },
+ {
+  "id": "j010",
+  "slide": 16,
+  "chapter": 2,
+  "topic": "微絨毛と線毛の比較",
+  "ask": "false",
+  "statements": [
+   {
+    "text": "同じ倍率では線毛のほうが太い",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "微絨毛の断面に9＋2の配列が見える",
+    "isTrue": false,
+    "note": "線毛"
+   },
+   {
+    "text": "線毛の根元には基底小体がある",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "微絨毛の根元には基底小体がある",
+    "isTrue": false,
+    "note": "終末扇"
+   },
+   {
+    "text": "微絨毛の芯はアクチンフィラメントである",
+    "isTrue": true,
+    "note": ""
+   }
+  ],
+  "boxes": [],
+  "figureBoxes": []
+ },
+ {
+  "id": "j011",
+  "slide": 18,
+  "chapter": 3,
+  "topic": "細胞間結合装置",
+  "ask": "true",
+  "statements": [
+   {
+    "text": "細胞間結合装置の最上部は密着帯である",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "接着帯はデスモゾームの下にある",
+    "isTrue": false,
+    "note": "密着帯の下、デスモゾームの上"
+   },
+   {
+    "text": "光顕の閉鎖堤は電顕の接着複合体である",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "接着斑はデスモゾームとも呼ぶ",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "密着帯はギャップ結合とも呼ぶ",
+    "isTrue": false,
+    "note": "閉鎖帯・タイト結合"
+   }
+  ],
+  "boxes": [],
+  "figureBoxes": []
+ },
+ {
+  "id": "j012",
+  "slide": 19,
+  "chapter": 3,
+  "topic": "密着帯",
+  "ask": "false",
+  "statements": [
+   {
+    "text": "密着帯は細胞全周に帯状に存在する",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "密着帯の膜の間隔は約30 nmである",
+    "isTrue": false,
+    "note": "0.1〜0.3 nm"
+   },
+   {
+    "text": "オクルディン同士、クローディン同士が結合する",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "密着帯は細胞外の物質を細胞間隙に通しやすくする",
+    "isTrue": false,
+    "note": "移動を阻止"
+   },
+   {
+    "text": "密着帯は膜蛋白質の移動を阻止する",
+    "isTrue": true,
+    "note": ""
+   }
+  ],
+  "boxes": [],
+  "figureBoxes": []
+ },
+ {
+  "id": "j013",
+  "slide": 22,
+  "chapter": 3,
+  "topic": "トリセルラータイトジャンクション",
+  "ask": "true",
+  "statements": [
+   {
+    "text": "3つの細胞の接点にあるタイト結合である",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "トリセルリンが含まれる",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "カドヘリンが主な構成分子である",
+    "isTrue": false,
+    "note": "トリセルリンとアンギュリン"
+   },
+   {
+    "text": "アンギュリンが含まれる",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "基底面に存在する",
+    "isTrue": false,
+    "note": "細胞の接点（頂上側のタイト結合）"
+   }
+  ],
+  "boxes": [],
+  "figureBoxes": []
+ },
+ {
+  "id": "j014",
+  "slide": 23,
+  "chapter": 3,
+  "topic": "トリセルリンの検出",
+  "ask": "false",
+  "statements": [
+   {
+    "text": "トリセルリンは3つの細胞の接点に点状に検出される",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "オクルディンは3つの細胞の接点だけに検出される",
+    "isTrue": false,
+    "note": "細胞の境界に沿って線状"
+   },
+   {
+    "text": "間接免疫蛍光抗体法で検出している",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "培養細胞では検出されない",
+    "isTrue": false,
+    "note": "培養上皮細胞でも検出"
+   },
+   {
+    "text": "マウスの器官でも検出されている",
+    "isTrue": true,
+    "note": ""
+   }
+  ],
+  "boxes": [],
+  "figureBoxes": []
+ },
+ {
+  "id": "j015",
+  "slide": 24,
+  "chapter": 3,
+  "topic": "ノックアウト実験",
+  "ask": "true",
+  "statements": [
+   {
+    "text": "アンギュリン-1 KOではCSEが欠損する",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "トリセルリンKOでは上皮バリア機能が低下する",
+    "isTrue": false,
+    "note": "正常"
+   },
+   {
+    "text": "アンギュリン-1 KOでは上皮バリア機能が低下する",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "野生型では3細胞接点に細胞間隙がある",
+    "isTrue": false,
+    "note": "細胞膜は密着"
+   },
+   {
+    "text": "CSEはcentral sealing elementsの略である",
+    "isTrue": true,
+    "note": ""
+   }
+  ],
+  "boxes": [],
+  "figureBoxes": []
+ },
+ {
+  "id": "j016",
+  "slide": 25,
+  "chapter": 4,
+  "topic": "接着帯",
+  "ask": "false",
+  "statements": [
+   {
+    "text": "接着帯は密着帯の下にある",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "接着帯は斑状に存在する",
+    "isTrue": false,
+    "note": "全周に帯状"
+   },
+   {
+    "text": "カドヘリン同士がCa依存性に結合する",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "接着帯はケラチン線維と結合する",
+    "isTrue": false,
+    "note": "アクチン線維"
+   },
+   {
+    "text": "接着帯の膜の間隔は15〜20 nmである",
+    "isTrue": true,
+    "note": ""
+   }
+  ],
+  "boxes": [],
+  "figureBoxes": []
+ },
+ {
+  "id": "j017",
+  "slide": 26,
+  "chapter": 4,
+  "topic": "デスモゾーム",
+  "ask": "true",
+  "statements": [
+   {
+    "text": "デスモゾームは楕円形の斑状に存在する",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "デスモグレインやデスモコリンはカドヘリンファミリーである",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "デスモゾームはアクチン線維と結合する",
+    "isTrue": false,
+    "note": "ケラチン線維"
+   },
+   {
+    "text": "デスモゾームの膜の間隔は2〜3 nmである",
+    "isTrue": false,
+    "note": "約30 nm"
+   },
+   {
+    "text": "デスモプラキンやプラコグロビンがプラークをつくる",
+    "isTrue": true,
+    "note": ""
+   }
+  ],
+  "boxes": [],
+  "figureBoxes": []
+ },
+ {
+  "id": "j018",
+  "slide": 27,
+  "chapter": 4,
+  "topic": "ギャップ結合",
+  "ask": "false",
+  "statements": [
+   {
+    "text": "コネクシンの6量体をコネクソンという",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "分子量10 kDaの蛋白質も通過する",
+    "isTrue": false,
+    "note": "1 kDa以下"
+   },
+   {
+    "text": "チャネルは開閉可能である",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "ギャップ結合は上皮細胞にしかない",
+    "isTrue": false,
+    "note": "心筋・平滑筋・神経・骨細胞にも"
+   },
+   {
+    "text": "膜の間隔は2〜3 nmである",
+    "isTrue": true,
+    "note": ""
+   }
+  ],
+  "boxes": [],
+  "figureBoxes": []
+ },
+ {
+  "id": "j019",
+  "slide": 29,
+  "chapter": 4,
+  "topic": "ヘミデスモゾーム",
+  "ask": "true",
+  "statements": [
+   {
+    "text": "ヘミデスモゾームは基底面に存在する",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "ヘミデスモゾームはカドヘリンで細胞同士をつなぐ",
+    "isTrue": false,
+    "note": "インテグリンで基底膜とつなぐ"
+   },
+   {
+    "text": "インテグリンがラミニンやIV型コラーゲンと結合する",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "細胞質側ではケラチン線維と結合する",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "ヘミデスモゾームはアクチン線維と結合する",
+    "isTrue": false,
+    "note": "ケラチン線維"
+   }
+  ],
+  "boxes": [],
+  "figureBoxes": []
+ },
+ {
+  "id": "j020",
+  "slide": 30,
+  "chapter": 4,
+  "topic": "基底陥入",
+  "ask": "false",
+  "statements": [
+   {
+    "text": "基底陥入はイオンを輸送する上皮の基底面にある",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "基底陥入は光顕で刷子縁として見える",
+    "isTrue": false,
+    "note": "基底線条"
+   },
+   {
+    "text": "膜にNa⁺-K⁺ ATPaseなどの輸送体がある",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "突起の間に多数のミトコンドリアがある",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "基底陥入は細胞膜の表面積を小さくする",
+    "isTrue": false,
+    "note": "拡大する"
+   }
+  ],
+  "boxes": [],
+  "figureBoxes": []
+ },
+ {
+  "id": "j021",
+  "slide": 32,
+  "chapter": 5,
+  "topic": "上皮の分類",
+  "ask": "true",
+  "statements": [
+   {
+    "text": "層の数で単層と重層に分ける",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "立方は修飾物による分類である",
+    "isTrue": false,
+    "note": "細胞の形"
+   },
+   {
+    "text": "角化は修飾物による分類である",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "多列上皮は本当に重層である",
+    "isTrue": false,
+    "note": "実は単層"
+   },
+   {
+    "text": "移行上皮は層の数が変化する",
+    "isTrue": true,
+    "note": ""
+   }
+  ],
+  "boxes": [],
+  "figureBoxes": []
+ },
+ {
+  "id": "j022",
+  "slide": 33,
+  "chapter": 5,
+  "topic": "単層扁平上皮",
+  "ask": "false",
+  "statements": [
+   {
+    "text": "物質透過性が高い",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "物理化学的な抵抗性が強い",
+    "isTrue": false,
+    "note": "弱い"
+   },
+   {
+    "text": "肺胞上皮は単層扁平上皮である",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "血管内皮は単層扁平上皮である",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "皮膚の表皮は単層扁平上皮である",
+    "isTrue": false,
+    "note": "角化重層扁平上皮"
+   }
+  ],
+  "boxes": [],
+  "figureBoxes": []
+ },
+ {
+  "id": "j023",
+  "slide": 34,
+  "chapter": 5,
+  "topic": "単層円柱上皮・単層立方上皮",
+  "ask": "true",
+  "statements": [
+   {
+    "text": "単層円柱上皮には吸収細胞や分泌細胞が多い",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "卵管上皮は単層立方上皮である",
+    "isTrue": false,
+    "note": "単層円柱上皮（線毛あり）"
+   },
+   {
+    "text": "消化管上皮は単層円柱上皮である",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "甲状腺濾胞は単層立方上皮である",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "単層立方上皮と単層円柱上皮は性質がまったく異なる",
+    "isTrue": false,
+    "note": "高さ以外は共通"
+   }
+  ],
+  "boxes": [],
+  "figureBoxes": []
+ },
+ {
+  "id": "j024",
+  "slide": 35,
+  "chapter": 5,
+  "topic": "重層扁平上皮",
+  "ask": "false",
+  "statements": [
+   {
+    "text": "上層の細胞のみが扁平である",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "物質透過性が大きい",
+    "isTrue": false,
+    "note": "小さい"
+   },
+   {
+    "text": "皮膚の表皮は角化重層扁平上皮である",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "食道は角化重層扁平上皮である",
+    "isTrue": false,
+    "note": "非角化"
+   },
+   {
+    "text": "角膜は非角化重層扁平上皮である",
+    "isTrue": true,
+    "note": ""
+   }
+  ],
+  "boxes": [],
+  "figureBoxes": []
+ },
+ {
+  "id": "j025",
+  "slide": 36,
+  "chapter": 6,
+  "topic": "多列円柱上皮",
+  "ask": "true",
+  "statements": [
+   {
+    "text": "すべての細胞が基底膜に付く",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "多列円柱上皮は重層上皮である",
+    "isTrue": false,
+    "note": "実は単層"
+   },
+   {
+    "text": "多列線毛上皮とも呼ぶ",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "気管は多列円柱上皮である",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "杯細胞は見られない",
+    "isTrue": false,
+    "note": "見られる"
+   }
+  ],
+  "boxes": [],
+  "figureBoxes": []
+ },
+ {
+  "id": "j026",
+  "slide": 37,
+  "chapter": 6,
+  "topic": "杯細胞",
+  "ask": "false",
+  "statements": [
+   {
+    "text": "杯細胞は上皮内に単独で存在する粘液腺細胞である",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "杯細胞の粘液はPAS染色で染まらない",
+    "isTrue": false,
+    "note": "赤く染まる"
+   },
+   {
+    "text": "PAS染色は水酸基を酸化してアルデヒド基に変える",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "PAS染色では刷子縁（糖衣）も染まる",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "杯細胞は皮膚の表皮に存在する",
+    "isTrue": false,
+    "note": "小腸上皮や気道上皮"
+   }
+  ],
+  "boxes": [],
+  "figureBoxes": []
+ },
+ {
+  "id": "j027",
+  "slide": 38,
+  "chapter": 6,
+  "topic": "移行上皮",
+  "ask": "true",
+  "statements": [
+   {
+    "text": "収縮時と伸展時で層の数が変わる",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "上層の細胞は扁平になる",
+    "isTrue": false,
+    "note": "扁平にならない"
+   },
+   {
+    "text": "最上層の細胞を被蓋細胞という",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "膀胱は移行上皮である",
+    "isTrue": true,
+    "note": ""
+   },
+   {
+    "text": "移行上皮は食道にある",
+    "isTrue": false,
+    "note": "尿路（尿管・膀胱・尿道上部）"
+   }
+  ],
+  "boxes": [],
+  "figureBoxes": []
+ }
+]

@@ -5,6 +5,7 @@ import { useProgress, useStudyPage } from '../../state/hooks';
 import { mastery, overall, studyTime, todaysPlan, weakSlides, wrongQuestions } from '../../state/analytics';
 import { ChapterList } from '../textbook/ChapterList';
 import { fmtDur } from '../analytics/StatsPage';
+import { courseStats } from '../../content/registry';
 
 const KIND_LABEL = { chapter: '教科書', lecture: '授業', animation: 'アニメ', figure: '図解', quiz: '問題', zukan: '図鑑' } as const;
 const KIND_TO = (k: keyof typeof KIND_LABEL, id: string) =>
@@ -117,6 +118,8 @@ export function TodayLecture() {
   const l = s.lectures[ch.id];
   const pct = l ? Math.round(Math.min(1, l.maxPosition / Math.max(1, l.total)) * 100) : 0;
   const done = course.chapters.filter((c) => s.lectures[c.id]?.completed).length;
+  // the board viewer and 5-minute review exist only for blackboard lectures
+  const board = courseStats(course.id).lectures.find((l) => l.id === ch.id)?.board;
   return (
     <section className="today-lec" aria-label="今日の授業">
       <div className="tl-board" aria-hidden="true">
@@ -132,8 +135,17 @@ export function TodayLecture() {
         {pct > 0 && <div className="bar" style={{ margin: '8px 0 4px' }}><i style={{ width: `${pct}%` }} /></div>}
         <div className="btnrow">
           <Link className="btn eosin" to={`/lecture/${ch.id}`}>▶ {pct > 3 && pct < 100 ? '続きから受ける' : '授業を受ける'}</Link>
-          <Link className="btn" to={`/lecture/${ch.id}/board`}>板書だけを見る</Link>
-          <Link className="btn" to={`/review5/${ch.id}`}>5分復習</Link>
+          {board ? (
+            <>
+              <Link className="btn" to={`/lecture/${ch.id}/board`}>板書だけを見る</Link>
+              <Link className="btn" to={`/review5/${ch.id}`}>5分復習</Link>
+            </>
+          ) : (
+            <>
+              <Link className="btn" to={`/chapter/${ch.id}`}>第{ch.id}章の教科書</Link>
+              <Link className="btn" to={`/quiz/play?chapter=${ch.id}`}>確認問題</Link>
+            </>
+          )}
         </div>
       </div>
     </section>

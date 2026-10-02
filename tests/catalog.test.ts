@@ -10,7 +10,7 @@ describe('catalog', () => {
   it('files every course under a known field; histology courses also appear under cell biology', () => {
     const ids = new Set(CATEGORIES.map((c) => c.id));
     for (const c of COURSES) expect(ids.has(c.category)).toBe(true);
-    expect(coursesIn('histology').map((c) => c.id)).toEqual(['histology-cytoplasm', 'histology-nucleus']);
+    expect(coursesIn('histology').map((c) => c.id)).toEqual(['histology-cytoplasm', 'histology-nucleus', 'histology-epithelium']);
     expect(coursesIn('cell').map((c) => c.id)).toEqual(['histology-cytoplasm', 'histology-nucleus']);
     expect(coursesIn('pharmacology')).toEqual([]);
   });

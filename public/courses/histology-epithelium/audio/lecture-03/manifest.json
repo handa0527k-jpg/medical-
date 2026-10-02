@@ -1,0 +1,647 @@
+{
+"voice": "ja-JP-NanamiNeural",
+"version": 3,
+"file": "../lecture-03.mp3",
+"cues": {
+"c03-0001": {
+"byteStart": 0,
+"byteLength": 30528,
+"duration": 5.088
+},
+"c03-0002": {
+"byteStart": 30528,
+"byteLength": 129600,
+"duration": 21.6
+},
+"c03-0003": {
+"byteStart": 160128,
+"byteLength": 18144,
+"duration": 3.024
+},
+"c03-0004": {
+"byteStart": 178272,
+"byteLength": 25632,
+"duration": 4.272
+},
+"c03-0005": {
+"byteStart": 203904,
+"byteLength": 43632,
+"duration": 7.272
+},
+"c03-0006": {
+"byteStart": 247536,
+"byteLength": 40032,
+"duration": 6.672
+},
+"c03-0007": {
+"byteStart": 287568,
+"byteLength": 26640,
+"duration": 4.44
+},
+"c03-0008": {
+"byteStart": 314208,
+"byteLength": 13248,
+"duration": 2.208
+},
+"c03-0009": {
+"byteStart": 327456,
+"byteLength": 22320,
+"duration": 3.72
+},
+"c03-0010": {
+"byteStart": 349776,
+"byteLength": 14688,
+"duration": 2.448
+},
+"c03-0011": {
+"byteStart": 364464,
+"byteLength": 16848,
+"duration": 2.808
+},
+"c03-0012": {
+"byteStart": 381312,
+"byteLength": 23040,
+"duration": 3.84
+},
+"c03-0013": {
+"byteStart": 404352,
+"byteLength": 28368,
+"duration": 4.728
+},
+"c03-0014": {
+"byteStart": 432720,
+"byteLength": 205776,
+"duration": 34.296
+},
+"c03-0015": {
+"byteStart": 638496,
+"byteLength": 90144,
+"duration": 15.024
+},
+"c03-0016": {
+"byteStart": 728640,
+"byteLength": 18864,
+"duration": 3.144
+},
+"c03-0017": {
+"byteStart": 747504,
+"byteLength": 17424,
+"duration": 2.904
+},
+"c03-0018": {
+"byteStart": 764928,
+"byteLength": 18144,
+"duration": 3.024
+},
+"c03-0019": {
+"byteStart": 783072,
+"byteLength": 19008,
+"duration": 3.168
+},
+"c03-0020": {
+"byteStart": 802080,
+"byteLength": 17856,
+"duration": 2.976
+},
+"c03-0021": {
+"byteStart": 819936,
+"byteLength": 41616,
+"duration": 6.936
+},
+"c03-0022": {
+"byteStart": 861552,
+"byteLength": 19584,
+"duration": 3.264
+},
+"c03-0023": {
+"byteStart": 881136,
+"byteLength": 21888,
+"duration": 3.648
+},
+"c03-0024": {
+"byteStart": 903024,
+"byteLength": 24480,
+"duration": 4.08
+},
+"c03-0025": {
+"byteStart": 927504,
+"byteLength": 16272,
+"duration": 2.712
+},
+"c03-0026": {
+"byteStart": 943776,
+"byteLength": 12384,
+"duration": 2.064
+},
+"c03-0027": {
+"byteStart": 956160,
+"byteLength": 22752,
+"duration": 3.792
+},
+"c03-0028": {
+"byteStart": 978912,
+"byteLength": 12816,
+"duration": 2.136
+},
+"c03-0029": {
+"byteStart": 991728,
+"byteLength": 14544,
+"duration": 2.424
+},
+"c03-0030": {
+"byteStart": 1006272,
+"byteLength": 12672,
+"duration": 2.112
+},
+"c03-0031": {
+"byteStart": 1018944,
+"byteLength": 11664,
+"duration": 1.944
+},
+"c03-0032": {
+"byteStart": 1030608,
+"byteLength": 19296,
+"duration": 3.216
+},
+"c03-0033": {
+"byteStart": 1049904,
+"byteLength": 28800,
+"duration": 4.8
+},
+"c03-0034": {
+"byteStart": 1078704,
+"byteLength": 37152,
+"duration": 6.192
+},
+"c03-0036": {
+"byteStart": 1115856,
+"byteLength": 46656,
+"duration": 7.776
+},
+"c03-0037": {
+"byteStart": 1162512,
+"byteLength": 24480,
+"duration": 4.08
+},
+"c03-0038": {
+"byteStart": 1186992,
+"byteLength": 20592,
+"duration": 3.432
+},
+"c03-0039": {
+"byteStart": 1207584,
+"byteLength": 27216,
+"duration": 4.536
+},
+"c03-0040": {
+"byteStart": 1234800,
+"byteLength": 25632,
+"duration": 4.272
+},
+"c03-0041": {
+"byteStart": 1260432,
+"byteLength": 26928,
+"duration": 4.488
+},
+"c03-0042": {
+"byteStart": 1287360,
+"byteLength": 23616,
+"duration": 3.936
+},
+"c03-0043": {
+"byteStart": 1310976,
+"byteLength": 204336,
+"duration": 34.056
+},
+"c03-0044": {
+"byteStart": 1515312,
+"byteLength": 19584,
+"duration": 3.264
+},
+"c03-0045": {
+"byteStart": 1534896,
+"byteLength": 16848,
+"duration": 2.808
+},
+"c03-0046": {
+"byteStart": 1551744,
+"byteLength": 17856,
+"duration": 2.976
+},
+"c03-0047": {
+"byteStart": 1569600,
+"byteLength": 17424,
+"duration": 2.904
+},
+"c03-0048": {
+"byteStart": 1587024,
+"byteLength": 31392,
+"duration": 5.232
+},
+"c03-0049": {
+"byteStart": 1618416,
+"byteLength": 13248,
+"duration": 2.208
+},
+"c03-0050": {
+"byteStart": 1631664,
+"byteLength": 19008,
+"duration": 3.168
+},
+"c03-0051": {
+"byteStart": 1650672,
+"byteLength": 13824,
+"duration": 2.304
+},
+"c03-0052": {
+"byteStart": 1664496,
+"byteLength": 19872,
+"duration": 3.312
+},
+"c03-0053": {
+"byteStart": 1684368,
+"byteLength": 12528,
+"duration": 2.088
+},
+"c03-0054": {
+"byteStart": 1696896,
+"byteLength": 29808,
+"duration": 4.968
+},
+"c03-0056": {
+"byteStart": 1726704,
+"byteLength": 28800,
+"duration": 4.8
+},
+"c03-0057": {
+"byteStart": 1755504,
+"byteLength": 20304,
+"duration": 3.384
+},
+"c03-0058": {
+"byteStart": 1775808,
+"byteLength": 27648,
+"duration": 4.608
+},
+"c03-0059": {
+"byteStart": 1803456,
+"byteLength": 22320,
+"duration": 3.72
+},
+"c03-0060": {
+"byteStart": 1825776,
+"byteLength": 24336,
+"duration": 4.056
+},
+"c03-0061": {
+"byteStart": 1850112,
+"byteLength": 40752,
+"duration": 6.792
+},
+"c03-0062": {
+"byteStart": 1890864,
+"byteLength": 34704,
+"duration": 5.784
+},
+"c03-0063": {
+"byteStart": 1925568,
+"byteLength": 170640,
+"duration": 28.44
+},
+"c03-0064": {
+"byteStart": 2096208,
+"byteLength": 15984,
+"duration": 2.664
+},
+"c03-0065": {
+"byteStart": 2112192,
+"byteLength": 45936,
+"duration": 7.656
+},
+"c03-0066": {
+"byteStart": 2158128,
+"byteLength": 45216,
+"duration": 7.536
+},
+"c03-0067": {
+"byteStart": 2203344,
+"byteLength": 46368,
+"duration": 7.728
+},
+"c03-0068": {
+"byteStart": 2249712,
+"byteLength": 68400,
+"duration": 11.4
+},
+"c03-0069": {
+"byteStart": 2318112,
+"byteLength": 99504,
+"duration": 16.584
+},
+"c03-0070": {
+"byteStart": 2417616,
+"byteLength": 67104,
+"duration": 11.184
+},
+"c03-0071": {
+"byteStart": 2484720,
+"byteLength": 30960,
+"duration": 5.16
+},
+"c03-0072": {
+"byteStart": 2515680,
+"byteLength": 28224,
+"duration": 4.704
+},
+"c03-0073": {
+"byteStart": 2543904,
+"byteLength": 20592,
+"duration": 3.432
+},
+"c03-0074": {
+"byteStart": 2564496,
+"byteLength": 24768,
+"duration": 4.128
+},
+"c03-0075": {
+"byteStart": 2589264,
+"byteLength": 37440,
+"duration": 6.24
+},
+"c03-0077": {
+"byteStart": 2626704,
+"byteLength": 89136,
+"duration": 14.856
+},
+"c03-0078": {
+"byteStart": 2715840,
+"byteLength": 56016,
+"duration": 9.336
+},
+"c03-0079": {
+"byteStart": 2771856,
+"byteLength": 34128,
+"duration": 5.688
+},
+"c03-0080": {
+"byteStart": 2805984,
+"byteLength": 33552,
+"duration": 5.592
+},
+"c03-0081": {
+"byteStart": 2839536,
+"byteLength": 28368,
+"duration": 4.728
+},
+"c03-0082": {
+"byteStart": 2867904,
+"byteLength": 28224,
+"duration": 4.704
+},
+"c03-0083": {
+"byteStart": 2896128,
+"byteLength": 19440,
+"duration": 3.24
+},
+"c03-0084": {
+"byteStart": 2915568,
+"byteLength": 31104,
+"duration": 5.184
+},
+"c03-0085": {
+"byteStart": 2946672,
+"byteLength": 175536,
+"duration": 29.256
+},
+"c03-0086": {
+"byteStart": 3122208,
+"byteLength": 11232,
+"duration": 1.872
+},
+"c03-0087": {
+"byteStart": 3133440,
+"byteLength": 22464,
+"duration": 3.744
+},
+"c03-0088": {
+"byteStart": 3155904,
+"byteLength": 35712,
+"duration": 5.952
+},
+"c03-0089": {
+"byteStart": 3191616,
+"byteLength": 24912,
+"duration": 4.152
+},
+"c03-0090": {
+"byteStart": 3216528,
+"byteLength": 14400,
+"duration": 2.4
+},
+"c03-0091": {
+"byteStart": 3230928,
+"byteLength": 19728,
+"duration": 3.288
+},
+"c03-0092": {
+"byteStart": 3250656,
+"byteLength": 11232,
+"duration": 1.872
+},
+"c03-0093": {
+"byteStart": 3261888,
+"byteLength": 13680,
+"duration": 2.28
+},
+"c03-0094": {
+"byteStart": 3275568,
+"byteLength": 11232,
+"duration": 1.872
+},
+"c03-0095": {
+"byteStart": 3286800,
+"byteLength": 27792,
+"duration": 4.632
+},
+"c03-0096": {
+"byteStart": 3314592,
+"byteLength": 32400,
+"duration": 5.4
+},
+"c03-0097": {
+"byteStart": 3346992,
+"byteLength": 36288,
+"duration": 6.048
+},
+"c03-0098": {
+"byteStart": 3383280,
+"byteLength": 22032,
+"duration": 3.672
+},
+"c03-0099": {
+"byteStart": 3405312,
+"byteLength": 19296,
+"duration": 3.216
+},
+"c03-0100": {
+"byteStart": 3424608,
+"byteLength": 64800,
+"duration": 10.8
+},
+"c03-0101": {
+"byteStart": 3489408,
+"byteLength": 191808,
+"duration": 31.968
+},
+"c03-0102": {
+"byteStart": 3681216,
+"byteLength": 55152,
+"duration": 9.192
+},
+"c03-0103": {
+"byteStart": 3736368,
+"byteLength": 48816,
+"duration": 8.136
+},
+"c03-0104": {
+"byteStart": 3785184,
+"byteLength": 37584,
+"duration": 6.264
+},
+"c03-0105": {
+"byteStart": 3822768,
+"byteLength": 20304,
+"duration": 3.384
+},
+"c03-0106": {
+"byteStart": 3843072,
+"byteLength": 11376,
+"duration": 1.896
+},
+"c03-0107": {
+"byteStart": 3854448,
+"byteLength": 16704,
+"duration": 2.784
+},
+"c03-0108": {
+"byteStart": 3871152,
+"byteLength": 17280,
+"duration": 2.88
+},
+"c03-0109": {
+"byteStart": 3888432,
+"byteLength": 35424,
+"duration": 5.904
+},
+"c03-0110": {
+"byteStart": 3923856,
+"byteLength": 33552,
+"duration": 5.592
+},
+"c03-0111": {
+"byteStart": 3957408,
+"byteLength": 25920,
+"duration": 4.32
+},
+"c03-0112": {
+"byteStart": 3983328,
+"byteLength": 17424,
+"duration": 2.904
+},
+"c03-0113": {
+"byteStart": 4000752,
+"byteLength": 19440,
+"duration": 3.24
+},
+"c03-0114": {
+"byteStart": 4020192,
+"byteLength": 83664,
+"duration": 13.944
+},
+"c03-0115": {
+"byteStart": 4103856,
+"byteLength": 19152,
+"duration": 3.192
+},
+"c03-0116": {
+"byteStart": 4123008,
+"byteLength": 35280,
+"duration": 5.88
+},
+"c03-0117": {
+"byteStart": 4158288,
+"byteLength": 23184,
+"duration": 3.864
+},
+"c03-0118": {
+"byteStart": 4181472,
+"byteLength": 29232,
+"duration": 4.872
+},
+"c03-0119": {
+"byteStart": 4210704,
+"byteLength": 19296,
+"duration": 3.216
+},
+"c03-0120": {
+"byteStart": 4230000,
+"byteLength": 21888,
+"duration": 3.648
+},
+"c03-0121": {
+"byteStart": 4251888,
+"byteLength": 33120,
+"duration": 5.52
+},
+"c03-0122": {
+"byteStart": 4285008,
+"byteLength": 39600,
+"duration": 6.6
+},
+"c03-0124": {
+"byteStart": 4324608,
+"byteLength": 72000,
+"duration": 12.0
+},
+"c03-0125": {
+"byteStart": 4396608,
+"byteLength": 55584,
+"duration": 9.264
+},
+"c03-0126": {
+"byteStart": 4452192,
+"byteLength": 38592,
+"duration": 6.432
+},
+"c03-0127": {
+"byteStart": 4490784,
+"byteLength": 39024,
+"duration": 6.504
+},
+"c03-0128": {
+"byteStart": 4529808,
+"byteLength": 39888,
+"duration": 6.648
+},
+"c03-0129": {
+"byteStart": 4569696,
+"byteLength": 45504,
+"duration": 7.584
+},
+"c03-0130": {
+"byteStart": 4615200,
+"byteLength": 41616,
+"duration": 6.936
+},
+"c03-0131": {
+"byteStart": 4656816,
+"byteLength": 30528,
+"duration": 5.088
+},
+"c03-0132": {
+"byteStart": 4687344,
+"byteLength": 55440,
+"duration": 9.24
+}
+}
+}

@@ -22,7 +22,7 @@ test('home: every medical field as a card with description, course count, progre
   await expect(cards.locator('h3')).toHaveText(FIELDS);
   const histo = cards.filter({ hasText: '組織学' }).first();
   await expect(histo).toContainText('上皮組織・結合組織・細胞・核など');
-  await expect(histo).toContainText('2教材');
+  await expect(histo).toContainText('3教材');
   await expect(histo).toContainText('進捗');
   await expect(histo).toContainText('学習する');
   await expect(cards.filter({ hasText: '薬理学' })).toContainText('準備中');

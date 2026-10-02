@@ -1,0 +1,2378 @@
+[
+ {
+  "id": "q001",
+  "slide": 3,
+  "chapter": 1,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "組織の定義として、スライド3の記述に合うものはどれか。",
+  "options": [
+   {
+    "text": "一つの細胞が増殖してできた、性質の同じ細胞の集団",
+    "explanation": "分化した細胞の集団",
+    "correct": false,
+    "trap": "mechanism"
+   },
+   {
+    "text": "細胞間質だけからなる構造",
+    "explanation": "細胞と細胞間質から形成",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "同様な形と機能をもつ分化した細胞の集団",
+    "explanation": "スライド3",
+    "correct": true
+   },
+   {
+    "text": "性質の異なる細胞が無秩序に集まったもの",
+    "explanation": "同様な形と機能",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "複数の器官が集まった構造",
+    "explanation": "器官より小さい単位",
+    "correct": false,
+    "trap": "scope"
+   }
+  ],
+  "explanation": "<b>組織</b>とは、増殖と分化を経た<b>同様な形と機能をもつ分化した細胞の集団</b>で、細胞と<b>細胞間質</b>から形成される。",
+  "point": "組織＝同様な形と機能の分化した細胞の集団＋細胞間質。",
+  "tags": [
+   "組織"
+  ]
+ },
+ {
+  "id": "q002",
+  "slide": 3,
+  "chapter": 1,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "増殖と分化について、正しい組み合わせはどれか。",
+  "options": [
+   {
+    "text": "増殖：細胞の数を増加させる／分化：少しずつ性質の異なる細胞に変化する",
+    "explanation": "スライド3",
+    "correct": true
+   },
+   {
+    "text": "増殖：性質の異なる細胞に変化する／分化：細胞の数を増加させる",
+    "explanation": "逆",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "増殖：細胞間質を増やす／分化：細胞が死ぬ",
+    "explanation": "該当しない",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "増殖：細胞が大きくなる／分化：細胞が融合する",
+    "explanation": "該当しない",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "増殖と分化は同じ意味である",
+    "explanation": "異なる",
+    "correct": false,
+    "trap": "swap"
+   }
+  ],
+  "explanation": "<b>増殖</b>は細胞の<b>数</b>を増やすこと、<b>分化</b>は少しずつ<b>性質</b>の異なる細胞に変化すること。",
+  "point": "増殖＝数、分化＝性質。",
+  "tags": [
+   "組織"
+  ]
+ },
+ {
+  "id": "q003",
+  "slide": 5,
+  "chapter": 1,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "4大組織に含まれないものはどれか。",
+  "options": [
+   {
+    "text": "上皮組織",
+    "explanation": "含まれる",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "支持組織（結合組織）",
+    "explanation": "含まれる",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "筋組織",
+    "explanation": "含まれる",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "骨髄組織",
+    "explanation": "4大組織は上皮・支持（結合）・筋・神経",
+    "correct": true
+   },
+   {
+    "text": "神経組織",
+    "explanation": "含まれる",
+    "correct": false,
+    "trap": "fact"
+   }
+  ],
+  "explanation": "4大組織は<b>上皮組織・支持組織（結合組織）・筋組織・神経組織</b>。",
+  "point": "上皮・支持（結合）・筋・神経。",
+  "tags": [
+   "4大組織"
+  ]
+ },
+ {
+  "id": "q004",
+  "slide": 5,
+  "chapter": 1,
+  "kind": "理解・統合",
+  "difficulty": 1,
+  "stem": "支持組織の別名として、スライド5の記載に合うものはどれか。",
+  "options": [
+   {
+    "text": "上皮組織",
+    "explanation": "別の組織",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "結合組織（connective tissue）",
+    "explanation": "スライド5",
+    "correct": true
+   },
+   {
+    "text": "筋組織",
+    "explanation": "別の組織",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "神経組織",
+    "explanation": "別の組織",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "腺組織",
+    "explanation": "腺は上皮組織に含まれる",
+    "correct": false,
+    "trap": "scope"
+   }
+  ],
+  "explanation": "支持組織は<b>結合組織</b>（connective tissue）とも呼ばれる。",
+  "point": "支持組織＝結合組織。",
+  "tags": [
+   "4大組織"
+  ]
+ },
+ {
+  "id": "q005",
+  "slide": 7,
+  "chapter": 1,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "上皮組織の特徴として、支持組織と比べて正しいものはどれか。",
+  "options": [
+   {
+    "text": "他の組織の間を埋め、細胞間質が多い",
+    "explanation": "支持組織",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "血管が豊富に入り込んでいる",
+    "explanation": "血管（−）",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "極性がない",
+    "explanation": "極性（＋）",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "細胞間質が多く、細胞はまばらに存在する",
+    "explanation": "少ない",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "自由表面を覆い、細胞間質が少なく、血管がなく、極性がある",
+    "explanation": "スライド7",
+    "correct": true
+   }
+  ],
+  "explanation": "上皮組織は<b>自由表面を覆い</b>、細胞間質が<b>少なく</b>、血管が<b>なく（−）</b>、極性が<b>ある（＋）</b>。支持組織はその逆。",
+  "point": "上皮：覆う・少ない・血管（−）・極性（＋）。",
+  "tags": [
+   "上皮と支持組織"
+  ]
+ },
+ {
+  "id": "q006",
+  "slide": 7,
+  "chapter": 1,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "支持組織の特徴として、スライド7の比較表に合うものはどれか。",
+  "options": [
+   {
+    "text": "自由表面を覆う",
+    "explanation": "上皮組織",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "他の組織の間を埋め、細胞間質が多く、血管がある",
+    "explanation": "スライド7",
+    "correct": true
+   },
+   {
+    "text": "極性がある",
+    "explanation": "上皮組織",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "血管がない",
+    "explanation": "上皮組織",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "細胞間質が少ない",
+    "explanation": "上皮組織",
+    "correct": false,
+    "trap": "swap"
+   }
+  ],
+  "explanation": "支持組織は<b>他の組織の間を埋め</b>、細胞間質が<b>多く</b>、血管が<b>ある（＋）</b>。極性は（−）。",
+  "point": "支持組織は上皮の逆。",
+  "tags": [
+   "上皮と支持組織"
+  ]
+ },
+ {
+  "id": "q007",
+  "slide": 8,
+  "chapter": 1,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "上皮組織（広義の上皮）の構成として正しいものはどれか。",
+  "options": [
+   {
+    "text": "上皮＋結合組織",
+    "explanation": "結合組織は別の組織",
+    "correct": false,
+    "trap": "scope"
+   },
+   {
+    "text": "上皮＋筋組織",
+    "explanation": "別の組織",
+    "correct": false,
+    "trap": "scope"
+   },
+   {
+    "text": "腺のみ",
+    "explanation": "上皮も含む",
+    "correct": false,
+    "trap": "scope"
+   },
+   {
+    "text": "狭義の上皮（epithelium）＋腺（gland）",
+    "explanation": "スライド8",
+    "correct": true
+   },
+   {
+    "text": "上皮＋基底膜＋血管",
+    "explanation": "上皮組織に血管はない",
+    "correct": false,
+    "trap": "fact"
+   }
+  ],
+  "explanation": "広義の上皮＝<b>狭義の上皮</b>（体の内と外の境界をつくる細胞層）＋<b>腺</b>。",
+  "point": "上皮組織＝上皮＋腺。",
+  "tags": [
+   "上皮と腺"
+  ]
+ },
+ {
+  "id": "q008",
+  "slide": 8,
+  "chapter": 1,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "上皮と腺について、スライド8の記述に合うものはどれか。",
+  "options": [
+   {
+    "text": "上皮と隣接する支持組織との間には基底膜があり、腺は分泌の方向性で外分泌腺と内分泌腺に分けられる",
+    "explanation": "スライド8",
+    "correct": true
+   },
+   {
+    "text": "上皮と支持組織の間には何もない",
+    "explanation": "基底膜がある",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "腺は支持組織から形成される",
+    "explanation": "上皮内、または上皮が支持組織内に落ち込んで形成",
+    "correct": false,
+    "trap": "mechanism"
+   },
+   {
+    "text": "腺は分泌物の色で分類される",
+    "explanation": "分泌の方向性",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "上皮は体の内部の組織の間を埋める",
+    "explanation": "内と外の境界をつくる",
+    "correct": false,
+    "trap": "swap"
+   }
+  ],
+  "explanation": "上皮は体の内と外の<b>境界</b>をつくる細胞層で、支持組織との間に<b>基底膜</b>がある。腺は上皮から形成された分泌細胞の集団で、<b>外分泌腺と内分泌腺</b>に分類される。",
+  "point": "上皮の下に基底膜。腺は上皮由来。",
+  "tags": [
+   "上皮と腺"
+  ]
+ },
+ {
+  "id": "q009",
+  "slide": 9,
+  "chapter": 1,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "上皮の機能と例の組み合わせで正しいものはどれか。",
+  "options": [
+   {
+    "text": "保護 ― 嗅上皮",
+    "explanation": "皮膚の表皮",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "運動 ― 腺上皮",
+    "explanation": "気道上皮",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "吸収 ― 小腸上皮、腎臓の尿細管上皮",
+    "explanation": "スライド9",
+    "correct": true
+   },
+   {
+    "text": "感覚 ― 気道上皮",
+    "explanation": "嗅上皮",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "分泌 ― 皮膚の表皮",
+    "explanation": "腺上皮",
+    "correct": false,
+    "trap": "swap"
+   }
+  ],
+  "explanation": "保護＝皮膚の表皮、透過＝毛細血管内皮、分泌＝腺上皮、<b>吸収＝小腸上皮・尿細管上皮</b>、運動＝気道上皮、感覚＝嗅上皮。",
+  "point": "6つの機能は例とセットで。",
+  "tags": [
+   "上皮の機能"
+  ]
+ },
+ {
+  "id": "q010",
+  "slide": 9,
+  "chapter": 1,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "透過性について、スライド9の例として正しいものはどれか。",
+  "options": [
+   {
+    "text": "皮膚の表皮は透過性が大きい",
+    "explanation": "小さい",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "毛細血管内皮は物質をまったく通さない",
+    "explanation": "透過性大",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "透過は物質を細胞内から外に出すことである",
+    "explanation": "それは分泌",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "透過は表面の物質を移動させることである",
+    "explanation": "それは運動",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "毛細血管内皮は透過性が大きく、皮膚の表皮は透過性が小さい",
+    "explanation": "スライド9",
+    "correct": true
+   }
+  ],
+  "explanation": "<b>透過</b>は水や物質を通過させる機能。<b>毛細血管内皮（透過性大）</b>と<b>皮膚の表皮（透過性小）</b>が例。",
+  "point": "透過性：毛細血管内皮は大、表皮は小。",
+  "tags": [
+   "上皮の機能"
+  ]
+ },
+ {
+  "id": "q011",
+  "slide": 11,
+  "chapter": 2,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "上皮細胞の極性について正しいものはどれか。",
+  "options": [
+   {
+    "text": "上皮細胞に上下横方向の区別があることで、頂上面・基底面・外側面がある",
+    "explanation": "スライド11",
+    "correct": true
+   },
+   {
+    "text": "細胞が電気的に＋と−に分かれていること",
+    "explanation": "該当しない",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "上皮細胞の形が球形であること",
+    "explanation": "該当しない",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "支持組織の細胞に見られる性質である",
+    "explanation": "上皮の特徴",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "上面を基底面、下面を頂上面という",
+    "explanation": "逆",
+    "correct": false,
+    "trap": "reverse"
+   }
+  ],
+  "explanation": "極性とは<b>上下横方向の区別</b>があること。上面が<b>頂上面</b>、下面が<b>基底面</b>、側面が<b>外側面</b>。",
+  "point": "極性＝頂上面・基底面・外側面の区別。",
+  "tags": [
+   "極性"
+  ]
+ },
+ {
+  "id": "q012",
+  "slide": 11,
+  "chapter": 2,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "極性によって決まるものとして、スライド11に挙げられているものはどれか。",
+  "options": [
+   {
+    "text": "細胞の染色体数",
+    "explanation": "該当しない",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "組織の血管の数",
+    "explanation": "該当しない",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "細胞間質の量",
+    "explanation": "該当しない",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "細胞質における細胞小器官の配置（rER→Golgi装置→分泌顆粒）",
+    "explanation": "スライド11",
+    "correct": true
+   },
+   {
+    "text": "細胞の分裂の速さ",
+    "explanation": "該当しない",
+    "correct": false,
+    "trap": "fact"
+   }
+  ],
+  "explanation": "極性により<b>各面の細胞膜に特徴的な構造</b>が見られ、<b>細胞小器官の配置</b>（rER→Golgi装置→分泌顆粒）が決まる。",
+  "point": "極性は膜の構造と小器官の配置を決める。",
+  "tags": [
+   "極性"
+  ]
+ },
+ {
+  "id": "q013",
+  "slide": 12,
+  "chapter": 2,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "光顕での用語と電顕での実体の組み合わせで正しいものはどれか。",
+  "options": [
+   {
+    "text": "刷子縁 ― 線毛",
+    "explanation": "微絨毛",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "閉鎖堤 ― ヘミデスモゾーム",
+    "explanation": "接着複合体",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "基底線条 ― 基底陥入",
+    "explanation": "スライド12",
+    "correct": true
+   },
+   {
+    "text": "基底線条 ― 微絨毛",
+    "explanation": "基底陥入",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "刷子縁 ― 接着複合体",
+    "explanation": "微絨毛",
+    "correct": false,
+    "trap": "swap"
+   }
+  ],
+  "explanation": "光顕→電顕：<b>刷子縁＝微絨毛</b>、<b>閉鎖堤＝接着複合体</b>、<b>基底線条＝基底陥入</b>。",
+  "point": "光顕と電顕の名前を対で。",
+  "tags": [
+   "面の構造"
+  ]
+ },
+ {
+  "id": "q014",
+  "slide": 12,
+  "chapter": 2,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "上皮細胞の面と構造の組み合わせで、スライド12に合わないものはどれか。",
+  "options": [
+   {
+    "text": "頂上面 ― 微絨毛",
+    "explanation": "合う",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "外側面の頂上近く ― 閉鎖堤",
+    "explanation": "合う",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "外側面の基底近く ― 嵌合",
+    "explanation": "合う",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "基底面 ― ヘミデスモゾーム",
+    "explanation": "合う",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "基底面 ― 線毛",
+    "explanation": "線毛は頂上面",
+    "correct": true
+   }
+  ],
+  "explanation": "頂上面：刷子縁（微絨毛）・<b>線毛</b>・不動毛。外側面：閉鎖堤・嵌合。基底面：基底線条（基底陥入）・ヘミデスモゾーム。",
+  "point": "線毛は頂上面。",
+  "tags": [
+   "面の構造"
+  ]
+ },
+ {
+  "id": "q015",
+  "slide": 14,
+  "chapter": 2,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "微絨毛の芯にあるものはどれか。",
+  "options": [
+   {
+    "text": "9＋2の微小管",
+    "explanation": "線毛",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "20〜30本のアクチンフィラメント",
+    "explanation": "スライド14",
+    "correct": true
+   },
+   {
+    "text": "9 tripletsの微小管",
+    "explanation": "基底小体",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "ケラチン線維",
+    "explanation": "デスモゾーム・ヘミデスモゾーム",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "コネクソン",
+    "explanation": "ギャップ結合",
+    "correct": false,
+    "trap": "swap"
+   }
+  ],
+  "explanation": "微絨毛の芯は<b>20〜30本のアクチンフィラメント</b>。線毛の芯は微小管（9＋2）。",
+  "point": "微絨毛＝アクチン、線毛＝微小管。",
+  "tags": [
+   "微絨毛"
+  ]
+ },
+ {
+  "id": "q016",
+  "slide": 14,
+  "chapter": 2,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "刷子縁について、スライド14の記述に合うものはどれか。",
+  "options": [
+   {
+    "text": "気道上皮の線毛が密集したもの",
+    "explanation": "微絨毛",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "基底面に見られるヒダ",
+    "explanation": "頂上面",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "微絨毛は長さ10 μm、幅1 μmである",
+    "explanation": "長さ1 μm×幅0.1 μm",
+    "correct": false,
+    "trap": "number"
+   },
+   {
+    "text": "小腸の吸収上皮細胞や近位尿細管上皮の頂上面に見られ、電顕では発達した微絨毛が密集したもの",
+    "explanation": "スライド14",
+    "correct": true
+   },
+   {
+    "text": "終末扇は微絨毛の先端にある",
+    "explanation": "基底部",
+    "correct": false,
+    "trap": "reverse"
+   }
+  ],
+  "explanation": "<b>刷子縁</b>は光顕の用語で、電顕では<b>微絨毛</b>の集まり。長さ<b>1 μm</b>×幅<b>0.1 μm</b>、表面に糖衣、基底部に<b>終末扇</b>。",
+  "point": "刷子縁＝微絨毛。小腸と近位尿細管。",
+  "tags": [
+   "微絨毛"
+  ]
+ },
+ {
+  "id": "q017",
+  "slide": 15,
+  "chapter": 2,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "線毛の芯の微小管の配列はどれか。",
+  "options": [
+   {
+    "text": "9 triplets",
+    "explanation": "基底小体",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "9 doublets＋2 singlets",
+    "explanation": "スライド15",
+    "correct": true
+   },
+   {
+    "text": "20〜30本のアクチンフィラメント",
+    "explanation": "微絨毛",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "9 doublets のみ",
+    "explanation": "中央に2 singlets",
+    "correct": false,
+    "trap": "number"
+   },
+   {
+    "text": "6量体のコネクシン",
+    "explanation": "ギャップ結合",
+    "correct": false,
+    "trap": "swap"
+   }
+  ],
+  "explanation": "線毛の芯は<b>9 doublets＋2 singlets</b>（9＋2）。基底小体は<b>9 triplets</b>。",
+  "point": "線毛9＋2、基底小体9 triplets。",
+  "tags": [
+   "線毛"
+  ]
+ },
+ {
+  "id": "q018",
+  "slide": 15,
+  "chapter": 2,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "線毛と基底小体について、スライド15の記述に合うものはどれか。",
+  "options": [
+   {
+    "text": "基底小体は線毛の先端にある",
+    "explanation": "基部",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "線毛は小腸の吸収上皮細胞に特徴的である",
+    "explanation": "気道・卵管・精巣輸出管",
+    "correct": false,
+    "trap": "scope"
+   },
+   {
+    "text": "基底小体は9 doubletsからなる",
+    "explanation": "9 triplets",
+    "correct": false,
+    "trap": "number"
+   },
+   {
+    "text": "線毛の2連管は基底小体のCから伸びる",
+    "explanation": "AとB",
+    "correct": false,
+    "trap": "number"
+   },
+   {
+    "text": "基底小体は中心子由来で、その3連管のA、Bが伸びて線毛の2連管になる",
+    "explanation": "スライド15",
+    "correct": true
+   }
+  ],
+  "explanation": "基底小体は<b>中心子由来の9 triplets</b>。tripletの<b>A、B</b>が伸びて線毛の<b>doublet</b>になる。線毛は気道・卵管・精巣輸出管など。",
+  "point": "基底小体（9 triplets）→ A、Bが線毛のdoubletへ。",
+  "tags": [
+   "線毛"
+  ]
+ },
+ {
+  "id": "q019",
+  "slide": 16,
+  "chapter": 2,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "微絨毛と線毛を同じ拡大倍率で比べたとき（スライド16）、正しいものはどれか。",
+  "options": [
+   {
+    "text": "線毛は微絨毛よりずっと太く、断面に微小管の配列が見える",
+    "explanation": "スライド16",
+    "correct": true
+   },
+   {
+    "text": "微絨毛のほうが太い",
+    "explanation": "線毛が太い",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "両者は同じ太さである",
+    "explanation": "異なる",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "微絨毛の断面に9＋2の配列が見える",
+    "explanation": "それは線毛",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "線毛の芯はアクチンフィラメントである",
+    "explanation": "微小管",
+    "correct": false,
+    "trap": "swap"
+   }
+  ],
+  "explanation": "同じ倍率では<b>線毛が明らかに太い</b>。線毛の断面には<b>微小管（9＋2）</b>、微絨毛の芯はアクチンフィラメント。",
+  "point": "線毛は太く、9＋2が見える。",
+  "tags": [
+   "微絨毛と線毛"
+  ]
+ },
+ {
+  "id": "q020",
+  "slide": 16,
+  "chapter": 2,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "微絨毛と線毛の組み合わせとして正しいものはどれか。",
+  "options": [
+   {
+    "text": "微絨毛 ― 基底小体 ／ 線毛 ― 終末扇",
+    "explanation": "逆",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "微絨毛 ― 気道 ／ 線毛 ― 小腸",
+    "explanation": "逆",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "微絨毛 ― 終末扇 ／ 線毛 ― 基底小体",
+    "explanation": "スライド14・15",
+    "correct": true
+   },
+   {
+    "text": "微絨毛 ― 微小管 ／ 線毛 ― アクチン",
+    "explanation": "逆",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "微絨毛 ― 9 triplets ／ 線毛 ― 20〜30本",
+    "explanation": "逆・数の取り違え",
+    "correct": false,
+    "trap": "number"
+   }
+  ],
+  "explanation": "微絨毛：アクチン20〜30本・<b>終末扇</b>・小腸や近位尿細管。線毛：微小管9＋2・<b>基底小体</b>・気道や卵管。",
+  "point": "根元は、微絨毛＝終末扇、線毛＝基底小体。",
+  "tags": [
+   "微絨毛と線毛"
+  ]
+ },
+ {
+  "id": "q021",
+  "slide": 18,
+  "chapter": 3,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "細胞間結合装置を頂上側から順に並べたものはどれか。",
+  "options": [
+   {
+    "text": "接着帯 → 密着帯 → 接着斑",
+    "explanation": "密着帯が最上部",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "密着帯 → 接着帯 → 接着斑（デスモゾーム）",
+    "explanation": "スライド18",
+    "correct": true
+   },
+   {
+    "text": "接着斑 → 接着帯 → 密着帯",
+    "explanation": "逆",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "ギャップ結合 → 密着帯 → 接着帯",
+    "explanation": "密着帯が最上部",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "密着帯 → 接着斑 → 接着帯",
+    "explanation": "接着帯が2番目",
+    "correct": false,
+    "trap": "reverse"
+   }
+  ],
+  "explanation": "細胞間結合装置（接着複合体）は上から<b>密着帯・接着帯・接着斑（デスモゾーム）</b>。ほかにギャップ結合がある。",
+  "point": "上から：密着帯・接着帯・デスモゾーム。",
+  "tags": [
+   "細胞間結合装置"
+  ]
+ },
+ {
+  "id": "q022",
+  "slide": 18,
+  "chapter": 3,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "閉鎖堤について正しいものはどれか。",
+  "options": [
+   {
+    "text": "電顕での用語で、光顕では接着複合体と呼ぶ",
+    "explanation": "逆",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "上皮細胞の基底面に見える",
+    "explanation": "頂上部",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "線毛の基部の構造である",
+    "explanation": "基底小体のこと",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "ギャップ結合だけからなる",
+    "explanation": "密着帯・接着帯・接着斑",
+    "correct": false,
+    "trap": "scope"
+   },
+   {
+    "text": "光顕で上皮細胞間の頂上部に縫い目のように見え、電顕では細胞間結合装置（接着複合体）である",
+    "explanation": "スライド18",
+    "correct": true
+   }
+  ],
+  "explanation": "光顕で頂上部に縫い目のように見える<b>閉鎖堤</b>は、電顕では<b>細胞間結合装置（接着複合体）</b>。",
+  "point": "閉鎖堤＝接着複合体（光顕名）。",
+  "tags": [
+   "細胞間結合装置"
+  ]
+ },
+ {
+  "id": "q023",
+  "slide": 19,
+  "chapter": 3,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "密着帯で結合する膜貫通蛋白質はどれか。",
+  "options": [
+   {
+    "text": "カドヘリン",
+    "explanation": "接着帯",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "デスモグレインとデスモコリン",
+    "explanation": "デスモゾーム",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "コネクシン",
+    "explanation": "ギャップ結合",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "オクルディンとクローディン",
+    "explanation": "スライド19",
+    "correct": true
+   },
+   {
+    "text": "インテグリン",
+    "explanation": "ヘミデスモゾーム",
+    "correct": false,
+    "trap": "swap"
+   }
+  ],
+  "explanation": "密着帯では<b>オクルディン同士、クローディン同士</b>が結合する。",
+  "point": "密着帯＝オクルディン・クローディン。",
+  "tags": [
+   "密着帯"
+  ]
+ },
+ {
+  "id": "q024",
+  "slide": 19,
+  "chapter": 3,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "密着帯の生理学的意味として、スライド19に挙げられているものはどれか。",
+  "options": [
+   {
+    "text": "細胞間隙を通る水・物質の移動の阻止と、膜蛋白質の移動の阻止",
+    "explanation": "スライド19",
+    "correct": true
+   },
+   {
+    "text": "イオンやcAMPを隣の細胞へ直接伝える",
+    "explanation": "ギャップ結合",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "上皮と基底膜の機械的結合の補強",
+    "explanation": "ヘミデスモゾーム",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "イオン輸送のため細胞膜の表面積を広げる",
+    "explanation": "基底陥入",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "表面の物質を移動させる",
+    "explanation": "線毛",
+    "correct": false,
+    "trap": "swap"
+   }
+  ],
+  "explanation": "密着帯は<b>①細胞間隙を通る水・物質の移動の阻止</b>（バリア）と<b>②膜蛋白質の移動の阻止</b>（頂上領域⇔基底外側領域）。",
+  "point": "密着帯＝バリアとフェンス。",
+  "tags": [
+   "密着帯"
+  ]
+ },
+ {
+  "id": "q025",
+  "slide": 22,
+  "chapter": 3,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "3つの上皮細胞の接点に存在するタイト結合を何というか。",
+  "options": [
+   {
+    "text": "ギャップ結合",
+    "explanation": "別の結合",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "ヘミデスモゾーム",
+    "explanation": "基底面",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "トリセルラータイトジャンクション",
+    "explanation": "スライド22",
+    "correct": true
+   },
+   {
+    "text": "終末扇",
+    "explanation": "微絨毛の基部",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "基底小体",
+    "explanation": "線毛の基部",
+    "correct": false,
+    "trap": "swap"
+   }
+  ],
+  "explanation": "3つの細胞の接点のタイト結合を<b>トリセルラータイトジャンクション</b>という。",
+  "point": "3細胞接点＝トリセルラーTJ。",
+  "tags": [
+   "トリセルラーTJ"
+  ]
+ },
+ {
+  "id": "q026",
+  "slide": 22,
+  "chapter": 3,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "トリセルラータイトジャンクションの構成分子として、スライド22に示されているものはどれか。",
+  "options": [
+   {
+    "text": "カドヘリンとカテニン",
+    "explanation": "接着帯",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "コネクシンとコネクソン",
+    "explanation": "ギャップ結合",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "インテグリンとラミニン",
+    "explanation": "ヘミデスモゾーム・基底膜",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "トリセルリンとアンギュリン",
+    "explanation": "スライド22",
+    "correct": true
+   },
+   {
+    "text": "デスモプラキンとプラコグロビン",
+    "explanation": "デスモゾームの裏打ち蛋白質",
+    "correct": false,
+    "trap": "swap"
+   }
+  ],
+  "explanation": "トリセルラーTJには<b>トリセルリン</b>と<b>アンギュリン</b>が集まる。",
+  "point": "トリセルリンとアンギュリン。",
+  "tags": [
+   "トリセルラーTJ"
+  ]
+ },
+ {
+  "id": "q027",
+  "slide": 23,
+  "chapter": 3,
+  "kind": "重要事項",
+  "difficulty": 2,
+  "stem": "間接免疫蛍光抗体法でのトリセルリンの局在として、スライド23に合うものはどれか。",
+  "options": [
+   {
+    "text": "細胞の境界全体に線状に検出される",
+    "explanation": "それはオクルディン",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "3つの細胞の接点に点状に検出される",
+    "explanation": "スライド23",
+    "correct": true
+   },
+   {
+    "text": "核の中に検出される",
+    "explanation": "該当しない",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "基底膜に沿って検出される",
+    "explanation": "該当しない",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "培養細胞では検出されず、器官だけで検出される",
+    "explanation": "両方で検出",
+    "correct": false,
+    "trap": "scope"
+   }
+  ],
+  "explanation": "トリセルリンは<b>3細胞の接点に点状</b>、オクルディンは<b>細胞の境界に沿って線状</b>。培養上皮細胞でもマウスの器官でも見られる。",
+  "point": "トリセルリン＝点、オクルディン＝線。",
+  "tags": [
+   "トリセルラーTJ"
+  ]
+ },
+ {
+  "id": "q028",
+  "slide": 23,
+  "chapter": 3,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "スライド23でトリセルリンとともに比較して染色された蛋白質はどれか。",
+  "options": [
+   {
+    "text": "オクルディン",
+    "explanation": "スライド23",
+    "correct": true
+   },
+   {
+    "text": "アクチン",
+    "explanation": "記載なし",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "ケラチン",
+    "explanation": "記載なし",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "コネクシン",
+    "explanation": "記載なし",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "ラミニン",
+    "explanation": "記載なし",
+    "correct": false,
+    "trap": "fact"
+   }
+  ],
+  "explanation": "トリセルリン（赤）とオクルディン（緑）を染め分け、mergeで比べている。",
+  "point": "トリセルリンとオクルディンの比較。",
+  "tags": [
+   "トリセルラーTJ"
+  ]
+ },
+ {
+  "id": "q029",
+  "slide": 24,
+  "chapter": 3,
+  "kind": "重要事項",
+  "difficulty": 2,
+  "stem": "アンギュリン-1をノックアウトした培養上皮細胞（スライド24）で見られた変化はどれか。",
+  "options": [
+   {
+    "text": "CSEは正常で、バリア機能も正常だった",
+    "explanation": "それはトリセルリンKO",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "TJストランドが増え、バリア機能が上昇した",
+    "explanation": "低下",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "細胞膜の密着が強くなった",
+    "explanation": "細胞間隙",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "何の変化もなかった",
+    "explanation": "CSE欠損・バリア低下",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "CSEが欠損して細胞間隙が生じ、上皮バリア機能が低下した",
+    "explanation": "スライド24",
+    "correct": true
+   }
+  ],
+  "explanation": "<b>アンギュリン-1 KO</b>ではCSE（central sealing elements）が<b>欠損</b>し、3細胞接点に<b>細胞間隙</b>が生じて<b>バリア機能が低下</b>した。",
+  "point": "アンギュリン-1 KO＝CSE欠損→バリア低下。",
+  "tags": [
+   "トリセルラーTJ"
+  ]
+ },
+ {
+  "id": "q030",
+  "slide": 24,
+  "chapter": 3,
+  "kind": "理解・統合",
+  "difficulty": 3,
+  "stem": "スライド24の結果から言えることとして、最も適切なものはどれか。",
+  "options": [
+   {
+    "text": "トリセルリンがなければ上皮バリアは必ず低下する",
+    "explanation": "トリセルリンKOのバリアは正常",
+    "correct": false,
+    "trap": "scope"
+   },
+   {
+    "text": "アンギュリン-1は2細胞間のタイト結合だけを制御する",
+    "explanation": "3細胞接点（TC）",
+    "correct": false,
+    "trap": "scope"
+   },
+   {
+    "text": "アンギュリン-1は、3細胞接点のCSE形成とバリア形成に必要である",
+    "explanation": "スライド24",
+    "correct": true
+   },
+   {
+    "text": "CSEはバリア機能に関係しない",
+    "explanation": "CSE欠損でバリア低下",
+    "correct": false,
+    "trap": "mechanism"
+   },
+   {
+    "text": "ノックアウトしても構造は変わらない",
+    "explanation": "変わる",
+    "correct": false,
+    "trap": "fact"
+   }
+  ],
+  "explanation": "トリセルリンKOではCSEが保たれバリアは正常、<b>アンギュリン-1 KOではCSEが欠損しバリアが低下</b>。アンギュリン-1が3細胞接点（TC）のバリア形成を制御する。",
+  "point": "TCのバリアにはアンギュリン-1（CSE）が必要。",
+  "tags": [
+   "トリセルラーTJ"
+  ]
+ },
+ {
+  "id": "q031",
+  "slide": 25,
+  "chapter": 4,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "接着帯で細胞同士を結合させる分子はどれか。",
+  "options": [
+   {
+    "text": "オクルディン",
+    "explanation": "密着帯",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "コネクシン",
+    "explanation": "ギャップ結合",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "カドヘリン",
+    "explanation": "スライド25",
+    "correct": true
+   },
+   {
+    "text": "インテグリン",
+    "explanation": "ヘミデスモゾーム",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "トリセルリン",
+    "explanation": "トリセルラーTJ",
+    "correct": false,
+    "trap": "swap"
+   }
+  ],
+  "explanation": "接着帯では<b>カドヘリン</b>（上皮：E-カドヘリン、神経：N-カドヘリン）同士がCa依存性に結合する。",
+  "point": "接着帯＝カドヘリン。",
+  "tags": [
+   "接着帯"
+  ]
+ },
+ {
+  "id": "q032",
+  "slide": 25,
+  "chapter": 4,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "接着帯について、スライド25の記述に合うものはどれか。",
+  "options": [
+   {
+    "text": "斑状に存在し、ケラチン線維と結合する",
+    "explanation": "デスモゾーム",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "細胞膜の間隔は2〜3 nmである",
+    "explanation": "ギャップ結合",
+    "correct": false,
+    "trap": "number"
+   },
+   {
+    "text": "細胞間結合装置の最上部にある",
+    "explanation": "密着帯の下",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "密着帯の下で全周に帯状に存在し、細胞膜の間隔は15〜20 nmで、細胞質側でアクチン線維と結合する",
+    "explanation": "スライド25",
+    "correct": true
+   },
+   {
+    "text": "基底面で基底膜と結合する",
+    "explanation": "ヘミデスモゾーム",
+    "correct": false,
+    "trap": "swap"
+   }
+  ],
+  "explanation": "接着帯は<b>密着帯の下</b>、<b>全周に帯状</b>、間隔<b>15〜20 nm</b>、<b>アクチン線維</b>と結合。機械的結合とシグナル伝達。",
+  "point": "接着帯＝帯状・15〜20 nm・アクチン。",
+  "tags": [
+   "接着帯"
+  ]
+ },
+ {
+  "id": "q033",
+  "slide": 26,
+  "chapter": 4,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "デスモゾームの細胞質側に結合する線維はどれか。",
+  "options": [
+   {
+    "text": "アクチン線維",
+    "explanation": "接着帯",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "微小管",
+    "explanation": "線毛",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "コラーゲン線維",
+    "explanation": "細胞外",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "弾性線維",
+    "explanation": "細胞外",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "ケラチン線維（中間径フィラメント）",
+    "explanation": "スライド26",
+    "correct": true
+   }
+  ],
+  "explanation": "デスモゾームには中間径フィラメントの<b>ケラチン線維</b>がヘアピン状に結合する。",
+  "point": "デスモゾーム＝ケラチン。",
+  "tags": [
+   "デスモゾーム"
+  ]
+ },
+ {
+  "id": "q034",
+  "slide": 26,
+  "chapter": 4,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "デスモゾーム（接着斑）について、スライド26の記述に合うものはどれか。",
+  "options": [
+   {
+    "text": "全周に帯状に存在する",
+    "explanation": "斑状",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "楕円形の斑状に存在し、細胞膜の間隔は約30 nmで、デスモグレインやデスモコリン同士が結合する",
+    "explanation": "スライド26",
+    "correct": true
+   },
+   {
+    "text": "細胞膜の間隔は0.1〜0.3 nmである",
+    "explanation": "密着帯",
+    "correct": false,
+    "trap": "number"
+   },
+   {
+    "text": "インテグリンが基底膜と結合する",
+    "explanation": "ヘミデスモゾーム",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "直径1.5〜2.0 nmのチャネルをつくる",
+    "explanation": "ギャップ結合",
+    "correct": false,
+    "trap": "swap"
+   }
+  ],
+  "explanation": "デスモゾームは接着帯の下に<b>斑状</b>、間隔<b>約30 nm</b>。カドヘリンファミリーの<b>デスモグレイン・デスモコリン</b>、プラーク（デスモプラキン・プラコグロビン）、ケラチン線維。",
+  "point": "デスモゾーム＝斑状・30 nm・デスモグレイン／デスモコリン。",
+  "tags": [
+   "デスモゾーム"
+  ]
+ },
+ {
+  "id": "q035",
+  "slide": 27,
+  "chapter": 4,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "ギャップ結合のチャネルをつくるものはどれか。",
+  "options": [
+   {
+    "text": "コネクシンの6量体であるコネクソン",
+    "explanation": "スライド27",
+    "correct": true
+   },
+   {
+    "text": "オクルディンの4量体",
+    "explanation": "密着帯の分子",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "カドヘリンの2量体",
+    "explanation": "接着帯の分子",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "インテグリン",
+    "explanation": "ヘミデスモゾーム",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "トリセルリン",
+    "explanation": "トリセルラーTJ",
+    "correct": false,
+    "trap": "swap"
+   }
+  ],
+  "explanation": "膜貫通蛋白質<b>コネクシン</b>の<b>6量体コネクソン</b>が、直径1.5〜2.0 nmの開閉可能なチャネルをつくる。",
+  "point": "コネクシン×6＝コネクソン。",
+  "tags": [
+   "ギャップ結合"
+  ]
+ },
+ {
+  "id": "q036",
+  "slide": 27,
+  "chapter": 4,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "ギャップ結合について、スライド27の記述に合うものはどれか。",
+  "options": [
+   {
+    "text": "蛋白質などの大きな分子も自由に通過する",
+    "explanation": "1 kDa以下",
+    "correct": false,
+    "trap": "number"
+   },
+   {
+    "text": "細胞膜の間隔は約30 nmである",
+    "explanation": "デスモゾーム",
+    "correct": false,
+    "trap": "number"
+   },
+   {
+    "text": "上皮細胞にしか存在しない",
+    "explanation": "心筋・平滑筋・神経・骨細胞にも",
+    "correct": false,
+    "trap": "scope"
+   },
+   {
+    "text": "分子量1 kDa以下のイオン、アミノ酸、cAMPなどが通過し、心筋や神経にも存在する",
+    "explanation": "スライド27",
+    "correct": true
+   },
+   {
+    "text": "チャネルは常に開いている",
+    "explanation": "開閉可能",
+    "correct": false,
+    "trap": "fact"
+   }
+  ],
+  "explanation": "ギャップ結合は間隔<b>2〜3 nm</b>、<b>1 kDa以下</b>の分子が通る開閉可能なチャネル。上皮のほか<b>心筋・平滑筋・神経・骨細胞</b>にも。電気的興奮やシグナル・栄養の直接伝達。",
+  "point": "ギャップ結合＝2〜3 nm・1 kDa以下・心筋や神経にも。",
+  "tags": [
+   "ギャップ結合"
+  ]
+ },
+ {
+  "id": "q037",
+  "slide": 29,
+  "chapter": 4,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "ヘミデスモゾームで基底膜と結合する接着分子はどれか。",
+  "options": [
+   {
+    "text": "カドヘリン",
+    "explanation": "接着帯",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "インテグリン",
+    "explanation": "スライド29",
+    "correct": true
+   },
+   {
+    "text": "オクルディン",
+    "explanation": "密着帯",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "コネクシン",
+    "explanation": "ギャップ結合",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "デスモグレイン",
+    "explanation": "デスモゾーム",
+    "correct": false,
+    "trap": "swap"
+   }
+  ],
+  "explanation": "ヘミデスモゾームでは<b>インテグリン</b>が基底膜の<b>ラミニンやIV型コラーゲン</b>と結合する。",
+  "point": "ヘミデスモゾーム＝インテグリン。",
+  "tags": [
+   "ヘミデスモゾーム"
+  ]
+ },
+ {
+  "id": "q038",
+  "slide": 29,
+  "chapter": 4,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "ヘミデスモゾームについて、スライド29の記述に合うものはどれか。",
+  "options": [
+   {
+    "text": "頂上面に存在する",
+    "explanation": "基底面",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "隣り合う細胞同士を結合する",
+    "explanation": "細胞と基底膜（細胞外マトリックス）",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "アクチン線維と結合する",
+    "explanation": "ケラチン線維",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "イオンを輸送するヒダである",
+    "explanation": "基底陥入",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "基底面に存在する斑状構造で、細胞質側では中間径フィラメントのケラチン線維と結合する",
+    "explanation": "スライド29",
+    "correct": true
+   }
+  ],
+  "explanation": "ヘミデスモゾームは<b>基底面</b>の斑状構造で、<b>細胞膜と細胞外マトリックス</b>を接着。インテグリン→ラミニン・IV型コラーゲン、細胞質側は<b>ケラチン線維</b>。",
+  "point": "細胞と基底膜をつなぐ。ケラチン。",
+  "tags": [
+   "ヘミデスモゾーム"
+  ]
+ },
+ {
+  "id": "q039",
+  "slide": 30,
+  "chapter": 4,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "基底陥入が見られる上皮はどれか。",
+  "options": [
+   {
+    "text": "皮膚の表皮",
+    "explanation": "記載なし",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "肺胞上皮",
+    "explanation": "記載なし",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "唾液腺の導管や腎臓の尿細管",
+    "explanation": "スライド30",
+    "correct": true
+   },
+   {
+    "text": "気管の多列線毛上皮",
+    "explanation": "記載なし",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "膀胱の移行上皮",
+    "explanation": "記載なし",
+    "correct": false,
+    "trap": "fact"
+   }
+  ],
+  "explanation": "基底陥入は<b>唾液腺の導管、腎臓の尿細管</b>など、<b>イオンを輸送する上皮の基底面</b>に存在する。",
+  "point": "イオン輸送上皮の基底面。",
+  "tags": [
+   "基底陥入"
+  ]
+ },
+ {
+  "id": "q040",
+  "slide": 30,
+  "chapter": 4,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "基底陥入について、スライド30の記述に合うものはどれか。",
+  "options": [
+   {
+    "text": "細胞膜の深いヒダに輸送体（例：Na⁺-K⁺ ATPase）があり、突起間の多数のミトコンドリアがエネルギーを供給する",
+    "explanation": "スライド30",
+    "correct": true
+   },
+   {
+    "text": "頂上面の細胞膜のヒダである",
+    "explanation": "基底側",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "光顕では刷子縁として見える",
+    "explanation": "基底線条",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "芯にアクチンフィラメントをもつ",
+    "explanation": "微絨毛",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "細胞膜の表面積を小さくする",
+    "explanation": "拡大",
+    "correct": false,
+    "trap": "reverse"
+   }
+  ],
+  "explanation": "基底陥入は<b>基底側の細胞膜の深いヒダ</b>で、<b>Na⁺-K⁺ ATPase</b>などの輸送体があり<b>表面積を拡大</b>。突起間の<b>ミトコンドリア</b>が供給。光顕では<b>基底線条</b>。",
+  "point": "基底陥入＝ヒダ＋ポンプ＋ミトコンドリア、光顕で基底線条。",
+  "tags": [
+   "基底陥入"
+  ]
+ },
+ {
+  "id": "q041",
+  "slide": 32,
+  "chapter": 5,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "上皮の形態による分類で、基準と用語の組み合わせが誤っているものはどれか。",
+  "options": [
+   {
+    "text": "層の数 ― 単層",
+    "explanation": "正しい",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "細胞の形 ― 立方",
+    "explanation": "正しい",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "細胞の形 ― 円柱",
+    "explanation": "正しい",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "細胞の形 ― 重層",
+    "explanation": "重層は層の数による分類",
+    "correct": true
+   },
+   {
+    "text": "修飾物 ― 角化",
+    "explanation": "正しい",
+    "correct": false,
+    "trap": "fact"
+   }
+  ],
+  "explanation": "層の数：単層・<b>重層</b>。細胞の形：<b>扁平・立方・円柱</b>。修飾物：線毛・角化。",
+  "point": "層の数／細胞の形／修飾物を区別。",
+  "tags": [
+   "上皮の分類"
+  ]
+ },
+ {
+  "id": "q042",
+  "slide": 32,
+  "chapter": 5,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "一見重層に見えるが、実は単層である上皮の組み合わせはどれか。",
+  "options": [
+   {
+    "text": "重層扁平上皮と移行上皮",
+    "explanation": "重層扁平は重層",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "単層扁平上皮と多列上皮",
+    "explanation": "単層扁平はもともと単層",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "角化重層扁平上皮と非角化重層扁平上皮",
+    "explanation": "重層",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "単層円柱上皮と単層立方上皮",
+    "explanation": "もともと単層",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "多列上皮と移行上皮",
+    "explanation": "スライド32",
+    "correct": true
+   }
+  ],
+  "explanation": "<b>多列</b>（重層に見えるが実は単層）と<b>移行</b>（層の数が変化する重層に見えるが実は単層）。",
+  "point": "多列と移行は実は単層。",
+  "tags": [
+   "上皮の分類"
+  ]
+ },
+ {
+  "id": "q043",
+  "slide": 33,
+  "chapter": 5,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "単層扁平上皮の存在部位として正しいものはどれか。",
+  "options": [
+   {
+    "text": "皮膚の表皮",
+    "explanation": "角化重層扁平上皮",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "肺胞上皮、血管内皮、体腔上皮（中皮）",
+    "explanation": "スライド33",
+    "correct": true
+   },
+   {
+    "text": "気管、気管支",
+    "explanation": "多列円柱上皮",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "膀胱",
+    "explanation": "移行上皮",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "小腸",
+    "explanation": "単層円柱上皮",
+    "correct": false,
+    "trap": "swap"
+   }
+  ],
+  "explanation": "単層扁平上皮は<b>肺胞上皮・血管内皮・体腔上皮（中皮）</b>。",
+  "point": "単層扁平＝肺胞・血管内皮・中皮。",
+  "tags": [
+   "単層扁平上皮"
+  ]
+ },
+ {
+  "id": "q044",
+  "slide": 33,
+  "chapter": 5,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "単層扁平上皮の性質として、スライド33の記述に合うものはどれか。",
+  "options": [
+   {
+    "text": "物質透過性が低く、抵抗性が強い",
+    "explanation": "それは重層扁平上皮",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "上層の細胞が角化する",
+    "explanation": "重層扁平上皮（角化）",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "物質透過性が高く、物理化学的な抵抗性は弱い",
+    "explanation": "スライド33",
+    "correct": true
+   },
+   {
+    "text": "層の数が変化する",
+    "explanation": "移行上皮",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "すべての細胞が線毛をもつ",
+    "explanation": "記載なし",
+    "correct": false,
+    "trap": "fact"
+   }
+  ],
+  "explanation": "単層扁平上皮は<b>物質透過性が高い</b>（細胞内と細胞間）が、<b>抵抗性は弱い</b>。Squameは魚の鱗の意味。",
+  "point": "薄い＝通しやすいが弱い。",
+  "tags": [
+   "単層扁平上皮"
+  ]
+ },
+ {
+  "id": "q045",
+  "slide": 34,
+  "chapter": 5,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "単層立方上皮の存在部位として、スライド34に挙げられているものはどれか。",
+  "options": [
+   {
+    "text": "尿細管上皮、甲状腺濾胞",
+    "explanation": "スライド34",
+    "correct": true
+   },
+   {
+    "text": "消化管上皮",
+    "explanation": "単層円柱上皮",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "卵管上皮",
+    "explanation": "単層円柱上皮",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "肺胞上皮",
+    "explanation": "単層扁平上皮",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "食道",
+    "explanation": "非角化重層扁平上皮",
+    "correct": false,
+    "trap": "swap"
+   }
+  ],
+  "explanation": "単層立方上皮は<b>尿細管上皮・甲状腺濾胞</b>など。単層円柱との違いは細胞の高さ。",
+  "point": "単層立方＝尿細管・甲状腺濾胞。",
+  "tags": [
+   "単層円柱・立方上皮"
+  ]
+ },
+ {
+  "id": "q046",
+  "slide": 34,
+  "chapter": 5,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "単層円柱上皮について、スライド34の記述に合うものはどれか。",
+  "options": [
+   {
+    "text": "抵抗性が大きく、皮膚の表皮に存在する",
+    "explanation": "重層扁平上皮",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "物質透過性が高く、肺胞に存在する",
+    "explanation": "単層扁平上皮",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "層の数が変化し、膀胱に存在する",
+    "explanation": "移行上皮",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "吸収細胞や分泌細胞（杯細胞など）が多く、消化管上皮（刷子縁あり）や卵管上皮（線毛あり）に存在する",
+    "explanation": "スライド34",
+    "correct": true
+   },
+   {
+    "text": "単層立方上皮とは細胞の高さ以外の性質がまったく異なる",
+    "explanation": "高さ以外は共通",
+    "correct": false,
+    "trap": "reverse"
+   }
+  ],
+  "explanation": "単層円柱上皮は<b>吸収・分泌</b>の細胞が多い。<b>消化管</b>（刷子縁）・<b>卵管</b>（線毛）。単層立方は高さ以外は共通。",
+  "point": "単層円柱＝消化管・卵管。",
+  "tags": [
+   "単層円柱・立方上皮"
+  ]
+ },
+ {
+  "id": "q047",
+  "slide": 35,
+  "chapter": 5,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "非角化重層扁平上皮の存在部位として正しいものはどれか。",
+  "options": [
+   {
+    "text": "皮膚の表皮",
+    "explanation": "角化",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "口腔〜食道、膣、角膜",
+    "explanation": "スライド35",
+    "correct": true
+   },
+   {
+    "text": "気管",
+    "explanation": "多列円柱",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "尿管",
+    "explanation": "移行上皮",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "血管内皮",
+    "explanation": "単層扁平",
+    "correct": false,
+    "trap": "swap"
+   }
+  ],
+  "explanation": "角化重層扁平上皮＝<b>皮膚の表皮</b>、非角化重層扁平上皮＝<b>口腔〜食道・膣・角膜</b>。",
+  "point": "角化＝表皮、非角化＝口腔〜食道・膣・角膜。",
+  "tags": [
+   "重層扁平上皮"
+  ]
+ },
+ {
+  "id": "q048",
+  "slide": 35,
+  "chapter": 5,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "重層扁平上皮について、スライド35の記述に合わないものはどれか。",
+  "options": [
+   {
+    "text": "上層の細胞のみが扁平である",
+    "explanation": "合う",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "最下層以外の細胞は基底膜に接触しない",
+    "explanation": "合う",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "物理・化学的な抵抗性が大きい",
+    "explanation": "合う",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "上層の細胞が死んでケラチンが蓄積することを角化という",
+    "explanation": "合う",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "物質透過性が大きく、分泌や吸収を活発に行う",
+    "explanation": "透過性小・分泌吸収（−）",
+    "correct": true
+   }
+  ],
+  "explanation": "重層扁平上皮は<b>上層のみ扁平</b>、<b>抵抗性大・透過性小・分泌吸収（−）</b>。最下層以外は基底膜に触れず栄養条件が悪い。",
+  "point": "石垣は強いが通さない。",
+  "tags": [
+   "重層扁平上皮"
+  ]
+ },
+ {
+  "id": "q049",
+  "slide": 36,
+  "chapter": 6,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "多列円柱上皮の存在部位はどれか。",
+  "options": [
+   {
+    "text": "膀胱",
+    "explanation": "移行上皮",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "皮膚の表皮",
+    "explanation": "角化重層扁平",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "気道（鼻腔、気管、気管支）",
+    "explanation": "スライド36",
+    "correct": true
+   },
+   {
+    "text": "小腸",
+    "explanation": "単層円柱",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "血管内皮",
+    "explanation": "単層扁平",
+    "correct": false,
+    "trap": "swap"
+   }
+  ],
+  "explanation": "多列円柱上皮（多列線毛上皮）は<b>気道（鼻腔・気管・気管支）</b>。",
+  "point": "多列＝気道。",
+  "tags": [
+   "多列円柱上皮"
+  ]
+ },
+ {
+  "id": "q050",
+  "slide": 36,
+  "chapter": 6,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "多列円柱上皮が単層とされる理由はどれか。",
+  "options": [
+   {
+    "text": "すべての細胞が基底膜に付くから",
+    "explanation": "スライド36",
+    "correct": true
+   },
+   {
+    "text": "すべての細胞が同じ高さだから",
+    "explanation": "背の高い細胞と低い細胞が混じる",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "核が1列に並ぶから",
+    "explanation": "核は何列にも見える",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "線毛をもたないから",
+    "explanation": "線毛をもつことが多い",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "細胞が扁平だから",
+    "explanation": "円柱",
+    "correct": false,
+    "trap": "fact"
+   }
+  ],
+  "explanation": "背の高い細胞と低い細胞（基底細胞）が混じり一見重層に見えるが、<b>すべての細胞が基底膜に付く</b>ので<b>単層</b>。",
+  "point": "基底膜に全員が付く＝単層。",
+  "tags": [
+   "多列円柱上皮"
+  ]
+ },
+ {
+  "id": "q051",
+  "slide": 37,
+  "chapter": 6,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "杯細胞の粘液を赤く染める染色法はどれか。",
+  "options": [
+   {
+    "text": "HE染色",
+    "explanation": "記載なし",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "間接免疫蛍光抗体法",
+    "explanation": "スライド23の方法",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "フリーズフラクチャー",
+    "explanation": "密着帯の観察法",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "鍍銀染色",
+    "explanation": "記載なし",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "PAS（periodic acid-Shiff）染色",
+    "explanation": "スライド37",
+    "correct": true
+   }
+  ],
+  "explanation": "粘液は糖鎖の多く付いた蛋白質なので<b>PAS染色で赤く</b>染まり、電顕では明るい顆粒を示す。",
+  "point": "杯細胞の粘液＝PASで赤。",
+  "tags": [
+   "杯細胞"
+  ]
+ },
+ {
+  "id": "q052",
+  "slide": 37,
+  "chapter": 6,
+  "kind": "理解・統合",
+  "difficulty": 3,
+  "stem": "PAS染色の原理として、スライド37の記述に合うものはどれか。",
+  "options": [
+   {
+    "text": "アルデヒド基を還元して水酸基に変える",
+    "explanation": "逆（酸化して水酸基→アルデヒド基）",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "DNAのリン酸基を染める",
+    "explanation": "糖鎖",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "抗体で糖鎖を検出する",
+    "explanation": "化学反応による染色",
+    "correct": false,
+    "trap": "mechanism"
+   },
+   {
+    "text": "糖鎖の水酸基CH-OHを酸化してアルデヒド基CH=Oに変え、Shiff試薬と反応させる",
+    "explanation": "スライド37",
+    "correct": true
+   },
+   {
+    "text": "刷子縁は染まらない",
+    "explanation": "刷子縁（糖衣）も染まる",
+    "correct": false,
+    "trap": "scope"
+   }
+  ],
+  "explanation": "PAS染色は糖鎖の<b>CH-OHを酸化してCH=O</b>に変え、<b>Shiff試薬</b>と反応させる。粘液顆粒のほか<b>刷子縁（糖衣）</b>も染まる。",
+  "point": "酸化→アルデヒド→Shiff試薬。",
+  "tags": [
+   "杯細胞"
+  ]
+ },
+ {
+  "id": "q053",
+  "slide": 38,
+  "chapter": 6,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "移行上皮の存在部位はどれか。",
+  "options": [
+   {
+    "text": "食道",
+    "explanation": "非角化重層扁平",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "気管",
+    "explanation": "多列円柱",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "尿路（尿管、膀胱、尿道上部）",
+    "explanation": "スライド38",
+    "correct": true
+   },
+   {
+    "text": "小腸",
+    "explanation": "単層円柱",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "尿細管",
+    "explanation": "単層立方",
+    "correct": false,
+    "trap": "swap"
+   }
+  ],
+  "explanation": "移行上皮は<b>尿路（尿管・膀胱・尿道上部）</b>。",
+  "point": "移行上皮＝尿路。",
+  "tags": [
+   "移行上皮"
+  ]
+ },
+ {
+  "id": "q054",
+  "slide": 38,
+  "chapter": 6,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "移行上皮について、スライド38の記述に合うものはどれか。",
+  "options": [
+   {
+    "text": "最上層の細胞が扁平になり角化する",
+    "explanation": "扁平にならない",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "収縮時と伸展時で層の数が変わり、最上層の細胞（被蓋細胞）は扁平にならない",
+    "explanation": "スライド38",
+    "correct": true
+   },
+   {
+    "text": "伸展時に細胞が増殖して表面積を広げる",
+    "explanation": "重なっていた細胞が基底膜側に落ちこむ",
+    "correct": false,
+    "trap": "mechanism"
+   },
+   {
+    "text": "基底膜に付く細胞は最下層だけと考えられている",
+    "explanation": "すべての細胞が付着すると考えられている",
+    "correct": false,
+    "trap": "scope"
+   },
+   {
+    "text": "層の数は常に一定である",
+    "explanation": "変わる",
+    "correct": false,
+    "trap": "reverse"
+   }
+  ],
+  "explanation": "移行上皮は<b>層の数が変わる</b>。上層は<b>扁平にならず</b>、最上層は<b>被蓋細胞</b>。伸展時は重なっていた細胞が<b>基底膜側に落ちこんで</b>表面積を広げる。",
+  "point": "移行上皮＝層の数が変わる・被蓋細胞・尿路。",
+  "tags": [
+   "移行上皮"
+  ]
+ }
+]
