@@ -21,6 +21,15 @@ const flag = (k) => rest.includes(k);
 const base = opt('--base', 'http://localhost:5199');
 let times = opt('--at', '') ? opt('--at').split(',').map(Number) : [];
 if (!times.length) { const a = Number(opt('--from', 0)), b = Number(opt('--to', 10)), fps = Number(opt('--fps', 4)); for (let t = a; t <= b + 1e-6; t += 1 / fps) times.push(Math.round(t * 1000) / 1000); }
+// --scene <id>: times are relative to that scene's start
+const scene = opt('--scene', '');
+if (scene) {
+  const def = JSON.parse(readFileSync(`src/content/courses/${course}/story/story.json`, 'utf8'));
+  let T = 0, s0 = null; const seen = new Set();
+  def.lines.forEach((l, i) => { if (!seen.has(l.scene)) { seen.add(l.scene); if (l.scene === scene) s0 = T; T += 1.2; } T += (l.wait || 0) + l.dur + 0.55; const n = def.lines[i + 1]; if (!n || n.scene !== l.scene) T += 1.4; });
+  if (s0 == null) { console.error('no scene', scene); process.exit(1); }
+  times = times.map((t) => Math.round((s0 + t) * 1000) / 1000);
+}
 mkdirSync(out, { recursive: true });
 
 const b = await chromium.launch(process.env.PW_CHROMIUM ? { executablePath: process.env.PW_CHROMIUM } : {});

@@ -4,6 +4,9 @@ import {
   CL, H, L, W, arrow, chibi, endCard, g, hand, label, motes, nameTag, rain, rr, seg, sky, sun, vignette,
 } from '../../../../engine/story/kit';
 import { opening } from './opening';
+import { library } from './scenes/library';
+import { letters } from './scenes/letters';
+import { pack } from './scenes/pack';
 
 /* ---------- characters ---------- */
 const jin = (x: number, y: number, s: number, t: number, run = false) => chibi(x, y, s, t, {
@@ -57,7 +60,10 @@ function codon(x: number, y: number, s: string, a = 1, hl = -1) {
 /* ---------- scenes ---------- */
 export const DRAW: Record<string, SceneDraw> = {
   opening,
-  library(t) {
+  library,
+  letters,
+  pack,
+  libraryOld(t) {
     shelves(t);
     lamp(400, 470);
     g.fillStyle = '#4a3428'; g.fillRect(150, 470, 520, 22);
@@ -84,7 +90,7 @@ export const DRAW: Record<string, SceneDraw> = {
     deo(1150, 640, 1.2, t); nameTag('原本の番人デオ', 1150, 500, '#3f86d1', seg(t, 1.5, 2.5));
     motes(t, 12, '255,224,170'); vignette(0.4);
   },
-  letters(t) {
+  lettersOld(t) {
     sky('#1f2433', '#272e42', '#2f3850');
     // the double helix as a twisting ladder
     const tw = t * 0.6;
@@ -119,7 +125,7 @@ export const DRAW: Record<string, SceneDraw> = {
     deo(110, 660, 0.9, t); jin(1190, 660, 0.9, t);
     label('塩基 ＝ 文字、糖 ＝ 紙、リン酸 ＝ 綴じ糸', t, '#3f86d1'); vignette(0.35);
   },
-  pack(t) {
+  packOld(t) {
     sky('#2a2038', '#33284a', '#3d3056');
     // DNA wrapping round octamer spools (nucleosomes) joined by linkers
     const n = Math.floor(L(0, 7, seg(t, 19, 30)));

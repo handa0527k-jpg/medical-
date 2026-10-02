@@ -13,7 +13,9 @@ export interface Look {
   shoulders: number;
   skin: string; skinShade: string; blush?: string;
   hair: string; hairShade: string; hairLight: string;
-  hairStyle: 'messy' | 'swept';
+  hairStyle: 'messy' | 'swept' | 'bob' | 'pony' | 'bun' | 'short';
+  /** softer jaw, longer lashes, tinted lips */
+  fem?: boolean;
   iris: string;
   glasses?: 'round' | 'half';
   beard?: string;
@@ -27,6 +29,15 @@ export interface Look {
   scarf?: [string, string];
   satchel?: [string, string];
   loupe?: boolean;
+  /** long skirt over the legs */
+  skirt?: string;
+  apron?: string;
+  /** proofreader's eyeshade */
+  visor?: string;
+  /** hooded cape behind the body: [outside, feather pattern] */
+  cape?: [string, string];
+  /** a necklace of eight beads */
+  necklace?: string;
 }
 
 /** an arm either aims its hand at a point (head units, from the shoulder; +x = facing direction) or uses angles */
@@ -108,12 +119,15 @@ export function drawHead(look: Look, cx: number, cy: number, h: number, f: Face,
   const fy = tilt * h * 0.14;
   const lw = Math.max(0.8, h * 0.014);
   const hw = h * 0.42; // half width of the skull
-  g.save(); g.translate(cx, cy);
+  g.save(); g.translate(cx, cy); g.lineJoin = 'round';
   const lit = (a: string, b: string) => (light < 0 ? [a, b] : [b, a]);
 
   /* hair mass behind the head (and the nape) */
   g.fillStyle = look.hairShade;
   g.beginPath(); g.ellipse(-fx * 0.3, -h * 0.12, hw * 1.08, h * 0.5, 0, 0, 7); g.fill();
+  if (look.hairStyle === 'bob') { g.beginPath(); g.moveTo(-hw * 1.1 - fx * 0.3, -h * 0.1); g.quadraticCurveTo(-hw * 1.25, h * 0.38, -hw * 0.8, h * 0.44); g.lineTo(hw * 0.8, h * 0.44); g.quadraticCurveTo(hw * 1.25, h * 0.38, hw * 1.1 - fx * 0.3, -h * 0.1); g.fill(); }
+  if (look.hairStyle === 'pony') { const sw2 = Math.sin(t * 2.2) * h * 0.05; g.beginPath(); g.moveTo(-sd * hw * 0.6, -h * 0.3); g.quadraticCurveTo(-sd * hw * 1.6 + sw2, h * 0.1, -sd * hw * 1.2 + sw2 * 1.5, h * 0.7); g.quadraticCurveTo(-sd * hw * 1.0 + sw2, h * 0.2, -sd * hw * 0.3, -h * 0.2); g.fill(); g.fillStyle = '#c0392b'; g.beginPath(); g.arc(-sd * hw * 0.62, -h * 0.28, h * 0.05, 0, 7); g.fill(); g.fillStyle = look.hairShade; }
+  if (look.hairStyle === 'bun') { g.beginPath(); g.arc(-fx * 0.2 - sd * hw * 0.2, -h * 0.62, h * 0.2, 0, 7); g.fill(); }
   if (look.hairStyle === 'messy') { g.beginPath(); g.moveTo(-hw * 1.02 - fx * 0.3, -h * 0.05); g.quadraticCurveTo(-hw * 0.9, h * 0.3, -hw * 0.5, h * 0.3); g.lineTo(hw * 0.5, h * 0.3); g.quadraticCurveTo(hw * 0.9, h * 0.3, hw * 1.02 - fx * 0.3, -h * 0.05); g.fill(); }
 
   /* ears */
@@ -132,8 +146,9 @@ export function drawHead(look: Look, cx: number, cy: number, h: number, f: Face,
     g.beginPath();
     g.moveTo(lx, -h * 0.1);
     g.bezierCurveTo(lx - h * 0.01, -h * 0.62, rx + h * 0.01, -h * 0.62, rx, -h * 0.1);
-    g.bezierCurveTo(rx, jawY * 0.5, rx * 0.9 + fx * 0.25, jawY, rx * 0.5 + fx * 0.7, h * 0.44);
-    g.bezierCurveTo(rx * 0.24 + fx * 0.85, chinY, lx * 0.24 + fx * 0.85, chinY, lx * 0.5 + fx * 0.7, h * 0.44);
+    const jw = look.fem ? 0.42 : 0.5, cw = look.fem ? 0.18 : 0.24;
+    g.bezierCurveTo(rx, jawY * 0.5, rx * 0.9 + fx * 0.25, jawY, rx * jw + fx * 0.7, h * 0.44);
+    g.bezierCurveTo(rx * cw + fx * 0.85, chinY, lx * cw + fx * 0.85, chinY, lx * jw + fx * 0.7, h * 0.44);
     g.bezierCurveTo(lx * 0.9 + fx * 0.25, jawY, lx, jawY * 0.5, lx, -h * 0.1);
     g.closePath();
   };
@@ -159,7 +174,7 @@ export function drawHead(look: Look, cx: number, cy: number, h: number, f: Face,
     if (!near && ay > 0.85) return;
     const sx = near ? 1 : 1 - ay * 0.5;
     const ex = fx + k * sep * (near ? 1 + ay * 0.04 : 1 - ay * 0.6);
-    const ew = h * 0.072 * sx, eh = h * 0.045, open = 1 - blink * 0.94;
+    const ew = h * (look.fem ? 0.078 : 0.072) * sx, eh = h * (look.fem ? 0.05 : 0.045), open = 1 - blink * 0.94;
     g.save(); g.translate(ex, eyeY);
     // eye white and iris, clipped by the lids
     if (open > 0.1) {
@@ -174,9 +189,12 @@ export function drawHead(look: Look, cx: number, cy: number, h: number, f: Face,
       g.restore();
     }
     // upper lid with a lash flick at the outer corner, a crease above, a faint lower lid
-    g.strokeStyle = '#22160f'; g.lineCap = 'round'; g.lineWidth = lw * 1.9;
+    g.strokeStyle = '#22160f'; g.lineCap = 'round'; g.lineWidth = lw * (look.fem ? 2.5 : 1.9);
     g.beginPath(); g.moveTo(-ew * 1.02, eh * 0.05); g.bezierCurveTo(-ew * 0.5, -eh * 1.5 * open - eh * 0.05, ew * 0.6, -eh * 1.45 * open - eh * 0.05, ew * 1.05, -eh * 0.1 * open);
-    g.lineTo(ew * 1.05 + k * 0 + h * 0.012 * k, -eh * 0.35 * open - h * 0.004); g.stroke();
+    g.stroke();
+    // lash flick at the outer corner
+    const ox = k < 0 ? -ew * 1.02 : ew * 1.05, oy = k < 0 ? eh * 0.05 : -eh * 0.1 * open;
+    g.beginPath(); g.moveTo(ox, oy); g.lineTo(ox + k * h * 0.016, oy - h * 0.012); g.stroke();
     if (open > 0.3) { g.strokeStyle = 'rgba(90,50,40,.45)'; g.lineWidth = lw * 0.7; g.beginPath(); g.moveTo(-ew * 0.7, -eh * 1.5); g.quadraticCurveTo(0, -eh * 2.1, ew * 0.8, -eh * 1.2); g.stroke();
       g.strokeStyle = 'rgba(120,60,50,.35)'; g.beginPath(); g.moveTo(-ew * 0.6, eh * 0.95); g.quadraticCurveTo(0, eh * 1.25, ew * 0.75, eh * 0.7); g.stroke(); }
     // brow: thin and tapered, inner end lifts with worry/surprise
@@ -199,7 +217,7 @@ export function drawHead(look: Look, cx: number, cy: number, h: number, f: Face,
     g.fillStyle = 'rgba(240,235,228,.85)'; g.beginPath(); g.ellipse(mx, my - h * 0.004, mw * 0.6, h * 0.007 * Math.min(1, mo * 2), 0, 0, Math.PI); g.fill();
     g.fillStyle = 'rgba(200,90,90,.5)'; g.beginPath(); g.ellipse(mx, my + h * 0.04 * mo, mw * 0.45, h * 0.012 * mo, 0, 0, 7); g.fill();
   } else {
-    g.strokeStyle = '#7a3d34'; g.lineWidth = lw * 1.05; g.beginPath(); g.moveTo(mx - mw, my - sm * h * 0.012); g.quadraticCurveTo(mx, my + sm * h * 0.02 + h * 0.004, mx + mw, my - sm * h * 0.012); g.stroke();
+    g.strokeStyle = look.fem ? '#b0504f' : '#7a3d34'; g.lineWidth = lw * (look.fem ? 1.5 : 1.05); g.beginPath(); g.moveTo(mx - mw, my - sm * h * 0.012); g.quadraticCurveTo(mx, my + sm * h * 0.02 + h * 0.004, mx + mw, my - sm * h * 0.012); g.stroke();
     g.strokeStyle = 'rgba(150,80,70,.3)'; g.beginPath(); g.moveTo(mx - mw * 0.5, my + h * 0.03); g.quadraticCurveTo(mx, my + h * 0.04, mx + mw * 0.5, my + h * 0.03); g.stroke();
   }
   if (look.beard) {
@@ -252,6 +270,25 @@ export function drawHead(look: Look, cx: number, cy: number, h: number, f: Face,
     [-1, 1].forEach((k) => { const sx = k * hw * 1.0 - fx * 0.25; if (k === sd && ay > 0.6) return; g.fillStyle = look.hair; g.beginPath(); g.moveTo(sx - k * h * 0.02, -h * 0.25); g.quadraticCurveTo(sx + k * h * 0.04, h * 0.02, sx - k * h * 0.02, h * 0.16); g.quadraticCurveTo(sx - k * h * 0.06, -h * 0.02, sx - k * h * 0.1, -h * 0.22); g.fill(); });
     // cowlick
     g.strokeStyle = look.hair; g.lineWidth = lw * 2.2; g.lineCap = 'round'; g.beginPath(); g.moveTo(fx * 0.2 + h * 0.03, -h * 0.6); g.quadraticCurveTo(fx * 0.2 + h * 0.08, -h * 0.69, fx * 0.2 + h * (0.05 + 0.012 * Math.sin(t * 2.6)), -h * 0.73); g.stroke();
+  } else if (look.hairStyle === 'bob' || look.hairStyle === 'short' || look.hairStyle === 'pony') {
+    // a cap over the skull; blunt bangs (bob), a neat side part (short) or swept bangs (pony)
+    const hg = g.createLinearGradient(0, -h * 0.7, 0, 0); hg.addColorStop(0, look.hairLight); hg.addColorStop(0.35, look.hair); hg.addColorStop(1, look.hairShade);
+    g.fillStyle = hg;
+    g.beginPath(); g.moveTo(-hw * 1.08 - fx * 0.2, h * (look.hairStyle === 'bob' ? 0.3 : 0.04));
+    g.bezierCurveTo(-hw * 1.16 - fx * 0.2, -h * 0.74, hw * 1.16 - fx * 0.2, -h * 0.74, hw * 1.08 - fx * 0.2, h * (look.hairStyle === 'bob' ? 0.3 : 0.04));
+    if (look.hairStyle === 'bob') { g.lineTo(hw * 0.86 - fx * 0.1, h * 0.25); g.lineTo(hw * 0.84 + fx * 0.3, -h * 0.1); g.quadraticCurveTo(fx * 0.6, -h * 0.05, -hw * 0.84 + fx * 0.3, -h * 0.1); g.lineTo(-hw * 0.86 - fx * 0.1, h * 0.25); }
+    else if (look.hairStyle === 'short') { g.quadraticCurveTo(hw * 0.9, -h * 0.2, hw * 0.5 + fx * 0.3, -h * 0.3); g.quadraticCurveTo(-hw * 0.2 + fx * 0.4, -h * 0.22, -hw * 0.6 + fx * 0.2, -h * 0.34); g.quadraticCurveTo(-hw * 0.95, -h * 0.2, -hw * 1.08 - fx * 0.2, h * 0.04); }
+    else { g.quadraticCurveTo(hw * 0.95, -h * 0.05, hw * 0.55 + fx * 0.3, -h * 0.12); g.quadraticCurveTo(fx * 0.3 - sd * hw * 0.3, -h * 0.28, -hw * 0.7 + fx * 0.2, -h * 0.08); g.quadraticCurveTo(-hw * 0.95, -h * 0.1, -hw * 1.08 - fx * 0.2, h * 0.04); }
+    g.closePath(); g.fill();
+    g.strokeStyle = look.hairShade; g.lineWidth = lw * 0.6; g.globalAlpha = 0.45;
+    for (let i = 0; i < 6; i++) { const u = -0.8 + i * 0.32; g.beginPath(); g.moveTo(u * hw * 0.5 + fx * 0.4, -h * 0.66); g.quadraticCurveTo(u * hw * 0.95, -h * 0.4, u * hw * 1.0 + fx * 0.3, look.hairStyle === 'bob' ? -h * 0.08 : -h * 0.22); g.stroke(); }
+    g.globalAlpha = 1;
+  } else if (look.hairStyle === 'bun') {
+    const hg = g.createLinearGradient(0, -h * 0.75, 0, 0); hg.addColorStop(0, look.hairLight); hg.addColorStop(0.4, look.hair); hg.addColorStop(1, look.hairShade);
+    g.fillStyle = hg; g.beginPath(); g.moveTo(-hw * 1.04 - fx * 0.2, h * 0.02);
+    g.bezierCurveTo(-hw * 1.1 - fx * 0.2, -h * 0.74, hw * 1.1 - fx * 0.2, -h * 0.74, hw * 1.04 - fx * 0.2, h * 0.02);
+    g.quadraticCurveTo(hw * 0.9, -h * 0.25, fx * 0.5, -h * 0.34); g.quadraticCurveTo(-hw * 0.9, -h * 0.25, -hw * 1.04 - fx * 0.2, h * 0.02); g.fill();
+    g.strokeStyle = look.hairShade; g.lineWidth = lw * 0.6; g.globalAlpha = 0.5; for (let i = 0; i < 6; i++) { const u = -0.8 + i * 0.32; g.beginPath(); g.moveTo(u * hw * 0.8 + fx * 0.4, -h * 0.3); g.quadraticCurveTo(u * hw * 0.6, -h * 0.55, -sd * hw * 0.2 - fx * 0.2, -h * 0.62); g.stroke(); } g.globalAlpha = 1;
   } else {
     // swept-back silver hair: receding temples, a soft widow's peak, combed back over the crown
     const hg = g.createLinearGradient(0, -h * 0.75, 0, h * 0.05); hg.addColorStop(0, look.hairLight); hg.addColorStop(0.45, look.hair); hg.addColorStop(1, look.hairShade);
@@ -266,6 +303,7 @@ export function drawHead(look: Look, cx: number, cy: number, h: number, f: Face,
     for (let i = 0; i < 5; i++) { const u = -0.6 + i * 0.3; g.beginPath(); g.moveTo(u * hw * 0.7 + fx * 0.45, -h * 0.38); g.bezierCurveTo(u * hw * 0.8 + fx * 0.2, -h * 0.5, u * hw * 0.9, -h * 0.62, u * hw * 1.05 - fx * 0.2, -h * 0.66); g.stroke(); }
     g.globalAlpha = 1;
   }
+  if (look.visor) { g.fillStyle = look.visor; g.globalAlpha = 0.85; g.beginPath(); g.moveTo(-hw * 1.05 - fx * 0.1, -h * 0.28); g.quadraticCurveTo(fx * 0.6, -h * 0.4, hw * 1.05 - fx * 0.1, -h * 0.28); g.lineTo(hw * 0.9 + fx * 0.9, -h * 0.12); g.quadraticCurveTo(fx * 1.1, -h * 0.2, -hw * 0.9 + fx * 0.9, -h * 0.12); g.closePath(); g.fill(); g.globalAlpha = 1; g.fillStyle = 'rgba(20,40,25,.5)'; g.fillRect(-hw * 1.05 - fx * 0.1, -h * 0.31, hw * 2.1, h * 0.05); }
   // crown highlight from the key light (thin strokes, not a band)
   g.save(); g.globalCompositeOperation = 'screen'; g.strokeStyle = look.hairLight; g.lineCap = 'round';
   for (let i = 0; i < 2; i++) { g.globalAlpha = 0.2; g.lineWidth = lw * (1.4 - i * 0.4); const a0 = Math.PI * (light < 0 ? 1.18 : 1.58) + i * 0.05, r0 = hw * (1.02 - i * 0.06); g.beginPath(); g.arc(-fx * 0.2, -h * 0.17, r0, a0, a0 + 0.32); g.stroke(); }
@@ -285,6 +323,14 @@ export function drawFigure(look: Look, p: Pose) {
   g.save(); g.translate(p.x, p.y);
   const hip: P = [0, -legLen + bob];
   const light = p.light ?? -1;
+  // cape behind the body, swaying
+  if (look.cape) {
+    const sway = Math.sin(t * 1.7) * h * 0.25 + walk * h * 0.3;
+    g.save(); g.translate(0, -legLen); g.fillStyle = look.cape[0];
+    g.beginPath(); g.moveTo(-h * 0.8, -h * 2.4); g.quadraticCurveTo(-dir * h * 2.4 + sway, -h * 0.6, -dir * h * 2.0 + sway * 1.4, h * 1.6); g.lineTo(dir * h * 0.7, h * 0.8); g.quadraticCurveTo(h * 0.8, -h * 1.0, h * 0.8, -h * 2.4); g.closePath(); g.fill();
+    g.strokeStyle = look.cape[1]; g.lineWidth = h * 0.05; for (let i = 0; i < 7; i++) { const u = i / 6; g.beginPath(); g.ellipse(L(-dir * h * 0.4, -dir * h * 1.6 + sway, u), L(-h * 1.6, h * 1.1, u), h * 0.28, h * 0.12, -dir * 0.6, 0, Math.PI); g.stroke(); }
+    g.restore();
+  }
   // contact shadow
   g.fillStyle = 'rgba(0,0,0,.28)'; g.beginPath(); g.ellipse(0, 0, h * 1.1, h * 0.16, 0, 0, 7); g.fill();
 
@@ -303,6 +349,7 @@ export function drawFigure(look: Look, p: Pose) {
     g.beginPath(); g.ellipse(ft[0] + dir * h * 0.14, Math.min(ft[1], 0) - h * 0.06, h * 0.26, h * 0.1, 0, 0, 7); g.fill();
   };
   legs(false);
+  if (look.skirt) legs(true);
 
   // upper body around the hip, leaning
   g.save(); g.translate(hip[0], hip[1]); g.rotate(lean * dir);
@@ -381,6 +428,9 @@ export function drawFigure(look: Look, p: Pose) {
   g.strokeStyle = 'rgba(0,0,0,.18)'; g.lineWidth = Math.max(1, h * 0.02); g.beginPath(); g.moveTo(-dir * sw * 0.32, waistY + h * 0.35); g.lineTo(-dir * sw * 0.12, waistY + h * 0.35); g.stroke();
   // satchel strap from the near shoulder across to the far hip
   if (look.satchel) { g.strokeStyle = look.satchel[1]; g.lineWidth = h * 0.09; g.lineCap = 'butt'; g.beginPath(); g.moveTo(dir * sw * 0.3, neckY + h * 0.12); g.quadraticCurveTo(0, chestY, -dir * sw * 0.38, -h * 0.5); g.stroke(); g.strokeStyle = 'rgba(255,230,190,.15)'; g.lineWidth = h * 0.02; g.stroke(); }
+  if (look.skirt && !p.noLegs) { const sk = g.createLinearGradient(-sw / 2, 0, sw / 2, 0); sk.addColorStop(0, look.skirt); sk.addColorStop(1, shadeHex(look.skirt)); g.fillStyle = sk; g.beginPath(); g.moveTo(-sw * 0.36, waistY + h * 0.1); g.lineTo(sw * 0.36, waistY + h * 0.1); g.quadraticCurveTo(sw * 0.5, legLen * 0.5, sw * 0.58 + walk * Math.sin(ph) * h * 0.2, legLen - h * 0.45); g.lineTo(-sw * 0.58 + walk * Math.sin(ph) * h * 0.2, legLen - h * 0.45); g.quadraticCurveTo(-sw * 0.5, legLen * 0.5, -sw * 0.36, waistY + h * 0.1); g.fill(); g.strokeStyle = 'rgba(0,0,0,.15)'; g.lineWidth = Math.max(1, h * 0.02); for (let i = -1; i <= 1; i++) { g.beginPath(); g.moveTo(i * sw * 0.15, waistY + h * 0.4); g.lineTo(i * sw * 0.25, legLen - h * 0.5); g.stroke(); } }
+  if (look.apron) { g.fillStyle = look.apron; rr(-sw * 0.3, chestY - h * 0.1, sw * 0.6, (look.skirt ? legLen * 0.6 : h * 0.4) - chestY + h * 0.1, h * 0.08); g.fill(); g.strokeStyle = shadeHex(look.apron); g.lineWidth = h * 0.04; g.beginPath(); g.moveTo(-sw * 0.3, chestY); g.lineTo(-sw * 0.16, neckY + h * 0.1); g.moveTo(sw * 0.3, chestY); g.lineTo(sw * 0.16, neckY + h * 0.1); g.stroke(); g.fillStyle = 'rgba(0,0,0,.12)'; rr(-sw * 0.18, waistY + h * 0.3, sw * 0.36, h * 0.35, h * 0.05); g.fill(); }
+  if (look.necklace) { for (let i = 0; i < 8; i++) { const a2 = Math.PI * (0.2 + (i / 7) * 0.6); g.fillStyle = i % 2 ? look.necklace : shadeHex(look.necklace); g.beginPath(); g.arc(Math.cos(a2) * sw * 0.2, neckY + h * 0.15 + Math.sin(a2) * h * 0.38, h * 0.055, 0, 7); g.fill(); } }
   // scarf with a twisting two-colour (double helix) knit
   if (look.scarf) {
     g.fillStyle = look.scarf[0]; rr(-sw * 0.26, neckY - h * 0.02, sw * 0.52, h * 0.3, h * 0.12); g.fill();
@@ -397,7 +447,7 @@ export function drawFigure(look: Look, p: Pose) {
   drawHead(look, (p.yaw ?? 0) * h * 0.06, neckY - h * 0.62, h, p, t, light);
   arm(true);
   g.restore();
-  legs(true);
+  if (!look.skirt) legs(true);
   g.restore();
 }
 
