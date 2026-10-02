@@ -16,6 +16,7 @@ const oct = (r: number, z: number, y = GATE_Y, x = 0): V3[] => Array.from({ leng
 
 /** night sky + city glow behind the head office (screen space) */
 function sky(cam: Camera, t: number) {
+  g.fillStyle = '#05060c'; g.fillRect(0, 0, W, H);
   const gr = g.createLinearGradient(0, 0, 0, H); gr.addColorStop(0, '#060912'); gr.addColorStop(0.7, '#141a30'); gr.addColorStop(1, '#22213a');
   g.fillStyle = gr; g.fillRect(0, 0, W, H);
   for (let i = 0; i < 60; i++) { const x = ((i * 197 - cam.pos[0] * 20) % W + W) % W, y = (i * 89) % 260; g.fillStyle = `rgba(255,250,225,${0.25 + 0.4 * Math.abs(Math.sin(t * 0.6 + i))})`; g.fillRect(x, y, 1.5, 1.5); }

@@ -50,10 +50,18 @@ function headquarters(cx: number, cy: number, r: number, t: number, mode: 'night
 
 /* ---------- scenes ---------- */
 import { gate } from './scenes/gate';
+import { hq } from './scenes/hq';
+import { archiveScene } from './scenes/archive';
+import { nucleolusScene } from './scenes/nucleolus';
+import { splitScene } from './scenes/split';
 
 export const DRAW: Record<string, SceneDraw> = {
   gate,
-  hq(t) {
+  hq,
+  archive: archiveScene,
+  nucleolus: nucleolusScene,
+  split: splitScene,
+  hqOld(t) {
     sky('#121a33', '#22305a', '#3b3f6a'); stars(t, 90); moon(1120, 110, 34);
     // sleeping town
     for (let i = 0; i < 14; i++) { const x = i * 96 - 20, h2 = 70 + ((i * 37) % 60); g.fillStyle = '#1d2443'; rr(x, 600 - h2, 80, h2 + 40, 12); g.fill(); g.fillStyle = (i * 5) % 3 ? 'rgba(255,214,130,.0)' : 'rgba(255,214,130,.7)'; rr(x + 30, 600 - h2 + 20, 16, 14, 3); g.fill(); }
@@ -110,7 +118,7 @@ export const DRAW: Record<string, SceneDraw> = {
     nameTag('核バスケット', 640, 510, '#c99a2a', bk); nameTag('核ラミナ（ラミン）', 1040, 420, '#6a4a96', lm);
     label('核膜孔複合体 ＝ 守衛つきの門', t, '#3f86d1'); vignette(0.3);
   },
-  archive(t) {
+  archiveOld(t) {
     room('#2c2340', '#3a2d4c', t, 0.12);
     // shelves
     for (let r2 = 0; r2 < 3; r2++) { g.fillStyle = '#4a3a62'; g.fillRect(0, 120 + r2 * 120, W, 10); for (let i = 0; i < 26; i++) { g.fillStyle = ['#7d5aa8', '#5b8b9e', '#a86f5a', '#8a9e5b'][(i + r2) % 4]; g.fillRect(20 + i * 48, 70 + r2 * 120, 30, 50); } }
@@ -137,7 +145,7 @@ export const DRAW: Record<string, SceneDraw> = {
     tag(110, 650, 1, t);
     motes(t, 18, '210,190,255'); label('染色質 ＝ 設計図の書庫', t, '#8a5cc2'); vignette(0.35);
   },
-  nucleolus(t) {
+  nucleolusOld(t) {
     sky('#3a2335', '#4a2c42', '#5a364c');
     const cx = 620, cy = 330;
     // granular, dense fibrillar, fibrillar centre
@@ -162,7 +170,7 @@ export const DRAW: Record<string, SceneDraw> = {
     hand('RNAポリメラーゼI → rRNA', 620, 62, 24, '#ffe6ef', seg(t, 30, 31), 'center');
     label('核小体 ＝ 部品の組立室', t, '#c0566f'); vignette(0.32);
   },
-  split(t) {
+  splitOld(t) {
     sky('#1d2a2a', '#28403a', '#2f4a40');
     // phase strip
     const P = ['前期', '前中期', '中期', '後期', '終期'];

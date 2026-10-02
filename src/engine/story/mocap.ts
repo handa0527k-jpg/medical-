@@ -92,7 +92,10 @@ function takePose(tk: Take, t: number): Pose3 {
   const end = tk.to ?? c.frames.length / c.fps;
   const u = from + Math.max(0, t - tk.at) * rate;
   const r0 = rawFrame(c, from), r = rawFrame(c, c.loop && !tk.to ? u : Math.min(u, end));
-  const base = r0.f[J.pelvis], face0 = facingOf(r0.f);
+  const base = r0.f[J.pelvis];
+  // walks: head along the stride (where the feet actually go), not the hip line
+  let face0 = facingOf(r0.f);
+  if (tk.travel && c.loop) { const fa = c.frames[c.loop.a][0], fb = c.frames[c.loop.b][0]; face0 = Math.atan2(fb[0] - fa[0], fb[2] - fa[2]); }
   const turn = tk.face - face0;
   const sc = tk.h && c.stature ? tk.h / c.stature : 1;
   const p = r.f.map((q) => {
