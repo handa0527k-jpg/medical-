@@ -5,9 +5,10 @@ Record the story anime voices (one MP3 per line).
     npx tsx scripts/build-story-speech.ts <course>
     python3 scripts/generate-story-audio.py <course>
 
-Each line is saved as public/courses/<course>/story/<hash>.mp3 (hash of voice + reading),
-so re-running only records new or changed lines; files no longer used are removed.
-The measured duration and file name are written back into story/story.json.
+Each line is recorded once into .audio-cache/story/<course>/<hash>.mp3 (hash of voice + reading),
+so re-running only records new or changed lines. All lines are then joined into one file,
+public/courses/<course>/story/story.mp3 (CBR frames, so any line's byte range is itself a valid
+MP3); each line's byte range and measured duration are written back into story/story.json.
 """
 import asyncio, hashlib, json, os, ssl, sys
 
@@ -47,8 +48,10 @@ async def main():
     course = sys.argv[1]
     spec = json.load(open(os.path.join(ROOT, '.audio-cache/story', f'{course}.json')))
     sdir = os.path.join(ROOT, 'src/content/courses', course, 'story')
-    adir = os.path.join(ROOT, 'public/courses', course, 'story')
+    adir = os.path.join(ROOT, '.audio-cache/story', course)
+    pdir = os.path.join(ROOT, 'public/courses', course, 'story')
     os.makedirs(adir, exist_ok=True)
+    os.makedirs(pdir, exist_ok=True)
     story_path = os.path.join(sdir, 'story.json')
     story = json.load(open(story_path))
     sem = asyncio.Semaphore(6)
@@ -65,13 +68,17 @@ async def main():
         return name
 
     names = await asyncio.gather(*(one(x) for x in spec))
+    blob = bytearray()
     for l, name in zip(story['lines'], names):
-        l['file'] = name
+        data = open(os.path.join(adir, name), 'rb').read()
+        l.pop('file', None)
+        l['bytes'] = [len(blob), len(data)]
         l['dur'] = duration(os.path.join(adir, name))
-    keep = set(names)
-    for f in os.listdir(adir):
-        if f.endswith('.mp3') and f not in keep:
-            os.remove(os.path.join(adir, f))
+        blob += data
+    for f in os.listdir(pdir):
+        os.remove(os.path.join(pdir, f))
+    open(os.path.join(pdir, 'story.mp3'), 'wb').write(blob)
+    story['audio'] = hashlib.sha1(bytes(blob)).hexdigest()[:10]
     with open(story_path, 'w') as fh:
         json.dump(story, fh, ensure_ascii=False, indent=1)
         fh.write('\n')

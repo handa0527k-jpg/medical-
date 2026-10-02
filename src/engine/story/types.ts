@@ -6,8 +6,8 @@ export interface StoryLine {
   text: string;
   /** audio length in seconds (measured when the audio was generated) */
   dur: number;
-  /** audio file name under <assetBase>story/ */
-  file: string;
+  /** byte range [start, length] of this line in <assetBase>story/story.mp3 */
+  bytes: [number, number];
 }
 
 export interface StoryScene {
@@ -44,6 +44,8 @@ export interface StoryDef {
   /** speaker → [voice, pitch, rate] used by scripts/generate-story-audio.py */
   voices: Record<string, [string, string, string]>;
   lines: StoryLine[];
+  /** version of story.mp3 (changes whenever the voices are re-recorded) */
+  audio: string;
   /** scene time (s) of the poster frame shown before playback */
   poster?: [string, number];
 }

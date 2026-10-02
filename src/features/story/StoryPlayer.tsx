@@ -19,6 +19,10 @@ export default function StoryPlayer({ story, assetBase }: { story: StoryModule; 
   const cvRef = useRef<HTMLCanvasElement>(null);
   const boxRef = useRef<HTMLDivElement>(null);
   const audios = useRef<Map<number, HTMLAudioElement>>(new Map());
+  // all voices of a story are one MP3; each line plays its own byte range of it
+  const buf = useRef<ArrayBuffer | null>(null);
+  const bufP = useRef<Promise<ArrayBuffer | null> | null>(null);
+  const [loading, setLoading] = useState(false);
   const st = useRef({ now: 0, playing: false, lastTs: 0, cur: -1, sound: true, audioOk: true, started: 0 });
   const [playing, setPlaying] = useState(false);
   const [started, setStarted] = useState(false);
@@ -29,9 +33,20 @@ export default function StoryPlayer({ story, assetBase }: { story: StoryModule; 
 
   const audioFor = useCallback((i: number) => {
     let a = audios.current.get(i);
-    if (!a) { a = new Audio(`${assetBase}story/${tl.lines[i].file}`); a.preload = 'auto'; audios.current.set(i, a); }
+    if (!a && buf.current) {
+      const [start, len] = tl.lines[i].bytes;
+      a = new Audio(URL.createObjectURL(new Blob([buf.current.slice(start, start + len)], { type: 'audio/mpeg' })));
+      a.preload = 'auto'; audios.current.set(i, a);
+    }
     return a;
-  }, [assetBase, tl]);
+  }, [tl]);
+  const loadVoices = useCallback(() => {
+    bufP.current ??= fetch(`${assetBase}story/story.mp3?v=${def.audio}`)
+      .then((r) => (r.ok ? r.arrayBuffer() : null))
+      .then((b) => (buf.current = b))
+      .catch(() => null);
+    return bufP.current;
+  }, [assetBase, def]);
 
   const render = useCallback(() => {
     const cv = cvRef.current; if (!cv) return;
@@ -56,6 +71,7 @@ export default function StoryPlayer({ story, assetBase }: { story: StoryModule; 
     const s = st.current; stopAudio();
     if (!s.sound || !s.audioOk || i < 0) return;
     const a = audioFor(i);
+    if (!a) return;
     a.currentTime = Math.max(0, s.now - tl.lines[i].t0);
     a.play().catch(() => { s.audioOk = false; });
     if (i + 1 < tl.lines.length) audioFor(i + 1);
@@ -87,8 +103,9 @@ export default function StoryPlayer({ story, assetBase }: { story: StoryModule; 
     requestAnimationFrame(frame);
   }, [render, speak, tl, record]);
 
-  const play = useCallback(() => {
+  const play = useCallback(async () => {
     const s = st.current; if (s.playing) return;
+    if (!buf.current && s.sound) { setLoading(true); await loadVoices(); setLoading(false); if (s.playing) return; }
     if (s.now >= tl.total - 0.05) s.now = 0;
     if (s.now < 0.05) store.animationProgress(STORY_KEY, 0, { play: true });
     s.playing = true; s.lastTs = 0; s.started = performance.now(); s.cur = lineAt(tl, s.now);
@@ -112,8 +129,9 @@ export default function StoryPlayer({ story, assetBase }: { story: StoryModule; 
     show();
     document.fonts?.ready.then(show).catch(() => {});
     const map = audios.current;
-    return () => { s.playing = false; map.forEach((a) => { a.pause(); a.src = ''; }); map.clear(); };
-  }, [def, render, tl]);
+    loadVoices();
+    return () => { s.playing = false; map.forEach((a) => { a.pause(); URL.revokeObjectURL(a.src); a.src = ''; }); map.clear(); };
+  }, [def, render, tl, loadVoices]);
 
   useEffect(() => () => record(), [record]);
 
@@ -153,11 +171,11 @@ export default function StoryPlayer({ story, assetBase }: { story: StoryModule; 
           <div className="story-sub" aria-live="polite"><span>{line.who !== 'N' && <b>{line.who}</b>}{line.text}</span></div>
         )}
         {!started && (
-          <div className="story-start"><button type="button" onClick={play}>▶ 上映をはじめる</button></div>
+          <div className="story-start"><button type="button" onClick={play} disabled={loading}>{loading ? '音声を読み込み中…' : '▶ 上映をはじめる'}</button></div>
         )}
       </div>
       <div className="story-ctl">
-        <button type="button" className="pri" onClick={() => (playing ? pause() : play())}>{playing ? '❚❚ 一時停止' : '▶ 再生'}</button>
+        <button type="button" className="pri" onClick={() => (playing ? pause() : play())} disabled={loading}>{loading ? '読み込み中…' : playing ? '❚❚ 一時停止' : '▶ 再生'}</button>
         <button type="button" onClick={() => seek(ui.now - 10)} aria-label="10秒戻る">−10秒</button>
         <button type="button" onClick={() => seek(ui.now + 10)} aria-label="10秒進む">＋10秒</button>
         <div

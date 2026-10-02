@@ -20,8 +20,11 @@ for course in sys.argv[1:]:
     spec = json.load(open(f'.audio-cache/story/{course}.json'))
     story = json.load(open(f'src/content/courses/{course}/story/story.json'))
     out = []
+    blob = open(f'public/courses/{course}/story/story.mp3', 'rb').read()
+    p = f'/tmp/story-line-{os.getpid()}.mp3'
     for x, l in zip(spec, story['lines']):
-        p = f"public/courses/{course}/story/{l['file']}"
+        a, n = l['bytes']
+        open(p, 'wb').write(blob[a:a + n])
         segs, _ = m.transcribe(p, language='ja', beam_size=5, vad_filter=False, condition_on_previous_text=False)
         heard = ''.join(s.text for s in segs)
         r = difflib.SequenceMatcher(None, kana(x['speech']), kana(heard)).ratio()
