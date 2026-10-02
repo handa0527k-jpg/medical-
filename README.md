@@ -42,6 +42,7 @@
 - 再生／一時停止、10秒戻る・進む、シーク、字幕・音声のON/OFF、シーンへのジャンプ、全画面（Escで戻る）
 - 下にキャラクター紹介、シーンごとの説明表、学習ポイントまとめ（たとえつき）
 - 授業の中で使う機序アニメ（ステップ再生）は、その下に「機序アニメ」として残しています
+- 「設計図の図書館」の冒頭（約47秒）は、映画的な2Dアニメの試作（人物リグ・カメラ・光と影・被写界深度）。場面構成と絵コンテ：[docs/story/genetics-library-storyboard.md](docs/story/genetics-library-storyboard.md)。`?t=秒` で任意の位置を開け、`node scripts/story-frames.mjs` で静止画を書き出せます
 - 作り方：`src/content/courses/<id>/story/story.json`（台本・キャスト・声）と `story/draw.ts`（Canvasの絵）。
   `npx tsx scripts/build-story-speech.ts <id>` → `python3 scripts/generate-story-audio.py <id>` で録音し、
   `python3 scripts/story-cues.py <id>` でセリフの時刻を確かめて絵のタイミングを合わせます。

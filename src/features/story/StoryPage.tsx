@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 import { useCourse } from '../../app/course';
 import { NotFound } from '../../app/NotFound';
 import { buildTimeline } from '../../engine/story/timeline';
@@ -15,6 +15,9 @@ export default function StoryPage() {
   const course = useCourse();
   const [story, setStory] = useState<StoryModule | null>(null);
   const [err, setErr] = useState(false);
+  // ?t=SECONDS opens the film at that position (to check one frame, or share a moment)
+  const [sp] = useSearchParams();
+  const startAt = sp.get('t') != null && !Number.isNaN(Number(sp.get('t'))) ? Number(sp.get('t')) : undefined;
   useEffect(() => {
     let live = true;
     course.story?.().then((m) => live && setStory(m)).catch(() => live && setErr(true));
@@ -37,7 +40,7 @@ export default function StoryPage() {
         <p>{def.kicker}</p>
         <p>{def.lead}</p>
       </section>
-      <StoryPlayer story={story} assetBase={course.assetBase} />
+      <StoryPlayer story={story} assetBase={course.assetBase} startAt={startAt} />
 
       <h2 className="story-h">キャラクター紹介</h2>
       <div className="story-cast">

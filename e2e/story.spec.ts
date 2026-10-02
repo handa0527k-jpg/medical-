@@ -45,3 +45,21 @@ for (const [id, title] of COURSES) {
     expect(errs).toEqual([]);
   });
 }
+
+test('genetics opening: any playback position draws its frame (?t=), across all six cuts', async ({ page }) => {
+  const errs: string[] = [];
+  page.on('pageerror', (e) => errs.push(e.message));
+  for (const t of [3, 12, 20, 27, 32, 34, 36, 37.9, 42]) {
+    await page.goto(`/#/open/genetics-basics/animations/story?t=${t}`);
+    await expect(page.locator('.story-tm')).toContainText(`0:${String(Math.floor(t)).padStart(2, '0')}`);
+    const painted = await page.locator('.story-screen canvas').evaluate((c: HTMLCanvasElement) => {
+      const d = c.getContext('2d')!.getImageData(0, 0, c.width, c.height).data; let n = 0; for (let i = 0; i < d.length; i += 4000) if (d[i] + d[i + 1] + d[i + 2] > 40) n++; return n;
+    });
+    expect(painted, `frame at ${t}s`).toBeGreaterThan(40);
+  }
+  // playback continues from the requested position
+  await page.locator('.story-start button').click();
+  await expect(page.locator('.story-ctl .pri')).toContainText('一時停止');
+  await expect(page.locator('.story-sub')).toContainText('おかしいな', { timeout: 8000 });
+  expect(errs).toEqual([]);
+});

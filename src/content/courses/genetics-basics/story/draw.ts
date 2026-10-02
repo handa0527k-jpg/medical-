@@ -1,8 +1,9 @@
 /** Story anime「設計図の図書館」: the genome as a night library of blueprints. */
 import type { SceneDraw } from '../../../../engine/story/types';
 import {
-  CL, H, L, W, arrow, chibi, endCard, g, hand, label, motes, nameTag, rain, rr, seg, sky, sun, titleCard, vignette,
+  CL, H, L, W, arrow, chibi, endCard, g, hand, label, motes, nameTag, rain, rr, seg, sky, sun, vignette,
 } from '../../../../engine/story/kit';
+import { opening } from './opening';
 
 /* ---------- characters ---------- */
 const jin = (x: number, y: number, s: number, t: number, run = false) => chibi(x, y, s, t, {
@@ -55,31 +56,32 @@ function codon(x: number, y: number, s: string, a = 1, hl = -1) {
 
 /* ---------- scenes ---------- */
 export const DRAW: Record<string, SceneDraw> = {
+  opening,
   library(t) {
     shelves(t);
     lamp(400, 470);
     g.fillStyle = '#4a3428'; g.fillRect(150, 470, 520, 22);
     // central dogma: original → copy → product
-    const cd = seg(t, 45, 47);
+    const cd = seg(t, 13.6, 15.6);
     if (cd > 0) {
       card(250, 150, 760, 190, cd);
       g.globalAlpha = cd;
       g.fillStyle = '#3f86d1'; rr(300, 190, 120, 110, 10); g.fill(); hand('DNA', 360, 255, 30, '#fff', 1, 'center'); hand('原本', 360, 330, 20, '#3a2a1e', 1, 'center');
       arrow(440, 245, 540, 245, '#6b5a48');
-      g.fillStyle = '#d14d7c'; rr(560, 205, 110, 80, 8); g.fill(); hand('RNA', 615, 255, 28, '#fff', 1, 'center'); hand('写し', 615, 330, 20, '#3a2a1e', seg(t, 50, 51), 'center');
+      g.fillStyle = '#d14d7c'; rr(560, 205, 110, 80, 8); g.fill(); hand('RNA', 615, 255, 28, '#fff', 1, 'center'); hand('写し', 615, 330, 20, '#3a2a1e', seg(t, 18.6, 19.6), 'center');
       arrow(690, 245, 790, 245, '#6b5a48');
-      g.fillStyle = '#3a9b69'; g.beginPath(); for (let i = 0; i < 12; i++) { const a = (i / 12) * 6.283; g.lineTo(880 + Math.cos(a) * (40 + (i % 2) * 14), 245 + Math.sin(a) * (40 + (i % 2) * 14)); } g.fill(); hand('蛋白質', 880, 330, 20, '#3a2a1e', seg(t, 55, 56), 'center');
+      g.fillStyle = '#3a9b69'; g.beginPath(); for (let i = 0; i < 12; i++) { const a = (i / 12) * 6.283; g.lineTo(880 + Math.cos(a) * (40 + (i % 2) * 14), 245 + Math.sin(a) * (40 + (i % 2) * 14)); } g.fill(); hand('蛋白質', 880, 330, 20, '#3a2a1e', seg(t, 23.6, 24.6), 'center');
       g.globalAlpha = 1;
     }
     // Avery's dish
-    const av = seg(t, 71, 73) * (1 - seg(t, 88, 89));
+    const av = seg(t, 39.8, 41.8) * (1 - seg(t, 56.8, 57.8));
     if (av > 0) { card(1000, 400, 240, 170, av); g.globalAlpha = av; g.fillStyle = '#e8eef0'; g.beginPath(); g.ellipse(1120, 470, 90, 40, 0, 0, 7); g.fill(); for (let i = 0; i < 9; i++) { g.fillStyle = i % 3 ? '#c9d6a8' : '#f2f2d8'; g.beginPath(); g.arc(1060 + (i % 5) * 28, 458 + Math.floor(i / 5) * 24, 9, 0, 7); g.fill(); } hand('1944 形質転換', 1120, 552, 20, '#3a2a1e', 1, 'center'); g.globalAlpha = 1; }
     // disease cascade
-    const ds = seg(t, 89, 91);
-    if (ds > 0) { const st = ['分子', '細胞', '組織', '個体', '疾患']; st.forEach((n, i) => nameTag(n, 300 + i * 150, 110, i === 4 ? '#c0566f' : '#3f86d1', seg(t, 89 + i * 1.2, 90 + i * 1.2))); }
-    jin(L(-60, 150, seg(t, 3, 8)), 640, 1.1, t, t > 3 && t < 8); nameTag('ジン（僕）', L(-60, 150, seg(t, 3, 8)), 520, '#d57f45', seg(t, 6, 7));
-    deo(1150, 640, 1.2, t); nameTag('原本の番人デオ', 1150, 500, '#3f86d1', seg(t, 22, 23));
-    titleCard('設計図の図書館', '遺伝医学「遺伝子の基礎」より', t);
+    const ds = seg(t, 57.6, 59.6);
+    if (ds > 0) { const st = ['分子', '細胞', '組織', '個体', '疾患']; st.forEach((n, i) => nameTag(n, 300 + i * 150, 110, i === 4 ? '#c0566f' : '#3f86d1', seg(t, 57.6 + i * 1.2, 58.6 + i * 1.2))); }
+    // the opening scene has already brought both of them to the desk
+    jin(150, 640, 1.1, t); nameTag('ジン（僕）', 150, 520, '#d57f45', seg(t, 1, 2));
+    deo(1150, 640, 1.2, t); nameTag('原本の番人デオ', 1150, 500, '#3f86d1', seg(t, 1.5, 2.5));
     motes(t, 12, '255,224,170'); vignette(0.4);
   },
   letters(t) {

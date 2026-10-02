@@ -25,6 +25,7 @@ export function buildTimeline(lines: StoryLine[]): StoryTimeline {
   const out: TimedLine[] = [];
   lines.forEach((l, i) => {
     if (!(l.scene in start)) { start[l.scene] = T; T += LEAD; }
+    T += l.wait ?? 0;
     const t0 = T, t1 = T + l.dur;
     out.push({ ...l, t0, t1 });
     T = t1 + GAP;

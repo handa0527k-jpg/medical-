@@ -8,6 +8,7 @@ for i, l in enumerate(s['lines']):
     if l['scene'] != cur:
         if cur is not None: print(f'  [{cur} ends at {T + TAIL - start:.1f}]'); T += TAIL
         cur = l['scene']; start = T; T += LEAD
+    T += l.get('wait', 0)
     print(f"{cur:8} {T - start:6.1f}-{T - start + l['dur']:6.1f}  {l['who']:4} {l['text'][:46]}")
     T += l['dur'] + GAP
 print(f'  [{cur} ends at {T + TAIL - start:.1f}]  total {T + TAIL:.0f}s')

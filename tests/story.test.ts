@@ -62,3 +62,23 @@ describe('story anime content', () => {
     });
   }
 });
+
+describe('genetics opening (cinematic prototype)', () => {
+  it('cuts follow the recorded lines and the opening lasts 30–50 s', async () => {
+    const mod = stories['../src/content/courses/genetics-basics/story/index.ts'].default;
+    const tl = buildTimeline(mod.def.lines);
+    expect(mod.def.scenes[0].id).toBe('opening');
+    const len = tl.end.opening - tl.start.opening;
+    expect(len).toBeGreaterThan(30); expect(len).toBeLessThan(50);
+    const { OPENING_SHOTS } = await import('../src/content/courses/genetics-basics/story/opening');
+    const cuts = [OPENING_SHOTS.B, OPENING_SHOTS.C, OPENING_SHOTS.D1, OPENING_SHOTS.D2, OPENING_SHOTS.E1, OPENING_SHOTS.E2, OPENING_SHOTS.F];
+    cuts.forEach((c, i) => { expect(c).toBeGreaterThan(i ? cuts[i - 1] + 0.8 : 1); expect(c).toBeLessThan(len); });
+    // the silent beat before Deo's last line holds the falling page
+    const last = tl.lines.filter((l) => l.scene === 'opening').at(-1)!;
+    expect(last.wait).toBeGreaterThan(2);
+  });
+  it('a held beat (wait) adds silence before a line', () => {
+    const a = buildTimeline([{ scene: 's', who: 'N', text: 'x', dur: 1, bytes: [0, 1] }, { scene: 's', who: 'N', text: 'y', dur: 1, bytes: [1, 1], wait: 2 }]);
+    expect(a.lines[1].t0).toBeCloseTo(LEAD + 1 + GAP + 2);
+  });
+});

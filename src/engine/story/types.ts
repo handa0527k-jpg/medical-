@@ -6,6 +6,10 @@ export interface StoryLine {
   text: string;
   /** how the voice should read the line, when the text alone is read wrongly (e.g. 十八番 as おはこ) */
   say?: string;
+  /** voice tone for this line only: [pitch, rate] (overrides the speaker's) */
+  tone?: [string, string];
+  /** extra silence (s) before the line — a held beat in the picture */
+  wait?: number;
   /** audio length in seconds (measured when the audio was generated) */
   dur: number;
   /** byte range [start, length] of this line in <assetBase>story/story.mp3 */

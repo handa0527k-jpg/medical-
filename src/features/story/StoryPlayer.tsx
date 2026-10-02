@@ -12,7 +12,7 @@ export const STORY_KEY = 'story';
  * Canvas player for a story anime: picture and voice lines share one clock.
  * While a line is speaking the picture follows the audio clock, so they never drift apart.
  */
-export default function StoryPlayer({ story, assetBase }: { story: StoryModule; assetBase: string }) {
+export default function StoryPlayer({ story, assetBase, startAt }: { story: StoryModule; assetBase: string; startAt?: number }) {
   const { def, draw } = story;
   const store = useStore();
   const tl = useMemo(() => buildTimeline(def.lines), [def]);
@@ -125,13 +125,18 @@ export default function StoryPlayer({ story, assetBase }: { story: StoryModule; 
   useEffect(() => {
     const s = st.current;
     const [pid, pt] = def.poster || [def.scenes[0].id, 3];
-    const show = () => { if (s.playing || s.now > 0) return render(); s.now = (tl.start[pid] ?? 0) + pt; render(); s.now = 0; setUi((u) => ({ ...u, now: 0 })); };
+    const show = () => {
+      // a requested position is shown and playback continues from it; otherwise a poster frame, then 0
+      if (startAt != null) { if (!s.playing) { s.now = Math.max(0, Math.min(tl.total - 0.01, startAt)); render(); } return; }
+      if (s.playing || s.now > 0) return render();
+      s.now = (tl.start[pid] ?? 0) + pt; render(); s.now = 0; setUi((u) => ({ ...u, now: 0 }));
+    };
     show();
     document.fonts?.ready.then(show).catch(() => {});
     const map = audios.current;
     loadVoices();
     return () => { s.playing = false; map.forEach((a) => { a.pause(); URL.revokeObjectURL(a.src); a.src = ''; }); map.clear(); };
-  }, [def, render, tl, loadVoices]);
+  }, [def, render, tl, loadVoices, startAt]);
 
   useEffect(() => () => record(), [record]);
 
