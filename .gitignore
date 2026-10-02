@@ -13,3 +13,5 @@ production/*/audio/bgm/*.mp3
 production/*/audio/se/synth/
 production/*/scenes/*/*.wav
 production/*/**/*.wav
+production/*/scenes/
+production/*/sample/*.wav

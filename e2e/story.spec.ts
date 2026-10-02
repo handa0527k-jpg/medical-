@@ -78,3 +78,20 @@ test('genetics full film: a frame from every scene draws without errors (?t=)', 
   }
   expect(errs).toEqual([]);
 });
+
+test('nucleus film (午前二時の本社ビル): a frame from every scene draws (?t=), and the sound bed is served', async ({ page, request }) => {
+  const errs: string[] = [];
+  page.on('pageerror', (e) => errs.push(e.message));
+  // hq, gate, archive, nucleolus, split, branch, dawn
+  for (const t of [20, 110, 230, 320, 420, 520, 600]) {
+    await page.goto(`/#/open/histology-nucleus/animations/story?t=${t}`);
+    await expect(page.locator('.story-tm')).toContainText(`${Math.floor(t / 60)}:${String(Math.floor(t % 60)).padStart(2, '0')}`);
+    const painted = await page.locator('.story-screen canvas').evaluate((c: HTMLCanvasElement) => {
+      const d = c.getContext('2d')!.getImageData(0, 0, c.width, c.height).data; let n = 0; for (let i = 0; i < d.length; i += 4000) if (d[i] + d[i + 1] + d[i + 2] > 40) n++; return n;
+    });
+    expect(painted, `frame at ${t}s`).toBeGreaterThan(40);
+  }
+  expect(errs).toEqual([]);
+  const bed = await request.get('/courses/histology-nucleus/story/bed.m4a');
+  expect(bed.ok()).toBe(true);
+});

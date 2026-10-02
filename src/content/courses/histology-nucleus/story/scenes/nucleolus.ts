@@ -12,7 +12,7 @@ import { darkness, finish } from '../../../../../engine/story/light';
 import { face, keys, pick, shotCam, span, faceTo } from '../../../../../engine/story/act';
 import { HEIGHT, NOR, TAG } from '../cast';
 import { cues, mouthIn } from '../film';
-import { ARCH, BENCH, CENTRE, R_DFC, R_FC, R_GC, subunit, workshop, workshopLamps } from '../sets/workshop';
+import { ARCH, CENTRE, R_DFC, R_FC, R_GC, subunit, workshop, workshopLamps } from '../sets/workshop';
 import { arrow, blueprint, callout, dip, txt, MINCHO } from '../sets/ink';
 import { boxAt, carryBox } from './props';
 

@@ -5,7 +5,7 @@
  * inside: chromatin, nucleolus, nucleoplasm → H&E (all purple) → methyl green–pyronin (DNA green, RNA pink).
  */
 import { g, W, H, L } from '../../../../../engine/story/kit';
-import { perform, reach, lookAt, headCentre, J, v, type Take, type V3, type Camera } from '../../../../../engine/story/mocap';
+import { perform, lookAt, headCentre, J, v, type Take, type V3, type Camera } from '../../../../../engine/story/mocap';
 import { drawActor } from '../../../../../engine/story/body';
 import { darkness, finish } from '../../../../../engine/story/light';
 import { face, keys, pick, shotCam, span } from '../../../../../engine/story/act';
@@ -15,7 +15,7 @@ import { CORR_X, GATE_Z, HQ, H_IN, H_OUT, R_IN, R_OUT, city, cityLamps } from '.
 import { blueprint, callout, dip, txt, MINCHO } from '../sets/ink';
 import { boxAt, carryBox } from './props';
 
-const { c, e, d } = cues('hq');
+const { c, d } = cues('hq');
 const Z0 = 27;
 const TAG_T: Take[] = [{ clip: 'walk', at: -1.5, from: 0, x: 0.35, z: Z0, face: Math.PI, travel: true, h: HEIGHT.TAG }];
 const tagZ = (t: number) => perform(TAG_T, t).p[J.pelvis][2];

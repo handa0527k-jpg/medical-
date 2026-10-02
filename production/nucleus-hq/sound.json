@@ -1,23 +1,1040 @@
 {
-  "_doc": "Sound cues for 「午前二時の本社ビル」. Anchors: <scene>.start/.end, <scene>#<n>.start/.end (n-th line), <scene>+s. gain in dB.",
-  "events": {},
-  "bgm": [
-    { "file": "production/nucleus-hq/audio/bgm/Almost New.mp3", "from": "gate+0.4", "to": "gate.end", "offset": 0, "gain": -11, "fadeIn": 2.5, "fadeOut": 2.5 }
-  ],
-  "ambience": [
-    { "file": "production/nucleus-hq/audio/se/synth/amb_street_night.wav", "from": "gate.start", "to": "gate.end", "gain": -17, "fadeIn": 0.8, "fadeOut": 1.0 }
-  ],
-  "sfx": [
-    { "at": "gate-0.75", "repeat": 8, "every": 0.716, "file": "production/nucleus-hq/audio/se/kenney/footstep_concrete_000.ogg", "gain": -14, "pan": -0.3 },
-    { "at": "gate-0.39", "repeat": 7, "every": 0.716, "file": "production/nucleus-hq/audio/se/kenney/footstep_concrete_003.ogg", "gain": -15, "pan": -0.25 },
-    { "at": "gate#1.start+2.0", "file": "production/nucleus-hq/audio/se/kenney/cloth2.ogg", "gain": -12 },
-    { "at": "gate#1.start+2.8", "file": "production/nucleus-hq/audio/se/kenney/bookPlace1.ogg", "gain": -16 },
-    { "at": "gate#2.start-0.2", "file": "production/nucleus-hq/audio/se/kenney/bookFlip1.ogg", "gain": -14 },
-    { "at": "gate#3.start+1.2", "file": "production/nucleus-hq/audio/se/kenney/glass_002.ogg", "gain": -22 },
-    { "at": "gate#4.start-0.2", "file": "production/nucleus-hq/audio/se/kenney/bookFlip2.ogg", "gain": -14 },
-    { "at": "gate#7.start+2.4", "file": "production/nucleus-hq/audio/se/kenney/cloth1.ogg", "gain": -14 },
-    { "at": "gate#8.start-0.25", "file": "production/nucleus-hq/audio/se/kenney/bookFlip1.ogg", "gain": -14 },
-    { "at": "gate#9.start+0.62", "repeat": 3, "every": 0.9, "file": "production/nucleus-hq/audio/se/kenney/footstep_carpet_002.ogg", "gain": -13, "pan": 0.3 },
-    { "at": "gate#9.end+0.5", "repeat": 5, "every": 0.716, "file": "production/nucleus-hq/audio/se/kenney/footstep_concrete_001.ogg", "gain": -16 }
-  ]
+ "_doc": "Sound cues for 「午前二時の本社ビル」 (histology-nucleus story). Anchors: <scene>.start/.end, <scene>#<n>.start/.end (n-th line of the scene, 0-based), <scene>+s (scene time). gain in dB. Resolved by scripts/film/timeline.ts.",
+ "events": {},
+ "bgm": [
+  {
+   "file": "production/nucleus-hq/audio/bgm/Late Night Radio.mp3",
+   "from": "hq+0.3",
+   "to": "hq.end",
+   "offset": 0,
+   "gain": -12,
+   "fadeIn": 3,
+   "fadeOut": 2.5
+  },
+  {
+   "file": "production/nucleus-hq/audio/bgm/Almost New.mp3",
+   "from": "gate+0.4",
+   "to": "gate.end",
+   "offset": 0,
+   "gain": -11,
+   "fadeIn": 2.5,
+   "fadeOut": 2.5
+  },
+  {
+   "file": "production/nucleus-hq/audio/bgm/Immersed.mp3",
+   "from": "archive+0.3",
+   "to": "archive.end",
+   "offset": 0,
+   "gain": -11,
+   "fadeIn": 3,
+   "fadeOut": 2.5
+  },
+  {
+   "file": "production/nucleus-hq/audio/bgm/Late Night Radio.mp3",
+   "from": "nucleolus+0.3",
+   "to": "nucleolus.end",
+   "offset": 95,
+   "gain": -12,
+   "fadeIn": 2.5,
+   "fadeOut": 2.5
+  },
+  {
+   "file": "production/nucleus-hq/audio/bgm/Man Down.mp3",
+   "from": "split+0.3",
+   "to": "split.end",
+   "offset": 0,
+   "gain": -12,
+   "fadeIn": 2.5,
+   "fadeOut": 2.5
+  },
+  {
+   "file": "production/nucleus-hq/audio/bgm/Danse Morialta.mp3",
+   "from": "branch+0.3",
+   "to": "branch.end",
+   "offset": 0,
+   "gain": -11,
+   "fadeIn": 3,
+   "fadeOut": 2.5
+  },
+  {
+   "file": "production/nucleus-hq/audio/bgm/Reawakening.mp3",
+   "from": "dawn+0.2",
+   "to": "dawn.end",
+   "offset": 0,
+   "gain": -10,
+   "fadeIn": 2.5,
+   "fadeOut": 4
+  }
+ ],
+ "ambience": [
+  {
+   "file": "production/nucleus-hq/audio/se/synth/amb_street_night.wav",
+   "from": "hq.start",
+   "to": "gate.end",
+   "gain": -17,
+   "fadeIn": 1.5,
+   "fadeOut": 1.0
+  },
+  {
+   "file": "production/nucleus-hq/audio/se/synth/amb_dark.wav",
+   "from": "archive.start",
+   "to": "archive.end",
+   "gain": -19,
+   "fadeIn": 1.0,
+   "fadeOut": 1.0
+  },
+  {
+   "file": "production/nucleus-hq/audio/se/synth/amb_office_hum.wav",
+   "from": "nucleolus.start",
+   "to": "split.end",
+   "gain": -22,
+   "fadeIn": 1.0,
+   "fadeOut": 1.0
+  },
+  {
+   "file": "production/nucleus-hq/audio/se/synth/amb_morning.wav",
+   "from": "branch.start",
+   "to": "dawn.end",
+   "gain": -18,
+   "fadeIn": 2.0,
+   "fadeOut": 3.0
+  }
+ ],
+ "sfx": [
+  {
+   "at": "hq+0.000",
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_concrete_000.ogg",
+   "gain": -17,
+   "pan": 0
+  },
+  {
+   "at": "hq+0.716",
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_concrete_001.ogg",
+   "gain": -18.5,
+   "pan": 0
+  },
+  {
+   "at": "hq+1.432",
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_concrete_002.ogg",
+   "gain": -17,
+   "pan": 0
+  },
+  {
+   "at": "hq+2.148",
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_concrete_003.ogg",
+   "gain": -18.5,
+   "pan": 0
+  },
+  {
+   "at": "hq+2.864",
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_concrete_000.ogg",
+   "gain": -17,
+   "pan": 0
+  },
+  {
+   "at": "hq+3.580",
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_concrete_001.ogg",
+   "gain": -18.5,
+   "pan": 0
+  },
+  {
+   "at": "hq+4.296",
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_concrete_002.ogg",
+   "gain": -17,
+   "pan": 0
+  },
+  {
+   "at": "hq+5.012",
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_concrete_003.ogg",
+   "gain": -18.5,
+   "pan": 0
+  },
+  {
+   "at": "hq+5.728",
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_concrete_000.ogg",
+   "gain": -17,
+   "pan": 0
+  },
+  {
+   "at": "hq+6.444",
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_concrete_001.ogg",
+   "gain": -18.5,
+   "pan": 0
+  },
+  {
+   "at": "hq+7.160",
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_concrete_002.ogg",
+   "gain": -17,
+   "pan": 0
+  },
+  {
+   "at": "hq+7.876",
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_concrete_003.ogg",
+   "gain": -18.5,
+   "pan": 0
+  },
+  {
+   "at": "hq+8.592",
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_concrete_000.ogg",
+   "gain": -17,
+   "pan": 0
+  },
+  {
+   "at": "hq+9.308",
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_concrete_001.ogg",
+   "gain": -18.5,
+   "pan": 0
+  },
+  {
+   "at": "hq+10.024",
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_concrete_002.ogg",
+   "gain": -17,
+   "pan": 0
+  },
+  {
+   "at": "hq+10.740",
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_concrete_003.ogg",
+   "gain": -18.5,
+   "pan": 0
+  },
+  {
+   "at": "hq+11.456",
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_concrete_000.ogg",
+   "gain": -17,
+   "pan": 0
+  },
+  {
+   "at": "hq+12.172",
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_concrete_001.ogg",
+   "gain": -18.5,
+   "pan": 0
+  },
+  {
+   "at": "hq+12.888",
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_concrete_002.ogg",
+   "gain": -17,
+   "pan": 0
+  },
+  {
+   "at": "hq+13.604",
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_concrete_003.ogg",
+   "gain": -18.5,
+   "pan": 0
+  },
+  {
+   "at": "hq+14.320",
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_concrete_000.ogg",
+   "gain": -17,
+   "pan": 0
+  },
+  {
+   "at": "hq+15.036",
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_concrete_001.ogg",
+   "gain": -18.5,
+   "pan": 0
+  },
+  {
+   "at": "hq+15.752",
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_concrete_002.ogg",
+   "gain": -17,
+   "pan": 0
+  },
+  {
+   "at": "hq+16.468",
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_concrete_003.ogg",
+   "gain": -18.5,
+   "pan": 0
+  },
+  {
+   "at": "hq+17.184",
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_concrete_000.ogg",
+   "gain": -17,
+   "pan": 0
+  },
+  {
+   "at": "hq+17.900",
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_concrete_001.ogg",
+   "gain": -18.5,
+   "pan": 0
+  },
+  {
+   "at": "hq+18.616",
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_concrete_002.ogg",
+   "gain": -17,
+   "pan": 0
+  },
+  {
+   "at": "hq+19.332",
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_concrete_003.ogg",
+   "gain": -18.5,
+   "pan": 0
+  },
+  {
+   "at": "hq+20.048",
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_concrete_000.ogg",
+   "gain": -17,
+   "pan": 0
+  },
+  {
+   "at": "hq+20.764",
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_concrete_001.ogg",
+   "gain": -18.5,
+   "pan": 0
+  },
+  {
+   "at": "hq+21.480",
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_concrete_002.ogg",
+   "gain": -17,
+   "pan": 0
+  },
+  {
+   "at": "hq+22.196",
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_concrete_003.ogg",
+   "gain": -18.5,
+   "pan": 0
+  },
+  {
+   "at": "hq+22.912",
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_concrete_000.ogg",
+   "gain": -17,
+   "pan": 0
+  },
+  {
+   "at": "hq+23.628",
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_concrete_001.ogg",
+   "gain": -18.5,
+   "pan": 0
+  },
+  {
+   "at": "hq+24.344",
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_concrete_002.ogg",
+   "gain": -17,
+   "pan": 0
+  },
+  {
+   "at": "hq+25.060",
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_concrete_003.ogg",
+   "gain": -18.5,
+   "pan": 0
+  },
+  {
+   "at": "hq+25.776",
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_concrete_000.ogg",
+   "gain": -17,
+   "pan": 0
+  },
+  {
+   "at": "hq+26.492",
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_concrete_001.ogg",
+   "gain": -18.5,
+   "pan": 0
+  },
+  {
+   "at": "hq+27.208",
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_concrete_002.ogg",
+   "gain": -17,
+   "pan": 0
+  },
+  {
+   "at": "hq+27.924",
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_concrete_003.ogg",
+   "gain": -18.5,
+   "pan": 0
+  },
+  {
+   "at": "hq+28.640",
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_concrete_000.ogg",
+   "gain": -17,
+   "pan": 0
+  },
+  {
+   "at": "hq#2.start+0.6",
+   "file": "production/nucleus-hq/audio/se/kenney/cloth3.ogg",
+   "gain": -12
+  },
+  {
+   "at": "hq#5.start-0.2",
+   "file": "production/nucleus-hq/audio/se/kenney/bookFlip1.ogg",
+   "gain": -15
+  },
+  {
+   "at": "hq#6.start-0.2",
+   "file": "production/nucleus-hq/audio/se/kenney/bookFlip1.ogg",
+   "gain": -17
+  },
+  {
+   "at": "hq#7.start+0.2",
+   "file": "production/nucleus-hq/audio/se/kenney/click_002.ogg",
+   "gain": -14
+  },
+  {
+   "at": "gate-0.75",
+   "repeat": 8,
+   "every": 0.716,
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_concrete_000.ogg",
+   "gain": -14,
+   "pan": -0.3
+  },
+  {
+   "at": "gate-0.39",
+   "repeat": 7,
+   "every": 0.716,
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_concrete_003.ogg",
+   "gain": -15,
+   "pan": -0.25
+  },
+  {
+   "at": "gate#1.start+2.0",
+   "file": "production/nucleus-hq/audio/se/kenney/cloth2.ogg",
+   "gain": -12
+  },
+  {
+   "at": "gate#1.start+2.8",
+   "file": "production/nucleus-hq/audio/se/kenney/bookPlace1.ogg",
+   "gain": -16
+  },
+  {
+   "at": "gate#2.start-0.2",
+   "file": "production/nucleus-hq/audio/se/kenney/bookFlip1.ogg",
+   "gain": -14
+  },
+  {
+   "at": "gate#3.start+1.2",
+   "file": "production/nucleus-hq/audio/se/kenney/glass_002.ogg",
+   "gain": -22
+  },
+  {
+   "at": "gate#4.start-0.2",
+   "file": "production/nucleus-hq/audio/se/kenney/bookFlip2.ogg",
+   "gain": -14
+  },
+  {
+   "at": "gate#7.start+2.4",
+   "file": "production/nucleus-hq/audio/se/kenney/cloth1.ogg",
+   "gain": -14
+  },
+  {
+   "at": "gate#8.start-0.25",
+   "file": "production/nucleus-hq/audio/se/kenney/bookFlip1.ogg",
+   "gain": -14
+  },
+  {
+   "at": "gate#9.start+0.62",
+   "repeat": 3,
+   "every": 0.9,
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_carpet_002.ogg",
+   "gain": -13,
+   "pan": 0.3
+  },
+  {
+   "at": "gate#9.end+0.5",
+   "repeat": 5,
+   "every": 0.716,
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_concrete_001.ogg",
+   "gain": -16
+  },
+  {
+   "at": "archive+0.600",
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_wood_000.ogg",
+   "gain": -16,
+   "pan": 0
+  },
+  {
+   "at": "archive+1.316",
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_wood_001.ogg",
+   "gain": -17.5,
+   "pan": 0
+  },
+  {
+   "at": "archive+2.032",
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_wood_002.ogg",
+   "gain": -16,
+   "pan": 0
+  },
+  {
+   "at": "archive+2.748",
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_wood_003.ogg",
+   "gain": -17.5,
+   "pan": 0
+  },
+  {
+   "at": "archive+3.464",
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_wood_000.ogg",
+   "gain": -16,
+   "pan": 0
+  },
+  {
+   "at": "archive+4.180",
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_wood_001.ogg",
+   "gain": -17.5,
+   "pan": 0
+  },
+  {
+   "at": "archive+4.896",
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_wood_002.ogg",
+   "gain": -16,
+   "pan": 0
+  },
+  {
+   "at": "archive+5.612",
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_wood_003.ogg",
+   "gain": -17.5,
+   "pan": 0
+  },
+  {
+   "at": "archive+6.328",
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_wood_000.ogg",
+   "gain": -16,
+   "pan": 0
+  },
+  {
+   "at": "archive+7.044",
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_wood_001.ogg",
+   "gain": -17.5,
+   "pan": 0
+  },
+  {
+   "at": "archive+7.760",
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_wood_002.ogg",
+   "gain": -16,
+   "pan": 0
+  },
+  {
+   "at": "archive#2.start+0.5",
+   "repeat": 4,
+   "every": 2.2,
+   "file": "production/nucleus-hq/audio/se/kenney/cloth4.ogg",
+   "gain": -20
+  },
+  {
+   "at": "archive#3.start-0.2",
+   "file": "production/nucleus-hq/audio/se/kenney/bookFlip1.ogg",
+   "gain": -15
+  },
+  {
+   "at": "archive#4.start-0.2",
+   "file": "production/nucleus-hq/audio/se/kenney/bookFlip1.ogg",
+   "gain": -15
+  },
+  {
+   "at": "archive#7.start-0.2",
+   "file": "production/nucleus-hq/audio/se/kenney/bookFlip1.ogg",
+   "gain": -15
+  },
+  {
+   "at": "nucleolus+0.900",
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_wood_000.ogg",
+   "gain": -16,
+   "pan": 0
+  },
+  {
+   "at": "nucleolus+1.616",
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_wood_001.ogg",
+   "gain": -17.5,
+   "pan": 0
+  },
+  {
+   "at": "nucleolus+2.332",
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_wood_002.ogg",
+   "gain": -16,
+   "pan": 0
+  },
+  {
+   "at": "nucleolus+3.048",
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_wood_003.ogg",
+   "gain": -17.5,
+   "pan": 0
+  },
+  {
+   "at": "nucleolus+3.764",
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_wood_000.ogg",
+   "gain": -16,
+   "pan": 0
+  },
+  {
+   "at": "nucleolus+4.480",
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_wood_001.ogg",
+   "gain": -17.5,
+   "pan": 0
+  },
+  {
+   "at": "nucleolus+5.196",
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_wood_002.ogg",
+   "gain": -16,
+   "pan": 0
+  },
+  {
+   "at": "nucleolus+5.912",
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_wood_003.ogg",
+   "gain": -17.5,
+   "pan": 0
+  },
+  {
+   "at": "nucleolus+6.628",
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_wood_000.ogg",
+   "gain": -16,
+   "pan": 0
+  },
+  {
+   "at": "nucleolus+7.344",
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_wood_001.ogg",
+   "gain": -17.5,
+   "pan": 0
+  },
+  {
+   "at": "nucleolus#1.start+4.3",
+   "file": "production/nucleus-hq/audio/se/kenney/bookPlace1.ogg",
+   "gain": -11
+  },
+  {
+   "at": "nucleolus#1.start+4.2",
+   "file": "production/nucleus-hq/audio/se/kenney/cloth2.ogg",
+   "gain": -15
+  },
+  {
+   "at": "nucleolus#1.start+5.6",
+   "file": "production/nucleus-hq/audio/se/kenney/metalClick.ogg",
+   "gain": -16
+  },
+  {
+   "at": "nucleolus#3.start-0.2",
+   "file": "production/nucleus-hq/audio/se/kenney/bookFlip1.ogg",
+   "gain": -15
+  },
+  {
+   "at": "nucleolus#4.start+4.2",
+   "file": "production/nucleus-hq/audio/se/kenney/bookFlip1.ogg",
+   "gain": -15
+  },
+  {
+   "at": "nucleolus#5.start-0.2",
+   "file": "production/nucleus-hq/audio/se/kenney/bookFlip1.ogg",
+   "gain": -15
+  },
+  {
+   "at": "nucleolus#5.start+6.5",
+   "file": "production/nucleus-hq/audio/se/kenney/glass_002.ogg",
+   "gain": -20
+  },
+  {
+   "at": "split+0.000",
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_wood_000.ogg",
+   "gain": -22,
+   "pan": -0.4
+  },
+  {
+   "at": "split+0.620",
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_wood_001.ogg",
+   "gain": -23.5,
+   "pan": -0.4
+  },
+  {
+   "at": "split+1.240",
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_wood_002.ogg",
+   "gain": -22,
+   "pan": -0.4
+  },
+  {
+   "at": "split+1.860",
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_wood_003.ogg",
+   "gain": -23.5,
+   "pan": -0.4
+  },
+  {
+   "at": "split+2.480",
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_wood_000.ogg",
+   "gain": -22,
+   "pan": -0.4
+  },
+  {
+   "at": "split+3.100",
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_wood_001.ogg",
+   "gain": -23.5,
+   "pan": -0.4
+  },
+  {
+   "at": "split+3.720",
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_wood_002.ogg",
+   "gain": -22,
+   "pan": -0.4
+  },
+  {
+   "at": "split+4.340",
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_wood_003.ogg",
+   "gain": -23.5,
+   "pan": -0.4
+  },
+  {
+   "at": "split+4.960",
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_wood_000.ogg",
+   "gain": -22,
+   "pan": -0.4
+  },
+  {
+   "at": "split+5.580",
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_wood_001.ogg",
+   "gain": -23.5,
+   "pan": -0.4
+  },
+  {
+   "at": "split+6.200",
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_wood_002.ogg",
+   "gain": -22,
+   "pan": -0.4
+  },
+  {
+   "at": "split+6.820",
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_wood_003.ogg",
+   "gain": -23.5,
+   "pan": -0.4
+  },
+  {
+   "at": "split+7.440",
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_wood_000.ogg",
+   "gain": -22,
+   "pan": -0.4
+  },
+  {
+   "at": "split+8.060",
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_wood_001.ogg",
+   "gain": -23.5,
+   "pan": -0.4
+  },
+  {
+   "at": "split+8.680",
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_wood_002.ogg",
+   "gain": -22,
+   "pan": -0.4
+  },
+  {
+   "at": "split+9.300",
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_wood_003.ogg",
+   "gain": -23.5,
+   "pan": -0.4
+  },
+  {
+   "at": "split+9.920",
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_wood_000.ogg",
+   "gain": -22,
+   "pan": -0.4
+  },
+  {
+   "at": "split+10.540",
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_wood_001.ogg",
+   "gain": -23.5,
+   "pan": -0.4
+  },
+  {
+   "at": "split+11.160",
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_wood_002.ogg",
+   "gain": -22,
+   "pan": -0.4
+  },
+  {
+   "at": "split+11.780",
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_wood_003.ogg",
+   "gain": -23.5,
+   "pan": -0.4
+  },
+  {
+   "at": "split+12.400",
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_wood_000.ogg",
+   "gain": -22,
+   "pan": -0.4
+  },
+  {
+   "at": "split+13.020",
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_wood_001.ogg",
+   "gain": -23.5,
+   "pan": -0.4
+  },
+  {
+   "at": "split+13.640",
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_wood_002.ogg",
+   "gain": -22,
+   "pan": -0.4
+  },
+  {
+   "at": "split+14.260",
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_wood_003.ogg",
+   "gain": -23.5,
+   "pan": -0.4
+  },
+  {
+   "at": "split+1.5",
+   "repeat": 5,
+   "every": 2.3,
+   "file": "production/nucleus-hq/audio/se/kenney/bookPlace1.ogg",
+   "gain": -20,
+   "pan": 0.4
+  },
+  {
+   "at": "split#1.start+0.1",
+   "file": "production/nucleus-hq/audio/se/kenney/cloth1.ogg",
+   "gain": -14
+  },
+  {
+   "at": "split#2.start-0.2",
+   "file": "production/nucleus-hq/audio/se/kenney/bookFlip1.ogg",
+   "gain": -15
+  },
+  {
+   "at": "split#3.start-0.2",
+   "file": "production/nucleus-hq/audio/se/kenney/bookFlip1.ogg",
+   "gain": -15
+  },
+  {
+   "at": "split#4.start-0.2",
+   "file": "production/nucleus-hq/audio/se/kenney/bookFlip1.ogg",
+   "gain": -15
+  },
+  {
+   "at": "split#6.start-0.2",
+   "file": "production/nucleus-hq/audio/se/kenney/bookFlip1.ogg",
+   "gain": -15
+  },
+  {
+   "at": "split#7.start-0.2",
+   "file": "production/nucleus-hq/audio/se/kenney/bookFlip1.ogg",
+   "gain": -15
+  },
+  {
+   "at": "split#5.start+1.4",
+   "file": "production/nucleus-hq/audio/se/kenney/creak1.ogg",
+   "gain": -10,
+   "pan": -0.4
+  },
+  {
+   "at": "split#5.start+1.5",
+   "file": "production/nucleus-hq/audio/se/kenney/creak2.ogg",
+   "gain": -10,
+   "pan": 0.4
+  },
+  {
+   "at": "split#5.start+3.0",
+   "file": "production/nucleus-hq/audio/se/kenney/creak3.ogg",
+   "gain": -12
+  },
+  {
+   "at": "split#5.start+4.4",
+   "file": "production/nucleus-hq/audio/se/kenney/bookPlace1.ogg",
+   "gain": -12
+  },
+  {
+   "at": "branch+0.000",
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_grass_000.ogg",
+   "gain": -17,
+   "pan": 0
+  },
+  {
+   "at": "branch+0.667",
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_grass_001.ogg",
+   "gain": -18.5,
+   "pan": 0
+  },
+  {
+   "at": "branch+1.334",
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_grass_002.ogg",
+   "gain": -17,
+   "pan": 0
+  },
+  {
+   "at": "branch+2.001",
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_grass_003.ogg",
+   "gain": -18.5,
+   "pan": 0
+  },
+  {
+   "at": "branch+2.668",
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_grass_000.ogg",
+   "gain": -17,
+   "pan": 0
+  },
+  {
+   "at": "branch+3.335",
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_grass_001.ogg",
+   "gain": -18.5,
+   "pan": 0
+  },
+  {
+   "at": "branch+4.002",
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_grass_002.ogg",
+   "gain": -17,
+   "pan": 0
+  },
+  {
+   "at": "branch+4.669",
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_grass_003.ogg",
+   "gain": -18.5,
+   "pan": 0
+  },
+  {
+   "at": "branch+5.336",
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_grass_000.ogg",
+   "gain": -17,
+   "pan": 0
+  },
+  {
+   "at": "branch+6.003",
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_grass_001.ogg",
+   "gain": -18.5,
+   "pan": 0
+  },
+  {
+   "at": "branch+6.670",
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_grass_002.ogg",
+   "gain": -17,
+   "pan": 0
+  },
+  {
+   "at": "branch#2.start-0.2",
+   "file": "production/nucleus-hq/audio/se/kenney/bookFlip1.ogg",
+   "gain": -15
+  },
+  {
+   "at": "branch#3.start-0.2",
+   "file": "production/nucleus-hq/audio/se/kenney/bookFlip1.ogg",
+   "gain": -15
+  },
+  {
+   "at": "branch#4.start+3.8",
+   "file": "production/nucleus-hq/audio/se/kenney/bookFlip1.ogg",
+   "gain": -15
+  },
+  {
+   "at": "branch#6.start-0.2",
+   "file": "production/nucleus-hq/audio/se/kenney/bookFlip1.ogg",
+   "gain": -15
+  },
+  {
+   "at": "dawn+1.0",
+   "repeat": 6,
+   "every": 0.6,
+   "file": "production/nucleus-hq/audio/se/kenney/glass_002.ogg",
+   "gain": -30
+  },
+  {
+   "at": "dawn+4.4",
+   "file": "production/nucleus-hq/audio/se/kenney/bookFlip1.ogg",
+   "gain": -15
+  },
+  {
+   "at": "dawn#0.start+10.3",
+   "file": "production/nucleus-hq/audio/se/kenney/confirmation_002.ogg",
+   "gain": -18
+  },
+  {
+   "at": "dawn#1.start+2.00",
+   "file": "production/nucleus-hq/audio/se/kenney/bookFlip2.ogg",
+   "gain": -22
+  },
+  {
+   "at": "dawn#1.start+3.90",
+   "file": "production/nucleus-hq/audio/se/kenney/bookFlip2.ogg",
+   "gain": -22
+  },
+  {
+   "at": "dawn#1.start+5.60",
+   "file": "production/nucleus-hq/audio/se/kenney/bookFlip2.ogg",
+   "gain": -22
+  },
+  {
+   "at": "dawn#1.start+7.60",
+   "file": "production/nucleus-hq/audio/se/kenney/bookFlip2.ogg",
+   "gain": -22
+  },
+  {
+   "at": "dawn#1.start+9.20",
+   "file": "production/nucleus-hq/audio/se/kenney/bookFlip2.ogg",
+   "gain": -22
+  },
+  {
+   "at": "dawn#1.start+10.90",
+   "file": "production/nucleus-hq/audio/se/kenney/bookFlip2.ogg",
+   "gain": -22
+  },
+  {
+   "at": "dawn+27.200",
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_concrete_000.ogg",
+   "gain": -17,
+   "pan": 0
+  },
+  {
+   "at": "dawn+27.916",
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_concrete_001.ogg",
+   "gain": -18.5,
+   "pan": 0
+  },
+  {
+   "at": "dawn+28.632",
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_concrete_002.ogg",
+   "gain": -17,
+   "pan": 0
+  },
+  {
+   "at": "dawn+29.348",
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_concrete_003.ogg",
+   "gain": -18.5,
+   "pan": 0
+  },
+  {
+   "at": "dawn+30.064",
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_concrete_000.ogg",
+   "gain": -17,
+   "pan": 0
+  },
+  {
+   "at": "dawn+30.780",
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_concrete_001.ogg",
+   "gain": -18.5,
+   "pan": 0
+  },
+  {
+   "at": "dawn+31.496",
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_concrete_002.ogg",
+   "gain": -17,
+   "pan": 0
+  },
+  {
+   "at": "dawn+32.212",
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_concrete_003.ogg",
+   "gain": -18.5,
+   "pan": 0
+  },
+  {
+   "at": "dawn+32.928",
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_concrete_000.ogg",
+   "gain": -17,
+   "pan": 0
+  },
+  {
+   "at": "dawn+33.644",
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_concrete_001.ogg",
+   "gain": -18.5,
+   "pan": 0
+  },
+  {
+   "at": "dawn+34.360",
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_concrete_002.ogg",
+   "gain": -17,
+   "pan": 0
+  },
+  {
+   "at": "dawn+35.076",
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_concrete_003.ogg",
+   "gain": -18.5,
+   "pan": 0
+  },
+  {
+   "at": "dawn+35.792",
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_concrete_000.ogg",
+   "gain": -17,
+   "pan": 0
+  },
+  {
+   "at": "dawn#3.start-0.2",
+   "file": "production/nucleus-hq/audio/se/kenney/cloth3.ogg",
+   "gain": -12
+  }
+ ]
 }

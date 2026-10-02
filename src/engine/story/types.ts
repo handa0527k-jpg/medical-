@@ -56,6 +56,10 @@ export interface StoryDef {
   poster?: [string, number];
   /** show long lines as short pieces (one sentence at a time) instead of the whole line */
   subChunks?: boolean;
+  /** music, effects and ambience under the voices: one file in <assetBase>story/, played on the film clock */
+  bed?: string;
+  /** playback volume of the bed (0..1) relative to the voices */
+  bedVolume?: number;
 }
 
 /** Draws one frame of a scene at scene time t (seconds from the scene start); d = scene length. */

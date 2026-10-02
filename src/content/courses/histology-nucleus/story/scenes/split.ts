@@ -34,7 +34,7 @@ const MOVERS: { look: BodyLook; takes: Take[] }[] = [
   { look: MOVER, takes: [{ clip: 'pull', at: c[5] - 0.3, from: 0.5, x: 2.4, z: -0.4, face: -Math.PI / 2, h: 1.72 }] },
 ];
 
-function hall(cam: Camera, t: number, rope: number) {
+export function hall(cam: Camera, t: number, rope: number) {
   use(cam);
   g.fillStyle = '#0d0b10'; g.fillRect(0, 0, W, H);
   quad([[-9, 0, -7], [9, 0, -7], [9, 0, 7], [-9, 0, 7]], '#2a2430');

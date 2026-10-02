@@ -30,6 +30,19 @@ export default function StoryPlayer({ story, assetBase, startAt }: { story: Stor
   const [sound, setSound] = useState(true);
   const [fs, setFs] = useState(false);
   const [ui, setUi] = useState({ now: 0, scene: def.scenes[0].id, line: -1 });
+  // the sound bed (music, effects, ambience) follows the film clock; voices stay line by line
+  const bedRef = useRef<HTMLAudioElement | null>(null);
+  const bedFor = useCallback(() => {
+    if (!def.bed) return null;
+    if (!bedRef.current) { const a = new Audio(`${assetBase}story/${def.bed}`); a.preload = 'auto'; a.volume = def.bedVolume ?? 0.6; bedRef.current = a; }
+    return bedRef.current;
+  }, [assetBase, def]);
+  const syncBed = useCallback((force = false) => {
+    const s = st.current, b = bedRef.current; if (!b) return;
+    if (!s.playing || !s.sound) { if (!b.paused) b.pause(); return; }
+    if (force || Math.abs(b.currentTime - s.now) > 0.3) { try { b.currentTime = s.now; } catch { /* not seekable yet */ } }
+    if (b.paused) b.play().catch(() => {});
+  }, []);
 
   const audioFor = useCallback((i: number) => {
     let a = audios.current.get(i);
@@ -85,8 +98,8 @@ export default function StoryPlayer({ story, assetBase, startAt }: { story: Stor
 
   const pause = useCallback(() => {
     const s = st.current; if (!s.playing) return;
-    s.playing = false; stopAudio(); setPlaying(false); record();
-  }, [record]);
+    s.playing = false; stopAudio(); syncBed(); setPlaying(false); record();
+  }, [record, syncBed]);
 
   const frame = useCallback((ts: number) => {
     const s = st.current; if (!s.playing) return;
@@ -97,11 +110,12 @@ export default function StoryPlayer({ story, assetBase, startAt }: { story: Stor
     const ni = lineAt(tl, s.now);
     if (ni !== s.cur) { s.cur = ni; if (ni >= 0) speak(ni); }
     if (s.now >= tl.total) {
-      s.now = tl.total - 0.001; s.playing = false; stopAudio(); setPlaying(false); record(true); render(); return;
+      s.now = tl.total - 0.001; s.playing = false; stopAudio(); syncBed(); setPlaying(false); record(true); render(); return;
     }
+    syncBed();
     render();
     requestAnimationFrame(frame);
-  }, [render, speak, tl, record]);
+  }, [render, speak, tl, record, syncBed]);
 
   const play = useCallback(async () => {
     const s = st.current; if (s.playing) return;
@@ -111,15 +125,16 @@ export default function StoryPlayer({ story, assetBase, startAt }: { story: Stor
     s.playing = true; s.lastTs = 0; s.started = performance.now(); s.cur = lineAt(tl, s.now);
     setPlaying(true); setStarted(true);
     if (s.cur >= 0) speak(s.cur);
+    bedFor(); syncBed(true);
     requestAnimationFrame(frame);
-  }, [frame, speak, store, tl]);
+  }, [frame, speak, store, tl, bedFor, syncBed]);
 
   const seek = useCallback((t: number) => {
     const s = st.current; const was = s.playing;
     if (was) { s.playing = false; stopAudio(); }
     s.now = Math.max(0, Math.min(tl.total - 0.01, t)); s.cur = -1; render();
-    if (was) { s.playing = true; s.lastTs = 0; requestAnimationFrame(frame); }
-  }, [frame, render, tl]);
+    if (was) { s.playing = true; s.lastTs = 0; syncBed(true); requestAnimationFrame(frame); } else syncBed();
+  }, [frame, render, tl, syncBed]);
 
   // poster frame, and redraw once the handwriting font has arrived
   useEffect(() => {
@@ -135,7 +150,7 @@ export default function StoryPlayer({ story, assetBase, startAt }: { story: Stor
     document.fonts?.ready.then(show).catch(() => {});
     const map = audios.current;
     loadVoices();
-    return () => { s.playing = false; map.forEach((a) => { a.pause(); URL.revokeObjectURL(a.src); a.src = ''; }); map.clear(); };
+    return () => { s.playing = false; map.forEach((a) => { a.pause(); URL.revokeObjectURL(a.src); a.src = ''; }); map.clear(); const b = bedRef.current; if (b) { b.pause(); b.src = ''; bedRef.current = null; } };
   }, [def, render, tl, loadVoices, startAt]);
 
   useEffect(() => () => record(), [record]);
@@ -193,7 +208,7 @@ export default function StoryPlayer({ story, assetBase, startAt }: { story: Stor
         <button type="button" aria-pressed={subs} onClick={() => setSubs(!subs)}>字幕</button>
         <button
           type="button" aria-pressed={sound}
-          onClick={() => { const v = !sound; setSound(v); st.current.sound = v; st.current.audioOk = true; if (!v) stopAudio(); else if (st.current.playing && st.current.cur >= 0) speak(st.current.cur); }}
+          onClick={() => { const v = !sound; setSound(v); st.current.sound = v; st.current.audioOk = true; if (!v) stopAudio(); else if (st.current.playing && st.current.cur >= 0) speak(st.current.cur); syncBed(true); }}
         >音声</button>
         <button type="button" onClick={toggleFs}>{fs ? '全画面を終了' : '全画面'}</button>
       </div>

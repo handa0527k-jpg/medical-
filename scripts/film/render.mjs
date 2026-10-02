@@ -35,8 +35,8 @@ page.on('pageerror', (e) => console.error('page error:', e.message));
 await page.goto(`${base}/production/render.html?course=${course}&t=${a}`);
 await page.waitForFunction(() => window.ready === true, null, { timeout: 60000 });
 const ff = spawn(FF, ['-y', '-loglevel', 'error', '-f', 'image2pipe', '-framerate', String(fps), '-i', '-', '-i', `${tmp}.wav`, '-i', `${tmp}.srt`,
-  '-map', '0:v', '-map', '1:a', '-map', '2:s', '-c:v', 'libx264', '-preset', 'medium', '-crf', '19', '-pix_fmt', 'yuv420p', '-c:a', 'aac', '-b:a', '192k',
-  '-c:s', 'mov_text', '-metadata:s:s:0', 'language=jpn', '-shortest', '-movflags', '+faststart', out], { stdio: ['pipe', 'inherit', 'inherit'] });
+  '-map', '0:v', '-map', '1:a', '-map', '2:s', '-c:v', 'libx264', '-preset', 'medium', '-crf', '21', '-pix_fmt', 'yuv420p', '-c:a', 'aac', '-b:a', '192k',
+  '-c:s', 'mov_text', '-metadata:s:s:0', 'language=jpn', '-tune', 'animation', '-movflags', '+faststart', out], { stdio: ['pipe', 'inherit', 'inherit'] });
 const n = Math.round((b - a) * fps), batch = 12; const t0 = Date.now();
 for (let i = 0; i < n; i += batch) {
   const times = Array.from({ length: Math.min(batch, n - i) }, (_, k) => a + (i + k) / fps);

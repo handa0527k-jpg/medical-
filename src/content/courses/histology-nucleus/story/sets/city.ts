@@ -89,7 +89,7 @@ export function city(cam: Camera, t: number, o: CityOpts = {}) {
     quad([[x, 0, z0], [x, 0, z1], [x, 1.5, z1], [x, 1.5, z0]], inner ? '#3a3050' : '#2a2238');
     quad([[x - 0.25 * sx, 1.5, z0], [x + 0.0, 1.5, z0], [x, 1.5, z1], [x - 0.25 * sx, 1.5, z1]], '#4a3f62');
     for (let z = z0 + 0.5; z < z1; z += 0.55) {
-      const q = P([x - sx * 0.12, 1.58, z]); if (q.d < 0.3 || q.d > 70) continue;
+      const q = P([x - sx * 0.12, 1.58, z]); if (q.d < 2.2 || q.d > 70) continue;
       g.fillStyle = '#2a1f3a'; g.beginPath(); g.arc(q.x, q.y, Math.max(1, q.s * 0.09), 0, 7); g.fill();
       g.fillStyle = `rgba(230,190,255,${0.35 + 0.25 * Math.sin(t * 1.3 + z)})`; g.beginPath(); g.arc(q.x - q.s * 0.03, q.y - q.s * 0.03, Math.max(0.6, q.s * 0.03), 0, 7); g.fill();
     }
