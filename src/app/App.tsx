@@ -27,6 +27,7 @@ const LecturesPage = lazy(() => import('../features/lecture/LecturesPage'));
 const LecturePage = lazy(() => import('../features/lecture/LecturePage'));
 const AnimationsPage = lazy(() => import('../features/animations/AnimationsPage'));
 const AnimationPage = lazy(() => import('../features/animations/AnimationPage'));
+const StoryPage = lazy(() => import('../features/story/StoryPage'));
 const BoardViewerPage = lazy(() => import('../features/lecture/BoardViewerPage'));
 const QuickReviewPage = lazy(() => import('../features/review/QuickReviewPage'));
 
@@ -83,6 +84,7 @@ export function App({ course }: { course: Course }) {
                 <Route path="/figures" element={<FiguresPage />} />
                 <Route path="/figures/:id" element={<FigurePage />} />
                 <Route path="/animations" element={<AnimationsPage />} />
+                <Route path="/animations/story" element={<StoryPage />} />
                 <Route path="/animations/:id" element={<AnimationPage />} />
                 <Route path="/zukan" element={<ZukanPage />} />
                 <Route path="/quiz" element={<QuizMenu />} />

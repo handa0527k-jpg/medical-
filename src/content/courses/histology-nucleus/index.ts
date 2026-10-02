@@ -49,6 +49,7 @@ const course: Course = {
   assetBase: `${import.meta.env.BASE_URL}courses/histology-nucleus/`,
   // no whole-cell overview figure in this course: the tissue backdrop is drawn without one
   macroSvg: () => (macro ??= buildMacroSvg('<svg></svg>')),
+  story: () => import('./story').then((m) => m.default),
 };
 
 export default course;

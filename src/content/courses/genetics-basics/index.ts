@@ -47,6 +47,7 @@ const course: Course = {
   mapSvg,
   assetBase: `${import.meta.env.BASE_URL}courses/genetics-basics/`,
   macroSvg: () => (macro ??= buildMacroSvg((figs.cell?.svg ?? '<svg></svg>'))),
+  story: () => import('./story').then((m) => m.default),
 };
 
 export default course;

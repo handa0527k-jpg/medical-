@@ -23,6 +23,9 @@ export interface CourseMeta {
   metaphor: string;
   /** how the metaphor is labelled in the UI (default: 工場メタファー / FACTORY / 工場での役割) */
   metaphorLabel?: { name: string; en: string; role: string; in: string };
+  /** title and one-line pitch of the story anime (shown without loading it) */
+  storyTitle?: string;
+  storyLead?: string;
   /** emphasised tail of the subtitle on the home hero (e.g. 工場。) */
   subtitleEm?: string;
   /** home-screen map: section title and legend */
@@ -208,4 +211,6 @@ export interface Course extends CourseMeta {
   assetBase: string;
   /** svg markup of the macro "tissue" backdrop used when animations zoom out */
   macroSvg: () => string;
+  /** story anime (narrated short film), code-split */
+  story?: () => Promise<import('../engine/story/types').StoryModule>;
 }

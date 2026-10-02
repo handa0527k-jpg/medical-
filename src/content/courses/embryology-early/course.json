@@ -6,6 +6,8 @@
  "subject": "人体発生学",
  "category": "embryology",
  "lecture": { "label": "初期発生と系統発生", "number": 4, "slideRange": [5, 51] },
+ "storyTitle": "生命史線の夜行列車",
+ "storyLead": "見習い車掌の僕が、ひと晩で走る二つの旅。一人のヒトが生まれるまでの旅と、生命が三十八億年かけてたどった旅。",
  "metaphor": "ヒトの発生＝生命史の旅",
  "metaphorLabel": { "name": "旅のたとえ", "en": "JOURNEY", "role": "旅での役割", "in": "旅でいうと" },
  "map": { "title": "旅の地図から学ぶ", "legend": [ { "label": "個体発生（受精から3層性胚盤まで）", "color": "var(--eosin)" }, { "label": "系統発生（脊索動物からヒトまで）", "color": "var(--hema)" } ] },

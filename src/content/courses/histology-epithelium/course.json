@@ -6,6 +6,8 @@
  "subject": "組織学",
  "category": "histology",
  "lecture": { "label": "上皮組織", "number": 5, "slideRange": [3, 38] },
+ "storyTitle": "コウと揺れる街",
+ "storyLead": "ある朝、上皮細胞の街が揺れた。僕は、すき間をふさぐ仲間たち――コーキング、ベルト、ボルト、ケーブル、そして大地の精霊――を訪ねて歩く。",
  "metaphor": "上皮組織＝体の国境の壁",
  "metaphorLabel": { "name": "国境のたとえ", "en": "BORDER", "role": "国境での役割", "in": "国境でいうと" },
  "map": { "title": "国境の壁から学ぶ", "legend": [ { "label": "上皮細胞の面と結合装置（壁のつくり）", "color": "var(--eosin)" }, { "label": "形による上皮の分類（壁の種類）", "color": "var(--hema)" } ] },

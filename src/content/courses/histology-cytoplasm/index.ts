@@ -48,6 +48,7 @@ const course: Course = {
   mapSvg,
   assetBase: `${import.meta.env.BASE_URL}courses/histology-cytoplasm/`,
   macroSvg: () => (macro ??= buildMacroSvg(figs.cell.svg)),
+  story: () => import('./story').then((m) => m.default),
 };
 
 export default course;
