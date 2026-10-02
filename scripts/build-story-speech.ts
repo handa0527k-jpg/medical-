@@ -17,10 +17,10 @@ const want = process.argv.slice(2);
 mkdirSync(join(root, '.audio-cache/story'), { recursive: true });
 for (const c of want.length ? want : all) {
   const def = JSON.parse(readFileSync(join(root, 'src/content/courses', c, 'story/story.json'), 'utf8'));
-  const out = def.lines.map((l: { who: string; text: string }, i: number) => {
+  const out = def.lines.map((l: { who: string; text: string; say?: string }, i: number) => {
     const v = def.voices[l.who];
     if (!v) throw new Error(`${c}: no voice for ${l.who}`);
-    return { i, who: l.who, voice: v[0], pitch: v[1], rate: v[2], speech: toSpeech(l.text) };
+    return { i, who: l.who, voice: v[0], pitch: v[1], rate: v[2], speech: toSpeech(l.say ?? l.text) };
   });
   writeFileSync(join(root, '.audio-cache/story', `${c}.json`), JSON.stringify(out, null, 1));
   console.log(c, out.length, 'lines');

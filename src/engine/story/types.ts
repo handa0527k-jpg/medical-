@@ -4,6 +4,8 @@ export interface StoryLine {
   /** speaker; 'N' is the narrator (no name shown in the subtitle) */
   who: string;
   text: string;
+  /** how the voice should read the line, when the text alone is read wrongly (e.g. 十八番 as おはこ) */
+  say?: string;
   /** audio length in seconds (measured when the audio was generated) */
   dur: number;
   /** byte range [start, length] of this line in <assetBase>story/story.mp3 */
