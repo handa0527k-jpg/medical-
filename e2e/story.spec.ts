@@ -92,6 +92,6 @@ test('nucleus film (午前二時の本社ビル): a frame from every scene draws
     expect(painted, `frame at ${t}s`).toBeGreaterThan(40);
   }
   expect(errs).toEqual([]);
-  const bed = await request.get('/courses/histology-nucleus/story/bed.m4a');
+  const bed = await request.get('/courses/histology-nucleus/story/bed.mp3');
   expect(bed.ok()).toBe(true);
 });

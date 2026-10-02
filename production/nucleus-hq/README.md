@@ -15,7 +15,7 @@ MED·STUDY 組織学「核・細胞周期」のストーリーアニメ（アプ
 | 使用モーション・BGM・SE一覧／ライセンス | `ASSETS.md` |
 | 音の設計（再編集用） | `sound.json` → `timeline.json`（解決済みの時刻） |
 
-アプリでは同じ絵がリアルタイムに描かれ、声は1行ずつ、音楽・効果音・環境音は `public/courses/histology-nucleus/story/bed.m4a`（セリフ中は自動で音楽が下がるように作った下敷きの音）として映画の時計に合わせて流れる。
+アプリでは同じ絵がリアルタイムに描かれ、声は1行ずつ、音楽・効果音・環境音は `public/courses/histology-nucleus/story/bed.mp3`（セリフ中は自動で音楽が下がるように作った下敷きの音）として映画の時計に合わせて流れる。
 
 ## 場面
 
@@ -40,7 +40,7 @@ npx vite --port 5199                   # アプリ：#/open/histology-nucleus/an
 node scripts/story-frames.mjs histology-nucleus out --scene gate --at 5,20 --sheet
 # 3) 音を変えたら
 npx tsx scripts/film/timeline.ts histology-nucleus production/nucleus-hq
-python3 scripts/film/mix.py production/nucleus-hq public/.../bed.wav --bed   # アプリ用の下敷き（AAC にして bed.m4a）
+python3 scripts/film/mix.py production/nucleus-hq public/.../bed.wav --bed   # アプリ用の下敷き（MP3 にして bed.mp3）
 # 4) 書き出し（場面ごと → 完成版）。できあがった場面は残り、途中で止まっても続きから
 PW_CHROMIUM=/opt/pw-browsers/chromium scripts/film/build.sh histology-nucleus production/nucleus-hq          # 変えた場面の scene.mp4 を消してから
 PW_CHROMIUM=/opt/pw-browsers/chromium scripts/film/build.sh histology-nucleus production/nucleus-hq --force  # 全部作り直す
