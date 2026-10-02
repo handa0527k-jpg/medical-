@@ -63,3 +63,18 @@ test('genetics opening: any playback position draws its frame (?t=), across all 
   await expect(page.locator('.story-sub')).toContainText('おかしいな', { timeout: 8000 });
   expect(errs).toEqual([]);
 });
+
+test('genetics full film: a frame from every scene draws without errors (?t=)', async ({ page }) => {
+  const errs: string[] = [];
+  page.on('pageerror', (e) => errs.push(e.message));
+  // library, letters, pack, meiosis, read, typo, jump, notes, close
+  for (const t of [70, 160, 280, 380, 470, 580, 660, 750, 845]) {
+    await page.goto(`/#/open/genetics-basics/animations/story?t=${t}`);
+    await expect(page.locator('.story-tm')).toContainText(`${Math.floor(t / 60)}:${String(Math.floor(t % 60)).padStart(2, '0')}`);
+    const painted = await page.locator('.story-screen canvas').evaluate((c: HTMLCanvasElement) => {
+      const d = c.getContext('2d')!.getImageData(0, 0, c.width, c.height).data; let n = 0; for (let i = 0; i < d.length; i += 4000) if (d[i] + d[i + 1] + d[i + 2] > 40) n++; return n;
+    });
+    expect(painted, `frame at ${t}s`).toBeGreaterThan(40);
+  }
+  expect(errs).toEqual([]);
+});

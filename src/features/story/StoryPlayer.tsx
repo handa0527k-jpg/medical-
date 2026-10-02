@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { bindCtx, CL, g, H, W } from '../../engine/story/kit';
-import { buildTimeline, lineAt, sceneAt } from '../../engine/story/timeline';
+import { buildTimeline, lineAt, sceneAt, subAt } from '../../engine/story/timeline';
 import type { StoryModule } from '../../engine/story/types';
 import { fmtT } from '../../engine/svg';
 import { useStore } from '../../state/hooks';
@@ -173,7 +173,7 @@ export default function StoryPlayer({ story, assetBase, startAt }: { story: Stor
       <div className="story-screen">
         <canvas ref={cvRef} width={W} height={H} aria-label={`アニメ「${def.title}」`} onClick={() => (playing ? pause() : play())} />
         {subs && line && (
-          <div className="story-sub" aria-live="polite"><span>{line.who !== 'N' && <b>{line.who}</b>}{line.text}</span></div>
+          <div className="story-sub" aria-live="polite"><span>{line.who !== 'N' && <b>{line.who}</b>}{def.subChunks ? subAt(line.text, line.t0, line.t1, ui.now) : line.text}</span></div>
         )}
         {!started && (
           <div className="story-start"><button type="button" onClick={play} disabled={loading}>{loading ? '音声を読み込み中…' : '▶ 上映をはじめる'}</button></div>

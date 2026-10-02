@@ -178,19 +178,19 @@ export function page(x: number, y: number, w: number, a: number, flip = 1, glowK
   if (glowK > 0) { g.globalCompositeOperation = 'screen'; g.fillStyle = `rgba(190,215,255,${glowK * 0.5})`; g.fillRect(-w / 2, -h / 2, w, h); }
   g.restore();
 }
-export function brassClock(x: number, y: number, s: number) {
+export function brassClock(x: number, y: number, s: number, hh = 11, mm = 4) {
   g.fillStyle = '#8a6a2c'; rr(x - s, y - s * 0.2, s * 2, s * 1.4, s * 0.2); g.fill();
   g.fillStyle = '#b8923f'; g.beginPath(); g.arc(x, y - s * 0.25, s * 0.8, 0, 7); g.fill();
   g.fillStyle = '#efe6cf'; g.beginPath(); g.arc(x, y - s * 0.25, s * 0.66, 0, 7); g.fill();
   g.strokeStyle = '#2a2420'; g.lineWidth = Math.max(1, s * 0.07); g.lineCap = 'round';
-  const hr = ((11 + 4 / 60) / 12) * Math.PI * 2, mn = (4 / 60) * Math.PI * 2;
+  const hr = ((hh + mm / 60) / 12) * Math.PI * 2, mn = (mm / 60) * Math.PI * 2;
   g.beginPath(); g.moveTo(x, y - s * 0.25); g.lineTo(x + Math.sin(hr) * s * 0.35, y - s * 0.25 - Math.cos(hr) * s * 0.35); g.stroke();
   g.lineWidth = Math.max(1, s * 0.05); g.beginPath(); g.moveTo(x, y - s * 0.25); g.lineTo(x + Math.sin(mn) * s * 0.55, y - s * 0.25 - Math.cos(mn) * s * 0.55); g.stroke();
 }
 
 /* ---------- the desk shot set (used by C and E2) ---------- */
 export const LAMP: [number, number] = [880, 392];
-export function deskSet(t: number, under: () => void, over: () => void) {
+export function deskSet(t: number, under: () => void, over: () => void, clock: [number, number] = [11, 4]) {
   g.drawImage(deskBg(), 0, 0);
   glow(LAMP[0], LAMP[1] + 60, 520, 'rgba(255,190,110,.55)', 0.94 + 0.06 * noise(t * 4, 2));
   under();
@@ -205,7 +205,7 @@ export function deskSet(t: number, under: () => void, over: () => void) {
   [['#6d3b33', 1150, 24], ['#3f4f63', 1160, 20], ['#71603e', 1168, 18]].forEach(([col, x, hgt], i) => { g.fillStyle = col as string; rr(x as number, 462 - 26 - i * 20, 150 - i * 12, hgt as number, 3); g.fill(); });
   g.fillStyle = '#141820'; rr(640, 446, 26, 30, 6); g.fill(); g.fillStyle = 'rgba(255,255,255,.25)'; g.fillRect(644, 450, 4, 18);
   g.strokeStyle = '#ddd2b8'; g.lineWidth = 2; g.beginPath(); g.moveTo(660, 446); g.lineTo(700, 420); g.stroke();
-  brassClock(760, 452, 22);
+  brassClock(760, 452, 22, clock[0], clock[1]);
   // banker's lamp
   g.fillStyle = '#8a6a2c'; rr(LAMP[0] - 40, 456, 80, 12, 4); g.fill(); g.fillRect(LAMP[0] - 4, 400, 8, 58);
   g.fillStyle = '#1f5a3c'; g.beginPath(); g.moveTo(LAMP[0] - 70, 404); g.quadraticCurveTo(LAMP[0], 352, LAMP[0] + 70, 404); g.lineTo(LAMP[0] - 70, 404); g.fill();

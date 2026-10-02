@@ -54,6 +54,8 @@ export interface StoryDef {
   audio: string;
   /** scene time (s) of the poster frame shown before playback */
   poster?: [string, number];
+  /** show long lines as short pieces (one sentence at a time) instead of the whole line */
+  subChunks?: boolean;
 }
 
 /** Draws one frame of a scene at scene time t (seconds from the scene start); d = scene length. */

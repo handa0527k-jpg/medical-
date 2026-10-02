@@ -82,3 +82,19 @@ describe('genetics opening (cinematic prototype)', () => {
     expect(a.lines[1].t0).toBeCloseTo(LEAD + 1 + GAP + 2);
   });
 });
+
+describe('subtitle pieces (subChunks)', async () => {
+  const { subPieces, subAt } = await import('../src/engine/story/timeline');
+  it('cuts a long line into sentences and comma pieces, keeping every character', () => {
+    const s = '別のアミノ酸に替われば、ミスセンス変異。GACからGAAへ、アスパラギン酸からグルタミン酸へと、性質の似たものに替わる保存的置換もあれば、CGAからGGAへ、アルギニンからグリシンへと、性質の違うものに替わる非保存的置換もある。終止コドンに変われば、ナンセンス変異だ。';
+    const ps = subPieces(s);
+    expect(ps.join('')).toBe(s);
+    expect(ps.length).toBeGreaterThan(3);
+    ps.forEach((p) => expect(p.length).toBeLessThanOrEqual(44));
+    expect(subAt(s, 0, 10, 0)).toBe(ps[0]);
+    expect(subAt(s, 0, 10, 9.99)).toBe(ps[ps.length - 1]);
+  });
+  it('leaves a short line whole', () => {
+    expect(subPieces('……済。間に合ったな。')).toEqual(['……済。間に合ったな。']);
+  });
+});
