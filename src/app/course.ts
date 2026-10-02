@@ -8,3 +8,7 @@ export function useCourse(): Course {
   if (!c) throw new Error('Course missing');
   return c;
 }
+
+/** Opens another course in place (downloads its content, then re-renders the app). */
+export const SwitchCourseContext = createContext<(id: string) => Promise<void>>(async () => {});
+export const useSwitchCourse = () => useContext(SwitchCourseContext);

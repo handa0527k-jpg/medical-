@@ -3,6 +3,8 @@
  "title": "組織学｜細胞質",
  "subtitle": "細胞質は、ひとつの工場。",
  "subject": "組織学",
+ "category": "histology",
+ "alsoIn": ["cell"],
  "lecture": {
   "label": "講義資料02",
   "number": 2,

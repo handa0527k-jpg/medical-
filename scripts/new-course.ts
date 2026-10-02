@@ -1,7 +1,7 @@
 /**
  * Scaffold a new course from a lecture PDF.
  *
- *   npm run new:course -- <course-id> <lecture.pdf> [--title "組織学｜上皮組織"] [--number 3] [--skip 1]
+ *   npm run new:course -- <course-id> <lecture.pdf> [--title "組織学｜上皮組織"] [--category histology] [--number 3] [--skip 1]
  *
  * What it does
  *  1. extracts the text of every page with pdf.js → slides.json (title guess + raw text)
@@ -72,6 +72,8 @@ j('course.json', {
   title: opt('title', id),
   subtitle: '',
   subject: opt('title', id).split('｜')[0],
+  // home-screen field: one of the ids in src/content/categories.ts
+  category: opt('category', 'other'),
   lecture: { label: `講義資料${opt('number', '')}`, number: Number(opt('number', '99')), slideRange: [content[0]?.n ?? 1, pages.length] },
   metaphor: '',
   chapters: [{ id: 1, name: '（章名）', role: '', slides: content.map((p) => p.n), points: [], overview: { one: '', flow: [], cast: [] }, figures: [], animations: [] }],
@@ -96,4 +98,4 @@ void copyFileSync;
 
 console.log(`created src/content/courses/${id} (${content.length} content pages, ${skip} skipped)`);
 console.log(rendered ? `rendered slide images → public/courses/${id}/slides/` : `⚠ pdftoppm not found: export each page as public/courses/${id}/slides/NN.jpg (e.g. brew/apt install poppler, then re-run the pdftoppm step)`);
-console.log('next: author textbook / questions from slides.json → npm run build:narration → npm run check:content');
+console.log('next: author textbook / questions from slides.json → npm run build:narration → npm run build:stats → npm run check:content');

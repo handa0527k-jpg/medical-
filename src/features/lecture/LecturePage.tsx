@@ -5,6 +5,7 @@ import { NotFound } from '../../app/NotFound';
 import type { Lecture } from '../../engine/lecture/types';
 import { useStudyPage } from '../../state/hooks';
 import { LecturePlayer } from './LecturePlayer';
+import { LectureList } from './LectureList';
 
 export default function LecturePage() {
   const course = useCourse();
@@ -26,11 +27,13 @@ export default function LecturePage() {
   if (!ch || err) return <NotFound />;
   return (
     <>
-      <div className="btnrow" style={{ marginTop: 0, marginBottom: 14 }}>
-        <Link className="btn sm" to="/lectures" style={{ flex: '0 0 auto' }}>← 授業一覧</Link>
-        <Link className="btn sm" to={`/chapter/${id}`} style={{ flex: '0 0 auto' }}>第{id}章の教科書</Link>
-      </div>
-      {lec ? <LecturePlayer key={id} lecture={lec} chapter={id} startAt={startAt} /> : <div className="empty">授業を読み込み中…</div>}
+      <nav className="crumb" aria-label="パンくず">
+        <Link to="/">ホーム</Link><span aria-hidden="true">／</span>
+        <Link to={`/category/${course.category}`}>{course.subject}</Link><span aria-hidden="true">／</span>
+        <Link to="/lectures">授業一覧</Link><span aria-hidden="true">／</span>
+        <span>第{id}講 {ch.name}</span>
+      </nav>
+      {lec ? <LecturePlayer key={id} lecture={lec} chapter={id} startAt={startAt} side={<LectureList current={id} />} /> : <div className="empty">授業を読み込み中…</div>}
     </>
   );
 }

@@ -7,6 +7,9 @@ import { ProgressStore } from '../state/store';
 import { LocalStorageRepository } from '../state/storage';
 import { Layout } from './Layout';
 import { HomePage } from '../features/home/HomePage';
+import { CourseHomePage } from '../features/home/CourseHomePage';
+import { CategoryPage } from '../features/catalog/CategoryPage';
+import { OpenCourse } from '../features/catalog/OpenCourse';
 import { BookPage } from '../features/textbook/BookPage';
 import { ChapterPage } from '../features/textbook/ChapterPage';
 import { QuizMenu } from '../features/quiz/QuizMenu';
@@ -54,19 +57,23 @@ export function App({ course }: { course: Course }) {
   useEffect(() => {
     const f = () => store.flush();
     window.addEventListener('pagehide', f);
-    return () => window.removeEventListener('pagehide', f);
+    // switching to another course: save this one's progress first
+    return () => { window.removeEventListener('pagehide', f); store.flush(); };
   }, [store]);
 
   return (
-    <CourseContext.Provider value={course}>
-      <StoreContext.Provider value={store}>
-        <HashRouter>
+    <HashRouter>
+      <CourseContext.Provider value={course}>
+        <StoreContext.Provider value={store} key={course.id}>
           <ThemeSync />
           <ScrollToTop />
           <Layout>
             <Suspense fallback={<div className="empty">読み込み中…</div>}>
               <Routes>
                 <Route path="/" element={<HomePage />} />
+                <Route path="/category/:id" element={<CategoryPage />} />
+                <Route path="/open/:courseId/*" element={<OpenCourse />} />
+                <Route path="/course" element={<CourseHomePage />} />
                 <Route path="/book" element={<BookPage />} />
                 <Route path="/chapter/:id" element={<ChapterPage />} />
                 <Route path="/lectures" element={<LecturesPage />} />
@@ -88,8 +95,8 @@ export function App({ course }: { course: Course }) {
               </Routes>
             </Suspense>
           </Layout>
-        </HashRouter>
-      </StoreContext.Provider>
-    </CourseContext.Provider>
+        </StoreContext.Provider>
+      </CourseContext.Provider>
+    </HashRouter>
   );
 }

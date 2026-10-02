@@ -2,13 +2,14 @@ import { useEffect, useState } from 'react';
 import { useProgress, useStore } from '../../state/hooks';
 import { japaneseVoices, voiceScore, webSpeechAvailable } from '../../engine/speech/narrator';
 import type { ThemePref } from '../../state/types';
-import { COURSES, selectCourse } from '../../content/registry';
-import { useCourse } from '../../app/course';
+import { COURSES } from '../../content/registry';
+import { useCourse, useSwitchCourse } from '../../app/course';
 
 export function SettingsPage() {
   const s = useProgress();
   const store = useStore();
   const course = useCourse();
+  const switchCourse = useSwitchCourse();
   const [voices, setVoices] = useState<SpeechSynthesisVoice[]>(() => japaneseVoices());
   const [confirm, setConfirm] = useState(false);
   const [msg, setMsg] = useState('');
@@ -35,8 +36,8 @@ export function SettingsPage() {
       <div className="card" style={{ padding: '6px 20px', marginTop: 16 }}>
         {COURSES.length > 1 && (
           <div className="set-row">
-            <div className="l"><b>教材</b><small>学習する講義を切り替えます（進捗は教材ごとに保存）</small></div>
-            <select className="sel" value={course.id} onChange={(e) => { selectCourse(e.target.value); window.location.hash = '#/'; window.location.reload(); }} aria-label="教材">
+            <div className="l"><b>教材</b><small>学習する講義を切り替えます（進捗は教材ごとに保存）。ホームの「分野から学ぶ」からも選べます</small></div>
+            <select className="sel" value={course.id} onChange={(e) => { void switchCourse(e.target.value); }} aria-label="教材">
               {COURSES.map((c) => <option key={c.id} value={c.id}>{c.lecture.label}　{c.title}</option>)}
             </select>
           </div>

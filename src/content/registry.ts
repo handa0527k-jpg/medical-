@@ -7,9 +7,11 @@
  * each course's content (textbook, questions, figures, animations) is a separate
  * chunk that is loaded when that course is opened.
  */
-import type { Course, CourseMeta } from './types';
+import type { Course, CourseMeta, CourseStats } from './types';
+import { CATEGORIES } from './categories';
 
 const metas = import.meta.glob<CourseMeta>('./courses/*/course.json', { eager: true, import: 'default' });
+const statsFiles = import.meta.glob<CourseStats>('./courses/*/stats.json', { eager: true, import: 'default' });
 const loaders = import.meta.glob<{ default: Course }>('./courses/*/index.ts');
 
 const dirOf = (path: string) => path.split('/')[2];
@@ -17,6 +19,21 @@ const dirOf = (path: string) => path.split('/')[2];
 /** Lightweight descriptions of every course, in lecture order. */
 export const COURSES: CourseMeta[] = Object.values(metas).sort((a, b) => a.lecture.number - b.lecture.number);
 export const DEFAULT_COURSE_ID = COURSES[0].id;
+
+const EMPTY_STATS: CourseStats = { lectures: [], single: {}, judgement: {}, figures: 0, animations: 0, zukan: 0 };
+const statsById: Record<string, CourseStats> = Object.fromEntries(
+  Object.entries(metas).map(([path, m]) => [m.id, statsFiles[path.replace('course.json', 'stats.json')] ?? EMPTY_STATS]),
+);
+/** Lecture lengths, question ids and counts of a course (no content download). */
+export const courseStats = (id: string): CourseStats => statsById[id] ?? EMPTY_STATS;
+
+/** Courses listed under a category (its own courses first, then those that are also filed there). */
+export const coursesIn = (categoryId: string) => [
+  ...COURSES.filter((c) => c.category === categoryId),
+  ...COURSES.filter((c) => c.category !== categoryId && c.alsoIn?.includes(categoryId)),
+];
+/** The category a course is filed under (falls back to その他). */
+export const categoryOf = (c: CourseMeta) => CATEGORIES.find((x) => x.id === c.category) ?? CATEGORIES[CATEGORIES.length - 1];
 
 const loaderById: Record<string, () => Promise<{ default: Course }>> = Object.fromEntries(
   Object.entries(loaders).map(([path, load]) => [metas[`./courses/${dirOf(path)}/course.json`]?.id ?? dirOf(path), load]),

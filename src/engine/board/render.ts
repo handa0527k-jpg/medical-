@@ -575,7 +575,9 @@ export class BoardRenderer {
   }
 
   draw(canvas: HTMLCanvasElement, T: number, cam: BoardCam, opt: DrawOptions = {}) {
-    const dpr = Math.min(opt.dpr ?? 2, window.devicePixelRatio || 1);
+    // a full-screen lecture scales its fixed-size stage up (data-zoom): draw at that resolution so chalk stays sharp
+    const zoom = Number(canvas.closest<HTMLElement>('[data-zoom]')?.dataset.zoom) || 1;
+    const dpr = Math.min(4, Math.min(opt.dpr ?? 2, window.devicePixelRatio || 1) * zoom);
     const cw = canvas.clientWidth, ch = canvas.clientHeight;
     if (!cw || !ch) return;
     const PW = Math.round(cw * dpr), PH = Math.round(ch * dpr);

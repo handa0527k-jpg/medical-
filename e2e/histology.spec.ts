@@ -45,7 +45,7 @@ test.beforeEach(async ({ page }) => {
   await page.addInitScript(() => localStorage.setItem('medstudy:course', JSON.stringify('histology-cytoplasm')));
 });
 
-const ROUTES = ['/', '/book', '/chapter/1', '/chapter/8', '/lectures', '/lecture/1', '/figures', '/figures/cell', '/animations', '/animations/sec', '/zukan', '/quiz', '/quiz/play?chapter=1', '/quiz/judge?chapter=2', '/review', '/stats', '/settings'];
+const ROUTES = ['/', '/course', '/category/histology', '/category/cell', '/category/pharmacology', '/book', '/chapter/1', '/chapter/8', '/lectures', '/lecture/1', '/figures', '/figures/cell', '/animations', '/animations/sec', '/zukan', '/quiz', '/quiz/play?chapter=1', '/quiz/judge?chapter=2', '/review', '/stats', '/settings'];
 
 test('every screen renders without errors or horizontal scrolling', async ({ page }) => {
   const errs = watchErrors(page);
@@ -59,7 +59,7 @@ test('every screen renders without errors or horizontal scrolling', async ({ pag
   expect(errs).toEqual([]);
 });
 
-const NUC_ROUTES = ['/', '/book', '/chapter/3', '/lectures', '/figures', '/figures/nuc', '/figures/chr', '/animations', '/animations/mitosis', '/animations/ribo', '/animations/renew', '/zukan', '/quiz/play?chapter=5', '/quiz/judge?chapter=4', '/stats'];
+const NUC_ROUTES = ['/', '/course', '/book', '/chapter/3', '/lectures', '/figures', '/figures/nuc', '/figures/chr', '/animations', '/animations/mitosis', '/animations/ribo', '/animations/renew', '/zukan', '/quiz/play?chapter=5', '/quiz/judge?chapter=4', '/stats'];
 
 test('second course (核・細胞周期): every screen renders, with its own metaphor and recorded lectures', async ({ page }) => {
   await page.addInitScript(() => localStorage.setItem('medstudy:course', JSON.stringify('histology-nucleus')));
@@ -71,7 +71,7 @@ test('second course (核・細胞周期): every screen renders, with its own met
     const overflow = await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth);
     expect(overflow, `horizontal overflow on ${r}`).toBeLessThanOrEqual(1);
   }
-  await page.goto('/#/');
+  await page.goto('/#/course');
   await expect(page.locator('h1')).toContainText('本社');
   await expect(page.locator('h1')).not.toContainText('工場');
   await page.goto('/#/quiz/play?chapter=5');
@@ -83,7 +83,7 @@ test('second course (核・細胞周期): every screen renders, with its own met
   expect(errs).toEqual([]);
 });
 
-const EMB_ROUTES = ['/', '/book', '/chapter/2', '/chapter/5', '/lectures', '/figures', '/figures/egg', '/figures/bila', '/figures/phylo', '/figures/heart', '/animations', '/animations/fert', '/animations/cleave', '/animations/gast', '/zukan', '/quiz/play?chapter=6', '/quiz/judge?chapter=3', '/stats'];
+const EMB_ROUTES = ['/', '/course', '/category/embryology', '/book', '/chapter/2', '/chapter/5', '/lectures', '/figures', '/figures/egg', '/figures/bila', '/figures/phylo', '/figures/heart', '/animations', '/animations/fert', '/animations/cleave', '/animations/gast', '/zukan', '/quiz/play?chapter=6', '/quiz/judge?chapter=3', '/stats'];
 
 test('third course (初期発生と系統発生): every screen renders, with its own metaphor and recorded lectures', async ({ page }) => {
   await page.addInitScript(() => localStorage.setItem('medstudy:course', JSON.stringify('embryology-early')));
@@ -95,7 +95,7 @@ test('third course (初期発生と系統発生): every screen renders, with its
     const overflow = await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth);
     expect(overflow, `horizontal overflow on ${r}`).toBeLessThanOrEqual(1);
   }
-  await page.goto('/#/');
+  await page.goto('/#/course');
   await expect(page.locator('h1')).toContainText('生命の歴史');
   await expect(page.locator('h1')).not.toContainText('工場');
   await page.goto('/#/quiz/play?chapter=6');

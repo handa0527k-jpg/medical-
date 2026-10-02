@@ -6,17 +6,18 @@ import { useProgress, useStore } from '../state/hooks';
 
 const NAV: { to: string; label: string; end?: boolean }[] = [
   { to: '/', label: 'ホーム', end: true },
-  { to: '/book', label: '教科書' },
+  { to: '/course', label: '教材トップ' },
   { to: '/lectures', label: '授業' },
+  { to: '/book', label: '教科書' },
   { to: '/figures', label: '図解' },
   { to: '/animations', label: 'アニメ' },
-  { to: '/zukan', label: '図鑑' },
   { to: '/quiz', label: '5択問題' },
   { to: '/review', label: '弱点復習' },
   { to: '/stats', label: '分析' },
 ];
 
 const MORE: { to: string; label: string; sub: string }[] = [
+  { to: '/book', label: '教科書', sub: '章ごとの解説と赤シート' },
   { to: '/figures', label: '図解', sub: 'タップで構造と役割を確認' },
   { to: '/animations', label: 'アニメーション', sub: '機序を動きで理解' },
   { to: '/zukan', label: '役割図鑑', sub: '小器官をたとえで一覧' },
@@ -32,7 +33,7 @@ export function Layout({ children }: { children: ReactNode }) {
   const loc = useLocation();
   useEffect(() => setMenu(false), [loc.pathname]);
   const isDark = settings.theme === 'dark' || (settings.theme === 'system' && matchMedia('(prefers-color-scheme: dark)').matches);
-  const tabActive = (p: string) => (p === '/' ? loc.pathname === '/' : loc.pathname.startsWith(p) || (p === '/book' && loc.pathname.startsWith('/chapter')) || (p === '/lectures' && loc.pathname.startsWith('/lecture')));
+  const tabActive = (p: string) => (p === '/' ? loc.pathname === '/' || loc.pathname.startsWith('/category') : loc.pathname.startsWith(p) || (p === '/book' && loc.pathname.startsWith('/chapter')) || (p === '/lectures' && loc.pathname.startsWith('/lecture')));
 
   return (
     <>
@@ -50,11 +51,11 @@ export function Layout({ children }: { children: ReactNode }) {
           <Link to="/" className="brand" aria-label="ホームへ">
             <i />
             <b>MED·STUDY</b>
-            <span>{course.title}</span>
           </Link>
+          <Link to="/course" className="brand-course" title="開いている教材">{course.title}</Link>
           <nav className="topnav" aria-label="メイン">
             {NAV.map((n) => (
-              <NavLink key={n.to} to={n.to} end={n.end} className={({ isActive }) => (isActive || (n.to === '/book' && loc.pathname.startsWith('/chapter')) || (n.to === '/lectures' && loc.pathname.startsWith('/lecture/')) ? 'active' : '')}>
+              <NavLink key={n.to} to={n.to} end={n.end} className={({ isActive }) => (isActive || (n.to === '/' && loc.pathname.startsWith('/category')) || (n.to === '/book' && loc.pathname.startsWith('/chapter')) || (n.to === '/lectures' && loc.pathname.startsWith('/lecture/')) ? 'active' : '')}>
                 {n.label}
               </NavLink>
             ))}
@@ -71,7 +72,7 @@ export function Layout({ children }: { children: ReactNode }) {
 
       <nav className="tabbar" aria-label="タブ">
         <Link to="/" className={tabActive('/') ? 'active' : ''}><Icon name="home" />ホーム</Link>
-        <Link to="/book" className={tabActive('/book') ? 'active' : ''}><Icon name="book" />教科書</Link>
+        <Link to="/course" className={tabActive('/course') || tabActive('/book') ? 'active' : ''}><Icon name="book" />教材</Link>
         <Link to="/lectures" className={tabActive('/lectures') ? 'active' : ''}><Icon name="play" />授業</Link>
         <Link to="/quiz" className={tabActive('/quiz') || tabActive('/review') ? 'active' : ''}><Icon name="quiz" />5択</Link>
         <button onClick={() => setMenu(true)} aria-haspopup="dialog" aria-expanded={menu}><Icon name="menu" />メニュー</button>

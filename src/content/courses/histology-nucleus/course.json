@@ -4,6 +4,8 @@
  "subtitle": "核は、細胞の本社。",
  "subtitleEm": "本社。",
  "subject": "組織学",
+ "category": "histology",
+ "alsoIn": ["cell"],
  "lecture": {
   "label": "核、細胞周期",
   "number": 3,

@@ -37,7 +37,10 @@ npm run build:narration -- histology-epithelium
 
 ## 4. 検証
 
+course.json の `category` に分野（`src/content/categories.ts` の id。例：`histology`、`embryology`、`pharmacology`）を書くと、ホームのその分野のカードに教材が並びます。ほかの分野にも載せるときは `"alsoIn": ["cell"]` のように書きます。
+
 ```bash
+npm run build:stats    # ホーム・分野ページ用の stats.json を作る（問題やナレーションを変えたら再実行）
 npm run check:content
 ```
 

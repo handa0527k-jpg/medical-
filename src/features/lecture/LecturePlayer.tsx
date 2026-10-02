@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState, type ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 import { useCourse } from '../../app/course';
 import { Rich } from '../../components/Rich';
@@ -20,7 +20,10 @@ export const fm2 = (s: number) => { s = Math.max(0, Math.floor(s + 0.001)); retu
 
 type Overlay = 'start' | 'pause' | 'end' | null;
 
-export function LecturePlayer({ lecture, chapter, startAt }: { lecture: Lecture; chapter: number; startAt?: number }) {
+/** fixed design size of the lecture screen in full-screen mode; larger screens scale it up like a video */
+const DESIGN_W = 1280;
+
+export function LecturePlayer({ lecture, chapter, startAt, side }: { lecture: Lecture; chapter: number; startAt?: number; side?: ReactNode }) {
   const course = useCourse();
   const store = useStore();
   const progress = useProgress();
@@ -74,7 +77,6 @@ export function LecturePlayer({ lecture, chapter, startAt }: { lecture: Lecture;
   const [autoPause, setAutoPause] = useState(settings.autoPause);
   const [volume, setVolume] = useState(settings.volume);
   const [note, setNote] = useState('');
-  const [theater, setTheater] = useState(false);
   const [digest, setDigest] = useState(false);
   const saved = progress.lectures[chapter];
   const resumeAt = saved && !saved.completed && saved.position > 10 && saved.position < total - 10 ? saved.position : 0;
@@ -221,17 +223,73 @@ export function LecturePlayer({ lecture, chapter, startAt }: { lecture: Lecture;
   // pause when scrolled away / tab hidden
   const stageRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
-    const io = new IntersectionObserver((es) => es.forEach((e) => { if (!e.isIntersecting && R.current.play && !theater) pause(); }));
+    const io = new IntersectionObserver((es) => es.forEach((e) => { if (!e.isIntersecting && R.current.play && !fsRef.current) pause(); }));
     if (stageRef.current) io.observe(stageRef.current);
     const vis = () => { if (document.visibilityState === 'hidden' && R.current.play) pause(); };
     document.addEventListener('visibilitychange', vis);
     return () => { io.disconnect(); document.removeEventListener('visibilitychange', vis); };
-  }, [pause, theater]);
+  }, [pause]);
   useEffect(() => {
     const ro = new ResizeObserver(() => { if (!R.current.play) frame.current?.(R.current.T); });
     if (stageRef.current) ro.observe(stageRef.current);
     return () => ro.disconnect();
   }, []);
+
+  /* ---------- full screen (browser full screen when allowed, else the whole window) ---------- */
+  const [fs, setFs] = useState(false);
+  const fsRef = useRef(false);
+  fsRef.current = fs;
+  const boxRef = useRef<HTMLDivElement>(null);
+  const [box, setBox] = useState<{ w: number; h: number; bw: number; bh: number; k: number } | null>(null);
+  const enterFs = useCallback(() => {
+    setFs(true);
+    const el = boxRef.current as (HTMLDivElement & { webkitRequestFullscreen?: () => void }) | null;
+    try {
+      if (el?.requestFullscreen) el.requestFullscreen({ navigationUI: 'hide' }).catch(() => { /* blocked (e.g. in a frame): window-filling mode */ });
+      else el?.webkitRequestFullscreen?.();
+    } catch { /* window-filling mode */ }
+  }, []);
+  const exitFs = useCallback(() => {
+    setFs(false);
+    if (document.fullscreenElement) document.exitFullscreen().catch(() => {});
+  }, []);
+  useEffect(() => {
+    // Esc in browser full screen arrives here, not as a keydown
+    const f = () => { if (!document.fullscreenElement && fsRef.current) setFs(false); };
+    document.addEventListener('fullscreenchange', f);
+    return () => { document.removeEventListener('fullscreenchange', f); if (document.fullscreenElement) document.exitFullscreen().catch(() => {}); };
+  }, []);
+  // 16:9 screen fitted to the window; above DESIGN_W it is the same layout scaled up (like a video)
+  useLayoutEffect(() => {
+    document.body.classList.toggle('lec-fs', fs);
+    if (!fs) { setBox(null); return; }
+    const fit = () => {
+      const vw = window.innerWidth, vh = window.innerHeight;
+      if (vw < vh) { setBox({ w: vw, h: vh, bw: vw, bh: vh, k: 1 }); return; } // portrait phone: use the whole screen
+      const w = Math.min(vw, (vh * 16) / 9), h = (w * 9) / 16, k = w > DESIGN_W ? w / DESIGN_W : 1;
+      setBox({ w, h, bw: w / k, bh: h / k, k });
+    };
+    fit();
+    window.addEventListener('resize', fit);
+    return () => { window.removeEventListener('resize', fit); document.body.classList.remove('lec-fs'); };
+  }, [fs]);
+  useEffect(() => { const id = requestAnimationFrame(() => { frame.current?.(R.current.T); render(); }); return () => cancelAnimationFrame(id); }, [box, render]);
+
+  // controls show on mouse movement and hide after a moment while playing
+  const [uiOn, setUiOn] = useState(true);
+  const [spdMenu, setSpdMenu] = useState(false);
+  const uiTimer = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
+  const poke = useCallback(() => {
+    setUiOn(true);
+    clearTimeout(uiTimer.current);
+    uiTimer.current = setTimeout(() => { if (R.current.play) { setUiOn(false); setSpdMenu(false); } }, 2600);
+  }, []);
+  useEffect(() => { if (fs) poke(); }, [fs, playing, poke]);
+  useEffect(() => () => clearTimeout(uiTimer.current), []);
+  const showUi = !fs || uiOn || !playing || overlay !== null || spdMenu;
+  const lastVol = useRef(volume || 1);
+  const setVol = (x: number) => { setVolume(x); store.setSettings({ volume: x }); };
+  const toggleMute = () => { if (volume > 0) { lastVol.current = volume; setVol(0); } else setVol(lastVol.current || 1); };
 
   const toggle = () => (R.current.play ? pause() : start());
   const shotIdx = () => cue.shot;
@@ -247,11 +305,13 @@ export function LecturePlayer({ lecture, chapter, startAt }: { lecture: Lecture;
       if (e.key === 'ArrowLeft') { e.preventDefault(); jump(R.current.T - 10); }
       if (e.key === 'c') setSubs((v) => !v);
       if (e.key === 'm') setNarr((v) => !v);
-      if (e.key === 'Escape') setTheater(false);
+      if (e.key === 'Escape' && fsRef.current) exitFs();
+      if (e.key === 'f') { e.preventDefault(); if (fsRef.current) exitFs(); else enterFs(); }
+      if (fsRef.current) poke();
     };
     window.addEventListener('keydown', h);
     return () => window.removeEventListener('keydown', h);
-  }, [pause, start, jump]);
+  }, [pause, start, jump, enterFs, exitFs, poke]);
 
   /* ---------- in-lecture questions ---------- */
   const [answers, setAnswers] = useState<Record<string, number>>({});
@@ -278,7 +338,15 @@ export function LecturePlayer({ lecture, chapter, startAt }: { lecture: Lecture;
   const P = cue.pause;
 
   return (
-    <div className={'card lecp' + (theater ? ' theater' : '')}>
+    <div className={'lec-layout' + (fs ? ' is-fs' : '')}>
+    <div className="lec-main">
+    <div
+      ref={boxRef}
+      className={'card lecp' + (fs ? ' fs' + (showUi ? ' ui' : ' idle') : '')}
+      onPointerMove={fs ? poke : undefined}
+      onPointerDown={fs ? poke : undefined}
+      onPointerLeave={fs ? () => { if (R.current.play) setUiOn(false); } : undefined}
+    >
       <div className="lhd">
         <div><div className="kick">LECTURE {String(chapter).padStart(2, '0')}</div><b>第{chapter}講　{ch.name}</b></div>
         <span className={'voice-src ' + srcKind} title="ナレーションの音源">
@@ -287,7 +355,13 @@ export function LecturePlayer({ lecture, chapter, startAt }: { lecture: Lecture;
         </span>
       </div>
 
-      <div className={'lstage' + (playing ? ' cine' : '') + (shot.visual.kind === 'quiz' ? ' is-quiz' : '')} ref={stageRef}>
+      <div className="fs-frame" style={box ? { width: box.w, height: box.h } : undefined}>
+      <div
+        className={'lstage' + (playing ? ' cine' : '') + (shot.visual.kind === 'quiz' ? ' is-quiz' : '')}
+        ref={stageRef}
+        data-zoom={box && box.k !== 1 ? box.k.toFixed(3) : undefined}
+        style={box ? { width: box.bw, height: box.bh, aspectRatio: 'auto', maxWidth: 'none', minHeight: 0, transform: box.k !== 1 ? `scale(${box.k})` : undefined, transformOrigin: '0 0', ['--fsbar' as string]: `${Math.round(124 / box.k)}px` } : undefined}
+      >
         <FrameContext.Provider value={frame}>
           <QuizContext.Provider value={quizApi}>
             <BoardContext.Provider value={boardCtx}>
@@ -349,8 +423,46 @@ export function LecturePlayer({ lecture, chapter, startAt }: { lecture: Lecture;
           </div></div>
         )}
       </div>
+      </div>
 
-      <div className="lctl">
+      {fs && (
+        <div className={'fsui' + (showUi ? ' on' : '')}>
+          <div className="fs-top">
+            <span className="kick">LECTURE {String(chapter).padStart(2, '0')}</span>
+            <b>第{chapter}講　{ch.name}</b>
+            <small>{course.title}</small>
+          </div>
+          <div className="fs-bot">
+            <Timeline total={total} ticks={chapters.slice(1).map((c) => ({ at: c.t0 / total, label: c.name }))} onSeek={(f) => jump(f * total)} bind={(api) => { tlApi.current = api; }} label="授業の再生位置" />
+            <div className="fs-row">
+              <button className="fs-play" onClick={toggle} aria-label={playing ? '一時停止' : '再生'}><Icon name={playing ? 'pause' : 'play'} /></button>
+              <button onClick={() => jump(R.current.T - 10)} aria-label="10秒戻る" title="10秒戻る（←）"><Icon name="rew" /><span className="n">10</span></button>
+              <button onClick={() => jump(R.current.T + 10)} aria-label="10秒進む" title="10秒進む（→）"><span className="n">10</span><Icon name="fwd" /></button>
+              <button onClick={prevScene} aria-label="前の場面" title="前の場面"><Icon name="prev" /></button>
+              <button onClick={nextScene} aria-label="次の場面" title="次の場面"><Icon name="next" /></button>
+              <span className="fs-vol">
+                <button onClick={toggleMute} disabled={!narrator} aria-label={volume > 0 ? 'ミュート' : 'ミュート解除'}><Icon name={volume > 0 && narr ? 'vol' : 'mute'} /></button>
+                <input type="range" min={0} max={1} step={0.05} value={volume} disabled={!narrator} onChange={(e) => setVol(Number(e.target.value))} aria-label="音量" />
+              </span>
+              <span className="tm" ref={tmRef}>00:00 / {fm2(total)}</span>
+              <span className="fs-sec">{LSN[shot.section]} {lecture.sections[shot.section]?.name}</span>
+              <span className="fs-sp" />
+              <span className="fs-spd">
+                <button onClick={() => setSpdMenu((v) => !v)} aria-haspopup="menu" aria-expanded={spdMenu} aria-label={`再生速度 ${speed}倍`}>{speed}×</button>
+                {spdMenu && (
+                  <span className="fs-menu" role="menu">
+                    {SPEEDS.map((x) => <button key={x} role="menuitemradio" aria-checked={x === speed} className={x === speed ? 'on' : ''} onClick={() => { setSpeed(x); store.setSettings({ lectureSpeed: x }); setSpdMenu(false); }}>{x}×</button>)}
+                  </span>
+                )}
+              </span>
+              <button className={subs ? 'on' : ''} aria-pressed={subs} onClick={() => { setSubs(!subs); store.setSettings({ subtitles: !subs }); }} aria-label="字幕" title="字幕（C）"><Icon name="cc" /></button>
+              <button onClick={exitFs} aria-label="全画面を終了" title="全画面を終了（Esc）"><Icon name="unfull" /></button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {!fs && <div className="lctl">
         <Timeline total={total} ticks={chapters.slice(1).map((c) => ({ at: c.t0 / total, label: c.name }))} onSeek={(f) => jump(f * total)} bind={(api) => { tlApi.current = api; }} label="授業の再生位置" />
         <div className="arow">
           <button onClick={() => { R.current.done.clear(); jump(0); }} aria-label="最初から"><Icon name="replay" /></button>
@@ -359,7 +471,7 @@ export function LecturePlayer({ lecture, chapter, startAt }: { lecture: Lecture;
           <button className="pl2" onClick={toggle} aria-label={playing ? '一時停止' : '再生'}><Icon name={playing ? 'pause' : 'play'} /> {playing ? '一時停止' : '再生'}</button>
           <button onClick={() => jump(R.current.T + 10)} aria-label="10秒進む"><span className="en" style={{ fontSize: 13 }}>10</span><Icon name="fwd" /></button>
           <button onClick={nextScene} aria-label="次の場面"><Icon name="next" /></button>
-          <button onClick={() => setTheater((t) => !t)} aria-label={theater ? '通常表示' : '大きく表示'} aria-pressed={theater}><Icon name="full" /></button>
+          <button className="fs-btn" onClick={enterFs} aria-label="全画面" title="全画面（F）"><Icon name="full" /><span>全画面</span></button>
           <span className="tm" ref={tmRef}>00:00 / {fm2(total)}</span>
         </div>
         <div className="arow">
@@ -387,16 +499,10 @@ export function LecturePlayer({ lecture, chapter, startAt }: { lecture: Lecture;
             <Link to="/settings" className="muted">自然な声の追加方法 →</Link>
           </div>
         )}
-      </div>
+      </div>}
+    </div>
 
       <div className="lextra">
-        <div className="ltoc" role="group" aria-label="授業のチャプター">
-          {chapters.map((c) => (
-            <button key={c.index} className={shot.section === c.index ? 'on' : ''} onClick={() => jump(c.t0 + 0.001)}>
-              <span className="en">{fm2(c.t0)}</span><b>{LSN[c.index]} {c.name}</b>
-            </button>
-          ))}
-        </div>
         <details className="lscr">
           <summary>講義台本（ナレーション全文・{cues.length}文・タイムスタンプ付き）</summary>
           <div className="lsl2">
@@ -416,9 +522,24 @@ export function LecturePlayer({ lecture, chapter, startAt }: { lecture: Lecture;
           {srcKind === 'audio' && 'ニューラル音声合成（Microsoft Nanami）で事前に収録した講義音声を再生しています。'}
           {srcKind === 'device' && '音声はこの端末の音声合成で生成しています（収録音声ではありません）。声の質は端末にインストールされている日本語音声によって変わります。'}
           {srcKind === 'none' && 'この環境では音声を再生できません。台本・字幕・タイムスタンプで授業が進行します。'}
-          　キーボード：スペース 再生／停止・←→ 10秒・C 字幕・M 音声
+          　キーボード：スペース 再生／停止・←→ 10秒・F 全画面・C 字幕・M 音声
         </p>
       </div>
+    </div>
+
+    <aside className="lec-side" aria-label="目次と講義一覧">
+      <section className="side-card">
+        <h3><span className="en">CONTENTS</span>この講義の目次</h3>
+        <div className="ltoc" role="group" aria-label="授業のチャプター">
+          {chapters.map((c) => (
+            <button key={c.index} className={shot.section === c.index ? 'on' : ''} onClick={() => jump(c.t0 + 0.001)}>
+              <span className="en">{fm2(c.t0)}</span><b>{LSN[c.index]} {c.name}</b>
+            </button>
+          ))}
+        </div>
+      </section>
+      {side}
+    </aside>
     </div>
   );
 }

@@ -11,7 +11,8 @@
     "test": "vitest run",
     "test:e2e": "playwright test",
     "build:narration": "tsx scripts/build-narration.ts",
-    "check:content": "tsx scripts/check-content.ts",
+    "check:content": "tsx scripts/check-content.ts && tsx scripts/build-stats.ts --check",
+    "build:stats": "tsx scripts/build-stats.ts",
     "new:course": "tsx scripts/new-course.ts"
   },
   "dependencies": {

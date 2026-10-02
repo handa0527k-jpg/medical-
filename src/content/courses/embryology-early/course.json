@@ -4,6 +4,7 @@
  "subtitle": "一人のヒトの誕生に、生命の歴史が詰まっている。",
  "subtitleEm": "生命の歴史が詰まっている。",
  "subject": "人体発生学",
+ "category": "embryology",
  "lecture": { "label": "初期発生と系統発生", "number": 4, "slideRange": [5, 51] },
  "metaphor": "ヒトの発生＝生命史の旅",
  "metaphorLabel": { "name": "旅のたとえ", "en": "JOURNEY", "role": "旅での役割", "in": "旅でいうと" },

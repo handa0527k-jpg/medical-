@@ -21,6 +21,8 @@ const P: Record<string, string> = {
   mute: 'M11 5 6 9H2v6h4l5 4zM22 9l-6 6M16 9l6 6',
   cc: 'M3 5h18v14H3zM10 10.5a2 2 0 1 0 0 3M16 10.5a2 2 0 1 0 0 3',
   full: 'M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5',
+  unfull: 'M9 4v5H4M15 4v5h5M9 20v-5H4M15 20v-5h5',
+  list: 'M8 6h13M8 12h13M8 18h13M3.5 6h.01M3.5 12h.01M3.5 18h.01',
   film: 'M4 3h16v18H4zM8 3v18M16 3v18M4 8h4M4 13h4M16 8h4M16 13h4',
   micro: 'M6 21h12M9 18h6M12 18v-4M9 3l6 6-5 5-6-6zM14 12a5 5 0 0 1-2 6',
   grid: 'M4 4h7v7H4zM13 4h7v7h-7zM4 13h7v7H4zM13 13h7v7h-7z',

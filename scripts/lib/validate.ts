@@ -4,6 +4,9 @@
  */
 import { existsSync, readFileSync, readdirSync } from 'node:fs';
 import { resolve } from 'node:path';
+import { CATEGORIES } from '../../src/content/categories';
+import { timeLecture } from '../../src/engine/lecture/timing';
+import type { AudioManifest, Lecture } from '../../src/engine/lecture/types';
 
 const read = (p: string) => JSON.parse(readFileSync(p, 'utf8'));
 
@@ -14,6 +17,9 @@ export function validateCourse(dir: string, publicDir: string): string[] {
   if (errs.length) return errs;
 
   const course = read(resolve(dir, 'course.json'));
+  const cats = new Set(CATEGORIES.map((c) => c.id));
+  if (!cats.has(course.category)) errs.push(`course.json: unknown category "${course.category}" (see src/content/categories.ts)`);
+  for (const c of course.alsoIn ?? []) if (!cats.has(c)) errs.push(`course.json: unknown alsoIn category "${c}"`);
   const slides = read(resolve(dir, 'slides.json'));
   const text = read(resolve(dir, 'textbook.json'));
   const single = read(resolve(dir, 'questions/single.json'));
@@ -78,4 +84,35 @@ export function validateCourse(dir: string, publicDir: string): string[] {
 export function courseDirs(root: string) {
   const base = resolve(root, 'src/content/courses');
   return readdirSync(base).filter((d) => existsSync(resolve(base, d, 'course.json'))).map((d) => ({ id: d, dir: resolve(base, d), pub: resolve(root, 'public/courses', d) }));
+}
+
+/** The numbers stats.json holds for one course (see scripts/build-stats.ts). */
+export function courseStats(dir: string, publicDir: string) {
+  const course = read(resolve(dir, 'course.json'));
+  const single: { id: string; chapter: number }[] = read(resolve(dir, 'questions/single.json'));
+  const judge: { id: string; chapter: number }[] = read(resolve(dir, 'questions/judgement.json'));
+  const byCh = (qs: { id: string; chapter: number }[]) => {
+    const o: Record<number, string[]> = {};
+    for (const q of qs) (o[q.chapter] ??= []).push(q.id);
+    return o;
+  };
+  const lectures = course.chapters.map((ch: { id: number }) => {
+    const nn = String(ch.id).padStart(2, '0');
+    const np = resolve(dir, `narrations/lecture-${nn}.json`);
+    if (!existsSync(np)) return { id: ch.id, minutes: 0, board: false, audio: false };
+    const lec: Lecture = read(np);
+    const mp = resolve(publicDir, `audio/lecture-${nn}/manifest.json`);
+    const man: AudioManifest | null = existsSync(mp) ? read(mp) : null;
+    const audio = !!man && man.version === lec.version;
+    const t = timeLecture(lec, audio ? man : null);
+    return { id: ch.id, minutes: Math.max(1, Math.round(t.total / 60)), board: lec.shots.some((s) => s.visual.kind === 'bb'), audio };
+  });
+  return {
+    lectures,
+    single: byCh(single),
+    judgement: byCh(judge),
+    figures: Object.keys(read(resolve(dir, 'figures/figures.json'))).length,
+    animations: Object.keys(read(resolve(dir, 'animations/meta.json'))).length,
+    zukan: read(resolve(dir, 'zukan.json')).length,
+  };
 }
