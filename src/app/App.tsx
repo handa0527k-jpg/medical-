@@ -30,6 +30,7 @@ const AnimationPage = lazy(() => import('../features/animations/AnimationPage'))
 const StoryPage = lazy(() => import('../features/story/StoryPage'));
 const BoardViewerPage = lazy(() => import('../features/lecture/BoardViewerPage'));
 const QuickReviewPage = lazy(() => import('../features/review/QuickReviewPage'));
+const VideoStudioPage = lazy(() => import('../features/lecture-video/VideoStudioPage'));
 
 function ScrollToTop() {
   const { pathname, search } = useLocation();
@@ -73,6 +74,7 @@ export function App({ course }: { course: Course }) {
               <Routes>
                 <Route path="/" element={<HomePage />} />
                 <Route path="/category/:id" element={<CategoryPage />} />
+                <Route path="/category/:id/video" element={<VideoStudioPage />} />
                 <Route path="/open/:courseId/*" element={<OpenCourse />} />
                 <Route path="/course" element={<CourseHomePage />} />
                 <Route path="/book" element={<BookPage />} />

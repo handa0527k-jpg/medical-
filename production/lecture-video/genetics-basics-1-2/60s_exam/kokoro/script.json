@@ -1,0 +1,296 @@
+{
+ "plan": "genetics-basics-1-2_60s_exam",
+ "engine": "kokoro (Kokoro-82M v1.0, ONNX) + misaki ja G2P (pyopenjtalk)",
+ "voice": "jm_kumo",
+ "speed": 1.06,
+ "sampleRate": 24000,
+ "note": "say = 読み（英字・誤読しやすい語はかな）。pre/post = 前後の間（秒）。speed = 区間ごとの話速（重要語はやや遅く）。",
+ "scenes": [
+  {
+   "id": "S01",
+   "file": "audio/S01.wav",
+   "segs": [
+    {
+     "beat": "ask",
+     "i": 0,
+     "text": "そもそも、遺伝を担っている物質は、",
+     "say": "そもそも、遺伝を担っている物質は、",
+     "speed": 1,
+     "pre": 0,
+     "post": 0,
+     "cue": "ask"
+    },
+    {
+     "beat": "ask",
+     "i": 1,
+     "text": "本当にDNAなのか。",
+     "say": "本当にディーエヌエーなのか。",
+     "speed": 1,
+     "pre": 0.1,
+     "post": 0.25,
+     "cue": "q-dna"
+    }
+   ]
+  },
+  {
+   "id": "S02",
+   "file": "audio/S02.wav",
+   "segs": [
+    {
+     "beat": "avery",
+     "i": 0,
+     "text": "1944年、",
+     "say": "1944年、",
+     "speed": 1,
+     "pre": 0,
+     "post": 0,
+     "cue": "year"
+    },
+    {
+     "beat": "avery",
+     "i": 1,
+     "text": "エイブリーは、2種類の肺炎球菌を使いました。",
+     "say": "エイブリーは、2種類の肺炎球菌を使いました。",
+     "speed": 1,
+     "pre": 0,
+     "post": 0.2,
+     "cue": "two"
+    },
+    {
+     "beat": "strainS",
+     "i": 0,
+     "text": "被膜があって表面が滑らかなS株。",
+     "say": "被膜があって表面が滑らかなエス株。",
+     "speed": 1,
+     "pre": 0,
+     "post": 0,
+     "cue": "S"
+    },
+    {
+     "beat": "strainS",
+     "i": 1,
+     "text": "これは病原性があります。",
+     "say": "これは病原性があります。",
+     "speed": 1,
+     "pre": 0,
+     "post": 0.2,
+     "cue": "S-path"
+    },
+    {
+     "beat": "strainR",
+     "i": 0,
+     "text": "被膜がなく、表面が滑らかでないR株。",
+     "say": "被膜がなく、表面が滑らかでないアール株。",
+     "speed": 1,
+     "pre": 0,
+     "post": 0,
+     "cue": "R"
+    },
+    {
+     "beat": "strainR",
+     "i": 1,
+     "text": "こちらは病原性がありません。",
+     "say": "こちらは病原性がありません。",
+     "speed": 1,
+     "pre": 0,
+     "post": 0.25,
+     "cue": "R-path"
+    }
+   ]
+  },
+  {
+   "id": "S03",
+   "file": "audio/S03.wav",
+   "segs": [
+    {
+     "beat": "tubes",
+     "i": 0,
+     "text": "S株から成分を1つずつ取り出して、",
+     "say": "エス株から成分を1つずつ取り出して、",
+     "speed": 1,
+     "pre": 0,
+     "post": 0,
+     "cue": "extract"
+    },
+    {
+     "beat": "tubes",
+     "i": 1,
+     "text": "R株に加えてみる。",
+     "say": "アール株に加えてみる。",
+     "speed": 1,
+     "pre": 0,
+     "post": 0.1,
+     "cue": "add"
+    },
+    {
+     "beat": "tubes",
+     "i": 2,
+     "text": "DNA、",
+     "say": "ディーエヌエー、",
+     "speed": 1,
+     "pre": 0,
+     "post": 0,
+     "cue": "t-dna"
+    },
+    {
+     "beat": "tubes",
+     "i": 3,
+     "text": "RNA、",
+     "say": "アールエヌエー、",
+     "speed": 1,
+     "pre": 0,
+     "post": 0,
+     "cue": "t-rna"
+    },
+    {
+     "beat": "tubes",
+     "i": 4,
+     "text": "脂質、",
+     "say": "脂質、",
+     "speed": 1,
+     "pre": 0,
+     "post": 0,
+     "cue": "t-lip"
+    },
+    {
+     "beat": "tubes",
+     "i": 5,
+     "text": "タンパク質、",
+     "say": "タンパク質、",
+     "speed": 1,
+     "pre": 0,
+     "post": 0,
+     "cue": "t-pro"
+    },
+    {
+     "beat": "tubes",
+     "i": 6,
+     "text": "炭水化物。",
+     "say": "炭水化物。",
+     "speed": 1,
+     "pre": 0,
+     "post": 0.2,
+     "cue": "t-carb"
+    }
+   ]
+  },
+  {
+   "id": "S04",
+   "file": "audio/S04.wav",
+   "segs": [
+    {
+     "beat": "result",
+     "i": 0,
+     "text": "すると、R株がS株に変わったのは、",
+     "say": "すると、アール株がエス株に変わったのは、",
+     "speed": 1,
+     "pre": 0,
+     "post": 0,
+     "cue": "result"
+    },
+    {
+     "beat": "result",
+     "i": 1,
+     "text": "DNAを加えたときだけでした。",
+     "say": "ディーエヌエーを加えたときだけでした。",
+     "speed": 1,
+     "pre": 0.15,
+     "post": 0.2,
+     "cue": "only-dna"
+    },
+    {
+     "beat": "term",
+     "i": 0,
+     "text": "性質が変わる。",
+     "say": "性質が変わる。",
+     "speed": 1,
+     "pre": 0,
+     "post": 0.2,
+     "cue": "change"
+    },
+    {
+     "beat": "term",
+     "i": 1,
+     "text": "これを形質転換といいます。",
+     "say": "これを形質転換といいます。",
+     "speed": 0.94,
+     "pre": 0.15,
+     "post": 0.35,
+     "cue": "term"
+    }
+   ]
+  },
+  {
+   "id": "S05",
+   "file": "audio/S05.wav",
+   "segs": [
+    {
+     "beat": "exam",
+     "i": 0,
+     "text": "結果と結論を区別する。",
+     "say": "結果と結論を区別する。",
+     "speed": 1,
+     "pre": 0,
+     "post": 0,
+     "cue": "exam"
+    },
+    {
+     "beat": "exam",
+     "i": 1,
+     "text": "遺伝の本体はDNA。",
+     "say": "遺伝の本体は、ディーエヌエー。",
+     "speed": 1,
+     "pre": 0.1,
+     "post": 0.35,
+     "cue": "box"
+    }
+   ]
+  },
+  {
+   "id": "S06",
+   "file": "audio/S06.wav",
+   "segs": [
+    {
+     "beat": "quizq",
+     "i": 0,
+     "text": "この問題は、実験の「結果」と、そこから言える「結論」を区別できるかを聞いています。",
+     "say": "この問題は、実験の結果と、そこから言える結論を区別できるかを聞いています。",
+     "speed": 1,
+     "pre": 0,
+     "post": 0.3,
+     "cue": "quiz"
+    },
+    {
+     "beat": "quiza",
+     "i": 0,
+     "text": "正解はC。",
+     "say": "正解はシー。",
+     "speed": 1,
+     "pre": 0,
+     "post": 0.2,
+     "cue": "answer"
+    },
+    {
+     "beat": "quiza",
+     "i": 1,
+     "text": "R株をS株に変えたのはDNAだけ。",
+     "say": "アール株をエス株に変えたのはディーエヌエーだけ。",
+     "speed": 1,
+     "pre": 0,
+     "post": 0,
+     "cue": "why"
+    },
+    {
+     "beat": "quiza",
+     "i": 2,
+     "text": "だから、形質を伝える物質はDNAだ、と言えます。",
+     "say": "だから、形質を伝える物質はディーエヌエーだ、と言えます。",
+     "speed": 1,
+     "pre": 0,
+     "post": 0.4,
+     "cue": "then"
+    }
+   ]
+  }
+ ]
+}

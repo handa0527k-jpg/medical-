@@ -1,0 +1,37 @@
+{
+ "voices": {
+  "genetics-basics-1-2_30s_board": {
+   "audio": "genetics-basics-1-2_30s_board/voice.mp3",
+   "timing": "genetics-basics-1-2_30s_board/kokoro_timing.json"
+  },
+  "genetics-basics-1-2_30s_documentary": {
+   "audio": "genetics-basics-1-2_30s_documentary/voice.mp3",
+   "timing": "genetics-basics-1-2_30s_documentary/kokoro_timing.json"
+  },
+  "genetics-basics-1-2_30s_exam": {
+   "audio": "genetics-basics-1-2_30s_exam/voice.mp3",
+   "timing": "genetics-basics-1-2_30s_exam/kokoro_timing.json"
+  },
+  "genetics-basics-1-2_60s_board": {
+   "audio": "genetics-basics-1-2_60s_board/voice.mp3",
+   "timing": "genetics-basics-1-2_60s_board/kokoro_timing.json"
+  },
+  "genetics-basics-1-2_60s_documentary": {
+   "audio": "genetics-basics-1-2_60s_documentary/voice.mp3",
+   "timing": "genetics-basics-1-2_60s_documentary/kokoro_timing.json"
+  },
+  "genetics-basics-1-2_60s_exam": {
+   "audio": "genetics-basics-1-2_60s_exam/voice.mp3",
+   "timing": "genetics-basics-1-2_60s_exam/kokoro_timing.json"
+  }
+ },
+ "videos": {
+  "genetics-basics:1:2|30|board|gekiga": {
+   "file": "genetics-basics-1-2_30s_board/gekiga.mp4",
+   "wanShots": 0,
+   "shots": 8,
+   "seconds": 29.834,
+   "built": "2026-10-04"
+  }
+ }
+}

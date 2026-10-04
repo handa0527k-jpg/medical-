@@ -1,0 +1,1655 @@
+{
+ "format": "medstudy-lecture-video/1",
+ "created": "2026-10-04T16:00:28.220Z",
+ "roles": {
+  "MEDSTUDY": "教材理解・授業設計・医学図・管理",
+  "ComfyUI": "動画生成ワークフロー管理",
+  "Wan 2.2": "映像生成（文字・正確な構造は描かせない）",
+  "Kokoro": "日本語講師音声",
+  "FFmpeg": "映像・音声・字幕・効果音の最終統合"
+ },
+ "theme": "遺伝子の基礎（構造と機能） 第1講「遺伝子とは何か」— 設計図の正体はDNA",
+ "curated": true,
+ "rationale": [
+  "教材の順序どおりに選定：遺伝学の最初の教材「遺伝子の基礎」第1講は 導入 → 全体像 → テーマ1「設計図の正体はDNA」。テーマ1が、具体的な現象（実験）を伴う最初のテーマ。",
+  "このテーマに紐づく素材：スライド14（キーポイント・セルフチェック5問）、確認問題 g14a / g14b、黒板 av-h〜av-c、まとめ（keyPoints 1）。",
+  "映像化に向く理由：「何を加えたら、何が変わったか」という一本の因果（S株の成分 → R株 → DNAのときだけS株）で、30秒に収まり、正確な図（菌・試験管・皿・板書）で示せる。"
+ ],
+ "options": {
+  "duration": 30,
+  "style": "黒板講義型",
+  "intensity": "劇画"
+ },
+ "wan": {
+  "profile": "ti2v-5b",
+  "label": "Wan 2.2 TI2V 5B（軽量・24fps）",
+  "w": 1280,
+  "h": 704,
+  "fps": 24,
+  "maxFrames": 121,
+  "note": "VRAM 8GB〜（ComfyUIのオフロード使用）。1280×704・最大121フレーム（約5秒）",
+  "jobs": [
+   {
+    "name": "S01_a",
+    "scene": "S01",
+    "shot": "a",
+    "mode": "background",
+    "desc": "夜の講義室。黒板の前を舞うチョークの粉と、一筋の光。カメラはゆっくり前進。",
+    "t0": 0,
+    "dur": 4.452,
+    "frames": 109,
+    "keyframe": "keyframes/S01_a.png",
+    "prompt": "a dark empty lecture hall at night, a huge slate blackboard, a single hard shaft of light cutting through floating chalk dust, dust motes drifting slowly. Camera: fast push-in that stops abruptly, dramatic low angle, strong perspective, sudden held frame. Look: gekiga manga style animation, bold hand-inked black lines, heavy cross-hatched shadows, high contrast chiaroscuro, limited desaturated palette with deep blacks, dramatic composition, cinematic, 1980s Japanese gekiga illustration texture. The centre of the frame stays calm and darker (an exact figure will be laid over it). Accuracy: no people, no writing on the board (the board text is added later).",
+    "negative": "writing, chalk text, equations, text, letters, numbers, captions, subtitles, labels, watermark, logo, signature, speech bubbles, writing, symbols, deformed structures, extra objects, cartoon faces on cells, cute mascot, pastel colors, oversaturated, photorealistic skin, gore, blood, 色调艳丽，过曝，静态，细节模糊不清，字幕，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走",
+    "camera": "ゆっくり前進（緊張を溜める） / 「DNA」の語で「？」へ高速接近 → 一瞬静止",
+    "seed": 1543850375
+   },
+   {
+    "name": "S02_a",
+    "scene": "S02",
+    "shot": "a",
+    "mode": "background",
+    "desc": "暗い液体の微小世界。ピントの外れた双球菌の対がゆっくり漂い、粒子が光る。",
+    "t0": 4.452,
+    "dur": 3.079,
+    "frames": 77,
+    "keyframe": "keyframes/S02_a.png",
+    "prompt": "a dark microscopic fluid world, out-of-focus Streptococcus pneumoniae drawn as lancet-shaped diplococci (two slightly pointed oval cells joined end to end, always in pairs) drifting slowly, tiny particles sparkling, cold bioluminescent rim light, slow push-in. Camera: fast push-in that stops abruptly, dramatic low angle, strong perspective, sudden held frame. Look: gekiga manga style animation, bold hand-inked black lines, heavy cross-hatched shadows, high contrast chiaroscuro, limited desaturated palette with deep blacks, dramatic composition, cinematic, 1980s Japanese gekiga illustration texture. The centre of the frame stays calm and darker (an exact figure will be laid over it). Accuracy: bacteria stay in pairs, no flagella, no cilia, no nucleus, no eyes or faces.",
+    "negative": "text, letters, numbers, captions, subtitles, labels, watermark, logo, signature, speech bubbles, writing, symbols, deformed structures, extra objects, cartoon faces on cells, cute mascot, pastel colors, oversaturated, photorealistic skin, gore, blood, 色调艳丽，过曝，静态，细节模糊不清，字幕，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走",
+    "camera": "「1944」の判を押す（30秒版は画面のみで示す） / S株のコマへ寄る（被膜を見せる） / R株へ高速パン（ホイップ）",
+    "seed": 3029166422
+   },
+   {
+    "name": "S02_b",
+    "scene": "S02",
+    "shot": "b",
+    "mode": "background",
+    "desc": "同じ微小世界でカメラが横へ流れる（S株→R株のパン）。",
+    "t0": 7.531,
+    "dur": 3.194,
+    "frames": 81,
+    "keyframe": "keyframes/S02_b.png",
+    "prompt": "the same dark microscopic fluid world, Streptococcus pneumoniae drawn as lancet-shaped diplococci (two slightly pointed oval cells joined end to end, always in pairs) out of focus, the camera sweeps sideways fast, motion blur streaks. Camera: fast push-in that stops abruptly, dramatic low angle, strong perspective, sudden held frame. Look: gekiga manga style animation, bold hand-inked black lines, heavy cross-hatched shadows, high contrast chiaroscuro, limited desaturated palette with deep blacks, dramatic composition, cinematic, 1980s Japanese gekiga illustration texture. The centre of the frame stays calm and darker (an exact figure will be laid over it). Accuracy: bacteria stay in pairs, no flagella, no cilia, no nucleus, no eyes or faces.",
+    "negative": "text, letters, numbers, captions, subtitles, labels, watermark, logo, signature, speech bubbles, writing, symbols, deformed structures, extra objects, cartoon faces on cells, cute mascot, pastel colors, oversaturated, photorealistic skin, gore, blood, 色调艳丽，过曝，静态，细节模糊不清，字幕，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走",
+    "camera": "「1944」の判を押す（30秒版は画面のみで示す） / S株のコマへ寄る（被膜を見せる） / R株へ高速パン（ホイップ）",
+    "seed": 3012388803
+   },
+   {
+    "name": "S03_a",
+    "scene": "S03",
+    "shot": "a",
+    "mode": "background",
+    "desc": "暗い実験台。ガラス器具がハードライトで光り、滴がスローモーションで落ちる。",
+    "t0": 10.725,
+    "dur": 4.532,
+    "frames": 113,
+    "keyframe": "keyframes/S03_a.png",
+    "prompt": "a dark laboratory bench, glass test tubes in a rack glinting under a single hard spotlight, a drop of clear liquid falling in slow motion into a glass dish, faint vapour. Camera: fast push-in that stops abruptly, dramatic low angle, strong perspective, sudden held frame. Look: gekiga manga style animation, bold hand-inked black lines, heavy cross-hatched shadows, high contrast chiaroscuro, limited desaturated palette with deep blacks, dramatic composition, cinematic, 1980s Japanese gekiga illustration texture. The centre of the frame stays calm and darker (an exact figure will be laid over it). Accuracy: glassware only, no labels, no colored liquids, no hands.",
+    "negative": "text, letters, numbers, captions, subtitles, labels, watermark, logo, signature, speech bubbles, writing, symbols, deformed structures, extra objects, cartoon faces on cells, cute mascot, pastel colors, oversaturated, photorealistic skin, gore, blood, 色调艳丽，过曝，静态，细节模糊不清，字幕，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走",
+    "camera": "S株から取り出す（試験管へ寄る） / 5枚の皿へ滴下を見せる / DNA の試験管へ急接近 / RNA へ跳ぶ / 脂質へ跳ぶ / タンパク質へ跳ぶ / 炭水化物へ跳ぶ / 急激に引いて5本を並べる",
+    "seed": 317859761
+   },
+   {
+    "name": "S03_b",
+    "scene": "S03",
+    "shot": "b",
+    "mode": "background",
+    "desc": "同じ実験台。カメラが試験管の列に沿って高速で横移動。",
+    "t0": 15.257,
+    "dur": 4.609,
+    "frames": 113,
+    "keyframe": "keyframes/S03_b.png",
+    "prompt": "the same dark laboratory bench, the camera tracks fast along a row of glass test tubes, glints streaking, motion blur. Camera: fast push-in that stops abruptly, dramatic low angle, strong perspective, sudden held frame. Look: gekiga manga style animation, bold hand-inked black lines, heavy cross-hatched shadows, high contrast chiaroscuro, limited desaturated palette with deep blacks, dramatic composition, cinematic, 1980s Japanese gekiga illustration texture. The centre of the frame stays calm and darker (an exact figure will be laid over it). Accuracy: glassware only, no labels, no colored liquids, no hands.",
+    "negative": "text, letters, numbers, captions, subtitles, labels, watermark, logo, signature, speech bubbles, writing, symbols, deformed structures, extra objects, cartoon faces on cells, cute mascot, pastel colors, oversaturated, photorealistic skin, gore, blood, 色调艳丽，过曝，静态，细节模糊不清，字幕，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走",
+    "camera": "S株から取り出す（試験管へ寄る） / 5枚の皿へ滴下を見せる / DNA の試験管へ急接近 / RNA へ跳ぶ / 脂質へ跳ぶ / タンパク質へ跳ぶ / 炭水化物へ跳ぶ / 急激に引いて5本を並べる",
+    "seed": 267526904
+   },
+   {
+    "name": "S04_a",
+    "scene": "S04",
+    "shot": "a",
+    "mode": "background",
+    "desc": "硬いスポットライトの下、暗い実験台に並ぶ培養皿。光がゆっくり揺れる。",
+    "t0": 19.866,
+    "dur": 5.739,
+    "frames": 121,
+    "keyframe": "keyframes/S04_a.png",
+    "prompt": "a row of glass petri dishes on a dark bench under a hard spotlight, light slowly sweeping across, deep shadows. Camera: fast push-in that stops abruptly, dramatic low angle, strong perspective, sudden held frame. Look: gekiga manga style animation, bold hand-inked black lines, heavy cross-hatched shadows, high contrast chiaroscuro, limited desaturated palette with deep blacks, dramatic composition, cinematic, 1980s Japanese gekiga illustration texture. The centre of the frame stays calm and darker (an exact figure will be laid over it). Accuracy: dishes empty or with faint agar, no labels, no hands.",
+    "negative": "text, letters, numbers, captions, subtitles, labels, watermark, logo, signature, speech bubbles, writing, symbols, deformed structures, extra objects, cartoon faces on cells, cute mascot, pastel colors, oversaturated, photorealistic skin, gore, blood, 色调艳丽，过曝，静态，细节模糊不清，字幕，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走",
+    "camera": "じわりと寄る / DNA の皿へ急接近 → 静止 / 大写しへさらに寄る",
+    "seed": 1813621568
+   },
+   {
+    "name": "S04_b",
+    "scene": "S04",
+    "shot": "b",
+    "mode": "feature",
+    "desc": "1個の双球菌（R株）の大写し。厚く半透明で艶のある被膜が一気に包み込み、表面が滑らかになる。",
+    "t0": 25.605,
+    "dur": 1.942,
+    "frames": 49,
+    "keyframe": "keyframes/S04_b.png",
+    "prompt": "extreme macro close-up of a single pair of Streptococcus pneumoniae drawn as lancet-shaped diplococci (two slightly pointed oval cells joined end to end, always in pairs) floating in dark fluid; a thick translucent glossy capsule rapidly forms and envelops the pair, its surface turning smooth and shining. Camera: fast push-in that stops abruptly, dramatic low angle, strong perspective, sudden held frame. Look: gekiga manga style animation, bold hand-inked black lines, heavy cross-hatched shadows, high contrast chiaroscuro, limited desaturated palette with deep blacks, dramatic composition, cinematic, 1980s Japanese gekiga illustration texture. The subject fills the frame. Accuracy: exactly one pair of cells, the capsule is a smooth translucent layer around the outside of the pair, cells keep their shape, no nucleus, no flagella, no faces.",
+    "negative": "many bacteria, rod-shaped bacteria, spirals, viruses, DNA helix, text, letters, numbers, captions, subtitles, labels, watermark, logo, signature, speech bubbles, writing, symbols, deformed structures, extra objects, cartoon faces on cells, cute mascot, pastel colors, oversaturated, photorealistic skin, gore, blood, 色调艳丽，过曝，静态，细节模糊不清，字幕，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走",
+    "camera": "じわりと寄る / DNA の皿へ急接近 → 静止 / 大写しへさらに寄る",
+    "seed": 1863954425
+   },
+   {
+    "name": "S05_a",
+    "scene": "S05",
+    "shot": "a",
+    "mode": "background",
+    "desc": "S01と同じ講義室。光の筋がゆっくり強くなる。",
+    "t0": 27.547,
+    "dur": 2.287,
+    "frames": 57,
+    "keyframe": "keyframes/S05_a.png",
+    "prompt": "the same dark lecture hall, the shaft of light slowly growing brighter, chalk dust settling. Camera: fast push-in that stops abruptly, dramatic low angle, strong perspective, sudden held frame. Look: gekiga manga style animation, bold hand-inked black lines, heavy cross-hatched shadows, high contrast chiaroscuro, limited desaturated palette with deep blacks, dramatic composition, cinematic, 1980s Japanese gekiga illustration texture. The centre of the frame stays calm and darker (an exact figure will be laid over it). Accuracy: no people, no writing.",
+    "negative": "text, letters, numbers, captions, subtitles, labels, watermark, logo, signature, speech bubbles, writing, symbols, deformed structures, extra objects, cartoon faces on cells, cute mascot, pastel colors, oversaturated, photorealistic skin, gore, blood, 色调艳丽，过曝，静态，细节模糊不清，字幕，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走",
+    "camera": "赤枠と同時に急激なズームアウト",
+    "seed": 144848411
+   }
+  ]
+ },
+ "kokoro": {
+  "plan": "genetics-basics-1-2_30s_board",
+  "engine": "kokoro (Kokoro-82M v1.0, ONNX) + misaki ja G2P (pyopenjtalk)",
+  "voice": "jm_kumo",
+  "speed": 1.06,
+  "sampleRate": 24000,
+  "note": "say = 読み（英字・誤読しやすい語はかな）。pre/post = 前後の間（秒）。speed = 区間ごとの話速（重要語はやや遅く）。",
+  "scenes": [
+   {
+    "id": "S01",
+    "file": "audio/S01.wav",
+    "segs": [
+     {
+      "beat": "ask",
+      "i": 0,
+      "text": "そもそも、遺伝を担っている物質は、",
+      "say": "そもそも、遺伝を担っている物質は、",
+      "speed": 1,
+      "pre": 0,
+      "post": 0,
+      "cue": "ask"
+     },
+     {
+      "beat": "ask",
+      "i": 1,
+      "text": "本当にDNAなのか。",
+      "say": "本当にディーエヌエーなのか。",
+      "speed": 1,
+      "pre": 0.1,
+      "post": 0.25,
+      "cue": "q-dna"
+     }
+    ]
+   },
+   {
+    "id": "S02",
+    "file": "audio/S02.wav",
+    "segs": [
+     {
+      "beat": "avery",
+      "i": 0,
+      "text": "エイブリーは、2種類の肺炎球菌を使いました。",
+      "say": "エイブリーは、2種類の肺炎球菌を使いました。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.12,
+      "cue": "year"
+     },
+     {
+      "beat": "strains",
+      "i": 0,
+      "text": "被膜のあるS株と、",
+      "say": "被膜のあるエス株と、",
+      "speed": 1,
+      "pre": 0,
+      "post": 0,
+      "cue": "S"
+     },
+     {
+      "beat": "strains",
+      "i": 1,
+      "text": "被膜のないR株。",
+      "say": "被膜のないアール株。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.15,
+      "cue": "R"
+     }
+    ]
+   },
+   {
+    "id": "S03",
+    "file": "audio/S03.wav",
+    "segs": [
+     {
+      "beat": "tubes",
+      "i": 0,
+      "text": "S株から成分を1つずつ取り出して、",
+      "say": "エス株から成分を1つずつ取り出して、",
+      "speed": 1,
+      "pre": 0,
+      "post": 0,
+      "cue": "extract"
+     },
+     {
+      "beat": "tubes",
+      "i": 1,
+      "text": "R株に加えてみる。",
+      "say": "アール株に加えてみる。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.1,
+      "cue": "add"
+     },
+     {
+      "beat": "tubes",
+      "i": 2,
+      "text": "DNA、",
+      "say": "ディーエヌエー、",
+      "speed": 1,
+      "pre": 0,
+      "post": 0,
+      "cue": "t-dna"
+     },
+     {
+      "beat": "tubes",
+      "i": 3,
+      "text": "RNA、",
+      "say": "アールエヌエー、",
+      "speed": 1,
+      "pre": 0,
+      "post": 0,
+      "cue": "t-rna"
+     },
+     {
+      "beat": "tubes",
+      "i": 4,
+      "text": "脂質、",
+      "say": "脂質、",
+      "speed": 1,
+      "pre": 0,
+      "post": 0,
+      "cue": "t-lip"
+     },
+     {
+      "beat": "tubes",
+      "i": 5,
+      "text": "タンパク質、",
+      "say": "タンパク質、",
+      "speed": 1,
+      "pre": 0,
+      "post": 0,
+      "cue": "t-pro"
+     },
+     {
+      "beat": "tubes",
+      "i": 6,
+      "text": "炭水化物。",
+      "say": "炭水化物。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.2,
+      "cue": "t-carb"
+     }
+    ]
+   },
+   {
+    "id": "S04",
+    "file": "audio/S04.wav",
+    "segs": [
+     {
+      "beat": "result",
+      "i": 0,
+      "text": "すると、R株がS株に変わったのは、",
+      "say": "すると、アール株がエス株に変わったのは、",
+      "speed": 1,
+      "pre": 0,
+      "post": 0,
+      "cue": "result"
+     },
+     {
+      "beat": "result",
+      "i": 1,
+      "text": "DNAを加えたときだけでした。",
+      "say": "ディーエヌエーを加えたときだけでした。",
+      "speed": 1,
+      "pre": 0.15,
+      "post": 0.2,
+      "cue": "only-dna"
+     },
+     {
+      "beat": "term",
+      "i": 0,
+      "text": "これを形質転換といいます。",
+      "say": "これを形質転換といいます。",
+      "speed": 0.95,
+      "pre": 0.12,
+      "post": 0.25,
+      "cue": "term"
+     }
+    ]
+   },
+   {
+    "id": "S05",
+    "file": "audio/S05.wav",
+    "segs": [
+     {
+      "beat": "conclusion",
+      "i": 0,
+      "text": "遺伝の本体はDNAだ",
+      "say": "遺伝の本体はディーエヌエーだ",
+      "speed": 1,
+      "pre": 0.1,
+      "post": 0.45,
+      "cue": "box"
+     }
+    ]
+   }
+  ]
+ },
+ "timing": {
+  "source": "kokoro",
+  "total": 29.834499999999995,
+  "scenes": [
+   {
+    "id": "S01",
+    "t0": 0,
+    "t1": 4.4522,
+    "events": {
+     "start": 0,
+     "ask": 0,
+     "q-dna": 2.5598
+    }
+   },
+   {
+    "id": "S02",
+    "t0": 4.4522,
+    "t1": 10.725200000000001,
+    "events": {
+     "start": 4.4522,
+     "year": 4.4522,
+     "S": 7.5311,
+     "R": 8.979800000000001
+    }
+   },
+   {
+    "id": "S03",
+    "t0": 10.725200000000001,
+    "t1": 19.866,
+    "events": {
+     "start": 10.725200000000001,
+     "extract": 10.725200000000001,
+     "add": 13.658000000000001,
+     "t-dna": 15.257000000000001,
+     "t-rna": 15.975000000000001,
+     "t-lip": 16.730500000000003,
+     "t-pro": 17.455000000000002,
+     "t-carb": 18.4582
+    }
+   },
+   {
+    "id": "S04",
+    "t0": 19.866,
+    "t1": 27.547399999999996,
+    "events": {
+     "start": 19.866,
+     "result": 19.866,
+     "only-dna": 22.7929,
+     "term": 25.60532
+    }
+   },
+   {
+    "id": "S05",
+    "t0": 27.547399999999996,
+    "t1": 29.834499999999995,
+    "events": {
+     "start": 27.547399999999996,
+     "box": 28.361594999999998
+    }
+   }
+  ],
+  "segs": [
+   {
+    "scene": "S01",
+    "beat": "ask",
+    "i": 0,
+    "seg": {
+     "text": "そもそも、遺伝を担っている物質は、",
+     "say": "そもそも、遺伝を担っている物質は、",
+     "cue": "ask"
+    },
+    "t0": 0,
+    "t1": 2.4598,
+    "speech0": 0,
+    "speech1": 2.4598
+   },
+   {
+    "scene": "S01",
+    "beat": "ask",
+    "i": 1,
+    "seg": {
+     "text": "本当に**DNA**なのか。",
+     "say": "本当にディーエヌエーなのか。",
+     "cue": "q-dna",
+     "pre": 0.1,
+     "post": 0.25
+    },
+    "t0": 2.4598,
+    "t1": 4.3022,
+    "speech0": 2.5598,
+    "speech1": 4.0522
+   },
+   {
+    "scene": "S02",
+    "beat": "avery",
+    "i": 0,
+    "seg": {
+     "text": "エイブリーは、2種類の**肺炎球菌**を使いました。",
+     "say": "エイブリーは、2種類の肺炎球菌を使いました。",
+     "cue": "year",
+     "post": 0.12
+    },
+    "t0": 4.4522,
+    "t1": 7.5311,
+    "speech0": 4.4522,
+    "speech1": 7.4111
+   },
+   {
+    "scene": "S02",
+    "beat": "strains",
+    "i": 0,
+    "seg": {
+     "text": "被膜のある**S株**と、",
+     "say": "被膜のあるエス株と、",
+     "cue": "S"
+    },
+    "t0": 7.5311,
+    "t1": 8.979800000000001,
+    "speech0": 7.5311,
+    "speech1": 8.979800000000001
+   },
+   {
+    "scene": "S02",
+    "beat": "strains",
+    "i": 1,
+    "seg": {
+     "text": "被膜のない**R株**。",
+     "say": "被膜のないアール株。",
+     "cue": "R",
+     "post": 0.15
+    },
+    "t0": 8.979800000000001,
+    "t1": 10.5752,
+    "speech0": 8.979800000000001,
+    "speech1": 10.4252
+   },
+   {
+    "scene": "S03",
+    "beat": "tubes",
+    "i": 0,
+    "seg": {
+     "text": "S株から成分を1つずつ取り出して、",
+     "say": "エス株から成分を1つずつ取り出して、",
+     "cue": "extract"
+    },
+    "t0": 10.725200000000001,
+    "t1": 13.658000000000001,
+    "speech0": 10.725200000000001,
+    "speech1": 13.658000000000001
+   },
+   {
+    "scene": "S03",
+    "beat": "tubes",
+    "i": 1,
+    "seg": {
+     "text": "R株に加えてみる。",
+     "say": "アール株に加えてみる。",
+     "cue": "add",
+     "post": 0.1
+    },
+    "t0": 13.658000000000001,
+    "t1": 15.257000000000001,
+    "speech0": 13.658000000000001,
+    "speech1": 15.157000000000002
+   },
+   {
+    "scene": "S03",
+    "beat": "tubes",
+    "i": 2,
+    "seg": {
+     "text": "**DNA**、",
+     "say": "ディーエヌエー、",
+     "cue": "t-dna"
+    },
+    "t0": 15.257000000000001,
+    "t1": 15.975000000000001,
+    "speech0": 15.257000000000001,
+    "speech1": 15.975000000000001
+   },
+   {
+    "scene": "S03",
+    "beat": "tubes",
+    "i": 3,
+    "seg": {
+     "text": "RNA、",
+     "say": "アールエヌエー、",
+     "cue": "t-rna"
+    },
+    "t0": 15.975000000000001,
+    "t1": 16.730500000000003,
+    "speech0": 15.975000000000001,
+    "speech1": 16.730500000000003
+   },
+   {
+    "scene": "S03",
+    "beat": "tubes",
+    "i": 4,
+    "seg": {
+     "text": "脂質、",
+     "say": "脂質、",
+     "cue": "t-lip"
+    },
+    "t0": 16.730500000000003,
+    "t1": 17.455000000000002,
+    "speech0": 16.730500000000003,
+    "speech1": 17.455000000000002
+   },
+   {
+    "scene": "S03",
+    "beat": "tubes",
+    "i": 5,
+    "seg": {
+     "text": "タンパク質、",
+     "say": "タンパク質、",
+     "cue": "t-pro"
+    },
+    "t0": 17.455000000000002,
+    "t1": 18.4582,
+    "speech0": 17.455000000000002,
+    "speech1": 18.4582
+   },
+   {
+    "scene": "S03",
+    "beat": "tubes",
+    "i": 6,
+    "seg": {
+     "text": "炭水化物。",
+     "say": "炭水化物。",
+     "cue": "t-carb",
+     "post": 0.2
+    },
+    "t0": 18.4582,
+    "t1": 19.716,
+    "speech0": 18.4582,
+    "speech1": 19.516000000000002
+   },
+   {
+    "scene": "S04",
+    "beat": "result",
+    "i": 0,
+    "seg": {
+     "text": "すると、R株がS株に変わったのは、",
+     "say": "すると、アール株がエス株に変わったのは、",
+     "cue": "result"
+    },
+    "t0": 19.866,
+    "t1": 22.6429,
+    "speech0": 19.866,
+    "speech1": 22.6429
+   },
+   {
+    "scene": "S04",
+    "beat": "result",
+    "i": 1,
+    "seg": {
+     "text": "**DNA**を加えたときだけでした。",
+     "say": "ディーエヌエーを加えたときだけでした。",
+     "cue": "only-dna",
+     "pre": 0.15,
+     "post": 0.2
+    },
+    "t0": 22.6429,
+    "t1": 25.0998,
+    "speech0": 22.7929,
+    "speech1": 24.8998
+   },
+   {
+    "scene": "S04",
+    "beat": "term",
+    "i": 0,
+    "seg": {
+     "text": "これを**形質転換**といいます。",
+     "say": "これを形質転換といいます。",
+     "cue": "term",
+     "at": 0.2,
+     "speed": 0.95,
+     "pre": 0.12,
+     "post": 0.25
+    },
+    "t0": 25.0998,
+    "t1": 27.397399999999998,
+    "speech0": 25.2198,
+    "speech1": 27.147399999999998
+   },
+   {
+    "scene": "S05",
+    "beat": "conclusion",
+    "i": 0,
+    "seg": {
+     "text": "遺伝の本体は**DNA**だ",
+     "say": "遺伝の本体はディーエヌエーだ",
+     "cue": "box",
+     "at": 0.45,
+     "pre": 0.1,
+     "post": 0.45
+    },
+    "t0": 27.547399999999996,
+    "t1": 29.684499999999996,
+    "speech0": 27.647399999999998,
+    "speech1": 29.234499999999997
+   }
+  ]
+ },
+ "edit": {
+  "plan": "genetics-basics:1:2|30|board|gekiga",
+  "voice": "genetics-basics-1-2_30s_board",
+  "size": [
+   1280,
+   720
+  ],
+  "fps": 24,
+  "total": 29.834,
+  "frames": 716,
+  "timing": "kokoro",
+  "layers": {
+   "plate": "layers/plate_%05d.jpg",
+   "overlay": "layers/overlay_%05d.png"
+  },
+  "note": "背景（Wan クリップ／無ければ MEDSTUDY アニマティック）→ 医学図レイヤーを重ねる → 白黒反転 → 字幕（ASS）→ 講師音声＋効果音（＋任意で BGM、声に合わせて自動で下げる）",
+  "scenes": [
+   {
+    "id": "S01",
+    "t0": 0,
+    "dur": 4.452,
+    "audio": "audio/S01.wav",
+    "shots": [
+     {
+      "id": "a",
+      "wan": "wan/S01_a.webm",
+      "mode": "background",
+      "t0": 0,
+      "dur": 4.452,
+      "f0": 0,
+      "f1": 107,
+      "wanFrames": 109,
+      "wanFps": 24
+     }
+    ],
+    "sfx": [
+     {
+      "kind": "chalk",
+      "t": 0,
+      "gain": 0.5
+     },
+     {
+      "kind": "boom",
+      "t": 2.56,
+      "gain": 1
+     },
+     {
+      "kind": "whoosh",
+      "t": 2.56,
+      "gain": 0.6
+     }
+    ],
+    "invert": []
+   },
+   {
+    "id": "S02",
+    "t0": 4.452,
+    "dur": 6.273,
+    "audio": "audio/S02.wav",
+    "shots": [
+     {
+      "id": "a",
+      "wan": "wan/S02_a.webm",
+      "mode": "background",
+      "t0": 4.452,
+      "dur": 3.079,
+      "f0": 107,
+      "f1": 181,
+      "wanFrames": 77,
+      "wanFps": 24
+     },
+     {
+      "id": "b",
+      "wan": "wan/S02_b.webm",
+      "mode": "background",
+      "t0": 7.531,
+      "dur": 3.194,
+      "f0": 181,
+      "f1": 257,
+      "wanFrames": 81,
+      "wanFps": 24
+     }
+    ],
+    "sfx": [
+     {
+      "kind": "impact",
+      "t": 4.452,
+      "gain": 0.7
+     },
+     {
+      "kind": "shimmer",
+      "t": 7.531,
+      "gain": 0.5
+     },
+     {
+      "kind": "whoosh",
+      "t": 8.98,
+      "gain": 1
+     }
+    ],
+    "invert": []
+   },
+   {
+    "id": "S03",
+    "t0": 10.725,
+    "dur": 9.141,
+    "audio": "audio/S03.wav",
+    "shots": [
+     {
+      "id": "a",
+      "wan": "wan/S03_a.webm",
+      "mode": "background",
+      "t0": 10.725,
+      "dur": 4.532,
+      "f0": 257,
+      "f1": 366,
+      "wanFrames": 113,
+      "wanFps": 24
+     },
+     {
+      "id": "b",
+      "wan": "wan/S03_b.webm",
+      "mode": "background",
+      "t0": 15.257,
+      "dur": 4.609,
+      "f0": 366,
+      "f1": 477,
+      "wanFrames": 113,
+      "wanFps": 24
+     }
+    ],
+    "sfx": [
+     {
+      "kind": "shimmer",
+      "t": 10.725,
+      "gain": 0.4
+     },
+     {
+      "kind": "tick",
+      "t": 13.658,
+      "gain": 1
+     },
+     {
+      "kind": "impact",
+      "t": 15.257,
+      "gain": 0.8
+     },
+     {
+      "kind": "tick",
+      "t": 15.975,
+      "gain": 1
+     },
+     {
+      "kind": "tick",
+      "t": 16.731,
+      "gain": 1
+     },
+     {
+      "kind": "tick",
+      "t": 17.455,
+      "gain": 1
+     },
+     {
+      "kind": "tick",
+      "t": 18.458,
+      "gain": 1
+     },
+     {
+      "kind": "whoosh",
+      "t": 19.158,
+      "gain": 0.6
+     }
+    ],
+    "invert": []
+   },
+   {
+    "id": "S04",
+    "t0": 19.866,
+    "dur": 7.681,
+    "audio": "audio/S04.wav",
+    "shots": [
+     {
+      "id": "a",
+      "wan": "wan/S04_a.webm",
+      "mode": "background",
+      "t0": 19.866,
+      "dur": 5.739,
+      "f0": 477,
+      "f1": 615,
+      "wanFrames": 121,
+      "wanFps": 24
+     },
+     {
+      "id": "b",
+      "wan": "wan/S04_b.webm",
+      "mode": "feature",
+      "t0": 25.605,
+      "dur": 1.942,
+      "f0": 615,
+      "f1": 661,
+      "wanFrames": 49,
+      "wanFps": 24
+     }
+    ],
+    "sfx": [
+     {
+      "kind": "riser",
+      "t": 19.866,
+      "gain": 0.5
+     },
+     {
+      "kind": "heartbeat",
+      "t": 22.793,
+      "gain": 1
+     },
+     {
+      "kind": "boom",
+      "t": 22.793,
+      "gain": 0.8
+     },
+     {
+      "kind": "shimmer",
+      "t": 25.605,
+      "gain": 1
+     }
+    ],
+    "invert": []
+   },
+   {
+    "id": "S05",
+    "t0": 27.547,
+    "dur": 2.287,
+    "audio": "audio/S05.wav",
+    "shots": [
+     {
+      "id": "a",
+      "wan": "wan/S05_a.webm",
+      "mode": "background",
+      "t0": 27.547,
+      "dur": 2.287,
+      "f0": 661,
+      "f1": 716,
+      "wanFrames": 57,
+      "wanFps": 24
+     }
+    ],
+    "sfx": [
+     {
+      "kind": "chalk",
+      "t": 27.547,
+      "gain": 0.6
+     },
+     {
+      "kind": "impact",
+      "t": 28.362,
+      "gain": 1
+     }
+    ],
+    "invert": []
+   }
+  ],
+  "subtitles": "subtitles.ass",
+  "bgm": {
+   "file": null,
+   "gain": 0.18,
+   "duck": true
+  }
+ },
+ "scenes": [
+  {
+   "id": "S01",
+   "title": "問い：遺伝の本体は本当にDNAか",
+   "picture": "夜の講義室。黒板の中央に大きく「DNA →？」（第1講の板書 c-dna / c-q）。講師が黒板を指す。「本当にDNAなのか」で「？」へカメラが急接近し、一瞬静止。",
+   "diagram": {
+    "id": "board-dna-q",
+    "title": "板書：DNA →？",
+    "note": "第1講の黒板（c-dna「DNA」・a1・c-q「？」）をそのまま再現"
+   },
+   "lecturer": true,
+   "sources": [
+    {
+     "beat": "ask",
+     "source": "第1講／台詞 c01-0026／板書 c-dna・c-q（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 1,
+      "section": "テーマ1　設計図の正体はDNA",
+      "cues": [
+       "c01-0026"
+      ],
+      "mode": "verbatim",
+      "board": [
+       "c-dna",
+       "c-q"
+      ]
+     },
+     "lines": [
+      "そもそも、遺伝を担っている物質は、",
+      "本当にDNAなのか。"
+     ]
+    }
+   ],
+   "cams": [
+    {
+     "at": "start",
+     "move": "set",
+     "x": 640,
+     "y": 380,
+     "z": 0.92,
+     "note": "講義室の引きの画から"
+    },
+    {
+     "at": "start",
+     "move": "push",
+     "x": 640,
+     "y": 360,
+     "z": 1.12,
+     "dur": 3.4,
+     "note": "ゆっくり前進（緊張を溜める）"
+    },
+    {
+     "at": "q-dna",
+     "move": "crash",
+     "x": 640,
+     "y": 470,
+     "z": 2.4,
+     "dur": 0.22,
+     "hold": 0.32,
+     "note": "「DNA」の語で「？」へ高速接近 → 一瞬静止"
+    }
+   ],
+   "fx": [
+    {
+     "at": "q-dna",
+     "kind": "focus",
+     "dur": 1.4,
+     "min": "gekiga"
+    },
+    {
+     "at": "q-dna",
+     "kind": "impact",
+     "dur": 0.5,
+     "min": "gekiga"
+    },
+    {
+     "at": "q-dna",
+     "kind": "onoma",
+     "dur": 1.2,
+     "text": "ドンッ",
+     "x": 1010,
+     "y": 175,
+     "min": "gekiga"
+    },
+    {
+     "at": "q-dna",
+     "kind": "invert",
+     "dur": 0.12,
+     "min": "ultra"
+    },
+    {
+     "at": "q-dna",
+     "kind": "shake",
+     "dur": 0.4,
+     "min": "gekiga"
+    },
+    {
+     "at": "start",
+     "kind": "tone",
+     "dur": 99,
+     "min": "gekiga"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "start",
+     "kind": "chalk",
+     "gain": 0.5
+    },
+    {
+     "at": "q-dna",
+     "kind": "boom"
+    },
+    {
+     "at": "q-dna",
+     "kind": "whoosh",
+     "gain": 0.6
+    }
+   ]
+  },
+  {
+   "id": "S02",
+   "title": "S株とR株（肺炎球菌）",
+   "picture": "画面を斜めに割った2コマ。左＝S株（双球菌の周りに厚い被膜・表面が滑らか・病原性あり）、右＝R株（被膜なし・病原性なし）。「1944」のスタンプの後、S株→R株へ高速パン。",
+   "diagram": {
+    "id": "strains",
+    "title": "肺炎球菌 S株／R株",
+    "note": "スライド14・selfCheck「病原性があるのはS株（被膜あり・表面が滑らか）」。双球菌（2個対）で描き、被膜の有無だけを違いとして示す"
+   },
+   "lecturer": false,
+   "sources": [
+    {
+     "beat": "avery",
+     "source": "第1講／台詞 c01-0028／スライド14（原文の一部）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 1,
+      "section": "テーマ1　設計図の正体はDNA",
+      "cues": [
+       "c01-0028"
+      ],
+      "mode": "trimmed",
+      "slide": 14
+     },
+     "lines": [
+      "エイブリーは、2種類の肺炎球菌を使いました。"
+     ]
+    },
+    {
+     "beat": "strains",
+     "source": "第1講／台詞 c01-0029・c01-0030／スライド14（要約（用語は教材のまま））",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 1,
+      "section": "テーマ1　設計図の正体はDNA",
+      "cues": [
+       "c01-0029",
+       "c01-0030"
+      ],
+      "mode": "condensed",
+      "slide": 14
+     },
+     "lines": [
+      "被膜のあるS株と、",
+      "被膜のないR株。"
+     ]
+    }
+   ],
+   "cams": [
+    {
+     "at": "start",
+     "move": "set",
+     "x": 640,
+     "y": 360,
+     "z": 1,
+     "note": "2コマの全景"
+    },
+    {
+     "at": "year",
+     "move": "push",
+     "x": 640,
+     "y": 360,
+     "z": 1.08,
+     "dur": 1.2,
+     "note": "「1944」の判を押す（30秒版は画面のみで示す）"
+    },
+    {
+     "at": "S",
+     "move": "push",
+     "x": 360,
+     "y": 400,
+     "z": 1.45,
+     "dur": 0.45,
+     "note": "S株のコマへ寄る（被膜を見せる）"
+    },
+    {
+     "at": "R",
+     "move": "whip",
+     "x": 920,
+     "y": 400,
+     "z": 1.45,
+     "dur": 0.24,
+     "note": "R株へ高速パン（ホイップ）"
+    }
+   ],
+   "fx": [
+    {
+     "at": "year",
+     "kind": "impact",
+     "dur": 0.35,
+     "min": "gekiga"
+    },
+    {
+     "at": "R",
+     "kind": "speed",
+     "dur": 0.5,
+     "min": "gekiga"
+    },
+    {
+     "at": "S",
+     "kind": "focus",
+     "dur": 0.8,
+     "min": "ultra"
+    },
+    {
+     "at": "R",
+     "kind": "onoma",
+     "dur": 0.9,
+     "text": "ザッ",
+     "x": 1110,
+     "y": 150,
+     "min": "ultra"
+    },
+    {
+     "at": "start",
+     "kind": "tone",
+     "dur": 99,
+     "min": "gekiga"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "year",
+     "kind": "impact",
+     "gain": 0.7
+    },
+    {
+     "at": "S",
+     "kind": "shimmer",
+     "gain": 0.5
+    },
+    {
+     "at": "R",
+     "kind": "whoosh"
+    }
+   ]
+  },
+  {
+   "id": "S03",
+   "title": "S株の成分を1つずつR株へ",
+   "picture": "教材の順（DNA・RNA・脂質・タンパク質・炭水化物）に並んだ5本の試験管。「R株に加えてみる」で5枚のR株の皿へ一斉に滴下。成分名を言うたびにカメラが試験管から試験管へ跳び、名前が叩きつけられる。",
+   "diagram": {
+    "id": "tubes",
+    "title": "S株の5成分 → R株",
+    "note": "lecture-01 c01-0031 の列挙順。各成分は別々のR株に加える"
+   },
+   "lecturer": false,
+   "sources": [
+    {
+     "beat": "tubes",
+     "source": "第1講／台詞 c01-0031／スライド14（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 1,
+      "section": "テーマ1　設計図の正体はDNA",
+      "cues": [
+       "c01-0031"
+      ],
+      "mode": "verbatim",
+      "slide": 14
+     },
+     "lines": [
+      "S株から成分を1つずつ取り出して、",
+      "R株に加えてみる。",
+      "DNA、",
+      "RNA、",
+      "脂質、",
+      "タンパク質、",
+      "炭水化物。"
+     ]
+    }
+   ],
+   "cams": [
+    {
+     "at": "start",
+     "move": "set",
+     "x": 640,
+     "y": 380,
+     "z": 1,
+     "note": "試験管の列とR株の皿の全景"
+    },
+    {
+     "at": "extract",
+     "move": "push",
+     "x": 640,
+     "y": 300,
+     "z": 1.12,
+     "dur": 1.4,
+     "note": "S株から取り出す（試験管へ寄る）"
+    },
+    {
+     "at": "add",
+     "move": "pull",
+     "x": 640,
+     "y": 380,
+     "z": 1,
+     "dur": 0.5,
+     "note": "5枚の皿へ滴下を見せる"
+    },
+    {
+     "at": "t-dna",
+     "move": "crash",
+     "x": 200,
+     "y": 280,
+     "z": 1.9,
+     "dur": 0.2,
+     "hold": 0.12,
+     "note": "DNA の試験管へ急接近"
+    },
+    {
+     "at": "t-rna",
+     "move": "whip",
+     "x": 420,
+     "y": 280,
+     "z": 1.9,
+     "dur": 0.16,
+     "note": "RNA へ跳ぶ"
+    },
+    {
+     "at": "t-lip",
+     "move": "whip",
+     "x": 640,
+     "y": 280,
+     "z": 1.9,
+     "dur": 0.16,
+     "note": "脂質へ跳ぶ"
+    },
+    {
+     "at": "t-pro",
+     "move": "whip",
+     "x": 860,
+     "y": 280,
+     "z": 1.9,
+     "dur": 0.16,
+     "note": "タンパク質へ跳ぶ"
+    },
+    {
+     "at": "t-carb",
+     "move": "whip",
+     "x": 1080,
+     "y": 280,
+     "z": 1.9,
+     "dur": 0.16,
+     "note": "炭水化物へ跳ぶ"
+    },
+    {
+     "at": "t-carb+0.7",
+     "move": "pull",
+     "x": 640,
+     "y": 380,
+     "z": 1,
+     "dur": 0.35,
+     "note": "急激に引いて5本を並べる"
+    }
+   ],
+   "fx": [
+    {
+     "at": "t-dna",
+     "kind": "impact",
+     "dur": 0.3,
+     "min": "gekiga"
+    },
+    {
+     "at": "t-rna",
+     "kind": "speed",
+     "dur": 0.25,
+     "min": "gekiga"
+    },
+    {
+     "at": "t-lip",
+     "kind": "speed",
+     "dur": 0.25,
+     "min": "gekiga"
+    },
+    {
+     "at": "t-pro",
+     "kind": "speed",
+     "dur": 0.25,
+     "min": "gekiga"
+    },
+    {
+     "at": "t-carb",
+     "kind": "speed",
+     "dur": 0.25,
+     "min": "gekiga"
+    },
+    {
+     "at": "add",
+     "kind": "onoma",
+     "dur": 0.9,
+     "text": "ポタッ",
+     "x": 1110,
+     "y": 470,
+     "min": "gekiga"
+    },
+    {
+     "at": "t-carb+0.7",
+     "kind": "focus",
+     "dur": 0.6,
+     "min": "ultra"
+    },
+    {
+     "at": "start",
+     "kind": "tone",
+     "dur": 99,
+     "min": "gekiga"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "extract",
+     "kind": "shimmer",
+     "gain": 0.4
+    },
+    {
+     "at": "add",
+     "kind": "tick"
+    },
+    {
+     "at": "t-dna",
+     "kind": "impact",
+     "gain": 0.8
+    },
+    {
+     "at": "t-rna",
+     "kind": "tick"
+    },
+    {
+     "at": "t-lip",
+     "kind": "tick"
+    },
+    {
+     "at": "t-pro",
+     "kind": "tick"
+    },
+    {
+     "at": "t-carb",
+     "kind": "tick"
+    },
+    {
+     "at": "t-carb+0.7",
+     "kind": "whoosh",
+     "gain": 0.6
+    }
+   ]
+  },
+  {
+   "id": "S04",
+   "title": "DNAのときだけ R株→S株（形質転換）",
+   "picture": "5枚の培養皿。4枚はR株のまま（ざらついた平たいコロニー）。「DNAを加えたときだけ」でDNAの皿へ急接近、ざらついたコロニーが艶のある丸いS株型コロニーへ変わる。続いてR株の1個の双球菌に被膜がまとわりつく大写し（Wan）に「形質転換」の文字。",
+   "diagram": {
+    "id": "plates",
+    "title": "結果：DNAを加えたときだけ S株に",
+    "note": "c01-0032「R株がS株に変わったのは、DNAを加えたときだけ」・板書 av-dna / av-no。コロニーの見た目（S＝滑らか、R＝ざらざら）で示す"
+   },
+   "lecturer": false,
+   "sources": [
+    {
+     "beat": "result",
+     "source": "第1講／台詞 c01-0032／スライド14／板書 av-dna・av-no（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 1,
+      "section": "テーマ1　設計図の正体はDNA",
+      "cues": [
+       "c01-0032"
+      ],
+      "mode": "verbatim",
+      "slide": 14,
+      "board": [
+       "av-dna",
+       "av-no"
+      ]
+     },
+     "lines": [
+      "すると、R株がS株に変わったのは、",
+      "DNAを加えたときだけでした。"
+     ]
+    },
+    {
+     "beat": "term",
+     "source": "第1講／台詞 c01-0033／スライド14（原文の一部）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 1,
+      "section": "テーマ1　設計図の正体はDNA",
+      "cues": [
+       "c01-0033"
+      ],
+      "mode": "trimmed",
+      "slide": 14
+     },
+     "lines": [
+      "これを形質転換といいます。"
+     ]
+    }
+   ],
+   "cams": [
+    {
+     "at": "start",
+     "move": "set",
+     "x": 640,
+     "y": 380,
+     "z": 1,
+     "note": "5枚の皿の全景"
+    },
+    {
+     "at": "result",
+     "move": "push",
+     "x": 640,
+     "y": 380,
+     "z": 1.1,
+     "dur": 1.6,
+     "note": "じわりと寄る"
+    },
+    {
+     "at": "only-dna",
+     "move": "crash",
+     "x": 205,
+     "y": 355,
+     "z": 2,
+     "dur": 0.22,
+     "hold": 0.4,
+     "note": "DNA の皿へ急接近 → 静止"
+    },
+    {
+     "at": "term",
+     "move": "set",
+     "x": 640,
+     "y": 360,
+     "z": 1,
+     "note": "被膜が形成される双球菌の大写しへ切り替え"
+    },
+    {
+     "at": "term",
+     "move": "push",
+     "x": 640,
+     "y": 390,
+     "z": 1.22,
+     "dur": 2,
+     "note": "大写しへさらに寄る"
+    }
+   ],
+   "fx": [
+    {
+     "at": "only-dna",
+     "kind": "focus",
+     "dur": 1.6,
+     "min": "standard"
+    },
+    {
+     "at": "only-dna",
+     "kind": "impact",
+     "dur": 0.45,
+     "min": "gekiga"
+    },
+    {
+     "at": "only-dna",
+     "kind": "onoma",
+     "dur": 1.3,
+     "text": "ドクン",
+     "x": 1050,
+     "y": 190,
+     "min": "gekiga"
+    },
+    {
+     "at": "only-dna",
+     "kind": "invert",
+     "dur": 0.1,
+     "min": "ultra"
+    },
+    {
+     "at": "only-dna",
+     "kind": "shake",
+     "dur": 0.35,
+     "min": "gekiga"
+    },
+    {
+     "at": "term",
+     "kind": "flash",
+     "dur": 0.25,
+     "min": "gekiga"
+    },
+    {
+     "at": "term",
+     "kind": "onoma",
+     "dur": 1.1,
+     "text": "ゴゴゴ",
+     "x": 160,
+     "y": 140,
+     "min": "ultra"
+    },
+    {
+     "at": "start",
+     "kind": "tone",
+     "dur": 99,
+     "min": "gekiga"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "result",
+     "kind": "riser",
+     "gain": 0.5
+    },
+    {
+     "at": "only-dna",
+     "kind": "heartbeat"
+    },
+    {
+     "at": "only-dna",
+     "kind": "boom",
+     "gain": 0.8
+    },
+    {
+     "at": "term",
+     "kind": "shimmer"
+    }
+   ]
+  },
+  {
+   "id": "S05",
+   "title": "まとめ：遺伝の本体＝DNA",
+   "picture": "黒板。「エイブリー（1944）」の板書（av-h・av1・av-dna・av-no）の下に「形質転換 → 遺伝の本体 ＝ DNA」が書かれ、赤チョークの枠が走る。「DNA」の寄りから急激にズームアウトして板書全体へ。",
+   "diagram": {
+    "id": "board-avery",
+    "title": "板書：エイブリー（1944）",
+    "note": "第1講の黒板 av-h / av1 / av-dna / av-no / av-c（赤枠）"
+   },
+   "lecturer": true,
+   "sources": [
+    {
+     "beat": "conclusion",
+     "source": "第1講／台詞 c01-0036／板書 av-c（原文の一部）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 1,
+      "section": "テーマ1　設計図の正体はDNA",
+      "cues": [
+       "c01-0036"
+      ],
+      "mode": "trimmed",
+      "board": [
+       "av-c"
+      ]
+     },
+     "lines": [
+      "遺伝の本体はDNAだ"
+     ]
+    }
+   ],
+   "cams": [
+    {
+     "at": "start",
+     "move": "set",
+     "x": 250,
+     "y": 370,
+     "z": 2,
+     "note": "板書「DNA → S株に変わる」の「DNA」に寄った画から"
+    },
+    {
+     "at": "box",
+     "move": "pull",
+     "x": 640,
+     "y": 380,
+     "z": 1,
+     "dur": 0.32,
+     "note": "赤枠と同時に急激なズームアウト"
+    }
+   ],
+   "fx": [
+    {
+     "at": "box",
+     "kind": "impact",
+     "dur": 0.4,
+     "min": "gekiga"
+    },
+    {
+     "at": "box",
+     "kind": "focus",
+     "dur": 1,
+     "min": "gekiga"
+    },
+    {
+     "at": "box",
+     "kind": "shake",
+     "dur": 0.25,
+     "min": "ultra"
+    },
+    {
+     "at": "start",
+     "kind": "tone",
+     "dur": 99,
+     "min": "gekiga"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "start",
+     "kind": "chalk",
+     "gain": 0.6
+    },
+    {
+     "at": "box",
+     "kind": "impact"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,122 @@
+{
+ "plan": "genetics-basics-1-2_30s_board",
+ "voice": "jm_kumo",
+ "speed": 1.06,
+ "scenes": [
+  {
+   "id": "S01",
+   "file": "audio/S01.wav",
+   "duration": 4.4522,
+   "segs": [
+    {
+     "beat": "ask",
+     "i": 0,
+     "speech": 2.4598
+    },
+    {
+     "beat": "ask",
+     "i": 1,
+     "speech": 1.4924
+    }
+   ]
+  },
+  {
+   "id": "S02",
+   "file": "audio/S02.wav",
+   "duration": 6.2731,
+   "segs": [
+    {
+     "beat": "avery",
+     "i": 0,
+     "speech": 2.9589
+    },
+    {
+     "beat": "strains",
+     "i": 0,
+     "speech": 1.4487
+    },
+    {
+     "beat": "strains",
+     "i": 1,
+     "speech": 1.4454
+    }
+   ]
+  },
+  {
+   "id": "S03",
+   "file": "audio/S03.wav",
+   "duration": 9.1409,
+   "segs": [
+    {
+     "beat": "tubes",
+     "i": 0,
+     "speech": 2.9328
+    },
+    {
+     "beat": "tubes",
+     "i": 1,
+     "speech": 1.499
+    },
+    {
+     "beat": "tubes",
+     "i": 2,
+     "speech": 0.718
+    },
+    {
+     "beat": "tubes",
+     "i": 3,
+     "speech": 0.7555
+    },
+    {
+     "beat": "tubes",
+     "i": 4,
+     "speech": 0.7245
+    },
+    {
+     "beat": "tubes",
+     "i": 5,
+     "speech": 1.0032
+    },
+    {
+     "beat": "tubes",
+     "i": 6,
+     "speech": 1.0578
+    }
+   ]
+  },
+  {
+   "id": "S04",
+   "file": "audio/S04.wav",
+   "duration": 7.6813,
+   "segs": [
+    {
+     "beat": "result",
+     "i": 0,
+     "speech": 2.7769
+    },
+    {
+     "beat": "result",
+     "i": 1,
+     "speech": 2.1069
+    },
+    {
+     "beat": "term",
+     "i": 0,
+     "speech": 1.9276
+    }
+   ]
+  },
+  {
+   "id": "S05",
+   "file": "audio/S05.wav",
+   "duration": 2.2871,
+   "segs": [
+    {
+     "beat": "conclusion",
+     "i": 0,
+     "speech": 1.5871
+    }
+   ]
+  }
+ ]
+}

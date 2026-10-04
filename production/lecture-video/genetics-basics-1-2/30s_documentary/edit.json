@@ -1,0 +1,268 @@
+{
+ "plan": "genetics-basics:1:2|30|documentary|gekiga",
+ "voice": "genetics-basics-1-2_30s_documentary",
+ "size": [
+  1280,
+  720
+ ],
+ "fps": 24,
+ "total": 29.834,
+ "frames": 716,
+ "timing": "kokoro",
+ "layers": {
+  "plate": "layers/plate_%05d.jpg",
+  "overlay": "layers/overlay_%05d.png"
+ },
+ "note": "背景（Wan クリップ／無ければ MEDSTUDY アニマティック）→ 医学図レイヤーを重ねる → 白黒反転 → 字幕（ASS）→ 講師音声＋効果音（＋任意で BGM、声に合わせて自動で下げる）",
+ "scenes": [
+  {
+   "id": "S01",
+   "t0": 0,
+   "dur": 4.452,
+   "audio": "audio/S01.wav",
+   "shots": [
+    {
+     "id": "a",
+     "wan": "wan/S01_a.webm",
+     "mode": "background",
+     "t0": 0,
+     "dur": 4.452,
+     "f0": 0,
+     "f1": 107,
+     "wanFrames": 109,
+     "wanFps": 24
+    }
+   ],
+   "sfx": [
+    {
+     "kind": "chalk",
+     "t": 0,
+     "gain": 0.5
+    },
+    {
+     "kind": "boom",
+     "t": 2.56,
+     "gain": 1
+    },
+    {
+     "kind": "whoosh",
+     "t": 2.56,
+     "gain": 0.6
+    }
+   ],
+   "invert": []
+  },
+  {
+   "id": "S02",
+   "t0": 4.452,
+   "dur": 6.273,
+   "audio": "audio/S02.wav",
+   "shots": [
+    {
+     "id": "a",
+     "wan": "wan/S02_a.webm",
+     "mode": "background",
+     "t0": 4.452,
+     "dur": 3.079,
+     "f0": 107,
+     "f1": 181,
+     "wanFrames": 77,
+     "wanFps": 24
+    },
+    {
+     "id": "b",
+     "wan": "wan/S02_b.webm",
+     "mode": "background",
+     "t0": 7.531,
+     "dur": 3.194,
+     "f0": 181,
+     "f1": 257,
+     "wanFrames": 81,
+     "wanFps": 24
+    }
+   ],
+   "sfx": [
+    {
+     "kind": "impact",
+     "t": 4.452,
+     "gain": 0.7
+    },
+    {
+     "kind": "shimmer",
+     "t": 7.531,
+     "gain": 0.5
+    },
+    {
+     "kind": "whoosh",
+     "t": 8.98,
+     "gain": 1
+    }
+   ],
+   "invert": []
+  },
+  {
+   "id": "S03",
+   "t0": 10.725,
+   "dur": 9.141,
+   "audio": "audio/S03.wav",
+   "shots": [
+    {
+     "id": "a",
+     "wan": "wan/S03_a.webm",
+     "mode": "background",
+     "t0": 10.725,
+     "dur": 4.532,
+     "f0": 257,
+     "f1": 366,
+     "wanFrames": 113,
+     "wanFps": 24
+    },
+    {
+     "id": "b",
+     "wan": "wan/S03_b.webm",
+     "mode": "background",
+     "t0": 15.257,
+     "dur": 4.609,
+     "f0": 366,
+     "f1": 477,
+     "wanFrames": 113,
+     "wanFps": 24
+    }
+   ],
+   "sfx": [
+    {
+     "kind": "shimmer",
+     "t": 10.725,
+     "gain": 0.4
+    },
+    {
+     "kind": "tick",
+     "t": 13.658,
+     "gain": 1
+    },
+    {
+     "kind": "impact",
+     "t": 15.257,
+     "gain": 0.8
+    },
+    {
+     "kind": "tick",
+     "t": 15.975,
+     "gain": 1
+    },
+    {
+     "kind": "tick",
+     "t": 16.731,
+     "gain": 1
+    },
+    {
+     "kind": "tick",
+     "t": 17.455,
+     "gain": 1
+    },
+    {
+     "kind": "tick",
+     "t": 18.458,
+     "gain": 1
+    },
+    {
+     "kind": "whoosh",
+     "t": 19.158,
+     "gain": 0.6
+    }
+   ],
+   "invert": []
+  },
+  {
+   "id": "S04",
+   "t0": 19.866,
+   "dur": 7.681,
+   "audio": "audio/S04.wav",
+   "shots": [
+    {
+     "id": "a",
+     "wan": "wan/S04_a.webm",
+     "mode": "background",
+     "t0": 19.866,
+     "dur": 5.739,
+     "f0": 477,
+     "f1": 615,
+     "wanFrames": 121,
+     "wanFps": 24
+    },
+    {
+     "id": "b",
+     "wan": "wan/S04_b.webm",
+     "mode": "feature",
+     "t0": 25.605,
+     "dur": 1.942,
+     "f0": 615,
+     "f1": 661,
+     "wanFrames": 49,
+     "wanFps": 24
+    }
+   ],
+   "sfx": [
+    {
+     "kind": "riser",
+     "t": 19.866,
+     "gain": 0.5
+    },
+    {
+     "kind": "heartbeat",
+     "t": 22.793,
+     "gain": 1
+    },
+    {
+     "kind": "boom",
+     "t": 22.793,
+     "gain": 0.8
+    },
+    {
+     "kind": "shimmer",
+     "t": 25.605,
+     "gain": 1
+    }
+   ],
+   "invert": []
+  },
+  {
+   "id": "S05",
+   "t0": 27.547,
+   "dur": 2.287,
+   "audio": "audio/S05.wav",
+   "shots": [
+    {
+     "id": "a",
+     "wan": "wan/S05_a.webm",
+     "mode": "background",
+     "t0": 27.547,
+     "dur": 2.287,
+     "f0": 661,
+     "f1": 716,
+     "wanFrames": 57,
+     "wanFps": 24
+    }
+   ],
+   "sfx": [
+    {
+     "kind": "chalk",
+     "t": 27.547,
+     "gain": 0.6
+    },
+    {
+     "kind": "impact",
+     "t": 28.362,
+     "gain": 1
+    }
+   ],
+   "invert": []
+  }
+ ],
+ "subtitles": "subtitles.ass",
+ "bgm": {
+  "file": null,
+  "gain": 0.18,
+  "duck": true
+ }
+}

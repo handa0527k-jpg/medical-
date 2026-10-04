@@ -243,3 +243,12 @@
 .story-skip:hover { background: rgba(213,127,69,.85); }
 @media (max-width: 600px) { .story-skip { top: 8px; right: 8px; font-size: 12px; padding: 5px 11px; } }
 .story-bar.mv i { background: #f0a868; }
+
+/* genetics: entry to 🎬 授業動画 (lecture film studio) */
+.cat-film { display: grid; grid-template-columns: auto 1fr auto; gap: 16px; align-items: center; padding: 16px 20px; text-decoration: none; color: inherit; background: linear-gradient(115deg, #0b0b0f 0 58%, #2a0f19); border: 2px solid #000; box-shadow: 5px 5px 0 var(--eosin); border-radius: var(--r-m); margin-bottom: 18px; }
+.cat-film .cf-ic { font-size: 34px; }
+.cat-film b { display: block; color: #fff; font-size: 19px; }
+.cat-film span { color: #c9c3da; font-size: 13.5px; line-height: 1.6; }
+.cat-film .cf-go { color: #fff; font-weight: 800; white-space: nowrap; }
+.cat-film:hover { transform: translate(-1px, -1px); box-shadow: 6px 6px 0 var(--eosin); }
+@media (max-width: 760px) { .cat-film { grid-template-columns: auto 1fr; } .cat-film .cf-go { grid-column: 1 / -1; } }

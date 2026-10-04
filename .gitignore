@@ -17,3 +17,11 @@ production/*/scenes/
 production/*/sample/*.wav
 # OP/ED songs as downloaded from 魔王魂 (not redistributed as single files; the app ships only the edited copies in public/music)
 production/opening-ending/audio/
+# 授業動画 packages: keep the text package + measured Kokoro timing; rendered media is reproducible
+production/lecture-video/*/*/layers/
+production/lecture-video/*/*/keyframes/
+production/lecture-video/*/*/audio/*.wav
+production/lecture-video/*/*/sfx/
+production/lecture-video/*/*/out/
+production/lecture-video/*/*/wan/
+tools/lecture-video/models/

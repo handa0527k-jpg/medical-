@@ -1,0 +1,174 @@
+{
+ "plan": "genetics-basics-1-2_60s_exam",
+ "voice": "jm_kumo",
+ "speed": 1.06,
+ "scenes": [
+  {
+   "id": "S01",
+   "file": "audio/S01.wav",
+   "duration": 4.4522,
+   "segs": [
+    {
+     "beat": "ask",
+     "i": 0,
+     "speech": 2.4598
+    },
+    {
+     "beat": "ask",
+     "i": 1,
+     "speech": 1.4924
+    }
+   ]
+  },
+  {
+   "id": "S02",
+   "file": "audio/S02.wav",
+   "duration": 14.3739,
+   "segs": [
+    {
+     "beat": "avery",
+     "i": 0,
+     "speech": 1.435
+    },
+    {
+     "beat": "avery",
+     "i": 1,
+     "speech": 2.9589
+    },
+    {
+     "beat": "strainS",
+     "i": 0,
+     "speech": 2.6976
+    },
+    {
+     "beat": "strainS",
+     "i": 1,
+     "speech": 1.6245
+    },
+    {
+     "beat": "strainR",
+     "i": 0,
+     "speech": 2.9771
+    },
+    {
+     "beat": "strainR",
+     "i": 1,
+     "speech": 1.8807
+    }
+   ]
+  },
+  {
+   "id": "S03",
+   "file": "audio/S03.wav",
+   "duration": 9.1409,
+   "segs": [
+    {
+     "beat": "tubes",
+     "i": 0,
+     "speech": 2.9328
+    },
+    {
+     "beat": "tubes",
+     "i": 1,
+     "speech": 1.499
+    },
+    {
+     "beat": "tubes",
+     "i": 2,
+     "speech": 0.718
+    },
+    {
+     "beat": "tubes",
+     "i": 3,
+     "speech": 0.7555
+    },
+    {
+     "beat": "tubes",
+     "i": 4,
+     "speech": 0.7245
+    },
+    {
+     "beat": "tubes",
+     "i": 5,
+     "speech": 1.0032
+    },
+    {
+     "beat": "tubes",
+     "i": 6,
+     "speech": 1.0578
+    }
+   ]
+  },
+  {
+   "id": "S04",
+   "file": "audio/S04.wav",
+   "duration": 9.1183,
+   "segs": [
+    {
+     "beat": "result",
+     "i": 0,
+     "speech": 2.7769
+    },
+    {
+     "beat": "result",
+     "i": 1,
+     "speech": 2.1069
+    },
+    {
+     "beat": "term",
+     "i": 0,
+     "speech": 1.107
+    },
+    {
+     "beat": "term",
+     "i": 1,
+     "speech": 1.9276
+    }
+   ]
+  },
+  {
+   "id": "S05",
+   "file": "audio/S05.wav",
+   "duration": 4.042,
+   "segs": [
+    {
+     "beat": "exam",
+     "i": 0,
+     "speech": 1.891
+    },
+    {
+     "beat": "exam",
+     "i": 1,
+     "speech": 1.551
+    }
+   ]
+  },
+  {
+   "id": "S06",
+   "file": "audio/S06.wav",
+   "duration": 14.4603,
+   "segs": [
+    {
+     "beat": "quizq",
+     "i": 0,
+     "speech": 5.8371
+    },
+    {
+     "beat": "quiza",
+     "i": 0,
+     "speech": 0.94
+    },
+    {
+     "beat": "quiza",
+     "i": 1,
+     "speech": 2.9201
+    },
+    {
+     "beat": "quiza",
+     "i": 2,
+     "speech": 3.7131
+    }
+   ]
+  }
+ ]
+}
