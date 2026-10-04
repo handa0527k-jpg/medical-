@@ -4,6 +4,7 @@ import { buildTimeline, lineAt, sceneAt, subAt } from '../../engine/story/timeli
 import type { StoryModule } from '../../engine/story/types';
 import { fmtT } from '../../engine/svg';
 import { useStore } from '../../state/hooks';
+import { useWakeLock } from '../../app/useWakeLock';
 
 /** progress key in the store's animation stats */
 export const STORY_KEY = 'story';
@@ -27,6 +28,8 @@ export default function StoryPlayer({ story, assetBase, startAt }: { story: Stor
   const [loading, setLoading] = useState(false);
   const st = useRef({ now: 0, playing: false, lastTs: 0, cur: -1, sound: true, audioOk: true, started: 0 });
   const [playing, setPlaying] = useState(false);
+  // keep the screen on while playing
+  useWakeLock(playing);
   const [started, setStarted] = useState(false);
   const [subs, setSubs] = useState(true);
   const [sound, setSound] = useState(true);

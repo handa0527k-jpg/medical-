@@ -7,6 +7,7 @@ import { SourceChips } from '../../components/Slide';
 import { AnimationStage, stepAt, timeScript, type TimedStep } from '../../engine/animation/stage';
 import { CL, fmtT } from '../../engine/svg';
 import { useStore } from '../../state/hooks';
+import { useWakeLock } from '../../app/useWakeLock';
 import { Timeline } from '../../components/Timeline';
 import { FiveChoice } from '../quiz/FiveChoice';
 
@@ -34,6 +35,8 @@ export default function AnimationPlayer({ id, compact, startAt }: { id: string; 
 
   const [cur, setCur] = useState<TimedStep>(steps[0]);
   const [playing, setPlaying] = useState(false);
+  // keep the screen on while playing
+  useWakeLock(playing);
   const [overlay, setOverlay] = useState<Overlay>('start');
   const [reveal, setReveal] = useState(false);
   const [speed, setSpeed] = useState(1);

@@ -135,3 +135,22 @@ test('transcription course: every mechanism animation plays its steps; links to 
   }
   expect(errs).toEqual([]);
 });
+
+test('the screen is kept on while a film plays and released on pause (Screen Wake Lock)', async ({ page }) => {
+  await page.addInitScript(() => {
+    const w = window as unknown as { __wl: { req: number; rel: number } };
+    w.__wl = { req: 0, rel: 0 };
+    Object.defineProperty(navigator, 'wakeLock', { configurable: true, value: { request: async () => { w.__wl.req++; const s = { released: false, release: async () => { s.released = true; w.__wl.rel++; } }; return s; } } });
+  });
+  await page.goto('/#/open/genetics-transcription/animations/story?t=20');
+  await page.locator('.story-start button').click();
+  await expect(page.locator('.story-ctl .pri')).toContainText('一時停止');
+  await expect.poll(() => page.evaluate(() => (window as unknown as { __wl: { req: number } }).__wl.req)).toBeGreaterThan(0);
+  await page.locator('.story-ctl .pri').click();
+  await expect.poll(() => page.evaluate(() => (window as unknown as { __wl: { rel: number } }).__wl.rel)).toBeGreaterThan(0);
+  // mechanism animation player too
+  await page.goto('/#/open/genetics-transcription/animations/lac');
+  const before = await page.evaluate(() => (window as unknown as { __wl: { req: number } }).__wl.req);
+  await page.getByRole('button', { name: /再生/ }).first().click();
+  await expect.poll(() => page.evaluate(() => (window as unknown as { __wl: { req: number } }).__wl.req)).toBeGreaterThan(before);
+});

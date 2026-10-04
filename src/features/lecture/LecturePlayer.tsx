@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState, type ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 import { useCourse } from '../../app/course';
+import { useWakeLock } from '../../app/useWakeLock';
 import { Rich } from '../../components/Rich';
 import { Icon } from '../../components/Icon';
 import { Timeline } from '../../components/Timeline';
@@ -69,6 +70,8 @@ export function LecturePlayer({ lecture, chapter, startAt, side }: { lecture: Le
   /* ---------- UI state ---------- */
   const [cue, setCue] = useState<TimedCue>(cues[0]);
   const [playing, setPlaying] = useState(false);
+  // keep the screen on while playing
+  useWakeLock(playing);
   const [overlay, setOverlay] = useState<Overlay>('start');
   const [reveal, setReveal] = useState(false);
   const [speed, setSpeed] = useState(settings.lectureSpeed || 1);
