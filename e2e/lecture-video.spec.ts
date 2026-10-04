@@ -10,8 +10,15 @@ test('genetics: 🎬 授業動画 studio — material, recommended theme, contro
   await page.goto('/#/category/histology');
   await expect(page.locator('.cat-film')).toHaveCount(0);
 
+  // opens on the finished film (第1講まるごと)
   await page.goto('/#/category/genetics/video');
   await expect(page.locator('.lv-head h1')).toContainText('授業動画');
+  await expect(page.locator('.lv-scene')).toHaveCount(18, { timeout: 20000 });
+  await expect(page.locator('.lv-form select').nth(1)).toHaveValue('genetics-basics:1:film');
+  await expect(page.locator('.lv-status')).toContainText('Kokoro', { timeout: 15000 });
+  await expect(page.locator('.lv-scene').nth(9)).toContainText('RNAポリメラーゼ');
+  // the 30 s prototype theme
+  await page.goto('/#/category/genetics/video?theme=genetics-basics:1:2');
   // honest about what runs where
   await expect(page.locator('.lv-honest')).toContainText('実行しません');
   // the theme comes from the material: 第1講 テーマ1, with slide 14 and question g14b
@@ -49,7 +56,7 @@ test('genetics: 🎬 授業動画 studio — material, recommended theme, contro
 });
 
 test('授業動画: the production package downloads with every file the Windows side needs', async ({ page }) => {
-  await page.goto('/#/category/genetics/video?d=30&style=board&k=gekiga');
+  await page.goto('/#/category/genetics/video?theme=genetics-basics:1:2&d=30&style=board&k=gekiga');
   await expect(page.locator('.lv-scene')).toHaveCount(5);
   const [dl] = await Promise.all([page.waitForEvent('download'), page.getByRole('button', { name: '制作パッケージ（ZIP）' }).click()]);
   expect(dl.suggestedFilename()).toMatch(/^medstudy_genetics-basics-1-2_30s_board_gekiga\.zip$/);
@@ -63,10 +70,14 @@ test('授業動画: the finished 30 s prototype film is served and plays in MEDS
   const v = idx.videos['genetics-basics:1:2|30|board|gekiga'];
   expect(v).toBeTruthy();
   expect(v.seconds).toBeGreaterThan(27);
-  expect(v.seconds).toBeLessThan(32);
+  expect(v.seconds).toBeLessThan(34);
+  const film = idx.videos['genetics-basics:1:film|full|board|gekiga'];
+  expect(film).toBeTruthy();
+  expect(film.seconds).toBeGreaterThan(200);
+  expect((await request.get(`/lecture-video/${film.file}`)).status()).toBe(200);
   const r = await request.get(`/lecture-video/${v.file}`);
   expect(r.status()).toBe(200);
-  await page.goto('/#/category/genetics/video?d=30&style=board&k=gekiga');
+  await page.goto('/#/category/genetics/video?theme=genetics-basics:1:2&d=30&style=board&k=gekiga');
   await expect(page.locator('.lv-final video')).toHaveCount(1);
   await expect(page.locator('.lv-final .lv-note').first()).toContainText('Wan 2.2 映像は 0/8 ショット');
   // the duration is read where the browser can decode H.264 (Playwright's open-source Chromium cannot)

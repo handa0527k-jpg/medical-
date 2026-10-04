@@ -11,7 +11,8 @@
 
 export type Intensity = 'standard' | 'gekiga' | 'ultra';
 export type LessonStyle = 'board' | 'documentary' | 'exam';
-export type Duration = 30 | 60;
+/** 30 / 60 s shorts, or 'full' = the whole lecture as one film (完成版) */
+export type Duration = 30 | 60 | 'full';
 
 export const INTENSITY_LABEL: Record<Intensity, string> = { standard: '標準', gekiga: '劇画', ultra: '超劇画' };
 export const STYLE_LABEL: Record<LessonStyle, string> = { board: '黒板講義型', documentary: '実験ドキュメント型', exam: '試験対策型' };
@@ -106,7 +107,10 @@ export type Visual =
   | 'board-question' | 'title-question'
   | 'strains' | 'tubes' | 'plates'
   | 'board-summary' | 'result-card' | 'exam-point' | 'quiz'
-  | 'board-generic';
+  | 'board-generic'
+  /* 完成版（第1講まるごと） */
+  | 'title-open' | 'zygote' | 'board' | 'transcription' | 'translation' | 'contrast' | 'universal'
+  | 'hierarchy' | 'hier-line' | 'disease' | 'end-card';
 
 export interface SceneDef {
   id: string;
@@ -123,8 +127,10 @@ export interface SceneDef {
   shots: WanShot[];
   /** show the lecturer (motion-captured silhouette) */
   lecturer?: boolean;
-  /** data for generic / quiz visuals */
+  /** data for generic / quiz / board visuals */
   data?: Record<string, unknown>;
+  /** first scene of a chapter: a title card flashes in (e.g. 「テーマ2　セントラルドグマ」) */
+  chapter?: string;
 }
 
 export interface Plan {

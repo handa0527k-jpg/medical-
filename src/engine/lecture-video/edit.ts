@@ -48,7 +48,7 @@ export function subtitleLines(timing: Timing): SubLine[] {
     return { t0: Math.max(0, x.speech0 - 0.05), t1, text: x.seg.text };
   });
 }
-/** ASS: bottom-centre, white with a dark outline; key terms (**…**) in chalk yellow, slightly larger */
+/** ASS: bottom-centre, white on a semi-transparent dark band (readable over boards and figures); key terms (**…**) in chalk yellow, slightly larger */
 export function assFile(timing: Timing, font = 'Zen Kaku Gothic New') {
   const head = `[Script Info]
 ScriptType: v4.00+
@@ -59,7 +59,7 @@ ScaledBorderAndShadow: yes
 
 [V4+ Styles]
 Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
-Style: Sub,${font},40,&H00FFFFFF,&H00FFFFFF,&H00101010,&H96000000,-1,0,0,0,100,100,1,0,1,3.2,1.2,2,80,80,34,1
+Style: Sub,${font},38,&H00FFFFFF,&H00FFFFFF,&H5A000000,&H5A000000,-1,0,0,0,100,100,1,0,3,7,0,2,80,80,30,1
 
 [Events]
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text

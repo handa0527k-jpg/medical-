@@ -37,7 +37,7 @@
 .lv-screen { position: relative; border-radius: var(--r-m); overflow: hidden; background: #000; box-shadow: var(--shadow); aspect-ratio: 16 / 9; }
 .lv-screen canvas { width: 100%; height: 100%; display: block; cursor: pointer; }
 .lv-screen.layer-overlay { background: repeating-conic-gradient(#2a2a2a 0 25%, #1c1c1c 0 50%) 0 0 / 22px 22px; }
-.lv-sub { position: absolute; left: 6%; right: 6%; bottom: 4.6%; text-align: center; font-weight: 900; font-size: clamp(13px, 2.9vw, 30px); line-height: 1.35; color: #fff; text-shadow: 0 0 3px #000, 0 0 3px #000, 2px 2px 0 #000, -2px 2px 0 #000, 2px -2px 0 #000, -2px -2px 0 #000; pointer-events: none; }
+.lv-sub { position: absolute; left: 6%; right: 6%; bottom: 4%; text-align: center; display: flex; justify-content: center; font-weight: 900; font-size: clamp(13px, 2.9vw, 30px); line-height: 1.35; color: #fff; text-shadow: 0 0 3px #000, 0 0 3px #000, 2px 2px 0 #000, -2px 2px 0 #000, 2px -2px 0 #000, -2px -2px 0 #000; pointer-events: none; }
 .lv-sub em { font-style: normal; color: #ffd84a; font-size: 1.08em; }
 .lv-hud { position: absolute; left: 10px; top: 8px; font: 700 12px var(--f-hud); color: #fffb; background: #0008; border-radius: 6px; padding: 3px 8px; display: flex; gap: 8px; align-items: baseline; pointer-events: none; }
 .lv-hud span { color: #ffd84abb; font-family: var(--f-sans); font-size: 11px; }
@@ -97,3 +97,4 @@
 }
 .lv, .lv > * { min-width: 0; }
 .lv-hud { max-width: calc(100% - 20px); flex-wrap: wrap; }
+.lv-sub > span { background: rgba(0,0,0,0.38); padding: 0.1em 0.6em; border-radius: 6px; }

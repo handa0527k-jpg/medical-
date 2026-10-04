@@ -15,7 +15,7 @@ MEDSTUDY が書き出した「制作パッケージ」フォルダ（medstudy_vi
 映像の出来事（DNA の皿へ急接近、など）が「その語を言った瞬間」に合わせて引き直され、レイヤー・字幕・Wan のフレーム数が確定します。
 
 必要なもの:
-  pip install kokoro-onnx misaki pyopenjtalk soundfile numpy requests
+  pip install kokoro-onnx "misaki[ja]" fugashi unidic-lite soundfile numpy requests
   Kokoro モデル: kokoro-v1.0.onnx / voices-v1.0.bin（https://github.com/thewh1teagle/kokoro-onnx/releases/tag/model-files-v1.0）
   FFmpeg（PATH 上、または --ffmpeg で指定。libass 入りのビルド）
   ComfyUI（Wan 2.2 のモデルを配置済み、http://127.0.0.1:8188 で起動）
@@ -57,6 +57,18 @@ def trim_silence(a, thr=0.012, pad=0.03):
     return a[s:e]
 
 
+def make_g2p():
+    """Kokoro's Japanese voices were trained on misaki's default (cutlet) phonemes — use them when fugashi +
+    a UniDic dictionary are installed; fall back to the pyopenjtalk front end otherwise."""
+    from misaki.ja import JAG2P
+    try:
+        g = JAG2P()
+        g("テスト")
+        return g, "cutlet"
+    except Exception:  # noqa: BLE001
+        return JAG2P(version="pyopenjtalk"), "pyopenjtalk"
+
+
 def phonemes(g2p, text: str) -> str:
     """misaki's pyopenjtalk mode returns the phonemes followed by an equally long pitch-accent string
     (e.g. "noka." + "^^_jj"); Kokoro must get the phonemes only, or it voices the markup as stray sounds."""
@@ -65,11 +77,95 @@ def phonemes(g2p, text: str) -> str:
     return out[:half] if len(out) % 2 == 0 and set(out[half:]) <= set("^_-j") else out
 
 
+def utterances(segs: list) -> list:
+    """Group a scene's segments into sentences. A sentence is read in one breath by Kokoro, so its
+    intonation is not reset at every cue; it is cut back into segments at the pauses afterwards."""
+    groups, cur = [], []
+    short = lambda s: mora(s["say"]) <= 7  # list items (「DNA、RNA、脂質、…」) are read one by one
+    for s in segs:
+        if cur and (float(s.get("speed", 1)) != float(cur[-1].get("speed", 1)) or short(s) or short(cur[-1])):
+            groups.append(cur); cur = []
+        cur.append(s)
+        if s["say"].rstrip()[-1:] in "。！？!?":
+            groups.append(cur); cur = []
+    if cur:
+        groups.append(cur)
+    return groups
+
+
+def mora(t: str) -> float:
+    import re
+    t = re.sub(r"[ゃゅょぁぃぅぇぉャュョァィゥェォ]", "", t)
+    return sum(1 if "\u3040" <= c <= "\u30ff" else 1.8 if "\u4e00" <= c <= "\u9fff" else 2.2 if c.isdigit() else 0 for c in t) or 1
+
+
+def split_at_pauses(wav, parts: list) -> list:
+    """Cut one sentence's audio into len(parts) pieces at the quiet points the voice made at the punctuation
+    between them. Each cut is searched near the position the reading predicts, never closer than 45 % of
+    the neighbouring pieces' predicted lengths (so a short list item cannot collapse), at the quietest
+    10 ms frame (smoothed), with a small pull toward the prediction."""
+    import numpy as np
+    n = len(parts)
+    if n == 1:
+        return [wav]
+    hop = int(0.01 * SR)
+    env = np.array([np.sqrt(np.mean(wav[i:i + hop] ** 2)) for i in range(0, len(wav) - hop, hop)])
+    env = np.convolve(env, np.ones(3) / 3, mode="same")
+    w = np.array([mora(p) for p in parts], dtype=float)
+    pred = w / w.sum() * len(env)  # predicted frames per piece
+    cuts, prev = [], 0
+    for k in range(n - 1):
+        guess = prev + pred[k]
+        lo = int(prev + pred[k] * 0.45)
+        rest = pred[k + 1:].sum()
+        hi = int(min(len(env) - rest * 0.45, guess + max(35, pred[k] * 0.6)))
+        lo = max(lo, int(guess - max(35, pred[k] * 0.6)), prev + 1)
+        if hi <= lo:
+            c = int(guess)
+        else:
+            idx = np.arange(lo, hi)
+            score = env[lo:hi] / (env.max() + 1e-9) + 0.25 * np.abs(idx - guess) / max(1.0, pred[k])
+            c = int(idx[np.argmin(score)])
+        cuts.append(c); prev = c
+    edges = [0] + [c * hop for c in cuts] + [len(wav)]
+    return [wav[edges[i]:edges[i + 1]] for i in range(n)]
+
+
+def finish(audio):
+    """Light finishing so the voice sits like a lecturer in a room: high-pass, gentle compression,
+    a very short room tail, loudness to about −18 LUFS-ish RMS with peaks under −1 dBFS."""
+    import numpy as np
+    a = audio.astype(np.float64)
+    # 1st-order high-pass at ~70 Hz
+    k = np.exp(-2 * np.pi * 70 / SR); y = np.empty_like(a); xp = yp = 0.0
+    for i, x in enumerate(a):
+        yp = k * (yp + x - xp); xp = x; y[i] = yp
+    # soft compression (above −20 dBFS, ratio ~2.5)
+    w = int(0.02 * SR)
+    env = np.sqrt(np.convolve(y ** 2, np.ones(w) / w, mode="same")) + 1e-9
+    thr = 0.1
+    gain = np.where(env > thr, (thr * (env / thr) ** (1 / 2.5)) / env, 1.0)
+    y *= gain
+    # short room: a few decaying early reflections + diffuse tail (≈ 0.25 s, −24 dB)
+    rng = np.random.default_rng(7)
+    ir_len = int(0.25 * SR)
+    ir = rng.standard_normal(ir_len) * np.exp(-np.arange(ir_len) / (0.06 * SR)) * 0.035
+    ir[0] = 1.0
+    for d, g in ((0.011, 0.12), (0.019, 0.09), (0.027, 0.06)):
+        ir[int(d * SR)] += g
+    y = np.convolve(y, ir)[: len(y)]
+    rms = np.sqrt(np.mean(y[np.abs(y) > 0.003] ** 2)) if np.any(np.abs(y) > 0.003) else 1
+    y *= 0.12 / rms
+    peak = np.max(np.abs(y))
+    if peak > 0.89:
+        y *= 0.89 / peak
+    return y.astype(np.float32)
+
+
 def cmd_tts(pkg: Path, a) -> None:
     import numpy as np
     import soundfile as sf
     from kokoro_onnx import Kokoro
-    from misaki.ja import JAG2P
 
     m = load(pkg)
     ks = m["kokoro"]
@@ -78,24 +174,25 @@ def cmd_tts(pkg: Path, a) -> None:
     if not model.exists() or not voices.exists():
         sys.exit(f"Kokoro モデルが見つかりません: {model} / {voices}（README の手順で配置してください）")
     kk = Kokoro(str(model), str(voices))
-    g2p = JAG2P(version="pyopenjtalk")
+    g2p, g2p_name = make_g2p()
     voice = a.voice or ks["voice"]
     base = float(a.speed or ks["speed"])
-    out = {"plan": ks["plan"], "voice": voice, "speed": base, "scenes": []}
+    print(f"Kokoro {voice}  speed {base}  G2P {g2p_name}")
+    out = {"plan": ks["plan"], "voice": voice, "speed": base, "g2p": g2p_name, "scenes": []}
     (pkg / "audio").mkdir(exist_ok=True)
     for sc in ks["scenes"]:
         chunks, segs = [], []
-        for s in sc["segs"]:
-            ph = phonemes(g2p, s["say"])
-            wav, sr = kk.create(ph, voice=voice, speed=base * float(s.get("speed", 1)), is_phonemes=True)
+        for group in utterances(sc["segs"]):
+            say = "".join(s["say"] for s in group)
+            wav, sr = kk.create(phonemes(g2p, say), voice=voice, speed=base * float(group[0].get("speed", 1)), is_phonemes=True)
             assert sr == SR, sr
-            wav = trim_silence(np.asarray(wav, dtype=np.float32))
-            chunks += [np.zeros(int(s.get("pre", 0) * SR), np.float32), wav, np.zeros(int(s.get("post", 0) * SR), np.float32)]
-            segs.append({"beat": s["beat"], "i": s["i"], "speech": round(len(wav) / SR, 4)})
-            print(f"  {sc['id']} {s['beat']}/{s['i']}  {len(wav) / SR:5.2f}s  {s['text']}")
+            pieces = split_at_pauses(trim_silence(np.asarray(wav, dtype=np.float32)), [s["say"] for s in group])
+            for s, piece in zip(group, pieces):
+                chunks += [np.zeros(int(s.get("pre", 0) * SR), np.float32), piece, np.zeros(int(s.get("post", 0) * SR), np.float32)]
+                segs.append({"beat": s["beat"], "i": s["i"], "speech": round(len(piece) / SR, 4)})
+                print(f"  {sc['id']} {s['beat']}/{s['i']}  {len(piece) / SR:5.2f}s  {s['text']}")
         chunks.append(np.zeros(int(SCENE_TAIL * SR), np.float32))
-        audio = np.concatenate(chunks)
-        audio = audio / max(1e-6, float(np.max(np.abs(audio)))) * 0.89  # peak −1 dBFS
+        audio = finish(np.concatenate(chunks)) if not a.raw else np.concatenate(chunks)
         sf.write(pkg / sc["file"], audio, SR, subtype="PCM_16")
         out["scenes"].append({"id": sc["id"], "file": sc["file"], "duration": round(len(audio) / SR, 4), "segs": segs})
     total = sum(s["duration"] for s in out["scenes"])
@@ -265,6 +362,12 @@ def cmd_assemble(pkg: Path, a) -> None:
     (pkg / "out").mkdir(exist_ok=True)
     plate = pkg / "layers" / "plate_00000.jpg"
     overlay = pkg / "layers" / "overlay_00000.png"
+    full = pkg / "layers" / "full_00000.jpg"
+    shots_all = [s for sc in e["scenes"] for s in sc["shots"]]
+    if full.exists() and not overlay.exists():
+        if any((pkg / s["wan"]).exists() for s in shots_all) and not a.animatic:
+            sys.exit("Wan クリップを重ねるには医学図レイヤー（overlay）が必要です：render-layers.mjs を --full なしで実行してください")
+        return assemble_full(pkg, e, a)
     if not overlay.exists():
         sys.exit("layers/overlay_*.png がありません（MEDSTUDY の「レイヤーを書き出す」または scripts/lecture-video/render-layers.mjs）")
     dur = mix_audio(pkg, e, a)
@@ -339,6 +442,34 @@ Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
 """
 
 
+def assemble_full(pkg: Path, e: dict, a) -> None:
+    """No Wan clip yet: the composited MEDSTUDY animatic frames + subtitles + voice + SFX."""
+    dur = mix_audio(pkg, e, a)
+    frames = int(round(dur * FPS))
+    fonts = Path(a.fonts or HERE / "fonts")
+    fd = str(fonts).replace("\\", "/").replace(":", "\\:")
+    fc = [f"[0:v]trim=end_frame={frames},setpts=PTS-STARTPTS,setsar=1[v0]"]
+    last = "v0"
+    inv = [w for sc in e["scenes"] for w in sc.get("invert", [])]  # already inverted in the animatic frames
+    sub = str(pkg / e["subtitles"]).replace("\\", "/").replace(":", "\\:")
+    if not a.no_subs:
+        fc.append(f"[{last}]ass='{sub}':fontsdir='{fd}'[v1]"); last = "v1"
+    if not a.no_tag:
+        shots = [s for sc in e["scenes"] for s in sc["shots"]]
+        tf = pkg / "out" / "_tag.ass"
+        ev = "\n".join(f"Dialogue: 0,{ass_t(s['t0'])},{ass_t(s['t0'] + s['dur'])},Tag,,0,0,0,,MEDSTUDY アニマティック（Wan 2.2 生成前）" for s in shots)
+        tf.write_text(TAG_ASS + ev + "\n", encoding="utf-8")
+        tp = str(tf).replace("\\", "/").replace(":", "\\:")
+        fc.append(f"[{last}]ass='{tp}':fontsdir='{fd}'[v2]"); last = "v2"
+    out = pkg / "out" / (a.out or "lecture.mp4")
+    cmd = [ffmpeg_bin(a), "-y", "-v", "error", "-framerate", str(FPS), "-i", str(pkg / "layers" / "full_%05d.jpg"), "-i", str(pkg / "out" / "mix.wav"),
+           "-filter_complex", ";".join(fc), "-map", f"[{last}]", "-map", "1:a", "-c:v", "libx264", "-preset", "medium", "-crf", str(a.crf),
+           "-pix_fmt", "yuv420p", "-r", str(FPS), "-c:a", "aac", "-b:a", "160k", "-movflags", "+faststart", "-t", f"{dur:.3f}", str(out)]
+    (pkg / "out" / "ffmpeg_command.txt").write_text(" ".join(f'"{c}"' if " " in c or ";" in c else c for c in cmd), encoding="utf-8")
+    subprocess.run(cmd, check=True)
+    print(f"完成 → {out}（{dur:.2f} 秒・MEDSTUDY アニマティック（Wan 2.2 未生成）{'' if not inv else '・白黒反転は描画済み'}）")
+
+
 # --------------------------------------------------------------------------- check / all
 def cmd_check(pkg: Path, a) -> None:
     m = load(pkg)
@@ -346,7 +477,7 @@ def cmd_check(pkg: Path, a) -> None:
     print(f"テーマ: {m['theme']}")
     print(f"  {ok((pkg / 'audio' / 'kokoro_timing.json').exists())} Kokoro 音声と実測タイミング（audio/）")
     print(f"  {ok(m['timing']['source'] == 'kokoro')} タイミング確定（MEDSTUDY に Kokoro タイミングを読み込んで書き出し済み）")
-    print(f"  {ok((pkg / 'layers' / 'overlay_00000.png').exists())} 医学図レイヤー（layers/）")
+    print(f"  {ok((pkg / 'layers' / 'overlay_00000.png').exists())} 医学図レイヤー（layers/overlay・plate）  {ok((pkg / 'layers' / 'full_00000.jpg').exists())} 合成済みアニマティック（layers/full）")
     for j in m["wan"]["jobs"]:
         print(f"  {ok((pkg / j['keyframe']).exists())} キーフレーム {j['name']}   {ok((pkg / 'wan' / (j['name'] + '.webm')).exists())} Wan クリップ")
     print(f"  {ok((pkg / 'sfx' / 'boom.wav').exists())} 効果音（sfx/）")
@@ -369,6 +500,7 @@ def main() -> None:
     p.add_argument("command", choices=["tts", "sfx", "comfy", "assemble", "check", "all"])
     p.add_argument("package", type=Path)
     p.add_argument("--model"); p.add_argument("--voices"); p.add_argument("--voice"); p.add_argument("--speed")
+    p.add_argument("--raw", action="store_true", help="音声の仕上げ処理（低域カット・整音・短い残響）をしない")
     p.add_argument("--server", default="http://127.0.0.1:8188"); p.add_argument("--profile"); p.add_argument("--fast", action="store_true", help="14B を 4 ステップ LoRA で")
     p.add_argument("--force", action="store_true"); p.add_argument("--skip-comfy", action="store_true")
     p.add_argument("--ffmpeg"); p.add_argument("--fonts"); p.add_argument("--bgm"); p.add_argument("--bgm-gain", default="0.18")

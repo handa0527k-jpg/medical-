@@ -301,6 +301,8 @@ function s06quiz(): SceneDef {
   };
 }
 
+export { s01, s02, s03, s04, s05, s06quiz, B as AVERY_BEATS, src as averySrc, DIPLO };
+
 export const AVERY_KEY = 'genetics-basics:1:2';
 
 export function averyScenes(duration: Duration, style: LessonStyle): SceneDef[] {

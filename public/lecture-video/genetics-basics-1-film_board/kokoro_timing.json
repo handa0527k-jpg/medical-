@@ -1,0 +1,569 @@
+{
+ "plan": "genetics-basics-1-film_board",
+ "voice": "jm_kumo",
+ "speed": 1.0,
+ "g2p": "cutlet",
+ "scenes": [
+  {
+   "id": "S01",
+   "file": "audio/S01.wav",
+   "duration": 8.0902,
+   "segs": [
+    {
+     "beat": "open",
+     "i": 0,
+     "speech": 1.1225
+    },
+    {
+     "beat": "open",
+     "i": 1,
+     "speech": 3.5103
+    },
+    {
+     "beat": "open",
+     "i": 2,
+     "speech": 2.5575
+    }
+   ]
+  },
+  {
+   "id": "S02",
+   "file": "audio/S02.wav",
+   "duration": 18.3411,
+   "segs": [
+    {
+     "beat": "egg",
+     "i": 0,
+     "speech": 3.35
+    },
+    {
+     "beat": "egg",
+     "i": 1,
+     "speech": 1.9772
+    },
+    {
+     "beat": "divide",
+     "i": 0,
+     "speech": 1.78
+    },
+    {
+     "beat": "divide",
+     "i": 1,
+     "speech": 4.2229
+    },
+    {
+     "beat": "same",
+     "i": 0,
+     "speech": 2.65
+    },
+    {
+     "beat": "same",
+     "i": 1,
+     "speech": 3.461
+    }
+   ]
+  },
+  {
+   "id": "S03",
+   "file": "audio/S03.wav",
+   "duration": 14.015,
+   "segs": [
+    {
+     "beat": "theme",
+     "i": 0,
+     "speech": 2.9402
+    },
+    {
+     "beat": "before",
+     "i": 0,
+     "speech": 5.1338
+    },
+    {
+     "beat": "ask",
+     "i": 0,
+     "speech": 2.76
+    },
+    {
+     "beat": "ask",
+     "i": 1,
+     "speech": 1.981
+    }
+   ]
+  },
+  {
+   "id": "S04",
+   "file": "audio/S04.wav",
+   "duration": 16.8138,
+   "segs": [
+    {
+     "beat": "avery",
+     "i": 0,
+     "speech": 1.64
+    },
+    {
+     "beat": "avery",
+     "i": 1,
+     "speech": 3.9443
+    },
+    {
+     "beat": "strainS",
+     "i": 0,
+     "speech": 2.8788
+    },
+    {
+     "beat": "strainS",
+     "i": 1,
+     "speech": 1.8845
+    },
+    {
+     "beat": "strainR",
+     "i": 0,
+     "speech": 3.4173
+    },
+    {
+     "beat": "strainR",
+     "i": 1,
+     "speech": 2.249
+    }
+   ]
+  },
+  {
+   "id": "S05",
+   "file": "audio/S05.wav",
+   "duration": 10.1085,
+   "segs": [
+    {
+     "beat": "tubes",
+     "i": 0,
+     "speech": 3.47
+    },
+    {
+     "beat": "tubes",
+     "i": 1,
+     "speech": 1.8208
+    },
+    {
+     "beat": "tubes",
+     "i": 2,
+     "speech": 0.7365
+    },
+    {
+     "beat": "tubes",
+     "i": 3,
+     "speech": 0.801
+    },
+    {
+     "beat": "tubes",
+     "i": 4,
+     "speech": 0.7324
+    },
+    {
+     "beat": "tubes",
+     "i": 5,
+     "speech": 1.0046
+    },
+    {
+     "beat": "tubes",
+     "i": 6,
+     "speech": 1.0933
+    }
+   ]
+  },
+  {
+   "id": "S06",
+   "file": "audio/S06.wav",
+   "duration": 10.3832,
+   "segs": [
+    {
+     "beat": "result",
+     "i": 0,
+     "speech": 3.16
+    },
+    {
+     "beat": "result",
+     "i": 1,
+     "speech": 2.7519
+    },
+    {
+     "beat": "term",
+     "i": 0,
+     "speech": 1.2622
+    },
+    {
+     "beat": "term",
+     "i": 1,
+     "speech": 2.0091
+    }
+   ]
+  },
+  {
+   "id": "S07",
+   "file": "audio/S07.wav",
+   "duration": 11.0953,
+   "segs": [
+    {
+     "beat": "conclusion",
+     "i": 0,
+     "speech": 2.84
+    },
+    {
+     "beat": "conclusion",
+     "i": 1,
+     "speech": 3.7123
+    },
+    {
+     "beat": "important",
+     "i": 0,
+     "speech": 3.593
+    }
+   ]
+  },
+  {
+   "id": "S08",
+   "file": "audio/S08.wav",
+   "duration": 13.6429,
+   "segs": [
+    {
+     "beat": "back",
+     "i": 0,
+     "speech": 2.4786
+    },
+    {
+     "beat": "back",
+     "i": 1,
+     "speech": 4.231
+    },
+    {
+     "beat": "rna",
+     "i": 0,
+     "speech": 2.2877
+    },
+    {
+     "beat": "pro",
+     "i": 0,
+     "speech": 3.5456
+    }
+   ]
+  },
+  {
+   "id": "S09",
+   "file": "audio/S09.wav",
+   "duration": 12.6947,
+   "segs": [
+    {
+     "beat": "trx",
+     "i": 0,
+     "speech": 3.3665
+    },
+    {
+     "beat": "trx",
+     "i": 1,
+     "speech": 1.42
+    },
+    {
+     "beat": "trl",
+     "i": 0,
+     "speech": 5.378
+    },
+    {
+     "beat": "trl",
+     "i": 1,
+     "speech": 1.5303
+    }
+   ]
+  },
+  {
+   "id": "S10",
+   "file": "audio/S10.wav",
+   "duration": 17.9202,
+   "segs": [
+    {
+     "beat": "peek",
+     "i": 0,
+     "speech": 4.8593
+    },
+    {
+     "beat": "peek",
+     "i": 1,
+     "speech": 3.2512
+    },
+    {
+     "beat": "pol",
+     "i": 0,
+     "speech": 4.95
+    },
+    {
+     "beat": "pol",
+     "i": 1,
+     "speech": 2.5592
+    },
+    {
+     "beat": "pol",
+     "i": 2,
+     "speech": 1.3005
+    }
+   ]
+  },
+  {
+   "id": "S11",
+   "file": "audio/S11.wav",
+   "duration": 10.0908,
+   "segs": [
+    {
+     "beat": "trl",
+     "i": 0,
+     "speech": 3.04
+    },
+    {
+     "beat": "trl",
+     "i": 1,
+     "speech": 2.29
+    },
+    {
+     "beat": "trl",
+     "i": 2,
+     "speech": 2.7552
+    },
+    {
+     "beat": "trl",
+     "i": 3,
+     "speech": 1.3557
+    }
+   ]
+  },
+  {
+   "id": "S12",
+   "file": "audio/S12.wav",
+   "duration": 7.8468,
+   "segs": [
+    {
+     "beat": "memo",
+     "i": 0,
+     "speech": 1.25
+    },
+    {
+     "beat": "memo",
+     "i": 1,
+     "speech": 4.7669
+    },
+    {
+     "beat": "memo",
+     "i": 2,
+     "speech": 1.3298
+    }
+   ]
+  },
+  {
+   "id": "S13",
+   "file": "audio/S13.wav",
+   "duration": 14.6012,
+   "segs": [
+    {
+     "beat": "name",
+     "i": 0,
+     "speech": 2.6499
+    },
+    {
+     "beat": "name",
+     "i": 1,
+     "speech": 2.4029
+    },
+    {
+     "beat": "all",
+     "i": 0,
+     "speech": 2.09
+    },
+    {
+     "beat": "all",
+     "i": 1,
+     "speech": 4.5647
+    },
+    {
+     "beat": "all",
+     "i": 2,
+     "speech": 1.7937
+    }
+   ]
+  },
+  {
+   "id": "S14",
+   "file": "audio/S14.wav",
+   "duration": 16.6875,
+   "segs": [
+    {
+     "beat": "levels",
+     "i": 0,
+     "speech": 0.721
+    },
+    {
+     "beat": "levels",
+     "i": 1,
+     "speech": 0.6498
+    },
+    {
+     "beat": "levels",
+     "i": 2,
+     "speech": 0.6555
+    },
+    {
+     "beat": "levels",
+     "i": 3,
+     "speech": 0.744
+    },
+    {
+     "beat": "levels",
+     "i": 4,
+     "speech": 0.6394
+    },
+    {
+     "beat": "levels",
+     "i": 5,
+     "speech": 3.334
+    },
+    {
+     "beat": "levels",
+     "i": 6,
+     "speech": 1.0415
+    },
+    {
+     "beat": "stack",
+     "i": 0,
+     "speech": 4.7053
+    },
+    {
+     "beat": "stack",
+     "i": 1,
+     "speech": 2.9973
+    }
+   ]
+  },
+  {
+   "id": "S15",
+   "file": "audio/S15.wav",
+   "duration": 32.9038,
+   "segs": [
+    {
+     "beat": "q",
+     "i": 0,
+     "speech": 3.7085
+    },
+    {
+     "beat": "down",
+     "i": 0,
+     "speech": 1.1327
+    },
+    {
+     "beat": "down",
+     "i": 1,
+     "speech": 4.9125
+    },
+    {
+     "beat": "prog",
+     "i": 0,
+     "speech": 2.8653
+    },
+    {
+     "beat": "prog",
+     "i": 1,
+     "speech": 5.8181
+    },
+    {
+     "beat": "tcs",
+     "i": 0,
+     "speech": 1.8672
+    },
+    {
+     "beat": "tcs",
+     "i": 1,
+     "speech": 6.396
+    },
+    {
+     "beat": "both",
+     "i": 0,
+     "speech": 4.3035
+    }
+   ]
+  },
+  {
+   "id": "S16",
+   "file": "audio/S16.wav",
+   "duration": 8.343,
+   "segs": [
+    {
+     "beat": "line",
+     "i": 0,
+     "speech": 3.59
+    },
+    {
+     "beat": "line",
+     "i": 1,
+     "speech": 4.153
+    }
+   ]
+  },
+  {
+   "id": "S17",
+   "file": "audio/S17.wav",
+   "duration": 28.6578,
+   "segs": [
+    {
+     "beat": "four",
+     "i": 0,
+     "speech": 2.6183
+    },
+    {
+     "beat": "p1",
+     "i": 0,
+     "speech": 0.8559
+    },
+    {
+     "beat": "p1",
+     "i": 1,
+     "speech": 5.5008
+    },
+    {
+     "beat": "p2",
+     "i": 0,
+     "speech": 0.8838
+    },
+    {
+     "beat": "p2",
+     "i": 1,
+     "speech": 5.4854
+    },
+    {
+     "beat": "p3",
+     "i": 0,
+     "speech": 0.8415
+    },
+    {
+     "beat": "p3",
+     "i": 1,
+     "speech": 4.9677
+    },
+    {
+     "beat": "p4",
+     "i": 0,
+     "speech": 5.4044
+    }
+   ]
+  },
+  {
+   "id": "S18",
+   "file": "audio/S18.wav",
+   "duration": 8.49,
+   "segs": [
+    {
+     "beat": "next",
+     "i": 0,
+     "speech": 3.36
+    },
+    {
+     "beat": "next",
+     "i": 1,
+     "speech": 3.98
+    }
+   ]
+  }
+ ]
+}

@@ -1,6 +1,6 @@
 {
  "format": "medstudy-lecture-video/1",
- "created": "2026-10-04T16:00:28.220Z",
+ "created": "2026-10-04T18:07:33.064Z",
  "roles": {
   "MEDSTUDY": "教材理解・授業設計・医学図・管理",
   "ComfyUI": "動画生成ワークフロー管理",
@@ -36,8 +36,8 @@
     "mode": "background",
     "desc": "夜の講義室。黒板の前を舞うチョークの粉と、一筋の光。カメラはゆっくり前進。",
     "t0": 0,
-    "dur": 4.452,
-    "frames": 109,
+    "dur": 4.965,
+    "frames": 121,
     "keyframe": "keyframes/S01_a.png",
     "prompt": "a dark empty lecture hall at night, a huge slate blackboard, a single hard shaft of light cutting through floating chalk dust, dust motes drifting slowly. Camera: fast push-in that stops abruptly, dramatic low angle, strong perspective, sudden held frame. Look: gekiga manga style animation, bold hand-inked black lines, heavy cross-hatched shadows, high contrast chiaroscuro, limited desaturated palette with deep blacks, dramatic composition, cinematic, 1980s Japanese gekiga illustration texture. The centre of the frame stays calm and darker (an exact figure will be laid over it). Accuracy: no people, no writing on the board (the board text is added later).",
     "negative": "writing, chalk text, equations, text, letters, numbers, captions, subtitles, labels, watermark, logo, signature, speech bubbles, writing, symbols, deformed structures, extra objects, cartoon faces on cells, cute mascot, pastel colors, oversaturated, photorealistic skin, gore, blood, 色调艳丽，过曝，静态，细节模糊不清，字幕，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走",
@@ -50,9 +50,9 @@
     "shot": "a",
     "mode": "background",
     "desc": "暗い液体の微小世界。ピントの外れた双球菌の対がゆっくり漂い、粒子が光る。",
-    "t0": 4.452,
-    "dur": 3.079,
-    "frames": 77,
+    "t0": 4.965,
+    "dur": 3.461,
+    "frames": 85,
     "keyframe": "keyframes/S02_a.png",
     "prompt": "a dark microscopic fluid world, out-of-focus Streptococcus pneumoniae drawn as lancet-shaped diplococci (two slightly pointed oval cells joined end to end, always in pairs) drifting slowly, tiny particles sparkling, cold bioluminescent rim light, slow push-in. Camera: fast push-in that stops abruptly, dramatic low angle, strong perspective, sudden held frame. Look: gekiga manga style animation, bold hand-inked black lines, heavy cross-hatched shadows, high contrast chiaroscuro, limited desaturated palette with deep blacks, dramatic composition, cinematic, 1980s Japanese gekiga illustration texture. The centre of the frame stays calm and darker (an exact figure will be laid over it). Accuracy: bacteria stay in pairs, no flagella, no cilia, no nucleus, no eyes or faces.",
     "negative": "text, letters, numbers, captions, subtitles, labels, watermark, logo, signature, speech bubbles, writing, symbols, deformed structures, extra objects, cartoon faces on cells, cute mascot, pastel colors, oversaturated, photorealistic skin, gore, blood, 色调艳丽，过曝，静态，细节模糊不清，字幕，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走",
@@ -65,8 +65,8 @@
     "shot": "b",
     "mode": "background",
     "desc": "同じ微小世界でカメラが横へ流れる（S株→R株のパン）。",
-    "t0": 7.531,
-    "dur": 3.194,
+    "t0": 8.426,
+    "dur": 3.333,
     "frames": 81,
     "keyframe": "keyframes/S02_b.png",
     "prompt": "the same dark microscopic fluid world, Streptococcus pneumoniae drawn as lancet-shaped diplococci (two slightly pointed oval cells joined end to end, always in pairs) out of focus, the camera sweeps sideways fast, motion blur streaks. Camera: fast push-in that stops abruptly, dramatic low angle, strong perspective, sudden held frame. Look: gekiga manga style animation, bold hand-inked black lines, heavy cross-hatched shadows, high contrast chiaroscuro, limited desaturated palette with deep blacks, dramatic composition, cinematic, 1980s Japanese gekiga illustration texture. The centre of the frame stays calm and darker (an exact figure will be laid over it). Accuracy: bacteria stay in pairs, no flagella, no cilia, no nucleus, no eyes or faces.",
@@ -80,9 +80,9 @@
     "shot": "a",
     "mode": "background",
     "desc": "暗い実験台。ガラス器具がハードライトで光り、滴がスローモーションで落ちる。",
-    "t0": 10.725,
-    "dur": 4.532,
-    "frames": 113,
+    "t0": 11.759,
+    "dur": 5.125,
+    "frames": 121,
     "keyframe": "keyframes/S03_a.png",
     "prompt": "a dark laboratory bench, glass test tubes in a rack glinting under a single hard spotlight, a drop of clear liquid falling in slow motion into a glass dish, faint vapour. Camera: fast push-in that stops abruptly, dramatic low angle, strong perspective, sudden held frame. Look: gekiga manga style animation, bold hand-inked black lines, heavy cross-hatched shadows, high contrast chiaroscuro, limited desaturated palette with deep blacks, dramatic composition, cinematic, 1980s Japanese gekiga illustration texture. The centre of the frame stays calm and darker (an exact figure will be laid over it). Accuracy: glassware only, no labels, no colored liquids, no hands.",
     "negative": "text, letters, numbers, captions, subtitles, labels, watermark, logo, signature, speech bubbles, writing, symbols, deformed structures, extra objects, cartoon faces on cells, cute mascot, pastel colors, oversaturated, photorealistic skin, gore, blood, 色调艳丽，过曝，静态，细节模糊不清，字幕，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走",
@@ -95,9 +95,9 @@
     "shot": "b",
     "mode": "background",
     "desc": "同じ実験台。カメラが試験管の列に沿って高速で横移動。",
-    "t0": 15.257,
-    "dur": 4.609,
-    "frames": 113,
+    "t0": 16.883,
+    "dur": 4.359,
+    "frames": 109,
     "keyframe": "keyframes/S03_b.png",
     "prompt": "the same dark laboratory bench, the camera tracks fast along a row of glass test tubes, glints streaking, motion blur. Camera: fast push-in that stops abruptly, dramatic low angle, strong perspective, sudden held frame. Look: gekiga manga style animation, bold hand-inked black lines, heavy cross-hatched shadows, high contrast chiaroscuro, limited desaturated palette with deep blacks, dramatic composition, cinematic, 1980s Japanese gekiga illustration texture. The centre of the frame stays calm and darker (an exact figure will be laid over it). Accuracy: glassware only, no labels, no colored liquids, no hands.",
     "negative": "text, letters, numbers, captions, subtitles, labels, watermark, logo, signature, speech bubbles, writing, symbols, deformed structures, extra objects, cartoon faces on cells, cute mascot, pastel colors, oversaturated, photorealistic skin, gore, blood, 色调艳丽，过曝，静态，细节模糊不清，字幕，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走",
@@ -110,8 +110,8 @@
     "shot": "a",
     "mode": "background",
     "desc": "硬いスポットライトの下、暗い実験台に並ぶ培養皿。光がゆっくり揺れる。",
-    "t0": 19.866,
-    "dur": 5.739,
+    "t0": 21.242,
+    "dur": 6.528,
     "frames": 121,
     "keyframe": "keyframes/S04_a.png",
     "prompt": "a row of glass petri dishes on a dark bench under a hard spotlight, light slowly sweeping across, deep shadows. Camera: fast push-in that stops abruptly, dramatic low angle, strong perspective, sudden held frame. Look: gekiga manga style animation, bold hand-inked black lines, heavy cross-hatched shadows, high contrast chiaroscuro, limited desaturated palette with deep blacks, dramatic composition, cinematic, 1980s Japanese gekiga illustration texture. The centre of the frame stays calm and darker (an exact figure will be laid over it). Accuracy: dishes empty or with faint agar, no labels, no hands.",
@@ -125,8 +125,8 @@
     "shot": "b",
     "mode": "feature",
     "desc": "1個の双球菌（R株）の大写し。厚く半透明で艶のある被膜が一気に包み込み、表面が滑らかになる。",
-    "t0": 25.605,
-    "dur": 1.942,
+    "t0": 27.77,
+    "dur": 1.958,
     "frames": 49,
     "keyframe": "keyframes/S04_b.png",
     "prompt": "extreme macro close-up of a single pair of Streptococcus pneumoniae drawn as lancet-shaped diplococci (two slightly pointed oval cells joined end to end, always in pairs) floating in dark fluid; a thick translucent glossy capsule rapidly forms and envelops the pair, its surface turning smooth and shining. Camera: fast push-in that stops abruptly, dramatic low angle, strong perspective, sudden held frame. Look: gekiga manga style animation, bold hand-inked black lines, heavy cross-hatched shadows, high contrast chiaroscuro, limited desaturated palette with deep blacks, dramatic composition, cinematic, 1980s Japanese gekiga illustration texture. The subject fills the frame. Accuracy: exactly one pair of cells, the capsule is a smooth translucent layer around the outside of the pair, cells keep their shape, no nucleus, no flagella, no faces.",
@@ -140,9 +140,9 @@
     "shot": "a",
     "mode": "background",
     "desc": "S01と同じ講義室。光の筋がゆっくり強くなる。",
-    "t0": 27.547,
-    "dur": 2.287,
-    "frames": 57,
+    "t0": 29.728,
+    "dur": 2.358,
+    "frames": 61,
     "keyframe": "keyframes/S05_a.png",
     "prompt": "the same dark lecture hall, the shaft of light slowly growing brighter, chalk dust settling. Camera: fast push-in that stops abruptly, dramatic low angle, strong perspective, sudden held frame. Look: gekiga manga style animation, bold hand-inked black lines, heavy cross-hatched shadows, high contrast chiaroscuro, limited desaturated palette with deep blacks, dramatic composition, cinematic, 1980s Japanese gekiga illustration texture. The centre of the frame stays calm and darker (an exact figure will be laid over it). Accuracy: no people, no writing.",
     "negative": "text, letters, numbers, captions, subtitles, labels, watermark, logo, signature, speech bubbles, writing, symbols, deformed structures, extra objects, cartoon faces on cells, cute mascot, pastel colors, oversaturated, photorealistic skin, gore, blood, 色调艳丽，过曝，静态，细节模糊不清，字幕，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走",
@@ -155,7 +155,7 @@
   "plan": "genetics-basics-1-2_30s_board",
   "engine": "kokoro (Kokoro-82M v1.0, ONNX) + misaki ja G2P (pyopenjtalk)",
   "voice": "jm_kumo",
-  "speed": 1.06,
+  "speed": 1.08,
   "sampleRate": 24000,
   "note": "say = 読み（英字・誤読しやすい語はかな）。pre/post = 前後の間（秒）。speed = 区間ごとの話速（重要語はやや遅く）。",
   "scenes": [
@@ -353,62 +353,62 @@
  },
  "timing": {
   "source": "kokoro",
-  "total": 29.834499999999995,
+  "total": 32.0863,
   "scenes": [
    {
     "id": "S01",
     "t0": 0,
-    "t1": 4.4522,
+    "t1": 4.964500000000001,
     "events": {
      "start": 0,
      "ask": 0,
-     "q-dna": 2.5598
+     "q-dna": 2.7
     }
    },
    {
     "id": "S02",
-    "t0": 4.4522,
-    "t1": 10.725200000000001,
+    "t0": 4.964500000000001,
+    "t1": 11.7588,
     "events": {
-     "start": 4.4522,
-     "year": 4.4522,
-     "S": 7.5311,
-     "R": 8.979800000000001
+     "start": 4.964500000000001,
+     "year": 4.964500000000001,
+     "S": 8.426,
+     "R": 9.946
     }
    },
    {
     "id": "S03",
-    "t0": 10.725200000000001,
-    "t1": 19.866,
+    "t0": 11.7588,
+    "t1": 21.2423,
     "events": {
-     "start": 10.725200000000001,
-     "extract": 10.725200000000001,
-     "add": 13.658000000000001,
-     "t-dna": 15.257000000000001,
-     "t-rna": 15.975000000000001,
-     "t-lip": 16.730500000000003,
-     "t-pro": 17.455000000000002,
-     "t-carb": 18.4582
+     "start": 11.7588,
+     "extract": 11.7588,
+     "add": 15.058800000000002,
+     "t-dna": 16.8834,
+     "t-rna": 17.583000000000002,
+     "t-lip": 18.283500000000004,
+     "t-pro": 18.946800000000003,
+     "t-carb": 19.899700000000003
     }
    },
    {
     "id": "S04",
-    "t0": 19.866,
-    "t1": 27.547399999999996,
+    "t0": 21.2423,
+    "t1": 29.728499999999997,
     "events": {
-     "start": 19.866,
-     "result": 19.866,
-     "only-dna": 22.7929,
-     "term": 25.60532
+     "start": 21.2423,
+     "result": 21.2423,
+     "only-dna": 24.4123,
+     "term": 27.7701
     }
    },
    {
     "id": "S05",
-    "t0": 27.547399999999996,
-    "t1": 29.834499999999995,
+    "t0": 29.728499999999997,
+    "t1": 32.0863,
     "events": {
-     "start": 27.547399999999996,
-     "box": 28.361594999999998
+     "start": 29.728499999999997,
+     "box": 30.574509999999997
     }
    }
   ],
@@ -423,9 +423,9 @@
      "cue": "ask"
     },
     "t0": 0,
-    "t1": 2.4598,
+    "t1": 2.6,
     "speech0": 0,
-    "speech1": 2.4598
+    "speech1": 2.6
    },
    {
     "scene": "S01",
@@ -438,10 +438,10 @@
      "pre": 0.1,
      "post": 0.25
     },
-    "t0": 2.4598,
-    "t1": 4.3022,
-    "speech0": 2.5598,
-    "speech1": 4.0522
+    "t0": 2.6,
+    "t1": 4.814500000000001,
+    "speech0": 2.7,
+    "speech1": 4.564500000000001
    },
    {
     "scene": "S02",
@@ -453,10 +453,10 @@
      "cue": "year",
      "post": 0.12
     },
-    "t0": 4.4522,
-    "t1": 7.5311,
-    "speech0": 4.4522,
-    "speech1": 7.4111
+    "t0": 4.964500000000001,
+    "t1": 8.426,
+    "speech0": 4.964500000000001,
+    "speech1": 8.306000000000001
    },
    {
     "scene": "S02",
@@ -467,10 +467,10 @@
      "say": "被膜のあるエス株と、",
      "cue": "S"
     },
-    "t0": 7.5311,
-    "t1": 8.979800000000001,
-    "speech0": 7.5311,
-    "speech1": 8.979800000000001
+    "t0": 8.426,
+    "t1": 9.946,
+    "speech0": 8.426,
+    "speech1": 9.946
    },
    {
     "scene": "S02",
@@ -482,10 +482,10 @@
      "cue": "R",
      "post": 0.15
     },
-    "t0": 8.979800000000001,
-    "t1": 10.5752,
-    "speech0": 8.979800000000001,
-    "speech1": 10.4252
+    "t0": 9.946,
+    "t1": 11.6088,
+    "speech0": 9.946,
+    "speech1": 11.4588
    },
    {
     "scene": "S03",
@@ -496,10 +496,10 @@
      "say": "エス株から成分を1つずつ取り出して、",
      "cue": "extract"
     },
-    "t0": 10.725200000000001,
-    "t1": 13.658000000000001,
-    "speech0": 10.725200000000001,
-    "speech1": 13.658000000000001
+    "t0": 11.7588,
+    "t1": 15.058800000000002,
+    "speech0": 11.7588,
+    "speech1": 15.058800000000002
    },
    {
     "scene": "S03",
@@ -511,10 +511,10 @@
      "cue": "add",
      "post": 0.1
     },
-    "t0": 13.658000000000001,
-    "t1": 15.257000000000001,
-    "speech0": 13.658000000000001,
-    "speech1": 15.157000000000002
+    "t0": 15.058800000000002,
+    "t1": 16.8834,
+    "speech0": 15.058800000000002,
+    "speech1": 16.7834
    },
    {
     "scene": "S03",
@@ -525,10 +525,10 @@
      "say": "ディーエヌエー、",
      "cue": "t-dna"
     },
-    "t0": 15.257000000000001,
-    "t1": 15.975000000000001,
-    "speech0": 15.257000000000001,
-    "speech1": 15.975000000000001
+    "t0": 16.8834,
+    "t1": 17.583000000000002,
+    "speech0": 16.8834,
+    "speech1": 17.583000000000002
    },
    {
     "scene": "S03",
@@ -539,10 +539,10 @@
      "say": "アールエヌエー、",
      "cue": "t-rna"
     },
-    "t0": 15.975000000000001,
-    "t1": 16.730500000000003,
-    "speech0": 15.975000000000001,
-    "speech1": 16.730500000000003
+    "t0": 17.583000000000002,
+    "t1": 18.283500000000004,
+    "speech0": 17.583000000000002,
+    "speech1": 18.283500000000004
    },
    {
     "scene": "S03",
@@ -553,10 +553,10 @@
      "say": "脂質、",
      "cue": "t-lip"
     },
-    "t0": 16.730500000000003,
-    "t1": 17.455000000000002,
-    "speech0": 16.730500000000003,
-    "speech1": 17.455000000000002
+    "t0": 18.283500000000004,
+    "t1": 18.946800000000003,
+    "speech0": 18.283500000000004,
+    "speech1": 18.946800000000003
    },
    {
     "scene": "S03",
@@ -567,10 +567,10 @@
      "say": "タンパク質、",
      "cue": "t-pro"
     },
-    "t0": 17.455000000000002,
-    "t1": 18.4582,
-    "speech0": 17.455000000000002,
-    "speech1": 18.4582
+    "t0": 18.946800000000003,
+    "t1": 19.899700000000003,
+    "speech0": 18.946800000000003,
+    "speech1": 19.899700000000003
    },
    {
     "scene": "S03",
@@ -582,10 +582,10 @@
      "cue": "t-carb",
      "post": 0.2
     },
-    "t0": 18.4582,
-    "t1": 19.716,
-    "speech0": 18.4582,
-    "speech1": 19.516000000000002
+    "t0": 19.899700000000003,
+    "t1": 21.0923,
+    "speech0": 19.899700000000003,
+    "speech1": 20.892300000000002
    },
    {
     "scene": "S04",
@@ -596,10 +596,10 @@
      "say": "すると、アール株がエス株に変わったのは、",
      "cue": "result"
     },
-    "t0": 19.866,
-    "t1": 22.6429,
-    "speech0": 19.866,
-    "speech1": 22.6429
+    "t0": 21.2423,
+    "t1": 24.2623,
+    "speech0": 21.2423,
+    "speech1": 24.2623
    },
    {
     "scene": "S04",
@@ -612,10 +612,10 @@
      "pre": 0.15,
      "post": 0.2
     },
-    "t0": 22.6429,
-    "t1": 25.0998,
-    "speech0": 22.7929,
-    "speech1": 24.8998
+    "t0": 24.2623,
+    "t1": 27.260499999999997,
+    "speech0": 24.4123,
+    "speech1": 27.060499999999998
    },
    {
     "scene": "S04",
@@ -630,10 +630,10 @@
      "pre": 0.12,
      "post": 0.25
     },
-    "t0": 25.0998,
-    "t1": 27.397399999999998,
-    "speech0": 25.2198,
-    "speech1": 27.147399999999998
+    "t0": 27.260499999999997,
+    "t1": 29.5785,
+    "speech0": 27.380499999999998,
+    "speech1": 29.3285
    },
    {
     "scene": "S05",
@@ -647,10 +647,10 @@
      "pre": 0.1,
      "post": 0.45
     },
-    "t0": 27.547399999999996,
-    "t1": 29.684499999999996,
-    "speech0": 27.647399999999998,
-    "speech1": 29.234499999999997
+    "t0": 29.728499999999997,
+    "t1": 31.9363,
+    "speech0": 29.8285,
+    "speech1": 31.4863
    }
   ]
  },
@@ -662,8 +662,8 @@
    720
   ],
   "fps": 24,
-  "total": 29.834,
-  "frames": 716,
+  "total": 32.086,
+  "frames": 770,
   "timing": "kokoro",
   "layers": {
    "plate": "layers/plate_%05d.jpg",
@@ -674,7 +674,7 @@
    {
     "id": "S01",
     "t0": 0,
-    "dur": 4.452,
+    "dur": 4.965,
     "audio": "audio/S01.wav",
     "shots": [
      {
@@ -682,10 +682,10 @@
       "wan": "wan/S01_a.webm",
       "mode": "background",
       "t0": 0,
-      "dur": 4.452,
+      "dur": 4.965,
       "f0": 0,
-      "f1": 107,
-      "wanFrames": 109,
+      "f1": 119,
+      "wanFrames": 121,
       "wanFps": 24
      }
     ],
@@ -697,12 +697,12 @@
      },
      {
       "kind": "boom",
-      "t": 2.56,
+      "t": 2.7,
       "gain": 1
      },
      {
       "kind": "whoosh",
-      "t": 2.56,
+      "t": 2.7,
       "gain": 0.6
      }
     ],
@@ -710,29 +710,29 @@
    },
    {
     "id": "S02",
-    "t0": 4.452,
-    "dur": 6.273,
+    "t0": 4.965,
+    "dur": 6.794,
     "audio": "audio/S02.wav",
     "shots": [
      {
       "id": "a",
       "wan": "wan/S02_a.webm",
       "mode": "background",
-      "t0": 4.452,
-      "dur": 3.079,
-      "f0": 107,
-      "f1": 181,
-      "wanFrames": 77,
+      "t0": 4.965,
+      "dur": 3.461,
+      "f0": 119,
+      "f1": 202,
+      "wanFrames": 85,
       "wanFps": 24
      },
      {
       "id": "b",
       "wan": "wan/S02_b.webm",
       "mode": "background",
-      "t0": 7.531,
-      "dur": 3.194,
-      "f0": 181,
-      "f1": 257,
+      "t0": 8.426,
+      "dur": 3.333,
+      "f0": 202,
+      "f1": 282,
       "wanFrames": 81,
       "wanFps": 24
      }
@@ -740,17 +740,17 @@
     "sfx": [
      {
       "kind": "impact",
-      "t": 4.452,
+      "t": 4.965,
       "gain": 0.7
      },
      {
       "kind": "shimmer",
-      "t": 7.531,
+      "t": 8.426,
       "gain": 0.5
      },
      {
       "kind": "whoosh",
-      "t": 8.98,
+      "t": 9.946,
       "gain": 1
      }
     ],
@@ -758,72 +758,72 @@
    },
    {
     "id": "S03",
-    "t0": 10.725,
-    "dur": 9.141,
+    "t0": 11.759,
+    "dur": 9.483,
     "audio": "audio/S03.wav",
     "shots": [
      {
       "id": "a",
       "wan": "wan/S03_a.webm",
       "mode": "background",
-      "t0": 10.725,
-      "dur": 4.532,
-      "f0": 257,
-      "f1": 366,
-      "wanFrames": 113,
+      "t0": 11.759,
+      "dur": 5.125,
+      "f0": 282,
+      "f1": 405,
+      "wanFrames": 121,
       "wanFps": 24
      },
      {
       "id": "b",
       "wan": "wan/S03_b.webm",
       "mode": "background",
-      "t0": 15.257,
-      "dur": 4.609,
-      "f0": 366,
-      "f1": 477,
-      "wanFrames": 113,
+      "t0": 16.883,
+      "dur": 4.359,
+      "f0": 405,
+      "f1": 510,
+      "wanFrames": 109,
       "wanFps": 24
      }
     ],
     "sfx": [
      {
       "kind": "shimmer",
-      "t": 10.725,
+      "t": 11.759,
       "gain": 0.4
      },
      {
       "kind": "tick",
-      "t": 13.658,
+      "t": 15.059,
       "gain": 1
      },
      {
       "kind": "impact",
-      "t": 15.257,
+      "t": 16.883,
       "gain": 0.8
      },
      {
       "kind": "tick",
-      "t": 15.975,
+      "t": 17.583,
       "gain": 1
      },
      {
       "kind": "tick",
-      "t": 16.731,
+      "t": 18.284,
       "gain": 1
      },
      {
       "kind": "tick",
-      "t": 17.455,
+      "t": 18.947,
       "gain": 1
      },
      {
       "kind": "tick",
-      "t": 18.458,
+      "t": 19.9,
       "gain": 1
      },
      {
       "kind": "whoosh",
-      "t": 19.158,
+      "t": 20.6,
       "gain": 0.6
      }
     ],
@@ -831,18 +831,18 @@
    },
    {
     "id": "S04",
-    "t0": 19.866,
-    "dur": 7.681,
+    "t0": 21.242,
+    "dur": 8.486,
     "audio": "audio/S04.wav",
     "shots": [
      {
       "id": "a",
       "wan": "wan/S04_a.webm",
       "mode": "background",
-      "t0": 19.866,
-      "dur": 5.739,
-      "f0": 477,
-      "f1": 615,
+      "t0": 21.242,
+      "dur": 6.528,
+      "f0": 510,
+      "f1": 666,
       "wanFrames": 121,
       "wanFps": 24
      },
@@ -850,10 +850,10 @@
       "id": "b",
       "wan": "wan/S04_b.webm",
       "mode": "feature",
-      "t0": 25.605,
-      "dur": 1.942,
-      "f0": 615,
-      "f1": 661,
+      "t0": 27.77,
+      "dur": 1.958,
+      "f0": 666,
+      "f1": 713,
       "wanFrames": 49,
       "wanFps": 24
      }
@@ -861,22 +861,22 @@
     "sfx": [
      {
       "kind": "riser",
-      "t": 19.866,
+      "t": 21.242,
       "gain": 0.5
      },
      {
       "kind": "heartbeat",
-      "t": 22.793,
+      "t": 24.412,
       "gain": 1
      },
      {
       "kind": "boom",
-      "t": 22.793,
+      "t": 24.412,
       "gain": 0.8
      },
      {
       "kind": "shimmer",
-      "t": 25.605,
+      "t": 27.77,
       "gain": 1
      }
     ],
@@ -884,31 +884,31 @@
    },
    {
     "id": "S05",
-    "t0": 27.547,
-    "dur": 2.287,
+    "t0": 29.728,
+    "dur": 2.358,
     "audio": "audio/S05.wav",
     "shots": [
      {
       "id": "a",
       "wan": "wan/S05_a.webm",
       "mode": "background",
-      "t0": 27.547,
-      "dur": 2.287,
-      "f0": 661,
-      "f1": 716,
-      "wanFrames": 57,
+      "t0": 29.728,
+      "dur": 2.358,
+      "f0": 713,
+      "f1": 770,
+      "wanFrames": 61,
       "wanFps": 24
      }
     ],
     "sfx": [
      {
       "kind": "chalk",
-      "t": 27.547,
+      "t": 29.728,
       "gain": 0.6
      },
      {
       "kind": "impact",
-      "t": 28.362,
+      "t": 30.575,
       "gain": 1
      }
     ],

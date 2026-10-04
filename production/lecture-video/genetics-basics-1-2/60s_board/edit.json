@@ -6,8 +6,8 @@
   720
  ],
  "fps": 24,
- "total": 61.284,
- "frames": 1471,
+ "total": 65.565,
+ "frames": 1574,
  "timing": "kokoro",
  "layers": {
   "plate": "layers/plate_%05d.jpg",
@@ -18,7 +18,7 @@
   {
    "id": "S01",
    "t0": 0,
-   "dur": 4.452,
+   "dur": 4.965,
    "audio": "audio/S01.wav",
    "shots": [
     {
@@ -26,10 +26,10 @@
      "wan": "wan/S01_a.webm",
      "mode": "background",
      "t0": 0,
-     "dur": 4.452,
+     "dur": 4.965,
      "f0": 0,
-     "f1": 107,
-     "wanFrames": 109,
+     "f1": 119,
+     "wanFrames": 121,
      "wanFps": 24
     }
    ],
@@ -41,12 +41,12 @@
     },
     {
      "kind": "boom",
-     "t": 2.56,
+     "t": 2.7,
      "gain": 1
     },
     {
      "kind": "whoosh",
-     "t": 2.56,
+     "t": 2.7,
      "gain": 0.6
     }
    ],
@@ -54,29 +54,29 @@
   },
   {
    "id": "S02",
-   "t0": 4.452,
-   "dur": 14.374,
+   "t0": 4.965,
+   "dur": 15.911,
    "audio": "audio/S02.wav",
    "shots": [
     {
      "id": "a",
      "wan": "wan/S02_a.webm",
      "mode": "background",
-     "t0": 4.452,
-     "dur": 4.594,
-     "f0": 107,
-     "f1": 217,
-     "wanFrames": 113,
+     "t0": 4.965,
+     "dur": 5.494,
+     "f0": 119,
+     "f1": 251,
+     "wanFrames": 121,
      "wanFps": 24
     },
     {
      "id": "b",
      "wan": "wan/S02_b.webm",
      "mode": "background",
-     "t0": 9.046,
-     "dur": 9.78,
-     "f0": 217,
-     "f1": 452,
+     "t0": 10.459,
+     "dur": 10.417,
+     "f0": 251,
+     "f1": 501,
      "wanFrames": 121,
      "wanFps": 24
     }
@@ -84,17 +84,17 @@
    "sfx": [
     {
      "kind": "impact",
-     "t": 4.452,
+     "t": 4.965,
      "gain": 0.7
     },
     {
      "kind": "shimmer",
-     "t": 9.046,
+     "t": 10.459,
      "gain": 0.5
     },
     {
      "kind": "whoosh",
-     "t": 13.568,
+     "t": 15.23,
      "gain": 1
     }
    ],
@@ -102,72 +102,72 @@
   },
   {
    "id": "S03",
-   "t0": 18.826,
-   "dur": 9.141,
+   "t0": 20.876,
+   "dur": 9.483,
    "audio": "audio/S03.wav",
    "shots": [
     {
      "id": "a",
      "wan": "wan/S03_a.webm",
      "mode": "background",
-     "t0": 18.826,
-     "dur": 4.532,
-     "f0": 452,
-     "f1": 561,
-     "wanFrames": 113,
+     "t0": 20.876,
+     "dur": 5.125,
+     "f0": 501,
+     "f1": 624,
+     "wanFrames": 121,
      "wanFps": 24
     },
     {
      "id": "b",
      "wan": "wan/S03_b.webm",
      "mode": "background",
-     "t0": 23.358,
-     "dur": 4.609,
-     "f0": 561,
-     "f1": 671,
-     "wanFrames": 113,
+     "t0": 26.001,
+     "dur": 4.359,
+     "f0": 624,
+     "f1": 729,
+     "wanFrames": 109,
      "wanFps": 24
     }
    ],
    "sfx": [
     {
      "kind": "shimmer",
-     "t": 18.826,
+     "t": 20.876,
      "gain": 0.4
     },
     {
      "kind": "tick",
-     "t": 21.759,
+     "t": 24.176,
      "gain": 1
     },
     {
      "kind": "impact",
-     "t": 23.358,
+     "t": 26.001,
      "gain": 0.8
     },
     {
      "kind": "tick",
-     "t": 24.076,
+     "t": 26.7,
      "gain": 1
     },
     {
      "kind": "tick",
-     "t": 24.831,
+     "t": 27.401,
      "gain": 1
     },
     {
      "kind": "tick",
-     "t": 25.556,
+     "t": 28.064,
      "gain": 1
     },
     {
      "kind": "tick",
-     "t": 26.559,
+     "t": 29.017,
      "gain": 1
     },
     {
      "kind": "whoosh",
-     "t": 27.259,
+     "t": 29.717,
      "gain": 0.6
     }
    ],
@@ -175,18 +175,18 @@
   },
   {
    "id": "S04",
-   "t0": 27.967,
-   "dur": 9.118,
+   "t0": 30.359,
+   "dur": 9.955,
    "audio": "audio/S04.wav",
    "shots": [
     {
      "id": "a",
      "wan": "wan/S04_a.webm",
      "mode": "background",
-     "t0": 27.967,
-     "dur": 7.076,
-     "f0": 671,
-     "f1": 841,
+     "t0": 30.359,
+     "dur": 7.897,
+     "f0": 729,
+     "f1": 918,
      "wanFrames": 121,
      "wanFps": 24
     },
@@ -194,10 +194,10 @@
      "id": "b",
      "wan": "wan/S04_b.webm",
      "mode": "feature",
-     "t0": 35.043,
-     "dur": 2.042,
-     "f0": 841,
-     "f1": 890,
+     "t0": 38.256,
+     "dur": 2.058,
+     "f0": 918,
+     "f1": 968,
      "wanFrames": 53,
      "wanFps": 24
     }
@@ -205,22 +205,22 @@
    "sfx": [
     {
      "kind": "riser",
-     "t": 27.967,
+     "t": 30.359,
      "gain": 0.5
     },
     {
      "kind": "heartbeat",
-     "t": 30.894,
+     "t": 33.529,
      "gain": 1
     },
     {
      "kind": "boom",
-     "t": 30.894,
+     "t": 33.529,
      "gain": 0.8
     },
     {
      "kind": "shimmer",
-     "t": 35.043,
+     "t": 38.256,
      "gain": 1
     }
    ],
@@ -228,18 +228,18 @@
   },
   {
    "id": "S05",
-   "t0": 37.085,
-   "dur": 9.738,
+   "t0": 40.315,
+   "dur": 10.569,
    "audio": "audio/S05.wav",
    "shots": [
     {
      "id": "a",
      "wan": "wan/S05_a.webm",
      "mode": "background",
-     "t0": 37.085,
-     "dur": 9.738,
-     "f0": 890,
-     "f1": 1124,
+     "t0": 40.315,
+     "dur": 10.569,
+     "f0": 968,
+     "f1": 1221,
      "wanFrames": 121,
      "wanFps": 24
     }
@@ -247,12 +247,12 @@
    "sfx": [
     {
      "kind": "chalk",
-     "t": 37.085,
+     "t": 40.315,
      "gain": 0.6
     },
     {
      "kind": "impact",
-     "t": 40.631,
+     "t": 44.36,
      "gain": 1
     }
    ],
@@ -260,18 +260,18 @@
   },
   {
    "id": "S06",
-   "t0": 46.823,
-   "dur": 14.46,
+   "t0": 50.884,
+   "dur": 14.681,
    "audio": "audio/S06.wav",
    "shots": [
     {
      "id": "a",
      "wan": "wan/S06_a.webm",
      "mode": "background",
-     "t0": 46.823,
-     "dur": 14.46,
-     "f0": 1124,
-     "f1": 1471,
+     "t0": 50.884,
+     "dur": 14.681,
+     "f0": 1221,
+     "f1": 1574,
      "wanFrames": 121,
      "wanFps": 24
     }
@@ -279,7 +279,7 @@
    "sfx": [
     {
      "kind": "impact",
-     "t": 52.961,
+     "t": 57.189,
      "gain": 1
     }
    ],

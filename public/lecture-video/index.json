@@ -23,6 +23,10 @@
   "genetics-basics-1-2_60s_exam": {
    "audio": "genetics-basics-1-2_60s_exam/voice.mp3",
    "timing": "genetics-basics-1-2_60s_exam/kokoro_timing.json"
+  },
+  "genetics-basics-1-film_board": {
+   "audio": "genetics-basics-1-film_board/voice.mp3",
+   "timing": "genetics-basics-1-film_board/kokoro_timing.json"
   }
  },
  "videos": {
@@ -30,7 +34,14 @@
    "file": "genetics-basics-1-2_30s_board/gekiga.mp4",
    "wanShots": 0,
    "shots": 8,
-   "seconds": 29.834,
+   "seconds": 32.086,
+   "built": "2026-10-04"
+  },
+  "genetics-basics:1:film|full|board|gekiga": {
+   "file": "genetics-basics-1-film_board/gekiga.mp4",
+   "wanShots": 0,
+   "shots": 25,
+   "seconds": 260.726,
    "built": "2026-10-04"
   }
  }

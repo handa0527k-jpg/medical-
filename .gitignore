@@ -24,4 +24,10 @@ production/lecture-video/*/*/audio/*.wav
 production/lecture-video/*/*/sfx/
 production/lecture-video/*/*/out/
 production/lecture-video/*/*/wan/
+production/lecture-video/*/layers/
+production/lecture-video/*/keyframes/
+production/lecture-video/*/audio/*.wav
+production/lecture-video/*/sfx/
+production/lecture-video/*/out/
+production/lecture-video/*/wan/
 tools/lecture-video/models/

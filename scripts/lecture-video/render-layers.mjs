@@ -9,6 +9,8 @@
  *
  *   node scripts/lecture-video/render-layers.mjs <package-dir> [--base http://localhost:5199]
  *        [--theme genetics-basics:1:2] [--d 30] [--style board] [--k gekiga] [--fps 24] [--workers 3]
+ *        [--range t0,t1]  only the frames of that span
+ *        [--full]   only the composited animatic (layers/full_%05d.jpg) — 3× faster; for films with no Wan clip yet
  */
 import { chromium } from 'playwright';
 import { mkdirSync, readFileSync, writeFileSync, existsSync } from 'node:fs';
@@ -23,6 +25,9 @@ const q = new URLSearchParams({ course: opt('--course', 'genetics-basics'), them
 const timingFile = join(pkg, 'audio', 'kokoro_timing.json');
 
 const workers = Math.max(1, Number(opt('--workers', 3)));
+const fullOnly = args.includes('--full');
+// --range 115.2,133.1 re-renders only the frames of that time span (after a fix to one scene)
+const range = opt('--range', '') ? opt('--range').split(',').map(Number) : null;
 const b = await chromium.launch({ executablePath: process.env.PW_CHROMIUM || undefined });
 const errors = [];
 async function openPage() {
@@ -51,9 +56,14 @@ let done = 0;
 await Promise.all(pages.map(async (page, w) => {
   for (let f = w; f < n; f += workers) {
     const t = f / fps;
-    const [ov, pl] = await page.evaluate(([t]) => [window.__lv.frame(t, 'overlay'), window.__lv.frame(t, 'plate', 'image/jpeg', 0.9)], [t]);
-    writeFileSync(join(pkg, 'layers', `overlay_${String(f).padStart(5, '0')}.png`), bytes(ov));
-    writeFileSync(join(pkg, 'layers', `plate_${String(f).padStart(5, '0')}.jpg`), bytes(pl));
+    if (range && (t < range[0] || t > range[1])) continue;
+    if (fullOnly) {
+      writeFileSync(join(pkg, 'layers', `full_${String(f).padStart(5, '0')}.jpg`), bytes(await page.evaluate(([t]) => window.__lv.frame(t, 'full', 'image/jpeg', 0.92), [t])));
+    } else {
+      const [ov, pl] = await page.evaluate(([t]) => [window.__lv.frame(t, 'overlay'), window.__lv.frame(t, 'plate', 'image/jpeg', 0.9)], [t]);
+      writeFileSync(join(pkg, 'layers', `overlay_${String(f).padStart(5, '0')}.png`), bytes(ov));
+      writeFileSync(join(pkg, 'layers', `plate_${String(f).padStart(5, '0')}.jpg`), bytes(pl));
+    }
     if (++done % 48 === 0) process.stdout.write(`\r  frames ${done}/${n}`);
   }
 }));

@@ -14,8 +14,9 @@ import type { Course } from '../../content/types';
 import type { Lecture } from '../../engine/lecture/types';
 import { NotFound } from '../../app/NotFound';
 import { useStudyPage } from '../../state/hooks';
-import { recommendTheme, themesOf } from '../../engine/lecture-video/analyze';
-import { buildPlan, isCurated, voiceKey } from '../../engine/lecture-video/plan';
+import { filmTheme, recommendTheme, themesOf } from '../../engine/lecture-video/analyze';
+import { buildPlan, isCurated, isFilm, voiceKey } from '../../engine/lecture-video/plan';
+import { FILM_KEY } from '../../engine/lecture-video/directions/lecture1';
 import { buildTiming, lengthsFromKokoro, tc, at, type KokoroTiming } from '../../engine/lecture-video/timing';
 import { INTENSITY_LABEL, STYLE_LABEL, type Duration, type Intensity, type LessonStyle, type Plan, type Timing } from '../../engine/lecture-video/types';
 import { renderFrame, sceneAt, activeShot, type Layer } from '../../engine/lecture-video/render';
@@ -66,8 +67,8 @@ export function VideoStudioPage() {
   const [localVideo, setLocalVideo] = useState<string | null>(null);
   const [busy, setBusy] = useState<string | null>(null);
 
-  const duration = (Number(q.get('d')) === 60 ? 60 : 30) as Duration;
-  const style = (['board', 'documentary', 'exam'].includes(q.get('style') ?? '') ? q.get('style') : 'board') as LessonStyle;
+  const durationQ = (Number(q.get('d')) === 60 ? 60 : 30) as Duration;
+  const styleQ = (['board', 'documentary', 'exam'].includes(q.get('style') ?? '') ? q.get('style') : 'board') as LessonStyle;
   const intensity = (['standard', 'gekiga', 'ultra'].includes(q.get('k') ?? '') ? q.get('k') : 'gekiga') as Intensity;
   const profile = (q.get('wan') === 'i2v-14b' ? 'i2v-14b' : 'ti2v-5b') as WanProfile;
   const set = (k: string, v: string) => { const n = new URLSearchParams(q); n.set(k, v); setQ(n, { replace: true }); };
@@ -86,11 +87,17 @@ export function VideoStudioPage() {
     return () => { live = false; };
   }, [courseId]);
 
-  const themes = useMemo(() => lectures.flatMap((l) => themesOf(courseId, l)), [lectures, courseId]);
-  const rec = useMemo(() => recommendTheme(themes), [themes]);
-  const themeKey = q.get('theme') && themes.some((t) => t.key === q.get('theme')) ? q.get('theme')! : rec?.theme.key ?? themes[0]?.key;
+  const sections = useMemo(() => lectures.flatMap((l) => themesOf(courseId, l)), [lectures, courseId]);
+  // 完成版: 第1講まるごと（hand-directed） is offered first when the course has it
+  const film = useMemo(() => { const l1 = lectures.find((l) => l.chapter === 1); return l1 && courseId === 'genetics-basics' ? filmTheme(courseId, l1, FILM_KEY) : null; }, [lectures, courseId]);
+  const themes = useMemo(() => (film ? [film, ...sections] : sections), [film, sections]);
+  const rec = useMemo(() => recommendTheme(sections), [sections]);
+  const themeKey = q.get('theme') && themes.some((t) => t.key === q.get('theme')) ? q.get('theme')! : film?.key ?? rec?.theme.key ?? themes[0]?.key;
   const theme = themes.find((t) => t.key === themeKey);
   const lecture = lectures.find((l) => l.chapter === theme?.lecture);
+  const filmMode = !!theme && isFilm(theme.key);
+  const duration: Duration = filmMode ? 'full' : durationQ;
+  const style: LessonStyle = filmMode ? 'board' : styleQ;
 
   const plan = useMemo<Plan | null>(() => (course && lecture && theme ? buildPlan({ course: course.id, courseTitle: course.title, lecture, theme, slides: course.slides, questions: course.questions }, { duration, style, intensity }) : null), [course, lecture, theme, duration, style, intensity]);
   const vk = theme ? voiceKey(theme.key, { duration, style }) : '';
@@ -158,9 +165,10 @@ export function VideoStudioPage() {
         </label>
         <label className="wide"><span>テーマを選択</span>
           <select value={themeKey ?? ''} onChange={(e) => set('theme', e.target.value)} disabled={!themes.length}>
+            {film && <optgroup label="完成版"><option value={film.key}>第1講「{film.lectureTitle}」まるごと（完成版・監修済み演出）</option></optgroup>}
             {lectures.map((l) => (
               <optgroup key={l.chapter} label={`第${l.chapter}講　${l.title}`}>
-                {themes.filter((t) => t.lecture === l.chapter).map((t) => (
+                {sections.filter((t) => t.lecture === l.chapter).map((t) => (
                   <option key={t.key} value={t.key}>{t.name}{t.key === rec?.theme.key ? '　★推奨' : ''}{isCurated(t.key) ? '（監修済み演出）' : t.substantive ? '（自動下書き）' : '（導入・まとめ）'}</option>
                 ))}
               </optgroup>
@@ -168,10 +176,12 @@ export function VideoStudioPage() {
           </select>
         </label>
         <fieldset><legend>動画時間</legend>
-          {([30, 60] as Duration[]).map((d) => <button key={d} type="button" aria-pressed={duration === d} onClick={() => set('d', String(d))}>{d}秒{d === 30 ? '（プロトタイプ）' : ''}</button>)}
+          {filmMode ? <button type="button" aria-pressed="true" disabled>完成版（講義まるごと）</button>
+            : ([30, 60] as Duration[]).map((d) => <button key={d} type="button" aria-pressed={duration === d} onClick={() => set('d', String(d))}>{d}秒{d === 30 ? '（プロトタイプ）' : ''}</button>)}
         </fieldset>
         <fieldset><legend>授業スタイル</legend>
-          {(['board', 'documentary', 'exam'] as LessonStyle[]).map((s) => <button key={s} type="button" aria-pressed={style === s} onClick={() => set('style', s)}>{STYLE_LABEL[s]}</button>)}
+          {(filmMode ? (['board'] as LessonStyle[]) : (['board', 'documentary', 'exam'] as LessonStyle[])).map((s) => <button key={s} type="button" aria-pressed={style === s} disabled={filmMode} onClick={() => set('style', s)}>{STYLE_LABEL[s]}</button>)}
+          {filmMode && <small>完成版は講義の黒板に沿って進むため、黒板講義型です。</small>}
         </fieldset>
         <fieldset><legend>アニメーション強度</legend>
           {(['standard', 'gekiga', 'ultra'] as Intensity[]).map((k) => <button key={k} type="button" aria-pressed={intensity === k} className={'k-' + k} onClick={() => set('k', k)}>{INTENSITY_LABEL[k]}</button>)}
@@ -304,7 +314,7 @@ function Preview({ plan, timing, audio }: { plan: Plan; timing: Timing; audio: s
     <section className="lv-player" aria-label="プレビュー">
       <div className={'lv-screen layer-' + layer}>
         <canvas ref={cv} width={W} height={H} onClick={() => (playing ? pause() : play())} aria-label="授業動画のプレビュー" />
-        {layer !== 'plate' && sub && <div className="lv-sub" aria-live="polite">{sub.text.split(/\*\*(.+?)\*\*/g).map((x, i) => (i % 2 ? <em key={i}>{x}</em> : x))}</div>}
+        {layer !== 'plate' && sub && <div className="lv-sub" aria-live="polite"><span>{sub.text.split(/\*\*(.+?)\*\*/g).map((x, i) => (i % 2 ? <em key={i}>{x}</em> : x))}</span></div>}
         <div className="lv-hud"><b>{sc.id}</b> {sc.title}<span>{shot.mode === 'feature' ? `Wan主役ショット ${sc.id}_${shot.id}` : `Wan背景ショット ${sc.id}_${shot.id}`}</span></div>
       </div>
       {audio && <audio ref={au} src={audio} preload="auto" />}

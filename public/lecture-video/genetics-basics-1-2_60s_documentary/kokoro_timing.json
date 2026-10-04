@@ -1,177 +1,178 @@
 {
  "plan": "genetics-basics-1-2_60s_documentary",
  "voice": "jm_kumo",
- "speed": 1.06,
+ "speed": 1.08,
+ "g2p": "cutlet",
  "scenes": [
   {
    "id": "S01",
    "file": "audio/S01.wav",
-   "duration": 4.4522,
+   "duration": 4.9645,
    "segs": [
     {
      "beat": "ask",
      "i": 0,
-     "speech": 2.4598
+     "speech": 2.6
     },
     {
      "beat": "ask",
      "i": 1,
-     "speech": 1.4924
+     "speech": 1.8645
     }
    ]
   },
   {
    "id": "S02",
    "file": "audio/S02.wav",
-   "duration": 14.3739,
+   "duration": 15.9114,
    "segs": [
     {
      "beat": "avery",
      "i": 0,
-     "speech": 1.435
+     "speech": 1.6
     },
     {
      "beat": "avery",
      "i": 1,
-     "speech": 2.9589
+     "speech": 3.6942
     },
     {
      "beat": "strainS",
      "i": 0,
-     "speech": 2.6976
+     "speech": 2.7578
     },
     {
      "beat": "strainS",
      "i": 1,
-     "speech": 1.6245
+     "speech": 1.814
     },
     {
      "beat": "strainR",
      "i": 0,
-     "speech": 2.9771
+     "speech": 3.1212
     },
     {
      "beat": "strainR",
      "i": 1,
-     "speech": 1.8807
+     "speech": 2.1242
     }
    ]
   },
   {
    "id": "S03",
    "file": "audio/S03.wav",
-   "duration": 9.1409,
+   "duration": 9.4834,
    "segs": [
     {
      "beat": "tubes",
      "i": 0,
-     "speech": 2.9328
+     "speech": 3.3
     },
     {
      "beat": "tubes",
      "i": 1,
-     "speech": 1.499
+     "speech": 1.7246
     },
     {
      "beat": "tubes",
      "i": 2,
-     "speech": 0.718
+     "speech": 0.6996
     },
     {
      "beat": "tubes",
      "i": 3,
-     "speech": 0.7555
+     "speech": 0.7005
     },
     {
      "beat": "tubes",
      "i": 4,
-     "speech": 0.7245
+     "speech": 0.6633
     },
     {
      "beat": "tubes",
      "i": 5,
-     "speech": 1.0032
+     "speech": 0.9529
     },
     {
      "beat": "tubes",
      "i": 6,
-     "speech": 1.0578
+     "speech": 0.9926
     }
    ]
   },
   {
    "id": "S04",
    "file": "audio/S04.wav",
-   "duration": 9.1183,
+   "duration": 9.9553,
    "segs": [
     {
      "beat": "result",
      "i": 0,
-     "speech": 2.7769
+     "speech": 3.02
     },
     {
      "beat": "result",
      "i": 1,
-     "speech": 2.1069
+     "speech": 2.6482
     },
     {
      "beat": "term",
      "i": 0,
-     "speech": 1.107
+     "speech": 1.139
     },
     {
      "beat": "term",
      "i": 1,
-     "speech": 1.9276
+     "speech": 1.948
     }
    ]
   },
   {
    "id": "S05",
    "file": "audio/S05.wav",
-   "duration": 9.7383,
+   "duration": 10.5693,
    "segs": [
     {
      "beat": "conclusion",
      "i": 0,
-     "speech": 2.4375
+     "speech": 2.71
     },
     {
      "beat": "conclusion",
      "i": 1,
-     "speech": 2.8805
+     "speech": 3.5293
     },
     {
      "beat": "important",
      "i": 0,
-     "speech": 3.4703
+     "speech": 3.38
     }
    ]
   },
   {
    "id": "S06",
    "file": "audio/S06.wav",
-   "duration": 14.4603,
+   "duration": 14.6813,
    "segs": [
     {
      "beat": "quizq",
      "i": 0,
-     "speech": 5.8371
+     "speech": 6.0047
     },
     {
      "beat": "quiza",
      "i": 0,
-     "speech": 0.94
+     "speech": 0.9919
     },
     {
      "beat": "quiza",
      "i": 1,
-     "speech": 2.9201
+     "speech": 2.915
     },
     {
      "beat": "quiza",
      "i": 2,
-     "speech": 3.7131
+     "speech": 3.7197
     }
    ]
   }

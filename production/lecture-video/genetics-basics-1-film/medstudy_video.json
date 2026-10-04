@@ -1,0 +1,6415 @@
+{
+ "format": "medstudy-lecture-video/1",
+ "created": "2026-10-04T17:59:16.938Z",
+ "roles": {
+  "MEDSTUDY": "教材理解・授業設計・医学図・管理",
+  "ComfyUI": "動画生成ワークフロー管理",
+  "Wan 2.2": "映像生成（文字・正確な構造は描かせない）",
+  "Kokoro": "日本語講師音声",
+  "FFmpeg": "映像・音声・字幕・効果音の最終統合"
+ },
+ "theme": "遺伝子の基礎（構造と機能） 第1講「遺伝子とは何か」— 完成版（講義まるごと）",
+ "curated": true,
+ "rationale": [
+  "第1講「遺伝子とは何か」を、講義の順（導入 → テーマ1 → テーマ2 → テーマ3 → まとめ）に1本の劇画授業映像にした完成版。",
+  "台詞はすべて第1講の講義台詞（narrations/lecture-01.json）の原文、またはその一部。板書は講義の黒板の文字をそのまま使う。",
+  "医学図：卵割、二重らせん（右巻き・主溝/副溝）、転写（鋳型鎖に相補的、TのかわりにU）、翻訳（遺伝暗号表どおりのコドン→アミノ酸）、細菌の核様体、21番染色体トリソミー、遺伝子1つの変異。患者の顔は描かない。"
+ ],
+ "options": {
+  "duration": "full",
+  "style": "黒板講義型",
+  "intensity": "劇画"
+ },
+ "wan": {
+  "profile": "ti2v-5b",
+  "label": "Wan 2.2 TI2V 5B（軽量・24fps）",
+  "w": 1280,
+  "h": 704,
+  "fps": 24,
+  "maxFrames": 121,
+  "note": "VRAM 8GB〜（ComfyUIのオフロード使用）。1280×704・最大121フレーム（約5秒）",
+  "jobs": [
+   {
+    "name": "S01_a",
+    "scene": "S01",
+    "shot": "a",
+    "mode": "feature",
+    "desc": "漆黒の空間で墨が爆ぜ、二重らせんの影がゆっくり回る。",
+    "t0": 0,
+    "dur": 8.09,
+    "frames": 121,
+    "keyframe": "keyframes/S01_a.png",
+    "prompt": "pitch black void, sumi ink exploding and swirling like smoke in water, the dark silhouette of a right-handed DNA double helix slowly rotating in the ink. Camera: fast push-in that stops abruptly, dramatic low angle, strong perspective, sudden held frame. Look: gekiga manga style animation, bold hand-inked black lines, heavy cross-hatched shadows, high contrast chiaroscuro, limited desaturated palette with deep blacks, dramatic composition, cinematic, 1980s Japanese gekiga illustration texture. The subject fills the frame. Accuracy: the helix is right-handed with a wide major groove and a narrow minor groove; no text, no letters, no labels.",
+    "negative": "text, letters, numbers, captions, subtitles, labels, watermark, logo, signature, speech bubbles, writing, symbols, deformed structures, extra objects, cartoon faces on cells, cute mascot, pastel colors, oversaturated, photorealistic skin, gore, blood, 色调艳丽，过曝，静态，细节模糊不清，字幕，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走",
+    "camera": "ゆっくり引く / 題名で急接近 → 静止",
+    "seed": 1245283089
+   },
+   {
+    "name": "S02_a",
+    "scene": "S02",
+    "shot": "a",
+    "mode": "background",
+    "desc": "暗い液体の中で、光の粒がゆっくり漂う。",
+    "t0": 8.09,
+    "dur": 7.307,
+    "frames": 121,
+    "keyframe": "keyframes/S02_a.png",
+    "prompt": "a dark warm fluid world, glowing particles drifting slowly, soft rim light, slow push-in. Camera: fast push-in that stops abruptly, dramatic low angle, strong perspective, sudden held frame. Look: gekiga manga style animation, bold hand-inked black lines, heavy cross-hatched shadows, high contrast chiaroscuro, limited desaturated palette with deep blacks, dramatic composition, cinematic, 1980s Japanese gekiga illustration texture. The centre of the frame stays calm and darker (an exact figure will be laid over it). Accuracy: background only, no text, no letters, no labels.",
+    "negative": "text, letters, numbers, captions, subtitles, labels, watermark, logo, signature, speech bubbles, writing, symbols, deformed structures, extra objects, cartoon faces on cells, cute mascot, pastel colors, oversaturated, photorealistic skin, gore, blood, 色调艳丽，过曝，静态，细节模糊不清，字幕，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走",
+    "camera": "分裂に合わせて少し引く / 「60兆個」で急激にズームアウト → ヒトの姿 / 細胞核の二重らせんへ寄る",
+    "seed": 4129601100
+   },
+   {
+    "name": "S02_b",
+    "scene": "S02",
+    "shot": "b",
+    "mode": "background",
+    "desc": "無数の光の粒が渦を巻いて広がる。",
+    "t0": 15.397,
+    "dur": 11.034,
+    "frames": 121,
+    "keyframe": "keyframes/S02_b.png",
+    "prompt": "countless glowing particles swirling outward in a dark space, camera pulling back fast, motion streaks. Camera: fast push-in that stops abruptly, dramatic low angle, strong perspective, sudden held frame. Look: gekiga manga style animation, bold hand-inked black lines, heavy cross-hatched shadows, high contrast chiaroscuro, limited desaturated palette with deep blacks, dramatic composition, cinematic, 1980s Japanese gekiga illustration texture. The centre of the frame stays calm and darker (an exact figure will be laid over it). Accuracy: background only, no human figure, no text, no letters, no labels.",
+    "negative": "text, letters, numbers, captions, subtitles, labels, watermark, logo, signature, speech bubbles, writing, symbols, deformed structures, extra objects, cartoon faces on cells, cute mascot, pastel colors, oversaturated, photorealistic skin, gore, blood, 色调艳丽，过曝，静态，细节模糊不清，字幕，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走",
+    "camera": "分裂に合わせて少し引く / 「60兆個」で急激にズームアウト → ヒトの姿 / 細胞核の二重らせんへ寄る",
+    "seed": 4179933957
+   },
+   {
+    "name": "S03_a",
+    "scene": "S03",
+    "shot": "a",
+    "mode": "background",
+    "desc": "夜の講義室。黒板の前を舞うチョークの粉と、一筋の光。",
+    "t0": 26.431,
+    "dur": 8.674,
+    "frames": 121,
+    "keyframe": "keyframes/S03_a.png",
+    "prompt": "a dark empty lecture hall at night, a huge slate blackboard, a single hard shaft of light cutting through floating chalk dust, dust motes drifting slowly. Camera: fast push-in that stops abruptly, dramatic low angle, strong perspective, sudden held frame. Look: gekiga manga style animation, bold hand-inked black lines, heavy cross-hatched shadows, high contrast chiaroscuro, limited desaturated palette with deep blacks, dramatic composition, cinematic, 1980s Japanese gekiga illustration texture. The centre of the frame stays calm and darker (an exact figure will be laid over it). Accuracy: no people, no writing on the board.",
+    "negative": "text, letters, numbers, captions, subtitles, labels, watermark, logo, signature, speech bubbles, writing, symbols, deformed structures, extra objects, cartoon faces on cells, cute mascot, pastel colors, oversaturated, photorealistic skin, gore, blood, 色调艳丽，过曝，静态，细节模糊不清，字幕，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走",
+    "camera": "ゆっくり前進 / 「DNA」の語で「？」へ急接近 → 静止",
+    "seed": 2492062055
+   },
+   {
+    "name": "S03_b",
+    "scene": "S03",
+    "shot": "b",
+    "mode": "background",
+    "desc": "同じ講義室、光の筋が強くなる。",
+    "t0": 35.105,
+    "dur": 5.341,
+    "frames": 121,
+    "keyframe": "keyframes/S03_b.png",
+    "prompt": "a dark empty lecture hall at night, a huge slate blackboard, a single hard shaft of light cutting through floating chalk dust, dust motes drifting slowly, the light grows harsher. Camera: fast push-in that stops abruptly, dramatic low angle, strong perspective, sudden held frame. Look: gekiga manga style animation, bold hand-inked black lines, heavy cross-hatched shadows, high contrast chiaroscuro, limited desaturated palette with deep blacks, dramatic composition, cinematic, 1980s Japanese gekiga illustration texture. The centre of the frame stays calm and darker (an exact figure will be laid over it). Accuracy: no people, no writing on the board.",
+    "negative": "text, letters, numbers, captions, subtitles, labels, watermark, logo, signature, speech bubbles, writing, symbols, deformed structures, extra objects, cartoon faces on cells, cute mascot, pastel colors, oversaturated, photorealistic skin, gore, blood, 色调艳丽，过曝，静态，细节模糊不清，字幕，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走",
+    "camera": "ゆっくり前進 / 「DNA」の語で「？」へ急接近 → 静止",
+    "seed": 2508839674
+   },
+   {
+    "name": "S04_a",
+    "scene": "S04",
+    "shot": "a",
+    "mode": "background",
+    "desc": "暗い液体の微小世界。ピントの外れた双球菌の対がゆっくり漂い、粒子が光る。",
+    "t0": 40.446,
+    "dur": 5.784,
+    "frames": 121,
+    "keyframe": "keyframes/S04_a.png",
+    "prompt": "a dark microscopic fluid world, out-of-focus Streptococcus pneumoniae drawn as lancet-shaped diplococci (two slightly pointed oval cells joined end to end, always in pairs) drifting slowly, tiny particles sparkling, cold bioluminescent rim light, slow push-in. Camera: fast push-in that stops abruptly, dramatic low angle, strong perspective, sudden held frame. Look: gekiga manga style animation, bold hand-inked black lines, heavy cross-hatched shadows, high contrast chiaroscuro, limited desaturated palette with deep blacks, dramatic composition, cinematic, 1980s Japanese gekiga illustration texture. The centre of the frame stays calm and darker (an exact figure will be laid over it). Accuracy: bacteria stay in pairs, no flagella, no cilia, no nucleus, no eyes or faces.",
+    "negative": "text, letters, numbers, captions, subtitles, labels, watermark, logo, signature, speech bubbles, writing, symbols, deformed structures, extra objects, cartoon faces on cells, cute mascot, pastel colors, oversaturated, photorealistic skin, gore, blood, 色调艳丽，过曝，静态，细节模糊不清，字幕，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走",
+    "camera": "「1944」の判を押す（30秒版は画面のみで示す） / S株のコマへ寄る（被膜を見せる） / R株へ高速パン（ホイップ）",
+    "seed": 2547142026
+   },
+   {
+    "name": "S04_b",
+    "scene": "S04",
+    "shot": "b",
+    "mode": "background",
+    "desc": "同じ微小世界でカメラが横へ流れる（S株→R株のパン）。",
+    "t0": 46.231,
+    "dur": 11.03,
+    "frames": 121,
+    "keyframe": "keyframes/S04_b.png",
+    "prompt": "the same dark microscopic fluid world, Streptococcus pneumoniae drawn as lancet-shaped diplococci (two slightly pointed oval cells joined end to end, always in pairs) out of focus, the camera sweeps sideways fast, motion blur streaks. Camera: fast push-in that stops abruptly, dramatic low angle, strong perspective, sudden held frame. Look: gekiga manga style animation, bold hand-inked black lines, heavy cross-hatched shadows, high contrast chiaroscuro, limited desaturated palette with deep blacks, dramatic composition, cinematic, 1980s Japanese gekiga illustration texture. The centre of the frame stays calm and darker (an exact figure will be laid over it). Accuracy: bacteria stay in pairs, no flagella, no cilia, no nucleus, no eyes or faces.",
+    "negative": "text, letters, numbers, captions, subtitles, labels, watermark, logo, signature, speech bubbles, writing, symbols, deformed structures, extra objects, cartoon faces on cells, cute mascot, pastel colors, oversaturated, photorealistic skin, gore, blood, 色调艳丽，过曝，静态，细节模糊不清，字幕，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走",
+    "camera": "「1944」の判を押す（30秒版は画面のみで示す） / S株のコマへ寄る（被膜を見せる） / R株へ高速パン（ホイップ）",
+    "seed": 2530364407
+   },
+   {
+    "name": "S05_a",
+    "scene": "S05",
+    "shot": "a",
+    "mode": "background",
+    "desc": "暗い実験台。ガラス器具がハードライトで光り、滴がスローモーションで落ちる。",
+    "t0": 57.26,
+    "dur": 5.391,
+    "frames": 121,
+    "keyframe": "keyframes/S05_a.png",
+    "prompt": "a dark laboratory bench, glass test tubes in a rack glinting under a single hard spotlight, a drop of clear liquid falling in slow motion into a glass dish, faint vapour. Camera: fast push-in that stops abruptly, dramatic low angle, strong perspective, sudden held frame. Look: gekiga manga style animation, bold hand-inked black lines, heavy cross-hatched shadows, high contrast chiaroscuro, limited desaturated palette with deep blacks, dramatic composition, cinematic, 1980s Japanese gekiga illustration texture. The centre of the frame stays calm and darker (an exact figure will be laid over it). Accuracy: glassware only, no labels, no colored liquids, no hands.",
+    "negative": "text, letters, numbers, captions, subtitles, labels, watermark, logo, signature, speech bubbles, writing, symbols, deformed structures, extra objects, cartoon faces on cells, cute mascot, pastel colors, oversaturated, photorealistic skin, gore, blood, 色调艳丽，过曝，静态，细节模糊不清，字幕，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走",
+    "camera": "S株から取り出す（試験管へ寄る） / 5枚の皿へ滴下を見せる / DNA の試験管へ急接近 / RNA へ跳ぶ / 脂質へ跳ぶ / タンパク質へ跳ぶ / 炭水化物へ跳ぶ / 急激に引いて5本を並べる",
+    "seed": 4099671717
+   },
+   {
+    "name": "S05_b",
+    "scene": "S05",
+    "shot": "b",
+    "mode": "background",
+    "desc": "同じ実験台。カメラが試験管の列に沿って高速で横移動。",
+    "t0": 62.651,
+    "dur": 4.718,
+    "frames": 117,
+    "keyframe": "keyframes/S05_b.png",
+    "prompt": "the same dark laboratory bench, the camera tracks fast along a row of glass test tubes, glints streaking, motion blur. Camera: fast push-in that stops abruptly, dramatic low angle, strong perspective, sudden held frame. Look: gekiga manga style animation, bold hand-inked black lines, heavy cross-hatched shadows, high contrast chiaroscuro, limited desaturated palette with deep blacks, dramatic composition, cinematic, 1980s Japanese gekiga illustration texture. The centre of the frame stays calm and darker (an exact figure will be laid over it). Accuracy: glassware only, no labels, no colored liquids, no hands.",
+    "negative": "text, letters, numbers, captions, subtitles, labels, watermark, logo, signature, speech bubbles, writing, symbols, deformed structures, extra objects, cartoon faces on cells, cute mascot, pastel colors, oversaturated, photorealistic skin, gore, blood, 色调艳丽，过曝，静态，细节模糊不清，字幕，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走",
+    "camera": "S株から取り出す（試験管へ寄る） / 5枚の皿へ滴下を見せる / DNA の試験管へ急接近 / RNA へ跳ぶ / 脂質へ跳ぶ / タンパク質へ跳ぶ / 炭水化物へ跳ぶ / 急激に引いて5本を並べる",
+    "seed": 4049338860
+   },
+   {
+    "name": "S06_a",
+    "scene": "S06",
+    "shot": "a",
+    "mode": "background",
+    "desc": "硬いスポットライトの下、暗い実験台に並ぶ培養皿。光がゆっくり揺れる。",
+    "t0": 67.369,
+    "dur": 8.276,
+    "frames": 121,
+    "keyframe": "keyframes/S06_a.png",
+    "prompt": "a row of glass petri dishes on a dark bench under a hard spotlight, light slowly sweeping across, deep shadows. Camera: fast push-in that stops abruptly, dramatic low angle, strong perspective, sudden held frame. Look: gekiga manga style animation, bold hand-inked black lines, heavy cross-hatched shadows, high contrast chiaroscuro, limited desaturated palette with deep blacks, dramatic composition, cinematic, 1980s Japanese gekiga illustration texture. The centre of the frame stays calm and darker (an exact figure will be laid over it). Accuracy: dishes empty or with faint agar, no labels, no hands.",
+    "negative": "text, letters, numbers, captions, subtitles, labels, watermark, logo, signature, speech bubbles, writing, symbols, deformed structures, extra objects, cartoon faces on cells, cute mascot, pastel colors, oversaturated, photorealistic skin, gore, blood, 色调艳丽，过曝，静态，细节模糊不清，字幕，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走",
+    "camera": "じわりと寄る / DNA の皿へ急接近 → 静止 / 大写しへさらに寄る",
+    "seed": 2720256544
+   },
+   {
+    "name": "S06_b",
+    "scene": "S06",
+    "shot": "b",
+    "mode": "feature",
+    "desc": "1個の双球菌（R株）の大写し。厚く半透明で艶のある被膜が一気に包み込み、表面が滑らかになる。",
+    "t0": 75.645,
+    "dur": 2.107,
+    "frames": 53,
+    "keyframe": "keyframes/S06_b.png",
+    "prompt": "extreme macro close-up of a single pair of Streptococcus pneumoniae drawn as lancet-shaped diplococci (two slightly pointed oval cells joined end to end, always in pairs) floating in dark fluid; a thick translucent glossy capsule rapidly forms and envelops the pair, its surface turning smooth and shining. Camera: fast push-in that stops abruptly, dramatic low angle, strong perspective, sudden held frame. Look: gekiga manga style animation, bold hand-inked black lines, heavy cross-hatched shadows, high contrast chiaroscuro, limited desaturated palette with deep blacks, dramatic composition, cinematic, 1980s Japanese gekiga illustration texture. The subject fills the frame. Accuracy: exactly one pair of cells, the capsule is a smooth translucent layer around the outside of the pair, cells keep their shape, no nucleus, no flagella, no faces.",
+    "negative": "many bacteria, rod-shaped bacteria, spirals, viruses, DNA helix, text, letters, numbers, captions, subtitles, labels, watermark, logo, signature, speech bubbles, writing, symbols, deformed structures, extra objects, cartoon faces on cells, cute mascot, pastel colors, oversaturated, photorealistic skin, gore, blood, 色调艳丽，过曝，静态，细节模糊不清，字幕，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走",
+    "camera": "じわりと寄る / DNA の皿へ急接近 → 静止 / 大写しへさらに寄る",
+    "seed": 2770589401
+   },
+   {
+    "name": "S07_a",
+    "scene": "S07",
+    "shot": "a",
+    "mode": "background",
+    "desc": "S01と同じ講義室。光の筋がゆっくり強くなる。",
+    "t0": 77.752,
+    "dur": 11.095,
+    "frames": 121,
+    "keyframe": "keyframes/S07_a.png",
+    "prompt": "the same dark lecture hall, the shaft of light slowly growing brighter, chalk dust settling. Camera: fast push-in that stops abruptly, dramatic low angle, strong perspective, sudden held frame. Look: gekiga manga style animation, bold hand-inked black lines, heavy cross-hatched shadows, high contrast chiaroscuro, limited desaturated palette with deep blacks, dramatic composition, cinematic, 1980s Japanese gekiga illustration texture. The centre of the frame stays calm and darker (an exact figure will be laid over it). Accuracy: no people, no writing.",
+    "negative": "text, letters, numbers, captions, subtitles, labels, watermark, logo, signature, speech bubbles, writing, symbols, deformed structures, extra objects, cartoon faces on cells, cute mascot, pastel colors, oversaturated, photorealistic skin, gore, blood, 色调艳丽，过曝，静态，细节模糊不清，字幕，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走",
+    "camera": "赤枠と同時に急激なズームアウト",
+    "seed": 1051483387
+   },
+   {
+    "name": "S08_a",
+    "scene": "S08",
+    "shot": "a",
+    "mode": "background",
+    "desc": "夜の講義室。",
+    "t0": 88.847,
+    "dur": 13.643,
+    "frames": 121,
+    "keyframe": "keyframes/S08_a.png",
+    "prompt": "a dark empty lecture hall at night, a huge slate blackboard, a single hard shaft of light cutting through floating chalk dust, dust motes drifting slowly. Camera: fast push-in that stops abruptly, dramatic low angle, strong perspective, sudden held frame. Look: gekiga manga style animation, bold hand-inked black lines, heavy cross-hatched shadows, high contrast chiaroscuro, limited desaturated palette with deep blacks, dramatic composition, cinematic, 1980s Japanese gekiga illustration texture. The centre of the frame stays calm and darker (an exact figure will be laid over it). Accuracy: no people, no writing on the board.",
+    "negative": "text, letters, numbers, captions, subtitles, labels, watermark, logo, signature, speech bubbles, writing, symbols, deformed structures, extra objects, cartoon faces on cells, cute mascot, pastel colors, oversaturated, photorealistic skin, gore, blood, 色调艳丽，过曝，静态，细节模糊不清，字幕，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走",
+    "camera": "「？」へ寄る / 「RNA」で急接近 / 「タンパク質」で引いて三段を見せる",
+    "seed": 2522094606
+   },
+   {
+    "name": "S09_a",
+    "scene": "S09",
+    "shot": "a",
+    "mode": "background",
+    "desc": "夜の講義室。",
+    "t0": 102.49,
+    "dur": 12.695,
+    "frames": 121,
+    "keyframe": "keyframes/S09_a.png",
+    "prompt": "a dark empty lecture hall at night, a huge slate blackboard, a single hard shaft of light cutting through floating chalk dust, dust motes drifting slowly. Camera: fast push-in that stops abruptly, dramatic low angle, strong perspective, sudden held frame. Look: gekiga manga style animation, bold hand-inked black lines, heavy cross-hatched shadows, high contrast chiaroscuro, limited desaturated palette with deep blacks, dramatic composition, cinematic, 1980s Japanese gekiga illustration texture. The centre of the frame stays calm and darker (an exact figure will be laid over it). Accuracy: no people, no writing on the board.",
+    "negative": "text, letters, numbers, captions, subtitles, labels, watermark, logo, signature, speech bubbles, writing, symbols, deformed structures, extra objects, cartoon faces on cells, cute mascot, pastel colors, oversaturated, photorealistic skin, gore, blood, 色调艳丽，过曝，静态，细节模糊不清，字幕，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走",
+    "camera": "上の矢印へ / 「転写」で急接近 / 下の矢印へ高速パン / 「翻訳」で急接近",
+    "seed": 4074521129
+   },
+   {
+    "name": "S10_a",
+    "scene": "S10",
+    "shot": "a",
+    "mode": "background",
+    "desc": "細胞核の中の暗い水の世界。",
+    "t0": 115.185,
+    "dur": 13.46,
+    "frames": 121,
+    "keyframe": "keyframes/S10_a.png",
+    "prompt": "a dark watery molecular world inside a cell nucleus, soft out-of-focus particles drifting, cold rim light, slow push-in. Camera: fast push-in that stops abruptly, dramatic low angle, strong perspective, sudden held frame. Look: gekiga manga style animation, bold hand-inked black lines, heavy cross-hatched shadows, high contrast chiaroscuro, limited desaturated palette with deep blacks, dramatic composition, cinematic, 1980s Japanese gekiga illustration texture. The centre of the frame stays calm and darker (an exact figure will be laid over it). Accuracy: background only, no molecules in focus, no text, no letters, no labels.",
+    "negative": "text, letters, numbers, captions, subtitles, labels, watermark, logo, signature, speech bubbles, writing, symbols, deformed structures, extra objects, cartoon faces on cells, cute mascot, pastel colors, oversaturated, photorealistic skin, gore, blood, 色调艳丽，过曝，静态，细节模糊不清，字幕，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走",
+    "camera": "のぞき込む / ポリメラーゼへ寄る / 鎖に沿って移動（RNAが伸びる） / 「転写」で急激に引く",
+    "seed": 4141444139
+   },
+   {
+    "name": "S10_b",
+    "scene": "S10",
+    "shot": "b",
+    "mode": "background",
+    "desc": "同じ世界でカメラが横へ流れる。",
+    "t0": 128.646,
+    "dur": 4.46,
+    "frames": 109,
+    "keyframe": "keyframes/S10_b.png",
+    "prompt": "a dark watery molecular world inside a cell nucleus, soft out-of-focus particles drifting, cold rim light, slow push-in, the camera tracks sideways. Camera: fast push-in that stops abruptly, dramatic low angle, strong perspective, sudden held frame. Look: gekiga manga style animation, bold hand-inked black lines, heavy cross-hatched shadows, high contrast chiaroscuro, limited desaturated palette with deep blacks, dramatic composition, cinematic, 1980s Japanese gekiga illustration texture. The centre of the frame stays calm and darker (an exact figure will be laid over it). Accuracy: background only, no text, no letters, no labels.",
+    "negative": "text, letters, numbers, captions, subtitles, labels, watermark, logo, signature, speech bubbles, writing, symbols, deformed structures, extra objects, cartoon faces on cells, cute mascot, pastel colors, oversaturated, photorealistic skin, gore, blood, 色调艳丽，过曝，静态，细节模糊不清，字幕，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走",
+    "camera": "のぞき込む / ポリメラーゼへ寄る / 鎖に沿って移動（RNAが伸びる） / 「転写」で急激に引く",
+    "seed": 4158221758
+   },
+   {
+    "name": "S11_a",
+    "scene": "S11",
+    "shot": "a",
+    "mode": "background",
+    "desc": "細胞質の暗い世界。粒がゆっくり流れる。",
+    "t0": 133.105,
+    "dur": 10.091,
+    "frames": 121,
+    "keyframe": "keyframes/S11_a.png",
+    "prompt": "the dark crowded cytoplasm of a cell, out-of-focus particles drifting, warm rim light, slow tracking shot. Camera: fast push-in that stops abruptly, dramatic low angle, strong perspective, sudden held frame. Look: gekiga manga style animation, bold hand-inked black lines, heavy cross-hatched shadows, high contrast chiaroscuro, limited desaturated palette with deep blacks, dramatic composition, cinematic, 1980s Japanese gekiga illustration texture. The centre of the frame stays calm and darker (an exact figure will be laid over it). Accuracy: background only, no text, no letters, no labels.",
+    "negative": "text, letters, numbers, captions, subtitles, labels, watermark, logo, signature, speech bubbles, writing, symbols, deformed structures, extra objects, cartoon faces on cells, cute mascot, pastel colors, oversaturated, photorealistic skin, gore, blood, 色调艳丽，过曝，静态，细节模糊不清，字幕，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走",
+    "camera": "リボソームへ高速パン / RNAに沿って移動（アミノ酸の鎖が伸びる） / 「翻訳」で急激に引く",
+    "seed": 2578675024
+   },
+   {
+    "name": "S12_a",
+    "scene": "S12",
+    "shot": "a",
+    "mode": "background",
+    "desc": "暗い背景に光の筋。",
+    "t0": 143.196,
+    "dur": 7.847,
+    "frames": 121,
+    "keyframe": "keyframes/S12_a.png",
+    "prompt": "abstract dark background, slow streaks of warm light drifting, subtle film grain. Camera: fast push-in that stops abruptly, dramatic low angle, strong perspective, sudden held frame. Look: gekiga manga style animation, bold hand-inked black lines, heavy cross-hatched shadows, high contrast chiaroscuro, limited desaturated palette with deep blacks, dramatic composition, cinematic, 1980s Japanese gekiga illustration texture. The centre of the frame stays calm and darker (an exact figure will be laid over it). Accuracy: no text, no letters, no labels.",
+    "negative": "text, letters, numbers, captions, subtitles, labels, watermark, logo, signature, speech bubbles, writing, symbols, deformed structures, extra objects, cartoon faces on cells, cute mascot, pastel colors, oversaturated, photorealistic skin, gore, blood, 色调艳丽，过曝，静态，细节模糊不清，字幕，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走",
+    "camera": "右のコマ「翻訳」へ高速パン / 2コマを並べる",
+    "seed": 3947644437
+   },
+   {
+    "name": "S13_a",
+    "scene": "S13",
+    "shot": "a",
+    "mode": "background",
+    "desc": "暗い空間に光の粒が流れる。",
+    "t0": 151.043,
+    "dur": 14.601,
+    "frames": 121,
+    "keyframe": "keyframes/S13_a.png",
+    "prompt": "abstract dark space with flowing glowing particles, slow sideways camera move. Camera: fast push-in that stops abruptly, dramatic low angle, strong perspective, sudden held frame. Look: gekiga manga style animation, bold hand-inked black lines, heavy cross-hatched shadows, high contrast chiaroscuro, limited desaturated palette with deep blacks, dramatic composition, cinematic, 1980s Japanese gekiga illustration texture. The centre of the frame stays calm and darker (an exact figure will be laid over it). Accuracy: no text, no letters, no labels.",
+    "negative": "text, letters, numbers, captions, subtitles, labels, watermark, logo, signature, speech bubbles, writing, symbols, deformed structures, extra objects, cartoon faces on cells, cute mascot, pastel colors, oversaturated, photorealistic skin, gore, blood, 色调艳丽，过曝，静态，细节模糊不清，字幕，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走",
+    "camera": "「セントラルドグマ」で急接近 / 引いて細菌〜ヒトを並べる / 横へ流す",
+    "seed": 2405560506
+   },
+   {
+    "name": "S14_a",
+    "scene": "S14",
+    "shot": "a",
+    "mode": "background",
+    "desc": "暗い空間を、光の粒が後ろへ流れていく（引いていく感覚）。",
+    "t0": 165.644,
+    "dur": 8.485,
+    "frames": 121,
+    "keyframe": "keyframes/S14_a.png",
+    "prompt": "abstract dark space, glowing particles rushing away from the camera as it pulls back very fast, depth layers. Camera: fast push-in that stops abruptly, dramatic low angle, strong perspective, sudden held frame. Look: gekiga manga style animation, bold hand-inked black lines, heavy cross-hatched shadows, high contrast chiaroscuro, limited desaturated palette with deep blacks, dramatic composition, cinematic, 1980s Japanese gekiga illustration texture. The centre of the frame stays calm and darker (an exact figure will be laid over it). Accuracy: background only, no text, no letters, no labels.",
+    "negative": "text, letters, numbers, captions, subtitles, labels, watermark, logo, signature, speech bubbles, writing, symbols, deformed structures, extra objects, cartoon faces on cells, cute mascot, pastel colors, oversaturated, photorealistic skin, gore, blood, 色调艳丽，过曝，静态，细节模糊不清，字幕，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走",
+    "camera": "",
+    "seed": 1235136215
+   },
+   {
+    "name": "S14_b",
+    "scene": "S14",
+    "shot": "b",
+    "mode": "background",
+    "desc": "逆に、光の粒へ突っ込んでいく。",
+    "t0": 174.129,
+    "dur": 8.203,
+    "frames": 121,
+    "keyframe": "keyframes/S14_b.png",
+    "prompt": "abstract dark space, the camera dives forward fast through glowing particles toward a tiny bright point. Camera: fast push-in that stops abruptly, dramatic low angle, strong perspective, sudden held frame. Look: gekiga manga style animation, bold hand-inked black lines, heavy cross-hatched shadows, high contrast chiaroscuro, limited desaturated palette with deep blacks, dramatic composition, cinematic, 1980s Japanese gekiga illustration texture. The centre of the frame stays calm and darker (an exact figure will be laid over it). Accuracy: background only, no text, no letters, no labels.",
+    "negative": "text, letters, numbers, captions, subtitles, labels, watermark, logo, signature, speech bubbles, writing, symbols, deformed structures, extra objects, cartoon faces on cells, cute mascot, pastel colors, oversaturated, photorealistic skin, gore, blood, 色调艳丽，过曝，静态，细节模糊不清，字幕，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走",
+    "camera": "",
+    "seed": 1251913834
+   },
+   {
+    "name": "S15_a",
+    "scene": "S15",
+    "shot": "a",
+    "mode": "background",
+    "desc": "夜の講義室。",
+    "t0": 182.332,
+    "dur": 32.904,
+    "frames": 121,
+    "keyframe": "keyframes/S15_a.png",
+    "prompt": "a dark empty lecture hall at night, a huge slate blackboard, a single hard shaft of light cutting through floating chalk dust, dust motes drifting slowly. Camera: fast push-in that stops abruptly, dramatic low angle, strong perspective, sudden held frame. Look: gekiga manga style animation, bold hand-inked black lines, heavy cross-hatched shadows, high contrast chiaroscuro, limited desaturated palette with deep blacks, dramatic composition, cinematic, 1980s Japanese gekiga illustration texture. The centre of the frame stays calm and darker (an exact figure will be laid over it). Accuracy: no people, no writing on the board, no patients, no faces.",
+    "negative": "text, letters, numbers, captions, subtitles, labels, watermark, logo, signature, speech bubbles, writing, symbols, deformed structures, extra objects, cartoon faces on cells, cute mascot, pastel colors, oversaturated, photorealistic skin, gore, blood, 色调艳丽，过曝，静态，细节模糊不清，字幕，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走",
+    "camera": "3本目の21番染色体へ急接近 / 引く / 遺伝子の1か所の変異へ寄る / 同じ図で TCOF1 / 全体へ",
+    "seed": 3977676988
+   },
+   {
+    "name": "S16_a",
+    "scene": "S16",
+    "shot": "a",
+    "mode": "background",
+    "desc": "暗い空間を下から上へ光が昇る。",
+    "t0": 215.236,
+    "dur": 8.343,
+    "frames": 121,
+    "keyframe": "keyframes/S16_a.png",
+    "prompt": "abstract dark vertical space, a beam of light rising from the bottom to the top, sparks. Camera: fast push-in that stops abruptly, dramatic low angle, strong perspective, sudden held frame. Look: gekiga manga style animation, bold hand-inked black lines, heavy cross-hatched shadows, high contrast chiaroscuro, limited desaturated palette with deep blacks, dramatic composition, cinematic, 1980s Japanese gekiga illustration texture. The centre of the frame stays calm and darker (an exact figure will be laid over it). Accuracy: no text, no letters, no labels.",
+    "negative": "text, letters, numbers, captions, subtitles, labels, watermark, logo, signature, speech bubbles, writing, symbols, deformed structures, extra objects, cartoon faces on cells, cute mascot, pastel colors, oversaturated, photorealistic skin, gore, blood, 色调艳丽，过曝，静态，细节模糊不清，字幕，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走",
+    "camera": "線と一緒に駆け上がる / 「疾患」で急接近",
+    "seed": 1093255809
+   },
+   {
+    "name": "S17_a",
+    "scene": "S17",
+    "shot": "a",
+    "mode": "background",
+    "desc": "夜の講義室。光がゆっくり強くなる。",
+    "t0": 223.579,
+    "dur": 28.658,
+    "frames": 121,
+    "keyframe": "keyframes/S17_a.png",
+    "prompt": "a dark empty lecture hall at night, a huge slate blackboard, a single hard shaft of light cutting through floating chalk dust, dust motes drifting slowly, the light slowly grows warmer. Camera: fast push-in that stops abruptly, dramatic low angle, strong perspective, sudden held frame. Look: gekiga manga style animation, bold hand-inked black lines, heavy cross-hatched shadows, high contrast chiaroscuro, limited desaturated palette with deep blacks, dramatic composition, cinematic, 1980s Japanese gekiga illustration texture. The centre of the frame stays calm and darker (an exact figure will be laid over it). Accuracy: no people, no writing on the board.",
+    "negative": "text, letters, numbers, captions, subtitles, labels, watermark, logo, signature, speech bubbles, writing, symbols, deformed structures, extra objects, cartoon faces on cells, cute mascot, pastel colors, oversaturated, photorealistic skin, gore, blood, 色调艳丽，过曝，静态，细节模糊不清，字幕，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走",
+    "camera": "①へ / ②へ / ③へ / ④へ / 4つを並べて引く",
+    "seed": 2730898022
+   },
+   {
+    "name": "S18_a",
+    "scene": "S18",
+    "shot": "a",
+    "mode": "background",
+    "desc": "漆黒に墨がゆっくり広がる。",
+    "t0": 252.236,
+    "dur": 8.49,
+    "frames": 121,
+    "keyframe": "keyframes/S18_a.png",
+    "prompt": "pitch black void, sumi ink spreading slowly, gentle. Camera: fast push-in that stops abruptly, dramatic low angle, strong perspective, sudden held frame. Look: gekiga manga style animation, bold hand-inked black lines, heavy cross-hatched shadows, high contrast chiaroscuro, limited desaturated palette with deep blacks, dramatic composition, cinematic, 1980s Japanese gekiga illustration texture. The centre of the frame stays calm and darker (an exact figure will be laid over it). Accuracy: no text, no letters, no labels.",
+    "negative": "text, letters, numbers, captions, subtitles, labels, watermark, logo, signature, speech bubbles, writing, symbols, deformed structures, extra objects, cartoon faces on cells, cute mascot, pastel colors, oversaturated, photorealistic skin, gore, blood, 色调艳丽，过曝，静态，细节模糊不清，字幕，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走",
+    "camera": "ゆっくり引いて終わる",
+    "seed": 2675714883
+   }
+  ]
+ },
+ "kokoro": {
+  "plan": "genetics-basics-1-film_board",
+  "engine": "kokoro (Kokoro-82M v1.0, ONNX) + misaki ja G2P (pyopenjtalk)",
+  "voice": "jm_kumo",
+  "speed": 1,
+  "sampleRate": 24000,
+  "note": "say = 読み（英字・誤読しやすい語はかな）。pre/post = 前後の間（秒）。speed = 区間ごとの話速（重要語はやや遅く）。",
+  "scenes": [
+   {
+    "id": "S01",
+    "file": "audio/S01.wav",
+    "segs": [
+     {
+      "beat": "open",
+      "i": 0,
+      "text": "はい、始めましょう。",
+      "say": "はい、始めましょう。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.15,
+      "cue": "hello"
+     },
+     {
+      "beat": "open",
+      "i": 1,
+      "text": "遺伝医学、最初の単元は「遺伝子の基礎」です。",
+      "say": "遺伝医学、最初の単元は遺伝子の基礎です。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.1,
+      "cue": "unit"
+     },
+     {
+      "beat": "open",
+      "i": 2,
+      "text": "今日は第1講、「遺伝子とは何か」。",
+      "say": "今日は第1講、遺伝子とは何か。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.5,
+      "cue": "title"
+     }
+    ]
+   },
+   {
+    "id": "S02",
+    "file": "audio/S02.wav",
+    "segs": [
+     {
+      "beat": "egg",
+      "i": 0,
+      "text": "私たちの体は、たった1個の細胞、",
+      "say": "私たちの体は、たった1個の細胞、",
+      "speed": 1,
+      "pre": 0,
+      "post": 0,
+      "cue": "one"
+     },
+     {
+      "beat": "egg",
+      "i": 1,
+      "text": "受精卵から始まります。",
+      "say": "受精卵から始まります。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.2,
+      "cue": "egg"
+     },
+     {
+      "beat": "divide",
+      "i": 0,
+      "text": "分裂を繰り返して",
+      "say": "分裂を繰り返して",
+      "speed": 1,
+      "pre": 0,
+      "post": 0,
+      "cue": "split"
+     },
+     {
+      "beat": "divide",
+      "i": 1,
+      "text": "60兆個の細胞になり、ヒトの形になっていく。",
+      "say": "60兆個の細胞になり、ヒトの形になっていく。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.25,
+      "cue": "body"
+     },
+     {
+      "beat": "same",
+      "i": 0,
+      "text": "では、この60兆個の細胞に、",
+      "say": "では、この60兆個の細胞に、",
+      "speed": 1,
+      "pre": 0,
+      "post": 0,
+      "cue": "all"
+     },
+     {
+      "beat": "same",
+      "i": 1,
+      "text": "どうやって同じ設計図が配られているのか。",
+      "say": "どうやって同じ設計図が配られているのか。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.3,
+      "cue": "same"
+     }
+    ]
+   },
+   {
+    "id": "S03",
+    "file": "audio/S03.wav",
+    "segs": [
+     {
+      "beat": "theme",
+      "i": 0,
+      "text": "その設計図が、今日のテーマ、遺伝子です。",
+      "say": "その設計図が、今日のテーマ、遺伝子です。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.35,
+      "cue": "gene"
+     },
+     {
+      "beat": "before",
+      "i": 0,
+      "text": "ただ、その前に、ひとつ確かめておかなければいけないことがあります。",
+      "say": "ただ、その前に、ひとつ確かめておかなければいけないことがあります。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.25,
+      "cue": "before"
+     },
+     {
+      "beat": "ask",
+      "i": 0,
+      "text": "そもそも、遺伝を担っている物質は、",
+      "say": "そもそも、遺伝を担っている物質は、",
+      "speed": 1,
+      "pre": 0,
+      "post": 0,
+      "cue": "ask"
+     },
+     {
+      "beat": "ask",
+      "i": 1,
+      "text": "本当にDNAなのか。",
+      "say": "本当にディーエヌエーなのか。",
+      "speed": 1,
+      "pre": 0.1,
+      "post": 0.35,
+      "cue": "q-dna"
+     }
+    ]
+   },
+   {
+    "id": "S04",
+    "file": "audio/S04.wav",
+    "segs": [
+     {
+      "beat": "avery",
+      "i": 0,
+      "text": "1944年、",
+      "say": "1944年、",
+      "speed": 1,
+      "pre": 0,
+      "post": 0,
+      "cue": "year"
+     },
+     {
+      "beat": "avery",
+      "i": 1,
+      "text": "エイブリーは、2種類の肺炎球菌を使いました。",
+      "say": "エイブリーは、2種類の肺炎球菌を使いました。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.2,
+      "cue": "two"
+     },
+     {
+      "beat": "strainS",
+      "i": 0,
+      "text": "被膜があって表面が滑らかなS株。",
+      "say": "被膜があって表面が滑らかなエス株。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0,
+      "cue": "S"
+     },
+     {
+      "beat": "strainS",
+      "i": 1,
+      "text": "これは病原性があります。",
+      "say": "これは病原性があります。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.2,
+      "cue": "S-path"
+     },
+     {
+      "beat": "strainR",
+      "i": 0,
+      "text": "被膜がなく、表面が滑らかでないR株。",
+      "say": "被膜がなく、表面が滑らかでないアール株。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0,
+      "cue": "R"
+     },
+     {
+      "beat": "strainR",
+      "i": 1,
+      "text": "こちらは病原性がありません。",
+      "say": "こちらは病原性がありません。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.25,
+      "cue": "R-path"
+     }
+    ]
+   },
+   {
+    "id": "S05",
+    "file": "audio/S05.wav",
+    "segs": [
+     {
+      "beat": "tubes",
+      "i": 0,
+      "text": "S株から成分を1つずつ取り出して、",
+      "say": "エス株から成分を1つずつ取り出して、",
+      "speed": 1,
+      "pre": 0,
+      "post": 0,
+      "cue": "extract"
+     },
+     {
+      "beat": "tubes",
+      "i": 1,
+      "text": "R株に加えてみる。",
+      "say": "アール株に加えてみる。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.1,
+      "cue": "add"
+     },
+     {
+      "beat": "tubes",
+      "i": 2,
+      "text": "DNA、",
+      "say": "ディーエヌエー、",
+      "speed": 1,
+      "pre": 0,
+      "post": 0,
+      "cue": "t-dna"
+     },
+     {
+      "beat": "tubes",
+      "i": 3,
+      "text": "RNA、",
+      "say": "アールエヌエー、",
+      "speed": 1,
+      "pre": 0,
+      "post": 0,
+      "cue": "t-rna"
+     },
+     {
+      "beat": "tubes",
+      "i": 4,
+      "text": "脂質、",
+      "say": "脂質、",
+      "speed": 1,
+      "pre": 0,
+      "post": 0,
+      "cue": "t-lip"
+     },
+     {
+      "beat": "tubes",
+      "i": 5,
+      "text": "タンパク質、",
+      "say": "タンパク質、",
+      "speed": 1,
+      "pre": 0,
+      "post": 0,
+      "cue": "t-pro"
+     },
+     {
+      "beat": "tubes",
+      "i": 6,
+      "text": "炭水化物。",
+      "say": "炭水化物。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.2,
+      "cue": "t-carb"
+     }
+    ]
+   },
+   {
+    "id": "S06",
+    "file": "audio/S06.wav",
+    "segs": [
+     {
+      "beat": "result",
+      "i": 0,
+      "text": "すると、R株がS株に変わったのは、",
+      "say": "すると、アール株がエス株に変わったのは、",
+      "speed": 1,
+      "pre": 0,
+      "post": 0,
+      "cue": "result"
+     },
+     {
+      "beat": "result",
+      "i": 1,
+      "text": "DNAを加えたときだけでした。",
+      "say": "ディーエヌエーを加えたときだけでした。",
+      "speed": 1,
+      "pre": 0.15,
+      "post": 0.2,
+      "cue": "only-dna"
+     },
+     {
+      "beat": "term",
+      "i": 0,
+      "text": "性質が変わる。",
+      "say": "性質が変わる。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.2,
+      "cue": "change"
+     },
+     {
+      "beat": "term",
+      "i": 1,
+      "text": "これを形質転換といいます。",
+      "say": "これを形質転換といいます。",
+      "speed": 0.94,
+      "pre": 0.15,
+      "post": 0.35,
+      "cue": "term"
+     }
+    ]
+   },
+   {
+    "id": "S07",
+    "file": "audio/S07.wav",
+    "segs": [
+     {
+      "beat": "conclusion",
+      "i": 0,
+      "text": "つまり、性質を次に伝える物質、",
+      "say": "つまり、性質を次に伝える物質、",
+      "speed": 1,
+      "pre": 0,
+      "post": 0,
+      "cue": "sum"
+     },
+     {
+      "beat": "conclusion",
+      "i": 1,
+      "text": "遺伝の本体はDNAだ、ということです。",
+      "say": "遺伝の本体はディーエヌエーだ、ということです。",
+      "speed": 1,
+      "pre": 0.1,
+      "post": 0.3,
+      "cue": "box"
+     },
+     {
+      "beat": "important",
+      "i": 0,
+      "text": "ここ、非常に重要です。赤で囲んでおきます。",
+      "say": "ここ、非常に重要です。赤で囲んでおきます。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.4,
+      "cue": "red"
+     }
+    ]
+   },
+   {
+    "id": "S08",
+    "file": "audio/S08.wav",
+    "segs": [
+     {
+      "beat": "back",
+      "i": 0,
+      "text": "では、黒板の真ん中に戻ります。",
+      "say": "では、黒板の真ん中に戻ります。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.15,
+      "cue": "back"
+     },
+     {
+      "beat": "back",
+      "i": 1,
+      "text": "DNAが設計図だとして、DNAは何を作るのか。",
+      "say": "ディーエヌエーが設計図だとして、ディーエヌエーは何を作るのか。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.3,
+      "cue": "what"
+     },
+     {
+      "beat": "rna",
+      "i": 0,
+      "text": "ここに入るのは、RNAです。",
+      "say": "ここに入るのは、アールエヌエーです。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.2,
+      "cue": "rna"
+     },
+     {
+      "beat": "pro",
+      "i": 0,
+      "text": "そして、RNAから、タンパク質が作られます。",
+      "say": "そして、アールエヌエーから、タンパク質が作られます。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.3,
+      "cue": "pro"
+     }
+    ]
+   },
+   {
+    "id": "S09",
+    "file": "audio/S09.wav",
+    "segs": [
+     {
+      "beat": "trx",
+      "i": 0,
+      "text": "DNAの情報をRNAに写し取ること。",
+      "say": "ディーエヌエーの情報をアールエヌエーに写し取ること。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0,
+      "cue": "copy"
+     },
+     {
+      "beat": "trx",
+      "i": 1,
+      "text": "これを転写といいます。",
+      "say": "これを転写といいます。",
+      "speed": 1,
+      "pre": 0.1,
+      "post": 0.3,
+      "cue": "trx"
+     },
+     {
+      "beat": "trl",
+      "i": 0,
+      "text": "RNAの情報をもとに、アミノ酸をつないでタンパク質を作ること。",
+      "say": "アールエヌエーの情報をもとに、アミノ酸をつないでタンパク質を作ること。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0,
+      "cue": "join"
+     },
+     {
+      "beat": "trl",
+      "i": 1,
+      "text": "これを翻訳といいます。",
+      "say": "これを翻訳といいます。",
+      "speed": 1,
+      "pre": 0.1,
+      "post": 0.35,
+      "cue": "trl"
+     }
+    ]
+   },
+   {
+    "id": "S10",
+    "file": "audio/S10.wav",
+    "segs": [
+     {
+      "beat": "peek",
+      "i": 0,
+      "text": "では、この二つの矢印の中で、実際に何が起きているのか。",
+      "say": "では、この二つの矢印の中で、実際に何が起きているのか。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.1,
+      "cue": "peek"
+     },
+     {
+      "beat": "peek",
+      "i": 1,
+      "text": "分子のレベルで、少しだけのぞいてみましょう。",
+      "say": "分子のレベルで、少しだけのぞいてみましょう。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.3,
+      "cue": "dive"
+     },
+     {
+      "beat": "pol",
+      "i": 0,
+      "text": "DNAの上を、RNAポリメラーゼという酵素が進みながら、",
+      "say": "ディーエヌエーの上を、アールエヌエーポリメラーゼという酵素が進みながら、",
+      "speed": 1,
+      "pre": 0,
+      "post": 0,
+      "cue": "pol"
+     },
+     {
+      "beat": "pol",
+      "i": 1,
+      "text": "RNAを写し取っていきます。",
+      "say": "アールエヌエーを写し取っていきます。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0,
+      "cue": "copy"
+     },
+     {
+      "beat": "pol",
+      "i": 2,
+      "text": "これが転写です。",
+      "say": "これが転写です。",
+      "speed": 1,
+      "pre": 0.1,
+      "post": 0.35,
+      "cue": "trx"
+     }
+    ]
+   },
+   {
+    "id": "S11",
+    "file": "audio/S11.wav",
+    "segs": [
+     {
+      "beat": "trl",
+      "i": 0,
+      "text": "そのRNAが核の外に出ると、",
+      "say": "そのアールエヌエーが核の外に出ると、",
+      "speed": 1,
+      "pre": 0,
+      "post": 0,
+      "cue": "out"
+     },
+     {
+      "beat": "trl",
+      "i": 1,
+      "text": "3つの塩基ずつ読まれて、",
+      "say": "3つの塩基ずつ読まれて、",
+      "speed": 1,
+      "pre": 0,
+      "post": 0,
+      "cue": "three"
+     },
+     {
+      "beat": "trl",
+      "i": 2,
+      "text": "アミノ酸が一つずつつながっていく。",
+      "say": "アミノ酸が一つずつつながっていく。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0,
+      "cue": "chain"
+     },
+     {
+      "beat": "trl",
+      "i": 3,
+      "text": "これが翻訳です。",
+      "say": "これが翻訳です。",
+      "speed": 1,
+      "pre": 0.1,
+      "post": 0.4,
+      "cue": "trl"
+     }
+    ]
+   },
+   {
+    "id": "S12",
+    "file": "audio/S12.wav",
+    "segs": [
+     {
+      "beat": "memo",
+      "i": 0,
+      "text": "写すのが転写、",
+      "say": "写すのが転写、",
+      "speed": 1,
+      "pre": 0,
+      "post": 0,
+      "cue": "copy"
+     },
+     {
+      "beat": "memo",
+      "i": 1,
+      "text": "別の言葉、つまりアミノ酸の言葉に置き換えるのが翻訳。",
+      "say": "別の言葉、つまりアミノ酸の言葉に置き換えるのが翻訳。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0,
+      "cue": "trans"
+     },
+     {
+      "beat": "memo",
+      "i": 2,
+      "text": "そう覚えてください。",
+      "say": "そう覚えてください。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.35,
+      "cue": "memo"
+     }
+    ]
+   },
+   {
+    "id": "S13",
+    "file": "audio/S13.wav",
+    "segs": [
+     {
+      "beat": "name",
+      "i": 0,
+      "text": "分子生物学の、セントラルドグマ。",
+      "say": "分子生物学の、セントラルドグマ。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.15,
+      "cue": "name"
+     },
+     {
+      "beat": "name",
+      "i": 1,
+      "text": "中心となる教義、という意味です。",
+      "say": "中心となる教義、という意味です。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.3,
+      "cue": "mean"
+     },
+     {
+      "beat": "all",
+      "i": 0,
+      "text": "細菌からヒトに至るまで、",
+      "say": "細菌からヒトに至るまで、",
+      "speed": 1,
+      "pre": 0,
+      "post": 0,
+      "cue": "from"
+     },
+     {
+      "beat": "all",
+      "i": 1,
+      "text": "すべての細胞は、遺伝情報をこの向きで発現します。",
+      "say": "すべての細胞は、遺伝情報をこの向きで発現します。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0,
+      "cue": "dir"
+     },
+     {
+      "beat": "all",
+      "i": 2,
+      "text": "普遍的な原理なんです。",
+      "say": "普遍てきな原理なんです。",
+      "speed": 1,
+      "pre": 0.1,
+      "post": 0.4,
+      "cue": "univ"
+     }
+    ]
+   },
+   {
+    "id": "S14",
+    "file": "audio/S14.wav",
+    "segs": [
+     {
+      "beat": "levels",
+      "i": 0,
+      "text": "遺伝子、",
+      "say": "遺伝子、",
+      "speed": 1,
+      "pre": 0,
+      "post": 0,
+      "cue": "l0"
+     },
+     {
+      "beat": "levels",
+      "i": 1,
+      "text": "分子、",
+      "say": "分子、",
+      "speed": 1,
+      "pre": 0,
+      "post": 0,
+      "cue": "l1"
+     },
+     {
+      "beat": "levels",
+      "i": 2,
+      "text": "細胞、",
+      "say": "細胞、",
+      "speed": 1,
+      "pre": 0,
+      "post": 0,
+      "cue": "l2"
+     },
+     {
+      "beat": "levels",
+      "i": 3,
+      "text": "組織、",
+      "say": "組織、",
+      "speed": 1,
+      "pre": 0,
+      "post": 0,
+      "cue": "l3"
+     },
+     {
+      "beat": "levels",
+      "i": 4,
+      "text": "個体。",
+      "say": "個体。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.2,
+      "cue": "l4"
+     },
+     {
+      "beat": "levels",
+      "i": 5,
+      "text": "そして、うまくいかなかったときに現れるのが、",
+      "say": "そして、うまくいかなかったときに現れるのが、",
+      "speed": 1,
+      "pre": 0,
+      "post": 0,
+      "cue": "wrong"
+     },
+     {
+      "beat": "levels",
+      "i": 6,
+      "text": "疾患です。",
+      "say": "疾患です。",
+      "speed": 1,
+      "pre": 0.15,
+      "post": 0.35,
+      "cue": "l5"
+     },
+     {
+      "beat": "stack",
+      "i": 0,
+      "text": "生き物は、小さな部品が階層的に積み上がってできています。",
+      "say": "生き物は、小さな部品が階層てきに積み上がってできています。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0,
+      "cue": "stack"
+     },
+     {
+      "beat": "stack",
+      "i": 1,
+      "text": "いちばん下の階層にあるのが、遺伝子です。",
+      "say": "いちばん下の階層にあるのが、遺伝子です。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.35,
+      "cue": "bottom"
+     }
+    ]
+   },
+   {
+    "id": "S15",
+    "file": "audio/S15.wav",
+    "segs": [
+     {
+      "beat": "q",
+      "i": 0,
+      "text": "最後に、設計図に変化が起きると何が起こるのか。",
+      "say": "最後に、設計図に変化が起きると何が起こるのか。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.3,
+      "cue": "q"
+     },
+     {
+      "beat": "down",
+      "i": 0,
+      "text": "ダウン症候群。",
+      "say": "ダウン症候群。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.1,
+      "cue": "down"
+     },
+     {
+      "beat": "down",
+      "i": 1,
+      "text": "21番染色体が1本多い、染色体の数の異常です。",
+      "say": "21番染色体が1本多い、染色体の数の異常です。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.25,
+      "cue": "tri"
+     },
+     {
+      "beat": "prog",
+      "i": 0,
+      "text": "ハッチンソン・ギルフォード・プロジェリア症候群。",
+      "say": "ハッチンソン・ギルフォード・プロジェリア症候群。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.1,
+      "cue": "prog"
+     },
+     {
+      "beat": "prog",
+      "i": 1,
+      "text": "Lamin A/Cという、たった一つの遺伝子の変異で、急速に老化が進みます。",
+      "say": "ラミンエーシーという、たった一つの遺伝子の変異で、急速に老化が進みます。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.25,
+      "cue": "lmna"
+     },
+     {
+      "beat": "tcs",
+      "i": 0,
+      "text": "トリーチャー・コリンズ症候群。",
+      "say": "トリーチャー・コリンズ症候群。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.1,
+      "cue": "tcs"
+     },
+     {
+      "beat": "tcs",
+      "i": 1,
+      "text": "こちらはTCOF1遺伝子の変異などで、顔の骨の形成に異常が起こります。",
+      "say": "こちらはティーコフワン遺伝子の変異などで、顔の骨の形成に異常が起こります。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.3,
+      "cue": "tcof"
+     },
+     {
+      "beat": "both",
+      "i": 0,
+      "text": "どちらも、体の形や働きに大きく影響します。",
+      "say": "どちらも、体の形や働きに大きく影響します。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.35,
+      "cue": "both"
+     }
+    ]
+   },
+   {
+    "id": "S16",
+    "file": "audio/S16.wav",
+    "segs": [
+     {
+      "beat": "line",
+      "i": 0,
+      "text": "遺伝子という一番下の階層の変化が、",
+      "say": "遺伝子という一番下の階層の変化が、",
+      "speed": 1,
+      "pre": 0,
+      "post": 0,
+      "cue": "up"
+     },
+     {
+      "beat": "line",
+      "i": 1,
+      "text": "個体の、そして疾患の階層まで届いているわけです。",
+      "say": "個体の、そして疾患の階層まで届いているわけです。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.45,
+      "cue": "reach"
+     }
+    ]
+   },
+   {
+    "id": "S17",
+    "file": "audio/S17.wav",
+    "segs": [
+     {
+      "beat": "four",
+      "i": 0,
+      "text": "今日覚えてほしいのは、この4つです。",
+      "say": "今日覚えてほしいのは、この4つです。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.3,
+      "cue": "four"
+     },
+     {
+      "beat": "p1",
+      "i": 0,
+      "text": "ひとつ目。",
+      "say": "ひとつ目。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.1,
+      "cue": "p1"
+     },
+     {
+      "beat": "p1",
+      "i": 1,
+      "text": "遺伝の本体はDNA。エイブリーの形質転換実験が根拠です。",
+      "say": "遺伝の本体はディーエヌエー。エイブリーの形質転換実験が根拠です。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.3,
+      "cue": "p1b"
+     },
+     {
+      "beat": "p2",
+      "i": 0,
+      "text": "ふたつ目。",
+      "say": "ふたつ目。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.1,
+      "cue": "p2"
+     },
+     {
+      "beat": "p2",
+      "i": 1,
+      "text": "DNAから転写でRNA、翻訳でタンパク質。セントラルドグマです。",
+      "say": "ディーエヌエーから転写でアールエヌエー、翻訳でタンパク質。セントラルドグマです。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.3,
+      "cue": "p2b"
+     },
+     {
+      "beat": "p3",
+      "i": 0,
+      "text": "みっつ目。",
+      "say": "みっつ目。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.1,
+      "cue": "p3"
+     },
+     {
+      "beat": "p3",
+      "i": 1,
+      "text": "この流れは、細菌からヒトまで共通の、普遍的な原理です。",
+      "say": "この流れは、細菌からヒトまで共通の、普遍てきな原理です。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.3,
+      "cue": "p3b"
+     },
+     {
+      "beat": "p4",
+      "i": 0,
+      "text": "そして、遺伝子の変化は、分子から個体まで伝わって、疾患になりうる。",
+      "say": "そして、遺伝子の変化は、分子から個体まで伝わって、疾患になりうる。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.45,
+      "cue": "p4"
+     }
+    ]
+   },
+   {
+    "id": "S18",
+    "file": "audio/S18.wav",
+    "segs": [
+     {
+      "beat": "next",
+      "i": 0,
+      "text": "次の第2講では、この設計図の「文字」、",
+      "say": "次の第2講では、この設計図の文字、",
+      "speed": 1,
+      "pre": 0,
+      "post": 0,
+      "cue": "next"
+     },
+     {
+      "beat": "next",
+      "i": 1,
+      "text": "つまりDNAが何でできているのかを見ていきます。",
+      "say": "つまりディーエヌエーが何でできているのかを見ていきます。",
+      "speed": 1,
+      "pre": 0,
+      "post": 1,
+      "cue": "what"
+     }
+    ]
+   }
+  ]
+ },
+ "timing": {
+  "source": "kokoro",
+  "total": 260.7265,
+  "scenes": [
+   {
+    "id": "S01",
+    "t0": 0,
+    "t1": 8.0903,
+    "events": {
+     "start": 0,
+     "hello": 0,
+     "unit": 1.2725,
+     "title": 4.8828
+    }
+   },
+   {
+    "id": "S02",
+    "t0": 8.0903,
+    "t1": 26.431399999999993,
+    "events": {
+     "start": 8.0903,
+     "one": 8.0903,
+     "egg": 11.440299999999999,
+     "split": 13.617499999999998,
+     "body": 15.397499999999997,
+     "all": 19.870399999999997,
+     "same": 22.520399999999995
+    }
+   },
+   {
+    "id": "S03",
+    "t0": 26.431399999999993,
+    "t1": 40.4464,
+    "events": {
+     "start": 26.431399999999993,
+     "gene": 26.431399999999993,
+     "before": 29.721599999999995,
+     "ask": 35.105399999999996,
+     "q-dna": 37.965399999999995
+    }
+   },
+   {
+    "id": "S04",
+    "t0": 40.4464,
+    "t1": 57.2603,
+    "events": {
+     "start": 40.4464,
+     "year": 40.4464,
+     "two": 42.0864,
+     "S": 46.2307,
+     "S-path": 49.1095,
+     "R": 51.194,
+     "R-path": 54.6113
+    }
+   },
+   {
+    "id": "S05",
+    "t0": 57.2603,
+    "t1": 67.3689,
+    "events": {
+     "start": 57.2603,
+     "extract": 57.2603,
+     "add": 60.7303,
+     "t-dna": 62.6511,
+     "t-rna": 63.3876,
+     "t-lip": 64.1886,
+     "t-pro": 64.92099999999999,
+     "t-carb": 65.92559999999999
+    }
+   },
+   {
+    "id": "S06",
+    "t0": 67.3689,
+    "t1": 77.75210000000001,
+    "events": {
+     "start": 67.3689,
+     "result": 67.3689,
+     "only-dna": 70.6789,
+     "change": 73.63080000000001,
+     "term": 75.64482000000001
+    }
+   },
+   {
+    "id": "S07",
+    "t0": 77.75210000000001,
+    "t1": 88.84740000000002,
+    "events": {
+     "start": 77.75210000000001,
+     "sum": 77.75210000000001,
+     "box": 81.99140500000001,
+     "red": 84.7044
+    }
+   },
+   {
+    "id": "S08",
+    "t0": 88.84740000000002,
+    "t1": 102.49030000000002,
+    "events": {
+     "start": 88.84740000000002,
+     "back": 88.84740000000002,
+     "what": 91.47600000000003,
+     "rna": 96.00700000000002,
+     "pro": 98.49470000000002
+    }
+   },
+   {
+    "id": "S09",
+    "t0": 102.49030000000002,
+    "t1": 115.1851,
+    "events": {
+     "start": 102.49030000000002,
+     "copy": 102.49030000000002,
+     "trx": 106.31180000000002,
+     "join": 107.67680000000001,
+     "trl": 113.53737500000001
+    }
+   },
+   {
+    "id": "S10",
+    "t0": 115.1851,
+    "t1": 133.1053,
+    "events": {
+     "start": 115.1851,
+     "peek": 115.1851,
+     "dive": 120.1444,
+     "pol": 123.6956,
+     "copy": 128.6456,
+     "trx": 131.3048
+    }
+   },
+   {
+    "id": "S11",
+    "t0": 133.1053,
+    "t1": 143.1962,
+    "events": {
+     "start": 133.1053,
+     "out": 133.1053,
+     "three": 136.1453,
+     "chain": 138.43529999999998,
+     "trl": 141.29049999999998
+    }
+   },
+   {
+    "id": "S12",
+    "t0": 143.1962,
+    "t1": 151.0429,
+    "events": {
+     "start": 143.1962,
+     "copy": 143.1962,
+     "trans": 144.4462,
+     "memo": 149.2131
+    }
+   },
+   {
+    "id": "S13",
+    "t0": 151.0429,
+    "t1": 165.6441,
+    "events": {
+     "start": 151.0429,
+     "name": 152.10286,
+     "mean": 153.8428,
+     "from": 156.5457,
+     "dir": 158.6357,
+     "univ": 163.3004
+    }
+   },
+   {
+    "id": "S14",
+    "t0": 165.6441,
+    "t1": 182.3319,
+    "events": {
+     "start": 165.6441,
+     "l0": 165.6441,
+     "l1": 166.3651,
+     "l2": 167.0149,
+     "l3": 167.6704,
+     "l4": 168.4144,
+     "wrong": 169.25379999999998,
+     "l5": 172.7378,
+     "stack": 174.1293,
+     "bottom": 179.73379
+    }
+   },
+   {
+    "id": "S15",
+    "t0": 182.3319,
+    "t1": 215.23569999999995,
+    "events": {
+     "start": 182.3319,
+     "q": 182.3319,
+     "down": 186.3404,
+     "tri": 187.57309999999998,
+     "prog": 192.73559999999998,
+     "lmna": 195.70089999999996,
+     "tcs": 201.76899999999995,
+     "tcof": 203.73619999999994,
+     "both": 210.43219999999994
+    }
+   },
+   {
+    "id": "S16",
+    "t0": 215.23569999999995,
+    "t1": 223.57869999999994,
+    "events": {
+     "start": 215.23569999999995,
+     "up": 215.23569999999995,
+     "reach": 218.82569999999996
+    }
+   },
+   {
+    "id": "S17",
+    "t0": 223.57869999999994,
+    "t1": 252.23649999999998,
+    "events": {
+     "start": 223.57869999999994,
+     "four": 223.57869999999994,
+     "p1": 226.49699999999996,
+     "p1b": 227.45289999999994,
+     "p2": 233.25369999999995,
+     "p2b": 234.23749999999995,
+     "p3": 240.02289999999996,
+     "p3b": 240.96439999999996,
+     "p4": 246.23209999999997
+    }
+   },
+   {
+    "id": "S18",
+    "t0": 252.23649999999998,
+    "t1": 260.7265,
+    "events": {
+     "start": 252.23649999999998,
+     "next": 252.23649999999998,
+     "what": 255.5965
+    }
+   }
+  ],
+  "segs": [
+   {
+    "scene": "S01",
+    "beat": "open",
+    "i": 0,
+    "seg": {
+     "text": "はい、始めましょう。",
+     "say": "はい、始めましょう。",
+     "cue": "hello",
+     "post": 0.15
+    },
+    "t0": 0,
+    "t1": 1.2725,
+    "speech0": 0,
+    "speech1": 1.1225
+   },
+   {
+    "scene": "S01",
+    "beat": "open",
+    "i": 1,
+    "seg": {
+     "text": "遺伝医学、最初の単元は「遺伝子の基礎」です。",
+     "say": "遺伝医学、最初の単元は遺伝子の基礎です。",
+     "cue": "unit",
+     "post": 0.1
+    },
+    "t0": 1.2725,
+    "t1": 4.8828,
+    "speech0": 1.2725,
+    "speech1": 4.7828
+   },
+   {
+    "scene": "S01",
+    "beat": "open",
+    "i": 2,
+    "seg": {
+     "text": "今日は第1講、「遺伝子とは何か」。",
+     "say": "今日は第1講、遺伝子とは何か。",
+     "cue": "title",
+     "post": 0.5
+    },
+    "t0": 4.8828,
+    "t1": 7.9403,
+    "speech0": 4.8828,
+    "speech1": 7.4403
+   },
+   {
+    "scene": "S02",
+    "beat": "egg",
+    "i": 0,
+    "seg": {
+     "text": "私たちの体は、たった1個の細胞、",
+     "say": "私たちの体は、たった1個の細胞、",
+     "cue": "one"
+    },
+    "t0": 8.0903,
+    "t1": 11.440299999999999,
+    "speech0": 8.0903,
+    "speech1": 11.440299999999999
+   },
+   {
+    "scene": "S02",
+    "beat": "egg",
+    "i": 1,
+    "seg": {
+     "text": "受精卵から始まります。",
+     "say": "受精卵から始まります。",
+     "cue": "egg",
+     "post": 0.2
+    },
+    "t0": 11.440299999999999,
+    "t1": 13.617499999999998,
+    "speech0": 11.440299999999999,
+    "speech1": 13.417499999999999
+   },
+   {
+    "scene": "S02",
+    "beat": "divide",
+    "i": 0,
+    "seg": {
+     "text": "分裂を繰り返して",
+     "say": "分裂を繰り返して",
+     "cue": "split"
+    },
+    "t0": 13.617499999999998,
+    "t1": 15.397499999999997,
+    "speech0": 13.617499999999998,
+    "speech1": 15.397499999999997
+   },
+   {
+    "scene": "S02",
+    "beat": "divide",
+    "i": 1,
+    "seg": {
+     "text": "60兆個の細胞になり、ヒトの形になっていく。",
+     "say": "60兆個の細胞になり、ヒトの形になっていく。",
+     "cue": "body",
+     "post": 0.25
+    },
+    "t0": 15.397499999999997,
+    "t1": 19.870399999999997,
+    "speech0": 15.397499999999997,
+    "speech1": 19.620399999999997
+   },
+   {
+    "scene": "S02",
+    "beat": "same",
+    "i": 0,
+    "seg": {
+     "text": "では、この60兆個の細胞に、",
+     "say": "では、この60兆個の細胞に、",
+     "cue": "all"
+    },
+    "t0": 19.870399999999997,
+    "t1": 22.520399999999995,
+    "speech0": 19.870399999999997,
+    "speech1": 22.520399999999995
+   },
+   {
+    "scene": "S02",
+    "beat": "same",
+    "i": 1,
+    "seg": {
+     "text": "どうやって同じ設計図が配られているのか。",
+     "say": "どうやって同じ設計図が配られているのか。",
+     "cue": "same",
+     "post": 0.3
+    },
+    "t0": 22.520399999999995,
+    "t1": 26.281399999999994,
+    "speech0": 22.520399999999995,
+    "speech1": 25.981399999999994
+   },
+   {
+    "scene": "S03",
+    "beat": "theme",
+    "i": 0,
+    "seg": {
+     "text": "その設計図が、今日のテーマ、遺伝子です。",
+     "say": "その設計図が、今日のテーマ、遺伝子です。",
+     "cue": "gene",
+     "post": 0.35
+    },
+    "t0": 26.431399999999993,
+    "t1": 29.721599999999995,
+    "speech0": 26.431399999999993,
+    "speech1": 29.371599999999994
+   },
+   {
+    "scene": "S03",
+    "beat": "before",
+    "i": 0,
+    "seg": {
+     "text": "ただ、その前に、ひとつ確かめておかなければいけないことがあります。",
+     "say": "ただ、その前に、ひとつ確かめておかなければいけないことがあります。",
+     "cue": "before",
+     "post": 0.25
+    },
+    "t0": 29.721599999999995,
+    "t1": 35.105399999999996,
+    "speech0": 29.721599999999995,
+    "speech1": 34.855399999999996
+   },
+   {
+    "scene": "S03",
+    "beat": "ask",
+    "i": 0,
+    "seg": {
+     "text": "そもそも、遺伝を担っている物質は、",
+     "say": "そもそも、遺伝を担っている物質は、",
+     "cue": "ask"
+    },
+    "t0": 35.105399999999996,
+    "t1": 37.865399999999994,
+    "speech0": 35.105399999999996,
+    "speech1": 37.865399999999994
+   },
+   {
+    "scene": "S03",
+    "beat": "ask",
+    "i": 1,
+    "seg": {
+     "text": "本当に**DNA**なのか。",
+     "say": "本当にディーエヌエーなのか。",
+     "cue": "q-dna",
+     "pre": 0.1,
+     "post": 0.35
+    },
+    "t0": 37.865399999999994,
+    "t1": 40.2964,
+    "speech0": 37.965399999999995,
+    "speech1": 39.9464
+   },
+   {
+    "scene": "S04",
+    "beat": "avery",
+    "i": 0,
+    "seg": {
+     "text": "1944年、",
+     "say": "1944年、",
+     "cue": "year"
+    },
+    "t0": 40.4464,
+    "t1": 42.0864,
+    "speech0": 40.4464,
+    "speech1": 42.0864
+   },
+   {
+    "scene": "S04",
+    "beat": "avery",
+    "i": 1,
+    "seg": {
+     "text": "エイブリーは、2種類の**肺炎球菌**を使いました。",
+     "say": "エイブリーは、2種類の肺炎球菌を使いました。",
+     "cue": "two",
+     "post": 0.2
+    },
+    "t0": 42.0864,
+    "t1": 46.2307,
+    "speech0": 42.0864,
+    "speech1": 46.030699999999996
+   },
+   {
+    "scene": "S04",
+    "beat": "strainS",
+    "i": 0,
+    "seg": {
+     "text": "被膜があって表面が滑らかな**S株**。",
+     "say": "被膜があって表面が滑らかなエス株。",
+     "cue": "S"
+    },
+    "t0": 46.2307,
+    "t1": 49.1095,
+    "speech0": 46.2307,
+    "speech1": 49.1095
+   },
+   {
+    "scene": "S04",
+    "beat": "strainS",
+    "i": 1,
+    "seg": {
+     "text": "これは病原性があります。",
+     "say": "これは病原性があります。",
+     "cue": "S-path",
+     "post": 0.2
+    },
+    "t0": 49.1095,
+    "t1": 51.194,
+    "speech0": 49.1095,
+    "speech1": 50.994
+   },
+   {
+    "scene": "S04",
+    "beat": "strainR",
+    "i": 0,
+    "seg": {
+     "text": "被膜がなく、表面が滑らかでない**R株**。",
+     "say": "被膜がなく、表面が滑らかでないアール株。",
+     "cue": "R"
+    },
+    "t0": 51.194,
+    "t1": 54.6113,
+    "speech0": 51.194,
+    "speech1": 54.6113
+   },
+   {
+    "scene": "S04",
+    "beat": "strainR",
+    "i": 1,
+    "seg": {
+     "text": "こちらは病原性がありません。",
+     "say": "こちらは病原性がありません。",
+     "cue": "R-path",
+     "post": 0.25
+    },
+    "t0": 54.6113,
+    "t1": 57.1103,
+    "speech0": 54.6113,
+    "speech1": 56.8603
+   },
+   {
+    "scene": "S05",
+    "beat": "tubes",
+    "i": 0,
+    "seg": {
+     "text": "S株から成分を1つずつ取り出して、",
+     "say": "エス株から成分を1つずつ取り出して、",
+     "cue": "extract"
+    },
+    "t0": 57.2603,
+    "t1": 60.7303,
+    "speech0": 57.2603,
+    "speech1": 60.7303
+   },
+   {
+    "scene": "S05",
+    "beat": "tubes",
+    "i": 1,
+    "seg": {
+     "text": "R株に加えてみる。",
+     "say": "アール株に加えてみる。",
+     "cue": "add",
+     "post": 0.1
+    },
+    "t0": 60.7303,
+    "t1": 62.6511,
+    "speech0": 60.7303,
+    "speech1": 62.5511
+   },
+   {
+    "scene": "S05",
+    "beat": "tubes",
+    "i": 2,
+    "seg": {
+     "text": "**DNA**、",
+     "say": "ディーエヌエー、",
+     "cue": "t-dna"
+    },
+    "t0": 62.6511,
+    "t1": 63.3876,
+    "speech0": 62.6511,
+    "speech1": 63.3876
+   },
+   {
+    "scene": "S05",
+    "beat": "tubes",
+    "i": 3,
+    "seg": {
+     "text": "RNA、",
+     "say": "アールエヌエー、",
+     "cue": "t-rna"
+    },
+    "t0": 63.3876,
+    "t1": 64.1886,
+    "speech0": 63.3876,
+    "speech1": 64.1886
+   },
+   {
+    "scene": "S05",
+    "beat": "tubes",
+    "i": 4,
+    "seg": {
+     "text": "脂質、",
+     "say": "脂質、",
+     "cue": "t-lip"
+    },
+    "t0": 64.1886,
+    "t1": 64.92099999999999,
+    "speech0": 64.1886,
+    "speech1": 64.92099999999999
+   },
+   {
+    "scene": "S05",
+    "beat": "tubes",
+    "i": 5,
+    "seg": {
+     "text": "タンパク質、",
+     "say": "タンパク質、",
+     "cue": "t-pro"
+    },
+    "t0": 64.92099999999999,
+    "t1": 65.92559999999999,
+    "speech0": 64.92099999999999,
+    "speech1": 65.92559999999999
+   },
+   {
+    "scene": "S05",
+    "beat": "tubes",
+    "i": 6,
+    "seg": {
+     "text": "炭水化物。",
+     "say": "炭水化物。",
+     "cue": "t-carb",
+     "post": 0.2
+    },
+    "t0": 65.92559999999999,
+    "t1": 67.21889999999999,
+    "speech0": 65.92559999999999,
+    "speech1": 67.01889999999999
+   },
+   {
+    "scene": "S06",
+    "beat": "result",
+    "i": 0,
+    "seg": {
+     "text": "すると、R株がS株に変わったのは、",
+     "say": "すると、アール株がエス株に変わったのは、",
+     "cue": "result"
+    },
+    "t0": 67.3689,
+    "t1": 70.5289,
+    "speech0": 67.3689,
+    "speech1": 70.5289
+   },
+   {
+    "scene": "S06",
+    "beat": "result",
+    "i": 1,
+    "seg": {
+     "text": "**DNA**を加えたときだけでした。",
+     "say": "ディーエヌエーを加えたときだけでした。",
+     "cue": "only-dna",
+     "pre": 0.15,
+     "post": 0.2
+    },
+    "t0": 70.5289,
+    "t1": 73.63080000000001,
+    "speech0": 70.6789,
+    "speech1": 73.4308
+   },
+   {
+    "scene": "S06",
+    "beat": "term",
+    "i": 0,
+    "seg": {
+     "text": "性質が変わる。",
+     "say": "性質が変わる。",
+     "cue": "change",
+     "post": 0.2
+    },
+    "t0": 73.63080000000001,
+    "t1": 75.093,
+    "speech0": 73.63080000000001,
+    "speech1": 74.893
+   },
+   {
+    "scene": "S06",
+    "beat": "term",
+    "i": 1,
+    "seg": {
+     "text": "これを**形質転換**といいます。",
+     "say": "これを形質転換といいます。",
+     "cue": "term",
+     "at": 0.2,
+     "speed": 0.94,
+     "pre": 0.15,
+     "post": 0.35
+    },
+    "t0": 75.093,
+    "t1": 77.60210000000001,
+    "speech0": 75.24300000000001,
+    "speech1": 77.25210000000001
+   },
+   {
+    "scene": "S07",
+    "beat": "conclusion",
+    "i": 0,
+    "seg": {
+     "text": "つまり、性質を次に伝える物質、",
+     "say": "つまり、性質を次に伝える物質、",
+     "cue": "sum"
+    },
+    "t0": 77.75210000000001,
+    "t1": 80.59210000000002,
+    "speech0": 77.75210000000001,
+    "speech1": 80.59210000000002
+   },
+   {
+    "scene": "S07",
+    "beat": "conclusion",
+    "i": 1,
+    "seg": {
+     "text": "遺伝の本体は**DNA**だ、ということです。",
+     "say": "遺伝の本体はディーエヌエーだ、ということです。",
+     "cue": "box",
+     "at": 0.35,
+     "pre": 0.1,
+     "post": 0.3
+    },
+    "t0": 80.59210000000002,
+    "t1": 84.7044,
+    "speech0": 80.69210000000001,
+    "speech1": 84.40440000000001
+   },
+   {
+    "scene": "S07",
+    "beat": "important",
+    "i": 0,
+    "seg": {
+     "text": "ここ、非常に重要です。赤で囲んでおきます。",
+     "say": "ここ、非常に重要です。赤で囲んでおきます。",
+     "cue": "red",
+     "post": 0.4
+    },
+    "t0": 84.7044,
+    "t1": 88.69740000000002,
+    "speech0": 84.7044,
+    "speech1": 88.29740000000001
+   },
+   {
+    "scene": "S08",
+    "beat": "back",
+    "i": 0,
+    "seg": {
+     "text": "では、黒板の真ん中に戻ります。",
+     "say": "では、黒板の真ん中に戻ります。",
+     "cue": "back",
+     "post": 0.15
+    },
+    "t0": 88.84740000000002,
+    "t1": 91.47600000000003,
+    "speech0": 88.84740000000002,
+    "speech1": 91.32600000000002
+   },
+   {
+    "scene": "S08",
+    "beat": "back",
+    "i": 1,
+    "seg": {
+     "text": "DNAが設計図だとして、DNAは何を作るのか。",
+     "say": "ディーエヌエーが設計図だとして、ディーエヌエーは何を作るのか。",
+     "cue": "what",
+     "post": 0.3
+    },
+    "t0": 91.47600000000003,
+    "t1": 96.00700000000002,
+    "speech0": 91.47600000000003,
+    "speech1": 95.70700000000002
+   },
+   {
+    "scene": "S08",
+    "beat": "rna",
+    "i": 0,
+    "seg": {
+     "text": "ここに入るのは、**RNA**です。",
+     "say": "ここに入るのは、アールエヌエーです。",
+     "cue": "rna",
+     "post": 0.2
+    },
+    "t0": 96.00700000000002,
+    "t1": 98.49470000000002,
+    "speech0": 96.00700000000002,
+    "speech1": 98.29470000000002
+   },
+   {
+    "scene": "S08",
+    "beat": "pro",
+    "i": 0,
+    "seg": {
+     "text": "そして、RNAから、**タンパク質**が作られます。",
+     "say": "そして、アールエヌエーから、タンパク質が作られます。",
+     "cue": "pro",
+     "post": 0.3
+    },
+    "t0": 98.49470000000002,
+    "t1": 102.34030000000001,
+    "speech0": 98.49470000000002,
+    "speech1": 102.04030000000002
+   },
+   {
+    "scene": "S09",
+    "beat": "trx",
+    "i": 0,
+    "seg": {
+     "text": "DNAの情報をRNAに写し取ること。",
+     "say": "ディーエヌエーの情報をアールエヌエーに写し取ること。",
+     "cue": "copy"
+    },
+    "t0": 102.49030000000002,
+    "t1": 105.85680000000002,
+    "speech0": 102.49030000000002,
+    "speech1": 105.85680000000002
+   },
+   {
+    "scene": "S09",
+    "beat": "trx",
+    "i": 1,
+    "seg": {
+     "text": "これを**転写**といいます。",
+     "say": "これを転写といいます。",
+     "cue": "trx",
+     "at": 0.25,
+     "pre": 0.1,
+     "post": 0.3
+    },
+    "t0": 105.85680000000002,
+    "t1": 107.67680000000001,
+    "speech0": 105.95680000000002,
+    "speech1": 107.37680000000002
+   },
+   {
+    "scene": "S09",
+    "beat": "trl",
+    "i": 0,
+    "seg": {
+     "text": "RNAの情報をもとに、アミノ酸をつないでタンパク質を作ること。",
+     "say": "アールエヌエーの情報をもとに、アミノ酸をつないでタンパク質を作ること。",
+     "cue": "join"
+    },
+    "t0": 107.67680000000001,
+    "t1": 113.05480000000001,
+    "speech0": 107.67680000000001,
+    "speech1": 113.05480000000001
+   },
+   {
+    "scene": "S09",
+    "beat": "trl",
+    "i": 1,
+    "seg": {
+     "text": "これを**翻訳**といいます。",
+     "say": "これを翻訳といいます。",
+     "cue": "trl",
+     "at": 0.25,
+     "pre": 0.1,
+     "post": 0.35
+    },
+    "t0": 113.05480000000001,
+    "t1": 115.0351,
+    "speech0": 113.15480000000001,
+    "speech1": 114.6851
+   },
+   {
+    "scene": "S10",
+    "beat": "peek",
+    "i": 0,
+    "seg": {
+     "text": "では、この二つの矢印の中で、実際に何が起きているのか。",
+     "say": "では、この二つの矢印の中で、実際に何が起きているのか。",
+     "cue": "peek",
+     "post": 0.1
+    },
+    "t0": 115.1851,
+    "t1": 120.1444,
+    "speech0": 115.1851,
+    "speech1": 120.04440000000001
+   },
+   {
+    "scene": "S10",
+    "beat": "peek",
+    "i": 1,
+    "seg": {
+     "text": "分子のレベルで、少しだけのぞいてみましょう。",
+     "say": "分子のレベルで、少しだけのぞいてみましょう。",
+     "cue": "dive",
+     "post": 0.3
+    },
+    "t0": 120.1444,
+    "t1": 123.6956,
+    "speech0": 120.1444,
+    "speech1": 123.3956
+   },
+   {
+    "scene": "S10",
+    "beat": "pol",
+    "i": 0,
+    "seg": {
+     "text": "DNAの上を、**RNAポリメラーゼ**という酵素が進みながら、",
+     "say": "ディーエヌエーの上を、アールエヌエーポリメラーゼという酵素が進みながら、",
+     "cue": "pol"
+    },
+    "t0": 123.6956,
+    "t1": 128.6456,
+    "speech0": 123.6956,
+    "speech1": 128.6456
+   },
+   {
+    "scene": "S10",
+    "beat": "pol",
+    "i": 1,
+    "seg": {
+     "text": "RNAを写し取っていきます。",
+     "say": "アールエヌエーを写し取っていきます。",
+     "cue": "copy"
+    },
+    "t0": 128.6456,
+    "t1": 131.2048,
+    "speech0": 128.6456,
+    "speech1": 131.2048
+   },
+   {
+    "scene": "S10",
+    "beat": "pol",
+    "i": 2,
+    "seg": {
+     "text": "これが**転写**です。",
+     "say": "これが転写です。",
+     "cue": "trx",
+     "pre": 0.1,
+     "post": 0.35
+    },
+    "t0": 131.2048,
+    "t1": 132.9553,
+    "speech0": 131.3048,
+    "speech1": 132.6053
+   },
+   {
+    "scene": "S11",
+    "beat": "trl",
+    "i": 0,
+    "seg": {
+     "text": "そのRNAが核の外に出ると、",
+     "say": "そのアールエヌエーが核の外に出ると、",
+     "cue": "out"
+    },
+    "t0": 133.1053,
+    "t1": 136.1453,
+    "speech0": 133.1053,
+    "speech1": 136.1453
+   },
+   {
+    "scene": "S11",
+    "beat": "trl",
+    "i": 1,
+    "seg": {
+     "text": "3つの塩基ずつ読まれて、",
+     "say": "3つの塩基ずつ読まれて、",
+     "cue": "three"
+    },
+    "t0": 136.1453,
+    "t1": 138.43529999999998,
+    "speech0": 136.1453,
+    "speech1": 138.43529999999998
+   },
+   {
+    "scene": "S11",
+    "beat": "trl",
+    "i": 2,
+    "seg": {
+     "text": "アミノ酸が一つずつつながっていく。",
+     "say": "アミノ酸が一つずつつながっていく。",
+     "cue": "chain"
+    },
+    "t0": 138.43529999999998,
+    "t1": 141.1905,
+    "speech0": 138.43529999999998,
+    "speech1": 141.1905
+   },
+   {
+    "scene": "S11",
+    "beat": "trl",
+    "i": 3,
+    "seg": {
+     "text": "これが**翻訳**です。",
+     "say": "これが翻訳です。",
+     "cue": "trl",
+     "pre": 0.1,
+     "post": 0.4
+    },
+    "t0": 141.1905,
+    "t1": 143.0462,
+    "speech0": 141.29049999999998,
+    "speech1": 142.6462
+   },
+   {
+    "scene": "S12",
+    "beat": "memo",
+    "i": 0,
+    "seg": {
+     "text": "写すのが**転写**、",
+     "say": "写すのが転写、",
+     "cue": "copy"
+    },
+    "t0": 143.1962,
+    "t1": 144.4462,
+    "speech0": 143.1962,
+    "speech1": 144.4462
+   },
+   {
+    "scene": "S12",
+    "beat": "memo",
+    "i": 1,
+    "seg": {
+     "text": "別の言葉、つまりアミノ酸の言葉に置き換えるのが**翻訳**。",
+     "say": "別の言葉、つまりアミノ酸の言葉に置き換えるのが翻訳。",
+     "cue": "trans"
+    },
+    "t0": 144.4462,
+    "t1": 149.2131,
+    "speech0": 144.4462,
+    "speech1": 149.2131
+   },
+   {
+    "scene": "S12",
+    "beat": "memo",
+    "i": 2,
+    "seg": {
+     "text": "そう覚えてください。",
+     "say": "そう覚えてください。",
+     "cue": "memo",
+     "post": 0.35
+    },
+    "t0": 149.2131,
+    "t1": 150.8929,
+    "speech0": 149.2131,
+    "speech1": 150.5429
+   },
+   {
+    "scene": "S13",
+    "beat": "name",
+    "i": 0,
+    "seg": {
+     "text": "分子生物学の、**セントラルドグマ**。",
+     "say": "分子生物学の、セントラルドグマ。",
+     "cue": "name",
+     "at": 0.4,
+     "post": 0.15
+    },
+    "t0": 151.0429,
+    "t1": 153.8428,
+    "speech0": 151.0429,
+    "speech1": 153.6928
+   },
+   {
+    "scene": "S13",
+    "beat": "name",
+    "i": 1,
+    "seg": {
+     "text": "中心となる教義、という意味です。",
+     "say": "中心となる教義、という意味です。",
+     "cue": "mean",
+     "post": 0.3
+    },
+    "t0": 153.8428,
+    "t1": 156.5457,
+    "speech0": 153.8428,
+    "speech1": 156.2457
+   },
+   {
+    "scene": "S13",
+    "beat": "all",
+    "i": 0,
+    "seg": {
+     "text": "細菌からヒトに至るまで、",
+     "say": "細菌からヒトに至るまで、",
+     "cue": "from"
+    },
+    "t0": 156.5457,
+    "t1": 158.6357,
+    "speech0": 156.5457,
+    "speech1": 158.6357
+   },
+   {
+    "scene": "S13",
+    "beat": "all",
+    "i": 1,
+    "seg": {
+     "text": "すべての細胞は、遺伝情報をこの向きで発現します。",
+     "say": "すべての細胞は、遺伝情報をこの向きで発現します。",
+     "cue": "dir"
+    },
+    "t0": 158.6357,
+    "t1": 163.2004,
+    "speech0": 158.6357,
+    "speech1": 163.2004
+   },
+   {
+    "scene": "S13",
+    "beat": "all",
+    "i": 2,
+    "seg": {
+     "text": "**普遍的な原理**なんです。",
+     "say": "普遍てきな原理なんです。",
+     "cue": "univ",
+     "pre": 0.1,
+     "post": 0.4
+    },
+    "t0": 163.2004,
+    "t1": 165.4941,
+    "speech0": 163.3004,
+    "speech1": 165.0941
+   },
+   {
+    "scene": "S14",
+    "beat": "levels",
+    "i": 0,
+    "seg": {
+     "text": "遺伝子、",
+     "say": "遺伝子、",
+     "cue": "l0"
+    },
+    "t0": 165.6441,
+    "t1": 166.3651,
+    "speech0": 165.6441,
+    "speech1": 166.3651
+   },
+   {
+    "scene": "S14",
+    "beat": "levels",
+    "i": 1,
+    "seg": {
+     "text": "分子、",
+     "say": "分子、",
+     "cue": "l1"
+    },
+    "t0": 166.3651,
+    "t1": 167.0149,
+    "speech0": 166.3651,
+    "speech1": 167.0149
+   },
+   {
+    "scene": "S14",
+    "beat": "levels",
+    "i": 2,
+    "seg": {
+     "text": "細胞、",
+     "say": "細胞、",
+     "cue": "l2"
+    },
+    "t0": 167.0149,
+    "t1": 167.6704,
+    "speech0": 167.0149,
+    "speech1": 167.6704
+   },
+   {
+    "scene": "S14",
+    "beat": "levels",
+    "i": 3,
+    "seg": {
+     "text": "組織、",
+     "say": "組織、",
+     "cue": "l3"
+    },
+    "t0": 167.6704,
+    "t1": 168.4144,
+    "speech0": 167.6704,
+    "speech1": 168.4144
+   },
+   {
+    "scene": "S14",
+    "beat": "levels",
+    "i": 4,
+    "seg": {
+     "text": "個体。",
+     "say": "個体。",
+     "cue": "l4",
+     "post": 0.2
+    },
+    "t0": 168.4144,
+    "t1": 169.25379999999998,
+    "speech0": 168.4144,
+    "speech1": 169.0538
+   },
+   {
+    "scene": "S14",
+    "beat": "levels",
+    "i": 5,
+    "seg": {
+     "text": "そして、うまくいかなかったときに現れるのが、",
+     "say": "そして、うまくいかなかったときに現れるのが、",
+     "cue": "wrong"
+    },
+    "t0": 169.25379999999998,
+    "t1": 172.5878,
+    "speech0": 169.25379999999998,
+    "speech1": 172.5878
+   },
+   {
+    "scene": "S14",
+    "beat": "levels",
+    "i": 6,
+    "seg": {
+     "text": "**疾患**です。",
+     "say": "疾患です。",
+     "cue": "l5",
+     "pre": 0.15,
+     "post": 0.35
+    },
+    "t0": 172.5878,
+    "t1": 174.1293,
+    "speech0": 172.7378,
+    "speech1": 173.7793
+   },
+   {
+    "scene": "S14",
+    "beat": "stack",
+    "i": 0,
+    "seg": {
+     "text": "生き物は、小さな部品が階層的に積み上がってできています。",
+     "say": "生き物は、小さな部品が階層てきに積み上がってできています。",
+     "cue": "stack"
+    },
+    "t0": 174.1293,
+    "t1": 178.8346,
+    "speech0": 174.1293,
+    "speech1": 178.8346
+   },
+   {
+    "scene": "S14",
+    "beat": "stack",
+    "i": 1,
+    "seg": {
+     "text": "いちばん下の階層にあるのが、**遺伝子**です。",
+     "say": "いちばん下の階層にあるのが、遺伝子です。",
+     "cue": "bottom",
+     "at": 0.3,
+     "post": 0.35
+    },
+    "t0": 178.8346,
+    "t1": 182.18189999999998,
+    "speech0": 178.8346,
+    "speech1": 181.8319
+   },
+   {
+    "scene": "S15",
+    "beat": "q",
+    "i": 0,
+    "seg": {
+     "text": "最後に、設計図に変化が起きると何が起こるのか。",
+     "say": "最後に、設計図に変化が起きると何が起こるのか。",
+     "cue": "q",
+     "post": 0.3
+    },
+    "t0": 182.3319,
+    "t1": 186.3404,
+    "speech0": 182.3319,
+    "speech1": 186.04039999999998
+   },
+   {
+    "scene": "S15",
+    "beat": "down",
+    "i": 0,
+    "seg": {
+     "text": "ダウン症候群。",
+     "say": "ダウン症候群。",
+     "cue": "down",
+     "post": 0.1
+    },
+    "t0": 186.3404,
+    "t1": 187.57309999999998,
+    "speech0": 186.3404,
+    "speech1": 187.4731
+   },
+   {
+    "scene": "S15",
+    "beat": "down",
+    "i": 1,
+    "seg": {
+     "text": "21番染色体が1本多い、染色体の数の異常です。",
+     "say": "21番染色体が1本多い、染色体の数の異常です。",
+     "cue": "tri",
+     "post": 0.25
+    },
+    "t0": 187.57309999999998,
+    "t1": 192.73559999999998,
+    "speech0": 187.57309999999998,
+    "speech1": 192.48559999999998
+   },
+   {
+    "scene": "S15",
+    "beat": "prog",
+    "i": 0,
+    "seg": {
+     "text": "ハッチンソン・ギルフォード・プロジェリア症候群。",
+     "say": "ハッチンソン・ギルフォード・プロジェリア症候群。",
+     "cue": "prog",
+     "post": 0.1
+    },
+    "t0": 192.73559999999998,
+    "t1": 195.70089999999996,
+    "speech0": 192.73559999999998,
+    "speech1": 195.60089999999997
+   },
+   {
+    "scene": "S15",
+    "beat": "prog",
+    "i": 1,
+    "seg": {
+     "text": "**Lamin A/C**という、たった一つの遺伝子の変異で、急速に老化が進みます。",
+     "say": "ラミンエーシーという、たった一つの遺伝子の変異で、急速に老化が進みます。",
+     "cue": "lmna",
+     "post": 0.25
+    },
+    "t0": 195.70089999999996,
+    "t1": 201.76899999999995,
+    "speech0": 195.70089999999996,
+    "speech1": 201.51899999999995
+   },
+   {
+    "scene": "S15",
+    "beat": "tcs",
+    "i": 0,
+    "seg": {
+     "text": "トリーチャー・コリンズ症候群。",
+     "say": "トリーチャー・コリンズ症候群。",
+     "cue": "tcs",
+     "post": 0.1
+    },
+    "t0": 201.76899999999995,
+    "t1": 203.73619999999994,
+    "speech0": 201.76899999999995,
+    "speech1": 203.63619999999995
+   },
+   {
+    "scene": "S15",
+    "beat": "tcs",
+    "i": 1,
+    "seg": {
+     "text": "こちらは**TCOF1**遺伝子の変異などで、顔の骨の形成に異常が起こります。",
+     "say": "こちらはティーコフワン遺伝子の変異などで、顔の骨の形成に異常が起こります。",
+     "cue": "tcof",
+     "post": 0.3
+    },
+    "t0": 203.73619999999994,
+    "t1": 210.43219999999994,
+    "speech0": 203.73619999999994,
+    "speech1": 210.13219999999993
+   },
+   {
+    "scene": "S15",
+    "beat": "both",
+    "i": 0,
+    "seg": {
+     "text": "どちらも、体の形や働きに大きく影響します。",
+     "say": "どちらも、体の形や働きに大きく影響します。",
+     "cue": "both",
+     "post": 0.35
+    },
+    "t0": 210.43219999999994,
+    "t1": 215.08569999999995,
+    "speech0": 210.43219999999994,
+    "speech1": 214.73569999999995
+   },
+   {
+    "scene": "S16",
+    "beat": "line",
+    "i": 0,
+    "seg": {
+     "text": "遺伝子という一番下の階層の変化が、",
+     "say": "遺伝子という一番下の階層の変化が、",
+     "cue": "up"
+    },
+    "t0": 215.23569999999995,
+    "t1": 218.82569999999996,
+    "speech0": 215.23569999999995,
+    "speech1": 218.82569999999996
+   },
+   {
+    "scene": "S16",
+    "beat": "line",
+    "i": 1,
+    "seg": {
+     "text": "個体の、そして**疾患**の階層まで届いているわけです。",
+     "say": "個体の、そして疾患の階層まで届いているわけです。",
+     "cue": "reach",
+     "post": 0.45
+    },
+    "t0": 218.82569999999996,
+    "t1": 223.42869999999994,
+    "speech0": 218.82569999999996,
+    "speech1": 222.97869999999995
+   },
+   {
+    "scene": "S17",
+    "beat": "four",
+    "i": 0,
+    "seg": {
+     "text": "今日覚えてほしいのは、この4つです。",
+     "say": "今日覚えてほしいのは、この4つです。",
+     "cue": "four",
+     "post": 0.3
+    },
+    "t0": 223.57869999999994,
+    "t1": 226.49699999999996,
+    "speech0": 223.57869999999994,
+    "speech1": 226.19699999999995
+   },
+   {
+    "scene": "S17",
+    "beat": "p1",
+    "i": 0,
+    "seg": {
+     "text": "ひとつ目。",
+     "say": "ひとつ目。",
+     "cue": "p1",
+     "post": 0.1
+    },
+    "t0": 226.49699999999996,
+    "t1": 227.45289999999994,
+    "speech0": 226.49699999999996,
+    "speech1": 227.35289999999995
+   },
+   {
+    "scene": "S17",
+    "beat": "p1",
+    "i": 1,
+    "seg": {
+     "text": "遺伝の本体は**DNA**。エイブリーの形質転換実験が根拠です。",
+     "say": "遺伝の本体はディーエヌエー。エイブリーの形質転換実験が根拠です。",
+     "cue": "p1b",
+     "post": 0.3
+    },
+    "t0": 227.45289999999994,
+    "t1": 233.25369999999995,
+    "speech0": 227.45289999999994,
+    "speech1": 232.95369999999994
+   },
+   {
+    "scene": "S17",
+    "beat": "p2",
+    "i": 0,
+    "seg": {
+     "text": "ふたつ目。",
+     "say": "ふたつ目。",
+     "cue": "p2",
+     "post": 0.1
+    },
+    "t0": 233.25369999999995,
+    "t1": 234.23749999999995,
+    "speech0": 233.25369999999995,
+    "speech1": 234.13749999999996
+   },
+   {
+    "scene": "S17",
+    "beat": "p2",
+    "i": 1,
+    "seg": {
+     "text": "DNAから**転写**でRNA、**翻訳**でタンパク質。セントラルドグマです。",
+     "say": "ディーエヌエーから転写でアールエヌエー、翻訳でタンパク質。セントラルドグマです。",
+     "cue": "p2b",
+     "post": 0.3
+    },
+    "t0": 234.23749999999995,
+    "t1": 240.02289999999996,
+    "speech0": 234.23749999999995,
+    "speech1": 239.72289999999995
+   },
+   {
+    "scene": "S17",
+    "beat": "p3",
+    "i": 0,
+    "seg": {
+     "text": "みっつ目。",
+     "say": "みっつ目。",
+     "cue": "p3",
+     "post": 0.1
+    },
+    "t0": 240.02289999999996,
+    "t1": 240.96439999999996,
+    "speech0": 240.02289999999996,
+    "speech1": 240.86439999999996
+   },
+   {
+    "scene": "S17",
+    "beat": "p3",
+    "i": 1,
+    "seg": {
+     "text": "この流れは、細菌からヒトまで共通の、普遍的な原理です。",
+     "say": "この流れは、細菌からヒトまで共通の、普遍てきな原理です。",
+     "cue": "p3b",
+     "post": 0.3
+    },
+    "t0": 240.96439999999996,
+    "t1": 246.23209999999997,
+    "speech0": 240.96439999999996,
+    "speech1": 245.93209999999996
+   },
+   {
+    "scene": "S17",
+    "beat": "p4",
+    "i": 0,
+    "seg": {
+     "text": "そして、遺伝子の変化は、分子から個体まで伝わって、**疾患**になりうる。",
+     "say": "そして、遺伝子の変化は、分子から個体まで伝わって、疾患になりうる。",
+     "cue": "p4",
+     "post": 0.45
+    },
+    "t0": 246.23209999999997,
+    "t1": 252.08649999999997,
+    "speech0": 246.23209999999997,
+    "speech1": 251.63649999999998
+   },
+   {
+    "scene": "S18",
+    "beat": "next",
+    "i": 0,
+    "seg": {
+     "text": "次の第2講では、この設計図の「文字」、",
+     "say": "次の第2講では、この設計図の文字、",
+     "cue": "next"
+    },
+    "t0": 252.23649999999998,
+    "t1": 255.5965,
+    "speech0": 252.23649999999998,
+    "speech1": 255.5965
+   },
+   {
+    "scene": "S18",
+    "beat": "next",
+    "i": 1,
+    "seg": {
+     "text": "つまりDNAが何でできているのかを見ていきます。",
+     "say": "つまりディーエヌエーが何でできているのかを見ていきます。",
+     "cue": "what",
+     "post": 1
+    },
+    "t0": 255.5965,
+    "t1": 260.5765,
+    "speech0": 255.5965,
+    "speech1": 259.5765
+   }
+  ]
+ },
+ "edit": {
+  "plan": "genetics-basics:1:film|full|board|gekiga",
+  "voice": "genetics-basics-1-film_board",
+  "size": [
+   1280,
+   720
+  ],
+  "fps": 24,
+  "total": 260.726,
+  "frames": 6257,
+  "timing": "kokoro",
+  "layers": {
+   "plate": "layers/plate_%05d.jpg",
+   "overlay": "layers/overlay_%05d.png"
+  },
+  "note": "背景（Wan クリップ／無ければ MEDSTUDY アニマティック）→ 医学図レイヤーを重ねる → 白黒反転 → 字幕（ASS）→ 講師音声＋効果音（＋任意で BGM、声に合わせて自動で下げる）",
+  "scenes": [
+   {
+    "id": "S01",
+    "t0": 0,
+    "dur": 8.09,
+    "audio": "audio/S01.wav",
+    "shots": [
+     {
+      "id": "a",
+      "wan": "wan/S01_a.webm",
+      "mode": "feature",
+      "t0": 0,
+      "dur": 8.09,
+      "f0": 0,
+      "f1": 194,
+      "wanFrames": 121,
+      "wanFps": 24
+     }
+    ],
+    "sfx": [
+     {
+      "kind": "riser",
+      "t": 0,
+      "gain": 0.5
+     },
+     {
+      "kind": "boom",
+      "t": 4.883,
+      "gain": 1
+     }
+    ],
+    "invert": []
+   },
+   {
+    "id": "S02",
+    "t0": 8.09,
+    "dur": 18.341,
+    "audio": "audio/S02.wav",
+    "shots": [
+     {
+      "id": "a",
+      "wan": "wan/S02_a.webm",
+      "mode": "background",
+      "t0": 8.09,
+      "dur": 7.307,
+      "f0": 194,
+      "f1": 370,
+      "wanFrames": 121,
+      "wanFps": 24
+     },
+     {
+      "id": "b",
+      "wan": "wan/S02_b.webm",
+      "mode": "background",
+      "t0": 15.397,
+      "dur": 11.034,
+      "f0": 370,
+      "f1": 634,
+      "wanFrames": 121,
+      "wanFps": 24
+     }
+    ],
+    "sfx": [
+     {
+      "kind": "shimmer",
+      "t": 11.44,
+      "gain": 0.5
+     },
+     {
+      "kind": "tick",
+      "t": 13.617,
+      "gain": 1
+     },
+     {
+      "kind": "tick",
+      "t": 14.217,
+      "gain": 1
+     },
+     {
+      "kind": "tick",
+      "t": 14.817,
+      "gain": 1
+     },
+     {
+      "kind": "whoosh",
+      "t": 15.397,
+      "gain": 1
+     },
+     {
+      "kind": "riser",
+      "t": 22.52,
+      "gain": 0.4
+     }
+    ],
+    "invert": []
+   },
+   {
+    "id": "S03",
+    "t0": 26.431,
+    "dur": 14.015,
+    "audio": "audio/S03.wav",
+    "shots": [
+     {
+      "id": "a",
+      "wan": "wan/S03_a.webm",
+      "mode": "background",
+      "t0": 26.431,
+      "dur": 8.674,
+      "f0": 634,
+      "f1": 843,
+      "wanFrames": 121,
+      "wanFps": 24
+     },
+     {
+      "id": "b",
+      "wan": "wan/S03_b.webm",
+      "mode": "background",
+      "t0": 35.105,
+      "dur": 5.341,
+      "f0": 843,
+      "f1": 971,
+      "wanFrames": 121,
+      "wanFps": 24
+     }
+    ],
+    "sfx": [
+     {
+      "kind": "chalk",
+      "t": 26.431,
+      "gain": 0.5
+     },
+     {
+      "kind": "boom",
+      "t": 37.965,
+      "gain": 1
+     },
+     {
+      "kind": "whoosh",
+      "t": 37.965,
+      "gain": 0.6
+     }
+    ],
+    "invert": []
+   },
+   {
+    "id": "S04",
+    "t0": 40.446,
+    "dur": 16.814,
+    "audio": "audio/S04.wav",
+    "shots": [
+     {
+      "id": "a",
+      "wan": "wan/S04_a.webm",
+      "mode": "background",
+      "t0": 40.446,
+      "dur": 5.784,
+      "f0": 971,
+      "f1": 1110,
+      "wanFrames": 121,
+      "wanFps": 24
+     },
+     {
+      "id": "b",
+      "wan": "wan/S04_b.webm",
+      "mode": "background",
+      "t0": 46.231,
+      "dur": 11.03,
+      "f0": 1110,
+      "f1": 1374,
+      "wanFrames": 121,
+      "wanFps": 24
+     }
+    ],
+    "sfx": [
+     {
+      "kind": "impact",
+      "t": 40.446,
+      "gain": 0.7
+     },
+     {
+      "kind": "shimmer",
+      "t": 46.231,
+      "gain": 0.5
+     },
+     {
+      "kind": "whoosh",
+      "t": 51.194,
+      "gain": 1
+     }
+    ],
+    "invert": []
+   },
+   {
+    "id": "S05",
+    "t0": 57.26,
+    "dur": 10.109,
+    "audio": "audio/S05.wav",
+    "shots": [
+     {
+      "id": "a",
+      "wan": "wan/S05_a.webm",
+      "mode": "background",
+      "t0": 57.26,
+      "dur": 5.391,
+      "f0": 1374,
+      "f1": 1504,
+      "wanFrames": 121,
+      "wanFps": 24
+     },
+     {
+      "id": "b",
+      "wan": "wan/S05_b.webm",
+      "mode": "background",
+      "t0": 62.651,
+      "dur": 4.718,
+      "f0": 1504,
+      "f1": 1617,
+      "wanFrames": 117,
+      "wanFps": 24
+     }
+    ],
+    "sfx": [
+     {
+      "kind": "shimmer",
+      "t": 57.26,
+      "gain": 0.4
+     },
+     {
+      "kind": "tick",
+      "t": 60.73,
+      "gain": 1
+     },
+     {
+      "kind": "impact",
+      "t": 62.651,
+      "gain": 0.8
+     },
+     {
+      "kind": "tick",
+      "t": 63.388,
+      "gain": 1
+     },
+     {
+      "kind": "tick",
+      "t": 64.189,
+      "gain": 1
+     },
+     {
+      "kind": "tick",
+      "t": 64.921,
+      "gain": 1
+     },
+     {
+      "kind": "tick",
+      "t": 65.926,
+      "gain": 1
+     },
+     {
+      "kind": "whoosh",
+      "t": 66.626,
+      "gain": 0.6
+     }
+    ],
+    "invert": []
+   },
+   {
+    "id": "S06",
+    "t0": 67.369,
+    "dur": 10.383,
+    "audio": "audio/S06.wav",
+    "shots": [
+     {
+      "id": "a",
+      "wan": "wan/S06_a.webm",
+      "mode": "background",
+      "t0": 67.369,
+      "dur": 8.276,
+      "f0": 1617,
+      "f1": 1815,
+      "wanFrames": 121,
+      "wanFps": 24
+     },
+     {
+      "id": "b",
+      "wan": "wan/S06_b.webm",
+      "mode": "feature",
+      "t0": 75.645,
+      "dur": 2.107,
+      "f0": 1815,
+      "f1": 1866,
+      "wanFrames": 53,
+      "wanFps": 24
+     }
+    ],
+    "sfx": [
+     {
+      "kind": "riser",
+      "t": 67.369,
+      "gain": 0.5
+     },
+     {
+      "kind": "heartbeat",
+      "t": 70.679,
+      "gain": 1
+     },
+     {
+      "kind": "boom",
+      "t": 70.679,
+      "gain": 0.8
+     },
+     {
+      "kind": "shimmer",
+      "t": 75.645,
+      "gain": 1
+     }
+    ],
+    "invert": []
+   },
+   {
+    "id": "S07",
+    "t0": 77.752,
+    "dur": 11.095,
+    "audio": "audio/S07.wav",
+    "shots": [
+     {
+      "id": "a",
+      "wan": "wan/S07_a.webm",
+      "mode": "background",
+      "t0": 77.752,
+      "dur": 11.095,
+      "f0": 1866,
+      "f1": 2132,
+      "wanFrames": 121,
+      "wanFps": 24
+     }
+    ],
+    "sfx": [
+     {
+      "kind": "chalk",
+      "t": 77.752,
+      "gain": 0.6
+     },
+     {
+      "kind": "impact",
+      "t": 81.991,
+      "gain": 1
+     }
+    ],
+    "invert": []
+   },
+   {
+    "id": "S08",
+    "t0": 88.847,
+    "dur": 13.643,
+    "audio": "audio/S08.wav",
+    "shots": [
+     {
+      "id": "a",
+      "wan": "wan/S08_a.webm",
+      "mode": "background",
+      "t0": 88.847,
+      "dur": 13.643,
+      "f0": 2132,
+      "f1": 2460,
+      "wanFrames": 121,
+      "wanFps": 24
+     }
+    ],
+    "sfx": [
+     {
+      "kind": "chalk",
+      "t": 88.847,
+      "gain": 0.5
+     },
+     {
+      "kind": "impact",
+      "t": 96.007,
+      "gain": 0.7
+     },
+     {
+      "kind": "chalk",
+      "t": 98.495,
+      "gain": 0.6
+     }
+    ],
+    "invert": []
+   },
+   {
+    "id": "S09",
+    "t0": 102.49,
+    "dur": 12.695,
+    "audio": "audio/S09.wav",
+    "shots": [
+     {
+      "id": "a",
+      "wan": "wan/S09_a.webm",
+      "mode": "background",
+      "t0": 102.49,
+      "dur": 12.695,
+      "f0": 2460,
+      "f1": 2764,
+      "wanFrames": 121,
+      "wanFps": 24
+     }
+    ],
+    "sfx": [
+     {
+      "kind": "impact",
+      "t": 106.312,
+      "gain": 1
+     },
+     {
+      "kind": "whoosh",
+      "t": 107.677,
+      "gain": 0.6
+     },
+     {
+      "kind": "impact",
+      "t": 113.537,
+      "gain": 1
+     }
+    ],
+    "invert": []
+   },
+   {
+    "id": "S10",
+    "t0": 115.185,
+    "dur": 17.92,
+    "audio": "audio/S10.wav",
+    "shots": [
+     {
+      "id": "a",
+      "wan": "wan/S10_a.webm",
+      "mode": "background",
+      "t0": 115.185,
+      "dur": 13.46,
+      "f0": 2764,
+      "f1": 3087,
+      "wanFrames": 121,
+      "wanFps": 24
+     },
+     {
+      "id": "b",
+      "wan": "wan/S10_b.webm",
+      "mode": "background",
+      "t0": 128.646,
+      "dur": 4.46,
+      "f0": 3087,
+      "f1": 3195,
+      "wanFrames": 109,
+      "wanFps": 24
+     }
+    ],
+    "sfx": [
+     {
+      "kind": "whoosh",
+      "t": 120.144,
+      "gain": 1
+     },
+     {
+      "kind": "riser",
+      "t": 123.696,
+      "gain": 0.4
+     },
+     {
+      "kind": "impact",
+      "t": 131.305,
+      "gain": 1
+     }
+    ],
+    "invert": []
+   },
+   {
+    "id": "S11",
+    "t0": 133.105,
+    "dur": 10.091,
+    "audio": "audio/S11.wav",
+    "shots": [
+     {
+      "id": "a",
+      "wan": "wan/S11_a.webm",
+      "mode": "background",
+      "t0": 133.105,
+      "dur": 10.091,
+      "f0": 3195,
+      "f1": 3437,
+      "wanFrames": 121,
+      "wanFps": 24
+     }
+    ],
+    "sfx": [
+     {
+      "kind": "whoosh",
+      "t": 133.105,
+      "gain": 0.5
+     },
+     {
+      "kind": "tick",
+      "t": 136.145,
+      "gain": 1
+     },
+     {
+      "kind": "tick",
+      "t": 138.435,
+      "gain": 1
+     },
+     {
+      "kind": "tick",
+      "t": 139.035,
+      "gain": 1
+     },
+     {
+      "kind": "tick",
+      "t": 139.635,
+      "gain": 1
+     },
+     {
+      "kind": "impact",
+      "t": 141.29,
+      "gain": 1
+     }
+    ],
+    "invert": []
+   },
+   {
+    "id": "S12",
+    "t0": 143.196,
+    "dur": 7.847,
+    "audio": "audio/S12.wav",
+    "shots": [
+     {
+      "id": "a",
+      "wan": "wan/S12_a.webm",
+      "mode": "background",
+      "t0": 143.196,
+      "dur": 7.847,
+      "f0": 3437,
+      "f1": 3625,
+      "wanFrames": 121,
+      "wanFps": 24
+     }
+    ],
+    "sfx": [
+     {
+      "kind": "tick",
+      "t": 143.196,
+      "gain": 1
+     },
+     {
+      "kind": "whoosh",
+      "t": 144.446,
+      "gain": 1
+     },
+     {
+      "kind": "impact",
+      "t": 149.213,
+      "gain": 0.7
+     }
+    ],
+    "invert": []
+   },
+   {
+    "id": "S13",
+    "t0": 151.043,
+    "dur": 14.601,
+    "audio": "audio/S13.wav",
+    "shots": [
+     {
+      "id": "a",
+      "wan": "wan/S13_a.webm",
+      "mode": "background",
+      "t0": 151.043,
+      "dur": 14.601,
+      "f0": 3625,
+      "f1": 3975,
+      "wanFrames": 121,
+      "wanFps": 24
+     }
+    ],
+    "sfx": [
+     {
+      "kind": "boom",
+      "t": 152.103,
+      "gain": 1
+     },
+     {
+      "kind": "whoosh",
+      "t": 156.546,
+      "gain": 0.6
+     },
+     {
+      "kind": "shimmer",
+      "t": 163.3,
+      "gain": 1
+     }
+    ],
+    "invert": []
+   },
+   {
+    "id": "S14",
+    "t0": 165.644,
+    "dur": 16.688,
+    "audio": "audio/S14.wav",
+    "shots": [
+     {
+      "id": "a",
+      "wan": "wan/S14_a.webm",
+      "mode": "background",
+      "t0": 165.644,
+      "dur": 8.485,
+      "f0": 3975,
+      "f1": 4179,
+      "wanFrames": 121,
+      "wanFps": 24
+     },
+     {
+      "id": "b",
+      "wan": "wan/S14_b.webm",
+      "mode": "background",
+      "t0": 174.129,
+      "dur": 8.203,
+      "f0": 4179,
+      "f1": 4376,
+      "wanFrames": 121,
+      "wanFps": 24
+     }
+    ],
+    "sfx": [
+     {
+      "kind": "whoosh",
+      "t": 165.644,
+      "gain": 0.5
+     },
+     {
+      "kind": "whoosh",
+      "t": 166.365,
+      "gain": 0.5
+     },
+     {
+      "kind": "whoosh",
+      "t": 167.015,
+      "gain": 0.5
+     },
+     {
+      "kind": "whoosh",
+      "t": 167.67,
+      "gain": 0.5
+     },
+     {
+      "kind": "impact",
+      "t": 168.414,
+      "gain": 0.7
+     },
+     {
+      "kind": "heartbeat",
+      "t": 172.738,
+      "gain": 1
+     },
+     {
+      "kind": "whoosh",
+      "t": 179.734,
+      "gain": 1
+     }
+    ],
+    "invert": []
+   },
+   {
+    "id": "S15",
+    "t0": 182.332,
+    "dur": 32.904,
+    "audio": "audio/S15.wav",
+    "shots": [
+     {
+      "id": "a",
+      "wan": "wan/S15_a.webm",
+      "mode": "background",
+      "t0": 182.332,
+      "dur": 32.904,
+      "f0": 4376,
+      "f1": 5166,
+      "wanFrames": 121,
+      "wanFps": 24
+     }
+    ],
+    "sfx": [
+     {
+      "kind": "riser",
+      "t": 182.332,
+      "gain": 0.4
+     },
+     {
+      "kind": "impact",
+      "t": 187.573,
+      "gain": 1
+     },
+     {
+      "kind": "tick",
+      "t": 195.701,
+      "gain": 1
+     },
+     {
+      "kind": "tick",
+      "t": 203.736,
+      "gain": 1
+     },
+     {
+      "kind": "boom",
+      "t": 210.432,
+      "gain": 0.6
+     }
+    ],
+    "invert": []
+   },
+   {
+    "id": "S16",
+    "t0": 215.236,
+    "dur": 8.343,
+    "audio": "audio/S16.wav",
+    "shots": [
+     {
+      "id": "a",
+      "wan": "wan/S16_a.webm",
+      "mode": "background",
+      "t0": 215.236,
+      "dur": 8.343,
+      "f0": 5166,
+      "f1": 5366,
+      "wanFrames": 121,
+      "wanFps": 24
+     }
+    ],
+    "sfx": [
+     {
+      "kind": "riser",
+      "t": 215.236,
+      "gain": 0.6
+     },
+     {
+      "kind": "boom",
+      "t": 218.826,
+      "gain": 1
+     }
+    ],
+    "invert": []
+   },
+   {
+    "id": "S17",
+    "t0": 223.579,
+    "dur": 28.658,
+    "audio": "audio/S17.wav",
+    "shots": [
+     {
+      "id": "a",
+      "wan": "wan/S17_a.webm",
+      "mode": "background",
+      "t0": 223.579,
+      "dur": 28.658,
+      "f0": 5366,
+      "f1": 6054,
+      "wanFrames": 121,
+      "wanFps": 24
+     }
+    ],
+    "sfx": [
+     {
+      "kind": "chalk",
+      "t": 223.579,
+      "gain": 0.5
+     },
+     {
+      "kind": "chalk",
+      "t": 226.497,
+      "gain": 0.5
+     },
+     {
+      "kind": "chalk",
+      "t": 233.254,
+      "gain": 0.5
+     },
+     {
+      "kind": "chalk",
+      "t": 240.023,
+      "gain": 0.5
+     },
+     {
+      "kind": "chalk",
+      "t": 246.232,
+      "gain": 0.5
+     },
+     {
+      "kind": "impact",
+      "t": 248.732,
+      "gain": 0.6
+     }
+    ],
+    "invert": []
+   },
+   {
+    "id": "S18",
+    "t0": 252.236,
+    "dur": 8.49,
+    "audio": "audio/S18.wav",
+    "shots": [
+     {
+      "id": "a",
+      "wan": "wan/S18_a.webm",
+      "mode": "background",
+      "t0": 252.236,
+      "dur": 8.49,
+      "f0": 6054,
+      "f1": 6257,
+      "wanFrames": 121,
+      "wanFps": 24
+     }
+    ],
+    "sfx": [
+     {
+      "kind": "impact",
+      "t": 252.236,
+      "gain": 0.6
+     },
+     {
+      "kind": "shimmer",
+      "t": 255.596,
+      "gain": 0.5
+     }
+    ],
+    "invert": []
+   }
+  ],
+  "subtitles": "subtitles.ass",
+  "bgm": {
+   "file": null,
+   "gain": 0.18,
+   "duck": true
+  }
+ },
+ "scenes": [
+  {
+   "id": "S01",
+   "title": "タイトル：第1講 遺伝子とは何か",
+   "picture": "漆黒に墨が爆ぜ、右巻きの二重らせん（B型DNA：主溝と副溝の幅が違う）の影がゆっくり回る。「遺伝子とは何か」の筆文字が叩きつけられる。",
+   "diagram": {
+    "id": "helix",
+    "title": "DNA二重らせん（影）",
+    "note": "右巻き・主溝/副溝の非対称を保った背景図。文字は MEDSTUDY が描く"
+   },
+   "lecturer": false,
+   "sources": [
+    {
+     "beat": "open",
+     "source": "第1講／台詞 c01-0001（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 1,
+      "section": "導入",
+      "cues": [
+       "c01-0001"
+      ],
+      "mode": "verbatim"
+     },
+     "lines": [
+      "はい、始めましょう。",
+      "遺伝医学、最初の単元は「遺伝子の基礎」です。",
+      "今日は第1講、「遺伝子とは何か」。"
+     ]
+    }
+   ],
+   "cams": [
+    {
+     "at": "start",
+     "move": "set",
+     "x": 640,
+     "y": 360,
+     "z": 1.25,
+     "note": "墨の中から"
+    },
+    {
+     "at": "start",
+     "move": "pull",
+     "x": 640,
+     "y": 360,
+     "z": 1,
+     "dur": 3,
+     "note": "ゆっくり引く"
+    },
+    {
+     "at": "title",
+     "move": "crash",
+     "x": 640,
+     "y": 330,
+     "z": 1.18,
+     "dur": 0.22,
+     "hold": 0.3,
+     "note": "題名で急接近 → 静止"
+    }
+   ],
+   "fx": [
+    {
+     "at": "title",
+     "kind": "impact",
+     "dur": 0.5,
+     "min": "gekiga"
+    },
+    {
+     "at": "title",
+     "kind": "focus",
+     "dur": 1.4,
+     "min": "gekiga"
+    },
+    {
+     "at": "title",
+     "kind": "shake",
+     "dur": 0.3,
+     "min": "gekiga"
+    },
+    {
+     "at": "start",
+     "kind": "tone",
+     "dur": 999,
+     "min": "gekiga"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "start",
+     "kind": "riser",
+     "gain": 0.5
+    },
+    {
+     "at": "title",
+     "kind": "boom"
+    }
+   ]
+  },
+  {
+   "id": "S02",
+   "title": "受精卵1個 → 60兆個の細胞",
+   "picture": "透明帯に包まれた受精卵が1個 → 2 → 4 → 8 と分裂（卵割：細胞は小さくなっていく）。「60兆個」で急激に引くと、細胞の群れがヒトの姿になる。「同じ設計図が配られているのか」で、すべての細胞核に同じ二重らせんが灯る。",
+   "diagram": {
+    "id": "cleavage",
+    "title": "受精卵と卵割",
+    "note": "板書 egg「受精卵 1個」・cells「60兆個の細胞→ヒト」。卵割期は透明帯の中で細胞数が増え、1個あたりは小さくなる"
+   },
+   "lecturer": false,
+   "sources": [
+    {
+     "beat": "egg",
+     "source": "第1講／台詞 c01-0017／板書 egg（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 1,
+      "section": "全体像",
+      "cues": [
+       "c01-0017"
+      ],
+      "mode": "verbatim",
+      "board": [
+       "egg"
+      ]
+     },
+     "lines": [
+      "私たちの体は、たった1個の細胞、",
+      "受精卵から始まります。"
+     ]
+    },
+    {
+     "beat": "divide",
+     "source": "第1講／台詞 c01-0018／板書 cells（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 1,
+      "section": "全体像",
+      "cues": [
+       "c01-0018"
+      ],
+      "mode": "verbatim",
+      "board": [
+       "cells"
+      ]
+     },
+     "lines": [
+      "分裂を繰り返して",
+      "60兆個の細胞になり、ヒトの形になっていく。"
+     ]
+    },
+    {
+     "beat": "same",
+     "source": "第1講／台詞 c01-0019（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 1,
+      "section": "全体像",
+      "cues": [
+       "c01-0019"
+      ],
+      "mode": "verbatim"
+     },
+     "lines": [
+      "では、この60兆個の細胞に、",
+      "どうやって同じ設計図が配られているのか。"
+     ]
+    }
+   ],
+   "cams": [
+    {
+     "at": "start",
+     "move": "set",
+     "x": 640,
+     "y": 340,
+     "z": 1.6,
+     "note": "受精卵の大写し"
+    },
+    {
+     "at": "split",
+     "move": "push",
+     "x": 640,
+     "y": 340,
+     "z": 1.3,
+     "dur": 1.6,
+     "note": "分裂に合わせて少し引く"
+    },
+    {
+     "at": "body",
+     "move": "pull",
+     "x": 640,
+     "y": 360,
+     "z": 1,
+     "dur": 0.35,
+     "note": "「60兆個」で急激にズームアウト → ヒトの姿"
+    },
+    {
+     "at": "same",
+     "move": "push",
+     "x": 640,
+     "y": 300,
+     "z": 1.25,
+     "dur": 1.2,
+     "note": "細胞核の二重らせんへ寄る"
+    }
+   ],
+   "fx": [
+    {
+     "at": "body",
+     "kind": "speed",
+     "dur": 0.4,
+     "min": "gekiga"
+    },
+    {
+     "at": "body",
+     "kind": "impact",
+     "dur": 0.4,
+     "min": "gekiga"
+    },
+    {
+     "at": "same",
+     "kind": "focus",
+     "dur": 1.2,
+     "min": "gekiga"
+    },
+    {
+     "at": "body",
+     "kind": "onoma",
+     "text": "ブワッ",
+     "x": 1080,
+     "y": 160,
+     "dur": 1,
+     "min": "ultra"
+    },
+    {
+     "at": "start",
+     "kind": "tone",
+     "dur": 999,
+     "min": "gekiga"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "egg",
+     "kind": "shimmer",
+     "gain": 0.5
+    },
+    {
+     "at": "split",
+     "kind": "tick"
+    },
+    {
+     "at": "split+0.6",
+     "kind": "tick"
+    },
+    {
+     "at": "split+1.2",
+     "kind": "tick"
+    },
+    {
+     "at": "body",
+     "kind": "whoosh"
+    },
+    {
+     "at": "same",
+     "kind": "riser",
+     "gain": 0.4
+    }
+   ]
+  },
+  {
+   "id": "S03",
+   "title": "設計図＝遺伝子 → 本当にDNAか",
+   "picture": "黒板の中央に「DNA → ？」（板書 c-dna / a1 / c-q）。講師が黒板を指す。「本当にDNAなのか」で「？」へ急接近。",
+   "diagram": {
+    "id": "board-dna-q",
+    "title": "板書：DNA →？",
+    "note": "第1講の黒板 c-dna・a1・c-q"
+   },
+   "lecturer": true,
+   "sources": [
+    {
+     "beat": "theme",
+     "source": "第1講／台詞 c01-0020／板書 c-dna（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 1,
+      "section": "全体像",
+      "cues": [
+       "c01-0020"
+      ],
+      "mode": "verbatim",
+      "board": [
+       "c-dna"
+      ]
+     },
+     "lines": [
+      "その設計図が、今日のテーマ、遺伝子です。"
+     ]
+    },
+    {
+     "beat": "before",
+     "source": "第1講／台詞 c01-0025／板書 a1・c-q（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 1,
+      "section": "全体像",
+      "cues": [
+       "c01-0025"
+      ],
+      "mode": "verbatim",
+      "board": [
+       "a1",
+       "c-q"
+      ]
+     },
+     "lines": [
+      "ただ、その前に、ひとつ確かめておかなければいけないことがあります。"
+     ]
+    },
+    {
+     "beat": "ask",
+     "source": "第1講／台詞 c01-0026（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 1,
+      "section": "全体像",
+      "cues": [
+       "c01-0026"
+      ],
+      "mode": "verbatim"
+     },
+     "lines": [
+      "そもそも、遺伝を担っている物質は、",
+      "本当にDNAなのか。"
+     ]
+    }
+   ],
+   "cams": [
+    {
+     "at": "start",
+     "move": "set",
+     "x": 640,
+     "y": 380,
+     "z": 0.92,
+     "note": "講義室の引き"
+    },
+    {
+     "at": "start",
+     "move": "push",
+     "x": 640,
+     "y": 330,
+     "z": 1.1,
+     "dur": 6,
+     "note": "ゆっくり前進"
+    },
+    {
+     "at": "q-dna",
+     "move": "crash",
+     "x": 640,
+     "y": 470,
+     "z": 2.4,
+     "dur": 0.22,
+     "hold": 0.32,
+     "note": "「DNA」の語で「？」へ急接近 → 静止"
+    }
+   ],
+   "fx": [
+    {
+     "at": "q-dna",
+     "kind": "focus",
+     "dur": 1.4,
+     "min": "gekiga"
+    },
+    {
+     "at": "q-dna",
+     "kind": "impact",
+     "dur": 0.5,
+     "min": "gekiga"
+    },
+    {
+     "at": "q-dna",
+     "kind": "onoma",
+     "text": "ドンッ",
+     "x": 1010,
+     "y": 175,
+     "dur": 1.2,
+     "min": "gekiga"
+    },
+    {
+     "at": "q-dna",
+     "kind": "invert",
+     "dur": 0.12,
+     "min": "ultra"
+    },
+    {
+     "at": "q-dna",
+     "kind": "shake",
+     "dur": 0.4,
+     "min": "gekiga"
+    },
+    {
+     "at": "start",
+     "kind": "tone",
+     "dur": 999,
+     "min": "gekiga"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "start",
+     "kind": "chalk",
+     "gain": 0.5
+    },
+    {
+     "at": "q-dna",
+     "kind": "boom"
+    },
+    {
+     "at": "q-dna",
+     "kind": "whoosh",
+     "gain": 0.6
+    }
+   ]
+  },
+  {
+   "id": "S04",
+   "title": "S株とR株（肺炎球菌）",
+   "picture": "画面を斜めに割った2コマ。左＝S株（双球菌の周りに厚い被膜・表面が滑らか・病原性あり）、右＝R株（被膜なし・病原性なし）。「1944」のスタンプの後、S株→R株へ高速パン。",
+   "diagram": {
+    "id": "strains",
+    "title": "肺炎球菌 S株／R株",
+    "note": "スライド14・selfCheck「病原性があるのはS株（被膜あり・表面が滑らか）」。双球菌（2個対）で描き、被膜の有無だけを違いとして示す"
+   },
+   "lecturer": false,
+   "sources": [
+    {
+     "beat": "avery",
+     "source": "第1講／台詞 c01-0028／スライド14（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 1,
+      "section": "テーマ1　設計図の正体はDNA",
+      "cues": [
+       "c01-0028"
+      ],
+      "mode": "verbatim",
+      "slide": 14
+     },
+     "lines": [
+      "1944年、",
+      "エイブリーは、2種類の肺炎球菌を使いました。"
+     ]
+    },
+    {
+     "beat": "strainS",
+     "source": "第1講／台詞 c01-0029／スライド14（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 1,
+      "section": "テーマ1　設計図の正体はDNA",
+      "cues": [
+       "c01-0029"
+      ],
+      "mode": "verbatim",
+      "slide": 14
+     },
+     "lines": [
+      "被膜があって表面が滑らかなS株。",
+      "これは病原性があります。"
+     ]
+    },
+    {
+     "beat": "strainR",
+     "source": "第1講／台詞 c01-0030／スライド14（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 1,
+      "section": "テーマ1　設計図の正体はDNA",
+      "cues": [
+       "c01-0030"
+      ],
+      "mode": "verbatim",
+      "slide": 14
+     },
+     "lines": [
+      "被膜がなく、表面が滑らかでないR株。",
+      "こちらは病原性がありません。"
+     ]
+    }
+   ],
+   "cams": [
+    {
+     "at": "start",
+     "move": "set",
+     "x": 640,
+     "y": 360,
+     "z": 1,
+     "note": "2コマの全景"
+    },
+    {
+     "at": "year",
+     "move": "push",
+     "x": 640,
+     "y": 360,
+     "z": 1.08,
+     "dur": 1.2,
+     "note": "「1944」の判を押す（30秒版は画面のみで示す）"
+    },
+    {
+     "at": "S",
+     "move": "push",
+     "x": 360,
+     "y": 400,
+     "z": 1.45,
+     "dur": 0.45,
+     "note": "S株のコマへ寄る（被膜を見せる）"
+    },
+    {
+     "at": "R",
+     "move": "whip",
+     "x": 920,
+     "y": 400,
+     "z": 1.45,
+     "dur": 0.24,
+     "note": "R株へ高速パン（ホイップ）"
+    }
+   ],
+   "fx": [
+    {
+     "at": "year",
+     "kind": "impact",
+     "dur": 0.35,
+     "min": "gekiga"
+    },
+    {
+     "at": "R",
+     "kind": "speed",
+     "dur": 0.5,
+     "min": "gekiga"
+    },
+    {
+     "at": "S",
+     "kind": "focus",
+     "dur": 0.8,
+     "min": "ultra"
+    },
+    {
+     "at": "R",
+     "kind": "onoma",
+     "dur": 0.9,
+     "text": "ザッ",
+     "x": 1110,
+     "y": 150,
+     "min": "ultra"
+    },
+    {
+     "at": "start",
+     "kind": "tone",
+     "dur": 99,
+     "min": "gekiga"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "year",
+     "kind": "impact",
+     "gain": 0.7
+    },
+    {
+     "at": "S",
+     "kind": "shimmer",
+     "gain": 0.5
+    },
+    {
+     "at": "R",
+     "kind": "whoosh"
+    }
+   ]
+  },
+  {
+   "id": "S05",
+   "title": "S株の成分を1つずつR株へ",
+   "picture": "教材の順（DNA・RNA・脂質・タンパク質・炭水化物）に並んだ5本の試験管。「R株に加えてみる」で5枚のR株の皿へ一斉に滴下。成分名を言うたびにカメラが試験管から試験管へ跳び、名前が叩きつけられる。",
+   "diagram": {
+    "id": "tubes",
+    "title": "S株の5成分 → R株",
+    "note": "lecture-01 c01-0031 の列挙順。各成分は別々のR株に加える"
+   },
+   "lecturer": false,
+   "sources": [
+    {
+     "beat": "tubes",
+     "source": "第1講／台詞 c01-0031／スライド14（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 1,
+      "section": "テーマ1　設計図の正体はDNA",
+      "cues": [
+       "c01-0031"
+      ],
+      "mode": "verbatim",
+      "slide": 14
+     },
+     "lines": [
+      "S株から成分を1つずつ取り出して、",
+      "R株に加えてみる。",
+      "DNA、",
+      "RNA、",
+      "脂質、",
+      "タンパク質、",
+      "炭水化物。"
+     ]
+    }
+   ],
+   "cams": [
+    {
+     "at": "start",
+     "move": "set",
+     "x": 640,
+     "y": 380,
+     "z": 1,
+     "note": "試験管の列とR株の皿の全景"
+    },
+    {
+     "at": "extract",
+     "move": "push",
+     "x": 640,
+     "y": 300,
+     "z": 1.12,
+     "dur": 1.4,
+     "note": "S株から取り出す（試験管へ寄る）"
+    },
+    {
+     "at": "add",
+     "move": "pull",
+     "x": 640,
+     "y": 380,
+     "z": 1,
+     "dur": 0.5,
+     "note": "5枚の皿へ滴下を見せる"
+    },
+    {
+     "at": "t-dna",
+     "move": "crash",
+     "x": 200,
+     "y": 280,
+     "z": 1.9,
+     "dur": 0.2,
+     "hold": 0.12,
+     "note": "DNA の試験管へ急接近"
+    },
+    {
+     "at": "t-rna",
+     "move": "whip",
+     "x": 420,
+     "y": 280,
+     "z": 1.9,
+     "dur": 0.16,
+     "note": "RNA へ跳ぶ"
+    },
+    {
+     "at": "t-lip",
+     "move": "whip",
+     "x": 640,
+     "y": 280,
+     "z": 1.9,
+     "dur": 0.16,
+     "note": "脂質へ跳ぶ"
+    },
+    {
+     "at": "t-pro",
+     "move": "whip",
+     "x": 860,
+     "y": 280,
+     "z": 1.9,
+     "dur": 0.16,
+     "note": "タンパク質へ跳ぶ"
+    },
+    {
+     "at": "t-carb",
+     "move": "whip",
+     "x": 1080,
+     "y": 280,
+     "z": 1.9,
+     "dur": 0.16,
+     "note": "炭水化物へ跳ぶ"
+    },
+    {
+     "at": "t-carb+0.7",
+     "move": "pull",
+     "x": 640,
+     "y": 380,
+     "z": 1,
+     "dur": 0.35,
+     "note": "急激に引いて5本を並べる"
+    }
+   ],
+   "fx": [
+    {
+     "at": "t-dna",
+     "kind": "impact",
+     "dur": 0.3,
+     "min": "gekiga"
+    },
+    {
+     "at": "t-rna",
+     "kind": "speed",
+     "dur": 0.25,
+     "min": "gekiga"
+    },
+    {
+     "at": "t-lip",
+     "kind": "speed",
+     "dur": 0.25,
+     "min": "gekiga"
+    },
+    {
+     "at": "t-pro",
+     "kind": "speed",
+     "dur": 0.25,
+     "min": "gekiga"
+    },
+    {
+     "at": "t-carb",
+     "kind": "speed",
+     "dur": 0.25,
+     "min": "gekiga"
+    },
+    {
+     "at": "add",
+     "kind": "onoma",
+     "dur": 0.9,
+     "text": "ポタッ",
+     "x": 1110,
+     "y": 470,
+     "min": "gekiga"
+    },
+    {
+     "at": "t-carb+0.7",
+     "kind": "focus",
+     "dur": 0.6,
+     "min": "ultra"
+    },
+    {
+     "at": "start",
+     "kind": "tone",
+     "dur": 99,
+     "min": "gekiga"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "extract",
+     "kind": "shimmer",
+     "gain": 0.4
+    },
+    {
+     "at": "add",
+     "kind": "tick"
+    },
+    {
+     "at": "t-dna",
+     "kind": "impact",
+     "gain": 0.8
+    },
+    {
+     "at": "t-rna",
+     "kind": "tick"
+    },
+    {
+     "at": "t-lip",
+     "kind": "tick"
+    },
+    {
+     "at": "t-pro",
+     "kind": "tick"
+    },
+    {
+     "at": "t-carb",
+     "kind": "tick"
+    },
+    {
+     "at": "t-carb+0.7",
+     "kind": "whoosh",
+     "gain": 0.6
+    }
+   ]
+  },
+  {
+   "id": "S06",
+   "title": "DNAのときだけ R株→S株（形質転換）",
+   "picture": "5枚の培養皿。4枚はR株のまま（ざらついた平たいコロニー）。「DNAを加えたときだけ」でDNAの皿へ急接近、ざらついたコロニーが艶のある丸いS株型コロニーへ変わる。続いてR株の1個の双球菌に被膜がまとわりつく大写し（Wan）に「形質転換」の文字。",
+   "diagram": {
+    "id": "plates",
+    "title": "結果：DNAを加えたときだけ S株に",
+    "note": "c01-0032「R株がS株に変わったのは、DNAを加えたときだけ」・板書 av-dna / av-no。コロニーの見た目（S＝滑らか、R＝ざらざら）で示す"
+   },
+   "lecturer": false,
+   "sources": [
+    {
+     "beat": "result",
+     "source": "第1講／台詞 c01-0032／スライド14／板書 av-dna・av-no（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 1,
+      "section": "テーマ1　設計図の正体はDNA",
+      "cues": [
+       "c01-0032"
+      ],
+      "mode": "verbatim",
+      "slide": 14,
+      "board": [
+       "av-dna",
+       "av-no"
+      ]
+     },
+     "lines": [
+      "すると、R株がS株に変わったのは、",
+      "DNAを加えたときだけでした。"
+     ]
+    },
+    {
+     "beat": "term",
+     "source": "第1講／台詞 c01-0033／スライド14（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 1,
+      "section": "テーマ1　設計図の正体はDNA",
+      "cues": [
+       "c01-0033"
+      ],
+      "mode": "verbatim",
+      "slide": 14
+     },
+     "lines": [
+      "性質が変わる。",
+      "これを形質転換といいます。"
+     ]
+    }
+   ],
+   "cams": [
+    {
+     "at": "start",
+     "move": "set",
+     "x": 640,
+     "y": 380,
+     "z": 1,
+     "note": "5枚の皿の全景"
+    },
+    {
+     "at": "result",
+     "move": "push",
+     "x": 640,
+     "y": 380,
+     "z": 1.1,
+     "dur": 1.6,
+     "note": "じわりと寄る"
+    },
+    {
+     "at": "only-dna",
+     "move": "crash",
+     "x": 205,
+     "y": 355,
+     "z": 2,
+     "dur": 0.22,
+     "hold": 0.4,
+     "note": "DNA の皿へ急接近 → 静止"
+    },
+    {
+     "at": "term",
+     "move": "set",
+     "x": 640,
+     "y": 360,
+     "z": 1,
+     "note": "被膜が形成される双球菌の大写しへ切り替え"
+    },
+    {
+     "at": "term",
+     "move": "push",
+     "x": 640,
+     "y": 390,
+     "z": 1.22,
+     "dur": 2,
+     "note": "大写しへさらに寄る"
+    }
+   ],
+   "fx": [
+    {
+     "at": "only-dna",
+     "kind": "focus",
+     "dur": 1.6,
+     "min": "standard"
+    },
+    {
+     "at": "only-dna",
+     "kind": "impact",
+     "dur": 0.45,
+     "min": "gekiga"
+    },
+    {
+     "at": "only-dna",
+     "kind": "onoma",
+     "dur": 1.3,
+     "text": "ドクン",
+     "x": 1050,
+     "y": 190,
+     "min": "gekiga"
+    },
+    {
+     "at": "only-dna",
+     "kind": "invert",
+     "dur": 0.1,
+     "min": "ultra"
+    },
+    {
+     "at": "only-dna",
+     "kind": "shake",
+     "dur": 0.35,
+     "min": "gekiga"
+    },
+    {
+     "at": "term",
+     "kind": "flash",
+     "dur": 0.25,
+     "min": "gekiga"
+    },
+    {
+     "at": "term",
+     "kind": "onoma",
+     "dur": 1.1,
+     "text": "ゴゴゴ",
+     "x": 160,
+     "y": 140,
+     "min": "ultra"
+    },
+    {
+     "at": "start",
+     "kind": "tone",
+     "dur": 99,
+     "min": "gekiga"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "result",
+     "kind": "riser",
+     "gain": 0.5
+    },
+    {
+     "at": "only-dna",
+     "kind": "heartbeat"
+    },
+    {
+     "at": "only-dna",
+     "kind": "boom",
+     "gain": 0.8
+    },
+    {
+     "at": "term",
+     "kind": "shimmer"
+    }
+   ]
+  },
+  {
+   "id": "S07",
+   "title": "まとめ：遺伝の本体＝DNA",
+   "picture": "黒板。「エイブリー（1944）」の板書（av-h・av1・av-dna・av-no）の下に「形質転換 → 遺伝の本体 ＝ DNA」が書かれ、赤チョークの枠が走る。「DNA」の寄りから急激にズームアウトして板書全体へ。",
+   "diagram": {
+    "id": "board-avery",
+    "title": "板書：エイブリー（1944）",
+    "note": "第1講の黒板 av-h / av1 / av-dna / av-no / av-c（赤枠）"
+   },
+   "lecturer": true,
+   "sources": [
+    {
+     "beat": "conclusion",
+     "source": "第1講／台詞 c01-0036／板書 av-c（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 1,
+      "section": "テーマ1　設計図の正体はDNA",
+      "cues": [
+       "c01-0036"
+      ],
+      "mode": "verbatim",
+      "board": [
+       "av-c"
+      ]
+     },
+     "lines": [
+      "つまり、性質を次に伝える物質、",
+      "遺伝の本体はDNAだ、ということです。"
+     ]
+    },
+    {
+     "beat": "important",
+     "source": "第1講／台詞 c01-0037／板書 av-c（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 1,
+      "section": "テーマ1　設計図の正体はDNA",
+      "cues": [
+       "c01-0037"
+      ],
+      "mode": "verbatim",
+      "board": [
+       "av-c"
+      ]
+     },
+     "lines": [
+      "ここ、非常に重要です。赤で囲んでおきます。"
+     ]
+    }
+   ],
+   "cams": [
+    {
+     "at": "start",
+     "move": "set",
+     "x": 250,
+     "y": 370,
+     "z": 2,
+     "note": "板書「DNA → S株に変わる」の「DNA」に寄った画から"
+    },
+    {
+     "at": "box",
+     "move": "pull",
+     "x": 640,
+     "y": 380,
+     "z": 1,
+     "dur": 0.32,
+     "note": "赤枠と同時に急激なズームアウト"
+    }
+   ],
+   "fx": [
+    {
+     "at": "box",
+     "kind": "impact",
+     "dur": 0.4,
+     "min": "gekiga"
+    },
+    {
+     "at": "box",
+     "kind": "focus",
+     "dur": 1,
+     "min": "gekiga"
+    },
+    {
+     "at": "box",
+     "kind": "shake",
+     "dur": 0.25,
+     "min": "ultra"
+    },
+    {
+     "at": "start",
+     "kind": "tone",
+     "dur": 99,
+     "min": "gekiga"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "start",
+     "kind": "chalk",
+     "gain": 0.6
+    },
+    {
+     "at": "box",
+     "kind": "impact"
+    }
+   ]
+  },
+  {
+   "id": "S08",
+   "title": "DNA → RNA → タンパク質",
+   "picture": "黒板中央。「？」を消して「RNA」、矢印、「タンパク質」と書き足し、「＝遺伝子の実体」「（生物らしさの発揮）」を添える（板書 c-rna・a2・c-pro・c-dna-n・c-pro-n）。",
+   "diagram": {
+    "id": "board-dogma",
+    "title": "板書：DNA → RNA → タンパク質",
+    "note": "第1講の黒板・中央の列"
+   },
+   "lecturer": true,
+   "sources": [
+    {
+     "beat": "back",
+     "source": "第1講／台詞 c01-0047（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 1,
+      "section": "テーマ2　セントラルドグマ",
+      "cues": [
+       "c01-0047"
+      ],
+      "mode": "verbatim"
+     },
+     "lines": [
+      "では、黒板の真ん中に戻ります。",
+      "DNAが設計図だとして、DNAは何を作るのか。"
+     ]
+    },
+    {
+     "beat": "rna",
+     "source": "第1講／台詞 c01-0050／板書 c-rna（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 1,
+      "section": "テーマ2　セントラルドグマ",
+      "cues": [
+       "c01-0050"
+      ],
+      "mode": "verbatim",
+      "board": [
+       "c-rna"
+      ]
+     },
+     "lines": [
+      "ここに入るのは、RNAです。"
+     ]
+    },
+    {
+     "beat": "pro",
+     "source": "第1講／台詞 c01-0051／板書 a2・c-pro（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 1,
+      "section": "テーマ2　セントラルドグマ",
+      "cues": [
+       "c01-0051"
+      ],
+      "mode": "verbatim",
+      "board": [
+       "a2",
+       "c-pro"
+      ]
+     },
+     "lines": [
+      "そして、RNAから、タンパク質が作られます。"
+     ]
+    }
+   ],
+   "cams": [
+    {
+     "at": "start",
+     "move": "set",
+     "x": 640,
+     "y": 300,
+     "z": 1,
+     "note": "黒板中央の列"
+    },
+    {
+     "at": "what",
+     "move": "push",
+     "x": 640,
+     "y": 270,
+     "z": 1.25,
+     "dur": 2,
+     "note": "「？」へ寄る"
+    },
+    {
+     "at": "rna",
+     "move": "crash",
+     "x": 640,
+     "y": 300,
+     "z": 1.7,
+     "dur": 0.22,
+     "hold": 0.2,
+     "note": "「RNA」で急接近"
+    },
+    {
+     "at": "pro",
+     "move": "pull",
+     "x": 640,
+     "y": 320,
+     "z": 1,
+     "dur": 0.5,
+     "note": "「タンパク質」で引いて三段を見せる"
+    }
+   ],
+   "fx": [
+    {
+     "at": "rna",
+     "kind": "impact",
+     "dur": 0.35,
+     "min": "gekiga"
+    },
+    {
+     "at": "pro",
+     "kind": "focus",
+     "dur": 0.9,
+     "min": "gekiga"
+    },
+    {
+     "at": "start",
+     "kind": "tone",
+     "dur": 999,
+     "min": "gekiga"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "back",
+     "kind": "chalk",
+     "gain": 0.5
+    },
+    {
+     "at": "rna",
+     "kind": "impact",
+     "gain": 0.7
+    },
+    {
+     "at": "pro",
+     "kind": "chalk",
+     "gain": 0.6
+    }
+   ]
+  },
+  {
+   "id": "S09",
+   "title": "転写と翻訳",
+   "picture": "同じ黒板の2本の矢印に、黄色で「転写」「翻訳」と書き込み、丸で囲む（板書 t-trx・t-trl）。言った瞬間にその矢印へ急接近。",
+   "diagram": {
+    "id": "board-dogma",
+    "title": "板書：転写・翻訳",
+    "note": "第1講の黒板 t-trx・t-trl"
+   },
+   "lecturer": true,
+   "sources": [
+    {
+     "beat": "trx",
+     "source": "第1講／台詞 c01-0055／板書 t-trx（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 1,
+      "section": "テーマ2　セントラルドグマ",
+      "cues": [
+       "c01-0055"
+      ],
+      "mode": "verbatim",
+      "board": [
+       "t-trx"
+      ]
+     },
+     "lines": [
+      "DNAの情報をRNAに写し取ること。",
+      "これを転写といいます。"
+     ]
+    },
+    {
+     "beat": "trl",
+     "source": "第1講／台詞 c01-0056／板書 t-trl（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 1,
+      "section": "テーマ2　セントラルドグマ",
+      "cues": [
+       "c01-0056"
+      ],
+      "mode": "verbatim",
+      "board": [
+       "t-trl"
+      ]
+     },
+     "lines": [
+      "RNAの情報をもとに、アミノ酸をつないでタンパク質を作ること。",
+      "これを翻訳といいます。"
+     ]
+    }
+   ],
+   "cams": [
+    {
+     "at": "start",
+     "move": "set",
+     "x": 640,
+     "y": 320,
+     "z": 1,
+     "note": "三段の全景"
+    },
+    {
+     "at": "copy",
+     "move": "push",
+     "x": 680,
+     "y": 210,
+     "z": 1.35,
+     "dur": 1.5,
+     "note": "上の矢印へ"
+    },
+    {
+     "at": "trx",
+     "move": "crash",
+     "x": 690,
+     "y": 210,
+     "z": 2,
+     "dur": 0.2,
+     "hold": 0.25,
+     "note": "「転写」で急接近"
+    },
+    {
+     "at": "join",
+     "move": "whip",
+     "x": 690,
+     "y": 385,
+     "z": 1.5,
+     "dur": 0.25,
+     "note": "下の矢印へ高速パン"
+    },
+    {
+     "at": "trl",
+     "move": "crash",
+     "x": 690,
+     "y": 385,
+     "z": 2,
+     "dur": 0.2,
+     "hold": 0.25,
+     "note": "「翻訳」で急接近"
+    }
+   ],
+   "fx": [
+    {
+     "at": "trx",
+     "kind": "impact",
+     "dur": 0.4,
+     "min": "gekiga"
+    },
+    {
+     "at": "trl",
+     "kind": "impact",
+     "dur": 0.4,
+     "min": "gekiga"
+    },
+    {
+     "at": "join",
+     "kind": "speed",
+     "dur": 0.3,
+     "min": "gekiga"
+    },
+    {
+     "at": "trx",
+     "kind": "onoma",
+     "text": "ズバッ",
+     "x": 1080,
+     "y": 170,
+     "dur": 0.9,
+     "min": "ultra"
+    },
+    {
+     "at": "start",
+     "kind": "tone",
+     "dur": 999,
+     "min": "gekiga"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "trx",
+     "kind": "impact"
+    },
+    {
+     "at": "join",
+     "kind": "whoosh",
+     "gain": 0.6
+    },
+    {
+     "at": "trl",
+     "kind": "impact"
+    }
+   ]
+  },
+  {
+   "id": "S10",
+   "title": "転写の現場：RNAポリメラーゼ",
+   "picture": "黒板の「転写」の矢印へ突っ込むと分子の世界。DNAの二本鎖の一部がほどけ、RNAポリメラーゼが鋳型鎖の上を進みながら、相補的な塩基（TのかわりにU）でRNAを伸ばしていく。",
+   "diagram": {
+    "id": "transcription",
+    "title": "転写：DNA → RNA",
+    "note": "c01-0060。鋳型鎖に相補的なRNA（A–U, T–A, G–C, C–G）。コード鎖とRNAは同じ配列（TがU）"
+   },
+   "lecturer": false,
+   "sources": [
+    {
+     "beat": "peek",
+     "source": "第1講／台詞 c01-0059（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 1,
+      "section": "テーマ2　セントラルドグマ",
+      "cues": [
+       "c01-0059"
+      ],
+      "mode": "verbatim"
+     },
+     "lines": [
+      "では、この二つの矢印の中で、実際に何が起きているのか。",
+      "分子のレベルで、少しだけのぞいてみましょう。"
+     ]
+    },
+    {
+     "beat": "pol",
+     "source": "第1講／台詞 c01-0060（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 1,
+      "section": "テーマ2　セントラルドグマ",
+      "cues": [
+       "c01-0060"
+      ],
+      "mode": "verbatim"
+     },
+     "lines": [
+      "DNAの上を、RNAポリメラーゼという酵素が進みながら、",
+      "RNAを写し取っていきます。",
+      "これが転写です。"
+     ]
+    }
+   ],
+   "cams": [
+    {
+     "at": "start",
+     "move": "set",
+     "x": 640,
+     "y": 360,
+     "z": 0.75,
+     "note": "分子の世界の全景"
+    },
+    {
+     "at": "dive",
+     "move": "push",
+     "x": 640,
+     "y": 360,
+     "z": 1,
+     "dur": 1.8,
+     "note": "のぞき込む"
+    },
+    {
+     "at": "pol",
+     "move": "push",
+     "x": 560,
+     "y": 380,
+     "z": 1.35,
+     "dur": 1.2,
+     "note": "ポリメラーゼへ寄る"
+    },
+    {
+     "at": "copy",
+     "move": "pan",
+     "x": 760,
+     "y": 340,
+     "z": 1.35,
+     "dur": 2.2,
+     "note": "鎖に沿って移動（RNAが伸びる）"
+    },
+    {
+     "at": "trx",
+     "move": "pull",
+     "x": 640,
+     "y": 360,
+     "z": 1,
+     "dur": 0.35,
+     "note": "「転写」で急激に引く"
+    }
+   ],
+   "fx": [
+    {
+     "at": "dive",
+     "kind": "flash",
+     "dur": 0.3,
+     "min": "gekiga"
+    },
+    {
+     "at": "pol",
+     "kind": "focus",
+     "dur": 0.8,
+     "min": "ultra"
+    },
+    {
+     "at": "trx",
+     "kind": "impact",
+     "dur": 0.45,
+     "min": "gekiga"
+    },
+    {
+     "at": "trx",
+     "kind": "onoma",
+     "text": "ゴゴゴ",
+     "x": 1110,
+     "y": 140,
+     "dur": 1,
+     "min": "ultra"
+    },
+    {
+     "at": "start",
+     "kind": "tone",
+     "dur": 999,
+     "min": "gekiga"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "dive",
+     "kind": "whoosh"
+    },
+    {
+     "at": "pol",
+     "kind": "riser",
+     "gain": 0.4
+    },
+    {
+     "at": "trx",
+     "kind": "impact"
+    }
+   ]
+  },
+  {
+   "id": "S11",
+   "title": "翻訳の現場：3つの塩基 → アミノ酸1つ",
+   "picture": "RNAが核膜孔から核の外へ。リボソームがRNAを3塩基（コドン）ずつ読み、アミノ酸がひとつずつつながっていく（AUG=Met, GCU=Ala, UUC=Phe, GGA=Gly, AAA=Lys, UGG=Trp）。",
+   "diagram": {
+    "id": "translation",
+    "title": "翻訳：コドン3塩基 → アミノ酸",
+    "note": "c01-0061。遺伝暗号表どおりのコドンとアミノ酸。tRNAは省略（第4講で扱う）"
+   },
+   "lecturer": false,
+   "sources": [
+    {
+     "beat": "trl",
+     "source": "第1講／台詞 c01-0061（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 1,
+      "section": "テーマ2　セントラルドグマ",
+      "cues": [
+       "c01-0061"
+      ],
+      "mode": "verbatim"
+     },
+     "lines": [
+      "そのRNAが核の外に出ると、",
+      "3つの塩基ずつ読まれて、",
+      "アミノ酸が一つずつつながっていく。",
+      "これが翻訳です。"
+     ]
+    }
+   ],
+   "cams": [
+    {
+     "at": "start",
+     "move": "set",
+     "x": 380,
+     "y": 360,
+     "z": 1.2,
+     "note": "核膜孔の出口"
+    },
+    {
+     "at": "three",
+     "move": "whip",
+     "x": 620,
+     "y": 380,
+     "z": 1.35,
+     "dur": 0.3,
+     "note": "リボソームへ高速パン"
+    },
+    {
+     "at": "chain",
+     "move": "pan",
+     "x": 760,
+     "y": 340,
+     "z": 1.3,
+     "dur": 2,
+     "note": "RNAに沿って移動（アミノ酸の鎖が伸びる）"
+    },
+    {
+     "at": "trl",
+     "move": "pull",
+     "x": 640,
+     "y": 360,
+     "z": 1,
+     "dur": 0.35,
+     "note": "「翻訳」で急激に引く"
+    }
+   ],
+   "fx": [
+    {
+     "at": "three",
+     "kind": "speed",
+     "dur": 0.35,
+     "min": "gekiga"
+    },
+    {
+     "at": "trl",
+     "kind": "impact",
+     "dur": 0.45,
+     "min": "gekiga"
+    },
+    {
+     "at": "chain",
+     "kind": "onoma",
+     "text": "カチッ",
+     "x": 1080,
+     "y": 170,
+     "dur": 0.8,
+     "min": "ultra"
+    },
+    {
+     "at": "start",
+     "kind": "tone",
+     "dur": 999,
+     "min": "gekiga"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "out",
+     "kind": "whoosh",
+     "gain": 0.5
+    },
+    {
+     "at": "three",
+     "kind": "tick"
+    },
+    {
+     "at": "chain",
+     "kind": "tick"
+    },
+    {
+     "at": "chain+0.6",
+     "kind": "tick"
+    },
+    {
+     "at": "chain+1.2",
+     "kind": "tick"
+    },
+    {
+     "at": "trl",
+     "kind": "impact"
+    }
+   ]
+  },
+  {
+   "id": "S12",
+   "title": "写すのが転写、置き換えるのが翻訳",
+   "picture": "画面を左右に割る。左「転写＝写す」：DNAの文字をRNAの文字へ（同じ言葉：塩基→塩基）。右「翻訳＝別の言葉に置き換える」：塩基3文字→アミノ酸1つ。",
+   "diagram": {
+    "id": "contrast",
+    "title": "転写と翻訳の区別",
+    "note": "c01-0058"
+   },
+   "lecturer": false,
+   "sources": [
+    {
+     "beat": "memo",
+     "source": "第1講／台詞 c01-0058（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 1,
+      "section": "テーマ2　セントラルドグマ",
+      "cues": [
+       "c01-0058"
+      ],
+      "mode": "verbatim"
+     },
+     "lines": [
+      "写すのが転写、",
+      "別の言葉、つまりアミノ酸の言葉に置き換えるのが翻訳。",
+      "そう覚えてください。"
+     ]
+    }
+   ],
+   "cams": [
+    {
+     "at": "start",
+     "move": "set",
+     "x": 330,
+     "y": 360,
+     "z": 1.3,
+     "note": "左のコマ「転写」"
+    },
+    {
+     "at": "trans",
+     "move": "whip",
+     "x": 950,
+     "y": 360,
+     "z": 1.3,
+     "dur": 0.25,
+     "note": "右のコマ「翻訳」へ高速パン"
+    },
+    {
+     "at": "memo",
+     "move": "pull",
+     "x": 640,
+     "y": 360,
+     "z": 1,
+     "dur": 0.4,
+     "note": "2コマを並べる"
+    }
+   ],
+   "fx": [
+    {
+     "at": "trans",
+     "kind": "speed",
+     "dur": 0.3,
+     "min": "gekiga"
+    },
+    {
+     "at": "memo",
+     "kind": "impact",
+     "dur": 0.4,
+     "min": "gekiga"
+    },
+    {
+     "at": "start",
+     "kind": "tone",
+     "dur": 999,
+     "min": "gekiga"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "copy",
+     "kind": "tick"
+    },
+    {
+     "at": "trans",
+     "kind": "whoosh"
+    },
+    {
+     "at": "memo",
+     "kind": "impact",
+     "gain": 0.7
+    }
+   ]
+  },
+  {
+   "id": "S13",
+   "title": "セントラルドグマ：細菌からヒトまで",
+   "picture": "「セントラルドグマ」の筆文字が叩きつけられる。続いて、細菌（核がなくDNAは細胞質の核様体）からヒトまで、どの細胞にも同じ向き「DNA→RNA→タンパク質」が流れている。",
+   "diagram": {
+    "id": "universal",
+    "title": "セントラルドグマは普遍的",
+    "note": "c01-0074・c01-0077、スライド48。細菌は核をもたない（核様体）"
+   },
+   "lecturer": false,
+   "sources": [
+    {
+     "beat": "name",
+     "source": "第1講／台詞 c01-0074／スライド48（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 1,
+      "section": "テーマ2　セントラルドグマ",
+      "cues": [
+       "c01-0074"
+      ],
+      "mode": "verbatim",
+      "slide": 48
+     },
+     "lines": [
+      "分子生物学の、セントラルドグマ。",
+      "中心となる教義、という意味です。"
+     ]
+    },
+    {
+     "beat": "all",
+     "source": "第1講／台詞 c01-0077／スライド48／板書 r2b（原文の一部）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 1,
+      "section": "テーマ2　セントラルドグマ",
+      "cues": [
+       "c01-0077"
+      ],
+      "mode": "trimmed",
+      "slide": 48,
+      "board": [
+       "r2b"
+      ]
+     },
+     "lines": [
+      "細菌からヒトに至るまで、",
+      "すべての細胞は、遺伝情報をこの向きで発現します。",
+      "普遍的な原理なんです。"
+     ]
+    }
+   ],
+   "cams": [
+    {
+     "at": "start",
+     "move": "set",
+     "x": 640,
+     "y": 300,
+     "z": 1.3,
+     "note": "題字の寄り"
+    },
+    {
+     "at": "name",
+     "move": "crash",
+     "x": 640,
+     "y": 260,
+     "z": 1.45,
+     "dur": 0.2,
+     "hold": 0.25,
+     "note": "「セントラルドグマ」で急接近"
+    },
+    {
+     "at": "from",
+     "move": "pull",
+     "x": 640,
+     "y": 380,
+     "z": 1,
+     "dur": 0.45,
+     "note": "引いて細菌〜ヒトを並べる"
+    },
+    {
+     "at": "dir",
+     "move": "pan",
+     "x": 700,
+     "y": 380,
+     "z": 1.05,
+     "dur": 2.5,
+     "note": "横へ流す"
+    }
+   ],
+   "fx": [
+    {
+     "at": "name",
+     "kind": "impact",
+     "dur": 0.5,
+     "min": "gekiga"
+    },
+    {
+     "at": "name",
+     "kind": "focus",
+     "dur": 1.2,
+     "min": "gekiga"
+    },
+    {
+     "at": "univ",
+     "kind": "flash",
+     "dur": 0.3,
+     "min": "gekiga"
+    },
+    {
+     "at": "name",
+     "kind": "onoma",
+     "text": "ドンッ",
+     "x": 1080,
+     "y": 150,
+     "dur": 1,
+     "min": "ultra"
+    },
+    {
+     "at": "start",
+     "kind": "tone",
+     "dur": 999,
+     "min": "gekiga"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "name",
+     "kind": "boom"
+    },
+    {
+     "at": "from",
+     "kind": "whoosh",
+     "gain": 0.6
+    },
+    {
+     "at": "univ",
+     "kind": "shimmer"
+    }
+   ]
+  },
+  {
+   "id": "S14",
+   "title": "生体の階層性：遺伝子 → 疾患",
+   "picture": "二重らせん（遺伝子）から急激にズームアウト：タンパク質（分子）→ 細胞 → 組織（細胞の層）→ 個体（ヒト）。「疾患」で画面が赤く脈打つ。続けて一気に一番下の遺伝子まで戻る。",
+   "diagram": {
+    "id": "hierarchy",
+    "title": "生体の階層性",
+    "note": "板書 hier1「遺伝子→分子→細胞」・hier2「→組織→個体→疾患」、c01-0010・c01-0011"
+   },
+   "lecturer": false,
+   "sources": [
+    {
+     "beat": "levels",
+     "source": "第1講／台詞 c01-0010／板書 hier1・hier2（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 1,
+      "section": "全体像",
+      "cues": [
+       "c01-0010"
+      ],
+      "mode": "verbatim",
+      "board": [
+       "hier1",
+       "hier2"
+      ]
+     },
+     "lines": [
+      "遺伝子、",
+      "分子、",
+      "細胞、",
+      "組織、",
+      "個体。",
+      "そして、うまくいかなかったときに現れるのが、",
+      "疾患です。"
+     ]
+    },
+    {
+     "beat": "stack",
+     "source": "第1講／台詞 c01-0011（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 1,
+      "section": "全体像",
+      "cues": [
+       "c01-0011"
+      ],
+      "mode": "verbatim"
+     },
+     "lines": [
+      "生き物は、小さな部品が階層的に積み上がってできています。",
+      "いちばん下の階層にあるのが、遺伝子です。"
+     ]
+    }
+   ],
+   "cams": [
+    {
+     "at": "start",
+     "move": "set",
+     "x": 640,
+     "y": 360,
+     "z": 1,
+     "note": "階層のズームは図そのものが行う（遺伝子→個体へ6倍ずつ）"
+    }
+   ],
+   "fx": [
+    {
+     "at": "l1",
+     "kind": "speed",
+     "dur": 0.25,
+     "min": "ultra"
+    },
+    {
+     "at": "l4",
+     "kind": "impact",
+     "dur": 0.4,
+     "min": "gekiga"
+    },
+    {
+     "at": "l5",
+     "kind": "impact",
+     "dur": 0.5,
+     "min": "gekiga"
+    },
+    {
+     "at": "l5",
+     "kind": "shake",
+     "dur": 0.4,
+     "min": "gekiga"
+    },
+    {
+     "at": "l5",
+     "kind": "onoma",
+     "text": "ドクン",
+     "x": 1060,
+     "y": 170,
+     "dur": 1.1,
+     "min": "gekiga"
+    },
+    {
+     "at": "bottom",
+     "kind": "focus",
+     "dur": 1,
+     "min": "gekiga"
+    },
+    {
+     "at": "start",
+     "kind": "tone",
+     "dur": 999,
+     "min": "gekiga"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "l0",
+     "kind": "whoosh",
+     "gain": 0.5
+    },
+    {
+     "at": "l1",
+     "kind": "whoosh",
+     "gain": 0.5
+    },
+    {
+     "at": "l2",
+     "kind": "whoosh",
+     "gain": 0.5
+    },
+    {
+     "at": "l3",
+     "kind": "whoosh",
+     "gain": 0.5
+    },
+    {
+     "at": "l4",
+     "kind": "impact",
+     "gain": 0.7
+    },
+    {
+     "at": "l5",
+     "kind": "heartbeat"
+    },
+    {
+     "at": "bottom",
+     "kind": "whoosh"
+    }
+   ]
+  },
+  {
+   "id": "S15",
+   "title": "遺伝子の変化 → 疾患",
+   "picture": "黒板右の「遺伝子の変化 → 疾患」（板書 dz-h・dz1〜dz3）。下に図：21番染色体が3本（トリソミー＝数の異常）、1つの遺伝子に1か所の変異（Lamin A/C・TCOF1）。患者の顔は描かない。",
+   "diagram": {
+    "id": "disease",
+    "title": "数の異常と遺伝子1つの変異",
+    "note": "c01-0084〜0088、スライド12・13、板書 dz-h〜dz3"
+   },
+   "lecturer": false,
+   "sources": [
+    {
+     "beat": "q",
+     "source": "第1講／台詞 c01-0084／スライド12（原文の一部）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 1,
+      "section": "テーマ3　遺伝子の変化と疾患",
+      "cues": [
+       "c01-0084"
+      ],
+      "mode": "trimmed",
+      "slide": 12
+     },
+     "lines": [
+      "最後に、設計図に変化が起きると何が起こるのか。"
+     ]
+    },
+    {
+     "beat": "down",
+     "source": "第1講／台詞 c01-0085／スライド12／板書 dz1（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 1,
+      "section": "テーマ3　遺伝子の変化と疾患",
+      "cues": [
+       "c01-0085"
+      ],
+      "mode": "verbatim",
+      "slide": 12,
+      "board": [
+       "dz1"
+      ]
+     },
+     "lines": [
+      "ダウン症候群。",
+      "21番染色体が1本多い、染色体の数の異常です。"
+     ]
+    },
+    {
+     "beat": "prog",
+     "source": "第1講／台詞 c01-0086／スライド12／板書 dz2（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 1,
+      "section": "テーマ3　遺伝子の変化と疾患",
+      "cues": [
+       "c01-0086"
+      ],
+      "mode": "verbatim",
+      "slide": 12,
+      "board": [
+       "dz2"
+      ]
+     },
+     "lines": [
+      "ハッチンソン・ギルフォード・プロジェリア症候群。",
+      "Lamin A/Cという、たった一つの遺伝子の変異で、急速に老化が進みます。"
+     ]
+    },
+    {
+     "beat": "tcs",
+     "source": "第1講／台詞 c01-0087／スライド13／板書 dz3（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 1,
+      "section": "テーマ3　遺伝子の変化と疾患",
+      "cues": [
+       "c01-0087"
+      ],
+      "mode": "verbatim",
+      "slide": 13,
+      "board": [
+       "dz3"
+      ]
+     },
+     "lines": [
+      "トリーチャー・コリンズ症候群。",
+      "こちらはTCOF1遺伝子の変異などで、顔の骨の形成に異常が起こります。"
+     ]
+    },
+    {
+     "beat": "both",
+     "source": "第1講／台詞 c01-0088（原文の一部）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 1,
+      "section": "テーマ3　遺伝子の変化と疾患",
+      "cues": [
+       "c01-0088"
+      ],
+      "mode": "trimmed"
+     },
+     "lines": [
+      "どちらも、体の形や働きに大きく影響します。"
+     ]
+    }
+   ],
+   "cams": [
+    {
+     "at": "start",
+     "move": "set",
+     "x": 640,
+     "y": 330,
+     "z": 1,
+     "note": "黒板と図"
+    },
+    {
+     "at": "tri",
+     "move": "crash",
+     "x": 300,
+     "y": 480,
+     "z": 1.7,
+     "dur": 0.22,
+     "hold": 0.2,
+     "note": "3本目の21番染色体へ急接近"
+    },
+    {
+     "at": "prog",
+     "move": "pull",
+     "x": 640,
+     "y": 330,
+     "z": 1,
+     "dur": 0.4,
+     "note": "引く"
+    },
+    {
+     "at": "lmna",
+     "move": "push",
+     "x": 860,
+     "y": 470,
+     "z": 1.6,
+     "dur": 0.8,
+     "note": "遺伝子の1か所の変異へ寄る"
+    },
+    {
+     "at": "tcof",
+     "move": "pan",
+     "x": 860,
+     "y": 470,
+     "z": 1.6,
+     "dur": 0.5,
+     "note": "同じ図で TCOF1"
+    },
+    {
+     "at": "both",
+     "move": "pull",
+     "x": 640,
+     "y": 330,
+     "z": 1,
+     "dur": 0.4,
+     "note": "全体へ"
+    }
+   ],
+   "fx": [
+    {
+     "at": "tri",
+     "kind": "impact",
+     "dur": 0.4,
+     "min": "gekiga"
+    },
+    {
+     "at": "tri",
+     "kind": "focus",
+     "dur": 1,
+     "min": "gekiga"
+    },
+    {
+     "at": "lmna",
+     "kind": "focus",
+     "dur": 1,
+     "min": "gekiga"
+    },
+    {
+     "at": "both",
+     "kind": "flash",
+     "dur": 0.25,
+     "min": "gekiga"
+    },
+    {
+     "at": "tri",
+     "kind": "invert",
+     "dur": 0.1,
+     "min": "ultra"
+    },
+    {
+     "at": "start",
+     "kind": "tone",
+     "dur": 999,
+     "min": "gekiga"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "q",
+     "kind": "riser",
+     "gain": 0.4
+    },
+    {
+     "at": "tri",
+     "kind": "impact"
+    },
+    {
+     "at": "lmna",
+     "kind": "tick"
+    },
+    {
+     "at": "tcof",
+     "kind": "tick"
+    },
+    {
+     "at": "both",
+     "kind": "boom",
+     "gain": 0.6
+    }
+   ]
+  },
+  {
+   "id": "S16",
+   "title": "一番下の変化が、疾患まで届く",
+   "picture": "縦に積んだ階層（遺伝子・分子・細胞・組織・個体・疾患）。一番下の遺伝子から一本の光の線が駆け上がり、疾患の段で炸裂する。",
+   "diagram": {
+    "id": "hier-line",
+    "title": "遺伝子から疾患まで一本の線",
+    "note": "c01-0089、板書 hier2 をなぞる（!p hier2）"
+   },
+   "lecturer": false,
+   "sources": [
+    {
+     "beat": "line",
+     "source": "第1講／台詞 c01-0089／板書 hier2（原文の一部）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 1,
+      "section": "テーマ3　遺伝子の変化と疾患",
+      "cues": [
+       "c01-0089"
+      ],
+      "mode": "trimmed",
+      "board": [
+       "hier2"
+      ]
+     },
+     "lines": [
+      "遺伝子という一番下の階層の変化が、",
+      "個体の、そして疾患の階層まで届いているわけです。"
+     ]
+    }
+   ],
+   "cams": [
+    {
+     "at": "start",
+     "move": "set",
+     "x": 640,
+     "y": 520,
+     "z": 1.5,
+     "note": "一番下（遺伝子）"
+    },
+    {
+     "at": "up",
+     "move": "pan",
+     "x": 640,
+     "y": 360,
+     "z": 1.2,
+     "dur": 2.2,
+     "note": "線と一緒に駆け上がる"
+    },
+    {
+     "at": "reach",
+     "move": "crash",
+     "x": 780,
+     "y": 160,
+     "z": 1.5,
+     "dur": 0.25,
+     "hold": 0.25,
+     "note": "「疾患」で急接近"
+    }
+   ],
+   "fx": [
+    {
+     "at": "reach",
+     "kind": "impact",
+     "dur": 0.45,
+     "min": "gekiga"
+    },
+    {
+     "at": "reach",
+     "kind": "focus",
+     "dur": 1,
+     "min": "gekiga"
+    },
+    {
+     "at": "up",
+     "kind": "speed",
+     "dur": 0.5,
+     "min": "ultra"
+    },
+    {
+     "at": "start",
+     "kind": "tone",
+     "dur": 999,
+     "min": "gekiga"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "up",
+     "kind": "riser",
+     "gain": 0.6
+    },
+    {
+     "at": "reach",
+     "kind": "boom"
+    }
+   ]
+  },
+  {
+   "id": "S17",
+   "title": "今日のまとめ：4つ",
+   "picture": "黒板の下段に「今日のまとめ」①〜④（板書 sum-h・s1〜s4）。読み上げに合わせて1行ずつ書かれ、言い終わるごとに黄色の下線。",
+   "diagram": {
+    "id": "board-summary4",
+    "title": "板書：今日のまとめ",
+    "note": "第1講の黒板 sum-h・s1〜s4、c01-0097〜0101"
+   },
+   "lecturer": true,
+   "sources": [
+    {
+     "beat": "four",
+     "source": "第1講／台詞 c01-0097／板書 sum-h（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 1,
+      "section": "まとめ",
+      "cues": [
+       "c01-0097"
+      ],
+      "mode": "verbatim",
+      "board": [
+       "sum-h"
+      ]
+     },
+     "lines": [
+      "今日覚えてほしいのは、この4つです。"
+     ]
+    },
+    {
+     "beat": "p1",
+     "source": "第1講／台詞 c01-0098／板書 s1（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 1,
+      "section": "まとめ",
+      "cues": [
+       "c01-0098"
+      ],
+      "mode": "verbatim",
+      "board": [
+       "s1"
+      ]
+     },
+     "lines": [
+      "ひとつ目。",
+      "遺伝の本体はDNA。エイブリーの形質転換実験が根拠です。"
+     ]
+    },
+    {
+     "beat": "p2",
+     "source": "第1講／台詞 c01-0099／板書 s2（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 1,
+      "section": "まとめ",
+      "cues": [
+       "c01-0099"
+      ],
+      "mode": "verbatim",
+      "board": [
+       "s2"
+      ]
+     },
+     "lines": [
+      "ふたつ目。",
+      "DNAから転写でRNA、翻訳でタンパク質。セントラルドグマです。"
+     ]
+    },
+    {
+     "beat": "p3",
+     "source": "第1講／台詞 c01-0100／板書 s3（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 1,
+      "section": "まとめ",
+      "cues": [
+       "c01-0100"
+      ],
+      "mode": "verbatim",
+      "board": [
+       "s3"
+      ]
+     },
+     "lines": [
+      "みっつ目。",
+      "この流れは、細菌からヒトまで共通の、普遍的な原理です。"
+     ]
+    },
+    {
+     "beat": "p4",
+     "source": "第1講／台詞 c01-0101／板書 s4（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 1,
+      "section": "まとめ",
+      "cues": [
+       "c01-0101"
+      ],
+      "mode": "verbatim",
+      "board": [
+       "s4"
+      ]
+     },
+     "lines": [
+      "そして、遺伝子の変化は、分子から個体まで伝わって、疾患になりうる。"
+     ]
+    }
+   ],
+   "cams": [
+    {
+     "at": "start",
+     "move": "set",
+     "x": 640,
+     "y": 330,
+     "z": 1,
+     "note": "まとめの板書"
+    },
+    {
+     "at": "p1",
+     "move": "push",
+     "x": 600,
+     "y": 190,
+     "z": 1.3,
+     "dur": 0.6,
+     "note": "①へ"
+    },
+    {
+     "at": "p2",
+     "move": "pan",
+     "x": 600,
+     "y": 285,
+     "z": 1.3,
+     "dur": 0.5,
+     "note": "②へ"
+    },
+    {
+     "at": "p3",
+     "move": "pan",
+     "x": 600,
+     "y": 380,
+     "z": 1.3,
+     "dur": 0.5,
+     "note": "③へ"
+    },
+    {
+     "at": "p4",
+     "move": "pan",
+     "x": 600,
+     "y": 475,
+     "z": 1.3,
+     "dur": 0.5,
+     "note": "④へ"
+    },
+    {
+     "at": "p4+2.5",
+     "move": "pull",
+     "x": 640,
+     "y": 330,
+     "z": 1,
+     "dur": 0.5,
+     "note": "4つを並べて引く"
+    }
+   ],
+   "fx": [
+    {
+     "at": "p1",
+     "kind": "impact",
+     "dur": 0.3,
+     "min": "ultra"
+    },
+    {
+     "at": "p4+2.5",
+     "kind": "focus",
+     "dur": 0.9,
+     "min": "gekiga"
+    },
+    {
+     "at": "start",
+     "kind": "tone",
+     "dur": 999,
+     "min": "gekiga"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "four",
+     "kind": "chalk",
+     "gain": 0.5
+    },
+    {
+     "at": "p1",
+     "kind": "chalk",
+     "gain": 0.5
+    },
+    {
+     "at": "p2",
+     "kind": "chalk",
+     "gain": 0.5
+    },
+    {
+     "at": "p3",
+     "kind": "chalk",
+     "gain": 0.5
+    },
+    {
+     "at": "p4",
+     "kind": "chalk",
+     "gain": 0.5
+    },
+    {
+     "at": "p4+2.5",
+     "kind": "impact",
+     "gain": 0.6
+    }
+   ]
+  },
+  {
+   "id": "S18",
+   "title": "次回：第2講",
+   "picture": "「次回 第2講」の判。設計図の「文字」＝DNAが何でできているか（ヌクレオチドの影）。黒にフェードアウト。",
+   "diagram": {
+    "id": "end",
+    "title": "次回予告",
+    "note": "c01-0103"
+   },
+   "lecturer": false,
+   "sources": [
+    {
+     "beat": "next",
+     "source": "第1講／台詞 c01-0103（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 1,
+      "section": "まとめ",
+      "cues": [
+       "c01-0103"
+      ],
+      "mode": "verbatim"
+     },
+     "lines": [
+      "次の第2講では、この設計図の「文字」、",
+      "つまりDNAが何でできているのかを見ていきます。"
+     ]
+    }
+   ],
+   "cams": [
+    {
+     "at": "start",
+     "move": "set",
+     "x": 640,
+     "y": 360,
+     "z": 1.15,
+     "note": "予告"
+    },
+    {
+     "at": "start",
+     "move": "pull",
+     "x": 640,
+     "y": 360,
+     "z": 1,
+     "dur": 5,
+     "note": "ゆっくり引いて終わる"
+    }
+   ],
+   "fx": [
+    {
+     "at": "next",
+     "kind": "impact",
+     "dur": 0.4,
+     "min": "gekiga"
+    },
+    {
+     "at": "start",
+     "kind": "tone",
+     "dur": 999,
+     "min": "gekiga"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "next",
+     "kind": "impact",
+     "gain": 0.6
+    },
+    {
+     "at": "what",
+     "kind": "shimmer",
+     "gain": 0.5
+    }
+   ]
+  }
+ ]
+}

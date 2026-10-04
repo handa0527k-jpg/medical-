@@ -2,7 +2,7 @@
  "plan": "genetics-basics-1-2_30s_board",
  "engine": "kokoro (Kokoro-82M v1.0, ONNX) + misaki ja G2P (pyopenjtalk)",
  "voice": "jm_kumo",
- "speed": 1.06,
+ "speed": 1.08,
  "sampleRate": 24000,
  "note": "say = 読み（英字・誤読しやすい語はかな）。pre/post = 前後の間（秒）。speed = 区間ごとの話速（重要語はやや遅く）。",
  "scenes": [

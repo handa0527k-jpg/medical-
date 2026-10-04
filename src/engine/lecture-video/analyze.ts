@@ -63,3 +63,14 @@ export function recommendTheme(themes: ThemeInfo[]): { theme: ThemeInfo; why: st
     why: `教材の順に見て、${skipped ? skipped + 'は導入・全体像のため除き、' : ''}最初に「スライド（${t.slides.join('・')}）」と「確認問題（${t.quizzes.join('・')}）」の両方を伴う具体的なテーマ。`,
   };
 }
+
+/** the whole lecture as one film (完成版): a theme that spans every section */
+export function filmTheme(course: string, lec: Lecture, key: string): ThemeInfo {
+  const all = themesOf(course, lec);
+  return {
+    key, course, lecture: lec.chapter, lectureTitle: lec.title, section: -1, name: `第${lec.chapter}講まるごと（完成版）`,
+    cueIds: all.flatMap((t) => t.cueIds), seconds: all.reduce((a, t) => a + t.seconds, 0),
+    slides: [...new Set(all.flatMap((t) => t.slides))], quizzes: [...new Set(all.flatMap((t) => t.quizzes))], anims: [...new Set(all.flatMap((t) => t.anims))],
+    board: all.flatMap((t) => t.board), substantive: true,
+  };
+}

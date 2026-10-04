@@ -8,6 +8,7 @@ import type { SingleQuestion, Slide } from '../../content/types';
 import type { ThemeInfo } from './analyze';
 import type { Beat, Duration, Intensity, LessonStyle, Plan, SceneDef, Segment } from './types';
 import { AVERY_KEY, AVERY_RATIONALE, averyScenes } from './directions/avery';
+import { FILM_KEY, FILM_RATIONALE, lecture1Film } from './directions/lecture1';
 import { estimateSpeech } from './timing';
 
 export interface Material {
@@ -21,22 +22,30 @@ export interface Material {
 export interface PlanOptions { duration: Duration; style: LessonStyle; intensity: Intensity }
 
 export const KOKORO_VOICE = 'jm_kumo';
-export const KOKORO_SPEED = 1.06;
+/** natural lecture pace for the full film; the 30 / 60 s shorts are read a little briskly to fit */
+export const KOKORO_SPEED = 1.0;
+export const KOKORO_SPEED_SHORT = 1.08;
 
 export const planKey = (theme: string, o: PlanOptions) => `${theme}|${o.duration}|${o.style}|${o.intensity}`;
 /** the voice depends only on what is said, not on how hard the picture hits */
-export const voiceKey = (theme: string, o: Pick<PlanOptions, 'duration' | 'style'>) => `${theme.replace(/:/g, '-')}_${o.duration}s_${o.style}`;
+export const voiceKey = (theme: string, o: Pick<PlanOptions, 'duration' | 'style'>) => theme === FILM_KEY ? `${theme.replace(/:/g, '-')}_board` : `${theme.replace(/:/g, '-')}_${o.duration}s_${o.style}`;
 
-export const isCurated = (themeKey: string) => themeKey === AVERY_KEY;
+export const isCurated = (themeKey: string) => themeKey === AVERY_KEY || themeKey === FILM_KEY;
+export const isFilm = (themeKey: string) => themeKey === FILM_KEY;
 
 const boardOps = (lec: Lecture, ids: string[]) => ids.map((id) => lec.board?.ops.find((o) => o.id === id)).filter(Boolean) as BoardOp[];
 
-export function buildPlan(m: Material, o: PlanOptions): Plan {
-  const curated = isCurated(m.theme.key);
-  const scenes = curated ? averyScenes(o.duration, o.style) : draftScenes(m, o);
+export function buildPlan(m: Material, opts: PlanOptions): Plan {
+  let o = opts;
+  const curated = isCurated(m.theme.key), film = isFilm(m.theme.key);
+  if (film) o = { ...o, duration: 'full', style: 'board' };
+  const scenes = film ? lecture1Film() : curated ? averyScenes(o.duration === 'full' ? 60 : o.duration, o.style) : draftScenes(m, o);
   if (curated) {
     for (const s of scenes) {
-      if (s.visual === 'board-question') s.data = { ...s.data, board: boardOps(m.lecture, ['c-dna', 'a1', 'c-q']) };
+      // the lecture's own blackboard: every op a scene writes is taken from the lecture's board by id
+      const items = (s.data?.items as { id: string }[] | undefined)?.map((x) => x.id);
+      if (items) s.data = { ...s.data, board: boardOps(m.lecture, items) };
+      if (s.visual === 'board-question') s.data = { ...s.data, board: boardOps(m.lecture, (s.data?.boardIds as string[]) ?? ['c-dna', 'a1', 'c-q']) };
       if (s.visual === 'board-summary') s.data = { ...s.data, board: boardOps(m.lecture, ['av-h', 'av1', 'av-dna', 'av-no', 'av-c']) };
       if (s.visual === 'quiz') s.data = { ...s.data, question: m.questions.find((q) => q.id === (s.data?.qid as string)) };
       if (s.visual === 'strains' || s.visual === 'tubes' || s.visual === 'plates') s.data = { ...s.data, slide: m.slides[14] ? { title: m.slides[14].title, keyPoint: m.slides[14].keyPoint } : undefined };
@@ -47,14 +56,14 @@ export function buildPlan(m: Material, o: PlanOptions): Plan {
     course: m.course,
     lecture: m.lecture.chapter,
     section: m.theme.name,
-    theme: `${m.courseTitle.split('｜').pop()} 第${m.lecture.chapter}講「${m.lecture.title}」— ${m.theme.name.replace(/^テーマ\d+\s*/, '')}`,
+    theme: film ? `${m.courseTitle.split('｜').pop()} 第${m.lecture.chapter}講「${m.lecture.title}」— 完成版（講義まるごと）` : `${m.courseTitle.split('｜').pop()} 第${m.lecture.chapter}講「${m.lecture.title}」— ${m.theme.name.replace(/^テーマ\d+\s*/, '')}`,
     duration: o.duration,
     style: o.style,
     intensity: o.intensity,
     curated,
-    rationale: curated ? AVERY_RATIONALE : ['自動下書き：このテーマの講義の台詞・板書・スライドから機械的に切り出した構成です。演出と医学図は監修前の汎用形です。'],
+    rationale: film ? FILM_RATIONALE : curated ? AVERY_RATIONALE : ['自動下書き：このテーマの講義の台詞・板書・スライドから機械的に切り出した構成です。演出と医学図は監修前の汎用形です。'],
     scenes,
-    voice: { kokoro: KOKORO_VOICE, speed: KOKORO_SPEED },
+    voice: { kokoro: KOKORO_VOICE, speed: o.duration === 'full' ? KOKORO_SPEED : KOKORO_SPEED_SHORT },
   };
 }
 
@@ -73,7 +82,7 @@ const emph = (t: string, terms: string[]) => terms.reduce((s, x) => (x && s.incl
 function draftScenes(m: Material, o: PlanOptions): SceneDef[] {
   const lec = m.lecture;
   const cues = m.theme.cueIds.map((id) => lec.cues.find((c) => c.id === id)!).filter((c) => c && c.speech && !/考える時間/.test(c.text));
-  const budget = o.duration - 1;
+  const budget = (o.duration === 'full' ? 240 : o.duration) - 1;
   const scenes: SceneDef[] = [];
   let used = 0, cur: { cues: LectureCue[]; len: number } | null = null;
   const flush = () => { if (cur?.cues.length) scenes.push(draftScene(m, cur.cues, scenes.length)); cur = null; };

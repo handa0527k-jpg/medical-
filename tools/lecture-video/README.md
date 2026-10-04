@@ -18,7 +18,7 @@ MEDSTUDY の「遺伝学 › 🎬 授業動画」が書き出す制作パッケ�
 
 ```bat
 :: Python 3.10 以上
-pip install kokoro-onnx misaki pyopenjtalk soundfile numpy requests
+pip install kokoro-onnx misaki fugashi unidic-lite jaconv mojimoji pyopenjtalk soundfile numpy requests
 
 :: Kokoro のモデルを tools\lecture-video\models\ に置く
 ::   kokoro-v1.0.onnx / voices-v1.0.bin
@@ -100,3 +100,34 @@ pip install kokoro-onnx misaki pyopenjtalk soundfile numpy requests
 6. **音声**：シーンの WAV をつないだもの（その長さがタイミングそのもの）に、効果音を指定の時刻で加える。
    - BGM は任意で、声の大きさに合わせて自動で下げる。
    - 効果音は外部素材を使わず、ノイズと正弦波から合成する（`sfx`）。
+
+## 6. 講師音声を自然に聞かせるための工夫（`tts`）
+
+| 工夫 | 内容 |
+|---|---|
+| **Kokoro が学習した音素で読ませる** | Kokoro の日本語ボイスは、misaki の標準 G2P（cutlet＋UniDic）の音素で学習されています。<br>pyopenjtalk 版の音素は記号体系が違う（う＝ɯ、き＝kʲi など）ため、cutlet 版を優先します。<br>`fugashi` と `unidic-lite` が無いときだけ、pyopenjtalk 版に切り替えます。 |
+| **文ごとに一息で読ませる** | 台本の区間（同期の目印）ごとに合成すると、毎回イントネーションが文末調に戻ってしまいます。<br>そこで文単位で一度に合成し、読点で自然にできる間（無音）で区間に切り分けます。<br>切った長さがそのまま実測タイミングになります。 |
+| **列挙は1語ずつ** | 「DNA、RNA、脂質、タンパク質、炭水化物」のような短い列挙語は間が短く、正確に切れません。<br>そのため1語ずつ読ませます（列挙らしい読み方になります）。 |
+| **重要語の前の間** | 台本の `pre` / `post`（例：「DNAを加えたときだけ」の前に 0.15 秒）を足します。 |
+| **話速** | 完成版は 1.0（自然な講義の速さ）、30秒・60秒版は 1.08 です。 |
+| **仕上げ** | 70 Hz 以下の低域カット、軽いコンプレッション、0.25 秒ほどのごく短い室内の残響、音量の正規化を行います。`--raw` で仕上げを外せます。 |
+
+**確認方法**：Whisper（small）で文字起こしし、台本との文字誤り率（かな換算）を比べました。
+
+| 条件 | 誤り率 |
+|---|---|
+| 以前の方式（pyopenjtalk 音素・区間ごとに合成） | 21.0% |
+| 今の方式・30秒版 | 9.0% |
+| 今の方式・完成版（4分20秒） | 5.9% |
+
+## 7. 時間のかかるレンダリングを短くする
+
+Wan のクリップがまだ1つも無い作品は、医学図レイヤーと背景を分けて書き出す必要がありません。
+
+```bat
+node scripts\lecture-video\render-layers.mjs C:\work\pkg --full
+```
+
+`--full` を付けると合成済みのフレーム（`layers\full_%05d.jpg`）だけを書き出し、`assemble` はそれをそのまま使います。
+
+Wan のクリップを入れるときは、`--full` を付けずにもう一度レイヤーを書き出してください。

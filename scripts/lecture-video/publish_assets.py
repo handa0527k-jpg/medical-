@@ -46,7 +46,9 @@ def main(dirs: list[str]) -> None:
         lst.unlink()
         shutil.copy(timing, out / "kokoro_timing.json")
         idx["voices"][vk] = {"audio": f"{vk}/voice.mp3", "timing": f"{vk}/kokoro_timing.json"}
-        film = d / "out" / "lecture.mp4"
+        film = d / "out" / "lecture-web.mp4"
+        if not film.exists():
+            film = d / "out" / "lecture.mp4"
         if film.exists():
             e = json.loads((d / "edit.json").read_text(encoding="utf-8"))
             if e.get("timing") != "kokoro":

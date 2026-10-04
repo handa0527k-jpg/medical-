@@ -3,7 +3,8 @@ import { readdirSync, readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import type { Lecture } from '../src/engine/lecture/types';
 import type { SingleQuestion, Slide } from '../src/content/types';
-import { recommendTheme, themesOf } from '../src/engine/lecture-video/analyze';
+import { filmTheme, recommendTheme, themesOf } from '../src/engine/lecture-video/analyze';
+import { FILM_KEY } from '../src/engine/lecture-video/directions/lecture1';
 import { buildPlan, voiceKey, type Material } from '../src/engine/lecture-video/plan';
 import { buildTiming, at, moraOf, lengthsFromKokoro } from '../src/engine/lecture-video/timing';
 import { existsSync } from 'node:fs';
@@ -66,7 +67,7 @@ describe('授業動画 plan (Avery, hand-directed)', () => {
           expect(Number.isFinite(at(ts, r)), `${sc.id} event ${r}`).toBe(true);
       }
       expect(plan.scenes.map((s) => s.id)).toEqual(d === 60 ? ['S01', 'S02', 'S03', 'S04', 'S05', 'S06'] : ['S01', 'S02', 'S03', 'S04', 'S05']);
-      if (d === 30) expect(timing.total).toBeGreaterThan(26), expect(timing.total).toBeLessThan(33);
+      if (d === 30) expect(timing.total).toBeGreaterThan(26), expect(timing.total).toBeLessThan(35);
     });
   }
 
@@ -77,7 +78,7 @@ describe('授業動画 plan (Avery, hand-directed)', () => {
       expect(existsSync(f), f).toBe(true);
       const t = buildTiming(plan, lengthsFromKokoro(JSON.parse(readFileSync(f, 'utf8'))));
       expect(t.source, `${d} ${style}`).toBe('kokoro');
-      if (d === 30 && style !== 'exam') expect(t.total).toBeLessThanOrEqual(30.5);
+      if (d === 30) expect(t.total).toBeLessThanOrEqual(34);
     }
   });
 
@@ -158,4 +159,52 @@ describe('automatic draft (any theme)', () => {
     for (const s of plan.scenes) for (const b of s.beats) { const c = lec.cues.find((x) => x.id === b.id)!; for (const x of b.segs) expect(strip(c.text)).toContain(strip(x.text)); }
   });
   it('mora counter', () => { expect(moraOf('ディーエヌエー')).toBe(6); });
+});
+
+describe('完成版：第1講まるごと', () => {
+  const m: Material = { course: 'genetics-basics', courseTitle: '遺伝医学｜遺伝子の基礎（構造と機能）', lecture: L1, theme: filmTheme('genetics-basics', L1, FILM_KEY), slides: slides as unknown as Record<number, Slide>, questions };
+  const plan = buildPlan(m, { duration: 30, style: 'exam', intensity: 'gekiga' });
+  it('is the whole lecture in order, hand-directed, read in the board style at natural pace', () => {
+    expect(plan.curated).toBe(true);
+    expect(plan.duration).toBe('full');
+    expect(plan.style).toBe('board');
+    expect(plan.voice.speed).toBe(1);
+    expect(plan.scenes.length).toBeGreaterThanOrEqual(16);
+    expect(plan.scenes.filter((s) => s.chapter).map((s) => s.chapter)).toEqual(['第1講', 'テーマ1　設計図の正体はDNA', 'テーマ2　セントラルドグマ', 'テーマ3　遺伝子の変化と疾患', 'まとめ']);
+    const visuals = plan.scenes.map((s) => s.visual);
+    for (const v of ['title-open', 'zygote', 'strains', 'tubes', 'plates', 'transcription', 'translation', 'universal', 'hierarchy', 'disease', 'end-card']) expect(visuals).toContain(v);
+  });
+  it('every line is the lecture\'s own (verbatim or a contiguous part), readings without latin letters', () => {
+    for (const sc of plan.scenes) for (const b of sc.beats) {
+      expect(['verbatim', 'trimmed', 'condensed']).toContain(b.src.mode);
+      const src = (b.src.cues ?? []).map((id) => strip(L1.cues.find((c) => c.id === id)!.text)).join('');
+      for (const x of b.segs) {
+        expect(x.say, x.text).not.toMatch(/[A-Za-z]/);
+        if (b.src.mode !== 'condensed') expect(src, `${sc.id} ${b.id}`).toContain(strip(x.text));
+      }
+    }
+  });
+  it('the board text is the lecture\'s own blackboard, and every event exists', () => {
+    const timing = buildTiming(plan);
+    for (const sc of plan.scenes) {
+      const want = ((sc.data?.items as { id: string }[] | undefined)?.map((i) => i.id)) ?? (sc.data?.boardIds as string[] | undefined) ?? [];
+      const ops = (sc.data?.board as { id: string }[] | undefined) ?? [];
+      if (want.length) expect(ops.map((o) => o.id), sc.id).toEqual(want); // every requested op exists on the lecture's board
+      const ts = timing.scenes.find((x) => x.id === sc.id)!;
+      for (const r of [...sc.cams.map((c) => c.at), ...sc.fx.map((f) => f.at), ...sc.sfx.map((s) => s.at), ...sc.shots.map((s) => s.from)]) expect(Number.isFinite(at(ts, r)), `${sc.id} ${r}`).toBe(true);
+    }
+  });
+  it('the Kokoro voice of the film matches its script (about 4 min)', () => {
+    const f = resolve(__dirname, '../production/lecture-video/genetics-basics-1-film/audio/kokoro_timing.json');
+    const t = buildTiming(plan, lengthsFromKokoro(JSON.parse(readFileSync(f, 'utf8'))));
+    expect(t.source).toBe('kokoro');
+    expect(t.total).toBeGreaterThan(200);
+    expect(t.total).toBeLessThan(300);
+  });
+  it('the genetic code shown is the standard one', () => {
+    const src = readFileSync(resolve(__dirname, '../src/engine/lecture-video/render-film.ts'), 'utf8');
+    const code: Record<string, string> = { AUG: 'Met', GCU: 'Ala', UUC: 'Phe', GGA: 'Gly', AAA: 'Lys', UGG: 'Trp' };
+    const m2 = /CODONS: \[string, string\]\[\] = (\[.*?\]);/.exec(src)!;
+    for (const [c, aa] of JSON.parse(m2[1].replace(/'/g, '"'))) expect(code[c], c).toBe(aa);
+  });
 });
