@@ -27,6 +27,10 @@
   "genetics-basics-1-film_board": {
    "audio": "genetics-basics-1-film_board/voice.mp3",
    "timing": "genetics-basics-1-film_board/kokoro_timing.json"
+  },
+  "genetics-basics-2-film_board": {
+   "audio": "genetics-basics-2-film_board/voice.mp3",
+   "timing": "genetics-basics-2-film_board/kokoro_timing.json"
   }
  },
  "videos": {
@@ -42,6 +46,13 @@
    "wanShots": 0,
    "shots": 25,
    "seconds": 260.726,
+   "built": "2026-10-04"
+  },
+  "genetics-basics:2:film|full|board|gekiga": {
+   "file": "genetics-basics-2-film_board/gekiga.mp4",
+   "wanShots": 0,
+   "shots": 22,
+   "seconds": 362.979,
    "built": "2026-10-04"
   }
  }

@@ -607,7 +607,7 @@ function goutFig(rc: RC) {
     for (let j = 0; j < Math.round(26 * dep); j++) { const a = rnd(j) * Math.PI * 2, l = 10 + rnd(j * 3) * 20, x = J[0] + (rnd(j * 5) - 0.5) * 60, y = J[1] + (rnd(j * 7) - 0.5) * 44; p.line([[x, y], [x + Math.cos(a) * l, y + Math.sin(a) * l]], { stroke: '#fffaf0', width: 2.5 }); }
     const gt = rc.u('gout', 0.3);
     if (gt > 0) { const pulse = 0.55 + 0.45 * Math.sin(t * 9); p.circle(J[0], J[1], 70 + 10 * pulse, { fill: `rgba(208,37,26,${0.45 * gt * pulse})` }); p.circle(J[0], J[1], 46, { stroke: '#ff4a3a', width: 6, opacity: gt }); }
-    label(p, '親指の付け根の関節', 905, 600, 26, { align: 'center', a: rc.u('dep', 0.3) });
+    label(p, '親指の付け根の関節', 905, 600, 26, { align: 'center', a: rc.u('dep', 0.3) * (1 - rc.u('gout-0.2', 0.2)) });
     label(p, '尿酸の結晶', 1110, 420, 28, { align: 'center', fill: '#fff6f0', a: rc.u('dep+1', 0.3) });
     term(p, '痛風', 760, 330, gt, 96, '#ff5a45');
     p.restore();

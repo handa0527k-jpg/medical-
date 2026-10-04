@@ -1,6 +1,7 @@
 import { test, expect } from '@playwright/test';
 
 test('genetics: 🎬 授業動画 studio — material, recommended theme, controls, synced preview, scene sheets', async ({ page }) => {
+  test.setTimeout(180_000); // two whole-lecture films are planned and timed in this one test
   const errs: string[] = [];
   page.on('pageerror', (e) => errs.push(e.message));
   // entry from the 遺伝学 page; other fields are untouched
