@@ -238,3 +238,8 @@
 .story-table td.n { font-family: 'Klee One', var(--f-sans); font-size: 17px; }
 .story-table small { color: var(--mute); }
 .story-note { margin-top: 16px; font-size: 13.5px; color: var(--mute); border-left: 3px solid var(--eosin); padding: 8px 14px; background: var(--glass); border-radius: 0 10px 10px 0; max-width: 76ch; }
+/* OP / ED skip button on the picture */
+.story-skip { position: absolute; top: 14px; right: 14px; z-index: 3; font: inherit; font-weight: 800; font-size: 15px; padding: 9px 16px; border-radius: 999px; border: 1px solid rgba(255,255,255,.55); background: rgba(10,12,20,.55); color: #fff; cursor: pointer; backdrop-filter: blur(4px); }
+.story-skip:hover { background: rgba(213,127,69,.85); }
+@media (max-width: 600px) { .story-skip { top: 8px; right: 8px; font-size: 12px; padding: 5px 11px; } }
+.story-bar.mv i { background: #f0a868; }

@@ -27,9 +27,13 @@ for (const [id, title] of COURSES) {
     expect(painted).toBeGreaterThan(50);
     await page.locator('.story-start button').click();
     await expect(page.locator('.story-ctl .pri')).toContainText('一時停止');
+    // from the beginning the opening plays first, with a skip button on the picture
+    await expect(page.locator('.story-tm')).toContainText('OP');
+    await page.locator('.story-skip').click();
+    await expect(page.locator('.story-skip')).toHaveCount(0);
     await expect(page.locator('.story-sub')).toBeVisible({ timeout: 8000 });
-    // jump to the third scene
-    const chip = page.locator('.story-chips button').nth(2);
+    // jump to the third scene (the first chip is the OP)
+    const chip = page.locator('.story-chips button').nth(3);
     await chip.click();
     await expect(chip).toHaveClass(/on/);
     // fullscreen and Esc back
@@ -186,5 +190,37 @@ test('animations have the lecture controls: speed (remembered), scene / 10 s ski
   await expect(page.locator('.anim.fs')).toBeVisible();
   await page.getByRole('button', { name: '全画面を終了' }).click();
   await expect(page.locator('.anim.fs')).toHaveCount(0);
+  expect(errs).toEqual([]);
+});
+
+test('opening and ending: OP first with a skip button, songs served, every shot draws, ED after the film', async ({ page, request }) => {
+  const errs: string[] = [];
+  page.on('pageerror', (e) => errs.push(e.message));
+  page.on('console', (m) => { if (m.type() === 'error' && !/Failed to load resource/.test(m.text())) errs.push(m.text()); });
+  for (const f of ['op-shining-star.mp3', 'ed-the-milky-way.mp3']) {
+    const r = await request.get(`/music/${f}`);
+    expect(r.status(), f).toBe(200);
+    expect((await r.body()).length).toBeGreaterThan(500_000);
+  }
+  // a frame of every OP / ED section draws (?op= / ?ed= open the player there)
+  const blank = (c: HTMLCanvasElement) => { const d = c.getContext('2d')!.getImageData(0, 0, c.width, c.height).data; let n = 0; for (let i = 0; i < d.length; i += 4000) if (d[i] + d[i + 1] + d[i + 2] > 30) n++; return n; };
+  for (const [k, ts] of [['op', [3, 8, 12, 25, 40, 50, 60, 66, 72, 84]], ['ed', [5, 20, 60, 90, 104]]] as const) {
+    for (const t of ts) {
+      await page.goto(`/#/open/genetics-transcription/animations/story?${k}=${t}`);
+      await expect(page.locator('.story-skip')).toContainText(k === 'op' ? 'OPをスキップ' : 'EDをスキップ');
+      await expect(page.locator('.story-tm')).toContainText(k.toUpperCase());
+      expect(await page.locator('.story-screen canvas').evaluate(blank), `${k}=${t}`).toBeGreaterThan(50);
+    }
+  }
+  // the ED's skip finishes the film; the ED chip brings it back
+  await page.locator('.story-skip').click();
+  await expect(page.locator('.story-skip')).toHaveCount(0);
+  await page.locator('.story-chips button', { hasText: 'ED' }).click();
+  await expect(page.locator('.story-skip')).toContainText('EDをスキップ');
+  await expect(page.locator('.story-ctl .pri')).toContainText('一時停止');
+  // the end of the film rolls into the ending
+  await page.goto('/#/open/genetics-basics/animations/story?t=99999');
+  await page.locator('.story-start button').click();
+  await expect(page.locator('.story-skip')).toContainText('EDをスキップ', { timeout: 10000 });
   expect(errs).toEqual([]);
 });

@@ -21,9 +21,10 @@ for cid, s in spec.items():
     if s.get('loop'):
         def rel(f): r = f[0]; return [(p[0] - r[0], p[1], p[2] - r[2]) for p in f]
         best = None
-        for i in range(0, len(fr) - 30):
+        for i in range(0, len(fr) - s.get('loopRange', [28, 45])[0] - 2):
             A = rel(fr[i])
-            for j in range(i + 28, min(len(fr), i + 45)):
+            lo, hi = s.get('loopRange', [28, 45])
+            for j in range(i + lo, min(len(fr), i + hi)):
                 B = rel(fr[j]); e = sum((x[0]-y[0])**2 + (x[1]-y[1])**2 + (x[2]-y[2])**2 for x, y in zip(A, B))
                 if best is None or e < best[0]: best = (e, i, j)
         o['loop'] = {'a': best[1], 'b': best[2]}

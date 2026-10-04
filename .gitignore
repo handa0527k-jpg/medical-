@@ -15,3 +15,5 @@ production/*/scenes/*/*.wav
 production/*/**/*.wav
 production/*/scenes/
 production/*/sample/*.wav
+# OP/ED songs as downloaded from 魔王魂 (not redistributed as single files; the app ships only the edited copies in public/music)
+production/opening-ending/audio/

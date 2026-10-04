@@ -67,5 +67,22 @@
     "from": 10.4,
     "to": 36.5,
     "desc": "coiling a rope"
+  },
+  "run": {
+    "src": "09_01",
+    "from": 0.0,
+    "to": 1.2,
+    "loop": true,
+    "loopRange": [
+      15,
+      26
+    ],
+    "desc": "run"
+  },
+  "jump": {
+    "src": "16_01",
+    "from": 0.0,
+    "to": 2.6,
+    "desc": "jump in place (both feet)"
   }
 }

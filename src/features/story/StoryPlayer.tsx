@@ -5,6 +5,13 @@ import type { StoryModule } from '../../engine/story/types';
 import { fmtT } from '../../engine/svg';
 import { useProgress, useStore } from '../../state/hooks';
 import { useWakeLock } from '../../app/useWakeLock';
+import { MUSIC, type MvCtx } from '../../engine/story/mv/common';
+import { drawOP, OP_LENGTH } from '../../engine/story/mv/op';
+import { drawED, ED_LENGTH } from '../../engine/story/mv/ed';
+
+type Phase = 'op' | 'film' | 'ed';
+const MV_LEN: Record<'op' | 'ed', number> = { op: OP_LENGTH, ed: ED_LENGTH };
+const fm = (x: number) => `${Math.floor(x / 60)}:${String(Math.floor(x % 60)).padStart(2, '0')}`;
 
 /** progress key in the store's animation stats */
 export const STORY_KEY = 'story';
@@ -16,7 +23,7 @@ const BGM_KEY = 'medstudy:story-bgm';
  * Canvas player for a story anime: picture and voice lines share one clock.
  * While a line is speaking the picture follows the audio clock, so they never drift apart.
  */
-export default function StoryPlayer({ story, assetBase, startAt }: { story: StoryModule; assetBase: string; startAt?: number }) {
+export default function StoryPlayer({ story, assetBase, startAt, startMv }: { story: StoryModule; assetBase: string; startAt?: number; startMv?: { phase: 'op' | 'ed'; t: number } }) {
   const { def, draw } = story;
   const store = useStore();
   const { settings } = useProgress();
@@ -28,7 +35,7 @@ export default function StoryPlayer({ story, assetBase, startAt }: { story: Stor
   const buf = useRef<ArrayBuffer | null>(null);
   const bufP = useRef<Promise<ArrayBuffer | null> | null>(null);
   const [loading, setLoading] = useState(false);
-  const st = useRef({ now: 0, playing: false, lastTs: 0, cur: -1, sound: true, audioOk: true, started: 0, speed: settings.animSpeed || 1, vol: settings.volume ?? 1 });
+  const st = useRef({ now: 0, playing: false, lastTs: 0, cur: -1, sound: true, audioOk: true, started: 0, speed: settings.animSpeed || 1, vol: settings.volume ?? 1, phase: 'film' as Phase, mv: 0, opSeen: false });
   const [playing, setPlaying] = useState(false);
   // keep the screen on while playing
   useWakeLock(playing);
@@ -40,7 +47,14 @@ export default function StoryPlayer({ story, assetBase, startAt }: { story: Stor
   const [vol, setVolState] = useState(settings.volume ?? 1);
   const [sound, setSound] = useState(true);
   const [fs, setFs] = useState(false);
-  const [ui, setUi] = useState({ now: 0, scene: def.scenes[0].id, line: -1 });
+  const [ui, setUi] = useState({ now: 0, scene: def.scenes[0].id, line: -1, phase: 'film' as Phase, mv: 0 });
+  // opening / ending music videos (shared songs, story-specific pictures)
+  const mvCtx = useMemo<MvCtx>(() => ({ def, draw, tl, key: def.title }), [def, draw, tl]);
+  const songs = useRef<{ op?: HTMLAudioElement; ed?: HTMLAudioElement }>({});
+  const songFor = useCallback((ph: 'op' | 'ed') => {
+    if (!songs.current[ph]) { const a = new Audio(`${import.meta.env.BASE_URL}music/${MUSIC[ph].file}`); a.preload = 'auto'; songs.current[ph] = a; }
+    return songs.current[ph]!;
+  }, []);
   // the sound bed (effects, ambience — and music when it is not a track of its own) and the music track follow the
   // film clock; voices stay line by line. The learner can switch the music off and set its volume (remembered).
   const tracks = useRef<{ bed?: HTMLAudioElement; music?: HTMLAudioElement }>({});
@@ -55,11 +69,20 @@ export default function StoryPlayer({ story, assetBase, startAt }: { story: Stor
     const s = st.current;
     for (const [k, b] of Object.entries(tracks.current) as [string, HTMLAudioElement | undefined][]) {
       if (!b) continue;
-      const on = s.playing && s.sound && (k !== 'music' || bgmRef.current.on);
+      const on = s.playing && s.sound && s.phase === 'film' && (k !== 'music' || bgmRef.current.on);
       if (!on) { if (!b.paused) b.pause(); continue; }
       if (force || Math.abs(b.currentTime - s.now) > 0.3) { try { b.currentTime = s.now; } catch { /* not seekable yet */ } }
       if (b.playbackRate !== s.speed) b.playbackRate = s.speed;
       if (b.paused) b.play().catch(() => {});
+    }
+    // the OP / ED song: plays with the music setting, always at 1× (a song should not be sped up)
+    for (const ph of ['op', 'ed'] as const) {
+      const a = songs.current[ph]; if (!a) continue;
+      const on = s.playing && s.sound && s.phase === ph && bgmRef.current.on;
+      if (!on) { if (!a.paused) a.pause(); continue; }
+      a.volume = CL(0.9 * bgmRef.current.vol);
+      if (force || Math.abs(a.currentTime - s.mv) > 0.25) { try { a.currentTime = s.mv; } catch { /* not seekable yet */ } }
+      if (a.paused) a.play().catch(() => {});
     }
   }, []);
   const setMusic = useCallback((v: { on: boolean; vol: number }) => {
@@ -101,6 +124,14 @@ export default function StoryPlayer({ story, assetBase, startAt }: { story: Stor
     const ctx = cv.getContext('2d'); if (!ctx) return;
     bindCtx(ctx);
     const s = st.current;
+    if (s.phase !== 'film') {
+      g.save();
+      try { (s.phase === 'op' ? drawOP : drawED)(mvCtx, s.mv); } catch (e) { console.error(e); }
+      g.restore();
+      bindCtx(ctx);
+      setUi((u) => (u.phase === s.phase && Math.abs(u.mv - s.mv) < 0.2 ? u : { ...u, phase: s.phase, mv: s.mv, line: -1, scene: s.phase }));
+      return;
+    }
     const sc = sceneAt(tl, def.scenes, s.now);
     const t = s.now - tl.start[sc.id];
     g.save();
@@ -110,9 +141,9 @@ export default function StoryPlayer({ story, assetBase, startAt }: { story: Stor
     if (fade > 0) { g.fillStyle = `rgba(10,14,12,${fade})`; g.fillRect(0, 0, W, H); }
     setUi((u) => {
       const line = lineAt(tl, s.now);
-      return Math.abs(u.now - s.now) < 0.2 && u.scene === sc.id && u.line === line ? u : { now: s.now, scene: sc.id, line };
+      return u.phase === 'film' && Math.abs(u.now - s.now) < 0.2 && u.scene === sc.id && u.line === line ? u : { now: s.now, scene: sc.id, line, phase: 'film', mv: s.mv };
     });
-  }, [def, draw, tl]);
+  }, [def, draw, tl, mvCtx]);
 
   const stopAudio = () => audios.current.forEach((a) => a.pause());
   const speak = useCallback((i: number) => {
@@ -137,40 +168,85 @@ export default function StoryPlayer({ story, assetBase, startAt }: { story: Stor
     s.playing = false; stopAudio(); syncBed(); setPlaying(false); record();
   }, [record, syncBed]);
 
+  /** switch to the opening / ending at song time t (keeps playing if playing) */
+  const toMv = (ph: 'op' | 'ed', t: number) => {
+    const s = st.current; stopAudio();
+    s.phase = ph; s.mv = Math.max(0, Math.min(MV_LEN[ph] - 0.01, t)); s.lastTs = 0;
+    if (ph === 'op') s.opSeen = true;
+    songFor(ph); syncBed(true); render();
+  };
+  /** the ending is over: record completion and return to the start screen (the next play opens with the OP again) */
+  const finish = () => {
+    const s = st.current;
+    s.playing = false; s.phase = 'film'; s.now = 0; s.cur = -1; s.opSeen = false;
+    syncBed(); setPlaying(false); setStarted(false); record(true); render();
+  };
+  /** switch to the film at film time t */
+  const toFilm = (t: number) => {
+    const s = st.current;
+    s.phase = 'film'; s.now = Math.max(0, Math.min(tl.total - 0.01, t)); s.cur = -1; s.lastTs = 0;
+    syncBed(true); render();
+  };
   const frame = useCallback((ts: number) => {
     const s = st.current; if (!s.playing) return;
     const dt = s.lastTs ? Math.min(0.1, (ts - s.lastTs) / 1000) : 0; s.lastTs = ts;
+    if (s.phase !== 'film') {
+      const ph = s.phase, a = songs.current[ph];
+      if (a && !a.paused && !a.seeking) s.mv = a.currentTime; else s.mv += dt;
+      if (s.mv >= MV_LEN[ph]) {
+        if (ph === 'op') { toFilm(0); requestAnimationFrame(frame); return; }
+        finish(); return;
+      }
+      syncBed(); render(); requestAnimationFrame(frame); return;
+    }
     const li = lineAt(tl, s.now);
     const a = li >= 0 ? audios.current.get(li) : undefined;
     if (a && s.sound && s.audioOk && !a.paused) s.now = tl.lines[li].t0 + a.currentTime; else s.now += dt * s.speed;
     const ni = lineAt(tl, s.now);
     if (ni !== s.cur) { s.cur = ni; if (ni >= 0) speak(ni); }
     if (s.now >= tl.total) {
-      s.now = tl.total - 0.001; s.playing = false; stopAudio(); syncBed(); setPlaying(false); record(true); render(); return;
+      s.now = tl.total - 0.001; stopAudio();
+      toMv('ed', 0); requestAnimationFrame(frame); return;
     }
     syncBed();
     render();
     requestAnimationFrame(frame);
-  }, [render, speak, tl, record, syncBed]);
+  }, [render, speak, tl, record, syncBed]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const play = useCallback(async () => {
     const s = st.current; if (s.playing) return;
     if (!buf.current && s.sound) { setLoading(true); await loadVoices(); setLoading(false); if (s.playing) return; }
-    if (s.now >= tl.total - 0.05) s.now = 0;
-    if (s.now < 0.05) store.animationProgress(STORY_KEY, 0, { play: true });
-    s.playing = true; s.lastTs = 0; s.started = performance.now(); s.cur = lineAt(tl, s.now);
+    if (s.phase === 'ed' && s.mv >= MV_LEN.ed - 0.05) { s.phase = 'film'; s.now = 0; s.opSeen = false; }
+    if (s.phase === 'film' && s.now < 0.05) store.animationProgress(STORY_KEY, 0, { play: true });
+    // from the very beginning, the film opens with its OP (skippable)
+    if (s.phase === 'film' && s.now < 0.05 && !s.opSeen && startAt == null) { s.phase = 'op'; s.mv = 0; s.opSeen = true; }
+    s.playing = true; s.lastTs = 0; s.started = performance.now(); s.cur = s.phase === 'film' ? lineAt(tl, s.now) : -1;
     setPlaying(true); setStarted(true);
-    if (s.cur >= 0) speak(s.cur);
-    bedFor(); syncBed(true);
+    if (s.phase === 'film' && s.cur >= 0) speak(s.cur);
+    bedFor(); if (s.phase !== 'film') songFor(s.phase); syncBed(true);
     requestAnimationFrame(frame);
-  }, [frame, speak, store, tl, bedFor, syncBed]);
+  }, [frame, speak, store, tl, bedFor, syncBed, songFor, startAt]);
 
   const seek = useCallback((t: number) => {
     const s = st.current; const was = s.playing;
     if (was) { s.playing = false; stopAudio(); }
-    s.now = Math.max(0, Math.min(tl.total - 0.01, t)); s.cur = -1; render();
+    s.phase = 'film'; s.now = Math.max(0, Math.min(tl.total - 0.01, t)); s.cur = -1; render();
     if (was) { s.playing = true; s.lastTs = 0; syncBed(true); requestAnimationFrame(frame); } else syncBed();
   }, [frame, render, tl, syncBed]);
+
+  /** move inside the OP / ED (song time) */
+  const seekMv = useCallback((ph: 'op' | 'ed', t: number) => {
+    const s = st.current, was = s.playing;
+    s.playing = false; toMv(ph, t);
+    if (was) { s.playing = true; s.lastTs = 0; syncBed(true); requestAnimationFrame(frame); } else syncBed();
+  }, [frame, syncBed]); // eslint-disable-line react-hooks/exhaustive-deps
+  /** the skip button: OP → the film, ED → the end */
+  const skip = useCallback(() => {
+    const s = st.current;
+    if (s.phase === 'op') { const was = s.playing; s.playing = false; toFilm(0); if (was) { s.playing = true; s.cur = -1; requestAnimationFrame(frame); } else render(); }
+    else if (s.phase === 'ed') finish();
+  }, [frame, render, record, syncBed]); // eslint-disable-line react-hooks/exhaustive-deps
+  const step = useCallback((d: number) => { const s = st.current; if (s.phase === 'film') seek(s.now + d); else seekMv(s.phase, s.mv + d); }, [seek, seekMv]);
 
   // poster frame, and redraw once the handwriting font has arrived
   useEffect(() => {
@@ -178,6 +254,7 @@ export default function StoryPlayer({ story, assetBase, startAt }: { story: Stor
     const [pid, pt] = def.poster || [def.scenes[0].id, 3];
     const show = () => {
       // a requested position is shown and playback continues from it; otherwise a poster frame, then 0
+      if (startMv) { if (!s.playing) { s.phase = startMv.phase; s.mv = Math.max(0, Math.min(MV_LEN[startMv.phase] - 0.01, startMv.t)); s.opSeen = true; render(); } return; }
       if (startAt != null) { if (!s.playing) { s.now = Math.max(0, Math.min(tl.total - 0.01, startAt)); render(); } return; }
       if (s.playing || s.now > 0) return render();
       s.now = (tl.start[pid] ?? 0) + pt; render(); s.now = 0; setUi((u) => ({ ...u, now: 0 }));
@@ -186,8 +263,8 @@ export default function StoryPlayer({ story, assetBase, startAt }: { story: Stor
     document.fonts?.ready.then(show).catch(() => {});
     const map = audios.current;
     loadVoices();
-    return () => { s.playing = false; map.forEach((a) => { a.pause(); URL.revokeObjectURL(a.src); a.src = ''; }); map.clear(); Object.values(tracks.current).forEach((b) => { if (b) { b.pause(); b.src = ''; } }); tracks.current = {}; };
-  }, [def, render, tl, loadVoices, startAt]);
+    return () => { s.playing = false; map.forEach((a) => { a.pause(); URL.revokeObjectURL(a.src); a.src = ''; }); map.clear(); [...Object.values(tracks.current), ...Object.values(songs.current)].forEach((b) => { if (b) { b.pause(); b.src = ''; } }); tracks.current = {}; songs.current = {}; };
+  }, [def, render, tl, loadVoices, startAt, startMv]);
 
   useEffect(() => () => record(), [record]);
 
@@ -199,12 +276,15 @@ export default function StoryPlayer({ story, assetBase, startAt }: { story: Stor
   }, [speak, syncBed]);
   // previous / next scene
   const sceneJump = useCallback((d: number) => {
-    const s = st.current, ids = def.scenes.map((x) => x.id), cur = sceneAt(tl, def.scenes, s.now).id;
+    const s = st.current, ids = def.scenes.map((x) => x.id);
+    if (s.phase === 'op') { if (d > 0) skip(); else seekMv('op', 0); return; }
+    if (s.phase === 'ed') { if (d < 0) seek(tl.start[ids[ids.length - 1]] + 0.01); return; }
+    const cur = sceneAt(tl, def.scenes, s.now).id;
     let i = ids.indexOf(cur);
     if (d < 0 && s.now - tl.start[cur] > 3) i += 1; // first press goes back to the start of this scene
     const to = ids[Math.max(0, Math.min(ids.length - 1, i + d))];
     seek(tl.start[to] + 0.01);
-  }, [def, tl, seek]);
+  }, [def, tl, seek, seekMv, skip]);
   const toggleFs = useCallback(() => {
     const on = !fs; setFs(on);
     if (on) boxRef.current?.requestFullscreen?.().catch(() => {});
@@ -217,8 +297,8 @@ export default function StoryPlayer({ story, assetBase, startAt }: { story: Stor
       if (tag === 'INPUT' || tag === 'TEXTAREA') return;
       if (e.key === 'Escape') setFs(false);
       else if (e.key === ' ') { e.preventDefault(); (st.current.playing ? pause : play)(); }
-      else if (e.key === 'ArrowRight') seek(st.current.now + 10);
-      else if (e.key === 'ArrowLeft') seek(st.current.now - 10);
+      else if (e.key === 'ArrowRight') step(10);
+      else if (e.key === 'ArrowLeft') step(-10);
       else if (e.key === 'f') toggleFs();
       else if (e.key === 'k') { e.preventDefault(); (st.current.playing ? pause : play)(); }
       else if (e.key === 'c') setSubs(!subsRef.current);
@@ -229,20 +309,26 @@ export default function StoryPlayer({ story, assetBase, startAt }: { story: Stor
     document.addEventListener('fullscreenchange', onFs);
     window.addEventListener('keydown', onKey);
     return () => { document.removeEventListener('fullscreenchange', onFs); window.removeEventListener('keydown', onKey); };
-  }, [pause, play, seek, toggleFs, toggleSound, setSpeed]);
+  }, [pause, play, step, toggleFs, toggleSound, setSpeed]);
   useEffect(() => {
     document.body.classList.toggle('lec-fs', fs);
     return () => document.body.classList.remove('lec-fs');
   }, [fs]);
 
-  const line = ui.line >= 0 ? tl.lines[ui.line] : null;
-  const pct = (ui.now / tl.total) * 100;
+  const inMv = ui.phase !== 'film';
+  const line = !inMv && ui.line >= 0 ? tl.lines[ui.line] : null;
+  const pct = inMv ? (ui.mv / MV_LEN[ui.phase as 'op' | 'ed']) * 100 : (ui.now / tl.total) * 100;
   return (
     <div className={`story-player${fs ? ' fs' : ''}`} ref={boxRef}>
       <div className="story-screen">
         <canvas ref={cvRef} width={W} height={H} aria-label={`アニメ「${def.title}」`} onClick={() => (playing ? pause() : play())} />
         {subs && line && (
           <div className="story-sub" aria-live="polite"><span>{line.who !== 'N' && <b>{line.who}</b>}{def.subChunks ? subAt(line.text, line.t0, line.t1, ui.now) : line.text}</span></div>
+        )}
+        {inMv && (started || startMv) && (
+          <button type="button" className="story-skip" onClick={skip} aria-label={ui.phase === 'op' ? 'オープニングをスキップ' : 'エンディングをスキップ'}>
+            {ui.phase === 'op' ? 'OPをスキップ' : 'EDをスキップ'} <span aria-hidden="true">▶▶</span>
+          </button>
         )}
         {!started && (
           <div className="story-start"><button type="button" onClick={play} disabled={loading}>{loading ? '音声を読み込み中…' : '▶ 上映をはじめる'}</button></div>
@@ -251,16 +337,16 @@ export default function StoryPlayer({ story, assetBase, startAt }: { story: Stor
       <div className="story-ctl">
         <button type="button" className="pri" onClick={() => (playing ? pause() : play())} disabled={loading}>{loading ? '読み込み中…' : playing ? '❚❚ 一時停止' : '▶ 再生'}</button>
         <button type="button" onClick={() => sceneJump(-1)} aria-label="前の場面" title="前の場面">⏮</button>
-        <button type="button" onClick={() => seek(ui.now - 10)} aria-label="10秒戻る" title="10秒戻る（←）">−10秒</button>
-        <button type="button" onClick={() => seek(ui.now + 10)} aria-label="10秒進む" title="10秒進む（→）">＋10秒</button>
+        <button type="button" onClick={() => step(-10)} aria-label="10秒戻る" title="10秒戻る（←）">−10秒</button>
+        <button type="button" onClick={() => step(10)} aria-label="10秒進む" title="10秒進む（→）">＋10秒</button>
         <button type="button" onClick={() => sceneJump(1)} aria-label="次の場面" title="次の場面">⏭</button>
         <div
-          className="story-bar" role="slider" tabIndex={0} aria-label="再生位置" aria-valuemin={0} aria-valuemax={Math.round(tl.total)} aria-valuenow={Math.round(ui.now)}
-          onClick={(e) => { const r = e.currentTarget.getBoundingClientRect(); seek(((e.clientX - r.left) / r.width) * tl.total); }}
+          className={'story-bar' + (inMv ? ' mv' : '')} role="slider" tabIndex={0} aria-label="再生位置" aria-valuemin={0} aria-valuemax={Math.round(inMv ? MV_LEN[ui.phase as 'op' | 'ed'] : tl.total)} aria-valuenow={Math.round(inMv ? ui.mv : ui.now)}
+          onClick={(e) => { const r = e.currentTarget.getBoundingClientRect(), f = (e.clientX - r.left) / r.width; if (inMv) seekMv(ui.phase as 'op' | 'ed', f * MV_LEN[ui.phase as 'op' | 'ed']); else seek(f * tl.total); }}
         >
           <i style={{ width: `${pct}%` }} />
         </div>
-        <span className="story-tm">{fmtT(ui.now)} / {fmtT(tl.total)}</span>
+        <span className="story-tm">{inMv ? `${ui.phase.toUpperCase()} ${fm(ui.mv)} / ${fm(MV_LEN[ui.phase as 'op' | 'ed'])}` : `${fmtT(ui.now)} / ${fmtT(tl.total)}`}</span>
         <span className="story-spd" role="radiogroup" aria-label="再生速度">
           {SPEEDS.map((x) => <button type="button" key={x} className={x === speed ? 'on' : ''} role="radio" aria-checked={x === speed} onClick={() => setSpeed(x)}>{x}×</button>)}
         </span>
@@ -270,7 +356,8 @@ export default function StoryPlayer({ story, assetBase, startAt }: { story: Stor
           onClick={toggleSound} title="音声（M）"
         >音声</button>
         <input className="story-vol" type="range" min={0} max={1} step={0.05} value={vol} aria-label="声の音量" disabled={!sound} onChange={(e) => setVol(Number(e.target.value))} />
-        {def.music && (
+        {/* BGM: the film's score (if any) and the OP / ED songs */}
+        {(
           <span className="story-bgm">
             <button type="button" aria-pressed={bgm.on} onClick={() => setMusic({ ...bgm, on: !bgm.on })}>BGM</button>
             <input type="range" min={0} max={1} step={0.05} value={bgm.vol} aria-label="BGMの音量" disabled={!bgm.on} onChange={(e) => setMusic({ ...bgm, vol: Number(e.target.value) })} />
@@ -279,11 +366,13 @@ export default function StoryPlayer({ story, assetBase, startAt }: { story: Stor
         <button type="button" onClick={toggleFs} title="全画面（F）">{fs ? '全画面を終了' : '全画面'}</button>
       </div>
       <div className="story-chips">
+        <button type="button" className={ui.phase === 'op' ? 'on' : ''} onClick={() => { seekMv('op', 0); if (!st.current.playing) play(); }}>OP</button>
         {def.scenes.map((s, i) => (
-          <button type="button" key={s.id} className={ui.scene === s.id ? 'on' : ''} onClick={() => { seek(tl.start[s.id] + 0.01); if (!st.current.playing) play(); }}>
+          <button type="button" key={s.id} className={!inMv && ui.scene === s.id ? 'on' : ''} onClick={() => { seek(tl.start[s.id] + 0.01); if (!st.current.playing) play(); }}>
             {i + 1} {s.title}
           </button>
         ))}
+        <button type="button" className={ui.phase === 'ed' ? 'on' : ''} onClick={() => { seekMv('ed', 0); if (!st.current.playing) play(); }}>ED</button>
       </div>
     </div>
   );

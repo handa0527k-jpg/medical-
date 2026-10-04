@@ -18,6 +18,9 @@ export default function StoryPage() {
   // ?t=SECONDS opens the film at that position (to check one frame, or share a moment)
   const [sp] = useSearchParams();
   const startAt = sp.get('t') != null && !Number.isNaN(Number(sp.get('t'))) ? Number(sp.get('t')) : undefined;
+  // ?op=SECONDS / ?ed=SECONDS opens the opening / ending at that point of the song
+  const mvq = (['op', 'ed'] as const).find((k) => sp.get(k) != null && !Number.isNaN(Number(sp.get(k))));
+  const startMv = useMemo(() => (mvq ? { phase: mvq, t: Number(sp.get(mvq)) } : undefined), [mvq, sp]);
   useEffect(() => {
     let live = true;
     course.story?.().then((m) => live && setStory(m)).catch(() => live && setErr(true));
@@ -42,7 +45,7 @@ export default function StoryPage() {
         <p>{def.kicker}</p>
         <p>{def.lead}</p>
       </section>
-      <StoryPlayer story={story} assetBase={course.assetBase} startAt={startAt} />
+      <StoryPlayer story={story} assetBase={course.assetBase} startAt={startAt} startMv={startMv} />
 
       <h2 className="story-h">キャラクター紹介</h2>
       <div className="story-cast">
@@ -71,6 +74,7 @@ export default function StoryPage() {
         <tbody>{def.points.rows.map((r, i) => <tr key={i}>{r.map((c, j) => <td key={j}><Cell html={c} /></td>)}</tr>)}</tbody>
       </table></div>
       <p className="story-note">{def.note}</p>
+      <p className="story-note">オープニング・エンディング　音楽：魔王魂（「シャイニングスター」「The milky way」）</p>
     </div>
   );
 }

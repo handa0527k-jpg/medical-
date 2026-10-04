@@ -23,6 +23,8 @@ let times = opt('--at', '') ? opt('--at').split(',').map(Number) : [];
 if (!times.length) { const a = Number(opt('--from', 0)), b = Number(opt('--to', 10)), fps = Number(opt('--fps', 4)); for (let t = a; t <= b + 1e-6; t += 1 / fps) times.push(Math.round(t * 1000) / 1000); }
 // --scene <id>: times are relative to that scene's start
 const scene = opt('--scene', '');
+// --mv op|ed: times are seconds of the opening / ending song
+const mv = opt('--mv', '');
 if (scene) {
   const def = JSON.parse(readFileSync(`src/content/courses/${course}/story/story.json`, 'utf8'));
   let T = 0, s0 = null; const seen = new Set();
@@ -36,13 +38,14 @@ const b = await chromium.launch(process.env.PW_CHROMIUM ? { executablePath: proc
 const page = await b.newPage({ viewport: flag('--phone') ? { width: 390, height: 844 } : { width: 1400, height: 900 }, deviceScaleFactor: flag('--phone') ? 2 : 1 });
 const errors = [];
 page.on('pageerror', (e) => errors.push(e.message));
-await page.goto(`${base}/#/open/${course}/animations/story?t=${times[0]}`);
+const q = mv ? mv : 't';
+await page.goto(`${base}/#/open/${course}/animations/story?${q}=${times[0]}`);
 await page.waitForSelector('.story-screen canvas', { timeout: 60000 });
 await page.addStyleTag({ content: `.story-start{display:none!important}${flag('--no-subs') ? '.story-sub{display:none!important}' : ''}` });
 await page.evaluate(() => document.fonts.ready);
 const files = [];
 for (const t of times) {
-  await page.evaluate((tt) => { location.hash = location.hash.replace(/\?t=[^&]*/, `?t=${tt}`); }, t);
+  await page.evaluate((tt) => { location.hash = location.hash.replace(/\?(t|op|ed)=[^&]*/, (m0, k) => `?${k}=${tt}`); }, t);
   await page.waitForTimeout(140);
   const f = join(out, `frame-${t.toFixed(2).padStart(6, '0')}.png`);
   await page.locator('.story-screen').screenshot({ path: f });
