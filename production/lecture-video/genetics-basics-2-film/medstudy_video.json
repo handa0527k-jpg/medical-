@@ -1,0 +1,8342 @@
+{
+ "format": "medstudy-lecture-video/1",
+ "created": "2026-10-04T19:08:06.173Z",
+ "roles": {
+  "MEDSTUDY": "教材理解・授業設計・医学図・管理",
+  "ComfyUI": "動画生成ワークフロー管理",
+  "Wan 2.2": "映像生成（文字・正確な構造は描かせない）",
+  "Kokoro": "日本語講師音声",
+  "FFmpeg": "映像・音声・字幕・効果音の最終統合"
+ },
+ "theme": "遺伝子の基礎（構造と機能） 第2講「核酸の化学とDNAの二重らせん」— 完成版（講義まるごと）",
+ "curated": true,
+ "rationale": [
+  "第2講「核酸の化学とDNAの二重らせん」を、講義の順（導入 → テーマ1〜4 → まとめ）に1本の劇画授業映像にした完成版。確認問題の選択肢の解説は省き、考える問題（G-C対とA-T対）は本文として残した。",
+  "台詞はすべて第2講の講義台詞（narrations/lecture-02.json）の原文、またはその一部。板書は講義の黒板の文字をそのまま使う。",
+  "医学図：ヌクレオチド（リン酸は糖の5'、塩基は1'）、リボース／2-デオキシリボース（2'のOH→H）、プリン（環2つ：A・G）とピリミジン（環1つ：C・T・U、TとUの違いは5位のメチル基）、右巻きの二重らせん（幅2 nm・1回転3.4 nm＝10塩基対）、逆平行、ワトソン・クリック型塩基対（A=T 2本・G≡C 3本、幅1.08 nm）、ホスホジエステル結合（3'–O–P–O–5'）、プリン→尿酸・ピリミジン→NH₃＋CO₂、痛風（顔は描かない）。"
+ ],
+ "options": {
+  "duration": "full",
+  "style": "黒板講義型",
+  "intensity": "劇画"
+ },
+ "wan": {
+  "profile": "ti2v-5b",
+  "label": "Wan 2.2 TI2V 5B（軽量・24fps）",
+  "w": 1280,
+  "h": 704,
+  "fps": 24,
+  "maxFrames": 121,
+  "note": "VRAM 8GB〜（ComfyUIのオフロード使用）。1280×704・最大121フレーム（約5秒）",
+  "jobs": [
+   {
+    "name": "S01_a",
+    "scene": "S01",
+    "shot": "a",
+    "mode": "feature",
+    "desc": "漆黒の空間で墨が爆ぜ、二重らせんの影がゆっくり回る。",
+    "t0": 0,
+    "dur": 13.309,
+    "frames": 121,
+    "keyframe": "keyframes/S01_a.png",
+    "prompt": "pitch black void, sumi ink exploding and swirling like smoke in water, the dark silhouette of a right-handed DNA double helix slowly rotating in the ink. Camera: fast push-in that stops abruptly, dramatic low angle, strong perspective, sudden held frame. Look: gekiga manga style animation, bold hand-inked black lines, heavy cross-hatched shadows, high contrast chiaroscuro, limited desaturated palette with deep blacks, dramatic composition, cinematic, 1980s Japanese gekiga illustration texture. The subject fills the frame. Accuracy: the helix is right-handed with a wide major groove and a narrow minor groove; no text, no letters, no labels.",
+    "negative": "text, letters, numbers, captions, subtitles, labels, watermark, logo, signature, speech bubbles, writing, symbols, deformed structures, extra objects, cartoon faces on cells, cute mascot, pastel colors, oversaturated, photorealistic skin, gore, blood, 色调艳丽，过曝，静态，细节模糊不清，字幕，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走",
+    "camera": "題名で急接近 → 静止 / ゆっくり引く / らせんへ寄る",
+    "seed": 1055657486
+   },
+   {
+    "name": "S02_a",
+    "scene": "S02",
+    "shot": "a",
+    "mode": "background",
+    "desc": "細胞の中の暗い水の世界。粒がゆっくり漂う。",
+    "t0": 13.309,
+    "dur": 17.006,
+    "frames": 121,
+    "keyframe": "keyframes/S02_a.png",
+    "prompt": "a dark watery molecular world inside a cell nucleus, soft out-of-focus particles drifting, cold rim light, slow push-in. Camera: fast push-in that stops abruptly, dramatic low angle, strong perspective, sudden held frame. Look: gekiga manga style animation, bold hand-inked black lines, heavy cross-hatched shadows, high contrast chiaroscuro, limited desaturated palette with deep blacks, dramatic composition, cinematic, 1980s Japanese gekiga illustration texture. The centre of the frame stays calm and darker (an exact figure will be laid over it). Accuracy: background only, no molecules in focus, no text, no letters, no labels.",
+    "negative": "text, letters, numbers, captions, subtitles, labels, watermark, logo, signature, speech bubbles, writing, symbols, deformed structures, extra objects, cartoon faces on cells, cute mascot, pastel colors, oversaturated, photorealistic skin, gore, blood, 色调艳丽，过曝，静态，细节模糊不清，字幕，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走",
+    "camera": "ゆっくり寄る / ヌクレオチドのコマへ / 「核酸」で急接近 / 主役のヌクレオチドを大写しに",
+    "seed": 2760307007
+   },
+   {
+    "name": "S03_a",
+    "scene": "S03",
+    "shot": "a",
+    "mode": "background",
+    "desc": "夜の講義室。",
+    "t0": 30.316,
+    "dur": 9.985,
+    "frames": 121,
+    "keyframe": "keyframes/S03_a.png",
+    "prompt": "a dark empty lecture hall at night, a huge slate blackboard, a single hard shaft of light cutting through floating chalk dust, dust motes drifting slowly. Camera: fast push-in that stops abruptly, dramatic low angle, strong perspective, sudden held frame. Look: gekiga manga style animation, bold hand-inked black lines, heavy cross-hatched shadows, high contrast chiaroscuro, limited desaturated palette with deep blacks, dramatic composition, cinematic, 1980s Japanese gekiga illustration texture. The centre of the frame stays calm and darker (an exact figure will be laid over it). Accuracy: no people, no writing on the board.",
+    "negative": "text, letters, numbers, captions, subtitles, labels, watermark, logo, signature, speech bubbles, writing, symbols, deformed structures, extra objects, cartoon faces on cells, cute mascot, pastel colors, oversaturated, photorealistic skin, gore, blood, 色调艳丽，过曝，静态，细节模糊不清，字幕，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走",
+    "camera": "「ヌクレオチド→核酸」へ / 三つの部品で急接近 / 引く",
+    "seed": 1207880484
+   },
+   {
+    "name": "S04_a",
+    "scene": "S04",
+    "shot": "a",
+    "mode": "background",
+    "desc": "細胞核の中の暗い水の世界。",
+    "t0": 40.301,
+    "dur": 12.754,
+    "frames": 121,
+    "keyframe": "keyframes/S04_a.png",
+    "prompt": "a dark watery molecular world inside a cell nucleus, soft out-of-focus particles drifting, cold rim light, slow push-in. Camera: fast push-in that stops abruptly, dramatic low angle, strong perspective, sudden held frame. Look: gekiga manga style animation, bold hand-inked black lines, heavy cross-hatched shadows, high contrast chiaroscuro, limited desaturated palette with deep blacks, dramatic composition, cinematic, 1980s Japanese gekiga illustration texture. The centre of the frame stays calm and darker (an exact figure will be laid over it). Accuracy: background only, no molecules in focus, no text, no letters, no labels.",
+    "negative": "text, letters, numbers, captions, subtitles, labels, watermark, logo, signature, speech bubbles, writing, symbols, deformed structures, extra objects, cartoon faces on cells, cute mascot, pastel colors, oversaturated, photorealistic skin, gore, blood, 色调艳丽，过曝，静态，细节模糊不清，字幕，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走",
+    "camera": "リン酸へ / 糖へ高速パン / 塩基へ高速パン / 引いて全体 / 「ヌクレオシド」で急接近",
+    "seed": 1177847933
+   },
+   {
+    "name": "S05_a",
+    "scene": "S05",
+    "shot": "a",
+    "mode": "background",
+    "desc": "夜の講義室。",
+    "t0": 53.055,
+    "dur": 6.432,
+    "frames": 121,
+    "keyframe": "keyframes/S05_a.png",
+    "prompt": "a dark empty lecture hall at night, a huge slate blackboard, a single hard shaft of light cutting through floating chalk dust, dust motes drifting slowly. Camera: fast push-in that stops abruptly, dramatic low angle, strong perspective, sudden held frame. Look: gekiga manga style animation, bold hand-inked black lines, heavy cross-hatched shadows, high contrast chiaroscuro, limited desaturated palette with deep blacks, dramatic composition, cinematic, 1980s Japanese gekiga illustration texture. The centre of the frame stays calm and darker (an exact figure will be laid over it). Accuracy: no people, no writing on the board.",
+    "negative": "text, letters, numbers, captions, subtitles, labels, watermark, logo, signature, speech bubbles, writing, symbols, deformed structures, extra objects, cartoon faces on cells, cute mascot, pastel colors, oversaturated, photorealistic skin, gore, blood, 色调艳丽，过曝，静态，细节模糊不清，字幕，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走",
+    "camera": "「シド」の行へ / 「チド」の行へ / 引く / 「シドはリン酸なし」で急接近",
+    "seed": 3909942946
+   },
+   {
+    "name": "S05_b",
+    "scene": "S05",
+    "shot": "b",
+    "mode": "background",
+    "desc": "同じ講義室、光の筋が強くなる。",
+    "t0": 59.487,
+    "dur": 8.932,
+    "frames": 121,
+    "keyframe": "keyframes/S05_b.png",
+    "prompt": "a dark empty lecture hall at night, a huge slate blackboard, a single hard shaft of light cutting through floating chalk dust, dust motes drifting slowly, the light grows harsher. Camera: fast push-in that stops abruptly, dramatic low angle, strong perspective, sudden held frame. Look: gekiga manga style animation, bold hand-inked black lines, heavy cross-hatched shadows, high contrast chiaroscuro, limited desaturated palette with deep blacks, dramatic composition, cinematic, 1980s Japanese gekiga illustration texture. The centre of the frame stays calm and darker (an exact figure will be laid over it). Accuracy: no people, no writing on the board.",
+    "negative": "text, letters, numbers, captions, subtitles, labels, watermark, logo, signature, speech bubbles, writing, symbols, deformed structures, extra objects, cartoon faces on cells, cute mascot, pastel colors, oversaturated, photorealistic skin, gore, blood, 色调艳丽，过曝，静态，细节模糊不清，字幕，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走",
+    "camera": "「シド」の行へ / 「チド」の行へ / 引く / 「シドはリン酸なし」で急接近",
+    "seed": 3893165327
+   },
+   {
+    "name": "S06_a",
+    "scene": "S06",
+    "shot": "a",
+    "mode": "background",
+    "desc": "細胞核の中の暗い水の世界。",
+    "t0": 68.419,
+    "dur": 18.673,
+    "frames": 121,
+    "keyframe": "keyframes/S06_a.png",
+    "prompt": "a dark watery molecular world inside a cell nucleus, soft out-of-focus particles drifting, cold rim light, slow push-in. Camera: fast push-in that stops abruptly, dramatic low angle, strong perspective, sudden held frame. Look: gekiga manga style animation, bold hand-inked black lines, heavy cross-hatched shadows, high contrast chiaroscuro, limited desaturated palette with deep blacks, dramatic composition, cinematic, 1980s Japanese gekiga illustration texture. The centre of the frame stays calm and darker (an exact figure will be laid over it). Accuracy: background only, no molecules in focus, no text, no letters, no labels.",
+    "negative": "text, letters, numbers, captions, subtitles, labels, watermark, logo, signature, speech bubbles, writing, symbols, deformed structures, extra objects, cartoon faces on cells, cute mascot, pastel colors, oversaturated, photorealistic skin, gore, blood, 色调艳丽，过曝，静态，细节模糊不清，字幕，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走",
+    "camera": "炭素の番号が灯る / リボースへ / 2-デオキシリボースへ高速パン / 並べる / 「2ダッシュ」の位置へ急接近 / 「DNAのD」で引く",
+    "seed": 1361305043
+   },
+   {
+    "name": "S07_a",
+    "scene": "S07",
+    "shot": "a",
+    "mode": "background",
+    "desc": "細胞核の中の暗い水の世界。",
+    "t0": 87.093,
+    "dur": 25.014,
+    "frames": 121,
+    "keyframe": "keyframes/S07_a.png",
+    "prompt": "a dark watery molecular world inside a cell nucleus, soft out-of-focus particles drifting, cold rim light, slow push-in. Camera: fast push-in that stops abruptly, dramatic low angle, strong perspective, sudden held frame. Look: gekiga manga style animation, bold hand-inked black lines, heavy cross-hatched shadows, high contrast chiaroscuro, limited desaturated palette with deep blacks, dramatic composition, cinematic, 1980s Japanese gekiga illustration texture. The centre of the frame stays calm and darker (an exact figure will be laid over it). Accuracy: background only, no molecules in focus, no text, no letters, no labels.",
+    "negative": "text, letters, numbers, captions, subtitles, labels, watermark, logo, signature, speech bubbles, writing, symbols, deformed structures, extra objects, cartoon faces on cells, cute mascot, pastel colors, oversaturated, photorealistic skin, gore, blood, 色调艳丽，过曝，静态，细节模糊不清，字幕，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走",
+    "camera": "窒素の位置が光る / プリンへ / ピリミジンへ高速パン / TとUへ急接近 / 引く / TとUに寄る",
+    "seed": 4103845816
+   },
+   {
+    "name": "S08_a",
+    "scene": "S08",
+    "shot": "a",
+    "mode": "background",
+    "desc": "細胞核の中の暗い水の世界。",
+    "t0": 112.107,
+    "dur": 26.051,
+    "frames": 121,
+    "keyframe": "keyframes/S08_a.png",
+    "prompt": "a dark watery molecular world inside a cell nucleus, soft out-of-focus particles drifting, cold rim light, slow push-in. Camera: fast push-in that stops abruptly, dramatic low angle, strong perspective, sudden held frame. Look: gekiga manga style animation, bold hand-inked black lines, heavy cross-hatched shadows, high contrast chiaroscuro, limited desaturated palette with deep blacks, dramatic composition, cinematic, 1980s Japanese gekiga illustration texture. The centre of the frame stays calm and darker (an exact figure will be laid over it). Accuracy: background only, no molecules in focus, no text, no letters, no labels.",
+    "negative": "text, letters, numbers, captions, subtitles, labels, watermark, logo, signature, speech bubbles, writing, symbols, deformed structures, extra objects, cartoon faces on cells, cute mascot, pastel colors, oversaturated, photorealistic skin, gore, blood, 色调艳丽，过曝，静态，细节模糊不清，字幕，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走",
+    "camera": "リン酸が付く所へ / 3つ目で急接近 / 引く / 末端のリン酸の光 / cAMPへ / 2'のHへ",
+    "seed": 4073813265
+   },
+   {
+    "name": "S09_a",
+    "scene": "S09",
+    "shot": "a",
+    "mode": "background",
+    "desc": "夜の講義室。",
+    "t0": 138.157,
+    "dur": 23.769,
+    "frames": 121,
+    "keyframe": "keyframes/S09_a.png",
+    "prompt": "a dark empty lecture hall at night, a huge slate blackboard, a single hard shaft of light cutting through floating chalk dust, dust motes drifting slowly. Camera: fast push-in that stops abruptly, dramatic low angle, strong perspective, sudden held frame. Look: gekiga manga style animation, bold hand-inked black lines, heavy cross-hatched shadows, high contrast chiaroscuro, limited desaturated palette with deep blacks, dramatic composition, cinematic, 1980s Japanese gekiga illustration texture. The centre of the frame stays calm and darker (an exact figure will be laid over it). Accuracy: no people, no writing on the board.",
+    "negative": "text, letters, numbers, captions, subtitles, labels, watermark, logo, signature, speech bubbles, writing, symbols, deformed structures, extra objects, cartoon faces on cells, cute mascot, pastel colors, oversaturated, photorealistic skin, gore, blood, 色调艳丽，过曝，静态，细节模糊不清，字幕，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走",
+    "camera": "鎖が書かれていく / 相手の塩基へ / 左の鎖 / 右の鎖 / 「逆」で急接近",
+    "seed": 2510940982
+   },
+   {
+    "name": "S10_a",
+    "scene": "S10",
+    "shot": "a",
+    "mode": "background",
+    "desc": "細胞核の中の暗い水の世界、ゆっくり回り込む。",
+    "t0": 161.927,
+    "dur": 14.815,
+    "frames": 121,
+    "keyframe": "keyframes/S10_a.png",
+    "prompt": "a dark watery molecular world inside a cell nucleus, soft out-of-focus particles drifting, cold rim light, slow push-in, the camera slowly orbits. Camera: fast push-in that stops abruptly, dramatic low angle, strong perspective, sudden held frame. Look: gekiga manga style animation, bold hand-inked black lines, heavy cross-hatched shadows, high contrast chiaroscuro, limited desaturated palette with deep blacks, dramatic composition, cinematic, 1980s Japanese gekiga illustration texture. The centre of the frame stays calm and darker (an exact figure will be laid over it). Accuracy: background only, no helix, no text, no letters, no labels.",
+    "negative": "text, letters, numbers, captions, subtitles, labels, watermark, logo, signature, speech bubbles, writing, symbols, deformed structures, extra objects, cartoon faces on cells, cute mascot, pastel colors, oversaturated, photorealistic skin, gore, blood, 色调艳丽，过曝，静态，细节模糊不清，字幕，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走",
+    "camera": "引いて全体 / 骨格へ / 塩基対へ / 幅の寸法線 / 1回転の寸法線",
+    "seed": 2454360564
+   },
+   {
+    "name": "S11_a",
+    "scene": "S11",
+    "shot": "a",
+    "mode": "background",
+    "desc": "暗い水の世界でカメラが横に流れる。",
+    "t0": 176.741,
+    "dur": 14.146,
+    "frames": 121,
+    "keyframe": "keyframes/S11_a.png",
+    "prompt": "a dark watery molecular world inside a cell nucleus, soft out-of-focus particles drifting, cold rim light, slow push-in, the camera tracks sideways. Camera: fast push-in that stops abruptly, dramatic low angle, strong perspective, sudden held frame. Look: gekiga manga style animation, bold hand-inked black lines, heavy cross-hatched shadows, high contrast chiaroscuro, limited desaturated palette with deep blacks, dramatic composition, cinematic, 1980s Japanese gekiga illustration texture. The centre of the frame stays calm and darker (an exact figure will be laid over it). Accuracy: background only, no molecules in focus, no text, no letters, no labels.",
+    "negative": "text, letters, numbers, captions, subtitles, labels, watermark, logo, signature, speech bubbles, writing, symbols, deformed structures, extra objects, cartoon faces on cells, cute mascot, pastel colors, oversaturated, photorealistic skin, gore, blood, 色调艳丽，过曝，静态，细节模糊不清，字幕，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走",
+    "camera": "ほどける / 上の鎖に沿って右へ / 下の鎖 / 「逆平行」で急接近",
+    "seed": 4017232847
+   },
+   {
+    "name": "S12_a",
+    "scene": "S12",
+    "shot": "a",
+    "mode": "background",
+    "desc": "細胞核の中の暗い水の世界。",
+    "t0": 190.888,
+    "dur": 19.342,
+    "frames": 121,
+    "keyframe": "keyframes/S12_a.png",
+    "prompt": "a dark watery molecular world inside a cell nucleus, soft out-of-focus particles drifting, cold rim light, slow push-in. Camera: fast push-in that stops abruptly, dramatic low angle, strong perspective, sudden held frame. Look: gekiga manga style animation, bold hand-inked black lines, heavy cross-hatched shadows, high contrast chiaroscuro, limited desaturated palette with deep blacks, dramatic composition, cinematic, 1980s Japanese gekiga illustration texture. The centre of the frame stays calm and darker (an exact figure will be laid over it). Accuracy: background only, no molecules in focus, no text, no letters, no labels.",
+    "negative": "text, letters, numbers, captions, subtitles, labels, watermark, logo, signature, speech bubbles, writing, symbols, deformed structures, extra objects, cartoon faces on cells, cute mascot, pastel colors, oversaturated, photorealistic skin, gore, blood, 色调艳丽，过曝，静态，细节模糊不清，字幕，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走",
+    "camera": "塩基対へ寄る / A–T / G–Cへ高速パン / 並べる / 「そろいます」で急接近",
+    "seed": 1207581598
+   },
+   {
+    "name": "S13_a",
+    "scene": "S13",
+    "shot": "a",
+    "mode": "background",
+    "desc": "細胞核の中の暗い水の世界。",
+    "t0": 210.23,
+    "dur": 13.341,
+    "frames": 121,
+    "keyframe": "keyframes/S13_a.png",
+    "prompt": "a dark watery molecular world inside a cell nucleus, soft out-of-focus particles drifting, cold rim light, slow push-in. Camera: fast push-in that stops abruptly, dramatic low angle, strong perspective, sudden held frame. Look: gekiga manga style animation, bold hand-inked black lines, heavy cross-hatched shadows, high contrast chiaroscuro, limited desaturated palette with deep blacks, dramatic composition, cinematic, 1980s Japanese gekiga illustration texture. The centre of the frame stays calm and darker (an exact figure will be laid over it). Accuracy: background only, no molecules in focus, no text, no letters, no labels.",
+    "negative": "text, letters, numbers, captions, subtitles, labels, watermark, logo, signature, speech bubbles, writing, symbols, deformed structures, extra objects, cartoon faces on cells, cute mascot, pastel colors, oversaturated, photorealistic skin, gore, blood, 色调艳丽，过曝，静态，细节模糊不清，字幕，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走",
+    "camera": "3'炭素→リン酸→5'炭素 / 「ホスホジエステル結合」で急接近 / 下へ伸びる",
+    "seed": 2749665529
+   },
+   {
+    "name": "S14_a",
+    "scene": "S14",
+    "shot": "a",
+    "mode": "background",
+    "desc": "夜の講義室。",
+    "t0": 223.571,
+    "dur": 24.303,
+    "frames": 121,
+    "keyframe": "keyframes/S14_a.png",
+    "prompt": "a dark empty lecture hall at night, a huge slate blackboard, a single hard shaft of light cutting through floating chalk dust, dust motes drifting slowly. Camera: fast push-in that stops abruptly, dramatic low angle, strong perspective, sudden held frame. Look: gekiga manga style animation, bold hand-inked black lines, heavy cross-hatched shadows, high contrast chiaroscuro, limited desaturated palette with deep blacks, dramatic composition, cinematic, 1980s Japanese gekiga illustration texture. The centre of the frame stays calm and darker (an exact figure will be laid over it). Accuracy: no people, no writing on the board.",
+    "negative": "text, letters, numbers, captions, subtitles, labels, watermark, logo, signature, speech bubbles, writing, symbols, deformed structures, extra objects, cartoon faces on cells, cute mascot, pastel colors, oversaturated, photorealistic skin, gore, blood, 色调艳丽，过曝，静态，细节模糊不清，字幕，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走",
+    "camera": "A=T・G≡Cで急接近 / 逆向き / 鎖の中 / 鎖の間 / 並べる / 数字",
+    "seed": 1013781896
+   },
+   {
+    "name": "S15_a",
+    "scene": "S15",
+    "shot": "a",
+    "mode": "background",
+    "desc": "暗い背景に光の筋。",
+    "t0": 247.874,
+    "dur": 26.877,
+    "frames": 121,
+    "keyframe": "keyframes/S15_a.png",
+    "prompt": "abstract dark background, slow streaks of warm light drifting, subtle film grain. Camera: fast push-in that stops abruptly, dramatic low angle, strong perspective, sudden held frame. Look: gekiga manga style animation, bold hand-inked black lines, heavy cross-hatched shadows, high contrast chiaroscuro, limited desaturated palette with deep blacks, dramatic composition, cinematic, 1980s Japanese gekiga illustration texture. The centre of the frame stays calm and darker (an exact figure will be laid over it). Accuracy: no text, no letters, no labels.",
+    "negative": "text, letters, numbers, captions, subtitles, labels, watermark, logo, signature, speech bubbles, writing, symbols, deformed structures, extra objects, cartoon faces on cells, cute mascot, pastel colors, oversaturated, photorealistic skin, gore, blood, 色调艳丽，过曝，静态，细节模糊不清，字幕，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走",
+    "camera": "綱引きが始まる / 「どちら」で急接近 / 本数 / A-Tの鎖がほどける / G-Cの鎖はこらえる / 引く",
+    "seed": 2576654179
+   },
+   {
+    "name": "S16_a",
+    "scene": "S16",
+    "shot": "a",
+    "mode": "background",
+    "desc": "体の中の暖かく暗い世界。",
+    "t0": 274.751,
+    "dur": 15.92,
+    "frames": 121,
+    "keyframe": "keyframes/S16_a.png",
+    "prompt": "a dark warm organic interior, soft glowing particles flowing slowly, warm rim light. Camera: fast push-in that stops abruptly, dramatic low angle, strong perspective, sudden held frame. Look: gekiga manga style animation, bold hand-inked black lines, heavy cross-hatched shadows, high contrast chiaroscuro, limited desaturated palette with deep blacks, dramatic composition, cinematic, 1980s Japanese gekiga illustration texture. The centre of the frame stays calm and darker (an exact figure will be laid over it). Accuracy: background only, no organs in focus, no text, no letters, no labels.",
+    "negative": "text, letters, numbers, captions, subtitles, labels, watermark, logo, signature, speech bubbles, writing, symbols, deformed structures, extra objects, cartoon faces on cells, cute mascot, pastel colors, oversaturated, photorealistic skin, gore, blood, 色调艳丽，过曝，静态，细节模糊不清，字幕，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走",
+    "camera": "小腸で切り分け / ピリミジンの道 / プリンの道へ高速パン / 「尿酸」で急接近",
+    "seed": 4093101170
+   },
+   {
+    "name": "S17_a",
+    "scene": "S17",
+    "shot": "a",
+    "mode": "background",
+    "desc": "暗い赤みを帯びた体の内側の世界。",
+    "t0": 290.671,
+    "dur": 9.165,
+    "frames": 121,
+    "keyframe": "keyframes/S17_a.png",
+    "prompt": "a dark reddish organic interior, slow pulsing glow, particles drifting. Camera: fast push-in that stops abruptly, dramatic low angle, strong perspective, sudden held frame. Look: gekiga manga style animation, bold hand-inked black lines, heavy cross-hatched shadows, high contrast chiaroscuro, limited desaturated palette with deep blacks, dramatic composition, cinematic, 1980s Japanese gekiga illustration texture. The centre of the frame stays calm and darker (an exact figure will be laid over it). Accuracy: background only, no body parts, no faces, no text, no letters, no labels.",
+    "negative": "text, letters, numbers, captions, subtitles, labels, watermark, logo, signature, speech bubbles, writing, symbols, deformed structures, extra objects, cartoon faces on cells, cute mascot, pastel colors, oversaturated, photorealistic skin, gore, blood, 色调艳丽，过曝，静态，细节模糊不清，字幕，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走",
+    "camera": "親指の付け根へ / 「痛風」で関節へ急接近 / 核酸の鎖へ / 新しく合成",
+    "seed": 2424328013
+   },
+   {
+    "name": "S17_b",
+    "scene": "S17",
+    "shot": "b",
+    "mode": "background",
+    "desc": "暗い空間に光の粒が集まる。",
+    "t0": 299.835,
+    "dur": 10.452,
+    "frames": 121,
+    "keyframe": "keyframes/S17_b.png",
+    "prompt": "abstract dark space, small glowing particles gathering and assembling slowly. Camera: fast push-in that stops abruptly, dramatic low angle, strong perspective, sudden held frame. Look: gekiga manga style animation, bold hand-inked black lines, heavy cross-hatched shadows, high contrast chiaroscuro, limited desaturated palette with deep blacks, dramatic composition, cinematic, 1980s Japanese gekiga illustration texture. The centre of the frame stays calm and darker (an exact figure will be laid over it). Accuracy: background only, no text, no letters, no labels.",
+    "negative": "text, letters, numbers, captions, subtitles, labels, watermark, logo, signature, speech bubbles, writing, symbols, deformed structures, extra objects, cartoon faces on cells, cute mascot, pastel colors, oversaturated, photorealistic skin, gore, blood, 色调艳丽，过曝，静态，细节模糊不清，字幕，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走",
+    "camera": "親指の付け根へ / 「痛風」で関節へ急接近 / 核酸の鎖へ / 新しく合成",
+    "seed": 2373995156
+   },
+   {
+    "name": "S18_a",
+    "scene": "S18",
+    "shot": "a",
+    "mode": "background",
+    "desc": "夜の講義室。",
+    "t0": 310.287,
+    "dur": 14.806,
+    "frames": 121,
+    "keyframe": "keyframes/S18_a.png",
+    "prompt": "a dark empty lecture hall at night, a huge slate blackboard, a single hard shaft of light cutting through floating chalk dust, dust motes drifting slowly. Camera: fast push-in that stops abruptly, dramatic low angle, strong perspective, sudden held frame. Look: gekiga manga style animation, bold hand-inked black lines, heavy cross-hatched shadows, high contrast chiaroscuro, limited desaturated palette with deep blacks, dramatic composition, cinematic, 1980s Japanese gekiga illustration texture. The centre of the frame stays calm and darker (an exact figure will be laid over it). Accuracy: no people, no writing on the board.",
+    "negative": "text, letters, numbers, captions, subtitles, labels, watermark, logo, signature, speech bubbles, writing, symbols, deformed structures, extra objects, cartoon faces on cells, cute mascot, pastel colors, oversaturated, photorealistic skin, gore, blood, 色调艳丽，过曝，静态，细节模糊不清，字幕，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走",
+    "camera": "プリン→尿酸 / ピリミジン / 食事の核酸 / 「プリンと尿酸」で急接近",
+    "seed": 3920089820
+   },
+   {
+    "name": "S19_a",
+    "scene": "S19",
+    "shot": "a",
+    "mode": "background",
+    "desc": "夜の講義室。光がゆっくり強くなる。",
+    "t0": 325.093,
+    "dur": 27.749,
+    "frames": 121,
+    "keyframe": "keyframes/S19_a.png",
+    "prompt": "a dark empty lecture hall at night, a huge slate blackboard, a single hard shaft of light cutting through floating chalk dust, dust motes drifting slowly, the light slowly grows warmer. Camera: fast push-in that stops abruptly, dramatic low angle, strong perspective, sudden held frame. Look: gekiga manga style animation, bold hand-inked black lines, heavy cross-hatched shadows, high contrast chiaroscuro, limited desaturated palette with deep blacks, dramatic composition, cinematic, 1980s Japanese gekiga illustration texture. The centre of the frame stays calm and darker (an exact figure will be laid over it). Accuracy: no people, no writing on the board.",
+    "negative": "text, letters, numbers, captions, subtitles, labels, watermark, logo, signature, speech bubbles, writing, symbols, deformed structures, extra objects, cartoon faces on cells, cute mascot, pastel colors, oversaturated, photorealistic skin, gore, blood, 色调艳丽，过曝，静态，细节模糊不清，字幕，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走",
+    "camera": "①へ / ②へ / ③へ / ④へ / 4つを並べて引く",
+    "seed": 1177549047
+   },
+   {
+    "name": "S20_a",
+    "scene": "S20",
+    "shot": "a",
+    "mode": "background",
+    "desc": "漆黒に墨がゆっくり広がる。",
+    "t0": 352.842,
+    "dur": 10.137,
+    "frames": 121,
+    "keyframe": "keyframes/S20_a.png",
+    "prompt": "pitch black void, sumi ink spreading slowly, gentle. Camera: fast push-in that stops abruptly, dramatic low angle, strong perspective, sudden held frame. Look: gekiga manga style animation, bold hand-inked black lines, heavy cross-hatched shadows, high contrast chiaroscuro, limited desaturated palette with deep blacks, dramatic composition, cinematic, 1980s Japanese gekiga illustration texture. The centre of the frame stays calm and darker (an exact figure will be laid over it). Accuracy: no text, no letters, no labels.",
+    "negative": "text, letters, numbers, captions, subtitles, labels, watermark, logo, signature, speech bubbles, writing, symbols, deformed structures, extra objects, cartoon faces on cells, cute mascot, pastel colors, oversaturated, photorealistic skin, gore, blood, 色调艳丽，过曝，静态，细节模糊不清，字幕，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走",
+    "camera": "ゆっくり引いて終わる",
+    "seed": 3932530631
+   }
+  ]
+ },
+ "kokoro": {
+  "plan": "genetics-basics-2-film_board",
+  "engine": "kokoro (Kokoro-82M v1.0, ONNX) + misaki ja G2P (pyopenjtalk)",
+  "voice": "jm_kumo",
+  "speed": 1,
+  "sampleRate": 24000,
+  "note": "say = 読み（英字・誤読しやすい語はかな）。pre/post = 前後の間（秒）。speed = 区間ごとの話速（重要語はやや遅く）。",
+  "scenes": [
+   {
+    "id": "S01",
+    "file": "audio/S01.wav",
+    "segs": [
+     {
+      "beat": "open",
+      "i": 0,
+      "text": "はい、第2講を始めます。",
+      "say": "はい、第2講を始めます。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.2,
+      "cue": "title"
+     },
+     {
+      "beat": "open",
+      "i": 1,
+      "text": "前回、遺伝の本体はDNAだ、というところまで来ました。",
+      "say": "前回、遺伝の本体はディーエヌエーだ、というところまで来ました。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.3,
+      "cue": "prev"
+     },
+     {
+      "beat": "today",
+      "i": 0,
+      "text": "今日は、そのDNAが「何でできているのか」。",
+      "say": "今日は、そのディーエヌエーが何でできているのか。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.2,
+      "cue": "what"
+     },
+     {
+      "beat": "today",
+      "i": 1,
+      "text": "設計図の、文字と紙の話です。",
+      "say": "設計図の、文字と紙の話です。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.5,
+      "cue": "paper"
+     }
+    ]
+   },
+   {
+    "id": "S02",
+    "file": "audio/S02.wav",
+    "segs": [
+     {
+      "beat": "four",
+      "i": 0,
+      "text": "細胞の中には、4種類の小さな有機分子があります。",
+      "say": "細胞の中には、4種類の小さな有機分子があります。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.25,
+      "cue": "four"
+     },
+     {
+      "beat": "poly",
+      "i": 0,
+      "text": "糖は多糖に、",
+      "say": "糖は多糖に、",
+      "speed": 1,
+      "pre": 0,
+      "post": 0,
+      "cue": "sug"
+     },
+     {
+      "beat": "poly",
+      "i": 1,
+      "text": "脂肪酸は膜に、",
+      "say": "脂肪酸は膜に、",
+      "speed": 1,
+      "pre": 0,
+      "post": 0,
+      "cue": "fat"
+     },
+     {
+      "beat": "poly",
+      "i": 2,
+      "text": "アミノ酸はタンパク質に。",
+      "say": "アミノ酸はタンパク質に。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.25,
+      "cue": "aa"
+     },
+     {
+      "beat": "poly",
+      "i": 3,
+      "text": "そして、ヌクレオチドがつながると……",
+      "say": "そして、ヌクレオチドがつながると",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.35,
+      "cue": "nuc"
+     },
+     {
+      "beat": "poly",
+      "i": 4,
+      "text": "核酸になります。",
+      "say": "核酸になります。",
+      "speed": 1,
+      "pre": 0.1,
+      "post": 0.2,
+      "cue": "na"
+     },
+     {
+      "beat": "poly",
+      "i": 5,
+      "text": "今日の主役は、このヌクレオチドです。",
+      "say": "今日の主役は、このヌクレオチドです。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.45,
+      "cue": "star"
+     }
+    ]
+   },
+   {
+    "id": "S03",
+    "file": "audio/S03.wav",
+    "segs": [
+     {
+      "beat": "unit",
+      "i": 0,
+      "text": "核酸の単位はヌクレオチド。",
+      "say": "核酸の単位はヌクレオチド。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.15,
+      "cue": "unit"
+     },
+     {
+      "beat": "unit",
+      "i": 1,
+      "text": "まずこれを押さえてください。",
+      "say": "まずこれを押さえてください。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.3,
+      "cue": "press"
+     },
+     {
+      "beat": "parts",
+      "i": 0,
+      "text": "ヌクレオチドは、三つの部品でできています。",
+      "say": "ヌクレオチドは、三つの部品でできています。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.15,
+      "cue": "three"
+     },
+     {
+      "beat": "parts",
+      "i": 1,
+      "text": "塩基、五炭糖、そしてリン酸。",
+      "say": "塩基、ごたんとう、そしてリン酸。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.4,
+      "cue": "parts"
+     }
+    ]
+   },
+   {
+    "id": "S04",
+    "file": "audio/S04.wav",
+    "segs": [
+     {
+      "beat": "pic",
+      "i": 0,
+      "text": "絵にすると、こうなります。",
+      "say": "絵にすると、こうなります。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.15,
+      "cue": "pic"
+     },
+     {
+      "beat": "pic",
+      "i": 1,
+      "text": "左の丸がリン酸、",
+      "say": "左の丸がリン酸、",
+      "speed": 1,
+      "pre": 0,
+      "post": 0,
+      "cue": "P"
+     },
+     {
+      "beat": "pic",
+      "i": 2,
+      "text": "真ん中の五角形が糖、",
+      "say": "真ん中の五角形が糖、",
+      "speed": 1,
+      "pre": 0,
+      "post": 0,
+      "cue": "S"
+     },
+     {
+      "beat": "pic",
+      "i": 3,
+      "text": "右の六角形が塩基です。",
+      "say": "右の六角形が塩基です。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.35,
+      "cue": "B"
+     },
+     {
+      "beat": "side",
+      "i": 0,
+      "text": "塩基と糖だけのかたまりを、",
+      "say": "塩基と糖だけのかたまりを、",
+      "speed": 1,
+      "pre": 0,
+      "post": 0,
+      "cue": "bs"
+     },
+     {
+      "beat": "side",
+      "i": 1,
+      "text": "ヌクレオシドと呼びます。",
+      "say": "ヌクレオシドと呼びます。",
+      "speed": 1,
+      "pre": 0.1,
+      "post": 0.45,
+      "cue": "side"
+     }
+    ]
+   },
+   {
+    "id": "S05",
+    "file": "audio/S05.wav",
+    "segs": [
+     {
+      "beat": "sort",
+      "i": 0,
+      "text": "黒板に整理します。",
+      "say": "黒板に整理します。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.1,
+      "cue": "sort"
+     },
+     {
+      "beat": "sort",
+      "i": 1,
+      "text": "塩基と糖だけならヌクレオ「シド」。",
+      "say": "塩基と糖だけならヌクレオシド。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.2,
+      "cue": "sid"
+     },
+     {
+      "beat": "sort",
+      "i": 2,
+      "text": "リン酸が付くとヌクレオ「チド」。",
+      "say": "リン酸が付くとヌクレオチド。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.35,
+      "cue": "tid"
+     },
+     {
+      "beat": "trap",
+      "i": 0,
+      "text": "試験では、この二つを入れ替えた選択肢が必ず出ます。",
+      "say": "試験では、この二つを入れ替えた選択肢が必ず出ます。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.2,
+      "cue": "trap"
+     },
+     {
+      "beat": "trap",
+      "i": 1,
+      "text": "「シドはリン酸なし」。",
+      "say": "シドはリン酸なし。",
+      "speed": 1,
+      "pre": 0.15,
+      "post": 0.25,
+      "cue": "rule"
+     },
+     {
+      "beat": "trap",
+      "i": 2,
+      "text": "これだけ覚えれば大丈夫です。",
+      "say": "これだけ覚えれば大丈夫です。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.4,
+      "cue": "ok"
+     }
+    ]
+   },
+   {
+    "id": "S06",
+    "file": "audio/S06.wav",
+    "segs": [
+     {
+      "beat": "c5",
+      "i": 0,
+      "text": "核酸の糖は、炭素が五つの五炭糖。",
+      "say": "核酸の糖は、炭素が五つのごたんとう。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.2,
+      "cue": "c5"
+     },
+     {
+      "beat": "c5",
+      "i": 1,
+      "text": "RNAはリボース、",
+      "say": "アールエヌエーはリボース、",
+      "speed": 1,
+      "pre": 0,
+      "post": 0,
+      "cue": "rib"
+     },
+     {
+      "beat": "c5",
+      "i": 2,
+      "text": "DNAは2デオキシリボースです。",
+      "say": "ディーエヌエーはにデオキシリボースです。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.35,
+      "cue": "deo"
+     },
+     {
+      "beat": "deoxy",
+      "i": 0,
+      "text": "デオキシ、というのは「酸素が取れた」という意味。",
+      "say": "デオキシ、というのは酸素が取れたという意味。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.2,
+      "cue": "mean"
+     },
+     {
+      "beat": "deoxy",
+      "i": 1,
+      "text": "2ダッシュの位置のヒドロキシ基が、水素になっています。",
+      "say": "にダッシュの位置のヒドロキシ基が、水素になっています。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.25,
+      "cue": "oh"
+     },
+     {
+      "beat": "deoxy",
+      "i": 2,
+      "text": "DNAのDは、このデオキシのDです。",
+      "say": "ディーエヌエーのディーは、このデオキシのディーです。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.45,
+      "cue": "dd"
+     }
+    ]
+   },
+   {
+    "id": "S07",
+    "file": "audio/S07.wav",
+    "segs": [
+     {
+      "beat": "two",
+      "i": 0,
+      "text": "次は塩基。",
+      "say": "次は塩基。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.1,
+      "cue": "base"
+     },
+     {
+      "beat": "two",
+      "i": 1,
+      "text": "窒素を含む環状の化合物で、大きく二つに分かれます。",
+      "say": "窒素を含む環状の化合物で、大きく二つに分かれます。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.25,
+      "cue": "ring"
+     },
+     {
+      "beat": "pp",
+      "i": 0,
+      "text": "環が二つのプリン。",
+      "say": "環が二つのプリン。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.1,
+      "cue": "pu"
+     },
+     {
+      "beat": "pp",
+      "i": 1,
+      "text": "アデニンとグアニン。",
+      "say": "アデニンとグアニン。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.2,
+      "cue": "ag"
+     },
+     {
+      "beat": "pp",
+      "i": 2,
+      "text": "環が一つのピリミジン。",
+      "say": "環が一つのピリミジン。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.1,
+      "cue": "py"
+     },
+     {
+      "beat": "pp",
+      "i": 3,
+      "text": "シトシン、チミン、ウラシルです。",
+      "say": "シトシン、チミン、ウラシルです。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.3,
+      "cue": "ctu"
+     },
+     {
+      "beat": "tu",
+      "i": 0,
+      "text": "そして重要なのが、",
+      "say": "そして重要なのが、",
+      "speed": 1,
+      "pre": 0,
+      "post": 0,
+      "cue": "imp"
+     },
+     {
+      "beat": "tu",
+      "i": 1,
+      "text": "RNAではチミンの代わりにウラシルが使われる、ということ。",
+      "say": "アールエヌエーではチミンの代わりにウラシルが使われる、ということ。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.3,
+      "cue": "tu"
+     },
+     {
+      "beat": "red",
+      "i": 0,
+      "text": "赤で囲んでおきます。",
+      "say": "赤で囲んでおきます。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.1,
+      "cue": "red"
+     },
+     {
+      "beat": "red",
+      "i": 1,
+      "text": "TとU、試験ではここを入れ替えてきます。",
+      "say": "ティーとユー、試験ではここを入れ替えてきます。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.45,
+      "cue": "swap"
+     }
+    ]
+   },
+   {
+    "id": "S08",
+    "file": "audio/S08.wav",
+    "segs": [
+     {
+      "beat": "n",
+      "i": 0,
+      "text": "リン酸が一つならNMP、",
+      "say": "リン酸が一つならエヌエムピー、",
+      "speed": 1,
+      "pre": 0,
+      "post": 0,
+      "cue": "nmp"
+     },
+     {
+      "beat": "n",
+      "i": 1,
+      "text": "二つならNDP、",
+      "say": "二つならエヌディーピー、",
+      "speed": 1,
+      "pre": 0,
+      "post": 0,
+      "cue": "ndp"
+     },
+     {
+      "beat": "n",
+      "i": 2,
+      "text": "三つならNTP。",
+      "say": "三つならエヌティーピー。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.15,
+      "cue": "ntp"
+     },
+     {
+      "beat": "n",
+      "i": 3,
+      "text": "実際には三つ付いたものが多いんです。",
+      "say": "実際には三つ付いたものが多いんです。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.3,
+      "cue": "many"
+     },
+     {
+      "beat": "atp",
+      "i": 0,
+      "text": "体の中で働くヌクレオチドの代表がATP。",
+      "say": "体の中で働くヌクレオチドの代表がエーティーピー。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.1,
+      "cue": "atp"
+     },
+     {
+      "beat": "atp",
+      "i": 1,
+      "text": "エネルギーの供給役です。",
+      "say": "エネルギーの供給役です。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.25,
+      "cue": "energy"
+     },
+     {
+      "beat": "camp",
+      "i": 0,
+      "text": "そして、シグナル伝達で働くcAMP。",
+      "say": "そして、シグナル伝達で働くサイクリックエーエムピー。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.35,
+      "cue": "camp"
+     },
+     {
+      "beat": "dntp",
+      "i": 0,
+      "text": "DNAの材料になるデオキシのほうは、",
+      "say": "ディーエヌエーの材料になるデオキシのほうは、",
+      "speed": 1,
+      "pre": 0,
+      "post": 0,
+      "cue": "deo"
+     },
+     {
+      "beat": "dntp",
+      "i": 1,
+      "text": "まとめてdNTPと書きます。",
+      "say": "まとめてディーエヌティーピーと書きます。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.45,
+      "cue": "dntp"
+     }
+    ]
+   },
+   {
+    "id": "S09",
+    "file": "audio/S09.wav",
+    "segs": [
+     {
+      "beat": "form",
+      "i": 0,
+      "text": "では、いよいよDNAの形です。",
+      "say": "では、いよいよディーエヌエーの形です。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.3,
+      "cue": "form"
+     },
+     {
+      "beat": "left",
+      "i": 0,
+      "text": "黒板に、DNAの二本の鎖を書いてみます。",
+      "say": "黒板に、ディーエヌエーの二本の鎖を書いてみます。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.15,
+      "cue": "write"
+     },
+     {
+      "beat": "left",
+      "i": 1,
+      "text": "左の鎖にA、T、G、C。",
+      "say": "左の鎖にエー、ティー、ジー、シー。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.25,
+      "cue": "atgc"
+     },
+     {
+      "beat": "right",
+      "i": 0,
+      "text": "右の鎖には、それぞれの相手が来ます。",
+      "say": "右の鎖には、それぞれの相手が来ます。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.1,
+      "cue": "mate"
+     },
+     {
+      "beat": "right",
+      "i": 1,
+      "text": "AにはT、TにはA、GにはC、CにはG。",
+      "say": "エーにはティー、ティーにはエー、ジーにはシー、シーにはジー。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.3,
+      "cue": "pairs"
+     },
+     {
+      "beat": "anti",
+      "i": 0,
+      "text": "左の鎖は上から下へ5ダッシュ、3ダッシュ。",
+      "say": "左の鎖は上から下へごダッシュ、さんダッシュ。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.1,
+      "cue": "l53"
+     },
+     {
+      "beat": "anti",
+      "i": 1,
+      "text": "右の鎖は下から上。",
+      "say": "右の鎖は下から上。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.1,
+      "cue": "r53"
+     },
+     {
+      "beat": "anti",
+      "i": 2,
+      "text": "向きが逆になっていますね。",
+      "say": "向きが逆になっていますね。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.4,
+      "cue": "rev"
+     }
+    ]
+   },
+   {
+    "id": "S10",
+    "file": "audio/S10.wav",
+    "segs": [
+     {
+      "beat": "this",
+      "i": 0,
+      "text": "これがDNAの二重らせんです。",
+      "say": "これがディーエヌエーの二重らせんです。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.2,
+      "cue": "this"
+     },
+     {
+      "beat": "this",
+      "i": 1,
+      "text": "黄色と青が、糖とリン酸の骨格。",
+      "say": "黄色と青が、糖とリン酸の骨格。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.15,
+      "cue": "bb"
+     },
+     {
+      "beat": "this",
+      "i": 2,
+      "text": "内側の横棒が塩基対です。",
+      "say": "内側の横棒が塩基対です。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.35,
+      "cue": "bp"
+     },
+     {
+      "beat": "size",
+      "i": 0,
+      "text": "らせんの幅は約2ナノメートル。",
+      "say": "らせんの幅は約にナノメートル。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.2,
+      "cue": "w"
+     },
+     {
+      "beat": "size",
+      "i": 1,
+      "text": "一回転で3.4ナノメートル進みます。",
+      "say": "一回転でさんてんよんナノメートル進みます。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.45,
+      "cue": "pitch"
+     }
+    ]
+   },
+   {
+    "id": "S11",
+    "file": "audio/S11.wav",
+    "segs": [
+     {
+      "beat": "flat",
+      "i": 0,
+      "text": "ほどいて、平らにしてみます。",
+      "say": "ほどいて、平らにしてみます。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.15,
+      "cue": "flat"
+     },
+     {
+      "beat": "flat",
+      "i": 1,
+      "text": "はしごのような形になりました。",
+      "say": "はしごのような形になりました。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.3,
+      "cue": "ladder"
+     },
+     {
+      "beat": "dir",
+      "i": 0,
+      "text": "上の鎖は左から右へ5ダッシュ、3ダッシュ。",
+      "say": "上の鎖は左から右へごダッシュ、さんダッシュ。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.1,
+      "cue": "top"
+     },
+     {
+      "beat": "dir",
+      "i": 1,
+      "text": "下の鎖はその逆。",
+      "say": "下の鎖はその逆。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.15,
+      "cue": "bot"
+     },
+     {
+      "beat": "dir",
+      "i": 2,
+      "text": "二本の鎖は逆向き、逆平行です。",
+      "say": "二本の鎖は逆向き、逆平行です。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.45,
+      "cue": "anti"
+     }
+    ]
+   },
+   {
+    "id": "S12",
+    "file": "audio/S12.wav",
+    "segs": [
+     {
+      "beat": "hb",
+      "i": 0,
+      "text": "塩基対に寄ってみましょう。",
+      "say": "塩基対に寄ってみましょう。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.15,
+      "cue": "zoom"
+     },
+     {
+      "beat": "hb",
+      "i": 1,
+      "text": "アデニンとチミンは、水素結合が2本。",
+      "say": "アデニンとチミンは、水素結合が2本。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.2,
+      "cue": "at"
+     },
+     {
+      "beat": "hb",
+      "i": 2,
+      "text": "グアニンとシトシンは、3本です。",
+      "say": "グアニンとシトシンは、3本です。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.35,
+      "cue": "gc"
+     },
+     {
+      "beat": "width",
+      "i": 0,
+      "text": "プリンは環が二つ、ピリミジンは環が一つ。",
+      "say": "プリンは環が二つ、ピリミジンは環が一つ。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.15,
+      "cue": "rings"
+     },
+     {
+      "beat": "width",
+      "i": 1,
+      "text": "必ずプリンとピリミジンが組むので、",
+      "say": "必ずプリンとピリミジンが組むので、",
+      "speed": 1,
+      "pre": 0,
+      "post": 0,
+      "cue": "pp"
+     },
+     {
+      "beat": "width",
+      "i": 2,
+      "text": "塩基対の幅はどれも1.08ナノメートルにそろいます。",
+      "say": "塩基対の幅はどれもいってんぜろはちナノメートルにそろいます。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.45,
+      "cue": "same"
+     }
+    ]
+   },
+   {
+    "id": "S13",
+    "file": "audio/S13.wav",
+    "segs": [
+     {
+      "beat": "link",
+      "i": 0,
+      "text": "最後に骨格。",
+      "say": "最後に骨格。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.15,
+      "cue": "bone"
+     },
+     {
+      "beat": "link",
+      "i": 1,
+      "text": "3ダッシュの炭素と、次の5ダッシュのリン酸がつながっていく。",
+      "say": "さんダッシュの炭素と、次のごダッシュのリン酸がつながっていく。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.2,
+      "cue": "link"
+     },
+     {
+      "beat": "link",
+      "i": 2,
+      "text": "これがホスホジエステル結合です。",
+      "say": "これがホスホジエステル結合です。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.35,
+      "cue": "pde"
+     },
+     {
+      "beat": "grow",
+      "i": 0,
+      "text": "鎖は、5ダッシュから3ダッシュの方向へ伸びていきます。",
+      "say": "鎖は、ごダッシュからさんダッシュの方向へ伸びていきます。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.5,
+      "cue": "grow"
+     }
+    ]
+   },
+   {
+    "id": "S14",
+    "file": "audio/S14.wav",
+    "segs": [
+     {
+      "beat": "n",
+      "i": 0,
+      "text": "まず、水素結合の本数。",
+      "say": "まず、水素結合の本数。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.1,
+      "cue": "n"
+     },
+     {
+      "beat": "n",
+      "i": 1,
+      "text": "A=Tは2本、G≡Cは3本。",
+      "say": "エーティーは2本、ジーシーは3本。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.2,
+      "cue": "n23"
+     },
+     {
+      "beat": "n",
+      "i": 2,
+      "text": "ここ、非常によく問われます。",
+      "say": "ここ、非常によく問われます。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.3,
+      "cue": "often"
+     },
+     {
+      "beat": "kinds",
+      "i": 0,
+      "text": "二本の鎖は逆向き。",
+      "say": "二本の鎖は逆向き。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.15,
+      "cue": "rev"
+     },
+     {
+      "beat": "kinds",
+      "i": 1,
+      "text": "鎖の中はホスホジエステル結合、",
+      "say": "鎖の中はホスホジエステル結合、",
+      "speed": 1,
+      "pre": 0,
+      "post": 0,
+      "cue": "in"
+     },
+     {
+      "beat": "kinds",
+      "i": 2,
+      "text": "鎖と鎖の間は水素結合。",
+      "say": "鎖と鎖の間は水素結合。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.15,
+      "cue": "between"
+     },
+     {
+      "beat": "kinds",
+      "i": 3,
+      "text": "結合の種類を入れ替えた選択肢に注意してください。",
+      "say": "結合の種類を入れ替えた選択肢に注意してください。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.3,
+      "cue": "care"
+     },
+     {
+      "beat": "num",
+      "i": 0,
+      "text": "数字では、幅2ナノメートル、一回転3.4ナノメートル。",
+      "say": "数字では、はばにナノメートル、一回転さんてんよんナノメートル。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.45,
+      "cue": "num"
+     }
+    ]
+   },
+   {
+    "id": "S15",
+    "file": "audio/S15.wav",
+    "segs": [
+     {
+      "beat": "q",
+      "i": 0,
+      "text": "G-C対が多いDNAと、A-T対が多いDNA。",
+      "say": "ジーシー対が多いディーエヌエーと、エーティー対が多いディーエヌエー。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.2,
+      "cue": "q"
+     },
+     {
+      "beat": "q",
+      "i": 1,
+      "text": "二本鎖を引き離すのに、",
+      "say": "二本鎖を引き離すのに、",
+      "speed": 1,
+      "pre": 0,
+      "post": 0,
+      "cue": "pull"
+     },
+     {
+      "beat": "q",
+      "i": 2,
+      "text": "より大きなエネルギーが必要なのはどちらでしょう。",
+      "say": "より大きなエネルギーが必要なのはどちらでしょう。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.7,
+      "cue": "which"
+     },
+     {
+      "beat": "a",
+      "i": 0,
+      "text": "G-C対は水素結合が3本、A-T対は2本。",
+      "say": "ジーシー対は水素結合が3本、エーティー対は2本。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.2,
+      "cue": "ans"
+     },
+     {
+      "beat": "a",
+      "i": 1,
+      "text": "G-C対が多いほど水素結合の総数が多いので、",
+      "say": "ジーシー対が多いほど水素結合の総数が多いので、",
+      "speed": 1,
+      "pre": 0,
+      "post": 0,
+      "cue": "total"
+     },
+     {
+      "beat": "a",
+      "i": 2,
+      "text": "引き離しにくくなります。",
+      "say": "引き離しにくくなります。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.35,
+      "cue": "hard"
+     },
+     {
+      "beat": "think",
+      "i": 0,
+      "text": "本数の暗記で終わらせずに、「だからどうなるか」まで考える。",
+      "say": "本数の暗記で終わらせずに、だからどうなるかまで考える。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.5,
+      "cue": "think"
+     }
+    ]
+   },
+   {
+    "id": "S16",
+    "file": "audio/S16.wav",
+    "segs": [
+     {
+      "beat": "food",
+      "i": 0,
+      "text": "食事でとった核酸は、",
+      "say": "食事でとった核酸は、",
+      "speed": 1,
+      "pre": 0,
+      "post": 0,
+      "cue": "food"
+     },
+     {
+      "beat": "food",
+      "i": 1,
+      "text": "小腸でペントースリン酸と塩基に分解されます。",
+      "say": "小腸でペントースリン酸と塩基に分解されます。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.3,
+      "cue": "split"
+     },
+     {
+      "beat": "py",
+      "i": 0,
+      "text": "吸収されたピリミジン塩基は、アンモニアと二酸化炭素に代謝されます。",
+      "say": "吸収されたピリミジン塩基は、アンモニアと二酸化炭素に代謝されます。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.3,
+      "cue": "py"
+     },
+     {
+      "beat": "pu",
+      "i": 0,
+      "text": "一方、プリン塩基は、",
+      "say": "一方、プリン塩基は、",
+      "speed": 1,
+      "pre": 0,
+      "post": 0,
+      "cue": "pu"
+     },
+     {
+      "beat": "pu",
+      "i": 1,
+      "text": "尿酸として排泄されます。",
+      "say": "尿酸として排泄されます。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.4,
+      "cue": "ua"
+     }
+    ]
+   },
+   {
+    "id": "S17",
+    "file": "audio/S17.wav",
+    "segs": [
+     {
+      "beat": "gout",
+      "i": 0,
+      "text": "尿酸は関節に沈着しやすいので、",
+      "say": "尿酸は関節に沈着しやすいので、",
+      "speed": 1,
+      "pre": 0,
+      "post": 0,
+      "cue": "dep"
+     },
+     {
+      "beat": "gout",
+      "i": 1,
+      "text": "血中の尿酸値が高いと、",
+      "say": "血中の尿酸値が高いと、",
+      "speed": 1,
+      "pre": 0,
+      "post": 0,
+      "cue": "high"
+     },
+     {
+      "beat": "gout",
+      "i": 2,
+      "text": "関節炎を起こす痛風の原因になります。",
+      "say": "関節炎を起こす痛風の原因になります。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.4,
+      "cue": "gout"
+     },
+     {
+      "beat": "new",
+      "i": 0,
+      "text": "吸収した核酸を、自分のDNAやRNAとしてそのまま使うことはありません。",
+      "say": "吸収した核酸を、自分のディーエヌエーやアールエヌエーとしてそのまま使うことはありません。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.2,
+      "cue": "no"
+     },
+     {
+      "beat": "new",
+      "i": 1,
+      "text": "必ず新しく合成して使います。",
+      "say": "必ず新しく合成して使います。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.45,
+      "cue": "new"
+     }
+    ]
+   },
+   {
+    "id": "S18",
+    "file": "audio/S18.wav",
+    "segs": [
+     {
+      "beat": "w",
+      "i": 0,
+      "text": "黒板にも書いておきます。",
+      "say": "黒板にも書いておきます。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.15,
+      "cue": "w"
+     },
+     {
+      "beat": "w",
+      "i": 1,
+      "text": "プリンは尿酸、そして痛風。",
+      "say": "プリンは尿酸、そして痛風。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.15,
+      "cue": "pu"
+     },
+     {
+      "beat": "w",
+      "i": 2,
+      "text": "ピリミジンはアンモニアと二酸化炭素。",
+      "say": "ピリミジンはアンモニアと二酸化炭素。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.15,
+      "cue": "py"
+     },
+     {
+      "beat": "w",
+      "i": 3,
+      "text": "食べた核酸は、そのまま自分の遺伝子にはならない。",
+      "say": "食べた核酸は、そのまま自分の遺伝子にはならない。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.3,
+      "cue": "eat"
+     },
+     {
+      "beat": "line",
+      "i": 0,
+      "text": "プリンと尿酸。",
+      "say": "プリンと尿酸。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.1,
+      "cue": "line"
+     },
+     {
+      "beat": "line",
+      "i": 1,
+      "text": "ここに線を引いておきましょう。",
+      "say": "ここに線を引いておきましょう。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.45,
+      "cue": "under"
+     }
+    ]
+   },
+   {
+    "id": "S19",
+    "file": "audio/S19.wav",
+    "segs": [
+     {
+      "beat": "four",
+      "i": 0,
+      "text": "今日覚えてほしいのは、この4つです。",
+      "say": "今日覚えてほしいのは、この4つです。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.3,
+      "cue": "four"
+     },
+     {
+      "beat": "p1",
+      "i": 0,
+      "text": "ひとつ目。",
+      "say": "ひとつ目。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.1,
+      "cue": "p1"
+     },
+     {
+      "beat": "p1",
+      "i": 1,
+      "text": "ヌクレオチドは塩基と五炭糖とリン酸。",
+      "say": "ヌクレオチドは塩基とごたんとうとリン酸。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.15,
+      "cue": "p1b"
+     },
+     {
+      "beat": "p1",
+      "i": 2,
+      "text": "リン酸がなければヌクレオシド。",
+      "say": "リン酸がなければヌクレオシド。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.3,
+      "cue": "p1c"
+     },
+     {
+      "beat": "p2",
+      "i": 0,
+      "text": "ふたつ目。",
+      "say": "ふたつ目。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.1,
+      "cue": "p2"
+     },
+     {
+      "beat": "p2",
+      "i": 1,
+      "text": "プリンはAとG、ピリミジンはCとTとU。",
+      "say": "プリンはエーとジー、ピリミジンはシーとティーとユー。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.15,
+      "cue": "p2b"
+     },
+     {
+      "beat": "p2",
+      "i": 2,
+      "text": "RNAではTの代わりにU。",
+      "say": "アールエヌエーではティーの代わりにユー。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.3,
+      "cue": "p2c"
+     },
+     {
+      "beat": "p3",
+      "i": 0,
+      "text": "みっつ目。",
+      "say": "みっつ目。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.1,
+      "cue": "p3"
+     },
+     {
+      "beat": "p3",
+      "i": 1,
+      "text": "二本鎖は逆向きで、A=Tは2本、G≡Cは3本の水素結合。",
+      "say": "二本鎖は逆向きで、エーティーは2本、ジーシーは3本の水素結合。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.3,
+      "cue": "p3b"
+     },
+     {
+      "beat": "p4",
+      "i": 0,
+      "text": "そして、プリンの代謝産物は尿酸。",
+      "say": "そして、プリンの代謝産物は尿酸。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.1,
+      "cue": "p4"
+     },
+     {
+      "beat": "p4",
+      "i": 1,
+      "text": "痛風につながります。",
+      "say": "痛風につながります。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.45,
+      "cue": "p4b"
+     }
+    ]
+   },
+   {
+    "id": "S20",
+    "file": "audio/S20.wav",
+    "segs": [
+     {
+      "beat": "next",
+      "i": 0,
+      "text": "次の第3講では、",
+      "say": "次の第3講では、",
+      "speed": 1,
+      "pre": 0,
+      "post": 0,
+      "cue": "next"
+     },
+     {
+      "beat": "next",
+      "i": 1,
+      "text": "この長いDNAを、どうやって細胞の核にしまっているのか。",
+      "say": "この長いディーエヌエーを、どうやって細胞の核にしまっているのか。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.2,
+      "cue": "what"
+     },
+     {
+      "beat": "next",
+      "i": 2,
+      "text": "染色体の話に進みます。",
+      "say": "染色体の話に進みます。",
+      "speed": 1,
+      "pre": 0,
+      "post": 1,
+      "cue": "chr"
+     }
+    ]
+   }
+  ]
+ },
+ "timing": {
+  "source": "kokoro",
+  "total": 362.9785999999998,
+  "scenes": [
+   {
+    "id": "S01",
+    "t0": 0,
+    "t1": 13.309299999999999,
+    "events": {
+     "start": 0,
+     "title": 0,
+     "prev": 1.769,
+     "what": 6.739,
+     "paper": 9.842799999999999
+    }
+   },
+   {
+    "id": "S02",
+    "t0": 13.309299999999999,
+    "t1": 30.315799999999996,
+    "events": {
+     "start": 13.309299999999999,
+     "four": 13.309299999999999,
+     "sug": 17.9548,
+     "fat": 19.064799999999998,
+     "aa": 20.4848,
+     "nuc": 22.7078,
+     "na": 25.5578,
+     "star": 27.1408
+    }
+   },
+   {
+    "id": "S03",
+    "t0": 30.315799999999996,
+    "t1": 40.30119999999999,
+    "events": {
+     "start": 30.315799999999996,
+     "unit": 30.315799999999996,
+     "press": 32.35209999999999,
+     "three": 34.49029999999999,
+     "parts": 37.80209999999999
+    }
+   },
+   {
+    "id": "S04",
+    "t0": 40.30119999999999,
+    "t1": 53.05499999999999,
+    "events": {
+     "start": 40.30119999999999,
+     "pic": 40.30119999999999,
+     "P": 42.054099999999984,
+     "S": 43.694099999999985,
+     "B": 45.874099999999984,
+     "bs": 48.397899999999986,
+     "side": 50.66789999999999
+    }
+   },
+   {
+    "id": "S05",
+    "t0": 53.05499999999999,
+    "t1": 68.4191,
+    "events": {
+     "start": 53.05499999999999,
+     "sort": 53.05499999999999,
+     "sid": 54.76989999999999,
+     "tid": 57.209399999999995,
+     "trap": 59.486999999999995,
+     "rule": 63.9937,
+     "ok": 65.6351
+    }
+   },
+   {
+    "id": "S06",
+    "t0": 68.4191,
+    "t1": 87.09250000000002,
+    "events": {
+     "start": 68.4191,
+     "c5": 68.4191,
+     "rib": 71.6473,
+     "deo": 73.2973,
+     "mean": 76.13550000000001,
+     "oh": 79.53800000000001,
+     "dd": 83.60610000000001
+    }
+   },
+   {
+    "id": "S07",
+    "t0": 87.09250000000002,
+    "t1": 112.1067,
+    "events": {
+     "start": 87.09250000000002,
+     "base": 87.09250000000002,
+     "ring": 88.2806,
+     "pu": 93.14550000000001,
+     "ag": 94.65910000000001,
+     "py": 95.9946,
+     "ctu": 97.8596,
+     "imp": 99.998,
+     "tu": 101.44800000000001,
+     "red": 106.6648,
+     "swap": 108.39829999999999
+    }
+   },
+   {
+    "id": "S08",
+    "t0": 112.1067,
+    "t1": 138.1573,
+    "events": {
+     "start": 112.1067,
+     "nmp": 112.1067,
+     "ndp": 114.3467,
+     "ntp": 115.9067,
+     "many": 117.6483,
+     "atp": 120.8516,
+     "energy": 125.3706,
+     "camp": 127.4474,
+     "deo": 131.86079999999998,
+     "dntp": 134.9808
+    }
+   },
+   {
+    "id": "S09",
+    "t0": 138.1573,
+    "t1": 161.9267,
+    "events": {
+     "start": 138.1573,
+     "form": 138.1573,
+     "write": 140.8808,
+     "atgc": 144.7143,
+     "mate": 147.196,
+     "pairs": 150.6273,
+     "l53": 154.0156,
+     "r53": 157.4182,
+     "rev": 159.4136
+    }
+   },
+   {
+    "id": "S10",
+    "t0": 161.9267,
+    "t1": 176.7413,
+    "events": {
+     "start": 161.9267,
+     "this": 161.9267,
+     "bb": 164.2802,
+     "bp": 167.24310000000003,
+     "w": 169.92460000000003,
+     "pitch": 172.7227
+    }
+   },
+   {
+    "id": "S11",
+    "t0": 176.7413,
+    "t1": 190.8877,
+    "events": {
+     "start": 176.7413,
+     "flat": 176.7413,
+     "ladder": 178.7308,
+     "top": 181.6637,
+     "bot": 185.3041,
+     "anti": 187.1886
+    }
+   },
+   {
+    "id": "S12",
+    "t0": 190.8877,
+    "t1": 210.22959999999995,
+    "events": {
+     "start": 190.8877,
+     "zoom": 190.8877,
+     "at": 192.6931,
+     "gc": 195.78659999999996,
+     "rings": 198.14239999999995,
+     "pp": 201.64879999999997,
+     "same": 204.46879999999996
+    }
+   },
+   {
+    "id": "S13",
+    "t0": 210.22959999999995,
+    "t1": 223.57079999999993,
+    "events": {
+     "start": 210.22959999999995,
+     "bone": 210.22959999999995,
+     "link": 211.65839999999994,
+     "pde": 216.14489999999992,
+     "grow": 218.79039999999992
+    }
+   },
+   {
+    "id": "S14",
+    "t0": 223.57079999999993,
+    "t1": 247.87389999999994,
+    "events": {
+     "start": 223.57079999999993,
+     "n": 223.57079999999993,
+     "n23": 225.47079999999994,
+     "often": 227.92329999999993,
+     "rev": 230.23249999999993,
+     "in": 232.17699999999994,
+     "between": 235.32699999999994,
+     "care": 238.33799999999994,
+     "num": 242.51889999999995
+    }
+   },
+   {
+    "id": "S15",
+    "t0": 247.87389999999994,
+    "t1": 274.7505999999999,
+    "events": {
+     "start": 247.87389999999994,
+     "q": 247.87389999999994,
+     "pull": 252.06289999999993,
+     "which": 254.28289999999993,
+     "ans": 258.8549999999999,
+     "total": 262.8840999999999,
+     "hard": 267.4340999999999,
+     "think": 269.7478999999999
+    }
+   },
+   {
+    "id": "S16",
+    "t0": 274.7505999999999,
+    "t1": 290.67059999999987,
+    "events": {
+     "start": 274.7505999999999,
+     "food": 274.7505999999999,
+     "split": 276.4805999999999,
+     "py": 280.5639999999999,
+     "pu": 286.4011999999999,
+     "ua": 288.0311999999999
+    }
+   },
+   {
+    "id": "S17",
+    "t0": 290.67059999999987,
+    "t1": 310.28719999999987,
+    "events": {
+     "start": 290.67059999999987,
+     "dep": 290.67059999999987,
+     "high": 293.6005999999999,
+     "gout": 295.8205999999999,
+     "no": 299.8350999999999,
+     "new": 307.0177999999999
+    }
+   },
+   {
+    "id": "S18",
+    "t0": 310.28719999999987,
+    "t1": 325.09329999999983,
+    "events": {
+     "start": 310.28719999999987,
+     "w": 310.28719999999987,
+     "pu": 312.19799999999987,
+     "py": 314.19579999999985,
+     "eat": 317.26039999999983,
+     "line": 321.4456999999998,
+     "under": 322.65769999999986
+    }
+   },
+   {
+    "id": "S19",
+    "t0": 325.09329999999983,
+    "t1": 352.84189999999984,
+    "events": {
+     "start": 325.09329999999983,
+     "four": 325.09329999999983,
+     "p1": 328.0115999999998,
+     "p1b": 328.96749999999986,
+     "p1c": 332.07449999999983,
+     "p2": 334.40679999999986,
+     "p2b": 335.3905999999999,
+     "p2c": 338.8335999999999,
+     "p3": 341.4752999999999,
+     "p3b": 342.4167999999999,
+     "p4": 347.8112999999999,
+     "p4b": 350.6724999999999
+    }
+   },
+   {
+    "id": "S20",
+    "t0": 352.84189999999984,
+    "t1": 362.9785999999998,
+    "events": {
+     "start": 352.84189999999984,
+     "next": 352.84189999999984,
+     "what": 354.47189999999983,
+     "chr": 359.6390999999998
+    }
+   }
+  ],
+  "segs": [
+   {
+    "scene": "S01",
+    "beat": "open",
+    "i": 0,
+    "seg": {
+     "text": "はい、第2講を始めます。",
+     "say": "はい、第2講を始めます。",
+     "cue": "title",
+     "post": 0.2
+    },
+    "t0": 0,
+    "t1": 1.769,
+    "speech0": 0,
+    "speech1": 1.569
+   },
+   {
+    "scene": "S01",
+    "beat": "open",
+    "i": 1,
+    "seg": {
+     "text": "前回、遺伝の本体は**DNA**だ、というところまで来ました。",
+     "say": "前回、遺伝の本体はディーエヌエーだ、というところまで来ました。",
+     "cue": "prev",
+     "post": 0.3
+    },
+    "t0": 1.769,
+    "t1": 6.739,
+    "speech0": 1.769,
+    "speech1": 6.439
+   },
+   {
+    "scene": "S01",
+    "beat": "today",
+    "i": 0,
+    "seg": {
+     "text": "今日は、そのDNAが「何でできているのか」。",
+     "say": "今日は、そのディーエヌエーが何でできているのか。",
+     "cue": "what",
+     "post": 0.2
+    },
+    "t0": 6.739,
+    "t1": 9.842799999999999,
+    "speech0": 6.739,
+    "speech1": 9.6428
+   },
+   {
+    "scene": "S01",
+    "beat": "today",
+    "i": 1,
+    "seg": {
+     "text": "設計図の、文字と紙の話です。",
+     "say": "設計図の、文字と紙の話です。",
+     "cue": "paper",
+     "post": 0.5
+    },
+    "t0": 9.842799999999999,
+    "t1": 13.159299999999998,
+    "speech0": 9.842799999999999,
+    "speech1": 12.659299999999998
+   },
+   {
+    "scene": "S02",
+    "beat": "four",
+    "i": 0,
+    "seg": {
+     "text": "細胞の中には、4種類の小さな有機分子があります。",
+     "say": "細胞の中には、4種類の小さな有機分子があります。",
+     "cue": "four",
+     "post": 0.25
+    },
+    "t0": 13.309299999999999,
+    "t1": 17.9548,
+    "speech0": 13.309299999999999,
+    "speech1": 17.7048
+   },
+   {
+    "scene": "S02",
+    "beat": "poly",
+    "i": 0,
+    "seg": {
+     "text": "糖は多糖に、",
+     "say": "糖は多糖に、",
+     "cue": "sug"
+    },
+    "t0": 17.9548,
+    "t1": 19.064799999999998,
+    "speech0": 17.9548,
+    "speech1": 19.064799999999998
+   },
+   {
+    "scene": "S02",
+    "beat": "poly",
+    "i": 1,
+    "seg": {
+     "text": "脂肪酸は膜に、",
+     "say": "脂肪酸は膜に、",
+     "cue": "fat"
+    },
+    "t0": 19.064799999999998,
+    "t1": 20.4848,
+    "speech0": 19.064799999999998,
+    "speech1": 20.4848
+   },
+   {
+    "scene": "S02",
+    "beat": "poly",
+    "i": 2,
+    "seg": {
+     "text": "アミノ酸はタンパク質に。",
+     "say": "アミノ酸はタンパク質に。",
+     "cue": "aa",
+     "post": 0.25
+    },
+    "t0": 20.4848,
+    "t1": 22.7078,
+    "speech0": 20.4848,
+    "speech1": 22.4578
+   },
+   {
+    "scene": "S02",
+    "beat": "poly",
+    "i": 3,
+    "seg": {
+     "text": "そして、ヌクレオチドがつながると……",
+     "say": "そして、ヌクレオチドがつながると",
+     "cue": "nuc",
+     "post": 0.35
+    },
+    "t0": 22.7078,
+    "t1": 25.4578,
+    "speech0": 22.7078,
+    "speech1": 25.107799999999997
+   },
+   {
+    "scene": "S02",
+    "beat": "poly",
+    "i": 4,
+    "seg": {
+     "text": "**核酸**になります。",
+     "say": "核酸になります。",
+     "cue": "na",
+     "pre": 0.1,
+     "post": 0.2
+    },
+    "t0": 25.4578,
+    "t1": 27.1408,
+    "speech0": 25.5578,
+    "speech1": 26.9408
+   },
+   {
+    "scene": "S02",
+    "beat": "poly",
+    "i": 5,
+    "seg": {
+     "text": "今日の主役は、この**ヌクレオチド**です。",
+     "say": "今日の主役は、このヌクレオチドです。",
+     "cue": "star",
+     "post": 0.45
+    },
+    "t0": 27.1408,
+    "t1": 30.165799999999997,
+    "speech0": 27.1408,
+    "speech1": 29.715799999999998
+   },
+   {
+    "scene": "S03",
+    "beat": "unit",
+    "i": 0,
+    "seg": {
+     "text": "核酸の単位は**ヌクレオチド**。",
+     "say": "核酸の単位はヌクレオチド。",
+     "cue": "unit",
+     "post": 0.15
+    },
+    "t0": 30.315799999999996,
+    "t1": 32.35209999999999,
+    "speech0": 30.315799999999996,
+    "speech1": 32.202099999999994
+   },
+   {
+    "scene": "S03",
+    "beat": "unit",
+    "i": 1,
+    "seg": {
+     "text": "まずこれを押さえてください。",
+     "say": "まずこれを押さえてください。",
+     "cue": "press",
+     "post": 0.3
+    },
+    "t0": 32.35209999999999,
+    "t1": 34.49029999999999,
+    "speech0": 32.35209999999999,
+    "speech1": 34.19029999999999
+   },
+   {
+    "scene": "S03",
+    "beat": "parts",
+    "i": 0,
+    "seg": {
+     "text": "ヌクレオチドは、三つの部品でできています。",
+     "say": "ヌクレオチドは、三つの部品でできています。",
+     "cue": "three",
+     "post": 0.15
+    },
+    "t0": 34.49029999999999,
+    "t1": 37.80209999999999,
+    "speech0": 34.49029999999999,
+    "speech1": 37.65209999999999
+   },
+   {
+    "scene": "S03",
+    "beat": "parts",
+    "i": 1,
+    "seg": {
+     "text": "**塩基**、**五炭糖**、そして**リン酸**。",
+     "say": "塩基、ごたんとう、そしてリン酸。",
+     "cue": "parts",
+     "post": 0.4
+    },
+    "t0": 37.80209999999999,
+    "t1": 40.15119999999999,
+    "speech0": 37.80209999999999,
+    "speech1": 39.75119999999999
+   },
+   {
+    "scene": "S04",
+    "beat": "pic",
+    "i": 0,
+    "seg": {
+     "text": "絵にすると、こうなります。",
+     "say": "絵にすると、こうなります。",
+     "cue": "pic",
+     "post": 0.15
+    },
+    "t0": 40.30119999999999,
+    "t1": 42.054099999999984,
+    "speech0": 40.30119999999999,
+    "speech1": 41.904099999999985
+   },
+   {
+    "scene": "S04",
+    "beat": "pic",
+    "i": 1,
+    "seg": {
+     "text": "左の丸が**リン酸**、",
+     "say": "左の丸がリン酸、",
+     "cue": "P"
+    },
+    "t0": 42.054099999999984,
+    "t1": 43.694099999999985,
+    "speech0": 42.054099999999984,
+    "speech1": 43.694099999999985
+   },
+   {
+    "scene": "S04",
+    "beat": "pic",
+    "i": 2,
+    "seg": {
+     "text": "真ん中の五角形が**糖**、",
+     "say": "真ん中の五角形が糖、",
+     "cue": "S"
+    },
+    "t0": 43.694099999999985,
+    "t1": 45.874099999999984,
+    "speech0": 43.694099999999985,
+    "speech1": 45.874099999999984
+   },
+   {
+    "scene": "S04",
+    "beat": "pic",
+    "i": 3,
+    "seg": {
+     "text": "右の六角形が**塩基**です。",
+     "say": "右の六角形が塩基です。",
+     "cue": "B",
+     "post": 0.35
+    },
+    "t0": 45.874099999999984,
+    "t1": 48.397899999999986,
+    "speech0": 45.874099999999984,
+    "speech1": 48.047899999999984
+   },
+   {
+    "scene": "S04",
+    "beat": "side",
+    "i": 0,
+    "seg": {
+     "text": "塩基と糖だけのかたまりを、",
+     "say": "塩基と糖だけのかたまりを、",
+     "cue": "bs"
+    },
+    "t0": 48.397899999999986,
+    "t1": 50.56789999999999,
+    "speech0": 48.397899999999986,
+    "speech1": 50.56789999999999
+   },
+   {
+    "scene": "S04",
+    "beat": "side",
+    "i": 1,
+    "seg": {
+     "text": "**ヌクレオシド**と呼びます。",
+     "say": "ヌクレオシドと呼びます。",
+     "cue": "side",
+     "pre": 0.1,
+     "post": 0.45
+    },
+    "t0": 50.56789999999999,
+    "t1": 52.904999999999994,
+    "speech0": 50.66789999999999,
+    "speech1": 52.45499999999999
+   },
+   {
+    "scene": "S05",
+    "beat": "sort",
+    "i": 0,
+    "seg": {
+     "text": "黒板に整理します。",
+     "say": "黒板に整理します。",
+     "cue": "sort",
+     "post": 0.1
+    },
+    "t0": 53.05499999999999,
+    "t1": 54.76989999999999,
+    "speech0": 53.05499999999999,
+    "speech1": 54.66989999999999
+   },
+   {
+    "scene": "S05",
+    "beat": "sort",
+    "i": 1,
+    "seg": {
+     "text": "塩基と糖だけならヌクレオ「シド」。",
+     "say": "塩基と糖だけならヌクレオシド。",
+     "cue": "sid",
+     "post": 0.2
+    },
+    "t0": 54.76989999999999,
+    "t1": 57.209399999999995,
+    "speech0": 54.76989999999999,
+    "speech1": 57.00939999999999
+   },
+   {
+    "scene": "S05",
+    "beat": "sort",
+    "i": 2,
+    "seg": {
+     "text": "リン酸が付くとヌクレオ「チド」。",
+     "say": "リン酸が付くとヌクレオチド。",
+     "cue": "tid",
+     "post": 0.35
+    },
+    "t0": 57.209399999999995,
+    "t1": 59.486999999999995,
+    "speech0": 57.209399999999995,
+    "speech1": 59.13699999999999
+   },
+   {
+    "scene": "S05",
+    "beat": "trap",
+    "i": 0,
+    "seg": {
+     "text": "試験では、この二つを入れ替えた選択肢が必ず出ます。",
+     "say": "試験では、この二つを入れ替えた選択肢が必ず出ます。",
+     "cue": "trap",
+     "post": 0.2
+    },
+    "t0": 59.486999999999995,
+    "t1": 63.8437,
+    "speech0": 59.486999999999995,
+    "speech1": 63.643699999999995
+   },
+   {
+    "scene": "S05",
+    "beat": "trap",
+    "i": 1,
+    "seg": {
+     "text": "「**シドはリン酸なし**」。",
+     "say": "シドはリン酸なし。",
+     "cue": "rule",
+     "pre": 0.15,
+     "post": 0.25
+    },
+    "t0": 63.8437,
+    "t1": 65.6351,
+    "speech0": 63.9937,
+    "speech1": 65.3851
+   },
+   {
+    "scene": "S05",
+    "beat": "trap",
+    "i": 2,
+    "seg": {
+     "text": "これだけ覚えれば大丈夫です。",
+     "say": "これだけ覚えれば大丈夫です。",
+     "cue": "ok",
+     "post": 0.4
+    },
+    "t0": 65.6351,
+    "t1": 68.2691,
+    "speech0": 65.6351,
+    "speech1": 67.86909999999999
+   },
+   {
+    "scene": "S06",
+    "beat": "c5",
+    "i": 0,
+    "seg": {
+     "text": "核酸の糖は、炭素が五つの**五炭糖**。",
+     "say": "核酸の糖は、炭素が五つのごたんとう。",
+     "cue": "c5",
+     "post": 0.2
+    },
+    "t0": 68.4191,
+    "t1": 71.6473,
+    "speech0": 68.4191,
+    "speech1": 71.4473
+   },
+   {
+    "scene": "S06",
+    "beat": "c5",
+    "i": 1,
+    "seg": {
+     "text": "RNAは**リボース**、",
+     "say": "アールエヌエーはリボース、",
+     "cue": "rib"
+    },
+    "t0": 71.6473,
+    "t1": 73.2973,
+    "speech0": 71.6473,
+    "speech1": 73.2973
+   },
+   {
+    "scene": "S06",
+    "beat": "c5",
+    "i": 2,
+    "seg": {
+     "text": "DNAは**2デオキシリボース**です。",
+     "say": "ディーエヌエーはにデオキシリボースです。",
+     "cue": "deo",
+     "post": 0.35
+    },
+    "t0": 73.2973,
+    "t1": 76.13550000000001,
+    "speech0": 73.2973,
+    "speech1": 75.78550000000001
+   },
+   {
+    "scene": "S06",
+    "beat": "deoxy",
+    "i": 0,
+    "seg": {
+     "text": "デオキシ、というのは「酸素が取れた」という意味。",
+     "say": "デオキシ、というのは酸素が取れたという意味。",
+     "cue": "mean",
+     "post": 0.2
+    },
+    "t0": 76.13550000000001,
+    "t1": 79.53800000000001,
+    "speech0": 76.13550000000001,
+    "speech1": 79.33800000000001
+   },
+   {
+    "scene": "S06",
+    "beat": "deoxy",
+    "i": 1,
+    "seg": {
+     "text": "2ダッシュの位置のヒドロキシ基が、**水素**になっています。",
+     "say": "にダッシュの位置のヒドロキシ基が、水素になっています。",
+     "cue": "oh",
+     "post": 0.25
+    },
+    "t0": 79.53800000000001,
+    "t1": 83.60610000000001,
+    "speech0": 79.53800000000001,
+    "speech1": 83.35610000000001
+   },
+   {
+    "scene": "S06",
+    "beat": "deoxy",
+    "i": 2,
+    "seg": {
+     "text": "DNAのDは、このデオキシのDです。",
+     "say": "ディーエヌエーのディーは、このデオキシのディーです。",
+     "cue": "dd",
+     "post": 0.45
+    },
+    "t0": 83.60610000000001,
+    "t1": 86.94250000000001,
+    "speech0": 83.60610000000001,
+    "speech1": 86.4925
+   },
+   {
+    "scene": "S07",
+    "beat": "two",
+    "i": 0,
+    "seg": {
+     "text": "次は塩基。",
+     "say": "次は塩基。",
+     "cue": "base",
+     "post": 0.1
+    },
+    "t0": 87.09250000000002,
+    "t1": 88.2806,
+    "speech0": 87.09250000000002,
+    "speech1": 88.18060000000001
+   },
+   {
+    "scene": "S07",
+    "beat": "two",
+    "i": 1,
+    "seg": {
+     "text": "窒素を含む環状の化合物で、大きく二つに分かれます。",
+     "say": "窒素を含む環状の化合物で、大きく二つに分かれます。",
+     "cue": "ring",
+     "post": 0.25
+    },
+    "t0": 88.2806,
+    "t1": 93.14550000000001,
+    "speech0": 88.2806,
+    "speech1": 92.89550000000001
+   },
+   {
+    "scene": "S07",
+    "beat": "pp",
+    "i": 0,
+    "seg": {
+     "text": "環が二つの**プリン**。",
+     "say": "環が二つのプリン。",
+     "cue": "pu",
+     "post": 0.1
+    },
+    "t0": 93.14550000000001,
+    "t1": 94.65910000000001,
+    "speech0": 93.14550000000001,
+    "speech1": 94.55910000000002
+   },
+   {
+    "scene": "S07",
+    "beat": "pp",
+    "i": 1,
+    "seg": {
+     "text": "アデニンとグアニン。",
+     "say": "アデニンとグアニン。",
+     "cue": "ag",
+     "post": 0.2
+    },
+    "t0": 94.65910000000001,
+    "t1": 95.9946,
+    "speech0": 94.65910000000001,
+    "speech1": 95.7946
+   },
+   {
+    "scene": "S07",
+    "beat": "pp",
+    "i": 2,
+    "seg": {
+     "text": "環が一つの**ピリミジン**。",
+     "say": "環が一つのピリミジン。",
+     "cue": "py",
+     "post": 0.1
+    },
+    "t0": 95.9946,
+    "t1": 97.8596,
+    "speech0": 95.9946,
+    "speech1": 97.7596
+   },
+   {
+    "scene": "S07",
+    "beat": "pp",
+    "i": 3,
+    "seg": {
+     "text": "シトシン、チミン、ウラシルです。",
+     "say": "シトシン、チミン、ウラシルです。",
+     "cue": "ctu",
+     "post": 0.3
+    },
+    "t0": 97.8596,
+    "t1": 99.998,
+    "speech0": 97.8596,
+    "speech1": 99.69800000000001
+   },
+   {
+    "scene": "S07",
+    "beat": "tu",
+    "i": 0,
+    "seg": {
+     "text": "そして重要なのが、",
+     "say": "そして重要なのが、",
+     "cue": "imp"
+    },
+    "t0": 99.998,
+    "t1": 101.44800000000001,
+    "speech0": 99.998,
+    "speech1": 101.44800000000001
+   },
+   {
+    "scene": "S07",
+    "beat": "tu",
+    "i": 1,
+    "seg": {
+     "text": "RNAでは**チミン**の代わりに**ウラシル**が使われる、ということ。",
+     "say": "アールエヌエーではチミンの代わりにウラシルが使われる、ということ。",
+     "cue": "tu",
+     "post": 0.3
+    },
+    "t0": 101.44800000000001,
+    "t1": 106.6648,
+    "speech0": 101.44800000000001,
+    "speech1": 106.3648
+   },
+   {
+    "scene": "S07",
+    "beat": "red",
+    "i": 0,
+    "seg": {
+     "text": "赤で囲んでおきます。",
+     "say": "赤で囲んでおきます。",
+     "cue": "red",
+     "post": 0.1
+    },
+    "t0": 106.6648,
+    "t1": 108.39829999999999,
+    "speech0": 106.6648,
+    "speech1": 108.2983
+   },
+   {
+    "scene": "S07",
+    "beat": "red",
+    "i": 1,
+    "seg": {
+     "text": "TとU、試験ではここを入れ替えてきます。",
+     "say": "ティーとユー、試験ではここを入れ替えてきます。",
+     "cue": "swap",
+     "post": 0.45
+    },
+    "t0": 108.39829999999999,
+    "t1": 111.9567,
+    "speech0": 108.39829999999999,
+    "speech1": 111.5067
+   },
+   {
+    "scene": "S08",
+    "beat": "n",
+    "i": 0,
+    "seg": {
+     "text": "リン酸が一つならNMP、",
+     "say": "リン酸が一つならエヌエムピー、",
+     "cue": "nmp"
+    },
+    "t0": 112.1067,
+    "t1": 114.3467,
+    "speech0": 112.1067,
+    "speech1": 114.3467
+   },
+   {
+    "scene": "S08",
+    "beat": "n",
+    "i": 1,
+    "seg": {
+     "text": "二つならNDP、",
+     "say": "二つならエヌディーピー、",
+     "cue": "ndp"
+    },
+    "t0": 114.3467,
+    "t1": 115.9067,
+    "speech0": 114.3467,
+    "speech1": 115.9067
+   },
+   {
+    "scene": "S08",
+    "beat": "n",
+    "i": 2,
+    "seg": {
+     "text": "三つならNTP。",
+     "say": "三つならエヌティーピー。",
+     "cue": "ntp",
+     "post": 0.15
+    },
+    "t0": 115.9067,
+    "t1": 117.6483,
+    "speech0": 115.9067,
+    "speech1": 117.4983
+   },
+   {
+    "scene": "S08",
+    "beat": "n",
+    "i": 3,
+    "seg": {
+     "text": "実際には三つ付いたものが多いんです。",
+     "say": "実際には三つ付いたものが多いんです。",
+     "cue": "many",
+     "post": 0.3
+    },
+    "t0": 117.6483,
+    "t1": 120.8516,
+    "speech0": 117.6483,
+    "speech1": 120.55160000000001
+   },
+   {
+    "scene": "S08",
+    "beat": "atp",
+    "i": 0,
+    "seg": {
+     "text": "体の中で働くヌクレオチドの代表が**ATP**。",
+     "say": "体の中で働くヌクレオチドの代表がエーティーピー。",
+     "cue": "atp",
+     "post": 0.1
+    },
+    "t0": 120.8516,
+    "t1": 125.3706,
+    "speech0": 120.8516,
+    "speech1": 125.2706
+   },
+   {
+    "scene": "S08",
+    "beat": "atp",
+    "i": 1,
+    "seg": {
+     "text": "エネルギーの供給役です。",
+     "say": "エネルギーの供給役です。",
+     "cue": "energy",
+     "post": 0.25
+    },
+    "t0": 125.3706,
+    "t1": 127.4474,
+    "speech0": 125.3706,
+    "speech1": 127.1974
+   },
+   {
+    "scene": "S08",
+    "beat": "camp",
+    "i": 0,
+    "seg": {
+     "text": "そして、シグナル伝達で働く**cAMP**。",
+     "say": "そして、シグナル伝達で働くサイクリックエーエムピー。",
+     "cue": "camp",
+     "post": 0.35
+    },
+    "t0": 127.4474,
+    "t1": 131.86079999999998,
+    "speech0": 127.4474,
+    "speech1": 131.5108
+   },
+   {
+    "scene": "S08",
+    "beat": "dntp",
+    "i": 0,
+    "seg": {
+     "text": "DNAの材料になるデオキシのほうは、",
+     "say": "ディーエヌエーの材料になるデオキシのほうは、",
+     "cue": "deo"
+    },
+    "t0": 131.86079999999998,
+    "t1": 134.9808,
+    "speech0": 131.86079999999998,
+    "speech1": 134.9808
+   },
+   {
+    "scene": "S08",
+    "beat": "dntp",
+    "i": 1,
+    "seg": {
+     "text": "まとめて**dNTP**と書きます。",
+     "say": "まとめてディーエヌティーピーと書きます。",
+     "cue": "dntp",
+     "post": 0.45
+    },
+    "t0": 134.9808,
+    "t1": 138.0073,
+    "speech0": 134.9808,
+    "speech1": 137.5573
+   },
+   {
+    "scene": "S09",
+    "beat": "form",
+    "i": 0,
+    "seg": {
+     "text": "では、いよいよDNAの形です。",
+     "say": "では、いよいよディーエヌエーの形です。",
+     "cue": "form",
+     "post": 0.3
+    },
+    "t0": 138.1573,
+    "t1": 140.8808,
+    "speech0": 138.1573,
+    "speech1": 140.58079999999998
+   },
+   {
+    "scene": "S09",
+    "beat": "left",
+    "i": 0,
+    "seg": {
+     "text": "黒板に、DNAの二本の鎖を書いてみます。",
+     "say": "黒板に、ディーエヌエーの二本の鎖を書いてみます。",
+     "cue": "write",
+     "post": 0.15
+    },
+    "t0": 140.8808,
+    "t1": 144.7143,
+    "speech0": 140.8808,
+    "speech1": 144.5643
+   },
+   {
+    "scene": "S09",
+    "beat": "left",
+    "i": 1,
+    "seg": {
+     "text": "左の鎖にA、T、G、C。",
+     "say": "左の鎖にエー、ティー、ジー、シー。",
+     "cue": "atgc",
+     "post": 0.25
+    },
+    "t0": 144.7143,
+    "t1": 147.196,
+    "speech0": 144.7143,
+    "speech1": 146.946
+   },
+   {
+    "scene": "S09",
+    "beat": "right",
+    "i": 0,
+    "seg": {
+     "text": "右の鎖には、それぞれの相手が来ます。",
+     "say": "右の鎖には、それぞれの相手が来ます。",
+     "cue": "mate",
+     "post": 0.1
+    },
+    "t0": 147.196,
+    "t1": 150.6273,
+    "speech0": 147.196,
+    "speech1": 150.5273
+   },
+   {
+    "scene": "S09",
+    "beat": "right",
+    "i": 1,
+    "seg": {
+     "text": "AにはT、TにはA、GにはC、CにはG。",
+     "say": "エーにはティー、ティーにはエー、ジーにはシー、シーにはジー。",
+     "cue": "pairs",
+     "post": 0.3
+    },
+    "t0": 150.6273,
+    "t1": 154.0156,
+    "speech0": 150.6273,
+    "speech1": 153.7156
+   },
+   {
+    "scene": "S09",
+    "beat": "anti",
+    "i": 0,
+    "seg": {
+     "text": "左の鎖は上から下へ5ダッシュ、3ダッシュ。",
+     "say": "左の鎖は上から下へごダッシュ、さんダッシュ。",
+     "cue": "l53",
+     "post": 0.1
+    },
+    "t0": 154.0156,
+    "t1": 157.4182,
+    "speech0": 154.0156,
+    "speech1": 157.31820000000002
+   },
+   {
+    "scene": "S09",
+    "beat": "anti",
+    "i": 1,
+    "seg": {
+     "text": "右の鎖は下から上。",
+     "say": "右の鎖は下から上。",
+     "cue": "r53",
+     "post": 0.1
+    },
+    "t0": 157.4182,
+    "t1": 159.4136,
+    "speech0": 157.4182,
+    "speech1": 159.3136
+   },
+   {
+    "scene": "S09",
+    "beat": "anti",
+    "i": 2,
+    "seg": {
+     "text": "向きが**逆**になっていますね。",
+     "say": "向きが逆になっていますね。",
+     "cue": "rev",
+     "post": 0.4
+    },
+    "t0": 159.4136,
+    "t1": 161.7767,
+    "speech0": 159.4136,
+    "speech1": 161.3767
+   },
+   {
+    "scene": "S10",
+    "beat": "this",
+    "i": 0,
+    "seg": {
+     "text": "これがDNAの**二重らせん**です。",
+     "say": "これがディーエヌエーの二重らせんです。",
+     "cue": "this",
+     "post": 0.2
+    },
+    "t0": 161.9267,
+    "t1": 164.2802,
+    "speech0": 161.9267,
+    "speech1": 164.08020000000002
+   },
+   {
+    "scene": "S10",
+    "beat": "this",
+    "i": 1,
+    "seg": {
+     "text": "黄色と青が、糖とリン酸の骨格。",
+     "say": "黄色と青が、糖とリン酸の骨格。",
+     "cue": "bb",
+     "post": 0.15
+    },
+    "t0": 164.2802,
+    "t1": 167.24310000000003,
+    "speech0": 164.2802,
+    "speech1": 167.09310000000002
+   },
+   {
+    "scene": "S10",
+    "beat": "this",
+    "i": 2,
+    "seg": {
+     "text": "内側の横棒が**塩基対**です。",
+     "say": "内側の横棒が塩基対です。",
+     "cue": "bp",
+     "post": 0.35
+    },
+    "t0": 167.24310000000003,
+    "t1": 169.92460000000003,
+    "speech0": 167.24310000000003,
+    "speech1": 169.57460000000003
+   },
+   {
+    "scene": "S10",
+    "beat": "size",
+    "i": 0,
+    "seg": {
+     "text": "らせんの幅は約2ナノメートル。",
+     "say": "らせんの幅は約にナノメートル。",
+     "cue": "w",
+     "post": 0.2
+    },
+    "t0": 169.92460000000003,
+    "t1": 172.7227,
+    "speech0": 169.92460000000003,
+    "speech1": 172.52270000000001
+   },
+   {
+    "scene": "S10",
+    "beat": "size",
+    "i": 1,
+    "seg": {
+     "text": "一回転で3.4ナノメートル進みます。",
+     "say": "一回転でさんてんよんナノメートル進みます。",
+     "cue": "pitch",
+     "post": 0.45
+    },
+    "t0": 172.7227,
+    "t1": 176.5913,
+    "speech0": 172.7227,
+    "speech1": 176.1413
+   },
+   {
+    "scene": "S11",
+    "beat": "flat",
+    "i": 0,
+    "seg": {
+     "text": "ほどいて、平らにしてみます。",
+     "say": "ほどいて、平らにしてみます。",
+     "cue": "flat",
+     "post": 0.15
+    },
+    "t0": 176.7413,
+    "t1": 178.7308,
+    "speech0": 176.7413,
+    "speech1": 178.58079999999998
+   },
+   {
+    "scene": "S11",
+    "beat": "flat",
+    "i": 1,
+    "seg": {
+     "text": "はしごのような形になりました。",
+     "say": "はしごのような形になりました。",
+     "cue": "ladder",
+     "post": 0.3
+    },
+    "t0": 178.7308,
+    "t1": 181.6637,
+    "speech0": 178.7308,
+    "speech1": 181.3637
+   },
+   {
+    "scene": "S11",
+    "beat": "dir",
+    "i": 0,
+    "seg": {
+     "text": "上の鎖は左から右へ5ダッシュ、3ダッシュ。",
+     "say": "上の鎖は左から右へごダッシュ、さんダッシュ。",
+     "cue": "top",
+     "post": 0.1
+    },
+    "t0": 181.6637,
+    "t1": 185.3041,
+    "speech0": 181.6637,
+    "speech1": 185.2041
+   },
+   {
+    "scene": "S11",
+    "beat": "dir",
+    "i": 1,
+    "seg": {
+     "text": "下の鎖はその逆。",
+     "say": "下の鎖はその逆。",
+     "cue": "bot",
+     "post": 0.15
+    },
+    "t0": 185.3041,
+    "t1": 187.1886,
+    "speech0": 185.3041,
+    "speech1": 187.0386
+   },
+   {
+    "scene": "S11",
+    "beat": "dir",
+    "i": 2,
+    "seg": {
+     "text": "二本の鎖は逆向き、**逆平行**です。",
+     "say": "二本の鎖は逆向き、逆平行です。",
+     "cue": "anti",
+     "post": 0.45
+    },
+    "t0": 187.1886,
+    "t1": 190.7377,
+    "speech0": 187.1886,
+    "speech1": 190.2877
+   },
+   {
+    "scene": "S12",
+    "beat": "hb",
+    "i": 0,
+    "seg": {
+     "text": "塩基対に寄ってみましょう。",
+     "say": "塩基対に寄ってみましょう。",
+     "cue": "zoom",
+     "post": 0.15
+    },
+    "t0": 190.8877,
+    "t1": 192.6931,
+    "speech0": 190.8877,
+    "speech1": 192.54309999999998
+   },
+   {
+    "scene": "S12",
+    "beat": "hb",
+    "i": 1,
+    "seg": {
+     "text": "アデニンとチミンは、水素結合が**2本**。",
+     "say": "アデニンとチミンは、水素結合が2本。",
+     "cue": "at",
+     "post": 0.2
+    },
+    "t0": 192.6931,
+    "t1": 195.78659999999996,
+    "speech0": 192.6931,
+    "speech1": 195.58659999999998
+   },
+   {
+    "scene": "S12",
+    "beat": "hb",
+    "i": 2,
+    "seg": {
+     "text": "グアニンとシトシンは、**3本**です。",
+     "say": "グアニンとシトシンは、3本です。",
+     "cue": "gc",
+     "post": 0.35
+    },
+    "t0": 195.78659999999996,
+    "t1": 198.14239999999995,
+    "speech0": 195.78659999999996,
+    "speech1": 197.79239999999996
+   },
+   {
+    "scene": "S12",
+    "beat": "width",
+    "i": 0,
+    "seg": {
+     "text": "プリンは環が二つ、ピリミジンは環が一つ。",
+     "say": "プリンは環が二つ、ピリミジンは環が一つ。",
+     "cue": "rings",
+     "post": 0.15
+    },
+    "t0": 198.14239999999995,
+    "t1": 201.64879999999997,
+    "speech0": 198.14239999999995,
+    "speech1": 201.49879999999996
+   },
+   {
+    "scene": "S12",
+    "beat": "width",
+    "i": 1,
+    "seg": {
+     "text": "必ずプリンとピリミジンが組むので、",
+     "say": "必ずプリンとピリミジンが組むので、",
+     "cue": "pp"
+    },
+    "t0": 201.64879999999997,
+    "t1": 204.46879999999996,
+    "speech0": 201.64879999999997,
+    "speech1": 204.46879999999996
+   },
+   {
+    "scene": "S12",
+    "beat": "width",
+    "i": 2,
+    "seg": {
+     "text": "塩基対の幅はどれも**1.08ナノメートル**にそろいます。",
+     "say": "塩基対の幅はどれもいってんぜろはちナノメートルにそろいます。",
+     "cue": "same",
+     "post": 0.45
+    },
+    "t0": 204.46879999999996,
+    "t1": 210.07959999999994,
+    "speech0": 204.46879999999996,
+    "speech1": 209.62959999999995
+   },
+   {
+    "scene": "S13",
+    "beat": "link",
+    "i": 0,
+    "seg": {
+     "text": "最後に骨格。",
+     "say": "最後に骨格。",
+     "cue": "bone",
+     "post": 0.15
+    },
+    "t0": 210.22959999999995,
+    "t1": 211.65839999999994,
+    "speech0": 210.22959999999995,
+    "speech1": 211.50839999999994
+   },
+   {
+    "scene": "S13",
+    "beat": "link",
+    "i": 1,
+    "seg": {
+     "text": "3ダッシュの炭素と、次の5ダッシュのリン酸がつながっていく。",
+     "say": "さんダッシュの炭素と、次のごダッシュのリン酸がつながっていく。",
+     "cue": "link",
+     "post": 0.2
+    },
+    "t0": 211.65839999999994,
+    "t1": 216.14489999999992,
+    "speech0": 211.65839999999994,
+    "speech1": 215.94489999999993
+   },
+   {
+    "scene": "S13",
+    "beat": "link",
+    "i": 2,
+    "seg": {
+     "text": "これが**ホスホジエステル結合**です。",
+     "say": "これがホスホジエステル結合です。",
+     "cue": "pde",
+     "post": 0.35
+    },
+    "t0": 216.14489999999992,
+    "t1": 218.79039999999992,
+    "speech0": 216.14489999999992,
+    "speech1": 218.44039999999993
+   },
+   {
+    "scene": "S13",
+    "beat": "grow",
+    "i": 0,
+    "seg": {
+     "text": "鎖は、5ダッシュから3ダッシュの方向へ伸びていきます。",
+     "say": "鎖は、ごダッシュからさんダッシュの方向へ伸びていきます。",
+     "cue": "grow",
+     "post": 0.5
+    },
+    "t0": 218.79039999999992,
+    "t1": 223.42079999999993,
+    "speech0": 218.79039999999992,
+    "speech1": 222.92079999999993
+   },
+   {
+    "scene": "S14",
+    "beat": "n",
+    "i": 0,
+    "seg": {
+     "text": "まず、水素結合の本数。",
+     "say": "まず、水素結合の本数。",
+     "cue": "n",
+     "post": 0.1
+    },
+    "t0": 223.57079999999993,
+    "t1": 225.47079999999994,
+    "speech0": 223.57079999999993,
+    "speech1": 225.37079999999995
+   },
+   {
+    "scene": "S14",
+    "beat": "n",
+    "i": 1,
+    "seg": {
+     "text": "A=Tは2本、G≡Cは3本。",
+     "say": "エーティーは2本、ジーシーは3本。",
+     "cue": "n23",
+     "post": 0.2
+    },
+    "t0": 225.47079999999994,
+    "t1": 227.92329999999993,
+    "speech0": 225.47079999999994,
+    "speech1": 227.72329999999994
+   },
+   {
+    "scene": "S14",
+    "beat": "n",
+    "i": 2,
+    "seg": {
+     "text": "ここ、非常によく問われます。",
+     "say": "ここ、非常によく問われます。",
+     "cue": "often",
+     "post": 0.3
+    },
+    "t0": 227.92329999999993,
+    "t1": 230.23249999999993,
+    "speech0": 227.92329999999993,
+    "speech1": 229.93249999999992
+   },
+   {
+    "scene": "S14",
+    "beat": "kinds",
+    "i": 0,
+    "seg": {
+     "text": "二本の鎖は逆向き。",
+     "say": "二本の鎖は逆向き。",
+     "cue": "rev",
+     "post": 0.15
+    },
+    "t0": 230.23249999999993,
+    "t1": 232.17699999999994,
+    "speech0": 230.23249999999993,
+    "speech1": 232.02699999999993
+   },
+   {
+    "scene": "S14",
+    "beat": "kinds",
+    "i": 1,
+    "seg": {
+     "text": "鎖の中は**ホスホジエステル結合**、",
+     "say": "鎖の中はホスホジエステル結合、",
+     "cue": "in"
+    },
+    "t0": 232.17699999999994,
+    "t1": 235.32699999999994,
+    "speech0": 232.17699999999994,
+    "speech1": 235.32699999999994
+   },
+   {
+    "scene": "S14",
+    "beat": "kinds",
+    "i": 2,
+    "seg": {
+     "text": "鎖と鎖の間は**水素結合**。",
+     "say": "鎖と鎖の間は水素結合。",
+     "cue": "between",
+     "post": 0.15
+    },
+    "t0": 235.32699999999994,
+    "t1": 238.33799999999994,
+    "speech0": 235.32699999999994,
+    "speech1": 238.18799999999993
+   },
+   {
+    "scene": "S14",
+    "beat": "kinds",
+    "i": 3,
+    "seg": {
+     "text": "結合の種類を入れ替えた選択肢に注意してください。",
+     "say": "結合の種類を入れ替えた選択肢に注意してください。",
+     "cue": "care",
+     "post": 0.3
+    },
+    "t0": 238.33799999999994,
+    "t1": 242.51889999999995,
+    "speech0": 238.33799999999994,
+    "speech1": 242.21889999999993
+   },
+   {
+    "scene": "S14",
+    "beat": "num",
+    "i": 0,
+    "seg": {
+     "text": "数字では、幅2ナノメートル、一回転3.4ナノメートル。",
+     "say": "数字では、はばにナノメートル、一回転さんてんよんナノメートル。",
+     "cue": "num",
+     "post": 0.45
+    },
+    "t0": 242.51889999999995,
+    "t1": 247.72389999999993,
+    "speech0": 242.51889999999995,
+    "speech1": 247.27389999999994
+   },
+   {
+    "scene": "S15",
+    "beat": "q",
+    "i": 0,
+    "seg": {
+     "text": "G-C対が多いDNAと、A-T対が多いDNA。",
+     "say": "ジーシー対が多いディーエヌエーと、エーティー対が多いディーエヌエー。",
+     "cue": "q",
+     "post": 0.2
+    },
+    "t0": 247.87389999999994,
+    "t1": 252.06289999999993,
+    "speech0": 247.87389999999994,
+    "speech1": 251.86289999999994
+   },
+   {
+    "scene": "S15",
+    "beat": "q",
+    "i": 1,
+    "seg": {
+     "text": "二本鎖を引き離すのに、",
+     "say": "二本鎖を引き離すのに、",
+     "cue": "pull"
+    },
+    "t0": 252.06289999999993,
+    "t1": 254.28289999999993,
+    "speech0": 252.06289999999993,
+    "speech1": 254.28289999999993
+   },
+   {
+    "scene": "S15",
+    "beat": "q",
+    "i": 2,
+    "seg": {
+     "text": "より大きなエネルギーが必要なのはどちらでしょう。",
+     "say": "より大きなエネルギーが必要なのはどちらでしょう。",
+     "cue": "which",
+     "post": 0.7
+    },
+    "t0": 254.28289999999993,
+    "t1": 258.8549999999999,
+    "speech0": 254.28289999999993,
+    "speech1": 258.1549999999999
+   },
+   {
+    "scene": "S15",
+    "beat": "a",
+    "i": 0,
+    "seg": {
+     "text": "G-C対は水素結合が**3本**、A-T対は**2本**。",
+     "say": "ジーシー対は水素結合が3本、エーティー対は2本。",
+     "cue": "ans",
+     "post": 0.2
+    },
+    "t0": 258.8549999999999,
+    "t1": 262.8840999999999,
+    "speech0": 258.8549999999999,
+    "speech1": 262.6840999999999
+   },
+   {
+    "scene": "S15",
+    "beat": "a",
+    "i": 1,
+    "seg": {
+     "text": "G-C対が多いほど水素結合の総数が多いので、",
+     "say": "ジーシー対が多いほど水素結合の総数が多いので、",
+     "cue": "total"
+    },
+    "t0": 262.8840999999999,
+    "t1": 267.4340999999999,
+    "speech0": 262.8840999999999,
+    "speech1": 267.4340999999999
+   },
+   {
+    "scene": "S15",
+    "beat": "a",
+    "i": 2,
+    "seg": {
+     "text": "**引き離しにくく**なります。",
+     "say": "引き離しにくくなります。",
+     "cue": "hard",
+     "post": 0.35
+    },
+    "t0": 267.4340999999999,
+    "t1": 269.7478999999999,
+    "speech0": 267.4340999999999,
+    "speech1": 269.3978999999999
+   },
+   {
+    "scene": "S15",
+    "beat": "think",
+    "i": 0,
+    "seg": {
+     "text": "本数の暗記で終わらせずに、「だからどうなるか」まで考える。",
+     "say": "本数の暗記で終わらせずに、だからどうなるかまで考える。",
+     "cue": "think",
+     "post": 0.5
+    },
+    "t0": 269.7478999999999,
+    "t1": 274.60059999999993,
+    "speech0": 269.7478999999999,
+    "speech1": 274.10059999999993
+   },
+   {
+    "scene": "S16",
+    "beat": "food",
+    "i": 0,
+    "seg": {
+     "text": "食事でとった核酸は、",
+     "say": "食事でとった核酸は、",
+     "cue": "food"
+    },
+    "t0": 274.7505999999999,
+    "t1": 276.4805999999999,
+    "speech0": 274.7505999999999,
+    "speech1": 276.4805999999999
+   },
+   {
+    "scene": "S16",
+    "beat": "food",
+    "i": 1,
+    "seg": {
+     "text": "小腸でペントースリン酸と塩基に分解されます。",
+     "say": "小腸でペントースリン酸と塩基に分解されます。",
+     "cue": "split",
+     "post": 0.3
+    },
+    "t0": 276.4805999999999,
+    "t1": 280.5639999999999,
+    "speech0": 276.4805999999999,
+    "speech1": 280.2639999999999
+   },
+   {
+    "scene": "S16",
+    "beat": "py",
+    "i": 0,
+    "seg": {
+     "text": "吸収された**ピリミジン塩基**は、アンモニアと二酸化炭素に代謝されます。",
+     "say": "吸収されたピリミジン塩基は、アンモニアと二酸化炭素に代謝されます。",
+     "cue": "py",
+     "post": 0.3
+    },
+    "t0": 280.5639999999999,
+    "t1": 286.4011999999999,
+    "speech0": 280.5639999999999,
+    "speech1": 286.1011999999999
+   },
+   {
+    "scene": "S16",
+    "beat": "pu",
+    "i": 0,
+    "seg": {
+     "text": "一方、**プリン塩基**は、",
+     "say": "一方、プリン塩基は、",
+     "cue": "pu"
+    },
+    "t0": 286.4011999999999,
+    "t1": 288.0311999999999,
+    "speech0": 286.4011999999999,
+    "speech1": 288.0311999999999
+   },
+   {
+    "scene": "S16",
+    "beat": "pu",
+    "i": 1,
+    "seg": {
+     "text": "**尿酸**として排泄されます。",
+     "say": "尿酸として排泄されます。",
+     "cue": "ua",
+     "post": 0.4
+    },
+    "t0": 288.0311999999999,
+    "t1": 290.5205999999999,
+    "speech0": 288.0311999999999,
+    "speech1": 290.1205999999999
+   },
+   {
+    "scene": "S17",
+    "beat": "gout",
+    "i": 0,
+    "seg": {
+     "text": "尿酸は関節に沈着しやすいので、",
+     "say": "尿酸は関節に沈着しやすいので、",
+     "cue": "dep"
+    },
+    "t0": 290.67059999999987,
+    "t1": 293.6005999999999,
+    "speech0": 290.67059999999987,
+    "speech1": 293.6005999999999
+   },
+   {
+    "scene": "S17",
+    "beat": "gout",
+    "i": 1,
+    "seg": {
+     "text": "血中の尿酸値が高いと、",
+     "say": "血中の尿酸値が高いと、",
+     "cue": "high"
+    },
+    "t0": 293.6005999999999,
+    "t1": 295.8205999999999,
+    "speech0": 293.6005999999999,
+    "speech1": 295.8205999999999
+   },
+   {
+    "scene": "S17",
+    "beat": "gout",
+    "i": 2,
+    "seg": {
+     "text": "関節炎を起こす**痛風**の原因になります。",
+     "say": "関節炎を起こす痛風の原因になります。",
+     "cue": "gout",
+     "post": 0.4
+    },
+    "t0": 295.8205999999999,
+    "t1": 299.8350999999999,
+    "speech0": 295.8205999999999,
+    "speech1": 299.4350999999999
+   },
+   {
+    "scene": "S17",
+    "beat": "new",
+    "i": 0,
+    "seg": {
+     "text": "吸収した核酸を、自分のDNAやRNAとしてそのまま使うことはありません。",
+     "say": "吸収した核酸を、自分のディーエヌエーやアールエヌエーとしてそのまま使うことはありません。",
+     "cue": "no",
+     "post": 0.2
+    },
+    "t0": 299.8350999999999,
+    "t1": 307.0177999999999,
+    "speech0": 299.8350999999999,
+    "speech1": 306.8177999999999
+   },
+   {
+    "scene": "S17",
+    "beat": "new",
+    "i": 1,
+    "seg": {
+     "text": "必ず**新しく合成**して使います。",
+     "say": "必ず新しく合成して使います。",
+     "cue": "new",
+     "post": 0.45
+    },
+    "t0": 307.0177999999999,
+    "t1": 310.1371999999999,
+    "speech0": 307.0177999999999,
+    "speech1": 309.6871999999999
+   },
+   {
+    "scene": "S18",
+    "beat": "w",
+    "i": 0,
+    "seg": {
+     "text": "黒板にも書いておきます。",
+     "say": "黒板にも書いておきます。",
+     "cue": "w",
+     "post": 0.15
+    },
+    "t0": 310.28719999999987,
+    "t1": 312.19799999999987,
+    "speech0": 310.28719999999987,
+    "speech1": 312.0479999999999
+   },
+   {
+    "scene": "S18",
+    "beat": "w",
+    "i": 1,
+    "seg": {
+     "text": "プリンは尿酸、そして痛風。",
+     "say": "プリンは尿酸、そして痛風。",
+     "cue": "pu",
+     "post": 0.15
+    },
+    "t0": 312.19799999999987,
+    "t1": 314.19579999999985,
+    "speech0": 312.19799999999987,
+    "speech1": 314.0457999999999
+   },
+   {
+    "scene": "S18",
+    "beat": "w",
+    "i": 2,
+    "seg": {
+     "text": "ピリミジンはアンモニアと二酸化炭素。",
+     "say": "ピリミジンはアンモニアと二酸化炭素。",
+     "cue": "py",
+     "post": 0.15
+    },
+    "t0": 314.19579999999985,
+    "t1": 317.26039999999983,
+    "speech0": 314.19579999999985,
+    "speech1": 317.11039999999986
+   },
+   {
+    "scene": "S18",
+    "beat": "w",
+    "i": 3,
+    "seg": {
+     "text": "食べた核酸は、そのまま自分の遺伝子にはならない。",
+     "say": "食べた核酸は、そのまま自分の遺伝子にはならない。",
+     "cue": "eat",
+     "post": 0.3
+    },
+    "t0": 317.26039999999983,
+    "t1": 321.4456999999998,
+    "speech0": 317.26039999999983,
+    "speech1": 321.1456999999998
+   },
+   {
+    "scene": "S18",
+    "beat": "line",
+    "i": 0,
+    "seg": {
+     "text": "プリンと尿酸。",
+     "say": "プリンと尿酸。",
+     "cue": "line",
+     "post": 0.1
+    },
+    "t0": 321.4456999999998,
+    "t1": 322.65769999999986,
+    "speech0": 321.4456999999998,
+    "speech1": 322.55769999999984
+   },
+   {
+    "scene": "S18",
+    "beat": "line",
+    "i": 1,
+    "seg": {
+     "text": "ここに線を引いておきましょう。",
+     "say": "ここに線を引いておきましょう。",
+     "cue": "under",
+     "post": 0.45
+    },
+    "t0": 322.65769999999986,
+    "t1": 324.94329999999985,
+    "speech0": 322.65769999999986,
+    "speech1": 324.49329999999986
+   },
+   {
+    "scene": "S19",
+    "beat": "four",
+    "i": 0,
+    "seg": {
+     "text": "今日覚えてほしいのは、この4つです。",
+     "say": "今日覚えてほしいのは、この4つです。",
+     "cue": "four",
+     "post": 0.3
+    },
+    "t0": 325.09329999999983,
+    "t1": 328.0115999999998,
+    "speech0": 325.09329999999983,
+    "speech1": 327.7115999999998
+   },
+   {
+    "scene": "S19",
+    "beat": "p1",
+    "i": 0,
+    "seg": {
+     "text": "ひとつ目。",
+     "say": "ひとつ目。",
+     "cue": "p1",
+     "post": 0.1
+    },
+    "t0": 328.0115999999998,
+    "t1": 328.96749999999986,
+    "speech0": 328.0115999999998,
+    "speech1": 328.86749999999984
+   },
+   {
+    "scene": "S19",
+    "beat": "p1",
+    "i": 1,
+    "seg": {
+     "text": "ヌクレオチドは塩基と五炭糖とリン酸。",
+     "say": "ヌクレオチドは塩基とごたんとうとリン酸。",
+     "cue": "p1b",
+     "post": 0.15
+    },
+    "t0": 328.96749999999986,
+    "t1": 332.07449999999983,
+    "speech0": 328.96749999999986,
+    "speech1": 331.92449999999985
+   },
+   {
+    "scene": "S19",
+    "beat": "p1",
+    "i": 2,
+    "seg": {
+     "text": "リン酸がなければ**ヌクレオシド**。",
+     "say": "リン酸がなければヌクレオシド。",
+     "cue": "p1c",
+     "post": 0.3
+    },
+    "t0": 332.07449999999983,
+    "t1": 334.40679999999986,
+    "speech0": 332.07449999999983,
+    "speech1": 334.10679999999985
+   },
+   {
+    "scene": "S19",
+    "beat": "p2",
+    "i": 0,
+    "seg": {
+     "text": "ふたつ目。",
+     "say": "ふたつ目。",
+     "cue": "p2",
+     "post": 0.1
+    },
+    "t0": 334.40679999999986,
+    "t1": 335.3905999999999,
+    "speech0": 334.40679999999986,
+    "speech1": 335.29059999999987
+   },
+   {
+    "scene": "S19",
+    "beat": "p2",
+    "i": 1,
+    "seg": {
+     "text": "プリンはAとG、ピリミジンはCとTとU。",
+     "say": "プリンはエーとジー、ピリミジンはシーとティーとユー。",
+     "cue": "p2b",
+     "post": 0.15
+    },
+    "t0": 335.3905999999999,
+    "t1": 338.8335999999999,
+    "speech0": 335.3905999999999,
+    "speech1": 338.6835999999999
+   },
+   {
+    "scene": "S19",
+    "beat": "p2",
+    "i": 2,
+    "seg": {
+     "text": "RNAではTの代わりに**U**。",
+     "say": "アールエヌエーではティーの代わりにユー。",
+     "cue": "p2c",
+     "post": 0.3
+    },
+    "t0": 338.8335999999999,
+    "t1": 341.4752999999999,
+    "speech0": 338.8335999999999,
+    "speech1": 341.1752999999999
+   },
+   {
+    "scene": "S19",
+    "beat": "p3",
+    "i": 0,
+    "seg": {
+     "text": "みっつ目。",
+     "say": "みっつ目。",
+     "cue": "p3",
+     "post": 0.1
+    },
+    "t0": 341.4752999999999,
+    "t1": 342.4167999999999,
+    "speech0": 341.4752999999999,
+    "speech1": 342.3167999999999
+   },
+   {
+    "scene": "S19",
+    "beat": "p3",
+    "i": 1,
+    "seg": {
+     "text": "二本鎖は逆向きで、A=Tは2本、G≡Cは3本の水素結合。",
+     "say": "二本鎖は逆向きで、エーティーは2本、ジーシーは3本の水素結合。",
+     "cue": "p3b",
+     "post": 0.3
+    },
+    "t0": 342.4167999999999,
+    "t1": 347.8112999999999,
+    "speech0": 342.4167999999999,
+    "speech1": 347.5112999999999
+   },
+   {
+    "scene": "S19",
+    "beat": "p4",
+    "i": 0,
+    "seg": {
+     "text": "そして、プリンの代謝産物は**尿酸**。",
+     "say": "そして、プリンの代謝産物は尿酸。",
+     "cue": "p4",
+     "post": 0.1
+    },
+    "t0": 347.8112999999999,
+    "t1": 350.6724999999999,
+    "speech0": 347.8112999999999,
+    "speech1": 350.5724999999999
+   },
+   {
+    "scene": "S19",
+    "beat": "p4",
+    "i": 1,
+    "seg": {
+     "text": "痛風につながります。",
+     "say": "痛風につながります。",
+     "cue": "p4b",
+     "post": 0.45
+    },
+    "t0": 350.6724999999999,
+    "t1": 352.69189999999986,
+    "speech0": 350.6724999999999,
+    "speech1": 352.2418999999999
+   },
+   {
+    "scene": "S20",
+    "beat": "next",
+    "i": 0,
+    "seg": {
+     "text": "次の第3講では、",
+     "say": "次の第3講では、",
+     "cue": "next"
+    },
+    "t0": 352.84189999999984,
+    "t1": 354.47189999999983,
+    "speech0": 352.84189999999984,
+    "speech1": 354.47189999999983
+   },
+   {
+    "scene": "S20",
+    "beat": "next",
+    "i": 1,
+    "seg": {
+     "text": "この長いDNAを、どうやって細胞の核にしまっているのか。",
+     "say": "この長いディーエヌエーを、どうやって細胞の核にしまっているのか。",
+     "cue": "what",
+     "post": 0.2
+    },
+    "t0": 354.47189999999983,
+    "t1": 359.6390999999998,
+    "speech0": 354.47189999999983,
+    "speech1": 359.4390999999998
+   },
+   {
+    "scene": "S20",
+    "beat": "next",
+    "i": 2,
+    "seg": {
+     "text": "**染色体**の話に進みます。",
+     "say": "染色体の話に進みます。",
+     "cue": "chr",
+     "post": 1
+    },
+    "t0": 359.6390999999998,
+    "t1": 362.8285999999998,
+    "speech0": 359.6390999999998,
+    "speech1": 361.8285999999998
+   }
+  ]
+ },
+ "edit": {
+  "plan": "genetics-basics:2:film|full|board|gekiga",
+  "voice": "genetics-basics-2-film_board",
+  "size": [
+   1280,
+   720
+  ],
+  "fps": 24,
+  "total": 362.979,
+  "frames": 8711,
+  "timing": "kokoro",
+  "layers": {
+   "plate": "layers/plate_%05d.jpg",
+   "overlay": "layers/overlay_%05d.png"
+  },
+  "note": "背景（Wan クリップ／無ければ MEDSTUDY アニマティック）→ 医学図レイヤーを重ねる → 白黒反転 → 字幕（ASS）→ 講師音声＋効果音（＋任意で BGM、声に合わせて自動で下げる）",
+  "scenes": [
+   {
+    "id": "S01",
+    "t0": 0,
+    "dur": 13.309,
+    "audio": "audio/S01.wav",
+    "shots": [
+     {
+      "id": "a",
+      "wan": "wan/S01_a.webm",
+      "mode": "feature",
+      "t0": 0,
+      "dur": 13.309,
+      "f0": 0,
+      "f1": 319,
+      "wanFrames": 121,
+      "wanFps": 24
+     }
+    ],
+    "sfx": [
+     {
+      "kind": "riser",
+      "t": 0,
+      "gain": 0.5
+     },
+     {
+      "kind": "boom",
+      "t": 0,
+      "gain": 1
+     },
+     {
+      "kind": "shimmer",
+      "t": 6.739,
+      "gain": 0.5
+     }
+    ],
+    "invert": []
+   },
+   {
+    "id": "S02",
+    "t0": 13.309,
+    "dur": 17.006,
+    "audio": "audio/S02.wav",
+    "shots": [
+     {
+      "id": "a",
+      "wan": "wan/S02_a.webm",
+      "mode": "background",
+      "t0": 13.309,
+      "dur": 17.006,
+      "f0": 319,
+      "f1": 728,
+      "wanFrames": 121,
+      "wanFps": 24
+     }
+    ],
+    "sfx": [
+     {
+      "kind": "tick",
+      "t": 17.955,
+      "gain": 1
+     },
+     {
+      "kind": "tick",
+      "t": 19.065,
+      "gain": 1
+     },
+     {
+      "kind": "tick",
+      "t": 20.485,
+      "gain": 1
+     },
+     {
+      "kind": "riser",
+      "t": 22.708,
+      "gain": 0.5
+     },
+     {
+      "kind": "impact",
+      "t": 25.558,
+      "gain": 1
+     },
+     {
+      "kind": "shimmer",
+      "t": 27.141,
+      "gain": 1
+     }
+    ],
+    "invert": []
+   },
+   {
+    "id": "S03",
+    "t0": 30.316,
+    "dur": 9.985,
+    "audio": "audio/S03.wav",
+    "shots": [
+     {
+      "id": "a",
+      "wan": "wan/S03_a.webm",
+      "mode": "background",
+      "t0": 30.316,
+      "dur": 9.985,
+      "f0": 728,
+      "f1": 967,
+      "wanFrames": 121,
+      "wanFps": 24
+     }
+    ],
+    "sfx": [
+     {
+      "kind": "chalk",
+      "t": 30.316,
+      "gain": 0.5
+     },
+     {
+      "kind": "chalk",
+      "t": 30.316,
+      "gain": 0.6
+     },
+     {
+      "kind": "impact",
+      "t": 37.802,
+      "gain": 0.7
+     }
+    ],
+    "invert": []
+   },
+   {
+    "id": "S04",
+    "t0": 40.301,
+    "dur": 12.754,
+    "audio": "audio/S04.wav",
+    "shots": [
+     {
+      "id": "a",
+      "wan": "wan/S04_a.webm",
+      "mode": "background",
+      "t0": 40.301,
+      "dur": 12.754,
+      "f0": 967,
+      "f1": 1273,
+      "wanFrames": 121,
+      "wanFps": 24
+     }
+    ],
+    "sfx": [
+     {
+      "kind": "impact",
+      "t": 42.054,
+      "gain": 0.5
+     },
+     {
+      "kind": "impact",
+      "t": 43.694,
+      "gain": 0.5
+     },
+     {
+      "kind": "impact",
+      "t": 45.874,
+      "gain": 0.5
+     },
+     {
+      "kind": "whoosh",
+      "t": 48.398,
+      "gain": 0.5
+     },
+     {
+      "kind": "boom",
+      "t": 50.668,
+      "gain": 0.8
+     }
+    ],
+    "invert": []
+   },
+   {
+    "id": "S05",
+    "t0": 53.055,
+    "dur": 15.364,
+    "audio": "audio/S05.wav",
+    "shots": [
+     {
+      "id": "a",
+      "wan": "wan/S05_a.webm",
+      "mode": "background",
+      "t0": 53.055,
+      "dur": 6.432,
+      "f0": 1273,
+      "f1": 1428,
+      "wanFrames": 121,
+      "wanFps": 24
+     },
+     {
+      "id": "b",
+      "wan": "wan/S05_b.webm",
+      "mode": "background",
+      "t0": 59.487,
+      "dur": 8.932,
+      "f0": 1428,
+      "f1": 1642,
+      "wanFrames": 121,
+      "wanFps": 24
+     }
+    ],
+    "sfx": [
+     {
+      "kind": "chalk",
+      "t": 54.77,
+      "gain": 0.6
+     },
+     {
+      "kind": "chalk",
+      "t": 57.209,
+      "gain": 0.6
+     },
+     {
+      "kind": "boom",
+      "t": 63.994,
+      "gain": 1
+     }
+    ],
+    "invert": []
+   },
+   {
+    "id": "S06",
+    "t0": 68.419,
+    "dur": 18.673,
+    "audio": "audio/S06.wav",
+    "shots": [
+     {
+      "id": "a",
+      "wan": "wan/S06_a.webm",
+      "mode": "background",
+      "t0": 68.419,
+      "dur": 18.673,
+      "f0": 1642,
+      "f1": 2090,
+      "wanFrames": 121,
+      "wanFps": 24
+     }
+    ],
+    "sfx": [
+     {
+      "kind": "tick",
+      "t": 68.419,
+      "gain": 1
+     },
+     {
+      "kind": "whoosh",
+      "t": 71.647,
+      "gain": 0.5
+     },
+     {
+      "kind": "whoosh",
+      "t": 73.297,
+      "gain": 0.6
+     },
+     {
+      "kind": "impact",
+      "t": 79.538,
+      "gain": 1
+     },
+     {
+      "kind": "boom",
+      "t": 83.606,
+      "gain": 0.7
+     }
+    ],
+    "invert": []
+   },
+   {
+    "id": "S07",
+    "t0": 87.093,
+    "dur": 25.014,
+    "audio": "audio/S07.wav",
+    "shots": [
+     {
+      "id": "a",
+      "wan": "wan/S07_a.webm",
+      "mode": "background",
+      "t0": 87.093,
+      "dur": 25.014,
+      "f0": 2090,
+      "f1": 2691,
+      "wanFrames": 121,
+      "wanFps": 24
+     }
+    ],
+    "sfx": [
+     {
+      "kind": "shimmer",
+      "t": 88.281,
+      "gain": 0.4
+     },
+     {
+      "kind": "impact",
+      "t": 93.146,
+      "gain": 0.5
+     },
+     {
+      "kind": "whoosh",
+      "t": 95.995,
+      "gain": 0.6
+     },
+     {
+      "kind": "impact",
+      "t": 101.448,
+      "gain": 1
+     },
+     {
+      "kind": "chalk",
+      "t": 106.665,
+      "gain": 0.6
+     },
+     {
+      "kind": "boom",
+      "t": 108.398,
+      "gain": 0.6
+     }
+    ],
+    "invert": []
+   },
+   {
+    "id": "S08",
+    "t0": 112.107,
+    "dur": 26.051,
+    "audio": "audio/S08.wav",
+    "shots": [
+     {
+      "id": "a",
+      "wan": "wan/S08_a.webm",
+      "mode": "background",
+      "t0": 112.107,
+      "dur": 26.051,
+      "f0": 2691,
+      "f1": 3316,
+      "wanFrames": 121,
+      "wanFps": 24
+     }
+    ],
+    "sfx": [
+     {
+      "kind": "tick",
+      "t": 112.107,
+      "gain": 1
+     },
+     {
+      "kind": "tick",
+      "t": 114.347,
+      "gain": 1
+     },
+     {
+      "kind": "impact",
+      "t": 115.907,
+      "gain": 0.7
+     },
+     {
+      "kind": "boom",
+      "t": 125.371,
+      "gain": 0.6
+     },
+     {
+      "kind": "whoosh",
+      "t": 127.447,
+      "gain": 1
+     },
+     {
+      "kind": "impact",
+      "t": 134.981,
+      "gain": 0.6
+     }
+    ],
+    "invert": []
+   },
+   {
+    "id": "S09",
+    "t0": 138.157,
+    "dur": 23.769,
+    "audio": "audio/S09.wav",
+    "shots": [
+     {
+      "id": "a",
+      "wan": "wan/S09_a.webm",
+      "mode": "background",
+      "t0": 138.157,
+      "dur": 23.769,
+      "f0": 3316,
+      "f1": 3886,
+      "wanFrames": 121,
+      "wanFps": 24
+     }
+    ],
+    "sfx": [
+     {
+      "kind": "chalk",
+      "t": 140.881,
+      "gain": 0.6
+     },
+     {
+      "kind": "chalk",
+      "t": 144.714,
+      "gain": 0.5
+     },
+     {
+      "kind": "chalk",
+      "t": 150.627,
+      "gain": 0.5
+     },
+     {
+      "kind": "whoosh",
+      "t": 154.016,
+      "gain": 0.5
+     },
+     {
+      "kind": "whoosh",
+      "t": 157.418,
+      "gain": 0.5
+     },
+     {
+      "kind": "impact",
+      "t": 159.414,
+      "gain": 1
+     }
+    ],
+    "invert": []
+   },
+   {
+    "id": "S10",
+    "t0": 161.927,
+    "dur": 14.815,
+    "audio": "audio/S10.wav",
+    "shots": [
+     {
+      "id": "a",
+      "wan": "wan/S10_a.webm",
+      "mode": "background",
+      "t0": 161.927,
+      "dur": 14.815,
+      "f0": 3886,
+      "f1": 4242,
+      "wanFrames": 121,
+      "wanFps": 24
+     }
+    ],
+    "sfx": [
+     {
+      "kind": "boom",
+      "t": 161.927,
+      "gain": 0.7
+     },
+     {
+      "kind": "shimmer",
+      "t": 164.28,
+      "gain": 0.4
+     },
+     {
+      "kind": "tick",
+      "t": 169.925,
+      "gain": 1
+     },
+     {
+      "kind": "tick",
+      "t": 172.723,
+      "gain": 1
+     },
+     {
+      "kind": "impact",
+      "t": 173.123,
+      "gain": 0.5
+     }
+    ],
+    "invert": []
+   },
+   {
+    "id": "S11",
+    "t0": 176.741,
+    "dur": 14.146,
+    "audio": "audio/S11.wav",
+    "shots": [
+     {
+      "id": "a",
+      "wan": "wan/S11_a.webm",
+      "mode": "background",
+      "t0": 176.741,
+      "dur": 14.146,
+      "f0": 4242,
+      "f1": 4581,
+      "wanFrames": 121,
+      "wanFps": 24
+     }
+    ],
+    "sfx": [
+     {
+      "kind": "riser",
+      "t": 176.741,
+      "gain": 0.5
+     },
+     {
+      "kind": "impact",
+      "t": 178.731,
+      "gain": 0.5
+     },
+     {
+      "kind": "whoosh",
+      "t": 181.664,
+      "gain": 0.5
+     },
+     {
+      "kind": "whoosh",
+      "t": 185.304,
+      "gain": 0.6
+     },
+     {
+      "kind": "boom",
+      "t": 187.189,
+      "gain": 1
+     }
+    ],
+    "invert": []
+   },
+   {
+    "id": "S12",
+    "t0": 190.888,
+    "dur": 19.342,
+    "audio": "audio/S12.wav",
+    "shots": [
+     {
+      "id": "a",
+      "wan": "wan/S12_a.webm",
+      "mode": "background",
+      "t0": 190.888,
+      "dur": 19.342,
+      "f0": 4581,
+      "f1": 5046,
+      "wanFrames": 121,
+      "wanFps": 24
+     }
+    ],
+    "sfx": [
+     {
+      "kind": "whoosh",
+      "t": 190.888,
+      "gain": 0.5
+     },
+     {
+      "kind": "tick",
+      "t": 192.693,
+      "gain": 1
+     },
+     {
+      "kind": "tick",
+      "t": 192.993,
+      "gain": 1
+     },
+     {
+      "kind": "tick",
+      "t": 195.787,
+      "gain": 1
+     },
+     {
+      "kind": "tick",
+      "t": 196.037,
+      "gain": 1
+     },
+     {
+      "kind": "tick",
+      "t": 196.287,
+      "gain": 1
+     },
+     {
+      "kind": "impact",
+      "t": 204.469,
+      "gain": 1
+     }
+    ],
+    "invert": []
+   },
+   {
+    "id": "S13",
+    "t0": 210.23,
+    "dur": 13.341,
+    "audio": "audio/S13.wav",
+    "shots": [
+     {
+      "id": "a",
+      "wan": "wan/S13_a.webm",
+      "mode": "background",
+      "t0": 210.23,
+      "dur": 13.341,
+      "f0": 5046,
+      "f1": 5366,
+      "wanFrames": 121,
+      "wanFps": 24
+     }
+    ],
+    "sfx": [
+     {
+      "kind": "riser",
+      "t": 211.658,
+      "gain": 0.4
+     },
+     {
+      "kind": "boom",
+      "t": 216.145,
+      "gain": 0.7
+     },
+     {
+      "kind": "whoosh",
+      "t": 218.79,
+      "gain": 1
+     },
+     {
+      "kind": "impact",
+      "t": 219.99,
+      "gain": 0.5
+     }
+    ],
+    "invert": []
+   },
+   {
+    "id": "S14",
+    "t0": 223.571,
+    "dur": 24.303,
+    "audio": "audio/S14.wav",
+    "shots": [
+     {
+      "id": "a",
+      "wan": "wan/S14_a.webm",
+      "mode": "background",
+      "t0": 223.571,
+      "dur": 24.303,
+      "f0": 5366,
+      "f1": 5949,
+      "wanFrames": 121,
+      "wanFps": 24
+     }
+    ],
+    "sfx": [
+     {
+      "kind": "chalk",
+      "t": 223.571,
+      "gain": 0.5
+     },
+     {
+      "kind": "impact",
+      "t": 225.471,
+      "gain": 1
+     },
+     {
+      "kind": "chalk",
+      "t": 230.232,
+      "gain": 0.5
+     },
+     {
+      "kind": "chalk",
+      "t": 232.177,
+      "gain": 0.5
+     },
+     {
+      "kind": "chalk",
+      "t": 235.327,
+      "gain": 0.5
+     },
+     {
+      "kind": "chalk",
+      "t": 242.519,
+      "gain": 0.5
+     }
+    ],
+    "invert": []
+   },
+   {
+    "id": "S15",
+    "t0": 247.874,
+    "dur": 26.877,
+    "audio": "audio/S15.wav",
+    "shots": [
+     {
+      "id": "a",
+      "wan": "wan/S15_a.webm",
+      "mode": "background",
+      "t0": 247.874,
+      "dur": 26.877,
+      "f0": 5949,
+      "f1": 6594,
+      "wanFrames": 121,
+      "wanFps": 24
+     }
+    ],
+    "sfx": [
+     {
+      "kind": "riser",
+      "t": 252.063,
+      "gain": 0.6
+     },
+     {
+      "kind": "boom",
+      "t": 254.283,
+      "gain": 1
+     },
+     {
+      "kind": "impact",
+      "t": 262.884,
+      "gain": 1
+     },
+     {
+      "kind": "impact",
+      "t": 267.434,
+      "gain": 1
+     },
+     {
+      "kind": "shimmer",
+      "t": 269.748,
+      "gain": 0.4
+     }
+    ],
+    "invert": []
+   },
+   {
+    "id": "S16",
+    "t0": 274.751,
+    "dur": 15.92,
+    "audio": "audio/S16.wav",
+    "shots": [
+     {
+      "id": "a",
+      "wan": "wan/S16_a.webm",
+      "mode": "background",
+      "t0": 274.751,
+      "dur": 15.92,
+      "f0": 6594,
+      "f1": 6976,
+      "wanFrames": 121,
+      "wanFps": 24
+     }
+    ],
+    "sfx": [
+     {
+      "kind": "whoosh",
+      "t": 274.751,
+      "gain": 0.5
+     },
+     {
+      "kind": "impact",
+      "t": 276.481,
+      "gain": 0.7
+     },
+     {
+      "kind": "shimmer",
+      "t": 280.564,
+      "gain": 0.4
+     },
+     {
+      "kind": "whoosh",
+      "t": 286.401,
+      "gain": 0.6
+     },
+     {
+      "kind": "boom",
+      "t": 288.031,
+      "gain": 0.7
+     }
+    ],
+    "invert": []
+   },
+   {
+    "id": "S17",
+    "t0": 290.671,
+    "dur": 19.617,
+    "audio": "audio/S17.wav",
+    "shots": [
+     {
+      "id": "a",
+      "wan": "wan/S17_a.webm",
+      "mode": "background",
+      "t0": 290.671,
+      "dur": 9.165,
+      "f0": 6976,
+      "f1": 7196,
+      "wanFrames": 121,
+      "wanFps": 24
+     },
+     {
+      "id": "b",
+      "wan": "wan/S17_b.webm",
+      "mode": "background",
+      "t0": 299.835,
+      "dur": 10.452,
+      "f0": 7196,
+      "f1": 7447,
+      "wanFrames": 121,
+      "wanFps": 24
+     }
+    ],
+    "sfx": [
+     {
+      "kind": "tick",
+      "t": 290.671,
+      "gain": 1
+     },
+     {
+      "kind": "riser",
+      "t": 293.601,
+      "gain": 0.5
+     },
+     {
+      "kind": "heartbeat",
+      "t": 295.821,
+      "gain": 1
+     },
+     {
+      "kind": "boom",
+      "t": 296.221,
+      "gain": 0.6
+     },
+     {
+      "kind": "impact",
+      "t": 299.835,
+      "gain": 0.6
+     },
+     {
+      "kind": "shimmer",
+      "t": 307.018,
+      "gain": 1
+     }
+    ],
+    "invert": []
+   },
+   {
+    "id": "S18",
+    "t0": 310.287,
+    "dur": 14.806,
+    "audio": "audio/S18.wav",
+    "shots": [
+     {
+      "id": "a",
+      "wan": "wan/S18_a.webm",
+      "mode": "background",
+      "t0": 310.287,
+      "dur": 14.806,
+      "f0": 7447,
+      "f1": 7802,
+      "wanFrames": 121,
+      "wanFps": 24
+     }
+    ],
+    "sfx": [
+     {
+      "kind": "chalk",
+      "t": 312.198,
+      "gain": 0.6
+     },
+     {
+      "kind": "chalk",
+      "t": 314.196,
+      "gain": 0.6
+     },
+     {
+      "kind": "chalk",
+      "t": 317.26,
+      "gain": 0.6
+     },
+     {
+      "kind": "impact",
+      "t": 321.446,
+      "gain": 0.7
+     },
+     {
+      "kind": "chalk",
+      "t": 322.658,
+      "gain": 0.7
+     }
+    ],
+    "invert": []
+   },
+   {
+    "id": "S19",
+    "t0": 325.093,
+    "dur": 27.749,
+    "audio": "audio/S19.wav",
+    "shots": [
+     {
+      "id": "a",
+      "wan": "wan/S19_a.webm",
+      "mode": "background",
+      "t0": 325.093,
+      "dur": 27.749,
+      "f0": 7802,
+      "f1": 8468,
+      "wanFrames": 121,
+      "wanFps": 24
+     }
+    ],
+    "sfx": [
+     {
+      "kind": "chalk",
+      "t": 325.093,
+      "gain": 0.5
+     },
+     {
+      "kind": "chalk",
+      "t": 328.012,
+      "gain": 0.5
+     },
+     {
+      "kind": "chalk",
+      "t": 334.407,
+      "gain": 0.5
+     },
+     {
+      "kind": "chalk",
+      "t": 341.475,
+      "gain": 0.5
+     },
+     {
+      "kind": "chalk",
+      "t": 347.811,
+      "gain": 0.5
+     },
+     {
+      "kind": "impact",
+      "t": 351.872,
+      "gain": 0.6
+     }
+    ],
+    "invert": []
+   },
+   {
+    "id": "S20",
+    "t0": 352.842,
+    "dur": 10.137,
+    "audio": "audio/S20.wav",
+    "shots": [
+     {
+      "id": "a",
+      "wan": "wan/S20_a.webm",
+      "mode": "background",
+      "t0": 352.842,
+      "dur": 10.137,
+      "f0": 8468,
+      "f1": 8711,
+      "wanFrames": 121,
+      "wanFps": 24
+     }
+    ],
+    "sfx": [
+     {
+      "kind": "impact",
+      "t": 352.842,
+      "gain": 0.6
+     },
+     {
+      "kind": "shimmer",
+      "t": 359.639,
+      "gain": 0.5
+     }
+    ],
+    "invert": []
+   }
+  ],
+  "subtitles": "subtitles.ass",
+  "bgm": {
+   "file": null,
+   "gain": 0.18,
+   "duck": true
+  }
+ },
+ "scenes": [
+  {
+   "id": "S01",
+   "title": "タイトル：第2講 核酸の化学とDNAの二重らせん",
+   "picture": "漆黒に墨が爆ぜ、右巻きの二重らせんの影が回る。「核酸の化学と／DNAの二重らせん」の筆文字。「何でできているのか」で、らせんの文字（塩基）と紙（骨格）に光が走る。",
+   "diagram": {
+    "id": "helix",
+    "title": "DNA二重らせん（影）",
+    "note": "右巻き・主溝/副溝の非対称を保った背景図。文字は MEDSTUDY が描く"
+   },
+   "lecturer": false,
+   "sources": [
+    {
+     "beat": "open",
+     "source": "第2講／台詞 c02-0001（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 2,
+      "section": "導入",
+      "cues": [
+       "c02-0001"
+      ],
+      "mode": "verbatim"
+     },
+     "lines": [
+      "はい、第2講を始めます。",
+      "前回、遺伝の本体はDNAだ、というところまで来ました。"
+     ]
+    },
+    {
+     "beat": "today",
+     "source": "第2講／台詞 c02-0002（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 2,
+      "section": "導入",
+      "cues": [
+       "c02-0002"
+      ],
+      "mode": "verbatim"
+     },
+     "lines": [
+      "今日は、そのDNAが「何でできているのか」。",
+      "設計図の、文字と紙の話です。"
+     ]
+    }
+   ],
+   "cams": [
+    {
+     "at": "start",
+     "move": "set",
+     "x": 640,
+     "y": 360,
+     "z": 1.3,
+     "note": "墨の中から"
+    },
+    {
+     "at": "title",
+     "move": "crash",
+     "x": 640,
+     "y": 330,
+     "z": 1.12,
+     "dur": 0.22,
+     "hold": 0.3,
+     "note": "題名で急接近 → 静止"
+    },
+    {
+     "at": "prev",
+     "move": "pull",
+     "x": 640,
+     "y": 360,
+     "z": 1,
+     "dur": 3,
+     "note": "ゆっくり引く"
+    },
+    {
+     "at": "what",
+     "move": "push",
+     "x": 640,
+     "y": 420,
+     "z": 1.15,
+     "dur": 2,
+     "note": "らせんへ寄る"
+    }
+   ],
+   "fx": [
+    {
+     "at": "title",
+     "kind": "impact",
+     "dur": 0.5,
+     "min": "gekiga"
+    },
+    {
+     "at": "title",
+     "kind": "focus",
+     "dur": 1.4,
+     "min": "gekiga"
+    },
+    {
+     "at": "title",
+     "kind": "shake",
+     "dur": 0.3,
+     "min": "gekiga"
+    },
+    {
+     "at": "paper",
+     "kind": "flash",
+     "dur": 0.25,
+     "min": "gekiga"
+    },
+    {
+     "at": "start",
+     "kind": "tone",
+     "dur": 999,
+     "min": "gekiga"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "start",
+     "kind": "riser",
+     "gain": 0.5
+    },
+    {
+     "at": "title",
+     "kind": "boom"
+    },
+    {
+     "at": "what",
+     "kind": "shimmer",
+     "gain": 0.5
+    }
+   ]
+  },
+  {
+   "id": "S02",
+   "title": "4種類の小さな有機分子 → ヌクレオチドがつながると核酸",
+   "picture": "4つのコマに小さな分子：糖・脂肪酸・アミノ酸・ヌクレオチド。それぞれがつながって多糖・膜・タンパク質へ。最後のヌクレオチドの列が「核酸」になる瞬間に急接近し、主役のヌクレオチドが画面いっぱいに。",
+   "diagram": {
+    "id": "monomers",
+    "title": "細胞内の4種類の小有機分子",
+    "note": "スライド17：糖→多糖、脂肪酸→脂肪・脂質・膜、アミノ酸→タンパク質、ヌクレオチド→核酸"
+   },
+   "lecturer": false,
+   "sources": [
+    {
+     "beat": "four",
+     "source": "第2講／台詞 c02-0013／スライド17（原文の一部）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 2,
+      "section": "全体像",
+      "cues": [
+       "c02-0013"
+      ],
+      "mode": "trimmed",
+      "slide": 17
+     },
+     "lines": [
+      "細胞の中には、4種類の小さな有機分子があります。"
+     ]
+    },
+    {
+     "beat": "poly",
+     "source": "第2講／台詞 c02-0014・c02-0015・c02-0016・c02-0017／スライド17（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 2,
+      "section": "全体像",
+      "cues": [
+       "c02-0014",
+       "c02-0015",
+       "c02-0016",
+       "c02-0017"
+      ],
+      "mode": "verbatim",
+      "slide": 17
+     },
+     "lines": [
+      "糖は多糖に、",
+      "脂肪酸は膜に、",
+      "アミノ酸はタンパク質に。",
+      "そして、ヌクレオチドがつながると……",
+      "核酸になります。",
+      "今日の主役は、このヌクレオチドです。"
+     ]
+    }
+   ],
+   "cams": [
+    {
+     "at": "start",
+     "move": "set",
+     "x": 640,
+     "y": 360,
+     "z": 1,
+     "note": "4つのコマ"
+    },
+    {
+     "at": "sug",
+     "move": "push",
+     "x": 640,
+     "y": 380,
+     "z": 1.05,
+     "dur": 4,
+     "note": "ゆっくり寄る"
+    },
+    {
+     "at": "nuc",
+     "move": "push",
+     "x": 1110,
+     "y": 400,
+     "z": 1.5,
+     "dur": 1.2,
+     "note": "ヌクレオチドのコマへ"
+    },
+    {
+     "at": "na",
+     "move": "crash",
+     "x": 1110,
+     "y": 500,
+     "z": 1.9,
+     "dur": 0.22,
+     "hold": 0.25,
+     "note": "「核酸」で急接近"
+    },
+    {
+     "at": "star",
+     "move": "pull",
+     "x": 640,
+     "y": 360,
+     "z": 1,
+     "dur": 0.4,
+     "note": "主役のヌクレオチドを大写しに"
+    }
+   ],
+   "fx": [
+    {
+     "at": "na",
+     "kind": "impact",
+     "dur": 0.45,
+     "min": "gekiga"
+    },
+    {
+     "at": "na",
+     "kind": "focus",
+     "dur": 1,
+     "min": "gekiga"
+    },
+    {
+     "at": "star",
+     "kind": "flash",
+     "dur": 0.3,
+     "min": "gekiga"
+    },
+    {
+     "at": "na",
+     "kind": "onoma",
+     "text": "ガシッ",
+     "x": 260,
+     "y": 150,
+     "dur": 0.9,
+     "min": "ultra"
+    },
+    {
+     "at": "start",
+     "kind": "tone",
+     "dur": 999,
+     "min": "gekiga"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "sug",
+     "kind": "tick"
+    },
+    {
+     "at": "fat",
+     "kind": "tick"
+    },
+    {
+     "at": "aa",
+     "kind": "tick"
+    },
+    {
+     "at": "nuc",
+     "kind": "riser",
+     "gain": 0.5
+    },
+    {
+     "at": "na",
+     "kind": "impact"
+    },
+    {
+     "at": "star",
+     "kind": "shimmer"
+    }
+   ]
+  },
+  {
+   "id": "S03",
+   "title": "核酸の単位はヌクレオチド",
+   "picture": "黒板の左に「核酸の単位」「ヌクレオチド→核酸」（黄色の下線）「＝塩基＋五炭糖＋リン酸」（板書 l-h・l1・l2）。",
+   "diagram": {
+    "id": "board-unit",
+    "title": "板書：核酸の単位",
+    "note": "第2講の黒板 l-h・l1・l2"
+   },
+   "lecturer": true,
+   "sources": [
+    {
+     "beat": "unit",
+     "source": "第2講／台詞 c02-0019／板書 l-h・l1（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 2,
+      "section": "テーマ1　ヌクレオチドの成り立ち",
+      "cues": [
+       "c02-0019"
+      ],
+      "mode": "verbatim",
+      "board": [
+       "l-h",
+       "l1"
+      ]
+     },
+     "lines": [
+      "核酸の単位はヌクレオチド。",
+      "まずこれを押さえてください。"
+     ]
+    },
+    {
+     "beat": "parts",
+     "source": "第2講／台詞 c02-0020／板書 l2（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 2,
+      "section": "テーマ1　ヌクレオチドの成り立ち",
+      "cues": [
+       "c02-0020"
+      ],
+      "mode": "verbatim",
+      "board": [
+       "l2"
+      ]
+     },
+     "lines": [
+      "ヌクレオチドは、三つの部品でできています。",
+      "塩基、五炭糖、そしてリン酸。"
+     ]
+    }
+   ],
+   "cams": [
+    {
+     "at": "start",
+     "move": "set",
+     "x": 600,
+     "y": 320,
+     "z": 1,
+     "note": "黒板の左"
+    },
+    {
+     "at": "unit",
+     "move": "push",
+     "x": 480,
+     "y": 220,
+     "z": 1.4,
+     "dur": 0.8,
+     "note": "「ヌクレオチド→核酸」へ"
+    },
+    {
+     "at": "parts",
+     "move": "crash",
+     "x": 480,
+     "y": 300,
+     "z": 1.55,
+     "dur": 0.22,
+     "hold": 0.2,
+     "note": "三つの部品で急接近"
+    },
+    {
+     "at": "parts+2.4",
+     "move": "pull",
+     "x": 600,
+     "y": 320,
+     "z": 1,
+     "dur": 0.5,
+     "note": "引く"
+    }
+   ],
+   "fx": [
+    {
+     "at": "unit",
+     "kind": "focus",
+     "dur": 0.9,
+     "min": "gekiga"
+    },
+    {
+     "at": "parts",
+     "kind": "impact",
+     "dur": 0.4,
+     "min": "gekiga"
+    },
+    {
+     "at": "start",
+     "kind": "tone",
+     "dur": 999,
+     "min": "gekiga"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "start",
+     "kind": "chalk",
+     "gain": 0.5
+    },
+    {
+     "at": "unit",
+     "kind": "chalk",
+     "gain": 0.6
+    },
+    {
+     "at": "parts",
+     "kind": "impact",
+     "gain": 0.7
+    }
+   ]
+  },
+  {
+   "id": "S04",
+   "title": "ヌクレオチド＝リン酸・糖・塩基／ヌクレオシド＝糖・塩基",
+   "picture": "分子の世界に、左の丸（リン酸）・真ん中の五角形（五炭糖）・右の六角形（塩基）が一つずつ飛び込んで結合する。リン酸は糖の5'に、塩基は1'に付く。「ヌクレオシド」で糖と塩基だけが赤い点線で囲まれ、リン酸が外れる。",
+   "diagram": {
+    "id": "nucleotide",
+    "title": "ヌクレオチドとヌクレオシド",
+    "note": "板書 nuc、スライド19：塩基＋五炭糖＝ヌクレオシド、糖のヒドロキシ基（5'）にリン酸が付くとヌクレオチド"
+   },
+   "lecturer": false,
+   "sources": [
+    {
+     "beat": "pic",
+     "source": "第2講／台詞 c02-0021／板書 nuc（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 2,
+      "section": "テーマ1　ヌクレオチドの成り立ち",
+      "cues": [
+       "c02-0021"
+      ],
+      "mode": "verbatim",
+      "board": [
+       "nuc"
+      ]
+     },
+     "lines": [
+      "絵にすると、こうなります。",
+      "左の丸がリン酸、",
+      "真ん中の五角形が糖、",
+      "右の六角形が塩基です。"
+     ]
+    },
+    {
+     "beat": "side",
+     "source": "第2講／台詞 c02-0025／スライド19（原文の一部）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 2,
+      "section": "テーマ1　ヌクレオチドの成り立ち",
+      "cues": [
+       "c02-0025"
+      ],
+      "mode": "trimmed",
+      "slide": 19
+     },
+     "lines": [
+      "塩基と糖だけのかたまりを、",
+      "ヌクレオシドと呼びます。"
+     ]
+    }
+   ],
+   "cams": [
+    {
+     "at": "start",
+     "move": "set",
+     "x": 640,
+     "y": 360,
+     "z": 0.95,
+     "note": "全景"
+    },
+    {
+     "at": "P",
+     "move": "push",
+     "x": 380,
+     "y": 380,
+     "z": 1.25,
+     "dur": 0.5,
+     "note": "リン酸へ"
+    },
+    {
+     "at": "S",
+     "move": "whip",
+     "x": 640,
+     "y": 380,
+     "z": 1.25,
+     "dur": 0.25,
+     "note": "糖へ高速パン"
+    },
+    {
+     "at": "B",
+     "move": "whip",
+     "x": 900,
+     "y": 380,
+     "z": 1.25,
+     "dur": 0.25,
+     "note": "塩基へ高速パン"
+    },
+    {
+     "at": "bs",
+     "move": "pull",
+     "x": 700,
+     "y": 370,
+     "z": 1,
+     "dur": 0.5,
+     "note": "引いて全体"
+    },
+    {
+     "at": "side",
+     "move": "crash",
+     "x": 760,
+     "y": 380,
+     "z": 1.35,
+     "dur": 0.22,
+     "hold": 0.3,
+     "note": "「ヌクレオシド」で急接近"
+    }
+   ],
+   "fx": [
+    {
+     "at": "P",
+     "kind": "speed",
+     "dur": 0.25,
+     "min": "ultra"
+    },
+    {
+     "at": "S",
+     "kind": "speed",
+     "dur": 0.25,
+     "min": "gekiga"
+    },
+    {
+     "at": "B",
+     "kind": "speed",
+     "dur": 0.25,
+     "min": "gekiga"
+    },
+    {
+     "at": "side",
+     "kind": "impact",
+     "dur": 0.45,
+     "min": "gekiga"
+    },
+    {
+     "at": "side",
+     "kind": "focus",
+     "dur": 1.2,
+     "min": "gekiga"
+    },
+    {
+     "at": "side",
+     "kind": "onoma",
+     "text": "バッ",
+     "x": 1100,
+     "y": 160,
+     "dur": 0.9,
+     "min": "ultra"
+    },
+    {
+     "at": "start",
+     "kind": "tone",
+     "dur": 999,
+     "min": "gekiga"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "P",
+     "kind": "impact",
+     "gain": 0.5
+    },
+    {
+     "at": "S",
+     "kind": "impact",
+     "gain": 0.5
+    },
+    {
+     "at": "B",
+     "kind": "impact",
+     "gain": 0.5
+    },
+    {
+     "at": "bs",
+     "kind": "whoosh",
+     "gain": 0.5
+    },
+    {
+     "at": "side",
+     "kind": "boom",
+     "gain": 0.8
+    }
+   ]
+  },
+  {
+   "id": "S05",
+   "title": "シドはリン酸なし",
+   "picture": "黒板の左下に「塩基＋糖＝ヌクレオシド」「＋リン酸＝ヌクレオチド」（板書 l3・l4）。「シドはリン酸なし」で赤く囲み、筆文字が叩きつけられる。",
+   "diagram": {
+    "id": "board-sido",
+    "title": "板書：ヌクレオシドとヌクレオチド",
+    "note": "第2講の黒板 l3・l4、c02-0027・0028"
+   },
+   "lecturer": true,
+   "sources": [
+    {
+     "beat": "sort",
+     "source": "第2講／台詞 c02-0027／板書 l3・l4（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 2,
+      "section": "テーマ1　ヌクレオチドの成り立ち",
+      "cues": [
+       "c02-0027"
+      ],
+      "mode": "verbatim",
+      "board": [
+       "l3",
+       "l4"
+      ]
+     },
+     "lines": [
+      "黒板に整理します。",
+      "塩基と糖だけならヌクレオ「シド」。",
+      "リン酸が付くとヌクレオ「チド」。"
+     ]
+    },
+    {
+     "beat": "trap",
+     "source": "第2講／台詞 c02-0028（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 2,
+      "section": "テーマ1　ヌクレオチドの成り立ち",
+      "cues": [
+       "c02-0028"
+      ],
+      "mode": "verbatim"
+     },
+     "lines": [
+      "試験では、この二つを入れ替えた選択肢が必ず出ます。",
+      "「シドはリン酸なし」。",
+      "これだけ覚えれば大丈夫です。"
+     ]
+    }
+   ],
+   "cams": [
+    {
+     "at": "start",
+     "move": "set",
+     "x": 560,
+     "y": 330,
+     "z": 1,
+     "note": "黒板の左"
+    },
+    {
+     "at": "sid",
+     "move": "push",
+     "x": 420,
+     "y": 460,
+     "z": 1.5,
+     "dur": 0.6,
+     "note": "「シド」の行へ"
+    },
+    {
+     "at": "tid",
+     "move": "pan",
+     "x": 420,
+     "y": 520,
+     "z": 1.5,
+     "dur": 0.5,
+     "note": "「チド」の行へ"
+    },
+    {
+     "at": "trap",
+     "move": "pull",
+     "x": 560,
+     "y": 360,
+     "z": 1,
+     "dur": 0.5,
+     "note": "引く"
+    },
+    {
+     "at": "rule",
+     "move": "crash",
+     "x": 640,
+     "y": 320,
+     "z": 1.15,
+     "dur": 0.2,
+     "hold": 0.3,
+     "note": "「シドはリン酸なし」で急接近"
+    }
+   ],
+   "fx": [
+    {
+     "at": "rule",
+     "kind": "impact",
+     "dur": 0.5,
+     "min": "gekiga"
+    },
+    {
+     "at": "rule",
+     "kind": "focus",
+     "dur": 1.3,
+     "min": "gekiga"
+    },
+    {
+     "at": "rule",
+     "kind": "shake",
+     "dur": 0.35,
+     "min": "gekiga"
+    },
+    {
+     "at": "rule",
+     "kind": "invert",
+     "dur": 0.1,
+     "min": "ultra"
+    },
+    {
+     "at": "rule",
+     "kind": "onoma",
+     "text": "ドンッ",
+     "x": 1080,
+     "y": 150,
+     "dur": 1,
+     "min": "gekiga"
+    },
+    {
+     "at": "start",
+     "kind": "tone",
+     "dur": 999,
+     "min": "gekiga"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "sid",
+     "kind": "chalk",
+     "gain": 0.6
+    },
+    {
+     "at": "tid",
+     "kind": "chalk",
+     "gain": 0.6
+    },
+    {
+     "at": "rule",
+     "kind": "boom"
+    }
+   ]
+  },
+  {
+   "id": "S06",
+   "title": "リボースと2-デオキシリボース",
+   "picture": "五炭糖を2つ並べる（ハース式：環は炭素4つと酸素1つ、1'〜5'の番号）。左がリボース（RNA）、右が2-デオキシリボース（DNA）。「2ダッシュ」で右の2'へ急接近：OHの酸素が弾け飛びHになる。最後に「DNAのD」の筆文字。",
+   "diagram": {
+    "id": "sugar",
+    "title": "リボースと2-デオキシリボース",
+    "note": "スライド18・板書 c-r・c-d・c-d2。β-D-リボフラノース（1'OH上、2'・3'OH下、4'にCH₂OH〔5'〕上）。2-デオキシ体は2'がH"
+   },
+   "lecturer": false,
+   "sources": [
+    {
+     "beat": "c5",
+     "source": "第2講／台詞 c02-0038／スライド18／板書 c-h1・c-r・c-d（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 2,
+      "section": "テーマ2　糖と塩基",
+      "cues": [
+       "c02-0038"
+      ],
+      "mode": "verbatim",
+      "slide": 18,
+      "board": [
+       "c-h1",
+       "c-r",
+       "c-d"
+      ]
+     },
+     "lines": [
+      "核酸の糖は、炭素が五つの五炭糖。",
+      "RNAはリボース、",
+      "DNAは2デオキシリボースです。"
+     ]
+    },
+    {
+     "beat": "deoxy",
+     "source": "第2講／台詞 c02-0039／スライド18／板書 c-d2（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 2,
+      "section": "テーマ2　糖と塩基",
+      "cues": [
+       "c02-0039"
+      ],
+      "mode": "verbatim",
+      "slide": 18,
+      "board": [
+       "c-d2"
+      ]
+     },
+     "lines": [
+      "デオキシ、というのは「酸素が取れた」という意味。",
+      "2ダッシュの位置のヒドロキシ基が、水素になっています。",
+      "DNAのDは、このデオキシのDです。"
+     ]
+    }
+   ],
+   "cams": [
+    {
+     "at": "start",
+     "move": "set",
+     "x": 640,
+     "y": 360,
+     "z": 1,
+     "note": "2つの五炭糖"
+    },
+    {
+     "at": "c5",
+     "move": "push",
+     "x": 640,
+     "y": 370,
+     "z": 1.08,
+     "dur": 2,
+     "note": "炭素の番号が灯る"
+    },
+    {
+     "at": "rib",
+     "move": "push",
+     "x": 360,
+     "y": 380,
+     "z": 1.3,
+     "dur": 0.5,
+     "note": "リボースへ"
+    },
+    {
+     "at": "deo",
+     "move": "whip",
+     "x": 920,
+     "y": 380,
+     "z": 1.3,
+     "dur": 0.25,
+     "note": "2-デオキシリボースへ高速パン"
+    },
+    {
+     "at": "mean",
+     "move": "pull",
+     "x": 640,
+     "y": 360,
+     "z": 1,
+     "dur": 0.5,
+     "note": "並べる"
+    },
+    {
+     "at": "oh",
+     "move": "crash",
+     "x": 960,
+     "y": 480,
+     "z": 2,
+     "dur": 0.22,
+     "hold": 0.3,
+     "note": "「2ダッシュ」の位置へ急接近"
+    },
+    {
+     "at": "dd",
+     "move": "pull",
+     "x": 640,
+     "y": 360,
+     "z": 1,
+     "dur": 0.4,
+     "note": "「DNAのD」で引く"
+    }
+   ],
+   "fx": [
+    {
+     "at": "deo",
+     "kind": "speed",
+     "dur": 0.3,
+     "min": "gekiga"
+    },
+    {
+     "at": "oh",
+     "kind": "impact",
+     "dur": 0.45,
+     "min": "gekiga"
+    },
+    {
+     "at": "oh",
+     "kind": "focus",
+     "dur": 1.2,
+     "min": "gekiga"
+    },
+    {
+     "at": "oh",
+     "kind": "onoma",
+     "text": "パキン",
+     "x": 1090,
+     "y": 160,
+     "dur": 1,
+     "min": "gekiga"
+    },
+    {
+     "at": "dd",
+     "kind": "flash",
+     "dur": 0.3,
+     "min": "gekiga"
+    },
+    {
+     "at": "start",
+     "kind": "tone",
+     "dur": 999,
+     "min": "gekiga"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "c5",
+     "kind": "tick"
+    },
+    {
+     "at": "rib",
+     "kind": "whoosh",
+     "gain": 0.5
+    },
+    {
+     "at": "deo",
+     "kind": "whoosh",
+     "gain": 0.6
+    },
+    {
+     "at": "oh",
+     "kind": "impact"
+    },
+    {
+     "at": "dd",
+     "kind": "boom",
+     "gain": 0.7
+    }
+   ]
+  },
+  {
+   "id": "S07",
+   "title": "プリンとピリミジン、RNAではTの代わりにU",
+   "picture": "窒素（N）を含む環の塩基が5つ。左に環2つのプリン（A・G）、右に環1つのピリミジン（C・T・U）。「チミンの代わりにウラシル」でTとUが前に出て入れ替わり（違いはTの5位のメチル基だけ）、赤で囲む。",
+   "diagram": {
+    "id": "bases",
+    "title": "プリン塩基とピリミジン塩基",
+    "note": "スライド20、板書 c-h2・c-pu・c-py・c-u。環の窒素の位置（プリン N1・N3・N7・N9、ピリミジン N1・N3）、置換基は正しい位置"
+   },
+   "lecturer": false,
+   "sources": [
+    {
+     "beat": "two",
+     "source": "第2講／台詞 c02-0044／スライド20／板書 c-h2（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 2,
+      "section": "テーマ2　糖と塩基",
+      "cues": [
+       "c02-0044"
+      ],
+      "mode": "verbatim",
+      "slide": 20,
+      "board": [
+       "c-h2"
+      ]
+     },
+     "lines": [
+      "次は塩基。",
+      "窒素を含む環状の化合物で、大きく二つに分かれます。"
+     ]
+    },
+    {
+     "beat": "pp",
+     "source": "第2講／台詞 c02-0045／スライド20／板書 c-pu・c-py（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 2,
+      "section": "テーマ2　糖と塩基",
+      "cues": [
+       "c02-0045"
+      ],
+      "mode": "verbatim",
+      "slide": 20,
+      "board": [
+       "c-pu",
+       "c-py"
+      ]
+     },
+     "lines": [
+      "環が二つのプリン。",
+      "アデニンとグアニン。",
+      "環が一つのピリミジン。",
+      "シトシン、チミン、ウラシルです。"
+     ]
+    },
+    {
+     "beat": "tu",
+     "source": "第2講／台詞 c02-0046／スライド20／板書 c-u（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 2,
+      "section": "テーマ2　糖と塩基",
+      "cues": [
+       "c02-0046"
+      ],
+      "mode": "verbatim",
+      "slide": 20,
+      "board": [
+       "c-u"
+      ]
+     },
+     "lines": [
+      "そして重要なのが、",
+      "RNAではチミンの代わりにウラシルが使われる、ということ。"
+     ]
+    },
+    {
+     "beat": "red",
+     "source": "第2講／台詞 c02-0047（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 2,
+      "section": "テーマ2　糖と塩基",
+      "cues": [
+       "c02-0047"
+      ],
+      "mode": "verbatim"
+     },
+     "lines": [
+      "赤で囲んでおきます。",
+      "TとU、試験ではここを入れ替えてきます。"
+     ]
+    }
+   ],
+   "cams": [
+    {
+     "at": "start",
+     "move": "set",
+     "x": 640,
+     "y": 360,
+     "z": 1,
+     "note": "5つの塩基"
+    },
+    {
+     "at": "ring",
+     "move": "push",
+     "x": 640,
+     "y": 360,
+     "z": 1.08,
+     "dur": 2.5,
+     "note": "窒素の位置が光る"
+    },
+    {
+     "at": "pu",
+     "move": "push",
+     "x": 340,
+     "y": 360,
+     "z": 1.35,
+     "dur": 0.5,
+     "note": "プリンへ"
+    },
+    {
+     "at": "py",
+     "move": "whip",
+     "x": 900,
+     "y": 360,
+     "z": 1.3,
+     "dur": 0.25,
+     "note": "ピリミジンへ高速パン"
+    },
+    {
+     "at": "tu",
+     "move": "crash",
+     "x": 900,
+     "y": 420,
+     "z": 1.6,
+     "dur": 0.22,
+     "hold": 0.25,
+     "note": "TとUへ急接近"
+    },
+    {
+     "at": "red",
+     "move": "pull",
+     "x": 640,
+     "y": 380,
+     "z": 1.05,
+     "dur": 0.4,
+     "note": "引く"
+    },
+    {
+     "at": "swap",
+     "move": "push",
+     "x": 900,
+     "y": 420,
+     "z": 1.4,
+     "dur": 0.6,
+     "note": "TとUに寄る"
+    }
+   ],
+   "fx": [
+    {
+     "at": "py",
+     "kind": "speed",
+     "dur": 0.3,
+     "min": "gekiga"
+    },
+    {
+     "at": "tu",
+     "kind": "impact",
+     "dur": 0.45,
+     "min": "gekiga"
+    },
+    {
+     "at": "tu",
+     "kind": "focus",
+     "dur": 1.2,
+     "min": "gekiga"
+    },
+    {
+     "at": "swap",
+     "kind": "shake",
+     "dur": 0.3,
+     "min": "gekiga"
+    },
+    {
+     "at": "swap",
+     "kind": "onoma",
+     "text": "ギラッ",
+     "x": 1100,
+     "y": 150,
+     "dur": 0.9,
+     "min": "ultra"
+    },
+    {
+     "at": "start",
+     "kind": "tone",
+     "dur": 999,
+     "min": "gekiga"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "ring",
+     "kind": "shimmer",
+     "gain": 0.4
+    },
+    {
+     "at": "pu",
+     "kind": "impact",
+     "gain": 0.5
+    },
+    {
+     "at": "py",
+     "kind": "whoosh",
+     "gain": 0.6
+    },
+    {
+     "at": "tu",
+     "kind": "impact"
+    },
+    {
+     "at": "red",
+     "kind": "chalk",
+     "gain": 0.6
+    },
+    {
+     "at": "swap",
+     "kind": "boom",
+     "gain": 0.6
+    }
+   ]
+  },
+  {
+   "id": "S08",
+   "title": "NMP・NDP・NTP、ATP・cAMP・dNTP",
+   "picture": "ヌクレオシドの5'にリン酸が1つ（NMP）→2つ（NDP）→3つ（NTP）と連なる。「ATP」で塩基がAになり、末端のリン酸から光（エネルギーの供給役）。「cAMP」では1つのリン酸が3'と5'をつないで環になる。「dNTP」では2'がHのデオキシ型。",
+   "diagram": {
+    "id": "ntp",
+    "title": "ヌクレオチドの種類",
+    "note": "スライド21：リン酸は1〜3個（3つが多い）、ATP（エネルギー供給）、cAMP（シグナル伝達、リン酸が3'と5'を環状に結ぶ）、DNA用はdNTP"
+   },
+   "lecturer": false,
+   "sources": [
+    {
+     "beat": "n",
+     "source": "第2講／台詞 c02-0052／スライド21（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 2,
+      "section": "テーマ2　糖と塩基",
+      "cues": [
+       "c02-0052"
+      ],
+      "mode": "verbatim",
+      "slide": 21
+     },
+     "lines": [
+      "リン酸が一つならNMP、",
+      "二つならNDP、",
+      "三つならNTP。",
+      "実際には三つ付いたものが多いんです。"
+     ]
+    },
+    {
+     "beat": "atp",
+     "source": "第2講／台詞 c02-0053／スライド21（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 2,
+      "section": "テーマ2　糖と塩基",
+      "cues": [
+       "c02-0053"
+      ],
+      "mode": "verbatim",
+      "slide": 21
+     },
+     "lines": [
+      "体の中で働くヌクレオチドの代表がATP。",
+      "エネルギーの供給役です。"
+     ]
+    },
+    {
+     "beat": "camp",
+     "source": "第2講／台詞 c02-0054／スライド21（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 2,
+      "section": "テーマ2　糖と塩基",
+      "cues": [
+       "c02-0054"
+      ],
+      "mode": "verbatim",
+      "slide": 21
+     },
+     "lines": [
+      "そして、シグナル伝達で働くcAMP。"
+     ]
+    },
+    {
+     "beat": "dntp",
+     "source": "第2講／台詞 c02-0055／スライド21（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 2,
+      "section": "テーマ2　糖と塩基",
+      "cues": [
+       "c02-0055"
+      ],
+      "mode": "verbatim",
+      "slide": 21
+     },
+     "lines": [
+      "DNAの材料になるデオキシのほうは、",
+      "まとめてdNTPと書きます。"
+     ]
+    }
+   ],
+   "cams": [
+    {
+     "at": "start",
+     "move": "set",
+     "x": 640,
+     "y": 360,
+     "z": 1,
+     "note": "ヌクレオシド"
+    },
+    {
+     "at": "nmp",
+     "move": "push",
+     "x": 520,
+     "y": 380,
+     "z": 1.2,
+     "dur": 1,
+     "note": "リン酸が付く所へ"
+    },
+    {
+     "at": "ntp",
+     "move": "crash",
+     "x": 480,
+     "y": 380,
+     "z": 1.35,
+     "dur": 0.2,
+     "hold": 0.2,
+     "note": "3つ目で急接近"
+    },
+    {
+     "at": "many",
+     "move": "pull",
+     "x": 640,
+     "y": 360,
+     "z": 1,
+     "dur": 0.5,
+     "note": "引く"
+    },
+    {
+     "at": "energy",
+     "move": "push",
+     "x": 330,
+     "y": 380,
+     "z": 1.3,
+     "dur": 0.5,
+     "note": "末端のリン酸の光"
+    },
+    {
+     "at": "camp",
+     "move": "whip",
+     "x": 640,
+     "y": 360,
+     "z": 1,
+     "dur": 0.3,
+     "note": "cAMPへ"
+    },
+    {
+     "at": "dntp",
+     "move": "push",
+     "x": 700,
+     "y": 400,
+     "z": 1.15,
+     "dur": 0.6,
+     "note": "2'のHへ"
+    }
+   ],
+   "fx": [
+    {
+     "at": "ntp",
+     "kind": "impact",
+     "dur": 0.35,
+     "min": "gekiga"
+    },
+    {
+     "at": "energy",
+     "kind": "flash",
+     "dur": 0.3,
+     "min": "gekiga"
+    },
+    {
+     "at": "energy",
+     "kind": "onoma",
+     "text": "バチッ",
+     "x": 260,
+     "y": 170,
+     "dur": 0.9,
+     "min": "gekiga"
+    },
+    {
+     "at": "camp",
+     "kind": "speed",
+     "dur": 0.3,
+     "min": "gekiga"
+    },
+    {
+     "at": "dntp",
+     "kind": "focus",
+     "dur": 0.9,
+     "min": "gekiga"
+    },
+    {
+     "at": "start",
+     "kind": "tone",
+     "dur": 999,
+     "min": "gekiga"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "nmp",
+     "kind": "tick"
+    },
+    {
+     "at": "ndp",
+     "kind": "tick"
+    },
+    {
+     "at": "ntp",
+     "kind": "impact",
+     "gain": 0.7
+    },
+    {
+     "at": "energy",
+     "kind": "boom",
+     "gain": 0.6
+    },
+    {
+     "at": "camp",
+     "kind": "whoosh"
+    },
+    {
+     "at": "dntp",
+     "kind": "impact",
+     "gain": 0.6
+    }
+   ]
+  },
+  {
+   "id": "S09",
+   "title": "黒板：DNAの2本の鎖",
+   "picture": "黒板に2本の縦の鎖。左にA・T・G・C、右にその相手T・A・C・G（板書 lad）。左は上から下へ5'→3'、右は下から上：矢印が逆向きに走る。",
+   "diagram": {
+    "id": "board-ladder",
+    "title": "板書：2本鎖",
+    "note": "第2講の黒板 lad、c02-0057・0058・0061"
+   },
+   "lecturer": true,
+   "sources": [
+    {
+     "beat": "form",
+     "source": "第2講／台詞 c02-0056（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 2,
+      "section": "テーマ3　二重らせん",
+      "cues": [
+       "c02-0056"
+      ],
+      "mode": "verbatim"
+     },
+     "lines": [
+      "では、いよいよDNAの形です。"
+     ]
+    },
+    {
+     "beat": "left",
+     "source": "第2講／台詞 c02-0057／板書 lad（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 2,
+      "section": "テーマ3　二重らせん",
+      "cues": [
+       "c02-0057"
+      ],
+      "mode": "verbatim",
+      "board": [
+       "lad"
+      ]
+     },
+     "lines": [
+      "黒板に、DNAの二本の鎖を書いてみます。",
+      "左の鎖にA、T、G、C。"
+     ]
+    },
+    {
+     "beat": "right",
+     "source": "第2講／台詞 c02-0058（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 2,
+      "section": "テーマ3　二重らせん",
+      "cues": [
+       "c02-0058"
+      ],
+      "mode": "verbatim"
+     },
+     "lines": [
+      "右の鎖には、それぞれの相手が来ます。",
+      "AにはT、TにはA、GにはC、CにはG。"
+     ]
+    },
+    {
+     "beat": "anti",
+     "source": "第2講／台詞 c02-0061（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 2,
+      "section": "テーマ3　二重らせん",
+      "cues": [
+       "c02-0061"
+      ],
+      "mode": "verbatim"
+     },
+     "lines": [
+      "左の鎖は上から下へ5ダッシュ、3ダッシュ。",
+      "右の鎖は下から上。",
+      "向きが逆になっていますね。"
+     ]
+    }
+   ],
+   "cams": [
+    {
+     "at": "start",
+     "move": "set",
+     "x": 560,
+     "y": 360,
+     "z": 1,
+     "note": "黒板"
+    },
+    {
+     "at": "write",
+     "move": "push",
+     "x": 520,
+     "y": 360,
+     "z": 1.15,
+     "dur": 3,
+     "note": "鎖が書かれていく"
+    },
+    {
+     "at": "pairs",
+     "move": "push",
+     "x": 520,
+     "y": 380,
+     "z": 1.3,
+     "dur": 1.5,
+     "note": "相手の塩基へ"
+    },
+    {
+     "at": "l53",
+     "move": "pan",
+     "x": 420,
+     "y": 380,
+     "z": 1.3,
+     "dur": 0.6,
+     "note": "左の鎖"
+    },
+    {
+     "at": "r53",
+     "move": "whip",
+     "x": 640,
+     "y": 380,
+     "z": 1.3,
+     "dur": 0.25,
+     "note": "右の鎖"
+    },
+    {
+     "at": "rev",
+     "move": "crash",
+     "x": 530,
+     "y": 360,
+     "z": 1.15,
+     "dur": 0.22,
+     "hold": 0.25,
+     "note": "「逆」で急接近"
+    }
+   ],
+   "fx": [
+    {
+     "at": "r53",
+     "kind": "speed",
+     "dur": 0.3,
+     "min": "gekiga"
+    },
+    {
+     "at": "rev",
+     "kind": "impact",
+     "dur": 0.45,
+     "min": "gekiga"
+    },
+    {
+     "at": "rev",
+     "kind": "focus",
+     "dur": 1,
+     "min": "gekiga"
+    },
+    {
+     "at": "start",
+     "kind": "tone",
+     "dur": 999,
+     "min": "gekiga"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "write",
+     "kind": "chalk",
+     "gain": 0.6
+    },
+    {
+     "at": "atgc",
+     "kind": "chalk",
+     "gain": 0.5
+    },
+    {
+     "at": "pairs",
+     "kind": "chalk",
+     "gain": 0.5
+    },
+    {
+     "at": "l53",
+     "kind": "whoosh",
+     "gain": 0.5
+    },
+    {
+     "at": "r53",
+     "kind": "whoosh",
+     "gain": 0.5
+    },
+    {
+     "at": "rev",
+     "kind": "impact"
+    }
+   ]
+  },
+  {
+   "id": "S10",
+   "title": "DNAの二重らせん：幅2 nm・1回転3.4 nm",
+   "picture": "縦に立つ右巻きの二重らせんがゆっくり回る。黄色と青の骨格（糖とリン酸）、内側の横棒が塩基対。「幅」で横に2 nmの寸法線、「一回転」で縦に3.4 nm（10塩基対）の寸法線が走る。",
+   "diagram": {
+    "id": "dna-helix",
+    "title": "B型DNAの二重らせん",
+    "note": "c02-0063・0064、板書 r5：幅2 nm、1回転3.4 nm（10塩基対）。右巻き、主溝と副溝"
+   },
+   "lecturer": false,
+   "sources": [
+    {
+     "beat": "this",
+     "source": "第2講／台詞 c02-0063（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 2,
+      "section": "テーマ3　二重らせん",
+      "cues": [
+       "c02-0063"
+      ],
+      "mode": "verbatim"
+     },
+     "lines": [
+      "これがDNAの二重らせんです。",
+      "黄色と青が、糖とリン酸の骨格。",
+      "内側の横棒が塩基対です。"
+     ]
+    },
+    {
+     "beat": "size",
+     "source": "第2講／台詞 c02-0064／板書 r5（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 2,
+      "section": "テーマ3　二重らせん",
+      "cues": [
+       "c02-0064"
+      ],
+      "mode": "verbatim",
+      "board": [
+       "r5"
+      ]
+     },
+     "lines": [
+      "らせんの幅は約2ナノメートル。",
+      "一回転で3.4ナノメートル進みます。"
+     ]
+    }
+   ],
+   "cams": [
+    {
+     "at": "start",
+     "move": "set",
+     "x": 640,
+     "y": 360,
+     "z": 1.15,
+     "note": "らせんの大写し"
+    },
+    {
+     "at": "start",
+     "move": "pull",
+     "x": 640,
+     "y": 360,
+     "z": 1,
+     "dur": 2.2,
+     "note": "引いて全体"
+    },
+    {
+     "at": "bb",
+     "move": "push",
+     "x": 560,
+     "y": 330,
+     "z": 1.4,
+     "dur": 0.6,
+     "note": "骨格へ"
+    },
+    {
+     "at": "bp",
+     "move": "pan",
+     "x": 640,
+     "y": 360,
+     "z": 1.4,
+     "dur": 0.5,
+     "note": "塩基対へ"
+    },
+    {
+     "at": "w",
+     "move": "pull",
+     "x": 640,
+     "y": 360,
+     "z": 1,
+     "dur": 0.4,
+     "note": "幅の寸法線"
+    },
+    {
+     "at": "pitch",
+     "move": "push",
+     "x": 700,
+     "y": 360,
+     "z": 1.1,
+     "dur": 1,
+     "note": "1回転の寸法線"
+    }
+   ],
+   "fx": [
+    {
+     "at": "this",
+     "kind": "impact",
+     "dur": 0.45,
+     "min": "gekiga"
+    },
+    {
+     "at": "this",
+     "kind": "focus",
+     "dur": 1,
+     "min": "gekiga"
+    },
+    {
+     "at": "w",
+     "kind": "speed",
+     "dur": 0.3,
+     "min": "ultra"
+    },
+    {
+     "at": "pitch",
+     "kind": "impact",
+     "dur": 0.35,
+     "min": "gekiga"
+    },
+    {
+     "at": "start",
+     "kind": "tone",
+     "dur": 999,
+     "min": "gekiga"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "this",
+     "kind": "boom",
+     "gain": 0.7
+    },
+    {
+     "at": "bb",
+     "kind": "shimmer",
+     "gain": 0.4
+    },
+    {
+     "at": "w",
+     "kind": "tick"
+    },
+    {
+     "at": "pitch",
+     "kind": "tick"
+    },
+    {
+     "at": "pitch+0.4",
+     "kind": "impact",
+     "gain": 0.5
+    }
+   ]
+  },
+  {
+   "id": "S11",
+   "title": "ほどくと、逆平行のはしご",
+   "picture": "横たわった二重らせんがほどけ、平らなはしごになる。上の鎖に左→右の矢印「5'→3'」、下の鎖に右→左の矢印。「逆平行」の筆文字。",
+   "diagram": {
+    "id": "ladder",
+    "title": "逆平行の2本鎖",
+    "note": "c02-0065・0066、板書 r2"
+   },
+   "lecturer": false,
+   "sources": [
+    {
+     "beat": "flat",
+     "source": "第2講／台詞 c02-0065（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 2,
+      "section": "テーマ3　二重らせん",
+      "cues": [
+       "c02-0065"
+      ],
+      "mode": "verbatim"
+     },
+     "lines": [
+      "ほどいて、平らにしてみます。",
+      "はしごのような形になりました。"
+     ]
+    },
+    {
+     "beat": "dir",
+     "source": "第2講／台詞 c02-0066／板書 r2（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 2,
+      "section": "テーマ3　二重らせん",
+      "cues": [
+       "c02-0066"
+      ],
+      "mode": "verbatim",
+      "board": [
+       "r2"
+      ]
+     },
+     "lines": [
+      "上の鎖は左から右へ5ダッシュ、3ダッシュ。",
+      "下の鎖はその逆。",
+      "二本の鎖は逆向き、逆平行です。"
+     ]
+    }
+   ],
+   "cams": [
+    {
+     "at": "start",
+     "move": "set",
+     "x": 640,
+     "y": 360,
+     "z": 1,
+     "note": "横たわるらせん"
+    },
+    {
+     "at": "flat",
+     "move": "push",
+     "x": 640,
+     "y": 360,
+     "z": 1.1,
+     "dur": 2.5,
+     "note": "ほどける"
+    },
+    {
+     "at": "top",
+     "move": "pan",
+     "x": 700,
+     "y": 280,
+     "z": 1.25,
+     "dur": 1.6,
+     "note": "上の鎖に沿って右へ"
+    },
+    {
+     "at": "bot",
+     "move": "whip",
+     "x": 580,
+     "y": 440,
+     "z": 1.25,
+     "dur": 0.25,
+     "note": "下の鎖"
+    },
+    {
+     "at": "anti",
+     "move": "crash",
+     "x": 640,
+     "y": 360,
+     "z": 1.15,
+     "dur": 0.22,
+     "hold": 0.25,
+     "note": "「逆平行」で急接近"
+    }
+   ],
+   "fx": [
+    {
+     "at": "flat",
+     "kind": "speed",
+     "dur": 0.5,
+     "min": "ultra"
+    },
+    {
+     "at": "bot",
+     "kind": "speed",
+     "dur": 0.3,
+     "min": "gekiga"
+    },
+    {
+     "at": "anti",
+     "kind": "impact",
+     "dur": 0.5,
+     "min": "gekiga"
+    },
+    {
+     "at": "anti",
+     "kind": "focus",
+     "dur": 1.2,
+     "min": "gekiga"
+    },
+    {
+     "at": "anti",
+     "kind": "onoma",
+     "text": "ズバッ",
+     "x": 1080,
+     "y": 150,
+     "dur": 0.9,
+     "min": "ultra"
+    },
+    {
+     "at": "start",
+     "kind": "tone",
+     "dur": 999,
+     "min": "gekiga"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "flat",
+     "kind": "riser",
+     "gain": 0.5
+    },
+    {
+     "at": "ladder",
+     "kind": "impact",
+     "gain": 0.5
+    },
+    {
+     "at": "top",
+     "kind": "whoosh",
+     "gain": 0.5
+    },
+    {
+     "at": "bot",
+     "kind": "whoosh",
+     "gain": 0.6
+    },
+    {
+     "at": "anti",
+     "kind": "boom"
+    }
+   ]
+  },
+  {
+   "id": "S12",
+   "title": "塩基対：A=T は2本、G≡C は3本の水素結合",
+   "picture": "塩基対の大写し。上にアデニン–チミン（水素結合2本の点線）、下にグアニン–シトシン（3本）。原子の位置どおり（A N6–H…O4 T、A N1…H–N3 T／G O6…H–N4 C、G N1–H…N3 C、G N2–H…O2 C）。「幅」で両方の対の糖の付け根の間に同じ長さの寸法線（1.08 nm）。",
+   "diagram": {
+    "id": "basepair",
+    "title": "ワトソン・クリック型塩基対",
+    "note": "c02-0067・0068、板書 r1。プリン（環2つ）とピリミジン（環1つ）が必ず組み、対の幅がそろう"
+   },
+   "lecturer": false,
+   "sources": [
+    {
+     "beat": "hb",
+     "source": "第2講／台詞 c02-0067／板書 r1（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 2,
+      "section": "テーマ3　二重らせん",
+      "cues": [
+       "c02-0067"
+      ],
+      "mode": "verbatim",
+      "board": [
+       "r1"
+      ]
+     },
+     "lines": [
+      "塩基対に寄ってみましょう。",
+      "アデニンとチミンは、水素結合が2本。",
+      "グアニンとシトシンは、3本です。"
+     ]
+    },
+    {
+     "beat": "width",
+     "source": "第2講／台詞 c02-0068（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 2,
+      "section": "テーマ3　二重らせん",
+      "cues": [
+       "c02-0068"
+      ],
+      "mode": "verbatim"
+     },
+     "lines": [
+      "プリンは環が二つ、ピリミジンは環が一つ。",
+      "必ずプリンとピリミジンが組むので、",
+      "塩基対の幅はどれも1.08ナノメートルにそろいます。"
+     ]
+    }
+   ],
+   "cams": [
+    {
+     "at": "start",
+     "move": "set",
+     "x": 640,
+     "y": 360,
+     "z": 0.8,
+     "note": "はしごの全景から"
+    },
+    {
+     "at": "zoom",
+     "move": "push",
+     "x": 640,
+     "y": 360,
+     "z": 1,
+     "dur": 1,
+     "note": "塩基対へ寄る"
+    },
+    {
+     "at": "at",
+     "move": "push",
+     "x": 640,
+     "y": 230,
+     "z": 1.45,
+     "dur": 0.5,
+     "note": "A–T"
+    },
+    {
+     "at": "gc",
+     "move": "whip",
+     "x": 640,
+     "y": 500,
+     "z": 1.45,
+     "dur": 0.25,
+     "note": "G–Cへ高速パン"
+    },
+    {
+     "at": "rings",
+     "move": "pull",
+     "x": 640,
+     "y": 360,
+     "z": 1,
+     "dur": 0.5,
+     "note": "並べる"
+    },
+    {
+     "at": "same",
+     "move": "crash",
+     "x": 640,
+     "y": 380,
+     "z": 1.12,
+     "dur": 0.22,
+     "hold": 0.25,
+     "note": "「そろいます」で急接近"
+    }
+   ],
+   "fx": [
+    {
+     "at": "at",
+     "kind": "focus",
+     "dur": 0.9,
+     "min": "gekiga"
+    },
+    {
+     "at": "gc",
+     "kind": "speed",
+     "dur": 0.3,
+     "min": "gekiga"
+    },
+    {
+     "at": "gc",
+     "kind": "impact",
+     "dur": 0.4,
+     "min": "gekiga"
+    },
+    {
+     "at": "same",
+     "kind": "impact",
+     "dur": 0.45,
+     "min": "gekiga"
+    },
+    {
+     "at": "gc",
+     "kind": "onoma",
+     "text": "ガチッ",
+     "x": 1100,
+     "y": 600,
+     "dur": 0.9,
+     "min": "ultra"
+    },
+    {
+     "at": "start",
+     "kind": "tone",
+     "dur": 999,
+     "min": "gekiga"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "zoom",
+     "kind": "whoosh",
+     "gain": 0.5
+    },
+    {
+     "at": "at",
+     "kind": "tick"
+    },
+    {
+     "at": "at+0.3",
+     "kind": "tick"
+    },
+    {
+     "at": "gc",
+     "kind": "tick"
+    },
+    {
+     "at": "gc+0.25",
+     "kind": "tick"
+    },
+    {
+     "at": "gc+0.5",
+     "kind": "tick"
+    },
+    {
+     "at": "same",
+     "kind": "impact"
+    }
+   ]
+  },
+  {
+   "id": "S13",
+   "title": "骨格：ホスホジエステル結合、5'→3'",
+   "picture": "縦に並ぶ3つのヌクレオチド。糖の3'炭素から酸素・リン酸・酸素を経て、次の糖の5'炭素へ。その鎖が光り「ホスホジエステル結合」。最後に下（3'末端）へ新しいヌクレオチドが加わり、5'→3'の矢印。",
+   "diagram": {
+    "id": "backbone",
+    "title": "ホスホジエステル結合",
+    "note": "c02-0069・0070、板書 r3・c-ph3：3'炭素―次の5'リン酸"
+   },
+   "lecturer": false,
+   "sources": [
+    {
+     "beat": "link",
+     "source": "第2講／台詞 c02-0069／板書 r3（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 2,
+      "section": "テーマ3　二重らせん",
+      "cues": [
+       "c02-0069"
+      ],
+      "mode": "verbatim",
+      "board": [
+       "r3"
+      ]
+     },
+     "lines": [
+      "最後に骨格。",
+      "3ダッシュの炭素と、次の5ダッシュのリン酸がつながっていく。",
+      "これがホスホジエステル結合です。"
+     ]
+    },
+    {
+     "beat": "grow",
+     "source": "第2講／台詞 c02-0070（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 2,
+      "section": "テーマ3　二重らせん",
+      "cues": [
+       "c02-0070"
+      ],
+      "mode": "verbatim"
+     },
+     "lines": [
+      "鎖は、5ダッシュから3ダッシュの方向へ伸びていきます。"
+     ]
+    }
+   ],
+   "cams": [
+    {
+     "at": "start",
+     "move": "set",
+     "x": 640,
+     "y": 360,
+     "z": 1,
+     "note": "3つのヌクレオチド"
+    },
+    {
+     "at": "link",
+     "move": "push",
+     "x": 560,
+     "y": 340,
+     "z": 1.45,
+     "dur": 0.8,
+     "note": "3'炭素→リン酸→5'炭素"
+    },
+    {
+     "at": "pde",
+     "move": "crash",
+     "x": 700,
+     "y": 330,
+     "z": 1.12,
+     "dur": 0.22,
+     "hold": 0.25,
+     "note": "「ホスホジエステル結合」で急接近"
+    },
+    {
+     "at": "grow",
+     "move": "pan",
+     "x": 640,
+     "y": 470,
+     "z": 1.05,
+     "dur": 2,
+     "note": "下へ伸びる"
+    }
+   ],
+   "fx": [
+    {
+     "at": "pde",
+     "kind": "impact",
+     "dur": 0.45,
+     "min": "gekiga"
+    },
+    {
+     "at": "pde",
+     "kind": "focus",
+     "dur": 1.1,
+     "min": "gekiga"
+    },
+    {
+     "at": "grow",
+     "kind": "speed",
+     "dur": 0.4,
+     "min": "gekiga"
+    },
+    {
+     "at": "start",
+     "kind": "tone",
+     "dur": 999,
+     "min": "gekiga"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "link",
+     "kind": "riser",
+     "gain": 0.4
+    },
+    {
+     "at": "pde",
+     "kind": "boom",
+     "gain": 0.7
+    },
+    {
+     "at": "grow",
+     "kind": "whoosh"
+    },
+    {
+     "at": "grow+1.2",
+     "kind": "impact",
+     "gain": 0.5
+    }
+   ]
+  },
+  {
+   "id": "S14",
+   "title": "試験ポイント",
+   "picture": "黒板の右に「試験ポイント」。A=T（2本）・G≡C（3本）を赤で二重に囲み、逆向き・鎖の中はホスホジエステル結合・鎖の間は水素結合・幅2 nm／1回転3.4 nm（板書 r-h・r1〜r5）。",
+   "diagram": {
+    "id": "board-exam",
+    "title": "板書：試験ポイント",
+    "note": "第2講の黒板 r-h・r1〜r5、c02-0072〜0074"
+   },
+   "lecturer": true,
+   "sources": [
+    {
+     "beat": "n",
+     "source": "第2講／台詞 c02-0072／板書 r-h・r1（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 2,
+      "section": "テーマ3　二重らせん",
+      "cues": [
+       "c02-0072"
+      ],
+      "mode": "verbatim",
+      "board": [
+       "r-h",
+       "r1"
+      ]
+     },
+     "lines": [
+      "まず、水素結合の本数。",
+      "A=Tは2本、G≡Cは3本。",
+      "ここ、非常によく問われます。"
+     ]
+    },
+    {
+     "beat": "kinds",
+     "source": "第2講／台詞 c02-0073／板書 r2・r3・r4（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 2,
+      "section": "テーマ3　二重らせん",
+      "cues": [
+       "c02-0073"
+      ],
+      "mode": "verbatim",
+      "board": [
+       "r2",
+       "r3",
+       "r4"
+      ]
+     },
+     "lines": [
+      "二本の鎖は逆向き。",
+      "鎖の中はホスホジエステル結合、",
+      "鎖と鎖の間は水素結合。",
+      "結合の種類を入れ替えた選択肢に注意してください。"
+     ]
+    },
+    {
+     "beat": "num",
+     "source": "第2講／台詞 c02-0074／板書 r5（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 2,
+      "section": "テーマ3　二重らせん",
+      "cues": [
+       "c02-0074"
+      ],
+      "mode": "verbatim",
+      "board": [
+       "r5"
+      ]
+     },
+     "lines": [
+      "数字では、幅2ナノメートル、一回転3.4ナノメートル。"
+     ]
+    }
+   ],
+   "cams": [
+    {
+     "at": "start",
+     "move": "set",
+     "x": 560,
+     "y": 300,
+     "z": 1,
+     "note": "試験ポイント"
+    },
+    {
+     "at": "n23",
+     "move": "crash",
+     "x": 480,
+     "y": 120,
+     "z": 1.6,
+     "dur": 0.22,
+     "hold": 0.25,
+     "note": "A=T・G≡Cで急接近"
+    },
+    {
+     "at": "rev",
+     "move": "pan",
+     "x": 480,
+     "y": 210,
+     "z": 1.35,
+     "dur": 0.5,
+     "note": "逆向き"
+    },
+    {
+     "at": "in",
+     "move": "pan",
+     "x": 480,
+     "y": 280,
+     "z": 1.35,
+     "dur": 0.5,
+     "note": "鎖の中"
+    },
+    {
+     "at": "between",
+     "move": "pan",
+     "x": 400,
+     "y": 340,
+     "z": 1.35,
+     "dur": 0.4,
+     "note": "鎖の間"
+    },
+    {
+     "at": "care",
+     "move": "pull",
+     "x": 560,
+     "y": 300,
+     "z": 1,
+     "dur": 0.5,
+     "note": "並べる"
+    },
+    {
+     "at": "num",
+     "move": "push",
+     "x": 520,
+     "y": 460,
+     "z": 1.3,
+     "dur": 0.6,
+     "note": "数字"
+    }
+   ],
+   "fx": [
+    {
+     "at": "n23",
+     "kind": "impact",
+     "dur": 0.45,
+     "min": "gekiga"
+    },
+    {
+     "at": "n23",
+     "kind": "focus",
+     "dur": 1,
+     "min": "gekiga"
+    },
+    {
+     "at": "care",
+     "kind": "shake",
+     "dur": 0.3,
+     "min": "gekiga"
+    },
+    {
+     "at": "care",
+     "kind": "onoma",
+     "text": "ギクッ",
+     "x": 1100,
+     "y": 160,
+     "dur": 0.9,
+     "min": "ultra"
+    },
+    {
+     "at": "start",
+     "kind": "tone",
+     "dur": 999,
+     "min": "gekiga"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "n",
+     "kind": "chalk",
+     "gain": 0.5
+    },
+    {
+     "at": "n23",
+     "kind": "impact"
+    },
+    {
+     "at": "rev",
+     "kind": "chalk",
+     "gain": 0.5
+    },
+    {
+     "at": "in",
+     "kind": "chalk",
+     "gain": 0.5
+    },
+    {
+     "at": "between",
+     "kind": "chalk",
+     "gain": 0.5
+    },
+    {
+     "at": "num",
+     "kind": "chalk",
+     "gain": 0.5
+    }
+   ]
+  },
+  {
+   "id": "S15",
+   "title": "G-C対が多いほど引き離しにくい",
+   "picture": "2本のDNAを左右から引っ張る綱引き。上はG-C対が多いDNA（横棒に水素結合3本）、下はA-T対が多いDNA（2本）。同じ力で引くと、下のA-Tの多い鎖のほうが先にほどけ、上はこらえる。「引き離しにくく」で上のDNAが光る。",
+   "diagram": {
+    "id": "tug",
+    "title": "塩基対の種類と二本鎖の結びつき",
+    "note": "c02-0076・0079・0084。G-C対は水素結合3本、A-T対は2本"
+   },
+   "lecturer": false,
+   "sources": [
+    {
+     "beat": "q",
+     "source": "第2講／台詞 c02-0076（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 2,
+      "section": "テーマ3　二重らせん",
+      "cues": [
+       "c02-0076"
+      ],
+      "mode": "verbatim"
+     },
+     "lines": [
+      "G-C対が多いDNAと、A-T対が多いDNA。",
+      "二本鎖を引き離すのに、",
+      "より大きなエネルギーが必要なのはどちらでしょう。"
+     ]
+    },
+    {
+     "beat": "a",
+     "source": "第2講／台詞 c02-0079（原文の一部）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 2,
+      "section": "テーマ3　二重らせん",
+      "cues": [
+       "c02-0079"
+      ],
+      "mode": "trimmed"
+     },
+     "lines": [
+      "G-C対は水素結合が3本、A-T対は2本。",
+      "G-C対が多いほど水素結合の総数が多いので、",
+      "引き離しにくくなります。"
+     ]
+    },
+    {
+     "beat": "think",
+     "source": "第2講／台詞 c02-0084（原文の一部）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 2,
+      "section": "テーマ3　二重らせん",
+      "cues": [
+       "c02-0084"
+      ],
+      "mode": "trimmed"
+     },
+     "lines": [
+      "本数の暗記で終わらせずに、「だからどうなるか」まで考える。"
+     ]
+    }
+   ],
+   "cams": [
+    {
+     "at": "start",
+     "move": "set",
+     "x": 640,
+     "y": 360,
+     "z": 1,
+     "note": "2本のDNA"
+    },
+    {
+     "at": "pull",
+     "move": "push",
+     "x": 640,
+     "y": 360,
+     "z": 1.1,
+     "dur": 1.5,
+     "note": "綱引きが始まる"
+    },
+    {
+     "at": "which",
+     "move": "crash",
+     "x": 640,
+     "y": 360,
+     "z": 1.2,
+     "dur": 0.22,
+     "hold": 0.3,
+     "note": "「どちら」で急接近"
+    },
+    {
+     "at": "ans",
+     "move": "pull",
+     "x": 640,
+     "y": 360,
+     "z": 1,
+     "dur": 0.4,
+     "note": "本数"
+    },
+    {
+     "at": "total",
+     "move": "push",
+     "x": 640,
+     "y": 470,
+     "z": 1.3,
+     "dur": 0.8,
+     "note": "A-Tの鎖がほどける"
+    },
+    {
+     "at": "hard",
+     "move": "whip",
+     "x": 640,
+     "y": 230,
+     "z": 1.3,
+     "dur": 0.25,
+     "note": "G-Cの鎖はこらえる"
+    },
+    {
+     "at": "think",
+     "move": "pull",
+     "x": 640,
+     "y": 360,
+     "z": 1,
+     "dur": 0.5,
+     "note": "引く"
+    }
+   ],
+   "fx": [
+    {
+     "at": "which",
+     "kind": "focus",
+     "dur": 1.3,
+     "min": "gekiga"
+    },
+    {
+     "at": "which",
+     "kind": "impact",
+     "dur": 0.45,
+     "min": "gekiga"
+    },
+    {
+     "at": "total",
+     "kind": "shake",
+     "dur": 0.5,
+     "min": "gekiga"
+    },
+    {
+     "at": "total",
+     "kind": "onoma",
+     "text": "ブチッ",
+     "x": 1080,
+     "y": 560,
+     "dur": 0.9,
+     "min": "gekiga"
+    },
+    {
+     "at": "hard",
+     "kind": "impact",
+     "dur": 0.4,
+     "min": "gekiga"
+    },
+    {
+     "at": "hard",
+     "kind": "onoma",
+     "text": "ググッ",
+     "x": 1080,
+     "y": 150,
+     "dur": 1,
+     "min": "ultra"
+    },
+    {
+     "at": "start",
+     "kind": "tone",
+     "dur": 999,
+     "min": "gekiga"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "pull",
+     "kind": "riser",
+     "gain": 0.6
+    },
+    {
+     "at": "which",
+     "kind": "boom"
+    },
+    {
+     "at": "total",
+     "kind": "impact"
+    },
+    {
+     "at": "hard",
+     "kind": "impact"
+    },
+    {
+     "at": "think",
+     "kind": "shimmer",
+     "gain": 0.4
+    }
+   ]
+  },
+  {
+   "id": "S16",
+   "title": "核酸の代謝：ピリミジン→NH₃＋CO₂、プリン→尿酸",
+   "picture": "食事の核酸（ヌクレオチドの鎖）が小腸に入り、ペントースリン酸と塩基に切り分けられる。塩基は2つの道へ：環1つのピリミジンはNH₃とCO₂へ、環2つのプリンは尿酸の結晶へ。",
+   "diagram": {
+    "id": "digest",
+    "title": "ヌクレオチド（核酸）の代謝",
+    "note": "スライド22、c02-0086〜0088"
+   },
+   "lecturer": false,
+   "sources": [
+    {
+     "beat": "food",
+     "source": "第2講／台詞 c02-0086／スライド22（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 2,
+      "section": "テーマ4　核酸の代謝と臨床",
+      "cues": [
+       "c02-0086"
+      ],
+      "mode": "verbatim",
+      "slide": 22
+     },
+     "lines": [
+      "食事でとった核酸は、",
+      "小腸でペントースリン酸と塩基に分解されます。"
+     ]
+    },
+    {
+     "beat": "py",
+     "source": "第2講／台詞 c02-0087／スライド22（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 2,
+      "section": "テーマ4　核酸の代謝と臨床",
+      "cues": [
+       "c02-0087"
+      ],
+      "mode": "verbatim",
+      "slide": 22
+     },
+     "lines": [
+      "吸収されたピリミジン塩基は、アンモニアと二酸化炭素に代謝されます。"
+     ]
+    },
+    {
+     "beat": "pu",
+     "source": "第2講／台詞 c02-0088／スライド22（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 2,
+      "section": "テーマ4　核酸の代謝と臨床",
+      "cues": [
+       "c02-0088"
+      ],
+      "mode": "verbatim",
+      "slide": 22
+     },
+     "lines": [
+      "一方、プリン塩基は、",
+      "尿酸として排泄されます。"
+     ]
+    }
+   ],
+   "cams": [
+    {
+     "at": "start",
+     "move": "set",
+     "x": 420,
+     "y": 360,
+     "z": 1.15,
+     "note": "食事の核酸"
+    },
+    {
+     "at": "split",
+     "move": "pan",
+     "x": 560,
+     "y": 360,
+     "z": 1.1,
+     "dur": 1.2,
+     "note": "小腸で切り分け"
+    },
+    {
+     "at": "py",
+     "move": "push",
+     "x": 900,
+     "y": 230,
+     "z": 1.3,
+     "dur": 0.6,
+     "note": "ピリミジンの道"
+    },
+    {
+     "at": "pu",
+     "move": "whip",
+     "x": 900,
+     "y": 500,
+     "z": 1.3,
+     "dur": 0.25,
+     "note": "プリンの道へ高速パン"
+    },
+    {
+     "at": "ua",
+     "move": "crash",
+     "x": 1040,
+     "y": 500,
+     "z": 1.6,
+     "dur": 0.22,
+     "hold": 0.25,
+     "note": "「尿酸」で急接近"
+    }
+   ],
+   "fx": [
+    {
+     "at": "split",
+     "kind": "impact",
+     "dur": 0.35,
+     "min": "gekiga"
+    },
+    {
+     "at": "pu",
+     "kind": "speed",
+     "dur": 0.3,
+     "min": "gekiga"
+    },
+    {
+     "at": "ua",
+     "kind": "impact",
+     "dur": 0.45,
+     "min": "gekiga"
+    },
+    {
+     "at": "ua",
+     "kind": "focus",
+     "dur": 1,
+     "min": "gekiga"
+    },
+    {
+     "at": "start",
+     "kind": "tone",
+     "dur": 999,
+     "min": "gekiga"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "food",
+     "kind": "whoosh",
+     "gain": 0.5
+    },
+    {
+     "at": "split",
+     "kind": "impact",
+     "gain": 0.7
+    },
+    {
+     "at": "py",
+     "kind": "shimmer",
+     "gain": 0.4
+    },
+    {
+     "at": "pu",
+     "kind": "whoosh",
+     "gain": 0.6
+    },
+    {
+     "at": "ua",
+     "kind": "boom",
+     "gain": 0.7
+    }
+   ]
+  },
+  {
+   "id": "S17",
+   "title": "尿酸 → 痛風／食べた核酸はそのまま使わない",
+   "picture": "足の側面図。血中の尿酸の粒が増え、親指の付け根の関節に針状の結晶が沈着し、関節が赤く脈打つ（痛風）。人物の顔は描かない。続いて、食べた核酸の鎖が「自分のDNA・RNA」へ直接は入れず✕、小さな材料から新しく合成される。",
+   "diagram": {
+    "id": "gout",
+    "title": "尿酸と痛風、核酸は新しく合成する",
+    "note": "スライド22、c02-0089・0090"
+   },
+   "lecturer": false,
+   "sources": [
+    {
+     "beat": "gout",
+     "source": "第2講／台詞 c02-0089／スライド22（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 2,
+      "section": "テーマ4　核酸の代謝と臨床",
+      "cues": [
+       "c02-0089"
+      ],
+      "mode": "verbatim",
+      "slide": 22
+     },
+     "lines": [
+      "尿酸は関節に沈着しやすいので、",
+      "血中の尿酸値が高いと、",
+      "関節炎を起こす痛風の原因になります。"
+     ]
+    },
+    {
+     "beat": "new",
+     "source": "第2講／台詞 c02-0090／スライド22／板書 r8（原文の一部）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 2,
+      "section": "テーマ4　核酸の代謝と臨床",
+      "cues": [
+       "c02-0090"
+      ],
+      "mode": "trimmed",
+      "slide": 22,
+      "board": [
+       "r8"
+      ]
+     },
+     "lines": [
+      "吸収した核酸を、自分のDNAやRNAとしてそのまま使うことはありません。",
+      "必ず新しく合成して使います。"
+     ]
+    }
+   ],
+   "cams": [
+    {
+     "at": "start",
+     "move": "set",
+     "x": 640,
+     "y": 380,
+     "z": 1,
+     "note": "足の側面"
+    },
+    {
+     "at": "high",
+     "move": "push",
+     "x": 760,
+     "y": 420,
+     "z": 1.3,
+     "dur": 1.2,
+     "note": "親指の付け根へ"
+    },
+    {
+     "at": "gout",
+     "move": "crash",
+     "x": 860,
+     "y": 470,
+     "z": 1.9,
+     "dur": 0.22,
+     "hold": 0.3,
+     "note": "「痛風」で関節へ急接近"
+    },
+    {
+     "at": "no",
+     "move": "pull",
+     "x": 640,
+     "y": 360,
+     "z": 1,
+     "dur": 0.45,
+     "note": "核酸の鎖へ"
+    },
+    {
+     "at": "new",
+     "move": "push",
+     "x": 640,
+     "y": 400,
+     "z": 1.05,
+     "dur": 0.8,
+     "note": "新しく合成"
+    }
+   ],
+   "fx": [
+    {
+     "at": "gout",
+     "kind": "impact",
+     "dur": 0.5,
+     "min": "gekiga"
+    },
+    {
+     "at": "gout",
+     "kind": "shake",
+     "dur": 0.4,
+     "min": "gekiga"
+    },
+    {
+     "at": "gout",
+     "kind": "onoma",
+     "text": "ズキッ",
+     "x": 1080,
+     "y": 170,
+     "dur": 1.1,
+     "min": "gekiga"
+    },
+    {
+     "at": "gout",
+     "kind": "invert",
+     "dur": 0.1,
+     "min": "ultra"
+    },
+    {
+     "at": "no",
+     "kind": "impact",
+     "dur": 0.35,
+     "min": "gekiga"
+    },
+    {
+     "at": "new",
+     "kind": "flash",
+     "dur": 0.3,
+     "min": "gekiga"
+    },
+    {
+     "at": "start",
+     "kind": "tone",
+     "dur": 999,
+     "min": "gekiga"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "dep",
+     "kind": "tick"
+    },
+    {
+     "at": "high",
+     "kind": "riser",
+     "gain": 0.5
+    },
+    {
+     "at": "gout",
+     "kind": "heartbeat"
+    },
+    {
+     "at": "gout+0.4",
+     "kind": "boom",
+     "gain": 0.6
+    },
+    {
+     "at": "no",
+     "kind": "impact",
+     "gain": 0.6
+    },
+    {
+     "at": "new",
+     "kind": "shimmer"
+    }
+   ]
+  },
+  {
+   "id": "S18",
+   "title": "黒板：プリン→尿酸（痛風）",
+   "picture": "試験ポイントの下に「プリン→尿酸（痛風）」「ピリミジン→NH₃＋CO₂」「食事の核酸はそのまま再利用しない」（板書 r6〜r8）。「線を引いて」でプリン→尿酸に赤い下線。",
+   "diagram": {
+    "id": "board-uric",
+    "title": "板書：核酸の代謝",
+    "note": "第2講の黒板 r6・r7・r8、c02-0091・0092"
+   },
+   "lecturer": true,
+   "sources": [
+    {
+     "beat": "w",
+     "source": "第2講／台詞 c02-0091／板書 r6・r7・r8（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 2,
+      "section": "テーマ4　核酸の代謝と臨床",
+      "cues": [
+       "c02-0091"
+      ],
+      "mode": "verbatim",
+      "board": [
+       "r6",
+       "r7",
+       "r8"
+      ]
+     },
+     "lines": [
+      "黒板にも書いておきます。",
+      "プリンは尿酸、そして痛風。",
+      "ピリミジンはアンモニアと二酸化炭素。",
+      "食べた核酸は、そのまま自分の遺伝子にはならない。"
+     ]
+    },
+    {
+     "beat": "line",
+     "source": "第2講／台詞 c02-0092（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 2,
+      "section": "テーマ4　核酸の代謝と臨床",
+      "cues": [
+       "c02-0092"
+      ],
+      "mode": "verbatim"
+     },
+     "lines": [
+      "プリンと尿酸。",
+      "ここに線を引いておきましょう。"
+     ]
+    }
+   ],
+   "cams": [
+    {
+     "at": "start",
+     "move": "set",
+     "x": 560,
+     "y": 330,
+     "z": 1,
+     "note": "黒板の右"
+    },
+    {
+     "at": "pu",
+     "move": "push",
+     "x": 440,
+     "y": 400,
+     "z": 1.45,
+     "dur": 0.6,
+     "note": "プリン→尿酸"
+    },
+    {
+     "at": "py",
+     "move": "pan",
+     "x": 440,
+     "y": 450,
+     "z": 1.45,
+     "dur": 0.5,
+     "note": "ピリミジン"
+    },
+    {
+     "at": "eat",
+     "move": "pan",
+     "x": 480,
+     "y": 500,
+     "z": 1.4,
+     "dur": 0.5,
+     "note": "食事の核酸"
+    },
+    {
+     "at": "line",
+     "move": "crash",
+     "x": 420,
+     "y": 410,
+     "z": 1.7,
+     "dur": 0.22,
+     "hold": 0.25,
+     "note": "「プリンと尿酸」で急接近"
+    }
+   ],
+   "fx": [
+    {
+     "at": "line",
+     "kind": "impact",
+     "dur": 0.4,
+     "min": "gekiga"
+    },
+    {
+     "at": "under",
+     "kind": "focus",
+     "dur": 1,
+     "min": "gekiga"
+    },
+    {
+     "at": "start",
+     "kind": "tone",
+     "dur": 999,
+     "min": "gekiga"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "pu",
+     "kind": "chalk",
+     "gain": 0.6
+    },
+    {
+     "at": "py",
+     "kind": "chalk",
+     "gain": 0.6
+    },
+    {
+     "at": "eat",
+     "kind": "chalk",
+     "gain": 0.6
+    },
+    {
+     "at": "line",
+     "kind": "impact",
+     "gain": 0.7
+    },
+    {
+     "at": "under",
+     "kind": "chalk",
+     "gain": 0.7
+    }
+   ]
+  },
+  {
+   "id": "S19",
+   "title": "今日のまとめ：4つ",
+   "picture": "黒板の下段に「今日のまとめ」①〜④（板書 sum-h・s1〜s4）。読み上げに合わせて1行ずつ書かれ、言い終わるごとに下線。",
+   "diagram": {
+    "id": "board-summary4",
+    "title": "板書：今日のまとめ",
+    "note": "第2講の黒板 sum-h・s1〜s4、c02-0104〜0108"
+   },
+   "lecturer": true,
+   "sources": [
+    {
+     "beat": "four",
+     "source": "第2講／台詞 c02-0104／板書 sum-h（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 2,
+      "section": "まとめ",
+      "cues": [
+       "c02-0104"
+      ],
+      "mode": "verbatim",
+      "board": [
+       "sum-h"
+      ]
+     },
+     "lines": [
+      "今日覚えてほしいのは、この4つです。"
+     ]
+    },
+    {
+     "beat": "p1",
+     "source": "第2講／台詞 c02-0105／板書 s1（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 2,
+      "section": "まとめ",
+      "cues": [
+       "c02-0105"
+      ],
+      "mode": "verbatim",
+      "board": [
+       "s1"
+      ]
+     },
+     "lines": [
+      "ひとつ目。",
+      "ヌクレオチドは塩基と五炭糖とリン酸。",
+      "リン酸がなければヌクレオシド。"
+     ]
+    },
+    {
+     "beat": "p2",
+     "source": "第2講／台詞 c02-0106／板書 s2（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 2,
+      "section": "まとめ",
+      "cues": [
+       "c02-0106"
+      ],
+      "mode": "verbatim",
+      "board": [
+       "s2"
+      ]
+     },
+     "lines": [
+      "ふたつ目。",
+      "プリンはAとG、ピリミジンはCとTとU。",
+      "RNAではTの代わりにU。"
+     ]
+    },
+    {
+     "beat": "p3",
+     "source": "第2講／台詞 c02-0107／板書 s3（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 2,
+      "section": "まとめ",
+      "cues": [
+       "c02-0107"
+      ],
+      "mode": "verbatim",
+      "board": [
+       "s3"
+      ]
+     },
+     "lines": [
+      "みっつ目。",
+      "二本鎖は逆向きで、A=Tは2本、G≡Cは3本の水素結合。"
+     ]
+    },
+    {
+     "beat": "p4",
+     "source": "第2講／台詞 c02-0108／板書 s4（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 2,
+      "section": "まとめ",
+      "cues": [
+       "c02-0108"
+      ],
+      "mode": "verbatim",
+      "board": [
+       "s4"
+      ]
+     },
+     "lines": [
+      "そして、プリンの代謝産物は尿酸。",
+      "痛風につながります。"
+     ]
+    }
+   ],
+   "cams": [
+    {
+     "at": "start",
+     "move": "set",
+     "x": 640,
+     "y": 330,
+     "z": 1,
+     "note": "まとめの板書"
+    },
+    {
+     "at": "p1",
+     "move": "push",
+     "x": 560,
+     "y": 190,
+     "z": 1.3,
+     "dur": 0.6,
+     "note": "①へ"
+    },
+    {
+     "at": "p2",
+     "move": "pan",
+     "x": 560,
+     "y": 285,
+     "z": 1.3,
+     "dur": 0.5,
+     "note": "②へ"
+    },
+    {
+     "at": "p3",
+     "move": "pan",
+     "x": 560,
+     "y": 380,
+     "z": 1.3,
+     "dur": 0.5,
+     "note": "③へ"
+    },
+    {
+     "at": "p4",
+     "move": "pan",
+     "x": 560,
+     "y": 475,
+     "z": 1.3,
+     "dur": 0.5,
+     "note": "④へ"
+    },
+    {
+     "at": "p4b+1.2",
+     "move": "pull",
+     "x": 640,
+     "y": 330,
+     "z": 1,
+     "dur": 0.5,
+     "note": "4つを並べて引く"
+    }
+   ],
+   "fx": [
+    {
+     "at": "p1",
+     "kind": "impact",
+     "dur": 0.3,
+     "min": "ultra"
+    },
+    {
+     "at": "p4b+1.2",
+     "kind": "focus",
+     "dur": 0.9,
+     "min": "gekiga"
+    },
+    {
+     "at": "start",
+     "kind": "tone",
+     "dur": 999,
+     "min": "gekiga"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "four",
+     "kind": "chalk",
+     "gain": 0.5
+    },
+    {
+     "at": "p1",
+     "kind": "chalk",
+     "gain": 0.5
+    },
+    {
+     "at": "p2",
+     "kind": "chalk",
+     "gain": 0.5
+    },
+    {
+     "at": "p3",
+     "kind": "chalk",
+     "gain": 0.5
+    },
+    {
+     "at": "p4",
+     "kind": "chalk",
+     "gain": 0.5
+    },
+    {
+     "at": "p4b+1.2",
+     "kind": "impact",
+     "gain": 0.6
+    }
+   ]
+  },
+  {
+   "id": "S20",
+   "title": "次回：第3講",
+   "picture": "「次回 第3講」の判。長いDNAを核にしまう＝染色体（2本の姉妹染色分体）の影。黒にフェードアウト。",
+   "diagram": {
+    "id": "end",
+    "title": "次回予告",
+    "note": "c02-0109"
+   },
+   "lecturer": false,
+   "sources": [
+    {
+     "beat": "next",
+     "source": "第2講／台詞 c02-0109（原文の一部）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 2,
+      "section": "まとめ",
+      "cues": [
+       "c02-0109"
+      ],
+      "mode": "trimmed"
+     },
+     "lines": [
+      "次の第3講では、",
+      "この長いDNAを、どうやって細胞の核にしまっているのか。",
+      "染色体の話に進みます。"
+     ]
+    }
+   ],
+   "cams": [
+    {
+     "at": "start",
+     "move": "set",
+     "x": 640,
+     "y": 360,
+     "z": 1.15,
+     "note": "予告"
+    },
+    {
+     "at": "start",
+     "move": "pull",
+     "x": 640,
+     "y": 360,
+     "z": 1,
+     "dur": 6,
+     "note": "ゆっくり引いて終わる"
+    }
+   ],
+   "fx": [
+    {
+     "at": "next",
+     "kind": "impact",
+     "dur": 0.4,
+     "min": "gekiga"
+    },
+    {
+     "at": "chr",
+     "kind": "focus",
+     "dur": 1,
+     "min": "gekiga"
+    },
+    {
+     "at": "start",
+     "kind": "tone",
+     "dur": 999,
+     "min": "gekiga"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "next",
+     "kind": "impact",
+     "gain": 0.6
+    },
+    {
+     "at": "chr",
+     "kind": "shimmer",
+     "gain": 0.5
+    }
+   ]
+  }
+ ]
+}

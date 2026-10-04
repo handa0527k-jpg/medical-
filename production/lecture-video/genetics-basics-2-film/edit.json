@@ -1,0 +1,982 @@
+{
+ "plan": "genetics-basics:2:film|full|board|gekiga",
+ "voice": "genetics-basics-2-film_board",
+ "size": [
+  1280,
+  720
+ ],
+ "fps": 24,
+ "total": 362.979,
+ "frames": 8711,
+ "timing": "kokoro",
+ "layers": {
+  "plate": "layers/plate_%05d.jpg",
+  "overlay": "layers/overlay_%05d.png"
+ },
+ "note": "背景（Wan クリップ／無ければ MEDSTUDY アニマティック）→ 医学図レイヤーを重ねる → 白黒反転 → 字幕（ASS）→ 講師音声＋効果音（＋任意で BGM、声に合わせて自動で下げる）",
+ "scenes": [
+  {
+   "id": "S01",
+   "t0": 0,
+   "dur": 13.309,
+   "audio": "audio/S01.wav",
+   "shots": [
+    {
+     "id": "a",
+     "wan": "wan/S01_a.webm",
+     "mode": "feature",
+     "t0": 0,
+     "dur": 13.309,
+     "f0": 0,
+     "f1": 319,
+     "wanFrames": 121,
+     "wanFps": 24
+    }
+   ],
+   "sfx": [
+    {
+     "kind": "riser",
+     "t": 0,
+     "gain": 0.5
+    },
+    {
+     "kind": "boom",
+     "t": 0,
+     "gain": 1
+    },
+    {
+     "kind": "shimmer",
+     "t": 6.739,
+     "gain": 0.5
+    }
+   ],
+   "invert": []
+  },
+  {
+   "id": "S02",
+   "t0": 13.309,
+   "dur": 17.006,
+   "audio": "audio/S02.wav",
+   "shots": [
+    {
+     "id": "a",
+     "wan": "wan/S02_a.webm",
+     "mode": "background",
+     "t0": 13.309,
+     "dur": 17.006,
+     "f0": 319,
+     "f1": 728,
+     "wanFrames": 121,
+     "wanFps": 24
+    }
+   ],
+   "sfx": [
+    {
+     "kind": "tick",
+     "t": 17.955,
+     "gain": 1
+    },
+    {
+     "kind": "tick",
+     "t": 19.065,
+     "gain": 1
+    },
+    {
+     "kind": "tick",
+     "t": 20.485,
+     "gain": 1
+    },
+    {
+     "kind": "riser",
+     "t": 22.708,
+     "gain": 0.5
+    },
+    {
+     "kind": "impact",
+     "t": 25.558,
+     "gain": 1
+    },
+    {
+     "kind": "shimmer",
+     "t": 27.141,
+     "gain": 1
+    }
+   ],
+   "invert": []
+  },
+  {
+   "id": "S03",
+   "t0": 30.316,
+   "dur": 9.985,
+   "audio": "audio/S03.wav",
+   "shots": [
+    {
+     "id": "a",
+     "wan": "wan/S03_a.webm",
+     "mode": "background",
+     "t0": 30.316,
+     "dur": 9.985,
+     "f0": 728,
+     "f1": 967,
+     "wanFrames": 121,
+     "wanFps": 24
+    }
+   ],
+   "sfx": [
+    {
+     "kind": "chalk",
+     "t": 30.316,
+     "gain": 0.5
+    },
+    {
+     "kind": "chalk",
+     "t": 30.316,
+     "gain": 0.6
+    },
+    {
+     "kind": "impact",
+     "t": 37.802,
+     "gain": 0.7
+    }
+   ],
+   "invert": []
+  },
+  {
+   "id": "S04",
+   "t0": 40.301,
+   "dur": 12.754,
+   "audio": "audio/S04.wav",
+   "shots": [
+    {
+     "id": "a",
+     "wan": "wan/S04_a.webm",
+     "mode": "background",
+     "t0": 40.301,
+     "dur": 12.754,
+     "f0": 967,
+     "f1": 1273,
+     "wanFrames": 121,
+     "wanFps": 24
+    }
+   ],
+   "sfx": [
+    {
+     "kind": "impact",
+     "t": 42.054,
+     "gain": 0.5
+    },
+    {
+     "kind": "impact",
+     "t": 43.694,
+     "gain": 0.5
+    },
+    {
+     "kind": "impact",
+     "t": 45.874,
+     "gain": 0.5
+    },
+    {
+     "kind": "whoosh",
+     "t": 48.398,
+     "gain": 0.5
+    },
+    {
+     "kind": "boom",
+     "t": 50.668,
+     "gain": 0.8
+    }
+   ],
+   "invert": []
+  },
+  {
+   "id": "S05",
+   "t0": 53.055,
+   "dur": 15.364,
+   "audio": "audio/S05.wav",
+   "shots": [
+    {
+     "id": "a",
+     "wan": "wan/S05_a.webm",
+     "mode": "background",
+     "t0": 53.055,
+     "dur": 6.432,
+     "f0": 1273,
+     "f1": 1428,
+     "wanFrames": 121,
+     "wanFps": 24
+    },
+    {
+     "id": "b",
+     "wan": "wan/S05_b.webm",
+     "mode": "background",
+     "t0": 59.487,
+     "dur": 8.932,
+     "f0": 1428,
+     "f1": 1642,
+     "wanFrames": 121,
+     "wanFps": 24
+    }
+   ],
+   "sfx": [
+    {
+     "kind": "chalk",
+     "t": 54.77,
+     "gain": 0.6
+    },
+    {
+     "kind": "chalk",
+     "t": 57.209,
+     "gain": 0.6
+    },
+    {
+     "kind": "boom",
+     "t": 63.994,
+     "gain": 1
+    }
+   ],
+   "invert": []
+  },
+  {
+   "id": "S06",
+   "t0": 68.419,
+   "dur": 18.673,
+   "audio": "audio/S06.wav",
+   "shots": [
+    {
+     "id": "a",
+     "wan": "wan/S06_a.webm",
+     "mode": "background",
+     "t0": 68.419,
+     "dur": 18.673,
+     "f0": 1642,
+     "f1": 2090,
+     "wanFrames": 121,
+     "wanFps": 24
+    }
+   ],
+   "sfx": [
+    {
+     "kind": "tick",
+     "t": 68.419,
+     "gain": 1
+    },
+    {
+     "kind": "whoosh",
+     "t": 71.647,
+     "gain": 0.5
+    },
+    {
+     "kind": "whoosh",
+     "t": 73.297,
+     "gain": 0.6
+    },
+    {
+     "kind": "impact",
+     "t": 79.538,
+     "gain": 1
+    },
+    {
+     "kind": "boom",
+     "t": 83.606,
+     "gain": 0.7
+    }
+   ],
+   "invert": []
+  },
+  {
+   "id": "S07",
+   "t0": 87.093,
+   "dur": 25.014,
+   "audio": "audio/S07.wav",
+   "shots": [
+    {
+     "id": "a",
+     "wan": "wan/S07_a.webm",
+     "mode": "background",
+     "t0": 87.093,
+     "dur": 25.014,
+     "f0": 2090,
+     "f1": 2691,
+     "wanFrames": 121,
+     "wanFps": 24
+    }
+   ],
+   "sfx": [
+    {
+     "kind": "shimmer",
+     "t": 88.281,
+     "gain": 0.4
+    },
+    {
+     "kind": "impact",
+     "t": 93.146,
+     "gain": 0.5
+    },
+    {
+     "kind": "whoosh",
+     "t": 95.995,
+     "gain": 0.6
+    },
+    {
+     "kind": "impact",
+     "t": 101.448,
+     "gain": 1
+    },
+    {
+     "kind": "chalk",
+     "t": 106.665,
+     "gain": 0.6
+    },
+    {
+     "kind": "boom",
+     "t": 108.398,
+     "gain": 0.6
+    }
+   ],
+   "invert": []
+  },
+  {
+   "id": "S08",
+   "t0": 112.107,
+   "dur": 26.051,
+   "audio": "audio/S08.wav",
+   "shots": [
+    {
+     "id": "a",
+     "wan": "wan/S08_a.webm",
+     "mode": "background",
+     "t0": 112.107,
+     "dur": 26.051,
+     "f0": 2691,
+     "f1": 3316,
+     "wanFrames": 121,
+     "wanFps": 24
+    }
+   ],
+   "sfx": [
+    {
+     "kind": "tick",
+     "t": 112.107,
+     "gain": 1
+    },
+    {
+     "kind": "tick",
+     "t": 114.347,
+     "gain": 1
+    },
+    {
+     "kind": "impact",
+     "t": 115.907,
+     "gain": 0.7
+    },
+    {
+     "kind": "boom",
+     "t": 125.371,
+     "gain": 0.6
+    },
+    {
+     "kind": "whoosh",
+     "t": 127.447,
+     "gain": 1
+    },
+    {
+     "kind": "impact",
+     "t": 134.981,
+     "gain": 0.6
+    }
+   ],
+   "invert": []
+  },
+  {
+   "id": "S09",
+   "t0": 138.157,
+   "dur": 23.769,
+   "audio": "audio/S09.wav",
+   "shots": [
+    {
+     "id": "a",
+     "wan": "wan/S09_a.webm",
+     "mode": "background",
+     "t0": 138.157,
+     "dur": 23.769,
+     "f0": 3316,
+     "f1": 3886,
+     "wanFrames": 121,
+     "wanFps": 24
+    }
+   ],
+   "sfx": [
+    {
+     "kind": "chalk",
+     "t": 140.881,
+     "gain": 0.6
+    },
+    {
+     "kind": "chalk",
+     "t": 144.714,
+     "gain": 0.5
+    },
+    {
+     "kind": "chalk",
+     "t": 150.627,
+     "gain": 0.5
+    },
+    {
+     "kind": "whoosh",
+     "t": 154.016,
+     "gain": 0.5
+    },
+    {
+     "kind": "whoosh",
+     "t": 157.418,
+     "gain": 0.5
+    },
+    {
+     "kind": "impact",
+     "t": 159.414,
+     "gain": 1
+    }
+   ],
+   "invert": []
+  },
+  {
+   "id": "S10",
+   "t0": 161.927,
+   "dur": 14.815,
+   "audio": "audio/S10.wav",
+   "shots": [
+    {
+     "id": "a",
+     "wan": "wan/S10_a.webm",
+     "mode": "background",
+     "t0": 161.927,
+     "dur": 14.815,
+     "f0": 3886,
+     "f1": 4242,
+     "wanFrames": 121,
+     "wanFps": 24
+    }
+   ],
+   "sfx": [
+    {
+     "kind": "boom",
+     "t": 161.927,
+     "gain": 0.7
+    },
+    {
+     "kind": "shimmer",
+     "t": 164.28,
+     "gain": 0.4
+    },
+    {
+     "kind": "tick",
+     "t": 169.925,
+     "gain": 1
+    },
+    {
+     "kind": "tick",
+     "t": 172.723,
+     "gain": 1
+    },
+    {
+     "kind": "impact",
+     "t": 173.123,
+     "gain": 0.5
+    }
+   ],
+   "invert": []
+  },
+  {
+   "id": "S11",
+   "t0": 176.741,
+   "dur": 14.146,
+   "audio": "audio/S11.wav",
+   "shots": [
+    {
+     "id": "a",
+     "wan": "wan/S11_a.webm",
+     "mode": "background",
+     "t0": 176.741,
+     "dur": 14.146,
+     "f0": 4242,
+     "f1": 4581,
+     "wanFrames": 121,
+     "wanFps": 24
+    }
+   ],
+   "sfx": [
+    {
+     "kind": "riser",
+     "t": 176.741,
+     "gain": 0.5
+    },
+    {
+     "kind": "impact",
+     "t": 178.731,
+     "gain": 0.5
+    },
+    {
+     "kind": "whoosh",
+     "t": 181.664,
+     "gain": 0.5
+    },
+    {
+     "kind": "whoosh",
+     "t": 185.304,
+     "gain": 0.6
+    },
+    {
+     "kind": "boom",
+     "t": 187.189,
+     "gain": 1
+    }
+   ],
+   "invert": []
+  },
+  {
+   "id": "S12",
+   "t0": 190.888,
+   "dur": 19.342,
+   "audio": "audio/S12.wav",
+   "shots": [
+    {
+     "id": "a",
+     "wan": "wan/S12_a.webm",
+     "mode": "background",
+     "t0": 190.888,
+     "dur": 19.342,
+     "f0": 4581,
+     "f1": 5046,
+     "wanFrames": 121,
+     "wanFps": 24
+    }
+   ],
+   "sfx": [
+    {
+     "kind": "whoosh",
+     "t": 190.888,
+     "gain": 0.5
+    },
+    {
+     "kind": "tick",
+     "t": 192.693,
+     "gain": 1
+    },
+    {
+     "kind": "tick",
+     "t": 192.993,
+     "gain": 1
+    },
+    {
+     "kind": "tick",
+     "t": 195.787,
+     "gain": 1
+    },
+    {
+     "kind": "tick",
+     "t": 196.037,
+     "gain": 1
+    },
+    {
+     "kind": "tick",
+     "t": 196.287,
+     "gain": 1
+    },
+    {
+     "kind": "impact",
+     "t": 204.469,
+     "gain": 1
+    }
+   ],
+   "invert": []
+  },
+  {
+   "id": "S13",
+   "t0": 210.23,
+   "dur": 13.341,
+   "audio": "audio/S13.wav",
+   "shots": [
+    {
+     "id": "a",
+     "wan": "wan/S13_a.webm",
+     "mode": "background",
+     "t0": 210.23,
+     "dur": 13.341,
+     "f0": 5046,
+     "f1": 5366,
+     "wanFrames": 121,
+     "wanFps": 24
+    }
+   ],
+   "sfx": [
+    {
+     "kind": "riser",
+     "t": 211.658,
+     "gain": 0.4
+    },
+    {
+     "kind": "boom",
+     "t": 216.145,
+     "gain": 0.7
+    },
+    {
+     "kind": "whoosh",
+     "t": 218.79,
+     "gain": 1
+    },
+    {
+     "kind": "impact",
+     "t": 219.99,
+     "gain": 0.5
+    }
+   ],
+   "invert": []
+  },
+  {
+   "id": "S14",
+   "t0": 223.571,
+   "dur": 24.303,
+   "audio": "audio/S14.wav",
+   "shots": [
+    {
+     "id": "a",
+     "wan": "wan/S14_a.webm",
+     "mode": "background",
+     "t0": 223.571,
+     "dur": 24.303,
+     "f0": 5366,
+     "f1": 5949,
+     "wanFrames": 121,
+     "wanFps": 24
+    }
+   ],
+   "sfx": [
+    {
+     "kind": "chalk",
+     "t": 223.571,
+     "gain": 0.5
+    },
+    {
+     "kind": "impact",
+     "t": 225.471,
+     "gain": 1
+    },
+    {
+     "kind": "chalk",
+     "t": 230.232,
+     "gain": 0.5
+    },
+    {
+     "kind": "chalk",
+     "t": 232.177,
+     "gain": 0.5
+    },
+    {
+     "kind": "chalk",
+     "t": 235.327,
+     "gain": 0.5
+    },
+    {
+     "kind": "chalk",
+     "t": 242.519,
+     "gain": 0.5
+    }
+   ],
+   "invert": []
+  },
+  {
+   "id": "S15",
+   "t0": 247.874,
+   "dur": 26.877,
+   "audio": "audio/S15.wav",
+   "shots": [
+    {
+     "id": "a",
+     "wan": "wan/S15_a.webm",
+     "mode": "background",
+     "t0": 247.874,
+     "dur": 26.877,
+     "f0": 5949,
+     "f1": 6594,
+     "wanFrames": 121,
+     "wanFps": 24
+    }
+   ],
+   "sfx": [
+    {
+     "kind": "riser",
+     "t": 252.063,
+     "gain": 0.6
+    },
+    {
+     "kind": "boom",
+     "t": 254.283,
+     "gain": 1
+    },
+    {
+     "kind": "impact",
+     "t": 262.884,
+     "gain": 1
+    },
+    {
+     "kind": "impact",
+     "t": 267.434,
+     "gain": 1
+    },
+    {
+     "kind": "shimmer",
+     "t": 269.748,
+     "gain": 0.4
+    }
+   ],
+   "invert": []
+  },
+  {
+   "id": "S16",
+   "t0": 274.751,
+   "dur": 15.92,
+   "audio": "audio/S16.wav",
+   "shots": [
+    {
+     "id": "a",
+     "wan": "wan/S16_a.webm",
+     "mode": "background",
+     "t0": 274.751,
+     "dur": 15.92,
+     "f0": 6594,
+     "f1": 6976,
+     "wanFrames": 121,
+     "wanFps": 24
+    }
+   ],
+   "sfx": [
+    {
+     "kind": "whoosh",
+     "t": 274.751,
+     "gain": 0.5
+    },
+    {
+     "kind": "impact",
+     "t": 276.481,
+     "gain": 0.7
+    },
+    {
+     "kind": "shimmer",
+     "t": 280.564,
+     "gain": 0.4
+    },
+    {
+     "kind": "whoosh",
+     "t": 286.401,
+     "gain": 0.6
+    },
+    {
+     "kind": "boom",
+     "t": 288.031,
+     "gain": 0.7
+    }
+   ],
+   "invert": []
+  },
+  {
+   "id": "S17",
+   "t0": 290.671,
+   "dur": 19.617,
+   "audio": "audio/S17.wav",
+   "shots": [
+    {
+     "id": "a",
+     "wan": "wan/S17_a.webm",
+     "mode": "background",
+     "t0": 290.671,
+     "dur": 9.165,
+     "f0": 6976,
+     "f1": 7196,
+     "wanFrames": 121,
+     "wanFps": 24
+    },
+    {
+     "id": "b",
+     "wan": "wan/S17_b.webm",
+     "mode": "background",
+     "t0": 299.835,
+     "dur": 10.452,
+     "f0": 7196,
+     "f1": 7447,
+     "wanFrames": 121,
+     "wanFps": 24
+    }
+   ],
+   "sfx": [
+    {
+     "kind": "tick",
+     "t": 290.671,
+     "gain": 1
+    },
+    {
+     "kind": "riser",
+     "t": 293.601,
+     "gain": 0.5
+    },
+    {
+     "kind": "heartbeat",
+     "t": 295.821,
+     "gain": 1
+    },
+    {
+     "kind": "boom",
+     "t": 296.221,
+     "gain": 0.6
+    },
+    {
+     "kind": "impact",
+     "t": 299.835,
+     "gain": 0.6
+    },
+    {
+     "kind": "shimmer",
+     "t": 307.018,
+     "gain": 1
+    }
+   ],
+   "invert": []
+  },
+  {
+   "id": "S18",
+   "t0": 310.287,
+   "dur": 14.806,
+   "audio": "audio/S18.wav",
+   "shots": [
+    {
+     "id": "a",
+     "wan": "wan/S18_a.webm",
+     "mode": "background",
+     "t0": 310.287,
+     "dur": 14.806,
+     "f0": 7447,
+     "f1": 7802,
+     "wanFrames": 121,
+     "wanFps": 24
+    }
+   ],
+   "sfx": [
+    {
+     "kind": "chalk",
+     "t": 312.198,
+     "gain": 0.6
+    },
+    {
+     "kind": "chalk",
+     "t": 314.196,
+     "gain": 0.6
+    },
+    {
+     "kind": "chalk",
+     "t": 317.26,
+     "gain": 0.6
+    },
+    {
+     "kind": "impact",
+     "t": 321.446,
+     "gain": 0.7
+    },
+    {
+     "kind": "chalk",
+     "t": 322.658,
+     "gain": 0.7
+    }
+   ],
+   "invert": []
+  },
+  {
+   "id": "S19",
+   "t0": 325.093,
+   "dur": 27.749,
+   "audio": "audio/S19.wav",
+   "shots": [
+    {
+     "id": "a",
+     "wan": "wan/S19_a.webm",
+     "mode": "background",
+     "t0": 325.093,
+     "dur": 27.749,
+     "f0": 7802,
+     "f1": 8468,
+     "wanFrames": 121,
+     "wanFps": 24
+    }
+   ],
+   "sfx": [
+    {
+     "kind": "chalk",
+     "t": 325.093,
+     "gain": 0.5
+    },
+    {
+     "kind": "chalk",
+     "t": 328.012,
+     "gain": 0.5
+    },
+    {
+     "kind": "chalk",
+     "t": 334.407,
+     "gain": 0.5
+    },
+    {
+     "kind": "chalk",
+     "t": 341.475,
+     "gain": 0.5
+    },
+    {
+     "kind": "chalk",
+     "t": 347.811,
+     "gain": 0.5
+    },
+    {
+     "kind": "impact",
+     "t": 351.872,
+     "gain": 0.6
+    }
+   ],
+   "invert": []
+  },
+  {
+   "id": "S20",
+   "t0": 352.842,
+   "dur": 10.137,
+   "audio": "audio/S20.wav",
+   "shots": [
+    {
+     "id": "a",
+     "wan": "wan/S20_a.webm",
+     "mode": "background",
+     "t0": 352.842,
+     "dur": 10.137,
+     "f0": 8468,
+     "f1": 8711,
+     "wanFrames": 121,
+     "wanFps": 24
+    }
+   ],
+   "sfx": [
+    {
+     "kind": "impact",
+     "t": 352.842,
+     "gain": 0.6
+    },
+    {
+     "kind": "shimmer",
+     "t": 359.639,
+     "gain": 0.5
+    }
+   ],
+   "invert": []
+  }
+ ],
+ "subtitles": "subtitles.ass",
+ "bgm": {
+  "file": null,
+  "gain": 0.18,
+  "duck": true
+ }
+}

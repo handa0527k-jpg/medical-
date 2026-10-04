@@ -16,6 +16,7 @@ import { RANK, shows } from './edit';
 
 import { CL, rnd, label, slate, lecturer, hall, voidInk, micro, streaks, type RC, type Layer } from './render-kit';
 import { FILM_PLATE, FILM_FIGURE, chapterCard } from './render-film';
+import { FILM2_PLATE, FILM2_FIGURE } from './render-film2';
 export type { Layer } from './render-kit';
 
 
@@ -48,14 +49,14 @@ export function renderFrame(g: CanvasRenderingContext2D, plan: Plan, timing: Tim
     g.save();
     g.filter = k === 'ultra' ? 'grayscale(0.75) contrast(1.35) brightness(0.92)' : k === 'gekiga' ? 'saturate(0.7) contrast(1.18)' : 'none';
     applyCam(g, cam, shake);
-    (PLATE[sc.visual] ?? FILM_PLATE[sc.visual])?.(rc);
+    (PLATE[sc.visual] ?? FILM_PLATE[sc.visual] ?? FILM2_PLATE[sc.visual])?.(rc);
     g.restore();
     if (sc.fx.some((f) => f.kind === 'tone' && shows(f.min, k))) tone(g, k === 'ultra' ? 0.9 : 0.65);
     grain(g, t, RANK[k] * 0.05);
   }
   // ---- overlay (MEDSTUDY): exact figure, board, labels, lecturer, FX
   if (layer !== 'plate') {
-    g.save(); applyCam(g, cam, shake); (FIGURE[sc.visual] ?? FILM_FIGURE[sc.visual])?.(rc); g.restore();
+    g.save(); applyCam(g, cam, shake); (FIGURE[sc.visual] ?? FILM_FIGURE[sc.visual] ?? FILM2_FIGURE[sc.visual])?.(rc); g.restore();
     fx(rc, layer);
     if (sc.chapter) chapterCard(rc, sc.chapter);
   }

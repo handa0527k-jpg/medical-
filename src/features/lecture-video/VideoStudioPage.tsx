@@ -16,7 +16,7 @@ import { NotFound } from '../../app/NotFound';
 import { useStudyPage } from '../../state/hooks';
 import { filmTheme, recommendTheme, themesOf } from '../../engine/lecture-video/analyze';
 import { buildPlan, isCurated, isFilm, voiceKey } from '../../engine/lecture-video/plan';
-import { FILM_KEY } from '../../engine/lecture-video/directions/lecture1';
+import { filmsOf } from '../../engine/lecture-video/directions/films';
 import { buildTiming, lengthsFromKokoro, tc, at, type KokoroTiming } from '../../engine/lecture-video/timing';
 import { INTENSITY_LABEL, STYLE_LABEL, type Duration, type Intensity, type LessonStyle, type Plan, type Timing } from '../../engine/lecture-video/types';
 import { renderFrame, sceneAt, activeShot, type Layer } from '../../engine/lecture-video/render';
@@ -88,9 +88,10 @@ export function VideoStudioPage() {
   }, [courseId]);
 
   const sections = useMemo(() => lectures.flatMap((l) => themesOf(courseId, l)), [lectures, courseId]);
-  // 完成版: 第1講まるごと（hand-directed） is offered first when the course has it
-  const film = useMemo(() => { const l1 = lectures.find((l) => l.chapter === 1); return l1 && courseId === 'genetics-basics' ? filmTheme(courseId, l1, FILM_KEY) : null; }, [lectures, courseId]);
-  const themes = useMemo(() => (film ? [film, ...sections] : sections), [film, sections]);
+  // 完成版: whole lectures (hand-directed) are offered first when the course has them
+  const films = useMemo(() => filmsOf(courseId).flatMap((f) => { const l = lectures.find((x) => x.chapter === f.lecture); return l ? [filmTheme(courseId, l, f.key)] : []; }), [lectures, courseId]);
+  const film = films[0] ?? null;
+  const themes = useMemo(() => [...films, ...sections], [films, sections]);
   const rec = useMemo(() => recommendTheme(sections), [sections]);
   const themeKey = q.get('theme') && themes.some((t) => t.key === q.get('theme')) ? q.get('theme')! : film?.key ?? rec?.theme.key ?? themes[0]?.key;
   const theme = themes.find((t) => t.key === themeKey);
@@ -165,7 +166,7 @@ export function VideoStudioPage() {
         </label>
         <label className="wide"><span>テーマを選択</span>
           <select value={themeKey ?? ''} onChange={(e) => set('theme', e.target.value)} disabled={!themes.length}>
-            {film && <optgroup label="完成版"><option value={film.key}>第1講「{film.lectureTitle}」まるごと（完成版・監修済み演出）</option></optgroup>}
+            {films.length > 0 && <optgroup label="完成版">{films.map((f) => <option key={f.key} value={f.key}>第{f.lecture}講「{f.lectureTitle}」まるごと（完成版・監修済み演出）</option>)}</optgroup>}
             {lectures.map((l) => (
               <optgroup key={l.chapter} label={`第${l.chapter}講　${l.title}`}>
                 {sections.filter((t) => t.lecture === l.chapter).map((t) => (

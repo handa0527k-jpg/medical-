@@ -13,7 +13,7 @@ const HERE = dirname(fileURLToPath(import.meta.url));
 import type { Lecture } from '../../src/engine/lecture/types';
 import type { SingleQuestion, Slide } from '../../src/content/types';
 import { filmTheme, themesOf } from '../../src/engine/lecture-video/analyze';
-import { FILM_KEY } from '../../src/engine/lecture-video/directions/lecture1';
+import { filmKey } from '../../src/engine/lecture-video/directions/films';
 import { buildPlan, voiceKey } from '../../src/engine/lecture-video/plan';
 import { buildTiming, lengthsFromKokoro, type KokoroTiming } from '../../src/engine/lecture-video/timing';
 import { packageFiles } from '../../src/engine/lecture-video/package';
@@ -28,7 +28,7 @@ const root = resolve(HERE, '../../src/content/courses', course);
 const lec: Lecture = JSON.parse(readFileSync(resolve(root, `narrations/lecture-${String(lecture).padStart(2, '0')}.json`), 'utf8'));
 const meta = JSON.parse(readFileSync(resolve(root, 'course.json'), 'utf8'));
 // --section film = the whole lecture as one film (完成版)
-const theme = sectionArg === 'film' ? filmTheme(course, lec, FILM_KEY) : themesOf(course, lec).find((t) => t.section === Number(sectionArg))!;
+const theme = sectionArg === 'film' ? filmTheme(course, lec, filmKey(course, lecture)) : themesOf(course, lec).find((t) => t.section === Number(sectionArg))!;
 const o = { duration: Number(opt('--duration', '30')) as Duration, style: opt('--style', 'board') as LessonStyle, intensity: opt('--intensity', 'gekiga') as Intensity };
 const plan = buildPlan({
   course, courseTitle: meta.title, lecture: lec, theme,

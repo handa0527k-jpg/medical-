@@ -110,7 +110,9 @@ export type Visual =
   | 'board-generic'
   /* 完成版（第1講まるごと） */
   | 'title-open' | 'zygote' | 'board' | 'transcription' | 'translation' | 'contrast' | 'universal'
-  | 'hierarchy' | 'hier-line' | 'disease' | 'end-card';
+  | 'hierarchy' | 'hier-line' | 'disease' | 'end-card'
+  /* 完成版（第2講まるごと） */
+  | 'monomers' | 'nucleotide' | 'sugar' | 'bases' | 'ntp' | 'dna-helix' | 'ladder' | 'basepair' | 'backbone' | 'tug' | 'digest' | 'gout';
 
 export interface SceneDef {
   id: string;

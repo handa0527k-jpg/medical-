@@ -17,6 +17,13 @@ test('genetics: 🎬 授業動画 studio — material, recommended theme, contro
   await expect(page.locator('.lv-form select').nth(1)).toHaveValue('genetics-basics:1:film');
   await expect(page.locator('.lv-status')).toContainText('Kokoro', { timeout: 15000 });
   await expect(page.locator('.lv-scene').nth(9)).toContainText('RNAポリメラーゼ');
+  // 第2講まるごと is offered as a finished film too
+  await expect(page.locator('.lv-form select').nth(1).locator('optgroup[label="完成版"] option')).toHaveCount(2);
+  await page.goto('/#/category/genetics/video?theme=genetics-basics:2:film');
+  await expect(page.locator('.lv-scene')).toHaveCount(20, { timeout: 20000 });
+  await expect(page.locator('.lv-status')).toContainText('Kokoro', { timeout: 15000 });
+  await expect(page.locator('.lv-scene').nth(4)).toContainText('シドはリン酸なし');
+  await expect(page.locator('.lv-scene').nth(11)).toContainText('c02-0067');
   // the 30 s prototype theme
   await page.goto('/#/category/genetics/video?theme=genetics-basics:1:2');
   // honest about what runs where
@@ -75,6 +82,10 @@ test('授業動画: the finished 30 s prototype film is served and plays in MEDS
   expect(film).toBeTruthy();
   expect(film.seconds).toBeGreaterThan(200);
   expect((await request.get(`/lecture-video/${film.file}`)).status()).toBe(200);
+  const film2 = idx.videos['genetics-basics:2:film|full|board|gekiga'];
+  expect(film2).toBeTruthy();
+  expect(film2.seconds).toBeGreaterThan(300);
+  expect((await request.get(`/lecture-video/${film2.file}`)).status()).toBe(200);
   const r = await request.get(`/lecture-video/${v.file}`);
   expect(r.status()).toBe(200);
   await page.goto('/#/category/genetics/video?theme=genetics-basics:1:2&d=30&style=board&k=gekiga');

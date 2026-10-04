@@ -118,7 +118,8 @@ pip install kokoro-onnx misaki fugashi unidic-lite jaconv mojimoji pyopenjtalk s
 |---|---|
 | 以前の方式（pyopenjtalk 音素・区間ごとに合成） | 21.0% |
 | 今の方式・30秒版 | 9.0% |
-| 今の方式・完成版（4分20秒） | 5.9% |
+| 今の方式・第1講の完成版（4分20秒） | 5.9% |
+| 今の方式・第2講の完成版（6分3秒、英字と数字が多い） | 10.3% |
 
 ## 7. 時間のかかるレンダリングを短くする
 
@@ -131,3 +132,14 @@ node scripts\lecture-video\render-layers.mjs C:\work\pkg --full
 `--full` を付けると合成済みのフレーム（`layers\full_%05d.jpg`）だけを書き出し、`assemble` はそれをそのまま使います。
 
 Wan のクリップを入れるときは、`--full` を付けずにもう一度レイヤーを書き出してください。
+
+## 8. 講義まるごとの完成版を作る
+
+完成版は講ごとに用意しています（第1講・第2講）。パッケージは次のように書き出します。
+
+```bat
+npx tsx scripts\lecture-video\export-package.ts --out C:\work\film2 --lecture 2 --section film
+node scripts\lecture-video\render-layers.mjs C:\work\film2 --theme genetics-basics:2:film --d full --full
+```
+
+あとは 2. の流れ（`tts` → タイミングを読み込んで書き出し直す → `sfx` → `assemble`）と同じです。

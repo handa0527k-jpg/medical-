@@ -22,13 +22,13 @@ import { bindCtx } from '../story/kit';
 import { perform } from '../story/mocap';
 import { sideCam, silhouette } from '../story/mv/common';
 
-const BASE: Record<string, string> = { A: '#ff6b5b', T: '#ffd84a', G: '#58c47a', C: '#5aa9ff', U: '#c38bff' };
-const PAIR: Record<string, string> = { A: 'T', T: 'A', G: 'C', C: 'G' };
+export const BASE: Record<string, string> = { A: '#ff6b5b', T: '#ffd84a', G: '#58c47a', C: '#5aa9ff', U: '#c38bff' };
+export const PAIR: Record<string, string> = { A: 'T', T: 'A', G: 'C', C: 'G' };
 const CODING = 'ATGGCTTTCGGAAAATGGCTGATTGCGTACGGTCATGA';
 const CODONS: [string, string][] = [['AUG', 'Met'], ['GCU', 'Ala'], ['UUC', 'Phe'], ['GGA', 'Gly'], ['AAA', 'Lys'], ['UGG', 'Trp']];
 /** progress (0..1) of the time between two events */
-const between = (rc: RC, a: string, b: string, e = (x: number) => x) => { const t0 = rc.ev(a), t1 = rc.ev(b); return Number.isFinite(t0) && Number.isFinite(t1) ? e(CL((rc.t - t0) / Math.max(0.01, t1 - t0))) : 0; };
-const term = (p: Pen, s: string, x: number, y: number, k: number, size = 96, col = '#fff') => {
+export const between = (rc: RC, a: string, b: string, e = (x: number) => x) => { const t0 = rc.ev(a), t1 = rc.ev(b); return Number.isFinite(t0) && Number.isFinite(t1) ? e(CL((rc.t - t0) / Math.max(0.01, t1 - t0))) : 0; };
+export const term = (p: Pen, s: string, x: number, y: number, k: number, size = 96, col = '#fff') => {
   if (k <= 0) return;
   p.save(); p.translate(x, y); p.scale(1 + 0.8 * (1 - ease.outExpo(k))); p.alpha(CL(k * 3));
   p.text(s, 0, 0, { size, font: 'brush', weight: 400, fill: col, stroke: INK, strokeW: size * 0.2, align: 'center' });
@@ -37,10 +37,10 @@ const term = (p: Pen, s: string, x: number, y: number, k: number, size = 96, col
 
 /* ---------- shared figure parts (Pen → canvas or SVG) ---------- */
 /** right-handed double helix along x; the two backbones are offset by ~0.38 turn so the grooves differ (major / minor) */
-export function helix(p: Pen, x0: number, x1: number, cy: number, amp: number, period: number, phase: number, o: { ink?: string; light?: string; bases?: boolean; lw?: number } = {}) {
+export function helix(p: Pen, x0: number, x1: number, cy: number, amp: number, period: number, phase: number, o: { ink?: string; light?: string; bases?: boolean; lw?: number; /** base pairs per turn */ bpt?: number } = {}) {
   const ink = o.ink ?? '#d9e6f2', lw = o.lw ?? 5, off = 0.76 * Math.PI;
   const pts = (ph: number) => { const r: [number, number][] = []; for (let x = x0; x <= x1; x += 6) r.push([x, cy + amp * Math.sin(((x - x0) / period) * 2 * Math.PI + phase + ph)]); return r; };
-  const bp = period / 10.5;
+  const bp = period / (o.bpt ?? 10.5);
   if (o.bases !== false) for (let x = x0 + bp / 2, i = 0; x < x1; x += bp, i++) {
     const th = ((x - x0) / period) * 2 * Math.PI + phase;
     const ya = cy + amp * Math.sin(th), yb = cy + amp * Math.sin(th + off), b = CODING[i % CODING.length];
@@ -51,7 +51,7 @@ export function helix(p: Pen, x0: number, x1: number, cy: number, amp: number, p
   p.line(pts(off), { stroke: INK, width: lw + 4 }); p.line(pts(off), { stroke: o.light ?? '#8fa3b5', width: lw });
   p.line(pts(0), { stroke: INK, width: lw + 4 }); p.line(pts(0), { stroke: ink, width: lw });
 }
-function cellCircle(p: Pen, x: number, y: number, r: number, o: { fill?: string; nucleus?: boolean; glow?: number } = {}) {
+export function cellCircle(p: Pen, x: number, y: number, r: number, o: { fill?: string; nucleus?: boolean; glow?: number } = {}) {
   p.circle(x, y, r, { fill: o.fill ?? '#e8d9c2', stroke: INK, width: Math.max(1.2, r * 0.08) });
   if (o.nucleus !== false) p.circle(x + r * 0.08, y - r * 0.05, r * 0.36, { fill: '#9c86b8', stroke: INK, width: Math.max(1, r * 0.05) });
   if (o.glow) p.circle(x + r * 0.08, y - r * 0.05, r * 0.5, { fill: `rgba(255,230,120,${0.5 * o.glow})` });
@@ -86,7 +86,7 @@ function bacterium(p: Pen, x: number, y: number, s: number) {
   p.path('M -50 0 C -35 -18 -20 18 -5 0 S 25 -18 40 0 S 60 16 52 6', { stroke: '#7a4f9e', width: 4 });
   p.restore();
 }
-function protein(p: Pen, x: number, y: number, s: number, a = 1) {
+export function protein(p: Pen, x: number, y: number, s: number, a = 1) {
   p.save(); p.translate(x, y); p.scale(s); p.alpha(a);
   p.path('M -60 10 C -70 -40 -20 -60 0 -30 S 50 -60 60 -10 S 30 50 0 40 S -50 60 -60 10 Z', { fill: '#e2a65a', stroke: INK, width: 5 });
   p.path('M -40 0 C -20 -25 10 20 30 -5', { stroke: '#8a5a1f', width: 4 });
@@ -105,13 +105,13 @@ let offCv: HTMLCanvasElement | null = null;
 const offscreen = () => { if (!offCv) { offCv = document.createElement('canvas'); offCv.width = W; offCv.height = H; } return offCv; };
 
 /* ---------- plates (the Wan stand-in) ---------- */
-function warmFluid(rc: RC) {
+export function warmFluid(rc: RC) {
   const { g, t } = rc;
   const gr = g.createRadialGradient(640, 340, 40, 640, 360, 900); gr.addColorStop(0, '#3a2a22'); gr.addColorStop(1, '#070504');
   g.fillStyle = gr; g.fillRect(-600, -400, W + 1200, H + 800);
   for (let i = 0; i < 80; i++) { g.fillStyle = `rgba(255,220,170,${0.12 + 0.3 * rnd(i * 13)})`; g.beginPath(); g.arc((rnd(i) * 1600 + t * 12) % 1600 - 160, rnd(i * 17) * 860 - 60 + Math.sin(t + i) * 8, 1 + rnd(i * 3) * 2, 0, 7); g.fill(); }
 }
-function nucleoplasm(rc: RC) {
+export function nucleoplasm(rc: RC) {
   const { g, t } = rc;
   const gr = g.createRadialGradient(640, 360, 60, 640, 360, 900); gr.addColorStop(0, '#16303a'); gr.addColorStop(1, '#03080b');
   g.fillStyle = gr; g.fillRect(-800, -400, W + 1600, H + 800);
@@ -124,12 +124,17 @@ function titleHelix(rc: RC) {
 }
 
 /* ---------- figures ---------- */
+interface TitleData { /** shift of the whole title block (px) */ dy?: number; unit?: string; unitAt?: string; title?: string | string[]; no?: string; subs?: { text: string; at: string; y: number; color?: 'y' | 'w' }[] }
 function titleOpen(rc: RC) {
   const { p } = rc;
-  label(p, '遺伝医学｜遺伝子の基礎', 640, 200, 34, { align: 'center', fill: '#e9e3d3', a: rc.u('unit', 0.4) });
+  const d = (rc.sc.data ?? {}) as TitleData, dy = d.dy ?? 0;
+  label(p, d.unit ?? '遺伝医学｜遺伝子の基礎', 640, 200 + dy, 34, { align: 'center', fill: '#e9e3d3', a: rc.u(d.unitAt ?? 'unit', 0.4) });
   const k = rc.u('title', 0.2);
-  term(p, '遺伝子とは何か', 640, 330, k, 118);
-  label(p, '第1講', 640, 440, 40, { align: 'center', fill: CHALK.y, a: rc.u('title+0.3', 0.3) });
+  const lines = Array.isArray(d.title) ? d.title : [d.title ?? '遺伝子とは何か'];
+  const size = lines.length > 1 ? 92 : 118;
+  lines.forEach((s, i) => term(p, s, 640, 330 + dy - (lines.length - 1) * 52 + i * 104, lines.length > 1 ? CL(k * 1.4 - i * 0.25) : k, size));
+  label(p, d.no ?? '第1講', 640, 440 + dy + (lines.length - 1) * 60, 40, { align: 'center', fill: CHALK.y, a: rc.u('title+0.3', 0.3) });
+  for (const x of d.subs ?? []) label(p, x.text, 640, x.y, 34, { align: 'center', fill: x.color === 'y' ? CHALK.y : '#fff', a: rc.u(x.at, 0.35) });
 }
 
 function zygoteFig(rc: RC) {
@@ -181,18 +186,19 @@ function zygoteFig(rc: RC) {
   }
 }
 
-interface Item { id: string; at: string; until?: string; x?: number; y?: number; k?: number }
-function boardFig(rc: RC) {
+interface Item { id: string; at: string; until?: string; x?: number; y?: number; k?: number; /** seconds the chalk takes to write it */ dur?: number }
+export function boardFig(rc: RC) {
   const { p } = rc;
   slate(rc);
-  const d = rc.sc.data as { items: Item[]; board: BoardOp[]; map?: ChalkMap; marks?: { id: string; at: string; color: 'y' | 'r' | 'w'; kind?: 'box' | 'under' }[]; lecturerX?: number; lecturerFace?: number };
+  const d = rc.sc.data as { items: Item[]; board: BoardOp[]; map?: ChalkMap; marks?: { id: string; at: string; color: 'y' | 'r' | 'w'; kind?: 'box' | 'under' }[]; lecturerX?: number; lecturerFace?: number;
+    arrows?: { at: string; from: [number, number]; to: [number, number]; color: 'y' | 'r' | 'w' }[]; slams?: { text: string; at: string; x: number; y: number; size: number; color?: string; band?: boolean }[] };
   const ops = new Map((d.board ?? []).map((o) => [o.id!, o]));
   const mapOf = (it: Item, op: BoardOp): ChalkMap => (it.x != null ? { bx: op.box[0], by: op.box[1], sx: it.x, sy: it.y!, k: it.k ?? 1 } : d.map!);
   for (const it of d.items ?? []) {
     const op = ops.get(it.id); if (!op) continue;
     const gone = it.until ? rc.u(it.until, 0.3) : 0;
     if (gone >= 1) continue;
-    p.save(); p.alpha(1 - gone); chalkOp(p, op, mapOf(it, op), rc.u(it.at, 0.55)); p.restore();
+    p.save(); p.alpha(1 - gone); chalkOp(p, op, mapOf(it, op), rc.u(it.at, it.dur ?? 0.55)); p.restore();
   }
   for (const m of d.marks ?? []) {
     const it = d.items.find((x) => x.id === m.id), op = ops.get(m.id); if (!it || !op) continue;
@@ -201,7 +207,18 @@ function boardFig(rc: RC) {
     if (m.kind === 'under') p.line([[x, y + h + 6], [x + w * k, y + h + 3]], { stroke: CHALK[m.color], width: 5 });
     else chalkBox(p, x - 14, y - 8, w + 28, h + 16, k, CHALK[m.color]);
   }
+  for (const a of d.arrows ?? []) {
+    const k = rc.u(a.at, 0.8); if (k <= 0) continue;
+    const [x0, y0] = a.from, x1 = x0 + (a.to[0] - x0) * k, y1 = y0 + (a.to[1] - y0) * k, ang = Math.atan2(a.to[1] - y0, a.to[0] - x0);
+    p.line([[x0, y0], [x1, y1]], { stroke: CHALK[a.color], width: 6 });
+    p.line([[x1 - 22 * Math.cos(ang - 0.45), y1 - 22 * Math.sin(ang - 0.45)], [x1, y1], [x1 - 22 * Math.cos(ang + 0.45), y1 - 22 * Math.sin(ang + 0.45)]], { stroke: CHALK[a.color], width: 6 });
+  }
   if (d.lecturerX != null) lecturer(rc, d.lecturerX, (d.lecturerFace ?? 1) * Math.PI / 2 * 0.7);
+  for (const s of d.slams ?? []) {
+    const k = rc.u(s.at, 0.2);
+    if (s.band && k > 0) { const w = s.text.length * s.size * 1.05 + 80; p.save(); p.translate(s.x, s.y); p.rotate(-0.03); p.alpha(CL(k * 2)); p.rect(-w / 2, -s.size * 0.75, w * ease.outExpo(k), s.size * 1.5, { fill: 'rgba(5,5,7,0.9)', stroke: '#d0251a', width: 6 }); p.restore(); }
+    term(p, s.text, s.x, s.y, k, s.size, s.color);
+  }
 }
 
 /* transcription: polymerase walks right, opening a bubble; RNA (template complement, U for T) peels off upward */
@@ -403,15 +420,23 @@ function diseaseFig(rc: RC) {
   label(p, '遺伝子1つの変異', 930, 630, 26, { align: 'center', fill: '#ffb0a6', a: rc.u('lmna+0.6', 0.3) });
 }
 
+interface EndData { no?: string; l1?: string; l1At?: string; l2?: string; l2At?: string; pic?: 'nucleotide' | 'chromosome' }
 function endCardFig(rc: RC) {
   const { p, g } = rc;
+  const d = (rc.sc.data ?? {}) as EndData;
   const s = rc.u('next', 0.2);
-  if (s > 0) { p.save(); p.translate(640, 170); p.rotate(-0.06); p.scale(1 + 0.6 * (1 - ease.outExpo(s))); p.rect(-170, -60, 340, 120, { fill: 'rgba(250,244,230,0.95)', stroke: '#b3261e', width: 8 }, 12); p.text('次回 第2講', 0, 0, { size: 52, font: 'gothic', weight: 900, fill: '#b3261e', align: 'center' }); p.restore(); }
-  label(p, '設計図の「文字」', 640, 320, 46, { align: 'center', fill: CHALK.y, a: rc.u('next+0.6', 0.3) });
-  label(p, 'DNAは何でできているのか', 640, 390, 40, { align: 'center', a: rc.u('what', 0.3) });
-  // a nucleotide sketch: phosphate – sugar (pentose) – base
-  const a = rc.u('what+0.6', 0.4);
-  if (a > 0) {
+  if (s > 0) { p.save(); p.translate(640, 170); p.rotate(-0.06); p.scale(1 + 0.6 * (1 - ease.outExpo(s))); p.rect(-170, -60, 340, 120, { fill: 'rgba(250,244,230,0.95)', stroke: '#b3261e', width: 8 }, 12); p.text(d.no ?? '次回 第2講', 0, 0, { size: 52, font: 'gothic', weight: 900, fill: '#b3261e', align: 'center' }); p.restore(); }
+  label(p, d.l1 ?? '設計図の「文字」', 640, 320, 46, { align: 'center', fill: CHALK.y, a: rc.u(d.l1At ?? 'next+0.6', 0.3) });
+  label(p, d.l2 ?? 'DNAは何でできているのか', 640, 390, 40, { align: 'center', a: rc.u(d.l2At ?? 'what', 0.3) });
+  const a = rc.u(`${d.l2At ?? 'what'}+0.6`, 0.4);
+  if (a > 0 && d.pic === 'chromosome') {
+    // a metaphase chromosome: two sister chromatids joined at the centromere
+    p.save(); p.alpha(a); p.translate(640, 540);
+    for (const dx of [-22, 22]) { p.path(`M ${dx} -100 C ${dx * 1.6} -60 ${dx * 1.6} -20 ${dx * 0.4} -6 C ${dx * 1.6} 20 ${dx * 1.8} 80 ${dx} 110`, { stroke: INK, width: 40 }); p.path(`M ${dx} -100 C ${dx * 1.6} -60 ${dx * 1.6} -20 ${dx * 0.4} -6 C ${dx * 1.6} 20 ${dx * 1.8} 80 ${dx} 110`, { stroke: '#e7dccb', width: 32 }); }
+    p.ellipse(0, -6, 16, 9, 0, { fill: INK });
+    p.restore();
+  } else if (a > 0) {
+    // a nucleotide sketch: phosphate – sugar (pentose) – base
     p.save(); p.alpha(a); p.translate(640, 520);
     p.circle(-150, 0, 34, { fill: '#ffd84a', stroke: INK, width: 5 }); p.text('P', -150, 0, { size: 30, font: 'gothic', weight: 900, fill: '#111', align: 'center' });
     p.line([[-116, 0], [-70, 0]], { stroke: '#fff', width: 5 });
