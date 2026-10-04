@@ -7,6 +7,8 @@
 
 usage: python3 scripts/film/mix.py <production dir> OUT.wav [--from S] [--to S] [--bed]
   --bed  everything except the voices (the app plays the voices itself and this track underneath)
+  --music  only the music (ducked under the dialogue) — for an app BGM track the learner can turn off
+  --fx     only the effects and ambiences (no voices, no music)
 """
 import json, os, subprocess, sys
 import numpy as np, imageio_ffmpeg
@@ -83,7 +85,9 @@ def main():
         y += (v - y) * (0.35 if v > y else 0.016); sm[i] = y
     env = np.repeat(sm, hop)[:N]
     music *= db(-9 * env)[:, None]; ambb *= db(-3 * env)[:, None]
-    mixb = (0 if bed else voice) + sfx + music + ambb
+    if '--music' in sys.argv: mixb = music
+    elif '--fx' in sys.argv: mixb = sfx + ambb
+    else: mixb = (0 if bed else voice) + sfx + music + ambb
     seg = mixb[: int((b - a) * SR)].astype(np.float64)
     # fixed master gain (so a part and the whole film match), then a soft clip at the top
     seg = seg * db(MASTER_DB)

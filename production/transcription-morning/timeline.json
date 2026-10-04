@@ -1,0 +1,1611 @@
+{
+ "course": "genetics-transcription",
+ "total": 699.9019999999996,
+ "scenes": [
+  {
+   "id": "morning",
+   "title": "朝の閲覧票",
+   "start": 0,
+   "end": 68.93599999999999
+  },
+  {
+   "id": "mirror",
+   "title": "鏡の向きで写す",
+   "start": 68.93599999999999,
+   "end": 153.78400000000002
+  },
+  {
+   "id": "annex",
+   "title": "分館の写字係",
+   "start": 153.78400000000002,
+   "end": 294.2080000000002
+  },
+  {
+   "id": "reception",
+   "title": "本館の受付",
+   "start": 294.2080000000002,
+   "end": 437.3980000000003
+  },
+  {
+   "id": "edit",
+   "title": "写しを整える",
+   "start": 437.3980000000003,
+   "end": 523.1980000000003
+  },
+  {
+   "id": "ncrna",
+   "title": "写しにならない写し",
+   "start": 523.1980000000003,
+   "end": 589.698
+  },
+  {
+   "id": "noon",
+   "title": "正午の窓口",
+   "start": 589.698,
+   "end": 699.9019999999996
+  }
+ ],
+ "lines": [
+  {
+   "i": 0,
+   "id": "morning#0",
+   "scene": "morning",
+   "who": "N",
+   "text": "あの雨の夜から、ひと月。僕は、昼の当番にも入るようになった。朝の図書館は、夜とはまるで別の建物みたいに明るい。",
+   "t0": 1.2,
+   "t1": 13.272,
+   "bytes": [
+    0,
+    72432
+   ]
+  },
+  {
+   "i": 1,
+   "id": "morning#1",
+   "scene": "morning",
+   "who": "デオ",
+   "text": "おはよう。さっそくだが、急ぎの閲覧票だ。肝臓の窓口から、グルコキナーゼの写しを一部。正午までに。",
+   "t0": 13.822,
+   "t1": 26.374,
+   "bytes": [
+    72432,
+    75312
+   ]
+  },
+  {
+   "i": 2,
+   "id": "morning#2",
+   "scene": "morning",
+   "who": "ジン",
+   "text": "写しなら、もう覚えました。原本を、僕が書き写せばいいんですよね。",
+   "t0": 26.924,
+   "t1": 33.548,
+   "bytes": [
+    147744,
+    39744
+   ]
+  },
+  {
+   "i": 3,
+   "id": "morning#3",
+   "scene": "morning",
+   "who": "デオ",
+   "text": "写すのは、わしでも君でもない。写字係だ。",
+   "t0": 34.098,
+   "t1": 39.618,
+   "bytes": [
+    187488,
+    33120
+   ]
+  },
+  {
+   "i": 4,
+   "id": "morning#4",
+   "scene": "morning",
+   "who": "ポル",
+   "text": "RNAポリメラーゼのポルよ。原本のどこから、どちら向きに写すか。それさえ決まれば、あとはわたしの仕事。",
+   "t0": 40.168,
+   "t1": 50.752,
+   "bytes": [
+    220608,
+    63504
+   ]
+  },
+  {
+   "i": 5,
+   "id": "morning#5",
+   "scene": "morning",
+   "who": "N",
+   "text": "遺伝情報は、DNAからRNAへ、RNAから蛋白質へと流れる。細菌からヒトまで、すべての細胞に共通する、この流れの最初の一歩。それが、転写だ。",
+   "t0": 51.602,
+   "t1": 66.986,
+   "bytes": [
+    284112,
+    92304
+   ]
+  },
+  {
+   "i": 6,
+   "id": "mirror#0",
+   "scene": "mirror",
+   "who": "ポル",
+   "text": "原本は、二本の鎖でできているでしょう。写すときに読むのは、片方だけ。この、鋳型鎖よ。",
+   "t0": 70.136,
+   "t1": 79.88,
+   "bytes": [
+    376416,
+    58464
+   ]
+  },
+  {
+   "i": 7,
+   "id": "mirror#1",
+   "scene": "mirror",
+   "who": "N",
+   "text": "RNAポリメラーゼは、鋳型鎖を3'から5'の向きに読み、相補的なRNAを、5'から3'の向きに合成する。",
+   "t0": 80.43,
+   "t1": 91.518,
+   "bytes": [
+    434880,
+    66528
+   ]
+  },
+  {
+   "i": 8,
+   "id": "mirror#2",
+   "scene": "mirror",
+   "who": "ジン",
+   "text": "じゃあ、できた写しは、読んでいる鎖とは、逆の文字になるんですね。",
+   "t0": 92.068,
+   "t1": 97.924,
+   "bytes": [
+    501408,
+    35136
+   ]
+  },
+  {
+   "i": 9,
+   "id": "mirror#3",
+   "scene": "mirror",
+   "who": "ポル",
+   "text": "そう。だから、もう一本の、非鋳型鎖と同じ並びになるの。ただし、Tのところは、Uで書く。",
+   "t0": 98.474,
+   "t1": 108.674,
+   "bytes": [
+    536544,
+    61200
+   ]
+  },
+  {
+   "i": 10,
+   "id": "mirror#4",
+   "scene": "mirror",
+   "who": "N",
+   "text": "材料は、ATP、UTP、CTP、GTP。伸びていく鎖の3'のOHに、次のヌクレオチドの5'の三リン酸がつながり、ピロリン酸がはずれて、リン酸ジエステル結合ができる。",
+   "t0": 109.224,
+   "t1": 127.2,
+   "bytes": [
+    597744,
+    107856
+   ]
+  },
+  {
+   "i": 11,
+   "id": "mirror#5",
+   "scene": "mirror",
+   "who": "ジン",
+   "text": "この棚の本、向きがばらばらですね。右向きのも、左向きのも。",
+   "t0": 127.75,
+   "t1": 134.062,
+   "bytes": [
+    705600,
+    37872
+   ]
+  },
+  {
+   "i": 12,
+   "id": "mirror#6",
+   "scene": "mirror",
+   "who": "デオ",
+   "text": "どちら向きに写すかは、それぞれの遺伝子の最初にある、プロモーターが決める。",
+   "t0": 134.612,
+   "t1": 141.428,
+   "bytes": [
+    743472,
+    40896
+   ]
+  },
+  {
+   "i": 13,
+   "id": "mirror#7",
+   "scene": "mirror",
+   "who": "ポル",
+   "text": "ただね、本館の受付は、手続きが多いの。しくみをつかむなら、先に分館の写字係を見ておいで。",
+   "t0": 142.378,
+   "t1": 151.834,
+   "bytes": [
+    784368,
+    56736
+   ]
+  },
+  {
+   "i": 14,
+   "id": "annex#0",
+   "scene": "annex",
+   "who": "N",
+   "text": "中庭の向こうの、小さな分館。ここにあるのは、細菌の設計図だ。天窓の下で、二人の係が待っていた。",
+   "t0": 154.984,
+   "t1": 166.12,
+   "bytes": [
+    841104,
+    66816
+   ]
+  },
+  {
+   "i": 15,
+   "id": "annex#1",
+   "scene": "annex",
+   "who": "シグマ",
+   "text": "ぼくはシグマ！　目印を探すのが仕事。ほら、マイナス三十五と、マイナス十。ここから写すよ！",
+   "t0": 166.67,
+   "t1": 176.654,
+   "bytes": [
+    907920,
+    59904
+   ]
+  },
+  {
+   "i": 16,
+   "id": "annex#2",
+   "scene": "annex",
+   "who": "N",
+   "text": "細菌のRNAポリメラーゼは、コア酵素にσ因子が加わったホロ酵素として、プロモーターを見つける。転写を始める場所でDNAをほどき、写しはじめる。",
+   "t0": 177.204,
+   "t1": 191.652,
+   "bytes": [
+    967824,
+    86688
+   ]
+  },
+  {
+   "i": 17,
+   "id": "annex#3",
+   "scene": "annex",
+   "who": "コア",
+   "text": "一文字、二文字……十文字。",
+   "t0": 192.202,
+   "t1": 195.058,
+   "bytes": [
+    1054512,
+    17136
+   ]
+  },
+  {
+   "i": 18,
+   "id": "annex#4",
+   "scene": "annex",
+   "who": "シグマ",
+   "text": "じゃあ、ぼくはここまで。あとはよろしく！",
+   "t0": 195.608,
+   "t1": 199.808,
+   "bytes": [
+    1071648,
+    25200
+   ]
+  },
+  {
+   "i": 19,
+   "id": "annex#5",
+   "scene": "annex",
+   "who": "N",
+   "text": "十ヌクレオチドほどのRNAができると、ポリメラーゼはプロモーターを離れ、σ因子もはずれる。ここからが、伸長だ。",
+   "t0": 200.358,
+   "t1": 211.182,
+   "bytes": [
+    1096848,
+    64944
+   ]
+  },
+  {
+   "i": 20,
+   "id": "annex#6",
+   "scene": "annex",
+   "who": "ジン",
+   "text": "あっ、写しの端が、くるっと折り返した。",
+   "t0": 211.732,
+   "t1": 215.572,
+   "bytes": [
+    1161792,
+    23040
+   ]
+  },
+  {
+   "i": 21,
+   "id": "annex#7",
+   "scene": "annex",
+   "who": "N",
+   "text": "終わりの印、ターミネーター。逆向きにくり返す配列が、RNAの中でステムループをつくり、ポリメラーゼが止まる。続くA–Uの弱い対のところで、RNAは外れる。ρタンパク質が、終わらせることもある。",
+   "t0": 216.122,
+   "t1": 235.514,
+   "bytes": [
+    1184832,
+    116352
+   ]
+  },
+  {
+   "i": 22,
+   "id": "annex#8",
+   "scene": "annex",
+   "who": "ジン",
+   "text": "あの棚には、「写すな」の札が掛かっていますね。",
+   "t0": 236.564,
+   "t1": 240.428,
+   "bytes": [
+    1301184,
+    23184
+   ]
+  },
+  {
+   "i": 23,
+   "id": "annex#9",
+   "scene": "annex",
+   "who": "コア",
+   "text": "ラクトースを分ける本さ。大腸菌はね、グルコースがあるうちは、それを写さないんだ。",
+   "t0": 240.978,
+   "t1": 248.082,
+   "bytes": [
+    1324368,
+    42624
+   ]
+  },
+  {
+   "i": 24,
+   "id": "annex#10",
+   "scene": "annex",
+   "who": "N",
+   "text": "リプレッサーが、オペレーターをふさいでいる。負の調節だ。ラクトースが入ってくると、リプレッサーは外れる。",
+   "t0": 248.632,
+   "t1": 258.496,
+   "bytes": [
+    1366992,
+    59184
+   ]
+  },
+  {
+   "i": 25,
+   "id": "annex#11",
+   "scene": "annex",
+   "who": "N",
+   "text": "グルコースがなくなりcAMPが増えると、cAMP–CRP複合体がプロモーターに結合し、ポリメラーゼが結合できるようになる。正の調節だ。lacZ、Y、Aの三つの遺伝子は、一本のmRNAに写される。",
+   "t0": 259.046,
+   "t1": 281.534,
+   "bytes": [
+    1426176,
+    134928
+   ]
+  },
+  {
+   "i": 26,
+   "id": "annex#12",
+   "scene": "annex",
+   "who": "ジン",
+   "text": "必要なときだけ、まとめて写すんだ。",
+   "t0": 282.084,
+   "t1": 285.612,
+   "bytes": [
+    1561104,
+    21168
+   ]
+  },
+  {
+   "i": 27,
+   "id": "annex#13",
+   "scene": "annex",
+   "who": "シグマ",
+   "text": "本館のポルさん、大変だよ。あっちは、ぼく一人じゃ足りないんだって！",
+   "t0": 286.162,
+   "t1": 292.258,
+   "bytes": [
+    1582272,
+    36576
+   ]
+  },
+  {
+   "i": 28,
+   "id": "reception#0",
+   "scene": "reception",
+   "who": "N",
+   "text": "本館に戻ると、グルコキナーゼの巻は、糸巻きにきつく巻かれたままだった。",
+   "t0": 295.408,
+   "t1": 301.576,
+   "bytes": [
+    1618848,
+    37008
+   ]
+  },
+  {
+   "i": 29,
+   "id": "reception#1",
+   "scene": "reception",
+   "who": "オクタ",
+   "text": "少しゆるめるわね。巻いたままじゃ、読めないもの。",
+   "t0": 302.126,
+   "t1": 307.598,
+   "bytes": [
+    1655856,
+    32832
+   ]
+  },
+  {
+   "i": 30,
+   "id": "reception#2",
+   "scene": "reception",
+   "who": "メチ",
+   "text": "付箋も、「開いて読む」に貼りかえておくわ。",
+   "t0": 308.148,
+   "t1": 312.564,
+   "bytes": [
+    1688688,
+    26496
+   ]
+  },
+  {
+   "i": 31,
+   "id": "reception#3",
+   "scene": "reception",
+   "who": "N",
+   "text": "真核生物のDNAは、ヌクレオソームをつくり、さらにクロマチンになっている。実際の転写には、クロマチン再構成複合体や、ヒストン修飾酵素の助けがいる。",
+   "t0": 313.114,
+   "t1": 327.658,
+   "bytes": [
+    1715184,
+    87264
+   ]
+  },
+  {
+   "i": 32,
+   "id": "reception#4",
+   "scene": "reception",
+   "who": "ポル",
+   "text": "本館では、わたし一人じゃ席に着けないの。まず、受付のみんなに並んでもらわないと。",
+   "t0": 328.208,
+   "t1": 336.296,
+   "bytes": [
+    1802448,
+    48528
+   ]
+  },
+  {
+   "i": 33,
+   "id": "reception#5",
+   "scene": "reception",
+   "who": "N",
+   "text": "転写開始部位から、およそ二十五塩基上流に、TATAボックスがある。TFIIDが、TBPを介してそこに結合し、DNAを大きくゆがめる。これが、活性のあるプロモーターの目印になると考えられている。",
+   "t0": 336.846,
+   "t1": 356.022,
+   "bytes": [
+    1850976,
+    115056
+   ]
+  },
+  {
+   "i": 34,
+   "id": "reception#6",
+   "scene": "reception",
+   "who": "N",
+   "text": "隣にTFIIB。続いて、残りの基本転写因子と、RNAポリメラーゼIIが集まり、転写開始複合体ができる。",
+   "t0": 356.572,
+   "t1": 367.948,
+   "bytes": [
+    1966032,
+    68256
+   ]
+  },
+  {
+   "i": 35,
+   "id": "reception#7",
+   "scene": "reception",
+   "who": "N",
+   "text": "TFIIHがATPを使ってDNAをほどき、鋳型鎖を露出させる。そして、ポリメラーゼのCTDをリン酸化すると、ポリメラーゼは因子たちから離れ、伸長に入る。",
+   "t0": 368.498,
+   "t1": 385.13,
+   "bytes": [
+    2034288,
+    99792
+   ]
+  },
+  {
+   "i": 36,
+   "id": "reception#8",
+   "scene": "reception",
+   "who": "ポル",
+   "text": "行ってきます。受付のみんなは、また次の写しで会いましょう。",
+   "t0": 385.68,
+   "t1": 391.776,
+   "bytes": [
+    2134080,
+    36576
+   ]
+  },
+  {
+   "i": 37,
+   "id": "reception#9",
+   "scene": "reception",
+   "who": "デオ",
+   "text": "遠くの棚から、「急ぎ」の札も届いておる。",
+   "t0": 392.326,
+   "t1": 396.598,
+   "bytes": [
+    2170656,
+    25632
+   ]
+  },
+  {
+   "i": 38,
+   "id": "reception#10",
+   "scene": "reception",
+   "who": "N",
+   "text": "遺伝子から離れたエンハンサーに、転写活性化因子が結合し、介在因子を通して、ポリメラーゼを転写開始部位へ引きつける。転写効率は上がる。その逆に、転写を抑えるのがサイレンサーだ。",
+   "t0": 397.148,
+   "t1": 414.98,
+   "bytes": [
+    2196288,
+    106992
+   ]
+  },
+  {
+   "i": 39,
+   "id": "reception#11",
+   "scene": "reception",
+   "who": "ジン",
+   "text": "肝臓の窓口の注文なのに、膵臓用の入口もあるんですね。",
+   "t0": 415.53,
+   "t1": 420.786,
+   "bytes": [
+    2303280,
+    31536
+   ]
+  },
+  {
+   "i": 40,
+   "id": "reception#12",
+   "scene": "reception",
+   "who": "デオ",
+   "text": "グルコキナーゼの遺伝子は、肝臓と、膵臓のB細胞とで、別のプロモーターを使う。同じ原本でも、組織ごとに、写し方が変わるのだ。",
+   "t0": 421.336,
+   "t1": 435.448,
+   "bytes": [
+    2334816,
+    84672
+   ]
+  },
+  {
+   "i": 41,
+   "id": "edit#0",
+   "scene": "edit",
+   "who": "N",
+   "text": "写字室では、スプラが、長い写しの帯を広げて待っていた。",
+   "t0": 438.798,
+   "t1": 444.126,
+   "bytes": [
+    2419488,
+    31968
+   ]
+  },
+  {
+   "i": 42,
+   "id": "edit#1",
+   "scene": "edit",
+   "who": "スプラ",
+   "text": "まだ、外には出せないな。表紙と、尾と、それから、読み飛ばすページの始末だ。",
+   "t0": 444.676,
+   "t1": 451.924,
+   "bytes": [
+    2451456,
+    43488
+   ]
+  },
+  {
+   "i": 43,
+   "id": "edit#2",
+   "scene": "edit",
+   "who": "N",
+   "text": "真核生物のmRNAは、まずmRNA前駆体として写される。5'末端にGが付き、その7位がメチル化されて、キャップになる。",
+   "t0": 452.474,
+   "t1": 467.066,
+   "bytes": [
+    2494944,
+    87552
+   ]
+  },
+  {
+   "i": 44,
+   "id": "edit#3",
+   "scene": "edit",
+   "who": "スプラ",
+   "text": "イントロンは、GUで始まって、AGで終わる。切る場所は、決まっているのさ。",
+   "t0": 467.616,
+   "t1": 474.792,
+   "bytes": [
+    2582496,
+    43056
+   ]
+  },
+  {
+   "i": 45,
+   "id": "edit#4",
+   "scene": "edit",
+   "who": "N",
+   "text": "snRNAとタンパク質の複合体、スプライセオソームが、二つの切断点を引き寄せる。イントロンは投げ縄の形で切り出され、エクソンどうしがつながる。",
+   "t0": 475.342,
+   "t1": 489.43,
+   "bytes": [
+    2625552,
+    84528
+   ]
+  },
+  {
+   "i": 46,
+   "id": "edit#5",
+   "scene": "edit",
+   "who": "N",
+   "text": "3'側では、ポリアデニル化シグナルの先で切断され、ポリ(A)ポリメラーゼが、Aを最大二百五十個まで付け加える。キャップとポリAは、写しを分解から守る。",
+   "t0": 489.98,
+   "t1": 504.908,
+   "bytes": [
+    2710080,
+    89568
+   ]
+  },
+  {
+   "i": 47,
+   "id": "edit#6",
+   "scene": "edit",
+   "who": "ジン",
+   "text": "同じ写しでも、つなぐページを変えたら……。",
+   "t0": 505.458,
+   "t1": 509.106,
+   "bytes": [
+    2799648,
+    21888
+   ]
+  },
+  {
+   "i": 48,
+   "id": "edit#7",
+   "scene": "edit",
+   "who": "スプラ",
+   "text": "別の写しになる。選択的スプライシングだ。遺伝子の数より多くの蛋白質が作られるのは、そのおかげさ。……さあ、門へ急げ。",
+   "t0": 509.656,
+   "t1": 521.248,
+   "bytes": [
+    2821536,
+    69552
+   ]
+  },
+  {
+   "i": 49,
+   "id": "ncrna#0",
+   "scene": "ncrna",
+   "who": "N",
+   "text": "門へ向かう廊下には、外へ出ていかない写しの棚が、ずらりと並んでいた。",
+   "t0": 524.398,
+   "t1": 530.614,
+   "bytes": [
+    2891088,
+    37296
+   ]
+  },
+  {
+   "i": 50,
+   "id": "ncrna#1",
+   "scene": "ncrna",
+   "who": "デオ",
+   "text": "館の中で、RNAのまま働く写しだ。",
+   "t0": 531.164,
+   "t1": 535.94,
+   "bytes": [
+    2928384,
+    28656
+   ]
+  },
+  {
+   "i": 51,
+   "id": "ncrna#2",
+   "scene": "ncrna",
+   "who": "N",
+   "text": "リボソームをつくるrRNA。アミノ酸を運ぶtRNA。ほかの写しに結合して、その翻訳を抑えるmiRNA。キャップもポリAも付き、スプライシングまで受けるのに、翻訳はされないlncRNA。",
+   "t0": 536.49,
+   "t1": 557.61,
+   "bytes": [
+    2957040,
+    126720
+   ]
+  },
+  {
+   "i": 52,
+   "id": "ncrna#3",
+   "scene": "ncrna",
+   "who": "ジン",
+   "text": "タンパク質にならない写しにも、ちゃんと仕事があるんですね。",
+   "t0": 558.16,
+   "t1": 562.864,
+   "bytes": [
+    3083760,
+    28224
+   ]
+  },
+  {
+   "i": 53,
+   "id": "ncrna#4",
+   "scene": "ncrna",
+   "who": "デオ",
+   "text": "ただし、多くはまだ、何をしているのか分かっておらん。だが、欠けると困るものもある。",
+   "t0": 563.414,
+   "t1": 572.054,
+   "bytes": [
+    3111984,
+    51840
+   ]
+  },
+  {
+   "i": 54,
+   "id": "ncrna#5",
+   "scene": "ncrna",
+   "who": "N",
+   "text": "15番染色体のsnoRNA遺伝子群の欠失は、Prader-Willi症候群を、13番染色体のmiRNA遺伝子群の欠失は、Feingold症候群を引き起こす。",
+   "t0": 572.604,
+   "t1": 587.748,
+   "bytes": [
+    3163824,
+    90864
+   ]
+  },
+  {
+   "i": 55,
+   "id": "noon#0",
+   "scene": "noon",
+   "who": "N",
+   "text": "十一時五十八分。僕は、整えた写しを、門の向こうへ差し出した。",
+   "t0": 591.098,
+   "t1": 598.13,
+   "bytes": [
+    3254688,
+    42192
+   ]
+  },
+  {
+   "i": 56,
+   "id": "noon#1",
+   "scene": "noon",
+   "who": "N",
+   "text": "成熟したmRNAは、核から細胞質へ運ばれ、そこで、蛋白質を合成するために使われる。",
+   "t0": 598.68,
+   "t1": 609.336,
+   "bytes": [
+    3296880,
+    63936
+   ]
+  },
+  {
+   "i": 57,
+   "id": "noon#2",
+   "scene": "noon",
+   "who": "デオ",
+   "text": "間に合ったな。……ほら、正午だ。この時計も、転写で動いておる。",
+   "t0": 610.186,
+   "t1": 618.058,
+   "bytes": [
+    3360816,
+    47232
+   ]
+  },
+  {
+   "i": 58,
+   "id": "noon#3",
+   "scene": "noon",
+   "who": "N",
+   "text": "BMAL1とCLOCKが、PerとCryの転写を促す。増えたPerとCryは、BMAL1とCLOCKを抑え、自分の転写を止める。このくり返しが、およそ一日のリズムをつくる。",
+   "t0": 618.608,
+   "t1": 634.28,
+   "bytes": [
+    3408048,
+    94032
+   ]
+  },
+  {
+   "i": 59,
+   "id": "noon#4",
+   "scene": "noon",
+   "who": "N",
+   "text": "時計遺伝子に異常のあるマウスでは、高脂血症や高血糖、肥満、食塩感受性高血圧などが見られる。",
+   "t0": 634.83,
+   "t1": 644.766,
+   "bytes": [
+    3502080,
+    59616
+   ]
+  },
+  {
+   "i": 60,
+   "id": "noon#5",
+   "scene": "noon",
+   "who": "デオ",
+   "text": "棚の隅の別冊、ミトコンドリアの原本にも、専用の写字係がおる。",
+   "t0": 645.316,
+   "t1": 652.228,
+   "bytes": [
+    3561696,
+    41472
+   ]
+  },
+  {
+   "i": 61,
+   "id": "noon#6",
+   "scene": "noon",
+   "who": "N",
+   "text": "ミトコンドリアゲノムは、核ゲノムにコードされたミトコンドリア特異的RNAポリメラーゼで、環状の鎖ごと全体が転写され、あとで、mRNAやtRNA、rRNAに切り分けられる。",
+   "t0": 652.778,
+   "t1": 670.634,
+   "bytes": [
+    3603168,
+    107136
+   ]
+  },
+  {
+   "i": 62,
+   "id": "noon#7",
+   "scene": "noon",
+   "who": "ジン",
+   "text": "写すだけじゃなかった。いつ、どこで、どれだけ写して、どう整えるかで、同じ原本が、別の働きをするんですね。",
+   "t0": 671.184,
+   "t1": 681.432,
+   "bytes": [
+    3710304,
+    61488
+   ]
+  },
+  {
+   "i": 63,
+   "id": "noon#8",
+   "scene": "noon",
+   "who": "デオ",
+   "text": "写しは、届いてはじめて意味をもつ。今日は、よく届けた。",
+   "t0": 681.982,
+   "t1": 688.654,
+   "bytes": [
+    3771792,
+    40032
+   ]
+  },
+  {
+   "i": 64,
+   "id": "noon#9",
+   "scene": "noon",
+   "who": "N",
+   "text": "窓の外は、もう真昼の光だった。午後の閲覧票が、また一枚、机に置かれていた。",
+   "t0": 689.504,
+   "t1": 697.952,
+   "bytes": [
+    3811824,
+    50688
+   ]
+  }
+ ],
+ "events": {},
+ "sfx": [
+  {
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_wood_000.ogg",
+   "gain": -19,
+   "pan": 0,
+   "t": 6.6
+  },
+  {
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_wood_001.ogg",
+   "gain": -20.5,
+   "pan": 0,
+   "t": 7.12
+  },
+  {
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_wood_002.ogg",
+   "gain": -19,
+   "pan": 0,
+   "t": 7.64
+  },
+  {
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_wood_003.ogg",
+   "gain": -20.5,
+   "pan": 0,
+   "t": 8.16
+  },
+  {
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_wood_000.ogg",
+   "gain": -19,
+   "pan": 0,
+   "t": 8.68
+  },
+  {
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_wood_001.ogg",
+   "gain": -20.5,
+   "pan": 0,
+   "t": 9.2
+  },
+  {
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_wood_002.ogg",
+   "gain": -19,
+   "pan": 0,
+   "t": 9.72
+  },
+  {
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_wood_003.ogg",
+   "gain": -20.5,
+   "pan": 0,
+   "t": 10.24
+  },
+  {
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_wood_000.ogg",
+   "gain": -19,
+   "pan": 0,
+   "t": 10.76
+  },
+  {
+   "file": "production/nucleus-hq/audio/se/kenney/cloth1.ogg",
+   "gain": -14,
+   "t": 16.222
+  },
+  {
+   "file": "production/nucleus-hq/audio/se/kenney/bookFlip2.ogg",
+   "gain": -18,
+   "t": 17.522
+  },
+  {
+   "file": "production/nucleus-hq/audio/se/kenney/bookFlip1.ogg",
+   "gain": -15,
+   "t": 69.336
+  },
+  {
+   "file": "production/transcription-morning/audio/se/synth/marker.wav",
+   "gain": -22,
+   "len": 6,
+   "t": 99.274
+  },
+  {
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_wood_000.ogg",
+   "gain": -19,
+   "pan": 0,
+   "t": 147.478
+  },
+  {
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_wood_001.ogg",
+   "gain": -20.5,
+   "pan": 0,
+   "t": 147.998
+  },
+  {
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_wood_002.ogg",
+   "gain": -19,
+   "pan": 0,
+   "t": 148.518
+  },
+  {
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_wood_003.ogg",
+   "gain": -20.5,
+   "pan": 0,
+   "t": 149.038
+  },
+  {
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_wood_000.ogg",
+   "gain": -19,
+   "pan": 0,
+   "t": 149.558
+  },
+  {
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_wood_001.ogg",
+   "gain": -20.5,
+   "pan": 0,
+   "t": 150.078
+  },
+  {
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_wood_002.ogg",
+   "gain": -19,
+   "pan": 0,
+   "t": 150.598
+  },
+  {
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_wood_003.ogg",
+   "gain": -20.5,
+   "pan": 0,
+   "t": 151.118
+  },
+  {
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_wood_000.ogg",
+   "gain": -19,
+   "pan": 0,
+   "t": 151.638
+  },
+  {
+   "file": "production/nucleus-hq/audio/se/kenney/doorOpen_1.ogg",
+   "gain": -16,
+   "t": 154.384
+  },
+  {
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_concrete_000.ogg",
+   "gain": -20,
+   "pan": 0,
+   "t": 154.984
+  },
+  {
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_concrete_001.ogg",
+   "gain": -21.5,
+   "pan": 0,
+   "t": 155.504
+  },
+  {
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_concrete_002.ogg",
+   "gain": -20,
+   "pan": 0,
+   "t": 156.024
+  },
+  {
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_concrete_003.ogg",
+   "gain": -21.5,
+   "pan": 0,
+   "t": 156.544
+  },
+  {
+   "file": "production/nucleus-hq/audio/se/kenney/doorClose_1.ogg",
+   "gain": -18,
+   "t": 156.984
+  },
+  {
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_concrete_000.ogg",
+   "gain": -20,
+   "pan": 0,
+   "t": 157.064
+  },
+  {
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_concrete_001.ogg",
+   "gain": -21.5,
+   "pan": 0,
+   "t": 157.584
+  },
+  {
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_concrete_002.ogg",
+   "gain": -20,
+   "pan": 0,
+   "t": 158.104
+  },
+  {
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_concrete_003.ogg",
+   "gain": -21.5,
+   "pan": 0,
+   "t": 158.624
+  },
+  {
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_concrete_000.ogg",
+   "gain": -20,
+   "pan": 0,
+   "t": 159.144
+  },
+  {
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_concrete_001.ogg",
+   "gain": -21.5,
+   "pan": 0,
+   "t": 159.664
+  },
+  {
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_concrete_002.ogg",
+   "gain": -20,
+   "pan": 0,
+   "t": 160.184
+  },
+  {
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_concrete_003.ogg",
+   "gain": -21.5,
+   "pan": 0,
+   "t": 160.704
+  },
+  {
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_concrete_000.ogg",
+   "gain": -20,
+   "pan": 0,
+   "t": 161.224
+  },
+  {
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_concrete_001.ogg",
+   "gain": -21.5,
+   "pan": 0,
+   "t": 161.744
+  },
+  {
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_concrete_002.ogg",
+   "gain": -20,
+   "pan": 0,
+   "t": 162.264
+  },
+  {
+   "file": "production/transcription-morning/audio/se/synth/marker_short.wav",
+   "gain": -22,
+   "t": 192.402
+  },
+  {
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_wood_002.ogg",
+   "gain": -13,
+   "t": 197.158
+  },
+  {
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_wood_000.ogg",
+   "gain": -19,
+   "pan": 0,
+   "t": 294.708
+  },
+  {
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_wood_001.ogg",
+   "gain": -20.5,
+   "pan": 0,
+   "t": 295.228
+  },
+  {
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_wood_002.ogg",
+   "gain": -19,
+   "pan": 0,
+   "t": 295.748
+  },
+  {
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_wood_003.ogg",
+   "gain": -20.5,
+   "pan": 0,
+   "t": 296.268
+  },
+  {
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_wood_000.ogg",
+   "gain": -19,
+   "pan": 0,
+   "t": 296.788
+  },
+  {
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_wood_001.ogg",
+   "gain": -20.5,
+   "pan": 0,
+   "t": 297.308
+  },
+  {
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_wood_002.ogg",
+   "gain": -19,
+   "pan": 0,
+   "t": 297.828
+  },
+  {
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_wood_003.ogg",
+   "gain": -20.5,
+   "pan": 0,
+   "t": 298.348
+  },
+  {
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_wood_000.ogg",
+   "gain": -19,
+   "pan": 0,
+   "t": 298.868
+  },
+  {
+   "file": "production/nucleus-hq/audio/se/kenney/creak1.ogg",
+   "gain": -20,
+   "t": 302.626
+  },
+  {
+   "file": "production/nucleus-hq/audio/se/kenney/cloth2.ogg",
+   "gain": -18,
+   "t": 309.548
+  },
+  {
+   "file": "production/nucleus-hq/audio/se/kenney/cloth3.ogg",
+   "gain": -17,
+   "t": 392.726
+  },
+  {
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_wood_000.ogg",
+   "gain": -19,
+   "pan": 0,
+   "t": 437.898
+  },
+  {
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_wood_001.ogg",
+   "gain": -20.5,
+   "pan": 0,
+   "t": 438.418
+  },
+  {
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_wood_002.ogg",
+   "gain": -19,
+   "pan": 0,
+   "t": 438.938
+  },
+  {
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_wood_003.ogg",
+   "gain": -20.5,
+   "pan": 0,
+   "t": 439.458
+  },
+  {
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_wood_000.ogg",
+   "gain": -19,
+   "pan": 0,
+   "t": 439.978
+  },
+  {
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_wood_001.ogg",
+   "gain": -20.5,
+   "pan": 0,
+   "t": 440.498
+  },
+  {
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_wood_002.ogg",
+   "gain": -19,
+   "pan": 0,
+   "t": 441.018
+  },
+  {
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_wood_003.ogg",
+   "gain": -20.5,
+   "pan": 0,
+   "t": 441.538
+  },
+  {
+   "file": "production/nucleus-hq/audio/se/kenney/metalClick.ogg",
+   "gain": -17,
+   "t": 445.076
+  },
+  {
+   "file": "production/nucleus-hq/audio/se/kenney/metalClick.ogg",
+   "gain": -17,
+   "t": 445.496
+  },
+  {
+   "file": "production/nucleus-hq/audio/se/kenney/metalClick.ogg",
+   "gain": -17,
+   "t": 445.916
+  },
+  {
+   "file": "production/nucleus-hq/audio/se/kenney/bookPlace1.ogg",
+   "gain": -17,
+   "t": 515.856
+  },
+  {
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_wood_000.ogg",
+   "gain": -19,
+   "pan": 0,
+   "t": 517.356
+  },
+  {
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_wood_001.ogg",
+   "gain": -20.5,
+   "pan": 0,
+   "t": 517.876
+  },
+  {
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_wood_002.ogg",
+   "gain": -19,
+   "pan": 0,
+   "t": 518.396
+  },
+  {
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_wood_003.ogg",
+   "gain": -20.5,
+   "pan": 0,
+   "t": 518.916
+  },
+  {
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_wood_000.ogg",
+   "gain": -19,
+   "pan": 0,
+   "t": 519.436
+  },
+  {
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_wood_001.ogg",
+   "gain": -20.5,
+   "pan": 0,
+   "t": 519.956
+  },
+  {
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_wood_002.ogg",
+   "gain": -19,
+   "pan": 0,
+   "t": 520.476
+  },
+  {
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_wood_003.ogg",
+   "gain": -20.5,
+   "pan": 0,
+   "t": 520.996
+  },
+  {
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_wood_000.ogg",
+   "gain": -19,
+   "pan": 0,
+   "t": 521.516
+  },
+  {
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_wood_001.ogg",
+   "gain": -20.5,
+   "pan": 0,
+   "t": 522.036
+  },
+  {
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_wood_000.ogg",
+   "gain": -19,
+   "pan": 0,
+   "t": 523.698
+  },
+  {
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_wood_001.ogg",
+   "gain": -20.5,
+   "pan": 0,
+   "t": 524.218
+  },
+  {
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_wood_002.ogg",
+   "gain": -19,
+   "pan": 0,
+   "t": 524.738
+  },
+  {
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_wood_003.ogg",
+   "gain": -20.5,
+   "pan": 0,
+   "t": 525.258
+  },
+  {
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_wood_000.ogg",
+   "gain": -19,
+   "pan": 0,
+   "t": 525.778
+  },
+  {
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_wood_001.ogg",
+   "gain": -20.5,
+   "pan": 0,
+   "t": 526.298
+  },
+  {
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_wood_002.ogg",
+   "gain": -19,
+   "pan": 0,
+   "t": 526.818
+  },
+  {
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_wood_003.ogg",
+   "gain": -20.5,
+   "pan": 0,
+   "t": 527.338
+  },
+  {
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_wood_000.ogg",
+   "gain": -19,
+   "pan": 0,
+   "t": 527.858
+  },
+  {
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_wood_001.ogg",
+   "gain": -20.5,
+   "pan": 0,
+   "t": 528.378
+  },
+  {
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_wood_002.ogg",
+   "gain": -19,
+   "pan": 0,
+   "t": 528.898
+  },
+  {
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_wood_003.ogg",
+   "gain": -20.5,
+   "pan": 0,
+   "t": 529.418
+  },
+  {
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_wood_000.ogg",
+   "gain": -19,
+   "pan": 0,
+   "t": 529.938
+  },
+  {
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_wood_001.ogg",
+   "gain": -20.5,
+   "pan": 0,
+   "t": 530.458
+  },
+  {
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_wood_000.ogg",
+   "gain": -19,
+   "pan": 0,
+   "t": 589.998
+  },
+  {
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_wood_001.ogg",
+   "gain": -20.5,
+   "pan": 0,
+   "t": 590.518
+  },
+  {
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_wood_002.ogg",
+   "gain": -19,
+   "pan": 0,
+   "t": 591.038
+  },
+  {
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_wood_003.ogg",
+   "gain": -20.5,
+   "pan": 0,
+   "t": 591.558
+  },
+  {
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_wood_000.ogg",
+   "gain": -19,
+   "pan": 0,
+   "t": 592.078
+  },
+  {
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_wood_001.ogg",
+   "gain": -20.5,
+   "pan": 0,
+   "t": 592.598
+  },
+  {
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_wood_002.ogg",
+   "gain": -19,
+   "pan": 0,
+   "t": 593.118
+  },
+  {
+   "file": "production/nucleus-hq/audio/se/kenney/cloth4.ogg",
+   "gain": -18,
+   "t": 593.898
+  },
+  {
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_wood_000.ogg",
+   "gain": -21,
+   "pan": 0,
+   "t": 610.286
+  },
+  {
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_wood_001.ogg",
+   "gain": -22.5,
+   "pan": 0,
+   "t": 610.786
+  },
+  {
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_wood_002.ogg",
+   "gain": -21,
+   "pan": 0,
+   "t": 611.286
+  },
+  {
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_wood_003.ogg",
+   "gain": -22.5,
+   "pan": 0,
+   "t": 611.786
+  },
+  {
+   "file": "production/nucleus-hq/audio/se/kenney/footstep_wood_000.ogg",
+   "gain": -21,
+   "pan": 0,
+   "t": 612.286
+  },
+  {
+   "file": "production/transcription-morning/audio/se/synth/chime.wav",
+   "gain": -12,
+   "t": 613.186
+  },
+  {
+   "file": "production/transcription-morning/audio/se/synth/chime.wav",
+   "gain": -12,
+   "t": 614.686
+  },
+  {
+   "file": "production/transcription-morning/audio/se/synth/chime.wav",
+   "gain": -12,
+   "t": 616.186
+  }
+ ],
+ "bgm": [
+  {
+   "file": "production/transcription-morning/audio/bgm/Carefree.mp3",
+   "from": "morning+0.2",
+   "to": "morning.end",
+   "offset": 0,
+   "gain": -15,
+   "fadeIn": 2.5,
+   "fadeOut": 2.5,
+   "t0": 0.2,
+   "t1": 68.936
+  },
+  {
+   "file": "production/transcription-morning/audio/bgm/Easy Lemon.mp3",
+   "from": "mirror+0.3",
+   "to": "mirror.end",
+   "offset": 0,
+   "gain": -16,
+   "fadeIn": 2.5,
+   "fadeOut": 2.5,
+   "t0": 69.236,
+   "t1": 153.784
+  },
+  {
+   "file": "production/transcription-morning/audio/bgm/Life of Riley.mp3",
+   "from": "annex+0.3",
+   "to": "annex.end",
+   "offset": 0,
+   "gain": -17,
+   "fadeIn": 2.5,
+   "fadeOut": 2.5,
+   "t0": 154.084,
+   "t1": 294.208
+  },
+  {
+   "file": "production/transcription-morning/audio/bgm/Wholesome.mp3",
+   "from": "reception+0.3",
+   "to": "reception.end",
+   "offset": 0,
+   "gain": -15,
+   "fadeIn": 3,
+   "fadeOut": 2.5,
+   "t0": 294.508,
+   "t1": 437.398
+  },
+  {
+   "file": "production/transcription-morning/audio/bgm/Easy Lemon.mp3",
+   "from": "edit+0.2",
+   "to": "edit.end",
+   "offset": 62,
+   "gain": -16,
+   "fadeIn": 2.5,
+   "fadeOut": 2.5,
+   "t0": 437.598,
+   "t1": 523.198
+  },
+  {
+   "file": "production/transcription-morning/audio/bgm/Bright Wish.mp3",
+   "from": "ncrna+0.3",
+   "to": "ncrna.end",
+   "offset": 0,
+   "gain": -15,
+   "fadeIn": 2.5,
+   "fadeOut": 2.5,
+   "t0": 523.498,
+   "t1": 589.698
+  },
+  {
+   "file": "production/transcription-morning/audio/bgm/Wholesome.mp3",
+   "from": "noon+0.3",
+   "to": "noon.end",
+   "offset": 120,
+   "gain": -14,
+   "fadeIn": 3,
+   "fadeOut": 4,
+   "t0": 589.998,
+   "t1": 699.902
+  }
+ ],
+ "ambience": [
+  {
+   "file": "production/transcription-morning/audio/se/synth/amb_morning.wav",
+   "from": "morning.start",
+   "to": "morning+6.4",
+   "gain": -18,
+   "fadeIn": 1,
+   "fadeOut": 0.8,
+   "t0": 0,
+   "t1": 6.4
+  },
+  {
+   "file": "production/transcription-morning/audio/se/synth/amb_morning.wav",
+   "from": "morning+6.0",
+   "to": "noon.end",
+   "gain": -30,
+   "fadeIn": 1.5,
+   "fadeOut": 2,
+   "t0": 6,
+   "t1": 699.902
+  }
+ ]
+}

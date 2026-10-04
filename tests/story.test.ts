@@ -30,7 +30,7 @@ describe('story timeline', () => {
 
 describe('story anime content', () => {
   const entries = Object.entries(stories);
-  it('every course has a story', () => expect(entries.length).toBe(5));
+  it('every course has a story', () => expect(entries.length).toBe(6));
   for (const [path, mod] of entries) {
     const course = path.split('/')[4];
     const { def, draw } = mod.default;

@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useCourse } from '../../app/course';
+import { COURSES } from '../../content/registry';
 import { timeScript } from '../../engine/animation/stage';
 import { fmtT } from '../../engine/svg';
 import { useProgress, useStudyPage } from '../../state/hooks';
@@ -28,6 +29,13 @@ export default function AnimationsPage() {
           </div>
         </Link>
       )}
+      {(course.related ?? []).map((id) => COURSES.find((c) => c.id === id)).filter((c) => c?.storyTitle).map((c) => (
+        <Link key={c!.id} className="card story-rel" to={`/open/${c!.id}/animations/story`}>
+          <div className="kick">関連するストーリー ・ {c!.title}</div>
+          <b>{c!.storyTitle}</b>
+          <small>{c!.storyLead}</small>
+        </Link>
+      ))}
       <h2 className="anim-sec">機序アニメ <small>授業の中でも使われる、ステップ再生のアニメーション</small></h2>
       <div className="grid cols-auto gal" style={{ marginTop: 12 }}>
         {Object.values(course.animations).map((a) => {
@@ -38,6 +46,7 @@ export default function AnimationsPage() {
               <div className="kick">{a.meta.en}</div>
               <b>{a.meta.title}</b>
               <small>第{a.meta.chapter}章・約{fmtT(t.total)}・全{t.groups.length}章構成／スライド{a.meta.sources.join('・')}</small>
+              <small className="anim-desc">{a.meta.description.replace(/<[^>]+>/g, '')}</small>
               <small>{v ? `✓ 再生 ${v.plays}回・最大 ${Math.round(v.maxProgress * 100)}%` : '未視聴'}</small>
             </Link>
           );

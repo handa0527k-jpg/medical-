@@ -75,8 +75,10 @@ async def main():
         l['bytes'] = [len(blob), len(data)]
         l['dur'] = duration(os.path.join(adir, name))
         blob += data
+    # only the voices are replaced; other tracks in the folder (bed / music / effects) stay
     for f in os.listdir(pdir):
-        os.remove(os.path.join(pdir, f))
+        if f.startswith('story') and f.endswith('.mp3'):
+            os.remove(os.path.join(pdir, f))
     open(os.path.join(pdir, 'story.mp3'), 'wb').write(blob)
     story['audio'] = hashlib.sha1(bytes(blob)).hexdigest()[:10]
     with open(story_path, 'w') as fh:

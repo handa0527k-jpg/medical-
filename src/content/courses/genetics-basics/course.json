@@ -5,6 +5,7 @@
  "subtitleEm": "理解する。",
  "subject": "遺伝医学",
  "category": "genetics",
+ "related": ["genetics-transcription"],
  "lecture": {
   "label": "講義資料 2026.09.28",
   "number": 1,

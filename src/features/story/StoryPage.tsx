@@ -33,6 +33,8 @@ export default function StoryPage() {
     <div className="story-page">
       <div className="btnrow" style={{ marginTop: 0, marginBottom: 14 }}>
         <Link className="btn sm" to="/animations" style={{ flex: '0 0 auto' }}>← アニメ一覧</Link>
+        <Link className="btn sm" to="/book" style={{ flex: '0 0 auto' }}>教科書</Link>
+        <Link className="btn sm" to="/quiz" style={{ flex: '0 0 auto' }}>問題</Link>
       </div>
       <section className="page-h">
         <div className="kick">STORY ANIME ・ 約{Math.round(tl.total / 60)}分</div>

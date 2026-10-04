@@ -19,6 +19,8 @@ export interface CourseMeta {
   category: string;
   /** further categories that also list this course */
   alsoIn?: string[];
+  /** courses whose story anime continues / precedes this one (cross-links on the animation page) */
+  related?: string[];
   lecture: { label: string; number: number; slideRange: [number, number] };
   metaphor: string;
   /** how the metaphor is labelled in the UI (default: 工場メタファー / FACTORY / 工場での役割) */

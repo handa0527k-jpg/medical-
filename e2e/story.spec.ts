@@ -95,3 +95,43 @@ test('nucleus film (午前二時の本社ビル): a frame from every scene draws
   const bed = await request.get('/courses/histology-nucleus/story/bed.mp3');
   expect(bed.ok()).toBe(true);
 });
+
+test('transcription film (写字室の朝): every scene draws, music and effects are served, the BGM control works', async ({ page, request }) => {
+  const errs: string[] = [];
+  page.on('pageerror', (e) => errs.push(e.message));
+  // morning, mirror, annex, reception, edit, ncrna, noon
+  for (const t of [40, 110, 230, 380, 480, 560, 650]) {
+    await page.goto(`/#/open/genetics-transcription/animations/story?t=${t}`);
+    await expect(page.locator('.story-tm')).toContainText(`${Math.floor(t / 60)}:${String(Math.floor(t % 60)).padStart(2, '0')}`);
+    const painted = await page.locator('.story-screen canvas').evaluate((c: HTMLCanvasElement) => {
+      const d = c.getContext('2d')!.getImageData(0, 0, c.width, c.height).data; let n = 0; for (let i = 0; i < d.length; i += 4000) if (d[i] + d[i + 1] + d[i + 2] > 40) n++; return n;
+    });
+    expect(painted, `frame at ${t}s`).toBeGreaterThan(40);
+  }
+  // music on/off and volume, remembered across visits
+  const bgm = page.locator('.story-bgm button');
+  await expect(bgm).toHaveAttribute('aria-pressed', 'true');
+  await bgm.click();
+  await expect(bgm).toHaveAttribute('aria-pressed', 'false');
+  await page.reload();
+  await expect(page.locator('.story-bgm button')).toHaveAttribute('aria-pressed', 'false');
+  await page.locator('.story-bgm button').click();
+  await page.locator('.story-bgm input').fill('0.4');
+  expect(errs).toEqual([]);
+  for (const f of ['story.mp3', 'bgm.mp3', 'fx.mp3']) expect((await request.get(`/courses/genetics-transcription/story/${f}`)).ok(), f).toBe(true);
+});
+
+test('transcription course: every mechanism animation plays its steps; links to the textbook and questions', async ({ page }) => {
+  const errs: string[] = [];
+  page.on('pageerror', (e) => errs.push(e.message));
+  await page.goto('/#/open/genetics-transcription/animations');
+  await expect(page.locator('.story-hero')).toContainText('写字室の朝');
+  await expect(page.locator('.story-rel')).toContainText('設計図の図書館');
+  for (const id of ['template', 'bacteria', 'lac', 'euinit', 'clock', 'splice', 'mirna']) {
+    await page.goto(`/#/open/genetics-transcription/animations/${id}?t=30`);
+    await expect(page.locator('.astage .stage-host svg').first()).toBeAttached();
+    await expect(page.locator('.anim-t')).toBeVisible();
+    await expect(page.getByRole('link', { name: /章の問題/ })).toBeVisible();
+  }
+  expect(errs).toEqual([]);
+});

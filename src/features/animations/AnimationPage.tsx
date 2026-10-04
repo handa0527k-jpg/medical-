@@ -17,6 +17,7 @@ export default function AnimationPage() {
       <div className="btnrow" style={{ marginTop: 0, marginBottom: 14 }}>
         <Link className="btn sm" to="/animations" style={{ flex: '0 0 auto' }}>← アニメーション一覧</Link>
         <Link className="btn sm" to={`/chapter/${a.meta.chapter}`} style={{ flex: '0 0 auto' }}>第{a.meta.chapter}章の教科書</Link>
+        <Link className="btn sm" to={`/quiz/play?chapter=${a.meta.chapter}`} style={{ flex: '0 0 auto' }}>第{a.meta.chapter}章の問題</Link>
       </div>
       <AnimationPlayer id={id} startAt={startAt} />
     </>

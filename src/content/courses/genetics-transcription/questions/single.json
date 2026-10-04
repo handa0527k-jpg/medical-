@@ -1,0 +1,5690 @@
+[
+ {
+  "id": "t02a",
+  "slide": 2,
+  "chapter": 1,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "スライド2「『転写』の重要語句」で、<b>原核生物のみ</b>に分類されている語句はどれか。",
+  "options": [
+   {
+    "text": "TATAボックス",
+    "explanation": "真核生物のみの欄にある",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "プロモーター",
+    "explanation": "真核・原核共通の欄にある",
+    "correct": false,
+    "trap": "scope"
+   },
+   {
+    "text": "基本転写因子",
+    "explanation": "真核生物のみの欄にある",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "オペロン、レギュロン",
+    "explanation": "原核生物のみの欄には「−10, −35ボックス」と「オペロン、レギュロン」が挙がっている",
+    "correct": true
+   },
+   {
+    "text": "ハウスキーピング遺伝子",
+    "explanation": "真核・原核共通の欄にある",
+    "correct": false,
+    "trap": "scope"
+   }
+  ],
+  "explanation": "スライド2では、原核生物のみの語句は<b>−10, −35ボックス</b>と<b>オペロン、レギュロン</b>の2項目だけである。TATAボックスや基本転写因子は真核生物のみ、プロモーター・ハウスキーピング遺伝子は真核・原核共通に分類されている。",
+  "point": "原核のみ＝−10/−35ボックス・オペロン/レギュロン。",
+  "tags": [
+   "重要語句",
+   "原核と真核"
+  ]
+ },
+ {
+  "id": "t02b",
+  "slide": 2,
+  "chapter": 1,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "スライド2の分類で、<b>すべてが「真核生物のみ」</b>の語句からなる組み合わせはどれか。",
+  "options": [
+   {
+    "text": "−10, −35ボックス・TATAボックス・GCボックス",
+    "explanation": "−10, −35ボックスは原核生物のみ",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "RNAポリメラーゼ・転写因子・エンハンサー",
+    "explanation": "RNAポリメラーゼと転写因子は真核・原核共通",
+    "correct": false,
+    "trap": "scope"
+   },
+   {
+    "text": "5'キャップ構造・ポリA付加・(選択的)スプライシング",
+    "explanation": "3つとも真核生物のみの欄にある",
+    "correct": true
+   },
+   {
+    "text": "ターミネーター・mRNA前駆体・CAATボックス",
+    "explanation": "ターミネーターは真核・原核共通",
+    "correct": false,
+    "trap": "scope"
+   },
+   {
+    "text": "オペロン・エクソン・イントロン",
+    "explanation": "オペロンは原核生物のみ",
+    "correct": false,
+    "trap": "swap"
+   }
+  ],
+  "explanation": "スライド2の「真核生物のみ」には、TATAボックス・GCボックス・CAATボックス・エンハンサー/サイレンサー・基本転写因子・RNAポリメラーゼII・転写開始前複合体・mRNA前駆体・5'キャップ構造・ポリA付加・不連続遺伝子・(選択的)スプライシング・エクソン/イントロン・クロマチンリモデリング・エピジェネティック制御が並ぶ。RNAポリメラーゼ・転写因子・ターミネーターなどは共通である。",
+  "point": "キャップ・ポリA・スプライシングなどmRNA前駆体の加工は真核のみ。共通語句の混入に注意。",
+  "tags": [
+   "重要語句",
+   "原核と真核"
+  ]
+ },
+ {
+  "id": "t03a",
+  "slide": 3,
+  "chapter": 1,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "スライド3「分子生物学のセントラルドグマ」で、DNAからRNAが作られる過程と、RNAからタンパク質が作られる過程の名称の組み合わせとして正しいのはどれか。",
+  "options": [
+   {
+    "text": "翻訳 ― 転写",
+    "explanation": "2つの名称が逆",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "複製 ― 翻訳",
+    "explanation": "DNA複製はDNAからDNAを作る過程として描かれている",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "転写 ― 修復",
+    "explanation": "DNA修復はDNA自身に向かう矢印として描かれている",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "組換え ― 転写",
+    "explanation": "遺伝的組換えはDNAの過程。RNA→タンパク質は翻訳",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "転写 ― 翻訳",
+    "explanation": "RNA合成＝転写、タンパク合成＝翻訳",
+    "correct": true
+   }
+  ],
+  "explanation": "スライド3の図では、DNA →「RNA合成（転写）」→ RNA →「タンパク合成（翻訳）」→ タンパク質。DNA複製・DNA修復・遺伝的組換えはDNA自身に戻る矢印として描かれている。",
+  "point": "DNA→RNAが転写、RNA→タンパク質が翻訳。",
+  "tags": [
+   "セントラルドグマ"
+  ]
+ },
+ {
+  "id": "t03b",
+  "slide": 3,
+  "chapter": 1,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "スライド3の記載として正しいのはどれか。",
+  "options": [
+   {
+    "text": "原核生物（細菌）はRNAを介さずにDNAから直接タンパク質を作る",
+    "explanation": "細菌も含めた全ての細胞がこの向きで発現すると記されている",
+    "correct": false,
+    "trap": "scope"
+   },
+   {
+    "text": "細菌からヒトに至る全ての細胞は、遺伝情報をDNA→RNA→タンパク質の向きで発現する",
+    "explanation": "スライドに「普遍的な原理」と記されている",
+    "correct": true
+   },
+   {
+    "text": "情報の流れ方は全ての生物で完全に同じで、違いはない",
+    "explanation": "「情報の流れ方には、色々と違いがある」と記されている",
+    "correct": false,
+    "trap": "scope"
+   },
+   {
+    "text": "セントラルドグマはタンパク質からDNAへ向かう情報の流れを指す",
+    "explanation": "流れは「DNAからタンパク質へ」",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "図の転写産物RNAは二本鎖として描かれている",
+    "explanation": "RNAは5'→3'の一本の鎖として描かれている",
+    "correct": false,
+    "trap": "fact"
+   }
+  ],
+  "explanation": "スライド3は、DNA→RNA→タンパク質という向きの発現が細菌からヒトまで共通の<b>普遍的な原理</b>であるとしたうえで、「しかし、情報の流れ方には、色々と違いがある」と続ける（原核と真核の違いが後のスライドで扱われる）。",
+  "point": "向きは普遍、流れ方の細部は生物で違う。",
+  "tags": [
+   "セントラルドグマ"
+  ]
+ },
+ {
+  "id": "t04a",
+  "slide": 4,
+  "chapter": 1,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "スライド4の図で、核の外（CYTOSOL）で起こる過程として描かれているのはどれか。",
+  "options": [
+   {
+    "text": "タンパク合成（翻訳）の開始",
+    "explanation": "核外へ輸送されたmRNAで翻訳が始まる",
+    "correct": true
+   },
+   {
+    "text": "キャップ形成",
+    "explanation": "核内（赤枠内）の過程",
+    "correct": false,
+    "trap": "scope"
+   },
+   {
+    "text": "スプライシング",
+    "explanation": "核内（赤枠内）の過程",
+    "correct": false,
+    "trap": "scope"
+   },
+   {
+    "text": "ポリアデニル化",
+    "explanation": "核内（赤枠内）の過程",
+    "correct": false,
+    "trap": "scope"
+   },
+   {
+    "text": "転写開始",
+    "explanation": "核内（赤枠内）の過程",
+    "correct": false,
+    "trap": "scope"
+   }
+  ],
+  "explanation": "スライド4では、核内で 転写開始 → キャップ形成・伸長・スプライシング → 切断・ポリアデニル化・転写終結 が起こり、mRNAが核外へ輸送される。その後、細胞質でmRNAの分解、翻訳の開始、タンパク合成の完了と折りたたみ、タンパク質の分解が描かれている。",
+  "point": "キャップ・スプライシング・ポリAは核内、翻訳は核外。",
+  "tags": [
+   "遺伝子発現の流れ",
+   "真核生物"
+  ]
+ },
+ {
+  "id": "t04b",
+  "slide": 4,
+  "chapter": 1,
+  "kind": "重要事項",
+  "difficulty": 2,
+  "stem": "スライド4に示された、核内での過程の順序として正しいのはどれか。",
+  "options": [
+   {
+    "text": "転写開始 → 切断・ポリアデニル化・転写終結 → キャップ形成・伸長・スプライシング → 核外へ輸送",
+    "explanation": "キャップ形成は伸長と同じ段階で、ポリアデニル化より前",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "転写開始 → 核外へ輸送 → キャップ形成・伸長・スプライシング → 切断・ポリアデニル化・転写終結",
+    "explanation": "核外へ輸送は核内の加工が終わった後",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "キャップ形成・伸長・スプライシング → 転写開始 → 切断・ポリアデニル化・転写終結 → 核外へ輸送",
+    "explanation": "転写が始まらなければキャップ形成も起こらない",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "転写開始 → キャップ形成・伸長・スプライシング → 切断・ポリアデニル化・転写終結 → 核外へ輸送",
+    "explanation": "スライドの並びどおり",
+    "correct": true
+   },
+   {
+    "text": "転写開始 → キャップ形成・伸長・スプライシング → タンパク合成（翻訳）の開始 → 核外へ輸送",
+    "explanation": "翻訳の開始は核外へ輸送された後",
+    "correct": false,
+    "trap": "reverse"
+   }
+  ],
+  "explanation": "スライド4の流れ：<b>転写開始</b> → <b>キャップ形成, 伸長, スプライシング</b> → <b>切断, ポリアデニル化, 転写終結</b> → <b>核外へ輸送</b> → mRNAの分解 / 翻訳の開始 → タンパク合成の完了と折りたたみ → タンパク質の分解。",
+  "point": "キャップは伸長とともに先、ポリAは終結とともに後、そのあと核外へ。",
+  "tags": [
+   "遺伝子発現の流れ",
+   "mRNAのプロセシング"
+  ]
+ },
+ {
+  "id": "t05a",
+  "slide": 5,
+  "chapter": 1,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "スライド5の記載として正しいのはどれか。",
+  "options": [
+   {
+    "text": "転写によって、DNAの両方の鎖に相補的な二本鎖RNA分子が作られる",
+    "explanation": "作られるのは一方の鎖に相補的な<b>一本鎖</b>RNA",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "DNAはDNAポリメラーゼが転写する",
+    "explanation": "転写するのは<b>RNAポリメラーゼ</b>",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "転写によって、DNAの一方の鎖に相補的な一本鎖RNA分子が作られる",
+    "explanation": "スライドの記載どおり",
+    "correct": true
+   },
+   {
+    "text": "合成されるRNAは、鋳型鎖と同じ塩基配列をもつ",
+    "explanation": "RNAは鋳型鎖に<b>相補的</b>",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "RNAポリメラーゼの入り口から取り込まれるのはデオキシリボヌクレオシド三リン酸である",
+    "explanation": "図では「リボヌクレオシド三リン酸の入り口」",
+    "correct": false,
+    "trap": "swap"
+   }
+  ],
+  "explanation": "スライド5：「転写によって、DNAの一方の鎖に相補的な一本鎖RNA分子が作られる」「DNAは<b>RNAポリメラーゼ</b>が転写する」。図では鋳型鎖（3'→5'）に相補的なRNAが5'→3'に作られる。",
+  "point": "一方の鎖（鋳型鎖）に相補的な一本鎖RNAを、RNAポリメラーゼが作る。",
+  "tags": [
+   "鋳型鎖",
+   "RNAポリメラーゼ"
+  ]
+ },
+ {
+  "id": "t05b",
+  "slide": 5,
+  "chapter": 1,
+  "kind": "理解・統合",
+  "difficulty": 3,
+  "stem": "スライド5のRNAポリメラーゼの模式図(A)・構造図(B)について正しいのはどれか。",
+  "options": [
+   {
+    "text": "リボヌクレオシド一リン酸が入り口から取り込まれる",
+    "explanation": "取り込まれるのは<b>リボヌクレオシド三リン酸</b>",
+    "correct": false,
+    "trap": "number"
+   },
+   {
+    "text": "鋳型にならないDNA鎖もDNA/RNAらせんに加わる",
+    "explanation": "図(B)では「鋳型にならないDNA鎖が外れる」",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "新たに合成されたRNAは3'末端側から先にRNAの出口を出ていく",
+    "explanation": "図(A)では出口から出ている先端は<b>5'</b>末端",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "DNA二重らせんはポリメラーゼの外にとどまり、一本鎖になった鋳型鎖だけが内部を通る",
+    "explanation": "図(B)には「下流のDNAらせんの通路」「DNA二重らせんの出口」がある",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "活性部位付近では、新たに合成されたRNAが鋳型DNA鎖と短いDNA/RNAらせんを形成している",
+    "explanation": "図に「短いDNA/RNAらせん」と示されている",
+    "correct": true
+   }
+  ],
+  "explanation": "スライド5の図：DNA二重らせんがRNAポリメラーゼに入り、活性部位で鋳型DNA鎖と新しいRNAが<b>短いDNA/RNAらせん</b>をつくる。材料のリボヌクレオシド三リン酸は専用の入り口から入り、RNAは5'末端から出口を出ていく。鋳型にならないDNA鎖は外れる。",
+  "point": "材料は三リン酸、RNAは5'末端から出る、DNA/RNAらせんは鋳型鎖とRNA。",
+  "tags": [
+   "RNAポリメラーゼ",
+   "鋳型鎖"
+  ]
+ },
+ {
+  "id": "t06a",
+  "slide": 6,
+  "chapter": 1,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "スライド6「転写の概要」で、原核生物と真核生物のmRNA合成を比べた図の内容として正しいのはどれか。",
+  "options": [
+   {
+    "text": "原核生物の遺伝子にはプロモーターがない",
+    "explanation": "原核生物の図にもプロモーターがある",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "真核生物では（不連続）遺伝子からmRNA前駆体が作られ、転写後プロセシングを経て完成したmRNAになる",
+    "explanation": "図の真核生物の欄のとおり",
+    "correct": true
+   },
+   {
+    "text": "真核生物の遺伝子にはターミネーターがない",
+    "explanation": "真核生物の図にもターミネーターがある",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "転写調節領域は原核生物にだけ描かれている",
+    "explanation": "真核生物の図にも転写調節領域がある",
+    "correct": false,
+    "trap": "scope"
+   },
+   {
+    "text": "真核生物のmRNA前駆体ではエクソンが除かれ、イントロン同士がつながる",
+    "explanation": "除かれるのは<b>イントロン</b>で、つながるのは<b>エクソン</b>",
+    "correct": false,
+    "trap": "swap"
+   }
+  ],
+  "explanation": "スライド6では、原核・真核とも 転写調節領域 → プロモーター → 遺伝子 → ターミネーター の並びで、RNAポリメラーゼ（真核ではRNAポリメラーゼII）が転写の開始・延長・終結を行う。真核生物では遺伝子が<b>不連続</b>で、mRNA前駆体から転写後プロセシングでイントロンが除かれ、両端にm<sup>7</sup>GとAAA…をもつ完成したmRNAになる。",
+  "point": "真核のmRNAは「前駆体 → 転写後プロセシング → 完成」。",
+  "tags": [
+   "転写の概要",
+   "原核と真核"
+  ]
+ },
+ {
+  "id": "t06b",
+  "slide": 6,
+  "chapter": 1,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "スライド6で、rRNAやtRNAができる過程として示されているのはどれか。",
+  "options": [
+   {
+    "text": "RNAポリメラーゼがrRNAやtRNAの前駆体を作り、修飾・プロセシングを経てrRNAやtRNAになる",
+    "explanation": "図の「rRNAやtRNA」の欄のとおり",
+    "correct": true
+   },
+   {
+    "text": "mRNAが翻訳されてrRNAやtRNAになる",
+    "explanation": "rRNAやtRNAは遺伝子から転写されるRNAで、翻訳産物ではない",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "遺伝子から最初から完成形のrRNAやtRNAが転写される",
+    "explanation": "まず<b>前駆体</b>が作られる",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "DNAポリメラーゼがrRNAやtRNAの前駆体を作る",
+    "explanation": "前駆体を作るのは<b>RNAポリメラーゼ</b>",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "rRNAやtRNAの前駆体は逆転写されてから成熟する",
+    "explanation": "図にそのような過程はない",
+    "correct": false,
+    "trap": "mechanism"
+   }
+  ],
+  "explanation": "スライド6の左下：遺伝子 →（RNAポリメラーゼ）→ rRNAやtRNAの前駆体 →（修飾・プロセシング）→ rRNAやtRNA。RNAは翻訳されずに、RNAのまま働く。",
+  "point": "rRNA・tRNAも前駆体 → 修飾・プロセシングで完成する。",
+  "tags": [
+   "転写の概要",
+   "rRNA・tRNA"
+  ]
+ },
+ {
+  "id": "t07a",
+  "slide": 7,
+  "chapter": 1,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "スライド7で、非鋳型鎖DNAの配列が 5'-ATGAAATGCTA-3' のとき、転写産物RNAの配列はどれか。",
+  "options": [
+   {
+    "text": "5'-ATGAAATGCTA-3'",
+    "explanation": "RNAではTが<b>U</b>に変わる",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "5'-UACUUUACGAU-3'",
+    "explanation": "非鋳型鎖に相補的な配列をつくってしまっている。RNAは<b>鋳型鎖</b>に相補的",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "5'-AUGAAAUGCUA-3'",
+    "explanation": "非鋳型鎖と同じ配列で、TがUに変わる",
+    "correct": true
+   },
+   {
+    "text": "3'-AUGAAAUGCUA-5'",
+    "explanation": "向きが逆。RNAの5'末端は非鋳型鎖の5'側に対応する",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "5'-TACTTTACGAT-3'",
+    "explanation": "鋳型鎖の塩基をそのまま書いている（しかも向きも違う）",
+    "correct": false,
+    "trap": "swap"
+   }
+  ],
+  "explanation": "スライド7：RNAポリメラーゼは<b>鋳型鎖DNA</b>に相補的なRNAを合成する（ただしTがUに変わる）。その結果、RNAは<b>非鋳型鎖</b>と同じ向き・同じ配列（T→U）になる。図ではAT…がAU…と「同じ」と示されている。",
+  "point": "RNA＝鋳型鎖に相補的＝非鋳型鎖と同じ（T→U）。",
+  "tags": [
+   "鋳型鎖",
+   "非鋳型鎖",
+   "T→U"
+  ]
+ },
+ {
+  "id": "t07b",
+  "slide": 7,
+  "chapter": 1,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "スライド7によると、ネットなどでタンパク質の遺伝子配列を検索すると一般に非鋳型鎖の配列のみが表示される。その理由はどれか。",
+  "options": [
+   {
+    "text": "鋳型鎖はRNAポリメラーゼに読まれない鎖だから",
+    "explanation": "RNAポリメラーゼが読むのは<b>鋳型鎖</b>",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "非鋳型鎖がRNAポリメラーゼに読まれる鎖だから",
+    "explanation": "読まれるのは鋳型鎖。非鋳型鎖は読まれない",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "転写産物RNAは鋳型鎖と同じ配列だから",
+    "explanation": "RNAは鋳型鎖に<b>相補的</b>",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "非鋳型鎖DNAの配列が転写産物RNAの配列と同様で、遺伝子情報から転写産物を容易に想像できるから",
+    "explanation": "スライドの記載どおり",
+    "correct": true
+   },
+   {
+    "text": "非鋳型鎖だけがタンパク質に直接翻訳されるから",
+    "explanation": "翻訳されるのはRNA。DNAが直接翻訳されることはない",
+    "correct": false,
+    "trap": "mechanism"
+   }
+  ],
+  "explanation": "スライド7の注：非鋳型鎖DNAの配列は転写産物RNAの配列と同様（TがUに変わるだけ）なので、遺伝子情報から転写産物を容易に想像できる。そのため一般に非鋳型鎖の配列のみが表示される。",
+  "point": "表示されるのは非鋳型鎖＝RNAと同じ配列の鎖。",
+  "tags": [
+   "鋳型鎖",
+   "非鋳型鎖"
+  ]
+ },
+ {
+  "id": "t08a",
+  "slide": 8,
+  "chapter": 1,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "スライド8の文「RNAポリメラーゼは伸長中のRNA鎖の（ア）にヌクレオチドの（イ）を重合して（ウ）を作る」の組み合わせとして正しいのはどれか。",
+  "options": [
+   {
+    "text": "ア 5'OH ― イ 3'三リン酸 ― ウ リン酸ジエステル結合",
+    "explanation": "3'と5'が逆",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "ア 3'OH ― イ 5'三リン酸 ― ウ リン酸ジエステル結合",
+    "explanation": "スライドの記載どおり",
+    "correct": true
+   },
+   {
+    "text": "ア 3'OH ― イ 5'三リン酸 ― ウ ペプチド結合",
+    "explanation": "ペプチド結合はアミノ酸どうしの結合",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "ア 3'OH ― イ 5'一リン酸 ― ウ リン酸ジエステル結合",
+    "explanation": "材料のヌクレオチドは<b>三リン酸</b>",
+    "correct": false,
+    "trap": "number"
+   },
+   {
+    "text": "ア 3'OH ― イ 5'三リン酸 ― ウ 水素結合",
+    "explanation": "水素結合は塩基対をつくる結合。鎖をつなぐのはリン酸ジエステル結合",
+    "correct": false,
+    "trap": "swap"
+   }
+  ],
+  "explanation": "スライド8：RNAポリメラーゼは伸長中のRNA鎖の<b>3'OH</b>にヌクレオチドの<b>5'三リン酸</b>を重合して<b>リン酸ジエステル結合</b>を作る。3'の炭素と5'の炭素の間にリン酸ジエステル結合ができる。",
+  "point": "3'OH ＋ 5'三リン酸 → リン酸ジエステル結合。",
+  "tags": [
+   "リン酸ジエステル結合",
+   "5'→3'"
+  ]
+ },
+ {
+  "id": "t08b",
+  "slide": 8,
+  "chapter": 1,
+  "kind": "理解・統合",
+  "difficulty": 3,
+  "stem": "スライド8の反応について正しいのはどれか。",
+  "options": [
+   {
+    "text": "材料はdATP, dTTP, dCTP, dGTPのいずれかである",
+    "explanation": "これはDNAの材料。RNAの材料はATP, UTP, CTP, GTP",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "新しいヌクレオチドは伸長中のRNA鎖の5'末端に付加される",
+    "explanation": "付加されるのは<b>3'末端</b>（3'OH）",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "材料はATP, UTP, CTP, GTPのいずれかで、結合ができるときにピロリン酸が放出される",
+    "explanation": "図のとおり",
+    "correct": true
+   },
+   {
+    "text": "結合ができるときに放出されるのは水1分子だけである",
+    "explanation": "図で放出されているのは<b>ピロリン酸</b>",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "塩基対は転写産物RNAの塩基どうしの間で形成される",
+    "explanation": "塩基対は新しいヌクレオチドの塩基と<b>鋳型DNA</b>の塩基の間",
+    "correct": false,
+    "trap": "fact"
+   }
+  ],
+  "explanation": "スライド8：材料は<b>ATP, UTP, CTP, GTP</b>のいずれか（リボースをもつ）。伸長中のRNA鎖の3'OHが新しいヌクレオチドの5'三リン酸を攻撃し、3'炭素と5'炭素の間にリン酸ジエステル結合ができ、<b>ピロリン酸</b>が外れる。新しいヌクレオチドの塩基は鋳型DNAの塩基と塩基対をつくる。",
+  "point": "材料はNTP、外れるのはピロリン酸、伸びるのは3'末端。",
+  "tags": [
+   "リン酸ジエステル結合",
+   "ピロリン酸",
+   "NTP"
+  ]
+ },
+ {
+  "id": "t09a",
+  "slide": 9,
+  "chapter": 1,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "スライド9の表で、RNAの材料として赤枠で囲まれているリボヌクレオチドの組み合わせはどれか。",
+  "options": [
+   {
+    "text": "dATP, dGTP, dCTP, dTTP",
+    "explanation": "デオキシリボヌクレオチド（DNA）の三リン酸",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "AMP, GMP, CMP, UMP",
+    "explanation": "一リン酸。赤枠は<b>三リン酸</b>",
+    "correct": false,
+    "trap": "number"
+   },
+   {
+    "text": "ADP, GDP, CDP, UDP",
+    "explanation": "二リン酸。赤枠は<b>三リン酸</b>",
+    "correct": false,
+    "trap": "number"
+   },
+   {
+    "text": "ATP, GTP, CTP, UTP",
+    "explanation": "リボヌクレオチドの三リン酸",
+    "correct": true
+   },
+   {
+    "text": "ATP, GTP, CTP, TTP",
+    "explanation": "リボヌクレオチド（RNA）の塩基はチミンではなく<b>ウラシル</b>",
+    "correct": false,
+    "trap": "swap"
+   }
+  ],
+  "explanation": "スライド9の表：リボヌクレオチド（RNA）の塩基はA・G・C・<b>U</b>、デオキシリボヌクレオチド（DNA）の塩基はA・G・C・<b>T</b>。赤枠はRNAの三リン酸 ATP・GTP・CTP・UTP で、スライド8の「ATP, UTP, CTP, GTPのいずれか」に対応する。",
+  "point": "RNAの材料＝ATP・GTP・CTP・UTP（Tではなく U）。",
+  "tags": [
+   "ヌクレオチド",
+   "NTP",
+   "T→U"
+  ]
+ },
+ {
+  "id": "t09b",
+  "slide": 9,
+  "chapter": 1,
+  "kind": "重要事項",
+  "difficulty": 2,
+  "stem": "スライド9「ヌクレオチドの種類」の記載として正しいのはどれか。",
+  "options": [
+   {
+    "text": "塩基を特定しない場合、リボヌクレオシド一リン酸をNMP、デオキシリボヌクレオシド三リン酸をdNTPと表す",
+    "explanation": "スライドの記載どおり",
+    "correct": true
+   },
+   {
+    "text": "付加するリン酸は1つのものが多く、3つ付いたものは少ない",
+    "explanation": "「むしろ3つのリン酸が付いたものが多い」",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "体内にあるヌクレオチドは3'-リン酸のものが多い",
+    "explanation": "体内にあるのは<b>5'</b>-リン酸が多い",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "cAMPはエネルギーを供給するヌクレオチドとして挙げられている",
+    "explanation": "エネルギー供給はATP。cAMPはシグナル伝達経路で働く",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "リン酸が付く位置は必ず5'である",
+    "explanation": "「5'とは限らない」と記されている（cAMPは3',5'）",
+    "correct": false,
+    "trap": "scope"
+   }
+  ],
+  "explanation": "スライド9：付加するリン酸は1つとは限らず、むしろ3つのものが多い。リン酸が付く位置は5'とは限らないが、体内にあるのは5'-リン酸が多い。ATP（adenosine 5'-triphosphate）はエネルギー供給、cAMP（adenosine 3',5'-cyclic monophosphate）はシグナル伝達で働く。塩基を特定しない場合はNMP・dNTPなどと表す（図ではNMP・NDP・NTPの範囲が示される）。",
+  "point": "N＝塩基不特定、M/D/T＝リン酸1/2/3個、d＝デオキシ。",
+  "tags": [
+   "ヌクレオチド",
+   "NMP/NDP/NTP"
+  ]
+ },
+ {
+  "id": "t10a",
+  "slide": 10,
+  "chapter": 1,
+  "kind": "重要事項",
+  "difficulty": 2,
+  "stem": "スライド10の記載として正しいのはどれか。",
+  "options": [
+   {
+    "text": "鋳型DNAを5'から3'の方向に読み、RNAを5'から3'の方向に合成する",
+    "explanation": "鋳型DNAは<b>3'→5'</b>に読まれる",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "鋳型DNAを3'から5'の方向に読み、RNAを3'から5'の方向に合成する",
+    "explanation": "RNAは<b>5'→3'</b>に合成される",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "鋳型DNAを5'から3'の方向に読み、RNAを3'から5'の方向に合成する",
+    "explanation": "両方の向きが逆",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "鋳型鎖DNAに相補的なヌクレオチドが数個ずつまとめてつながれてゆく",
+    "explanation": "「1個づつつなげられてゆく」と記されている",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "RNAポリメラーゼは、鋳型DNAを3'から5'の方向に読み、RNAを5'から3'の方向に合成する",
+    "explanation": "スライドの記載どおり",
+    "correct": true
+   }
+  ],
+  "explanation": "スライド10：RNAポリメラーゼは鋳型DNAを<b>3'から5'</b>の方向に読み、RNAを<b>5'から3'</b>の方向に合成する。鋳型鎖DNAに相補的なヌクレオチドが1個ずつつなげられてゆく。",
+  "point": "鋳型は3'→5'に読み、RNAは5'→3'に伸びる（逆平行）。",
+  "tags": [
+   "5'→3'",
+   "鋳型鎖"
+  ]
+ },
+ {
+  "id": "t10b",
+  "slide": 10,
+  "chapter": 1,
+  "kind": "理解・統合",
+  "difficulty": 3,
+  "stem": "スライド10の図で、鋳型DNAは 3'-TAGCCTATC-5' であり、最初のヌクレオチドAが置かれた後、RNAが伸長していく。2番目と3番目に取り込まれるヌクレオチドの組み合わせとして正しいのはどれか。",
+  "options": [
+   {
+    "text": "UTP → CTP",
+    "explanation": "鋳型のA・Gに相補的なU・Cが順に取り込まれる",
+    "correct": true
+   },
+   {
+    "text": "ATP → GTP",
+    "explanation": "鋳型と同じ塩基を選んでいる。取り込まれるのは<b>相補的</b>な塩基",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "TTP → CTP",
+    "explanation": "RNAの材料にTはない。Aに対してはU（UTP）",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "CTP → UTP",
+    "explanation": "順序が逆。鋳型は3'側から読まれ、先にAに対するUが入る",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "UMP → CMP",
+    "explanation": "材料は三リン酸（UTP・CTP）",
+    "correct": false,
+    "trap": "number"
+   }
+  ],
+  "explanation": "スライド10の図：鋳型DNA 3'-T A G C C T A T C-5' を3'側から読み、相補的なヌクレオチドが1個ずつRNAの3'末端に付加される。Tに対してA、Aに対して<b>U（UTP）</b>、Gに対して<b>C（CTP）</b>…と進み、最終的に 5'-AUCGGAUAG-3' のRNAになる。",
+  "point": "相補的に、Aの相手はU、材料はNTP、鋳型は3'側から読む。",
+  "tags": [
+   "5'→3'",
+   "NTP",
+   "T→U"
+  ]
+ },
+ {
+  "id": "t11a",
+  "slide": 11,
+  "chapter": 1,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "スライド11によると、転写の方向を決めるのはどれか。",
+  "options": [
+   {
+    "text": "それぞれの遺伝子の最後の部分にあるターミネーター",
+    "explanation": "ターミネーターは転写の終結にかかわる。方向を決めるのはプロモーター",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "転写調節領域",
+    "explanation": "方向を決めるのはプロモーターと記されている",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "RNAポリメラーゼが遺伝子ごとにランダムに選ぶ",
+    "explanation": "プロモーター配列の向きによって決定される",
+    "correct": false,
+    "trap": "mechanism"
+   },
+   {
+    "text": "染色体全体で一方向に決まっている",
+    "explanation": "図では遺伝子c・dが他の遺伝子と逆向きに転写されている",
+    "correct": false,
+    "trap": "scope"
+   },
+   {
+    "text": "それぞれの遺伝子の最初の部分にあるプロモーター",
+    "explanation": "スライドの記載どおり",
+    "correct": true
+   }
+  ],
+  "explanation": "スライド11：転写の方向を決めるのは、それぞれの遺伝子の最初の部分にある<b>プロモーター</b>である。つまり、プロモーター配列の向きによってRNAポリメラーゼの動く向きが決定される。",
+  "point": "向きを決めるのはプロモーター（の配列の向き）。",
+  "tags": [
+   "プロモーター",
+   "転写の方向"
+  ]
+ },
+ {
+  "id": "t11b",
+  "slide": 11,
+  "chapter": 1,
+  "kind": "理解・統合",
+  "difficulty": 3,
+  "stem": "スライド11の図（遺伝子a・b・eは右向き、遺伝子c・dは左向きの矢印）について正しい解釈はどれか。スライド10の内容もあわせて考えよ。",
+  "options": [
+   {
+    "text": "1本のDNA上の遺伝子はすべて同じ向きに転写される",
+    "explanation": "遺伝子c・dは逆向きに転写されている",
+    "correct": false,
+    "trap": "scope"
+   },
+   {
+    "text": "遺伝子c・dと遺伝子a・b・eとでは、鋳型となるDNA鎖が異なる",
+    "explanation": "RNAは5'→3'に伸び鋳型は3'→5'に読まれるため、逆向きの遺伝子は反対側の鎖を鋳型にする",
+    "correct": true
+   },
+   {
+    "text": "遺伝子cの転写産物RNAは図の右向きに伸長する",
+    "explanation": "遺伝子cの矢印は左向き",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "転写の向きはターミネーターの向きで決まる",
+    "explanation": "向きを決めるのは<b>プロモーター</b>",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "どの遺伝子も、図の上側の鎖（左が5'の鎖）を鋳型として転写される",
+    "explanation": "右向きに転写される遺伝子では、3'→5'に読まれる鋳型は下側の鎖になる",
+    "correct": false,
+    "trap": "mechanism"
+   }
+  ],
+  "explanation": "スライド11の図では、プロモーター（P）の向きにより遺伝子a・b・eは右向き、c・dは左向きに転写される。スライド10のとおりRNAは5'→3'に合成され鋳型は3'→5'に読まれるので、右向きの遺伝子は図の下側の鎖（左が3'）、左向きの遺伝子は上側の鎖（左が5'）を鋳型にする。つまり同じDNA二本鎖でも遺伝子ごとに鋳型鎖は異なりうる。",
+  "point": "プロモーターの向き → 転写の向き → どちらの鎖が鋳型になるか、が決まる。",
+  "tags": [
+   "プロモーター",
+   "転写の方向",
+   "鋳型鎖"
+  ]
+ },
+ {
+  "id": "t13a",
+  "slide": 13,
+  "chapter": 2,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "スライド13「細菌のRNAポリメラーゼによる転写サイクル」の流れとして正しい順序はどれか。",
+  "options": [
+   {
+    "text": "プロモーターに結合 → σ因子の結合 → DNAがほどける → RNA合成開始 → 終結",
+    "explanation": "σ因子はプロモーターに結合する<b>前</b>にポリメラーゼと結合している（図の最上段）",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "σ因子の結合 → プロモーターに結合 → RNA合成開始 → DNAがほどける → 終結",
+    "explanation": "DNAがほどけてから、鋳型鎖を読んでRNA合成が始まる",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "σ因子の結合（ホロ酵素）→ プロモーターに結合 → DNAがほどける → RNA合成開始 → σ因子が離れて伸長 → 終結",
+    "explanation": "図の1〜7の流れどおり",
+    "correct": true
+   },
+   {
+    "text": "σ因子の結合 → プロモーターに結合 → DNAがほどける → 終結 → σ因子が離れる",
+    "explanation": "σ因子が離れるのは伸長に入るとき（図の5）。終結（図の6・7）より前",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "DNAがほどける → σ因子の結合 → プロモーターに結合 → RNA合成開始 → 終結",
+    "explanation": "DNAをほどくのはプロモーターに結合したホロ酵素。ほどける前にσ因子の結合・プロモーター結合がある",
+    "correct": false,
+    "trap": "reverse"
+   }
+  ],
+  "explanation": "図はσ因子がRNAポリメラーゼに結合する段階から始まり、①プロモーターに結合 → ②DNAがほどける → ③RNA合成開始 → ④⑤σ因子が離れて伸長 → ⑥ステムループ形成 → ⑦RNAとポリメラーゼが離れる、と一周する。",
+  "point": "開始（σ因子あり）→ 伸長（σ因子なし）→ 終結 の順。",
+  "tags": [
+   "細菌の転写",
+   "転写サイクル"
+  ]
+ },
+ {
+  "id": "t13b",
+  "slide": 13,
+  "chapter": 2,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "スライド13の図が「サイクル（環）」として描かれている理由として、図から読み取れることはどれか。",
+  "options": [
+   {
+    "text": "合成されたRNAが鋳型となって、再びDNAが合成されるから",
+    "explanation": "図はDNA→RNAの転写のみを描いている。RNAからDNAを作る過程はない",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "σ因子がRNAを分解して、ヌクレオチドを再利用するから",
+    "explanation": "σ因子はプロモーターを見つけさせる働き。RNAを分解するとは描かれていない",
+    "correct": false,
+    "trap": "mechanism"
+   },
+   {
+    "text": "RNAポリメラーゼがDNAから離れずに、同じ遺伝子を何度も読み続けるから",
+    "explanation": "図の7でポリメラーゼはDNAからいったん離れる",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "σ因子が伸長の間ずっとポリメラーゼに結合したまま次の遺伝子へ移るから",
+    "explanation": "σ因子は伸長に入るときに離れる（図の5）",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "終結後に離れたRNAポリメラーゼが、再びσ因子と結合して次の転写を始められるから",
+    "explanation": "図の7で離れたポリメラーゼが最上段に戻り、σ因子と結合している",
+    "correct": true
+   }
+  ],
+  "explanation": "図の7で転写を終えたRNAポリメラーゼはDNAとRNAを離し、最上段で再びσ因子と結合する。同じ酵素が開始・伸長・終結をくり返すので「サイクル」と描かれている。",
+  "point": "ポリメラーゼは終結後に離れ、再びσ因子と結合して次の転写へ。",
+  "tags": [
+   "細菌の転写",
+   "転写サイクル",
+   "σ因子"
+  ]
+ },
+ {
+  "id": "t14a",
+  "slide": 14,
+  "chapter": 2,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "スライド14で、細菌のRNAポリメラーゼ<b>ホロ酵素</b>を構成するとされているものはどれか。",
+  "options": [
+   {
+    "text": "コア酵素とσ因子",
+    "explanation": "スライド14「RNAポリメラーゼホロ酵素（コア酵素とσ因子）が形成される」",
+    "correct": true
+   },
+   {
+    "text": "コア酵素とρタンパク質",
+    "explanation": "ρタンパク質は終結に働くタンパク質（スライド20）。ホロ酵素の構成要素ではない",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "コア酵素とCRP",
+    "explanation": "CRPはcAMPと複合体を作りプロモーターに結合する調節タンパク質（スライド24）",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "RNAポリメラーゼIIと基本転写因子",
+    "explanation": "真核生物の転写開始の話。細菌のホロ酵素ではない",
+    "correct": false,
+    "trap": "scope"
+   },
+   {
+    "text": "コア酵素とリプレッサー",
+    "explanation": "リプレッサーはオペレーターに結合して転写を抑えるタンパク質（スライド24）",
+    "correct": false,
+    "trap": "swap"
+   }
+  ],
+  "explanation": "細菌のRNAポリメラーゼは、<b>コア酵素</b>に<b>σ因子</b>が結合して<b>ホロ酵素</b>となる。",
+  "point": "ホロ酵素＝コア酵素＋σ因子（細菌）。",
+  "tags": [
+   "細菌の転写",
+   "ホロ酵素",
+   "σ因子"
+  ]
+ },
+ {
+  "id": "t14b",
+  "slide": 14,
+  "chapter": 2,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "スライド14〜19で、細菌のRNAポリメラーゼの状態について正しいのはどれか。",
+  "options": [
+   {
+    "text": "σ因子はコア酵素の一部で、ホロ酵素から離れることはない",
+    "explanation": "σ因子は約10ヌクレオチドの合成後に解離する（スライド16）",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "ホロ酵素はコア酵素からσ因子が外れたものである",
+    "explanation": "逆。ホロ酵素＝コア酵素＋σ因子",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "ホロ酵素が形成されるのは転写が終結した後だけで、開始には関与しない",
+    "explanation": "ホロ酵素がプロモーターを見つけて転写を開始する（スライド15）",
+    "correct": false,
+    "trap": "mechanism"
+   },
+   {
+    "text": "伸長中のRNAポリメラーゼはσ因子を含まず、スライド19では「コア酵素」と記されている",
+    "explanation": "σ因子は伸長に入ると離れる。伸長の図のポリメラーゼはコア酵素",
+    "correct": true
+   },
+   {
+    "text": "ホロ酵素は真核生物のRNAポリメラーゼIIの別名である",
+    "explanation": "ホロ酵素・σ因子は細菌（原核）の話",
+    "correct": false,
+    "trap": "scope"
+   }
+  ],
+  "explanation": "開始：ホロ酵素（コア酵素＋σ因子）がプロモーターを見つける → 伸長：σ因子が離れ、<b>コア酵素</b>がDNAに沿って移動する。",
+  "point": "開始はホロ酵素、伸長はコア酵素。",
+  "tags": [
+   "細菌の転写",
+   "ホロ酵素",
+   "コア酵素"
+  ]
+ },
+ {
+  "id": "t15a",
+  "slide": 15,
+  "chapter": 2,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "スライド15の説明で、プロモーターを見つけて転写を始めるのはどれか。",
+  "options": [
+   {
+    "text": "σ因子が外れたコア酵素だけ",
+    "explanation": "σ因子が外れるのは伸長に入るとき。開始はホロ酵素",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "RNAポリメラーゼホロ酵素",
+    "explanation": "スライド15「RNAポリメラーゼホロ酵素がプロモーターを見つけ…転写開始」",
+    "correct": true
+   },
+   {
+    "text": "ρタンパク質",
+    "explanation": "ρは終結に働く（スライド20）",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "DNAポリメラーゼ",
+    "explanation": "DNAの複製に働く酵素。転写はRNAポリメラーゼ",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "合成されたばかりのRNA",
+    "explanation": "RNAは転写の産物で、プロモーターを探す役ではない",
+    "correct": false,
+    "trap": "mechanism"
+   }
+  ],
+  "explanation": "ホロ酵素（コア酵素＋σ因子）がプロモーターを見つけ、転写を始めるべき場所のDNAをほどいて転写を開始する（図の①②）。",
+  "point": "プロモーターを見つけるのはホロ酵素。",
+  "tags": [
+   "細菌の転写",
+   "転写開始",
+   "プロモーター"
+  ]
+ },
+ {
+  "id": "t15b",
+  "slide": 15,
+  "chapter": 2,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "スライド15で、ホロ酵素がプロモーターに結合した後、RNA合成が始まる前に起こることはどれか。",
+  "options": [
+   {
+    "text": "σ因子がポリメラーゼから解離する",
+    "explanation": "σ因子の解離は約10ヌクレオチドのRNAが合成された後（スライド16）",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "ρタンパク質がRNAに結合する",
+    "explanation": "ρの結合は終結の段階（スライド20）",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "RNAがステムループ構造を作る",
+    "explanation": "ステムループは終結シグナルによってできる構造（スライド17・20）",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "DNAの全長がほどけて一本鎖になる",
+    "explanation": "ほどけるのは転写を始めるべき場所の一部",
+    "correct": false,
+    "trap": "scope"
+   },
+   {
+    "text": "転写を始めるべき場所のDNA二重らせんがほどける",
+    "explanation": "スライド15「転写を始めるべき場所のDNAをほどき、転写開始」",
+    "correct": true
+   }
+  ],
+  "explanation": "鋳型鎖を読むためには二本鎖をほどく必要がある。ホロ酵素はプロモーターに結合し、<b>開始点付近のDNAをほどいて</b>から転写を始める。",
+  "point": "プロモーター結合 → DNAがほどける → 転写開始。",
+  "tags": [
+   "細菌の転写",
+   "転写開始"
+  ]
+ },
+ {
+  "id": "t16a",
+  "slide": 16,
+  "chapter": 2,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "スライド16で、RNAポリメラーゼがプロモーターDNAから離れ、σ因子との結合が解消されるのは、RNA鎖がどの程度合成されたときか。",
+  "options": [
+   {
+    "text": "1ヌクレオチド",
+    "explanation": "最初の1個ではまだ開始段階",
+    "correct": false,
+    "trap": "number"
+   },
+   {
+    "text": "35ヌクレオチド程度",
+    "explanation": "35は−35ボックスの位置の数字（スライド18）",
+    "correct": false,
+    "trap": "number"
+   },
+   {
+    "text": "10ヌクレオチド程度",
+    "explanation": "スライド16「10ヌクレオチド程度のRNA鎖が合成されると」",
+    "correct": true
+   },
+   {
+    "text": "100ヌクレオチド程度",
+    "explanation": "資料の記載は10ヌクレオチド程度",
+    "correct": false,
+    "trap": "number"
+   },
+   {
+    "text": "RNA鎖の全長が合成されたとき（転写終結時）",
+    "explanation": "σ因子は伸長に入る前に離れる。終結まで残らない",
+    "correct": false,
+    "trap": "reverse"
+   }
+  ],
+  "explanation": "10ヌクレオチド程度のRNA鎖ができると、RNAポリメラーゼはプロモーターDNAから離れ、σ因子との結合も解消されて伸長状態に入る。",
+  "point": "約10ヌクレオチド → プロモーターから離れ、σ因子解離 → 伸長。",
+  "tags": [
+   "細菌の転写",
+   "σ因子",
+   "伸長"
+  ]
+ },
+ {
+  "id": "t16b",
+  "slide": 16,
+  "chapter": 2,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "スライド16で示される、転写開始から伸長への移行について正しいのはどれか。",
+  "options": [
+   {
+    "text": "σ因子との結合が解消された後、RNAポリメラーゼはDNAに沿って移動を開始する",
+    "explanation": "スライド16の記載どおり",
+    "correct": true
+   },
+   {
+    "text": "σ因子は伸長中もポリメラーゼに結合し続け、移動を助ける",
+    "explanation": "σ因子との結合は解消され、以後伸長に入る",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "RNAポリメラーゼはプロモーターに結合したままRNAを伸ばす",
+    "explanation": "プロモーターDNAから離れ、DNAに沿って移動する",
+    "correct": false,
+    "trap": "mechanism"
+   },
+   {
+    "text": "σ因子が離れるとRNAポリメラーゼもDNAから離れ、転写が終わる",
+    "explanation": "σ因子の解離は伸長の始まり。終結ではない",
+    "correct": false,
+    "trap": "mechanism"
+   },
+   {
+    "text": "σ因子が離れた後は、RNAではなくDNAが合成される",
+    "explanation": "ポリメラーゼはRNA合成の伸長状態に入る",
+    "correct": false,
+    "trap": "swap"
+   }
+  ],
+  "explanation": "開始（ホロ酵素）から伸長（コア酵素）への切り替えの目印が<b>σ因子の解離</b>。プロモーターから離れたポリメラーゼはDNAに沿って移動しながらRNAを伸ばす。",
+  "point": "σ因子は開始に必要で、伸長には残らない。",
+  "tags": [
+   "細菌の転写",
+   "σ因子",
+   "伸長"
+  ]
+ },
+ {
+  "id": "t17a",
+  "slide": 17,
+  "chapter": 2,
+  "kind": "重要事項",
+  "difficulty": 2,
+  "stem": "スライド17で、細菌の転写が終了するしくみの多くとして説明されているものはどれか。",
+  "options": [
+   {
+    "text": "σ因子が再び結合して、ポリメラーゼを止める",
+    "explanation": "σ因子はプロモーターを見つけさせる因子。終結の説明ではない",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "RNAポリメラーゼがプロモーターに戻ると転写が終了する",
+    "explanation": "転写はDNA上の終結シグナル（ターミネーター）に出会って終了する",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "DNAの終結シグナルにリプレッサーが結合して終了する",
+    "explanation": "リプレッサーはオペレーターに結合して転写開始を抑える（スライド24）",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "終結シグナルによりRNAが立体構造を形成し、ポリメラーゼがRNAを捕捉しにくくなる",
+    "explanation": "スライド17の記載どおり（立体構造＝ステムループ、スライド20）",
+    "correct": true
+   },
+   {
+    "text": "RNAが5'キャップとポリAを付加されて終了する",
+    "explanation": "5'キャップ・ポリAは真核生物のmRNAプロセシング",
+    "correct": false,
+    "trap": "scope"
+   }
+  ],
+  "explanation": "RNAポリメラーゼはDNA上の<b>終結シグナル</b>に出会うと転写を終える。多くの場合、終結シグナルに由来するRNAが立体構造（ステムループ）を作り、ポリメラーゼがRNAを捕捉しにくくなる。",
+  "point": "終結シグナル → RNAの立体構造 → ポリメラーゼがRNAを保持しにくくなる。",
+  "tags": [
+   "細菌の転写",
+   "転写終結",
+   "ターミネーター"
+  ]
+ },
+ {
+  "id": "t17b",
+  "slide": 17,
+  "chapter": 2,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "スライド17で丸で囲まれた終結の段階（図の⑥⑦）について、図から読み取れることとして正しいのはどれか。",
+  "options": [
+   {
+    "text": "σ因子が結合したまま終結を迎える",
+    "explanation": "図ではσ因子は伸長の段階（⑤）で離れており、終結の段階には描かれていない",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "終結後、合成されたRNAとRNAポリメラーゼはDNAから離れる",
+    "explanation": "図の⑦でRNAが放出され、ポリメラーゼはσ因子と再び結合する位置へ戻る",
+    "correct": true
+   },
+   {
+    "text": "終結シグナルはRNAポリメラーゼのタンパク質中にある",
+    "explanation": "終結シグナルはDNA上にある（スライド17「DNA上の終結シグナル」）",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "放出されたRNAは一本の直線状で、立体構造をもたない",
+    "explanation": "図のRNAには折れ返った構造（ステムループ）が描かれている",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "終結の段階ではDNAが分解される",
+    "explanation": "DNAは原本として残る。分解されるとは描かれていない",
+    "correct": false,
+    "trap": "mechanism"
+   }
+  ],
+  "explanation": "図の⑥でRNAに折れ返った構造ができ、⑦でRNAとポリメラーゼがDNAから離れる。ポリメラーゼは再びσ因子と結合して次のサイクルに入る。",
+  "point": "終結＝RNAとポリメラーゼがDNAから離れる。",
+  "tags": [
+   "細菌の転写",
+   "転写終結",
+   "転写サイクル"
+  ]
+ },
+ {
+  "id": "t18a",
+  "slide": 18,
+  "chapter": 2,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "スライド18「大腸菌の転写の開始」で示されるプロモーターの配列（5'→3'）の組合せとして正しいのはどれか。",
+  "options": [
+   {
+    "text": "−35ボックス：TATAAT、−10ボックス：TTGACA",
+    "explanation": "2つのボックスの配列が入れ替わっている",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "−35ボックス：TGTCAA、−10ボックス：TAATAT",
+    "explanation": "下段の3'→5'の相補鎖を左から読んだ形。5'→3'の記載ではない",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "−35ボックス：CAATボックス、−10ボックス：TATAボックス",
+    "explanation": "TATAボックス・CAATボックスは真核生物のプロモーター要素",
+    "correct": false,
+    "trap": "scope"
+   },
+   {
+    "text": "−35ボックス：TTGACA、−10ボックス：GCボックス",
+    "explanation": "GCボックスは真核生物の要素",
+    "correct": false,
+    "trap": "scope"
+   },
+   {
+    "text": "−35ボックス：TTGACA、−10ボックス：TATAAT",
+    "explanation": "スライド18の枠内の記載どおり",
+    "correct": true
+   }
+  ],
+  "explanation": "大腸菌のプロモーターには転写開始点（+1）の上流に<b>−35ボックス（5'-TTGACA-3'）</b>と<b>−10ボックス（5'-TATAAT-3'）</b>がある。RNAポリメラーゼ（ホロ酵素）がここに結合する。",
+  "point": "−35：TTGACA、−10：TATAAT（原核）。TATAボックスは真核。",
+  "tags": [
+   "細菌の転写",
+   "プロモーター",
+   "−10ボックス",
+   "−35ボックス"
+  ]
+ },
+ {
+  "id": "t18b",
+  "slide": 18,
+  "chapter": 2,
+  "kind": "理解・統合",
+  "difficulty": 3,
+  "stem": "スライド18の図で、転写の最初の<b>リン酸ジエステル結合</b>ができるのはどこか。",
+  "options": [
+   {
+    "text": "−35ボックスと−10ボックスの間のDNA",
+    "explanation": "プロモーターはポリメラーゼが結合する場所。RNAの結合ができる場所ではない",
+    "correct": false,
+    "trap": "mechanism"
+   },
+   {
+    "text": "二重らせんがほどける前の、+1のデオキシリボヌクレオチドどうしの間",
+    "explanation": "RNAの合成は二重らせんがほどけた後。材料はリボヌクレオチド",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "二重らせんがほどけた後、開始点（+1）と+2に入った最初の二つのリボヌクレオチドの間",
+    "explanation": "図の最下段「最初の二つのリボヌクレオチド」「この間で最初のリン酸ジエステル結合ができる」",
+    "correct": true
+   },
+   {
+    "text": "σ因子とコア酵素の間",
+    "explanation": "σ因子とコア酵素の結合はタンパク質どうしの結合で、リン酸ジエステル結合ではない",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "−10ボックスの最初の二つのリボヌクレオチドの間",
+    "explanation": "RNAは+1（転写開始点）から合成される。−10はプロモーター内",
+    "correct": false,
+    "trap": "number"
+   }
+  ],
+  "explanation": "スライド18の流れ：プロモーターへのRNAポリメラーゼの結合（二重らせんがほどけていない状態）→ 二重らせんがほどけた状態 → 最初の二つのリボヌクレオチド（+1、+2）の間で<b>最初のリン酸ジエステル結合</b>ができる。図にはσ因子の解離も描かれている。",
+  "point": "RNA合成は+1から。最初の結合は+1と+2のリボヌクレオチドの間。",
+  "tags": [
+   "細菌の転写",
+   "転写開始",
+   "リン酸ジエステル結合"
+  ]
+ },
+ {
+  "id": "t19a",
+  "slide": 19,
+  "chapter": 2,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "スライド19「大腸菌の転写の延長」に示される伸長の3つの段階を正しい順に並べたものはどれか。",
+  "options": [
+   {
+    "text": "RNAポリメラーゼの移動 → リン酸ジエステル結合 → 相補的なリボヌクレオチドが1個入る",
+    "explanation": "順序が逆",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "相補的なリボヌクレオチドが1個入る → 既存のRNA鎖とリン酸ジエステル結合 → RNAポリメラーゼの移動",
+    "explanation": "スライド19の1）2）3）の順",
+    "correct": true
+   },
+   {
+    "text": "リン酸ジエステル結合 → 相補的なリボヌクレオチドが1個入る → RNAポリメラーゼの移動",
+    "explanation": "まずヌクレオチドが入り、その後で既存のRNA鎖と結合する",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "相補的なデオキシリボヌクレオチドが1個入る → 水素結合でつながる → DNAポリメラーゼの移動",
+    "explanation": "転写で入るのはリボヌクレオチド。RNA鎖とはリン酸ジエステル結合でつながる",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "σ因子の結合 → 相補的なリボヌクレオチドが1個入る → RNAポリメラーゼの移動",
+    "explanation": "伸長中のポリメラーゼはコア酵素。σ因子は結合しない",
+    "correct": false,
+    "trap": "fact"
+   }
+  ],
+  "explanation": "伸長は 1）DNA塩基に<b>相補的なリボヌクレオチド</b>が1個入る 2）既に合成されたRNA鎖と<b>リン酸ジエステル結合</b> 3）RNAポリメラーゼの移動 のくり返し。",
+  "point": "入る → つなぐ → 進む のくり返し。",
+  "tags": [
+   "細菌の転写",
+   "伸長",
+   "リン酸ジエステル結合"
+  ]
+ },
+ {
+  "id": "t19b",
+  "slide": 19,
+  "chapter": 2,
+  "kind": "理解・統合",
+  "difficulty": 3,
+  "stem": "スライド19の図について正しいのはどれか。",
+  "options": [
+   {
+    "text": "RNA転写産物の3'末端が転写開始点（+1）に対応する",
+    "explanation": "+1に対応するのは5'末端。RNAは5'→3'に伸びる",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "RNA転写産物は非鋳型鎖に相補的である",
+    "explanation": "RNAは<b>鋳型鎖</b>に相補的",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "転写方向とRNAポリメラーゼの移動方向は逆である",
+    "explanation": "図に「転写方向＝RNAポリメラーゼの移動方向」とある",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "RNA転写産物の5'末端は、鋳型鎖上の転写開始点（+1）に対応する",
+    "explanation": "図で+1とRNAの5'が赤丸と矢印で対応づけられている",
+    "correct": true
+   },
+   {
+    "text": "伸長中のRNAポリメラーゼはσ因子を含むホロ酵素である",
+    "explanation": "図には「RNAポリメラーゼ コア酵素」と記されている",
+    "correct": false,
+    "trap": "swap"
+   }
+  ],
+  "explanation": "伸長中のポリメラーゼは<b>コア酵素</b>。鋳型鎖（図の上段、3'→5'）を読み、RNAを5'→3'に伸ばす。RNAの5'末端が開始点+1にあたり、転写方向はポリメラーゼの移動方向と同じ。",
+  "point": "+1＝RNAの5'末端。転写方向＝ポリメラーゼの移動方向。",
+  "tags": [
+   "細菌の転写",
+   "伸長",
+   "転写の向き"
+  ]
+ },
+ {
+  "id": "t20a",
+  "slide": 20,
+  "chapter": 2,
+  "kind": "重要事項",
+  "difficulty": 2,
+  "stem": "スライド20「大腸菌の転写の終結」で、ρ（ロー）タンパク質の働きとして記されているものはどれか。",
+  "options": [
+   {
+    "text": "RNAに結合し、停止したRNAポリメラーゼのDNAとRNA間の塩基対を壊す",
+    "explanation": "スライド20の2）の記載どおり",
+    "correct": true
+   },
+   {
+    "text": "プロモーターに結合してRNAポリメラーゼを呼び込む",
+    "explanation": "プロモーターを見つけさせるのはσ因子。開始の話",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "RNAにステムループ構造を作らせる",
+    "explanation": "ステムループはパリンドローム配列のRNAが自ら折れ返ってできる（スライド21）",
+    "correct": false,
+    "trap": "mechanism"
+   },
+   {
+    "text": "オペレーターに結合して転写開始を抑える",
+    "explanation": "それはリプレッサー（スライド24）",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "DNAに結合して二重らせんをほどき、転写を開始させる",
+    "explanation": "開始時にDNAをほどくのはホロ酵素（スライド15）",
+    "correct": false,
+    "trap": "swap"
+   }
+  ],
+  "explanation": "大腸菌の終結：1）ステムループ構造ができるとRNAポリメラーゼが停止 2）RNAにρタンパク質が結合し、停止したポリメラーゼ内のDNA–RNA間の塩基対を壊す 3）結合力の弱いA–U塩基対が多いとRNAがDNAから外れやすくなる。",
+  "point": "ρはRNAに結合し、DNA–RNA塩基対を壊して終結を助ける（原核）。",
+  "tags": [
+   "細菌の転写",
+   "転写終結",
+   "ρタンパク質"
+  ]
+ },
+ {
+  "id": "t20b",
+  "slide": 20,
+  "chapter": 2,
+  "kind": "理解・統合",
+  "difficulty": 3,
+  "stem": "スライド20で、ターミネーター部分にA–U塩基対が多いとRNAがDNAから外れやすくなる理由として記されているのはどれか。",
+  "options": [
+   {
+    "text": "A–U塩基対は結合力が強く、ポリメラーゼを押し出すから",
+    "explanation": "A–Uは結合力が<b>弱い</b>",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "A–U塩基対がρタンパク質に分解されるから",
+    "explanation": "ρはDNA–RNA間の塩基対を壊すが、「A–Uだから分解される」とは記されていない",
+    "correct": false,
+    "trap": "mechanism"
+   },
+   {
+    "text": "A–U塩基対は結合力が弱いから",
+    "explanation": "スライド20の3）「結合力の弱いA–U塩基対が多いとRNAがDNAからはずれやすくなる」",
+    "correct": true
+   },
+   {
+    "text": "Uが連続するとσ因子が再結合するから",
+    "explanation": "σ因子は終結に関与するとは記されていない",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "G–C塩基対が多いほどRNAは外れやすいから",
+    "explanation": "資料はA–U塩基対の弱さを理由にしている",
+    "correct": false,
+    "trap": "fact"
+   }
+  ],
+  "explanation": "ターミネーター（遺伝子の下流の転写終結のための塩基配列）は、大腸菌ではステムループや連続するAなど。鋳型鎖の連続するAに対してRNAには連続するUが入り、<b>結合力の弱いA–U塩基対</b>が多いのでRNAがDNAから外れやすい。",
+  "point": "ステムループで停止 → 弱いA–U塩基対で外れやすい（＋ρ）。",
+  "tags": [
+   "細菌の転写",
+   "転写終結",
+   "ターミネーター"
+  ]
+ },
+ {
+  "id": "t21a",
+  "slide": 21,
+  "chapter": 2,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "スライド21で、RNA中のパリンドローム配列（逆方向反復配列）が折れ返ってできる構造はどれか。",
+  "options": [
+   {
+    "text": "二重らせん構造",
+    "explanation": "DNAの二本鎖の構造。RNA一本鎖の折れ返りではない",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "ステムループ構造",
+    "explanation": "スライド21の図「パリンドローム配列（逆方向反復配列）」「ステムループ構造」",
+    "correct": true
+   },
+   {
+    "text": "投げ縄構造",
+    "explanation": "スプライシングでイントロンが作る構造（真核）",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "ヌクレオソーム",
+    "explanation": "DNAがヒストンに巻きついた構造",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "5'キャップ構造",
+    "explanation": "真核生物のmRNA 5'末端の修飾",
+    "correct": false,
+    "trap": "swap"
+   }
+  ],
+  "explanation": "逆方向反復配列をもつRNAは、前半と後半が相補的に塩基対を作って折れ返り、<b>ステムループ構造</b>となる。これが大腸菌の転写終結の目印になる（スライド20）。",
+  "point": "パリンドローム配列 → ステムループ → 転写終結。",
+  "tags": [
+   "細菌の転写",
+   "転写終結",
+   "ステムループ"
+  ]
+ },
+ {
+  "id": "t21b",
+  "slide": 21,
+  "chapter": 2,
+  "kind": "理解・統合",
+  "difficulty": 3,
+  "stem": "スライド21のRNA配列 5'-UAUACU<b>GCAGGCU</b>AUCGAGCCUGCUUGAU-3' で、太字部分と塩基対を作ってステムを形成する部分はどれか。",
+  "options": [
+   {
+    "text": "GCAGGCU",
+    "explanation": "同じ配列どうしでは相補的な塩基対にならない",
+    "correct": false,
+    "trap": "mechanism"
+   },
+   {
+    "text": "CGUCCGA",
+    "explanation": "相補的だが向きが逆。逆平行に対合するので、相補配列を逆向きに読んだ配列になる",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "UCGGACG",
+    "explanation": "向きを逆にしただけで、相補的ではない",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "UUGAU",
+    "explanation": "ステムの外にある3'側の配列",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "AGCCUGC",
+    "explanation": "GCAGGCUの相補配列を逆向きに読んだもの。図でもG–C、C–G、A–U、G–C、G–C、C–G、U–Aと対合する",
+    "correct": true
+   }
+  ],
+  "explanation": "パリンドローム配列（逆方向反復配列）は、前半の配列の<b>相補配列を逆向きに</b>した配列が後半にある。GCAGGCU（7塩基）と AGCCUGC（7塩基）が逆平行に対合してステムとなり、間の AUCG がループになる。",
+  "point": "ステムは「相補的」かつ「逆平行」に対合する。",
+  "tags": [
+   "細菌の転写",
+   "ステムループ",
+   "パリンドローム配列"
+  ]
+ },
+ {
+  "id": "t22a",
+  "slide": 22,
+  "chapter": 3,
+  "kind": "重要事項",
+  "difficulty": 2,
+  "stem": "スライド22（転写の概要の原核生物部分）の注に記されている、lacオペロンのオペレーターの位置はどれか。",
+  "options": [
+   {
+    "text": "ターミネーターの下流",
+    "explanation": "オペレーターは転写調節領域。ターミネーターの下流ではない",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "lacZ遺伝子の内部",
+    "explanation": "スライド24でもオペレーターはβ-gal構造遺伝子の上流、プロモーター領域に描かれている",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "遠く離れたエンハンサー",
+    "explanation": "エンハンサーは真核生物の転写調節配列",
+    "correct": false,
+    "trap": "scope"
+   },
+   {
+    "text": "プロモーター内",
+    "explanation": "注「lacオペロンの転写調節領域であるオペレーターはプロモーター内にある」",
+    "correct": true
+   },
+   {
+    "text": "mRNAのイントロン内",
+    "explanation": "原核生物の図にはイントロン・mRNA前駆体は描かれていない",
+    "correct": false,
+    "trap": "scope"
+   }
+  ],
+  "explanation": "原核生物の図では、転写調節領域はプロモーターの上流に描かれているが、注で「lacオペロンの転写調節領域であるオペレーターは<b>プロモーター内</b>にある」と補われている（スライド24の負の調節の図とも一致）。",
+  "point": "lacオペロンのオペレーターはプロモーター内。",
+  "tags": [
+   "lacオペロン",
+   "オペレーター",
+   "プロモーター"
+  ]
+ },
+ {
+  "id": "t22b",
+  "slide": 22,
+  "chapter": 3,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "スライド22の転写の概要で、原核生物のmRNA合成の図について正しいのはどれか。",
+  "options": [
+   {
+    "text": "RNAポリメラーゼがプロモーターから転写を開始し、ターミネーターで終結してmRNAができる",
+    "explanation": "図の「転写の開始・延長・終結」の流れどおり",
+    "correct": true
+   },
+   {
+    "text": "RNAポリメラーゼIIが転写する",
+    "explanation": "RNAポリメラーゼIIは真核生物の図に記されている",
+    "correct": false,
+    "trap": "scope"
+   },
+   {
+    "text": "mRNA前駆体がスプライシングされてからmRNAになる",
+    "explanation": "mRNA前駆体・転写後プロセシングは真核生物の図にのみ描かれている",
+    "correct": false,
+    "trap": "scope"
+   },
+   {
+    "text": "遺伝子は（不連続）遺伝子として描かれ、エクソンとイントロンからなる",
+    "explanation": "不連続遺伝子は真核生物の図の記載",
+    "correct": false,
+    "trap": "scope"
+   },
+   {
+    "text": "完成したmRNAの末端にm<sup>7</sup>GとAAA…が付く",
+    "explanation": "m<sup>7</sup>G・AAA…は真核生物のmRNAの図",
+    "correct": false,
+    "trap": "scope"
+   }
+  ],
+  "explanation": "原核生物では、転写調節領域・プロモーター・遺伝子・ターミネーターが並び、RNAポリメラーゼが開始・延長・終結を行ってmRNAができる。不連続遺伝子・mRNA前駆体・m<sup>7</sup>G／AAA…は真核生物の図の要素。",
+  "point": "原核と真核の図の要素を混同しない。",
+  "tags": [
+   "転写の概要",
+   "原核と真核"
+  ]
+ },
+ {
+  "id": "t23a",
+  "slide": 23,
+  "chapter": 3,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "スライド23で、細胞に常時必要であり常時転写されている遺伝子は何と呼ばれているか。",
+  "options": [
+   {
+    "text": "調節的発現遺伝子",
+    "explanation": "必要に応じて発現が変化する遺伝子（スライド26）。図の遺伝子2・3",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "レギュロン",
+    "explanation": "散在する遺伝子群を一斉に調節するシステム（スライド25）",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "ハウスキーピング遺伝子",
+    "explanation": "スライド23「ハウスキーピング遺伝子と呼ばれる（図中の遺伝子1）」",
+    "correct": true
+   },
+   {
+    "text": "オペレーター",
+    "explanation": "リプレッサーが結合する転写調節領域。遺伝子の種類ではない",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "分化機能・制御に関わる遺伝子",
+    "explanation": "真核多細胞生物に特徴的な遺伝子（スライド26）",
+    "correct": false,
+    "trap": "swap"
+   }
+  ],
+  "explanation": "転写調節により細胞は必要なRNAだけを作る。逆に、常時必要で常時転写されている遺伝子が<b>ハウスキーピング遺伝子</b>（図中の遺伝子1）。",
+  "point": "常時転写＝ハウスキーピング遺伝子。",
+  "tags": [
+   "遺伝子発現調節",
+   "ハウスキーピング遺伝子"
+  ]
+ },
+ {
+  "id": "t23b",
+  "slide": 23,
+  "chapter": 3,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "スライド23の図で、細菌の環境がグルコースなどからラクトースなどの新しい糖に変化したときの転写の変化として正しいのはどれか。",
+  "options": [
+   {
+    "text": "遺伝子1・2・3がすべて活性化される",
+    "explanation": "不要になった遺伝子2は抑制される。必要なRNAだけを作るのが転写調節",
+    "correct": false,
+    "trap": "scope"
+   },
+   {
+    "text": "遺伝子1は常時転写され、遺伝子2は抑制、遺伝子3は活性化される",
+    "explanation": "図の下段のとおり",
+    "correct": true
+   },
+   {
+    "text": "遺伝子2が活性化され、遺伝子3は抑制されたままである",
+    "explanation": "それは環境変化前（グルコースなど）の状態",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "遺伝子1が抑制され、遺伝子3が活性化される",
+    "explanation": "遺伝子1はハウスキーピング遺伝子で常時転写される",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "遺伝子3が活性化されるが、遺伝子2も活性化されたままである",
+    "explanation": "新しい糖の分解には遺伝子2は不必要で、転写が抑制される",
+    "correct": false,
+    "trap": "fact"
+   }
+  ],
+  "explanation": "グルコースなどの環境では遺伝子2が必要・遺伝子3は不要、ラクトースなどの新しい糖では遺伝子3が必要・遺伝子2は不要。遺伝子1（ハウスキーピング遺伝子）はどちらでも常時転写される。",
+  "point": "環境に応じて必要な遺伝子だけを転写する。ハウスキーピング遺伝子は変わらない。",
+  "tags": [
+   "遺伝子発現調節",
+   "ハウスキーピング遺伝子",
+   "環境の変化"
+  ]
+ },
+ {
+  "id": "t24a",
+  "slide": 24,
+  "chapter": 3,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "スライド24の<b>正の調節</b>で、大腸菌内のcAMP濃度が低下したときに起こることとして記されているのはどれか。",
+  "options": [
+   {
+    "text": "cAMP–CRP複合体がオペレーターに結合して転写を抑える",
+    "explanation": "オペレーターに結合して抑えるのはリプレッサー（負の調節）",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "CRP単独でプロモーターに結合し、転写が促進される",
+    "explanation": "図ではCRPはcAMPと結合して複合体としてCRP結合領域に結合する",
+    "correct": false,
+    "trap": "mechanism"
+   },
+   {
+    "text": "リプレッサーが合成されなくなり、転写が促進される",
+    "explanation": "cAMPの低下とリプレッサーの合成の関係は記されていない",
+    "correct": false,
+    "trap": "mechanism"
+   },
+   {
+    "text": "RNAポリメラーゼだけで十分にプロモーターに結合し、転写量は変わらない",
+    "explanation": "cAMP–CRPがないとRNAポリメラーゼもプロモーターに結合できない",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "cAMP–CRP複合体ができず、プロモーターに結合しないので、RNAポリメラーゼもプロモーターに結合できない",
+    "explanation": "スライド24上段の記載どおり",
+    "correct": true
+   }
+  ],
+  "explanation": "正の調節（積極的に発現促進）：cAMPがCRPと<b>cAMP–CRP複合体</b>を作り、プロモーターのCRP結合領域に結合すると、RNAポリメラーゼがプロモーターに結合できる。cAMPが低下すると複合体ができず、転写されない。",
+  "point": "正の調節＝cAMP–CRPがプロモーターに結合して促進。cAMP低下 → 転写されない。",
+  "tags": [
+   "lacオペロン",
+   "正の調節",
+   "cAMP–CRP"
+  ]
+ },
+ {
+  "id": "t24b",
+  "slide": 24,
+  "chapter": 3,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "スライド24で、大腸菌がβガラクトシダーゼ（βgal）酵素を作りラクトースを利用するのは、どの培地で培養したときか。",
+  "options": [
+   {
+    "text": "グルコース（＋）培地",
+    "explanation": "グルコース（＋）培地ではβgal酵素は作られない（βgal遺伝子が働かない）",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "グルコース（＋）ラクトース（−）培地",
+    "explanation": "グルコースがありラクトースがない条件ではβgalを作らない",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "グルコース（−）ラクトース（−）培地",
+    "explanation": "資料でβgal酵素を作るとされているのはラクトース（＋）の条件",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "グルコース（−）ラクトース（＋）培地",
+    "explanation": "スライド24下段「グルコース（−）ラクトース（＋）培地で培養するとβgal酵素を作りラクトースを利用する」",
+    "correct": true
+   },
+   {
+    "text": "培地にかかわらず常に作る",
+    "explanation": "βgal遺伝子は培地により発現が変わる調節的発現遺伝子。常時転写されるハウスキーピング遺伝子ではない",
+    "correct": false,
+    "trap": "swap"
+   }
+  ],
+  "explanation": "大腸菌はラクトースをそのまま利用できず、βgal酵素で加水分解してグルコースにして利用する。グルコース（＋）ではβgalを作らず、<b>グルコース（−）ラクトース（＋）</b>で作る。負の調節（リプレッサーがオペレーターに結合）と正の調節（cAMP–CRP）がこの切り替えに関わる。",
+  "point": "βgalを作る＝グルコース（−）かつラクトース（＋）。",
+  "tags": [
+   "lacオペロン",
+   "βガラクトシダーゼ",
+   "負の調節"
+  ]
+ },
+ {
+  "id": "t25a",
+  "slide": 25,
+  "chapter": 3,
+  "kind": "重要事項",
+  "difficulty": 2,
+  "stem": "スライド25の<b>オペロン</b>と<b>レギュロン</b>の説明の組合せとして正しいのはどれか。",
+  "options": [
+   {
+    "text": "オペロン：DNAのあちこちに散在する遺伝子群／レギュロン：並んだ遺伝子が1つのmRNAに転写される単位",
+    "explanation": "定義が入れ替わっている",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "オペロン：同一の転写因子により転写調節を受ける連携的に働く酵素の遺伝子の集合体／レギュロン：DNAのあちこちに散在する遺伝子群の発現を一斉に調節するシステム",
+    "explanation": "スライド25の定義どおり",
+    "correct": true
+   },
+   {
+    "text": "オペロン：常時転写される遺伝子の集合／レギュロン：必要なときだけ転写される遺伝子",
+    "explanation": "常時転写されるのはハウスキーピング遺伝子。オペロン・レギュロンの定義ではない",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "オペロンの例：熱ショックオペロン／レギュロンの例：ヒスチジンレギュロン",
+    "explanation": "例が入れ替わっている。ヒスチジン<b>オペロン</b>、熱ショック<b>レギュロン</b>",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "オペロン：真核生物のエンハンサーの集合／レギュロン：原核生物のプロモーター",
+    "explanation": "オペロン・レギュロンは原核生物（大腸菌）の例で説明されている",
+    "correct": false,
+    "trap": "scope"
+   }
+  ],
+  "explanation": "オペロン＝同一の転写因子で調節を受ける、連携的に働く酵素の遺伝子の集合体（lacオペロン、ヒスチジンオペロンなど）。レギュロン＝DNAのあちこちに散在する遺伝子群の発現を一斉に調節するシステム（熱ショックレギュロン、SOSレギュロンなど）。",
+  "point": "並んでまとめて＝オペロン、散在して一斉に＝レギュロン。",
+  "tags": [
+   "オペロン",
+   "レギュロン"
+  ]
+ },
+ {
+  "id": "t25b",
+  "slide": 25,
+  "chapter": 3,
+  "kind": "理解・統合",
+  "difficulty": 3,
+  "stem": "スライド25のlacオペロンについて正しいのはどれか。",
+  "options": [
+   {
+    "text": "lacZ・lacY・lacAの3つの遺伝子が1つの転写単位として転写され、1つのmRNA上に複数のタンパク質の情報がコードされている",
+    "explanation": "図(a)の記載どおり",
+    "correct": true
+   },
+   {
+    "text": "lacZ・lacY・lacAはそれぞれ別々のプロモーターから別々のmRNAとして転写される",
+    "explanation": "1つのプロモーター（P）からターミネーター（T）までが1つの転写単位",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "lacオペロンは10種の酵素遺伝子からなる",
+    "explanation": "10種の酵素遺伝子を制御するのはヒスチジンオペロン",
+    "correct": false,
+    "trap": "number"
+   },
+   {
+    "text": "lacIはlacZYAと同じmRNAに含まれる",
+    "explanation": "lacIは独自のPとTをもつ別の転写単位で、その産物がlacZYAの発現を調節する（図(b)）",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "lacオペロンはラクトースを合成する遺伝子群である",
+    "explanation": "ラクトースの<b>分解</b>（細胞内への輸送と加水分解）に必要な遺伝子群",
+    "correct": false,
+    "trap": "reverse"
+   }
+  ],
+  "explanation": "ラクトースの分解に必要な遺伝子群の転写はlacオペロン（<b>lacZYAの3つの遺伝子</b>）により制御される。プロモーターからターミネーターまでが1つの転写単位で、1つのmRNA上に複数のタンパク質の情報がある。調節遺伝子lacIは別の転写単位で、その産物がlacZYAの発現を調節する。",
+  "point": "lacZYA＝3遺伝子・1本のmRNA。lacIは別の転写単位の調節遺伝子。",
+  "tags": [
+   "lacオペロン",
+   "オペロン",
+   "転写単位"
+  ]
+ },
+ {
+  "id": "t26a",
+  "slide": 26,
+  "chapter": 3,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "スライド26でハウスキーピング遺伝子の代表例として挙げられているものはどれか。",
+  "options": [
+   {
+    "text": "多細胞生物の分化機能・制御に関わる遺伝子",
+    "explanation": "ハウスキーピング遺伝子と対比される別の分類",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "必要に応じて発現が変化する調節的発現遺伝子",
+    "explanation": "常に発現している構成的発現遺伝子と対比される分類",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "タンパク質合成に関わる酵素の遺伝子",
+    "explanation": "スライド26の枠内に代表例として記載",
+    "correct": true
+   },
+   {
+    "text": "ラクトースがあるときだけ働くβガラクトシダーゼ遺伝子",
+    "explanation": "培地によって発現が変わる（スライド24）。常時転写ではない",
+    "correct": false,
+    "trap": "scope"
+   },
+   {
+    "text": "散在する遺伝子群を一斉に調節するレギュロン",
+    "explanation": "調節のしくみの名称で、遺伝子の分類ではない",
+    "correct": false,
+    "trap": "swap"
+   }
+  ],
+  "explanation": "ハウスキーピング遺伝子は細胞が生存し増殖するために必要な遺伝子で、代表例はエネルギー生産、糖・脂質・アミノ酸などの中間代謝に関わる酵素、核酸・タンパク質合成に関わる酵素などの遺伝子。",
+  "point": "ハウスキーピング＝生存・増殖に必要（エネルギー生産・中間代謝・核酸/タンパク質合成）。",
+  "tags": [
+   "遺伝子発現調節",
+   "ハウスキーピング遺伝子"
+  ]
+ },
+ {
+  "id": "t26b",
+  "slide": 26,
+  "chapter": 3,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "スライド26「遺伝子発現の調節（1）」の記載として正しいのはどれか。",
+  "options": [
+   {
+    "text": "ハウスキーピング遺伝子は真核多細胞生物にのみ存在する",
+    "explanation": "原核生物にも存在する",
+    "correct": false,
+    "trap": "scope"
+   },
+   {
+    "text": "分化機能・制御に関わる遺伝子は原核生物に特徴的である",
+    "explanation": "真核多細胞生物に特徴的",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "構成的発現遺伝子は、必要に応じて発現が変化する遺伝子である",
+    "explanation": "構成的発現遺伝子は<b>常に</b>発現している。必要に応じて変化するのは調節的発現遺伝子",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "分化機能・制御に関わる遺伝子は、細胞の生存と増殖に不可欠な遺伝子である",
+    "explanation": "生存と増殖に不可欠なのはハウスキーピング遺伝子",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "ハウスキーピング遺伝子は原核生物にも真核多細胞生物にも存在する",
+    "explanation": "スライド26の3つめの○の記載",
+    "correct": true
+   }
+  ],
+  "explanation": "遺伝子は発現パターンで<b>構成的発現遺伝子</b>（常に発現）と<b>調節的発現遺伝子</b>（必要に応じて変化）に、役割で<b>ハウスキーピング遺伝子</b>（生存・増殖に不可欠、原核にも真核多細胞生物にもある）と<b>分化機能・制御に関わる遺伝子</b>（真核多細胞生物に特徴的）に大別される。",
+  "point": "ハウスキーピング＝原核・真核に共通、分化機能・制御＝真核多細胞生物に特徴的。",
+  "tags": [
+   "遺伝子発現調節",
+   "ハウスキーピング遺伝子",
+   "構成的発現"
+  ]
+ },
+ {
+  "id": "t28a",
+  "slide": 28,
+  "chapter": 4,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "スライド28の表で、<b>RNAポリメラーゼI</b>が転写する遺伝子はどれか。",
+  "options": [
+   {
+    "text": "タンパク質指令遺伝子すべて",
+    "explanation": "これは<b>RNAポリメラーゼII</b>の担当",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "tRNA遺伝子",
+    "explanation": "これは<b>RNAポリメラーゼIII</b>の担当",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "5.8S・18S・28S rRNA遺伝子",
+    "explanation": "表の記載どおり。RNAポリメラーゼIはこの3種のrRNA遺伝子を担当する",
+    "correct": true
+   },
+   {
+    "text": "5S rRNA遺伝子",
+    "explanation": "同じrRNAでも5Sは<b>RNAポリメラーゼIII</b>の担当",
+    "correct": false,
+    "trap": "scope"
+   },
+   {
+    "text": "miRNA遺伝子",
+    "explanation": "これは<b>RNAポリメラーゼII</b>の担当",
+    "correct": false,
+    "trap": "swap"
+   }
+  ],
+  "explanation": "表では、<b>I</b>＝5.8S・18S・28S rRNA遺伝子、<b>II</b>＝タンパク質指令遺伝子すべて・snoRNA・miRNA・siRNA遺伝子とほとんどのsnRNA遺伝子、<b>III</b>＝tRNA遺伝子・5S rRNA遺伝子・一部のsnRNA遺伝子と他の小分子RNA遺伝子。",
+  "point": "rRNAでも5SだけはIII。I＝大きなrRNA、II＝タンパク質＋snoRNA・miRNAなど、III＝tRNA・5S rRNA。",
+  "tags": [
+   "RNAポリメラーゼ"
+  ]
+ },
+ {
+  "id": "t28b",
+  "slide": 28,
+  "chapter": 4,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "スライド28の記載に照らして、細菌と真核生物の転写開始の違いとして正しいのはどれか。",
+  "options": [
+   {
+    "text": "真核生物のRNAポリメラーゼも、σ因子だけで転写を開始できる",
+    "explanation": "σ因子だけで開始できるのは<b>細菌</b>のRNAポリメラーゼ",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "細菌の染色体DNAもヌクレオソームを形成しており、真核生物と同じ条件で転写される",
+    "explanation": "ヌクレオソームや凝集度の高いクロマチン構造は「細菌の染色体にはない」と記されている",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "真核細胞のRNAポリメラーゼは1種類で、すべての遺伝子を転写する",
+    "explanation": "真核細胞には<b>3種類</b>（I・II・III）のRNAポリメラーゼがある",
+    "correct": false,
+    "trap": "number"
+   },
+   {
+    "text": "rRNAの「S」の値は、大きいほど小さいrRNA分子であることを示す",
+    "explanation": "表の注では「Sの値が大きいほど、大きいrRNA分子」。大小が逆",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "真核生物のRNAポリメラーゼは、転写基本因子とよばれる多数のタンパク質群を必要とする",
+    "explanation": "スライドの記載どおり。細菌はσ因子だけでよい",
+    "correct": true
+   }
+  ],
+  "explanation": "細菌のRNAポリメラーゼが転写を始めるのに必要なのは<b>σ因子</b>だけだが、真核生物では<b>転写基本因子</b>という多数のタンパク質群が必要になる。さらに真核生物は、細菌の染色体にはない<b>ヌクレオソーム</b>や凝集度の高い<b>クロマチン構造</b>をとったDNAを転写しなければならない。",
+  "point": "細菌＝σ因子だけ／真核＝転写基本因子（多数）＋クロマチンという壁。",
+  "tags": [
+   "RNAポリメラーゼ",
+   "原核と真核"
+  ]
+ },
+ {
+  "id": "t29a",
+  "slide": 29,
+  "chapter": 4,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "スライド29で、真核生物の<b>RNAポリメラーゼII</b>が合成するとされているものはどれか。",
+  "options": [
+   {
+    "text": "mRNA前駆体",
+    "explanation": "スライドの記載どおり。修飾やプロセシングを受けて成熟したmRNAになる",
+    "correct": true
+   },
+   {
+    "text": "成熟したmRNA（修飾・プロセシングを受けない）",
+    "explanation": "mRNAはまず<b>前駆体</b>として合成され、修飾やプロセシングを受けた後に成熟する",
+    "correct": false,
+    "trap": "mechanism"
+   },
+   {
+    "text": "rRNA分子",
+    "explanation": "rRNA遺伝子の転写は主にポリメラーゼI（5Sは III）の担当（スライド28）",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "tRNA分子",
+    "explanation": "tRNA遺伝子の転写はポリメラーゼIIIの担当（スライド28）",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "タンパク質",
+    "explanation": "タンパク質はmRNAの<b>翻訳</b>でつくられる。ポリメラーゼが行うのは転写",
+    "correct": false,
+    "trap": "swap"
+   }
+  ],
+  "explanation": "RNAポリメラーゼIIはタンパク質をコードする遺伝子を転写して<b>mRNA前駆体</b>をつくる。真核生物では、mRNAはまず前駆体として合成され、さまざまな修飾やプロセシングを受けた後に成熟したmRNAとなる。",
+  "point": "ポリメラーゼIIの産物は「mRNA前駆体」。成熟mRNAは修飾・プロセシングの後。",
+  "tags": [
+   "RNAポリメラーゼ",
+   "mRNA前駆体"
+  ]
+ },
+ {
+  "id": "t29b",
+  "slide": 29,
+  "chapter": 4,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "スライド29の図で、「遺伝子発現の最終産物」として括られているものはどれか。",
+  "options": [
+   {
+    "text": "mRNA分子",
+    "explanation": "mRNAは翻訳されてタンパク質になる。最終産物の括りには入っていない",
+    "correct": false,
+    "trap": "scope"
+   },
+   {
+    "text": "mRNA前駆体",
+    "explanation": "プロセシングを受けて成熟mRNAになる途中の段階",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "rRNA分子のみ",
+    "explanation": "tRNA分子も括られている",
+    "correct": false,
+    "trap": "scope"
+   },
+   {
+    "text": "rRNA分子とtRNA分子",
+    "explanation": "図の括弧はrRNA分子とtRNA分子にかかる。RNAのまま働く",
+    "correct": true
+   },
+   {
+    "text": "tRNA分子とmRNA分子",
+    "explanation": "mRNAは最終産物ではなく翻訳の鋳型",
+    "correct": false,
+    "trap": "swap"
+   }
+  ],
+  "explanation": "図ではrRNA遺伝子・tRNA遺伝子の転写産物（rRNA分子・tRNA分子）が「遺伝子発現の最終産物」とされる。タンパク質をコードする遺伝子は転写で<b>mRNA前駆体</b>となり、mRNA分子を経て<b>翻訳</b>でタンパク質になる。",
+  "point": "rRNA・tRNAはRNAのまま最終産物。mRNAはタンパク質への中継ぎ。",
+  "tags": [
+   "RNAポリメラーゼ",
+   "mRNA前駆体"
+  ]
+ },
+ {
+  "id": "t30a",
+  "slide": 30,
+  "chapter": 4,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "スライド30で、真核生物の<b>TATAボックス</b>の位置として記されているのはどれか。",
+  "options": [
+   {
+    "text": "転写開始部位から約25塩基下流",
+    "explanation": "上流と下流が逆。TATAボックスは転写開始部位より手前（上流）にある",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "転写開始部位から約25塩基上流",
+    "explanation": "スライドの記載どおり",
+    "correct": true
+   },
+   {
+    "text": "転写開始部位から約10塩基上流",
+    "explanation": "−10付近の配列は細菌（原核）のプロモーターの話。数値も違う",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "転写開始部位から数百〜数千bp離れた上流",
+    "explanation": "これはエンハンサー・サイレンサーなどの位置（スライド35）",
+    "correct": false,
+    "trap": "number"
+   },
+   {
+    "text": "転写開始部位そのもの",
+    "explanation": "TATAボックスは開始部位から離れた上流にある",
+    "correct": false,
+    "trap": "fact"
+   }
+  ],
+  "explanation": "真核生物のRNAポリメラーゼIIによる転写開始では、転写開始部位から<b>約25塩基上流</b>の<b>TATAボックス</b>に、まず<b>TFIID</b>がTBPを介して結合する。",
+  "point": "TATAボックス＝開始部位の約25塩基上流（真核）。−10/−35は原核。",
+  "tags": [
+   "転写開始複合体",
+   "TATAボックス"
+  ]
+ },
+ {
+  "id": "t30b",
+  "slide": 30,
+  "chapter": 4,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "スライド30の、RNAポリメラーゼIIによる転写開始（推定）の順序として正しいのはどれか。",
+  "options": [
+   {
+    "text": "TFIIBがTATAボックスに結合 → TFIIDが隣に結合 → RNAポリメラーゼIIが結合 → TFIIHがCTDをリン酸化",
+    "explanation": "TATAボックスに最初に結合するのは<b>TFIID</b>（TBP）。TFIIBはその隣に結合できるようになる",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "RNAポリメラーゼIIがTATAボックスに結合 → TFIID → TFIIB → TFIIH",
+    "explanation": "ポリメラーゼIIはTFIID・TFIIBの結合の後に、残りの因子とともにプロモーターに結合する",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "TFIIDがTATAボックスに結合 → TFIIHがCTDをリン酸化 → TFIIBが結合 → RNAポリメラーゼIIが結合",
+    "explanation": "CTDのリン酸化はポリメラーゼIIが結合した後、伸長期に入る直前の段階",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "σ因子がTATAボックスを認識 → RNAポリメラーゼIIが結合 → TFIIHがDNAをほどく",
+    "explanation": "σ因子は細菌の因子。真核生物ではTFIID（TBP）がTATAボックスを認識する",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "TFIIDがTBPを介してTATAボックスに結合 → TFIIBが隣に結合 → 残りの転写基本因子とRNAポリメラーゼIIが結合 → TFIIHがATPを使ってDNAをほどき、CTDをリン酸化",
+    "explanation": "図(A)〜(E)の順どおり",
+    "correct": true
+   }
+  ],
+  "explanation": "(A)〜(B) <b>TFIID</b>が<b>TBP</b>というサブユニットを介してTATAボックスに結合し、(C) 隣に<b>TFIIB</b>が結合できるようになる。(D) 残りの転写基本因子（TFIIE・TFIIF・TFIIHなど）と<b>RNAポリメラーゼII</b>がプロモーターに結合する。(E) <b>TFIIH</b>がATPを使って転写開始部位のDNA二本鎖を解離させて鋳型鎖を露出させ、ポリメラーゼIIの<b>CTD</b>（C末端領域）をリン酸化する。立体構造が変わったポリメラーゼは転写基本因子から離れて伸長期に入る。",
+  "point": "D（TBP）→ B → ポリメラーゼII＋残り（E・F・H）→ TFIIHがほどいてCTDをリン酸化 → 伸長へ。",
+  "tags": [
+   "転写開始複合体",
+   "基本転写因子"
+  ]
+ },
+ {
+  "id": "t32a",
+  "slide": 32,
+  "chapter": 4,
+  "kind": "理解・統合",
+  "difficulty": 3,
+  "stem": "スライド32の記載として正しいのはどれか。",
+  "options": [
+   {
+    "text": "TATAボックスを識別するのは、TFIIDのうちTAFサブユニットである",
+    "explanation": "TATAボックスを識別するのは<b>TBP</b>サブユニット。TAFは開始部位付近のほかのDNA配列を識別し、TBPのDNAへの結合を調節する",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "TFIIHは1個のサブユニットからなる",
+    "explanation": "TFIIHのサブユニット数は<b>9</b>。1個なのはTBPとTFIIB",
+    "correct": false,
+    "trap": "number"
+   },
+   {
+    "text": "TFIIDの結合でTATAボックスのDNAに大きなゆがみができ、活性のあるプロモーターの位置を示す物理的目印になると考えられている",
+    "explanation": "スライドの記載どおり",
+    "correct": true
+   },
+   {
+    "text": "ポリメラーゼIIがRNAを延ばし始めた後も、転写基本因子はすべてDNAに結合したまま残る",
+    "explanation": "ほとんどの転写基本因子はDNAから離れる",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "転写基本因子は1回の転写開始に使われると分解され、再利用されない",
+    "explanation": "離れた転写基本因子は別のRNAポリメラーゼIIと一緒になって、次の転写開始に利用される",
+    "correct": false,
+    "trap": "fact"
+   }
+  ],
+  "explanation": "TFIIDの結合によるTATAボックスDNAの大きな<b>ゆがみ</b>は、巨大なゲノムの中で活性のあるプロモーターの位置を示す<b>物理的目印</b>になると考えられている。その後、RNAポリメラーゼIIと他の因子が集合して<b>転写開始複合体</b>が完成する。ポリメラーゼIIがRNAを延ばし始めると、ほとんどの転写基本因子はDNAから離れ、別のポリメラーゼIIと一緒に<b>次の転写開始に再利用</b>される。",
+  "point": "ゆがみ＝目印、伸長が始まれば因子は離れて再利用。TATA識別はTBP、TAFは補助。",
+  "tags": [
+   "基本転写因子",
+   "転写開始複合体"
+  ]
+ },
+ {
+  "id": "t32b",
+  "slide": 32,
+  "chapter": 4,
+  "kind": "重要事項",
+  "difficulty": 2,
+  "stem": "スライド32の表で、転写基本因子とその役割の組み合わせとして正しいのはどれか。",
+  "options": [
+   {
+    "text": "TFIIH ― 転写開始部位のDNAをほどき、RNAポリメラーゼのCTDのSer5をリン酸化し、ポリメラーゼをプロモーターから解離させる",
+    "explanation": "表の記載どおり",
+    "correct": true
+   },
+   {
+    "text": "TFIIB ― TATAボックスを識別する",
+    "explanation": "TATAボックスを識別するのはTFIIDの<b>TBP</b>サブユニット。TFIIBはBRE配列を識別し、ポリメラーゼを開始部位へ正しく配置する",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "TFIIE ― プロモーターのBRE配列を識別する",
+    "explanation": "BRE配列を識別するのは<b>TFIIB</b>。TFIIEはTFIIHを引き寄せ、調節する",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "TFIIF ― RNAポリメラーゼのCTDをリン酸化する",
+    "explanation": "CTDをリン酸化するのは<b>TFIIH</b>。TFIIFはポリメラーゼとTBP・TFIIBの結合を安定化し、TFIIEとTFIIHを引き寄せるのを助ける",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "TAFサブユニット ― RNAポリメラーゼを転写開始部位へ正しく配置する",
+    "explanation": "それはTFIIBの役割。TAFは開始部位付近のほかのDNA配列を識別し、TBPのDNAへの結合を調節する",
+    "correct": false,
+    "trap": "swap"
+   }
+  ],
+  "explanation": "表：<b>TFIID</b>（TBP 1個：TATAボックスを識別／TAF 約11個：ほかの配列を識別しTBPの結合を調節）、<b>TFIIB</b>（1：BRE配列を識別しポリメラーゼを正しく配置）、<b>TFIIF</b>（3：ポリメラーゼとTBP・TFIIBの結合を安定化し、TFIIE・TFIIHを引き寄せるのを助ける）、<b>TFIIE</b>（2：TFIIHを引き寄せ調節）、<b>TFIIH</b>（9：DNAをほどき、CTDのSer5をリン酸化し、ポリメラーゼをプロモーターから解離させる）。",
+  "point": "TATA識別＝TBP、BRE＝TFIIB、ほどく＋CTDリン酸化＝TFIIH。",
+  "tags": [
+   "基本転写因子"
+  ]
+ },
+ {
+  "id": "t33a",
+  "slide": 33,
+  "chapter": 4,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "スライド33の上流プロモーター要素で、<b>CAATボックス</b>と<b>GCボックス</b>の配列の組み合わせとして正しいのはどれか。",
+  "options": [
+   {
+    "text": "CAATボックス：5'-GGGCGG-3'／GCボックス：5'-CCAAT-3'",
+    "explanation": "2つの配列が入れ替わっている",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "CAATボックス：5'-CCAAT-3'／GCボックス：5'-GCGCGC-3'",
+    "explanation": "GCボックスは5'-<b>GGGCGG</b>-3'",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "CAATボックス：5'-TTAAT-3'／GCボックス：5'-GGGCGG-3'",
+    "explanation": "CAATボックスは5'-<b>CCAAT</b>-3'",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "CAATボックス：5'-CCAAT-3'／GCボックス：5'-GGGCGG-3'",
+    "explanation": "スライドの記載どおり",
+    "correct": true
+   },
+   {
+    "text": "CAATボックス：5'-CCAAT-3'／GCボックス：5'-GGCGGG-3'",
+    "explanation": "GCボックスの並びを末端側から逆に読んでいる。正しくは5'-GGGCGG-3'",
+    "correct": false,
+    "trap": "reverse"
+   }
+  ],
+  "explanation": "TATAボックス以外にも、プロモーター上流に転写効率を増加させる配列（<b>上流プロモーター要素</b>）があり、これに結合したタンパク質がRNAポリメラーゼIIの転写効率を高める。<b>CAATボックス</b>：5'-CCAAT-3'、<b>GCボックス</b>：5'-GGGCGG-3'。",
+  "point": "CAAT＝CCAAT（Cが2つ）、GC＝GGGCGG。",
+  "tags": [
+   "上流プロモーター要素"
+  ]
+ },
+ {
+  "id": "t33b",
+  "slide": 33,
+  "chapter": 4,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "スライド33の図と記載について正しいのはどれか。",
+  "options": [
+   {
+    "text": "CAATボックス結合転写因子（CTF）は、TATAボックスに直接結合する",
+    "explanation": "CTFが結合するのは<b>CAATボックス</b>。TATAボックスに結合するのはTBP",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "図で「＝TFIID」と囲まれているのは、（補助）転写活性化因子（TAF）とTATAボックス結合タンパク質（TBP）である",
+    "explanation": "図の緑の囲みどおり。TBPとTAFでTFIIDになる",
+    "correct": true
+   },
+   {
+    "text": "上流プロモーター要素は、転写開始点（+1）より下流に位置する",
+    "explanation": "その名のとおりプロモーターの<b>上流</b>にある。図でもCAATはTATAより上流",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "上流プロモーター要素に結合したタンパク質は、RNAポリメラーゼIIの転写効率を低下させる",
+    "explanation": "スライドでは「転写効率を高める」",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "上流プロモーター要素は、細菌の−10・−35ボックスと同じものを指す",
+    "explanation": "−10・−35ボックスは原核生物のプロモーター配列。CAAT・GCボックスは真核生物",
+    "correct": false,
+    "trap": "swap"
+   }
+  ],
+  "explanation": "図では、CAATボックスに<b>CTF</b>（CAATボックス結合転写因子）が結合し、<b>TAF</b>（（補助）転写活性化因子）を介して、TATAボックスに結合した<b>TBP</b>とつながる。TAFとTBPを合わせたものが<b>TFIID</b>で、その下流側にRNAポリメラーゼやTFIIA・B・E・Fなどを含む基本複合体がある。上流プロモーター要素に結合したタンパク質は転写効率を高める。",
+  "point": "CAAT→CTF→TAF→TBP（TAF＋TBP＝TFIID）。上流要素は転写効率を「高める」。",
+  "tags": [
+   "上流プロモーター要素",
+   "基本転写因子"
+  ]
+ },
+ {
+  "id": "t34a",
+  "slide": 34,
+  "chapter": 4,
+  "kind": "重要事項",
+  "difficulty": 2,
+  "stem": "スライド34で、<b>介在因子（mediator）</b>の働きとして記されているのはどれか。",
+  "options": [
+   {
+    "text": "TATAボックスを識別して結合する",
+    "explanation": "それはTFIIDのTBPの働き",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "ヒストンを修飾して、クロマチン中のDNAを反応しやすい状態にする",
+    "explanation": "それは<b>ヒストン修飾酵素</b>（クロマチン修飾酵素）の働き",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "転写活性化因子と、ポリメラーゼIIや転写基本因子群との適切な結合に機能する",
+    "explanation": "スライドの記載どおり",
+    "correct": true
+   },
+   {
+    "text": "エンハンサーの特異的配列に結合し、RNAポリメラーゼを転写開始部位へ引きつける",
+    "explanation": "それは<b>転写活性化因子</b>（遺伝子調節タンパク）の働き",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "転写効率を下げる配列としてDNA上に存在する",
+    "explanation": "それは<b>サイレンサー</b>。介在因子はタンパク複合体",
+    "correct": false,
+    "trap": "fact"
+   }
+  ],
+  "explanation": "転写活性化因子とよばれる遺伝子調節タンパクがDNAの特異的配列（<b>エンハンサー</b>）に結合し、RNAポリメラーゼを転写開始部位へ引きつける。<b>介在因子（mediator）</b>というタンパク複合体は、転写活性化因子とポリメラーゼIIや転写基本因子群との適切な結合に機能する。クロマチン中のDNAを反応しやすい状態にするには、<b>クロマチン再構成複合体</b>や<b>ヒストン修飾酵素</b>などのクロマチン修飾酵素が必要である。",
+  "point": "活性化因子＝エンハンサーに結合、介在因子＝つなぎ役、クロマチン修飾酵素＝DNAを開く。",
+  "tags": [
+   "転写調節",
+   "介在因子"
+  ]
+ },
+ {
+  "id": "t34b",
+  "slide": 34,
+  "chapter": 4,
+  "kind": "理解・統合",
+  "difficulty": 3,
+  "stem": "スライド34の記載・図として正しいのはどれか。",
+  "options": [
+   {
+    "text": "実際の転写開始は、転写基本因子とRNAポリメラーゼIIだけで完結する",
+    "explanation": "実際には介在因子・クロマチン再構成複合体・ヒストン修飾酵素なども結合し、はるかに複雑で、より多くのタンパク質を必要とする",
+    "correct": false,
+    "trap": "scope"
+   },
+   {
+    "text": "エンハンサーは転写効率を低下させる配列で、その逆がサイレンサーである",
+    "explanation": "逆。エンハンサーは転写効率を<b>増強</b>させ、その逆がサイレンサー",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "転写活性化因子は、RNAポリメラーゼを転写開始部位から遠ざける",
+    "explanation": "転写活性化因子はRNAポリメラーゼを転写開始部位へ<b>引きつける</b>",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "エンハンサーはTATAボックスのすぐ隣にしか存在できない",
+    "explanation": "図ではエンハンサーはTATAボックスから離れた位置にあり、DNAがループを作って複合体に近づく",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "真核生物のDNAはヌクレオソームと高次のクロマチン構造をとるため、実際の転写開始にはクロマチン再構成複合体やヒストン修飾酵素なども必要である",
+    "explanation": "スライドの記載どおり",
+    "correct": true
+   }
+  ],
+  "explanation": "図では、離れた<b>エンハンサー</b>に結合した転写活性化タンパクが、DNAのループを介して、転写基本因子・RNAポリメラーゼII・<b>介在因子</b>・<b>クロマチン再構成複合体</b>・<b>ヒストン修飾酵素</b>の集合に関わる。エンハンサーは転写効率を増強させ、逆はサイレンサー。",
+  "point": "真核の実際の転写開始＝基本転写因子＋ポリメラーゼII＋介在因子＋クロマチン修飾酵素。",
+  "tags": [
+   "転写調節",
+   "クロマチン"
+  ]
+ },
+ {
+  "id": "t35a",
+  "slide": 35,
+  "chapter": 5,
+  "kind": "重要事項",
+  "difficulty": 2,
+  "stem": "スライド35の図で、「<b>基礎的発現</b>」の範囲に含まれる要素の組み合わせとして正しいのはどれか。",
+  "options": [
+   {
+    "text": "エンハンサー・TATAボックス",
+    "explanation": "エンハンサーは遠位調節要素で「調節的発現」の側",
+    "correct": false,
+    "trap": "scope"
+   },
+   {
+    "text": "サイレンサー・Inr",
+    "explanation": "サイレンサーは遠位調節要素で「調節的発現」の側",
+    "correct": false,
+    "trap": "scope"
+   },
+   {
+    "text": "他の応答配列・GCボックス",
+    "explanation": "他の応答配列は遠位調節要素で「調節的発現」の側",
+    "correct": false,
+    "trap": "scope"
+   },
+   {
+    "text": "TATAボックス・Inr・プロモーター近位要素（GC/CAATなど）",
+    "explanation": "図の赤枠（基礎的発現）の中にある要素",
+    "correct": true
+   },
+   {
+    "text": "−10ボックス・−35ボックス",
+    "explanation": "細菌（原核生物）のプロモーター配列で、この図にはない",
+    "correct": false,
+    "trap": "swap"
+   }
+  ],
+  "explanation": "図は左（上流）から、<b>遠位調節要素</b>（他の応答配列、エンハンサー（＋）またはサイレンサー（−）配列）＝<b>調節的発現</b>、<b>近位調節要素</b>（プロモーター近位要素：GC/CAATなど）と<b>プロモーター</b>（TATA、Inr）＝<b>基礎的発現</b>、と区分している。",
+  "point": "基礎的発現＝近位要素（GC/CAAT）＋TATA＋Inr。調節的発現＝エンハンサー・サイレンサー・他の応答配列。",
+  "tags": [
+   "転写調節配列"
+  ]
+ },
+ {
+  "id": "t35b",
+  "slide": 35,
+  "chapter": 5,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "スライド35で、エンハンサー・サイレンサー・その他の応答配列の位置として記されているのはどれか。",
+  "options": [
+   {
+    "text": "遺伝子から数百〜数千bp離れた上流（または下流）",
+    "explanation": "スライドの記載どおり",
+    "correct": true
+   },
+   {
+    "text": "遺伝子の上流だけで、下流には存在しない",
+    "explanation": "「上流（または下流）」と記されている",
+    "correct": false,
+    "trap": "scope"
+   },
+   {
+    "text": "転写開始部位から約25塩基上流",
+    "explanation": "それはTATAボックスの位置（スライド30）",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "転写開始部位から数塩基以内",
+    "explanation": "数百〜数千bp離れた位置にある",
+    "correct": false,
+    "trap": "number"
+   },
+   {
+    "text": "成熟mRNAの中",
+    "explanation": "転写調節配列はDNA上の配列",
+    "correct": false,
+    "trap": "fact"
+   }
+  ],
+  "explanation": "遺伝子から<b>数百〜数千bp</b>離れた<b>上流（または下流）</b>にあるエンハンサー、サイレンサー、その他の応答配列が、各細胞での<b>調節的発現</b>（転写調節）に関与する。",
+  "point": "エンハンサー・サイレンサー＝離れた位置（数百〜数千bp）、上流にも下流にも。",
+  "tags": [
+   "転写調節配列",
+   "エンハンサー"
+  ]
+ },
+ {
+  "id": "t35c",
+  "slide": 35,
+  "chapter": 5,
+  "kind": "理解・統合",
+  "difficulty": 3,
+  "stem": "スライド35の図で、「プロモーター」という語の範囲について正しいのはどれか。",
+  "options": [
+   {
+    "text": "エンハンサー・サイレンサーなどの遠位調節要素まで含めて、必ずプロモーターと呼ぶ",
+    "explanation": "「含めて呼ぶ場合もある」とされているのは近位調節要素まで。遠位調節要素は含めない",
+    "correct": false,
+    "trap": "scope"
+   },
+   {
+    "text": "狭い意味ではTATAボックスからInr（+1）までを指すが、近位調節要素まで含めてプロモーターと呼ぶ場合もある",
+    "explanation": "図の「ここまでを含めてプロモーターと呼ぶ場合もある」の矢印どおり",
+    "correct": true
+   },
+   {
+    "text": "プロモーターは遺伝子の3'側（下流）に位置する",
+    "explanation": "図ではプロモーターは遺伝子の手前（上流）にある",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "TATAボックスは調節的発現の領域に含まれる",
+    "explanation": "TATAボックスは<b>基礎的発現</b>の領域",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "プロモーター近位要素（GC/CAATなど）は遠位調節要素に含まれる",
+    "explanation": "GC/CAATなどは<b>近位</b>調節要素",
+    "correct": false,
+    "trap": "swap"
+   }
+  ],
+  "explanation": "図では、TATAとInr（+1）の部分を<b>プロモーター</b>とし、その上流の<b>近位調節要素</b>（GC/CAATなど）までを含めてプロモーターと呼ぶ場合もある（ここまでが<b>基礎的発現</b>）。さらに上流の<b>遠位調節要素</b>（エンハンサー・サイレンサー・他の応答配列）は<b>調節的発現</b>に関わる。",
+  "point": "プロモーター（TATA・Inr）⊂ 近位調節要素を含む広義のプロモーター。遠位要素は含めない。",
+  "tags": [
+   "転写調節配列"
+  ]
+ },
+ {
+  "id": "t35d",
+  "slide": 35,
+  "chapter": 5,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "スライド35の図の「エンハンサー（＋）またはサイレンサー（−）配列」について正しいのはどれか。",
+  "options": [
+   {
+    "text": "エンハンサーは転写を抑え、サイレンサーは増強する",
+    "explanation": "＋と−が逆",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "サイレンサーは細菌のオペレーターを指す語である",
+    "explanation": "サイレンサーは真核生物の転写調節配列。オペレーターは原核の話",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "エンハンサー・サイレンサーは基礎的発現の領域にある",
+    "explanation": "遠位調節要素であり、<b>調節的発現</b>の領域にある",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "エンハンサーは転写を増強し、サイレンサーは逆に抑える方向に働く",
+    "explanation": "（＋）（−）の表記と、スライド34の「エンハンサーは転写効率を増強させる。逆は、サイレンサー」どおり",
+    "correct": true
+   },
+   {
+    "text": "エンハンサーはタンパク質に翻訳されて働く",
+    "explanation": "エンハンサーはDNA上の配列で、転写活性化タンパクが結合する部位",
+    "correct": false,
+    "trap": "fact"
+   }
+  ],
+  "explanation": "エンハンサー（＋）とサイレンサー（−）は遠位調節要素に含まれ、各細胞での<b>調節的発現</b>（転写調節）に関わる。エンハンサーは転写効率を<b>増強</b>し、サイレンサーはその逆である。",
+  "point": "エンハンサー＝＋（増強）、サイレンサー＝−（抑制）。どちらもDNA上の遠位調節要素。",
+  "tags": [
+   "転写調節配列",
+   "エンハンサー"
+  ]
+ },
+ {
+  "id": "t36a",
+  "slide": 36,
+  "chapter": 5,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "スライド36(b)「ホルモンや調節分子が遺伝子の発現を調節する」に添えられた例として正しいのはどれか。",
+  "options": [
+   {
+    "text": "甲状腺の甲状腺刺激ホルモンが下垂体前葉に働き、甲状腺ホルモンの発現につながる",
+    "explanation": "甲状腺刺激ホルモンの産生は<b>下垂体前葉</b>、標的が甲状腺。向きが逆",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "下垂体後葉の甲状腺刺激ホルモンが甲状腺に働く",
+    "explanation": "スライドでは<b>下垂体前葉</b>",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "下垂体前葉の甲状腺刺激ホルモンが標的細胞（甲状腺）に働き、甲状腺ホルモンの発現につながる",
+    "explanation": "スライドの例どおり",
+    "correct": true
+   },
+   {
+    "text": "甲状腺ホルモンが標的細胞の表面受容体に働き、甲状腺刺激ホルモンの発現につながる",
+    "explanation": "産生細胞側と応答側が入れ替わっている",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "ホルモンは標的細胞の遺伝子発現には関わらない",
+    "explanation": "図では、受容体からの信号がホルモン応答性遺伝子の発現につながる",
+    "correct": false,
+    "trap": "mechanism"
+   }
+  ],
+  "explanation": "図(b)：産生細胞がホルモンを分泌し、標的細胞の<b>細胞表面の受容体</b>に結合する。受容体からの信号が<b>ホルモン応答性遺伝子</b>の発現につながる。例として、産生細胞側に<b>甲状腺刺激ホルモン（下垂体前葉）</b>、応答側に<b>甲状腺ホルモン（甲状腺）</b>が示されている。",
+  "point": "下垂体前葉（甲状腺刺激ホルモン）→ 甲状腺（甲状腺ホルモン）。",
+  "tags": [
+   "転写調節",
+   "ホルモン"
+  ]
+ },
+ {
+  "id": "t36b",
+  "slide": 36,
+  "chapter": 5,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "スライド36(c)(d)の内容として正しいのはどれか。",
+  "options": [
+   {
+    "text": "β-グロビン遺伝子群では、胚から成体まで同じ1つの遺伝子だけが発現し続ける",
+    "explanation": "図では胚・胎児・成体でそれぞれ別の遺伝子が発現している",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "β-グロビン遺伝子群では、胚・胎児・成体の発生段階ごとに異なる遺伝子が発現する",
+    "explanation": "図(c)どおり。発生段階で制御されている",
+    "correct": true
+   },
+   {
+    "text": "分化した細胞は、どれも同じ遺伝子の組み合わせをオンにしている",
+    "explanation": "図(d)では細胞ごとにオン・オフの組み合わせが異なる",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "分化した細胞で発現が異なるのは、細胞ごとに持っている遺伝子そのものが違うからである",
+    "explanation": "図(d)の2つの細胞は同じ並びの遺伝子を持ち、オン・オフが異なる",
+    "correct": false,
+    "trap": "mechanism"
+   },
+   {
+    "text": "β-グロビン遺伝子の発現は、ホルモンの有無だけで決まると示されている",
+    "explanation": "図(c)の見出しは「<b>発生段階</b>で制御されている」",
+    "correct": false,
+    "trap": "scope"
+   }
+  ],
+  "explanation": "(c) <b>β-グロビン遺伝子</b>は<b>発生段階</b>で制御されており、胚・胎児・成体で異なる遺伝子が発現する。(d) <b>分化</b>された細胞は、同じ遺伝子の並びのうち異なる遺伝子をオン・オフして発現する。",
+  "point": "同じ遺伝子セット、違うオン・オフ＝発生段階（β-グロビン）と分化。",
+  "tags": [
+   "転写調節",
+   "細胞分化"
+  ]
+ },
+ {
+  "id": "t37a",
+  "slide": 37,
+  "chapter": 5,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "スライド37「細胞のコミットメントと転写因子」上段（Normal Differentiation）の図の読み取りとして正しいのはどれか。",
+  "options": [
+   {
+    "text": "分化の段階ごとに転写因子の組み合わせが入れ替わり、細胞はlineage Aへ進み、lineage Bへの分化は抑えられている",
+    "explanation": "図では各段階で因子が加わり・抜け、lineage Bへの矢印は阻止されている",
+    "correct": true
+   },
+   {
+    "text": "分化の全段階で、転写因子の組み合わせはまったく変わらない",
+    "explanation": "図では段階ごとに因子が加わり、また抜けていく",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "正常分化では、細胞は途中で自由にlineage Bへ移っていく",
+    "explanation": "正常分化ではlineage Bへの分化は阻止されている（赤い抑制の印）",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "転写因子は分化の最終段階にだけ働き、それまでは関与しない",
+    "explanation": "図では最初の段階から転写因子の出入りが描かれている",
+    "correct": false,
+    "trap": "scope"
+   },
+   {
+    "text": "lineage Bへの分化を促す因子が、lineage Aへの分化を促進している",
+    "explanation": "もう一方の系列への分化を促す因子（星印）は、正常分化では抑えられている",
+    "correct": false,
+    "trap": "mechanism"
+   }
+  ],
+  "explanation": "上段では、細胞が段階を進むごとに転写因子（図形）が加わり・抜け、組み合わせが変わってlineage Aへ<b>コミットメント</b>（運命決定）していく。もう一方の系列（lineage B）への分化は抑えられている。下段は、この流れが乱れた状態（Differentiation Block・Differentiation to the Other Lineage・Self-renewal Capacity）を示す。",
+  "point": "転写因子の組み合わせが段階ごとに変わり、細胞の行き先（系列）を決める。",
+  "tags": [
+   "転写因子",
+   "細胞分化"
+  ]
+ },
+ {
+  "id": "t37b",
+  "slide": 37,
+  "chapter": 5,
+  "kind": "理解・統合",
+  "difficulty": 3,
+  "stem": "スライド37下段で、分化の流れが乱れた状態として並記されている3項目の組み合わせはどれか。",
+  "options": [
+   {
+    "text": "Differentiation Block・Apoptosis（アポトーシス）・Self-renewal Capacity",
+    "explanation": "アポトーシスは図に記されていない",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "Normal Differentiation・Differentiation to the Other Lineage・Self-renewal Capacity",
+    "explanation": "Normal Differentiationは<b>上段</b>（正常）の見出し",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "Differentiation Block・Differentiation to the Other Lineage・Cell Cycle Arrest（細胞周期の停止）",
+    "explanation": "細胞周期の停止は図に記されていない。3つ目は自己複製能",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "Differentiation to the Other Lineageのみ",
+    "explanation": "3つの項目が「＋」で並記されている",
+    "correct": false,
+    "trap": "scope"
+   },
+   {
+    "text": "Differentiation Block（分化の停止）・Differentiation to the Other Lineage（他の系列への分化）・Self-renewal Capacity（自己複製能）",
+    "explanation": "図の左に並記された3項目",
+    "correct": true
+   }
+  ],
+  "explanation": "下段では、ある段階で必要な転写因子が働かず（×印）、lineage Aへの分化が止まる（<b>Differentiation Block</b>）。同じ段階にとどまる矢印（<b>Self-renewal Capacity</b>）と、本来抑えられていた別系列への分化（<b>Differentiation to the Other Lineage</b>）が「＋」で並べられている。",
+  "point": "下段＝分化の停止＋他系列への分化＋自己複製能。",
+  "tags": [
+   "転写因子",
+   "細胞分化"
+  ]
+ },
+ {
+  "id": "t39a",
+  "slide": 39,
+  "chapter": 5,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "スライド39の、メタロチオネイン遺伝子の金属応答について正しいのはどれか。",
+  "options": [
+   {
+    "text": "Cd²⁺そのものがMRE配列に直接結合して転写を活性化する",
+    "explanation": "MRE配列に結合するのは、<b>活性化された転写因子</b>",
+    "correct": false,
+    "trap": "mechanism"
+   },
+   {
+    "text": "細胞内のCd²⁺が減ると、メタロチオネイン遺伝子の発現はさらに増える",
+    "explanation": "逆。Cd²⁺が減ると転写因子が活性化されず、さらなる発現が起こらない",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "メタロチオネインがCd²⁺に結合して細胞内Cd²⁺が減ると、転写因子が活性化されずMREに結合できなくなり、さらなる発現が起こらない",
+    "explanation": "図の右側の流れどおり",
+    "correct": true
+   },
+   {
+    "text": "MRE（金属応答配列）はメタロチオネインタンパク質の内部にある配列である",
+    "explanation": "MREはメタロチオネイン<b>遺伝子</b>の上流（DNA上）にある応答配列",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "メタロチオネイン遺伝子の上流には、MREが1か所だけ存在する",
+    "explanation": "図では−150付近と−50付近などに<b>複数</b>のMREが描かれている",
+    "correct": false,
+    "trap": "number"
+   }
+  ],
+  "explanation": "重金属（Cd²⁺）があると、<b>活性化された転写因子</b>がMRE配列に結合して転写を活性化し、メタロチオネインタンパク質が増える。メタロチオネインがCd²⁺に結合すると細胞内Cd²⁺が減少し、転写因子が活性化されずMREに結合できない（金属応答部位が空になる）ので、さらなる発現は起こらない。上流にはGRE・エンハンサー・複数のMRE・GC・TATAが並ぶ。",
+  "point": "Cd²⁺→転写因子活性化→MRE結合→メタロチオネイン↑→Cd²⁺↓→発現停止。",
+  "tags": [
+   "応答配列",
+   "メタロチオネイン"
+  ]
+ },
+ {
+  "id": "t39b",
+  "slide": 39,
+  "chapter": 5,
+  "kind": "応用・症例",
+  "difficulty": 2,
+  "stem": "スライド39の<b>カドミウム</b>についての記載として正しいのはどれか。",
+  "options": [
+   {
+    "text": "酵素のチオール基・カルボキシル基・アミノ基と相互作用して酵素活性を阻害し、肝臓障害・骨軟化症・高血圧などを引き起こす",
+    "explanation": "スライドの記載どおり",
+    "correct": true
+   },
+   {
+    "text": "酵素活性を高めることで肝臓障害を引き起こす",
+    "explanation": "酵素活性を<b>阻害</b>する",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "主な障害として低血圧を引き起こす",
+    "explanation": "スライドでは<b>高血圧</b>",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "タバコ1本に約20μg含まれる",
+    "explanation": "スライドでは約<b>2μg</b>",
+    "correct": false,
+    "trap": "number"
+   },
+   {
+    "text": "ヒトは食物からは摂取せず、喫煙だけで取り込む",
+    "explanation": "食物から75～100μg摂取しているうえに、喫煙などで余分に取っていると記されている",
+    "correct": false,
+    "trap": "scope"
+   }
+  ],
+  "explanation": "<b>カドミウム</b>は、酵素のチオール基・カルボキシル基・アミノ基と相互作用して酵素活性を阻害し、<b>肝臓障害・骨軟化症・高血圧</b>などを引き起こす。ヒトは食物から75～100μg摂取しているが、喫煙（タバコ1本に約2μg）などで余分のカドミウムを取っている。細胞はメタロチオネイン遺伝子の発現（MREを介した金属応答）でCd²⁺に応じる。",
+  "point": "カドミウム＝酵素活性阻害 → 肝臓障害・骨軟化症・高血圧など。タバコ1本約2μg。",
+  "tags": [
+   "応答配列",
+   "メタロチオネイン",
+   "遺伝子と疾患"
+  ]
+ },
+ {
+  "id": "t40a",
+  "slide": 40,
+  "chapter": 6,
+  "kind": "重要事項",
+  "difficulty": 2,
+  "stem": "スライド40の図で、中枢（CNS）の時計の出力として示されているものはどれか。",
+  "options": [
+   {
+    "text": "Sleep/wakefulness（睡眠・覚醒）",
+    "explanation": "CNS clock outputsに示されている（ほかにGlucose homeostasis、Feeding/Energy expenditure）",
+    "correct": true
+   },
+   {
+    "text": "Insulin secretion（インスリン分泌）",
+    "explanation": "膵臓の絵とともに<b>末梢</b>（Peripheral）時計の出力として示されている",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "Lipogenesis（脂肪合成）",
+    "explanation": "肝臓の絵とともに<b>末梢</b>時計の出力として示されている",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "Glucose clearance（糖の取り込み）",
+    "explanation": "筋の絵とともに<b>末梢</b>時計の出力。中枢の出力はGlucose homeostasis",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "Food absorption（食物吸収）",
+    "explanation": "腸の絵とともに<b>末梢</b>時計の出力として示されている",
+    "correct": false,
+    "trap": "swap"
+   }
+  ],
+  "explanation": "図の上段<b>CNS clock outputs</b>：Sleep/wakefulness、Glucose homeostasis、Feeding/Energy expenditure。下段<b>Peripheral clock outputs</b>：Lipogenesis（肝臓）、Food absorption（腸）、Insulin secretion（膵臓）、Glucose clearance（筋）、Fat accumulation。",
+  "point": "中枢＝睡眠・覚醒／糖恒常性／摂食・エネルギー消費。末梢＝臓器ごとの代謝。",
+  "tags": [
+   "時計遺伝子"
+  ]
+ },
+ {
+  "id": "t40b",
+  "slide": 40,
+  "chapter": 6,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "スライド40右のグラフ（XとYの時間変化）の読み取りとして正しいのはどれか。",
+  "options": [
+   {
+    "text": "XとYは時間によらずほぼ一定である",
+    "explanation": "XもYも大きく増減している",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "XとYは常に同じ時刻にピークを迎える",
+    "explanation": "Yの山とXの山は時刻がずれている",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "XとYの増減の周期はおよそ12時間である",
+    "explanation": "山から次の山まではおよそ24時間",
+    "correct": false,
+    "trap": "number"
+   },
+   {
+    "text": "XとYはおよそ24時間周期で増減を繰り返し、ピークの時刻が互いにずれている",
+    "explanation": "どちらのグラフでもXとYは約24時間ごとに山をつくり、山の位置がずれている",
+    "correct": true
+   },
+   {
+    "text": "48時間の間にXの山は1回しか現れない",
+    "explanation": "Xの山は48時間の間に2回現れる",
+    "correct": false,
+    "trap": "number"
+   }
+  ],
+  "explanation": "横軸はZeitgeber Time（上）とCircadian Time（下）で0〜48時間。どちらでもXとYはおよそ<b>24時間周期</b>で増減し、ピークの時刻が互いにずれている。時計遺伝子による生理機能の調節は、こうした約1日のリズムとして現れる。",
+  "point": "時計の出力は約24時間周期のリズム。山の時刻は分子ごとにずれる。",
+  "tags": [
+   "時計遺伝子"
+  ]
+ },
+ {
+  "id": "t41a",
+  "slide": 41,
+  "chapter": 6,
+  "kind": "重要事項",
+  "difficulty": 2,
+  "stem": "スライド41の<b>Circadian feedback loop</b>について正しいのはどれか。",
+  "options": [
+   {
+    "text": "Per・CryはBMAL1–Clockの働きを促進する",
+    "explanation": "Per・CryはBMAL1–Clockを<b>抑える</b>（⊣の記号）",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "BMAL1–ClockはRREに結合してPer・Cryの転写を促す",
+    "explanation": "BMAL1–Clockが結合するのは<b>E/E'-box</b>。RREにはRev-erbα・RORαが作用する",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "Per・CryはE/E'-boxに結合して、BMAL1遺伝子の転写を促す",
+    "explanation": "Per・CryはBMAL1–Clockを抑える側。BMAL1遺伝子の転写はRREを介して調節される",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "このループでは、転写産物が自分の遺伝子の転写に影響することはない",
+    "explanation": "Per・Cryは自分たちの転写を促したBMAL1–Clockを抑える。自分の転写を抑える<b>フィードバック</b>がループの要点",
+    "correct": false,
+    "trap": "mechanism"
+   },
+   {
+    "text": "BMAL1とClockはE/E'-boxに結合し、Per・Cry・Rev-erbα・RORαの転写を促す",
+    "explanation": "図の上半分どおり",
+    "correct": true
+   }
+  ],
+  "explanation": "<b>BMAL1–Clock</b>がE/E'-boxに結合して<b>Per・Cry・Rev-erbα・RORα</b>の転写を促す。できた<b>Per・Cry</b>はBMAL1–Clockを抑え、自分たちの転写を止める（負のフィードバック）。",
+  "point": "BMAL1–Clock → E/E'-box → Per・Cry ⊣ BMAL1–Clock。",
+  "tags": [
+   "時計遺伝子",
+   "フィードバック"
+  ]
+ },
+ {
+  "id": "t41b",
+  "slide": 41,
+  "chapter": 6,
+  "kind": "理解・統合",
+  "difficulty": 3,
+  "stem": "スライド41のループのうち、<b>RRE</b>を介した<b>BMAL1</b>遺伝子の調節として正しいのはどれか。",
+  "options": [
+   {
+    "text": "Rev-erbαはRREを介してBMAL1の転写を促し、RORαは抑える",
+    "explanation": "促進と抑制が逆",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "Rev-erbαとRORαは、どちらもE/E'-boxに結合してPer・Cryの転写を調節する",
+    "explanation": "Rev-erbα・RORαが作用するのはBMAL1遺伝子の上流の<b>RRE</b>",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "Rev-erbαはRREを介してBMAL1の転写を抑え、RORαはRREを介してBMAL1の転写を促す",
+    "explanation": "図の⊣（抑制）と→（促進）どおり",
+    "correct": true
+   },
+   {
+    "text": "Rev-erbαとRORαの遺伝子は、BMAL1–Clockとは無関係に転写される",
+    "explanation": "Rev-erbα・RORαもBMAL1–ClockによりE/E'-boxを介して転写が促される",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "BMAL1遺伝子の産物はClockと結合せず、単独でE/E'-boxに働く",
+    "explanation": "BMAL1はClockと組んでE/E'-boxに結合する",
+    "correct": false,
+    "trap": "fact"
+   }
+  ],
+  "explanation": "BMAL1–ClockはE/E'-boxを介して<b>Rev-erbα</b>・<b>RORα</b>の転写も促す。Rev-erbαはRREを介してBMAL1の転写を<b>抑え</b>、RORαは<b>促す</b>。BMAL1遺伝子からできたBMAL1は再びClockと組んでE/E'-boxに結合し、ループが回る。",
+  "point": "RRE：Rev-erbα ⊣ BMAL1、RORα → BMAL1。",
+  "tags": [
+   "時計遺伝子",
+   "フィードバック"
+  ]
+ },
+ {
+  "id": "t42a",
+  "slide": 42,
+  "chapter": 6,
+  "kind": "応用・症例",
+  "difficulty": 2,
+  "stem": "スライド42で、時計遺伝子に異常をもつ<b>マウス</b>と、そこで認められた所見の組み合わせとして正しいのはどれか。",
+  "options": [
+   {
+    "text": "Per2欠損マウス ― 高血糖",
+    "explanation": "Per2欠損マウスの所見は<b>肥満</b>。高血糖はClock異常マウス",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "Cry1/Cry2欠損マウス ― 食塩感受性高血圧",
+    "explanation": "スライドの記載どおり",
+    "correct": true
+   },
+   {
+    "text": "Clock異常マウス ― 肥満",
+    "explanation": "Clock異常マウスの所見は<b>高脂血症・高血糖</b>",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "Bmal1欠損マウス ― 食塩感受性高血圧",
+    "explanation": "Bmal1欠損マウスの所見は<b>高脂血症・耐糖能異常</b>",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "Cry1/Cry2欠損マウス ― 耐糖能異常",
+    "explanation": "耐糖能異常はBmal1欠損マウスの所見",
+    "correct": false,
+    "trap": "swap"
+   }
+  ],
+  "explanation": "スライド42（いずれも<b>マウス</b>の所見）：<b>Clock異常マウス</b>＝高脂血症・高血糖、<b>Bmal1欠損マウス</b>＝高脂血症・耐糖能異常、<b>Per2欠損マウス</b>＝肥満、<b>Cry1/Cry2欠損マウス</b>＝食塩感受性高血圧。",
+  "point": "Clock＝高脂血症・高血糖、Bmal1＝高脂血症・耐糖能異常、Per2＝肥満、Cry1/Cry2＝食塩感受性高血圧（すべてマウス）。",
+  "tags": [
+   "時計遺伝子",
+   "遺伝子と疾患"
+  ]
+ },
+ {
+  "id": "t42b",
+  "slide": 42,
+  "chapter": 6,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "スライド42の記載として正しいのはどれか。",
+  "options": [
+   {
+    "text": "時計遺伝子は約100種類あり、ヒトにだけ認められる",
+    "explanation": "「約<b>10</b>種類」で「<b>ほとんどの生物</b>に認められる」",
+    "correct": false,
+    "trap": "number"
+   },
+   {
+    "text": "示された高脂血症や肥満などの所見は、時計遺伝子に異常をもつヒト患者で確かめられたものとして示されている",
+    "explanation": "スライドの所見はすべて<b>マウス</b>（異常マウス・欠損マウス）のもの",
+    "correct": false,
+    "trap": "scope"
+   },
+   {
+    "text": "Clock異常マウスでは低血糖が認められる",
+    "explanation": "Clock異常マウスの所見は高脂血症と<b>高血糖</b>",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "Bmal1欠損マウスでは、所見として食塩感受性高血圧だけが示されている",
+    "explanation": "Bmal1欠損マウスは高脂血症・耐糖能異常。食塩感受性高血圧はCry1/Cry2欠損マウス",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "時計遺伝子（約10種類）はほとんどの生物に認められる",
+    "explanation": "スライドの記載どおり。太陽エネルギーを効率よく、安全に利用するためとされる",
+    "correct": true
+   }
+  ],
+  "explanation": "太陽エネルギーを効率よく、安全に利用するため、<b>時計遺伝子（約10種類）</b>はほとんどの生物に認められる。スライドに並ぶ代謝・血圧の異常は、Clock異常・Bmal1欠損・Per2欠損・Cry1/Cry2欠損の<b>マウス</b>で認められた所見である。",
+  "point": "時計遺伝子は約10種類、ほとんどの生物に。疾患所見は「マウス」の所見として読む。",
+  "tags": [
+   "時計遺伝子",
+   "遺伝子と疾患"
+  ]
+ },
+ {
+  "id": "t43a",
+  "slide": 43,
+  "chapter": 6,
+  "kind": "重要事項",
+  "difficulty": 2,
+  "stem": "スライド43「概日時計機構の破綻と疾患」で、破綻の要因とその分類の組み合わせとして正しいのはどれか。",
+  "options": [
+   {
+    "text": "Genetic（遺伝的要因） ― FASPS（per2, CK1δ）",
+    "explanation": "スライドの記載どおり",
+    "correct": true
+   },
+   {
+    "text": "Genetic（遺伝的要因） ― DSPS（per2）",
+    "explanation": "DSPSに添えられた遺伝子は<b>per3</b>。per2はFASPS",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "Environmental（環境要因） ― Aging（加齢）",
+    "explanation": "Agingは<b>Physiological</b>（生理的要因）に分類されている",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "Physiological（生理的要因） ― shift work（交代勤務）",
+    "explanation": "shift workは<b>Environmental</b>（環境要因）",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "Environmental（環境要因） ― FASPS",
+    "explanation": "FASPSは<b>Genetic</b>（遺伝的要因）",
+    "correct": false,
+    "trap": "swap"
+   }
+  ],
+  "explanation": "要因は3つに分類される。<b>Genetic</b>：FASPS（per2, CK1δ）、DSPS（per3）。<b>Environmental</b>：Behavioural desynchronisation、sleep restriction、shift work。<b>Physiological</b>：Aging。",
+  "point": "Genetic＝FASPS（per2, CK1δ）・DSPS（per3）、Environmental＝行動の非同調・睡眠制限・交代勤務、Physiological＝加齢。",
+  "tags": [
+   "時計遺伝子",
+   "遺伝子と疾患"
+  ]
+ },
+ {
+  "id": "t43b",
+  "slide": 43,
+  "chapter": 6,
+  "kind": "応用・症例",
+  "difficulty": 2,
+  "stem": "スライド43で、概日時計機構の破綻から矢印で結ばれている（関連づけられている）疾患・病態の組み合わせとして正しいのはどれか。",
+  "options": [
+   {
+    "text": "Sleep disorders・Cancer・Affective disorders・Metabolic syndrome・骨軟化症",
+    "explanation": "骨軟化症はカドミウムの記載（スライド39）。5つ目はInflammation（炎症）",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "Sleep disorders・Cancer・Affective disorders・食塩感受性高血圧・Inflammation",
+    "explanation": "食塩感受性高血圧はCry1/Cry2欠損<b>マウス</b>の所見（スライド42）。図ではMetabolic syndrome",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "Sleep disorders・Infection・Affective disorders・Metabolic syndrome・Inflammation",
+    "explanation": "Infection（感染症）は図にない。正しくはCancer",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "Sleep disorders・Cancer・Affective disorders・Metabolic syndrome・Inflammation",
+    "explanation": "図の5本の矢印の先どおり",
+    "correct": true
+   },
+   {
+    "text": "Sleep disorders のみ",
+    "explanation": "睡眠障害だけでなく、5つの疾患・病態に矢印が向いている",
+    "correct": false,
+    "trap": "scope"
+   }
+  ],
+  "explanation": "図では、Genetic・Environmental・Physiologicalの要因による<b>概日時計機構の破綻</b>から、<b>Sleep disorders</b>（睡眠障害）・<b>Cancer</b>（がん）・<b>Affective disorders</b>（感情障害）・<b>Metabolic syndrome</b>（メタボリックシンドローム）・<b>Inflammation</b>（炎症）へ矢印が向く。これらは図の矢印が示す範囲での「関連」として理解する。",
+  "point": "時計の破綻 → 睡眠障害・がん・感情障害・メタボリックシンドローム・炎症（関連）。",
+  "tags": [
+   "時計遺伝子",
+   "遺伝子と疾患"
+  ]
+ },
+ {
+  "id": "t46a",
+  "slide": 46,
+  "chapter": 7,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "スライド46で、真核生物のmRNAが作られる過程として挙げられている順に正しく並べたものはどれか。",
+  "options": [
+   {
+    "text": "RNAポリメラーゼIによるmRNA前駆体の合成 → 5'キャップの付加 → ポリAの付加 → スプライシング",
+    "explanation": "mRNA前駆体を合成するのは<b>RNAポリメラーゼII</b>",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "スプライシング → RNAポリメラーゼIIによるmRNA前駆体の合成 → ポリAの付加 → 5'キャップの付加",
+    "explanation": "まず前駆体が合成されなければ加工できない。順序が逆",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "RNAポリメラーゼIIによるmRNA前駆体の合成 → ポリAの付加 → 5'キャップの付加 → スプライシング",
+    "explanation": "スライドではキャップが2）、ポリAが3）",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "RNAポリメラーゼIIによるmRNA前駆体の合成 → 5'キャップの付加 → ポリAの付加 → スプライシング",
+    "explanation": "スライドの1）〜4）の順そのもの",
+    "correct": true
+   },
+   {
+    "text": "RNAポリメラーゼIIによるmRNA前駆体の合成 → 翻訳 → 5'キャップの付加 → スプライシング",
+    "explanation": "翻訳は完成したmRNAが核から細胞質に出た後に行われる",
+    "correct": false,
+    "trap": "mechanism"
+   }
+  ],
+  "explanation": "スライド46は真核生物のmRNAの作られ方を 1）RNAポリメラーゼIIによる<b>mRNA前駆体</b>の合成、2）<b>5'キャップ</b>の付加、3）<b>ポリA</b>の付加、4）<b>スプライシング</b>によるイントロンの除去とエクソンの結合、と並べる。完成したmRNAは核から細胞質に出た後にリボソームで翻訳される。",
+  "point": "前駆体合成 → キャップ → ポリA → スプライシング →（核外へ）→ 翻訳。",
+  "tags": [
+   "mRNAプロセシング"
+  ]
+ },
+ {
+  "id": "t46b",
+  "slide": 46,
+  "chapter": 7,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "スライド46の図と記載について正しいのはどれか。",
+  "options": [
+   {
+    "text": "完成したmRNAは核から細胞質に出た後に、リボソームでタンパク質合成のための翻訳に使われる",
+    "explanation": "スライドの記載どおり（図では80Sリボソーム）",
+    "correct": true
+   },
+   {
+    "text": "mRNA前駆体のスプライシングは細胞質で行われる",
+    "explanation": "図ではスプライセオソームは核質側にある。加工は核内",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "キャッピング酵素はmRNA前駆体の3'末端に作用する",
+    "explanation": "キャップは<b>5'末端</b>に付く",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "ポリ(A)ポリメラーゼがイントロンを除去する",
+    "explanation": "イントロンを除去するのは<b>スプライセオソーム</b>。ポリ(A)ポリメラーゼはポリAを付加する",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "翻訳は核内の80Sリボソームで行われる",
+    "explanation": "図では80Sリボソームは細胞質側にある。mRNAは核から出た後に翻訳される",
+    "correct": false,
+    "trap": "fact"
+   }
+  ],
+  "explanation": "図では核内でRNAポリメラーゼが転写し、<b>キャッピング酵素</b>・<b>ポリ(A)ポリメラーゼ</b>・<b>スプライセオソーム</b>が前駆体（hnRNA＝ヘテロ核RNA）を加工する。キャップ構造とポリ(A)をもつ完成mRNAが核から細胞質へ出て、80Sリボソームで翻訳される。",
+  "point": "加工は核内、翻訳は細胞質。酵素と役割の対応（キャップ／ポリA／スプライシング）を取り違えない。",
+  "tags": [
+   "mRNAプロセシング",
+   "核外輸送"
+  ]
+ },
+ {
+  "id": "t47a",
+  "slide": 47,
+  "chapter": 7,
+  "kind": "重要事項",
+  "difficulty": 2,
+  "stem": "スライド47のmRNA前駆体へのポリA付加について正しいのはどれか。",
+  "options": [
+   {
+    "text": "エキソヌクレアーゼがポリアデニル化シグナルの位置で切断する",
+    "explanation": "切断するのは<b>エンドヌクレアーゼ</b>。二つのシグナルの間を切る",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "ポリアデニル化シグナルはGUに富む配列で、AAUAAAはその下流にある",
+    "explanation": "ポリアデニル化シグナルが<b>AAUAAA</b>で、GUに富む配列はその3'側",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "エンドヌクレアーゼがポリアデニル化シグナル（AAUAAA）とGUに富む配列の間を切断し、ポリ(A)ポリメラーゼが250個までのAを付加する",
+    "explanation": "スライドの図どおり",
+    "correct": true
+   },
+   {
+    "text": "ポリ(A)ポリメラーゼは2,500個前後のAを付加する",
+    "explanation": "付加されるのは<b>250個まで</b>（20〜250個）",
+    "correct": false,
+    "trap": "number"
+   },
+   {
+    "text": "切断はGUに富む配列のさらに3'側で起こるため、GUに富む配列は完成mRNAに残る",
+    "explanation": "切断は二つのシグナルの<b>間</b>。切断後の図にGU配列は残っていない",
+    "correct": false,
+    "trap": "fact"
+   }
+  ],
+  "explanation": "転写一次産物（mRNA前駆体）の3'側には<b>ポリアデニル化シグナル（AAUAAA）</b>と<b>GUに富む配列</b>がある。エンドヌクレアーゼが二つのシグナルの間を切断して3'側がやや短くなり、<b>ポリ(A)ポリメラーゼ</b>が250個までの（20〜250個の）Aを付加してポリ(A)末端ができる。",
+  "point": "AAUAAA と GU配列の「間」で切る → ポリ(A)ポリメラーゼが最大250個のA。",
+  "tags": [
+   "ポリA",
+   "mRNAプロセシング"
+  ]
+ },
+ {
+  "id": "t47b",
+  "slide": 47,
+  "chapter": 7,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "スライド47の5'キャップとポリAについて正しいのはどれか。",
+  "options": [
+   {
+    "text": "5'キャップは、mRNA前駆体の5'末端にAが付加されてできる",
+    "explanation": "付加されるのは<b>G</b>（グアニン）。7位の窒素がメチル化されm<sup>7</sup>Gとなる",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "キャップのメチル化は、Gが付加される前にRNAの5'末端の三リン酸に起こる",
+    "explanation": "まず5'末端にGが付加され、<b>その後</b>Gの7位の窒素がメチル化される",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "一般に、細胞内で長時間必要となるタンパク質のmRNAほど安定性が低い",
+    "explanation": "逆。長時間必要なタンパク質のmRNAは安定性が<b>高く</b>、短時間のみ必要なものは低い",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "ポリAはmRNA前駆体の5'末端に付加される",
+    "explanation": "ポリAは<b>3'末端</b>。5'末端に付くのはキャップ",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "5'キャップやポリAは、mRNAを細胞内のエキソヌクレアーゼの攻撃から守る",
+    "explanation": "スライドの記載どおり",
+    "correct": true
+   }
+  ],
+  "explanation": "5'キャップは、mRNA前駆体の5'末端に<b>G</b>が付加され、そのGの<b>7位の窒素</b>がメチル化されて<b>m<sup>7</sup>G</b>となる構造。ポリAは3'末端に付く。両者はmRNAを細胞内の<b>エキソヌクレアーゼ</b>の攻撃から守る。一般に長時間必要なタンパク質のmRNAは安定性が高く、短時間のみ必要なタンパク質のmRNAは安定性が低い。",
+  "point": "キャップ＝5'末端にG付加→7位Nをメチル化（m<sup>7</sup>G）。キャップとポリAがエキソヌクレアーゼから守る。",
+  "tags": [
+   "5'キャップ",
+   "ポリA",
+   "mRNAの安定性"
+  ]
+ },
+ {
+  "id": "t48a",
+  "slide": 48,
+  "chapter": 7,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "スライド48の「GT-AG規則」の内容として正しいのはどれか。",
+  "options": [
+   {
+    "text": "イントロンはAGで始まりGTで終わる",
+    "explanation": "始まりと終わりが逆",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "イントロンはDNA上でGTで始まりAGで終わる（GT側が5'スプライス部位、AG側が3'スプライス部位）",
+    "explanation": "スライドの図どおり",
+    "correct": true
+   },
+   {
+    "text": "エクソンはGTで始まりAGで終わる",
+    "explanation": "GT-AGはエクソンではなく<b>イントロン</b>の両端",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "イントロンはATGで始まりTGAで終わる",
+    "explanation": "ATG・TGAは開始コドン・終止コドン（スライド53）。イントロンの両端ではない",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "イントロンはGTで始まりAGで終わり、AG側が5'スプライス部位である",
+    "explanation": "AG側は<b>3'スプライス部位</b>。5'スプライス部位はGT側",
+    "correct": false,
+    "trap": "reverse"
+   }
+  ],
+  "explanation": "スプライシングは、複数のエクソンをもつ<b>不連続遺伝子</b>の転写産物からイントロンを除去する過程である。イントロンはDNA上で<b>GT</b>で始まり<b>AG</b>で終わる（GT-AG規則）。GT側の境界が<b>5'スプライス部位</b>、AG側の境界が<b>3'スプライス部位</b>。",
+  "point": "イントロン＝GT…AG。5'側がGT、3'側がAG。",
+  "tags": [
+   "GT-AGルール",
+   "スプライシング"
+  ]
+ },
+ {
+  "id": "t48b",
+  "slide": 48,
+  "chapter": 7,
+  "kind": "重要事項",
+  "difficulty": 3,
+  "stem": "スライド48の表「いろいろなヒト遺伝子のイントロン」の内容として正しいのはどれか。",
+  "options": [
+   {
+    "text": "インスリン遺伝子は長さ1.4 kbで25個のイントロンをもつ",
+    "explanation": "インスリンのイントロンは<b>2個</b>（割合67%）",
+    "correct": false,
+    "trap": "number"
+   },
+   {
+    "text": "表中で最も長い遺伝子は血液凝固因子VIIIである",
+    "explanation": "最長は<b>ジストロフィン</b>（2400 kb）。血液凝固因子VIIIは186 kb",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "表のすべての遺伝子で、イントロンの割合は90%以上である",
+    "explanation": "インスリン・アポリポタンパク質Bは67%、血清アルブミンは88%",
+    "correct": false,
+    "trap": "scope"
+   },
+   {
+    "text": "ジストロフィン遺伝子は長さ2400 kbで78個のイントロンをもち、遺伝子の長さの99%をイントロンが占める",
+    "explanation": "表の記載どおり",
+    "correct": true
+   },
+   {
+    "text": "血清アルブミン遺伝子では、イントロンの割合は18%である",
+    "explanation": "18は長さ（kb）。イントロンの割合は<b>88%</b>",
+    "correct": false,
+    "trap": "number"
+   }
+  ],
+  "explanation": "表では、インスリン 1.4 kb・2個・67%、血清アルブミン 18 kb・13個・88%、アポリポタンパク質B 43 kb・17個・67%、フェニルアラニンヒドロキシラーゼ 90 kb・25個・97%、血液凝固因子VIII 186 kb・25個・97%、ジストロフィン 2400 kb・78個・99%。遺伝子の長さの大半をイントロンが占める例が多い。",
+  "point": "ジストロフィン：2400 kb・78イントロン・99%。インスリン：1.4 kb・2イントロン・67%。",
+  "tags": [
+   "イントロン",
+   "スプライシング"
+  ]
+ },
+ {
+  "id": "t49a",
+  "slide": 49,
+  "chapter": 7,
+  "kind": "重要事項",
+  "difficulty": 2,
+  "stem": "スライド49の選択的スプライシングの図（mRNA前駆体 E1〜E4）について正しいのはどれか。",
+  "options": [
+   {
+    "text": "同じmRNA前駆体から、Aの場合はE1–E3–E4、Bの場合はE1–E2–E4という異なるmRNAが作られる",
+    "explanation": "図どおり。どの範囲がイントロンとして働くかで、残るエクソンが変わる",
+    "correct": true
+   },
+   {
+    "text": "Aの場合はE1–E2–E4、Bの場合はE1–E3–E4となる",
+    "explanation": "AとBの結果が逆",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "1つのmRNA前駆体からは、常に1種類のmRNAしか作られない",
+    "explanation": "選択的スプライシングでは1種類の前駆体から複数のmRNAができる",
+    "correct": false,
+    "trap": "scope"
+   },
+   {
+    "text": "選択的スプライシングでは、5'キャップとポリAが除去される",
+    "explanation": "図ではAの場合もBの場合もm<sup>7</sup>GとポリAが残っている",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "選択的スプライシングでは、エクソンの並び順が入れ替わる（例：E4–E1–E3）",
+    "explanation": "図ではエクソンの順序は保たれ、一部が抜けるだけ",
+    "correct": false,
+    "trap": "reverse"
+   }
+  ],
+  "explanation": "図の線Aの範囲（E2を含む）が全体で1つのイントロンとして働くとE2が除かれE1–E3–E4、線Bの範囲（E3を含む）が働くとE3が除かれE1–E2–E4となる。「この部分全体が1つのイントロンとしても機能しうる」ことが選択的スプライシングの仕組みである。",
+  "point": "どこまでをイントロンとして扱うかで、残るエクソンが変わる。順序は入れ替わらない。",
+  "tags": [
+   "選択的スプライシング"
+  ]
+ },
+ {
+  "id": "t49b",
+  "slide": 49,
+  "chapter": 7,
+  "kind": "応用・症例",
+  "difficulty": 3,
+  "stem": "スライド49のグルコキナーゼ遺伝子の例について正しいのはどれか。",
+  "options": [
+   {
+    "text": "肝臓ではエクソン1Bから、膵B細胞/下垂体ではエクソン1Lから転写が始まる",
+    "explanation": "組織と使われるエクソンの対応が逆",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "肝臓と膵B細胞のグルコキナーゼは、別々の遺伝子から作られる",
+    "explanation": "同じグルコキナーゼ遺伝子が、異なるプロモーターを使い分けている",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "肝臓ではエクソン1Lから、膵B細胞/下垂体ではエクソン1Bから転写が始まり、異なるプロモーター周辺配列の使用で組織特異的な転写調節が行われる",
+    "explanation": "図とスライドの記載どおり",
+    "correct": true
+   },
+   {
+    "text": "エクソン1Bとエクソン1Lの間は約3 kbである",
+    "explanation": "図では<b>約30 kb</b>",
+    "correct": false,
+    "trap": "number"
+   },
+   {
+    "text": "膵B細胞/下垂体のmRNAには、エクソン1Bとエクソン1Lの両方が含まれる",
+    "explanation": "図では1Bから1Lを飛ばして下流のエクソンにつながる",
+    "correct": false,
+    "trap": "fact"
+   }
+  ],
+  "explanation": "グルコキナーゼ遺伝子は、肝臓では<b>エクソン1L</b>の上流から、膵B細胞/下垂体では約30 kb上流の<b>エクソン1B</b>の上流から転写が始まり、それぞれ下流の共通のエクソンにスプライシングでつながる。スライドは「異なるプロモーター周辺配列を使用することで、組織特異的な転写調節をおこなっている」とまとめる。",
+  "point": "肝臓＝1L、膵B細胞/下垂体＝1B。同じ遺伝子でプロモーターを使い分ける。",
+  "tags": [
+   "選択的スプライシング",
+   "選択的プロモーター",
+   "グルコキナーゼ"
+  ]
+ },
+ {
+  "id": "t50a",
+  "slide": 50,
+  "chapter": 7,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "スライド50のスプライセオソームとsnRNAについて正しいのはどれか。",
+  "options": [
+   {
+    "text": "snRNAはタンパク質に翻訳されてから、スプライセオソームとして働く",
+    "explanation": "snRNAは<b>非翻訳RNA</b>。RNAのまま働く",
+    "correct": false,
+    "trap": "mechanism"
+   },
+   {
+    "text": "snRNAは普段はタンパク質と結合せず、単独で働く",
+    "explanation": "普段は<b>タンパク質と結合してsnRNP</b>として働く",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "スプライセオソームはrRNAとタンパク質の複合体である",
+    "explanation": "rRNAはリボソームの成分。スプライセオソームは<b>snRNA</b>とタンパク質",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "スプライセオソームはDNA上のイントロンを切り出す",
+    "explanation": "スプライシングは<b>mRNA前駆体（pre mRNA）</b>の上で起こる。DNAは切らない",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "スプライセオソームは非翻訳RNAであるsnRNAとタンパク質の複合体で、mRNA前駆体の切断点近傍に結合して2つの切断点を引き寄せる",
+    "explanation": "スライドの記載どおり",
+    "correct": true
+   }
+  ],
+  "explanation": "イントロンを除いて離れた2つのエクソンをつなぐため、非翻訳RNAである<b>snRNA</b>とタンパク質の複合体（<b>スプライセオソーム</b>）がpre mRNAの切断点近傍に結合し、2つの切断点を引き寄せる。snRNA（U1・U2・U4・U5・U6）は普段タンパク質と結合して<b>snRNP</b>として働く。",
+  "point": "スプライセオソーム＝snRNA＋タンパク質（snRNP）。働く場はpre mRNA。",
+  "tags": [
+   "スプライセオソーム",
+   "snRNP"
+  ]
+ },
+ {
+  "id": "t50b",
+  "slide": 50,
+  "chapter": 7,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "スライド50の図で、遺伝子（DNA）のイントロンがGT…AGであるとき、転写されたRNA上のイントロンの5'末端・3'末端・ブランチ部位の塩基の組み合わせとして正しいのはどれか。",
+  "options": [
+   {
+    "text": "5'末端 GT、3'末端 AG、ブランチ部位 T",
+    "explanation": "RNAではTの代わりに<b>U</b>を使う。ブランチ部位は<b>A</b>",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "5'末端 GU、3'末端 AG、ブランチ部位 A",
+    "explanation": "図のRNAは 5'–GU……A……AG–3'。DNAのTはRNAではUになる",
+    "correct": true
+   },
+   {
+    "text": "5'末端 AG、3'末端 GU、ブランチ部位 A",
+    "explanation": "5'側と3'側が逆",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "5'末端 CA、3'末端 UC、ブランチ部位 U",
+    "explanation": "CA・TCは図のDNAの相補鎖側の表記。RNAの配列ではない",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "5'末端 GU、3'末端 AG、ブランチ部位 G",
+    "explanation": "ブランチ部位は<b>A</b>（branch site）",
+    "correct": false,
+    "trap": "fact"
+   }
+  ],
+  "explanation": "GT-AGルールはDNA上の表記。転写されたRNAではイントロンは<b>5'–GU</b>で始まり<b>AG–3'</b>で終わり、その間に<b>ブランチ部位のA</b>がある。このAが後に投げ縄構造の要になる（スライド52）。",
+  "point": "DNAのGT…AG → RNAのGU…A…AG。",
+  "tags": [
+   "GT-AGルール",
+   "ブランチ部位"
+  ]
+ },
+ {
+  "id": "t51a",
+  "slide": 51,
+  "chapter": 7,
+  "kind": "重要事項",
+  "difficulty": 2,
+  "stem": "スライド51で、スプライシングの最初にイントロン5'末端のGU配列に結合する因子と、その結合の仕組みの組み合わせとして正しいのはどれか。",
+  "options": [
+   {
+    "text": "U2 snRNP ― U2 snRNAがGU配列と塩基対を形成する",
+    "explanation": "U2 snRNPが結合するのは<b>ブランチ部位</b>",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "U2AF ― タンパク質がGU配列を認識して結合する",
+    "explanation": "U2AFが結合するのは<b>ブランチ部位の下流</b>",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "U6 snRNP ― 最初にGU配列に塩基対で結合する",
+    "explanation": "U6がGU配列と結合するのはU1が放出された後（スライド52）",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "U1 snRNP ― U1 snRNA中の、GU配列と塩基対を形成できる配列で特異的に結合する",
+    "explanation": "スライドの記載どおり",
+    "correct": true
+   },
+   {
+    "text": "U1 snRNP ― U1 snRNAから翻訳されたタンパク質がGU配列を認識する",
+    "explanation": "snRNAは翻訳されない。<b>塩基対</b>で認識する",
+    "correct": false,
+    "trap": "mechanism"
+   }
+  ],
+  "explanation": "まず<b>U1 snRNP</b>がイントロン5'末端のGU配列に結合する。U1 snRNAはGU配列と<b>塩基対</b>を形成できる配列をもつので特異的に結合できる。続いてU2AFがブランチ部位の下流に、U2 snRNPがブランチ部位に結合する（U2 snRNAも塩基対を利用）。",
+  "point": "最初＝U1がGU（塩基対）。U2はブランチ部位、U2AFはその下流。",
+  "tags": [
+   "スプライセオソーム",
+   "snRNP"
+  ]
+ },
+ {
+  "id": "t51b",
+  "slide": 51,
+  "chapter": 7,
+  "kind": "理解・統合",
+  "difficulty": 3,
+  "stem": "スライド51に示されたスプライシングの1〜3の段階を、正しい順に並べたものはどれか。",
+  "options": [
+   {
+    "text": "U1 snRNPがGU配列に結合 → U2AFがブランチ部位の下流に、U2 snRNPがブランチ部位に結合 → U5・U4・U6 snRNPが集まり本格的なスプライシングが開始",
+    "explanation": "スライドの1→2→3の順",
+    "correct": true
+   },
+   {
+    "text": "U5・U4・U6 snRNPが集合 → U1 snRNPがGU配列に結合 → U2 snRNPがブランチ部位に結合",
+    "explanation": "U5・U4・U6が集まるのは最後（3）",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "U2 snRNPがブランチ部位に結合 → U1 snRNPがGU配列に結合 → U5・U4・U6 snRNPが集合",
+    "explanation": "U1が先（1）、U2が次（2）",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "U1 snRNPがGU配列に結合 → U2AFがブランチ部位の上流に、U2 snRNPがAG配列に結合 → U5・U4・U6 snRNPが集合",
+    "explanation": "U2AFはブランチ部位の<b>下流</b>、U2 snRNPは<b>ブランチ部位</b>に結合",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "U1 snRNPがAG配列に結合 → U2 snRNPがブランチ部位に結合 → U5・U4・U6 snRNPが集合",
+    "explanation": "U1 snRNPが結合するのはイントロン5'末端の<b>GU</b>配列",
+    "correct": false,
+    "trap": "swap"
+   }
+  ],
+  "explanation": "1）U1 snRNPがイントロン5'末端のGU配列に結合。2）U2AFタンパク質がブランチ部位の下流に結合し、さらにU2 snRNPがブランチ部位に結合。3）U5・U4・U6 snRNPが集まって全ての因子がそろい、本格的なスプライシングが始まる。",
+  "point": "U1（GU）→ U2AF・U2（ブランチ部位）→ U5・U4・U6 集合。",
+  "tags": [
+   "スプライセオソーム",
+   "snRNP"
+  ]
+ },
+ {
+  "id": "t52a",
+  "slide": 52,
+  "chapter": 7,
+  "kind": "重要事項",
+  "difficulty": 2,
+  "stem": "スライド52で投げ縄構造（ラリアット構造）が形成されるとき、イントロン5'末端のGU配列のG塩基が結合する相手はどれか。",
+  "options": [
+   {
+    "text": "イントロン3'末端のAG配列のA塩基",
+    "explanation": "AG配列はU5 snRNPが結合し、その3'側で切断される部位",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "ブランチ部位中のA塩基",
+    "explanation": "スライドの記載どおり",
+    "correct": true
+   },
+   {
+    "text": "5'キャップのm<sup>7</sup>G",
+    "explanation": "キャップはmRNAの5'末端の構造で、投げ縄構造とは関係しない",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "ポリA末端のA塩基",
+    "explanation": "ポリAはmRNAの3'末端。投げ縄構造には関わらない",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "U1 snRNA中のCA配列",
+    "explanation": "U1はGU配列と塩基対を作るが、投げ縄構造の前に放出される",
+    "correct": false,
+    "trap": "mechanism"
+   }
+  ],
+  "explanation": "U6 snRNPが塩基対を利用してイントロン5'末端のGU配列と結合し、U2/U6がGU配列の5'側でmRNAを切断して、GU配列の<b>G塩基</b>を<b>ブランチ部位中のA塩基</b>と結合させる。これで<b>投げ縄構造</b>ができる。",
+  "point": "投げ縄＝イントロン5'末端のG ＋ ブランチ部位のA。",
+  "tags": [
+   "投げ縄構造",
+   "ブランチ部位"
+  ]
+ },
+ {
+  "id": "t52b",
+  "slide": 52,
+  "chapter": 7,
+  "kind": "理解・統合",
+  "difficulty": 3,
+  "stem": "スライド52のスプライシングの段階4〜5について正しいのはどれか。",
+  "options": [
+   {
+    "text": "U6 snRNPが放出され、U4 snRNPがU2 snRNPに結合する",
+    "explanation": "放出されるのは<b>U4</b>、U2に結合するのは<b>U6</b>",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "U5 snRNPがGU配列の5'側でmRNAを切断する",
+    "explanation": "GU配列の5'側で切断するのは<b>U2/U6</b>",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "イントロン3'末端ではAG配列の5'側でmRNAが切断される",
+    "explanation": "切断はAG配列の<b>3'側</b>",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "U5 snRNPはAG配列の切断後、2つのエクソンを引き離す",
+    "explanation": "U5 snRNPは切断後も2つのエクソンを<b>離れないようにしている</b>",
+    "correct": false,
+    "trap": "mechanism"
+   },
+   {
+    "text": "U1 snRNPが放出されてGU配列が開放されU5やU6 snRNPが近づき、次にU4 snRNPが放出されてU6 snRNPがU2 snRNPに結合する",
+    "explanation": "スライドの段階4の記載どおり",
+    "correct": true
+   }
+  ],
+  "explanation": "段階4：U1 snRNPが放出されGU配列が開放され、U5やU6 snRNPが近づく。次にU4 snRNPが放出され、U6 snRNPがU2 snRNPに結合する。段階5：U6がGU配列とも塩基対で結合し、U2/U6がGU配列の5'側で切断、GU配列のG塩基をブランチ部位のA塩基と結合させ投げ縄構造を作る。U5 snRNPは切り離されたエクソンとイントロン3'末端のAG配列に結合し、AG配列の3'側で切断された後も2つのエクソンを離さない。",
+  "point": "放出はU1→U4。切断はGU配列の5'側（U2/U6）とAG配列の3'側。U5はエクソンを保持。",
+  "tags": [
+   "投げ縄構造",
+   "スプライセオソーム"
+  ]
+ },
+ {
+  "id": "t53a",
+  "slide": 53,
+  "chapter": 7,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "スライド53で、DNA上で開始コドン（ATG）・終止コドン（TGA）と表記される配列は、mRNA上ではどう表記されるか。",
+  "options": [
+   {
+    "text": "開始コドン UAC、終止コドン ACU",
+    "explanation": "相補的な塩基に置き換えている。図のmRNA側の表記はAUG・UGA",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "開始コドン ATG、終止コドン TGA",
+    "explanation": "RNAで使われる文字はU・C・G・A。Tは使わない",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "開始コドン AUG、終止コドン UGA",
+    "explanation": "DNAのTがRNAではUになる",
+    "correct": true
+   },
+   {
+    "text": "開始コドン UGA、終止コドン AUG",
+    "explanation": "開始と終止が逆",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "開始コドン GUA、終止コドン AGU",
+    "explanation": "配列を逆向きに読んでいる",
+    "correct": false,
+    "trap": "reverse"
+   }
+  ],
+  "explanation": "スライド53では、DNAで使われる文字はA・G・C・T、転写後のRNAで使われる文字はU・C・G・A。DNA上の開始コドン（ATG）・終止コドン（TGA）は、mRNA上では<b>AUG</b>・<b>UGA</b>と表記される。",
+  "point": "DNAのT ↔ RNAのU。ATG→AUG、TGA→UGA。",
+  "tags": [
+   "ヒト遺伝子の構造",
+   "コドン"
+  ]
+ },
+ {
+  "id": "t53b",
+  "slide": 53,
+  "chapter": 7,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "スライド53「ヒト遺伝子の構造上の特徴と遺伝情報の流れ」の図について正しいのはどれか。",
+  "options": [
+   {
+    "text": "プロモーターは転写されて、mRNAの5'末端部分になる",
+    "explanation": "プロモーターは最初のエクソンより上流にあり、転写産物には含まれていない",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "ポリアデニル化シグナルは開始コドンの直前にある",
+    "explanation": "図では最後のエクソン（3'UTR）の末端、終止コドンより下流",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "イントロンはタンパク質に翻訳された後に、タンパク質から除かれる",
+    "explanation": "イントロンは<b>翻訳の前</b>にスプライシングでRNAから除かれる",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "5'非翻訳領域（UTR）と3'非翻訳領域（UTR）はエクソンに含まれ、スプライシング後のmRNAにも残る",
+    "explanation": "図ではUTR部分（水色）がスプライシング後も残っている",
+    "correct": true
+   },
+   {
+    "text": "図では開始コドン（ATG）は最初のエクソンの先頭にある",
+    "explanation": "図の最初のエクソンはすべて5'UTRで、ATGは2番目のエクソンにある",
+    "correct": false,
+    "trap": "fact"
+   }
+  ],
+  "explanation": "図ではプロモーターの下流にエクソンとイントロンが並ぶ。最初のエクソンと2番目のエクソンの一部が5'UTR、開始コドン（ATG）から終止コドン（TGA）までが翻訳される部分、最後のエクソンの後半が3'UTRで、その末端にポリアデニル化シグナルがある。転写→スプライシングでイントロンが除かれ、UTRを含むエクソンがつながったmRNAが翻訳される。",
+  "point": "UTRはエクソンの一部（翻訳されないが、mRNAには残る）。プロモーターは転写されない。",
+  "tags": [
+   "ヒト遺伝子の構造",
+   "非翻訳領域"
+  ]
+ },
+ {
+  "id": "t54a",
+  "slide": 54,
+  "chapter": 8,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "スライド54「ヒトの核ゲノム（約30億塩基対）」の内訳で、<b>アミノ酸指定配列</b>が占める割合はどれか。",
+  "options": [
+   {
+    "text": "約0.4％",
+    "explanation": "偽遺伝子の割合",
+    "correct": false,
+    "trap": "number"
+   },
+   {
+    "text": "約25.3％",
+    "explanation": "遺伝子に関わるDNA全体の割合",
+    "correct": false,
+    "trap": "scope"
+   },
+   {
+    "text": "約1.3％",
+    "explanation": "アミノ酸指定配列は約1.3％にすぎない",
+    "correct": true
+   },
+   {
+    "text": "約24％",
+    "explanation": "アミノ酸非指定配列（転写調節配列・イントロン・rRNA/tRNAなど）の割合",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "約48％",
+    "explanation": "非遺伝子DNAのうち中から高頻度の繰り返し配列の割合",
+    "correct": false,
+    "trap": "number"
+   }
+  ],
+  "explanation": "ヒトの核ゲノムは遺伝子に関わるDNA（約25.3％）と非遺伝子DNA（約74.7％）に分かれる。遺伝子に関わるDNAのうち、タンパク質のアミノ酸配列を指定する部分は<b>約1.3％</b>で、残りの約24％はアミノ酸非指定配列である。",
+  "point": "アミノ酸指定配列＝約1.3％。遺伝子に関わるDNA全体（約25.3％）と混同しない。",
+  "tags": [
+   "ゲノムの構成",
+   "非コードRNA"
+  ]
+ },
+ {
+  "id": "t54b",
+  "slide": 54,
+  "chapter": 8,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "スライド54のヒト核ゲノムの内訳図で、赤枠で「Noncoding RNA」と示されている「リボソームRNA、tRNAなど」はどの区分に含まれるか。",
+  "options": [
+   {
+    "text": "非遺伝子DNAの「その他」",
+    "explanation": "非遺伝子DNAは遺伝子として働かない領域。rRNA・tRNAの遺伝子は遺伝子に関わるDNAに入る",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "遺伝子に関わるDNAのうち、アミノ酸非指定配列",
+    "explanation": "転写調節配列、イントロン・非翻訳配列などと並んで、アミノ酸非指定配列の下に置かれている",
+    "correct": true
+   },
+   {
+    "text": "遺伝子に関わるDNAのうち、アミノ酸指定配列",
+    "explanation": "rRNA・tRNAはアミノ酸配列を指定しない",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "非遺伝子DNAの偽遺伝子",
+    "explanation": "偽遺伝子は非遺伝子DNAの約0.4％で、別の区分",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "非遺伝子DNAの中から高頻度の繰り返し配列",
+    "explanation": "繰り返し配列は非遺伝子DNAの区分",
+    "correct": false,
+    "trap": "swap"
+   }
+  ],
+  "explanation": "スライド54は遺伝子を「タンパク質の一次構造（アミノ酸配列）<b>あるいは非翻訳RNAの構造（塩基配列）</b>を決定する情報を持った領域」と定義する。rRNA・tRNAの遺伝子は遺伝子に関わるDNA（約25.3％）のうち、<b>アミノ酸非指定配列</b>（約24％）に分類され、これが非コードRNA（Noncoding RNA）である。",
+  "point": "遺伝子にはタンパク質を指定するものだけでなく、非翻訳RNAの塩基配列を決めるものも含まれる。",
+  "tags": [
+   "ゲノムの構成",
+   "非コードRNA"
+  ]
+ },
+ {
+  "id": "t55a",
+  "slide": 55,
+  "chapter": 8,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "スライド55の円グラフ「ヒト 全転写物：60,483」で、最も数が多い区分とその数の組み合わせはどれか。",
+  "options": [
+   {
+    "text": "メッセンジャーRNA ― 25,794",
+    "explanation": "25,794はノンコーディングRNAの数。mRNAは19,814",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "その他（偽遺伝子など） ― 14,285",
+    "explanation": "その他は最も少ない区分",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "メッセンジャーRNA ― 19,814",
+    "explanation": "mRNAの数は正しいが、最多ではない",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "ノンコーディングRNA ― 25,794",
+    "explanation": "ノンコーディングRNAが最多",
+    "correct": true
+   },
+   {
+    "text": "ノンコーディングRNA ― 60,483",
+    "explanation": "60,483はヒト全転写物の総数",
+    "correct": false,
+    "trap": "number"
+   }
+  ],
+  "explanation": "ヒト全転写物60,483のうち、<b>ノンコーディングRNA 25,794</b>、メッセンジャーRNA 19,814、その他（偽遺伝子など）14,285。スライドの見出しは「細胞内にはタンパク質をコードする遺伝子以上に多くのノンコーディングRNAをコードする遺伝子が存在する」。",
+  "point": "ncRNA（25,794）＞ mRNA（19,814）＞ その他（14,285）、合計60,483。",
+  "tags": [
+   "ノンコーディングRNA",
+   "転写物の数"
+  ]
+ },
+ {
+  "id": "t55b",
+  "slide": 55,
+  "chapter": 8,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "スライド55の記載として<b>正しい</b>のはどれか。",
+  "options": [
+   {
+    "text": "ノンコーディングRNA遺伝子の多くは機能が解明されている",
+    "explanation": "スライドには「しかし、ノンコーディングRNA遺伝子の多くは、機能は未解明」とある",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "タンパク質をコードする遺伝子の数はノンコーディングRNA遺伝子より多い",
+    "explanation": "逆。ノンコーディングRNA（25,794）のほうがmRNA（19,814）より多い",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "偽遺伝子などの「その他」は全転写物の半数以上を占める",
+    "explanation": "その他は14,285で、全体60,483の半数に満たない",
+    "correct": false,
+    "trap": "number"
+   },
+   {
+    "text": "細胞内にはタンパク質をコードする遺伝子以上に多くのノンコーディングRNAをコードする遺伝子が存在する",
+    "explanation": "スライドの見出しそのもの",
+    "correct": true
+   },
+   {
+    "text": "ヒトの全転写物はすべてタンパク質に翻訳される",
+    "explanation": "mRNA以外にノンコーディングRNAやその他の転写物がある",
+    "correct": false,
+    "trap": "scope"
+   }
+  ],
+  "explanation": "スライド55は、ヒト全転写物60,483のうちノンコーディングRNA（25,794）がメッセンジャーRNA（19,814）より多いことを示し、同時に「ノンコーディングRNA遺伝子の多くは、機能は未解明」と注記している。",
+  "point": "数は多いが、機能の多くは未解明 ― この2点をセットで覚える。",
+  "tags": [
+   "ノンコーディングRNA",
+   "転写物の数"
+  ]
+ },
+ {
+  "id": "t56a",
+  "slide": 56,
+  "chapter": 8,
+  "kind": "重要事項",
+  "difficulty": 2,
+  "stem": "スライド56で、<b>15番染色体</b>のsnoRNA（small nucleolar RNA）遺伝子群の欠失によって起こるとされる疾患はどれか。",
+  "options": [
+   {
+    "text": "Feingold症候群",
+    "explanation": "13番染色体のmiRNA遺伝子群の欠失によるもの",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "Prader-Willi症候群",
+    "explanation": "肥満、性腺機能低下、認知障害を特徴とする",
+    "correct": true
+   },
+   {
+    "text": "骨軟化症",
+    "explanation": "スライド39でカドミウムによる障害として挙げられたもの",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "食塩感受性高血圧",
+    "explanation": "スライド42のCry1/Cry2欠損マウスの所見",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "小頭症のみを示す疾患",
+    "explanation": "小頭症はFeingold症候群の特徴の一つとして挙げられている",
+    "correct": false,
+    "trap": "swap"
+   }
+  ],
+  "explanation": "スライド56：15番染色体のsno（small nucleolar RNA）遺伝子群の欠失は、肥満、性腺機能低下、認知障害を特徴とする<b>Prader-Willi症候群</b>を引き起こす。13番染色体にあるmiRNA遺伝子群の欠失は、小頭症、低身長、手指の奇形を特徴とする骨格系疾患の<b>Feingold症候群</b>を引き起こす。",
+  "point": "15番・snoRNA → Prader-Willi、13番・miRNA → Feingold。",
+  "tags": [
+   "ncRNAと疾患",
+   "snoRNA",
+   "miRNA"
+  ]
+ },
+ {
+  "id": "t56b",
+  "slide": 56,
+  "chapter": 8,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "スライド56の非コードRNA（ncRNA）遺伝子に関する記載として正しいのはどれか。",
+  "options": [
+   {
+    "text": "ncRNA遺伝子は、遺伝子の機能性産物がタンパク質である遺伝子をいう",
+    "explanation": "ncRNA遺伝子は機能性産物が<b>RNA自体</b>である遺伝子",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "ncRNA遺伝子の数はタンパク質コード遺伝子の約10分の1と推定されている",
+    "explanation": "スライドではタンパク質コード遺伝子と<b>ほぼ同数（20,000～25,000）</b>程度と推定",
+    "correct": false,
+    "trap": "number"
+   },
+   {
+    "text": "miRNAは標的遺伝子のmRNAに結合し、その翻訳を抑制する",
+    "explanation": "スライドの記載どおり。1,000以上が同定されている",
+    "correct": true
+   },
+   {
+    "text": "snoRNAはmRNAのキャップ形成に関わる",
+    "explanation": "スライドではsnoRNAは<b>rRNAの修飾</b>に関わるとされる",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "ncRNAは成人期発症の疾患にのみ関与する",
+    "explanation": "初期発生に関わる症候群から成人期発症の疾患まで幅広く関与する",
+    "correct": false,
+    "trap": "scope"
+   }
+  ],
+  "explanation": "ncRNA遺伝子は「遺伝子の機能性産物がRNA自体である遺伝子」。タンパク質コード遺伝子とほぼ同数（20,000～25,000）程度が存在すると推定される。miRNA（約22塩基の短いncRNA）は標的mRNAに結合してその翻訳を抑制し、1,000以上が同定され、全タンパク質コード遺伝子の30％以上の活性を抑制すると推測されている。",
+  "point": "ncRNA＝RNAのまま働く。miRNAは標的mRNAの翻訳を抑制する。",
+  "tags": [
+   "非コードRNA",
+   "miRNA",
+   "snoRNA"
+  ]
+ },
+ {
+  "id": "t58a",
+  "slide": 58,
+  "chapter": 8,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "スライド58の左下「rRNAやtRNA」の流れとして正しいのはどれか。",
+  "options": [
+   {
+    "text": "遺伝子 → RNAポリメラーゼ → rRNAやtRNAの前駆体 → 修飾・プロセシング → rRNAやtRNA",
+    "explanation": "前駆体として転写され、修飾・プロセシングを経て完成する",
+    "correct": true
+   },
+   {
+    "text": "遺伝子 → RNAポリメラーゼ → 完成したrRNAやtRNAが直接できる",
+    "explanation": "まず前駆体ができ、修飾・プロセシングを受ける",
+    "correct": false,
+    "trap": "mechanism"
+   },
+   {
+    "text": "遺伝子 → 翻訳 → rRNAやtRNA",
+    "explanation": "rRNA・tRNAは転写でできるRNA。翻訳は経ない",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "rRNAやtRNA → 修飾・プロセシング → 前駆体 → 遺伝子",
+    "explanation": "向きが逆",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "遺伝子 → mRNA → rRNAやtRNA",
+    "explanation": "rRNA・tRNAはmRNAを介さず、遺伝子から直接その前駆体が転写される",
+    "correct": false,
+    "trap": "mechanism"
+   }
+  ],
+  "explanation": "スライド58左下：rRNAやtRNAも遺伝子からRNAポリメラーゼによって転写されるが、まず<b>rRNAやtRNAの前駆体</b>としてつくられ、<b>修飾・プロセシング</b>を経て完成したrRNAやtRNAになる。",
+  "point": "rRNA・tRNAは「前駆体 → 修飾・プロセシング」で完成する。",
+  "tags": [
+   "rRNA",
+   "tRNA",
+   "プロセシング"
+  ]
+ },
+ {
+  "id": "t58b",
+  "slide": 58,
+  "chapter": 8,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "スライド58右の図（16S・23S・5S・tRNAを含む前駆体、複数のtRNAが連なった前駆体）で、赤矢印が示すものはどれか。",
+  "options": [
+   {
+    "text": "RNAポリメラーゼの結合部位",
+    "explanation": "図の凡例は「RNasePによる切断点」",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "スプライセオソームによるイントロンの切断点",
+    "explanation": "スプライセオソームはmRNA前駆体のスプライシングで登場したもの",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "RNasePによる切断点",
+    "explanation": "凡例に「→はRNasePによる切断点」とある",
+    "correct": true
+   },
+   {
+    "text": "5'キャップの付加部位",
+    "explanation": "キャップはmRNA前駆体の5'末端に付く。図の矢印とは関係ない",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "ポリAの付加部位",
+    "explanation": "ポリAはmRNA前駆体の3'末端に付く。図の矢印とは関係ない",
+    "correct": false,
+    "trap": "swap"
+   }
+  ],
+  "explanation": "スライド58の右図では、1本の長い前駆体RNAに16S・23S・5S・tRNA、あるいは複数のtRNA（tRNA<sup>Leu</sup>、tRNA<sup>Met</sup>、tRNA<sup>Gln</sup>など）が並び、<b>RNasePによる切断点</b>（赤矢印）で切り出される。これが前駆体の「プロセシング」の具体例である。",
+  "point": "前駆体から個々のrRNA・tRNAを切り出すのがプロセシング。図の矢印はRNasePの切断点。",
+  "tags": [
+   "rRNA",
+   "tRNA",
+   "プロセシング"
+  ]
+ },
+ {
+  "id": "t59a",
+  "slide": 59,
+  "chapter": 8,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "スライド59の表で、真核生物の<b>RNAポリメラーゼI</b>が転写する遺伝子はどれか。",
+  "options": [
+   {
+    "text": "タンパク質をコードする遺伝子",
+    "explanation": "RNAポリメラーゼIIが転写する",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "tRNA遺伝子",
+    "explanation": "RNAポリメラーゼIIIが転写する",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "U6 snRNA遺伝子",
+    "explanation": "表ではRNAポリメラーゼIIIの欄に含まれる",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "rRNA遺伝子",
+    "explanation": "RNAポリメラーゼIは主にrRNA（リボソームRNA）の合成を行う",
+    "correct": true
+   },
+   {
+    "text": "snRNA遺伝子のほとんど",
+    "explanation": "表ではRNAポリメラーゼIIの欄",
+    "correct": false,
+    "trap": "swap"
+   }
+  ],
+  "explanation": "スライド59：RNAポリメラーゼIは<b>rRNA遺伝子</b>、IIは<b>タンパク質をコードする遺伝子とsnRNA遺伝子のほとんど</b>、IIIは<b>小さいRNAの遺伝子（tRNA遺伝子、5S rRNA遺伝子、U6 snRNA遺伝子、7SL RNA、7SK RNA、7SM RNA）</b>を転写する。",
+  "point": "I＝rRNA、II＝タンパク質コード遺伝子（＋snRNAのほとんど）、III＝tRNA・5S rRNAなど小さいRNA。",
+  "tags": [
+   "RNAポリメラーゼ",
+   "rRNA",
+   "tRNA"
+  ]
+ },
+ {
+  "id": "t59b",
+  "slide": 59,
+  "chapter": 8,
+  "kind": "理解・統合",
+  "difficulty": 3,
+  "stem": "スライド59の表で、<b>5S rRNA遺伝子</b>を転写するRNAポリメラーゼはどれか。",
+  "options": [
+   {
+    "text": "RNAポリメラーゼI",
+    "explanation": "rRNAでも5S rRNA遺伝子はIの欄にない。Iの欄はrRNA遺伝子（主転写単位）",
+    "correct": false,
+    "trap": "scope"
+   },
+   {
+    "text": "RNAポリメラーゼII",
+    "explanation": "IIはタンパク質をコードする遺伝子とsnRNA遺伝子のほとんど",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "RNAポリメラーゼIII",
+    "explanation": "表でtRNA遺伝子、U6 snRNA遺伝子などと並んでIIIの欄にある",
+    "correct": true
+   },
+   {
+    "text": "ミトコンドリア特異的RNAポリメラーゼ",
+    "explanation": "スライド72でミトコンドリアゲノムの転写に働くとされる酵素",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "RNAポリメラーゼIとIIIの共同",
+    "explanation": "表にそのような記載はない",
+    "correct": false,
+    "trap": "fact"
+   }
+  ],
+  "explanation": "「rRNA＝ポリメラーゼI」と単純に覚えると誤る。スライド59の表では、<b>5S rRNA遺伝子</b>はtRNA遺伝子・U6 snRNA遺伝子・7SL RNAなどとともに<b>RNAポリメラーゼIII</b>の欄に入る（スライド63で、5S以外の3種のrRNAは1つの転写単位から合成されることとあわせて理解する）。",
+  "point": "rRNAのうち5S rRNAだけはポリメラーゼIIIが転写する。",
+  "tags": [
+   "RNAポリメラーゼ",
+   "rRNA"
+  ]
+ },
+ {
+  "id": "t60a",
+  "slide": 60,
+  "chapter": 8,
+  "kind": "重要事項",
+  "difficulty": 2,
+  "stem": "スライド60で、<b>RNAポリメラーゼIII</b>のプロモーターの特徴として示されているのはどれか。",
+  "options": [
+   {
+    "text": "プロモーター（内部制御領域、約50 bp）が遺伝子内部にある",
+    "explanation": "図(b)の記載どおり",
+    "correct": true
+   },
+   {
+    "text": "−200〜−100付近に制御配列がある",
+    "explanation": "RNAポリメラーゼI（図(a)）の特徴",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "コアプロモーターが−45〜+20にあり開始点とオーバーラップする",
+    "explanation": "RNAポリメラーゼI（図(a)）の特徴",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "−10ボックスと−35ボックスを認識する",
+    "explanation": "細菌（原核生物）のプロモーター。真核のポリメラーゼIIIではない",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "TATAボックスだけで転写が始まる",
+    "explanation": "スライド60には記載がない。ポリメラーゼIIIでは内部制御領域が示されている",
+    "correct": false,
+    "trap": "fact"
+   }
+  ],
+  "explanation": "スライド60「RNAポリメラーゼIとRNAポリメラーゼIIIは特殊なプロモーターを持つ」。(b) RNAポリメラーゼIIIでは<b>内部制御領域（約50 bp）</b>が遺伝子の内部にあり、「プロモーターが遺伝子内部にある」「一旦開始点に戻ってから転写が起こる」と記されている。",
+  "point": "ポリメラーゼIII＝プロモーターが遺伝子の内部（内部制御領域 約50 bp）。",
+  "tags": [
+   "RNAポリメラーゼ",
+   "プロモーター"
+  ]
+ },
+ {
+  "id": "t60b",
+  "slide": 60,
+  "chapter": 8,
+  "kind": "理解・統合",
+  "difficulty": 3,
+  "stem": "スライド60の図(a) <b>RNAポリメラーゼI</b>のプロモーターについて正しいのはどれか。",
+  "options": [
+   {
+    "text": "プロモーターは遺伝子の内部だけにある",
+    "explanation": "ポリメラーゼIII（図(b)）の特徴",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "制御配列は開始点（+1）より下流の+100〜+200にある",
+    "explanation": "制御配列は上流の<b>−200〜−100</b>付近",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "コアプロモーターは開始点より上流だけにあり、開始点には重ならない",
+    "explanation": "コアプロモーターは−45〜+20に及び、開始点とオーバーラップする",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "コアプロモーターが−45〜+20にあり、プロモーターが開始点とオーバーラップする",
+    "explanation": "図(a)の記載どおり",
+    "correct": true
+   },
+   {
+    "text": "約50 bpの内部制御領域で転写開始点が決まる",
+    "explanation": "ポリメラーゼIII（図(b)）の記載",
+    "correct": false,
+    "trap": "swap"
+   }
+  ],
+  "explanation": "図(a) RNAポリメラーゼI：上流の−200〜−100付近に<b>制御配列</b>、−45〜+20に<b>コアプロモーター</b>があり、+20まで延びるため「プロモーターが開始点とオーバーラップ」する。図(b) RNAポリメラーゼIIIは内部制御領域（約50 bp）が遺伝子内部にある。",
+  "point": "I＝開始点と重なるコアプロモーター＋上流の制御配列、III＝遺伝子内部の制御領域。",
+  "tags": [
+   "RNAポリメラーゼ",
+   "プロモーター"
+  ]
+ },
+ {
+  "id": "t62a",
+  "slide": 62,
+  "chapter": 8,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "スライド62の真核生物のリボソームで、<b>小サブユニット（40S）</b>に含まれるrRNAはどれか。",
+  "options": [
+   {
+    "text": "28S rRNA",
+    "explanation": "大サブユニット（60S）に含まれる。4700ヌクレオチド",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "5.8S rRNA",
+    "explanation": "大サブユニット（60S）に含まれる。160ヌクレオチド",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "5S rRNA",
+    "explanation": "大サブユニット（60S）に含まれる。120ヌクレオチド",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "16S rRNA",
+    "explanation": "スライド62の真核生物リボソームの図には登場しない",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "18S rRNA",
+    "explanation": "40Sには18S rRNA（1900ヌクレオチド）と約33個のタンパク質",
+    "correct": true
+   }
+  ],
+  "explanation": "スライド62：真核生物の80Sリボソーム（分子量4,200,000）は、60S大サブユニット（5S・28S・5.8S rRNA＋約49タンパク質）と40S小サブユニット（<b>18S rRNA</b>＋約33タンパク質）からなる。rRNAは計4個を含む。",
+  "point": "40S＝18S、60S＝5S・5.8S・28S。",
+  "tags": [
+   "リボソーム",
+   "rRNA"
+  ]
+ },
+ {
+  "id": "t62b",
+  "slide": 62,
+  "chapter": 8,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "スライド62の記載として<b>誤っている</b>のはどれか。",
+  "options": [
+   {
+    "text": "リボソームは翻訳を担うタンパク質とrRNAの複合体である",
+    "explanation": "正しい記載（スライドの定義どおり）",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "真核生物のリボソームはrRNAを4個含む",
+    "explanation": "正しい記載。図中に「rRNA 4個を含む」とある",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "60Sサブユニットの分子量は40Sサブユニットより大きい",
+    "explanation": "正しい記載。60Sは2,800,000、40Sは1,400,000",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "rRNAは塩基対による2重らせんからなるステムループ構造をとる",
+    "explanation": "正しい記載。右下の拡大図の記載どおり",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "真核生物のリボソームは60Sと40Sのサブユニットを足し合わせて100Sとよばれる",
+    "explanation": "スライドでは<b>80S</b>と記されている。S値は単純な足し算にならない",
+    "correct": true
+   }
+  ],
+  "explanation": "スライド62：rRNAはリボソームの一部を構成するRNA、リボソームは翻訳を担うタンパク質とrRNAの複合体。真核生物のリボソームは<b>80S</b>（60S＋40S）で、rRNAを4個含む。rRNAは分子内で塩基対を組み、2重らせんによるステムループ構造をとる。",
+  "point": "60S＋40S＝80S（100Sではない）。",
+  "tags": [
+   "リボソーム",
+   "rRNA"
+  ]
+ },
+ {
+  "id": "t63a",
+  "slide": 63,
+  "chapter": 8,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "スライド63で、ヒトの45S rRNA前駆体から削除とプロセシングによって生じるrRNAの組み合わせはどれか。",
+  "options": [
+   {
+    "text": "18S・5.8S・28S",
+    "explanation": "1つの転写単位から合成され、プロセシングを受けて3種のrRNAとなる",
+    "correct": true
+   },
+   {
+    "text": "5S・5.8S・28S",
+    "explanation": "5S rRNAは別の遺伝子（多重遺伝子族）として存在する",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "16S・23S・5S",
+    "explanation": "スライド58右の図に出てくる組み合わせ。45S前駆体ではない",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "18S・28S・tRNA",
+    "explanation": "tRNAは45S前駆体に含まれない",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "5S・18S・28S",
+    "explanation": "5S rRNAは45S前駆体に含まれない",
+    "correct": false,
+    "trap": "fact"
+   }
+  ],
+  "explanation": "スライド63：プロモーターからターミネーターまでの転写単位に<b>18S・5.8S・28S rRNA遺伝子</b>が並び、<b>45S rRNA前駆体</b>として1つのRNAに転写された後、削除とプロセシングを受けて3種のrRNAとなる。5S rRNA遺伝子は別に多コピー存在する。",
+  "point": "45S前駆体 → 18S・5.8S・28S。5Sは別。",
+  "tags": [
+   "rRNA",
+   "プロセシング"
+  ]
+ },
+ {
+  "id": "t63b",
+  "slide": 63,
+  "chapter": 8,
+  "kind": "理解・統合",
+  "difficulty": 3,
+  "stem": "スライド63の表で、<b>ヒト</b>の遺伝子の数として正しい組み合わせはどれか。（rRNA主転写単位／5S rRNA遺伝子／tRNA遺伝子）",
+  "options": [
+   {
+    "text": "7／7／60",
+    "explanation": "大腸菌の値",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "140／140／250",
+    "explanation": "出芽酵母の値",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "280／2000／1300",
+    "explanation": "ヒトの値",
+    "correct": true
+   },
+   {
+    "text": "450／24,000／1150",
+    "explanation": "カエルの値",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "2000／280／1300",
+    "explanation": "rRNA主転写単位と5S rRNA遺伝子の数が逆",
+    "correct": false,
+    "trap": "reverse"
+   }
+  ],
+  "explanation": "rRNAはタンパク質を合成するリボソームの構成成分で、細胞にとって常時大量に必要である。そのためヒトでは<b>rRNA主転写単位280</b>、<b>5S rRNA遺伝子2000</b>、tRNA遺伝子1300と多コピー存在する（多重遺伝子族）。",
+  "point": "ヒト：rRNA主転写単位280、5S rRNA 2000、tRNA 1300。大量に必要だから多コピー。",
+  "tags": [
+   "rRNA",
+   "多重遺伝子族"
+  ]
+ },
+ {
+  "id": "t64a",
+  "slide": 64,
+  "chapter": 8,
+  "kind": "重要事項",
+  "difficulty": 2,
+  "stem": "スライド64で、tRNAの修飾が関係するものとして挙げられて<b>いない</b>のはどれか。",
+  "options": [
+   {
+    "text": "立体構造",
+    "explanation": "挙げられている（正答ではない）",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "安定性",
+    "explanation": "挙げられている（正答ではない）",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "輸送アミノ酸の選択特異性",
+    "explanation": "挙げられている（正答ではない）",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "アンチコドンによるコドン識別特異性",
+    "explanation": "挙げられている（青字で強調）（正答ではない）",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "tRNA遺伝子の転写開始点の決定",
+    "explanation": "スライドの記載にない。修飾は転写されたtRNAに対するもの",
+    "correct": true
+   }
+  ],
+  "explanation": "スライド64：tRNAは高度に<b>修飾</b>を受けており、これらの修飾は<b>立体構造、安定性、輸送アミノ酸の選択特異性、アンチコドンによるコドン識別特異性</b>に関係する。図には修飾塩基として7-メチルグアノシン（m<sup>7</sup>G）、リボチミジン（T）、シュードウラシル（ψ）、ジヒドロウリジン（DHU）、イノシン（I）、4-チオウリジン（S<sup>4</sup>U）、キューオシン（Q）が示されている。",
+  "point": "tRNAの修飾 → 立体構造・安定性・アミノ酸選択特異性・コドン識別特異性。",
+  "tags": [
+   "tRNA",
+   "修飾"
+  ]
+ },
+ {
+  "id": "t64b",
+  "slide": 64,
+  "chapter": 8,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "スライド64のtRNAの模式図で、mRNAのコドンを読み取る<b>アンチコドン</b>が位置する部分はどれか。",
+  "options": [
+   {
+    "text": "アクセプターアーム",
+    "explanation": "3'末端側の腕。アンチコドンとは反対側に描かれている",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "TψCループ",
+    "explanation": "シュードウラシル（ψ）を含むループで、アンチコドンではない",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "アンチコドンループ",
+    "explanation": "図でアンチコドンはアンチコドンアームの先端のループにある",
+    "correct": true
+   },
+   {
+    "text": "DHUループ",
+    "explanation": "ジヒドロウリジン（DHU）を含むループで、アンチコドンではない",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "オプショナルアーム",
+    "explanation": "tRNAの種類によって存在する部分",
+    "correct": false,
+    "trap": "swap"
+   }
+  ],
+  "explanation": "tRNAはタンパク質合成の際にリボソームにアミノ酸を運び、遺伝暗号（コドン）を読み取る。図ではアクセプターアーム（3'末端側）、TψCアーム・ループ、DHUアーム・ループ、オプショナルアーム、アンチコドンアームが描かれ、<b>アンチコドン</b>は<b>アンチコドンループ</b>にある。",
+  "point": "コドンを読むのはアンチコドンループ。",
+  "tags": [
+   "tRNA",
+   "アンチコドン"
+  ]
+ },
+ {
+  "id": "t66a",
+  "slide": 66,
+  "chapter": 8,
+  "kind": "重要事項",
+  "difficulty": 2,
+  "stem": "スライド66で、Small non-coding RNAs（microRNAs）の特徴として記載されているのはどれか。",
+  "options": [
+   {
+    "text": ">200 nt",
+    "explanation": "lncRNAの特徴。microRNAsは<200 nt",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "transcribed by RNA Polymerase II",
+    "explanation": "small・long の両方に共通して記載",
+    "correct": true
+   },
+   {
+    "text": "poorly conserved",
+    "explanation": "lncRNAの特徴。microRNAsはwell conserved",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "mostly 5'-cap, polyadenylated (in part), spliced",
+    "explanation": "lncRNAの特徴",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "> 30,000",
+    "explanation": "lncRNAの数。microRNAsは> 2,000",
+    "correct": false,
+    "trap": "number"
+   }
+  ],
+  "explanation": "スライド66：Small non-coding RNAs “microRNAs” は <200 nt、transcribed by RNA Polymerase II、endogenously processed by endonucleases、well conserved、> 2,000 microRNAs。Long non-coding RNAs “lncRNAs” は >200 nt、transcribed by RNA Polymerase II、mostly 5'-cap, polyadenylated (in part), spliced、poorly conserved、> 30,000 lncRNAs。",
+  "point": "small：<200 nt・よく保存・>2,000／long：>200 nt・保存性低い・>30,000。どちらもPol II。",
+  "tags": [
+   "非コードRNA",
+   "miRNA",
+   "lncRNA"
+  ]
+ },
+ {
+  "id": "t66b",
+  "slide": 66,
+  "chapter": 8,
+  "kind": "理解・統合",
+  "difficulty": 3,
+  "stem": "スライド66のベン図に示された数値として正しいのはどれか。",
+  "options": [
+   {
+    "text": "ゲノムのうちprotein-codingは >80 ％",
+    "explanation": "数値の取り違え。protein-codingは < 3 ％",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "transcriptome non-codingは < 3 ％",
+    "explanation": "数値の取り違え。non-codingは >80 ％",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "protein-codingは < 3 ％、transcriptome non-codingは >80 ％",
+    "explanation": "図の記載どおり",
+    "correct": true
+   },
+   {
+    "text": "protein-codingは約25.3 ％",
+    "explanation": "約25.3％はスライド54の「遺伝子に関わるDNA」の割合",
+    "correct": false,
+    "trap": "number"
+   },
+   {
+    "text": "transcriptome non-codingは約48 ％",
+    "explanation": "約48％はスライド54の繰り返し配列の割合",
+    "correct": false,
+    "trap": "number"
+   }
+  ],
+  "explanation": "スライド66のベン図では、Genomeのうち<b>Protein-coding < 3 ％</b>（mRNA → Protein）、<b>Transcriptome non-coding >80 ％</b>。タンパク質をコードしない転写産物が大部分を占め、それがsmall（microRNAs）とlong（lncRNAs）に分けられる。",
+  "point": "protein-coding < 3 ％、non-coding transcriptome > 80 ％。",
+  "tags": [
+   "非コードRNA"
+  ]
+ },
+ {
+  "id": "t67a",
+  "slide": 67,
+  "chapter": 8,
+  "kind": "重要事項",
+  "difficulty": 2,
+  "stem": "スライド67のmiRNAの生成過程として正しい順序はどれか。",
+  "options": [
+   {
+    "text": "RNA pol IIによる転写（pri-miRNA） → Drosha → Exportin5で細胞質へ → Dicer → RISC形成",
+    "explanation": "スライドの記載どおりの順序",
+    "correct": true
+   },
+   {
+    "text": "RNA pol IIIによる転写（pri-miRNA） → Drosha → Exportin5 → Dicer → RISC形成",
+    "explanation": "pri-miRNAはRNA pol IIにより転写される",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "RNA pol IIによる転写 → Dicer → Exportin5で細胞質へ → Drosha → RISC形成",
+    "explanation": "DroshaとDicerの順序が逆。核内でDrosha、細胞質でDicer",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "RNA pol IIによる転写 → Drosha → Dicer → RISC形成 → Exportin5で細胞質へ",
+    "explanation": "Exportin5による細胞質への輸送はDicerより前",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "RNA pol IIによる転写 → 翻訳 → Drosha → Dicer → RISC形成",
+    "explanation": "miRNAは翻訳されない",
+    "correct": false,
+    "trap": "mechanism"
+   }
+  ],
+  "explanation": "スライド67：miRNAは<b>RNA pol II</b>により転写され（pri-miRNA）、エンドヌクレアーゼ<b>Drosha</b>によって60–70 ntの<b>pre-miRNA</b>へ、<b>Exportin5</b>によって細胞質へ輸送され、エンドヌクレアーゼ<b>Dicer</b>によって21–23 ntの成熟型miRNAとなり、RNA–タンパク質複合体である<b>RISC</b>を形成して遺伝子発現抑制に働く。",
+  "point": "pri（Pol II）→ Drosha → pre（60–70 nt）→ Exportin5 → Dicer → 成熟型（21–23 nt）→ RISC。",
+  "tags": [
+   "miRNA"
+  ]
+ },
+ {
+  "id": "t67b",
+  "slide": 67,
+  "chapter": 8,
+  "kind": "理解・統合",
+  "difficulty": 3,
+  "stem": "スライド67で、エンドヌクレアーゼ<b>Dicer</b>による切断後に生じる成熟型miRNAの長さはどれか。",
+  "options": [
+   {
+    "text": "60–70 nt",
+    "explanation": "Droshaによって生じるpre-miRNAの長さ",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "21–23 nt",
+    "explanation": "Dicerによって21–23 ntの成熟型miRNAになる",
+    "correct": true
+   },
+   {
+    "text": "200 nt以上",
+    "explanation": "lncRNAの定義（スライド68）",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "約120ヌクレオチド",
+    "explanation": "スライド62の5S rRNAの長さ",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "約1900ヌクレオチド",
+    "explanation": "スライド62の18S rRNAの長さ",
+    "correct": false,
+    "trap": "fact"
+   }
+  ],
+  "explanation": "Droshaが核内でpri-miRNAを切って60–70 ntのpre-miRNAにし、Exportin5で細胞質へ運ばれたのち、Dicerが<b>21–23 nt</b>の成熟型miRNAにする。成熟型miRNAはRISCを形成し、特定のmRNAに結合して遺伝子発現を抑制する（スライド67の図では、結合したmRNAは分解され、タンパク質合成に使われない）。",
+  "point": "Drosha → 60–70 nt、Dicer → 21–23 nt。",
+  "tags": [
+   "miRNA"
+  ]
+ },
+ {
+  "id": "t68a",
+  "slide": 68,
+  "chapter": 8,
+  "kind": "重要事項",
+  "difficulty": 2,
+  "stem": "スライド68でのlong non-coding RNA（lncRNA）の定義として正しいのはどれか。",
+  "options": [
+   {
+    "text": "200塩基未満で、潜在的なORFが100アミノ酸残基以下のRNA",
+    "explanation": "長さは200塩基<b>以上</b>",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "200塩基以上で、潜在的なORFが100アミノ酸残基以上のRNA",
+    "explanation": "ORFは100アミノ酸残基<b>以下</b>",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "200塩基以上で、潜在的なORFが100アミノ酸残基以下のRNA",
+    "explanation": "スライドの定義どおり",
+    "correct": true
+   },
+   {
+    "text": "21–23塩基で、RISCを形成するRNA",
+    "explanation": "成熟型miRNA（スライド67）",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "遺伝子間領域に独立した転写ユニットをもつものだけをlncRNAという",
+    "explanation": "それはlncRNAの中のlincRNA（長鎖遺伝子間非コードRNA）",
+    "correct": false,
+    "trap": "scope"
+   }
+  ],
+  "explanation": "スライド68：タンパク質をコードしない領域からの転写産物のうち、<b>200塩基以上、かつ潜在的なORFが100アミノ酸残基以下</b>のRNAをlncRNA（長鎖非コードRNA）とよぶ。そのうち遺伝子間領域に独立した転写ユニットをもつものを<b>lincRNA</b>（long intergenic non-coding RNA、長鎖遺伝子間非コードRNA）とよぶ。",
+  "point": "lncRNA＝200塩基以上・ORF 100アミノ酸残基以下。lincRNAはその一部。",
+  "tags": [
+   "lncRNA"
+  ]
+ },
+ {
+  "id": "t68b",
+  "slide": 68,
+  "chapter": 8,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "スライド68で、lncRNAがタンパク質をコードするmRNAと<b>異なる</b>点はどれか。",
+  "options": [
+   {
+    "text": "転写されない",
+    "explanation": "mRNAと同様に転写される",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "5'capが付加されない",
+    "explanation": "mRNAと同様に5'capが付加される",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "polyA tailが付加されない",
+    "explanation": "mRNAと同様にpolyA tailが付加される",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "スプライシングを受けない",
+    "explanation": "スプライシングまで行われる",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "翻訳されない",
+    "explanation": "「しかし、mRNAと違い、翻訳は行われない」",
+    "correct": true
+   }
+  ],
+  "explanation": "スライド68：lncRNAは「タンパク質をコードするmRNAと同様に転写、5'cap及びpolyA tailが付加され、スプライシングまで行われる。しかし、mRNAと違い、翻訳は行われない」。",
+  "point": "lncRNAは mRNA と同じ加工を受けるが、翻訳だけされない。",
+  "tags": [
+   "lncRNA"
+  ]
+ },
+ {
+  "id": "t69a",
+  "slide": 69,
+  "chapter": 8,
+  "kind": "重要事項",
+  "difficulty": 2,
+  "stem": "スライド69の図で、lncRNA遺伝子の転写産物の役割として挙げられて<b>いない</b>のはどれか。",
+  "options": [
+   {
+    "text": "X-chromosome inactivation",
+    "explanation": "lncRNA側に記載あり（正答ではない）",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "Stem cell proliferation",
+    "explanation": "lncRNA側に記載あり（正答ではない）",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "Tumorigenesis",
+    "explanation": "lncRNA側に記載あり（正答ではない）",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "Catalytic roles",
+    "explanation": "タンパク質コード遺伝子側（翻訳されたタンパク質）の役割として記載",
+    "correct": true
+   },
+   {
+    "text": "Neurodegeneration",
+    "explanation": "lncRNA側に記載あり（正答ではない）",
+    "correct": false,
+    "trap": "fact"
+   }
+  ],
+  "explanation": "スライド69：lncRNA GENEの転写産物の下には X-chromosome inactivation、Stem cell proliferation、Tumorigenesis、Neurodegeneration、Other roles? と記される。PROTEIN-CODING GENEは翻訳（TRANSLATION）を経てタンパク質となり、Structure、Catalytic roles、Signaling を担う。",
+  "point": "lncRNA側とタンパク質側の役割の一覧を取り違えない。",
+  "tags": [
+   "lncRNA"
+  ]
+ },
+ {
+  "id": "t69b",
+  "slide": 69,
+  "chapter": 8,
+  "kind": "理解・統合",
+  "difficulty": 3,
+  "stem": "スライド69下段のmRNAとlncRNAの比較図の記載として正しいのはどれか。",
+  "options": [
+   {
+    "text": "lncRNAはRNAポリメラーゼIIIで転写される",
+    "explanation": "図ではmRNA・lncRNAとも<b>Pol II</b>",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "mRNAは通常3個以下、lncRNAは通常5個以上のエクソンをもつ",
+    "explanation": "逆。mRNAはUsually 5 or more exons、lncRNAはUsually 3 or less exons",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "lncRNAは5'末端もポリA（AAAAAAA）ももたない",
+    "explanation": "図のlncRNAにも5'とAAAAAAAが描かれている",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "lncRNAはsplicingの段階で止まり、ribosomeへは進まない",
+    "explanation": "lncRNAはsplicingへ進むが、その先のribosome・proteinへの矢印に×が付いている",
+    "correct": true
+   },
+   {
+    "text": "lncRNAはribosomeで翻訳され、短いタンパク質になる",
+    "explanation": "ribosomeへの段階に×が付いており、翻訳されない",
+    "correct": false,
+    "trap": "mechanism"
+   }
+  ],
+  "explanation": "スライド69下段：mRNAもlncRNAも<b>Pol II</b>で転写され、5'末端とポリA（AAAAAAA）をもつ。mRNAは通常5個以上、lncRNAは通常3個以下のエクソンをもつ。mRNAは splicing → ribosome → protein と進むが、lncRNAは splicing の先に×が付き、翻訳されない。",
+  "point": "lncRNA：Pol II・キャップ・ポリA・スプライシングはあり、翻訳はなし。エクソン数は通常3個以下。",
+  "tags": [
+   "lncRNA"
+  ]
+ },
+ {
+  "id": "t70a",
+  "slide": 70,
+  "chapter": 9,
+  "kind": "重要事項",
+  "difficulty": 2,
+  "stem": "スライド70「遺伝子発現の調節（2）」の記載として正しいのはどれか。",
+  "options": [
+   {
+    "text": "真核生物の遺伝子発現は転写調節のみで制御され、転写後調節は原核生物に特有である",
+    "explanation": "原核と真核が逆。転写後調節が加わるのは<b>真核生物</b>",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "原核生物の遺伝子発現はmRNA合成の有無（転写調節）で制御されるが、真核生物では転写調節に加えて、mRNAの修飾の段階や核から細胞質への輸送を含めた転写後調節によっても制御される",
+    "explanation": "スライドの記載どおり",
+    "correct": true
+   },
+   {
+    "text": "真核生物の遺伝子発現調節領域はプロモーターだけで、エンハンサーやサイレンサーは原核生物にある",
+    "explanation": "エンハンサー・サイレンサーは<b>真核生物</b>のDNA上の調節領域",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "プロモーター領域に結合する転写因子は、転写を正にのみ調節する",
+    "explanation": "転写は結合によって<b>正、負</b>に調節される",
+    "correct": false,
+    "trap": "scope"
+   },
+   {
+    "text": "核から細胞質へのmRNAの輸送は、遺伝子発現の調節には関わらない",
+    "explanation": "輸送も転写後調節に含まれる",
+    "correct": false,
+    "trap": "fact"
+   }
+  ],
+  "explanation": "調節的発現には、プロモーター領域の塩基配列を認識して結合する転写因子が関わり、転写は正、負に調節される。真核生物ではエンハンサー・サイレンサーにそれぞれ特有の転写調節因子が結合して発現を調節する。さらに真核生物では、転写調節に加えて<b>mRNAの修飾</b>や<b>核から細胞質への輸送</b>を含む<b>転写後調節</b>がある。",
+  "point": "原核＝転写調節、真核＝転写調節＋転写後調節。",
+  "tags": [
+   "遺伝子発現の調節",
+   "転写後調節"
+  ]
+ },
+ {
+  "id": "t70b",
+  "slide": 70,
+  "chapter": 9,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "スライド70のクロマチンと遺伝子発現についての記載として正しいのはどれか。",
+  "options": [
+   {
+    "text": "発現しうる遺伝子はほぐれたクロマチン（ユークロマチン）領域に、発現しない遺伝子は凝集したクロマチン（ヘテロクロマチン）領域に存在する",
+    "explanation": "スライドの記載どおり",
+    "correct": true
+   },
+   {
+    "text": "発現しうる遺伝子はヘテロクロマチン領域に、発現しない遺伝子はユークロマチン領域に存在する",
+    "explanation": "ユークロマチンとヘテロクロマチンが逆",
+    "correct": false,
+    "trap": "reverse"
+   },
+   {
+    "text": "ヒストンは酸性タンパク質で、DNAと複合してヌクレオソーム構造を作る",
+    "explanation": "ヒストンは<b>塩基性</b>タンパク質",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "エンハンサー・サイレンサーによる発現調節は、必ずクロマチンリモデリングを伴う",
+    "explanation": "スライドは「伴う場合がある」と記す",
+    "correct": false,
+    "trap": "scope"
+   },
+   {
+    "text": "ヌクレオソームはDNAとrRNAの複合体である",
+    "explanation": "ヌクレオソームはDNAと<b>ヒストン</b>の複合体",
+    "correct": false,
+    "trap": "swap"
+   }
+  ],
+  "explanation": "真核生物のDNAは塩基性タンパク質<b>ヒストン</b>と複合して<b>ヌクレオソーム</b>構造を作り、さらに他のタンパク質が結合してクロマチンになる。エンハンサー・サイレンサーによる調節には<b>クロマチンリモデリング</b>を伴う場合がある。発現しうる遺伝子は<b>ユークロマチン</b>、発現しない遺伝子は<b>ヘテロクロマチン</b>に存在する。",
+  "point": "ほぐれた＝ユークロマチン＝発現しうる。凝集＝ヘテロクロマチン＝発現しない。",
+  "tags": [
+   "クロマチン",
+   "遺伝子発現の調節"
+  ]
+ },
+ {
+  "id": "t71a",
+  "slide": 71,
+  "chapter": 9,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "スライド71「まとめ」で述べられているプロモーターの役割として正しいのはどれか。",
+  "options": [
+   {
+    "text": "リボソームを結合させ、翻訳の開始点を決める",
+    "explanation": "プロモーターはDNA上の領域で、転写に関わる。翻訳の開始は開始コドン",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "イントロンの切断点を決め、スプライシングを行う",
+    "explanation": "切断点はGT-AGなどの配列とスプライセオソームが関わる",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "RNAを合成する酵素そのものとして働く",
+    "explanation": "RNAを合成する酵素は<b>RNAポリメラーゼ</b>。プロモーターはその結合に必要なDNA上の領域",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "mRNAの3'末端にポリAを付加させる",
+    "explanation": "ポリA付加はポリアデニル化シグナルとポリ(A)ポリメラーゼが関わる",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "RNAポリメラーゼを結合させ、転写の開始点と鋳型として用いるDNA鎖を決める",
+    "explanation": "スライドの記載どおり",
+    "correct": true
+   }
+  ],
+  "explanation": "RNAを合成する酵素は<b>RNAポリメラーゼ</b>で、それが結合するために必要なDNA上の領域が<b>プロモーター</b>。プロモーターの役割は、RNAポリメラーゼを結合させ、<b>転写の開始点</b>と<b>鋳型として用いるDNA鎖</b>を決めることである。RNAは二本鎖DNAのうち1本（antisense鎖）を鋳型として、相補的に合成される。",
+  "point": "プロモーター＝RNAポリメラーゼの結合場所。開始点と鋳型鎖を決める。",
+  "tags": [
+   "プロモーター",
+   "まとめ"
+  ]
+ },
+ {
+  "id": "t71b",
+  "slide": 71,
+  "chapter": 9,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "スライド71「まとめ」の記載として正しいのはどれか。",
+  "options": [
+   {
+    "text": "非翻訳RNAには5'キャップもポリAも付加されず、スプライシングも受けない",
+    "explanation": "スライドは非翻訳RNAも5'cap・polyA tailが付加され、スプライシングまで行われると記す",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "rRNAやtRNAは、DNA上の遺伝子から転写されずに作られる",
+    "explanation": "rRNAやtRNAも<b>DNA上のrRNA遺伝子、tRNA遺伝子</b>から転写される",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "タンパク質の遺伝子の情報単位は、DNA上の2つの塩基配列で、これが1つのアミノ酸に対応する",
+    "explanation": "情報単位は<b>3つ</b>の塩基配列",
+    "correct": false,
+    "trap": "number"
+   },
+   {
+    "text": "1種類のmRNA前駆体からスプライシングを利用して複数のmRNAが作られ、多様な機能をもつタンパク質が遺伝子の数よりも多く作られる",
+    "explanation": "スライドの記載どおり",
+    "correct": true
+   },
+   {
+    "text": "真核生物のmRNAは細胞質でキャッピング・ポリA付加・スプライシングを受けた後、核へ運ばれて翻訳される",
+    "explanation": "修飾は<b>核内</b>で行われ、その後<b>細胞質</b>へ運ばれて翻訳される",
+    "correct": false,
+    "trap": "reverse"
+   }
+  ],
+  "explanation": "まとめ：1種類のpre mRNAから選択的なスプライシングで複数のmRNAができ、タンパク質の種類は遺伝子の数より多くなる。真核生物のmRNAは核内でキャッピング・ポリA付加・スプライシングを経て完成し、細胞質で翻訳される。タンパク質の遺伝子の情報単位はDNA上の3塩基で1アミノ酸に対応する。rRNA・tRNAも遺伝子から転写される非翻訳RNAで、非翻訳RNAはキャップ・ポリA付加・スプライシングを受けるが翻訳はされない。",
+  "point": "1遺伝子 → 複数mRNA → タンパク質の種類＞遺伝子の数。修飾は核内、翻訳は細胞質。",
+  "tags": [
+   "選択的スプライシング",
+   "まとめ"
+  ]
+ },
+ {
+  "id": "t72a",
+  "slide": 72,
+  "chapter": 9,
+  "kind": "重要事項",
+  "difficulty": 1,
+  "stem": "スライド72で、ミトコンドリアゲノムがコードする遺伝子の数とゲノムの大きさの組み合わせとして正しいのはどれか。",
+  "options": [
+   {
+    "text": "37個 ― 約16 kb",
+    "explanation": "図では16,569 bp。スライドの記載どおり",
+    "correct": true
+   },
+   {
+    "text": "13個 ― 約16 kb",
+    "explanation": "遺伝子の数は<b>37個</b>",
+    "correct": false,
+    "trap": "number"
+   },
+   {
+    "text": "37個 ― 約16 Mb",
+    "explanation": "大きさは約16 <b>kb</b>（16,569 bp）",
+    "correct": false,
+    "trap": "number"
+   },
+   {
+    "text": "37個 ― 約3 kb",
+    "explanation": "大きさは<b>約16 kb</b>",
+    "correct": false,
+    "trap": "number"
+   },
+   {
+    "text": "約2万個 ― 約16 kb",
+    "explanation": "ミトコンドリアゲノムがコードするのは<b>37個</b>",
+    "correct": false,
+    "trap": "number"
+   }
+  ],
+  "explanation": "ミトコンドリアゲノムは約16 kb（図では16,569 bp）の環状ゲノムで、コードする遺伝子は<b>37個</b>。これらはミトコンドリア内で機能する（呼吸鎖の構成やミトコンドリア翻訳系など）。",
+  "point": "ミトコンドリアゲノム：37遺伝子・約16 kb・環状。",
+  "tags": [
+   "ミトコンドリアゲノム"
+  ]
+ },
+ {
+  "id": "t72b",
+  "slide": 72,
+  "chapter": 9,
+  "kind": "理解・統合",
+  "difficulty": 2,
+  "stem": "スライド72「ミトコンドリアゲノムの転写」の記載として正しいのはどれか。",
+  "options": [
+   {
+    "text": "転写を担うRNAポリメラーゼは、ミトコンドリアゲノム自身にコードされている",
+    "explanation": "<b>核ゲノム</b>にコードされたミトコンドリア特異的RNAポリメラーゼが働く",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "核ゲノムの転写と同じRNAポリメラーゼIIが、ミトコンドリアゲノムを転写する",
+    "explanation": "働くのは<b>ミトコンドリア特異的</b>RNAポリメラーゼ",
+    "correct": false,
+    "trap": "swap"
+   },
+   {
+    "text": "環状ゲノムの各鎖は全体が転写され、その転写産物がプロセッシングされて各種のミトコンドリアmRNA・tRNA・rRNAとなる",
+    "explanation": "スライドの記載どおり",
+    "correct": true
+   },
+   {
+    "text": "ミトコンドリアゲノムは、核ゲノムと同じ転写系・タンパク質合成系を使う",
+    "explanation": "核ゲノムのものとは<b>異なる</b>転写系やタンパク質合成系が備わっている",
+    "correct": false,
+    "trap": "fact"
+   },
+   {
+    "text": "37個の遺伝子は、それぞれ別々に1つずつ転写されてから加工される",
+    "explanation": "各鎖は<b>全体が</b>転写され、その後プロセッシングで分かれる",
+    "correct": false,
+    "trap": "mechanism"
+   }
+  ],
+  "explanation": "ミトコンドリアゲノムには核ゲノムとは異なる転写系・タンパク質合成系がある。転写には<b>核ゲノムにコードされた</b>ミトコンドリア特異的RNAポリメラーゼが働く。環状ゲノムの<b>各鎖は全体が転写</b>され、その転写産物がプロセッシングされてミトコンドリアmRNA・tRNA・rRNAとなる。",
+  "point": "ポリメラーゼは核ゲノムにコード。各鎖を丸ごと転写 → 後で切り分ける。",
+  "tags": [
+   "ミトコンドリアゲノム",
+   "転写"
+  ]
+ }
+]

@@ -60,6 +60,10 @@ export interface StoryDef {
   bed?: string;
   /** playback volume of the bed (0..1) relative to the voices */
   bedVolume?: number;
+  /** background music as its own track (already ducked under the dialogue), so the learner can turn it off or change its volume */
+  music?: string;
+  /** default playback volume of the music track (0..1) */
+  musicVolume?: number;
 }
 
 /** Draws one frame of a scene at scene time t (seconds from the scene start); d = scene length. */

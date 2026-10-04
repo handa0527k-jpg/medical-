@@ -7,6 +7,8 @@ import { useStore } from '../../state/hooks';
 
 /** progress key in the store's animation stats */
 export const STORY_KEY = 'story';
+/** the learner's music setting for story anime (on/off and volume), shared by all stories */
+const BGM_KEY = 'medstudy:story-bgm';
 
 /**
  * Canvas player for a story anime: picture and voice lines share one clock.
@@ -30,19 +32,32 @@ export default function StoryPlayer({ story, assetBase, startAt }: { story: Stor
   const [sound, setSound] = useState(true);
   const [fs, setFs] = useState(false);
   const [ui, setUi] = useState({ now: 0, scene: def.scenes[0].id, line: -1 });
-  // the sound bed (music, effects, ambience) follows the film clock; voices stay line by line
-  const bedRef = useRef<HTMLAudioElement | null>(null);
+  // the sound bed (effects, ambience — and music when it is not a track of its own) and the music track follow the
+  // film clock; voices stay line by line. The learner can switch the music off and set its volume (remembered).
+  const tracks = useRef<{ bed?: HTMLAudioElement; music?: HTMLAudioElement }>({});
+  const [bgm, setBgm] = useState<{ on: boolean; vol: number }>(() => { try { return { on: true, vol: 1, ...JSON.parse(localStorage.getItem(BGM_KEY) || '{}') }; } catch { return { on: true, vol: 1 }; } });
+  const bgmRef = useRef(bgm);
   const bedFor = useCallback(() => {
-    if (!def.bed) return null;
-    if (!bedRef.current) { const a = new Audio(`${assetBase}story/${def.bed}`); a.preload = 'auto'; a.volume = def.bedVolume ?? 0.6; bedRef.current = a; }
-    return bedRef.current;
+    const mk = (file: string, vol: number) => { const a = new Audio(`${assetBase}story/${file}`); a.preload = 'auto'; a.volume = vol; return a; };
+    if (def.bed && !tracks.current.bed) tracks.current.bed = mk(def.bed, def.bedVolume ?? 0.6);
+    if (def.music && !tracks.current.music) tracks.current.music = mk(def.music, CL((def.musicVolume ?? 0.6) * bgmRef.current.vol));
   }, [assetBase, def]);
   const syncBed = useCallback((force = false) => {
-    const s = st.current, b = bedRef.current; if (!b) return;
-    if (!s.playing || !s.sound) { if (!b.paused) b.pause(); return; }
-    if (force || Math.abs(b.currentTime - s.now) > 0.3) { try { b.currentTime = s.now; } catch { /* not seekable yet */ } }
-    if (b.paused) b.play().catch(() => {});
+    const s = st.current;
+    for (const [k, b] of Object.entries(tracks.current) as [string, HTMLAudioElement | undefined][]) {
+      if (!b) continue;
+      const on = s.playing && s.sound && (k !== 'music' || bgmRef.current.on);
+      if (!on) { if (!b.paused) b.pause(); continue; }
+      if (force || Math.abs(b.currentTime - s.now) > 0.3) { try { b.currentTime = s.now; } catch { /* not seekable yet */ } }
+      if (b.paused) b.play().catch(() => {});
+    }
   }, []);
+  const setMusic = useCallback((v: { on: boolean; vol: number }) => {
+    bgmRef.current = v; setBgm(v);
+    try { localStorage.setItem(BGM_KEY, JSON.stringify(v)); } catch { /* private mode */ }
+    const m = tracks.current.music; if (m) m.volume = CL((def.musicVolume ?? 0.6) * v.vol);
+    syncBed(true);
+  }, [def, syncBed]);
 
   const audioFor = useCallback((i: number) => {
     let a = audios.current.get(i);
@@ -150,7 +165,7 @@ export default function StoryPlayer({ story, assetBase, startAt }: { story: Stor
     document.fonts?.ready.then(show).catch(() => {});
     const map = audios.current;
     loadVoices();
-    return () => { s.playing = false; map.forEach((a) => { a.pause(); URL.revokeObjectURL(a.src); a.src = ''; }); map.clear(); const b = bedRef.current; if (b) { b.pause(); b.src = ''; bedRef.current = null; } };
+    return () => { s.playing = false; map.forEach((a) => { a.pause(); URL.revokeObjectURL(a.src); a.src = ''; }); map.clear(); Object.values(tracks.current).forEach((b) => { if (b) { b.pause(); b.src = ''; } }); tracks.current = {}; };
   }, [def, render, tl, loadVoices, startAt]);
 
   useEffect(() => () => record(), [record]);
@@ -210,6 +225,12 @@ export default function StoryPlayer({ story, assetBase, startAt }: { story: Stor
           type="button" aria-pressed={sound}
           onClick={() => { const v = !sound; setSound(v); st.current.sound = v; st.current.audioOk = true; if (!v) stopAudio(); else if (st.current.playing && st.current.cur >= 0) speak(st.current.cur); syncBed(true); }}
         >音声</button>
+        {def.music && (
+          <span className="story-bgm">
+            <button type="button" aria-pressed={bgm.on} onClick={() => setMusic({ ...bgm, on: !bgm.on })}>BGM</button>
+            <input type="range" min={0} max={1} step={0.05} value={bgm.vol} aria-label="BGMの音量" disabled={!bgm.on} onChange={(e) => setMusic({ ...bgm, vol: Number(e.target.value) })} />
+          </span>
+        )}
         <button type="button" onClick={toggleFs}>{fs ? '全画面を終了' : '全画面'}</button>
       </div>
       <div className="story-chips">
