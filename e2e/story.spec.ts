@@ -154,3 +154,37 @@ test('the screen is kept on while a film plays and released on pause (Screen Wak
   await page.getByRole('button', { name: /再生/ }).first().click();
   await expect.poll(() => page.evaluate(() => (window as unknown as { __wl: { req: number } }).__wl.req)).toBeGreaterThan(before);
 });
+
+test('animations have the lecture controls: speed (remembered), scene / 10 s skips, full screen', async ({ page }) => {
+  const errs: string[] = [];
+  page.on('pageerror', (e) => errs.push(e.message));
+  const sec = async () => { const s = (await page.locator('.story-tm').textContent()) || ''; const [m, x] = s.split('/')[0].trim().split(':').map(Number); return m * 60 + x; };
+  // story anime: 2× plays about twice as fast
+  await page.goto('/#/open/genetics-transcription/animations/story?t=20');
+  await page.locator('.story-spd button', { hasText: '2×' }).click();
+  await expect(page.locator('.story-spd button', { hasText: '2×' })).toHaveAttribute('aria-checked', 'true');
+  await page.locator('.story-start button').click();
+  await expect(page.locator('.story-ctl .pri')).toContainText('一時停止');
+  const t0 = await sec(); await page.waitForTimeout(4000); const t1 = await sec();
+  expect(t1 - t0, 'film seconds advanced in 4 s at 2×').toBeGreaterThanOrEqual(6);
+  await page.locator('.story-ctl .pri').click();
+  // next / previous scene
+  await page.getByRole('button', { name: '次の場面' }).click();
+  await expect(page.locator('.story-chips button.on')).toContainText('鏡の向きで写す');
+  await page.getByRole('button', { name: '前の場面' }).click();
+  await expect(page.locator('.story-chips button.on')).toContainText('朝の閲覧票');
+  // the speed is remembered and shared with the mechanism animations
+  await page.goto('/#/open/genetics-transcription/animations/lac');
+  await expect(page.locator('.actl .spd button', { hasText: '2×' })).toHaveAttribute('aria-pressed', 'true');
+  await page.locator('.actl .spd button', { hasText: '1.25×' }).click();
+  await page.reload();
+  await expect(page.locator('.actl .spd button', { hasText: '1.25×' })).toHaveAttribute('aria-pressed', 'true');
+  // 10 s skip and full screen
+  await page.getByRole('button', { name: '10秒進む' }).click();
+  await expect(page.locator('.actl .tm')).toContainText('0:10');
+  await page.getByRole('button', { name: '全画面', exact: true }).click();
+  await expect(page.locator('.anim.fs')).toBeVisible();
+  await page.getByRole('button', { name: '全画面を終了' }).click();
+  await expect(page.locator('.anim.fs')).toHaveCount(0);
+  expect(errs).toEqual([]);
+});

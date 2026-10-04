@@ -83,6 +83,8 @@ export interface Settings {
   narration: boolean;
   volume: number;
   lectureSpeed: number;
+  /** playback speed of story and mechanism animations */
+  animSpeed: number;
   autoPause: boolean;
 }
 
@@ -93,6 +95,7 @@ export const DEFAULT_SETTINGS: Settings = {
   narration: true,
   volume: 1,
   lectureSpeed: 1,
+  animSpeed: 1,
   autoPause: true,
 };
 

@@ -112,3 +112,11 @@
 }
 /* keep controls visible on short (landscape) screens: the stage crops (SVG uses "slice") */
 @media (min-width: 600px) { .astage { width: 100%; max-width: max(535px, calc((100dvh - var(--header-h) - 200px) * 16 / 9)); margin-inline: auto; } }
+
+/* full screen (browser full screen when allowed, window-filling otherwise) */
+.anim.fs { position: fixed; inset: 0; z-index: 1000; margin: 0; border-radius: 0; display: flex; flex-direction: column; justify-content: center; gap: 6px; padding: 8px; background: var(--paper); overflow: auto; }
+.anim.fs .anim-h, .anim.fs .apan, .anim.fs .adesc, .anim.fs .aqz { display: none; }
+.anim.fs .astage { width: min(100%, calc((100dvh - 150px) * 16 / 9)); align-self: center; }
+.anim.fs .actl { width: min(100%, 1100px); align-self: center; }
+body.anim-fs { overflow: hidden; }
+body.anim-fs .app-header, body.anim-fs .tabbar { visibility: hidden; }

@@ -3,11 +3,12 @@ import { bindCtx, CL, g, H, W } from '../../engine/story/kit';
 import { buildTimeline, lineAt, sceneAt, subAt } from '../../engine/story/timeline';
 import type { StoryModule } from '../../engine/story/types';
 import { fmtT } from '../../engine/svg';
-import { useStore } from '../../state/hooks';
+import { useProgress, useStore } from '../../state/hooks';
 import { useWakeLock } from '../../app/useWakeLock';
 
 /** progress key in the store's animation stats */
 export const STORY_KEY = 'story';
+const SPEEDS = [0.75, 1, 1.25, 1.5, 2];
 /** the learner's music setting for story anime (on/off and volume), shared by all stories */
 const BGM_KEY = 'medstudy:story-bgm';
 
@@ -18,6 +19,7 @@ const BGM_KEY = 'medstudy:story-bgm';
 export default function StoryPlayer({ story, assetBase, startAt }: { story: StoryModule; assetBase: string; startAt?: number }) {
   const { def, draw } = story;
   const store = useStore();
+  const { settings } = useProgress();
   const tl = useMemo(() => buildTimeline(def.lines), [def]);
   const cvRef = useRef<HTMLCanvasElement>(null);
   const boxRef = useRef<HTMLDivElement>(null);
@@ -26,12 +28,16 @@ export default function StoryPlayer({ story, assetBase, startAt }: { story: Stor
   const buf = useRef<ArrayBuffer | null>(null);
   const bufP = useRef<Promise<ArrayBuffer | null> | null>(null);
   const [loading, setLoading] = useState(false);
-  const st = useRef({ now: 0, playing: false, lastTs: 0, cur: -1, sound: true, audioOk: true, started: 0 });
+  const st = useRef({ now: 0, playing: false, lastTs: 0, cur: -1, sound: true, audioOk: true, started: 0, speed: settings.animSpeed || 1, vol: settings.volume ?? 1 });
   const [playing, setPlaying] = useState(false);
   // keep the screen on while playing
   useWakeLock(playing);
   const [started, setStarted] = useState(false);
-  const [subs, setSubs] = useState(true);
+  const [subs, setSubsState] = useState(settings.subtitles);
+  const subsRef = useRef(subs); subsRef.current = subs;
+  const setSubs = (v: boolean) => { setSubsState(v); store.setSettings({ subtitles: v }); };
+  const [speed, setSpeedState] = useState(settings.animSpeed || 1);
+  const [vol, setVolState] = useState(settings.volume ?? 1);
   const [sound, setSound] = useState(true);
   const [fs, setFs] = useState(false);
   const [ui, setUi] = useState({ now: 0, scene: def.scenes[0].id, line: -1 });
@@ -52,6 +58,7 @@ export default function StoryPlayer({ story, assetBase, startAt }: { story: Stor
       const on = s.playing && s.sound && (k !== 'music' || bgmRef.current.on);
       if (!on) { if (!b.paused) b.pause(); continue; }
       if (force || Math.abs(b.currentTime - s.now) > 0.3) { try { b.currentTime = s.now; } catch { /* not seekable yet */ } }
+      if (b.playbackRate !== s.speed) b.playbackRate = s.speed;
       if (b.paused) b.play().catch(() => {});
     }
   }, []);
@@ -61,6 +68,16 @@ export default function StoryPlayer({ story, assetBase, startAt }: { story: Stor
     const m = tracks.current.music; if (m) m.volume = CL((def.musicVolume ?? 0.6) * v.vol);
     syncBed(true);
   }, [def, syncBed]);
+
+  const setSpeed = useCallback((v: number) => {
+    st.current.speed = v; setSpeedState(v); store.setSettings({ animSpeed: v });
+    audios.current.forEach((x) => { x.playbackRate = v; });
+    Object.values(tracks.current).forEach((b) => { if (b) b.playbackRate = v; });
+  }, [store]);
+  const setVol = useCallback((v: number) => {
+    st.current.vol = v; setVolState(v); store.setSettings({ volume: v });
+    audios.current.forEach((x) => { x.volume = v; });
+  }, [store]);
 
   const audioFor = useCallback((i: number) => {
     let a = audios.current.get(i);
@@ -104,6 +121,7 @@ export default function StoryPlayer({ story, assetBase, startAt }: { story: Stor
     const a = audioFor(i);
     if (!a) return;
     a.currentTime = Math.max(0, s.now - tl.lines[i].t0);
+    a.playbackRate = s.speed; a.volume = s.vol;
     a.play().catch(() => { s.audioOk = false; });
     if (i + 1 < tl.lines.length) audioFor(i + 1);
   }, [audioFor, tl]);
@@ -124,7 +142,7 @@ export default function StoryPlayer({ story, assetBase, startAt }: { story: Stor
     const dt = s.lastTs ? Math.min(0.1, (ts - s.lastTs) / 1000) : 0; s.lastTs = ts;
     const li = lineAt(tl, s.now);
     const a = li >= 0 ? audios.current.get(li) : undefined;
-    if (a && s.sound && s.audioOk && !a.paused) s.now = tl.lines[li].t0 + a.currentTime; else s.now += dt;
+    if (a && s.sound && s.audioOk && !a.paused) s.now = tl.lines[li].t0 + a.currentTime; else s.now += dt * s.speed;
     const ni = lineAt(tl, s.now);
     if (ni !== s.cur) { s.cur = ni; if (ni >= 0) speak(ni); }
     if (s.now >= tl.total) {
@@ -174,6 +192,19 @@ export default function StoryPlayer({ story, assetBase, startAt }: { story: Stor
   useEffect(() => () => record(), [record]);
 
   // fullscreen: browser fullscreen when available, CSS fullscreen always
+  const toggleSound = useCallback(() => {
+    const v = !st.current.sound; setSound(v); st.current.sound = v; st.current.audioOk = true;
+    if (!v) stopAudio(); else if (st.current.playing && st.current.cur >= 0) speak(st.current.cur);
+    syncBed(true);
+  }, [speak, syncBed]);
+  // previous / next scene
+  const sceneJump = useCallback((d: number) => {
+    const s = st.current, ids = def.scenes.map((x) => x.id), cur = sceneAt(tl, def.scenes, s.now).id;
+    let i = ids.indexOf(cur);
+    if (d < 0 && s.now - tl.start[cur] > 3) i += 1; // first press goes back to the start of this scene
+    const to = ids[Math.max(0, Math.min(ids.length - 1, i + d))];
+    seek(tl.start[to] + 0.01);
+  }, [def, tl, seek]);
   const toggleFs = useCallback(() => {
     const on = !fs; setFs(on);
     if (on) boxRef.current?.requestFullscreen?.().catch(() => {});
@@ -189,11 +220,16 @@ export default function StoryPlayer({ story, assetBase, startAt }: { story: Stor
       else if (e.key === 'ArrowRight') seek(st.current.now + 10);
       else if (e.key === 'ArrowLeft') seek(st.current.now - 10);
       else if (e.key === 'f') toggleFs();
+      else if (e.key === 'k') { e.preventDefault(); (st.current.playing ? pause : play)(); }
+      else if (e.key === 'c') setSubs(!subsRef.current);
+      else if (e.key === 'm') toggleSound();
+      else if (e.key === '>' || e.key === '.') { const i = SPEEDS.indexOf(st.current.speed); if (i < SPEEDS.length - 1) setSpeed(SPEEDS[i + 1]); }
+      else if (e.key === '<' || e.key === ',') { const i = SPEEDS.indexOf(st.current.speed); if (i > 0) setSpeed(SPEEDS[i - 1]); }
     };
     document.addEventListener('fullscreenchange', onFs);
     window.addEventListener('keydown', onKey);
     return () => { document.removeEventListener('fullscreenchange', onFs); window.removeEventListener('keydown', onKey); };
-  }, [pause, play, seek, toggleFs]);
+  }, [pause, play, seek, toggleFs, toggleSound, setSpeed]);
   useEffect(() => {
     document.body.classList.toggle('lec-fs', fs);
     return () => document.body.classList.remove('lec-fs');
@@ -214,8 +250,10 @@ export default function StoryPlayer({ story, assetBase, startAt }: { story: Stor
       </div>
       <div className="story-ctl">
         <button type="button" className="pri" onClick={() => (playing ? pause() : play())} disabled={loading}>{loading ? '読み込み中…' : playing ? '❚❚ 一時停止' : '▶ 再生'}</button>
-        <button type="button" onClick={() => seek(ui.now - 10)} aria-label="10秒戻る">−10秒</button>
-        <button type="button" onClick={() => seek(ui.now + 10)} aria-label="10秒進む">＋10秒</button>
+        <button type="button" onClick={() => sceneJump(-1)} aria-label="前の場面" title="前の場面">⏮</button>
+        <button type="button" onClick={() => seek(ui.now - 10)} aria-label="10秒戻る" title="10秒戻る（←）">−10秒</button>
+        <button type="button" onClick={() => seek(ui.now + 10)} aria-label="10秒進む" title="10秒進む（→）">＋10秒</button>
+        <button type="button" onClick={() => sceneJump(1)} aria-label="次の場面" title="次の場面">⏭</button>
         <div
           className="story-bar" role="slider" tabIndex={0} aria-label="再生位置" aria-valuemin={0} aria-valuemax={Math.round(tl.total)} aria-valuenow={Math.round(ui.now)}
           onClick={(e) => { const r = e.currentTarget.getBoundingClientRect(); seek(((e.clientX - r.left) / r.width) * tl.total); }}
@@ -223,18 +261,22 @@ export default function StoryPlayer({ story, assetBase, startAt }: { story: Stor
           <i style={{ width: `${pct}%` }} />
         </div>
         <span className="story-tm">{fmtT(ui.now)} / {fmtT(tl.total)}</span>
-        <button type="button" aria-pressed={subs} onClick={() => setSubs(!subs)}>字幕</button>
+        <span className="story-spd" role="radiogroup" aria-label="再生速度">
+          {SPEEDS.map((x) => <button type="button" key={x} className={x === speed ? 'on' : ''} role="radio" aria-checked={x === speed} onClick={() => setSpeed(x)}>{x}×</button>)}
+        </span>
+        <button type="button" aria-pressed={subs} onClick={() => setSubs(!subs)} title="字幕（C）">字幕</button>
         <button
           type="button" aria-pressed={sound}
-          onClick={() => { const v = !sound; setSound(v); st.current.sound = v; st.current.audioOk = true; if (!v) stopAudio(); else if (st.current.playing && st.current.cur >= 0) speak(st.current.cur); syncBed(true); }}
+          onClick={toggleSound} title="音声（M）"
         >音声</button>
+        <input className="story-vol" type="range" min={0} max={1} step={0.05} value={vol} aria-label="声の音量" disabled={!sound} onChange={(e) => setVol(Number(e.target.value))} />
         {def.music && (
           <span className="story-bgm">
             <button type="button" aria-pressed={bgm.on} onClick={() => setMusic({ ...bgm, on: !bgm.on })}>BGM</button>
             <input type="range" min={0} max={1} step={0.05} value={bgm.vol} aria-label="BGMの音量" disabled={!bgm.on} onChange={(e) => setMusic({ ...bgm, vol: Number(e.target.value) })} />
           </span>
         )}
-        <button type="button" onClick={toggleFs}>{fs ? '全画面を終了' : '全画面'}</button>
+        <button type="button" onClick={toggleFs} title="全画面（F）">{fs ? '全画面を終了' : '全画面'}</button>
       </div>
       <div className="story-chips">
         {def.scenes.map((s, i) => (

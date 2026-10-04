@@ -6,12 +6,12 @@ import { Icon } from '../../components/Icon';
 import { SourceChips } from '../../components/Slide';
 import { AnimationStage, stepAt, timeScript, type TimedStep } from '../../engine/animation/stage';
 import { CL, fmtT } from '../../engine/svg';
-import { useStore } from '../../state/hooks';
+import { useProgress, useStore } from '../../state/hooks';
 import { useWakeLock } from '../../app/useWakeLock';
 import { Timeline } from '../../components/Timeline';
 import { FiveChoice } from '../quiz/FiveChoice';
 
-const SPEEDS = [0.5, 1, 1.5, 2];
+const SPEEDS = [0.5, 0.75, 1, 1.25, 1.5, 2];
 const pad = (n: number) => String(n).padStart(2, '0');
 
 type Overlay = 'start' | 'ask' | 'end' | null;
@@ -39,12 +39,15 @@ export default function AnimationPlayer({ id, compact, startAt }: { id: string; 
   useWakeLock(playing);
   const [overlay, setOverlay] = useState<Overlay>('start');
   const [reveal, setReveal] = useState(false);
-  const [speed, setSpeed] = useState(1);
+  const { settings } = useProgress();
+  const [speed, setSpeedState] = useState(settings.animSpeed || 1);
+  const setSpeed = (v: number) => { setSpeedState(v); store.setSettings({ animSpeed: v }); };
+  const [fs, setFs] = useState(false);
   const [fac, setFac] = useState(true);
   const [quiz, setQuiz] = useState(false);
 
   // mutable playback state lives in a ref so the rAF loop never re-renders React
-  const P = useRef({ T: 0, play: false, last: 0, raf: 0, speed: 1, cur: -1, asked: new Set<number>(), stage: null as AnimationStage | null, started: 0 });
+  const P = useRef({ T: 0, play: false, last: 0, raf: 0, speed: settings.animSpeed || 1, cur: -1, asked: new Set<number>(), stage: null as AnimationStage | null, started: 0 });
 
   const fx = useCallback((s: TimedStep) => {
     if (reduced) return;
@@ -131,8 +134,21 @@ export default function AnimationPlayer({ id, compact, startAt }: { id: string; 
   }, [A, course, render, pause, startAt, total]);
 
   useEffect(() => { P.current.speed = speed; }, [speed]);
+  useEffect(() => {
+    const onFs = () => { if (!document.fullscreenElement) setFs(false); };
+    document.addEventListener('fullscreenchange', onFs);
+    document.body.classList.toggle('anim-fs', fs);
+    return () => { document.removeEventListener('fullscreenchange', onFs); document.body.classList.remove('anim-fs'); };
+  }, [fs]);
 
   const toggle = () => (P.current.play ? pause() : start());
+  // full screen: the browser's when available, a window-filling layout always (same as the lecture player)
+  const toggleFs = () => {
+    const on = !fs; setFs(on);
+    if (on) hostRef.current?.requestFullscreen?.().catch(() => { /* blocked: window-filling mode */ });
+    else if (document.fullscreenElement) document.exitFullscreen().catch(() => {});
+    hostRef.current?.focus();
+  };
   const prev = () => { const s = stepAt(steps, P.current.T); jump(P.current.T - s.s0 > 1 || s.i === 0 ? s.s0 : steps[s.i - 1].s0); };
   const next = () => { const s = stepAt(steps, P.current.T); jump(s.i < steps.length - 1 ? steps[s.i + 1].s0 : total - 1e-3); };
   const restart = () => { pause(); P.current.T = 0; P.current.asked.clear(); P.current.cur = -1; render(); start(); };
@@ -142,15 +158,19 @@ export default function AnimationPlayer({ id, compact, startAt }: { id: string; 
   const onKey = (e: React.KeyboardEvent) => {
     if ((e.target as HTMLElement).closest('button,input,select')) return;
     if (e.key === ' ' || e.key === 'k') { e.preventDefault(); toggle(); }
-    if (e.key === 'ArrowRight') { e.preventDefault(); jump(P.current.T + 5); }
-    if (e.key === 'ArrowLeft') { e.preventDefault(); jump(P.current.T - 5); }
+    if (e.key === 'ArrowRight') { e.preventDefault(); jump(P.current.T + 10); }
+    if (e.key === 'ArrowLeft') { e.preventDefault(); jump(P.current.T - 10); }
+    if (e.key === 'f') { e.preventDefault(); toggleFs(); }
+    if (e.key === 'Escape' && fs) setFs(false);
+    if (e.key === '>' || e.key === '.') { const i = SPEEDS.indexOf(speed); if (i < SPEEDS.length - 1) setSpeed(SPEEDS[i + 1]); }
+    if (e.key === '<' || e.key === ',') { const i = SPEEDS.indexOf(speed); if (i > 0) setSpeed(SPEEDS[i - 1]); }
   };
 
   const exam = cur.g === 'EXAM POINT';
   const ticks = groups.slice(1).map((g) => ({ at: steps[g.first].s0 / total, label: g.name }));
 
   return (
-    <div className="card anim" ref={hostRef} tabIndex={-1} onKeyDown={onKey}>
+    <div className={'card anim' + (fs ? ' fs' : '')} ref={hostRef} tabIndex={-1} onKeyDown={onKey}>
       <div className="anim-h">
         <div className="kick">{A.meta.en}</div>
         <div className="anim-t">{A.meta.title}<span className="muted">　約{fmtT(total)}・全{groups.length}章</span></div>
@@ -214,6 +234,9 @@ export default function AnimationPlayer({ id, compact, startAt }: { id: string; 
             <Icon name={playing ? 'pause' : 'play'} /> {playing ? '一時停止' : P.current.T >= total ? 'もう一度' : '再生'}
           </button>
           <button onClick={next} aria-label="次のステップ"><Icon name="next" /></button>
+          <button onClick={() => jump(P.current.T - 10)} aria-label="10秒戻る" title="10秒戻る（←）"><Icon name="rew" /><span className="en" style={{ fontSize: 13 }}>10</span></button>
+          <button onClick={() => jump(P.current.T + 10)} aria-label="10秒進む" title="10秒進む（→）"><span className="en" style={{ fontSize: 13 }}>10</span><Icon name="fwd" /></button>
+          <button className="fs-btn" onClick={toggleFs} aria-label={fs ? '全画面を終了' : '全画面'} title="全画面（F）"><Icon name={fs ? 'unfull' : 'full'} /><span>{fs ? '戻る' : '全画面'}</span></button>
           <span className="spd" role="group" aria-label="再生速度">
             {SPEEDS.map((v) => <button key={v} className={v === speed ? 'on' : ''} onClick={() => setSpeed(v)} aria-pressed={v === speed}>{v}×</button>)}
           </span>

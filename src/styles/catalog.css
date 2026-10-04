@@ -207,6 +207,11 @@
 .story-bgm { display: inline-flex; align-items: center; gap: 6px; }
 .story-bgm input[type='range'] { width: 96px; accent-color: var(--eosin); }
 .story-bgm input[type='range']:disabled { opacity: 0.4; }
+.story-spd { display: inline-flex; gap: 4px; }
+.story-ctl .story-spd button { min-width: 48px; padding: 0 8px; }
+.story-ctl .story-spd button.on { background: var(--eosin); border-color: var(--eosin); color: #fff; }
+.story-vol { width: 88px; accent-color: var(--eosin); }
+.story-vol:disabled { opacity: 0.4; }
 .story-bar { flex: 1 1 180px; height: 8px; background: var(--line); border-radius: 8px; overflow: hidden; cursor: pointer; }
 .story-bar i { display: block; height: 100%; background: var(--eosin); }
 .story-tm { font-variant-numeric: tabular-nums; color: var(--mute); font-size: 13px; }
