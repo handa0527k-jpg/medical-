@@ -154,6 +154,6 @@ node scripts\lecture-video\render-layers.mjs C:\work\film2 --theme genetics-basi
 
 ## 10. 動画の置き場所
 
-公開しているサイト（claude.ai の Artifact）は1版あたり256 MiBまでです。教材本体だけで上限に近いため、完成版の動画（約8〜15 MB）と講師音声は、サイトの版の外にあるアセット保存領域（1ファイル20 MiBまで）に置きます。サイトの `lecture-video/index.json` には、その保存先のURL（`/_blob/…`）を書きます。アプリは `/` や `https:` で始まる場所をそのまま使い、それ以外はサイト内の相対パスとして読みます。
+公開しているサイト（claude.ai の Artifact）は1版あたり256 MiBまでです。教材本体だけで上限に近いため、完成版の動画（約8〜15 MB）と講師音声は、サイトの版の外にあるアセット保存領域（1ファイル20 MiBまで）に置きます。サイトの `lecture-video/index.json` には、その保存先のURL（`/_blob/…`）を書きます。アセット保存領域は mp3 を受け付けないため、講師音声は音声だけの MP4（AAC 64 kbps）に変換して置きます。アプリは `/` や `https:` で始まる場所をそのまま使い、それ以外はサイト内の相対パスとして読みます。
 
 リポジトリには、Web用に縮めた版（960×540、`out/lecture-web.mp4`）を `public/lecture-video/` に入れています。元の画質（1280×720、`out/lecture.mp4`）は Git に入れません。
