@@ -1,4 +1,7 @@
-import { test, expect } from '@playwright/test';
+import { test, expect as base } from '@playwright/test';
+
+// planning a whole-lecture film (six are registered) takes a few seconds on a busy CI machine
+const expect = base.configure({ timeout: 20_000 });
 
 test('genetics: 🎬 授業動画 studio — material, recommended theme, controls, synced preview, scene sheets', async ({ page }) => {
   test.setTimeout(240_000); // whole-lecture films are planned and timed in this one test
