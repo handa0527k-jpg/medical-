@@ -327,7 +327,7 @@ const mtdna = () => fig('mtdna', {
     { at: 'start', move: 'set', x: 640, y: 370, z: 1.0, note: '細胞' },
     { at: 'nuc', move: 'push', x: 360, y: 380, z: 1.35, dur: 0.6, note: '核' },
     { at: 'copy', move: 'pan', x: 850, y: 300, z: 1.2, dur: 0.6, note: '多コピー' },
-    { at: 'g37', move: 'push', x: 1020, y: 220, z: 1.45, dur: 0.5, note: '37個' },
+    { at: 'g37', move: 'push', x: 1040, y: 220, z: 1.45, dur: 0.5, note: '37個' },
     { at: 'import', move: 'pull', x: 640, y: 380, z: 1.0, dur: 0.5, note: '核から運ばれる' },
     { at: 'mat', move: 'pan', x: 640, y: 520, z: 1.15, dur: 0.5, note: '母系遺伝' },
   ],

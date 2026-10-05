@@ -95,8 +95,8 @@ function twinsFig(rc: RC) {
     label(p, '生活・環境', 1110, 290, 26, { align: 'center', fill: '#ffcf8a', a: e });
   }
   const h = rc.u('how', 0.4);
-  if (h > 0) label(p, '環境は、どうやって体を変える？', 640, 630, 30, { align: 'center', fill: CHALK.y, a: h });
-  term(p, '今日のテーマ', 640, 660, rc.u('theme', 0.25), 40, '#fff');
+  if (h > 0) label(p, '環境は、どうやって体を変える？', 640, 630, 30, { align: 'center', fill: CHALK.y, a: h * (1 - rc.u('theme', 0.3)) });
+  term(p, '今日のテーマ', 640, 635, rc.u('theme', 0.25), 44, '#fff');
 }
 
 /* ---------- 全体像：見た目年齢の研究 ---------- */
@@ -151,8 +151,8 @@ function omicsFig(rc: RC) {
     p.line([[960, 250], [1180, 250]], { stroke: DNAC, width: 5, opacity: m });
     flag(p, 1000, 246, 'Me', m); flag(p, 1060, 246, 'Me', CL(m * 2 - 0.5));
     label(p, 'DNAのメチル化', 1070, 290, 20, { align: 'center', fill: ME, a: m });
-    p.save(); p.alpha(m); nucleosome(p, 1070, 160, 28, 1); p.restore();
-    flag(p, 1100, 140, 'Ac', m);
+    p.save(); p.alpha(m); nucleosome(p, 1070, 178, 28, 1); p.restore();
+    flag(p, 1100, 158, 'Ac', m);
     label(p, 'ヒストンの修飾', 1070, 92, 20, { align: 'center', fill: AC, a: m });
   }
 }
@@ -235,7 +235,7 @@ function cpgFig(rc: RC) {
   // a complex that reads the methyl marks, then methylates histones and packs the chromatin
   const c = rc.u('complex', 0.5), pk = ease.inOut(rc.u('complex+1.5', 1.4));
   if (c > 0) {
-    p.save(); p.alpha(c * (1 - nc * 0.6));
+    p.save(); p.alpha(c * (1 - nc));
     const xs = Array.from({ length: 6 }, (_, i) => lerp(330 + i * 120, 480 + i * 56, pk));
     p.line([[240, 430], [1040, 430]], { stroke: DNAC, width: 5 });
     xs.forEach((x, i) => { nucleosome(p, x, 430, 28, 1); flag(p, x + 10, 404, 'Me', CL(pk * 6 - i)); });
@@ -398,17 +398,17 @@ function mtdnaFig(rc: RC) {
   label(p, '核：父と母から1セットずつ', 330, 520, 24, { align: 'center', a: n });
   const c = rc.u('copy', 0.5);
   MITO.forEach(([x, y, ang], i) => mito(p, x, y + Math.sin(t + i) * 3, 1, ang, a0, c > 0 ? 0.5 + 0.5 * Math.sin(t * 5 + i) : 0));
-  if (c > 0) { card(p, 900, 120, 420, 70, c, CHALK.y); label(p, '細胞あたり 10³〜10⁴ コピー', 900, 120, 28, { align: 'center', fill: CHALK.y, a: c }); }
+  if (c > 0) { card(p, 780, 110, 420, 70, c, CHALK.y); label(p, '細胞あたり 10³〜10⁴ コピー', 780, 110, 28, { align: 'center', fill: CHALK.y, a: c }); }
   const g = rc.u('g37', 0.5);
   if (g > 0) {
     // the mtDNA ring, 37 genes
     p.save(); p.alpha(g * (1 - rc.u('import', 0.4)));
-    p.circle(1120, 160, 96, { fill: 'rgba(8,10,14,0.9)', stroke: CHALK.y, width: 3 });
-    for (let i = 0; i < 37; i++) { const a1 = (i / 37) * Math.PI * 2, a2 = a1 + (Math.PI * 2) / 37 * 0.75; p.path(`M ${1120 + 70 * Math.cos(a1)} ${160 + 70 * Math.sin(a1)} A 70 70 0 0 1 ${1120 + 70 * Math.cos(a2)} ${160 + 70 * Math.sin(a2)}`, { stroke: ['#ff6b5b', '#ffd84a', '#58c47a', '#5aa9ff'][i % 4], width: 12, opacity: CL(g * 37 - i) }); }
-    p.text('37', 1120, 160, { size: 36, font: 'gothic', weight: 900, fill: '#fff', stroke: INK, strokeW: 5, align: 'center' });
+    p.circle(1150, 160, 96, { fill: 'rgba(8,10,14,0.9)', stroke: CHALK.y, width: 3 });
+    for (let i = 0; i < 37; i++) { const a1 = (i / 37) * Math.PI * 2, a2 = a1 + (Math.PI * 2) / 37 * 0.75; p.path(`M ${1150 + 70 * Math.cos(a1)} ${160 + 70 * Math.sin(a1)} A 70 70 0 0 1 ${1150 + 70 * Math.cos(a2)} ${160 + 70 * Math.sin(a2)}`, { stroke: ['#ff6b5b', '#ffd84a', '#58c47a', '#5aa9ff'][i % 4], width: 12, opacity: CL(g * 37 - i) }); }
+    p.text('37', 1150, 160, { size: 36, font: 'gothic', weight: 900, fill: '#fff', stroke: INK, strokeW: 5, align: 'center' });
     p.restore();
-    label(p, '遺伝子37個', 1120, 285, 26, { align: 'center', fill: CHALK.y, a: g * (1 - rc.u('import', 0.4)) });
-    label(p, '呼吸鎖の部品など', 1120, 320, 22, { align: 'center', a: rc.u('resp', 0.3) * (1 - rc.u('import', 0.4)) });
+    label(p, '遺伝子37個', 1150, 285, 26, { align: 'center', fill: CHALK.y, a: g * (1 - rc.u('import', 0.4)) });
+    label(p, '呼吸鎖の部品など', 1150, 320, 22, { align: 'center', a: rc.u('resp', 0.3) * (1 - rc.u('import', 0.4)) });
   }
   const im = rc.u('import', 0.5);
   if (im > 0) {

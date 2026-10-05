@@ -1,0 +1,6752 @@
+{
+ "format": "medstudy-lecture-video/1",
+ "created": "2026-10-05T01:42:18.588Z",
+ "roles": {
+  "MEDSTUDY": "教材理解・授業設計・医学図・管理",
+  "ComfyUI": "動画生成ワークフロー管理",
+  "Wan 2.2": "映像生成（文字・正確な構造は描かせない）",
+  "Kokoro": "日本語講師音声",
+  "FFmpeg": "映像・音声・字幕・効果音の最終統合"
+ },
+ "theme": "遺伝子の基礎（構造と機能） 第6講「エピゲノムとミトコンドリアゲノム」— 完成版（講義まるごと）",
+ "curated": true,
+ "rationale": [
+  "第6講「エピゲノムとミトコンドリアゲノム」を、講義の順（導入 → 全体像 → テーマ1〜3 → まとめ）に1本の劇画授業映像にした完成版。確認問題・典型問題・本番問題の選択肢の解説と、スイッチの動きと重なるスライド74の説明は省いた。",
+  "台詞はすべて第6講の講義台詞（narrations/lecture-06.json）の原文、またはその一部。板書は講義の黒板の文字をそのまま使う。",
+  "医学図：遺伝型→エピゲノム→表現型、凝集（ヘテロクロマチン・オフ）と緩み（ユークロマチン・オン）、高メチル化／低メチル化、5'-CG-3' のシトシン（70%以上）、アセチル化で塩基性↓・プロモーター露出、運動で低メチル化・HDACが核外へ、ミトコンドリアゲノム（10³〜10⁴コピー・37遺伝子・大部分のタンパク質は核遺伝子・母系遺伝）。双子は抽象的なカードと目盛りで表し、人物の顔は描かない。"
+ ],
+ "options": {
+  "duration": "full",
+  "style": "黒板講義型",
+  "intensity": "劇画"
+ },
+ "wan": {
+  "profile": "ti2v-5b",
+  "label": "Wan 2.2 TI2V 5B（軽量・24fps）",
+  "w": 1280,
+  "h": 704,
+  "fps": 24,
+  "maxFrames": 121,
+  "note": "VRAM 8GB〜（ComfyUIのオフロード使用）。1280×704・最大121フレーム（約5秒）",
+  "jobs": [
+   {
+    "name": "S01_a",
+    "scene": "S01",
+    "shot": "a",
+    "mode": "feature",
+    "desc": "漆黒の空間で墨が爆ぜ、二重らせんの影がゆっくり回る。",
+    "t0": 0,
+    "dur": 15.68,
+    "frames": 121,
+    "keyframe": "keyframes/S01_a.png",
+    "prompt": "pitch black void, sumi ink exploding and swirling like smoke in water, the dark silhouette of a right-handed DNA double helix slowly rotating in the ink. Camera: fast push-in that stops abruptly, dramatic low angle, strong perspective, sudden held frame. Look: gekiga manga style animation, bold hand-inked black lines, heavy cross-hatched shadows, high contrast chiaroscuro, limited desaturated palette with deep blacks, dramatic composition, cinematic, 1980s Japanese gekiga illustration texture. The subject fills the frame. Accuracy: the helix is right-handed with a wide major groove and a narrow minor groove; no text, no letters, no labels.",
+    "negative": "text, letters, numbers, captions, subtitles, labels, watermark, logo, signature, speech bubbles, writing, symbols, deformed structures, extra objects, cartoon faces on cells, cute mascot, pastel colors, oversaturated, photorealistic skin, gore, blood, 色调艳丽，过曝，静态，细节模糊不清，字幕，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走",
+    "camera": "題名で急接近 → 静止 / ゆっくり引く",
+    "seed": 3969801274
+   },
+   {
+    "name": "S02_a",
+    "scene": "S02",
+    "shot": "a",
+    "mode": "background",
+    "desc": "暗い背景に光の筋。",
+    "t0": 15.68,
+    "dur": 22.967,
+    "frames": 121,
+    "keyframe": "keyframes/S02_a.png",
+    "prompt": "abstract dark background, slow streaks of warm light drifting, subtle film grain. Camera: fast push-in that stops abruptly, dramatic low angle, strong perspective, sudden held frame. Look: gekiga manga style animation, bold hand-inked black lines, heavy cross-hatched shadows, high contrast chiaroscuro, limited desaturated palette with deep blacks, dramatic composition, cinematic, 1980s Japanese gekiga illustration texture. The centre of the frame stays calm and darker (an exact figure will be laid over it). Accuracy: no text, no letters, no labels.",
+    "negative": "text, letters, numbers, captions, subtitles, labels, watermark, logo, signature, speech bubbles, writing, symbols, deformed structures, extra objects, cartoon faces on cells, cute mascot, pastel colors, oversaturated, photorealistic skin, gore, blood, 色调艳丽，过曝，静态，细节模糊不清，字幕，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走",
+    "camera": "見た目の年齢 / 年上に見える / 同じゲノム / 環境",
+    "seed": 1410717611
+   },
+   {
+    "name": "S03_a",
+    "scene": "S03",
+    "shot": "a",
+    "mode": "background",
+    "desc": "暗い背景に光の筋。",
+    "t0": 38.647,
+    "dur": 21.234,
+    "frames": 121,
+    "keyframe": "keyframes/S03_a.png",
+    "prompt": "abstract dark background, slow streaks of warm light drifting, subtle film grain. Camera: fast push-in that stops abruptly, dramatic low angle, strong perspective, sudden held frame. Look: gekiga manga style animation, bold hand-inked black lines, heavy cross-hatched shadows, high contrast chiaroscuro, limited desaturated palette with deep blacks, dramatic composition, cinematic, 1980s Japanese gekiga illustration texture. The centre of the frame stays calm and darker (an exact figure will be laid over it). Accuracy: no text, no letters, no labels.",
+    "negative": "text, letters, numbers, captions, subtitles, labels, watermark, logo, signature, speech bubbles, writing, symbols, deformed structures, extra objects, cartoon faces on cells, cute mascot, pastel colors, oversaturated, photorealistic skin, gore, blood, 色调艳丽，过曝，静态，细节模糊不清，字幕，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走",
+    "camera": "予見",
+    "seed": 4142915792
+   },
+   {
+    "name": "S04_a",
+    "scene": "S04",
+    "shot": "a",
+    "mode": "background",
+    "desc": "細胞核の中の暗い水の世界。",
+    "t0": 59.881,
+    "dur": 18.306,
+    "frames": 121,
+    "keyframe": "keyframes/S04_a.png",
+    "prompt": "a dark watery molecular world inside a cell nucleus, soft out-of-focus particles drifting, cold rim light, slow push-in. Camera: fast push-in that stops abruptly, dramatic low angle, strong perspective, sudden held frame. Look: gekiga manga style animation, bold hand-inked black lines, heavy cross-hatched shadows, high contrast chiaroscuro, limited desaturated palette with deep blacks, dramatic composition, cinematic, 1980s Japanese gekiga illustration texture. The centre of the frame stays calm and darker (an exact figure will be laid over it). Accuracy: background only, no molecules in focus, no text, no letters, no labels.",
+    "negative": "text, letters, numbers, captions, subtitles, labels, watermark, logo, signature, speech bubbles, writing, symbols, deformed structures, extra objects, cartoon faces on cells, cute mascot, pastel colors, oversaturated, photorealistic skin, gore, blood, 色调艳丽，过曝，静态，细节模糊不清，字幕，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走",
+    "camera": "遺伝型 / エピゲノム / 表現型",
+    "seed": 2657496577
+   },
+   {
+    "name": "S05_a",
+    "scene": "S05",
+    "shot": "a",
+    "mode": "background",
+    "desc": "夜の講義室。",
+    "t0": 78.187,
+    "dur": 23.689,
+    "frames": 121,
+    "keyframe": "keyframes/S05_a.png",
+    "prompt": "a dark empty lecture hall at night, a huge slate blackboard, a single hard shaft of light cutting through floating chalk dust, dust motes drifting slowly. Camera: fast push-in that stops abruptly, dramatic low angle, strong perspective, sudden held frame. Look: gekiga manga style animation, bold hand-inked black lines, heavy cross-hatched shadows, high contrast chiaroscuro, limited desaturated palette with deep blacks, dramatic composition, cinematic, 1980s Japanese gekiga illustration texture. The centre of the frame stays calm and darker (an exact figure will be laid over it). Accuracy: no people, no writing on the board.",
+    "negative": "text, letters, numbers, captions, subtitles, labels, watermark, logo, signature, speech bubbles, writing, symbols, deformed structures, extra objects, cartoon faces on cells, cute mascot, pastel colors, oversaturated, photorealistic skin, gore, blood, 色调艳丽，过曝，静态，细节模糊不清，字幕，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走",
+    "camera": "エピゲノム / 今日の主役 / 双子 / 全体",
+    "seed": 171494
+   },
+   {
+    "name": "S06_a",
+    "scene": "S06",
+    "shot": "a",
+    "mode": "background",
+    "desc": "細胞核の中の暗い水の世界。",
+    "t0": 101.876,
+    "dur": 19.169,
+    "frames": 121,
+    "keyframe": "keyframes/S06_a.png",
+    "prompt": "a dark watery molecular world inside a cell nucleus, soft out-of-focus particles drifting, cold rim light, slow push-in. Camera: fast push-in that stops abruptly, dramatic low angle, strong perspective, sudden held frame. Look: gekiga manga style animation, bold hand-inked black lines, heavy cross-hatched shadows, high contrast chiaroscuro, limited desaturated palette with deep blacks, dramatic composition, cinematic, 1980s Japanese gekiga illustration texture. The centre of the frame stays calm and darker (an exact figure will be laid over it). Accuracy: background only, no molecules in focus, no text, no letters, no labels.",
+    "negative": "text, letters, numbers, captions, subtitles, labels, watermark, logo, signature, speech bubbles, writing, symbols, deformed structures, extra objects, cartoon faces on cells, cute mascot, pastel colors, oversaturated, photorealistic skin, gore, blood, 色调艳丽，过曝，静态，细节模糊不清，字幕，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走",
+    "camera": "オフ / オン / 行き来",
+    "seed": 2799376983
+   },
+   {
+    "name": "S07_a",
+    "scene": "S07",
+    "shot": "a",
+    "mode": "background",
+    "desc": "夜の講義室。",
+    "t0": 121.045,
+    "dur": 32.991,
+    "frames": 121,
+    "keyframe": "keyframes/S07_a.png",
+    "prompt": "a dark empty lecture hall at night, a huge slate blackboard, a single hard shaft of light cutting through floating chalk dust, dust motes drifting slowly. Camera: fast push-in that stops abruptly, dramatic low angle, strong perspective, sudden held frame. Look: gekiga manga style animation, bold hand-inked black lines, heavy cross-hatched shadows, high contrast chiaroscuro, limited desaturated palette with deep blacks, dramatic composition, cinematic, 1980s Japanese gekiga illustration texture. The centre of the frame stays calm and darker (an exact figure will be laid over it). Accuracy: no people, no writing on the board.",
+    "negative": "text, letters, numbers, captions, subtitles, labels, watermark, logo, signature, speech bubbles, writing, symbols, deformed structures, extra objects, cartoon faces on cells, cute mascot, pastel colors, oversaturated, photorealistic skin, gore, blood, 色调艳丽，过曝，静态，细节模糊不清，字幕，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走",
+    "camera": "ヌクレオソーム / オフ / オン / 全体",
+    "seed": 1246950460
+   },
+   {
+    "name": "S08_a",
+    "scene": "S08",
+    "shot": "a",
+    "mode": "background",
+    "desc": "細胞核の中の暗い水の世界。",
+    "t0": 154.036,
+    "dur": 8.468,
+    "frames": 121,
+    "keyframe": "keyframes/S08_a.png",
+    "prompt": "a dark watery molecular world inside a cell nucleus, soft out-of-focus particles drifting, cold rim light, slow push-in. Camera: fast push-in that stops abruptly, dramatic low angle, strong perspective, sudden held frame. Look: gekiga manga style animation, bold hand-inked black lines, heavy cross-hatched shadows, high contrast chiaroscuro, limited desaturated palette with deep blacks, dramatic composition, cinematic, 1980s Japanese gekiga illustration texture. The centre of the frame stays calm and darker (an exact figure will be laid over it). Accuracy: background only, no molecules in focus, no text, no letters, no labels.",
+    "negative": "text, letters, numbers, captions, subtitles, labels, watermark, logo, signature, speech bubbles, writing, symbols, deformed structures, extra objects, cartoon faces on cells, cute mascot, pastel colors, oversaturated, photorealistic skin, gore, blood, 色调艳丽，过曝，静态，细节模糊不清，字幕，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走",
+    "camera": "低メチル化 / 比べる",
+    "seed": 4066944301
+   },
+   {
+    "name": "S09_a",
+    "scene": "S09",
+    "shot": "a",
+    "mode": "background",
+    "desc": "細胞核の中の暗い水の世界。",
+    "t0": 162.504,
+    "dur": 33.872,
+    "frames": 121,
+    "keyframe": "keyframes/S09_a.png",
+    "prompt": "a dark watery molecular world inside a cell nucleus, soft out-of-focus particles drifting, cold rim light, slow push-in. Camera: fast push-in that stops abruptly, dramatic low angle, strong perspective, sudden held frame. Look: gekiga manga style animation, bold hand-inked black lines, heavy cross-hatched shadows, high contrast chiaroscuro, limited desaturated palette with deep blacks, dramatic composition, cinematic, 1980s Japanese gekiga illustration texture. The centre of the frame stays calm and darker (an exact figure will be laid over it). Accuracy: background only, no molecules in focus, no text, no letters, no labels.",
+    "negative": "text, letters, numbers, captions, subtitles, labels, watermark, logo, signature, speech bubbles, writing, symbols, deformed structures, extra objects, cartoon faces on cells, cute mascot, pastel colors, oversaturated, photorealistic skin, gore, blood, 色调艳丽，过曝，静态，细节模糊不清，字幕，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走",
+    "camera": "70%以上 / 凝集 / 配列は同じ / ジェネティックとエピジェネティック",
+    "seed": 1440750162
+   },
+   {
+    "name": "S10_a",
+    "scene": "S10",
+    "shot": "a",
+    "mode": "background",
+    "desc": "細胞核の中の暗い水の世界。",
+    "t0": 196.375,
+    "dur": 55.326,
+    "frames": 121,
+    "keyframe": "keyframes/S10_a.png",
+    "prompt": "a dark watery molecular world inside a cell nucleus, soft out-of-focus particles drifting, cold rim light, slow push-in. Camera: fast push-in that stops abruptly, dramatic low angle, strong perspective, sudden held frame. Look: gekiga manga style animation, bold hand-inked black lines, heavy cross-hatched shadows, high contrast chiaroscuro, limited desaturated palette with deep blacks, dramatic composition, cinematic, 1980s Japanese gekiga illustration texture. The centre of the frame stays calm and darker (an exact figure will be laid over it). Accuracy: background only, no molecules in focus, no text, no letters, no labels.",
+    "negative": "text, letters, numbers, captions, subtitles, labels, watermark, logo, signature, speech bubbles, writing, symbols, deformed structures, extra objects, cartoon faces on cells, cute mascot, pastel colors, oversaturated, photorealistic skin, gore, blood, 色调艳丽，过曝，静态，细节模糊不清，字幕，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走",
+    "camera": "メチル基 / 凝集 / 転写因子とアセチル化酵素 / プロモーター / 戻る",
+    "seed": 4284497312
+   },
+   {
+    "name": "S11_a",
+    "scene": "S11",
+    "shot": "a",
+    "mode": "background",
+    "desc": "暗い背景に光の筋。",
+    "t0": 251.702,
+    "dur": 14.563,
+    "frames": 121,
+    "keyframe": "keyframes/S11_a.png",
+    "prompt": "abstract dark background, slow streaks of warm light drifting, subtle film grain. Camera: fast push-in that stops abruptly, dramatic low angle, strong perspective, sudden held frame. Look: gekiga manga style animation, bold hand-inked black lines, heavy cross-hatched shadows, high contrast chiaroscuro, limited desaturated palette with deep blacks, dramatic composition, cinematic, 1980s Japanese gekiga illustration texture. The centre of the frame stays calm and darker (an exact figure will be laid over it). Accuracy: no text, no letters, no labels.",
+    "negative": "text, letters, numbers, captions, subtitles, labels, watermark, logo, signature, speech bubbles, writing, symbols, deformed structures, extra objects, cartoon faces on cells, cute mascot, pastel colors, oversaturated, photorealistic skin, gore, blood, 色调艳丽，过曝，静态，细节模糊不清，字幕，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走",
+    "camera": "手放す",
+    "seed": 2615724155
+   },
+   {
+    "name": "S12_a",
+    "scene": "S12",
+    "shot": "a",
+    "mode": "background",
+    "desc": "体の中の暖かく暗い世界。",
+    "t0": 266.265,
+    "dur": 26.184,
+    "frames": 121,
+    "keyframe": "keyframes/S12_a.png",
+    "prompt": "a dark warm organic interior, soft glowing particles flowing slowly, warm rim light. Camera: fast push-in that stops abruptly, dramatic low angle, strong perspective, sudden held frame. Look: gekiga manga style animation, bold hand-inked black lines, heavy cross-hatched shadows, high contrast chiaroscuro, limited desaturated palette with deep blacks, dramatic composition, cinematic, 1980s Japanese gekiga illustration texture. The centre of the frame stays calm and darker (an exact figure will be laid over it). Accuracy: background only, no organs in focus, no faces, no text, no letters, no labels.",
+    "negative": "text, letters, numbers, captions, subtitles, labels, watermark, logo, signature, speech bubbles, writing, symbols, deformed structures, extra objects, cartoon faces on cells, cute mascot, pastel colors, oversaturated, photorealistic skin, gore, blood, 色调艳丽，过曝，静态，细节模糊不清，字幕，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走",
+    "camera": "運動 / プロモーター / HDAC",
+    "seed": 4111382794
+   },
+   {
+    "name": "S13_a",
+    "scene": "S13",
+    "shot": "a",
+    "mode": "background",
+    "desc": "夜の講義室。",
+    "t0": 292.449,
+    "dur": 12.973,
+    "frames": 121,
+    "keyframe": "keyframes/S13_a.png",
+    "prompt": "a dark empty lecture hall at night, a huge slate blackboard, a single hard shaft of light cutting through floating chalk dust, dust motes drifting slowly. Camera: fast push-in that stops abruptly, dramatic low angle, strong perspective, sudden held frame. Look: gekiga manga style animation, bold hand-inked black lines, heavy cross-hatched shadows, high contrast chiaroscuro, limited desaturated palette with deep blacks, dramatic composition, cinematic, 1980s Japanese gekiga illustration texture. The centre of the frame stays calm and darker (an exact figure will be laid over it). Accuracy: no people, no writing on the board.",
+    "negative": "text, letters, numbers, captions, subtitles, labels, watermark, logo, signature, speech bubbles, writing, symbols, deformed structures, extra objects, cartoon faces on cells, cute mascot, pastel colors, oversaturated, photorealistic skin, gore, blood, 色调艳丽，过曝，静态，细节模糊不清，字幕，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走",
+    "camera": "運動の例",
+    "seed": 1368945189
+   },
+   {
+    "name": "S14_a",
+    "scene": "S14",
+    "shot": "a",
+    "mode": "background",
+    "desc": "体の中の暖かく暗い世界。",
+    "t0": 305.422,
+    "dur": 30.118,
+    "frames": 121,
+    "keyframe": "keyframes/S14_a.png",
+    "prompt": "a dark warm organic interior, soft glowing particles flowing slowly, warm rim light. Camera: fast push-in that stops abruptly, dramatic low angle, strong perspective, sudden held frame. Look: gekiga manga style animation, bold hand-inked black lines, heavy cross-hatched shadows, high contrast chiaroscuro, limited desaturated palette with deep blacks, dramatic composition, cinematic, 1980s Japanese gekiga illustration texture. The centre of the frame stays calm and darker (an exact figure will be laid over it). Accuracy: background only, no organs in focus, no faces, no text, no letters, no labels.",
+    "negative": "text, letters, numbers, captions, subtitles, labels, watermark, logo, signature, speech bubbles, writing, symbols, deformed structures, extra objects, cartoon faces on cells, cute mascot, pastel colors, oversaturated, photorealistic skin, gore, blood, 色调艳丽，过曝，静态，细节模糊不清，字幕，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走",
+    "camera": "核 / 多コピー / 37個 / 核から運ばれる / 母系遺伝",
+    "seed": 1398874572
+   },
+   {
+    "name": "S15_a",
+    "scene": "S15",
+    "shot": "a",
+    "mode": "background",
+    "desc": "夜の講義室。",
+    "t0": 335.541,
+    "dur": 21.411,
+    "frames": 121,
+    "keyframe": "keyframes/S15_a.png",
+    "prompt": "a dark empty lecture hall at night, a huge slate blackboard, a single hard shaft of light cutting through floating chalk dust, dust motes drifting slowly. Camera: fast push-in that stops abruptly, dramatic low angle, strong perspective, sudden held frame. Look: gekiga manga style animation, bold hand-inked black lines, heavy cross-hatched shadows, high contrast chiaroscuro, limited desaturated palette with deep blacks, dramatic composition, cinematic, 1980s Japanese gekiga illustration texture. The centre of the frame stays calm and darker (an exact figure will be laid over it). Accuracy: no people, no writing on the board.",
+    "negative": "text, letters, numbers, captions, subtitles, labels, watermark, logo, signature, speech bubbles, writing, symbols, deformed structures, extra objects, cartoon faces on cells, cute mascot, pastel colors, oversaturated, photorealistic skin, gore, blood, 色调艳丽，过曝，静态，细节模糊不清，字幕，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走",
+    "camera": "配列は変わらない / 向き / ミトコンドリア / 全体",
+    "seed": 4056302823
+   },
+   {
+    "name": "S16_a",
+    "scene": "S16",
+    "shot": "a",
+    "mode": "background",
+    "desc": "夜の講義室。",
+    "t0": 356.951,
+    "dur": 29.393,
+    "frames": 121,
+    "keyframe": "keyframes/S16_a.png",
+    "prompt": "a dark empty lecture hall at night, a huge slate blackboard, a single hard shaft of light cutting through floating chalk dust, dust motes drifting slowly. Camera: fast push-in that stops abruptly, dramatic low angle, strong perspective, sudden held frame. Look: gekiga manga style animation, bold hand-inked black lines, heavy cross-hatched shadows, high contrast chiaroscuro, limited desaturated palette with deep blacks, dramatic composition, cinematic, 1980s Japanese gekiga illustration texture. The centre of the frame stays calm and darker (an exact figure will be laid over it). Accuracy: no people, no writing on the board.",
+    "negative": "text, letters, numbers, captions, subtitles, labels, watermark, logo, signature, speech bubbles, writing, symbols, deformed structures, extra objects, cartoon faces on cells, cute mascot, pastel colors, oversaturated, photorealistic skin, gore, blood, 色调艳丽，过曝，静态，细节模糊不清，字幕，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走",
+    "camera": "①へ / ②へ / ③へ / ④へ / 4つを並べて引く",
+    "seed": 1246651574
+   },
+   {
+    "name": "S17_a",
+    "scene": "S17",
+    "shot": "a",
+    "mode": "background",
+    "desc": "漆黒に墨がゆっくり広がる。",
+    "t0": 386.344,
+    "dur": 9.915,
+    "frames": 121,
+    "keyframe": "keyframes/S17_a.png",
+    "prompt": "pitch black void, sumi ink spreading slowly, gentle. Camera: fast push-in that stops abruptly, dramatic low angle, strong perspective, sudden held frame. Look: gekiga manga style animation, bold hand-inked black lines, heavy cross-hatched shadows, high contrast chiaroscuro, limited desaturated palette with deep blacks, dramatic composition, cinematic, 1980s Japanese gekiga illustration texture. The centre of the frame stays calm and darker (an exact figure will be laid over it). Accuracy: no text, no letters, no labels.",
+    "negative": "text, letters, numbers, captions, subtitles, labels, watermark, logo, signature, speech bubbles, writing, symbols, deformed structures, extra objects, cartoon faces on cells, cute mascot, pastel colors, oversaturated, photorealistic skin, gore, blood, 色调艳丽，过曝，静态，细节模糊不清，字幕，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走",
+    "camera": "ゆっくり引いて終わる",
+    "seed": 2809523857
+   }
+  ]
+ },
+ "kokoro": {
+  "plan": "genetics-basics-6-film_board",
+  "engine": "kokoro (Kokoro-82M v1.0, ONNX) + misaki ja G2P (pyopenjtalk)",
+  "voice": "jm_kumo",
+  "speed": 1,
+  "sampleRate": 24000,
+  "note": "say = 読み（英字・誤読しやすい語はかな）。pre/post = 前後の間（秒）。speed = 区間ごとの話速（重要語はやや遅く）。",
+  "scenes": [
+   {
+    "id": "S01",
+    "file": "audio/S01.wav",
+    "segs": [
+     {
+      "beat": "open",
+      "i": 0,
+      "text": "第6講、この単元の最終回です。",
+      "say": "第6講、この単元の最終回です。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.3,
+      "cue": "title"
+     },
+     {
+      "beat": "today",
+      "i": 0,
+      "text": "ここまで、設計図の文字、製本、読み方、そして誤植を見てきました。",
+      "say": "ここまで、設計図の文字、製本、読み方、そして誤植を見てきました。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.2,
+      "cue": "prev"
+     },
+     {
+      "beat": "today",
+      "i": 1,
+      "text": "今日は、文字をまったく変えずに、設計図の「読み方」を変える仕組み。",
+      "say": "今日は、文字をまったく変えずに、設計図の読み方を変える仕組み。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.15,
+      "cue": "what"
+     },
+     {
+      "beat": "today",
+      "i": 2,
+      "text": "エピゲノムです。",
+      "say": "エピゲノムです。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.5,
+      "cue": "epi"
+     }
+    ]
+   },
+   {
+    "id": "S02",
+    "file": "audio/S02.wav",
+    "segs": [
+     {
+      "beat": "look",
+      "i": 0,
+      "text": "まず、この写真を見てください。",
+      "say": "まず、この写真を見てください。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.15,
+      "cue": "look"
+     },
+     {
+      "beat": "what",
+      "i": 0,
+      "text": "この双子の、何が違うのでしょうか。",
+      "say": "この双子の、何が違うのでしょうか。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.15,
+      "cue": "what"
+     },
+     {
+      "beat": "what",
+      "i": 1,
+      "text": "赤ちゃんのときは、そっくりです。",
+      "say": "赤ちゃんのときは、そっくりです。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.2,
+      "cue": "baby"
+     },
+     {
+      "beat": "adult",
+      "i": 0,
+      "text": "ところが大人になると、一方は明らかに年上に見えます。",
+      "say": "ところが大人になると、一方は明らかに年上に見えます。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.1,
+      "cue": "adult"
+     },
+     {
+      "beat": "adult",
+      "i": 1,
+      "text": "同じ遺伝子を持っているはずなのに。",
+      "say": "同じ遺伝子を持っているはずなのに。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.25,
+      "cue": "same"
+     },
+     {
+      "beat": "env",
+      "i": 0,
+      "text": "違いを生んだのは、生活の違い、環境です。",
+      "say": "違いを生んだのは、生活の違い、環境です。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.1,
+      "cue": "env"
+     },
+     {
+      "beat": "env",
+      "i": 1,
+      "text": "では、環境はどうやって体を変えるのか。",
+      "say": "では、環境はどうやって体を変えるのか。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.1,
+      "cue": "how"
+     },
+     {
+      "beat": "env",
+      "i": 2,
+      "text": "それが今日のテーマです。",
+      "say": "それが今日のテーマです。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.45,
+      "cue": "theme"
+     }
+    ]
+   },
+   {
+    "id": "S03",
+    "file": "audio/S03.wav",
+    "segs": [
+     {
+      "beat": "q",
+      "i": 0,
+      "text": "実際に、見た目の年齢が健康と関係するのか。",
+      "say": "実際に、見た目の年齢が健康と関係するのか。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.2,
+      "cue": "q"
+     },
+     {
+      "beat": "n",
+      "i": 0,
+      "text": "70歳以上の双子、1826人を調べた研究です。",
+      "say": "ななじゅっさい以上の双子、せんはっぴゃくにじゅうろくにんを調べた研究です。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.25,
+      "cue": "n"
+     },
+     {
+      "beat": "res",
+      "i": 0,
+      "text": "実年齢や生活習慣で補正しても、見た目年齢は健康寿命を予見し、",
+      "say": "実年齢や生活習慣で補正しても、見た目年齢は健康寿命を予見し、",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.05,
+      "cue": "pred"
+     },
+     {
+      "beat": "res",
+      "i": 1,
+      "text": "テロメアの長さや認知機能とも関連していました。",
+      "say": "テロメアの長さや認知機能とも関連していました。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.45,
+      "cue": "telo"
+     }
+    ]
+   },
+   {
+    "id": "S04",
+    "file": "audio/S04.wav",
+    "segs": [
+     {
+      "beat": "q",
+      "i": 0,
+      "text": "では、遺伝子から体までの道のりを、もう一度整理します。",
+      "say": "では、遺伝子から体までの道のりを、もう一度整理します。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.2,
+      "cue": "q"
+     },
+     {
+      "beat": "g",
+      "i": 0,
+      "text": "一番上は、生まれつきのゲノム。",
+      "say": "一番上は、生まれつきのゲノム。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.1,
+      "cue": "genome"
+     },
+     {
+      "beat": "g",
+      "i": 1,
+      "text": "これが遺伝型。",
+      "say": "これがいでんがた。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.2,
+      "cue": "geno"
+     },
+     {
+      "beat": "e",
+      "i": 0,
+      "text": "その下にエピゲノム。",
+      "say": "その下にエピゲノム。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.1,
+      "cue": "epi"
+     },
+     {
+      "beat": "e",
+      "i": 1,
+      "text": "DNAやヒストンの化学修飾です。",
+      "say": "ディーエヌエーやヒストンの化学修飾です。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.25,
+      "cue": "mod"
+     },
+     {
+      "beat": "p",
+      "i": 0,
+      "text": "一番下の、タンパク質や代謝物が、表現型です。",
+      "say": "一番下の、タンパク質や代謝物が、ひょうげんがたです。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.45,
+      "cue": "pheno"
+     }
+    ]
+   },
+   {
+    "id": "S05",
+    "file": "audio/S05.wav",
+    "segs": [
+     {
+      "beat": "w",
+      "i": 0,
+      "text": "左側に、この流れを書いていきます。",
+      "say": "左側に、この流れを書いていきます。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.1,
+      "cue": "w"
+     },
+     {
+      "beat": "w",
+      "i": 1,
+      "text": "生まれつきのゲノムと、症状に直結する表現型。",
+      "say": "生まれつきのゲノムと、症状に直結するひょうげんがた。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.1,
+      "cue": "l15"
+     },
+     {
+      "beat": "w",
+      "i": 2,
+      "text": "その間に、生活環境によって少しずつ変わっていくエピゲノムがある。",
+      "say": "その間に、生活環境によって少しずつ変わっていくエピゲノムがある。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.15,
+      "cue": "l2"
+     },
+     {
+      "beat": "main",
+      "i": 0,
+      "text": "ここが今日の主役です。",
+      "say": "ここが今日の主役です。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.25,
+      "cue": "main"
+     },
+     {
+      "beat": "twin",
+      "i": 0,
+      "text": "さっきの双子。",
+      "say": "さっきの双子。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.05,
+      "cue": "twin"
+     },
+     {
+      "beat": "twin",
+      "i": 1,
+      "text": "同じゲノムでも、環境によってエピゲノムが変わり、見た目が変わる。",
+      "say": "同じゲノムでも、環境によってエピゲノムが変わり、見た目が変わる。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.1,
+      "cue": "l7"
+     },
+     {
+      "beat": "twin",
+      "i": 2,
+      "text": "そう考えることができます。",
+      "say": "そう考えることができます。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.45,
+      "cue": "think"
+     }
+    ]
+   },
+   {
+    "id": "S06",
+    "file": "audio/S06.wav",
+    "segs": [
+     {
+      "beat": "q",
+      "i": 0,
+      "text": "では、エピゲノムは、具体的に何をしているのか。",
+      "say": "では、エピゲノムは、具体てきに何をしているのか。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.2,
+      "cue": "q"
+     },
+     {
+      "beat": "off",
+      "i": 0,
+      "text": "ぎゅっと凝集したクロマチンでは、遺伝子の転写がオフ。",
+      "say": "ぎゅっと凝集したクロマチンでは、遺伝子の転写がオフ。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.1,
+      "cue": "off"
+     },
+     {
+      "beat": "off",
+      "i": 1,
+      "text": "これがヘテロクロマチン。",
+      "say": "これがヘテロクロマチン。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.2,
+      "cue": "hetero"
+     },
+     {
+      "beat": "on",
+      "i": 0,
+      "text": "緩んだクロマチンでは、転写がオン。",
+      "say": "緩んだクロマチンでは、転写がオン。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.1,
+      "cue": "on"
+     },
+     {
+      "beat": "on",
+      "i": 1,
+      "text": "こちらがユークロマチン。",
+      "say": "こちらがユークロマチン。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.2,
+      "cue": "eu"
+     },
+     {
+      "beat": "rem",
+      "i": 0,
+      "text": "この二つの状態を行き来させるのが、クロマチンリモデリングです。",
+      "say": "この二つの状態を行き来させるのが、クロマチンリモデリングです。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.45,
+      "cue": "rem"
+     }
+    ]
+   },
+   {
+    "id": "S07",
+    "file": "audio/S07.wav",
+    "segs": [
+     {
+      "beat": "w",
+      "i": 0,
+      "text": "真ん中に、スイッチの仕組みを書きます。",
+      "say": "真ん中に、スイッチの仕組みを書きます。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.1,
+      "cue": "w"
+     },
+     {
+      "beat": "w",
+      "i": 1,
+      "text": "DNAがヒストンに巻き付いた、ヌクレオソームの並びです。",
+      "say": "ディーエヌエーがヒストンに巻き付いた、ヌクレオソームの並びです。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.25,
+      "cue": "nuc"
+     },
+     {
+      "beat": "off",
+      "i": 0,
+      "text": "まずオフの側。",
+      "say": "まずオフの側。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.05,
+      "cue": "off"
+     },
+     {
+      "beat": "off",
+      "i": 1,
+      "text": "DNAが高度にメチル化され、",
+      "say": "ディーエヌエーが高度にメチル化され、",
+      "speed": 1,
+      "pre": 0,
+      "post": 0,
+      "cue": "c1"
+     },
+     {
+      "beat": "off",
+      "i": 2,
+      "text": "ヒストンのアセチル基が外されると、",
+      "say": "ヒストンのアセチル基が外されると、",
+      "speed": 1,
+      "pre": 0,
+      "post": 0,
+      "cue": "c2"
+     },
+     {
+      "beat": "off",
+      "i": 3,
+      "text": "クロマチンが凝集してヘテロクロマチンになり、転写はオフ。",
+      "say": "クロマチンが凝集してヘテロクロマチンになり、転写はオフ。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.3,
+      "cue": "offx"
+     },
+     {
+      "beat": "on",
+      "i": 0,
+      "text": "そしてオンの側。",
+      "say": "そしてオンの側。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.05,
+      "cue": "on"
+     },
+     {
+      "beat": "on",
+      "i": 1,
+      "text": "ヒストンがアセチル化されると、",
+      "say": "ヒストンがアセチル化されると、",
+      "speed": 1,
+      "pre": 0,
+      "post": 0,
+      "cue": "c3"
+     },
+     {
+      "beat": "on",
+      "i": 2,
+      "text": "塩基性が下がってDNAとの結合が弱まる。",
+      "say": "塩基性が下がってディーエヌエーとの結合が弱まる。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.1,
+      "cue": "c4"
+     },
+     {
+      "beat": "on",
+      "i": 3,
+      "text": "プロモーターが露出して、RNAポリメラーゼが結合できるようになります。",
+      "say": "プロモーターが露出して、アールエヌエーポリメラーゼが結合できるようになります。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.45,
+      "cue": "c5"
+     }
+    ]
+   },
+   {
+    "id": "S08",
+    "file": "audio/S08.wav",
+    "segs": [
+     {
+      "beat": "hi",
+      "i": 0,
+      "text": "DNAの高メチル化で、",
+      "say": "ディーエヌエーの高メチル化で、",
+      "speed": 1,
+      "pre": 0,
+      "post": 0,
+      "cue": "hi"
+     },
+     {
+      "beat": "hi",
+      "i": 1,
+      "text": "凝集して発現が低下。",
+      "say": "凝集して発現が低下。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.3,
+      "cue": "down"
+     },
+     {
+      "beat": "lo",
+      "i": 0,
+      "text": "低メチル化では、",
+      "say": "低メチル化では、",
+      "speed": 1,
+      "pre": 0,
+      "post": 0,
+      "cue": "lo"
+     },
+     {
+      "beat": "lo",
+      "i": 1,
+      "text": "緩んで発現が増加します。",
+      "say": "緩んで発現が増加します。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.6,
+      "cue": "up"
+     }
+    ]
+   },
+   {
+    "id": "S09",
+    "file": "audio/S09.wav",
+    "segs": [
+     {
+      "beat": "cpg",
+      "i": 0,
+      "text": "メチル化について、もう少し詳しく。",
+      "say": "メチル化について、もう少し詳しく。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.15,
+      "cue": "more"
+     },
+     {
+      "beat": "cpg",
+      "i": 1,
+      "text": "発現しない遺伝子のDNAでは、シトシンが高度にメチル化されています。",
+      "say": "発現しない遺伝子のディーエヌエーでは、シトシンが高度にメチル化されています。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.2,
+      "cue": "cpg"
+     },
+     {
+      "beat": "70",
+      "i": 0,
+      "text": "特に5ダッシュCG3ダッシュの並びでは、70パーセント以上。",
+      "say": "特に、ごダッシュ、シージー、さんダッシュの並びでは、ななじゅっパーセント以上。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.25,
+      "cue": "p70"
+     },
+     {
+      "beat": "cx",
+      "i": 0,
+      "text": "それを認識する複合体が、ヒストンもメチル化して、クロマチンを強く凝集させます。",
+      "say": "それを認識する複合体が、ヒストンもメチル化して、クロマチンを強く凝集させます。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.25,
+      "cue": "complex"
+     },
+     {
+      "beat": "epi",
+      "i": 0,
+      "text": "そして大事なのが、ここ。",
+      "say": "そして大事なのが、ここ。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.1,
+      "cue": "imp"
+     },
+     {
+      "beat": "epi",
+      "i": 1,
+      "text": "塩基配列の変化はありません。",
+      "say": "塩基配列の変化はありません。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.15,
+      "cue": "nochg"
+     },
+     {
+      "beat": "epi",
+      "i": 2,
+      "text": "だから、突然変異のようなジェネティックな変化に対して、",
+      "say": "だから、突然変異のようなジェネティックな変化に対して、",
+      "speed": 1,
+      "pre": 0,
+      "post": 0,
+      "cue": "gen"
+     },
+     {
+      "beat": "epi",
+      "i": 3,
+      "text": "エピジェネティックな変化と呼ぶわけです。",
+      "say": "エピジェネティックな変化と呼ぶわけです。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.5,
+      "cue": "epi"
+     }
+    ]
+   },
+   {
+    "id": "S10",
+    "file": "audio/S10.wav",
+    "segs": [
+     {
+      "beat": "row",
+      "i": 0,
+      "text": "実際の動きで見てみましょう。",
+      "say": "実際の動きで見てみましょう。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.1,
+      "cue": "see"
+     },
+     {
+      "beat": "row",
+      "i": 1,
+      "text": "ヌクレオソームが並んでいます。",
+      "say": "ヌクレオソームが並んでいます。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.1,
+      "cue": "row"
+     },
+     {
+      "beat": "row",
+      "i": 2,
+      "text": "このままでは、RNAポリメラーゼは近づけません。",
+      "say": "このままでは、アールエヌエーポリメラーゼは近づけません。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.25,
+      "cue": "cant"
+     },
+     {
+      "beat": "me",
+      "i": 0,
+      "text": "DNAのシトシンに、メチル基が付いていきます。",
+      "say": "ディーエヌエーのシトシンに、メチル基が付いていきます。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.3,
+      "cue": "me"
+     },
+     {
+      "beat": "pack",
+      "i": 0,
+      "text": "ヒストンもメチル化されて、ヌクレオソームがぎゅっと集まりました。",
+      "say": "ヒストンもメチル化されて、ヌクレオソームがぎゅっと集まりました。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.15,
+      "cue": "pack"
+     },
+     {
+      "beat": "pack",
+      "i": 1,
+      "text": "ヘテロクロマチン。",
+      "say": "ヘテロクロマチン。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.1,
+      "cue": "hetero"
+     },
+     {
+      "beat": "pack",
+      "i": 2,
+      "text": "転写はオフです。",
+      "say": "転写はオフです。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.4,
+      "cue": "off"
+     },
+     {
+      "beat": "tf",
+      "i": 0,
+      "text": "今度は、転写因子がエンハンサーに結合して、ヒストンアセチル化酵素を呼び込みます。",
+      "say": "今度は、転写因子がエンハンサーに結合して、ヒストンアセチル化酵素を呼び込みます。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.15,
+      "cue": "tf"
+     },
+     {
+      "beat": "tf",
+      "i": 1,
+      "text": "ヒストンのしっぽにアセチル基が付いていきます。",
+      "say": "ヒストンのしっぽにアセチル基が付いていきます。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.3,
+      "cue": "ac"
+     },
+     {
+      "beat": "open",
+      "i": 0,
+      "text": "ヌクレオソームの間が広がって、プロモーターが現れました。",
+      "say": "ヌクレオソームの間が広がって、プロモーターが現れました。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.15,
+      "cue": "open"
+     },
+     {
+      "beat": "open",
+      "i": 1,
+      "text": "RNAポリメラーゼが結合して、RNAが作られ始めます。",
+      "say": "アールエヌエーポリメラーゼが結合して、アールエヌエーが作られ始めます。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.1,
+      "cue": "pol"
+     },
+     {
+      "beat": "open",
+      "i": 2,
+      "text": "転写オンです。",
+      "say": "転写オンです。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.4,
+      "cue": "on"
+     },
+     {
+      "beat": "hdac",
+      "i": 0,
+      "text": "最後に、脱アセチル化酵素がアセチル基を外すと、また凝集して、オフに戻ります。",
+      "say": "最後に、脱アセチル化酵素がアセチル基を外すと、また凝集して、オフに戻ります。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.4,
+      "cue": "hdac"
+     },
+     {
+      "beat": "sw",
+      "i": 0,
+      "text": "スイッチは、入れたり切ったりできる。",
+      "say": "スイッチは、入れたり切ったりできる。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.15,
+      "cue": "switch"
+     },
+     {
+      "beat": "sw",
+      "i": 1,
+      "text": "これがエピゲノムの大きな特徴です。",
+      "say": "これがエピゲノムの大きな特徴です。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.6,
+      "cue": "feat"
+     }
+    ]
+   },
+   {
+    "id": "S11",
+    "file": "audio/S11.wav",
+    "segs": [
+     {
+      "beat": "elec",
+      "i": 0,
+      "text": "電気の話で考えると分かりやすいです。",
+      "say": "電気の話で考えると分かりやすいです。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.15,
+      "cue": "elec"
+     },
+     {
+      "beat": "elec",
+      "i": 1,
+      "text": "ヒストンはプラス、DNAはマイナス。",
+      "say": "ヒストンはプラス、ディーエヌエーはマイナス。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.2,
+      "cue": "pm"
+     },
+     {
+      "beat": "elec",
+      "i": 2,
+      "text": "アセチル化でヒストンのプラスが減ると、DNAを手放す。",
+      "say": "アセチル化でヒストンのプラスが減ると、ディーエヌエーを手放す。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.2,
+      "cue": "release"
+     },
+     {
+      "beat": "elec",
+      "i": 3,
+      "text": "これは補足のイメージですが、覚えやすいと思います。",
+      "say": "これは補足のイメージですが、覚えやすいと思います。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.45,
+      "cue": "note"
+     }
+    ]
+   },
+   {
+    "id": "S12",
+    "file": "audio/S12.wav",
+    "segs": [
+     {
+      "beat": "q",
+      "i": 0,
+      "text": "では、生活でエピゲノムが本当に変わるのか。",
+      "say": "では、生活でエピゲノムが本当に変わるのか。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.1,
+      "cue": "q"
+     },
+     {
+      "beat": "q",
+      "i": 1,
+      "text": "運動の研究を紹介します。",
+      "say": "運動の研究を紹介します。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.2,
+      "cue": "study"
+     },
+     {
+      "beat": "meth",
+      "i": 0,
+      "text": "激しい運動の直後、PGC-1アルファなど代謝に関わる遺伝子のプロモーターのメチル化が下がり、",
+      "say": "激しい運動の直後、ピージーシーワンアルファなど代謝に関わる遺伝子のプロモーターのメチル化が下がり、",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.05,
+      "cue": "meth"
+     },
+     {
+      "beat": "meth",
+      "i": 1,
+      "text": "同じ遺伝子の発現が上がっていました。",
+      "say": "同じ遺伝子の発現が上がっていました。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.3,
+      "cue": "expr"
+     },
+     {
+      "beat": "hdac",
+      "i": 0,
+      "text": "筋肉が収縮するシグナルで、脱アセチル化酵素のHDACが核の外に出ていきます。",
+      "say": "筋肉が収縮するシグナルで、脱アセチル化酵素のエイチダックが核の外に出ていきます。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.5,
+      "cue": "hdac"
+     }
+    ]
+   },
+   {
+    "id": "S13",
+    "file": "audio/S13.wav",
+    "segs": [
+     {
+      "beat": "w",
+      "i": 0,
+      "text": "黒板に書いておきます。",
+      "say": "黒板に書いておきます。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.1,
+      "cue": "w"
+     },
+     {
+      "beat": "w",
+      "i": 1,
+      "text": "運動で、脱アセチル化酵素が核の外へ。",
+      "say": "運動で、脱アセチル化酵素が核の外へ。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.1,
+      "cue": "c6"
+     },
+     {
+      "beat": "w",
+      "i": 2,
+      "text": "プロモーターのメチル化が下がって、発現が上がる。",
+      "say": "プロモーターのメチル化が下がって、発現が上がる。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.1,
+      "cue": "c7"
+     },
+     {
+      "beat": "w",
+      "i": 3,
+      "text": "生活でエピゲノムが変わる、具体的な例です。",
+      "say": "生活でエピゲノムが変わる、具体てきな例です。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.45,
+      "cue": "ex"
+     }
+    ]
+   },
+   {
+    "id": "S14",
+    "file": "audio/S14.wav",
+    "segs": [
+     {
+      "beat": "q",
+      "i": 0,
+      "text": "最後に、核とは別のゲノムの話です。",
+      "say": "最後に、核とは別のゲノムの話です。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.2,
+      "cue": "q"
+     },
+     {
+      "beat": "copy",
+      "i": 0,
+      "text": "核のゲノムは両親から1セットずつですが、",
+      "say": "核のゲノムは両親からひとセットずつですが、",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.05,
+      "cue": "nuc"
+     },
+     {
+      "beat": "copy",
+      "i": 1,
+      "text": "ミトコンドリアのゲノムは、細胞あたり10の3乗から10の4乗コピーもあります。",
+      "say": "ミトコンドリアのゲノムは、細胞あたり、じゅうのさんじょうから、じゅうのよんじょうコピーもあります。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.25,
+      "cue": "copy"
+     },
+     {
+      "beat": "g37",
+      "i": 0,
+      "text": "遺伝子は37個。",
+      "say": "遺伝子はさんじゅうななこ。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.1,
+      "cue": "g37"
+     },
+     {
+      "beat": "g37",
+      "i": 1,
+      "text": "呼吸鎖の部品などです。",
+      "say": "呼吸鎖の部品などです。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.25,
+      "cue": "resp"
+     },
+     {
+      "beat": "imp",
+      "i": 0,
+      "text": "ミトコンドリアの中のタンパク質の大部分は、実は核の遺伝子の産物。",
+      "say": "ミトコンドリアの中のタンパク質の大部分は、実は核の遺伝子の産物。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.25,
+      "cue": "import"
+     },
+     {
+      "beat": "mat",
+      "i": 0,
+      "text": "そして、ミトコンドリアの遺伝子の変異は、母系遺伝を示します。",
+      "say": "そして、ミトコンドリアの遺伝子の変異は、母系遺伝を示します。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.5,
+      "cue": "mat"
+     }
+    ]
+   },
+   {
+    "id": "S15",
+    "file": "audio/S15.wav",
+    "segs": [
+     {
+      "beat": "w",
+      "i": 0,
+      "text": "右側に、今日の試験ポイントをまとめます。",
+      "say": "右側に、今日の試験ポイントをまとめます。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.15,
+      "cue": "w"
+     },
+     {
+      "beat": "r",
+      "i": 0,
+      "text": "エピジェネティックは、配列が変わらない。",
+      "say": "エピジェネティックは、配列が変わらない。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.1,
+      "cue": "r1"
+     },
+     {
+      "beat": "r",
+      "i": 1,
+      "text": "メチル化はオフ、アセチル化はオン。",
+      "say": "メチル化はオフ、アセチル化はオン。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.1,
+      "cue": "r23"
+     },
+     {
+      "beat": "r",
+      "i": 2,
+      "text": "向きを絶対に取り違えないでください。",
+      "say": "向きを絶対に取り違えないでください。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.3,
+      "cue": "warn"
+     },
+     {
+      "beat": "m",
+      "i": 0,
+      "text": "ミトコンドリアは、37個の遺伝子、たくさんのコピー、母系遺伝。",
+      "say": "ミトコンドリアは、さんじゅうななこの遺伝子、たくさんのコピー、母系遺伝。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.1,
+      "cue": "m1"
+     },
+     {
+      "beat": "m",
+      "i": 1,
+      "text": "そして、中のタンパク質の大部分は核の遺伝子から。",
+      "say": "そして、中のタンパク質の大部分は核の遺伝子から。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.45,
+      "cue": "m3"
+     }
+    ]
+   },
+   {
+    "id": "S16",
+    "file": "audio/S16.wav",
+    "segs": [
+     {
+      "beat": "four",
+      "i": 0,
+      "text": "今日覚えてほしいのは、この4つです。",
+      "say": "今日覚えてほしいのは、この4つです。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.3,
+      "cue": "four"
+     },
+     {
+      "beat": "p1",
+      "i": 0,
+      "text": "ひとつ目。",
+      "say": "ひとつ目。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.1,
+      "cue": "p1"
+     },
+     {
+      "beat": "p1",
+      "i": 1,
+      "text": "遺伝型と表現型の間にあるエピゲノム。",
+      "say": "いでんがたとひょうげんがたの間にあるエピゲノム。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.1,
+      "cue": "p1b"
+     },
+     {
+      "beat": "p1",
+      "i": 2,
+      "text": "塩基配列を変えずに、遺伝子の働きを変えます。",
+      "say": "塩基配列を変えずに、遺伝子の働きを変えます。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.3,
+      "cue": "p1c"
+     },
+     {
+      "beat": "p2",
+      "i": 0,
+      "text": "ふたつ目。",
+      "say": "ふたつ目。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.1,
+      "cue": "p2"
+     },
+     {
+      "beat": "p2",
+      "i": 1,
+      "text": "高メチル化と脱アセチル化で凝集してオフ。",
+      "say": "高メチル化と脱アセチル化で凝集してオフ。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.1,
+      "cue": "p2b"
+     },
+     {
+      "beat": "p2",
+      "i": 2,
+      "text": "アセチル化で緩んでオン。",
+      "say": "アセチル化で緩んでオン。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.3,
+      "cue": "p2c"
+     },
+     {
+      "beat": "p3",
+      "i": 0,
+      "text": "みっつ目。",
+      "say": "みっつ目。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.1,
+      "cue": "p3"
+     },
+     {
+      "beat": "p3",
+      "i": 1,
+      "text": "エピゲノムは、運動などの生活で変わりうる。",
+      "say": "エピゲノムは、運動などの生活で変わりうる。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.3,
+      "cue": "p3b"
+     },
+     {
+      "beat": "p4",
+      "i": 0,
+      "text": "そして、ミトコンドリアのゲノムは、",
+      "say": "そして、ミトコンドリアのゲノムは、",
+      "speed": 1,
+      "pre": 0,
+      "post": 0,
+      "cue": "p4"
+     },
+     {
+      "beat": "p4",
+      "i": 1,
+      "text": "37個の遺伝子、多コピー、母系遺伝。",
+      "say": "さんじゅうななこの遺伝子、多コピー、母系遺伝。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.45,
+      "cue": "p4b"
+     }
+    ]
+   },
+   {
+    "id": "S17",
+    "file": "audio/S17.wav",
+    "segs": [
+     {
+      "beat": "next",
+      "i": 0,
+      "text": "これで「遺伝子の基礎」の6回がすべて終わりです。",
+      "say": "これで遺伝子の基礎のろっかいがすべて終わりです。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.4,
+      "cue": "next"
+     },
+     {
+      "beat": "bye",
+      "i": 0,
+      "text": "第6講、そして遺伝子の基礎の授業は、これで終わりです。",
+      "say": "第6講、そして遺伝子の基礎の授業は、これで終わりです。",
+      "speed": 1,
+      "pre": 0,
+      "post": 1.4,
+      "cue": "bye"
+     }
+    ]
+   }
+  ]
+ },
+ "timing": {
+  "source": "kokoro",
+  "total": 396.2588000000001,
+  "scenes": [
+   {
+    "id": "S01",
+    "t0": 0,
+    "t1": 15.680099999999998,
+    "events": {
+     "start": 0,
+     "title": 0,
+     "prev": 3.1083999999999996,
+     "what": 8.839299999999998,
+     "epi": 13.847599999999998
+    }
+   },
+   {
+    "id": "S02",
+    "t0": 15.680099999999998,
+    "t1": 38.6468,
+    "events": {
+     "start": 15.680099999999998,
+     "look": 15.680099999999998,
+     "what": 17.865899999999996,
+     "baby": 20.677999999999994,
+     "adult": 22.938999999999993,
+     "same": 27.628499999999995,
+     "env": 30.139999999999993,
+     "how": 33.45869999999999,
+     "theme": 36.4828
+    }
+   },
+   {
+    "id": "S03",
+    "t0": 38.6468,
+    "t1": 59.8811,
+    "events": {
+     "start": 38.6468,
+     "q": 38.6468,
+     "n": 42.6396,
+     "pred": 48.3051,
+     "telo": 55.1451
+    }
+   },
+   {
+    "id": "S04",
+    "t0": 59.8811,
+    "t1": 78.1871,
+    "events": {
+     "start": 59.8811,
+     "q": 59.8811,
+     "genome": 64.9726,
+     "geno": 67.3611,
+     "epi": 68.7996,
+     "mod": 70.47059999999999,
+     "pheno": 73.46079999999999
+    }
+   },
+   {
+    "id": "S05",
+    "t0": 78.1871,
+    "t1": 101.876,
+    "events": {
+     "start": 78.1871,
+     "w": 78.1871,
+     "l15": 81.2272,
+     "l2": 85.37469999999999,
+     "main": 90.827,
+     "twin": 92.7012,
+     "l7": 93.9102,
+     "think": 99.3034
+    }
+   },
+   {
+    "id": "S06",
+    "t0": 101.876,
+    "t1": 121.04530000000001,
+    "events": {
+     "start": 101.876,
+     "q": 101.876,
+     "off": 105.76070000000001,
+     "hetero": 109.70540000000001,
+     "on": 111.42550000000001,
+     "eu": 113.798,
+     "rem": 115.4653
+    }
+   },
+   {
+    "id": "S07",
+    "t0": 121.04530000000001,
+    "t1": 154.03610000000003,
+    "events": {
+     "start": 121.04530000000001,
+     "w": 121.04530000000001,
+     "nuc": 123.73580000000001,
+     "off": 128.072,
+     "c1": 129.31220000000002,
+     "c2": 132.31220000000002,
+     "offx": 135.12220000000002,
+     "on": 140.01560000000003,
+     "c3": 141.32350000000005,
+     "c4": 143.50350000000006,
+     "c5": 147.62710000000004
+    }
+   },
+   {
+    "id": "S08",
+    "t0": 154.03610000000003,
+    "t1": 162.50380000000004,
+    "events": {
+     "start": 154.03610000000003,
+     "hi": 154.03610000000003,
+     "down": 156.01610000000002,
+     "lo": 158.18950000000004,
+     "up": 159.48950000000005
+    }
+   },
+   {
+    "id": "S09",
+    "t0": 162.50380000000004,
+    "t1": 196.37540000000004,
+    "events": {
+     "start": 162.50380000000004,
+     "more": 162.50380000000004,
+     "cpg": 165.28080000000006,
+     "p70": 171.29800000000006,
+     "complex": 176.54950000000005,
+     "imp": 183.84740000000005,
+     "nochg": 185.71160000000003,
+     "gen": 188.18230000000003,
+     "epi": 192.67230000000004
+    }
+   },
+   {
+    "id": "S10",
+    "t0": 196.37540000000004,
+    "t1": 251.70150000000004,
+    "events": {
+     "start": 196.37540000000004,
+     "see": 196.37540000000004,
+     "row": 198.71910000000003,
+     "cant": 200.8496,
+     "me": 205.03990000000002,
+     "pack": 208.90070000000003,
+     "hetero": 213.58740000000003,
+     "off": 214.94700000000003,
+     "tf": 216.66940000000002,
+     "ac": 223.42620000000002,
+     "open": 227.13000000000002,
+     "pol": 231.47650000000002,
+     "on": 236.5644,
+     "hdac": 238.02810000000002,
+     "switch": 245.59900000000002,
+     "feat": 248.07880000000003
+    }
+   },
+   {
+    "id": "S11",
+    "t0": 251.70150000000004,
+    "t1": 266.2649,
+    "events": {
+     "start": 251.70150000000004,
+     "elec": 251.70150000000004,
+     "pm": 254.83110000000005,
+     "release": 257.37010000000004,
+     "note": 261.79630000000003
+    }
+   },
+   {
+    "id": "S12",
+    "t0": 266.2649,
+    "t1": 292.44930000000005,
+    "events": {
+     "start": 266.2649,
+     "q": 266.2649,
+     "study": 269.85630000000003,
+     "meth": 272.10970000000003,
+     "expr": 280.40970000000004,
+     "hdac": 284.01830000000007
+    }
+   },
+   {
+    "id": "S13",
+    "t0": 292.44930000000005,
+    "t1": 305.4222000000001,
+    "events": {
+     "start": 292.44930000000005,
+     "w": 292.44930000000005,
+     "c6": 294.20610000000005,
+     "c7": 297.6394000000001,
+     "ex": 301.1782000000001
+    }
+   },
+   {
+    "id": "S14",
+    "t0": 305.4222000000001,
+    "t1": 335.5407000000001,
+    "events": {
+     "start": 305.4222000000001,
+     "q": 305.4222000000001,
+     "nuc": 308.7220000000001,
+     "copy": 312.5320000000001,
+     "g37": 319.9448000000001,
+     "resp": 321.6511000000001,
+     "import": 323.6081000000001,
+     "mat": 330.0699000000001
+    }
+   },
+   {
+    "id": "S15",
+    "t0": 335.5407000000001,
+    "t1": 356.9513000000001,
+    "events": {
+     "start": 335.5407000000001,
+     "w": 335.5407000000001,
+     "r1": 338.7712,
+     "r23": 341.55580000000003,
+     "warn": 344.12520000000006,
+     "m1": 347.0757000000001,
+     "m3": 351.88190000000014
+    }
+   },
+   {
+    "id": "S16",
+    "t0": 356.9513000000001,
+    "t1": 386.3439000000002,
+    "events": {
+     "start": 356.9513000000001,
+     "four": 356.9513000000001,
+     "p1": 359.8696000000001,
+     "p1b": 360.82550000000015,
+     "p1c": 364.42150000000015,
+     "p2": 368.46160000000015,
+     "p2b": 369.4454000000002,
+     "p2c": 373.3400000000002,
+     "p3": 375.3805000000002,
+     "p3b": 376.32200000000023,
+     "p4": 380.0471000000002,
+     "p4b": 382.1771000000002
+    }
+   },
+   {
+    "id": "S17",
+    "t0": 386.3439000000002,
+    "t1": 396.2588000000001,
+    "events": {
+     "start": 386.3439000000002,
+     "next": 386.3439000000002,
+     "bye": 390.04290000000015
+    }
+   }
+  ],
+  "segs": [
+   {
+    "scene": "S01",
+    "beat": "open",
+    "i": 0,
+    "seg": {
+     "text": "第6講、この単元の最終回です。",
+     "say": "第6講、この単元の最終回です。",
+     "cue": "title",
+     "post": 0.3
+    },
+    "t0": 0,
+    "t1": 3.1083999999999996,
+    "speech0": 0,
+    "speech1": 2.8084
+   },
+   {
+    "scene": "S01",
+    "beat": "today",
+    "i": 0,
+    "seg": {
+     "text": "ここまで、設計図の文字、製本、読み方、そして誤植を見てきました。",
+     "say": "ここまで、設計図の文字、製本、読み方、そして誤植を見てきました。",
+     "cue": "prev",
+     "post": 0.2
+    },
+    "t0": 3.1083999999999996,
+    "t1": 8.839299999999998,
+    "speech0": 3.1083999999999996,
+    "speech1": 8.639299999999999
+   },
+   {
+    "scene": "S01",
+    "beat": "today",
+    "i": 1,
+    "seg": {
+     "text": "今日は、文字をまったく変えずに、設計図の「読み方」を変える仕組み。",
+     "say": "今日は、文字をまったく変えずに、設計図の読み方を変える仕組み。",
+     "cue": "what",
+     "post": 0.15
+    },
+    "t0": 8.839299999999998,
+    "t1": 13.847599999999998,
+    "speech0": 8.839299999999998,
+    "speech1": 13.697599999999998
+   },
+   {
+    "scene": "S01",
+    "beat": "today",
+    "i": 2,
+    "seg": {
+     "text": "エピゲノムです。",
+     "say": "エピゲノムです。",
+     "cue": "epi",
+     "post": 0.5
+    },
+    "t0": 13.847599999999998,
+    "t1": 15.530099999999997,
+    "speech0": 13.847599999999998,
+    "speech1": 15.030099999999997
+   },
+   {
+    "scene": "S02",
+    "beat": "look",
+    "i": 0,
+    "seg": {
+     "text": "まず、この写真を見てください。",
+     "say": "まず、この写真を見てください。",
+     "cue": "look",
+     "post": 0.15
+    },
+    "t0": 15.680099999999998,
+    "t1": 17.865899999999996,
+    "speech0": 15.680099999999998,
+    "speech1": 17.715899999999998
+   },
+   {
+    "scene": "S02",
+    "beat": "what",
+    "i": 0,
+    "seg": {
+     "text": "この双子の、何が違うのでしょうか。",
+     "say": "この双子の、何が違うのでしょうか。",
+     "cue": "what",
+     "post": 0.15
+    },
+    "t0": 17.865899999999996,
+    "t1": 20.677999999999994,
+    "speech0": 17.865899999999996,
+    "speech1": 20.527999999999995
+   },
+   {
+    "scene": "S02",
+    "beat": "what",
+    "i": 1,
+    "seg": {
+     "text": "赤ちゃんのときは、そっくりです。",
+     "say": "赤ちゃんのときは、そっくりです。",
+     "cue": "baby",
+     "post": 0.2
+    },
+    "t0": 20.677999999999994,
+    "t1": 22.938999999999993,
+    "speech0": 20.677999999999994,
+    "speech1": 22.738999999999994
+   },
+   {
+    "scene": "S02",
+    "beat": "adult",
+    "i": 0,
+    "seg": {
+     "text": "ところが大人になると、一方は明らかに年上に見えます。",
+     "say": "ところが大人になると、一方は明らかに年上に見えます。",
+     "cue": "adult",
+     "post": 0.1
+    },
+    "t0": 22.938999999999993,
+    "t1": 27.628499999999995,
+    "speech0": 22.938999999999993,
+    "speech1": 27.528499999999994
+   },
+   {
+    "scene": "S02",
+    "beat": "adult",
+    "i": 1,
+    "seg": {
+     "text": "同じ遺伝子を持っているはずなのに。",
+     "say": "同じ遺伝子を持っているはずなのに。",
+     "cue": "same",
+     "post": 0.25
+    },
+    "t0": 27.628499999999995,
+    "t1": 30.139999999999993,
+    "speech0": 27.628499999999995,
+    "speech1": 29.889999999999993
+   },
+   {
+    "scene": "S02",
+    "beat": "env",
+    "i": 0,
+    "seg": {
+     "text": "違いを生んだのは、生活の違い、環境です。",
+     "say": "違いを生んだのは、生活の違い、環境です。",
+     "cue": "env",
+     "post": 0.1
+    },
+    "t0": 30.139999999999993,
+    "t1": 33.45869999999999,
+    "speech0": 30.139999999999993,
+    "speech1": 33.35869999999999
+   },
+   {
+    "scene": "S02",
+    "beat": "env",
+    "i": 1,
+    "seg": {
+     "text": "では、環境はどうやって体を変えるのか。",
+     "say": "では、環境はどうやって体を変えるのか。",
+     "cue": "how",
+     "post": 0.1
+    },
+    "t0": 33.45869999999999,
+    "t1": 36.4828,
+    "speech0": 33.45869999999999,
+    "speech1": 36.382799999999996
+   },
+   {
+    "scene": "S02",
+    "beat": "env",
+    "i": 2,
+    "seg": {
+     "text": "それが今日のテーマです。",
+     "say": "それが今日のテーマです。",
+     "cue": "theme",
+     "post": 0.45
+    },
+    "t0": 36.4828,
+    "t1": 38.4968,
+    "speech0": 36.4828,
+    "speech1": 38.0468
+   },
+   {
+    "scene": "S03",
+    "beat": "q",
+    "i": 0,
+    "seg": {
+     "text": "実際に、見た目の年齢が健康と関係するのか。",
+     "say": "実際に、見た目の年齢が健康と関係するのか。",
+     "cue": "q",
+     "post": 0.2
+    },
+    "t0": 38.6468,
+    "t1": 42.6396,
+    "speech0": 38.6468,
+    "speech1": 42.4396
+   },
+   {
+    "scene": "S03",
+    "beat": "n",
+    "i": 0,
+    "seg": {
+     "text": "70歳以上の双子、1826人を調べた研究です。",
+     "say": "ななじゅっさい以上の双子、せんはっぴゃくにじゅうろくにんを調べた研究です。",
+     "cue": "n",
+     "post": 0.25
+    },
+    "t0": 42.6396,
+    "t1": 48.3051,
+    "speech0": 42.6396,
+    "speech1": 48.0551
+   },
+   {
+    "scene": "S03",
+    "beat": "res",
+    "i": 0,
+    "seg": {
+     "text": "実年齢や生活習慣で補正しても、見た目年齢は健康寿命を予見し、",
+     "say": "実年齢や生活習慣で補正しても、見た目年齢は健康寿命を予見し、",
+     "cue": "pred",
+     "post": 0.05
+    },
+    "t0": 48.3051,
+    "t1": 55.1451,
+    "speech0": 48.3051,
+    "speech1": 55.0951
+   },
+   {
+    "scene": "S03",
+    "beat": "res",
+    "i": 1,
+    "seg": {
+     "text": "テロメアの長さや認知機能とも関連していました。",
+     "say": "テロメアの長さや認知機能とも関連していました。",
+     "cue": "telo",
+     "post": 0.45
+    },
+    "t0": 55.1451,
+    "t1": 59.731100000000005,
+    "speech0": 55.1451,
+    "speech1": 59.2811
+   },
+   {
+    "scene": "S04",
+    "beat": "q",
+    "i": 0,
+    "seg": {
+     "text": "では、遺伝子から体までの道のりを、もう一度整理します。",
+     "say": "では、遺伝子から体までの道のりを、もう一度整理します。",
+     "cue": "q",
+     "post": 0.2
+    },
+    "t0": 59.8811,
+    "t1": 64.9726,
+    "speech0": 59.8811,
+    "speech1": 64.7726
+   },
+   {
+    "scene": "S04",
+    "beat": "g",
+    "i": 0,
+    "seg": {
+     "text": "一番上は、生まれつきのゲノム。",
+     "say": "一番上は、生まれつきのゲノム。",
+     "cue": "genome",
+     "post": 0.1
+    },
+    "t0": 64.9726,
+    "t1": 67.3611,
+    "speech0": 64.9726,
+    "speech1": 67.2611
+   },
+   {
+    "scene": "S04",
+    "beat": "g",
+    "i": 1,
+    "seg": {
+     "text": "これが遺伝型。",
+     "say": "これがいでんがた。",
+     "cue": "geno",
+     "post": 0.2
+    },
+    "t0": 67.3611,
+    "t1": 68.7996,
+    "speech0": 67.3611,
+    "speech1": 68.5996
+   },
+   {
+    "scene": "S04",
+    "beat": "e",
+    "i": 0,
+    "seg": {
+     "text": "その下にエピゲノム。",
+     "say": "その下にエピゲノム。",
+     "cue": "epi",
+     "post": 0.1
+    },
+    "t0": 68.7996,
+    "t1": 70.47059999999999,
+    "speech0": 68.7996,
+    "speech1": 70.3706
+   },
+   {
+    "scene": "S04",
+    "beat": "e",
+    "i": 1,
+    "seg": {
+     "text": "DNAやヒストンの化学修飾です。",
+     "say": "ディーエヌエーやヒストンの化学修飾です。",
+     "cue": "mod",
+     "post": 0.25
+    },
+    "t0": 70.47059999999999,
+    "t1": 73.46079999999999,
+    "speech0": 70.47059999999999,
+    "speech1": 73.21079999999999
+   },
+   {
+    "scene": "S04",
+    "beat": "p",
+    "i": 0,
+    "seg": {
+     "text": "一番下の、タンパク質や代謝物が、表現型です。",
+     "say": "一番下の、タンパク質や代謝物が、ひょうげんがたです。",
+     "cue": "pheno",
+     "post": 0.45
+    },
+    "t0": 73.46079999999999,
+    "t1": 78.0371,
+    "speech0": 73.46079999999999,
+    "speech1": 77.58709999999999
+   },
+   {
+    "scene": "S05",
+    "beat": "w",
+    "i": 0,
+    "seg": {
+     "text": "左側に、この流れを書いていきます。",
+     "say": "左側に、この流れを書いていきます。",
+     "cue": "w",
+     "post": 0.1
+    },
+    "t0": 78.1871,
+    "t1": 81.2272,
+    "speech0": 78.1871,
+    "speech1": 81.1272
+   },
+   {
+    "scene": "S05",
+    "beat": "w",
+    "i": 1,
+    "seg": {
+     "text": "生まれつきのゲノムと、症状に直結する表現型。",
+     "say": "生まれつきのゲノムと、症状に直結するひょうげんがた。",
+     "cue": "l15",
+     "post": 0.1
+    },
+    "t0": 81.2272,
+    "t1": 85.37469999999999,
+    "speech0": 81.2272,
+    "speech1": 85.2747
+   },
+   {
+    "scene": "S05",
+    "beat": "w",
+    "i": 2,
+    "seg": {
+     "text": "その間に、生活環境によって少しずつ変わっていくエピゲノムがある。",
+     "say": "その間に、生活環境によって少しずつ変わっていくエピゲノムがある。",
+     "cue": "l2",
+     "post": 0.15
+    },
+    "t0": 85.37469999999999,
+    "t1": 90.827,
+    "speech0": 85.37469999999999,
+    "speech1": 90.67699999999999
+   },
+   {
+    "scene": "S05",
+    "beat": "main",
+    "i": 0,
+    "seg": {
+     "text": "ここが今日の主役です。",
+     "say": "ここが今日の主役です。",
+     "cue": "main",
+     "post": 0.25
+    },
+    "t0": 90.827,
+    "t1": 92.7012,
+    "speech0": 90.827,
+    "speech1": 92.4512
+   },
+   {
+    "scene": "S05",
+    "beat": "twin",
+    "i": 0,
+    "seg": {
+     "text": "さっきの双子。",
+     "say": "さっきの双子。",
+     "cue": "twin",
+     "post": 0.05
+    },
+    "t0": 92.7012,
+    "t1": 93.9102,
+    "speech0": 92.7012,
+    "speech1": 93.8602
+   },
+   {
+    "scene": "S05",
+    "beat": "twin",
+    "i": 1,
+    "seg": {
+     "text": "同じゲノムでも、環境によってエピゲノムが変わり、見た目が変わる。",
+     "say": "同じゲノムでも、環境によってエピゲノムが変わり、見た目が変わる。",
+     "cue": "l7",
+     "post": 0.1
+    },
+    "t0": 93.9102,
+    "t1": 99.3034,
+    "speech0": 93.9102,
+    "speech1": 99.2034
+   },
+   {
+    "scene": "S05",
+    "beat": "twin",
+    "i": 2,
+    "seg": {
+     "text": "そう考えることができます。",
+     "say": "そう考えることができます。",
+     "cue": "think",
+     "post": 0.45
+    },
+    "t0": 99.3034,
+    "t1": 101.726,
+    "speech0": 99.3034,
+    "speech1": 101.276
+   },
+   {
+    "scene": "S06",
+    "beat": "q",
+    "i": 0,
+    "seg": {
+     "text": "では、エピゲノムは、具体的に何をしているのか。",
+     "say": "では、エピゲノムは、具体てきに何をしているのか。",
+     "cue": "q",
+     "post": 0.2
+    },
+    "t0": 101.876,
+    "t1": 105.76070000000001,
+    "speech0": 101.876,
+    "speech1": 105.56070000000001
+   },
+   {
+    "scene": "S06",
+    "beat": "off",
+    "i": 0,
+    "seg": {
+     "text": "ぎゅっと凝集したクロマチンでは、遺伝子の転写がオフ。",
+     "say": "ぎゅっと凝集したクロマチンでは、遺伝子の転写がオフ。",
+     "cue": "off",
+     "post": 0.1
+    },
+    "t0": 105.76070000000001,
+    "t1": 109.70540000000001,
+    "speech0": 105.76070000000001,
+    "speech1": 109.60540000000002
+   },
+   {
+    "scene": "S06",
+    "beat": "off",
+    "i": 1,
+    "seg": {
+     "text": "これがヘテロクロマチン。",
+     "say": "これがヘテロクロマチン。",
+     "cue": "hetero",
+     "post": 0.2
+    },
+    "t0": 109.70540000000001,
+    "t1": 111.42550000000001,
+    "speech0": 109.70540000000001,
+    "speech1": 111.22550000000001
+   },
+   {
+    "scene": "S06",
+    "beat": "on",
+    "i": 0,
+    "seg": {
+     "text": "緩んだクロマチンでは、転写がオン。",
+     "say": "緩んだクロマチンでは、転写がオン。",
+     "cue": "on",
+     "post": 0.1
+    },
+    "t0": 111.42550000000001,
+    "t1": 113.798,
+    "speech0": 111.42550000000001,
+    "speech1": 113.69800000000001
+   },
+   {
+    "scene": "S06",
+    "beat": "on",
+    "i": 1,
+    "seg": {
+     "text": "こちらがユークロマチン。",
+     "say": "こちらがユークロマチン。",
+     "cue": "eu",
+     "post": 0.2
+    },
+    "t0": 113.798,
+    "t1": 115.4653,
+    "speech0": 113.798,
+    "speech1": 115.2653
+   },
+   {
+    "scene": "S06",
+    "beat": "rem",
+    "i": 0,
+    "seg": {
+     "text": "この二つの状態を行き来させるのが、クロマチンリモデリングです。",
+     "say": "この二つの状態を行き来させるのが、クロマチンリモデリングです。",
+     "cue": "rem",
+     "post": 0.45
+    },
+    "t0": 115.4653,
+    "t1": 120.8953,
+    "speech0": 115.4653,
+    "speech1": 120.4453
+   },
+   {
+    "scene": "S07",
+    "beat": "w",
+    "i": 0,
+    "seg": {
+     "text": "真ん中に、スイッチの仕組みを書きます。",
+     "say": "真ん中に、スイッチの仕組みを書きます。",
+     "cue": "w",
+     "post": 0.1
+    },
+    "t0": 121.04530000000001,
+    "t1": 123.73580000000001,
+    "speech0": 121.04530000000001,
+    "speech1": 123.63580000000002
+   },
+   {
+    "scene": "S07",
+    "beat": "w",
+    "i": 1,
+    "seg": {
+     "text": "DNAがヒストンに巻き付いた、ヌクレオソームの並びです。",
+     "say": "ディーエヌエーがヒストンに巻き付いた、ヌクレオソームの並びです。",
+     "cue": "nuc",
+     "post": 0.25
+    },
+    "t0": 123.73580000000001,
+    "t1": 128.072,
+    "speech0": 123.73580000000001,
+    "speech1": 127.82200000000002
+   },
+   {
+    "scene": "S07",
+    "beat": "off",
+    "i": 0,
+    "seg": {
+     "text": "まずオフの側。",
+     "say": "まずオフの側。",
+     "cue": "off",
+     "post": 0.05
+    },
+    "t0": 128.072,
+    "t1": 129.31220000000002,
+    "speech0": 128.072,
+    "speech1": 129.2622
+   },
+   {
+    "scene": "S07",
+    "beat": "off",
+    "i": 1,
+    "seg": {
+     "text": "DNAが高度にメチル化され、",
+     "say": "ディーエヌエーが高度にメチル化され、",
+     "cue": "c1"
+    },
+    "t0": 129.31220000000002,
+    "t1": 132.31220000000002,
+    "speech0": 129.31220000000002,
+    "speech1": 132.31220000000002
+   },
+   {
+    "scene": "S07",
+    "beat": "off",
+    "i": 2,
+    "seg": {
+     "text": "ヒストンのアセチル基が外されると、",
+     "say": "ヒストンのアセチル基が外されると、",
+     "cue": "c2"
+    },
+    "t0": 132.31220000000002,
+    "t1": 135.12220000000002,
+    "speech0": 132.31220000000002,
+    "speech1": 135.12220000000002
+   },
+   {
+    "scene": "S07",
+    "beat": "off",
+    "i": 3,
+    "seg": {
+     "text": "クロマチンが凝集してヘテロクロマチンになり、転写はオフ。",
+     "say": "クロマチンが凝集してヘテロクロマチンになり、転写はオフ。",
+     "cue": "offx",
+     "post": 0.3
+    },
+    "t0": 135.12220000000002,
+    "t1": 140.01560000000003,
+    "speech0": 135.12220000000002,
+    "speech1": 139.71560000000002
+   },
+   {
+    "scene": "S07",
+    "beat": "on",
+    "i": 0,
+    "seg": {
+     "text": "そしてオンの側。",
+     "say": "そしてオンの側。",
+     "cue": "on",
+     "post": 0.05
+    },
+    "t0": 140.01560000000003,
+    "t1": 141.32350000000005,
+    "speech0": 140.01560000000003,
+    "speech1": 141.27350000000004
+   },
+   {
+    "scene": "S07",
+    "beat": "on",
+    "i": 1,
+    "seg": {
+     "text": "ヒストンがアセチル化されると、",
+     "say": "ヒストンがアセチル化されると、",
+     "cue": "c3"
+    },
+    "t0": 141.32350000000005,
+    "t1": 143.50350000000006,
+    "speech0": 141.32350000000005,
+    "speech1": 143.50350000000006
+   },
+   {
+    "scene": "S07",
+    "beat": "on",
+    "i": 2,
+    "seg": {
+     "text": "塩基性が下がってDNAとの結合が弱まる。",
+     "say": "塩基性が下がってディーエヌエーとの結合が弱まる。",
+     "cue": "c4",
+     "post": 0.1
+    },
+    "t0": 143.50350000000006,
+    "t1": 147.62710000000004,
+    "speech0": 143.50350000000006,
+    "speech1": 147.52710000000005
+   },
+   {
+    "scene": "S07",
+    "beat": "on",
+    "i": 3,
+    "seg": {
+     "text": "プロモーターが露出して、RNAポリメラーゼが結合できるようになります。",
+     "say": "プロモーターが露出して、アールエヌエーポリメラーゼが結合できるようになります。",
+     "cue": "c5",
+     "post": 0.45
+    },
+    "t0": 147.62710000000004,
+    "t1": 153.88610000000003,
+    "speech0": 147.62710000000004,
+    "speech1": 153.43610000000004
+   },
+   {
+    "scene": "S08",
+    "beat": "hi",
+    "i": 0,
+    "seg": {
+     "text": "DNAの高メチル化で、",
+     "say": "ディーエヌエーの高メチル化で、",
+     "cue": "hi"
+    },
+    "t0": 154.03610000000003,
+    "t1": 156.01610000000002,
+    "speech0": 154.03610000000003,
+    "speech1": 156.01610000000002
+   },
+   {
+    "scene": "S08",
+    "beat": "hi",
+    "i": 1,
+    "seg": {
+     "text": "凝集して発現が低下。",
+     "say": "凝集して発現が低下。",
+     "cue": "down",
+     "post": 0.3
+    },
+    "t0": 156.01610000000002,
+    "t1": 158.18950000000004,
+    "speech0": 156.01610000000002,
+    "speech1": 157.88950000000003
+   },
+   {
+    "scene": "S08",
+    "beat": "lo",
+    "i": 0,
+    "seg": {
+     "text": "低メチル化では、",
+     "say": "低メチル化では、",
+     "cue": "lo"
+    },
+    "t0": 158.18950000000004,
+    "t1": 159.48950000000005,
+    "speech0": 158.18950000000004,
+    "speech1": 159.48950000000005
+   },
+   {
+    "scene": "S08",
+    "beat": "lo",
+    "i": 1,
+    "seg": {
+     "text": "緩んで発現が増加します。",
+     "say": "緩んで発現が増加します。",
+     "cue": "up",
+     "post": 0.6
+    },
+    "t0": 159.48950000000005,
+    "t1": 162.35380000000004,
+    "speech0": 159.48950000000005,
+    "speech1": 161.75380000000004
+   },
+   {
+    "scene": "S09",
+    "beat": "cpg",
+    "i": 0,
+    "seg": {
+     "text": "メチル化について、もう少し詳しく。",
+     "say": "メチル化について、もう少し詳しく。",
+     "cue": "more",
+     "post": 0.15
+    },
+    "t0": 162.50380000000004,
+    "t1": 165.28080000000006,
+    "speech0": 162.50380000000004,
+    "speech1": 165.13080000000005
+   },
+   {
+    "scene": "S09",
+    "beat": "cpg",
+    "i": 1,
+    "seg": {
+     "text": "発現しない遺伝子のDNAでは、シトシンが高度にメチル化されています。",
+     "say": "発現しない遺伝子のディーエヌエーでは、シトシンが高度にメチル化されています。",
+     "cue": "cpg",
+     "post": 0.2
+    },
+    "t0": 165.28080000000006,
+    "t1": 171.29800000000006,
+    "speech0": 165.28080000000006,
+    "speech1": 171.09800000000007
+   },
+   {
+    "scene": "S09",
+    "beat": "70",
+    "i": 0,
+    "seg": {
+     "text": "特に5ダッシュCG3ダッシュの並びでは、70パーセント以上。",
+     "say": "特に、ごダッシュ、シージー、さんダッシュの並びでは、ななじゅっパーセント以上。",
+     "cue": "p70",
+     "post": 0.25
+    },
+    "t0": 171.29800000000006,
+    "t1": 176.54950000000005,
+    "speech0": 171.29800000000006,
+    "speech1": 176.29950000000005
+   },
+   {
+    "scene": "S09",
+    "beat": "cx",
+    "i": 0,
+    "seg": {
+     "text": "それを認識する複合体が、ヒストンもメチル化して、クロマチンを強く凝集させます。",
+     "say": "それを認識する複合体が、ヒストンもメチル化して、クロマチンを強く凝集させます。",
+     "cue": "complex",
+     "post": 0.25
+    },
+    "t0": 176.54950000000005,
+    "t1": 183.84740000000005,
+    "speech0": 176.54950000000005,
+    "speech1": 183.59740000000005
+   },
+   {
+    "scene": "S09",
+    "beat": "epi",
+    "i": 0,
+    "seg": {
+     "text": "そして大事なのが、ここ。",
+     "say": "そして大事なのが、ここ。",
+     "cue": "imp",
+     "post": 0.1
+    },
+    "t0": 183.84740000000005,
+    "t1": 185.71160000000003,
+    "speech0": 183.84740000000005,
+    "speech1": 185.61160000000004
+   },
+   {
+    "scene": "S09",
+    "beat": "epi",
+    "i": 1,
+    "seg": {
+     "text": "塩基配列の変化はありません。",
+     "say": "塩基配列の変化はありません。",
+     "cue": "nochg",
+     "post": 0.15
+    },
+    "t0": 185.71160000000003,
+    "t1": 188.18230000000003,
+    "speech0": 185.71160000000003,
+    "speech1": 188.03230000000002
+   },
+   {
+    "scene": "S09",
+    "beat": "epi",
+    "i": 2,
+    "seg": {
+     "text": "だから、突然変異のようなジェネティックな変化に対して、",
+     "say": "だから、突然変異のようなジェネティックな変化に対して、",
+     "cue": "gen"
+    },
+    "t0": 188.18230000000003,
+    "t1": 192.67230000000004,
+    "speech0": 188.18230000000003,
+    "speech1": 192.67230000000004
+   },
+   {
+    "scene": "S09",
+    "beat": "epi",
+    "i": 3,
+    "seg": {
+     "text": "エピジェネティックな変化と呼ぶわけです。",
+     "say": "エピジェネティックな変化と呼ぶわけです。",
+     "cue": "epi",
+     "post": 0.5
+    },
+    "t0": 192.67230000000004,
+    "t1": 196.22540000000004,
+    "speech0": 192.67230000000004,
+    "speech1": 195.72540000000004
+   },
+   {
+    "scene": "S10",
+    "beat": "row",
+    "i": 0,
+    "seg": {
+     "text": "実際の動きで見てみましょう。",
+     "say": "実際の動きで見てみましょう。",
+     "cue": "see",
+     "post": 0.1
+    },
+    "t0": 196.37540000000004,
+    "t1": 198.71910000000003,
+    "speech0": 196.37540000000004,
+    "speech1": 198.61910000000003
+   },
+   {
+    "scene": "S10",
+    "beat": "row",
+    "i": 1,
+    "seg": {
+     "text": "ヌクレオソームが並んでいます。",
+     "say": "ヌクレオソームが並んでいます。",
+     "cue": "row",
+     "post": 0.1
+    },
+    "t0": 198.71910000000003,
+    "t1": 200.8496,
+    "speech0": 198.71910000000003,
+    "speech1": 200.74960000000002
+   },
+   {
+    "scene": "S10",
+    "beat": "row",
+    "i": 2,
+    "seg": {
+     "text": "このままでは、RNAポリメラーゼは近づけません。",
+     "say": "このままでは、アールエヌエーポリメラーゼは近づけません。",
+     "cue": "cant",
+     "post": 0.25
+    },
+    "t0": 200.8496,
+    "t1": 205.03990000000002,
+    "speech0": 200.8496,
+    "speech1": 204.78990000000002
+   },
+   {
+    "scene": "S10",
+    "beat": "me",
+    "i": 0,
+    "seg": {
+     "text": "DNAのシトシンに、メチル基が付いていきます。",
+     "say": "ディーエヌエーのシトシンに、メチル基が付いていきます。",
+     "cue": "me",
+     "post": 0.3
+    },
+    "t0": 205.03990000000002,
+    "t1": 208.90070000000003,
+    "speech0": 205.03990000000002,
+    "speech1": 208.60070000000002
+   },
+   {
+    "scene": "S10",
+    "beat": "pack",
+    "i": 0,
+    "seg": {
+     "text": "ヒストンもメチル化されて、ヌクレオソームがぎゅっと集まりました。",
+     "say": "ヒストンもメチル化されて、ヌクレオソームがぎゅっと集まりました。",
+     "cue": "pack",
+     "post": 0.15
+    },
+    "t0": 208.90070000000003,
+    "t1": 213.58740000000003,
+    "speech0": 208.90070000000003,
+    "speech1": 213.43740000000003
+   },
+   {
+    "scene": "S10",
+    "beat": "pack",
+    "i": 1,
+    "seg": {
+     "text": "ヘテロクロマチン。",
+     "say": "ヘテロクロマチン。",
+     "cue": "hetero",
+     "post": 0.1
+    },
+    "t0": 213.58740000000003,
+    "t1": 214.94700000000003,
+    "speech0": 213.58740000000003,
+    "speech1": 214.84700000000004
+   },
+   {
+    "scene": "S10",
+    "beat": "pack",
+    "i": 2,
+    "seg": {
+     "text": "転写はオフです。",
+     "say": "転写はオフです。",
+     "cue": "off",
+     "post": 0.4
+    },
+    "t0": 214.94700000000003,
+    "t1": 216.66940000000002,
+    "speech0": 214.94700000000003,
+    "speech1": 216.26940000000002
+   },
+   {
+    "scene": "S10",
+    "beat": "tf",
+    "i": 0,
+    "seg": {
+     "text": "今度は、転写因子がエンハンサーに結合して、ヒストンアセチル化酵素を呼び込みます。",
+     "say": "今度は、転写因子がエンハンサーに結合して、ヒストンアセチル化酵素を呼び込みます。",
+     "cue": "tf",
+     "post": 0.15
+    },
+    "t0": 216.66940000000002,
+    "t1": 223.42620000000002,
+    "speech0": 216.66940000000002,
+    "speech1": 223.27620000000002
+   },
+   {
+    "scene": "S10",
+    "beat": "tf",
+    "i": 1,
+    "seg": {
+     "text": "ヒストンのしっぽにアセチル基が付いていきます。",
+     "say": "ヒストンのしっぽにアセチル基が付いていきます。",
+     "cue": "ac",
+     "post": 0.3
+    },
+    "t0": 223.42620000000002,
+    "t1": 227.13000000000002,
+    "speech0": 223.42620000000002,
+    "speech1": 226.83
+   },
+   {
+    "scene": "S10",
+    "beat": "open",
+    "i": 0,
+    "seg": {
+     "text": "ヌクレオソームの間が広がって、プロモーターが現れました。",
+     "say": "ヌクレオソームの間が広がって、プロモーターが現れました。",
+     "cue": "open",
+     "post": 0.15
+    },
+    "t0": 227.13000000000002,
+    "t1": 231.47650000000002,
+    "speech0": 227.13000000000002,
+    "speech1": 231.3265
+   },
+   {
+    "scene": "S10",
+    "beat": "open",
+    "i": 1,
+    "seg": {
+     "text": "RNAポリメラーゼが結合して、RNAが作られ始めます。",
+     "say": "アールエヌエーポリメラーゼが結合して、アールエヌエーが作られ始めます。",
+     "cue": "pol",
+     "post": 0.1
+    },
+    "t0": 231.47650000000002,
+    "t1": 236.5644,
+    "speech0": 231.47650000000002,
+    "speech1": 236.4644
+   },
+   {
+    "scene": "S10",
+    "beat": "open",
+    "i": 2,
+    "seg": {
+     "text": "転写オンです。",
+     "say": "転写オンです。",
+     "cue": "on",
+     "post": 0.4
+    },
+    "t0": 236.5644,
+    "t1": 238.02810000000002,
+    "speech0": 236.5644,
+    "speech1": 237.62810000000002
+   },
+   {
+    "scene": "S10",
+    "beat": "hdac",
+    "i": 0,
+    "seg": {
+     "text": "最後に、脱アセチル化酵素がアセチル基を外すと、また凝集して、オフに戻ります。",
+     "say": "最後に、脱アセチル化酵素がアセチル基を外すと、また凝集して、オフに戻ります。",
+     "cue": "hdac",
+     "post": 0.4
+    },
+    "t0": 238.02810000000002,
+    "t1": 245.59900000000002,
+    "speech0": 238.02810000000002,
+    "speech1": 245.199
+   },
+   {
+    "scene": "S10",
+    "beat": "sw",
+    "i": 0,
+    "seg": {
+     "text": "スイッチは、入れたり切ったりできる。",
+     "say": "スイッチは、入れたり切ったりできる。",
+     "cue": "switch",
+     "post": 0.15
+    },
+    "t0": 245.59900000000002,
+    "t1": 248.07880000000003,
+    "speech0": 245.59900000000002,
+    "speech1": 247.92880000000002
+   },
+   {
+    "scene": "S10",
+    "beat": "sw",
+    "i": 1,
+    "seg": {
+     "text": "これがエピゲノムの大きな特徴です。",
+     "say": "これがエピゲノムの大きな特徴です。",
+     "cue": "feat",
+     "post": 0.6
+    },
+    "t0": 248.07880000000003,
+    "t1": 251.55150000000003,
+    "speech0": 248.07880000000003,
+    "speech1": 250.95150000000004
+   },
+   {
+    "scene": "S11",
+    "beat": "elec",
+    "i": 0,
+    "seg": {
+     "text": "電気の話で考えると分かりやすいです。",
+     "say": "電気の話で考えると分かりやすいです。",
+     "cue": "elec",
+     "post": 0.15
+    },
+    "t0": 251.70150000000004,
+    "t1": 254.83110000000005,
+    "speech0": 251.70150000000004,
+    "speech1": 254.68110000000004
+   },
+   {
+    "scene": "S11",
+    "beat": "elec",
+    "i": 1,
+    "seg": {
+     "text": "ヒストンはプラス、DNAはマイナス。",
+     "say": "ヒストンはプラス、ディーエヌエーはマイナス。",
+     "cue": "pm",
+     "post": 0.2
+    },
+    "t0": 254.83110000000005,
+    "t1": 257.37010000000004,
+    "speech0": 254.83110000000005,
+    "speech1": 257.17010000000005
+   },
+   {
+    "scene": "S11",
+    "beat": "elec",
+    "i": 2,
+    "seg": {
+     "text": "アセチル化でヒストンのプラスが減ると、DNAを手放す。",
+     "say": "アセチル化でヒストンのプラスが減ると、ディーエヌエーを手放す。",
+     "cue": "release",
+     "post": 0.2
+    },
+    "t0": 257.37010000000004,
+    "t1": 261.79630000000003,
+    "speech0": 257.37010000000004,
+    "speech1": 261.59630000000004
+   },
+   {
+    "scene": "S11",
+    "beat": "elec",
+    "i": 3,
+    "seg": {
+     "text": "これは補足のイメージですが、覚えやすいと思います。",
+     "say": "これは補足のイメージですが、覚えやすいと思います。",
+     "cue": "note",
+     "post": 0.45
+    },
+    "t0": 261.79630000000003,
+    "t1": 266.11490000000003,
+    "speech0": 261.79630000000003,
+    "speech1": 265.66490000000005
+   },
+   {
+    "scene": "S12",
+    "beat": "q",
+    "i": 0,
+    "seg": {
+     "text": "では、生活でエピゲノムが本当に変わるのか。",
+     "say": "では、生活でエピゲノムが本当に変わるのか。",
+     "cue": "q",
+     "post": 0.1
+    },
+    "t0": 266.2649,
+    "t1": 269.85630000000003,
+    "speech0": 266.2649,
+    "speech1": 269.7563
+   },
+   {
+    "scene": "S12",
+    "beat": "q",
+    "i": 1,
+    "seg": {
+     "text": "運動の研究を紹介します。",
+     "say": "運動の研究を紹介します。",
+     "cue": "study",
+     "post": 0.2
+    },
+    "t0": 269.85630000000003,
+    "t1": 272.10970000000003,
+    "speech0": 269.85630000000003,
+    "speech1": 271.90970000000004
+   },
+   {
+    "scene": "S12",
+    "beat": "meth",
+    "i": 0,
+    "seg": {
+     "text": "激しい運動の直後、PGC-1アルファなど代謝に関わる遺伝子のプロモーターのメチル化が下がり、",
+     "say": "激しい運動の直後、ピージーシーワンアルファなど代謝に関わる遺伝子のプロモーターのメチル化が下がり、",
+     "cue": "meth",
+     "post": 0.05
+    },
+    "t0": 272.10970000000003,
+    "t1": 280.40970000000004,
+    "speech0": 272.10970000000003,
+    "speech1": 280.35970000000003
+   },
+   {
+    "scene": "S12",
+    "beat": "meth",
+    "i": 1,
+    "seg": {
+     "text": "同じ遺伝子の発現が上がっていました。",
+     "say": "同じ遺伝子の発現が上がっていました。",
+     "cue": "expr",
+     "post": 0.3
+    },
+    "t0": 280.40970000000004,
+    "t1": 284.01830000000007,
+    "speech0": 280.40970000000004,
+    "speech1": 283.71830000000006
+   },
+   {
+    "scene": "S12",
+    "beat": "hdac",
+    "i": 0,
+    "seg": {
+     "text": "筋肉が収縮するシグナルで、脱アセチル化酵素のHDACが核の外に出ていきます。",
+     "say": "筋肉が収縮するシグナルで、脱アセチル化酵素のエイチダックが核の外に出ていきます。",
+     "cue": "hdac",
+     "post": 0.5
+    },
+    "t0": 284.01830000000007,
+    "t1": 292.2993000000001,
+    "speech0": 284.01830000000007,
+    "speech1": 291.7993000000001
+   },
+   {
+    "scene": "S13",
+    "beat": "w",
+    "i": 0,
+    "seg": {
+     "text": "黒板に書いておきます。",
+     "say": "黒板に書いておきます。",
+     "cue": "w",
+     "post": 0.1
+    },
+    "t0": 292.44930000000005,
+    "t1": 294.20610000000005,
+    "speech0": 292.44930000000005,
+    "speech1": 294.1061
+   },
+   {
+    "scene": "S13",
+    "beat": "w",
+    "i": 1,
+    "seg": {
+     "text": "運動で、脱アセチル化酵素が核の外へ。",
+     "say": "運動で、脱アセチル化酵素が核の外へ。",
+     "cue": "c6",
+     "post": 0.1
+    },
+    "t0": 294.20610000000005,
+    "t1": 297.6394000000001,
+    "speech0": 294.20610000000005,
+    "speech1": 297.53940000000006
+   },
+   {
+    "scene": "S13",
+    "beat": "w",
+    "i": 2,
+    "seg": {
+     "text": "プロモーターのメチル化が下がって、発現が上がる。",
+     "say": "プロモーターのメチル化が下がって、発現が上がる。",
+     "cue": "c7",
+     "post": 0.1
+    },
+    "t0": 297.6394000000001,
+    "t1": 301.1782000000001,
+    "speech0": 297.6394000000001,
+    "speech1": 301.0782000000001
+   },
+   {
+    "scene": "S13",
+    "beat": "w",
+    "i": 3,
+    "seg": {
+     "text": "生活でエピゲノムが変わる、具体的な例です。",
+     "say": "生活でエピゲノムが変わる、具体てきな例です。",
+     "cue": "ex",
+     "post": 0.45
+    },
+    "t0": 301.1782000000001,
+    "t1": 305.2722000000001,
+    "speech0": 301.1782000000001,
+    "speech1": 304.8222000000001
+   },
+   {
+    "scene": "S14",
+    "beat": "q",
+    "i": 0,
+    "seg": {
+     "text": "最後に、核とは別のゲノムの話です。",
+     "say": "最後に、核とは別のゲノムの話です。",
+     "cue": "q",
+     "post": 0.2
+    },
+    "t0": 305.4222000000001,
+    "t1": 308.7220000000001,
+    "speech0": 305.4222000000001,
+    "speech1": 308.5220000000001
+   },
+   {
+    "scene": "S14",
+    "beat": "copy",
+    "i": 0,
+    "seg": {
+     "text": "核のゲノムは両親から1セットずつですが、",
+     "say": "核のゲノムは両親からひとセットずつですが、",
+     "cue": "nuc",
+     "post": 0.05
+    },
+    "t0": 308.7220000000001,
+    "t1": 312.5320000000001,
+    "speech0": 308.7220000000001,
+    "speech1": 312.4820000000001
+   },
+   {
+    "scene": "S14",
+    "beat": "copy",
+    "i": 1,
+    "seg": {
+     "text": "ミトコンドリアのゲノムは、細胞あたり10の3乗から10の4乗コピーもあります。",
+     "say": "ミトコンドリアのゲノムは、細胞あたり、じゅうのさんじょうから、じゅうのよんじょうコピーもあります。",
+     "cue": "copy",
+     "post": 0.25
+    },
+    "t0": 312.5320000000001,
+    "t1": 319.9448000000001,
+    "speech0": 312.5320000000001,
+    "speech1": 319.6948000000001
+   },
+   {
+    "scene": "S14",
+    "beat": "g37",
+    "i": 0,
+    "seg": {
+     "text": "遺伝子は37個。",
+     "say": "遺伝子はさんじゅうななこ。",
+     "cue": "g37",
+     "post": 0.1
+    },
+    "t0": 319.9448000000001,
+    "t1": 321.6511000000001,
+    "speech0": 319.9448000000001,
+    "speech1": 321.5511000000001
+   },
+   {
+    "scene": "S14",
+    "beat": "g37",
+    "i": 1,
+    "seg": {
+     "text": "呼吸鎖の部品などです。",
+     "say": "呼吸鎖の部品などです。",
+     "cue": "resp",
+     "post": 0.25
+    },
+    "t0": 321.6511000000001,
+    "t1": 323.6081000000001,
+    "speech0": 321.6511000000001,
+    "speech1": 323.3581000000001
+   },
+   {
+    "scene": "S14",
+    "beat": "imp",
+    "i": 0,
+    "seg": {
+     "text": "ミトコンドリアの中のタンパク質の大部分は、実は核の遺伝子の産物。",
+     "say": "ミトコンドリアの中のタンパク質の大部分は、実は核の遺伝子の産物。",
+     "cue": "import",
+     "post": 0.25
+    },
+    "t0": 323.6081000000001,
+    "t1": 330.0699000000001,
+    "speech0": 323.6081000000001,
+    "speech1": 329.8199000000001
+   },
+   {
+    "scene": "S14",
+    "beat": "mat",
+    "i": 0,
+    "seg": {
+     "text": "そして、ミトコンドリアの遺伝子の変異は、母系遺伝を示します。",
+     "say": "そして、ミトコンドリアの遺伝子の変異は、母系遺伝を示します。",
+     "cue": "mat",
+     "post": 0.5
+    },
+    "t0": 330.0699000000001,
+    "t1": 335.3907000000001,
+    "speech0": 330.0699000000001,
+    "speech1": 334.8907000000001
+   },
+   {
+    "scene": "S15",
+    "beat": "w",
+    "i": 0,
+    "seg": {
+     "text": "右側に、今日の試験ポイントをまとめます。",
+     "say": "右側に、今日の試験ポイントをまとめます。",
+     "cue": "w",
+     "post": 0.15
+    },
+    "t0": 335.5407000000001,
+    "t1": 338.7712,
+    "speech0": 335.5407000000001,
+    "speech1": 338.62120000000004
+   },
+   {
+    "scene": "S15",
+    "beat": "r",
+    "i": 0,
+    "seg": {
+     "text": "エピジェネティックは、配列が変わらない。",
+     "say": "エピジェネティックは、配列が変わらない。",
+     "cue": "r1",
+     "post": 0.1
+    },
+    "t0": 338.7712,
+    "t1": 341.55580000000003,
+    "speech0": 338.7712,
+    "speech1": 341.4558
+   },
+   {
+    "scene": "S15",
+    "beat": "r",
+    "i": 1,
+    "seg": {
+     "text": "メチル化はオフ、アセチル化はオン。",
+     "say": "メチル化はオフ、アセチル化はオン。",
+     "cue": "r23",
+     "post": 0.1
+    },
+    "t0": 341.55580000000003,
+    "t1": 344.12520000000006,
+    "speech0": 341.55580000000003,
+    "speech1": 344.02520000000004
+   },
+   {
+    "scene": "S15",
+    "beat": "r",
+    "i": 2,
+    "seg": {
+     "text": "向きを絶対に取り違えないでください。",
+     "say": "向きを絶対に取り違えないでください。",
+     "cue": "warn",
+     "post": 0.3
+    },
+    "t0": 344.12520000000006,
+    "t1": 347.0757000000001,
+    "speech0": 344.12520000000006,
+    "speech1": 346.7757000000001
+   },
+   {
+    "scene": "S15",
+    "beat": "m",
+    "i": 0,
+    "seg": {
+     "text": "ミトコンドリアは、37個の遺伝子、たくさんのコピー、母系遺伝。",
+     "say": "ミトコンドリアは、さんじゅうななこの遺伝子、たくさんのコピー、母系遺伝。",
+     "cue": "m1",
+     "post": 0.1
+    },
+    "t0": 347.0757000000001,
+    "t1": 351.88190000000014,
+    "speech0": 347.0757000000001,
+    "speech1": 351.7819000000001
+   },
+   {
+    "scene": "S15",
+    "beat": "m",
+    "i": 1,
+    "seg": {
+     "text": "そして、中のタンパク質の大部分は核の遺伝子から。",
+     "say": "そして、中のタンパク質の大部分は核の遺伝子から。",
+     "cue": "m3",
+     "post": 0.45
+    },
+    "t0": 351.88190000000014,
+    "t1": 356.80130000000014,
+    "speech0": 351.88190000000014,
+    "speech1": 356.35130000000015
+   },
+   {
+    "scene": "S16",
+    "beat": "four",
+    "i": 0,
+    "seg": {
+     "text": "今日覚えてほしいのは、この4つです。",
+     "say": "今日覚えてほしいのは、この4つです。",
+     "cue": "four",
+     "post": 0.3
+    },
+    "t0": 356.9513000000001,
+    "t1": 359.8696000000001,
+    "speech0": 356.9513000000001,
+    "speech1": 359.5696000000001
+   },
+   {
+    "scene": "S16",
+    "beat": "p1",
+    "i": 0,
+    "seg": {
+     "text": "ひとつ目。",
+     "say": "ひとつ目。",
+     "cue": "p1",
+     "post": 0.1
+    },
+    "t0": 359.8696000000001,
+    "t1": 360.82550000000015,
+    "speech0": 359.8696000000001,
+    "speech1": 360.7255000000001
+   },
+   {
+    "scene": "S16",
+    "beat": "p1",
+    "i": 1,
+    "seg": {
+     "text": "遺伝型と表現型の間にあるエピゲノム。",
+     "say": "いでんがたとひょうげんがたの間にあるエピゲノム。",
+     "cue": "p1b",
+     "post": 0.1
+    },
+    "t0": 360.82550000000015,
+    "t1": 364.42150000000015,
+    "speech0": 360.82550000000015,
+    "speech1": 364.3215000000001
+   },
+   {
+    "scene": "S16",
+    "beat": "p1",
+    "i": 2,
+    "seg": {
+     "text": "塩基配列を変えずに、遺伝子の働きを変えます。",
+     "say": "塩基配列を変えずに、遺伝子の働きを変えます。",
+     "cue": "p1c",
+     "post": 0.3
+    },
+    "t0": 364.42150000000015,
+    "t1": 368.46160000000015,
+    "speech0": 364.42150000000015,
+    "speech1": 368.16160000000013
+   },
+   {
+    "scene": "S16",
+    "beat": "p2",
+    "i": 0,
+    "seg": {
+     "text": "ふたつ目。",
+     "say": "ふたつ目。",
+     "cue": "p2",
+     "post": 0.1
+    },
+    "t0": 368.46160000000015,
+    "t1": 369.4454000000002,
+    "speech0": 368.46160000000015,
+    "speech1": 369.34540000000015
+   },
+   {
+    "scene": "S16",
+    "beat": "p2",
+    "i": 1,
+    "seg": {
+     "text": "高メチル化と脱アセチル化で凝集してオフ。",
+     "say": "高メチル化と脱アセチル化で凝集してオフ。",
+     "cue": "p2b",
+     "post": 0.1
+    },
+    "t0": 369.4454000000002,
+    "t1": 373.3400000000002,
+    "speech0": 369.4454000000002,
+    "speech1": 373.2400000000002
+   },
+   {
+    "scene": "S16",
+    "beat": "p2",
+    "i": 2,
+    "seg": {
+     "text": "アセチル化で緩んでオン。",
+     "say": "アセチル化で緩んでオン。",
+     "cue": "p2c",
+     "post": 0.3
+    },
+    "t0": 373.3400000000002,
+    "t1": 375.3805000000002,
+    "speech0": 373.3400000000002,
+    "speech1": 375.0805000000002
+   },
+   {
+    "scene": "S16",
+    "beat": "p3",
+    "i": 0,
+    "seg": {
+     "text": "みっつ目。",
+     "say": "みっつ目。",
+     "cue": "p3",
+     "post": 0.1
+    },
+    "t0": 375.3805000000002,
+    "t1": 376.32200000000023,
+    "speech0": 375.3805000000002,
+    "speech1": 376.2220000000002
+   },
+   {
+    "scene": "S16",
+    "beat": "p3",
+    "i": 1,
+    "seg": {
+     "text": "エピゲノムは、運動などの生活で変わりうる。",
+     "say": "エピゲノムは、運動などの生活で変わりうる。",
+     "cue": "p3b",
+     "post": 0.3
+    },
+    "t0": 376.32200000000023,
+    "t1": 380.0471000000002,
+    "speech0": 376.32200000000023,
+    "speech1": 379.7471000000002
+   },
+   {
+    "scene": "S16",
+    "beat": "p4",
+    "i": 0,
+    "seg": {
+     "text": "そして、ミトコンドリアのゲノムは、",
+     "say": "そして、ミトコンドリアのゲノムは、",
+     "cue": "p4"
+    },
+    "t0": 380.0471000000002,
+    "t1": 382.1771000000002,
+    "speech0": 380.0471000000002,
+    "speech1": 382.1771000000002
+   },
+   {
+    "scene": "S16",
+    "beat": "p4",
+    "i": 1,
+    "seg": {
+     "text": "37個の遺伝子、多コピー、母系遺伝。",
+     "say": "さんじゅうななこの遺伝子、多コピー、母系遺伝。",
+     "cue": "p4b",
+     "post": 0.45
+    },
+    "t0": 382.1771000000002,
+    "t1": 386.1939000000002,
+    "speech0": 382.1771000000002,
+    "speech1": 385.7439000000002
+   },
+   {
+    "scene": "S17",
+    "beat": "next",
+    "i": 0,
+    "seg": {
+     "text": "これで「遺伝子の基礎」の6回がすべて終わりです。",
+     "say": "これで遺伝子の基礎のろっかいがすべて終わりです。",
+     "cue": "next",
+     "post": 0.4
+    },
+    "t0": 386.3439000000002,
+    "t1": 390.04290000000015,
+    "speech0": 386.3439000000002,
+    "speech1": 389.64290000000017
+   },
+   {
+    "scene": "S17",
+    "beat": "bye",
+    "i": 0,
+    "seg": {
+     "text": "第6講、そして遺伝子の基礎の授業は、これで終わりです。",
+     "say": "第6講、そして遺伝子の基礎の授業は、これで終わりです。",
+     "cue": "bye",
+     "post": 1.4
+    },
+    "t0": 390.04290000000015,
+    "t1": 396.10880000000014,
+    "speech0": 390.04290000000015,
+    "speech1": 394.70880000000017
+   }
+  ]
+ },
+ "edit": {
+  "plan": "genetics-basics:6:film|full|board|gekiga",
+  "voice": "genetics-basics-6-film_board",
+  "size": [
+   1280,
+   720
+  ],
+  "fps": 24,
+  "total": 396.259,
+  "frames": 9510,
+  "timing": "kokoro",
+  "layers": {
+   "plate": "layers/plate_%05d.jpg",
+   "overlay": "layers/overlay_%05d.png"
+  },
+  "note": "背景（Wan クリップ／無ければ MEDSTUDY アニマティック）→ 医学図レイヤーを重ねる → 白黒反転 → 字幕（ASS）→ 講師音声＋効果音（＋任意で BGM、声に合わせて自動で下げる）",
+  "scenes": [
+   {
+    "id": "S01",
+    "t0": 0,
+    "dur": 15.68,
+    "audio": "audio/S01.wav",
+    "shots": [
+     {
+      "id": "a",
+      "wan": "wan/S01_a.webm",
+      "mode": "feature",
+      "t0": 0,
+      "dur": 15.68,
+      "f0": 0,
+      "f1": 376,
+      "wanFrames": 121,
+      "wanFps": 24
+     }
+    ],
+    "sfx": [
+     {
+      "kind": "riser",
+      "t": 0,
+      "gain": 0.5
+     },
+     {
+      "kind": "boom",
+      "t": 0,
+      "gain": 1
+     }
+    ],
+    "invert": []
+   },
+   {
+    "id": "S02",
+    "t0": 15.68,
+    "dur": 22.967,
+    "audio": "audio/S02.wav",
+    "shots": [
+     {
+      "id": "a",
+      "wan": "wan/S02_a.webm",
+      "mode": "background",
+      "t0": 15.68,
+      "dur": 22.967,
+      "f0": 376,
+      "f1": 928,
+      "wanFrames": 121,
+      "wanFps": 24
+     }
+    ],
+    "sfx": [
+     {
+      "kind": "tick",
+      "t": 20.678,
+      "gain": 1
+     },
+     {
+      "kind": "impact",
+      "t": 22.939,
+      "gain": 0.6
+     },
+     {
+      "kind": "whoosh",
+      "t": 30.14,
+      "gain": 0.5
+     },
+     {
+      "kind": "boom",
+      "t": 36.483,
+      "gain": 0.5
+     }
+    ],
+    "invert": []
+   },
+   {
+    "id": "S03",
+    "t0": 38.647,
+    "dur": 21.234,
+    "audio": "audio/S03.wav",
+    "shots": [
+     {
+      "id": "a",
+      "wan": "wan/S03_a.webm",
+      "mode": "background",
+      "t0": 38.647,
+      "dur": 21.234,
+      "f0": 928,
+      "f1": 1437,
+      "wanFrames": 121,
+      "wanFps": 24
+     }
+    ],
+    "sfx": [
+     {
+      "kind": "impact",
+      "t": 42.64,
+      "gain": 0.5
+     },
+     {
+      "kind": "whoosh",
+      "t": 48.305,
+      "gain": 0.5
+     },
+     {
+      "kind": "tick",
+      "t": 55.145,
+      "gain": 1
+     }
+    ],
+    "invert": []
+   },
+   {
+    "id": "S04",
+    "t0": 59.881,
+    "dur": 18.306,
+    "audio": "audio/S04.wav",
+    "shots": [
+     {
+      "id": "a",
+      "wan": "wan/S04_a.webm",
+      "mode": "background",
+      "t0": 59.881,
+      "dur": 18.306,
+      "f0": 1437,
+      "f1": 1876,
+      "wanFrames": 121,
+      "wanFps": 24
+     }
+    ],
+    "sfx": [
+     {
+      "kind": "tick",
+      "t": 64.973,
+      "gain": 1
+     },
+     {
+      "kind": "boom",
+      "t": 68.8,
+      "gain": 0.5
+     },
+     {
+      "kind": "tick",
+      "t": 73.461,
+      "gain": 1
+     }
+    ],
+    "invert": []
+   },
+   {
+    "id": "S05",
+    "t0": 78.187,
+    "dur": 23.689,
+    "audio": "audio/S05.wav",
+    "shots": [
+     {
+      "id": "a",
+      "wan": "wan/S05_a.webm",
+      "mode": "background",
+      "t0": 78.187,
+      "dur": 23.689,
+      "f0": 1876,
+      "f1": 2445,
+      "wanFrames": 121,
+      "wanFps": 24
+     }
+    ],
+    "sfx": [
+     {
+      "kind": "chalk",
+      "t": 78.187,
+      "gain": 0.6
+     },
+     {
+      "kind": "chalk",
+      "t": 85.375,
+      "gain": 0.6
+     },
+     {
+      "kind": "impact",
+      "t": 90.827,
+      "gain": 0.6
+     },
+     {
+      "kind": "chalk",
+      "t": 92.701,
+      "gain": 0.6
+     }
+    ],
+    "invert": []
+   },
+   {
+    "id": "S06",
+    "t0": 101.876,
+    "dur": 19.169,
+    "audio": "audio/S06.wav",
+    "shots": [
+     {
+      "id": "a",
+      "wan": "wan/S06_a.webm",
+      "mode": "background",
+      "t0": 101.876,
+      "dur": 19.169,
+      "f0": 2445,
+      "f1": 2905,
+      "wanFrames": 121,
+      "wanFps": 24
+     }
+    ],
+    "sfx": [
+     {
+      "kind": "impact",
+      "t": 105.761,
+      "gain": 0.5
+     },
+     {
+      "kind": "whoosh",
+      "t": 111.426,
+      "gain": 0.5
+     },
+     {
+      "kind": "shimmer",
+      "t": 115.465,
+      "gain": 0.4
+     }
+    ],
+    "invert": []
+   },
+   {
+    "id": "S07",
+    "t0": 121.045,
+    "dur": 32.991,
+    "audio": "audio/S07.wav",
+    "shots": [
+     {
+      "id": "a",
+      "wan": "wan/S07_a.webm",
+      "mode": "background",
+      "t0": 121.045,
+      "dur": 32.991,
+      "f0": 2905,
+      "f1": 3697,
+      "wanFrames": 121,
+      "wanFps": 24
+     }
+    ],
+    "sfx": [
+     {
+      "kind": "chalk",
+      "t": 121.045,
+      "gain": 0.6
+     },
+     {
+      "kind": "chalk",
+      "t": 128.072,
+      "gain": 0.6
+     },
+     {
+      "kind": "chalk",
+      "t": 140.016,
+      "gain": 0.6
+     }
+    ],
+    "invert": []
+   },
+   {
+    "id": "S08",
+    "t0": 154.036,
+    "dur": 8.468,
+    "audio": "audio/S08.wav",
+    "shots": [
+     {
+      "id": "a",
+      "wan": "wan/S08_a.webm",
+      "mode": "background",
+      "t0": 154.036,
+      "dur": 8.468,
+      "f0": 3697,
+      "f1": 3900,
+      "wanFrames": 121,
+      "wanFps": 24
+     }
+    ],
+    "sfx": [
+     {
+      "kind": "tick",
+      "t": 154.036,
+      "gain": 1
+     },
+     {
+      "kind": "impact",
+      "t": 156.016,
+      "gain": 0.5
+     },
+     {
+      "kind": "tick",
+      "t": 158.19,
+      "gain": 1
+     },
+     {
+      "kind": "shimmer",
+      "t": 159.49,
+      "gain": 0.4
+     }
+    ],
+    "invert": []
+   },
+   {
+    "id": "S09",
+    "t0": 162.504,
+    "dur": 33.872,
+    "audio": "audio/S09.wav",
+    "shots": [
+     {
+      "id": "a",
+      "wan": "wan/S09_a.webm",
+      "mode": "background",
+      "t0": 162.504,
+      "dur": 33.872,
+      "f0": 3900,
+      "f1": 4713,
+      "wanFrames": 121,
+      "wanFps": 24
+     }
+    ],
+    "sfx": [
+     {
+      "kind": "tick",
+      "t": 165.281,
+      "gain": 1
+     },
+     {
+      "kind": "impact",
+      "t": 171.298,
+      "gain": 0.6
+     },
+     {
+      "kind": "whoosh",
+      "t": 176.55,
+      "gain": 0.5
+     },
+     {
+      "kind": "shimmer",
+      "t": 185.712,
+      "gain": 0.4
+     },
+     {
+      "kind": "boom",
+      "t": 192.672,
+      "gain": 0.6
+     }
+    ],
+    "invert": []
+   },
+   {
+    "id": "S10",
+    "t0": 196.375,
+    "dur": 55.326,
+    "audio": "audio/S10.wav",
+    "shots": [
+     {
+      "id": "a",
+      "wan": "wan/S10_a.webm",
+      "mode": "background",
+      "t0": 196.375,
+      "dur": 55.326,
+      "f0": 4713,
+      "f1": 6041,
+      "wanFrames": 121,
+      "wanFps": 24
+     }
+    ],
+    "sfx": [
+     {
+      "kind": "tick",
+      "t": 205.04,
+      "gain": 1
+     },
+     {
+      "kind": "whoosh",
+      "t": 208.901,
+      "gain": 0.5
+     },
+     {
+      "kind": "impact",
+      "t": 214.947,
+      "gain": 0.6
+     },
+     {
+      "kind": "tick",
+      "t": 216.669,
+      "gain": 1
+     },
+     {
+      "kind": "whoosh",
+      "t": 227.13,
+      "gain": 0.5
+     },
+     {
+      "kind": "shimmer",
+      "t": 236.564,
+      "gain": 0.5
+     },
+     {
+      "kind": "whoosh",
+      "t": 238.028,
+      "gain": 0.5
+     },
+     {
+      "kind": "boom",
+      "t": 245.599,
+      "gain": 0.6
+     }
+    ],
+    "invert": []
+   },
+   {
+    "id": "S11",
+    "t0": 251.702,
+    "dur": 14.563,
+    "audio": "audio/S11.wav",
+    "shots": [
+     {
+      "id": "a",
+      "wan": "wan/S11_a.webm",
+      "mode": "background",
+      "t0": 251.702,
+      "dur": 14.563,
+      "f0": 6041,
+      "f1": 6390,
+      "wanFrames": 121,
+      "wanFps": 24
+     }
+    ],
+    "sfx": [
+     {
+      "kind": "tick",
+      "t": 254.831,
+      "gain": 1
+     },
+     {
+      "kind": "whoosh",
+      "t": 257.37,
+      "gain": 1
+     }
+    ],
+    "invert": []
+   },
+   {
+    "id": "S12",
+    "t0": 266.265,
+    "dur": 26.184,
+    "audio": "audio/S12.wav",
+    "shots": [
+     {
+      "id": "a",
+      "wan": "wan/S12_a.webm",
+      "mode": "background",
+      "t0": 266.265,
+      "dur": 26.184,
+      "f0": 6390,
+      "f1": 7019,
+      "wanFrames": 121,
+      "wanFps": 24
+     }
+    ],
+    "sfx": [
+     {
+      "kind": "heartbeat",
+      "t": 269.856,
+      "gain": 1
+     },
+     {
+      "kind": "tick",
+      "t": 272.11,
+      "gain": 1
+     },
+     {
+      "kind": "shimmer",
+      "t": 280.41,
+      "gain": 0.4
+     },
+     {
+      "kind": "whoosh",
+      "t": 284.018,
+      "gain": 1
+     }
+    ],
+    "invert": []
+   },
+   {
+    "id": "S13",
+    "t0": 292.449,
+    "dur": 12.973,
+    "audio": "audio/S13.wav",
+    "shots": [
+     {
+      "id": "a",
+      "wan": "wan/S13_a.webm",
+      "mode": "background",
+      "t0": 292.449,
+      "dur": 12.973,
+      "f0": 7019,
+      "f1": 7330,
+      "wanFrames": 121,
+      "wanFps": 24
+     }
+    ],
+    "sfx": [
+     {
+      "kind": "chalk",
+      "t": 294.206,
+      "gain": 0.6
+     },
+     {
+      "kind": "chalk",
+      "t": 297.639,
+      "gain": 0.6
+     }
+    ],
+    "invert": []
+   },
+   {
+    "id": "S14",
+    "t0": 305.422,
+    "dur": 30.118,
+    "audio": "audio/S14.wav",
+    "shots": [
+     {
+      "id": "a",
+      "wan": "wan/S14_a.webm",
+      "mode": "background",
+      "t0": 305.422,
+      "dur": 30.118,
+      "f0": 7330,
+      "f1": 8053,
+      "wanFrames": 121,
+      "wanFps": 24
+     }
+    ],
+    "sfx": [
+     {
+      "kind": "tick",
+      "t": 308.722,
+      "gain": 1
+     },
+     {
+      "kind": "shimmer",
+      "t": 312.532,
+      "gain": 0.5
+     },
+     {
+      "kind": "impact",
+      "t": 319.945,
+      "gain": 0.6
+     },
+     {
+      "kind": "whoosh",
+      "t": 323.608,
+      "gain": 0.5
+     },
+     {
+      "kind": "boom",
+      "t": 330.07,
+      "gain": 0.6
+     }
+    ],
+    "invert": []
+   },
+   {
+    "id": "S15",
+    "t0": 335.541,
+    "dur": 21.411,
+    "audio": "audio/S15.wav",
+    "shots": [
+     {
+      "id": "a",
+      "wan": "wan/S15_a.webm",
+      "mode": "background",
+      "t0": 335.541,
+      "dur": 21.411,
+      "f0": 8053,
+      "f1": 8567,
+      "wanFrames": 121,
+      "wanFps": 24
+     }
+    ],
+    "sfx": [
+     {
+      "kind": "chalk",
+      "t": 335.541,
+      "gain": 0.6
+     },
+     {
+      "kind": "chalk",
+      "t": 338.771,
+      "gain": 0.6
+     },
+     {
+      "kind": "impact",
+      "t": 344.125,
+      "gain": 0.6
+     },
+     {
+      "kind": "chalk",
+      "t": 347.076,
+      "gain": 0.6
+     }
+    ],
+    "invert": []
+   },
+   {
+    "id": "S16",
+    "t0": 356.951,
+    "dur": 29.393,
+    "audio": "audio/S16.wav",
+    "shots": [
+     {
+      "id": "a",
+      "wan": "wan/S16_a.webm",
+      "mode": "background",
+      "t0": 356.951,
+      "dur": 29.393,
+      "f0": 8567,
+      "f1": 9272,
+      "wanFrames": 121,
+      "wanFps": 24
+     }
+    ],
+    "sfx": [
+     {
+      "kind": "chalk",
+      "t": 356.951,
+      "gain": 0.5
+     },
+     {
+      "kind": "chalk",
+      "t": 359.87,
+      "gain": 0.5
+     },
+     {
+      "kind": "chalk",
+      "t": 368.462,
+      "gain": 0.5
+     },
+     {
+      "kind": "chalk",
+      "t": 375.381,
+      "gain": 0.5
+     },
+     {
+      "kind": "chalk",
+      "t": 380.047,
+      "gain": 0.5
+     },
+     {
+      "kind": "impact",
+      "t": 383.777,
+      "gain": 0.6
+     }
+    ],
+    "invert": []
+   },
+   {
+    "id": "S17",
+    "t0": 386.344,
+    "dur": 9.915,
+    "audio": "audio/S17.wav",
+    "shots": [
+     {
+      "id": "a",
+      "wan": "wan/S17_a.webm",
+      "mode": "background",
+      "t0": 386.344,
+      "dur": 9.915,
+      "f0": 9272,
+      "f1": 9510,
+      "wanFrames": 121,
+      "wanFps": 24
+     }
+    ],
+    "sfx": [
+     {
+      "kind": "impact",
+      "t": 386.344,
+      "gain": 0.6
+     },
+     {
+      "kind": "shimmer",
+      "t": 390.043,
+      "gain": 0.5
+     }
+    ],
+    "invert": []
+   }
+  ],
+  "subtitles": "subtitles.ass",
+  "bgm": {
+   "file": null,
+   "gain": 0.18,
+   "duck": true
+  }
+ },
+ "scenes": [
+  {
+   "id": "S01",
+   "title": "タイトル：第6講 エピゲノムとミトコンドリアゲノム",
+   "picture": "漆黒に墨が爆ぜ、二重らせんの影が回る。「エピゲノムとミトコンドリアゲノム」の筆文字。単元の最終回。",
+   "diagram": {
+    "id": "helix",
+    "title": "DNA二重らせん（影）",
+    "note": "右巻き・主溝/副溝の非対称を保った背景図。文字は MEDSTUDY が描く"
+   },
+   "lecturer": false,
+   "sources": [
+    {
+     "beat": "open",
+     "source": "第6講／台詞 c06-0001（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 6,
+      "section": "導入",
+      "cues": [
+       "c06-0001"
+      ],
+      "mode": "verbatim"
+     },
+     "lines": [
+      "第6講、この単元の最終回です。"
+     ]
+    },
+    {
+     "beat": "today",
+     "source": "第6講／台詞 c06-0002（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 6,
+      "section": "導入",
+      "cues": [
+       "c06-0002"
+      ],
+      "mode": "verbatim"
+     },
+     "lines": [
+      "ここまで、設計図の文字、製本、読み方、そして誤植を見てきました。",
+      "今日は、文字をまったく変えずに、設計図の「読み方」を変える仕組み。",
+      "エピゲノムです。"
+     ]
+    }
+   ],
+   "cams": [
+    {
+     "at": "start",
+     "move": "set",
+     "x": 640,
+     "y": 360,
+     "z": 1.3,
+     "note": "墨の中から"
+    },
+    {
+     "at": "title",
+     "move": "crash",
+     "x": 640,
+     "y": 330,
+     "z": 1.12,
+     "dur": 0.22,
+     "hold": 0.3,
+     "note": "題名で急接近 → 静止"
+    },
+    {
+     "at": "title+1.5",
+     "move": "pull",
+     "x": 640,
+     "y": 360,
+     "z": 1,
+     "dur": 3,
+     "note": "ゆっくり引く"
+    }
+   ],
+   "fx": [
+    {
+     "at": "title",
+     "kind": "impact",
+     "dur": 0.5,
+     "min": "gekiga"
+    },
+    {
+     "at": "title",
+     "kind": "focus",
+     "dur": 1.4,
+     "min": "gekiga"
+    },
+    {
+     "at": "title",
+     "kind": "shake",
+     "dur": 0.3,
+     "min": "gekiga"
+    },
+    {
+     "at": "start",
+     "kind": "tone",
+     "dur": 999,
+     "min": "gekiga"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "start",
+     "kind": "riser",
+     "gain": 0.5
+    },
+    {
+     "at": "title",
+     "kind": "boom"
+    }
+   ]
+  },
+  {
+   "id": "S02",
+   "title": "双子：同じゲノムでも見た目が違う",
+   "picture": "双子を2枚のカードで表す（顔は描かない）。同じ縞模様のゲノムの帯。「見た目の年齢」の目盛りは赤ちゃんでは同じ、大人では一方だけ大きく上がる。片方に「生活・環境」の波が当たる。",
+   "diagram": {
+    "id": "twins",
+    "title": "双子：同じゲノムでも見た目が違う",
+    "note": "スライド68、c06-0009〜0013"
+   },
+   "lecturer": false,
+   "sources": [
+    {
+     "beat": "look",
+     "source": "第6講／台詞 c06-0009／スライド68（原文の一部）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 6,
+      "section": "全体像",
+      "cues": [
+       "c06-0009"
+      ],
+      "mode": "trimmed",
+      "slide": 68
+     },
+     "lines": [
+      "まず、この写真を見てください。"
+     ]
+    },
+    {
+     "beat": "what",
+     "source": "第6講／台詞 c06-0010・c06-0011／スライド68（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 6,
+      "section": "全体像",
+      "cues": [
+       "c06-0010",
+       "c06-0011"
+      ],
+      "mode": "verbatim",
+      "slide": 68
+     },
+     "lines": [
+      "この双子の、何が違うのでしょうか。",
+      "赤ちゃんのときは、そっくりです。"
+     ]
+    },
+    {
+     "beat": "adult",
+     "source": "第6講／台詞 c06-0012／スライド68（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 6,
+      "section": "全体像",
+      "cues": [
+       "c06-0012"
+      ],
+      "mode": "verbatim",
+      "slide": 68
+     },
+     "lines": [
+      "ところが大人になると、一方は明らかに年上に見えます。",
+      "同じ遺伝子を持っているはずなのに。"
+     ]
+    },
+    {
+     "beat": "env",
+     "source": "第6講／台詞 c06-0013／スライド68（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 6,
+      "section": "全体像",
+      "cues": [
+       "c06-0013"
+      ],
+      "mode": "verbatim",
+      "slide": 68
+     },
+     "lines": [
+      "違いを生んだのは、生活の違い、環境です。",
+      "では、環境はどうやって体を変えるのか。",
+      "それが今日のテーマです。"
+     ]
+    }
+   ],
+   "cams": [
+    {
+     "at": "start",
+     "move": "set",
+     "x": 640,
+     "y": 300,
+     "z": 1.1,
+     "note": "双子"
+    },
+    {
+     "at": "baby",
+     "move": "push",
+     "x": 640,
+     "y": 380,
+     "z": 1.15,
+     "dur": 0.6,
+     "note": "見た目の年齢"
+    },
+    {
+     "at": "adult",
+     "move": "crash",
+     "x": 880,
+     "y": 400,
+     "z": 1.35,
+     "dur": 0.22,
+     "hold": 0.3,
+     "note": "年上に見える"
+    },
+    {
+     "at": "same",
+     "move": "pan",
+     "x": 640,
+     "y": 200,
+     "z": 1.3,
+     "dur": 0.5,
+     "note": "同じゲノム"
+    },
+    {
+     "at": "env",
+     "move": "pull",
+     "x": 640,
+     "y": 360,
+     "z": 1,
+     "dur": 0.5,
+     "note": "環境"
+    }
+   ],
+   "fx": [
+    {
+     "at": "adult",
+     "kind": "impact",
+     "dur": 0.4,
+     "min": "gekiga"
+    },
+    {
+     "at": "how",
+     "kind": "focus",
+     "dur": 1,
+     "min": "gekiga"
+    },
+    {
+     "at": "start",
+     "kind": "tone",
+     "dur": 999,
+     "min": "gekiga"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "baby",
+     "kind": "tick"
+    },
+    {
+     "at": "adult",
+     "kind": "impact",
+     "gain": 0.6
+    },
+    {
+     "at": "env",
+     "kind": "whoosh",
+     "gain": 0.5
+    },
+    {
+     "at": "theme",
+     "kind": "boom",
+     "gain": 0.5
+    }
+   ]
+  },
+  {
+   "id": "S03",
+   "title": "見た目年齢は健康寿命を予見する",
+   "picture": "「70歳以上の双子 1826人」の札。実年齢・生活習慣で補正しても、見た目年齢から「健康寿命を予見」へ矢印。さらにテロメアの長さ・認知機能とも関連。",
+   "diagram": {
+    "id": "twin-study",
+    "title": "見た目年齢は健康寿命を予見する",
+    "note": "スライド69、c06-0014〜0017"
+   },
+   "lecturer": false,
+   "sources": [
+    {
+     "beat": "q",
+     "source": "第6講／台詞 c06-0014／スライド69（原文の一部）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 6,
+      "section": "全体像",
+      "cues": [
+       "c06-0014"
+      ],
+      "mode": "trimmed",
+      "slide": 69
+     },
+     "lines": [
+      "実際に、見た目の年齢が健康と関係するのか。"
+     ]
+    },
+    {
+     "beat": "n",
+     "source": "第6講／台詞 c06-0015／スライド69（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 6,
+      "section": "全体像",
+      "cues": [
+       "c06-0015"
+      ],
+      "mode": "verbatim",
+      "slide": 69
+     },
+     "lines": [
+      "70歳以上の双子、1826人を調べた研究です。"
+     ]
+    },
+    {
+     "beat": "res",
+     "source": "第6講／台詞 c06-0016・c06-0017／スライド69（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 6,
+      "section": "全体像",
+      "cues": [
+       "c06-0016",
+       "c06-0017"
+      ],
+      "mode": "verbatim",
+      "slide": 69
+     },
+     "lines": [
+      "実年齢や生活習慣で補正しても、見た目年齢は健康寿命を予見し、",
+      "テロメアの長さや認知機能とも関連していました。"
+     ]
+    }
+   ],
+   "cams": [
+    {
+     "at": "start",
+     "move": "set",
+     "x": 640,
+     "y": 200,
+     "z": 1.2,
+     "note": "研究"
+    },
+    {
+     "at": "pred",
+     "move": "pull",
+     "x": 640,
+     "y": 380,
+     "z": 1,
+     "dur": 0.5,
+     "note": "予見"
+    }
+   ],
+   "fx": [
+    {
+     "at": "n",
+     "kind": "impact",
+     "dur": 0.35,
+     "min": "gekiga"
+    },
+    {
+     "at": "pred",
+     "kind": "speed",
+     "dur": 0.35,
+     "min": "gekiga"
+    },
+    {
+     "at": "start",
+     "kind": "tone",
+     "dur": 999,
+     "min": "gekiga"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "n",
+     "kind": "impact",
+     "gain": 0.5
+    },
+    {
+     "at": "pred",
+     "kind": "whoosh",
+     "gain": 0.5
+    },
+    {
+     "at": "telo",
+     "kind": "tick"
+    }
+   ]
+  },
+  {
+   "id": "S04",
+   "title": "遺伝型 → エピゲノム → … → 表現型",
+   "picture": "5段の箱：ゲノム（DNA）・エピゲノム（DNA・ヒストンの修飾）・トランスクリプトーム（RNA）・プロテオーム（タンパク質）・メタボローム（代謝物）。上が遺伝型、下が表現型。エピゲノムの段が光り、横にメチル化・アセチル化の印。",
+   "diagram": {
+    "id": "omics",
+    "title": "遺伝型 → エピゲノム → … → 表現型",
+    "note": "スライド47、c06-0018〜0021"
+   },
+   "lecturer": false,
+   "sources": [
+    {
+     "beat": "q",
+     "source": "第6講／台詞 c06-0018／スライド47（原文の一部）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 6,
+      "section": "テーマ1　遺伝型から表現型へ",
+      "cues": [
+       "c06-0018"
+      ],
+      "mode": "trimmed",
+      "slide": 47
+     },
+     "lines": [
+      "では、遺伝子から体までの道のりを、もう一度整理します。"
+     ]
+    },
+    {
+     "beat": "g",
+     "source": "第6講／台詞 c06-0019／スライド47（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 6,
+      "section": "テーマ1　遺伝型から表現型へ",
+      "cues": [
+       "c06-0019"
+      ],
+      "mode": "verbatim",
+      "slide": 47
+     },
+     "lines": [
+      "一番上は、生まれつきのゲノム。",
+      "これが遺伝型。"
+     ]
+    },
+    {
+     "beat": "e",
+     "source": "第6講／台詞 c06-0020／スライド47（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 6,
+      "section": "テーマ1　遺伝型から表現型へ",
+      "cues": [
+       "c06-0020"
+      ],
+      "mode": "verbatim",
+      "slide": 47
+     },
+     "lines": [
+      "その下にエピゲノム。",
+      "DNAやヒストンの化学修飾です。"
+     ]
+    },
+    {
+     "beat": "p",
+     "source": "第6講／台詞 c06-0021／スライド47（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 6,
+      "section": "テーマ1　遺伝型から表現型へ",
+      "cues": [
+       "c06-0021"
+      ],
+      "mode": "verbatim",
+      "slide": 47
+     },
+     "lines": [
+      "一番下の、タンパク質や代謝物が、表現型です。"
+     ]
+    }
+   ],
+   "cams": [
+    {
+     "at": "start",
+     "move": "set",
+     "x": 640,
+     "y": 340,
+     "z": 1,
+     "note": "5段"
+    },
+    {
+     "at": "genome",
+     "move": "push",
+     "x": 520,
+     "y": 150,
+     "z": 1.4,
+     "dur": 0.6,
+     "note": "遺伝型"
+    },
+    {
+     "at": "epi",
+     "move": "pan",
+     "x": 780,
+     "y": 220,
+     "z": 1.35,
+     "dur": 0.6,
+     "note": "エピゲノム"
+    },
+    {
+     "at": "pheno",
+     "move": "pull",
+     "x": 640,
+     "y": 360,
+     "z": 1,
+     "dur": 0.5,
+     "note": "表現型"
+    }
+   ],
+   "fx": [
+    {
+     "at": "epi",
+     "kind": "impact",
+     "dur": 0.4,
+     "min": "gekiga"
+    },
+    {
+     "at": "epi",
+     "kind": "focus",
+     "dur": 1,
+     "min": "gekiga"
+    },
+    {
+     "at": "start",
+     "kind": "tone",
+     "dur": 999,
+     "min": "gekiga"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "genome",
+     "kind": "tick"
+    },
+    {
+     "at": "epi",
+     "kind": "boom",
+     "gain": 0.5
+    },
+    {
+     "at": "pheno",
+     "kind": "tick"
+    }
+   ]
+  },
+  {
+   "id": "S05",
+   "title": "板書：遺伝型と表現型の間にエピゲノム",
+   "picture": "黒板の左：ゲノム（DNA）＝遺伝型 → エピゲノム → トランスクリプトーム → プロテオーム → メタボローム＝表現型。エピゲノムを赤で囲む。双子：同じゲノムでも見た目が違う → 違い＝環境 × エピゲノム。",
+   "diagram": {
+    "id": "board-l7",
+    "title": "板書：板書：遺伝型と表現型の間にエピゲノム",
+    "note": "第6講の黒板 l-h・l1〜l7（l2に赤枠）、c06-0022〜0025"
+   },
+   "lecturer": true,
+   "sources": [
+    {
+     "beat": "w",
+     "source": "第6講／台詞 c06-0022・c06-0023／板書 l-h・l1・l2・l3・l4・l5（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 6,
+      "section": "テーマ1　遺伝型から表現型へ",
+      "cues": [
+       "c06-0022",
+       "c06-0023"
+      ],
+      "mode": "verbatim",
+      "board": [
+       "l-h",
+       "l1",
+       "l2",
+       "l3",
+       "l4",
+       "l5"
+      ]
+     },
+     "lines": [
+      "左側に、この流れを書いていきます。",
+      "生まれつきのゲノムと、症状に直結する表現型。",
+      "その間に、生活環境によって少しずつ変わっていくエピゲノムがある。"
+     ]
+    },
+    {
+     "beat": "main",
+     "source": "第6講／台詞 c06-0024（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 6,
+      "section": "テーマ1　遺伝型から表現型へ",
+      "cues": [
+       "c06-0024"
+      ],
+      "mode": "verbatim"
+     },
+     "lines": [
+      "ここが今日の主役です。"
+     ]
+    },
+    {
+     "beat": "twin",
+     "source": "第6講／台詞 c06-0025／板書 l6・l7（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 6,
+      "section": "テーマ1　遺伝型から表現型へ",
+      "cues": [
+       "c06-0025"
+      ],
+      "mode": "verbatim",
+      "board": [
+       "l6",
+       "l7"
+      ]
+     },
+     "lines": [
+      "さっきの双子。",
+      "同じゲノムでも、環境によってエピゲノムが変わり、見た目が変わる。",
+      "そう考えることができます。"
+     ]
+    }
+   ],
+   "cams": [
+    {
+     "at": "start",
+     "move": "set",
+     "x": 600,
+     "y": 330,
+     "z": 1,
+     "note": "板書"
+    },
+    {
+     "at": "l2",
+     "move": "push",
+     "x": 450,
+     "y": 250,
+     "z": 1.35,
+     "dur": 0.6,
+     "note": "エピゲノム"
+    },
+    {
+     "at": "main",
+     "move": "crash",
+     "x": 450,
+     "y": 250,
+     "z": 1.6,
+     "dur": 0.22,
+     "hold": 0.25,
+     "note": "今日の主役"
+    },
+    {
+     "at": "twin",
+     "move": "pan",
+     "x": 450,
+     "y": 560,
+     "z": 1.3,
+     "dur": 0.5,
+     "note": "双子"
+    },
+    {
+     "at": "think",
+     "move": "pull",
+     "x": 600,
+     "y": 330,
+     "z": 1,
+     "dur": 0.5,
+     "note": "全体"
+    }
+   ],
+   "fx": [
+    {
+     "at": "main",
+     "kind": "impact",
+     "dur": 0.4,
+     "min": "gekiga"
+    },
+    {
+     "at": "start",
+     "kind": "tone",
+     "dur": 999,
+     "min": "gekiga"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "w",
+     "kind": "chalk",
+     "gain": 0.6
+    },
+    {
+     "at": "l2",
+     "kind": "chalk",
+     "gain": 0.6
+    },
+    {
+     "at": "main",
+     "kind": "impact",
+     "gain": 0.6
+    },
+    {
+     "at": "twin",
+     "kind": "chalk",
+     "gain": 0.6
+    }
+   ]
+  },
+  {
+   "id": "S06",
+   "title": "凝集＝転写オフ（ヘテロクロマチン）／緩む＝オン（ユークロマチン）",
+   "picture": "左：ぎゅっと固まったヌクレオソームの塊（ヘテロクロマチン、OFF）。右：ほどけたビーズの糸（ユークロマチン、ON）。2つの間を行き来する矢印＝クロマチンリモデリング。",
+   "diagram": {
+    "id": "chromatin",
+    "title": "凝集＝転写オフ（ヘテロクロマチン）／緩む＝オン（ユークロマチン）",
+    "note": "スライド40、c06-0026〜0029"
+   },
+   "lecturer": false,
+   "sources": [
+    {
+     "beat": "q",
+     "source": "第6講／台詞 c06-0026／スライド40（原文の一部）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 6,
+      "section": "テーマ2　スイッチのしくみ",
+      "cues": [
+       "c06-0026"
+      ],
+      "mode": "trimmed",
+      "slide": 40
+     },
+     "lines": [
+      "では、エピゲノムは、具体的に何をしているのか。"
+     ]
+    },
+    {
+     "beat": "off",
+     "source": "第6講／台詞 c06-0027／スライド40（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 6,
+      "section": "テーマ2　スイッチのしくみ",
+      "cues": [
+       "c06-0027"
+      ],
+      "mode": "verbatim",
+      "slide": 40
+     },
+     "lines": [
+      "ぎゅっと凝集したクロマチンでは、遺伝子の転写がオフ。",
+      "これがヘテロクロマチン。"
+     ]
+    },
+    {
+     "beat": "on",
+     "source": "第6講／台詞 c06-0028／スライド40（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 6,
+      "section": "テーマ2　スイッチのしくみ",
+      "cues": [
+       "c06-0028"
+      ],
+      "mode": "verbatim",
+      "slide": 40
+     },
+     "lines": [
+      "緩んだクロマチンでは、転写がオン。",
+      "こちらがユークロマチン。"
+     ]
+    },
+    {
+     "beat": "rem",
+     "source": "第6講／台詞 c06-0029／スライド40（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 6,
+      "section": "テーマ2　スイッチのしくみ",
+      "cues": [
+       "c06-0029"
+      ],
+      "mode": "verbatim",
+      "slide": 40
+     },
+     "lines": [
+      "この二つの状態を行き来させるのが、クロマチンリモデリングです。"
+     ]
+    }
+   ],
+   "cams": [
+    {
+     "at": "start",
+     "move": "set",
+     "x": 640,
+     "y": 360,
+     "z": 1,
+     "note": "2つの状態"
+    },
+    {
+     "at": "off",
+     "move": "push",
+     "x": 340,
+     "y": 380,
+     "z": 1.35,
+     "dur": 0.6,
+     "note": "オフ"
+    },
+    {
+     "at": "on",
+     "move": "whip",
+     "x": 950,
+     "y": 380,
+     "z": 1.35,
+     "dur": 0.3,
+     "note": "オン"
+    },
+    {
+     "at": "rem",
+     "move": "pull",
+     "x": 640,
+     "y": 380,
+     "z": 1,
+     "dur": 0.5,
+     "note": "行き来"
+    }
+   ],
+   "fx": [
+    {
+     "at": "off",
+     "kind": "impact",
+     "dur": 0.35,
+     "min": "gekiga"
+    },
+    {
+     "at": "on",
+     "kind": "speed",
+     "dur": 0.3,
+     "min": "gekiga"
+    },
+    {
+     "at": "rem",
+     "kind": "focus",
+     "dur": 1,
+     "min": "gekiga"
+    },
+    {
+     "at": "start",
+     "kind": "tone",
+     "dur": 999,
+     "min": "gekiga"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "off",
+     "kind": "impact",
+     "gain": 0.5
+    },
+    {
+     "at": "on",
+     "kind": "whoosh",
+     "gain": 0.5
+    },
+    {
+     "at": "rem",
+     "kind": "shimmer",
+     "gain": 0.4
+    }
+   ]
+  },
+  {
+   "id": "S07",
+   "title": "板書：スイッチのしくみ（オフ／オン）",
+   "picture": "黒板の真ん中「スイッチのしくみ」：ヌクレオソームの並び。OFF：凝集＝ヘテロクロマチン（DNA高メチル化、ヒストン脱アセチル化）。ON：緩む＝ユークロマチン（ヒストンアセチル化 → 塩基性↓ → DNAとの結合↓ → プロモーター露出 → RNAポリメラーゼ）。",
+   "diagram": {
+    "id": "board-c5",
+    "title": "板書：板書：スイッチのしくみ（オフ／オン）",
+    "note": "第6講の黒板 c-h・nuc・c-off・c1・c2・c-on・c3〜c5、c06-0030〜0033"
+   },
+   "lecturer": true,
+   "sources": [
+    {
+     "beat": "w",
+     "source": "第6講／台詞 c06-0030・c06-0031／板書 c-h・nuc（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 6,
+      "section": "テーマ2　スイッチのしくみ",
+      "cues": [
+       "c06-0030",
+       "c06-0031"
+      ],
+      "mode": "verbatim",
+      "board": [
+       "c-h",
+       "nuc"
+      ]
+     },
+     "lines": [
+      "真ん中に、スイッチの仕組みを書きます。",
+      "DNAがヒストンに巻き付いた、ヌクレオソームの並びです。"
+     ]
+    },
+    {
+     "beat": "off",
+     "source": "第6講／台詞 c06-0032／板書 c-off・c1・c2（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 6,
+      "section": "テーマ2　スイッチのしくみ",
+      "cues": [
+       "c06-0032"
+      ],
+      "mode": "verbatim",
+      "board": [
+       "c-off",
+       "c1",
+       "c2"
+      ]
+     },
+     "lines": [
+      "まずオフの側。",
+      "DNAが高度にメチル化され、",
+      "ヒストンのアセチル基が外されると、",
+      "クロマチンが凝集してヘテロクロマチンになり、転写はオフ。"
+     ]
+    },
+    {
+     "beat": "on",
+     "source": "第6講／台詞 c06-0033／板書 c-on・c3・c4・c5（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 6,
+      "section": "テーマ2　スイッチのしくみ",
+      "cues": [
+       "c06-0033"
+      ],
+      "mode": "verbatim",
+      "board": [
+       "c-on",
+       "c3",
+       "c4",
+       "c5"
+      ]
+     },
+     "lines": [
+      "そしてオンの側。",
+      "ヒストンがアセチル化されると、",
+      "塩基性が下がってDNAとの結合が弱まる。",
+      "プロモーターが露出して、RNAポリメラーゼが結合できるようになります。"
+     ]
+    }
+   ],
+   "cams": [
+    {
+     "at": "start",
+     "move": "set",
+     "x": 600,
+     "y": 330,
+     "z": 1,
+     "note": "板書"
+    },
+    {
+     "at": "nuc",
+     "move": "push",
+     "x": 450,
+     "y": 180,
+     "z": 1.4,
+     "dur": 0.6,
+     "note": "ヌクレオソーム"
+    },
+    {
+     "at": "off",
+     "move": "pan",
+     "x": 450,
+     "y": 320,
+     "z": 1.4,
+     "dur": 0.5,
+     "note": "オフ"
+    },
+    {
+     "at": "on",
+     "move": "pan",
+     "x": 450,
+     "y": 500,
+     "z": 1.35,
+     "dur": 0.5,
+     "note": "オン"
+    },
+    {
+     "at": "c5+2",
+     "move": "pull",
+     "x": 600,
+     "y": 330,
+     "z": 1,
+     "dur": 0.5,
+     "note": "全体"
+    }
+   ],
+   "fx": [
+    {
+     "at": "offx",
+     "kind": "impact",
+     "dur": 0.35,
+     "min": "gekiga"
+    },
+    {
+     "at": "c5",
+     "kind": "focus",
+     "dur": 1,
+     "min": "gekiga"
+    },
+    {
+     "at": "start",
+     "kind": "tone",
+     "dur": 999,
+     "min": "gekiga"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "w",
+     "kind": "chalk",
+     "gain": 0.6
+    },
+    {
+     "at": "off",
+     "kind": "chalk",
+     "gain": 0.6
+    },
+    {
+     "at": "on",
+     "kind": "chalk",
+     "gain": 0.6
+    }
+   ]
+  },
+  {
+   "id": "S08",
+   "title": "高メチル化で凝集・発現低下、低メチル化で緩み・発現増加",
+   "picture": "上：メチル基の印が多いDNA、ヌクレオソームが寄り集まる → 発現↓。下：印が少ないDNA、ヌクレオソームが離れる → 発現↑。",
+   "diagram": {
+    "id": "methylation",
+    "title": "高メチル化で凝集・発現低下、低メチル化で緩み・発現増加",
+    "note": "スライド72、c06-0035〜0038"
+   },
+   "lecturer": false,
+   "sources": [
+    {
+     "beat": "hi",
+     "source": "第6講／台詞 c06-0035・c06-0036／スライド72（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 6,
+      "section": "テーマ2　スイッチのしくみ",
+      "cues": [
+       "c06-0035",
+       "c06-0036"
+      ],
+      "mode": "verbatim",
+      "slide": 72
+     },
+     "lines": [
+      "DNAの高メチル化で、",
+      "凝集して発現が低下。"
+     ]
+    },
+    {
+     "beat": "lo",
+     "source": "第6講／台詞 c06-0037・c06-0038／スライド72（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 6,
+      "section": "テーマ2　スイッチのしくみ",
+      "cues": [
+       "c06-0037",
+       "c06-0038"
+      ],
+      "mode": "verbatim",
+      "slide": 72
+     },
+     "lines": [
+      "低メチル化では、",
+      "緩んで発現が増加します。"
+     ]
+    }
+   ],
+   "cams": [
+    {
+     "at": "start",
+     "move": "set",
+     "x": 640,
+     "y": 230,
+     "z": 1.3,
+     "note": "高メチル化"
+    },
+    {
+     "at": "lo",
+     "move": "pan",
+     "x": 640,
+     "y": 470,
+     "z": 1.3,
+     "dur": 0.5,
+     "note": "低メチル化"
+    },
+    {
+     "at": "up+1",
+     "move": "pull",
+     "x": 640,
+     "y": 360,
+     "z": 1,
+     "dur": 0.5,
+     "note": "比べる"
+    }
+   ],
+   "fx": [
+    {
+     "at": "down",
+     "kind": "impact",
+     "dur": 0.35,
+     "min": "gekiga"
+    },
+    {
+     "at": "up",
+     "kind": "flash",
+     "dur": 0.25,
+     "min": "gekiga"
+    },
+    {
+     "at": "start",
+     "kind": "tone",
+     "dur": 999,
+     "min": "gekiga"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "hi",
+     "kind": "tick"
+    },
+    {
+     "at": "down",
+     "kind": "impact",
+     "gain": 0.5
+    },
+    {
+     "at": "lo",
+     "kind": "tick"
+    },
+    {
+     "at": "up",
+     "kind": "shimmer",
+     "gain": 0.4
+    }
+   ]
+  },
+  {
+   "id": "S09",
+   "title": "5'-CG-3' のシトシンは70%以上メチル化、配列は変わらない",
+   "picture": "塩基の列。CGの並びのシトシンにメチル基の印。5'-CG-3' の C は70%以上。メチル基を認識する複合体がヒストンもメチル化し、ヌクレオソームが強く凝集。塩基配列は一文字も変わらない。ジェネティック（配列が変わる）とエピジェネティック（配列は同じ）のカード。",
+   "diagram": {
+    "id": "cpg",
+    "title": "5'-CG-3' のシトシンは70%以上メチル化、配列は変わらない",
+    "note": "スライド73、c06-0045〜0049"
+   },
+   "lecturer": false,
+   "sources": [
+    {
+     "beat": "cpg",
+     "source": "第6講／台詞 c06-0045・c06-0046／スライド73（原文の一部）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 6,
+      "section": "テーマ2　スイッチのしくみ",
+      "cues": [
+       "c06-0045",
+       "c06-0046"
+      ],
+      "mode": "trimmed",
+      "slide": 73
+     },
+     "lines": [
+      "メチル化について、もう少し詳しく。",
+      "発現しない遺伝子のDNAでは、シトシンが高度にメチル化されています。"
+     ]
+    },
+    {
+     "beat": "70",
+     "source": "第6講／台詞 c06-0047／スライド73（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 6,
+      "section": "テーマ2　スイッチのしくみ",
+      "cues": [
+       "c06-0047"
+      ],
+      "mode": "verbatim",
+      "slide": 73
+     },
+     "lines": [
+      "特に5ダッシュCG3ダッシュの並びでは、70パーセント以上。"
+     ]
+    },
+    {
+     "beat": "cx",
+     "source": "第6講／台詞 c06-0048／スライド73（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 6,
+      "section": "テーマ2　スイッチのしくみ",
+      "cues": [
+       "c06-0048"
+      ],
+      "mode": "verbatim",
+      "slide": 73
+     },
+     "lines": [
+      "それを認識する複合体が、ヒストンもメチル化して、クロマチンを強く凝集させます。"
+     ]
+    },
+    {
+     "beat": "epi",
+     "source": "第6講／台詞 c06-0049／スライド73（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 6,
+      "section": "テーマ2　スイッチのしくみ",
+      "cues": [
+       "c06-0049"
+      ],
+      "mode": "verbatim",
+      "slide": 73
+     },
+     "lines": [
+      "そして大事なのが、ここ。",
+      "塩基配列の変化はありません。",
+      "だから、突然変異のようなジェネティックな変化に対して、",
+      "エピジェネティックな変化と呼ぶわけです。"
+     ]
+    }
+   ],
+   "cams": [
+    {
+     "at": "start",
+     "move": "set",
+     "x": 640,
+     "y": 200,
+     "z": 1.25,
+     "note": "塩基の列"
+    },
+    {
+     "at": "p70",
+     "move": "crash",
+     "x": 640,
+     "y": 220,
+     "z": 1.45,
+     "dur": 0.22,
+     "hold": 0.25,
+     "note": "70%以上"
+    },
+    {
+     "at": "complex",
+     "move": "pan",
+     "x": 640,
+     "y": 400,
+     "z": 1.2,
+     "dur": 0.6,
+     "note": "凝集"
+    },
+    {
+     "at": "imp",
+     "move": "push",
+     "x": 640,
+     "y": 230,
+     "z": 1.3,
+     "dur": 0.4,
+     "note": "配列は同じ"
+    },
+    {
+     "at": "gen",
+     "move": "pull",
+     "x": 640,
+     "y": 420,
+     "z": 1,
+     "dur": 0.5,
+     "note": "ジェネティックとエピジェネティック"
+    }
+   ],
+   "fx": [
+    {
+     "at": "p70",
+     "kind": "impact",
+     "dur": 0.4,
+     "min": "gekiga"
+    },
+    {
+     "at": "imp",
+     "kind": "focus",
+     "dur": 1,
+     "min": "gekiga"
+    },
+    {
+     "at": "epi",
+     "kind": "impact",
+     "dur": 0.4,
+     "min": "gekiga"
+    },
+    {
+     "at": "start",
+     "kind": "tone",
+     "dur": 999,
+     "min": "gekiga"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "cpg",
+     "kind": "tick"
+    },
+    {
+     "at": "p70",
+     "kind": "impact",
+     "gain": 0.6
+    },
+    {
+     "at": "complex",
+     "kind": "whoosh",
+     "gain": 0.5
+    },
+    {
+     "at": "nochg",
+     "kind": "shimmer",
+     "gain": 0.4
+    },
+    {
+     "at": "epi",
+     "kind": "boom",
+     "gain": 0.6
+    }
+   ]
+  },
+  {
+   "id": "S10",
+   "title": "スイッチの動き：メチル化でオフ、アセチル化でオン、脱アセチル化で再びオフ",
+   "picture": "ヌクレオソームの並び（RNAポリメラーゼは近づけない）。DNAにメチル基 → ヒストンもメチル化され、ぎゅっと集まる（ヘテロクロマチン、OFF）。次の場面：転写因子がエンハンサーに結合し、ヒストンアセチル化酵素を呼ぶ → しっぽにアセチル基 → 間が広がりプロモーターが現れる → RNAポリメラーゼが結合しRNAができる（ON）。脱アセチル化酵素がアセチル基を外すと再び凝集（OFF）。",
+   "diagram": {
+    "id": "epi-switch",
+    "title": "スイッチの動き：メチル化でオフ、アセチル化でオン、脱アセチル化で再びオフ",
+    "note": "c06-0054〜0060（スライド74の内容を動きで）"
+   },
+   "lecturer": false,
+   "sources": [
+    {
+     "beat": "row",
+     "source": "第6講／台詞 c06-0054（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 6,
+      "section": "テーマ2　スイッチのしくみ",
+      "cues": [
+       "c06-0054"
+      ],
+      "mode": "verbatim"
+     },
+     "lines": [
+      "実際の動きで見てみましょう。",
+      "ヌクレオソームが並んでいます。",
+      "このままでは、RNAポリメラーゼは近づけません。"
+     ]
+    },
+    {
+     "beat": "me",
+     "source": "第6講／台詞 c06-0055（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 6,
+      "section": "テーマ2　スイッチのしくみ",
+      "cues": [
+       "c06-0055"
+      ],
+      "mode": "verbatim"
+     },
+     "lines": [
+      "DNAのシトシンに、メチル基が付いていきます。"
+     ]
+    },
+    {
+     "beat": "pack",
+     "source": "第6講／台詞 c06-0056（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 6,
+      "section": "テーマ2　スイッチのしくみ",
+      "cues": [
+       "c06-0056"
+      ],
+      "mode": "verbatim"
+     },
+     "lines": [
+      "ヒストンもメチル化されて、ヌクレオソームがぎゅっと集まりました。",
+      "ヘテロクロマチン。",
+      "転写はオフです。"
+     ]
+    },
+    {
+     "beat": "tf",
+     "source": "第6講／台詞 c06-0057（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 6,
+      "section": "テーマ2　スイッチのしくみ",
+      "cues": [
+       "c06-0057"
+      ],
+      "mode": "verbatim"
+     },
+     "lines": [
+      "今度は、転写因子がエンハンサーに結合して、ヒストンアセチル化酵素を呼び込みます。",
+      "ヒストンのしっぽにアセチル基が付いていきます。"
+     ]
+    },
+    {
+     "beat": "open",
+     "source": "第6講／台詞 c06-0058（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 6,
+      "section": "テーマ2　スイッチのしくみ",
+      "cues": [
+       "c06-0058"
+      ],
+      "mode": "verbatim"
+     },
+     "lines": [
+      "ヌクレオソームの間が広がって、プロモーターが現れました。",
+      "RNAポリメラーゼが結合して、RNAが作られ始めます。",
+      "転写オンです。"
+     ]
+    },
+    {
+     "beat": "hdac",
+     "source": "第6講／台詞 c06-0059（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 6,
+      "section": "テーマ2　スイッチのしくみ",
+      "cues": [
+       "c06-0059"
+      ],
+      "mode": "verbatim"
+     },
+     "lines": [
+      "最後に、脱アセチル化酵素がアセチル基を外すと、また凝集して、オフに戻ります。"
+     ]
+    },
+    {
+     "beat": "sw",
+     "source": "第6講／台詞 c06-0060（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 6,
+      "section": "テーマ2　スイッチのしくみ",
+      "cues": [
+       "c06-0060"
+      ],
+      "mode": "verbatim"
+     },
+     "lines": [
+      "スイッチは、入れたり切ったりできる。",
+      "これがエピゲノムの大きな特徴です。"
+     ]
+    }
+   ],
+   "cams": [
+    {
+     "at": "start",
+     "move": "set",
+     "x": 640,
+     "y": 330,
+     "z": 1,
+     "note": "並び"
+    },
+    {
+     "at": "me",
+     "move": "push",
+     "x": 520,
+     "y": 330,
+     "z": 1.3,
+     "dur": 0.6,
+     "note": "メチル基"
+    },
+    {
+     "at": "pack",
+     "move": "pan",
+     "x": 690,
+     "y": 380,
+     "z": 1.2,
+     "dur": 0.6,
+     "note": "凝集"
+    },
+    {
+     "at": "tf",
+     "move": "pan",
+     "x": 400,
+     "y": 300,
+     "z": 1.25,
+     "dur": 0.6,
+     "note": "転写因子とアセチル化酵素"
+    },
+    {
+     "at": "open",
+     "move": "pan",
+     "x": 760,
+     "y": 330,
+     "z": 1.2,
+     "dur": 0.6,
+     "note": "プロモーター"
+    },
+    {
+     "at": "hdac",
+     "move": "pull",
+     "x": 640,
+     "y": 340,
+     "z": 1,
+     "dur": 0.5,
+     "note": "戻る"
+    }
+   ],
+   "fx": [
+    {
+     "at": "off",
+     "kind": "impact",
+     "dur": 0.4,
+     "min": "gekiga"
+    },
+    {
+     "at": "on",
+     "kind": "impact",
+     "dur": 0.4,
+     "min": "gekiga"
+    },
+    {
+     "at": "on",
+     "kind": "onoma",
+     "text": "パッ",
+     "x": 1080,
+     "y": 150,
+     "dur": 0.9,
+     "min": "gekiga"
+    },
+    {
+     "at": "switch",
+     "kind": "focus",
+     "dur": 1.2,
+     "min": "gekiga"
+    },
+    {
+     "at": "start",
+     "kind": "tone",
+     "dur": 999,
+     "min": "gekiga"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "me",
+     "kind": "tick"
+    },
+    {
+     "at": "pack",
+     "kind": "whoosh",
+     "gain": 0.5
+    },
+    {
+     "at": "off",
+     "kind": "impact",
+     "gain": 0.6
+    },
+    {
+     "at": "tf",
+     "kind": "tick"
+    },
+    {
+     "at": "open",
+     "kind": "whoosh",
+     "gain": 0.5
+    },
+    {
+     "at": "on",
+     "kind": "shimmer",
+     "gain": 0.5
+    },
+    {
+     "at": "hdac",
+     "kind": "whoosh",
+     "gain": 0.5
+    },
+    {
+     "at": "switch",
+     "kind": "boom",
+     "gain": 0.6
+    }
+   ]
+  },
+  {
+   "id": "S11",
+   "title": "電気のイメージ：ヒストンはプラス、DNAはマイナス",
+   "picture": "ヒストン（＋の印）にDNA（−の印）が巻き付き引き合う。アセチル化で＋がAcに置き換わると、DNAが緩んで離れる。「補足のイメージ」と小さく添える。",
+   "diagram": {
+    "id": "charge",
+    "title": "電気のイメージ：ヒストンはプラス、DNAはマイナス",
+    "note": "c06-0068（典型問題の補足）"
+   },
+   "lecturer": false,
+   "sources": [
+    {
+     "beat": "elec",
+     "source": "第6講／台詞 c06-0068（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 6,
+      "section": "テーマ2　スイッチのしくみ",
+      "cues": [
+       "c06-0068"
+      ],
+      "mode": "verbatim"
+     },
+     "lines": [
+      "電気の話で考えると分かりやすいです。",
+      "ヒストンはプラス、DNAはマイナス。",
+      "アセチル化でヒストンのプラスが減ると、DNAを手放す。",
+      "これは補足のイメージですが、覚えやすいと思います。"
+     ]
+    }
+   ],
+   "cams": [
+    {
+     "at": "start",
+     "move": "set",
+     "x": 640,
+     "y": 370,
+     "z": 1.2,
+     "note": "ヒストン"
+    },
+    {
+     "at": "release",
+     "move": "pull",
+     "x": 640,
+     "y": 380,
+     "z": 1,
+     "dur": 0.8,
+     "note": "手放す"
+    }
+   ],
+   "fx": [
+    {
+     "at": "pm",
+     "kind": "flash",
+     "dur": 0.25,
+     "min": "gekiga"
+    },
+    {
+     "at": "release",
+     "kind": "speed",
+     "dur": 0.4,
+     "min": "gekiga"
+    },
+    {
+     "at": "start",
+     "kind": "tone",
+     "dur": 999,
+     "min": "gekiga"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "pm",
+     "kind": "tick"
+    },
+    {
+     "at": "release",
+     "kind": "whoosh"
+    }
+   ]
+  },
+  {
+   "id": "S12",
+   "title": "運動でエピゲノムが変わる：メチル化↓・発現↑、HDACが核の外へ",
+   "picture": "縞のある筋線維が収縮する。核の中、PGC-1αなど代謝に関わる遺伝子のプロモーターからメチル基の印が外れ、RNAが次々に作られる（発現↑）。収縮のシグナルで、脱アセチル化酵素HDACが核の外へ出ていく。",
+   "diagram": {
+    "id": "exercise",
+    "title": "運動でエピゲノムが変わる：メチル化↓・発現↑、HDACが核の外へ",
+    "note": "スライド81・79、c06-0069〜0072"
+   },
+   "lecturer": false,
+   "sources": [
+    {
+     "beat": "q",
+     "source": "第6講／台詞 c06-0069／スライド81（原文の一部）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 6,
+      "section": "テーマ2　スイッチのしくみ",
+      "cues": [
+       "c06-0069"
+      ],
+      "mode": "trimmed",
+      "slide": 81
+     },
+     "lines": [
+      "では、生活でエピゲノムが本当に変わるのか。",
+      "運動の研究を紹介します。"
+     ]
+    },
+    {
+     "beat": "meth",
+     "source": "第6講／台詞 c06-0070・c06-0071／スライド81（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 6,
+      "section": "テーマ2　スイッチのしくみ",
+      "cues": [
+       "c06-0070",
+       "c06-0071"
+      ],
+      "mode": "verbatim",
+      "slide": 81
+     },
+     "lines": [
+      "激しい運動の直後、PGC-1アルファなど代謝に関わる遺伝子のプロモーターのメチル化が下がり、",
+      "同じ遺伝子の発現が上がっていました。"
+     ]
+    },
+    {
+     "beat": "hdac",
+     "source": "第6講／台詞 c06-0072／スライド79（原文の一部）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 6,
+      "section": "テーマ2　スイッチのしくみ",
+      "cues": [
+       "c06-0072"
+      ],
+      "mode": "trimmed",
+      "slide": 79
+     },
+     "lines": [
+      "筋肉が収縮するシグナルで、脱アセチル化酵素のHDACが核の外に出ていきます。"
+     ]
+    }
+   ],
+   "cams": [
+    {
+     "at": "start",
+     "move": "set",
+     "x": 640,
+     "y": 360,
+     "z": 1,
+     "note": "筋肉と核"
+    },
+    {
+     "at": "study",
+     "move": "push",
+     "x": 330,
+     "y": 360,
+     "z": 1.3,
+     "dur": 0.6,
+     "note": "運動"
+    },
+    {
+     "at": "meth",
+     "move": "pan",
+     "x": 880,
+     "y": 350,
+     "z": 1.3,
+     "dur": 0.6,
+     "note": "プロモーター"
+    },
+    {
+     "at": "hdac",
+     "move": "pull",
+     "x": 640,
+     "y": 360,
+     "z": 1,
+     "dur": 0.5,
+     "note": "HDAC"
+    }
+   ],
+   "fx": [
+    {
+     "at": "study",
+     "kind": "speed",
+     "dur": 0.35,
+     "min": "gekiga"
+    },
+    {
+     "at": "expr",
+     "kind": "flash",
+     "dur": 0.25,
+     "min": "gekiga"
+    },
+    {
+     "at": "hdac",
+     "kind": "speed",
+     "dur": 0.4,
+     "min": "gekiga"
+    },
+    {
+     "at": "start",
+     "kind": "tone",
+     "dur": 999,
+     "min": "gekiga"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "study",
+     "kind": "heartbeat"
+    },
+    {
+     "at": "meth",
+     "kind": "tick"
+    },
+    {
+     "at": "expr",
+     "kind": "shimmer",
+     "gain": 0.4
+    },
+    {
+     "at": "hdac",
+     "kind": "whoosh"
+    }
+   ]
+  },
+  {
+   "id": "S13",
+   "title": "板書：運動 → HDACが核外へ、低メチル化 → 発現↑",
+   "picture": "黒板の真ん中の下：例：運動→HDACが核外へ／PGC-1αなどのプロモーター／低メチル化→発現↑。",
+   "diagram": {
+    "id": "board-c7b",
+    "title": "板書：板書：運動 → HDACが核外へ、低メチル化 → 発現↑",
+    "note": "第6講の黒板 c-on・c3〜c5・c6・c7・c7b（c7bに下線）、c06-0073"
+   },
+   "lecturer": true,
+   "sources": [
+    {
+     "beat": "w",
+     "source": "第6講／台詞 c06-0073／板書 c6・c7・c7b（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 6,
+      "section": "テーマ2　スイッチのしくみ",
+      "cues": [
+       "c06-0073"
+      ],
+      "mode": "verbatim",
+      "board": [
+       "c6",
+       "c7",
+       "c7b"
+      ]
+     },
+     "lines": [
+      "黒板に書いておきます。",
+      "運動で、脱アセチル化酵素が核の外へ。",
+      "プロモーターのメチル化が下がって、発現が上がる。",
+      "生活でエピゲノムが変わる、具体的な例です。"
+     ]
+    }
+   ],
+   "cams": [
+    {
+     "at": "start",
+     "move": "set",
+     "x": 600,
+     "y": 340,
+     "z": 1,
+     "note": "板書"
+    },
+    {
+     "at": "c6",
+     "move": "push",
+     "x": 520,
+     "y": 470,
+     "z": 1.35,
+     "dur": 0.5,
+     "note": "運動の例"
+    }
+   ],
+   "fx": [
+    {
+     "at": "ex",
+     "kind": "focus",
+     "dur": 0.9,
+     "min": "gekiga"
+    },
+    {
+     "at": "start",
+     "kind": "tone",
+     "dur": 999,
+     "min": "gekiga"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "c6",
+     "kind": "chalk",
+     "gain": 0.6
+    },
+    {
+     "at": "c7",
+     "kind": "chalk",
+     "gain": 0.6
+    }
+   ]
+  },
+  {
+   "id": "S14",
+   "title": "ミトコンドリアゲノム：多コピー・37遺伝子・母系遺伝",
+   "picture": "1つの細胞。核には父と母から1セットずつ。細胞質にはミトコンドリアが多数、それぞれに小さな環状DNA（細胞あたり10³〜10⁴コピー）。環状DNAの拡大：遺伝子37個（呼吸鎖の部品など）。核からミトコンドリアへタンパク質が運ばれる（大部分は核の遺伝子の産物）。家系図の記号だけで母系遺伝。",
+   "diagram": {
+    "id": "mtdna",
+    "title": "ミトコンドリアゲノム：多コピー・37遺伝子・母系遺伝",
+    "note": "スライド82、c06-0079〜0083"
+   },
+   "lecturer": false,
+   "sources": [
+    {
+     "beat": "q",
+     "source": "第6講／台詞 c06-0079／スライド82（原文の一部）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 6,
+      "section": "テーマ3　ミトコンドリアゲノム",
+      "cues": [
+       "c06-0079"
+      ],
+      "mode": "trimmed",
+      "slide": 82
+     },
+     "lines": [
+      "最後に、核とは別のゲノムの話です。"
+     ]
+    },
+    {
+     "beat": "copy",
+     "source": "第6講／台詞 c06-0080／スライド82（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 6,
+      "section": "テーマ3　ミトコンドリアゲノム",
+      "cues": [
+       "c06-0080"
+      ],
+      "mode": "verbatim",
+      "slide": 82
+     },
+     "lines": [
+      "核のゲノムは両親から1セットずつですが、",
+      "ミトコンドリアのゲノムは、細胞あたり10の3乗から10の4乗コピーもあります。"
+     ]
+    },
+    {
+     "beat": "g37",
+     "source": "第6講／台詞 c06-0081／スライド82（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 6,
+      "section": "テーマ3　ミトコンドリアゲノム",
+      "cues": [
+       "c06-0081"
+      ],
+      "mode": "verbatim",
+      "slide": 82
+     },
+     "lines": [
+      "遺伝子は37個。",
+      "呼吸鎖の部品などです。"
+     ]
+    },
+    {
+     "beat": "imp",
+     "source": "第6講／台詞 c06-0082／スライド82（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 6,
+      "section": "テーマ3　ミトコンドリアゲノム",
+      "cues": [
+       "c06-0082"
+      ],
+      "mode": "verbatim",
+      "slide": 82
+     },
+     "lines": [
+      "ミトコンドリアの中のタンパク質の大部分は、実は核の遺伝子の産物。"
+     ]
+    },
+    {
+     "beat": "mat",
+     "source": "第6講／台詞 c06-0083／スライド82（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 6,
+      "section": "テーマ3　ミトコンドリアゲノム",
+      "cues": [
+       "c06-0083"
+      ],
+      "mode": "verbatim",
+      "slide": 82
+     },
+     "lines": [
+      "そして、ミトコンドリアの遺伝子の変異は、母系遺伝を示します。"
+     ]
+    }
+   ],
+   "cams": [
+    {
+     "at": "start",
+     "move": "set",
+     "x": 640,
+     "y": 370,
+     "z": 1,
+     "note": "細胞"
+    },
+    {
+     "at": "nuc",
+     "move": "push",
+     "x": 360,
+     "y": 380,
+     "z": 1.35,
+     "dur": 0.6,
+     "note": "核"
+    },
+    {
+     "at": "copy",
+     "move": "pan",
+     "x": 850,
+     "y": 300,
+     "z": 1.2,
+     "dur": 0.6,
+     "note": "多コピー"
+    },
+    {
+     "at": "g37",
+     "move": "push",
+     "x": 1020,
+     "y": 220,
+     "z": 1.45,
+     "dur": 0.5,
+     "note": "37個"
+    },
+    {
+     "at": "import",
+     "move": "pull",
+     "x": 640,
+     "y": 380,
+     "z": 1,
+     "dur": 0.5,
+     "note": "核から運ばれる"
+    },
+    {
+     "at": "mat",
+     "move": "pan",
+     "x": 640,
+     "y": 520,
+     "z": 1.15,
+     "dur": 0.5,
+     "note": "母系遺伝"
+    }
+   ],
+   "fx": [
+    {
+     "at": "copy",
+     "kind": "flash",
+     "dur": 0.25,
+     "min": "gekiga"
+    },
+    {
+     "at": "g37",
+     "kind": "impact",
+     "dur": 0.4,
+     "min": "gekiga"
+    },
+    {
+     "at": "mat",
+     "kind": "impact",
+     "dur": 0.45,
+     "min": "gekiga"
+    },
+    {
+     "at": "start",
+     "kind": "tone",
+     "dur": 999,
+     "min": "gekiga"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "nuc",
+     "kind": "tick"
+    },
+    {
+     "at": "copy",
+     "kind": "shimmer",
+     "gain": 0.5
+    },
+    {
+     "at": "g37",
+     "kind": "impact",
+     "gain": 0.6
+    },
+    {
+     "at": "import",
+     "kind": "whoosh",
+     "gain": 0.5
+    },
+    {
+     "at": "mat",
+     "kind": "boom",
+     "gain": 0.6
+    }
+   ]
+  },
+  {
+   "id": "S15",
+   "title": "板書：試験ポイント（向きを取り違えない）",
+   "picture": "黒板の右「試験ポイント」：エピ＝塩基配列の変化なし／高メチル化・脱アセチル化→OFF／アセチル化→塩基性↓→ON／5'-CG-3' のCは70%以上メチル化。「ミトコンドリアゲノム」：遺伝子37個・10³〜10⁴コピー/細胞／変異は母系遺伝／中のタンパク質の大部分は核遺伝子。",
+   "diagram": {
+    "id": "board-m3",
+    "title": "板書：板書：試験ポイント（向きを取り違えない）",
+    "note": "第6講の黒板 r-h・r1〜r4（r2・r3に赤枠）・m-h・m1〜m3（m2に下線）、c06-0084〜0086"
+   },
+   "lecturer": true,
+   "sources": [
+    {
+     "beat": "w",
+     "source": "第6講／台詞 c06-0084／板書 r-h（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 6,
+      "section": "テーマ3　ミトコンドリアゲノム",
+      "cues": [
+       "c06-0084"
+      ],
+      "mode": "verbatim",
+      "board": [
+       "r-h"
+      ]
+     },
+     "lines": [
+      "右側に、今日の試験ポイントをまとめます。"
+     ]
+    },
+    {
+     "beat": "r",
+     "source": "第6講／台詞 c06-0085／板書 r1・r2・r3・r4（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 6,
+      "section": "テーマ3　ミトコンドリアゲノム",
+      "cues": [
+       "c06-0085"
+      ],
+      "mode": "verbatim",
+      "board": [
+       "r1",
+       "r2",
+       "r3",
+       "r4"
+      ]
+     },
+     "lines": [
+      "エピジェネティックは、配列が変わらない。",
+      "メチル化はオフ、アセチル化はオン。",
+      "向きを絶対に取り違えないでください。"
+     ]
+    },
+    {
+     "beat": "m",
+     "source": "第6講／台詞 c06-0086／板書 m-h・m1・m2・m3（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 6,
+      "section": "テーマ3　ミトコンドリアゲノム",
+      "cues": [
+       "c06-0086"
+      ],
+      "mode": "verbatim",
+      "board": [
+       "m-h",
+       "m1",
+       "m2",
+       "m3"
+      ]
+     },
+     "lines": [
+      "ミトコンドリアは、37個の遺伝子、たくさんのコピー、母系遺伝。",
+      "そして、中のタンパク質の大部分は核の遺伝子から。"
+     ]
+    }
+   ],
+   "cams": [
+    {
+     "at": "start",
+     "move": "set",
+     "x": 600,
+     "y": 330,
+     "z": 1,
+     "note": "板書"
+    },
+    {
+     "at": "r1",
+     "move": "push",
+     "x": 470,
+     "y": 200,
+     "z": 1.35,
+     "dur": 0.5,
+     "note": "配列は変わらない"
+    },
+    {
+     "at": "warn",
+     "move": "crash",
+     "x": 470,
+     "y": 230,
+     "z": 1.55,
+     "dur": 0.22,
+     "hold": 0.25,
+     "note": "向き"
+    },
+    {
+     "at": "m1",
+     "move": "pan",
+     "x": 470,
+     "y": 480,
+     "z": 1.35,
+     "dur": 0.5,
+     "note": "ミトコンドリア"
+    },
+    {
+     "at": "m3+1.2",
+     "move": "pull",
+     "x": 600,
+     "y": 330,
+     "z": 1,
+     "dur": 0.5,
+     "note": "全体"
+    }
+   ],
+   "fx": [
+    {
+     "at": "warn",
+     "kind": "impact",
+     "dur": 0.4,
+     "min": "gekiga"
+    },
+    {
+     "at": "start",
+     "kind": "tone",
+     "dur": 999,
+     "min": "gekiga"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "w",
+     "kind": "chalk",
+     "gain": 0.6
+    },
+    {
+     "at": "r1",
+     "kind": "chalk",
+     "gain": 0.6
+    },
+    {
+     "at": "warn",
+     "kind": "impact",
+     "gain": 0.6
+    },
+    {
+     "at": "m1",
+     "kind": "chalk",
+     "gain": 0.6
+    }
+   ]
+  },
+  {
+   "id": "S16",
+   "title": "今日のまとめ：4つ",
+   "picture": "黒板の下段に「今日のまとめ」①〜④（板書 sum-h・s1〜s4）。読み上げに合わせて1行ずつ書かれ、言い終わるごとに下線。",
+   "diagram": {
+    "id": "board-s4",
+    "title": "板書：今日のまとめ：4つ",
+    "note": "第6講の黒板 sum-h・s1〜s4、c06-0092〜0096"
+   },
+   "lecturer": true,
+   "sources": [
+    {
+     "beat": "four",
+     "source": "第6講／台詞 c06-0092／板書 sum-h（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 6,
+      "section": "テーマ3　ミトコンドリアゲノム",
+      "cues": [
+       "c06-0092"
+      ],
+      "mode": "verbatim",
+      "board": [
+       "sum-h"
+      ]
+     },
+     "lines": [
+      "今日覚えてほしいのは、この4つです。"
+     ]
+    },
+    {
+     "beat": "p1",
+     "source": "第6講／台詞 c06-0093／板書 s1（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 6,
+      "section": "テーマ3　ミトコンドリアゲノム",
+      "cues": [
+       "c06-0093"
+      ],
+      "mode": "verbatim",
+      "board": [
+       "s1"
+      ]
+     },
+     "lines": [
+      "ひとつ目。",
+      "遺伝型と表現型の間にあるエピゲノム。",
+      "塩基配列を変えずに、遺伝子の働きを変えます。"
+     ]
+    },
+    {
+     "beat": "p2",
+     "source": "第6講／台詞 c06-0094／板書 s2（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 6,
+      "section": "テーマ3　ミトコンドリアゲノム",
+      "cues": [
+       "c06-0094"
+      ],
+      "mode": "verbatim",
+      "board": [
+       "s2"
+      ]
+     },
+     "lines": [
+      "ふたつ目。",
+      "高メチル化と脱アセチル化で凝集してオフ。",
+      "アセチル化で緩んでオン。"
+     ]
+    },
+    {
+     "beat": "p3",
+     "source": "第6講／台詞 c06-0095／板書 s3（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 6,
+      "section": "テーマ3　ミトコンドリアゲノム",
+      "cues": [
+       "c06-0095"
+      ],
+      "mode": "verbatim",
+      "board": [
+       "s3"
+      ]
+     },
+     "lines": [
+      "みっつ目。",
+      "エピゲノムは、運動などの生活で変わりうる。"
+     ]
+    },
+    {
+     "beat": "p4",
+     "source": "第6講／台詞 c06-0096／板書 s4（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 6,
+      "section": "テーマ3　ミトコンドリアゲノム",
+      "cues": [
+       "c06-0096"
+      ],
+      "mode": "verbatim",
+      "board": [
+       "s4"
+      ]
+     },
+     "lines": [
+      "そして、ミトコンドリアのゲノムは、",
+      "37個の遺伝子、多コピー、母系遺伝。"
+     ]
+    }
+   ],
+   "cams": [
+    {
+     "at": "start",
+     "move": "set",
+     "x": 640,
+     "y": 330,
+     "z": 1,
+     "note": "まとめの板書"
+    },
+    {
+     "at": "p1",
+     "move": "push",
+     "x": 560,
+     "y": 190,
+     "z": 1.25,
+     "dur": 0.6,
+     "note": "①へ"
+    },
+    {
+     "at": "p2",
+     "move": "pan",
+     "x": 560,
+     "y": 285,
+     "z": 1.25,
+     "dur": 0.5,
+     "note": "②へ"
+    },
+    {
+     "at": "p3",
+     "move": "pan",
+     "x": 560,
+     "y": 380,
+     "z": 1.25,
+     "dur": 0.5,
+     "note": "③へ"
+    },
+    {
+     "at": "p4",
+     "move": "pan",
+     "x": 560,
+     "y": 475,
+     "z": 1.25,
+     "dur": 0.5,
+     "note": "④へ"
+    },
+    {
+     "at": "p4b+1.6",
+     "move": "pull",
+     "x": 640,
+     "y": 330,
+     "z": 1,
+     "dur": 0.5,
+     "note": "4つを並べて引く"
+    }
+   ],
+   "fx": [
+    {
+     "at": "p4b+1.6",
+     "kind": "focus",
+     "dur": 0.9,
+     "min": "gekiga"
+    },
+    {
+     "at": "start",
+     "kind": "tone",
+     "dur": 999,
+     "min": "gekiga"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "four",
+     "kind": "chalk",
+     "gain": 0.5
+    },
+    {
+     "at": "p1",
+     "kind": "chalk",
+     "gain": 0.5
+    },
+    {
+     "at": "p2",
+     "kind": "chalk",
+     "gain": 0.5
+    },
+    {
+     "at": "p3",
+     "kind": "chalk",
+     "gain": 0.5
+    },
+    {
+     "at": "p4",
+     "kind": "chalk",
+     "gain": 0.5
+    },
+    {
+     "at": "p4b+1.6",
+     "kind": "impact",
+     "gain": 0.6
+    }
+   ]
+  },
+  {
+   "id": "S17",
+   "title": "終わり：遺伝子の基礎 全6回",
+   "picture": "「第6講 終」の判。「遺伝子の基礎 全6回」「おつかれさまでした」。ミトコンドリアの絵。黒にフェードアウト。",
+   "diagram": {
+    "id": "end",
+    "title": "次回予告",
+    "note": "c06-0097・0106"
+   },
+   "lecturer": false,
+   "sources": [
+    {
+     "beat": "next",
+     "source": "第6講／台詞 c06-0097（原文の一部）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 6,
+      "section": "まとめ",
+      "cues": [
+       "c06-0097"
+      ],
+      "mode": "trimmed"
+     },
+     "lines": [
+      "これで「遺伝子の基礎」の6回がすべて終わりです。"
+     ]
+    },
+    {
+     "beat": "bye",
+     "source": "第6講／台詞 c06-0106（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 6,
+      "section": "本番問題",
+      "cues": [
+       "c06-0106"
+      ],
+      "mode": "verbatim"
+     },
+     "lines": [
+      "第6講、そして遺伝子の基礎の授業は、これで終わりです。"
+     ]
+    }
+   ],
+   "cams": [
+    {
+     "at": "start",
+     "move": "set",
+     "x": 640,
+     "y": 360,
+     "z": 1.15,
+     "note": "予告"
+    },
+    {
+     "at": "start",
+     "move": "pull",
+     "x": 640,
+     "y": 360,
+     "z": 1,
+     "dur": 6,
+     "note": "ゆっくり引いて終わる"
+    }
+   ],
+   "fx": [
+    {
+     "at": "next",
+     "kind": "impact",
+     "dur": 0.4,
+     "min": "gekiga"
+    },
+    {
+     "at": "start",
+     "kind": "tone",
+     "dur": 999,
+     "min": "gekiga"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "next",
+     "kind": "impact",
+     "gain": 0.6
+    },
+    {
+     "at": "bye",
+     "kind": "shimmer",
+     "gain": 0.5
+    }
+   ]
+  }
+ ]
+}
