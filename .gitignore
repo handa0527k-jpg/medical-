@@ -31,3 +31,5 @@ production/lecture-video/*/sfx/
 production/lecture-video/*/out/
 production/lecture-video/*/wan/
 tools/lecture-video/models/
+
+production/lecture-video/youtube/*.mp4
