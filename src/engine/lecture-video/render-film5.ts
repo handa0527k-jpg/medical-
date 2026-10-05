@@ -207,10 +207,10 @@ function frameshiftFig(rc: RC) {
   const top = 1 - rc.u('ins', 0.4) * 0.7;
   p.save(); p.alpha(top);
   p.line([[x0 - 90, y], [x0 + 4 * dx + 90, y]], { stroke: RNA, width: 8 });
-  cods.forEach((c, i) => codon(p, i === 2 && stop > 0.5 ? 'UGA' : c, x0 + i * dx, y + 36, 28, i === 2 && stop > 0 ? 0 : -1));
   const pos = Math.min(2, 2 * between(rc, 'start', 'stop', ease.inOut));
   const rx = x0 + pos * dx;
-  ribosome(p, rx, y);
+  ribosome(p, rx, y, 0.75);
+  cods.forEach((c, i) => codon(p, i === 2 && stop > 0.5 ? 'UGA' : c, x0 + i * dx, y + 36, 28, i === 2 && stop > 0 ? 0 : -1));
   for (let i = 0; i <= Math.min(1, Math.floor(pos + 0.02)); i++) aaBead(p, rx - 30 - (Math.floor(pos) - i) * 58, y - 120, aas[i]);
   const n = rc.u('non', 0.3);
   if (n > 0) { label(p, '終止コドン → 合成が止まる', x0 + 2 * dx, y + 96, 26, { align: 'center', fill: RED, a: n }); }
@@ -277,7 +277,7 @@ function alcoholFig(rc: RC) {
     if (a <= 0) return;
     const r = 70 * (1 + 0.08 * pulse * Math.sin(t * 8));
     p.circle(x, y, r, { fill: col, stroke: INK, width: 5, opacity: a });
-    label(p, name, x, y, name.length > 6 ? 22 : 26, { align: 'center', a });
+    label(p, name, x, y + 100, 26, { align: 'center', a });
   };
   const a0 = rc.u('start', 0.4), ad = rc.u('adh', 0.5), al = rc.u('aldh', 0.5);
   mol(160, 'アルコール', '#4a7ab8', a0);
@@ -299,7 +299,7 @@ function alcoholFig(rc: RC) {
   const tx = rc.u('tox', 0.4);
   if (tx > 0) { card(p, 560, 450, 520, 90, tx, '#ff4a3a'); label(p, '顔が赤くなる・気分が悪くなる原因', 560, 450, 28, { align: 'center', fill: '#ffb0a0', a: tx }); }
   const a2 = rc.u('adh2', 0.4);
-  if (a2 > 0) { p.line([[360, y - 66], [300, 560]], { stroke: '#fff', width: 3, opacity: a2 }); label(p, 'ADH2：日本人でも遺伝子多型', 300, 590, 28, { align: 'center', fill: CHALK.y, a: a2 }); }
+  if (a2 > 0) { p.rect(300, y - 62, 120, 44, { stroke: CHALK.y, width: 3, opacity: a2 }, 8); label(p, 'ADH2：日本人でも遺伝子多型', 330, y - 165, 26, { align: 'center', fill: CHALK.y, a: a2 }); }
 }
 
 /* ---------- テーマ2：ALDH2 ---------- */
@@ -351,7 +351,7 @@ function transposonFig(rc: RC) {
   const ex = 300 + 550 * j, ey = y - Math.sin(Math.PI * j) * 140;
   if (j > 0 && j < 1) p.path(`M 360 ${y} Q 635 ${y - 280} 910 ${y}`, { stroke: TE, width: 3, dash: [10, 8], opacity: 0.6 });
   element(p, ex, ex + 120, ey, rc.u('start', 0.4), TE, 30);
-  label(p, '位置を変える配列', 640, 110, 30, { align: 'center', fill: TE, a: rc.u('def', 0.3) });
+  label(p, '位置を変える配列', 640, 296, 28, { align: 'center', fill: TE, a: rc.u('def', 0.3) });
   const d = rc.u('dna', 0.4), r = rc.u('rna', 0.4);
   if (d > 0) { card(p, 330, 360, 440, 90, d, TE); label(p, 'DNA型：DNAが直接動く', 330, 360, 28, { align: 'center', a: d }); }
   if (r > 0) { card(p, 950, 360, 500, 90, r, RNA); label(p, 'RNA型：転写 → 逆転写', 950, 345, 26, { align: 'center', a: r }); label(p, 'レトロポゾン', 950, 380, 24, { align: 'center', fill: '#d8b6ff', a: r }); }
@@ -488,7 +488,7 @@ function retroFig(rc: RC) {
     p.restore();
   }
   const rv = rc.u('rev', 0.4);
-  if (rv > 0) { label(p, 'RNA → DNA（逆向き）', 1060, y3, 28, { align: 'center', fill: CHALK.y, a: rv }); }
+  if (rv > 0) { label(p, 'RNA → DNA（逆向き）', 1010, y3 + 52, 26, { align: 'center', fill: CHALK.y, a: rv }); }
   // row 4: insertion into another chromosome
   const y4 = 480, i4 = rc.u('ins', 0.5);
   if (i4 > 0) {

@@ -1,0 +1,8053 @@
+{
+ "format": "medstudy-lecture-video/1",
+ "created": "2026-10-05T01:26:41.038Z",
+ "roles": {
+  "MEDSTUDY": "教材理解・授業設計・医学図・管理",
+  "ComfyUI": "動画生成ワークフロー管理",
+  "Wan 2.2": "映像生成（文字・正確な構造は描かせない）",
+  "Kokoro": "日本語講師音声",
+  "FFmpeg": "映像・音声・字幕・効果音の最終統合"
+ },
+ "theme": "遺伝子の基礎（構造と機能） 第5講「ゲノムの変異・多型と動く遺伝子」— 完成版（講義まるごと）",
+ "curated": true,
+ "rationale": [
+  "第5講「ゲノムの変異・多型と動く遺伝子」を、講義の順（導入 → テーマ1〜3 → まとめ）に1本の劇画授業映像にした完成版。確認問題・症例問題の選択肢の解説は省いた。",
+  "台詞はすべて第5講の講義台詞（narrations/lecture-05.json）の原文、またはその一部。板書は講義の黒板の文字をそのまま使う。",
+  "医学図：置換・挿入・欠失、置換の結果4通り（標準遺伝暗号：AGA/CGA Arg、GAC Asp→GAA Glu、Arg→Gly、終止コドン）、読み枠のずれ、一塩基多型の数、アルコール代謝（ADH・ALDH、アセトアルデヒド）、ALDH2 487番 Glu→Lys と GG/AG/AA、トランスポゾン（DNA型・レトロ型）、レトロ転移とプロセッシングを受けた偽遺伝子（イントロン・プロモーターなし）。人物の顔は描かない。"
+ ],
+ "options": {
+  "duration": "full",
+  "style": "黒板講義型",
+  "intensity": "劇画"
+ },
+ "wan": {
+  "profile": "ti2v-5b",
+  "label": "Wan 2.2 TI2V 5B（軽量・24fps）",
+  "w": 1280,
+  "h": 704,
+  "fps": 24,
+  "maxFrames": 121,
+  "note": "VRAM 8GB〜（ComfyUIのオフロード使用）。1280×704・最大121フレーム（約5秒）",
+  "jobs": [
+   {
+    "name": "S01_a",
+    "scene": "S01",
+    "shot": "a",
+    "mode": "feature",
+    "desc": "漆黒の空間で墨が爆ぜ、二重らせんの影がゆっくり回る。",
+    "t0": 0,
+    "dur": 17.916,
+    "frames": 121,
+    "keyframe": "keyframes/S01_a.png",
+    "prompt": "pitch black void, sumi ink exploding and swirling like smoke in water, the dark silhouette of a right-handed DNA double helix slowly rotating in the ink. Camera: fast push-in that stops abruptly, dramatic low angle, strong perspective, sudden held frame. Look: gekiga manga style animation, bold hand-inked black lines, heavy cross-hatched shadows, high contrast chiaroscuro, limited desaturated palette with deep blacks, dramatic composition, cinematic, 1980s Japanese gekiga illustration texture. The subject fills the frame. Accuracy: the helix is right-handed with a wide major groove and a narrow minor groove; no text, no letters, no labels.",
+    "negative": "text, letters, numbers, captions, subtitles, labels, watermark, logo, signature, speech bubbles, writing, symbols, deformed structures, extra objects, cartoon faces on cells, cute mascot, pastel colors, oversaturated, photorealistic skin, gore, blood, 色调艳丽，过曝，静态，细节模糊不清，字幕，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走",
+    "camera": "題名で急接近 → 静止 / ゆっくり引く",
+    "seed": 1950893629
+   },
+   {
+    "name": "S02_a",
+    "scene": "S02",
+    "shot": "a",
+    "mode": "background",
+    "desc": "細胞核の中の暗い水の世界。",
+    "t0": 17.916,
+    "dur": 12.875,
+    "frames": 121,
+    "keyframe": "keyframes/S02_a.png",
+    "prompt": "a dark watery molecular world inside a cell nucleus, soft out-of-focus particles drifting, cold rim light, slow push-in. Camera: fast push-in that stops abruptly, dramatic low angle, strong perspective, sudden held frame. Look: gekiga manga style animation, bold hand-inked black lines, heavy cross-hatched shadows, high contrast chiaroscuro, limited desaturated palette with deep blacks, dramatic composition, cinematic, 1980s Japanese gekiga illustration texture. The centre of the frame stays calm and darker (an exact figure will be laid over it). Accuracy: background only, no molecules in focus, no text, no letters, no labels.",
+    "negative": "text, letters, numbers, captions, subtitles, labels, watermark, logo, signature, speech bubbles, writing, symbols, deformed structures, extra objects, cartoon faces on cells, cute mascot, pastel colors, oversaturated, photorealistic skin, gore, blood, 色调艳丽，过曝，静态，细节模糊不清，字幕，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走",
+    "camera": "挿入 / 欠失 / 染色体異常",
+    "seed": 540244344
+   },
+   {
+    "name": "S03_a",
+    "scene": "S03",
+    "shot": "a",
+    "mode": "background",
+    "desc": "夜の講義室。",
+    "t0": 30.792,
+    "dur": 6.814,
+    "frames": 121,
+    "keyframe": "keyframes/S03_a.png",
+    "prompt": "a dark empty lecture hall at night, a huge slate blackboard, a single hard shaft of light cutting through floating chalk dust, dust motes drifting slowly. Camera: fast push-in that stops abruptly, dramatic low angle, strong perspective, sudden held frame. Look: gekiga manga style animation, bold hand-inked black lines, heavy cross-hatched shadows, high contrast chiaroscuro, limited desaturated palette with deep blacks, dramatic composition, cinematic, 1980s Japanese gekiga illustration texture. The centre of the frame stays calm and darker (an exact figure will be laid over it). Accuracy: no people, no writing on the board.",
+    "negative": "text, letters, numbers, captions, subtitles, labels, watermark, logo, signature, speech bubbles, writing, symbols, deformed structures, extra objects, cartoon faces on cells, cute mascot, pastel colors, oversaturated, photorealistic skin, gore, blood, 色调艳丽，过曝，静态，细节模糊不清，字幕，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走",
+    "camera": "4通り",
+    "seed": 2092670867
+   },
+   {
+    "name": "S04_a",
+    "scene": "S04",
+    "shot": "a",
+    "mode": "background",
+    "desc": "暗い背景に光の筋。",
+    "t0": 37.605,
+    "dur": 36.252,
+    "frames": 121,
+    "keyframe": "keyframes/S04_a.png",
+    "prompt": "abstract dark background, slow streaks of warm light drifting, subtle film grain. Camera: fast push-in that stops abruptly, dramatic low angle, strong perspective, sudden held frame. Look: gekiga manga style animation, bold hand-inked black lines, heavy cross-hatched shadows, high contrast chiaroscuro, limited desaturated palette with deep blacks, dramatic composition, cinematic, 1980s Japanese gekiga illustration texture. The centre of the frame stays calm and darker (an exact figure will be laid over it). Accuracy: no text, no letters, no labels.",
+    "negative": "text, letters, numbers, captions, subtitles, labels, watermark, logo, signature, speech bubbles, writing, symbols, deformed structures, extra objects, cartoon faces on cells, cute mascot, pastel colors, oversaturated, photorealistic skin, gore, blood, 色调艳丽，过曝，静态，细节模糊不清，字幕，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走",
+    "camera": "ナンセンス / ミスセンス / サイレント / センス / コドン表",
+    "seed": 1787023310
+   },
+   {
+    "name": "S05_a",
+    "scene": "S05",
+    "shot": "a",
+    "mode": "background",
+    "desc": "夜の講義室。",
+    "t0": 73.857,
+    "dur": 16.38,
+    "frames": 121,
+    "keyframe": "keyframes/S05_a.png",
+    "prompt": "a dark empty lecture hall at night, a huge slate blackboard, a single hard shaft of light cutting through floating chalk dust, dust motes drifting slowly. Camera: fast push-in that stops abruptly, dramatic low angle, strong perspective, sudden held frame. Look: gekiga manga style animation, bold hand-inked black lines, heavy cross-hatched shadows, high contrast chiaroscuro, limited desaturated palette with deep blacks, dramatic composition, cinematic, 1980s Japanese gekiga illustration texture. The centre of the frame stays calm and darker (an exact figure will be laid over it). Accuracy: no people, no writing on the board.",
+    "negative": "text, letters, numbers, captions, subtitles, labels, watermark, logo, signature, speech bubbles, writing, symbols, deformed structures, extra objects, cartoon faces on cells, cute mascot, pastel colors, oversaturated, photorealistic skin, gore, blood, 色调艳丽，过曝，静态，细节模糊不清，字幕，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走",
+    "camera": "4通り / 向きが逆",
+    "seed": 3339449833
+   },
+   {
+    "name": "S06_a",
+    "scene": "S06",
+    "shot": "a",
+    "mode": "background",
+    "desc": "細胞核の中の暗い水の世界。",
+    "t0": 90.237,
+    "dur": 33.345,
+    "frames": 121,
+    "keyframe": "keyframes/S06_a.png",
+    "prompt": "a dark watery molecular world inside a cell nucleus, soft out-of-focus particles drifting, cold rim light, slow push-in. Camera: fast push-in that stops abruptly, dramatic low angle, strong perspective, sudden held frame. Look: gekiga manga style animation, bold hand-inked black lines, heavy cross-hatched shadows, high contrast chiaroscuro, limited desaturated palette with deep blacks, dramatic composition, cinematic, 1980s Japanese gekiga illustration texture. The centre of the frame stays calm and darker (an exact figure will be laid over it). Accuracy: background only, no molecules in focus, no text, no letters, no labels.",
+    "negative": "text, letters, numbers, captions, subtitles, labels, watermark, logo, signature, speech bubbles, writing, symbols, deformed structures, extra objects, cartoon faces on cells, cute mascot, pastel colors, oversaturated, photorealistic skin, gore, blood, 色调艳丽，过曝，静态，细节模糊不清，字幕，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走",
+    "camera": "5番目 / コドンのカード / 保存的",
+    "seed": 1980823012
+   },
+   {
+    "name": "S07_a",
+    "scene": "S07",
+    "shot": "a",
+    "mode": "background",
+    "desc": "細胞核の中の暗い水の世界。",
+    "t0": 123.582,
+    "dur": 27.138,
+    "frames": 121,
+    "keyframe": "keyframes/S07_a.png",
+    "prompt": "a dark watery molecular world inside a cell nucleus, soft out-of-focus particles drifting, cold rim light, slow push-in. Camera: fast push-in that stops abruptly, dramatic low angle, strong perspective, sudden held frame. Look: gekiga manga style animation, bold hand-inked black lines, heavy cross-hatched shadows, high contrast chiaroscuro, limited desaturated palette with deep blacks, dramatic composition, cinematic, 1980s Japanese gekiga illustration texture. The centre of the frame stays calm and darker (an exact figure will be laid over it). Accuracy: background only, no molecules in focus, no text, no letters, no labels.",
+    "negative": "text, letters, numbers, captions, subtitles, labels, watermark, logo, signature, speech bubbles, writing, symbols, deformed structures, extra objects, cartoon faces on cells, cute mascot, pastel colors, oversaturated, photorealistic skin, gore, blood, 色调艳丽，过曝，静态，细节模糊不清，字幕，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走",
+    "camera": "止まる / 挿入 / 比べる",
+    "seed": 3533352703
+   },
+   {
+    "name": "S08_a",
+    "scene": "S08",
+    "shot": "a",
+    "mode": "background",
+    "desc": "暗い背景に光の筋。",
+    "t0": 150.72,
+    "dur": 21.022,
+    "frames": 121,
+    "keyframe": "keyframes/S08_a.png",
+    "prompt": "abstract dark background, slow streaks of warm light drifting, subtle film grain. Camera: fast push-in that stops abruptly, dramatic low angle, strong perspective, sudden held frame. Look: gekiga manga style animation, bold hand-inked black lines, heavy cross-hatched shadows, high contrast chiaroscuro, limited desaturated palette with deep blacks, dramatic composition, cinematic, 1980s Japanese gekiga illustration texture. The centre of the frame stays calm and darker (an exact figure will be laid over it). Accuracy: no text, no letters, no labels.",
+    "negative": "text, letters, numbers, captions, subtitles, labels, watermark, logo, signature, speech bubbles, writing, symbols, deformed structures, extra objects, cartoon faces on cells, cute mascot, pastel colors, oversaturated, photorealistic skin, gore, blood, 色调艳丽，过曝，静态，细节模糊不清，字幕，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走",
+    "camera": "無数の印 / 赤い印 / 個性",
+    "seed": 1853750602
+   },
+   {
+    "name": "S09_a",
+    "scene": "S09",
+    "shot": "a",
+    "mode": "background",
+    "desc": "体の中の暖かく暗い世界。",
+    "t0": 171.741,
+    "dur": 23.255,
+    "frames": 121,
+    "keyframe": "keyframes/S09_a.png",
+    "prompt": "a dark warm organic interior, soft glowing particles flowing slowly, warm rim light. Camera: fast push-in that stops abruptly, dramatic low angle, strong perspective, sudden held frame. Look: gekiga manga style animation, bold hand-inked black lines, heavy cross-hatched shadows, high contrast chiaroscuro, limited desaturated palette with deep blacks, dramatic composition, cinematic, 1980s Japanese gekiga illustration texture. The centre of the frame stays calm and darker (an exact figure will be laid over it). Accuracy: background only, no organs in focus, no faces, no text, no letters, no labels.",
+    "negative": "text, letters, numbers, captions, subtitles, labels, watermark, logo, signature, speech bubbles, writing, symbols, deformed structures, extra objects, cartoon faces on cells, cute mascot, pastel colors, oversaturated, photorealistic skin, gore, blood, 色调艳丽，过曝，静态，细节模糊不清，字幕，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走",
+    "camera": "ADH / ALDH / アセトアルデヒド / 全体",
+    "seed": 3406177125
+   },
+   {
+    "name": "S10_a",
+    "scene": "S10",
+    "shot": "a",
+    "mode": "background",
+    "desc": "夜の講義室。",
+    "t0": 194.997,
+    "dur": 11.152,
+    "frames": 121,
+    "keyframe": "keyframes/S10_a.png",
+    "prompt": "a dark empty lecture hall at night, a huge slate blackboard, a single hard shaft of light cutting through floating chalk dust, dust motes drifting slowly. Camera: fast push-in that stops abruptly, dramatic low angle, strong perspective, sudden held frame. Look: gekiga manga style animation, bold hand-inked black lines, heavy cross-hatched shadows, high contrast chiaroscuro, limited desaturated palette with deep blacks, dramatic composition, cinematic, 1980s Japanese gekiga illustration texture. The centre of the frame stays calm and darker (an exact figure will be laid over it). Accuracy: no people, no writing on the board.",
+    "negative": "text, letters, numbers, captions, subtitles, labels, watermark, logo, signature, speech bubbles, writing, symbols, deformed structures, extra objects, cartoon faces on cells, cute mascot, pastel colors, oversaturated, photorealistic skin, gore, blood, 色调艳丽，过曝，静态，细节模糊不清，字幕，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走",
+    "camera": "ADH / アセトアルデヒド",
+    "seed": 541744791
+   },
+   {
+    "name": "S11_a",
+    "scene": "S11",
+    "shot": "a",
+    "mode": "background",
+    "desc": "体の中の暖かく暗い世界。",
+    "t0": 206.149,
+    "dur": 30.422,
+    "frames": 121,
+    "keyframe": "keyframes/S11_a.png",
+    "prompt": "a dark warm organic interior, soft glowing particles flowing slowly, warm rim light. Camera: fast push-in that stops abruptly, dramatic low angle, strong perspective, sudden held frame. Look: gekiga manga style animation, bold hand-inked black lines, heavy cross-hatched shadows, high contrast chiaroscuro, limited desaturated palette with deep blacks, dramatic composition, cinematic, 1980s Japanese gekiga illustration texture. The centre of the frame stays calm and darker (an exact figure will be laid over it). Accuracy: background only, no organs in focus, no faces, no text, no letters, no labels.",
+    "negative": "text, letters, numbers, captions, subtitles, labels, watermark, logo, signature, speech bubbles, writing, symbols, deformed structures, extra objects, cartoon faces on cells, cute mascot, pastel colors, oversaturated, photorealistic skin, gore, blood, 色调艳丽，过曝，静态，细节模糊不清，字幕，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走",
+    "camera": "487番 / 3つの型 / AA / たまる",
+    "seed": 3284182396
+   },
+   {
+    "name": "S12_a",
+    "scene": "S12",
+    "shot": "a",
+    "mode": "background",
+    "desc": "夜の講義室。",
+    "t0": 236.571,
+    "dur": 17.429,
+    "frames": 121,
+    "keyframe": "keyframes/S12_a.png",
+    "prompt": "a dark empty lecture hall at night, a huge slate blackboard, a single hard shaft of light cutting through floating chalk dust, dust motes drifting slowly. Camera: fast push-in that stops abruptly, dramatic low angle, strong perspective, sudden held frame. Look: gekiga manga style animation, bold hand-inked black lines, heavy cross-hatched shadows, high contrast chiaroscuro, limited desaturated palette with deep blacks, dramatic composition, cinematic, 1980s Japanese gekiga illustration texture. The centre of the frame stays calm and darker (an exact figure will be laid over it). Accuracy: no people, no writing on the board.",
+    "negative": "text, letters, numbers, captions, subtitles, labels, watermark, logo, signature, speech bubbles, writing, symbols, deformed structures, extra objects, cartoon faces on cells, cute mascot, pastel colors, oversaturated, photorealistic skin, gore, blood, 色调艳丽，过曝，静态，细节模糊不清，字幕，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走",
+    "camera": "487番 / AA / 訓練では変わらない",
+    "seed": 358287681
+   },
+   {
+    "name": "S13_a",
+    "scene": "S13",
+    "shot": "a",
+    "mode": "background",
+    "desc": "細胞核の中の暗い水の世界。",
+    "t0": 254,
+    "dur": 36.034,
+    "frames": 121,
+    "keyframe": "keyframes/S13_a.png",
+    "prompt": "a dark watery molecular world inside a cell nucleus, soft out-of-focus particles drifting, cold rim light, slow push-in. Camera: fast push-in that stops abruptly, dramatic low angle, strong perspective, sudden held frame. Look: gekiga manga style animation, bold hand-inked black lines, heavy cross-hatched shadows, high contrast chiaroscuro, limited desaturated palette with deep blacks, dramatic composition, cinematic, 1980s Japanese gekiga illustration texture. The centre of the frame stays calm and darker (an exact figure will be laid over it). Accuracy: background only, no molecules in focus, no text, no letters, no labels.",
+    "negative": "text, letters, numbers, captions, subtitles, labels, watermark, logo, signature, speech bubbles, writing, symbols, deformed structures, extra objects, cartoon faces on cells, cute mascot, pastel colors, oversaturated, photorealistic skin, gore, blood, 色调艳丽，过曝，静态，细节模糊不清，字幕，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走",
+    "camera": "跳ぶ配列 / トウモロコシ / 45%",
+    "seed": 2037403430
+   },
+   {
+    "name": "S14_a",
+    "scene": "S14",
+    "shot": "a",
+    "mode": "background",
+    "desc": "細胞核の中の暗い水の世界。",
+    "t0": 290.033,
+    "dur": 17.957,
+    "frames": 121,
+    "keyframe": "keyframes/S14_a.png",
+    "prompt": "a dark watery molecular world inside a cell nucleus, soft out-of-focus particles drifting, cold rim light, slow push-in. Camera: fast push-in that stops abruptly, dramatic low angle, strong perspective, sudden held frame. Look: gekiga manga style animation, bold hand-inked black lines, heavy cross-hatched shadows, high contrast chiaroscuro, limited desaturated palette with deep blacks, dramatic composition, cinematic, 1980s Japanese gekiga illustration texture. The centre of the frame stays calm and darker (an exact figure will be laid over it). Accuracy: background only, no molecules in focus, no text, no letters, no labels.",
+    "negative": "text, letters, numbers, captions, subtitles, labels, watermark, logo, signature, speech bubbles, writing, symbols, deformed structures, extra objects, cartoon faces on cells, cute mascot, pastel colors, oversaturated, photorealistic skin, gore, blood, 色调艳丽，过曝，静态，细节模糊不清，字幕，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走",
+    "camera": "コピー&ペースト / 今も動く",
+    "seed": 3406476011
+   },
+   {
+    "name": "S15_a",
+    "scene": "S15",
+    "shot": "a",
+    "mode": "background",
+    "desc": "夜の講義室。",
+    "t0": 307.99,
+    "dur": 11.525,
+    "frames": 121,
+    "keyframe": "keyframes/S15_a.png",
+    "prompt": "a dark empty lecture hall at night, a huge slate blackboard, a single hard shaft of light cutting through floating chalk dust, dust motes drifting slowly. Camera: fast push-in that stops abruptly, dramatic low angle, strong perspective, sudden held frame. Look: gekiga manga style animation, bold hand-inked black lines, heavy cross-hatched shadows, high contrast chiaroscuro, limited desaturated palette with deep blacks, dramatic composition, cinematic, 1980s Japanese gekiga illustration texture. The centre of the frame stays calm and darker (an exact figure will be laid over it). Accuracy: no people, no writing on the board.",
+    "negative": "text, letters, numbers, captions, subtitles, labels, watermark, logo, signature, speech bubbles, writing, symbols, deformed structures, extra objects, cartoon faces on cells, cute mascot, pastel colors, oversaturated, photorealistic skin, gore, blood, 色调艳丽，过曝，静态，细节模糊不清，字幕，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走",
+    "camera": "DNA型 / 今も動く",
+    "seed": 1843603728
+   },
+   {
+    "name": "S16_a",
+    "scene": "S16",
+    "shot": "a",
+    "mode": "background",
+    "desc": "暗い背景に光の筋。",
+    "t0": 319.515,
+    "dur": 28.184,
+    "frames": 121,
+    "keyframe": "keyframes/S16_a.png",
+    "prompt": "abstract dark background, slow streaks of warm light drifting, subtle film grain. Camera: fast push-in that stops abruptly, dramatic low angle, strong perspective, sudden held frame. Look: gekiga manga style animation, bold hand-inked black lines, heavy cross-hatched shadows, high contrast chiaroscuro, limited desaturated palette with deep blacks, dramatic composition, cinematic, 1980s Japanese gekiga illustration texture. The centre of the frame stays calm and darker (an exact figure will be laid over it). Accuracy: no text, no letters, no labels.",
+    "negative": "text, letters, numbers, captions, subtitles, labels, watermark, logo, signature, speech bubbles, writing, symbols, deformed structures, extra objects, cartoon faces on cells, cute mascot, pastel colors, oversaturated, photorealistic skin, gore, blood, 色调艳丽，过曝，静态，细节模糊不清，字幕，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走",
+    "camera": "進化の名残 / レトロ転移 / イントロンなし",
+    "seed": 3254253013
+   },
+   {
+    "name": "S17_a",
+    "scene": "S17",
+    "shot": "a",
+    "mode": "background",
+    "desc": "細胞核の中の暗い水の世界。",
+    "t0": 347.7,
+    "dur": 36.942,
+    "frames": 121,
+    "keyframe": "keyframes/S17_a.png",
+    "prompt": "a dark watery molecular world inside a cell nucleus, soft out-of-focus particles drifting, cold rim light, slow push-in. Camera: fast push-in that stops abruptly, dramatic low angle, strong perspective, sudden held frame. Look: gekiga manga style animation, bold hand-inked black lines, heavy cross-hatched shadows, high contrast chiaroscuro, limited desaturated palette with deep blacks, dramatic composition, cinematic, 1980s Japanese gekiga illustration texture. The centre of the frame stays calm and darker (an exact figure will be laid over it). Accuracy: background only, no molecules in focus, no text, no letters, no labels.",
+    "negative": "text, letters, numbers, captions, subtitles, labels, watermark, logo, signature, speech bubbles, writing, symbols, deformed structures, extra objects, cartoon faces on cells, cute mascot, pastel colors, oversaturated, photorealistic skin, gore, blood, 色调艳丽，过曝，静态，细节模糊不清，字幕，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走",
+    "camera": "mRNA / 逆転写 / 別の染色体 / 全体",
+    "seed": 1670592378
+   },
+   {
+    "name": "S18_a",
+    "scene": "S18",
+    "shot": "a",
+    "mode": "background",
+    "desc": "夜の講義室。",
+    "t0": 384.642,
+    "dur": 8.016,
+    "frames": 121,
+    "keyframe": "keyframes/S18_a.png",
+    "prompt": "a dark empty lecture hall at night, a huge slate blackboard, a single hard shaft of light cutting through floating chalk dust, dust motes drifting slowly. Camera: fast push-in that stops abruptly, dramatic low angle, strong perspective, sudden held frame. Look: gekiga manga style animation, bold hand-inked black lines, heavy cross-hatched shadows, high contrast chiaroscuro, limited desaturated palette with deep blacks, dramatic composition, cinematic, 1980s Japanese gekiga illustration texture. The centre of the frame stays calm and darker (an exact figure will be laid over it). Accuracy: no people, no writing on the board.",
+    "negative": "text, letters, numbers, captions, subtitles, labels, watermark, logo, signature, speech bubbles, writing, symbols, deformed structures, extra objects, cartoon faces on cells, cute mascot, pastel colors, oversaturated, photorealistic skin, gore, blood, 色调艳丽，过曝，静态，细节模糊不清，字幕，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走",
+    "camera": "偽遺伝子",
+    "seed": 3381325423
+   },
+   {
+    "name": "S19_a",
+    "scene": "S19",
+    "shot": "a",
+    "mode": "background",
+    "desc": "細胞核の中の暗い水の世界。",
+    "t0": 392.658,
+    "dur": 23.339,
+    "frames": 121,
+    "keyframe": "keyframes/S19_a.png",
+    "prompt": "a dark watery molecular world inside a cell nucleus, soft out-of-focus particles drifting, cold rim light, slow push-in. Camera: fast push-in that stops abruptly, dramatic low angle, strong perspective, sudden held frame. Look: gekiga manga style animation, bold hand-inked black lines, heavy cross-hatched shadows, high contrast chiaroscuro, limited desaturated palette with deep blacks, dramatic composition, cinematic, 1980s Japanese gekiga illustration texture. The centre of the frame stays calm and darker (an exact figure will be laid over it). Accuracy: background only, no molecules in focus, no text, no letters, no labels.",
+    "negative": "text, letters, numbers, captions, subtitles, labels, watermark, logo, signature, speech bubbles, writing, symbols, deformed structures, extra objects, cartoon faces on cells, cute mascot, pastel colors, oversaturated, photorealistic skin, gore, blood, 色调艳丽，过曝，静态，细节模糊不清，字幕，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走",
+    "camera": "割り込む / 65例 / ユークロマチン",
+    "seed": 1797664788
+   },
+   {
+    "name": "S20_a",
+    "scene": "S20",
+    "shot": "a",
+    "mode": "background",
+    "desc": "夜の講義室。",
+    "t0": 415.997,
+    "dur": 9.63,
+    "frames": 121,
+    "keyframe": "keyframes/S20_a.png",
+    "prompt": "a dark empty lecture hall at night, a huge slate blackboard, a single hard shaft of light cutting through floating chalk dust, dust motes drifting slowly. Camera: fast push-in that stops abruptly, dramatic low angle, strong perspective, sudden held frame. Look: gekiga manga style animation, bold hand-inked black lines, heavy cross-hatched shadows, high contrast chiaroscuro, limited desaturated palette with deep blacks, dramatic composition, cinematic, 1980s Japanese gekiga illustration texture. The centre of the frame stays calm and darker (an exact figure will be laid over it). Accuracy: no people, no writing on the board.",
+    "negative": "text, letters, numbers, captions, subtitles, labels, watermark, logo, signature, speech bubbles, writing, symbols, deformed structures, extra objects, cartoon faces on cells, cute mascot, pastel colors, oversaturated, photorealistic skin, gore, blood, 色调艳丽，过曝，静态，细节模糊不清，字幕，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走",
+    "camera": "65例",
+    "seed": 1433732868
+   },
+   {
+    "name": "S21_a",
+    "scene": "S21",
+    "shot": "a",
+    "mode": "background",
+    "desc": "夜の講義室。",
+    "t0": 425.627,
+    "dur": 36.031,
+    "frames": 121,
+    "keyframe": "keyframes/S21_a.png",
+    "prompt": "a dark empty lecture hall at night, a huge slate blackboard, a single hard shaft of light cutting through floating chalk dust, dust motes drifting slowly. Camera: fast push-in that stops abruptly, dramatic low angle, strong perspective, sudden held frame. Look: gekiga manga style animation, bold hand-inked black lines, heavy cross-hatched shadows, high contrast chiaroscuro, limited desaturated palette with deep blacks, dramatic composition, cinematic, 1980s Japanese gekiga illustration texture. The centre of the frame stays calm and darker (an exact figure will be laid over it). Accuracy: no people, no writing on the board.",
+    "negative": "text, letters, numbers, captions, subtitles, labels, watermark, logo, signature, speech bubbles, writing, symbols, deformed structures, extra objects, cartoon faces on cells, cute mascot, pastel colors, oversaturated, photorealistic skin, gore, blood, 色调艳丽，过曝，静态，细节模糊不清，字幕，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走",
+    "camera": "①へ / ②へ / ③へ / ④へ / 4つを並べて引く",
+    "seed": 2986159391
+   },
+   {
+    "name": "S22_a",
+    "scene": "S22",
+    "shot": "a",
+    "mode": "background",
+    "desc": "漆黒に墨がゆっくり広がる。",
+    "t0": 461.658,
+    "dur": 10.093,
+    "frames": 121,
+    "keyframe": "keyframes/S22_a.png",
+    "prompt": "pitch black void, sumi ink spreading slowly, gentle. Camera: fast push-in that stops abruptly, dramatic low angle, strong perspective, sudden held frame. Look: gekiga manga style animation, bold hand-inked black lines, heavy cross-hatched shadows, high contrast chiaroscuro, limited desaturated palette with deep blacks, dramatic composition, cinematic, 1980s Japanese gekiga illustration texture. The centre of the frame stays calm and darker (an exact figure will be laid over it). Accuracy: no text, no letters, no labels.",
+    "negative": "text, letters, numbers, captions, subtitles, labels, watermark, logo, signature, speech bubbles, writing, symbols, deformed structures, extra objects, cartoon faces on cells, cute mascot, pastel colors, oversaturated, photorealistic skin, gore, blood, 色调艳丽，过曝，静态，细节模糊不清，字幕，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走",
+    "camera": "ゆっくり引いて終わる",
+    "seed": 1260618350
+   }
+  ]
+ },
+ "kokoro": {
+  "plan": "genetics-basics-5-film_board",
+  "engine": "kokoro (Kokoro-82M v1.0, ONNX) + misaki ja G2P (pyopenjtalk)",
+  "voice": "jm_kumo",
+  "speed": 1,
+  "sampleRate": 24000,
+  "note": "say = 読み（英字・誤読しやすい語はかな）。pre/post = 前後の間（秒）。speed = 区間ごとの話速（重要語はやや遅く）。",
+  "scenes": [
+   {
+    "id": "S01",
+    "file": "audio/S01.wav",
+    "segs": [
+     {
+      "beat": "open",
+      "i": 0,
+      "text": "第5講です。",
+      "say": "第5講です。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.2,
+      "cue": "title"
+     },
+     {
+      "beat": "open",
+      "i": 1,
+      "text": "前回は、遺伝子がどう読まれてタンパク質になるのかを見ました。",
+      "say": "前回は、遺伝子がどう読まれてタンパク質になるのかを見ました。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.3,
+      "cue": "prev"
+     },
+     {
+      "beat": "today",
+      "i": 0,
+      "text": "今日は、その設計図の文字が変わったら、何が起こるのか。",
+      "say": "今日は、その設計図の文字が変わったら、何が起こるのか。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.15,
+      "cue": "what"
+     },
+     {
+      "beat": "today",
+      "i": 1,
+      "text": "病気の原因になる変化もあれば、お酒の強さのような「個性」になる変化もあります。",
+      "say": "病気の原因になる変化もあれば、お酒の強さのような個性になる変化もあります。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.5,
+      "cue": "trait"
+     }
+    ]
+   },
+   {
+    "id": "S02",
+    "file": "audio/S02.wav",
+    "segs": [
+     {
+      "beat": "kinds",
+      "i": 0,
+      "text": "塩基対が別の塩基対に置き換わるのが置換。",
+      "say": "塩基対が別の塩基対に置き換わるのが置換。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.2,
+      "cue": "sub"
+     },
+     {
+      "beat": "kinds",
+      "i": 1,
+      "text": "余分な塩基が入り込むのが挿入、",
+      "say": "余分な塩基が入り込むのが挿入、",
+      "speed": 1,
+      "pre": 0,
+      "post": 0,
+      "cue": "ins"
+     },
+     {
+      "beat": "kinds",
+      "i": 2,
+      "text": "抜け落ちるのが欠失。",
+      "say": "抜け落ちるのが欠失。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.2,
+      "cue": "del"
+     },
+     {
+      "beat": "kinds",
+      "i": 3,
+      "text": "もっと大きな変化が、第3講で見た染色体異常です。",
+      "say": "もっと大きな変化が、第3講で見た染色体異常です。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.45,
+      "cue": "chr"
+     }
+    ]
+   },
+   {
+    "id": "S03",
+    "file": "audio/S03.wav",
+    "segs": [
+     {
+      "beat": "four",
+      "i": 0,
+      "text": "では、1つの塩基が置き換わると、タンパク質はどうなるか。",
+      "say": "では、1つの塩基が置き換わると、タンパク質はどうなるか。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.15,
+      "cue": "q"
+     },
+     {
+      "beat": "four",
+      "i": 1,
+      "text": "結果は4通りあります。",
+      "say": "結果は4通りあります。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.4,
+      "cue": "four"
+     }
+    ]
+   },
+   {
+    "id": "S04",
+    "file": "audio/S04.wav",
+    "segs": [
+     {
+      "beat": "non",
+      "i": 0,
+      "text": "ナンセンス変異は、アミノ酸のコドンが終止コドンに変わるもの。",
+      "say": "ナンセンス変異は、アミノ酸のコドンが終止コドンに変わるもの。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.25,
+      "cue": "non"
+     },
+     {
+      "beat": "mis",
+      "i": 0,
+      "text": "ミスセンス変異は、別のアミノ酸に変わるもの。",
+      "say": "ミスセンス変異は、別のアミノ酸に変わるもの。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.15,
+      "cue": "mis"
+     },
+     {
+      "beat": "mis",
+      "i": 1,
+      "text": "似た性質への保存的置換と、違う性質への非保存的置換があります。",
+      "say": "似た性質への保存てき置換と、違う性質への非保存てき置換があります。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.25,
+      "cue": "cons"
+     },
+     {
+      "beat": "sil",
+      "i": 0,
+      "text": "サイレント変異は、コドンが変わってもアミノ酸が同じもの。",
+      "say": "サイレント変異は、コドンが変わってもアミノ酸が同じもの。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.1,
+      "cue": "sil"
+     },
+     {
+      "beat": "sil",
+      "i": 1,
+      "text": "例えば、アルギニンのAGAとCGA。",
+      "say": "例えば、アルギニンのエージーエーとシージーエー。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.25,
+      "cue": "arg"
+     },
+     {
+      "beat": "sen",
+      "i": 0,
+      "text": "センス変異は逆に、終止コドンが別のアミノ酸のコドンに変わるものです。",
+      "say": "センス変異は逆に、終止コドンが別のアミノ酸のコドンに変わるものです。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.25,
+      "cue": "sen"
+     },
+     {
+      "beat": "table",
+      "i": 0,
+      "text": "下のコドン表のように、一つのアミノ酸に複数のコドンがある。",
+      "say": "下のコドン表のように、一つのアミノ酸に複数のコドンがある。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.1,
+      "cue": "table"
+     },
+     {
+      "beat": "table",
+      "i": 1,
+      "text": "だからサイレント変異が起こるんです。",
+      "say": "だからサイレント変異が起こるんです。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.45,
+      "cue": "why"
+     }
+    ]
+   },
+   {
+    "id": "S05",
+    "file": "audio/S05.wav",
+    "segs": [
+     {
+      "beat": "w",
+      "i": 0,
+      "text": "黒板に整理します。",
+      "say": "黒板に整理します。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.1,
+      "cue": "w"
+     },
+     {
+      "beat": "w",
+      "i": 1,
+      "text": "ナンセンスは終止へ。",
+      "say": "ナンセンスは終止へ。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.1,
+      "cue": "l4"
+     },
+     {
+      "beat": "w",
+      "i": 2,
+      "text": "ミスセンスは別のアミノ酸へ。",
+      "say": "ミスセンスは別のアミノ酸へ。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.1,
+      "cue": "l5"
+     },
+     {
+      "beat": "w",
+      "i": 3,
+      "text": "サイレントは変わらない。",
+      "say": "サイレントは変わらない。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.1,
+      "cue": "l6"
+     },
+     {
+      "beat": "w",
+      "i": 4,
+      "text": "センスは終止から。",
+      "say": "センスは終止から。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.25,
+      "cue": "l7"
+     },
+     {
+      "beat": "rev",
+      "i": 0,
+      "text": "ナンセンスとセンスは、向きが逆です。",
+      "say": "ナンセンスとセンスは、向きが逆です。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.15,
+      "cue": "rev"
+     },
+     {
+      "beat": "rev",
+      "i": 1,
+      "text": "ここ、非常に紛らわしいので、赤で囲んでおきます。",
+      "say": "ここ、非常に紛らわしいので、赤で囲んでおきます。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.4,
+      "cue": "red"
+     }
+    ]
+   },
+   {
+    "id": "S06",
+    "file": "audio/S06.wav",
+    "segs": [
+     {
+      "beat": "see",
+      "i": 0,
+      "text": "実際にコドンがどう変わるのか、動きで見てみましょう。",
+      "say": "実際にコドンがどう変わるのか、動きで見てみましょう。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.1,
+      "cue": "see"
+     },
+     {
+      "beat": "see",
+      "i": 1,
+      "text": "正常な塩基対です。",
+      "say": "正常な塩基対です。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.25,
+      "cue": "norm"
+     },
+     {
+      "beat": "sub",
+      "i": 0,
+      "text": "5番目の、AとTの対が、CとGの対に置き換わりました。",
+      "say": "5番目の、エーとティーの対が、シーとジーの対に置き換わりました。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.1,
+      "cue": "sub"
+     },
+     {
+      "beat": "sub",
+      "i": 1,
+      "text": "これが置換。",
+      "say": "これが置換。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.25,
+      "cue": "subn"
+     },
+     {
+      "beat": "sil",
+      "i": 0,
+      "text": "アルギニンのCGAが、AGAに変わっても……",
+      "say": "アルギニンのシージーエーが、エージーエーに変わっても",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.2,
+      "cue": "cga"
+     },
+     {
+      "beat": "sil",
+      "i": 1,
+      "text": "やはりアルギニン。",
+      "say": "やはりアルギニン。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.1,
+      "cue": "arg"
+     },
+     {
+      "beat": "sil",
+      "i": 2,
+      "text": "これがサイレント変異です。",
+      "say": "これがサイレント変異です。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.25,
+      "cue": "sil"
+     },
+     {
+      "beat": "cons",
+      "i": 0,
+      "text": "アスパラギン酸のGACがGAAになると、グルタミン酸に。",
+      "say": "アスパラギン酸のジーエーシーがジーエーエーになると、グルタミン酸に。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.1,
+      "cue": "asp"
+     },
+     {
+      "beat": "cons",
+      "i": 1,
+      "text": "似た性質への、保存的なミスセンス変異。",
+      "say": "似た性質への、保存てきなミスセンス変異。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.25,
+      "cue": "cons"
+     },
+     {
+      "beat": "non",
+      "i": 0,
+      "text": "アルギニンがグリシンに変わるのは、性質の違う、非保存的なミスセンス変異。",
+      "say": "アルギニンがグリシンに変わるのは、性質の違う、非保存てきなミスセンス変異。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.4,
+      "cue": "gly"
+     }
+    ]
+   },
+   {
+    "id": "S07",
+    "file": "audio/S07.wav",
+    "segs": [
+     {
+      "beat": "non",
+      "i": 0,
+      "text": "そして、アミノ酸のコドンが終止コドンに変わると、そこでタンパク質の合成が止まってしまいます。",
+      "say": "そして、アミノ酸のコドンが終止コドンに変わると、そこでタンパク質の合成が止まってしまいます。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.1,
+      "cue": "stop"
+     },
+     {
+      "beat": "non",
+      "i": 1,
+      "text": "ナンセンス変異です。",
+      "say": "ナンセンス変異です。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.3,
+      "cue": "non"
+     },
+     {
+      "beat": "fs",
+      "i": 0,
+      "text": "最後は補足ですが、1塩基の挿入や欠失。",
+      "say": "最後は補足ですが、1塩基の挿入や欠失。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.15,
+      "cue": "ins"
+     },
+     {
+      "beat": "fs",
+      "i": 1,
+      "text": "コドンの区切り、読み枠がずれて、その後のアミノ酸がすべて変わってしまいます。",
+      "say": "コドンの区切り、読み枠がずれて、その後のアミノ酸がすべて変わってしまいます。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.25,
+      "cue": "shift"
+     },
+     {
+      "beat": "size",
+      "i": 0,
+      "text": "同じ1文字の変化でも、置換と挿入・欠失では、影響の大きさが違うわけです。",
+      "say": "同じ1文字の変化でも、置換と挿入・欠失では、影響の大きさが違うわけです。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.45,
+      "cue": "size"
+     }
+    ]
+   },
+   {
+    "id": "S08",
+    "file": "audio/S08.wav",
+    "segs": [
+     {
+      "beat": "q",
+      "i": 0,
+      "text": "一人の人のゲノムには、どれくらいの違いがあるのか。",
+      "say": "一人の人のゲノムには、どれくらいの違いがあるのか。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.25,
+      "cue": "q"
+     },
+     {
+      "beat": "snp",
+      "i": 0,
+      "text": "一塩基多型は、ワトソン博士で約347万か所。",
+      "say": "いちえんきたけいは、ワトソン博士で約さんびゃくよんじゅうななまんかしょ。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.25,
+      "cue": "snp"
+     },
+     {
+      "beat": "aa",
+      "i": 0,
+      "text": "そのうち、アミノ酸が変わるものは約1万か所です。",
+      "say": "そのうち、アミノ酸が変わるものは約いちまんかしょです。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.25,
+      "cue": "aa"
+     },
+     {
+      "beat": "poly",
+      "i": 0,
+      "text": "こうした違いの大部分は、病気ではなく、一人一人の個性、つまり多型です。",
+      "say": "こうした違いの大部分は、病気ではなく、一人一人の個性、つまり多型です。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.45,
+      "cue": "poly"
+     }
+    ]
+   },
+   {
+    "id": "S09",
+    "file": "audio/S09.wav",
+    "segs": [
+     {
+      "beat": "q",
+      "i": 0,
+      "text": "その個性の代表例が、お酒の強さです。",
+      "say": "その個性の代表例が、お酒の強さです。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.25,
+      "cue": "q"
+     },
+     {
+      "beat": "path",
+      "i": 0,
+      "text": "アルコールは、ADHでアセトアルデヒドに、",
+      "say": "アルコールは、エーディーエイチでアセトアルデヒドに、",
+      "speed": 1,
+      "pre": 0,
+      "post": 0,
+      "cue": "adh"
+     },
+     {
+      "beat": "path",
+      "i": 1,
+      "text": "ALDHで酢酸になります。",
+      "say": "エーエルディーエイチで酢酸になります。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.25,
+      "cue": "aldh"
+     },
+     {
+      "beat": "tox",
+      "i": 0,
+      "text": "問題はアセトアルデヒド。",
+      "say": "問題はアセトアルデヒド。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.1,
+      "cue": "ach"
+     },
+     {
+      "beat": "tox",
+      "i": 1,
+      "text": "毒性が強く、顔が赤くなったり、気持ちが悪くなる原因です。",
+      "say": "毒性が強く、顔が赤くなったり、気持ちが悪くなる原因です。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.25,
+      "cue": "tox"
+     },
+     {
+      "beat": "adh2",
+      "i": 0,
+      "text": "ADHのうち、ADH2には日本人でも遺伝子多型があります。",
+      "say": "エーディーエイチのうち、エーディーエイチツーには日本人でも遺伝子多型があります。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.45,
+      "cue": "adh2"
+     }
+    ]
+   },
+   {
+    "id": "S10",
+    "file": "audio/S10.wav",
+    "segs": [
+     {
+      "beat": "w",
+      "i": 0,
+      "text": "アルコールから、ADHでアセトアルデヒド。",
+      "say": "アルコールから、エーディーエイチでアセトアルデヒド。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.1,
+      "cue": "c1"
+     },
+     {
+      "beat": "w",
+      "i": 1,
+      "text": "ALDHで酢酸、そして二酸化炭素と水。",
+      "say": "エーエルディーエイチで酢酸、そして二酸化炭素と水。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.15,
+      "cue": "c2"
+     },
+     {
+      "beat": "w",
+      "i": 2,
+      "text": "顔を赤くしているのは、アセトアルデヒドです。",
+      "say": "顔を赤くしているのは、アセトアルデヒドです。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.45,
+      "cue": "c3"
+     }
+    ]
+   },
+   {
+    "id": "S11",
+    "file": "audio/S11.wav",
+    "segs": [
+     {
+      "beat": "q",
+      "i": 0,
+      "text": "次に、ALDHのほうです。",
+      "say": "次に、エーエルディーエイチのほうです。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.2,
+      "cue": "q"
+     },
+     {
+      "beat": "pos",
+      "i": 0,
+      "text": "ALDHの遺伝子は、487番目のアミノ酸を決める塩基の違いで、3つの型に分かれます。",
+      "say": "エーエルディーエイチの遺伝子は、487番目のアミノ酸を決める塩基の違いで、3つの型に分かれます。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.25,
+      "cue": "pos"
+     },
+     {
+      "beat": "glu",
+      "i": 0,
+      "text": "グルタミン酸がリシンに置き換わる。",
+      "say": "グルタミン酸がリシンに置き換わる。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.1,
+      "cue": "glu"
+     },
+     {
+      "beat": "glu",
+      "i": 1,
+      "text": "これもミスセンス変異ですね。",
+      "say": "これもミスセンス変異ですね。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.25,
+      "cue": "mis"
+     },
+     {
+      "beat": "types",
+      "i": 0,
+      "text": "GG型はお酒が強い。",
+      "say": "ジージー型はお酒が強い。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.1,
+      "cue": "gg"
+     },
+     {
+      "beat": "types",
+      "i": 1,
+      "text": "AG型は弱い。",
+      "say": "エージー型は弱い。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.1,
+      "cue": "ag"
+     },
+     {
+      "beat": "types",
+      "i": 2,
+      "text": "AA型は飲めません。",
+      "say": "エーエー型は飲めません。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.25,
+      "cue": "aa"
+     },
+     {
+      "beat": "both",
+      "i": 0,
+      "text": "ALDHが弱くてADHが強いと、アセトアルデヒドがすぐにたまる。",
+      "say": "エーエルディーエイチが弱くてエーディーエイチが強いと、アセトアルデヒドがすぐにたまる。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.1,
+      "cue": "both"
+     },
+     {
+      "beat": "both",
+      "i": 1,
+      "text": "お酒が苦手なタイプです。",
+      "say": "お酒が苦手なタイプです。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.45,
+      "cue": "weak"
+     }
+    ]
+   },
+   {
+    "id": "S12",
+    "file": "audio/S12.wav",
+    "segs": [
+     {
+      "beat": "w",
+      "i": 0,
+      "text": "黒板に整理します。",
+      "say": "黒板に整理します。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.1,
+      "cue": "w"
+     },
+     {
+      "beat": "w",
+      "i": 1,
+      "text": "ALDHの487番目、グルタミン酸がリシンに。",
+      "say": "エーエルディーエイチの487番目、グルタミン酸がリシンに。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.15,
+      "cue": "c4"
+     },
+     {
+      "beat": "w",
+      "i": 2,
+      "text": "GGは強い、AGは弱い、AAは飲めない。",
+      "say": "ジージーは強い、エージーは弱い、エーエーは飲めない。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.25,
+      "cue": "c5"
+     },
+     {
+      "beat": "train",
+      "i": 0,
+      "text": "AAは飲めない。",
+      "say": "エーエーは飲めない。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.1,
+      "cue": "aa"
+     },
+     {
+      "beat": "train",
+      "i": 1,
+      "text": "この型は、訓練で変わるものではありません。",
+      "say": "この型は、訓練で変わるものではありません。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.15,
+      "cue": "train"
+     },
+     {
+      "beat": "train",
+      "i": 2,
+      "text": "遺伝子で決まっているからです。",
+      "say": "遺伝子で決まっているからです。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.45,
+      "cue": "gene"
+     }
+    ]
+   },
+   {
+    "id": "S13",
+    "file": "audio/S13.wav",
+    "segs": [
+     {
+      "beat": "q",
+      "i": 0,
+      "text": "では、最後のテーマ。ゲノムの中を動く配列です。",
+      "say": "では、最後のテーマ。ゲノムの中を動く配列です。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.25,
+      "cue": "q"
+     },
+     {
+      "beat": "def",
+      "i": 0,
+      "text": "トランスポゾンとは、ゲノムの上で位置を変えることができる塩基配列です。",
+      "say": "トランスポゾンとは、ゲノムの上で位置を変えることができる塩基配列です。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.25,
+      "cue": "def"
+     },
+     {
+      "beat": "types",
+      "i": 0,
+      "text": "DNAが直接動くDNA型と、",
+      "say": "ディーエヌエーが直接動くディーエヌエー型と、",
+      "speed": 1,
+      "pre": 0,
+      "post": 0,
+      "cue": "dna"
+     },
+     {
+      "beat": "types",
+      "i": 1,
+      "text": "転写と逆転写を経るRNA型、レトロポゾンがあります。",
+      "say": "転写と逆転写を経るアールエヌエー型、レトロポゾンがあります。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.25,
+      "cue": "rna"
+     },
+     {
+      "beat": "mc",
+      "i": 0,
+      "text": "発見したのはマクリントック。",
+      "say": "発見したのはマクリントック。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.1,
+      "cue": "mc"
+     },
+     {
+      "beat": "mc",
+      "i": 1,
+      "text": "トウモロコシのまだら模様から見つけ、1983年、81歳でノーベル賞を受賞しました。",
+      "say": "トウモロコシのまだら模様から見つけ、せんきゅうひゃくはちじゅうさんねん、はちじゅういっさいでノーベル賞を受賞しました。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.25,
+      "cue": "corn"
+     },
+     {
+      "beat": "p45",
+      "i": 0,
+      "text": "そして、ヒトゲノムの約45パーセントが、トランスポゾンに関連した配列です。",
+      "say": "そして、ヒトゲノムの約よんじゅうごパーセントが、トランスポゾンに関連した配列です。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.45,
+      "cue": "p45"
+     }
+    ]
+   },
+   {
+    "id": "S14",
+    "file": "audio/S14.wav",
+    "segs": [
+     {
+      "beat": "cut",
+      "i": 0,
+      "text": "DNA型は、切り取って貼り付けるカット・アンド・ペースト。",
+      "say": "ディーエヌエー型は、切り取って貼り付けるカット・アンド・ペースト。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.1,
+      "cue": "cut"
+     },
+     {
+      "beat": "cut",
+      "i": 1,
+      "text": "現在のヒトでは、もう動いていません。",
+      "say": "現在のヒトでは、もう動いていません。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.25,
+      "cue": "dead"
+     },
+     {
+      "beat": "copy",
+      "i": 0,
+      "text": "レトロトランスポゾンは、コピー・アンド・ペースト。",
+      "say": "レトロトランスポゾンは、コピー・アンド・ペースト。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.1,
+      "cue": "copy"
+     },
+     {
+      "beat": "copy",
+      "i": 1,
+      "text": "だから数が増えていきます。",
+      "say": "だから数が増えていきます。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.25,
+      "cue": "more"
+     },
+     {
+      "beat": "act",
+      "i": 0,
+      "text": "そのうち、LINE-1、Alu、SVAは、今も転移する活性を持っています。",
+      "say": "そのうち、ラインワン、アルー、エスブイエーは、今も転移する活性を持っています。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.45,
+      "cue": "act"
+     }
+    ]
+   },
+   {
+    "id": "S15",
+    "file": "audio/S15.wav",
+    "segs": [
+     {
+      "beat": "w",
+      "i": 0,
+      "text": "ゲノムの約45パーセント。",
+      "say": "ゲノムの約よんじゅうごパーセント。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.1,
+      "cue": "r1"
+     },
+     {
+      "beat": "w",
+      "i": 1,
+      "text": "DNA型は今は動かない。",
+      "say": "ディーエヌエー型は今は動かない。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.1,
+      "cue": "r2"
+     },
+     {
+      "beat": "w",
+      "i": 2,
+      "text": "レトロ型はコピー・アンド・ペーストで増える。",
+      "say": "レトロ型はコピー・アンド・ペーストで増える。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.1,
+      "cue": "r3"
+     },
+     {
+      "beat": "w",
+      "i": 3,
+      "text": "今も動いているのは、LINE-1、Alu、SVAです。",
+      "say": "今も動いているのは、ラインワン、アルー、エスブイエーです。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.45,
+      "cue": "r4"
+     }
+    ]
+   },
+   {
+    "id": "S16",
+    "file": "audio/S16.wav",
+    "segs": [
+     {
+      "beat": "q",
+      "i": 0,
+      "text": "このコピー・アンド・ペーストから生まれたのが、偽遺伝子の一部です。",
+      "say": "このコピー・アンド・ペーストから生まれたのが、偽遺伝子の一部です。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.25,
+      "cue": "q"
+     },
+     {
+      "beat": "non",
+      "i": 0,
+      "text": "偽遺伝子には二種類あります。",
+      "say": "偽遺伝子には二種類あります。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.1,
+      "cue": "two"
+     },
+     {
+      "beat": "non",
+      "i": 1,
+      "text": "プロセッシングを受けない偽遺伝子は、変異で働かなくなった進化の名残。",
+      "say": "プロセッシングを受けない偽遺伝子は、変異で働かなくなった進化の名残。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.25,
+      "cue": "non"
+     },
+     {
+      "beat": "pro",
+      "i": 0,
+      "text": "プロセッシングを受けた偽遺伝子は、レトロ転移で生まれます。",
+      "say": "プロセッシングを受けた偽遺伝子は、レトロ転移で生まれます。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.25,
+      "cue": "pro"
+     },
+     {
+      "beat": "why",
+      "i": 0,
+      "text": "スプライシングを受けたmRNAが逆転写されてDNAになり、ゲノムに入り込む。",
+      "say": "スプライシングを受けたメッセンジャーアールエヌエーが逆転写されてディーエヌエーになり、ゲノムに入り込む。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.1,
+      "cue": "rt"
+     },
+     {
+      "beat": "why",
+      "i": 1,
+      "text": "だからイントロンがありません。",
+      "say": "だからイントロンがありません。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.45,
+      "cue": "nointron"
+     }
+    ]
+   },
+   {
+    "id": "S17",
+    "file": "audio/S17.wav",
+    "segs": [
+     {
+      "beat": "gene",
+      "i": 0,
+      "text": "動きで見てみましょう。",
+      "say": "動きで見てみましょう。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.1,
+      "cue": "see"
+     },
+     {
+      "beat": "gene",
+      "i": 1,
+      "text": "元の遺伝子です。",
+      "say": "元の遺伝子です。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.1,
+      "cue": "gene"
+     },
+     {
+      "beat": "gene",
+      "i": 2,
+      "text": "プロモーター、エクソン、イントロン。",
+      "say": "プロモーター、エクソン、イントロン。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.25,
+      "cue": "parts"
+     },
+     {
+      "beat": "mrna",
+      "i": 0,
+      "text": "転写されて、スプライシングを受けると、イントロンのないmRNAになります。",
+      "say": "転写されて、スプライシングを受けると、イントロンのないメッセンジャーアールエヌエーになります。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.25,
+      "cue": "mrna"
+     },
+     {
+      "beat": "rt",
+      "i": 0,
+      "text": "ここで、逆転写酵素が、mRNAを鋳型にしてDNAのコピーを作ります。",
+      "say": "ここで、逆転写酵素が、メッセンジャーアールエヌエーをいがたにしてディーエヌエーのコピーを作ります。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.1,
+      "cue": "rt"
+     },
+     {
+      "beat": "rt",
+      "i": 1,
+      "text": "RNAからDNAへ。逆向きの流れです。",
+      "say": "アールエヌエーからディーエヌエーへ。逆向きの流れです。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.25,
+      "cue": "rev"
+     },
+     {
+      "beat": "ins",
+      "i": 0,
+      "text": "そのコピーが、別の染色体に入り込む。",
+      "say": "そのコピーが、別の染色体に入り込む。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.1,
+      "cue": "ins"
+     },
+     {
+      "beat": "ins",
+      "i": 1,
+      "text": "これがレトロ転移です。",
+      "say": "これがレトロ転移です。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.25,
+      "cue": "retro"
+     },
+     {
+      "beat": "pg",
+      "i": 0,
+      "text": "できあがった配列には、イントロンもプロモーターもありません。",
+      "say": "できあがった配列には、イントロンもプロモーターもありません。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.1,
+      "cue": "none"
+     },
+     {
+      "beat": "pg",
+      "i": 1,
+      "text": "だから、ふつうは働かない。",
+      "say": "だから、ふつうは働かない。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.1,
+      "cue": "off"
+     },
+     {
+      "beat": "pg",
+      "i": 2,
+      "text": "プロセッシングを受けた偽遺伝子です。",
+      "say": "プロセッシングを受けた偽遺伝子です。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.45,
+      "cue": "pg"
+     }
+    ]
+   },
+   {
+    "id": "S18",
+    "file": "audio/S18.wav",
+    "segs": [
+     {
+      "beat": "w",
+      "i": 0,
+      "text": "黒板に書きます。",
+      "say": "黒板に書きます。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.1,
+      "cue": "w"
+     },
+     {
+      "beat": "w",
+      "i": 1,
+      "text": "mRNAが逆転写されて、再び挿入される。",
+      "say": "メッセンジャーアールエヌエーが逆転写されて、再び挿入される。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.15,
+      "cue": "r6"
+     },
+     {
+      "beat": "w",
+      "i": 2,
+      "text": "だからイントロンがない。",
+      "say": "だからイントロンがない。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.45,
+      "cue": "r7"
+     }
+    ]
+   },
+   {
+    "id": "S19",
+    "file": "audio/S19.wav",
+    "segs": [
+     {
+      "beat": "q",
+      "i": 0,
+      "text": "最後に、こうした挿入が何を起こすのか。",
+      "say": "最後に、こうした挿入が何を起こすのか。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.25,
+      "cue": "q"
+     },
+     {
+      "beat": "eff",
+      "i": 0,
+      "text": "遺伝子を壊す挿入変異や、ゲノムの再編成、発現の変化。",
+      "say": "遺伝子を壊す挿入変異や、ゲノムの再編成、発現の変化。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.25,
+      "cue": "eff"
+     },
+     {
+      "beat": "dz",
+      "i": 0,
+      "text": "少なくとも65例で、遺伝性疾患の原因になっています。",
+      "say": "少なくとも65例で、遺伝性疾患の原因になっています。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.1,
+      "cue": "n65"
+     },
+     {
+      "beat": "dz",
+      "i": 1,
+      "text": "血友病、嚢胞性線維症、デュシェンヌ型筋ジストロフィーなどです。",
+      "say": "血友病、のう胞性線維症、デュシェンヌ型筋ジストロフィーなどです。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.25,
+      "cue": "dz"
+     },
+     {
+      "beat": "eu",
+      "i": 0,
+      "text": "しかも挿入は、転写が活発なユークロマチンに起こりやすいのです。",
+      "say": "しかも挿入は、転写が活発なユークロマチンに起こりやすいのです。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.45,
+      "cue": "eu"
+     }
+    ]
+   },
+   {
+    "id": "S20",
+    "file": "audio/S20.wav",
+    "segs": [
+     {
+      "beat": "w",
+      "i": 0,
+      "text": "生殖系列で起こると、次の世代に伝わって病気の原因になりうる。",
+      "say": "生殖系列で起こると、次の世代に伝わって病気の原因になりうる。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.1,
+      "cue": "r8"
+     },
+     {
+      "beat": "w",
+      "i": 1,
+      "text": "65例以上。",
+      "say": "65例以上。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.1,
+      "cue": "n65"
+     },
+     {
+      "beat": "w",
+      "i": 2,
+      "text": "ユークロマチンに入りやすい。",
+      "say": "ユークロマチンに入りやすい。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.45,
+      "cue": "r9"
+     }
+    ]
+   },
+   {
+    "id": "S21",
+    "file": "audio/S21.wav",
+    "segs": [
+     {
+      "beat": "four",
+      "i": 0,
+      "text": "今日覚えてほしいのは、この4つです。",
+      "say": "今日覚えてほしいのは、この4つです。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.3,
+      "cue": "four"
+     },
+     {
+      "beat": "p1",
+      "i": 0,
+      "text": "ひとつ目。",
+      "say": "ひとつ目。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.1,
+      "cue": "p1"
+     },
+     {
+      "beat": "p1",
+      "i": 1,
+      "text": "置換の結果は4通り。",
+      "say": "置換の結果は4通り。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.1,
+      "cue": "p1b"
+     },
+     {
+      "beat": "p1",
+      "i": 2,
+      "text": "ナンセンスは終止へ、センスは終止から。",
+      "say": "ナンセンスは終止へ、センスは終止から。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.1,
+      "cue": "p1c"
+     },
+     {
+      "beat": "p1",
+      "i": 3,
+      "text": "ミスセンスは別のアミノ酸、サイレントは変わらない。",
+      "say": "ミスセンスは別のアミノ酸、サイレントは変わらない。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.3,
+      "cue": "p1d"
+     },
+     {
+      "beat": "p2",
+      "i": 0,
+      "text": "ふたつ目。",
+      "say": "ふたつ目。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.1,
+      "cue": "p2"
+     },
+     {
+      "beat": "p2",
+      "i": 1,
+      "text": "ALDH2の487番、グルタミン酸がリシン。",
+      "say": "エーエルディーエイチツーの487番、グルタミン酸がリシン。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.1,
+      "cue": "p2b"
+     },
+     {
+      "beat": "p2",
+      "i": 2,
+      "text": "AAは飲めない。",
+      "say": "エーエーは飲めない。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.1,
+      "cue": "p2c"
+     },
+     {
+      "beat": "p2",
+      "i": 3,
+      "text": "遺伝子で決まっているので、訓練では変わりません。",
+      "say": "遺伝子で決まっているので、訓練では変わりません。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.3,
+      "cue": "p2d"
+     },
+     {
+      "beat": "p3",
+      "i": 0,
+      "text": "みっつ目。",
+      "say": "みっつ目。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.1,
+      "cue": "p3"
+     },
+     {
+      "beat": "p3",
+      "i": 1,
+      "text": "ゲノムの約45パーセントがトランスポゾン関連。",
+      "say": "ゲノムの約よんじゅうごパーセントがトランスポゾン関連。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.1,
+      "cue": "p3b"
+     },
+     {
+      "beat": "p3",
+      "i": 2,
+      "text": "今も動くのはLINE-1、Alu、SVA。",
+      "say": "今も動くのはラインワン、アルー、エスブイエー。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.3,
+      "cue": "p3c"
+     },
+     {
+      "beat": "p4",
+      "i": 0,
+      "text": "そして、レトロ転移でできた偽遺伝子には、イントロンがない。",
+      "say": "そして、レトロ転移でできた偽遺伝子には、イントロンがない。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.45,
+      "cue": "p4"
+     }
+    ]
+   },
+   {
+    "id": "S22",
+    "file": "audio/S22.wav",
+    "segs": [
+     {
+      "beat": "next",
+      "i": 0,
+      "text": "次の第6講、最終回では、",
+      "say": "次の第6講、最終回では、",
+      "speed": 1,
+      "pre": 0,
+      "post": 0,
+      "cue": "next"
+     },
+     {
+      "beat": "next",
+      "i": 1,
+      "text": "塩基配列を変えずに遺伝子の働きを変える仕組み、",
+      "say": "塩基配列を変えずに遺伝子の働きを変える仕組み、",
+      "speed": 1,
+      "pre": 0,
+      "post": 0,
+      "cue": "what"
+     },
+     {
+      "beat": "next",
+      "i": 2,
+      "text": "エピゲノムを学びます。",
+      "say": "エピゲノムを学びます。",
+      "speed": 1,
+      "pre": 0,
+      "post": 1,
+      "cue": "epi"
+     }
+    ]
+   }
+  ]
+ },
+ "timing": {
+  "source": "kokoro",
+  "total": 471.75190000000026,
+  "scenes": [
+   {
+    "id": "S01",
+    "t0": 0,
+    "t1": 17.9165,
+    "events": {
+     "start": 0,
+     "title": 0,
+     "prev": 1.3267,
+     "what": 6.3961,
+     "trait": 10.5524
+    }
+   },
+   {
+    "id": "S02",
+    "t0": 17.9165,
+    "t1": 30.791599999999992,
+    "events": {
+     "start": 17.9165,
+     "sub": 17.9165,
+     "ins": 21.515199999999997,
+     "del": 24.125199999999996,
+     "chr": 25.890399999999996
+    }
+   },
+   {
+    "id": "S03",
+    "t0": 30.791599999999992,
+    "t1": 37.605499999999985,
+    "events": {
+     "start": 30.791599999999992,
+     "q": 30.791599999999992,
+     "four": 35.29679999999999
+    }
+   },
+   {
+    "id": "S04",
+    "t0": 37.605499999999985,
+    "t1": 73.85739999999998,
+    "events": {
+     "start": 37.605499999999985,
+     "non": 37.605499999999985,
+     "mis": 42.27299999999998,
+     "cons": 45.99619999999998,
+     "sil": 52.41549999999998,
+     "arg": 56.80449999999998,
+     "sen": 59.775899999999986,
+     "table": 65.97139999999999,
+     "why": 70.87179999999998
+    }
+   },
+   {
+    "id": "S05",
+    "t0": 73.85739999999998,
+    "t1": 90.2372,
+    "events": {
+     "start": 73.85739999999998,
+     "w": 73.85739999999998,
+     "l4": 75.57229999999998,
+     "l5": 77.08859999999999,
+     "l6": 79.59629999999999,
+     "l7": 81.19299999999998,
+     "rev": 82.71879999999999,
+     "red": 85.59419999999999
+    }
+   },
+   {
+    "id": "S06",
+    "t0": 90.2372,
+    "t1": 123.58179999999999,
+    "events": {
+     "start": 90.2372,
+     "see": 90.2372,
+     "norm": 94.2819,
+     "sub": 95.96849999999999,
+     "subn": 100.79179999999998,
+     "cga": 102.02569999999999,
+     "arg": 105.63569999999999,
+     "sil": 106.78789999999998,
+     "asp": 108.74589999999998,
+     "cons": 113.22499999999997,
+     "gly": 116.92459999999997
+    }
+   },
+   {
+    "id": "S07",
+    "t0": 123.58179999999999,
+    "t1": 150.7197,
+    "events": {
+     "start": 123.58179999999999,
+     "stop": 123.58179999999999,
+     "non": 131.44189999999998,
+     "ins": 133.11049999999997,
+     "shift": 136.9765,
+     "size": 143.3304
+    }
+   },
+   {
+    "id": "S08",
+    "t0": 150.7197,
+    "t1": 171.74149999999997,
+    "events": {
+     "start": 150.7197,
+     "q": 150.7197,
+     "snp": 154.9443,
+     "aa": 160.4218,
+     "poly": 165.00209999999998
+    }
+   },
+   {
+    "id": "S09",
+    "t0": 171.74149999999997,
+    "t1": 194.99689999999995,
+    "events": {
+     "start": 171.74149999999997,
+     "q": 171.74149999999997,
+     "adh": 175.35949999999997,
+     "aldh": 178.72949999999997,
+     "ach": 181.70649999999998,
+     "tox": 183.59539999999998,
+     "adh2": 188.79369999999997
+    }
+   },
+   {
+    "id": "S10",
+    "t0": 194.99689999999995,
+    "t1": 206.14889999999997,
+    "events": {
+     "start": 194.99689999999995,
+     "c1": 194.99689999999995,
+     "c2": 198.19489999999996,
+     "c3": 202.29339999999996
+    }
+   },
+   {
+    "id": "S11",
+    "t0": 206.14889999999997,
+    "t1": 236.57129999999992,
+    "events": {
+     "start": 206.14889999999997,
+     "q": 206.14889999999997,
+     "pos": 208.58679999999995,
+     "glu": 217.69069999999996,
+     "mis": 220.31089999999995,
+     "gg": 222.52249999999995,
+     "ag": 224.67039999999994,
+     "aa": 226.04039999999995,
+     "both": 227.80889999999994,
+     "weak": 233.88519999999994
+    }
+   },
+   {
+    "id": "S12",
+    "t0": 236.57129999999992,
+    "t1": 253.9998999999999,
+    "events": {
+     "start": 236.57129999999992,
+     "w": 236.57129999999992,
+     "c4": 238.28619999999992,
+     "c5": 243.35049999999993,
+     "aa": 246.73509999999993,
+     "train": 247.91699999999992,
+     "gene": 251.46159999999992
+    }
+   },
+   {
+    "id": "S13",
+    "t0": 253.9998999999999,
+    "t1": 290.0333999999999,
+    "events": {
+     "start": 253.9998999999999,
+     "q": 253.9998999999999,
+     "def": 258.2619999999999,
+     "dna": 263.8169999999999,
+     "rna": 267.1669999999999,
+     "mc": 272.48459999999994,
+     "corn": 274.57879999999994,
+     "p45": 283.06429999999995
+    }
+   },
+   {
+    "id": "S14",
+    "t0": 290.0333999999999,
+    "t1": 307.9903,
+    "events": {
+     "start": 290.0333999999999,
+     "cut": 290.0333999999999,
+     "dead": 294.19289999999995,
+     "copy": 297.07439999999997,
+     "more": 300.1442,
+     "act": 302.2275
+    }
+   },
+   {
+    "id": "S15",
+    "t0": 307.9903,
+    "t1": 319.51540000000006,
+    "events": {
+     "start": 307.9903,
+     "r1": 307.9903,
+     "r2": 310.2645,
+     "r3": 312.40930000000003,
+     "r4": 315.4723000000001
+    }
+   },
+   {
+    "id": "S16",
+    "t0": 319.51540000000006,
+    "t1": 347.69980000000004,
+    "events": {
+     "start": 319.51540000000006,
+     "q": 319.51540000000006,
+     "two": 324.56790000000007,
+     "non": 326.72640000000007,
+     "pro": 332.9657000000001,
+     "rt": 337.52780000000007,
+     "nointron": 345.31450000000007
+    }
+   },
+   {
+    "id": "S17",
+    "t0": 347.69980000000004,
+    "t1": 384.6420000000001,
+    "events": {
+     "start": 347.69980000000004,
+     "see": 347.69980000000004,
+     "gene": 349.4770000000001,
+     "parts": 350.9240000000001,
+     "mrna": 352.8665000000001,
+     "rt": 359.0936000000001,
+     "rev": 366.2636000000001,
+     "ins": 370.0712000000001,
+     "retro": 373.4103000000001,
+     "none": 375.2152000000001,
+     "off": 379.54270000000014,
+     "pg": 381.42150000000015
+    }
+   },
+   {
+    "id": "S18",
+    "t0": 384.6420000000001,
+    "t1": 392.65780000000007,
+    "events": {
+     "start": 384.6420000000001,
+     "w": 384.6420000000001,
+     "r6": 386.1286000000001,
+     "r7": 390.6191000000001
+    }
+   },
+   {
+    "id": "S19",
+    "t0": 392.65780000000007,
+    "t1": 415.99700000000007,
+    "events": {
+     "start": 392.65780000000007,
+     "q": 392.65780000000007,
+     "eff": 395.6163000000001,
+     "n65": 400.6688000000001,
+     "dz": 405.3956000000001,
+     "eu": 410.6416000000001
+    }
+   },
+   {
+    "id": "S20",
+    "t0": 415.99700000000007,
+    "t1": 425.62720000000013,
+    "events": {
+     "start": 415.99700000000007,
+     "r8": 415.99700000000007,
+     "n65": 421.8632000000001,
+     "r9": 423.29240000000016
+    }
+   },
+   {
+    "id": "S21",
+    "t0": 425.62720000000013,
+    "t1": 461.6584000000003,
+    "events": {
+     "start": 425.62720000000013,
+     "four": 425.62720000000013,
+     "p1": 428.5455000000001,
+     "p1b": 429.50140000000016,
+     "p1c": 431.4196000000002,
+     "p1d": 434.0196000000002,
+     "p2": 437.9738000000002,
+     "p2b": 438.95760000000024,
+     "p2c": 443.7511000000003,
+     "p2d": 444.93300000000033,
+     "p3": 448.8796000000003,
+     "p3b": 449.82110000000034,
+     "p3c": 453.62750000000034,
+     "p4": 456.68230000000034
+    }
+   },
+   {
+    "id": "S22",
+    "t0": 461.6584000000003,
+    "t1": 471.75190000000026,
+    "events": {
+     "start": 461.6584000000003,
+     "next": 461.6584000000003,
+     "what": 463.82840000000033,
+     "epi": 468.6684000000003
+    }
+   }
+  ],
+  "segs": [
+   {
+    "scene": "S01",
+    "beat": "open",
+    "i": 0,
+    "seg": {
+     "text": "第5講です。",
+     "say": "第5講です。",
+     "cue": "title",
+     "post": 0.2
+    },
+    "t0": 0,
+    "t1": 1.3267,
+    "speech0": 0,
+    "speech1": 1.1267
+   },
+   {
+    "scene": "S01",
+    "beat": "open",
+    "i": 1,
+    "seg": {
+     "text": "前回は、遺伝子がどう読まれてタンパク質になるのかを見ました。",
+     "say": "前回は、遺伝子がどう読まれてタンパク質になるのかを見ました。",
+     "cue": "prev",
+     "post": 0.3
+    },
+    "t0": 1.3267,
+    "t1": 6.3961,
+    "speech0": 1.3267,
+    "speech1": 6.0961
+   },
+   {
+    "scene": "S01",
+    "beat": "today",
+    "i": 0,
+    "seg": {
+     "text": "今日は、その設計図の文字が変わったら、何が起こるのか。",
+     "say": "今日は、その設計図の文字が変わったら、何が起こるのか。",
+     "cue": "what",
+     "post": 0.15
+    },
+    "t0": 6.3961,
+    "t1": 10.5524,
+    "speech0": 6.3961,
+    "speech1": 10.4024
+   },
+   {
+    "scene": "S01",
+    "beat": "today",
+    "i": 1,
+    "seg": {
+     "text": "病気の原因になる変化もあれば、お酒の強さのような「個性」になる変化もあります。",
+     "say": "病気の原因になる変化もあれば、お酒の強さのような個性になる変化もあります。",
+     "cue": "trait",
+     "post": 0.5
+    },
+    "t0": 10.5524,
+    "t1": 17.7665,
+    "speech0": 10.5524,
+    "speech1": 17.2665
+   },
+   {
+    "scene": "S02",
+    "beat": "kinds",
+    "i": 0,
+    "seg": {
+     "text": "塩基対が別の塩基対に置き換わるのが**置換**。",
+     "say": "塩基対が別の塩基対に置き換わるのが置換。",
+     "cue": "sub",
+     "post": 0.2
+    },
+    "t0": 17.9165,
+    "t1": 21.515199999999997,
+    "speech0": 17.9165,
+    "speech1": 21.315199999999997
+   },
+   {
+    "scene": "S02",
+    "beat": "kinds",
+    "i": 1,
+    "seg": {
+     "text": "余分な塩基が入り込むのが**挿入**、",
+     "say": "余分な塩基が入り込むのが挿入、",
+     "cue": "ins"
+    },
+    "t0": 21.515199999999997,
+    "t1": 24.125199999999996,
+    "speech0": 21.515199999999997,
+    "speech1": 24.125199999999996
+   },
+   {
+    "scene": "S02",
+    "beat": "kinds",
+    "i": 2,
+    "seg": {
+     "text": "抜け落ちるのが**欠失**。",
+     "say": "抜け落ちるのが欠失。",
+     "cue": "del",
+     "post": 0.2
+    },
+    "t0": 24.125199999999996,
+    "t1": 25.890399999999996,
+    "speech0": 24.125199999999996,
+    "speech1": 25.690399999999997
+   },
+   {
+    "scene": "S02",
+    "beat": "kinds",
+    "i": 3,
+    "seg": {
+     "text": "もっと大きな変化が、第3講で見た**染色体異常**です。",
+     "say": "もっと大きな変化が、第3講で見た染色体異常です。",
+     "cue": "chr",
+     "post": 0.45
+    },
+    "t0": 25.890399999999996,
+    "t1": 30.641599999999993,
+    "speech0": 25.890399999999996,
+    "speech1": 30.191599999999994
+   },
+   {
+    "scene": "S03",
+    "beat": "four",
+    "i": 0,
+    "seg": {
+     "text": "では、1つの塩基が置き換わると、タンパク質はどうなるか。",
+     "say": "では、1つの塩基が置き換わると、タンパク質はどうなるか。",
+     "cue": "q",
+     "post": 0.15
+    },
+    "t0": 30.791599999999992,
+    "t1": 35.29679999999999,
+    "speech0": 30.791599999999992,
+    "speech1": 35.14679999999999
+   },
+   {
+    "scene": "S03",
+    "beat": "four",
+    "i": 1,
+    "seg": {
+     "text": "結果は**4通り**あります。",
+     "say": "結果は4通りあります。",
+     "cue": "four",
+     "post": 0.4
+    },
+    "t0": 35.29679999999999,
+    "t1": 37.45549999999999,
+    "speech0": 35.29679999999999,
+    "speech1": 37.05549999999999
+   },
+   {
+    "scene": "S04",
+    "beat": "non",
+    "i": 0,
+    "seg": {
+     "text": "**ナンセンス変異**は、アミノ酸のコドンが終止コドンに変わるもの。",
+     "say": "ナンセンス変異は、アミノ酸のコドンが終止コドンに変わるもの。",
+     "cue": "non",
+     "post": 0.25
+    },
+    "t0": 37.605499999999985,
+    "t1": 42.27299999999998,
+    "speech0": 37.605499999999985,
+    "speech1": 42.02299999999998
+   },
+   {
+    "scene": "S04",
+    "beat": "mis",
+    "i": 0,
+    "seg": {
+     "text": "**ミスセンス変異**は、別のアミノ酸に変わるもの。",
+     "say": "ミスセンス変異は、別のアミノ酸に変わるもの。",
+     "cue": "mis",
+     "post": 0.15
+    },
+    "t0": 42.27299999999998,
+    "t1": 45.99619999999998,
+    "speech0": 42.27299999999998,
+    "speech1": 45.84619999999998
+   },
+   {
+    "scene": "S04",
+    "beat": "mis",
+    "i": 1,
+    "seg": {
+     "text": "似た性質への保存的置換と、違う性質への非保存的置換があります。",
+     "say": "似た性質への保存てき置換と、違う性質への非保存てき置換があります。",
+     "cue": "cons",
+     "post": 0.25
+    },
+    "t0": 45.99619999999998,
+    "t1": 52.41549999999998,
+    "speech0": 45.99619999999998,
+    "speech1": 52.16549999999998
+   },
+   {
+    "scene": "S04",
+    "beat": "sil",
+    "i": 0,
+    "seg": {
+     "text": "**サイレント変異**は、コドンが変わってもアミノ酸が同じもの。",
+     "say": "サイレント変異は、コドンが変わってもアミノ酸が同じもの。",
+     "cue": "sil",
+     "post": 0.1
+    },
+    "t0": 52.41549999999998,
+    "t1": 56.80449999999998,
+    "speech0": 52.41549999999998,
+    "speech1": 56.70449999999998
+   },
+   {
+    "scene": "S04",
+    "beat": "sil",
+    "i": 1,
+    "seg": {
+     "text": "例えば、アルギニンのAGAとCGA。",
+     "say": "例えば、アルギニンのエージーエーとシージーエー。",
+     "cue": "arg",
+     "post": 0.25
+    },
+    "t0": 56.80449999999998,
+    "t1": 59.775899999999986,
+    "speech0": 56.80449999999998,
+    "speech1": 59.525899999999986
+   },
+   {
+    "scene": "S04",
+    "beat": "sen",
+    "i": 0,
+    "seg": {
+     "text": "**センス変異**は逆に、終止コドンが別のアミノ酸のコドンに変わるものです。",
+     "say": "センス変異は逆に、終止コドンが別のアミノ酸のコドンに変わるものです。",
+     "cue": "sen",
+     "post": 0.25
+    },
+    "t0": 59.775899999999986,
+    "t1": 65.97139999999999,
+    "speech0": 59.775899999999986,
+    "speech1": 65.72139999999999
+   },
+   {
+    "scene": "S04",
+    "beat": "table",
+    "i": 0,
+    "seg": {
+     "text": "下のコドン表のように、一つのアミノ酸に複数のコドンがある。",
+     "say": "下のコドン表のように、一つのアミノ酸に複数のコドンがある。",
+     "cue": "table",
+     "post": 0.1
+    },
+    "t0": 65.97139999999999,
+    "t1": 70.87179999999998,
+    "speech0": 65.97139999999999,
+    "speech1": 70.77179999999998
+   },
+   {
+    "scene": "S04",
+    "beat": "table",
+    "i": 1,
+    "seg": {
+     "text": "だからサイレント変異が起こるんです。",
+     "say": "だからサイレント変異が起こるんです。",
+     "cue": "why",
+     "post": 0.45
+    },
+    "t0": 70.87179999999998,
+    "t1": 73.70739999999998,
+    "speech0": 70.87179999999998,
+    "speech1": 73.25739999999998
+   },
+   {
+    "scene": "S05",
+    "beat": "w",
+    "i": 0,
+    "seg": {
+     "text": "黒板に整理します。",
+     "say": "黒板に整理します。",
+     "cue": "w",
+     "post": 0.1
+    },
+    "t0": 73.85739999999998,
+    "t1": 75.57229999999998,
+    "speech0": 73.85739999999998,
+    "speech1": 75.47229999999999
+   },
+   {
+    "scene": "S05",
+    "beat": "w",
+    "i": 1,
+    "seg": {
+     "text": "ナンセンスは終止へ。",
+     "say": "ナンセンスは終止へ。",
+     "cue": "l4",
+     "post": 0.1
+    },
+    "t0": 75.57229999999998,
+    "t1": 77.08859999999999,
+    "speech0": 75.57229999999998,
+    "speech1": 76.98859999999999
+   },
+   {
+    "scene": "S05",
+    "beat": "w",
+    "i": 2,
+    "seg": {
+     "text": "ミスセンスは別のアミノ酸へ。",
+     "say": "ミスセンスは別のアミノ酸へ。",
+     "cue": "l5",
+     "post": 0.1
+    },
+    "t0": 77.08859999999999,
+    "t1": 79.59629999999999,
+    "speech0": 77.08859999999999,
+    "speech1": 79.49629999999999
+   },
+   {
+    "scene": "S05",
+    "beat": "w",
+    "i": 3,
+    "seg": {
+     "text": "サイレントは変わらない。",
+     "say": "サイレントは変わらない。",
+     "cue": "l6",
+     "post": 0.1
+    },
+    "t0": 79.59629999999999,
+    "t1": 81.19299999999998,
+    "speech0": 79.59629999999999,
+    "speech1": 81.09299999999999
+   },
+   {
+    "scene": "S05",
+    "beat": "w",
+    "i": 4,
+    "seg": {
+     "text": "センスは終止から。",
+     "say": "センスは終止から。",
+     "cue": "l7",
+     "post": 0.25
+    },
+    "t0": 81.19299999999998,
+    "t1": 82.71879999999999,
+    "speech0": 81.19299999999998,
+    "speech1": 82.46879999999999
+   },
+   {
+    "scene": "S05",
+    "beat": "rev",
+    "i": 0,
+    "seg": {
+     "text": "ナンセンスとセンスは、**向きが逆**です。",
+     "say": "ナンセンスとセンスは、向きが逆です。",
+     "cue": "rev",
+     "post": 0.15
+    },
+    "t0": 82.71879999999999,
+    "t1": 85.59419999999999,
+    "speech0": 82.71879999999999,
+    "speech1": 85.44419999999998
+   },
+   {
+    "scene": "S05",
+    "beat": "rev",
+    "i": 1,
+    "seg": {
+     "text": "ここ、非常に紛らわしいので、赤で囲んでおきます。",
+     "say": "ここ、非常に紛らわしいので、赤で囲んでおきます。",
+     "cue": "red",
+     "post": 0.4
+    },
+    "t0": 85.59419999999999,
+    "t1": 90.0872,
+    "speech0": 85.59419999999999,
+    "speech1": 89.68719999999999
+   },
+   {
+    "scene": "S06",
+    "beat": "see",
+    "i": 0,
+    "seg": {
+     "text": "実際にコドンがどう変わるのか、動きで見てみましょう。",
+     "say": "実際にコドンがどう変わるのか、動きで見てみましょう。",
+     "cue": "see",
+     "post": 0.1
+    },
+    "t0": 90.2372,
+    "t1": 94.2819,
+    "speech0": 90.2372,
+    "speech1": 94.1819
+   },
+   {
+    "scene": "S06",
+    "beat": "see",
+    "i": 1,
+    "seg": {
+     "text": "正常な塩基対です。",
+     "say": "正常な塩基対です。",
+     "cue": "norm",
+     "post": 0.25
+    },
+    "t0": 94.2819,
+    "t1": 95.96849999999999,
+    "speech0": 94.2819,
+    "speech1": 95.71849999999999
+   },
+   {
+    "scene": "S06",
+    "beat": "sub",
+    "i": 0,
+    "seg": {
+     "text": "5番目の、AとTの対が、CとGの対に置き換わりました。",
+     "say": "5番目の、エーとティーの対が、シーとジーの対に置き換わりました。",
+     "cue": "sub",
+     "post": 0.1
+    },
+    "t0": 95.96849999999999,
+    "t1": 100.79179999999998,
+    "speech0": 95.96849999999999,
+    "speech1": 100.69179999999999
+   },
+   {
+    "scene": "S06",
+    "beat": "sub",
+    "i": 1,
+    "seg": {
+     "text": "これが**置換**。",
+     "say": "これが置換。",
+     "cue": "subn",
+     "post": 0.25
+    },
+    "t0": 100.79179999999998,
+    "t1": 102.02569999999999,
+    "speech0": 100.79179999999998,
+    "speech1": 101.77569999999999
+   },
+   {
+    "scene": "S06",
+    "beat": "sil",
+    "i": 0,
+    "seg": {
+     "text": "アルギニンのCGAが、AGAに変わっても……",
+     "say": "アルギニンのシージーエーが、エージーエーに変わっても",
+     "cue": "cga",
+     "post": 0.2
+    },
+    "t0": 102.02569999999999,
+    "t1": 105.63569999999999,
+    "speech0": 102.02569999999999,
+    "speech1": 105.43569999999998
+   },
+   {
+    "scene": "S06",
+    "beat": "sil",
+    "i": 1,
+    "seg": {
+     "text": "やはりアルギニン。",
+     "say": "やはりアルギニン。",
+     "cue": "arg",
+     "post": 0.1
+    },
+    "t0": 105.63569999999999,
+    "t1": 106.78789999999998,
+    "speech0": 105.63569999999999,
+    "speech1": 106.68789999999998
+   },
+   {
+    "scene": "S06",
+    "beat": "sil",
+    "i": 2,
+    "seg": {
+     "text": "これが**サイレント変異**です。",
+     "say": "これがサイレント変異です。",
+     "cue": "sil",
+     "post": 0.25
+    },
+    "t0": 106.78789999999998,
+    "t1": 108.74589999999998,
+    "speech0": 106.78789999999998,
+    "speech1": 108.49589999999998
+   },
+   {
+    "scene": "S06",
+    "beat": "cons",
+    "i": 0,
+    "seg": {
+     "text": "アスパラギン酸のGACがGAAになると、グルタミン酸に。",
+     "say": "アスパラギン酸のジーエーシーがジーエーエーになると、グルタミン酸に。",
+     "cue": "asp",
+     "post": 0.1
+    },
+    "t0": 108.74589999999998,
+    "t1": 113.22499999999997,
+    "speech0": 108.74589999999998,
+    "speech1": 113.12499999999997
+   },
+   {
+    "scene": "S06",
+    "beat": "cons",
+    "i": 1,
+    "seg": {
+     "text": "似た性質への、**保存的**なミスセンス変異。",
+     "say": "似た性質への、保存てきなミスセンス変異。",
+     "cue": "cons",
+     "post": 0.25
+    },
+    "t0": 113.22499999999997,
+    "t1": 116.92459999999997,
+    "speech0": 113.22499999999997,
+    "speech1": 116.67459999999997
+   },
+   {
+    "scene": "S06",
+    "beat": "non",
+    "i": 0,
+    "seg": {
+     "text": "アルギニンがグリシンに変わるのは、性質の違う、**非保存的**なミスセンス変異。",
+     "say": "アルギニンがグリシンに変わるのは、性質の違う、非保存てきなミスセンス変異。",
+     "cue": "gly",
+     "post": 0.4
+    },
+    "t0": 116.92459999999997,
+    "t1": 123.43179999999998,
+    "speech0": 116.92459999999997,
+    "speech1": 123.03179999999998
+   },
+   {
+    "scene": "S07",
+    "beat": "non",
+    "i": 0,
+    "seg": {
+     "text": "そして、アミノ酸のコドンが終止コドンに変わると、そこでタンパク質の合成が止まってしまいます。",
+     "say": "そして、アミノ酸のコドンが終止コドンに変わると、そこでタンパク質の合成が止まってしまいます。",
+     "cue": "stop",
+     "post": 0.1
+    },
+    "t0": 123.58179999999999,
+    "t1": 131.44189999999998,
+    "speech0": 123.58179999999999,
+    "speech1": 131.34189999999998
+   },
+   {
+    "scene": "S07",
+    "beat": "non",
+    "i": 1,
+    "seg": {
+     "text": "**ナンセンス変異**です。",
+     "say": "ナンセンス変異です。",
+     "cue": "non",
+     "post": 0.3
+    },
+    "t0": 131.44189999999998,
+    "t1": 133.11049999999997,
+    "speech0": 131.44189999999998,
+    "speech1": 132.81049999999996
+   },
+   {
+    "scene": "S07",
+    "beat": "fs",
+    "i": 0,
+    "seg": {
+     "text": "最後は補足ですが、1塩基の挿入や欠失。",
+     "say": "最後は補足ですが、1塩基の挿入や欠失。",
+     "cue": "ins",
+     "post": 0.15
+    },
+    "t0": 133.11049999999997,
+    "t1": 136.9765,
+    "speech0": 133.11049999999997,
+    "speech1": 136.82649999999998
+   },
+   {
+    "scene": "S07",
+    "beat": "fs",
+    "i": 1,
+    "seg": {
+     "text": "コドンの区切り、**読み枠**がずれて、その後のアミノ酸がすべて変わってしまいます。",
+     "say": "コドンの区切り、読み枠がずれて、その後のアミノ酸がすべて変わってしまいます。",
+     "cue": "shift",
+     "post": 0.25
+    },
+    "t0": 136.9765,
+    "t1": 143.3304,
+    "speech0": 136.9765,
+    "speech1": 143.0804
+   },
+   {
+    "scene": "S07",
+    "beat": "size",
+    "i": 0,
+    "seg": {
+     "text": "同じ1文字の変化でも、置換と挿入・欠失では、影響の大きさが違うわけです。",
+     "say": "同じ1文字の変化でも、置換と挿入・欠失では、影響の大きさが違うわけです。",
+     "cue": "size",
+     "post": 0.45
+    },
+    "t0": 143.3304,
+    "t1": 150.56969999999998,
+    "speech0": 143.3304,
+    "speech1": 150.1197
+   },
+   {
+    "scene": "S08",
+    "beat": "q",
+    "i": 0,
+    "seg": {
+     "text": "一人の人のゲノムには、どれくらいの違いがあるのか。",
+     "say": "一人の人のゲノムには、どれくらいの違いがあるのか。",
+     "cue": "q",
+     "post": 0.25
+    },
+    "t0": 150.7197,
+    "t1": 154.9443,
+    "speech0": 150.7197,
+    "speech1": 154.6943
+   },
+   {
+    "scene": "S08",
+    "beat": "snp",
+    "i": 0,
+    "seg": {
+     "text": "**一塩基多型**は、ワトソン博士で約347万か所。",
+     "say": "いちえんきたけいは、ワトソン博士で約さんびゃくよんじゅうななまんかしょ。",
+     "cue": "snp",
+     "post": 0.25
+    },
+    "t0": 154.9443,
+    "t1": 160.4218,
+    "speech0": 154.9443,
+    "speech1": 160.1718
+   },
+   {
+    "scene": "S08",
+    "beat": "aa",
+    "i": 0,
+    "seg": {
+     "text": "そのうち、アミノ酸が変わるものは約1万か所です。",
+     "say": "そのうち、アミノ酸が変わるものは約いちまんかしょです。",
+     "cue": "aa",
+     "post": 0.25
+    },
+    "t0": 160.4218,
+    "t1": 165.00209999999998,
+    "speech0": 160.4218,
+    "speech1": 164.75209999999998
+   },
+   {
+    "scene": "S08",
+    "beat": "poly",
+    "i": 0,
+    "seg": {
+     "text": "こうした違いの大部分は、病気ではなく、一人一人の個性、つまり**多型**です。",
+     "say": "こうした違いの大部分は、病気ではなく、一人一人の個性、つまり多型です。",
+     "cue": "poly",
+     "post": 0.45
+    },
+    "t0": 165.00209999999998,
+    "t1": 171.59149999999997,
+    "speech0": 165.00209999999998,
+    "speech1": 171.14149999999998
+   },
+   {
+    "scene": "S09",
+    "beat": "q",
+    "i": 0,
+    "seg": {
+     "text": "その個性の代表例が、お酒の強さです。",
+     "say": "その個性の代表例が、お酒の強さです。",
+     "cue": "q",
+     "post": 0.25
+    },
+    "t0": 171.74149999999997,
+    "t1": 175.35949999999997,
+    "speech0": 171.74149999999997,
+    "speech1": 175.10949999999997
+   },
+   {
+    "scene": "S09",
+    "beat": "path",
+    "i": 0,
+    "seg": {
+     "text": "アルコールは、**ADH**でアセトアルデヒドに、",
+     "say": "アルコールは、エーディーエイチでアセトアルデヒドに、",
+     "cue": "adh"
+    },
+    "t0": 175.35949999999997,
+    "t1": 178.72949999999997,
+    "speech0": 175.35949999999997,
+    "speech1": 178.72949999999997
+   },
+   {
+    "scene": "S09",
+    "beat": "path",
+    "i": 1,
+    "seg": {
+     "text": "**ALDH**で酢酸になります。",
+     "say": "エーエルディーエイチで酢酸になります。",
+     "cue": "aldh",
+     "post": 0.25
+    },
+    "t0": 178.72949999999997,
+    "t1": 181.70649999999998,
+    "speech0": 178.72949999999997,
+    "speech1": 181.45649999999998
+   },
+   {
+    "scene": "S09",
+    "beat": "tox",
+    "i": 0,
+    "seg": {
+     "text": "問題は**アセトアルデヒド**。",
+     "say": "問題はアセトアルデヒド。",
+     "cue": "ach",
+     "post": 0.1
+    },
+    "t0": 181.70649999999998,
+    "t1": 183.59539999999998,
+    "speech0": 181.70649999999998,
+    "speech1": 183.4954
+   },
+   {
+    "scene": "S09",
+    "beat": "tox",
+    "i": 1,
+    "seg": {
+     "text": "毒性が強く、顔が赤くなったり、気持ちが悪くなる原因です。",
+     "say": "毒性が強く、顔が赤くなったり、気持ちが悪くなる原因です。",
+     "cue": "tox",
+     "post": 0.25
+    },
+    "t0": 183.59539999999998,
+    "t1": 188.79369999999997,
+    "speech0": 183.59539999999998,
+    "speech1": 188.54369999999997
+   },
+   {
+    "scene": "S09",
+    "beat": "adh2",
+    "i": 0,
+    "seg": {
+     "text": "ADHのうち、ADH2には日本人でも遺伝子多型があります。",
+     "say": "エーディーエイチのうち、エーディーエイチツーには日本人でも遺伝子多型があります。",
+     "cue": "adh2",
+     "post": 0.45
+    },
+    "t0": 188.79369999999997,
+    "t1": 194.84689999999995,
+    "speech0": 188.79369999999997,
+    "speech1": 194.39689999999996
+   },
+   {
+    "scene": "S10",
+    "beat": "w",
+    "i": 0,
+    "seg": {
+     "text": "アルコールから、ADHでアセトアルデヒド。",
+     "say": "アルコールから、エーディーエイチでアセトアルデヒド。",
+     "cue": "c1",
+     "post": 0.1
+    },
+    "t0": 194.99689999999995,
+    "t1": 198.19489999999996,
+    "speech0": 194.99689999999995,
+    "speech1": 198.09489999999997
+   },
+   {
+    "scene": "S10",
+    "beat": "w",
+    "i": 1,
+    "seg": {
+     "text": "ALDHで酢酸、そして二酸化炭素と水。",
+     "say": "エーエルディーエイチで酢酸、そして二酸化炭素と水。",
+     "cue": "c2",
+     "post": 0.15
+    },
+    "t0": 198.19489999999996,
+    "t1": 202.29339999999996,
+    "speech0": 198.19489999999996,
+    "speech1": 202.14339999999996
+   },
+   {
+    "scene": "S10",
+    "beat": "w",
+    "i": 2,
+    "seg": {
+     "text": "顔を赤くしているのは、**アセトアルデヒド**です。",
+     "say": "顔を赤くしているのは、アセトアルデヒドです。",
+     "cue": "c3",
+     "post": 0.45
+    },
+    "t0": 202.29339999999996,
+    "t1": 205.99889999999996,
+    "speech0": 202.29339999999996,
+    "speech1": 205.54889999999997
+   },
+   {
+    "scene": "S11",
+    "beat": "q",
+    "i": 0,
+    "seg": {
+     "text": "次に、ALDHのほうです。",
+     "say": "次に、エーエルディーエイチのほうです。",
+     "cue": "q",
+     "post": 0.2
+    },
+    "t0": 206.14889999999997,
+    "t1": 208.58679999999995,
+    "speech0": 206.14889999999997,
+    "speech1": 208.38679999999997
+   },
+   {
+    "scene": "S11",
+    "beat": "pos",
+    "i": 0,
+    "seg": {
+     "text": "ALDHの遺伝子は、487番目のアミノ酸を決める塩基の違いで、3つの型に分かれます。",
+     "say": "エーエルディーエイチの遺伝子は、487番目のアミノ酸を決める塩基の違いで、3つの型に分かれます。",
+     "cue": "pos",
+     "post": 0.25
+    },
+    "t0": 208.58679999999995,
+    "t1": 217.69069999999996,
+    "speech0": 208.58679999999995,
+    "speech1": 217.44069999999996
+   },
+   {
+    "scene": "S11",
+    "beat": "glu",
+    "i": 0,
+    "seg": {
+     "text": "グルタミン酸がリシンに置き換わる。",
+     "say": "グルタミン酸がリシンに置き換わる。",
+     "cue": "glu",
+     "post": 0.1
+    },
+    "t0": 217.69069999999996,
+    "t1": 220.31089999999995,
+    "speech0": 217.69069999999996,
+    "speech1": 220.21089999999995
+   },
+   {
+    "scene": "S11",
+    "beat": "glu",
+    "i": 1,
+    "seg": {
+     "text": "これもミスセンス変異ですね。",
+     "say": "これもミスセンス変異ですね。",
+     "cue": "mis",
+     "post": 0.25
+    },
+    "t0": 220.31089999999995,
+    "t1": 222.52249999999995,
+    "speech0": 220.31089999999995,
+    "speech1": 222.27249999999995
+   },
+   {
+    "scene": "S11",
+    "beat": "types",
+    "i": 0,
+    "seg": {
+     "text": "GG型はお酒が強い。",
+     "say": "ジージー型はお酒が強い。",
+     "cue": "gg",
+     "post": 0.1
+    },
+    "t0": 222.52249999999995,
+    "t1": 224.67039999999994,
+    "speech0": 222.52249999999995,
+    "speech1": 224.57039999999995
+   },
+   {
+    "scene": "S11",
+    "beat": "types",
+    "i": 1,
+    "seg": {
+     "text": "AG型は弱い。",
+     "say": "エージー型は弱い。",
+     "cue": "ag",
+     "post": 0.1
+    },
+    "t0": 224.67039999999994,
+    "t1": 226.04039999999995,
+    "speech0": 224.67039999999994,
+    "speech1": 225.94039999999995
+   },
+   {
+    "scene": "S11",
+    "beat": "types",
+    "i": 2,
+    "seg": {
+     "text": "AA型は飲めません。",
+     "say": "エーエー型は飲めません。",
+     "cue": "aa",
+     "post": 0.25
+    },
+    "t0": 226.04039999999995,
+    "t1": 227.80889999999994,
+    "speech0": 226.04039999999995,
+    "speech1": 227.55889999999994
+   },
+   {
+    "scene": "S11",
+    "beat": "both",
+    "i": 0,
+    "seg": {
+     "text": "ALDHが弱くてADHが強いと、アセトアルデヒドがすぐにたまる。",
+     "say": "エーエルディーエイチが弱くてエーディーエイチが強いと、アセトアルデヒドがすぐにたまる。",
+     "cue": "both",
+     "post": 0.1
+    },
+    "t0": 227.80889999999994,
+    "t1": 233.88519999999994,
+    "speech0": 227.80889999999994,
+    "speech1": 233.78519999999995
+   },
+   {
+    "scene": "S11",
+    "beat": "both",
+    "i": 1,
+    "seg": {
+     "text": "お酒が苦手なタイプです。",
+     "say": "お酒が苦手なタイプです。",
+     "cue": "weak",
+     "post": 0.45
+    },
+    "t0": 233.88519999999994,
+    "t1": 236.42129999999992,
+    "speech0": 233.88519999999994,
+    "speech1": 235.97129999999993
+   },
+   {
+    "scene": "S12",
+    "beat": "w",
+    "i": 0,
+    "seg": {
+     "text": "黒板に整理します。",
+     "say": "黒板に整理します。",
+     "cue": "w",
+     "post": 0.1
+    },
+    "t0": 236.57129999999992,
+    "t1": 238.28619999999992,
+    "speech0": 236.57129999999992,
+    "speech1": 238.18619999999993
+   },
+   {
+    "scene": "S12",
+    "beat": "w",
+    "i": 1,
+    "seg": {
+     "text": "ALDHの487番目、グルタミン酸がリシンに。",
+     "say": "エーエルディーエイチの487番目、グルタミン酸がリシンに。",
+     "cue": "c4",
+     "post": 0.15
+    },
+    "t0": 238.28619999999992,
+    "t1": 243.35049999999993,
+    "speech0": 238.28619999999992,
+    "speech1": 243.20049999999992
+   },
+   {
+    "scene": "S12",
+    "beat": "w",
+    "i": 2,
+    "seg": {
+     "text": "GGは強い、AGは弱い、AAは飲めない。",
+     "say": "ジージーは強い、エージーは弱い、エーエーは飲めない。",
+     "cue": "c5",
+     "post": 0.25
+    },
+    "t0": 243.35049999999993,
+    "t1": 246.73509999999993,
+    "speech0": 243.35049999999993,
+    "speech1": 246.48509999999993
+   },
+   {
+    "scene": "S12",
+    "beat": "train",
+    "i": 0,
+    "seg": {
+     "text": "AAは飲めない。",
+     "say": "エーエーは飲めない。",
+     "cue": "aa",
+     "post": 0.1
+    },
+    "t0": 246.73509999999993,
+    "t1": 247.91699999999992,
+    "speech0": 246.73509999999993,
+    "speech1": 247.81699999999992
+   },
+   {
+    "scene": "S12",
+    "beat": "train",
+    "i": 1,
+    "seg": {
+     "text": "この型は、**訓練で変わるものではありません**。",
+     "say": "この型は、訓練で変わるものではありません。",
+     "cue": "train",
+     "post": 0.15
+    },
+    "t0": 247.91699999999992,
+    "t1": 251.46159999999992,
+    "speech0": 247.91699999999992,
+    "speech1": 251.3115999999999
+   },
+   {
+    "scene": "S12",
+    "beat": "train",
+    "i": 2,
+    "seg": {
+     "text": "遺伝子で決まっているからです。",
+     "say": "遺伝子で決まっているからです。",
+     "cue": "gene",
+     "post": 0.45
+    },
+    "t0": 251.46159999999992,
+    "t1": 253.8498999999999,
+    "speech0": 251.46159999999992,
+    "speech1": 253.39989999999992
+   },
+   {
+    "scene": "S13",
+    "beat": "q",
+    "i": 0,
+    "seg": {
+     "text": "では、最後のテーマ。ゲノムの中を動く配列です。",
+     "say": "では、最後のテーマ。ゲノムの中を動く配列です。",
+     "cue": "q",
+     "post": 0.25
+    },
+    "t0": 253.9998999999999,
+    "t1": 258.2619999999999,
+    "speech0": 253.9998999999999,
+    "speech1": 258.0119999999999
+   },
+   {
+    "scene": "S13",
+    "beat": "def",
+    "i": 0,
+    "seg": {
+     "text": "**トランスポゾン**とは、ゲノムの上で位置を変えることができる塩基配列です。",
+     "say": "トランスポゾンとは、ゲノムの上で位置を変えることができる塩基配列です。",
+     "cue": "def",
+     "post": 0.25
+    },
+    "t0": 258.2619999999999,
+    "t1": 263.8169999999999,
+    "speech0": 258.2619999999999,
+    "speech1": 263.5669999999999
+   },
+   {
+    "scene": "S13",
+    "beat": "types",
+    "i": 0,
+    "seg": {
+     "text": "DNAが直接動くDNA型と、",
+     "say": "ディーエヌエーが直接動くディーエヌエー型と、",
+     "cue": "dna"
+    },
+    "t0": 263.8169999999999,
+    "t1": 267.1669999999999,
+    "speech0": 263.8169999999999,
+    "speech1": 267.1669999999999
+   },
+   {
+    "scene": "S13",
+    "beat": "types",
+    "i": 1,
+    "seg": {
+     "text": "転写と逆転写を経るRNA型、**レトロポゾン**があります。",
+     "say": "転写と逆転写を経るアールエヌエー型、レトロポゾンがあります。",
+     "cue": "rna",
+     "post": 0.25
+    },
+    "t0": 267.1669999999999,
+    "t1": 272.48459999999994,
+    "speech0": 267.1669999999999,
+    "speech1": 272.23459999999994
+   },
+   {
+    "scene": "S13",
+    "beat": "mc",
+    "i": 0,
+    "seg": {
+     "text": "発見したのは**マクリントック**。",
+     "say": "発見したのはマクリントック。",
+     "cue": "mc",
+     "post": 0.1
+    },
+    "t0": 272.48459999999994,
+    "t1": 274.57879999999994,
+    "speech0": 272.48459999999994,
+    "speech1": 274.4787999999999
+   },
+   {
+    "scene": "S13",
+    "beat": "mc",
+    "i": 1,
+    "seg": {
+     "text": "トウモロコシのまだら模様から見つけ、1983年、81歳でノーベル賞を受賞しました。",
+     "say": "トウモロコシのまだら模様から見つけ、せんきゅうひゃくはちじゅうさんねん、はちじゅういっさいでノーベル賞を受賞しました。",
+     "cue": "corn",
+     "post": 0.25
+    },
+    "t0": 274.57879999999994,
+    "t1": 283.06429999999995,
+    "speech0": 274.57879999999994,
+    "speech1": 282.81429999999995
+   },
+   {
+    "scene": "S13",
+    "beat": "p45",
+    "i": 0,
+    "seg": {
+     "text": "そして、ヒトゲノムの約**45パーセント**が、トランスポゾンに関連した配列です。",
+     "say": "そして、ヒトゲノムの約よんじゅうごパーセントが、トランスポゾンに関連した配列です。",
+     "cue": "p45",
+     "post": 0.45
+    },
+    "t0": 283.06429999999995,
+    "t1": 289.88339999999994,
+    "speech0": 283.06429999999995,
+    "speech1": 289.43339999999995
+   },
+   {
+    "scene": "S14",
+    "beat": "cut",
+    "i": 0,
+    "seg": {
+     "text": "DNA型は、切り取って貼り付ける**カット・アンド・ペースト**。",
+     "say": "ディーエヌエー型は、切り取って貼り付けるカット・アンド・ペースト。",
+     "cue": "cut",
+     "post": 0.1
+    },
+    "t0": 290.0333999999999,
+    "t1": 294.19289999999995,
+    "speech0": 290.0333999999999,
+    "speech1": 294.09289999999993
+   },
+   {
+    "scene": "S14",
+    "beat": "cut",
+    "i": 1,
+    "seg": {
+     "text": "現在のヒトでは、もう動いていません。",
+     "say": "現在のヒトでは、もう動いていません。",
+     "cue": "dead",
+     "post": 0.25
+    },
+    "t0": 294.19289999999995,
+    "t1": 297.07439999999997,
+    "speech0": 294.19289999999995,
+    "speech1": 296.82439999999997
+   },
+   {
+    "scene": "S14",
+    "beat": "copy",
+    "i": 0,
+    "seg": {
+     "text": "レトロトランスポゾンは、**コピー・アンド・ペースト**。",
+     "say": "レトロトランスポゾンは、コピー・アンド・ペースト。",
+     "cue": "copy",
+     "post": 0.1
+    },
+    "t0": 297.07439999999997,
+    "t1": 300.1442,
+    "speech0": 297.07439999999997,
+    "speech1": 300.0442
+   },
+   {
+    "scene": "S14",
+    "beat": "copy",
+    "i": 1,
+    "seg": {
+     "text": "だから数が増えていきます。",
+     "say": "だから数が増えていきます。",
+     "cue": "more",
+     "post": 0.25
+    },
+    "t0": 300.1442,
+    "t1": 302.2275,
+    "speech0": 300.1442,
+    "speech1": 301.9775
+   },
+   {
+    "scene": "S14",
+    "beat": "act",
+    "i": 0,
+    "seg": {
+     "text": "そのうち、LINE-1、Alu、SVAは、今も転移する活性を持っています。",
+     "say": "そのうち、ラインワン、アルー、エスブイエーは、今も転移する活性を持っています。",
+     "cue": "act",
+     "post": 0.45
+    },
+    "t0": 302.2275,
+    "t1": 307.8403,
+    "speech0": 302.2275,
+    "speech1": 307.3903
+   },
+   {
+    "scene": "S15",
+    "beat": "w",
+    "i": 0,
+    "seg": {
+     "text": "ゲノムの約45パーセント。",
+     "say": "ゲノムの約よんじゅうごパーセント。",
+     "cue": "r1",
+     "post": 0.1
+    },
+    "t0": 307.9903,
+    "t1": 310.2645,
+    "speech0": 307.9903,
+    "speech1": 310.1645
+   },
+   {
+    "scene": "S15",
+    "beat": "w",
+    "i": 1,
+    "seg": {
+     "text": "DNA型は今は動かない。",
+     "say": "ディーエヌエー型は今は動かない。",
+     "cue": "r2",
+     "post": 0.1
+    },
+    "t0": 310.2645,
+    "t1": 312.40930000000003,
+    "speech0": 310.2645,
+    "speech1": 312.3093
+   },
+   {
+    "scene": "S15",
+    "beat": "w",
+    "i": 2,
+    "seg": {
+     "text": "レトロ型はコピー・アンド・ペーストで増える。",
+     "say": "レトロ型はコピー・アンド・ペーストで増える。",
+     "cue": "r3",
+     "post": 0.1
+    },
+    "t0": 312.40930000000003,
+    "t1": 315.4723000000001,
+    "speech0": 312.40930000000003,
+    "speech1": 315.37230000000005
+   },
+   {
+    "scene": "S15",
+    "beat": "w",
+    "i": 3,
+    "seg": {
+     "text": "今も動いているのは、LINE-1、Alu、SVAです。",
+     "say": "今も動いているのは、ラインワン、アルー、エスブイエーです。",
+     "cue": "r4",
+     "post": 0.45
+    },
+    "t0": 315.4723000000001,
+    "t1": 319.3654000000001,
+    "speech0": 315.4723000000001,
+    "speech1": 318.9154000000001
+   },
+   {
+    "scene": "S16",
+    "beat": "q",
+    "i": 0,
+    "seg": {
+     "text": "このコピー・アンド・ペーストから生まれたのが、偽遺伝子の一部です。",
+     "say": "このコピー・アンド・ペーストから生まれたのが、偽遺伝子の一部です。",
+     "cue": "q",
+     "post": 0.25
+    },
+    "t0": 319.51540000000006,
+    "t1": 324.56790000000007,
+    "speech0": 319.51540000000006,
+    "speech1": 324.31790000000007
+   },
+   {
+    "scene": "S16",
+    "beat": "non",
+    "i": 0,
+    "seg": {
+     "text": "偽遺伝子には二種類あります。",
+     "say": "偽遺伝子には二種類あります。",
+     "cue": "two",
+     "post": 0.1
+    },
+    "t0": 324.56790000000007,
+    "t1": 326.72640000000007,
+    "speech0": 324.56790000000007,
+    "speech1": 326.62640000000005
+   },
+   {
+    "scene": "S16",
+    "beat": "non",
+    "i": 1,
+    "seg": {
+     "text": "プロセッシングを受けない偽遺伝子は、変異で働かなくなった進化の名残。",
+     "say": "プロセッシングを受けない偽遺伝子は、変異で働かなくなった進化の名残。",
+     "cue": "non",
+     "post": 0.25
+    },
+    "t0": 326.72640000000007,
+    "t1": 332.9657000000001,
+    "speech0": 326.72640000000007,
+    "speech1": 332.7157000000001
+   },
+   {
+    "scene": "S16",
+    "beat": "pro",
+    "i": 0,
+    "seg": {
+     "text": "プロセッシングを受けた偽遺伝子は、**レトロ転移**で生まれます。",
+     "say": "プロセッシングを受けた偽遺伝子は、レトロ転移で生まれます。",
+     "cue": "pro",
+     "post": 0.25
+    },
+    "t0": 332.9657000000001,
+    "t1": 337.52780000000007,
+    "speech0": 332.9657000000001,
+    "speech1": 337.27780000000007
+   },
+   {
+    "scene": "S16",
+    "beat": "why",
+    "i": 0,
+    "seg": {
+     "text": "スプライシングを受けたmRNAが逆転写されてDNAになり、ゲノムに入り込む。",
+     "say": "スプライシングを受けたメッセンジャーアールエヌエーが逆転写されてディーエヌエーになり、ゲノムに入り込む。",
+     "cue": "rt",
+     "post": 0.1
+    },
+    "t0": 337.52780000000007,
+    "t1": 345.31450000000007,
+    "speech0": 337.52780000000007,
+    "speech1": 345.21450000000004
+   },
+   {
+    "scene": "S16",
+    "beat": "why",
+    "i": 1,
+    "seg": {
+     "text": "だから**イントロンがありません**。",
+     "say": "だからイントロンがありません。",
+     "cue": "nointron",
+     "post": 0.45
+    },
+    "t0": 345.31450000000007,
+    "t1": 347.54980000000006,
+    "speech0": 345.31450000000007,
+    "speech1": 347.0998000000001
+   },
+   {
+    "scene": "S17",
+    "beat": "gene",
+    "i": 0,
+    "seg": {
+     "text": "動きで見てみましょう。",
+     "say": "動きで見てみましょう。",
+     "cue": "see",
+     "post": 0.1
+    },
+    "t0": 347.69980000000004,
+    "t1": 349.4770000000001,
+    "speech0": 347.69980000000004,
+    "speech1": 349.37700000000007
+   },
+   {
+    "scene": "S17",
+    "beat": "gene",
+    "i": 1,
+    "seg": {
+     "text": "元の遺伝子です。",
+     "say": "元の遺伝子です。",
+     "cue": "gene",
+     "post": 0.1
+    },
+    "t0": 349.4770000000001,
+    "t1": 350.9240000000001,
+    "speech0": 349.4770000000001,
+    "speech1": 350.82400000000007
+   },
+   {
+    "scene": "S17",
+    "beat": "gene",
+    "i": 2,
+    "seg": {
+     "text": "プロモーター、エクソン、イントロン。",
+     "say": "プロモーター、エクソン、イントロン。",
+     "cue": "parts",
+     "post": 0.25
+    },
+    "t0": 350.9240000000001,
+    "t1": 352.8665000000001,
+    "speech0": 350.9240000000001,
+    "speech1": 352.6165000000001
+   },
+   {
+    "scene": "S17",
+    "beat": "mrna",
+    "i": 0,
+    "seg": {
+     "text": "転写されて、スプライシングを受けると、イントロンのないmRNAになります。",
+     "say": "転写されて、スプライシングを受けると、イントロンのないメッセンジャーアールエヌエーになります。",
+     "cue": "mrna",
+     "post": 0.25
+    },
+    "t0": 352.8665000000001,
+    "t1": 359.0936000000001,
+    "speech0": 352.8665000000001,
+    "speech1": 358.8436000000001
+   },
+   {
+    "scene": "S17",
+    "beat": "rt",
+    "i": 0,
+    "seg": {
+     "text": "ここで、**逆転写酵素**が、mRNAを鋳型にしてDNAのコピーを作ります。",
+     "say": "ここで、逆転写酵素が、メッセンジャーアールエヌエーをいがたにしてディーエヌエーのコピーを作ります。",
+     "cue": "rt",
+     "post": 0.1
+    },
+    "t0": 359.0936000000001,
+    "t1": 366.2636000000001,
+    "speech0": 359.0936000000001,
+    "speech1": 366.1636000000001
+   },
+   {
+    "scene": "S17",
+    "beat": "rt",
+    "i": 1,
+    "seg": {
+     "text": "RNAからDNAへ。逆向きの流れです。",
+     "say": "アールエヌエーからディーエヌエーへ。逆向きの流れです。",
+     "cue": "rev",
+     "post": 0.25
+    },
+    "t0": 366.2636000000001,
+    "t1": 370.0712000000001,
+    "speech0": 366.2636000000001,
+    "speech1": 369.8212000000001
+   },
+   {
+    "scene": "S17",
+    "beat": "ins",
+    "i": 0,
+    "seg": {
+     "text": "そのコピーが、別の染色体に入り込む。",
+     "say": "そのコピーが、別の染色体に入り込む。",
+     "cue": "ins",
+     "post": 0.1
+    },
+    "t0": 370.0712000000001,
+    "t1": 373.4103000000001,
+    "speech0": 370.0712000000001,
+    "speech1": 373.3103000000001
+   },
+   {
+    "scene": "S17",
+    "beat": "ins",
+    "i": 1,
+    "seg": {
+     "text": "これが**レトロ転移**です。",
+     "say": "これがレトロ転移です。",
+     "cue": "retro",
+     "post": 0.25
+    },
+    "t0": 373.4103000000001,
+    "t1": 375.2152000000001,
+    "speech0": 373.4103000000001,
+    "speech1": 374.9652000000001
+   },
+   {
+    "scene": "S17",
+    "beat": "pg",
+    "i": 0,
+    "seg": {
+     "text": "できあがった配列には、イントロンもプロモーターもありません。",
+     "say": "できあがった配列には、イントロンもプロモーターもありません。",
+     "cue": "none",
+     "post": 0.1
+    },
+    "t0": 375.2152000000001,
+    "t1": 379.54270000000014,
+    "speech0": 375.2152000000001,
+    "speech1": 379.4427000000001
+   },
+   {
+    "scene": "S17",
+    "beat": "pg",
+    "i": 1,
+    "seg": {
+     "text": "だから、ふつうは働かない。",
+     "say": "だから、ふつうは働かない。",
+     "cue": "off",
+     "post": 0.1
+    },
+    "t0": 379.54270000000014,
+    "t1": 381.42150000000015,
+    "speech0": 379.54270000000014,
+    "speech1": 381.3215000000001
+   },
+   {
+    "scene": "S17",
+    "beat": "pg",
+    "i": 2,
+    "seg": {
+     "text": "プロセッシングを受けた**偽遺伝子**です。",
+     "say": "プロセッシングを受けた偽遺伝子です。",
+     "cue": "pg",
+     "post": 0.45
+    },
+    "t0": 381.42150000000015,
+    "t1": 384.49200000000013,
+    "speech0": 381.42150000000015,
+    "speech1": 384.04200000000014
+   },
+   {
+    "scene": "S18",
+    "beat": "w",
+    "i": 0,
+    "seg": {
+     "text": "黒板に書きます。",
+     "say": "黒板に書きます。",
+     "cue": "w",
+     "post": 0.1
+    },
+    "t0": 384.6420000000001,
+    "t1": 386.1286000000001,
+    "speech0": 384.6420000000001,
+    "speech1": 386.0286000000001
+   },
+   {
+    "scene": "S18",
+    "beat": "w",
+    "i": 1,
+    "seg": {
+     "text": "mRNAが逆転写されて、再び挿入される。",
+     "say": "メッセンジャーアールエヌエーが逆転写されて、再び挿入される。",
+     "cue": "r6",
+     "post": 0.15
+    },
+    "t0": 386.1286000000001,
+    "t1": 390.6191000000001,
+    "speech0": 386.1286000000001,
+    "speech1": 390.46910000000014
+   },
+   {
+    "scene": "S18",
+    "beat": "w",
+    "i": 2,
+    "seg": {
+     "text": "だから**イントロンがない**。",
+     "say": "だからイントロンがない。",
+     "cue": "r7",
+     "post": 0.45
+    },
+    "t0": 390.6191000000001,
+    "t1": 392.5078000000001,
+    "speech0": 390.6191000000001,
+    "speech1": 392.0578000000001
+   },
+   {
+    "scene": "S19",
+    "beat": "q",
+    "i": 0,
+    "seg": {
+     "text": "最後に、こうした挿入が何を起こすのか。",
+     "say": "最後に、こうした挿入が何を起こすのか。",
+     "cue": "q",
+     "post": 0.25
+    },
+    "t0": 392.65780000000007,
+    "t1": 395.6163000000001,
+    "speech0": 392.65780000000007,
+    "speech1": 395.3663000000001
+   },
+   {
+    "scene": "S19",
+    "beat": "eff",
+    "i": 0,
+    "seg": {
+     "text": "遺伝子を壊す挿入変異や、ゲノムの再編成、発現の変化。",
+     "say": "遺伝子を壊す挿入変異や、ゲノムの再編成、発現の変化。",
+     "cue": "eff",
+     "post": 0.25
+    },
+    "t0": 395.6163000000001,
+    "t1": 400.6688000000001,
+    "speech0": 395.6163000000001,
+    "speech1": 400.4188000000001
+   },
+   {
+    "scene": "S19",
+    "beat": "dz",
+    "i": 0,
+    "seg": {
+     "text": "少なくとも**65例**で、遺伝性疾患の原因になっています。",
+     "say": "少なくとも65例で、遺伝性疾患の原因になっています。",
+     "cue": "n65",
+     "post": 0.1
+    },
+    "t0": 400.6688000000001,
+    "t1": 405.3956000000001,
+    "speech0": 400.6688000000001,
+    "speech1": 405.2956000000001
+   },
+   {
+    "scene": "S19",
+    "beat": "dz",
+    "i": 1,
+    "seg": {
+     "text": "血友病、嚢胞性線維症、デュシェンヌ型筋ジストロフィーなどです。",
+     "say": "血友病、のう胞性線維症、デュシェンヌ型筋ジストロフィーなどです。",
+     "cue": "dz",
+     "post": 0.25
+    },
+    "t0": 405.3956000000001,
+    "t1": 410.6416000000001,
+    "speech0": 405.3956000000001,
+    "speech1": 410.3916000000001
+   },
+   {
+    "scene": "S19",
+    "beat": "eu",
+    "i": 0,
+    "seg": {
+     "text": "しかも挿入は、転写が活発な**ユークロマチン**に起こりやすいのです。",
+     "say": "しかも挿入は、転写が活発なユークロマチンに起こりやすいのです。",
+     "cue": "eu",
+     "post": 0.45
+    },
+    "t0": 410.6416000000001,
+    "t1": 415.8470000000001,
+    "speech0": 410.6416000000001,
+    "speech1": 415.3970000000001
+   },
+   {
+    "scene": "S20",
+    "beat": "w",
+    "i": 0,
+    "seg": {
+     "text": "生殖系列で起こると、次の世代に伝わって病気の原因になりうる。",
+     "say": "生殖系列で起こると、次の世代に伝わって病気の原因になりうる。",
+     "cue": "r8",
+     "post": 0.1
+    },
+    "t0": 415.99700000000007,
+    "t1": 421.8632000000001,
+    "speech0": 415.99700000000007,
+    "speech1": 421.7632000000001
+   },
+   {
+    "scene": "S20",
+    "beat": "w",
+    "i": 1,
+    "seg": {
+     "text": "65例以上。",
+     "say": "65例以上。",
+     "cue": "n65",
+     "post": 0.1
+    },
+    "t0": 421.8632000000001,
+    "t1": 423.29240000000016,
+    "speech0": 421.8632000000001,
+    "speech1": 423.19240000000013
+   },
+   {
+    "scene": "S20",
+    "beat": "w",
+    "i": 2,
+    "seg": {
+     "text": "ユークロマチンに入りやすい。",
+     "say": "ユークロマチンに入りやすい。",
+     "cue": "r9",
+     "post": 0.45
+    },
+    "t0": 423.29240000000016,
+    "t1": 425.47720000000015,
+    "speech0": 423.29240000000016,
+    "speech1": 425.02720000000016
+   },
+   {
+    "scene": "S21",
+    "beat": "four",
+    "i": 0,
+    "seg": {
+     "text": "今日覚えてほしいのは、この4つです。",
+     "say": "今日覚えてほしいのは、この4つです。",
+     "cue": "four",
+     "post": 0.3
+    },
+    "t0": 425.62720000000013,
+    "t1": 428.5455000000001,
+    "speech0": 425.62720000000013,
+    "speech1": 428.2455000000001
+   },
+   {
+    "scene": "S21",
+    "beat": "p1",
+    "i": 0,
+    "seg": {
+     "text": "ひとつ目。",
+     "say": "ひとつ目。",
+     "cue": "p1",
+     "post": 0.1
+    },
+    "t0": 428.5455000000001,
+    "t1": 429.50140000000016,
+    "speech0": 428.5455000000001,
+    "speech1": 429.40140000000014
+   },
+   {
+    "scene": "S21",
+    "beat": "p1",
+    "i": 1,
+    "seg": {
+     "text": "置換の結果は4通り。",
+     "say": "置換の結果は4通り。",
+     "cue": "p1b",
+     "post": 0.1
+    },
+    "t0": 429.50140000000016,
+    "t1": 431.4196000000002,
+    "speech0": 429.50140000000016,
+    "speech1": 431.31960000000015
+   },
+   {
+    "scene": "S21",
+    "beat": "p1",
+    "i": 2,
+    "seg": {
+     "text": "ナンセンスは終止へ、センスは終止から。",
+     "say": "ナンセンスは終止へ、センスは終止から。",
+     "cue": "p1c",
+     "post": 0.1
+    },
+    "t0": 431.4196000000002,
+    "t1": 434.0196000000002,
+    "speech0": 431.4196000000002,
+    "speech1": 433.9196000000002
+   },
+   {
+    "scene": "S21",
+    "beat": "p1",
+    "i": 3,
+    "seg": {
+     "text": "ミスセンスは別のアミノ酸、サイレントは変わらない。",
+     "say": "ミスセンスは別のアミノ酸、サイレントは変わらない。",
+     "cue": "p1d",
+     "post": 0.3
+    },
+    "t0": 434.0196000000002,
+    "t1": 437.9738000000002,
+    "speech0": 434.0196000000002,
+    "speech1": 437.6738000000002
+   },
+   {
+    "scene": "S21",
+    "beat": "p2",
+    "i": 0,
+    "seg": {
+     "text": "ふたつ目。",
+     "say": "ふたつ目。",
+     "cue": "p2",
+     "post": 0.1
+    },
+    "t0": 437.9738000000002,
+    "t1": 438.95760000000024,
+    "speech0": 437.9738000000002,
+    "speech1": 438.8576000000002
+   },
+   {
+    "scene": "S21",
+    "beat": "p2",
+    "i": 1,
+    "seg": {
+     "text": "ALDH2の487番、グルタミン酸がリシン。",
+     "say": "エーエルディーエイチツーの487番、グルタミン酸がリシン。",
+     "cue": "p2b",
+     "post": 0.1
+    },
+    "t0": 438.95760000000024,
+    "t1": 443.7511000000003,
+    "speech0": 438.95760000000024,
+    "speech1": 443.65110000000027
+   },
+   {
+    "scene": "S21",
+    "beat": "p2",
+    "i": 2,
+    "seg": {
+     "text": "AAは飲めない。",
+     "say": "エーエーは飲めない。",
+     "cue": "p2c",
+     "post": 0.1
+    },
+    "t0": 443.7511000000003,
+    "t1": 444.93300000000033,
+    "speech0": 443.7511000000003,
+    "speech1": 444.8330000000003
+   },
+   {
+    "scene": "S21",
+    "beat": "p2",
+    "i": 3,
+    "seg": {
+     "text": "遺伝子で決まっているので、訓練では変わりません。",
+     "say": "遺伝子で決まっているので、訓練では変わりません。",
+     "cue": "p2d",
+     "post": 0.3
+    },
+    "t0": 444.93300000000033,
+    "t1": 448.8796000000003,
+    "speech0": 444.93300000000033,
+    "speech1": 448.5796000000003
+   },
+   {
+    "scene": "S21",
+    "beat": "p3",
+    "i": 0,
+    "seg": {
+     "text": "みっつ目。",
+     "say": "みっつ目。",
+     "cue": "p3",
+     "post": 0.1
+    },
+    "t0": 448.8796000000003,
+    "t1": 449.82110000000034,
+    "speech0": 448.8796000000003,
+    "speech1": 449.7211000000003
+   },
+   {
+    "scene": "S21",
+    "beat": "p3",
+    "i": 1,
+    "seg": {
+     "text": "ゲノムの約45パーセントがトランスポゾン関連。",
+     "say": "ゲノムの約よんじゅうごパーセントがトランスポゾン関連。",
+     "cue": "p3b",
+     "post": 0.1
+    },
+    "t0": 449.82110000000034,
+    "t1": 453.62750000000034,
+    "speech0": 449.82110000000034,
+    "speech1": 453.5275000000003
+   },
+   {
+    "scene": "S21",
+    "beat": "p3",
+    "i": 2,
+    "seg": {
+     "text": "今も動くのはLINE-1、Alu、SVA。",
+     "say": "今も動くのはラインワン、アルー、エスブイエー。",
+     "cue": "p3c",
+     "post": 0.3
+    },
+    "t0": 453.62750000000034,
+    "t1": 456.68230000000034,
+    "speech0": 453.62750000000034,
+    "speech1": 456.3823000000003
+   },
+   {
+    "scene": "S21",
+    "beat": "p4",
+    "i": 0,
+    "seg": {
+     "text": "そして、レトロ転移でできた偽遺伝子には、**イントロンがない**。",
+     "say": "そして、レトロ転移でできた偽遺伝子には、イントロンがない。",
+     "cue": "p4",
+     "post": 0.45
+    },
+    "t0": 456.68230000000034,
+    "t1": 461.50840000000034,
+    "speech0": 456.68230000000034,
+    "speech1": 461.05840000000035
+   },
+   {
+    "scene": "S22",
+    "beat": "next",
+    "i": 0,
+    "seg": {
+     "text": "次の第6講、最終回では、",
+     "say": "次の第6講、最終回では、",
+     "cue": "next"
+    },
+    "t0": 461.6584000000003,
+    "t1": 463.82840000000033,
+    "speech0": 461.6584000000003,
+    "speech1": 463.82840000000033
+   },
+   {
+    "scene": "S22",
+    "beat": "next",
+    "i": 1,
+    "seg": {
+     "text": "塩基配列を変えずに遺伝子の働きを変える仕組み、",
+     "say": "塩基配列を変えずに遺伝子の働きを変える仕組み、",
+     "cue": "what"
+    },
+    "t0": 463.82840000000033,
+    "t1": 468.6684000000003,
+    "speech0": 463.82840000000033,
+    "speech1": 468.6684000000003
+   },
+   {
+    "scene": "S22",
+    "beat": "next",
+    "i": 2,
+    "seg": {
+     "text": "**エピゲノム**を学びます。",
+     "say": "エピゲノムを学びます。",
+     "cue": "epi",
+     "post": 1
+    },
+    "t0": 468.6684000000003,
+    "t1": 471.6019000000003,
+    "speech0": 468.6684000000003,
+    "speech1": 470.6019000000003
+   }
+  ]
+ },
+ "edit": {
+  "plan": "genetics-basics:5:film|full|board|gekiga",
+  "voice": "genetics-basics-5-film_board",
+  "size": [
+   1280,
+   720
+  ],
+  "fps": 24,
+  "total": 471.752,
+  "frames": 11322,
+  "timing": "kokoro",
+  "layers": {
+   "plate": "layers/plate_%05d.jpg",
+   "overlay": "layers/overlay_%05d.png"
+  },
+  "note": "背景（Wan クリップ／無ければ MEDSTUDY アニマティック）→ 医学図レイヤーを重ねる → 白黒反転 → 字幕（ASS）→ 講師音声＋効果音（＋任意で BGM、声に合わせて自動で下げる）",
+  "scenes": [
+   {
+    "id": "S01",
+    "t0": 0,
+    "dur": 17.916,
+    "audio": "audio/S01.wav",
+    "shots": [
+     {
+      "id": "a",
+      "wan": "wan/S01_a.webm",
+      "mode": "feature",
+      "t0": 0,
+      "dur": 17.916,
+      "f0": 0,
+      "f1": 430,
+      "wanFrames": 121,
+      "wanFps": 24
+     }
+    ],
+    "sfx": [
+     {
+      "kind": "riser",
+      "t": 0,
+      "gain": 0.5
+     },
+     {
+      "kind": "boom",
+      "t": 0,
+      "gain": 1
+     }
+    ],
+    "invert": []
+   },
+   {
+    "id": "S02",
+    "t0": 17.916,
+    "dur": 12.875,
+    "audio": "audio/S02.wav",
+    "shots": [
+     {
+      "id": "a",
+      "wan": "wan/S02_a.webm",
+      "mode": "background",
+      "t0": 17.916,
+      "dur": 12.875,
+      "f0": 430,
+      "f1": 739,
+      "wanFrames": 121,
+      "wanFps": 24
+     }
+    ],
+    "sfx": [
+     {
+      "kind": "tick",
+      "t": 17.916,
+      "gain": 1
+     },
+     {
+      "kind": "tick",
+      "t": 21.515,
+      "gain": 1
+     },
+     {
+      "kind": "tick",
+      "t": 24.125,
+      "gain": 1
+     },
+     {
+      "kind": "boom",
+      "t": 25.89,
+      "gain": 0.6
+     }
+    ],
+    "invert": []
+   },
+   {
+    "id": "S03",
+    "t0": 30.792,
+    "dur": 6.814,
+    "audio": "audio/S03.wav",
+    "shots": [
+     {
+      "id": "a",
+      "wan": "wan/S03_a.webm",
+      "mode": "background",
+      "t0": 30.792,
+      "dur": 6.814,
+      "f0": 739,
+      "f1": 903,
+      "wanFrames": 121,
+      "wanFps": 24
+     }
+    ],
+    "sfx": [
+     {
+      "kind": "chalk",
+      "t": 35.297,
+      "gain": 0.7
+     }
+    ],
+    "invert": []
+   },
+   {
+    "id": "S04",
+    "t0": 37.605,
+    "dur": 36.252,
+    "audio": "audio/S04.wav",
+    "shots": [
+     {
+      "id": "a",
+      "wan": "wan/S04_a.webm",
+      "mode": "background",
+      "t0": 37.605,
+      "dur": 36.252,
+      "f0": 903,
+      "f1": 1773,
+      "wanFrames": 121,
+      "wanFps": 24
+     }
+    ],
+    "sfx": [
+     {
+      "kind": "impact",
+      "t": 37.605,
+      "gain": 0.6
+     },
+     {
+      "kind": "whoosh",
+      "t": 42.273,
+      "gain": 0.5
+     },
+     {
+      "kind": "whoosh",
+      "t": 52.415,
+      "gain": 0.5
+     },
+     {
+      "kind": "whoosh",
+      "t": 59.776,
+      "gain": 0.5
+     },
+     {
+      "kind": "shimmer",
+      "t": 65.971,
+      "gain": 0.4
+     }
+    ],
+    "invert": []
+   },
+   {
+    "id": "S05",
+    "t0": 73.857,
+    "dur": 16.38,
+    "audio": "audio/S05.wav",
+    "shots": [
+     {
+      "id": "a",
+      "wan": "wan/S05_a.webm",
+      "mode": "background",
+      "t0": 73.857,
+      "dur": 16.38,
+      "f0": 1773,
+      "f1": 2166,
+      "wanFrames": 121,
+      "wanFps": 24
+     }
+    ],
+    "sfx": [
+     {
+      "kind": "chalk",
+      "t": 75.572,
+      "gain": 0.5
+     },
+     {
+      "kind": "chalk",
+      "t": 77.089,
+      "gain": 0.5
+     },
+     {
+      "kind": "chalk",
+      "t": 79.596,
+      "gain": 0.5
+     },
+     {
+      "kind": "chalk",
+      "t": 81.193,
+      "gain": 0.5
+     },
+     {
+      "kind": "boom",
+      "t": 82.719,
+      "gain": 0.7
+     }
+    ],
+    "invert": []
+   },
+   {
+    "id": "S06",
+    "t0": 90.237,
+    "dur": 33.345,
+    "audio": "audio/S06.wav",
+    "shots": [
+     {
+      "id": "a",
+      "wan": "wan/S06_a.webm",
+      "mode": "background",
+      "t0": 90.237,
+      "dur": 33.345,
+      "f0": 2166,
+      "f1": 2966,
+      "wanFrames": 121,
+      "wanFps": 24
+     }
+    ],
+    "sfx": [
+     {
+      "kind": "impact",
+      "t": 95.968,
+      "gain": 1
+     },
+     {
+      "kind": "tick",
+      "t": 102.026,
+      "gain": 1
+     },
+     {
+      "kind": "shimmer",
+      "t": 105.636,
+      "gain": 0.4
+     },
+     {
+      "kind": "tick",
+      "t": 108.746,
+      "gain": 1
+     },
+     {
+      "kind": "impact",
+      "t": 116.925,
+      "gain": 0.6
+     }
+    ],
+    "invert": []
+   },
+   {
+    "id": "S07",
+    "t0": 123.582,
+    "dur": 27.138,
+    "audio": "audio/S07.wav",
+    "shots": [
+     {
+      "id": "a",
+      "wan": "wan/S07_a.webm",
+      "mode": "background",
+      "t0": 123.582,
+      "dur": 27.138,
+      "f0": 2966,
+      "f1": 3617,
+      "wanFrames": 121,
+      "wanFps": 24
+     }
+    ],
+    "sfx": [
+     {
+      "kind": "tick",
+      "t": 123.582,
+      "gain": 1
+     },
+     {
+      "kind": "impact",
+      "t": 131.442,
+      "gain": 1
+     },
+     {
+      "kind": "tick",
+      "t": 133.11,
+      "gain": 1
+     },
+     {
+      "kind": "whoosh",
+      "t": 136.976,
+      "gain": 1
+     }
+    ],
+    "invert": []
+   },
+   {
+    "id": "S08",
+    "t0": 150.72,
+    "dur": 21.022,
+    "audio": "audio/S08.wav",
+    "shots": [
+     {
+      "id": "a",
+      "wan": "wan/S08_a.webm",
+      "mode": "background",
+      "t0": 150.72,
+      "dur": 21.022,
+      "f0": 3617,
+      "f1": 4122,
+      "wanFrames": 121,
+      "wanFps": 24
+     }
+    ],
+    "sfx": [
+     {
+      "kind": "shimmer",
+      "t": 154.944,
+      "gain": 0.5
+     },
+     {
+      "kind": "impact",
+      "t": 160.422,
+      "gain": 0.6
+     },
+     {
+      "kind": "shimmer",
+      "t": 165.002,
+      "gain": 0.4
+     }
+    ],
+    "invert": []
+   },
+   {
+    "id": "S09",
+    "t0": 171.741,
+    "dur": 23.255,
+    "audio": "audio/S09.wav",
+    "shots": [
+     {
+      "id": "a",
+      "wan": "wan/S09_a.webm",
+      "mode": "background",
+      "t0": 171.741,
+      "dur": 23.255,
+      "f0": 4122,
+      "f1": 4680,
+      "wanFrames": 121,
+      "wanFps": 24
+     }
+    ],
+    "sfx": [
+     {
+      "kind": "whoosh",
+      "t": 175.359,
+      "gain": 0.5
+     },
+     {
+      "kind": "whoosh",
+      "t": 178.729,
+      "gain": 0.5
+     },
+     {
+      "kind": "boom",
+      "t": 181.706,
+      "gain": 0.6
+     },
+     {
+      "kind": "heartbeat",
+      "t": 183.595,
+      "gain": 1
+     }
+    ],
+    "invert": []
+   },
+   {
+    "id": "S10",
+    "t0": 194.997,
+    "dur": 11.152,
+    "audio": "audio/S10.wav",
+    "shots": [
+     {
+      "id": "a",
+      "wan": "wan/S10_a.webm",
+      "mode": "background",
+      "t0": 194.997,
+      "dur": 11.152,
+      "f0": 4680,
+      "f1": 4948,
+      "wanFrames": 121,
+      "wanFps": 24
+     }
+    ],
+    "sfx": [
+     {
+      "kind": "chalk",
+      "t": 194.997,
+      "gain": 0.6
+     },
+     {
+      "kind": "chalk",
+      "t": 198.195,
+      "gain": 0.6
+     },
+     {
+      "kind": "chalk",
+      "t": 202.293,
+      "gain": 0.6
+     }
+    ],
+    "invert": []
+   },
+   {
+    "id": "S11",
+    "t0": 206.149,
+    "dur": 30.422,
+    "audio": "audio/S11.wav",
+    "shots": [
+     {
+      "id": "a",
+      "wan": "wan/S11_a.webm",
+      "mode": "background",
+      "t0": 206.149,
+      "dur": 30.422,
+      "f0": 4948,
+      "f1": 5678,
+      "wanFrames": 121,
+      "wanFps": 24
+     }
+    ],
+    "sfx": [
+     {
+      "kind": "impact",
+      "t": 217.691,
+      "gain": 1
+     },
+     {
+      "kind": "tick",
+      "t": 222.522,
+      "gain": 1
+     },
+     {
+      "kind": "tick",
+      "t": 224.67,
+      "gain": 1
+     },
+     {
+      "kind": "boom",
+      "t": 226.04,
+      "gain": 0.6
+     }
+    ],
+    "invert": []
+   },
+   {
+    "id": "S12",
+    "t0": 236.571,
+    "dur": 17.429,
+    "audio": "audio/S12.wav",
+    "shots": [
+     {
+      "id": "a",
+      "wan": "wan/S12_a.webm",
+      "mode": "background",
+      "t0": 236.571,
+      "dur": 17.429,
+      "f0": 5678,
+      "f1": 6096,
+      "wanFrames": 121,
+      "wanFps": 24
+     }
+    ],
+    "sfx": [
+     {
+      "kind": "chalk",
+      "t": 238.286,
+      "gain": 0.6
+     },
+     {
+      "kind": "chalk",
+      "t": 243.35,
+      "gain": 0.6
+     },
+     {
+      "kind": "impact",
+      "t": 246.735,
+      "gain": 0.5
+     },
+     {
+      "kind": "boom",
+      "t": 247.917,
+      "gain": 0.7
+     }
+    ],
+    "invert": []
+   },
+   {
+    "id": "S13",
+    "t0": 254,
+    "dur": 36.034,
+    "audio": "audio/S13.wav",
+    "shots": [
+     {
+      "id": "a",
+      "wan": "wan/S13_a.webm",
+      "mode": "background",
+      "t0": 254,
+      "dur": 36.034,
+      "f0": 6096,
+      "f1": 6961,
+      "wanFrames": 121,
+      "wanFps": 24
+     }
+    ],
+    "sfx": [
+     {
+      "kind": "whoosh",
+      "t": 258.262,
+      "gain": 1
+     },
+     {
+      "kind": "shimmer",
+      "t": 272.485,
+      "gain": 0.4
+     },
+     {
+      "kind": "boom",
+      "t": 283.064,
+      "gain": 0.6
+     }
+    ],
+    "invert": []
+   },
+   {
+    "id": "S14",
+    "t0": 290.033,
+    "dur": 17.957,
+    "audio": "audio/S14.wav",
+    "shots": [
+     {
+      "id": "a",
+      "wan": "wan/S14_a.webm",
+      "mode": "background",
+      "t0": 290.033,
+      "dur": 17.957,
+      "f0": 6961,
+      "f1": 7392,
+      "wanFrames": 121,
+      "wanFps": 24
+     }
+    ],
+    "sfx": [
+     {
+      "kind": "tick",
+      "t": 290.033,
+      "gain": 1
+     },
+     {
+      "kind": "impact",
+      "t": 294.193,
+      "gain": 0.5
+     },
+     {
+      "kind": "whoosh",
+      "t": 297.074,
+      "gain": 1
+     },
+     {
+      "kind": "tick",
+      "t": 300.144,
+      "gain": 1
+     },
+     {
+      "kind": "shimmer",
+      "t": 302.228,
+      "gain": 1
+     }
+    ],
+    "invert": []
+   },
+   {
+    "id": "S15",
+    "t0": 307.99,
+    "dur": 11.525,
+    "audio": "audio/S15.wav",
+    "shots": [
+     {
+      "id": "a",
+      "wan": "wan/S15_a.webm",
+      "mode": "background",
+      "t0": 307.99,
+      "dur": 11.525,
+      "f0": 7392,
+      "f1": 7668,
+      "wanFrames": 121,
+      "wanFps": 24
+     }
+    ],
+    "sfx": [
+     {
+      "kind": "chalk",
+      "t": 307.99,
+      "gain": 0.5
+     },
+     {
+      "kind": "chalk",
+      "t": 310.264,
+      "gain": 0.5
+     },
+     {
+      "kind": "chalk",
+      "t": 312.409,
+      "gain": 0.5
+     },
+     {
+      "kind": "chalk",
+      "t": 315.472,
+      "gain": 0.6
+     }
+    ],
+    "invert": []
+   },
+   {
+    "id": "S16",
+    "t0": 319.515,
+    "dur": 28.184,
+    "audio": "audio/S16.wav",
+    "shots": [
+     {
+      "id": "a",
+      "wan": "wan/S16_a.webm",
+      "mode": "background",
+      "t0": 319.515,
+      "dur": 28.184,
+      "f0": 7668,
+      "f1": 8345,
+      "wanFrames": 121,
+      "wanFps": 24
+     }
+    ],
+    "sfx": [
+     {
+      "kind": "tick",
+      "t": 326.726,
+      "gain": 1
+     },
+     {
+      "kind": "whoosh",
+      "t": 332.966,
+      "gain": 1
+     },
+     {
+      "kind": "boom",
+      "t": 345.315,
+      "gain": 0.6
+     }
+    ],
+    "invert": []
+   },
+   {
+    "id": "S17",
+    "t0": 347.7,
+    "dur": 36.942,
+    "audio": "audio/S17.wav",
+    "shots": [
+     {
+      "id": "a",
+      "wan": "wan/S17_a.webm",
+      "mode": "background",
+      "t0": 347.7,
+      "dur": 36.942,
+      "f0": 8345,
+      "f1": 9231,
+      "wanFrames": 121,
+      "wanFps": 24
+     }
+    ],
+    "sfx": [
+     {
+      "kind": "whoosh",
+      "t": 352.867,
+      "gain": 0.5
+     },
+     {
+      "kind": "riser",
+      "t": 359.094,
+      "gain": 0.5
+     },
+     {
+      "kind": "impact",
+      "t": 370.071,
+      "gain": 0.6
+     },
+     {
+      "kind": "boom",
+      "t": 381.422,
+      "gain": 0.6
+     }
+    ],
+    "invert": []
+   },
+   {
+    "id": "S18",
+    "t0": 384.642,
+    "dur": 8.016,
+    "audio": "audio/S18.wav",
+    "shots": [
+     {
+      "id": "a",
+      "wan": "wan/S18_a.webm",
+      "mode": "background",
+      "t0": 384.642,
+      "dur": 8.016,
+      "f0": 9231,
+      "f1": 9424,
+      "wanFrames": 121,
+      "wanFps": 24
+     }
+    ],
+    "sfx": [
+     {
+      "kind": "chalk",
+      "t": 386.129,
+      "gain": 0.6
+     },
+     {
+      "kind": "chalk",
+      "t": 390.619,
+      "gain": 0.6
+     }
+    ],
+    "invert": []
+   },
+   {
+    "id": "S19",
+    "t0": 392.658,
+    "dur": 23.339,
+    "audio": "audio/S19.wav",
+    "shots": [
+     {
+      "id": "a",
+      "wan": "wan/S19_a.webm",
+      "mode": "background",
+      "t0": 392.658,
+      "dur": 23.339,
+      "f0": 9424,
+      "f1": 9984,
+      "wanFrames": 121,
+      "wanFps": 24
+     }
+    ],
+    "sfx": [
+     {
+      "kind": "impact",
+      "t": 395.616,
+      "gain": 1
+     },
+     {
+      "kind": "tick",
+      "t": 400.669,
+      "gain": 1
+     },
+     {
+      "kind": "tick",
+      "t": 405.396,
+      "gain": 1
+     },
+     {
+      "kind": "shimmer",
+      "t": 410.642,
+      "gain": 0.4
+     }
+    ],
+    "invert": []
+   },
+   {
+    "id": "S20",
+    "t0": 415.997,
+    "dur": 9.63,
+    "audio": "audio/S20.wav",
+    "shots": [
+     {
+      "id": "a",
+      "wan": "wan/S20_a.webm",
+      "mode": "background",
+      "t0": 415.997,
+      "dur": 9.63,
+      "f0": 9984,
+      "f1": 10215,
+      "wanFrames": 121,
+      "wanFps": 24
+     }
+    ],
+    "sfx": [
+     {
+      "kind": "chalk",
+      "t": 415.997,
+      "gain": 0.6
+     },
+     {
+      "kind": "chalk",
+      "t": 423.292,
+      "gain": 0.6
+     }
+    ],
+    "invert": []
+   },
+   {
+    "id": "S21",
+    "t0": 425.627,
+    "dur": 36.031,
+    "audio": "audio/S21.wav",
+    "shots": [
+     {
+      "id": "a",
+      "wan": "wan/S21_a.webm",
+      "mode": "background",
+      "t0": 425.627,
+      "dur": 36.031,
+      "f0": 10215,
+      "f1": 11080,
+      "wanFrames": 121,
+      "wanFps": 24
+     }
+    ],
+    "sfx": [
+     {
+      "kind": "chalk",
+      "t": 425.627,
+      "gain": 0.5
+     },
+     {
+      "kind": "chalk",
+      "t": 428.546,
+      "gain": 0.5
+     },
+     {
+      "kind": "chalk",
+      "t": 437.974,
+      "gain": 0.5
+     },
+     {
+      "kind": "chalk",
+      "t": 448.88,
+      "gain": 0.5
+     },
+     {
+      "kind": "chalk",
+      "t": 456.682,
+      "gain": 0.5
+     },
+     {
+      "kind": "impact",
+      "t": 460.282,
+      "gain": 0.6
+     }
+    ],
+    "invert": []
+   },
+   {
+    "id": "S22",
+    "t0": 461.658,
+    "dur": 10.093,
+    "audio": "audio/S22.wav",
+    "shots": [
+     {
+      "id": "a",
+      "wan": "wan/S22_a.webm",
+      "mode": "background",
+      "t0": 461.658,
+      "dur": 10.093,
+      "f0": 11080,
+      "f1": 11322,
+      "wanFrames": 121,
+      "wanFps": 24
+     }
+    ],
+    "sfx": [
+     {
+      "kind": "impact",
+      "t": 461.658,
+      "gain": 0.6
+     },
+     {
+      "kind": "shimmer",
+      "t": 468.668,
+      "gain": 0.5
+     }
+    ],
+    "invert": []
+   }
+  ],
+  "subtitles": "subtitles.ass",
+  "bgm": {
+   "file": null,
+   "gain": 0.18,
+   "duck": true
+  }
+ },
+ "scenes": [
+  {
+   "id": "S01",
+   "title": "タイトル：第5講 ゲノムの変異・多型と動く遺伝子",
+   "picture": "漆黒に墨が爆ぜ、二重らせんの影が回る。「ゲノムの変異・多型と動く遺伝子」の筆文字。",
+   "diagram": {
+    "id": "helix",
+    "title": "DNA二重らせん（影）",
+    "note": "右巻き・主溝/副溝の非対称を保った背景図。文字は MEDSTUDY が描く"
+   },
+   "lecturer": false,
+   "sources": [
+    {
+     "beat": "open",
+     "source": "第5講／台詞 c05-0001（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 5,
+      "section": "導入",
+      "cues": [
+       "c05-0001"
+      ],
+      "mode": "verbatim"
+     },
+     "lines": [
+      "第5講です。",
+      "前回は、遺伝子がどう読まれてタンパク質になるのかを見ました。"
+     ]
+    },
+    {
+     "beat": "today",
+     "source": "第5講／台詞 c05-0002（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 5,
+      "section": "導入",
+      "cues": [
+       "c05-0002"
+      ],
+      "mode": "verbatim"
+     },
+     "lines": [
+      "今日は、その設計図の文字が変わったら、何が起こるのか。",
+      "病気の原因になる変化もあれば、お酒の強さのような「個性」になる変化もあります。"
+     ]
+    }
+   ],
+   "cams": [
+    {
+     "at": "start",
+     "move": "set",
+     "x": 640,
+     "y": 360,
+     "z": 1.3,
+     "note": "墨の中から"
+    },
+    {
+     "at": "title",
+     "move": "crash",
+     "x": 640,
+     "y": 330,
+     "z": 1.12,
+     "dur": 0.22,
+     "hold": 0.3,
+     "note": "題名で急接近 → 静止"
+    },
+    {
+     "at": "title+1.5",
+     "move": "pull",
+     "x": 640,
+     "y": 360,
+     "z": 1,
+     "dur": 3,
+     "note": "ゆっくり引く"
+    }
+   ],
+   "fx": [
+    {
+     "at": "title",
+     "kind": "impact",
+     "dur": 0.5,
+     "min": "gekiga"
+    },
+    {
+     "at": "title",
+     "kind": "focus",
+     "dur": 1.4,
+     "min": "gekiga"
+    },
+    {
+     "at": "title",
+     "kind": "shake",
+     "dur": 0.3,
+     "min": "gekiga"
+    },
+    {
+     "at": "start",
+     "kind": "tone",
+     "dur": 999,
+     "min": "gekiga"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "start",
+     "kind": "riser",
+     "gain": 0.5
+    },
+    {
+     "at": "title",
+     "kind": "boom"
+    }
+   ]
+  },
+  {
+   "id": "S02",
+   "title": "置換・挿入・欠失、そして染色体異常",
+   "picture": "塩基の列が4段。1文字が別の文字に置き換わる（置換）、余分な1文字が入り込む（挿入）、1文字が抜け落ちる（欠失）。最後に、もっと大きな変化として染色体ごとの異常。",
+   "diagram": {
+    "id": "mut-types",
+    "title": "置換・挿入・欠失、そして染色体異常",
+    "note": "スライド57、c05-0010〜0013"
+   },
+   "lecturer": false,
+   "sources": [
+    {
+     "beat": "kinds",
+     "source": "第5講／台詞 c05-0010・c05-0011・c05-0012・c05-0013／スライド57（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 5,
+      "section": "全体像",
+      "cues": [
+       "c05-0010",
+       "c05-0011",
+       "c05-0012",
+       "c05-0013"
+      ],
+      "mode": "verbatim",
+      "slide": 57
+     },
+     "lines": [
+      "塩基対が別の塩基対に置き換わるのが置換。",
+      "余分な塩基が入り込むのが挿入、",
+      "抜け落ちるのが欠失。",
+      "もっと大きな変化が、第3講で見た染色体異常です。"
+     ]
+    }
+   ],
+   "cams": [
+    {
+     "at": "start",
+     "move": "set",
+     "x": 640,
+     "y": 150,
+     "z": 1.4,
+     "note": "置換"
+    },
+    {
+     "at": "ins",
+     "move": "pan",
+     "x": 640,
+     "y": 260,
+     "z": 1.4,
+     "dur": 0.5,
+     "note": "挿入"
+    },
+    {
+     "at": "del",
+     "move": "pan",
+     "x": 640,
+     "y": 370,
+     "z": 1.4,
+     "dur": 0.5,
+     "note": "欠失"
+    },
+    {
+     "at": "chr",
+     "move": "pull",
+     "x": 640,
+     "y": 340,
+     "z": 1,
+     "dur": 0.5,
+     "note": "染色体異常"
+    }
+   ],
+   "fx": [
+    {
+     "at": "sub",
+     "kind": "impact",
+     "dur": 0.3,
+     "min": "gekiga"
+    },
+    {
+     "at": "chr",
+     "kind": "impact",
+     "dur": 0.45,
+     "min": "gekiga"
+    },
+    {
+     "at": "start",
+     "kind": "tone",
+     "dur": 999,
+     "min": "gekiga"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "sub",
+     "kind": "tick"
+    },
+    {
+     "at": "ins",
+     "kind": "tick"
+    },
+    {
+     "at": "del",
+     "kind": "tick"
+    },
+    {
+     "at": "chr",
+     "kind": "boom",
+     "gain": 0.6
+    }
+   ]
+  },
+  {
+   "id": "S03",
+   "title": "板書：変異の種類、置換の結果は4通り",
+   "picture": "黒板の左「変異の種類」：置換・挿入・欠失（＋染色体異常：数的・構造的）／置換の結果は4通り。",
+   "diagram": {
+    "id": "board-l3",
+    "title": "板書：板書：変異の種類、置換の結果は4通り",
+    "note": "第5講の黒板 l-h・l1〜l3、c05-0015"
+   },
+   "lecturer": true,
+   "sources": [
+    {
+     "beat": "four",
+     "source": "第5講／台詞 c05-0015／板書 l3（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 5,
+      "section": "テーマ1　置換で何が起こるか",
+      "cues": [
+       "c05-0015"
+      ],
+      "mode": "verbatim",
+      "board": [
+       "l3"
+      ]
+     },
+     "lines": [
+      "では、1つの塩基が置き換わると、タンパク質はどうなるか。",
+      "結果は4通りあります。"
+     ]
+    }
+   ],
+   "cams": [
+    {
+     "at": "start",
+     "move": "set",
+     "x": 560,
+     "y": 220,
+     "z": 1,
+     "note": "板書"
+    },
+    {
+     "at": "four",
+     "move": "crash",
+     "x": 400,
+     "y": 280,
+     "z": 1.6,
+     "dur": 0.22,
+     "hold": 0.25,
+     "note": "4通り"
+    }
+   ],
+   "fx": [
+    {
+     "at": "four",
+     "kind": "impact",
+     "dur": 0.4,
+     "min": "gekiga"
+    },
+    {
+     "at": "start",
+     "kind": "tone",
+     "dur": 999,
+     "min": "gekiga"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "four",
+     "kind": "chalk",
+     "gain": 0.7
+    }
+   ]
+  },
+  {
+   "id": "S04",
+   "title": "置換の結果：ナンセンス・ミスセンス・サイレント・センス",
+   "picture": "4枚のカード。ナンセンス：アミノ酸のコドン→終止コドン。ミスセンス：別のアミノ酸へ（保存的 Asp→Glu／非保存的 Arg→Gly）。サイレント：AGA↔CGA、どちらもアルギニン。センス：終止コドン→アミノ酸のコドン。下に「1つのアミノ酸に複数のコドン」。",
+   "diagram": {
+    "id": "sub-outcomes",
+    "title": "置換の結果：ナンセンス・ミスセンス・サイレント・センス",
+    "note": "スライド55、c05-0017〜0021"
+   },
+   "lecturer": false,
+   "sources": [
+    {
+     "beat": "non",
+     "source": "第5講／台詞 c05-0017／スライド55（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 5,
+      "section": "テーマ1　置換で何が起こるか",
+      "cues": [
+       "c05-0017"
+      ],
+      "mode": "verbatim",
+      "slide": 55
+     },
+     "lines": [
+      "ナンセンス変異は、アミノ酸のコドンが終止コドンに変わるもの。"
+     ]
+    },
+    {
+     "beat": "mis",
+     "source": "第5講／台詞 c05-0018／スライド55（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 5,
+      "section": "テーマ1　置換で何が起こるか",
+      "cues": [
+       "c05-0018"
+      ],
+      "mode": "verbatim",
+      "slide": 55
+     },
+     "lines": [
+      "ミスセンス変異は、別のアミノ酸に変わるもの。",
+      "似た性質への保存的置換と、違う性質への非保存的置換があります。"
+     ]
+    },
+    {
+     "beat": "sil",
+     "source": "第5講／台詞 c05-0019／スライド55（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 5,
+      "section": "テーマ1　置換で何が起こるか",
+      "cues": [
+       "c05-0019"
+      ],
+      "mode": "verbatim",
+      "slide": 55
+     },
+     "lines": [
+      "サイレント変異は、コドンが変わってもアミノ酸が同じもの。",
+      "例えば、アルギニンのAGAとCGA。"
+     ]
+    },
+    {
+     "beat": "sen",
+     "source": "第5講／台詞 c05-0020／スライド55（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 5,
+      "section": "テーマ1　置換で何が起こるか",
+      "cues": [
+       "c05-0020"
+      ],
+      "mode": "verbatim",
+      "slide": 55
+     },
+     "lines": [
+      "センス変異は逆に、終止コドンが別のアミノ酸のコドンに変わるものです。"
+     ]
+    },
+    {
+     "beat": "table",
+     "source": "第5講／台詞 c05-0021／スライド55（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 5,
+      "section": "テーマ1　置換で何が起こるか",
+      "cues": [
+       "c05-0021"
+      ],
+      "mode": "verbatim",
+      "slide": 55
+     },
+     "lines": [
+      "下のコドン表のように、一つのアミノ酸に複数のコドンがある。",
+      "だからサイレント変異が起こるんです。"
+     ]
+    }
+   ],
+   "cams": [
+    {
+     "at": "start",
+     "move": "set",
+     "x": 640,
+     "y": 330,
+     "z": 1,
+     "note": "4枚"
+    },
+    {
+     "at": "non",
+     "move": "push",
+     "x": 190,
+     "y": 280,
+     "z": 1.6,
+     "dur": 0.5,
+     "note": "ナンセンス"
+    },
+    {
+     "at": "mis",
+     "move": "whip",
+     "x": 490,
+     "y": 280,
+     "z": 1.6,
+     "dur": 0.25,
+     "note": "ミスセンス"
+    },
+    {
+     "at": "sil",
+     "move": "whip",
+     "x": 790,
+     "y": 280,
+     "z": 1.6,
+     "dur": 0.25,
+     "note": "サイレント"
+    },
+    {
+     "at": "sen",
+     "move": "whip",
+     "x": 1090,
+     "y": 280,
+     "z": 1.6,
+     "dur": 0.25,
+     "note": "センス"
+    },
+    {
+     "at": "table",
+     "move": "pull",
+     "x": 640,
+     "y": 350,
+     "z": 1,
+     "dur": 0.5,
+     "note": "コドン表"
+    }
+   ],
+   "fx": [
+    {
+     "at": "non",
+     "kind": "impact",
+     "dur": 0.35,
+     "min": "gekiga"
+    },
+    {
+     "at": "mis",
+     "kind": "speed",
+     "dur": 0.3,
+     "min": "gekiga"
+    },
+    {
+     "at": "sil",
+     "kind": "speed",
+     "dur": 0.3,
+     "min": "gekiga"
+    },
+    {
+     "at": "sen",
+     "kind": "speed",
+     "dur": 0.3,
+     "min": "gekiga"
+    },
+    {
+     "at": "why",
+     "kind": "focus",
+     "dur": 0.9,
+     "min": "gekiga"
+    },
+    {
+     "at": "start",
+     "kind": "tone",
+     "dur": 999,
+     "min": "gekiga"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "non",
+     "kind": "impact",
+     "gain": 0.6
+    },
+    {
+     "at": "mis",
+     "kind": "whoosh",
+     "gain": 0.5
+    },
+    {
+     "at": "sil",
+     "kind": "whoosh",
+     "gain": 0.5
+    },
+    {
+     "at": "sen",
+     "kind": "whoosh",
+     "gain": 0.5
+    },
+    {
+     "at": "table",
+     "kind": "shimmer",
+     "gain": 0.4
+    }
+   ]
+  },
+  {
+   "id": "S05",
+   "title": "ナンセンスとセンスは向きが逆",
+   "picture": "黒板の左：ナンセンス … 終止コドンへ／ミスセンス … 別のアミノ酸へ（保存的 Asp⇔Glu／非保存的）／サイレント … アミノ酸は不変／センス … 終止コドンから別のアミノ酸へ。ナンセンスを赤で囲み、「向きが逆」の筆文字。",
+   "diagram": {
+    "id": "board-l7",
+    "title": "板書：ナンセンスとセンスは向きが逆",
+    "note": "第5講の黒板 l4〜l7（l4に赤丸）、c05-0022・0023"
+   },
+   "lecturer": true,
+   "sources": [
+    {
+     "beat": "w",
+     "source": "第5講／台詞 c05-0022／板書 l4・l5・l5b・l6・l7（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 5,
+      "section": "テーマ1　置換で何が起こるか",
+      "cues": [
+       "c05-0022"
+      ],
+      "mode": "verbatim",
+      "board": [
+       "l4",
+       "l5",
+       "l5b",
+       "l6",
+       "l7"
+      ]
+     },
+     "lines": [
+      "黒板に整理します。",
+      "ナンセンスは終止へ。",
+      "ミスセンスは別のアミノ酸へ。",
+      "サイレントは変わらない。",
+      "センスは終止から。"
+     ]
+    },
+    {
+     "beat": "rev",
+     "source": "第5講／台詞 c05-0023（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 5,
+      "section": "テーマ1　置換で何が起こるか",
+      "cues": [
+       "c05-0023"
+      ],
+      "mode": "verbatim"
+     },
+     "lines": [
+      "ナンセンスとセンスは、向きが逆です。",
+      "ここ、非常に紛らわしいので、赤で囲んでおきます。"
+     ]
+    }
+   ],
+   "cams": [
+    {
+     "at": "start",
+     "move": "set",
+     "x": 560,
+     "y": 330,
+     "z": 1,
+     "note": "板書"
+    },
+    {
+     "at": "l4",
+     "move": "push",
+     "x": 420,
+     "y": 330,
+     "z": 1.4,
+     "dur": 0.6,
+     "note": "4通り"
+    },
+    {
+     "at": "rev",
+     "move": "pull",
+     "x": 640,
+     "y": 360,
+     "z": 1,
+     "dur": 0.4,
+     "note": "向きが逆"
+    }
+   ],
+   "fx": [
+    {
+     "at": "rev",
+     "kind": "impact",
+     "dur": 0.45,
+     "min": "gekiga"
+    },
+    {
+     "at": "rev",
+     "kind": "shake",
+     "dur": 0.3,
+     "min": "gekiga"
+    },
+    {
+     "at": "start",
+     "kind": "tone",
+     "dur": 999,
+     "min": "gekiga"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "l4",
+     "kind": "chalk",
+     "gain": 0.5
+    },
+    {
+     "at": "l5",
+     "kind": "chalk",
+     "gain": 0.5
+    },
+    {
+     "at": "l6",
+     "kind": "chalk",
+     "gain": 0.5
+    },
+    {
+     "at": "l7",
+     "kind": "chalk",
+     "gain": 0.5
+    },
+    {
+     "at": "rev",
+     "kind": "boom",
+     "gain": 0.7
+    }
+   ]
+  },
+  {
+   "id": "S06",
+   "title": "コドンの変化：サイレント・保存的／非保存的ミスセンス",
+   "picture": "2本鎖の5番目のA–T対がC–G対に置き換わる（置換）。続いてコドンのカード：アルギニンのCGA→AGAでもアルギニン（サイレント）、アスパラギン酸のGAC→GAAでグルタミン酸（似た性質＝保存的ミスセンス）、アルギニン→グリシン（違う性質＝非保存的ミスセンス）。",
+   "diagram": {
+    "id": "codon-change",
+    "title": "コドンの変化：サイレント・保存的／非保存的ミスセンス",
+    "note": "c05-0024〜0029。標準遺伝暗号：CGA・AGA Arg、GAC Asp、GAA Glu、GGA Gly"
+   },
+   "lecturer": false,
+   "sources": [
+    {
+     "beat": "see",
+     "source": "第5講／台詞 c05-0024（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 5,
+      "section": "テーマ1　置換で何が起こるか",
+      "cues": [
+       "c05-0024"
+      ],
+      "mode": "verbatim"
+     },
+     "lines": [
+      "実際にコドンがどう変わるのか、動きで見てみましょう。",
+      "正常な塩基対です。"
+     ]
+    },
+    {
+     "beat": "sub",
+     "source": "第5講／台詞 c05-0025（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 5,
+      "section": "テーマ1　置換で何が起こるか",
+      "cues": [
+       "c05-0025"
+      ],
+      "mode": "verbatim"
+     },
+     "lines": [
+      "5番目の、AとTの対が、CとGの対に置き換わりました。",
+      "これが置換。"
+     ]
+    },
+    {
+     "beat": "sil",
+     "source": "第5講／台詞 c05-0026・c05-0027（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 5,
+      "section": "テーマ1　置換で何が起こるか",
+      "cues": [
+       "c05-0026",
+       "c05-0027"
+      ],
+      "mode": "verbatim"
+     },
+     "lines": [
+      "アルギニンのCGAが、AGAに変わっても……",
+      "やはりアルギニン。",
+      "これがサイレント変異です。"
+     ]
+    },
+    {
+     "beat": "cons",
+     "source": "第5講／台詞 c05-0028（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 5,
+      "section": "テーマ1　置換で何が起こるか",
+      "cues": [
+       "c05-0028"
+      ],
+      "mode": "verbatim"
+     },
+     "lines": [
+      "アスパラギン酸のGACがGAAになると、グルタミン酸に。",
+      "似た性質への、保存的なミスセンス変異。"
+     ]
+    },
+    {
+     "beat": "non",
+     "source": "第5講／台詞 c05-0029（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 5,
+      "section": "テーマ1　置換で何が起こるか",
+      "cues": [
+       "c05-0029"
+      ],
+      "mode": "verbatim"
+     },
+     "lines": [
+      "アルギニンがグリシンに変わるのは、性質の違う、非保存的なミスセンス変異。"
+     ]
+    }
+   ],
+   "cams": [
+    {
+     "at": "start",
+     "move": "set",
+     "x": 640,
+     "y": 200,
+     "z": 1.2,
+     "note": "塩基対"
+    },
+    {
+     "at": "sub",
+     "move": "crash",
+     "x": 560,
+     "y": 200,
+     "z": 1.6,
+     "dur": 0.22,
+     "hold": 0.25,
+     "note": "5番目"
+    },
+    {
+     "at": "cga",
+     "move": "pull",
+     "x": 640,
+     "y": 380,
+     "z": 1.05,
+     "dur": 0.5,
+     "note": "コドンのカード"
+    },
+    {
+     "at": "asp",
+     "move": "pan",
+     "x": 640,
+     "y": 420,
+     "z": 1.1,
+     "dur": 0.5,
+     "note": "保存的"
+    }
+   ],
+   "fx": [
+    {
+     "at": "sub",
+     "kind": "impact",
+     "dur": 0.4,
+     "min": "gekiga"
+    },
+    {
+     "at": "arg",
+     "kind": "flash",
+     "dur": 0.25,
+     "min": "gekiga"
+    },
+    {
+     "at": "gly",
+     "kind": "impact",
+     "dur": 0.4,
+     "min": "gekiga"
+    },
+    {
+     "at": "start",
+     "kind": "tone",
+     "dur": 999,
+     "min": "gekiga"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "sub",
+     "kind": "impact"
+    },
+    {
+     "at": "cga",
+     "kind": "tick"
+    },
+    {
+     "at": "arg",
+     "kind": "shimmer",
+     "gain": 0.4
+    },
+    {
+     "at": "asp",
+     "kind": "tick"
+    },
+    {
+     "at": "gly",
+     "kind": "impact",
+     "gain": 0.6
+    }
+   ]
+  },
+  {
+   "id": "S07",
+   "title": "ナンセンス変異と、読み枠のずれ",
+   "picture": "リボソームが読み進むmRNA。途中のコドンが終止コドンに変わると、そこで合成が止まる（ナンセンス）。次に1塩基が挿入されると3文字ずつの区切りが1つずれ、その後のアミノ酸がすべて変わる。",
+   "diagram": {
+    "id": "frameshift",
+    "title": "ナンセンス変異と、読み枠のずれ",
+    "note": "c05-0030〜0032。例：CGA（Arg）→UGA（終止）、1塩基挿入で読み枠がずれる"
+   },
+   "lecturer": false,
+   "sources": [
+    {
+     "beat": "non",
+     "source": "第5講／台詞 c05-0030（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 5,
+      "section": "テーマ1　置換で何が起こるか",
+      "cues": [
+       "c05-0030"
+      ],
+      "mode": "verbatim"
+     },
+     "lines": [
+      "そして、アミノ酸のコドンが終止コドンに変わると、そこでタンパク質の合成が止まってしまいます。",
+      "ナンセンス変異です。"
+     ]
+    },
+    {
+     "beat": "fs",
+     "source": "第5講／台詞 c05-0031（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 5,
+      "section": "テーマ1　置換で何が起こるか",
+      "cues": [
+       "c05-0031"
+      ],
+      "mode": "verbatim"
+     },
+     "lines": [
+      "最後は補足ですが、1塩基の挿入や欠失。",
+      "コドンの区切り、読み枠がずれて、その後のアミノ酸がすべて変わってしまいます。"
+     ]
+    },
+    {
+     "beat": "size",
+     "source": "第5講／台詞 c05-0032（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 5,
+      "section": "テーマ1　置換で何が起こるか",
+      "cues": [
+       "c05-0032"
+      ],
+      "mode": "verbatim"
+     },
+     "lines": [
+      "同じ1文字の変化でも、置換と挿入・欠失では、影響の大きさが違うわけです。"
+     ]
+    }
+   ],
+   "cams": [
+    {
+     "at": "start",
+     "move": "set",
+     "x": 640,
+     "y": 220,
+     "z": 1.1,
+     "note": "翻訳"
+    },
+    {
+     "at": "non",
+     "move": "crash",
+     "x": 640,
+     "y": 200,
+     "z": 1.35,
+     "dur": 0.22,
+     "hold": 0.25,
+     "note": "止まる"
+    },
+    {
+     "at": "ins",
+     "move": "pull",
+     "x": 640,
+     "y": 420,
+     "z": 1.05,
+     "dur": 0.5,
+     "note": "挿入"
+    },
+    {
+     "at": "size",
+     "move": "pull",
+     "x": 640,
+     "y": 340,
+     "z": 1,
+     "dur": 0.5,
+     "note": "比べる"
+    }
+   ],
+   "fx": [
+    {
+     "at": "non",
+     "kind": "impact",
+     "dur": 0.45,
+     "min": "gekiga"
+    },
+    {
+     "at": "non",
+     "kind": "onoma",
+     "text": "ブツッ",
+     "x": 1080,
+     "y": 150,
+     "dur": 0.9,
+     "min": "gekiga"
+    },
+    {
+     "at": "shift",
+     "kind": "speed",
+     "dur": 0.4,
+     "min": "gekiga"
+    },
+    {
+     "at": "start",
+     "kind": "tone",
+     "dur": 999,
+     "min": "gekiga"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "stop",
+     "kind": "tick"
+    },
+    {
+     "at": "non",
+     "kind": "impact"
+    },
+    {
+     "at": "ins",
+     "kind": "tick"
+    },
+    {
+     "at": "shift",
+     "kind": "whoosh"
+    }
+   ]
+  },
+  {
+   "id": "S08",
+   "title": "一人のゲノムの違い：一塩基多型 約347万、アミノ酸が変わるのは約1万",
+   "picture": "1本のゲノムの帯に、無数の細い印（一塩基多型、ワトソン博士で約347万か所）。そのうちアミノ酸が変わる印（約1万か所）だけが赤い。大部分は病気ではなく「個性」＝多型。",
+   "diagram": {
+    "id": "snp-count",
+    "title": "一人のゲノムの違い：一塩基多型 約347万、アミノ酸が変わるのは約1万",
+    "note": "スライド56、c05-0038〜0041"
+   },
+   "lecturer": false,
+   "sources": [
+    {
+     "beat": "q",
+     "source": "第5講／台詞 c05-0038／スライド56（原文の一部）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 5,
+      "section": "テーマ1　置換で何が起こるか",
+      "cues": [
+       "c05-0038"
+      ],
+      "mode": "trimmed",
+      "slide": 56
+     },
+     "lines": [
+      "一人の人のゲノムには、どれくらいの違いがあるのか。"
+     ]
+    },
+    {
+     "beat": "snp",
+     "source": "第5講／台詞 c05-0039／スライド56（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 5,
+      "section": "テーマ1　置換で何が起こるか",
+      "cues": [
+       "c05-0039"
+      ],
+      "mode": "verbatim",
+      "slide": 56
+     },
+     "lines": [
+      "一塩基多型は、ワトソン博士で約347万か所。"
+     ]
+    },
+    {
+     "beat": "aa",
+     "source": "第5講／台詞 c05-0040／スライド56（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 5,
+      "section": "テーマ1　置換で何が起こるか",
+      "cues": [
+       "c05-0040"
+      ],
+      "mode": "verbatim",
+      "slide": 56
+     },
+     "lines": [
+      "そのうち、アミノ酸が変わるものは約1万か所です。"
+     ]
+    },
+    {
+     "beat": "poly",
+     "source": "第5講／台詞 c05-0041／スライド56（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 5,
+      "section": "テーマ1　置換で何が起こるか",
+      "cues": [
+       "c05-0041"
+      ],
+      "mode": "verbatim",
+      "slide": 56
+     },
+     "lines": [
+      "こうした違いの大部分は、病気ではなく、一人一人の個性、つまり多型です。"
+     ]
+    }
+   ],
+   "cams": [
+    {
+     "at": "start",
+     "move": "set",
+     "x": 640,
+     "y": 330,
+     "z": 1,
+     "note": "ゲノムの帯"
+    },
+    {
+     "at": "snp",
+     "move": "push",
+     "x": 640,
+     "y": 300,
+     "z": 1.3,
+     "dur": 1.5,
+     "note": "無数の印"
+    },
+    {
+     "at": "aa",
+     "move": "crash",
+     "x": 500,
+     "y": 300,
+     "z": 1.6,
+     "dur": 0.22,
+     "hold": 0.25,
+     "note": "赤い印"
+    },
+    {
+     "at": "poly",
+     "move": "pull",
+     "x": 640,
+     "y": 330,
+     "z": 1,
+     "dur": 0.5,
+     "note": "個性"
+    }
+   ],
+   "fx": [
+    {
+     "at": "snp",
+     "kind": "flash",
+     "dur": 0.25,
+     "min": "gekiga"
+    },
+    {
+     "at": "aa",
+     "kind": "impact",
+     "dur": 0.4,
+     "min": "gekiga"
+    },
+    {
+     "at": "poly",
+     "kind": "focus",
+     "dur": 1,
+     "min": "gekiga"
+    },
+    {
+     "at": "start",
+     "kind": "tone",
+     "dur": 999,
+     "min": "gekiga"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "snp",
+     "kind": "shimmer",
+     "gain": 0.5
+    },
+    {
+     "at": "aa",
+     "kind": "impact",
+     "gain": 0.6
+    },
+    {
+     "at": "poly",
+     "kind": "shimmer",
+     "gain": 0.4
+    }
+   ]
+  },
+  {
+   "id": "S09",
+   "title": "アルコール → ADH → アセトアルデヒド → ALDH → 酢酸",
+   "picture": "アルコールの分子が、ADHでアセトアルデヒドに、ALDHで酢酸に、最後に二酸化炭素と水になる流れ。毒性の強いアセトアルデヒドが赤く脈打ち、「顔が赤くなる・気分が悪くなる原因」。人物の顔は描かない。ADH2には日本人でも多型。",
+   "diagram": {
+    "id": "alcohol",
+    "title": "アルコール → ADH → アセトアルデヒド → ALDH → 酢酸",
+    "note": "スライド58、c05-0042〜0045"
+   },
+   "lecturer": false,
+   "sources": [
+    {
+     "beat": "q",
+     "source": "第5講／台詞 c05-0042／スライド58（原文の一部）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 5,
+      "section": "テーマ2　飲酒と遺伝子多型",
+      "cues": [
+       "c05-0042"
+      ],
+      "mode": "trimmed",
+      "slide": 58
+     },
+     "lines": [
+      "その個性の代表例が、お酒の強さです。"
+     ]
+    },
+    {
+     "beat": "path",
+     "source": "第5講／台詞 c05-0043／スライド58（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 5,
+      "section": "テーマ2　飲酒と遺伝子多型",
+      "cues": [
+       "c05-0043"
+      ],
+      "mode": "verbatim",
+      "slide": 58
+     },
+     "lines": [
+      "アルコールは、ADHでアセトアルデヒドに、",
+      "ALDHで酢酸になります。"
+     ]
+    },
+    {
+     "beat": "tox",
+     "source": "第5講／台詞 c05-0044／スライド58（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 5,
+      "section": "テーマ2　飲酒と遺伝子多型",
+      "cues": [
+       "c05-0044"
+      ],
+      "mode": "verbatim",
+      "slide": 58
+     },
+     "lines": [
+      "問題はアセトアルデヒド。",
+      "毒性が強く、顔が赤くなったり、気持ちが悪くなる原因です。"
+     ]
+    },
+    {
+     "beat": "adh2",
+     "source": "第5講／台詞 c05-0045／スライド58（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 5,
+      "section": "テーマ2　飲酒と遺伝子多型",
+      "cues": [
+       "c05-0045"
+      ],
+      "mode": "verbatim",
+      "slide": 58
+     },
+     "lines": [
+      "ADHのうち、ADH2には日本人でも遺伝子多型があります。"
+     ]
+    }
+   ],
+   "cams": [
+    {
+     "at": "start",
+     "move": "set",
+     "x": 640,
+     "y": 300,
+     "z": 1,
+     "note": "代謝の流れ"
+    },
+    {
+     "at": "adh",
+     "move": "push",
+     "x": 380,
+     "y": 280,
+     "z": 1.35,
+     "dur": 0.6,
+     "note": "ADH"
+    },
+    {
+     "at": "aldh",
+     "move": "pan",
+     "x": 860,
+     "y": 280,
+     "z": 1.35,
+     "dur": 0.6,
+     "note": "ALDH"
+    },
+    {
+     "at": "ach",
+     "move": "crash",
+     "x": 560,
+     "y": 280,
+     "z": 1.6,
+     "dur": 0.22,
+     "hold": 0.3,
+     "note": "アセトアルデヒド"
+    },
+    {
+     "at": "adh2",
+     "move": "pull",
+     "x": 640,
+     "y": 320,
+     "z": 1,
+     "dur": 0.5,
+     "note": "全体"
+    }
+   ],
+   "fx": [
+    {
+     "at": "ach",
+     "kind": "impact",
+     "dur": 0.45,
+     "min": "gekiga"
+    },
+    {
+     "at": "ach",
+     "kind": "focus",
+     "dur": 1.2,
+     "min": "gekiga"
+    },
+    {
+     "at": "tox",
+     "kind": "onoma",
+     "text": "ドクン",
+     "x": 1080,
+     "y": 160,
+     "dur": 1,
+     "min": "gekiga"
+    },
+    {
+     "at": "start",
+     "kind": "tone",
+     "dur": 999,
+     "min": "gekiga"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "adh",
+     "kind": "whoosh",
+     "gain": 0.5
+    },
+    {
+     "at": "aldh",
+     "kind": "whoosh",
+     "gain": 0.5
+    },
+    {
+     "at": "ach",
+     "kind": "boom",
+     "gain": 0.6
+    },
+    {
+     "at": "tox",
+     "kind": "heartbeat"
+    }
+   ]
+  },
+  {
+   "id": "S10",
+   "title": "板書：お酒の代謝、顔を赤くするのはアセトアルデヒド",
+   "picture": "黒板の真ん中「飲酒と遺伝子多型」：アルコール→ADH→アセトアルデヒド→ALDH→酢酸→CO₂＋水／アセトアルデヒド＝顔が赤くなる原因（下線）。",
+   "diagram": {
+    "id": "board-c3",
+    "title": "板書：板書：お酒の代謝、顔を赤くするのはアセトアルデヒド",
+    "note": "第5講の黒板 c-h・c1〜c3（c3に下線）、c05-0047"
+   },
+   "lecturer": true,
+   "sources": [
+    {
+     "beat": "w",
+     "source": "第5講／台詞 c05-0047／板書 c-h・c1・c2・c3（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 5,
+      "section": "テーマ2　飲酒と遺伝子多型",
+      "cues": [
+       "c05-0047"
+      ],
+      "mode": "verbatim",
+      "board": [
+       "c-h",
+       "c1",
+       "c2",
+       "c3"
+      ]
+     },
+     "lines": [
+      "アルコールから、ADHでアセトアルデヒド。",
+      "ALDHで酢酸、そして二酸化炭素と水。",
+      "顔を赤くしているのは、アセトアルデヒドです。"
+     ]
+    }
+   ],
+   "cams": [
+    {
+     "at": "start",
+     "move": "set",
+     "x": 560,
+     "y": 220,
+     "z": 1,
+     "note": "板書"
+    },
+    {
+     "at": "c1",
+     "move": "push",
+     "x": 500,
+     "y": 170,
+     "z": 1.4,
+     "dur": 0.5,
+     "note": "ADH"
+    },
+    {
+     "at": "c3",
+     "move": "pan",
+     "x": 500,
+     "y": 290,
+     "z": 1.45,
+     "dur": 0.5,
+     "note": "アセトアルデヒド"
+    }
+   ],
+   "fx": [
+    {
+     "at": "start",
+     "kind": "tone",
+     "dur": 999,
+     "min": "gekiga"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "c1",
+     "kind": "chalk",
+     "gain": 0.6
+    },
+    {
+     "at": "c2",
+     "kind": "chalk",
+     "gain": 0.6
+    },
+    {
+     "at": "c3",
+     "kind": "chalk",
+     "gain": 0.6
+    }
+   ]
+  },
+  {
+   "id": "S11",
+   "title": "ALDH2：487番目 Glu→Lys、GG・AG・AA",
+   "picture": "ALDH2のアミノ酸の鎖、487番目のグルタミン酸がリシンに置き換わる（ミスセンス）。3つの型のカード：GG＝強い、AG＝弱い、AA＝飲めない。ALDHが弱くADHが強いと、アセトアルデヒドがすぐにたまる。",
+   "diagram": {
+    "id": "aldh2",
+    "title": "ALDH2：487番目 Glu→Lys、GG・AG・AA",
+    "note": "スライド59、c05-0049〜0053"
+   },
+   "lecturer": false,
+   "sources": [
+    {
+     "beat": "q",
+     "source": "第5講／台詞 c05-0049／スライド59（原文の一部）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 5,
+      "section": "テーマ2　飲酒と遺伝子多型",
+      "cues": [
+       "c05-0049"
+      ],
+      "mode": "trimmed",
+      "slide": 59
+     },
+     "lines": [
+      "次に、ALDHのほうです。"
+     ]
+    },
+    {
+     "beat": "pos",
+     "source": "第5講／台詞 c05-0050／スライド59（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 5,
+      "section": "テーマ2　飲酒と遺伝子多型",
+      "cues": [
+       "c05-0050"
+      ],
+      "mode": "verbatim",
+      "slide": 59
+     },
+     "lines": [
+      "ALDHの遺伝子は、487番目のアミノ酸を決める塩基の違いで、3つの型に分かれます。"
+     ]
+    },
+    {
+     "beat": "glu",
+     "source": "第5講／台詞 c05-0051／スライド59（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 5,
+      "section": "テーマ2　飲酒と遺伝子多型",
+      "cues": [
+       "c05-0051"
+      ],
+      "mode": "verbatim",
+      "slide": 59
+     },
+     "lines": [
+      "グルタミン酸がリシンに置き換わる。",
+      "これもミスセンス変異ですね。"
+     ]
+    },
+    {
+     "beat": "types",
+     "source": "第5講／台詞 c05-0052／スライド59（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 5,
+      "section": "テーマ2　飲酒と遺伝子多型",
+      "cues": [
+       "c05-0052"
+      ],
+      "mode": "verbatim",
+      "slide": 59
+     },
+     "lines": [
+      "GG型はお酒が強い。",
+      "AG型は弱い。",
+      "AA型は飲めません。"
+     ]
+    },
+    {
+     "beat": "both",
+     "source": "第5講／台詞 c05-0053／スライド59（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 5,
+      "section": "テーマ2　飲酒と遺伝子多型",
+      "cues": [
+       "c05-0053"
+      ],
+      "mode": "verbatim",
+      "slide": 59
+     },
+     "lines": [
+      "ALDHが弱くてADHが強いと、アセトアルデヒドがすぐにたまる。",
+      "お酒が苦手なタイプです。"
+     ]
+    }
+   ],
+   "cams": [
+    {
+     "at": "start",
+     "move": "set",
+     "x": 640,
+     "y": 200,
+     "z": 1.1,
+     "note": "ALDH2の鎖"
+    },
+    {
+     "at": "glu",
+     "move": "crash",
+     "x": 640,
+     "y": 190,
+     "z": 1.5,
+     "dur": 0.22,
+     "hold": 0.25,
+     "note": "487番"
+    },
+    {
+     "at": "gg",
+     "move": "pull",
+     "x": 640,
+     "y": 420,
+     "z": 1.05,
+     "dur": 0.5,
+     "note": "3つの型"
+    },
+    {
+     "at": "aa",
+     "move": "push",
+     "x": 1000,
+     "y": 420,
+     "z": 1.3,
+     "dur": 0.4,
+     "note": "AA"
+    },
+    {
+     "at": "both",
+     "move": "pull",
+     "x": 640,
+     "y": 360,
+     "z": 1,
+     "dur": 0.5,
+     "note": "たまる"
+    }
+   ],
+   "fx": [
+    {
+     "at": "glu",
+     "kind": "impact",
+     "dur": 0.4,
+     "min": "gekiga"
+    },
+    {
+     "at": "aa",
+     "kind": "impact",
+     "dur": 0.4,
+     "min": "gekiga"
+    },
+    {
+     "at": "both",
+     "kind": "focus",
+     "dur": 1,
+     "min": "gekiga"
+    },
+    {
+     "at": "start",
+     "kind": "tone",
+     "dur": 999,
+     "min": "gekiga"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "glu",
+     "kind": "impact"
+    },
+    {
+     "at": "gg",
+     "kind": "tick"
+    },
+    {
+     "at": "ag",
+     "kind": "tick"
+    },
+    {
+     "at": "aa",
+     "kind": "boom",
+     "gain": 0.6
+    }
+   ]
+  },
+  {
+   "id": "S12",
+   "title": "AAは飲めない、訓練では変わらない",
+   "picture": "黒板の真ん中下：ALDH2：487番 Glu→Lys／GG … 強い／AG … 弱い／AA … 飲めない（赤の二重丸）。「訓練では変わらない」の筆文字。",
+   "diagram": {
+    "id": "board-c7",
+    "title": "板書：AAは飲めない、訓練では変わらない",
+    "note": "第5講の黒板 c4〜c7（c7に赤の二重丸）、c05-0054・0055"
+   },
+   "lecturer": true,
+   "sources": [
+    {
+     "beat": "w",
+     "source": "第5講／台詞 c05-0054／板書 c4・c5・c6・c7（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 5,
+      "section": "テーマ2　飲酒と遺伝子多型",
+      "cues": [
+       "c05-0054"
+      ],
+      "mode": "verbatim",
+      "board": [
+       "c4",
+       "c5",
+       "c6",
+       "c7"
+      ]
+     },
+     "lines": [
+      "黒板に整理します。",
+      "ALDHの487番目、グルタミン酸がリシンに。",
+      "GGは強い、AGは弱い、AAは飲めない。"
+     ]
+    },
+    {
+     "beat": "train",
+     "source": "第5講／台詞 c05-0055（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 5,
+      "section": "テーマ2　飲酒と遺伝子多型",
+      "cues": [
+       "c05-0055"
+      ],
+      "mode": "verbatim"
+     },
+     "lines": [
+      "AAは飲めない。",
+      "この型は、訓練で変わるものではありません。",
+      "遺伝子で決まっているからです。"
+     ]
+    }
+   ],
+   "cams": [
+    {
+     "at": "start",
+     "move": "set",
+     "x": 560,
+     "y": 300,
+     "z": 1,
+     "note": "板書"
+    },
+    {
+     "at": "c4",
+     "move": "push",
+     "x": 460,
+     "y": 330,
+     "z": 1.4,
+     "dur": 0.5,
+     "note": "487番"
+    },
+    {
+     "at": "aa",
+     "move": "pan",
+     "x": 460,
+     "y": 430,
+     "z": 1.45,
+     "dur": 0.4,
+     "note": "AA"
+    },
+    {
+     "at": "train",
+     "move": "pull",
+     "x": 640,
+     "y": 420,
+     "z": 1.05,
+     "dur": 0.4,
+     "note": "訓練では変わらない"
+    }
+   ],
+   "fx": [
+    {
+     "at": "train",
+     "kind": "impact",
+     "dur": 0.45,
+     "min": "gekiga"
+    },
+    {
+     "at": "train",
+     "kind": "shake",
+     "dur": 0.3,
+     "min": "gekiga"
+    },
+    {
+     "at": "start",
+     "kind": "tone",
+     "dur": 999,
+     "min": "gekiga"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "c4",
+     "kind": "chalk",
+     "gain": 0.6
+    },
+    {
+     "at": "c5",
+     "kind": "chalk",
+     "gain": 0.6
+    },
+    {
+     "at": "aa",
+     "kind": "impact",
+     "gain": 0.5
+    },
+    {
+     "at": "train",
+     "kind": "boom",
+     "gain": 0.7
+    }
+   ]
+  },
+  {
+   "id": "S13",
+   "title": "トランスポゾン：ゲノムの上で位置を変える配列",
+   "picture": "DNAの上の一区画が光って跳び、別の場所に入る。DNAが直接動くDNA型と、RNAを経て逆転写されるRNA型（レトロポゾン）。マクリントックがトウモロコシのまだら模様から発見（1983年、81歳でノーベル賞）。ヒトゲノムの約45%がトランスポゾン関連の配列。",
+   "diagram": {
+    "id": "transposon",
+    "title": "トランスポゾン：ゲノムの上で位置を変える配列",
+    "note": "スライド63・64、c05-0066〜0070"
+   },
+   "lecturer": false,
+   "sources": [
+    {
+     "beat": "q",
+     "source": "第5講／台詞 c05-0066／スライド63（原文の一部）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 5,
+      "section": "テーマ3　動く遺伝子",
+      "cues": [
+       "c05-0066"
+      ],
+      "mode": "trimmed",
+      "slide": 63
+     },
+     "lines": [
+      "では、最後のテーマ。ゲノムの中を動く配列です。"
+     ]
+    },
+    {
+     "beat": "def",
+     "source": "第5講／台詞 c05-0067／スライド63（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 5,
+      "section": "テーマ3　動く遺伝子",
+      "cues": [
+       "c05-0067"
+      ],
+      "mode": "verbatim",
+      "slide": 63
+     },
+     "lines": [
+      "トランスポゾンとは、ゲノムの上で位置を変えることができる塩基配列です。"
+     ]
+    },
+    {
+     "beat": "types",
+     "source": "第5講／台詞 c05-0068／スライド63（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 5,
+      "section": "テーマ3　動く遺伝子",
+      "cues": [
+       "c05-0068"
+      ],
+      "mode": "verbatim",
+      "slide": 63
+     },
+     "lines": [
+      "DNAが直接動くDNA型と、",
+      "転写と逆転写を経るRNA型、レトロポゾンがあります。"
+     ]
+    },
+    {
+     "beat": "mc",
+     "source": "第5講／台詞 c05-0069／スライド63（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 5,
+      "section": "テーマ3　動く遺伝子",
+      "cues": [
+       "c05-0069"
+      ],
+      "mode": "verbatim",
+      "slide": 63
+     },
+     "lines": [
+      "発見したのはマクリントック。",
+      "トウモロコシのまだら模様から見つけ、1983年、81歳でノーベル賞を受賞しました。"
+     ]
+    },
+    {
+     "beat": "p45",
+     "source": "第5講／台詞 c05-0070／スライド64（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 5,
+      "section": "テーマ3　動く遺伝子",
+      "cues": [
+       "c05-0070"
+      ],
+      "mode": "verbatim",
+      "slide": 64
+     },
+     "lines": [
+      "そして、ヒトゲノムの約45パーセントが、トランスポゾンに関連した配列です。"
+     ]
+    }
+   ],
+   "cams": [
+    {
+     "at": "start",
+     "move": "set",
+     "x": 640,
+     "y": 250,
+     "z": 1.1,
+     "note": "DNA"
+    },
+    {
+     "at": "def",
+     "move": "push",
+     "x": 640,
+     "y": 240,
+     "z": 1.3,
+     "dur": 2,
+     "note": "跳ぶ配列"
+    },
+    {
+     "at": "mc",
+     "move": "pull",
+     "x": 640,
+     "y": 360,
+     "z": 1,
+     "dur": 0.5,
+     "note": "トウモロコシ"
+    },
+    {
+     "at": "p45",
+     "move": "crash",
+     "x": 900,
+     "y": 420,
+     "z": 1.3,
+     "dur": 0.22,
+     "hold": 0.25,
+     "note": "45%"
+    }
+   ],
+   "fx": [
+    {
+     "at": "def",
+     "kind": "speed",
+     "dur": 0.4,
+     "min": "gekiga"
+    },
+    {
+     "at": "p45",
+     "kind": "impact",
+     "dur": 0.45,
+     "min": "gekiga"
+    },
+    {
+     "at": "def",
+     "kind": "onoma",
+     "text": "ピョン",
+     "x": 1080,
+     "y": 150,
+     "dur": 0.9,
+     "min": "ultra"
+    },
+    {
+     "at": "start",
+     "kind": "tone",
+     "dur": 999,
+     "min": "gekiga"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "def",
+     "kind": "whoosh"
+    },
+    {
+     "at": "mc",
+     "kind": "shimmer",
+     "gain": 0.4
+    },
+    {
+     "at": "p45",
+     "kind": "boom",
+     "gain": 0.6
+    }
+   ]
+  },
+  {
+   "id": "S14",
+   "title": "カット&ペーストと、コピー&ペースト",
+   "picture": "左：DNA型はハサミで切り取って貼り付ける（数は増えない）、今のヒトでは動かない（灰色）。右：レトロトランスポゾンはコピーを作って貼り付ける（数が増える）。LINE-1・Alu・SVAは今も動く（光る）。",
+   "diagram": {
+    "id": "cut-copy",
+    "title": "カット&ペーストと、コピー&ペースト",
+    "note": "スライド65、c05-0071〜0073"
+   },
+   "lecturer": false,
+   "sources": [
+    {
+     "beat": "cut",
+     "source": "第5講／台詞 c05-0071／スライド65（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 5,
+      "section": "テーマ3　動く遺伝子",
+      "cues": [
+       "c05-0071"
+      ],
+      "mode": "verbatim",
+      "slide": 65
+     },
+     "lines": [
+      "DNA型は、切り取って貼り付けるカット・アンド・ペースト。",
+      "現在のヒトでは、もう動いていません。"
+     ]
+    },
+    {
+     "beat": "copy",
+     "source": "第5講／台詞 c05-0072／スライド65（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 5,
+      "section": "テーマ3　動く遺伝子",
+      "cues": [
+       "c05-0072"
+      ],
+      "mode": "verbatim",
+      "slide": 65
+     },
+     "lines": [
+      "レトロトランスポゾンは、コピー・アンド・ペースト。",
+      "だから数が増えていきます。"
+     ]
+    },
+    {
+     "beat": "act",
+     "source": "第5講／台詞 c05-0073／スライド65（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 5,
+      "section": "テーマ3　動く遺伝子",
+      "cues": [
+       "c05-0073"
+      ],
+      "mode": "verbatim",
+      "slide": 65
+     },
+     "lines": [
+      "そのうち、LINE-1、Alu、SVAは、今も転移する活性を持っています。"
+     ]
+    }
+   ],
+   "cams": [
+    {
+     "at": "start",
+     "move": "set",
+     "x": 330,
+     "y": 330,
+     "z": 1.3,
+     "note": "カット&ペースト"
+    },
+    {
+     "at": "copy",
+     "move": "whip",
+     "x": 950,
+     "y": 330,
+     "z": 1.3,
+     "dur": 0.3,
+     "note": "コピー&ペースト"
+    },
+    {
+     "at": "act",
+     "move": "pull",
+     "x": 640,
+     "y": 340,
+     "z": 1,
+     "dur": 0.5,
+     "note": "今も動く"
+    }
+   ],
+   "fx": [
+    {
+     "at": "dead",
+     "kind": "impact",
+     "dur": 0.35,
+     "min": "gekiga"
+    },
+    {
+     "at": "copy",
+     "kind": "speed",
+     "dur": 0.3,
+     "min": "gekiga"
+    },
+    {
+     "at": "act",
+     "kind": "flash",
+     "dur": 0.25,
+     "min": "gekiga"
+    },
+    {
+     "at": "start",
+     "kind": "tone",
+     "dur": 999,
+     "min": "gekiga"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "cut",
+     "kind": "tick"
+    },
+    {
+     "at": "dead",
+     "kind": "impact",
+     "gain": 0.5
+    },
+    {
+     "at": "copy",
+     "kind": "whoosh"
+    },
+    {
+     "at": "more",
+     "kind": "tick"
+    },
+    {
+     "at": "act",
+     "kind": "shimmer"
+    }
+   ]
+  },
+  {
+   "id": "S15",
+   "title": "板書：動く遺伝子",
+   "picture": "黒板の右「動く遺伝子」：トランスポゾン関連＝ゲノムの約45%／DNA型：カット&ペースト（今は不活性）／レトロ：コピー&ペースト（数が増える）／今も動く：LINE-1・Alu・SVA（下線）。",
+   "diagram": {
+    "id": "board-r4",
+    "title": "板書：板書：動く遺伝子",
+    "note": "第5講の黒板 r-h・r1〜r4（r4に下線）、c05-0075"
+   },
+   "lecturer": true,
+   "sources": [
+    {
+     "beat": "w",
+     "source": "第5講／台詞 c05-0075／板書 r1・r2・r3・r4（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 5,
+      "section": "テーマ3　動く遺伝子",
+      "cues": [
+       "c05-0075"
+      ],
+      "mode": "verbatim",
+      "board": [
+       "r1",
+       "r2",
+       "r3",
+       "r4"
+      ]
+     },
+     "lines": [
+      "ゲノムの約45パーセント。",
+      "DNA型は今は動かない。",
+      "レトロ型はコピー・アンド・ペーストで増える。",
+      "今も動いているのは、LINE-1、Alu、SVAです。"
+     ]
+    }
+   ],
+   "cams": [
+    {
+     "at": "start",
+     "move": "set",
+     "x": 560,
+     "y": 220,
+     "z": 1,
+     "note": "板書"
+    },
+    {
+     "at": "r2",
+     "move": "push",
+     "x": 480,
+     "y": 210,
+     "z": 1.4,
+     "dur": 0.5,
+     "note": "DNA型"
+    },
+    {
+     "at": "r4",
+     "move": "pan",
+     "x": 440,
+     "y": 290,
+     "z": 1.45,
+     "dur": 0.5,
+     "note": "今も動く"
+    }
+   ],
+   "fx": [
+    {
+     "at": "start",
+     "kind": "tone",
+     "dur": 999,
+     "min": "gekiga"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "r1",
+     "kind": "chalk",
+     "gain": 0.5
+    },
+    {
+     "at": "r2",
+     "kind": "chalk",
+     "gain": 0.5
+    },
+    {
+     "at": "r3",
+     "kind": "chalk",
+     "gain": 0.5
+    },
+    {
+     "at": "r4",
+     "kind": "chalk",
+     "gain": 0.6
+    }
+   ]
+  },
+  {
+   "id": "S16",
+   "title": "偽遺伝子：プロセッシングを受けない／受けた",
+   "picture": "左：変異で働かなくなった元の遺伝子（エクソンとイントロンは残るが✕）＝プロセッシングを受けない偽遺伝子。右：レトロ転移でできた、イントロンのないコピー＝プロセッシングを受けた偽遺伝子。",
+   "diagram": {
+    "id": "pseudogene",
+    "title": "偽遺伝子：プロセッシングを受けない／受けた",
+    "note": "スライド62、c05-0077〜0080"
+   },
+   "lecturer": false,
+   "sources": [
+    {
+     "beat": "q",
+     "source": "第5講／台詞 c05-0077／スライド62（原文の一部）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 5,
+      "section": "テーマ3　動く遺伝子",
+      "cues": [
+       "c05-0077"
+      ],
+      "mode": "trimmed",
+      "slide": 62
+     },
+     "lines": [
+      "このコピー・アンド・ペーストから生まれたのが、偽遺伝子の一部です。"
+     ]
+    },
+    {
+     "beat": "non",
+     "source": "第5講／台詞 c05-0078／スライド62（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 5,
+      "section": "テーマ3　動く遺伝子",
+      "cues": [
+       "c05-0078"
+      ],
+      "mode": "verbatim",
+      "slide": 62
+     },
+     "lines": [
+      "偽遺伝子には二種類あります。",
+      "プロセッシングを受けない偽遺伝子は、変異で働かなくなった進化の名残。"
+     ]
+    },
+    {
+     "beat": "pro",
+     "source": "第5講／台詞 c05-0079／スライド62（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 5,
+      "section": "テーマ3　動く遺伝子",
+      "cues": [
+       "c05-0079"
+      ],
+      "mode": "verbatim",
+      "slide": 62
+     },
+     "lines": [
+      "プロセッシングを受けた偽遺伝子は、レトロ転移で生まれます。"
+     ]
+    },
+    {
+     "beat": "why",
+     "source": "第5講／台詞 c05-0080／スライド62（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 5,
+      "section": "テーマ3　動く遺伝子",
+      "cues": [
+       "c05-0080"
+      ],
+      "mode": "verbatim",
+      "slide": 62
+     },
+     "lines": [
+      "スプライシングを受けたmRNAが逆転写されてDNAになり、ゲノムに入り込む。",
+      "だからイントロンがありません。"
+     ]
+    }
+   ],
+   "cams": [
+    {
+     "at": "start",
+     "move": "set",
+     "x": 640,
+     "y": 330,
+     "z": 1,
+     "note": "2種類"
+    },
+    {
+     "at": "non",
+     "move": "push",
+     "x": 330,
+     "y": 330,
+     "z": 1.35,
+     "dur": 0.6,
+     "note": "進化の名残"
+    },
+    {
+     "at": "pro",
+     "move": "whip",
+     "x": 950,
+     "y": 330,
+     "z": 1.35,
+     "dur": 0.3,
+     "note": "レトロ転移"
+    },
+    {
+     "at": "nointron",
+     "move": "crash",
+     "x": 950,
+     "y": 330,
+     "z": 1.5,
+     "dur": 0.22,
+     "hold": 0.25,
+     "note": "イントロンなし"
+    }
+   ],
+   "fx": [
+    {
+     "at": "pro",
+     "kind": "speed",
+     "dur": 0.3,
+     "min": "gekiga"
+    },
+    {
+     "at": "nointron",
+     "kind": "impact",
+     "dur": 0.45,
+     "min": "gekiga"
+    },
+    {
+     "at": "start",
+     "kind": "tone",
+     "dur": 999,
+     "min": "gekiga"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "non",
+     "kind": "tick"
+    },
+    {
+     "at": "pro",
+     "kind": "whoosh"
+    },
+    {
+     "at": "nointron",
+     "kind": "boom",
+     "gain": 0.6
+    }
+   ]
+  },
+  {
+   "id": "S17",
+   "title": "レトロ転移：mRNA → 逆転写 → 別の染色体へ",
+   "picture": "元の遺伝子（プロモーター・エクソン・イントロン）が転写され、スプライシングでイントロンのないmRNAに。逆転写酵素がmRNAを鋳型にDNAのコピーを作り（RNA→DNA、逆向き）、別の染色体に入り込む。できた配列にはイントロンもプロモーターもない＝プロセッシングを受けた偽遺伝子。",
+   "diagram": {
+    "id": "retro",
+    "title": "レトロ転移：mRNA → 逆転写 → 別の染色体へ",
+    "note": "c05-0081〜0085"
+   },
+   "lecturer": false,
+   "sources": [
+    {
+     "beat": "gene",
+     "source": "第5講／台詞 c05-0081（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 5,
+      "section": "テーマ3　動く遺伝子",
+      "cues": [
+       "c05-0081"
+      ],
+      "mode": "verbatim"
+     },
+     "lines": [
+      "動きで見てみましょう。",
+      "元の遺伝子です。",
+      "プロモーター、エクソン、イントロン。"
+     ]
+    },
+    {
+     "beat": "mrna",
+     "source": "第5講／台詞 c05-0082（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 5,
+      "section": "テーマ3　動く遺伝子",
+      "cues": [
+       "c05-0082"
+      ],
+      "mode": "verbatim"
+     },
+     "lines": [
+      "転写されて、スプライシングを受けると、イントロンのないmRNAになります。"
+     ]
+    },
+    {
+     "beat": "rt",
+     "source": "第5講／台詞 c05-0083（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 5,
+      "section": "テーマ3　動く遺伝子",
+      "cues": [
+       "c05-0083"
+      ],
+      "mode": "verbatim"
+     },
+     "lines": [
+      "ここで、逆転写酵素が、mRNAを鋳型にしてDNAのコピーを作ります。",
+      "RNAからDNAへ。逆向きの流れです。"
+     ]
+    },
+    {
+     "beat": "ins",
+     "source": "第5講／台詞 c05-0084（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 5,
+      "section": "テーマ3　動く遺伝子",
+      "cues": [
+       "c05-0084"
+      ],
+      "mode": "verbatim"
+     },
+     "lines": [
+      "そのコピーが、別の染色体に入り込む。",
+      "これがレトロ転移です。"
+     ]
+    },
+    {
+     "beat": "pg",
+     "source": "第5講／台詞 c05-0085（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 5,
+      "section": "テーマ3　動く遺伝子",
+      "cues": [
+       "c05-0085"
+      ],
+      "mode": "verbatim"
+     },
+     "lines": [
+      "できあがった配列には、イントロンもプロモーターもありません。",
+      "だから、ふつうは働かない。",
+      "プロセッシングを受けた偽遺伝子です。"
+     ]
+    }
+   ],
+   "cams": [
+    {
+     "at": "start",
+     "move": "set",
+     "x": 640,
+     "y": 130,
+     "z": 1.2,
+     "note": "元の遺伝子"
+    },
+    {
+     "at": "mrna",
+     "move": "pan",
+     "x": 640,
+     "y": 250,
+     "z": 1.15,
+     "dur": 0.6,
+     "note": "mRNA"
+    },
+    {
+     "at": "rt",
+     "move": "pan",
+     "x": 640,
+     "y": 360,
+     "z": 1.15,
+     "dur": 0.6,
+     "note": "逆転写"
+    },
+    {
+     "at": "ins",
+     "move": "pan",
+     "x": 640,
+     "y": 480,
+     "z": 1.15,
+     "dur": 0.6,
+     "note": "別の染色体"
+    },
+    {
+     "at": "pg",
+     "move": "pull",
+     "x": 640,
+     "y": 340,
+     "z": 1,
+     "dur": 0.5,
+     "note": "全体"
+    }
+   ],
+   "fx": [
+    {
+     "at": "rev",
+     "kind": "speed",
+     "dur": 0.4,
+     "min": "gekiga"
+    },
+    {
+     "at": "retro",
+     "kind": "impact",
+     "dur": 0.45,
+     "min": "gekiga"
+    },
+    {
+     "at": "pg",
+     "kind": "focus",
+     "dur": 1,
+     "min": "gekiga"
+    },
+    {
+     "at": "start",
+     "kind": "tone",
+     "dur": 999,
+     "min": "gekiga"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "mrna",
+     "kind": "whoosh",
+     "gain": 0.5
+    },
+    {
+     "at": "rt",
+     "kind": "riser",
+     "gain": 0.5
+    },
+    {
+     "at": "ins",
+     "kind": "impact",
+     "gain": 0.6
+    },
+    {
+     "at": "pg",
+     "kind": "boom",
+     "gain": 0.6
+    }
+   ]
+  },
+  {
+   "id": "S18",
+   "title": "偽遺伝子にはイントロンがない",
+   "picture": "黒板の右「偽遺伝子（プロセッシング済）」：mRNA→逆転写→DNA→再挿入／イントロンなし・別の染色体へ（赤丸）。",
+   "diagram": {
+    "id": "board-r7",
+    "title": "板書：偽遺伝子にはイントロンがない",
+    "note": "第5講の黒板 r5〜r7（r7に赤丸）、c05-0086"
+   },
+   "lecturer": true,
+   "sources": [
+    {
+     "beat": "w",
+     "source": "第5講／台詞 c05-0086／板書 r5・r6・r7（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 5,
+      "section": "テーマ3　動く遺伝子",
+      "cues": [
+       "c05-0086"
+      ],
+      "mode": "verbatim",
+      "board": [
+       "r5",
+       "r6",
+       "r7"
+      ]
+     },
+     "lines": [
+      "黒板に書きます。",
+      "mRNAが逆転写されて、再び挿入される。",
+      "だからイントロンがない。"
+     ]
+    }
+   ],
+   "cams": [
+    {
+     "at": "start",
+     "move": "set",
+     "x": 560,
+     "y": 300,
+     "z": 1,
+     "note": "板書"
+    },
+    {
+     "at": "r6",
+     "move": "push",
+     "x": 440,
+     "y": 400,
+     "z": 1.45,
+     "dur": 0.5,
+     "note": "偽遺伝子"
+    }
+   ],
+   "fx": [
+    {
+     "at": "r7+1",
+     "kind": "impact",
+     "dur": 0.35,
+     "min": "gekiga"
+    },
+    {
+     "at": "start",
+     "kind": "tone",
+     "dur": 999,
+     "min": "gekiga"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "r6",
+     "kind": "chalk",
+     "gain": 0.6
+    },
+    {
+     "at": "r7",
+     "kind": "chalk",
+     "gain": 0.6
+    }
+   ]
+  },
+  {
+   "id": "S19",
+   "title": "挿入が起こすこと：遺伝性疾患65例以上、ユークロマチンに入りやすい",
+   "picture": "遺伝子のエクソンの真ん中に、跳んできた配列が割り込み、遺伝子が壊れる（挿入変異）。並ぶ札：血友病・嚢胞性線維症・デュシェンヌ型筋ジストロフィー…（少なくとも65例）。ほどけて開いたクロマチン（ユークロマチン）に入りやすい。",
+   "diagram": {
+    "id": "insertion",
+    "title": "挿入が起こすこと：遺伝性疾患65例以上、ユークロマチンに入りやすい",
+    "note": "スライド67、c05-0094〜0097"
+   },
+   "lecturer": false,
+   "sources": [
+    {
+     "beat": "q",
+     "source": "第5講／台詞 c05-0094／スライド67（原文の一部）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 5,
+      "section": "テーマ3　動く遺伝子",
+      "cues": [
+       "c05-0094"
+      ],
+      "mode": "trimmed",
+      "slide": 67
+     },
+     "lines": [
+      "最後に、こうした挿入が何を起こすのか。"
+     ]
+    },
+    {
+     "beat": "eff",
+     "source": "第5講／台詞 c05-0095／スライド67（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 5,
+      "section": "テーマ3　動く遺伝子",
+      "cues": [
+       "c05-0095"
+      ],
+      "mode": "verbatim",
+      "slide": 67
+     },
+     "lines": [
+      "遺伝子を壊す挿入変異や、ゲノムの再編成、発現の変化。"
+     ]
+    },
+    {
+     "beat": "dz",
+     "source": "第5講／台詞 c05-0096／スライド67（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 5,
+      "section": "テーマ3　動く遺伝子",
+      "cues": [
+       "c05-0096"
+      ],
+      "mode": "verbatim",
+      "slide": 67
+     },
+     "lines": [
+      "少なくとも65例で、遺伝性疾患の原因になっています。",
+      "血友病、嚢胞性線維症、デュシェンヌ型筋ジストロフィーなどです。"
+     ]
+    },
+    {
+     "beat": "eu",
+     "source": "第5講／台詞 c05-0097／スライド67（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 5,
+      "section": "テーマ3　動く遺伝子",
+      "cues": [
+       "c05-0097"
+      ],
+      "mode": "verbatim",
+      "slide": 67
+     },
+     "lines": [
+      "しかも挿入は、転写が活発なユークロマチンに起こりやすいのです。"
+     ]
+    }
+   ],
+   "cams": [
+    {
+     "at": "start",
+     "move": "set",
+     "x": 640,
+     "y": 220,
+     "z": 1.2,
+     "note": "遺伝子"
+    },
+    {
+     "at": "eff",
+     "move": "crash",
+     "x": 640,
+     "y": 200,
+     "z": 1.4,
+     "dur": 0.22,
+     "hold": 0.25,
+     "note": "割り込む"
+    },
+    {
+     "at": "n65",
+     "move": "pull",
+     "x": 640,
+     "y": 380,
+     "z": 1.05,
+     "dur": 0.5,
+     "note": "65例"
+    },
+    {
+     "at": "eu",
+     "move": "pan",
+     "x": 640,
+     "y": 470,
+     "z": 1.1,
+     "dur": 0.6,
+     "note": "ユークロマチン"
+    }
+   ],
+   "fx": [
+    {
+     "at": "eff",
+     "kind": "impact",
+     "dur": 0.45,
+     "min": "gekiga"
+    },
+    {
+     "at": "eff",
+     "kind": "onoma",
+     "text": "ガツン",
+     "x": 1080,
+     "y": 150,
+     "dur": 0.9,
+     "min": "gekiga"
+    },
+    {
+     "at": "eu",
+     "kind": "focus",
+     "dur": 1,
+     "min": "gekiga"
+    },
+    {
+     "at": "start",
+     "kind": "tone",
+     "dur": 999,
+     "min": "gekiga"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "eff",
+     "kind": "impact"
+    },
+    {
+     "at": "n65",
+     "kind": "tick"
+    },
+    {
+     "at": "dz",
+     "kind": "tick"
+    },
+    {
+     "at": "eu",
+     "kind": "shimmer",
+     "gain": 0.4
+    }
+   ]
+  },
+  {
+   "id": "S20",
+   "title": "生殖系列の挿入 → 遺伝性疾患65例〜、ユークロマチンに入りやすい",
+   "picture": "黒板の右下：生殖系列の挿入→遺伝性疾患65例〜／ユークロマチンに入りやすい。",
+   "diagram": {
+    "id": "board-r9",
+    "title": "板書：生殖系列の挿入 → 遺伝性疾患65例〜、ユークロマチンに入りやすい",
+    "note": "第5講の黒板 r8・r9、c05-0098"
+   },
+   "lecturer": true,
+   "sources": [
+    {
+     "beat": "w",
+     "source": "第5講／台詞 c05-0098／板書 r8・r9（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 5,
+      "section": "テーマ3　動く遺伝子",
+      "cues": [
+       "c05-0098"
+      ],
+      "mode": "verbatim",
+      "board": [
+       "r8",
+       "r9"
+      ]
+     },
+     "lines": [
+      "生殖系列で起こると、次の世代に伝わって病気の原因になりうる。",
+      "65例以上。",
+      "ユークロマチンに入りやすい。"
+     ]
+    }
+   ],
+   "cams": [
+    {
+     "at": "start",
+     "move": "set",
+     "x": 560,
+     "y": 300,
+     "z": 1,
+     "note": "板書"
+    },
+    {
+     "at": "r8",
+     "move": "push",
+     "x": 440,
+     "y": 470,
+     "z": 1.45,
+     "dur": 0.5,
+     "note": "65例"
+    }
+   ],
+   "fx": [
+    {
+     "at": "start",
+     "kind": "tone",
+     "dur": 999,
+     "min": "gekiga"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "r8",
+     "kind": "chalk",
+     "gain": 0.6
+    },
+    {
+     "at": "r9",
+     "kind": "chalk",
+     "gain": 0.6
+    }
+   ]
+  },
+  {
+   "id": "S21",
+   "title": "今日のまとめ：4つ",
+   "picture": "黒板の下段に「今日のまとめ」①〜④（板書 sum-h・s1〜s4）。読み上げに合わせて1行ずつ書かれ、言い終わるごとに下線。",
+   "diagram": {
+    "id": "board-s4",
+    "title": "板書：今日のまとめ：4つ",
+    "note": "第5講の黒板 sum-h・s1〜s4、c05-0104〜0108"
+   },
+   "lecturer": true,
+   "sources": [
+    {
+     "beat": "four",
+     "source": "第5講／台詞 c05-0104／板書 sum-h（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 5,
+      "section": "まとめ",
+      "cues": [
+       "c05-0104"
+      ],
+      "mode": "verbatim",
+      "board": [
+       "sum-h"
+      ]
+     },
+     "lines": [
+      "今日覚えてほしいのは、この4つです。"
+     ]
+    },
+    {
+     "beat": "p1",
+     "source": "第5講／台詞 c05-0105／板書 s1（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 5,
+      "section": "まとめ",
+      "cues": [
+       "c05-0105"
+      ],
+      "mode": "verbatim",
+      "board": [
+       "s1"
+      ]
+     },
+     "lines": [
+      "ひとつ目。",
+      "置換の結果は4通り。",
+      "ナンセンスは終止へ、センスは終止から。",
+      "ミスセンスは別のアミノ酸、サイレントは変わらない。"
+     ]
+    },
+    {
+     "beat": "p2",
+     "source": "第5講／台詞 c05-0106／板書 s2（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 5,
+      "section": "まとめ",
+      "cues": [
+       "c05-0106"
+      ],
+      "mode": "verbatim",
+      "board": [
+       "s2"
+      ]
+     },
+     "lines": [
+      "ふたつ目。",
+      "ALDH2の487番、グルタミン酸がリシン。",
+      "AAは飲めない。",
+      "遺伝子で決まっているので、訓練では変わりません。"
+     ]
+    },
+    {
+     "beat": "p3",
+     "source": "第5講／台詞 c05-0107／板書 s3（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 5,
+      "section": "まとめ",
+      "cues": [
+       "c05-0107"
+      ],
+      "mode": "verbatim",
+      "board": [
+       "s3"
+      ]
+     },
+     "lines": [
+      "みっつ目。",
+      "ゲノムの約45パーセントがトランスポゾン関連。",
+      "今も動くのはLINE-1、Alu、SVA。"
+     ]
+    },
+    {
+     "beat": "p4",
+     "source": "第5講／台詞 c05-0108／板書 s4（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 5,
+      "section": "まとめ",
+      "cues": [
+       "c05-0108"
+      ],
+      "mode": "verbatim",
+      "board": [
+       "s4"
+      ]
+     },
+     "lines": [
+      "そして、レトロ転移でできた偽遺伝子には、イントロンがない。"
+     ]
+    }
+   ],
+   "cams": [
+    {
+     "at": "start",
+     "move": "set",
+     "x": 640,
+     "y": 330,
+     "z": 1,
+     "note": "まとめの板書"
+    },
+    {
+     "at": "p1",
+     "move": "push",
+     "x": 560,
+     "y": 190,
+     "z": 1.25,
+     "dur": 0.6,
+     "note": "①へ"
+    },
+    {
+     "at": "p2",
+     "move": "pan",
+     "x": 560,
+     "y": 285,
+     "z": 1.25,
+     "dur": 0.5,
+     "note": "②へ"
+    },
+    {
+     "at": "p3",
+     "move": "pan",
+     "x": 560,
+     "y": 380,
+     "z": 1.25,
+     "dur": 0.5,
+     "note": "③へ"
+    },
+    {
+     "at": "p4",
+     "move": "pan",
+     "x": 560,
+     "y": 475,
+     "z": 1.25,
+     "dur": 0.5,
+     "note": "④へ"
+    },
+    {
+     "at": "p4+3.6",
+     "move": "pull",
+     "x": 640,
+     "y": 330,
+     "z": 1,
+     "dur": 0.5,
+     "note": "4つを並べて引く"
+    }
+   ],
+   "fx": [
+    {
+     "at": "p4+3.6",
+     "kind": "focus",
+     "dur": 0.9,
+     "min": "gekiga"
+    },
+    {
+     "at": "start",
+     "kind": "tone",
+     "dur": 999,
+     "min": "gekiga"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "four",
+     "kind": "chalk",
+     "gain": 0.5
+    },
+    {
+     "at": "p1",
+     "kind": "chalk",
+     "gain": 0.5
+    },
+    {
+     "at": "p2",
+     "kind": "chalk",
+     "gain": 0.5
+    },
+    {
+     "at": "p3",
+     "kind": "chalk",
+     "gain": 0.5
+    },
+    {
+     "at": "p4",
+     "kind": "chalk",
+     "gain": 0.5
+    },
+    {
+     "at": "p4+3.6",
+     "kind": "impact",
+     "gain": 0.6
+    }
+   ]
+  },
+  {
+   "id": "S22",
+   "title": "次回：第6講",
+   "picture": "「次回 第6講（最終回）」の判。配列は変えずに働きを変える＝エピゲノム。黒にフェードアウト。",
+   "diagram": {
+    "id": "end",
+    "title": "次回予告",
+    "note": "c05-0109"
+   },
+   "lecturer": false,
+   "sources": [
+    {
+     "beat": "next",
+     "source": "第5講／台詞 c05-0109（原文の一部）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 5,
+      "section": "まとめ",
+      "cues": [
+       "c05-0109"
+      ],
+      "mode": "trimmed"
+     },
+     "lines": [
+      "次の第6講、最終回では、",
+      "塩基配列を変えずに遺伝子の働きを変える仕組み、",
+      "エピゲノムを学びます。"
+     ]
+    }
+   ],
+   "cams": [
+    {
+     "at": "start",
+     "move": "set",
+     "x": 640,
+     "y": 360,
+     "z": 1.15,
+     "note": "予告"
+    },
+    {
+     "at": "start",
+     "move": "pull",
+     "x": 640,
+     "y": 360,
+     "z": 1,
+     "dur": 6,
+     "note": "ゆっくり引いて終わる"
+    }
+   ],
+   "fx": [
+    {
+     "at": "next",
+     "kind": "impact",
+     "dur": 0.4,
+     "min": "gekiga"
+    },
+    {
+     "at": "start",
+     "kind": "tone",
+     "dur": 999,
+     "min": "gekiga"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "next",
+     "kind": "impact",
+     "gain": 0.6
+    },
+    {
+     "at": "epi",
+     "kind": "shimmer",
+     "gain": 0.5
+    }
+   ]
+  }
+ ]
+}

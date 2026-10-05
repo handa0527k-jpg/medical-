@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 
 test('genetics: 🎬 授業動画 studio — material, recommended theme, controls, synced preview, scene sheets', async ({ page }) => {
-  test.setTimeout(180_000); // two whole-lecture films are planned and timed in this one test
+  test.setTimeout(240_000); // whole-lecture films are planned and timed in this one test
   const errs: string[] = [];
   page.on('pageerror', (e) => errs.push(e.message));
   // entry from the 遺伝学 page; other fields are untouched
@@ -18,8 +18,8 @@ test('genetics: 🎬 授業動画 studio — material, recommended theme, contro
   await expect(page.locator('.lv-form select').nth(1)).toHaveValue('genetics-basics:1:film');
   await expect(page.locator('.lv-status')).toContainText('Kokoro', { timeout: 15000 });
   await expect(page.locator('.lv-scene').nth(9)).toContainText('RNAポリメラーゼ');
-  // 第2講まるごと is offered as a finished film too
-  await expect(page.locator('.lv-form select').nth(1).locator('optgroup[label="完成版"] option')).toHaveCount(2);
+  // every lecture of the unit (第1〜6講まるごと) is offered as a finished film
+  await expect(page.locator('.lv-form select').nth(1).locator('optgroup[label="完成版"] option')).toHaveCount(6);
   await page.goto('/#/category/genetics/video?theme=genetics-basics:2:film');
   await expect(page.locator('.lv-scene')).toHaveCount(20, { timeout: 20000 });
   await expect(page.locator('.lv-status')).toContainText('Kokoro', { timeout: 15000 });
@@ -87,6 +87,12 @@ test('授業動画: the finished 30 s prototype film is served and plays in MEDS
   expect(film2).toBeTruthy();
   expect(film2.seconds).toBeGreaterThan(300);
   expect((await request.get(`/lecture-video/${film2.file}`)).status()).toBe(200);
+  for (const n of [3, 4, 5, 6]) {
+    const f = idx.videos[`genetics-basics:${n}:film|full|board|gekiga`];
+    expect(f, `第${n}講`).toBeTruthy();
+    expect(f.seconds).toBeGreaterThan(300);
+    expect((await request.get(`/lecture-video/${f.file}`)).status()).toBe(200);
+  }
   const r = await request.get(`/lecture-video/${v.file}`);
   expect(r.status()).toBe(200);
   await page.goto('/#/category/genetics/video?theme=genetics-basics:1:2&d=30&style=board&k=gekiga');
