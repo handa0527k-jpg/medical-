@@ -505,7 +505,7 @@ function backboneFig(rc: RC) {
 function tugFig(rc: RC) {
   const { p, t } = rc;
   const x0 = 250, x1 = 1030, n = 10, step = (x1 - x0) / (n - 1);
-  const strain = rc.u('pull', 1.0) * (1 - rc.u('ans', 0.2) * 0) * 10 + Math.sin(t * 30) * 2 * rc.u('pull', 0.3);
+  const strain = rc.u('pull', 1.0) * 10;
   const brk = rc.u('total', 1.2), hold = rc.u('hard', 0.3);
   const lad = (cy: number, seq: string, d: number, glow: number, title: string) => {
     const ya = cy - 46 - d, yb = cy + 46 + d;

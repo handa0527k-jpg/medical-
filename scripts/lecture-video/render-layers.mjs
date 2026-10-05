@@ -47,6 +47,15 @@ async function openPage() {
 const pages = await Promise.all(Array.from({ length: workers }, openPage));
 const info = await pages[0].evaluate(() => window.__lv.info());
 console.log(`${info.key}  ${info.total.toFixed(2)} s  timing=${info.source}  workers=${workers}`);
+// Frames are interleaved across workers, so every worker must draw a moment identically — otherwise the
+// film shakes frame to frame (e.g. a font piece loaded in one worker but not another). Check before rendering.
+{
+  const probes = [0.25, 0.5, 0.75].map((k) => info.total * k);
+  const shots = await Promise.all(pages.map((p) => p.evaluate((ts) => ts.map((t) => window.__lv.frame(t, 'full', 'image/png')), probes)));
+  const bad = shots.findIndex((s) => s.some((u, i) => u !== shots[0][i]));
+  if (bad >= 0) { console.error(`  workers draw differently (worker ${bad} ≠ worker 0) — not rendering`); await b.close(); process.exit(1); }
+  console.log(`  ${workers} workers draw identical frames`);
+}
 mkdirSync(join(pkg, 'layers'), { recursive: true });
 mkdirSync(join(pkg, 'keyframes'), { recursive: true });
 const bytes = (u) => Buffer.from(u.split(',')[1], 'base64');

@@ -29,18 +29,24 @@ import '../../styles/studio.css';
 
 const W = 1280, H = 720, FPS = 24;
 const BASE = `${import.meta.env.BASE_URL}lecture-video/`;
+/** index.json paths are relative to lecture-video/, or absolute when a film lives elsewhere (e.g. an asset store) */
+const src = (p: string) => (/^(\/|https?:)/.test(p) ? p : BASE + p);
 interface AssetIndex { voices: Record<string, { audio: string; timing: string }>; videos: Record<string, { file: string; wanShots: number; shots: number; built: string; seconds: number }> }
 
 /**
- * The lettering faces (擬音 = Dela Gothic One, 筆文字 = Yuji Syuku; SIL OFL) are self-hosted subsets
- * (public/fonts) so the film letters the same everywhere, also in headless rendering.
+ * Every face the film draws with (擬音 = Dela Gothic One, 筆文字 = Yuji Syuku, labels = Zen Kaku Gothic New,
+ * chalk = Klee One; SIL OFL) is a self-hosted subset (public/fonts, scripts/lecture-video/build-fonts.py), loaded
+ * whole before the first frame — so every render worker draws identical frames (no glyph falls back mid-film).
  */
 let letteringReady: Promise<boolean> | null = null;
 export function loadLettering(): Promise<boolean> {
   return (letteringReady ??= Promise.all([
-    ['LV Dela', 'DelaGothicOne-lv.woff2'],
-    ['LV Brush', 'YujiSyuku-lv.woff2'],
-  ].map(([fam, file]) => new FontFace(fam, `url(${import.meta.env.BASE_URL}fonts/${file})`).load().then((f) => { document.fonts.add(f); return true; }).catch(() => false)))
+    ['LV Dela', 'DelaGothicOne-lv.woff2', '400'],
+    ['LV Brush', 'YujiSyuku-lv.woff2', '400'],
+    ['LV Gothic', 'ZenKakuGothicNew-Black-lv.woff2', '900'],
+    ['LV Gothic', 'ZenKakuGothicNew-Bold-lv.woff2', '700'],
+    ['LV Hand', 'KleeOne-SemiBold-lv.woff2', '600'],
+  ].map(([fam, file, weight]) => new FontFace(fam, `url(${import.meta.env.BASE_URL}fonts/${file})`, { weight }).load().then((f) => { document.fonts.add(f); return true; }).catch(() => false)))
     .then((r) => r.every(Boolean)));
 }
 function useLetteringFonts() { useEffect(() => { void loadLettering(); }, []); }
@@ -104,7 +110,7 @@ export function VideoStudioPage() {
   const vk = theme ? voiceKey(theme.key, { duration, style }) : '';
   const shipped = index.voices[vk];
   const [shippedTiming, setShippedTiming] = useState<KokoroTiming | null>(null);
-  useEffect(() => { setShippedTiming(null); if (shipped) fetch(BASE + shipped.timing).then((r) => r.json()).then(setShippedTiming).catch(() => {}); }, [shipped]);
+  useEffect(() => { setShippedTiming(null); if (shipped) fetch(src(shipped.timing)).then((r) => r.json()).then(setShippedTiming).catch(() => {}); }, [shipped]);
   const kokoro = imported && imported.plan === vk ? imported : shippedTiming;
   const timing = useMemo<Timing | null>(() => (plan ? buildTiming(plan, kokoro ? lengthsFromKokoro(kokoro) : undefined) : null), [plan, kokoro]);
   const video = plan ? index.videos[plan.key] : undefined;
@@ -206,7 +212,7 @@ export function VideoStudioPage() {
 
       {!plan || !timing ? <div className="card lv-loading">教材を読み込み中…</div> : (
         <>
-          <Preview plan={plan} timing={timing} audio={kokoro && shipped && kokoro === shippedTiming ? BASE + shipped.audio : null} />
+          <Preview plan={plan} timing={timing} audio={kokoro && shipped && kokoro === shippedTiming ? src(shipped.audio) : null} />
           <div className="lv-status">
             <span className={timing.source === 'kokoro' ? 'ok' : 'warn'}>{timing.source === 'kokoro' ? `音声：Kokoro ${plan.voice.kokoro}（生成済み・実測タイミング ${timing.total.toFixed(1)} 秒）` : `音声：未生成（推定タイミング ${timing.total.toFixed(1)} 秒）— Kokoro で生成するとタイミングが確定します`}</span>
             <span className={plan.curated ? 'ok' : 'warn'}>{plan.curated ? '演出：監修済み（台詞はすべて講義の原文・その一部、または用語を変えない要約）' : '演出：自動下書き（要監修）'}</span>
@@ -217,7 +223,7 @@ export function VideoStudioPage() {
             <div className="sec-h"><span className="en">FINISHED FILM</span><h2>完成動画</h2></div>
             {video ? (
               <>
-                <video src={BASE + video.file} controls playsInline preload="metadata" className="lv-video" />
+                <video src={src(video.file)} controls playsInline preload="metadata" className="lv-video" />
                 <p className="lv-note">FFmpeg で統合した {video.seconds.toFixed(1)} 秒の授業動画です（Kokoro 音声・字幕・効果音・医学図レイヤー）。Wan 2.2 映像は {video.wanShots}/{video.shots} ショット — 未生成のショットの背景は MEDSTUDY のアニマティックで、画面右上にその旨を表示しています。</p>
               </>
             ) : <p className="lv-note">この設定の完成動画はまだありません。下の手順で Windows 側で作ると、ここで再生できます。</p>}
@@ -275,7 +281,7 @@ function Preview({ plan, timing, audio }: { plan: Plan; timing: Timing; audio: s
   // automation hook (scripts/lecture-video/render-layers.mjs): draw any frame / layer and read it back
   useEffect(() => {
     (window as unknown as Record<string, unknown>).__lv = {
-      fonts: () => loadLettering().then((ok) => Promise.all(['900 40px "Zen Kaku Gothic New"', '600 40px "Klee One"'].map((f) => document.fonts.load(f, 'あア字1A').catch(() => []))).then(() => document.fonts.ready).then(() => ok)),
+      fonts: () => loadLettering().then((ok) => document.fonts.ready.then(() => ok)),
       info: () => ({ total: timing.total, source: timing.source, key: plan.key, jobs: wanJobs(plan, timing, 'ti2v-5b').map((j) => ({ name: j.name, t0: j.t0 })) }),
       frame: (tt: number, l: Layer, type = 'image/png', q = 0.9) => { const c = document.createElement('canvas'); c.width = W; c.height = H; renderFrame(c.getContext('2d')!, plan, timing, tt, l); return c.toDataURL(type, q); },
     };

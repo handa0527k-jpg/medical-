@@ -94,11 +94,22 @@ export function chalkOp(p: Pen, op: BoardOp, m: ChalkMap, reveal = 1, color?: st
 function chalkPrim(p: Pen, prim: Prim, m: ChalkMap, reveal: number, color?: string) {
   const X = (x: number) => (x - m.bx) * m.k + m.sx, Y = (y: number) => (y - m.by) * m.k + m.sy;
   if (prim.p === 'line') {
+    // the whole chalk path (closed outlines, curves), written progressively along its length
     const pts = prim.pts.map(([x, y]) => [X(x), Y(y)] as [number, number]);
-    const [a, b] = [pts[0], pts[pts.length - 1]];
-    const e: [number, number] = [a[0] + (b[0] - a[0]) * reveal, a[1] + (b[1] - a[1]) * reveal];
-    p.line([a, e], { stroke: color ?? CHALK[prim.c], width: 5 * m.k + 1 });
-    if (prim.head && reveal > 0.95) arrowHead(p, a, b, color ?? CHALK[prim.c], m.k);
+    const lens = pts.slice(1).map((q, i) => Math.hypot(q[0] - pts[i][0], q[1] - pts[i][1]));
+    let left = lens.reduce((a, b) => a + b, 0) * reveal;
+    const drawn: [number, number][] = [pts[0]];
+    for (let i = 0; i < lens.length && left > 0; i++) {
+      const k = Math.min(1, left / Math.max(1e-6, lens[i]));
+      drawn.push([pts[i][0] + (pts[i + 1][0] - pts[i][0]) * k, pts[i][1] + (pts[i + 1][1] - pts[i][1]) * k]);
+      left -= lens[i];
+    }
+    const col = color ?? CHALK[prim.c];
+    if (drawn.length > 1) p.line(drawn, { stroke: col, width: (prim.w ?? 5) * m.k + 1, dash: prim.dash ? [10 * m.k + 4, 8 * m.k + 4] : undefined });
+    if (prim.head && reveal > 0.95 && pts.length > 1) {
+      arrowHead(p, pts[pts.length - 2], pts[pts.length - 1], col, m.k);
+      if (prim.head === 2) arrowHead(p, pts[1], pts[0], col, m.k);
+    }
     return;
   }
   const size = prim.s * m.k;

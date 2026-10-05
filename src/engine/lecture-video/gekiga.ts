@@ -62,7 +62,7 @@ export function applyCam(g: CanvasRenderingContext2D, c: CamState, shake: [numbe
   g.translate(W / 2 + shake[0], H / 2 + shake[1]); g.rotate(c.rot); g.scale(c.z, c.z); g.translate(-c.x, -c.y);
 }
 export function shakeAt(t: number, wins: { t: number; d: number }[], k: Intensity): [number, number] {
-  const amp = k === 'ultra' ? 16 : k === 'gekiga' ? 9 : 0;
+  const amp = k === 'ultra' ? 10 : k === 'gekiga' ? 5 : 0; // kept small: the shake moves every letter on screen
   let x = 0, y = 0;
   for (const w of wins) {
     const u = (t - w.t) / w.d; if (u < 0 || u > 1) continue;

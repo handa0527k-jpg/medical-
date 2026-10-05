@@ -7,8 +7,8 @@ export type FontKey = 'hand' | 'gothic' | 'mincho' | 'impact' | 'brush';
 export interface TextStyle { size: number; font?: FontKey; weight?: number; fill?: string; stroke?: string; strokeW?: number; align?: CanvasTextAlign; opacity?: number; spacing?: number }
 
 export const FONTS: Record<FontKey, string> = {
-  hand: '"Klee One", "Zen Kaku Gothic New", sans-serif',
-  gothic: '"Zen Kaku Gothic New", "Hiragino Sans", sans-serif',
+  hand: '"LV Hand", "Klee One", "Zen Kaku Gothic New", sans-serif',
+  gothic: '"LV Gothic", "Zen Kaku Gothic New", "Hiragino Sans", sans-serif',
   mincho: '"Zen Old Mincho", "Hiragino Mincho ProN", serif',
   impact: '"LV Dela", "Dela Gothic One", "Zen Kaku Gothic New", sans-serif',
   brush: '"LV Brush", "Yuji Syuku", "Zen Old Mincho", serif',
@@ -55,6 +55,8 @@ export class CanvasPen implements Pen {
   text(s: string, x: number, y: number, ts: TextStyle) {
     const g = this.g; g.save();
     if (ts.opacity != null) g.globalAlpha *= ts.opacity;
+    // unhinted glyphs: under a moving / zooming camera hinted text snaps to the pixel grid every frame and visibly shakes
+    (g as CanvasRenderingContext2D & { textRendering: string }).textRendering = 'geometricPrecision';
     g.font = fontOf(ts); g.textAlign = ts.align ?? 'left'; g.textBaseline = 'middle';
     if (ts.spacing) (g as CanvasRenderingContext2D & { letterSpacing: string }).letterSpacing = `${ts.spacing}px`;
     if (ts.stroke) { g.strokeStyle = ts.stroke; g.lineWidth = ts.strokeW ?? ts.size * 0.14; g.lineJoin = 'round'; g.strokeText(s, x, y); }

@@ -1,0 +1,8526 @@
+{
+ "format": "medstudy-lecture-video/1",
+ "created": "2026-10-05T00:48:03.866Z",
+ "roles": {
+  "MEDSTUDY": "教材理解・授業設計・医学図・管理",
+  "ComfyUI": "動画生成ワークフロー管理",
+  "Wan 2.2": "映像生成（文字・正確な構造は描かせない）",
+  "Kokoro": "日本語講師音声",
+  "FFmpeg": "映像・音声・字幕・効果音の最終統合"
+ },
+ "theme": "遺伝子の基礎（構造と機能） 第3講「染色体 ― DNAの収納と数の異常」— 完成版（講義まるごと）",
+ "curated": true,
+ "rationale": [
+  "第3講「染色体 ― DNAの収納と数の異常」を、講義の順（導入 → テーマ1〜4 → まとめ）に1本の劇画授業映像にした完成版。確認問題の選択肢の解説は省いた。",
+  "台詞はすべて第3講の講義台詞（narrations/lecture-03.json）の原文、またはその一部。板書は講義の黒板の文字をそのまま使う。",
+  "医学図：ヌクレオソーム（コアはH2A・H2B・H3・H4各2個の八量体、DNAが約1.7周・約140塩基対、スペーサーにH1）、収納の階層（2・11・1400 nm）、核型（模式図）、メタ／アクロ／テロセントリック、二倍体と一倍体、減数分裂（第1分裂で相同染色体、第2分裂で姉妹染色分体）、不分離、加齢とダウン症候群の頻度、遺伝子数（概数）。患者の顔は描かない。"
+ ],
+ "options": {
+  "duration": "full",
+  "style": "黒板講義型",
+  "intensity": "劇画"
+ },
+ "wan": {
+  "profile": "ti2v-5b",
+  "label": "Wan 2.2 TI2V 5B（軽量・24fps）",
+  "w": 1280,
+  "h": 704,
+  "fps": 24,
+  "maxFrames": 121,
+  "note": "VRAM 8GB〜（ComfyUIのオフロード使用）。1280×704・最大121フレーム（約5秒）",
+  "jobs": [
+   {
+    "name": "S01_a",
+    "scene": "S01",
+    "shot": "a",
+    "mode": "feature",
+    "desc": "漆黒の空間で墨が爆ぜ、二重らせんの影がゆっくり回る。",
+    "t0": 0,
+    "dur": 18.031,
+    "frames": 121,
+    "keyframe": "keyframes/S01_a.png",
+    "prompt": "pitch black void, sumi ink exploding and swirling like smoke in water, the dark silhouette of a right-handed DNA double helix slowly rotating in the ink. Camera: fast push-in that stops abruptly, dramatic low angle, strong perspective, sudden held frame. Look: gekiga manga style animation, bold hand-inked black lines, heavy cross-hatched shadows, high contrast chiaroscuro, limited desaturated palette with deep blacks, dramatic composition, cinematic, 1980s Japanese gekiga illustration texture. The subject fills the frame. Accuracy: the helix is right-handed with a wide major groove and a narrow minor groove; no text, no letters, no labels.",
+    "negative": "text, letters, numbers, captions, subtitles, labels, watermark, logo, signature, speech bubbles, writing, symbols, deformed structures, extra objects, cartoon faces on cells, cute mascot, pastel colors, oversaturated, photorealistic skin, gore, blood, 色调艳丽，过曝，静态，细节模糊不清，字幕，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走",
+    "camera": "題名で急接近 → 静止 / ゆっくり引く",
+    "seed": 1256149583
+   },
+   {
+    "name": "S02_a",
+    "scene": "S02",
+    "shot": "a",
+    "mode": "background",
+    "desc": "細胞核の中の暗い水の世界。",
+    "t0": 18.031,
+    "dur": 9.95,
+    "frames": 121,
+    "keyframe": "keyframes/S02_a.png",
+    "prompt": "a dark watery molecular world inside a cell nucleus, soft out-of-focus particles drifting, cold rim light, slow push-in. Camera: fast push-in that stops abruptly, dramatic low angle, strong perspective, sudden held frame. Look: gekiga manga style animation, bold hand-inked black lines, heavy cross-hatched shadows, high contrast chiaroscuro, limited desaturated palette with deep blacks, dramatic composition, cinematic, 1980s Japanese gekiga illustration texture. The centre of the frame stays calm and darker (an exact figure will be laid over it). Accuracy: background only, no molecules in focus, no text, no letters, no labels.",
+    "negative": "text, letters, numbers, captions, subtitles, labels, watermark, logo, signature, speech bubbles, writing, symbols, deformed structures, extra objects, cartoon faces on cells, cute mascot, pastel colors, oversaturated, photorealistic skin, gore, blood, 色调艳丽，过曝，静态，细节模糊不清，字幕，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走",
+    "camera": "ヌクレオソームへ / クロマチンへ / 4つを並べる",
+    "seed": 2741465630
+   },
+   {
+    "name": "S03_a",
+    "scene": "S03",
+    "shot": "a",
+    "mode": "background",
+    "desc": "夜の講義室。",
+    "t0": 27.981,
+    "dur": 14.419,
+    "frames": 121,
+    "keyframe": "keyframes/S03_a.png",
+    "prompt": "a dark empty lecture hall at night, a huge slate blackboard, a single hard shaft of light cutting through floating chalk dust, dust motes drifting slowly. Camera: fast push-in that stops abruptly, dramatic low angle, strong perspective, sudden held frame. Look: gekiga manga style animation, bold hand-inked black lines, heavy cross-hatched shadows, high contrast chiaroscuro, limited desaturated palette with deep blacks, dramatic composition, cinematic, 1980s Japanese gekiga illustration texture. The centre of the frame stays calm and darker (an exact figure will be laid over it). Accuracy: no people, no writing on the board.",
+    "negative": "text, letters, numbers, captions, subtitles, labels, watermark, logo, signature, speech bubbles, writing, symbols, deformed structures, extra objects, cartoon faces on cells, cute mascot, pastel colors, oversaturated, photorealistic skin, gore, blood, 色调艳丽，过曝，静态，细节模糊不清，字幕，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走",
+    "camera": "DNA 2 nm / 11 nm / 1400 nm / 全体",
+    "seed": 4283549561
+   },
+   {
+    "name": "S04_a",
+    "scene": "S04",
+    "shot": "a",
+    "mode": "background",
+    "desc": "細胞核の中の暗い水の世界。",
+    "t0": 42.401,
+    "dur": 42.237,
+    "frames": 121,
+    "keyframe": "keyframes/S04_a.png",
+    "prompt": "a dark watery molecular world inside a cell nucleus, soft out-of-focus particles drifting, cold rim light, slow push-in. Camera: fast push-in that stops abruptly, dramatic low angle, strong perspective, sudden held frame. Look: gekiga manga style animation, bold hand-inked black lines, heavy cross-hatched shadows, high contrast chiaroscuro, limited desaturated palette with deep blacks, dramatic composition, cinematic, 1980s Japanese gekiga illustration texture. The centre of the frame stays calm and darker (an exact figure will be laid over it). Accuracy: background only, no molecules in focus, no text, no letters, no labels.",
+    "negative": "text, letters, numbers, captions, subtitles, labels, watermark, logo, signature, speech bubbles, writing, symbols, deformed structures, extra objects, cartoon faces on cells, cute mascot, pastel colors, oversaturated, photorealistic skin, gore, blood, 色调艳丽，过曝，静态，细节模糊不清，字幕，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走",
+    "camera": "2 nm / コアに巻き付く / 数珠 / H1へ / 折りたたみ / 染色体で急接近 / 引く",
+    "seed": 2547665928
+   },
+   {
+    "name": "S05_a",
+    "scene": "S05",
+    "shot": "a",
+    "mode": "background",
+    "desc": "細胞核の中の暗い水の世界。",
+    "t0": 84.637,
+    "dur": 17.353,
+    "frames": 121,
+    "keyframe": "keyframes/S05_a.png",
+    "prompt": "a dark watery molecular world inside a cell nucleus, soft out-of-focus particles drifting, cold rim light, slow push-in. Camera: fast push-in that stops abruptly, dramatic low angle, strong perspective, sudden held frame. Look: gekiga manga style animation, bold hand-inked black lines, heavy cross-hatched shadows, high contrast chiaroscuro, limited desaturated palette with deep blacks, dramatic composition, cinematic, 1980s Japanese gekiga illustration texture. The centre of the frame stays calm and darker (an exact figure will be laid over it). Accuracy: background only, no molecules in focus, no text, no letters, no labels.",
+    "negative": "text, letters, numbers, captions, subtitles, labels, watermark, logo, signature, speech bubbles, writing, symbols, deformed structures, extra objects, cartoon faces on cells, cute mascot, pastel colors, oversaturated, photorealistic skin, gore, blood, 色调艳丽，过曝，静态，细节模糊不清，字幕，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走",
+    "camera": "8個の玉 / 「八量体」 / スペーサーとH1",
+    "seed": 4110538211
+   },
+   {
+    "name": "S06_a",
+    "scene": "S06",
+    "shot": "a",
+    "mode": "background",
+    "desc": "夜の講義室。",
+    "t0": 101.99,
+    "dur": 5.817,
+    "frames": 121,
+    "keyframe": "keyframes/S06_a.png",
+    "prompt": "a dark empty lecture hall at night, a huge slate blackboard, a single hard shaft of light cutting through floating chalk dust, dust motes drifting slowly. Camera: fast push-in that stops abruptly, dramatic low angle, strong perspective, sudden held frame. Look: gekiga manga style animation, bold hand-inked black lines, heavy cross-hatched shadows, high contrast chiaroscuro, limited desaturated palette with deep blacks, dramatic composition, cinematic, 1980s Japanese gekiga illustration texture. The centre of the frame stays calm and darker (an exact figure will be laid over it). Accuracy: no people, no writing on the board.",
+    "negative": "text, letters, numbers, captions, subtitles, labels, watermark, logo, signature, speech bubbles, writing, symbols, deformed structures, extra objects, cartoon faces on cells, cute mascot, pastel colors, oversaturated, photorealistic skin, gore, blood, 色调艳丽，过曝，静态，细节模糊不清，字幕，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走",
+    "camera": "H1の行 / 「H1はコアではない」",
+    "seed": 1332017906
+   },
+   {
+    "name": "S07_a",
+    "scene": "S07",
+    "shot": "a",
+    "mode": "background",
+    "desc": "細胞核の中の暗い水の世界。",
+    "t0": 107.807,
+    "dur": 15.485,
+    "frames": 121,
+    "keyframe": "keyframes/S07_a.png",
+    "prompt": "a dark watery molecular world inside a cell nucleus, soft out-of-focus particles drifting, cold rim light, slow push-in. Camera: fast push-in that stops abruptly, dramatic low angle, strong perspective, sudden held frame. Look: gekiga manga style animation, bold hand-inked black lines, heavy cross-hatched shadows, high contrast chiaroscuro, limited desaturated palette with deep blacks, dramatic composition, cinematic, 1980s Japanese gekiga illustration texture. The centre of the frame stays calm and darker (an exact figure will be laid over it). Accuracy: background only, no molecules in focus, no text, no letters, no labels.",
+    "negative": "text, letters, numbers, captions, subtitles, labels, watermark, logo, signature, speech bubbles, writing, symbols, deformed structures, extra objects, cartoon faces on cells, cute mascot, pastel colors, oversaturated, photorealistic skin, gore, blood, 色调艳丽，过曝，静态，细节模糊不清，字幕，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走",
+    "camera": "印が付く / 2つの細胞 / 第6講へ",
+    "seed": 3958212045
+   },
+   {
+    "name": "S08_a",
+    "scene": "S08",
+    "shot": "a",
+    "mode": "background",
+    "desc": "暗い背景に、顕微鏡の視野のような柔らかい光。",
+    "t0": 123.293,
+    "dur": 15.125,
+    "frames": 121,
+    "keyframe": "keyframes/S08_a.png",
+    "prompt": "abstract dark background, slow streaks of warm light drifting, subtle film grain. Camera: fast push-in that stops abruptly, dramatic low angle, strong perspective, sudden held frame. Look: gekiga manga style animation, bold hand-inked black lines, heavy cross-hatched shadows, high contrast chiaroscuro, limited desaturated palette with deep blacks, dramatic composition, cinematic, 1980s Japanese gekiga illustration texture. The centre of the frame stays calm and darker (an exact figure will be laid over it). Accuracy: no text, no letters, no labels.",
+    "negative": "text, letters, numbers, captions, subtitles, labels, watermark, logo, signature, speech bubbles, writing, symbols, deformed structures, extra objects, cartoon faces on cells, cute mascot, pastel colors, oversaturated, photorealistic skin, gore, blood, 色调艳丽，过曝，静态，细节模糊不清，字幕，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走",
+    "camera": "縞模様 / 全体 / 性染色体",
+    "seed": 1159006556
+   },
+   {
+    "name": "S09_a",
+    "scene": "S09",
+    "shot": "a",
+    "mode": "background",
+    "desc": "夜の講義室。",
+    "t0": 138.417,
+    "dur": 18.715,
+    "frames": 121,
+    "keyframe": "keyframes/S09_a.png",
+    "prompt": "a dark empty lecture hall at night, a huge slate blackboard, a single hard shaft of light cutting through floating chalk dust, dust motes drifting slowly. Camera: fast push-in that stops abruptly, dramatic low angle, strong perspective, sudden held frame. Look: gekiga manga style animation, bold hand-inked black lines, heavy cross-hatched shadows, high contrast chiaroscuro, limited desaturated palette with deep blacks, dramatic composition, cinematic, 1980s Japanese gekiga illustration texture. The centre of the frame stays calm and darker (an exact figure will be laid over it). Accuracy: no people, no writing on the board.",
+    "negative": "text, letters, numbers, captions, subtitles, labels, watermark, logo, signature, speech bubbles, writing, symbols, deformed structures, extra objects, cartoon faces on cells, cute mascot, pastel colors, oversaturated, photorealistic skin, gore, blood, 色调艳丽，过曝，静态，细节模糊不清，字幕，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走",
+    "camera": "セントロメア / 短腕p / 長腕q / テロメア / 46本",
+    "seed": 2711433079
+   },
+   {
+    "name": "S10_a",
+    "scene": "S10",
+    "shot": "a",
+    "mode": "background",
+    "desc": "暗い背景に光の筋。",
+    "t0": 157.133,
+    "dur": 24.965,
+    "frames": 121,
+    "keyframe": "keyframes/S10_a.png",
+    "prompt": "abstract dark background, slow streaks of warm light drifting, subtle film grain. Camera: fast push-in that stops abruptly, dramatic low angle, strong perspective, sudden held frame. Look: gekiga manga style animation, bold hand-inked black lines, heavy cross-hatched shadows, high contrast chiaroscuro, limited desaturated palette with deep blacks, dramatic composition, cinematic, 1980s Japanese gekiga illustration texture. The centre of the frame stays calm and darker (an exact figure will be laid over it). Accuracy: no text, no letters, no labels.",
+    "negative": "text, letters, numbers, captions, subtitles, labels, watermark, logo, signature, speech bubbles, writing, symbols, deformed structures, extra objects, cartoon faces on cells, cute mascot, pastel colors, oversaturated, photorealistic skin, gore, blood, 色调艳丽，过曝，静态，细节模糊不清，字幕，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走",
+    "camera": "メタ / アクロ / テロ / 「ヒトにない」",
+    "seed": 4141968041
+   },
+   {
+    "name": "S11_a",
+    "scene": "S11",
+    "shot": "a",
+    "mode": "background",
+    "desc": "夜の講義室。",
+    "t0": 182.098,
+    "dur": 12.2,
+    "frames": 121,
+    "keyframe": "keyframes/S11_a.png",
+    "prompt": "a dark empty lecture hall at night, a huge slate blackboard, a single hard shaft of light cutting through floating chalk dust, dust motes drifting slowly. Camera: fast push-in that stops abruptly, dramatic low angle, strong perspective, sudden held frame. Look: gekiga manga style animation, bold hand-inked black lines, heavy cross-hatched shadows, high contrast chiaroscuro, limited desaturated palette with deep blacks, dramatic composition, cinematic, 1980s Japanese gekiga illustration texture. The centre of the frame stays calm and darker (an exact figure will be laid over it). Accuracy: no people, no writing on the board.",
+    "negative": "text, letters, numbers, captions, subtitles, labels, watermark, logo, signature, speech bubbles, writing, symbols, deformed structures, extra objects, cartoon faces on cells, cute mascot, pastel colors, oversaturated, photorealistic skin, gore, blood, 色调艳丽，过曝，静态，细节模糊不清，字幕，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走",
+    "camera": "アクロ / ヒトにない / 引く",
+    "seed": 2589541518
+   },
+   {
+    "name": "S12_a",
+    "scene": "S12",
+    "shot": "a",
+    "mode": "background",
+    "desc": "体の中の暖かく暗い世界。",
+    "t0": 194.298,
+    "dur": 26.357,
+    "frames": 121,
+    "keyframe": "keyframes/S12_a.png",
+    "prompt": "a dark warm organic interior, soft glowing particles flowing slowly, warm rim light. Camera: fast push-in that stops abruptly, dramatic low angle, strong perspective, sudden held frame. Look: gekiga manga style animation, bold hand-inked black lines, heavy cross-hatched shadows, high contrast chiaroscuro, limited desaturated palette with deep blacks, dramatic composition, cinematic, 1980s Japanese gekiga illustration texture. The centre of the frame stays calm and darker (an exact figure will be laid over it). Accuracy: background only, no organs in focus, no faces, no text, no letters, no labels.",
+    "negative": "text, letters, numbers, captions, subtitles, labels, watermark, logo, signature, speech bubbles, writing, symbols, deformed structures, extra objects, cartoon faces on cells, cute mascot, pastel colors, oversaturated, photorealistic skin, gore, blood, 色调艳丽，过曝，静态，细节模糊不清，字幕，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走",
+    "camera": "体細胞 / 配偶子 / 減数分裂の矢印",
+    "seed": 4294191039
+   },
+   {
+    "name": "S13_a",
+    "scene": "S13",
+    "shot": "a",
+    "mode": "background",
+    "desc": "夜の講義室。",
+    "t0": 220.655,
+    "dur": 13.357,
+    "frames": 121,
+    "keyframe": "keyframes/S13_a.png",
+    "prompt": "a dark empty lecture hall at night, a huge slate blackboard, a single hard shaft of light cutting through floating chalk dust, dust motes drifting slowly. Camera: fast push-in that stops abruptly, dramatic low angle, strong perspective, sudden held frame. Look: gekiga manga style animation, bold hand-inked black lines, heavy cross-hatched shadows, high contrast chiaroscuro, limited desaturated palette with deep blacks, dramatic composition, cinematic, 1980s Japanese gekiga illustration texture. The centre of the frame stays calm and darker (an exact figure will be laid over it). Accuracy: no people, no writing on the board.",
+    "negative": "text, letters, numbers, captions, subtitles, labels, watermark, logo, signature, speech bubbles, writing, symbols, deformed structures, extra objects, cartoon faces on cells, cute mascot, pastel colors, oversaturated, photorealistic skin, gore, blood, 色调艳丽，过曝，静态，细节模糊不清，字幕，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走",
+    "camera": "第1分裂 / 第2分裂",
+    "seed": 2741764516
+   },
+   {
+    "name": "S14_a",
+    "scene": "S14",
+    "shot": "a",
+    "mode": "background",
+    "desc": "細胞核の中の暗い水の世界。",
+    "t0": 234.011,
+    "dur": 33.074,
+    "frames": 121,
+    "keyframe": "keyframes/S14_a.png",
+    "prompt": "a dark watery molecular world inside a cell nucleus, soft out-of-focus particles drifting, cold rim light, slow push-in. Camera: fast push-in that stops abruptly, dramatic low angle, strong perspective, sudden held frame. Look: gekiga manga style animation, bold hand-inked black lines, heavy cross-hatched shadows, high contrast chiaroscuro, limited desaturated palette with deep blacks, dramatic composition, cinematic, 1980s Japanese gekiga illustration texture. The centre of the frame stays calm and darker (an exact figure will be laid over it). Accuracy: background only, no molecules in focus, no text, no letters, no labels.",
+    "negative": "text, letters, numbers, captions, subtitles, labels, watermark, logo, signature, speech bubbles, writing, symbols, deformed structures, extra objects, cartoon faces on cells, cute mascot, pastel colors, oversaturated, photorealistic skin, gore, blood, 色调艳丽，过曝，静态，细节模糊不清，字幕，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走",
+    "camera": "複製 / 第1分裂 / 4つの配偶子",
+    "seed": 2711731965
+   },
+   {
+    "name": "S15_a",
+    "scene": "S15",
+    "shot": "a",
+    "mode": "background",
+    "desc": "細胞核の中の暗い水の世界。",
+    "t0": 267.085,
+    "dur": 23.252,
+    "frames": 121,
+    "keyframe": "keyframes/S15_a.png",
+    "prompt": "a dark watery molecular world inside a cell nucleus, soft out-of-focus particles drifting, cold rim light, slow push-in. Camera: fast push-in that stops abruptly, dramatic low angle, strong perspective, sudden held frame. Look: gekiga manga style animation, bold hand-inked black lines, heavy cross-hatched shadows, high contrast chiaroscuro, limited desaturated palette with deep blacks, dramatic composition, cinematic, 1980s Japanese gekiga illustration texture. The centre of the frame stays calm and darker (an exact figure will be laid over it). Accuracy: background only, no molecules in focus, no text, no letters, no labels.",
+    "negative": "text, letters, numbers, captions, subtitles, labels, watermark, logo, signature, speech bubbles, writing, symbols, deformed structures, extra objects, cartoon faces on cells, cute mascot, pastel colors, oversaturated, photorealistic skin, gore, blood, 色调艳丽，过曝，静态，细节模糊不清，字幕，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走",
+    "camera": "分かれない / 配偶子 / 受精 / 第2分裂の不分離",
+    "seed": 1148859682
+   },
+   {
+    "name": "S16_a",
+    "scene": "S16",
+    "shot": "a",
+    "mode": "background",
+    "desc": "夜の講義室。",
+    "t0": 290.337,
+    "dur": 8.239,
+    "frames": 121,
+    "keyframe": "keyframes/S16_a.png",
+    "prompt": "a dark empty lecture hall at night, a huge slate blackboard, a single hard shaft of light cutting through floating chalk dust, dust motes drifting slowly. Camera: fast push-in that stops abruptly, dramatic low angle, strong perspective, sudden held frame. Look: gekiga manga style animation, bold hand-inked black lines, heavy cross-hatched shadows, high contrast chiaroscuro, limited desaturated palette with deep blacks, dramatic composition, cinematic, 1980s Japanese gekiga illustration texture. The centre of the frame stays calm and darker (an exact figure will be laid over it). Accuracy: no people, no writing on the board.",
+    "negative": "text, letters, numbers, captions, subtitles, labels, watermark, logo, signature, speech bubbles, writing, symbols, deformed structures, extra objects, cartoon faces on cells, cute mascot, pastel colors, oversaturated, photorealistic skin, gore, blood, 色调艳丽，过曝，静态，细节模糊不清，字幕，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走",
+    "camera": "一行",
+    "seed": 2895189075
+   },
+   {
+    "name": "S17_a",
+    "scene": "S17",
+    "shot": "a",
+    "mode": "background",
+    "desc": "体の中の暖かく暗い世界。",
+    "t0": 298.576,
+    "dur": 31.926,
+    "frames": 121,
+    "keyframe": "keyframes/S17_a.png",
+    "prompt": "a dark warm organic interior, soft glowing particles flowing slowly, warm rim light. Camera: fast push-in that stops abruptly, dramatic low angle, strong perspective, sudden held frame. Look: gekiga manga style animation, bold hand-inked black lines, heavy cross-hatched shadows, high contrast chiaroscuro, limited desaturated palette with deep blacks, dramatic composition, cinematic, 1980s Japanese gekiga illustration texture. The centre of the frame stays calm and darker (an exact figure will be laid over it). Accuracy: background only, no organs in focus, no faces, no text, no letters, no labels.",
+    "negative": "text, letters, numbers, captions, subtitles, labels, watermark, logo, signature, speech bubbles, writing, symbols, deformed structures, extra objects, cartoon faces on cells, cute mascot, pastel colors, oversaturated, photorealistic skin, gore, blood, 色调艳丽，过曝，静态，细节模糊不清，字幕，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走",
+    "camera": "卵子 / 精子 / 頻度の棒 / 40歳",
+    "seed": 1342762552
+   },
+   {
+    "name": "S18_a",
+    "scene": "S18",
+    "shot": "a",
+    "mode": "background",
+    "desc": "夜の講義室。",
+    "t0": 330.502,
+    "dur": 14.019,
+    "frames": 121,
+    "keyframe": "keyframes/S18_a.png",
+    "prompt": "a dark empty lecture hall at night, a huge slate blackboard, a single hard shaft of light cutting through floating chalk dust, dust motes drifting slowly. Camera: fast push-in that stops abruptly, dramatic low angle, strong perspective, sudden held frame. Look: gekiga manga style animation, bold hand-inked black lines, heavy cross-hatched shadows, high contrast chiaroscuro, limited desaturated palette with deep blacks, dramatic composition, cinematic, 1980s Japanese gekiga illustration texture. The centre of the frame stays calm and darker (an exact figure will be laid over it). Accuracy: no people, no writing on the board.",
+    "negative": "text, letters, numbers, captions, subtitles, labels, watermark, logo, signature, speech bubbles, writing, symbols, deformed structures, extra objects, cartoon faces on cells, cute mascot, pastel colors, oversaturated, photorealistic skin, gore, blood, 色调艳丽，过曝，静态，细节模糊不清，字幕，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走",
+    "camera": "母 / 父 / 35歳",
+    "seed": 1312730001
+   },
+   {
+    "name": "S19_a",
+    "scene": "S19",
+    "shot": "a",
+    "mode": "background",
+    "desc": "暗い背景に光の筋。",
+    "t0": 344.521,
+    "dur": 27.068,
+    "frames": 121,
+    "keyframe": "keyframes/S19_a.png",
+    "prompt": "abstract dark background, slow streaks of warm light drifting, subtle film grain. Camera: fast push-in that stops abruptly, dramatic low angle, strong perspective, sudden held frame. Look: gekiga manga style animation, bold hand-inked black lines, heavy cross-hatched shadows, high contrast chiaroscuro, limited desaturated palette with deep blacks, dramatic composition, cinematic, 1980s Japanese gekiga illustration texture. The centre of the frame stays calm and darker (an exact figure will be laid over it). Accuracy: no text, no letters, no labels.",
+    "negative": "text, letters, numbers, captions, subtitles, labels, watermark, logo, signature, speech bubbles, writing, symbols, deformed structures, extra objects, cartoon faces on cells, cute mascot, pastel colors, oversaturated, photorealistic skin, gore, blood, 色调艳丽，过曝，静态，细节模糊不清，字幕，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走",
+    "camera": "13・18・21 / 性染色体 / ターナーのみ",
+    "seed": 4044825014
+   },
+   {
+    "name": "S20_a",
+    "scene": "S20",
+    "shot": "a",
+    "mode": "background",
+    "desc": "夜の講義室。",
+    "t0": 371.589,
+    "dur": 12.991,
+    "frames": 121,
+    "keyframe": "keyframes/S20_a.png",
+    "prompt": "a dark empty lecture hall at night, a huge slate blackboard, a single hard shaft of light cutting through floating chalk dust, dust motes drifting slowly. Camera: fast push-in that stops abruptly, dramatic low angle, strong perspective, sudden held frame. Look: gekiga manga style animation, bold hand-inked black lines, heavy cross-hatched shadows, high contrast chiaroscuro, limited desaturated palette with deep blacks, dramatic composition, cinematic, 1980s Japanese gekiga illustration texture. The centre of the frame stays calm and darker (an exact figure will be laid over it). Accuracy: no people, no writing on the board.",
+    "negative": "text, letters, numbers, captions, subtitles, labels, watermark, logo, signature, speech bubbles, writing, symbols, deformed structures, extra objects, cartoon faces on cells, cute mascot, pastel colors, oversaturated, photorealistic skin, gore, blood, 色调艳丽，过曝，静态，细节模糊不清，字幕，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走",
+    "camera": "13・18・21 / ターナー / 5p-",
+    "seed": 4238923602
+   },
+   {
+    "name": "S21_a",
+    "scene": "S21",
+    "shot": "a",
+    "mode": "background",
+    "desc": "暗い背景に光の筋。",
+    "t0": 384.579,
+    "dur": 24.214,
+    "frames": 121,
+    "keyframe": "keyframes/S21_a.png",
+    "prompt": "abstract dark background, slow streaks of warm light drifting, subtle film grain. Camera: fast push-in that stops abruptly, dramatic low angle, strong perspective, sudden held frame. Look: gekiga manga style animation, bold hand-inked black lines, heavy cross-hatched shadows, high contrast chiaroscuro, limited desaturated palette with deep blacks, dramatic composition, cinematic, 1980s Japanese gekiga illustration texture. The centre of the frame stays calm and darker (an exact figure will be laid over it). Accuracy: no text, no letters, no labels.",
+    "negative": "text, letters, numbers, captions, subtitles, labels, watermark, logo, signature, speech bubbles, writing, symbols, deformed structures, extra objects, cartoon faces on cells, cute mascot, pastel colors, oversaturated, photorealistic skin, gore, blood, 色调艳丽，过曝，静态，细节模糊不清，字幕，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走",
+    "camera": "13番 / 21番 / 全体",
+    "seed": 2570150445
+   },
+   {
+    "name": "S22_a",
+    "scene": "S22",
+    "shot": "a",
+    "mode": "background",
+    "desc": "夜の講義室。",
+    "t0": 408.793,
+    "dur": 26.834,
+    "frames": 121,
+    "keyframe": "keyframes/S22_a.png",
+    "prompt": "a dark empty lecture hall at night, a huge slate blackboard, a single hard shaft of light cutting through floating chalk dust, dust motes drifting slowly. Camera: fast push-in that stops abruptly, dramatic low angle, strong perspective, sudden held frame. Look: gekiga manga style animation, bold hand-inked black lines, heavy cross-hatched shadows, high contrast chiaroscuro, limited desaturated palette with deep blacks, dramatic composition, cinematic, 1980s Japanese gekiga illustration texture. The centre of the frame stays calm and darker (an exact figure will be laid over it). Accuracy: no people, no writing on the board.",
+    "negative": "text, letters, numbers, captions, subtitles, labels, watermark, logo, signature, speech bubbles, writing, symbols, deformed structures, extra objects, cartoon faces on cells, cute mascot, pastel colors, oversaturated, photorealistic skin, gore, blood, 色调艳丽，过曝，静态，细节模糊不清，字幕，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走",
+    "camera": "①へ / ②へ / ③へ / ④へ / 4つを並べて引く",
+    "seed": 1159604328
+   },
+   {
+    "name": "S23_a",
+    "scene": "S23",
+    "shot": "a",
+    "mode": "background",
+    "desc": "漆黒に墨がゆっくり広がる。",
+    "t0": 435.627,
+    "dur": 10.159,
+    "frames": 121,
+    "keyframe": "keyframes/S23_a.png",
+    "prompt": "pitch black void, sumi ink spreading slowly, gentle. Camera: fast push-in that stops abruptly, dramatic low angle, strong perspective, sudden held frame. Look: gekiga manga style animation, bold hand-inked black lines, heavy cross-hatched shadows, high contrast chiaroscuro, limited desaturated palette with deep blacks, dramatic composition, cinematic, 1980s Japanese gekiga illustration texture. The centre of the frame stays calm and darker (an exact figure will be laid over it). Accuracy: no text, no letters, no labels.",
+    "negative": "text, letters, numbers, captions, subtitles, labels, watermark, logo, signature, speech bubbles, writing, symbols, deformed structures, extra objects, cartoon faces on cells, cute mascot, pastel colors, oversaturated, photorealistic skin, gore, blood, 色调艳丽，过曝，静态，细节模糊不清，字幕，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走",
+    "camera": "ゆっくり引いて終わる",
+    "seed": 2743161795
+   }
+  ]
+ },
+ "kokoro": {
+  "plan": "genetics-basics-3-film_board",
+  "engine": "kokoro (Kokoro-82M v1.0, ONNX) + misaki ja G2P (pyopenjtalk)",
+  "voice": "jm_kumo",
+  "speed": 1,
+  "sampleRate": 24000,
+  "note": "say = 読み（英字・誤読しやすい語はかな）。pre/post = 前後の間（秒）。speed = 区間ごとの話速（重要語はやや遅く）。",
+  "scenes": [
+   {
+    "id": "S01",
+    "file": "audio/S01.wav",
+    "segs": [
+     {
+      "beat": "open",
+      "i": 0,
+      "text": "第3講を始めます。",
+      "say": "第3講を始めます。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.2,
+      "cue": "title"
+     },
+     {
+      "beat": "open",
+      "i": 1,
+      "text": "前回は、DNAが何でできているのかを見ました。",
+      "say": "前回は、ディーエヌエーが何でできているのかを見ました。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.3,
+      "cue": "prev"
+     },
+     {
+      "beat": "today",
+      "i": 0,
+      "text": "今日は、その長いDNAを、細胞がどうやって片付けているのか。",
+      "say": "今日は、その長いディーエヌエーを、細胞がどうやって片付けているのか。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.15,
+      "cue": "tidy"
+     },
+     {
+      "beat": "today",
+      "i": 1,
+      "text": "そして、片付け方や配り方を間違えると何が起こるのか。",
+      "say": "そして、片付け方や配り方を間違えると何が起こるのか。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.15,
+      "cue": "wrong"
+     },
+     {
+      "beat": "today",
+      "i": 2,
+      "text": "染色体の話です。",
+      "say": "染色体の話です。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.5,
+      "cue": "chr"
+     }
+    ]
+   },
+   {
+    "id": "S02",
+    "file": "audio/S02.wav",
+    "segs": [
+     {
+      "beat": "flow",
+      "i": 0,
+      "text": "DNAが、",
+      "say": "ディーエヌエーが、",
+      "speed": 1,
+      "pre": 0,
+      "post": 0,
+      "cue": "dna"
+     },
+     {
+      "beat": "flow",
+      "i": 1,
+      "text": "ヒストンに巻き付いてヌクレオソームになり、",
+      "say": "ヒストンに巻き付いてヌクレオソームになり、",
+      "speed": 1,
+      "pre": 0,
+      "post": 0,
+      "cue": "nuc"
+     },
+     {
+      "beat": "flow",
+      "i": 2,
+      "text": "折りたたまれてクロマチン、",
+      "say": "折りたたまれてクロマチン、",
+      "speed": 1,
+      "pre": 0,
+      "post": 0,
+      "cue": "chrom"
+     },
+     {
+      "beat": "flow",
+      "i": 3,
+      "text": "分裂のときには染色体になります。",
+      "say": "分裂のときには染色体になります。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.45,
+      "cue": "chr"
+     }
+    ]
+   },
+   {
+    "id": "S03",
+    "file": "audio/S03.wav",
+    "segs": [
+     {
+      "beat": "nums",
+      "i": 0,
+      "text": "DNAは2ナノメートル。",
+      "say": "ディーエヌエーはにナノメートル。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.15,
+      "cue": "d2"
+     },
+     {
+      "beat": "nums",
+      "i": 1,
+      "text": "ヌクレオソームで11ナノメートル。",
+      "say": "ヌクレオソームでじゅういちナノメートル。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.15,
+      "cue": "n11"
+     },
+     {
+      "beat": "nums",
+      "i": 2,
+      "text": "そしてクロマチンを経て、分裂期の染色体は1400ナノメートル。",
+      "say": "そしてクロマチンを経て、分裂期の染色体はせんよんひゃくナノメートル。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.3,
+      "cue": "c1400"
+     },
+     {
+      "beat": "memo",
+      "i": 0,
+      "text": "数字も一緒に覚えておくと、図の問題で迷いません。",
+      "say": "数字も一緒に覚えておくと、図の問題で迷いません。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.4,
+      "cue": "memo"
+     }
+    ]
+   },
+   {
+    "id": "S04",
+    "file": "audio/S04.wav",
+    "segs": [
+     {
+      "beat": "naked",
+      "i": 0,
+      "text": "実際にどれくらい小さくたたまれているのか、見てみましょう。",
+      "say": "実際にどれくらい小さくたたまれているのか、見てみましょう。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.15,
+      "cue": "look"
+     },
+     {
+      "beat": "naked",
+      "i": 1,
+      "text": "まずは裸のDNA。",
+      "say": "まずは裸のディーエヌエー。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.1,
+      "cue": "naked"
+     },
+     {
+      "beat": "naked",
+      "i": 2,
+      "text": "直径わずか2ナノメートルです。",
+      "say": "直径わずかにナノメートルです。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.3,
+      "cue": "d2"
+     },
+     {
+      "beat": "wrap",
+      "i": 0,
+      "text": "これが、ヒストンの塊に巻き付いていきます。",
+      "say": "これが、ヒストンの塊に巻き付いていきます。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.25,
+      "cue": "wrap"
+     },
+     {
+      "beat": "nuc",
+      "i": 0,
+      "text": "一つのコアに約140塩基対が巻き付いて、ヌクレオソームになります。",
+      "say": "一つのコアに約ひゃくよんじゅう塩基対が巻き付いて、ヌクレオソームになります。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.15,
+      "cue": "nuc"
+     },
+     {
+      "beat": "nuc",
+      "i": 1,
+      "text": "つなぎの部分がスペーサー。",
+      "say": "つなぎの部分がスペーサー。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.1,
+      "cue": "spacer"
+     },
+     {
+      "beat": "nuc",
+      "i": 2,
+      "text": "ここにH1が結合します。",
+      "say": "ここにエイチワンが結合します。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.3,
+      "cue": "h1"
+     },
+     {
+      "beat": "fold",
+      "i": 0,
+      "text": "ヌクレオソームの連なりが、さらに折りたたまれてクロマチンに。",
+      "say": "ヌクレオソームの連なりが、さらに折りたたまれてクロマチンに。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.25,
+      "cue": "fold"
+     },
+     {
+      "beat": "chr",
+      "i": 0,
+      "text": "分裂期には、ここまで凝縮して、幅約1400ナノメートルの染色体になります。",
+      "say": "分裂期には、ここまで凝縮して、幅約せんよんひゃくナノメートルの染色体になります。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.3,
+      "cue": "chr"
+     },
+     {
+      "beat": "end",
+      "i": 0,
+      "text": "細い糸が、何段階にも折りたたまれて、ようやく目に見える形になるわけです。",
+      "say": "細い糸が、何段階にも折りたたまれて、ようやく目に見える形になるわけです。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.45,
+      "cue": "end"
+     }
+    ]
+   },
+   {
+    "id": "S05",
+    "file": "audio/S05.wav",
+    "segs": [
+     {
+      "beat": "core",
+      "i": 0,
+      "text": "ヒストンを整理します。",
+      "say": "ヒストンを整理します。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.1,
+      "cue": "sort"
+     },
+     {
+      "beat": "core",
+      "i": 1,
+      "text": "コアになるのは、H2A、H2B、H3、H4が2個ずつ。",
+      "say": "コアになるのは、エイチツーエー、エイチツービー、エイチスリー、エイチフォーが2個ずつ。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.15,
+      "cue": "core"
+     },
+     {
+      "beat": "core",
+      "i": 2,
+      "text": "合わせて八量体です。",
+      "say": "合わせてはちりょうたいです。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.3,
+      "cue": "oct"
+     },
+     {
+      "beat": "h1",
+      "i": 0,
+      "text": "H1だけは、コアではなく、ヌクレオソームの間のスペーサーのところでDNAと結合しています。",
+      "say": "エイチワンだけは、コアではなく、ヌクレオソームの間のスペーサーのところでディーエヌエーと結合しています。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.4,
+      "cue": "h1"
+     }
+    ]
+   },
+   {
+    "id": "S06",
+    "file": "audio/S06.wav",
+    "segs": [
+     {
+      "beat": "line",
+      "i": 0,
+      "text": "ここに線を引いておきます。",
+      "say": "ここに線を引いておきます。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.1,
+      "cue": "line"
+     },
+     {
+      "beat": "line",
+      "i": 1,
+      "text": "H1はコアではない。",
+      "say": "エイチワンはコアではない。",
+      "speed": 1,
+      "pre": 0.15,
+      "post": 0.2,
+      "cue": "rule"
+     },
+     {
+      "beat": "line",
+      "i": 2,
+      "text": "これがよく問われます。",
+      "say": "これがよく問われます。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.4,
+      "cue": "often"
+     }
+    ]
+   },
+   {
+    "id": "S07",
+    "file": "audio/S07.wav",
+    "segs": [
+     {
+      "beat": "mod",
+      "i": 0,
+      "text": "ヒストンは化学修飾を受けて、ヌクレオソームの性質を変えます。",
+      "say": "ヒストンは化学修飾を受けて、ヌクレオソームの性質を変えます。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.25,
+      "cue": "mod"
+     },
+     {
+      "beat": "cell",
+      "i": 0,
+      "text": "この修飾が細胞ごとに違い、遺伝子発現の制御に関わる。",
+      "say": "この修飾が細胞ごとに違い、遺伝子発現の制御に関わる。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.15,
+      "cue": "cell"
+     },
+     {
+      "beat": "cell",
+      "i": 1,
+      "text": "第6講のエピゲノムにつながる、大事な伏線です。",
+      "say": "第6講のエピゲノムにつながる、大事な伏線です。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.45,
+      "cue": "epi"
+     }
+    ]
+   },
+   {
+    "id": "S08",
+    "file": "audio/S08.wav",
+    "segs": [
+     {
+      "beat": "band",
+      "i": 0,
+      "text": "G分染法で染めて並べたものが核型。",
+      "say": "ジー分染法で染めて並べたものがかくがた。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.15,
+      "cue": "band"
+     },
+     {
+      "beat": "band",
+      "i": 1,
+      "text": "正常な男性は46,XYと書きます。",
+      "say": "正常な男性はよんじゅうろく、エックスワイと書きます。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.25,
+      "cue": "xy"
+     },
+     {
+      "beat": "n",
+      "i": 0,
+      "text": "ヒトは46本。",
+      "say": "ヒトは46本。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.1,
+      "cue": "n46"
+     },
+     {
+      "beat": "n",
+      "i": 1,
+      "text": "長い方から1番から22番、残りの2本が性染色体です。",
+      "say": "長い方から1番から22番、残りの2本が性染色体です。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.4,
+      "cue": "order"
+     }
+    ]
+   },
+   {
+    "id": "S09",
+    "file": "audio/S09.wav",
+    "segs": [
+     {
+      "beat": "x",
+      "i": 0,
+      "text": "分裂期の染色体は、こういうX字形です。",
+      "say": "分裂期の染色体は、こういうエックス字形です。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.15,
+      "cue": "x"
+     },
+     {
+      "beat": "x",
+      "i": 1,
+      "text": "くびれたところがセントロメア。",
+      "say": "くびれたところがセントロメア。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.1,
+      "cue": "cen"
+     },
+     {
+      "beat": "x",
+      "i": 2,
+      "text": "上の短い腕が短腕p、",
+      "say": "上の短い腕がたんわんピー、",
+      "speed": 1,
+      "pre": 0,
+      "post": 0,
+      "cue": "p"
+     },
+     {
+      "beat": "x",
+      "i": 3,
+      "text": "下の長い腕が長腕q。",
+      "say": "下の長い腕がちょうわんキュー。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.1,
+      "cue": "q"
+     },
+     {
+      "beat": "x",
+      "i": 4,
+      "text": "末端がテロメアです。",
+      "say": "末端がテロメアです。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.3,
+      "cue": "tel"
+     },
+     {
+      "beat": "n",
+      "i": 0,
+      "text": "ヒトは46本。",
+      "say": "ヒトは46本。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.1,
+      "cue": "n46"
+     },
+     {
+      "beat": "n",
+      "i": 1,
+      "text": "常染色体22対と、性染色体。",
+      "say": "常染色体22対と、性染色体。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.1,
+      "cue": "auto"
+     },
+     {
+      "beat": "n",
+      "i": 2,
+      "text": "番号は長さの順です。",
+      "say": "番号は長さの順です。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.4,
+      "cue": "len"
+     }
+    ]
+   },
+   {
+    "id": "S10",
+    "file": "audio/S10.wav",
+    "segs": [
+     {
+      "beat": "class",
+      "i": 0,
+      "text": "セントロメアの位置で、形が分類されます。",
+      "say": "セントロメアの位置で、形が分類されます。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.2,
+      "cue": "class"
+     },
+     {
+      "beat": "meta",
+      "i": 0,
+      "text": "セントロメアが真ん中にあるのがメタセントリック。",
+      "say": "セントロメアが真ん中にあるのがメタセントリック。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.1,
+      "cue": "meta"
+     },
+     {
+      "beat": "meta",
+      "i": 1,
+      "text": "ヒトでは1、3、16、19、20番。",
+      "say": "ヒトでは1、3、16、19、20番。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.25,
+      "cue": "metaN"
+     },
+     {
+      "beat": "acro",
+      "i": 0,
+      "text": "セントロメアが端に近いのがアクロセントリック。",
+      "say": "セントロメアが端に近いのがアクロセントリック。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.1,
+      "cue": "acro"
+     },
+     {
+      "beat": "acro",
+      "i": 1,
+      "text": "13、14、15、21、22番とYの6本です。",
+      "say": "13、14、15、21、22番とワイの6本です。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.25,
+      "cue": "acroN"
+     },
+     {
+      "beat": "telo",
+      "i": 0,
+      "text": "そして、完全に端にあるテロセントリック。",
+      "say": "そして、完全に端にあるテロセントリック。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.1,
+      "cue": "telo"
+     },
+     {
+      "beat": "telo",
+      "i": 1,
+      "text": "これはヒトの染色体にはありません。",
+      "say": "これはヒトの染色体にはありません。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.45,
+      "cue": "none"
+     }
+    ]
+   },
+   {
+    "id": "S11",
+    "file": "audio/S11.wav",
+    "segs": [
+     {
+      "beat": "w",
+      "i": 0,
+      "text": "黒板にも書きます。",
+      "say": "黒板にも書きます。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.1,
+      "cue": "w"
+     },
+     {
+      "beat": "w",
+      "i": 1,
+      "text": "アクロセントリックは13、14、15、21、22、Y。",
+      "say": "アクロセントリックは13、14、15、21、22、ワイ。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.15,
+      "cue": "acro"
+     },
+     {
+      "beat": "w",
+      "i": 2,
+      "text": "テロセントリックはヒトにはない。",
+      "say": "テロセントリックはヒトにはない。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.2,
+      "cue": "none"
+     },
+     {
+      "beat": "often",
+      "i": 0,
+      "text": "ヒトにないもの、これも選択肢によく出ます。",
+      "say": "ヒトにないもの、これも選択肢によく出ます。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.4,
+      "cue": "often"
+     }
+    ]
+   },
+   {
+    "id": "S12",
+    "file": "audio/S12.wav",
+    "segs": [
+     {
+      "beat": "q",
+      "i": 0,
+      "text": "では、この46本の染色体が、どうやって次の世代に配られるのか。",
+      "say": "では、この46本の染色体が、どうやって次の世代に配られるのか。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.25,
+      "cue": "q"
+     },
+     {
+      "beat": "dip",
+      "i": 0,
+      "text": "体細胞は46本。",
+      "say": "体細胞は46本。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.1,
+      "cue": "soma"
+     },
+     {
+      "beat": "dip",
+      "i": 1,
+      "text": "一方は母親から、もう一方は父親から来ています。",
+      "say": "一方は母親から、もう一方は父親から来ています。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.1,
+      "cue": "parents"
+     },
+     {
+      "beat": "dip",
+      "i": 2,
+      "text": "これが二倍体。",
+      "say": "これが二倍体。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.25,
+      "cue": "dip"
+     },
+     {
+      "beat": "hap",
+      "i": 0,
+      "text": "精子と卵子は23本。",
+      "say": "精子と卵子は23本。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.1,
+      "cue": "gam"
+     },
+     {
+      "beat": "hap",
+      "i": 1,
+      "text": "一倍体です。",
+      "say": "一倍体です。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.25,
+      "cue": "hap"
+     },
+     {
+      "beat": "mei",
+      "i": 0,
+      "text": "生殖細胞の分裂を減数分裂と呼び、",
+      "say": "生殖細胞の分裂を減数分裂と呼び、",
+      "speed": 1,
+      "pre": 0,
+      "post": 0,
+      "cue": "mei"
+     },
+     {
+      "beat": "mei",
+      "i": 1,
+      "text": "2回の分裂で、二倍体を一倍体に半減させます。",
+      "say": "2回の分裂で、二倍体を一倍体に半減させます。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.4,
+      "cue": "half"
+     }
+    ]
+   },
+   {
+    "id": "S13",
+    "file": "audio/S13.wav",
+    "segs": [
+     {
+      "beat": "w",
+      "i": 0,
+      "text": "黒板に整理します。",
+      "say": "黒板に整理します。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.1,
+      "cue": "w"
+     },
+     {
+      "beat": "w",
+      "i": 1,
+      "text": "2回の分裂で、46本が23本に。",
+      "say": "2回の分裂で、46本が23本に。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.15,
+      "cue": "two"
+     },
+     {
+      "beat": "w",
+      "i": 2,
+      "text": "第1分裂では相同染色体が、",
+      "say": "第1分裂では相同染色体が、",
+      "speed": 1,
+      "pre": 0,
+      "post": 0,
+      "cue": "m1"
+     },
+     {
+      "beat": "w",
+      "i": 3,
+      "text": "第2分裂では姉妹染色分体が分かれます。",
+      "say": "第2分裂ではしまいせんしょくぶんたいが分かれます。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.4,
+      "cue": "m2"
+     }
+    ]
+   },
+   {
+    "id": "S14",
+    "file": "audio/S14.wav",
+    "segs": [
+     {
+      "beat": "see",
+      "i": 0,
+      "text": "動きで確認しましょう。",
+      "say": "動きで確認しましょう。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.1,
+      "cue": "see"
+     },
+     {
+      "beat": "see",
+      "i": 1,
+      "text": "ここでは1対、例えば21番だけを追います。",
+      "say": "ここでは1対、例えば21番だけを追います。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.1,
+      "cue": "one"
+     },
+     {
+      "beat": "see",
+      "i": 2,
+      "text": "青が父親由来、赤が母親由来です。",
+      "say": "青が父親由来、赤が母親由来です。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.25,
+      "cue": "col"
+     },
+     {
+      "beat": "rep",
+      "i": 0,
+      "text": "まずDNAが複製されて、それぞれの染色体が2本の姉妹染色分体になります。",
+      "say": "まずディーエヌエーが複製されて、それぞれの染色体が2本のしまいせんしょくぶんたいになります。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.25,
+      "cue": "rep"
+     },
+     {
+      "beat": "pair",
+      "i": 0,
+      "text": "相同染色体どうしが並んで……",
+      "say": "相同染色体どうしが並んで",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.2,
+      "cue": "pair"
+     },
+     {
+      "beat": "m1",
+      "i": 0,
+      "text": "第1分裂。",
+      "say": "第1分裂。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.1,
+      "cue": "m1"
+     },
+     {
+      "beat": "m1",
+      "i": 1,
+      "text": "相同染色体が、別々の細胞へ分かれます。",
+      "say": "相同染色体が、別々の細胞へ分かれます。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.25,
+      "cue": "sep1"
+     },
+     {
+      "beat": "m2",
+      "i": 0,
+      "text": "第2分裂。今度は姉妹染色分体が分かれて……",
+      "say": "第2分裂。今度はしまいせんしょくぶんたいが分かれて",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.2,
+      "cue": "m2"
+     },
+     {
+      "beat": "four",
+      "i": 0,
+      "text": "4つの配偶子ができました。",
+      "say": "4つの配偶子ができました。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.1,
+      "cue": "four"
+     },
+     {
+      "beat": "four",
+      "i": 1,
+      "text": "どれも1本ずつです。",
+      "say": "どれも1本ずつです。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.4,
+      "cue": "one1"
+     }
+    ]
+   },
+   {
+    "id": "S15",
+    "file": "audio/S15.wav",
+    "segs": [
+     {
+      "beat": "q",
+      "i": 0,
+      "text": "では、第1分裂で、相同染色体が分かれなかったらどうなるでしょう。",
+      "say": "では、第1分裂で、相同染色体が分かれなかったらどうなるでしょう。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.3,
+      "cue": "q"
+     },
+     {
+      "beat": "g",
+      "i": 0,
+      "text": "2本持った配偶子と、1本も持たない配偶子ができます。",
+      "say": "2本持った配偶子と、1本も持たない配偶子ができます。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.15,
+      "cue": "g"
+     },
+     {
+      "beat": "g",
+      "i": 1,
+      "text": "これが受精すると、3本のトリソミー、1本のモノソミーになります。",
+      "say": "これが受精すると、3本のトリソミー、1本のモノソミーになります。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.35,
+      "cue": "tri"
+     },
+     {
+      "beat": "m2",
+      "i": 0,
+      "text": "第2分裂で姉妹染色分体が分かれない場合も、同じように本数が狂います。",
+      "say": "第2分裂でしまいせんしょくぶんたいが分かれない場合も、同じように本数が狂います。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.45,
+      "cue": "m2"
+     }
+    ]
+   },
+   {
+    "id": "S16",
+    "file": "audio/S16.wav",
+    "segs": [
+     {
+      "beat": "w",
+      "i": 0,
+      "text": "黒板に一行。",
+      "say": "黒板に一行。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.1,
+      "cue": "w"
+     },
+     {
+      "beat": "w",
+      "i": 1,
+      "text": "不分離が起こると、1本多い配偶子ができて、受精するとトリソミーになります。",
+      "say": "不分離が起こると、1本多い配偶子ができて、受精するとトリソミーになります。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.45,
+      "cue": "m4"
+     }
+    ]
+   },
+   {
+    "id": "S17",
+    "file": "audio/S17.wav",
+    "segs": [
+     {
+      "beat": "why",
+      "i": 0,
+      "text": "では、なぜ不分離が起こるのか。",
+      "say": "では、なぜ不分離が起こるのか。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.25,
+      "cue": "why"
+     },
+     {
+      "beat": "egg",
+      "i": 0,
+      "text": "卵子は、減数第1分裂の前期で長い間止まっています。",
+      "say": "卵子は、減数第1分裂の前期で長い間止まっています。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.15,
+      "cue": "egg"
+     },
+     {
+      "beat": "egg",
+      "i": 1,
+      "text": "だから年齢が上がると不分離を起こしやすい。",
+      "say": "だから年齢が上がると不分離を起こしやすい。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.25,
+      "cue": "age"
+     },
+     {
+      "beat": "sperm",
+      "i": 0,
+      "text": "精子は、年齢とともにDNA複製のエラーが増えて、",
+      "say": "精子は、年齢とともにディーエヌエー複製のエラーが増えて、",
+      "speed": 1,
+      "pre": 0,
+      "post": 0,
+      "cue": "sperm"
+     },
+     {
+      "beat": "sperm",
+      "i": 1,
+      "text": "塩基レベルの突然変異を起こしやすくなります。",
+      "say": "塩基レベルの突然変異を起こしやすくなります。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.25,
+      "cue": "mut"
+     },
+     {
+      "beat": "down",
+      "i": 0,
+      "text": "ダウン症候群は、",
+      "say": "ダウン症候群は、",
+      "speed": 1,
+      "pre": 0,
+      "post": 0,
+      "cue": "down"
+     },
+     {
+      "beat": "down",
+      "i": 1,
+      "text": "母親が20歳で約1500人に1人、",
+      "say": "母親がはたちで約せんごひゃくにんにひとり、",
+      "speed": 1,
+      "pre": 0,
+      "post": 0,
+      "cue": "a20"
+     },
+     {
+      "beat": "down",
+      "i": 2,
+      "text": "35歳で約350人に1人、",
+      "say": "さんじゅうごさいで約さんびゃくごじゅうにんにひとり、",
+      "speed": 1,
+      "pre": 0,
+      "post": 0,
+      "cue": "a35"
+     },
+     {
+      "beat": "down",
+      "i": 3,
+      "text": "40歳で約100人に1人です。",
+      "say": "よんじゅっさいで約ひゃくにんにひとりです。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.45,
+      "cue": "a40"
+     }
+    ]
+   },
+   {
+    "id": "S18",
+    "file": "audio/S18.wav",
+    "segs": [
+     {
+      "beat": "cmp",
+      "i": 0,
+      "text": "母親の加齢は不分離、",
+      "say": "母親の加齢は不分離、",
+      "speed": 1,
+      "pre": 0,
+      "post": 0,
+      "cue": "mom"
+     },
+     {
+      "beat": "cmp",
+      "i": 1,
+      "text": "父親の加齢は塩基レベルの変異。",
+      "say": "父親の加齢は塩基レベルの変異。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.1,
+      "cue": "dad"
+     },
+     {
+      "beat": "cmp",
+      "i": 2,
+      "text": "この対比、よく問われます。",
+      "say": "この対比、よく問われます。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.25,
+      "cue": "often"
+     },
+     {
+      "beat": "num",
+      "i": 0,
+      "text": "数字も一つだけ覚えるなら、",
+      "say": "数字も一つだけ覚えるなら、",
+      "speed": 1,
+      "pre": 0,
+      "post": 0,
+      "cue": "one"
+     },
+     {
+      "beat": "num",
+      "i": 1,
+      "text": "35歳で約350人に1人です。",
+      "say": "さんじゅうごさいで約さんびゃくごじゅうにんにひとりです。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.45,
+      "cue": "n350"
+     }
+    ]
+   },
+   {
+    "id": "S19",
+    "file": "audio/S19.wav",
+    "segs": [
+     {
+      "beat": "n",
+      "i": 0,
+      "text": "1本ならモノソミー、",
+      "say": "1本ならモノソミー、",
+      "speed": 1,
+      "pre": 0,
+      "post": 0,
+      "cue": "mono"
+     },
+     {
+      "beat": "n",
+      "i": 1,
+      "text": "3本ならトリソミー、",
+      "say": "3本ならトリソミー、",
+      "speed": 1,
+      "pre": 0,
+      "post": 0,
+      "cue": "tri"
+     },
+     {
+      "beat": "n",
+      "i": 2,
+      "text": "4本ならテトラソミー。",
+      "say": "4本ならテトラソミー。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.25,
+      "cue": "tetra"
+     },
+     {
+      "beat": "born",
+      "i": 0,
+      "text": "常染色体の完全トリソミーで生まれてくるのは、13番、18番、21番だけ。",
+      "say": "常染色体の完全トリソミーで生まれてくるのは、13番、18番、21番だけ。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.15,
+      "cue": "born"
+     },
+     {
+      "beat": "born",
+      "i": 1,
+      "text": "多くのトリソミーは、早期に流産すると考えられています。",
+      "say": "多くのトリソミーは、早期に流産すると考えられています。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.25,
+      "cue": "loss"
+     },
+     {
+      "beat": "sex",
+      "i": 0,
+      "text": "性染色体の過剰は不活性化されるため症状が軽く、",
+      "say": "性染色体の過剰は不活性化されるため症状が軽く、",
+      "speed": 1,
+      "pre": 0,
+      "post": 0,
+      "cue": "sex"
+     },
+     {
+      "beat": "sex",
+      "i": 1,
+      "text": "性染色体のモノソミーは、ターナー症候群だけです。",
+      "say": "性染色体のモノソミーは、ターナー症候群だけです。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.45,
+      "cue": "turner"
+     }
+    ]
+   },
+   {
+    "id": "S20",
+    "file": "audio/S20.wav",
+    "segs": [
+     {
+      "beat": "t",
+      "i": 0,
+      "text": "右側に書きます。",
+      "say": "右側に書きます。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.1,
+      "cue": "w"
+     },
+     {
+      "beat": "t",
+      "i": 1,
+      "text": "13番ペイトー、18番エドワーズ、21番ダウン。",
+      "say": "13番ペイトー、18番エドワーズ、21番ダウン。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.25,
+      "cue": "t"
+     },
+     {
+      "beat": "sex",
+      "i": 0,
+      "text": "ターナーだけが性染色体のモノソミー。",
+      "say": "ターナーだけが性染色体のモノソミー。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.1,
+      "cue": "turner"
+     },
+     {
+      "beat": "sex",
+      "i": 1,
+      "text": "性染色体の過剰は軽い。",
+      "say": "性染色体の過剰は軽い。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.1,
+      "cue": "mild"
+     },
+     {
+      "beat": "sex",
+      "i": 2,
+      "text": "5p-は猫鳴き。",
+      "say": "ごピーマイナスはねこなき。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.4,
+      "cue": "cat"
+     }
+    ]
+   },
+   {
+    "id": "S21",
+    "file": "audio/S21.wav",
+    "segs": [
+     {
+      "beat": "why",
+      "i": 0,
+      "text": "では、なぜ13、18、21番だけが生まれてくるのか。",
+      "say": "では、なぜ13、18、21番だけが生まれてくるのか。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.25,
+      "cue": "why"
+     },
+     {
+      "beat": "graph",
+      "i": 0,
+      "text": "右のグラフは、染色体ごとの遺伝子の数です。",
+      "say": "右のグラフは、染色体ごとの遺伝子の数です。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.2,
+      "cue": "graph"
+     },
+     {
+      "beat": "three",
+      "i": 0,
+      "text": "13番、",
+      "say": "13番、",
+      "speed": 1,
+      "pre": 0,
+      "post": 0,
+      "cue": "g13"
+     },
+     {
+      "beat": "three",
+      "i": 1,
+      "text": "18番、",
+      "say": "18番、",
+      "speed": 1,
+      "pre": 0,
+      "post": 0,
+      "cue": "g18"
+     },
+     {
+      "beat": "three",
+      "i": 2,
+      "text": "そして21番。",
+      "say": "そして21番。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.1,
+      "cue": "g21"
+     },
+     {
+      "beat": "three",
+      "i": 3,
+      "text": "この3本は、遺伝子の数が特に少ないんです。",
+      "say": "この3本は、遺伝子の数が特に少ないんです。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.25,
+      "cue": "few"
+     },
+     {
+      "beat": "live",
+      "i": 0,
+      "text": "1本多くても、余分な遺伝子の量が比較的少ない。",
+      "say": "1本多くても、余分な遺伝子の量が比較てき少ない。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.1,
+      "cue": "extra"
+     },
+     {
+      "beat": "live",
+      "i": 1,
+      "text": "だから、致死にならずに生まれてこられる。",
+      "say": "だから、致死にならずに生まれてこられる。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.45,
+      "cue": "live"
+     }
+    ]
+   },
+   {
+    "id": "S22",
+    "file": "audio/S22.wav",
+    "segs": [
+     {
+      "beat": "four",
+      "i": 0,
+      "text": "今日覚えてほしいのは、この4つです。",
+      "say": "今日覚えてほしいのは、この4つです。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.3,
+      "cue": "four"
+     },
+     {
+      "beat": "p1",
+      "i": 0,
+      "text": "ひとつ目。",
+      "say": "ひとつ目。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.1,
+      "cue": "p1"
+     },
+     {
+      "beat": "p1",
+      "i": 1,
+      "text": "DNAからヌクレオソーム、クロマチン、染色体へ。",
+      "say": "ディーエヌエーからヌクレオソーム、クロマチン、染色体へ。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.1,
+      "cue": "p1b"
+     },
+     {
+      "beat": "p1",
+      "i": 2,
+      "text": "2、11、1400ナノメートル。",
+      "say": "に、じゅういち、せんよんひゃくナノメートル。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.3,
+      "cue": "p1c"
+     },
+     {
+      "beat": "p2",
+      "i": 0,
+      "text": "ふたつ目。",
+      "say": "ふたつ目。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.1,
+      "cue": "p2"
+     },
+     {
+      "beat": "p2",
+      "i": 1,
+      "text": "コアヒストンは4種類が2個ずつ。",
+      "say": "コアヒストンは4種類が2個ずつ。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.1,
+      "cue": "p2b"
+     },
+     {
+      "beat": "p2",
+      "i": 2,
+      "text": "H1はスペーサー。",
+      "say": "エイチワンはスペーサー。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.3,
+      "cue": "p2c"
+     },
+     {
+      "beat": "p3",
+      "i": 0,
+      "text": "みっつ目。",
+      "say": "みっつ目。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.1,
+      "cue": "p3"
+     },
+     {
+      "beat": "p3",
+      "i": 1,
+      "text": "不分離でトリソミー。",
+      "say": "不分離でトリソミー。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.1,
+      "cue": "p3b"
+     },
+     {
+      "beat": "p3",
+      "i": 2,
+      "text": "生まれてくるのは13、18、21番。",
+      "say": "生まれてくるのは13、18、21番。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.3,
+      "cue": "p3c"
+     },
+     {
+      "beat": "p4",
+      "i": 0,
+      "text": "そして、母親の加齢は不分離、父親の加齢は点変異です。",
+      "say": "そして、母親の加齢は不分離、父親の加齢は点変異です。",
+      "speed": 1,
+      "pre": 0,
+      "post": 0.45,
+      "cue": "p4"
+     }
+    ]
+   },
+   {
+    "id": "S23",
+    "file": "audio/S23.wav",
+    "segs": [
+     {
+      "beat": "next",
+      "i": 0,
+      "text": "次の第4講では、",
+      "say": "次の第4講では、",
+      "speed": 1,
+      "pre": 0,
+      "post": 0,
+      "cue": "next"
+     },
+     {
+      "beat": "next",
+      "i": 1,
+      "text": "この染色体の上にある「遺伝子」そのものの構造と、",
+      "say": "この染色体の上にある遺伝子そのものの構造と、",
+      "speed": 1,
+      "pre": 0,
+      "post": 0,
+      "cue": "what"
+     },
+     {
+      "beat": "next",
+      "i": 2,
+      "text": "それが読まれる仕組みを見ていきます。",
+      "say": "それが読まれる仕組みを見ていきます。",
+      "speed": 1,
+      "pre": 0,
+      "post": 1,
+      "cue": "read"
+     }
+    ]
+   }
+  ]
+ },
+ "timing": {
+  "source": "kokoro",
+  "total": 445.7859,
+  "scenes": [
+   {
+    "id": "S01",
+    "t0": 0,
+    "t1": 18.031,
+    "events": {
+     "start": 0,
+     "title": 0,
+     "prev": 1.7057,
+     "tidy": 5.7623999999999995,
+     "wrong": 10.866200000000001,
+     "chr": 15.776700000000002
+    }
+   },
+   {
+    "id": "S02",
+    "t0": 18.031,
+    "t1": 27.981499999999997,
+    "events": {
+     "start": 18.031,
+     "dna": 18.031,
+     "nuc": 18.9823,
+     "chrom": 22.5123,
+     "chr": 24.6423
+    }
+   },
+   {
+    "id": "S03",
+    "t0": 27.981499999999997,
+    "t1": 42.40079999999999,
+    "events": {
+     "start": 27.981499999999997,
+     "d2": 27.981499999999997,
+     "n11": 29.704099999999997,
+     "c1400": 32.112399999999994,
+     "memo": 37.82149999999999
+    }
+   },
+   {
+    "id": "S04",
+    "t0": 42.40079999999999,
+    "t1": 84.6373,
+    "events": {
+     "start": 42.40079999999999,
+     "look": 42.40079999999999,
+     "naked": 47.06239999999999,
+     "d2": 48.956999999999994,
+     "wrap": 51.44679999999999,
+     "nuc": 55.074499999999986,
+     "spacer": 60.899999999999984,
+     "h1": 62.728799999999985,
+     "fold": 65.27609999999999,
+     "chr": 70.01259999999999,
+     "end": 77.6077
+    }
+   },
+   {
+    "id": "S05",
+    "t0": 84.6373,
+    "t1": 101.99040000000001,
+    "events": {
+     "start": 84.6373,
+     "sort": 84.6373,
+     "core": 86.3102,
+     "oct": 91.7892,
+     "h1": 93.8115
+    }
+   },
+   {
+    "id": "S06",
+    "t0": 101.99040000000001,
+    "t1": 107.80730000000003,
+    "events": {
+     "start": 101.99040000000001,
+     "line": 101.99040000000001,
+     "rule": 104.02520000000001,
+     "often": 105.69930000000001
+    }
+   },
+   {
+    "id": "S07",
+    "t0": 107.80730000000003,
+    "t1": 123.29250000000005,
+    "events": {
+     "start": 107.80730000000003,
+     "mod": 107.80730000000003,
+     "cell": 113.08270000000003,
+     "epi": 118.67750000000004
+    }
+   },
+   {
+    "id": "S08",
+    "t0": 123.29250000000005,
+    "t1": 138.41720000000007,
+    "events": {
+     "start": 123.29250000000005,
+     "band": 123.29250000000005,
+     "xy": 127.01800000000006,
+     "n46": 130.89810000000006,
+     "order": 132.49710000000005
+    }
+   },
+   {
+    "id": "S09",
+    "t0": 138.41720000000007,
+    "t1": 157.13250000000008,
+    "events": {
+     "start": 138.41720000000007,
+     "x": 138.41720000000007,
+     "cen": 142.04900000000006,
+     "p": 144.23720000000006,
+     "q": 146.31720000000007,
+     "tel": 148.51630000000006,
+     "n46": 150.23000000000008,
+     "auto": 151.82900000000006,
+     "len": 154.91190000000006
+    }
+   },
+   {
+    "id": "S10",
+    "t0": 157.13250000000008,
+    "t1": 182.09780000000006,
+    "events": {
+     "start": 157.13250000000008,
+     "class": 157.13250000000008,
+     "meta": 160.60550000000006,
+     "metaN": 164.28480000000005,
+     "acro": 167.61300000000006,
+     "acroN": 171.00320000000005,
+     "telo": 175.74310000000006,
+     "none": 178.75170000000006
+    }
+   },
+   {
+    "id": "S11",
+    "t0": 182.09780000000006,
+    "t1": 194.29760000000007,
+    "events": {
+     "start": 182.09780000000006,
+     "w": 182.09780000000006,
+     "acro": 183.68230000000005,
+     "none": 188.15990000000005,
+     "often": 190.43650000000005
+    }
+   },
+   {
+    "id": "S12",
+    "t0": 194.29760000000007,
+    "t1": 220.65480000000002,
+    "events": {
+     "start": 194.29760000000007,
+     "q": 194.29760000000007,
+     "soma": 200.68320000000008,
+     "parents": 202.52680000000007,
+     "dip": 206.56050000000005,
+     "gam": 207.94720000000004,
+     "hap": 209.87050000000002,
+     "mei": 211.54030000000003,
+     "half": 215.33030000000002
+    }
+   },
+   {
+    "id": "S13",
+    "t0": 220.65480000000002,
+    "t1": 234.01140000000004,
+    "events": {
+     "start": 220.65480000000002,
+     "w": 220.65480000000002,
+     "two": 222.36970000000002,
+     "m1": 226.18640000000002,
+     "m2": 229.21640000000002
+    }
+   },
+   {
+    "id": "S14",
+    "t0": 234.01140000000004,
+    "t1": 267.0852,
+    "events": {
+     "start": 234.01140000000004,
+     "see": 234.01140000000004,
+     "one": 235.83150000000003,
+     "col": 239.63050000000004,
+     "rep": 243.00750000000005,
+     "pair": 250.37180000000006,
+     "m1": 253.28180000000006,
+     "sep1": 254.05750000000006,
+     "m2": 257.98190000000005,
+     "four": 262.44190000000003,
+     "one1": 264.90770000000003
+    }
+   },
+   {
+    "id": "S15",
+    "t0": 267.0852,
+    "t1": 290.33739999999995,
+    "events": {
+     "start": 267.0852,
+     "q": 267.0852,
+     "g": 272.7896,
+     "tri": 277.45349999999996,
+     "m2": 283.0824
+    }
+   },
+   {
+    "id": "S16",
+    "t0": 290.33739999999995,
+    "t1": 298.5762999999999,
+    "events": {
+     "start": 290.33739999999995,
+     "w": 290.33739999999995,
+     "m4": 291.69179999999994
+    }
+   },
+   {
+    "id": "S17",
+    "t0": 298.5762999999999,
+    "t1": 330.50239999999974,
+    "events": {
+     "start": 298.5762999999999,
+     "why": 298.5762999999999,
+     "egg": 300.85559999999987,
+     "age": 305.72119999999984,
+     "sperm": 309.2221999999998,
+     "mut": 313.5921999999998,
+     "down": 317.6461999999998,
+     "a20": 319.2261999999998,
+     "a35": 322.8461999999998,
+     "a40": 326.7061999999998
+    }
+   },
+   {
+    "id": "S18",
+    "t0": 330.50239999999974,
+    "t1": 344.52089999999976,
+    "events": {
+     "start": 330.50239999999974,
+     "mom": 330.50239999999974,
+     "dad": 332.44239999999974,
+     "often": 335.2492999999998,
+     "one": 337.3753999999998,
+     "n350": 339.8553999999998
+    }
+   },
+   {
+    "id": "S19",
+    "t0": 344.52089999999976,
+    "t1": 371.5886999999998,
+    "events": {
+     "start": 344.52089999999976,
+     "mono": 344.52089999999976,
+     "tri": 346.1208999999998,
+     "tetra": 347.7208999999998,
+     "born": 349.7196999999998,
+     "loss": 357.0670999999998,
+     "sex": 361.6816999999998,
+     "turner": 366.6216999999998
+    }
+   },
+   {
+    "id": "S20",
+    "t0": 371.5886999999998,
+    "t1": 384.57939999999985,
+    "events": {
+     "start": 371.5886999999998,
+     "w": 371.5886999999998,
+     "t": 373.2237999999998,
+     "turner": 377.2780999999998,
+     "mild": 380.25599999999986,
+     "cat": 382.31029999999987
+    }
+   },
+   {
+    "id": "S21",
+    "t0": 384.57939999999985,
+    "t1": 408.7932999999999,
+    "events": {
+     "start": 384.57939999999985,
+     "why": 384.57939999999985,
+     "graph": 389.5749999999999,
+     "g13": 393.6335999999999,
+     "g18": 394.54559999999987,
+     "g21": 395.47159999999985,
+     "few": 396.9405999999999,
+     "extra": 400.8875999999999,
+     "live": 405.5043999999999
+    }
+   },
+   {
+    "id": "S22",
+    "t0": 408.7932999999999,
+    "t1": 435.62730000000005,
+    "events": {
+     "start": 408.7932999999999,
+     "four": 408.7932999999999,
+     "p1": 411.71159999999986,
+     "p1b": 412.6674999999999,
+     "p1c": 416.3048999999999,
+     "p2": 419.00479999999993,
+     "p2b": 419.98859999999996,
+     "p2c": 422.4944,
+     "p3": 424.2171,
+     "p3b": 425.15860000000004,
+     "p3c": 426.72940000000006,
+     "p4": 430.16910000000007
+    }
+   },
+   {
+    "id": "S23",
+    "t0": 435.62730000000005,
+    "t1": 445.7859,
+    "events": {
+     "start": 435.62730000000005,
+     "next": 435.62730000000005,
+     "what": 437.24730000000005,
+     "read": 441.51730000000003
+    }
+   }
+  ],
+  "segs": [
+   {
+    "scene": "S01",
+    "beat": "open",
+    "i": 0,
+    "seg": {
+     "text": "第3講を始めます。",
+     "say": "第3講を始めます。",
+     "cue": "title",
+     "post": 0.2
+    },
+    "t0": 0,
+    "t1": 1.7057,
+    "speech0": 0,
+    "speech1": 1.5057
+   },
+   {
+    "scene": "S01",
+    "beat": "open",
+    "i": 1,
+    "seg": {
+     "text": "前回は、DNAが何でできているのかを見ました。",
+     "say": "前回は、ディーエヌエーが何でできているのかを見ました。",
+     "cue": "prev",
+     "post": 0.3
+    },
+    "t0": 1.7057,
+    "t1": 5.7623999999999995,
+    "speech0": 1.7057,
+    "speech1": 5.4624
+   },
+   {
+    "scene": "S01",
+    "beat": "today",
+    "i": 0,
+    "seg": {
+     "text": "今日は、その長いDNAを、細胞がどうやって片付けているのか。",
+     "say": "今日は、その長いディーエヌエーを、細胞がどうやって片付けているのか。",
+     "cue": "tidy",
+     "post": 0.15
+    },
+    "t0": 5.7623999999999995,
+    "t1": 10.866200000000001,
+    "speech0": 5.7623999999999995,
+    "speech1": 10.7162
+   },
+   {
+    "scene": "S01",
+    "beat": "today",
+    "i": 1,
+    "seg": {
+     "text": "そして、片付け方や配り方を間違えると何が起こるのか。",
+     "say": "そして、片付け方や配り方を間違えると何が起こるのか。",
+     "cue": "wrong",
+     "post": 0.15
+    },
+    "t0": 10.866200000000001,
+    "t1": 15.776700000000002,
+    "speech0": 10.866200000000001,
+    "speech1": 15.626700000000001
+   },
+   {
+    "scene": "S01",
+    "beat": "today",
+    "i": 2,
+    "seg": {
+     "text": "**染色体**の話です。",
+     "say": "染色体の話です。",
+     "cue": "chr",
+     "post": 0.5
+    },
+    "t0": 15.776700000000002,
+    "t1": 17.881,
+    "speech0": 15.776700000000002,
+    "speech1": 17.381
+   },
+   {
+    "scene": "S02",
+    "beat": "flow",
+    "i": 0,
+    "seg": {
+     "text": "DNAが、",
+     "say": "ディーエヌエーが、",
+     "cue": "dna"
+    },
+    "t0": 18.031,
+    "t1": 18.9823,
+    "speech0": 18.031,
+    "speech1": 18.9823
+   },
+   {
+    "scene": "S02",
+    "beat": "flow",
+    "i": 1,
+    "seg": {
+     "text": "**ヒストン**に巻き付いて**ヌクレオソーム**になり、",
+     "say": "ヒストンに巻き付いてヌクレオソームになり、",
+     "cue": "nuc"
+    },
+    "t0": 18.9823,
+    "t1": 22.5123,
+    "speech0": 18.9823,
+    "speech1": 22.5123
+   },
+   {
+    "scene": "S02",
+    "beat": "flow",
+    "i": 2,
+    "seg": {
+     "text": "折りたたまれて**クロマチン**、",
+     "say": "折りたたまれてクロマチン、",
+     "cue": "chrom"
+    },
+    "t0": 22.5123,
+    "t1": 24.6423,
+    "speech0": 22.5123,
+    "speech1": 24.6423
+   },
+   {
+    "scene": "S02",
+    "beat": "flow",
+    "i": 3,
+    "seg": {
+     "text": "分裂のときには**染色体**になります。",
+     "say": "分裂のときには染色体になります。",
+     "cue": "chr",
+     "post": 0.45
+    },
+    "t0": 24.6423,
+    "t1": 27.8315,
+    "speech0": 24.6423,
+    "speech1": 27.3815
+   },
+   {
+    "scene": "S03",
+    "beat": "nums",
+    "i": 0,
+    "seg": {
+     "text": "DNAは**2ナノメートル**。",
+     "say": "ディーエヌエーはにナノメートル。",
+     "cue": "d2",
+     "post": 0.15
+    },
+    "t0": 27.981499999999997,
+    "t1": 29.704099999999997,
+    "speech0": 27.981499999999997,
+    "speech1": 29.5541
+   },
+   {
+    "scene": "S03",
+    "beat": "nums",
+    "i": 1,
+    "seg": {
+     "text": "ヌクレオソームで**11ナノメートル**。",
+     "say": "ヌクレオソームでじゅういちナノメートル。",
+     "cue": "n11",
+     "post": 0.15
+    },
+    "t0": 29.704099999999997,
+    "t1": 32.112399999999994,
+    "speech0": 29.704099999999997,
+    "speech1": 31.962399999999995
+   },
+   {
+    "scene": "S03",
+    "beat": "nums",
+    "i": 2,
+    "seg": {
+     "text": "そしてクロマチンを経て、分裂期の染色体は**1400ナノメートル**。",
+     "say": "そしてクロマチンを経て、分裂期の染色体はせんよんひゃくナノメートル。",
+     "cue": "c1400",
+     "post": 0.3
+    },
+    "t0": 32.112399999999994,
+    "t1": 37.82149999999999,
+    "speech0": 32.112399999999994,
+    "speech1": 37.521499999999996
+   },
+   {
+    "scene": "S03",
+    "beat": "memo",
+    "i": 0,
+    "seg": {
+     "text": "数字も一緒に覚えておくと、図の問題で迷いません。",
+     "say": "数字も一緒に覚えておくと、図の問題で迷いません。",
+     "cue": "memo",
+     "post": 0.4
+    },
+    "t0": 37.82149999999999,
+    "t1": 42.25079999999999,
+    "speech0": 37.82149999999999,
+    "speech1": 41.85079999999999
+   },
+   {
+    "scene": "S04",
+    "beat": "naked",
+    "i": 0,
+    "seg": {
+     "text": "実際にどれくらい小さくたたまれているのか、見てみましょう。",
+     "say": "実際にどれくらい小さくたたまれているのか、見てみましょう。",
+     "cue": "look",
+     "post": 0.15
+    },
+    "t0": 42.40079999999999,
+    "t1": 47.06239999999999,
+    "speech0": 42.40079999999999,
+    "speech1": 46.91239999999999
+   },
+   {
+    "scene": "S04",
+    "beat": "naked",
+    "i": 1,
+    "seg": {
+     "text": "まずは裸のDNA。",
+     "say": "まずは裸のディーエヌエー。",
+     "cue": "naked",
+     "post": 0.1
+    },
+    "t0": 47.06239999999999,
+    "t1": 48.956999999999994,
+    "speech0": 47.06239999999999,
+    "speech1": 48.85699999999999
+   },
+   {
+    "scene": "S04",
+    "beat": "naked",
+    "i": 2,
+    "seg": {
+     "text": "直径わずか**2ナノメートル**です。",
+     "say": "直径わずかにナノメートルです。",
+     "cue": "d2",
+     "post": 0.3
+    },
+    "t0": 48.956999999999994,
+    "t1": 51.44679999999999,
+    "speech0": 48.956999999999994,
+    "speech1": 51.14679999999999
+   },
+   {
+    "scene": "S04",
+    "beat": "wrap",
+    "i": 0,
+    "seg": {
+     "text": "これが、**ヒストン**の塊に巻き付いていきます。",
+     "say": "これが、ヒストンの塊に巻き付いていきます。",
+     "cue": "wrap",
+     "post": 0.25
+    },
+    "t0": 51.44679999999999,
+    "t1": 55.074499999999986,
+    "speech0": 51.44679999999999,
+    "speech1": 54.824499999999986
+   },
+   {
+    "scene": "S04",
+    "beat": "nuc",
+    "i": 0,
+    "seg": {
+     "text": "一つのコアに約140塩基対が巻き付いて、**ヌクレオソーム**になります。",
+     "say": "一つのコアに約ひゃくよんじゅう塩基対が巻き付いて、ヌクレオソームになります。",
+     "cue": "nuc",
+     "post": 0.15
+    },
+    "t0": 55.074499999999986,
+    "t1": 60.899999999999984,
+    "speech0": 55.074499999999986,
+    "speech1": 60.749999999999986
+   },
+   {
+    "scene": "S04",
+    "beat": "nuc",
+    "i": 1,
+    "seg": {
+     "text": "つなぎの部分が**スペーサー**。",
+     "say": "つなぎの部分がスペーサー。",
+     "cue": "spacer",
+     "post": 0.1
+    },
+    "t0": 60.899999999999984,
+    "t1": 62.728799999999985,
+    "speech0": 60.899999999999984,
+    "speech1": 62.628799999999984
+   },
+   {
+    "scene": "S04",
+    "beat": "nuc",
+    "i": 2,
+    "seg": {
+     "text": "ここに**H1**が結合します。",
+     "say": "ここにエイチワンが結合します。",
+     "cue": "h1",
+     "post": 0.3
+    },
+    "t0": 62.728799999999985,
+    "t1": 65.27609999999999,
+    "speech0": 62.728799999999985,
+    "speech1": 64.97609999999999
+   },
+   {
+    "scene": "S04",
+    "beat": "fold",
+    "i": 0,
+    "seg": {
+     "text": "ヌクレオソームの連なりが、さらに折りたたまれて**クロマチン**に。",
+     "say": "ヌクレオソームの連なりが、さらに折りたたまれてクロマチンに。",
+     "cue": "fold",
+     "post": 0.25
+    },
+    "t0": 65.27609999999999,
+    "t1": 70.01259999999999,
+    "speech0": 65.27609999999999,
+    "speech1": 69.76259999999999
+   },
+   {
+    "scene": "S04",
+    "beat": "chr",
+    "i": 0,
+    "seg": {
+     "text": "分裂期には、ここまで凝縮して、幅約1400ナノメートルの**染色体**になります。",
+     "say": "分裂期には、ここまで凝縮して、幅約せんよんひゃくナノメートルの染色体になります。",
+     "cue": "chr",
+     "post": 0.3
+    },
+    "t0": 70.01259999999999,
+    "t1": 77.6077,
+    "speech0": 70.01259999999999,
+    "speech1": 77.3077
+   },
+   {
+    "scene": "S04",
+    "beat": "end",
+    "i": 0,
+    "seg": {
+     "text": "細い糸が、何段階にも折りたたまれて、ようやく目に見える形になるわけです。",
+     "say": "細い糸が、何段階にも折りたたまれて、ようやく目に見える形になるわけです。",
+     "cue": "end",
+     "post": 0.45
+    },
+    "t0": 77.6077,
+    "t1": 84.48729999999999,
+    "speech0": 77.6077,
+    "speech1": 84.03729999999999
+   },
+   {
+    "scene": "S05",
+    "beat": "core",
+    "i": 0,
+    "seg": {
+     "text": "ヒストンを整理します。",
+     "say": "ヒストンを整理します。",
+     "cue": "sort",
+     "post": 0.1
+    },
+    "t0": 84.6373,
+    "t1": 86.3102,
+    "speech0": 84.6373,
+    "speech1": 86.2102
+   },
+   {
+    "scene": "S05",
+    "beat": "core",
+    "i": 1,
+    "seg": {
+     "text": "コアになるのは、H2A、H2B、H3、H4が2個ずつ。",
+     "say": "コアになるのは、エイチツーエー、エイチツービー、エイチスリー、エイチフォーが2個ずつ。",
+     "cue": "core",
+     "post": 0.15
+    },
+    "t0": 86.3102,
+    "t1": 91.7892,
+    "speech0": 86.3102,
+    "speech1": 91.63919999999999
+   },
+   {
+    "scene": "S05",
+    "beat": "core",
+    "i": 2,
+    "seg": {
+     "text": "合わせて**八量体**です。",
+     "say": "合わせてはちりょうたいです。",
+     "cue": "oct",
+     "post": 0.3
+    },
+    "t0": 91.7892,
+    "t1": 93.8115,
+    "speech0": 91.7892,
+    "speech1": 93.5115
+   },
+   {
+    "scene": "S05",
+    "beat": "h1",
+    "i": 0,
+    "seg": {
+     "text": "H1だけは、コアではなく、ヌクレオソームの間のスペーサーのところでDNAと結合しています。",
+     "say": "エイチワンだけは、コアではなく、ヌクレオソームの間のスペーサーのところでディーエヌエーと結合しています。",
+     "cue": "h1",
+     "post": 0.4
+    },
+    "t0": 93.8115,
+    "t1": 101.8404,
+    "speech0": 93.8115,
+    "speech1": 101.4404
+   },
+   {
+    "scene": "S06",
+    "beat": "line",
+    "i": 0,
+    "seg": {
+     "text": "ここに線を引いておきます。",
+     "say": "ここに線を引いておきます。",
+     "cue": "line",
+     "post": 0.1
+    },
+    "t0": 101.99040000000001,
+    "t1": 103.8752,
+    "speech0": 101.99040000000001,
+    "speech1": 103.77520000000001
+   },
+   {
+    "scene": "S06",
+    "beat": "line",
+    "i": 1,
+    "seg": {
+     "text": "**H1はコアではない**。",
+     "say": "エイチワンはコアではない。",
+     "cue": "rule",
+     "pre": 0.15,
+     "post": 0.2
+    },
+    "t0": 103.8752,
+    "t1": 105.69930000000001,
+    "speech0": 104.02520000000001,
+    "speech1": 105.4993
+   },
+   {
+    "scene": "S06",
+    "beat": "line",
+    "i": 2,
+    "seg": {
+     "text": "これがよく問われます。",
+     "say": "これがよく問われます。",
+     "cue": "often",
+     "post": 0.4
+    },
+    "t0": 105.69930000000001,
+    "t1": 107.65730000000002,
+    "speech0": 105.69930000000001,
+    "speech1": 107.25730000000001
+   },
+   {
+    "scene": "S07",
+    "beat": "mod",
+    "i": 0,
+    "seg": {
+     "text": "ヒストンは**化学修飾**を受けて、ヌクレオソームの性質を変えます。",
+     "say": "ヒストンは化学修飾を受けて、ヌクレオソームの性質を変えます。",
+     "cue": "mod",
+     "post": 0.25
+    },
+    "t0": 107.80730000000003,
+    "t1": 113.08270000000003,
+    "speech0": 107.80730000000003,
+    "speech1": 112.83270000000003
+   },
+   {
+    "scene": "S07",
+    "beat": "cell",
+    "i": 0,
+    "seg": {
+     "text": "この修飾が細胞ごとに違い、遺伝子発現の制御に関わる。",
+     "say": "この修飾が細胞ごとに違い、遺伝子発現の制御に関わる。",
+     "cue": "cell",
+     "post": 0.15
+    },
+    "t0": 113.08270000000003,
+    "t1": 118.67750000000004,
+    "speech0": 113.08270000000003,
+    "speech1": 118.52750000000003
+   },
+   {
+    "scene": "S07",
+    "beat": "cell",
+    "i": 1,
+    "seg": {
+     "text": "第6講の**エピゲノム**につながる、大事な伏線です。",
+     "say": "第6講のエピゲノムにつながる、大事な伏線です。",
+     "cue": "epi",
+     "post": 0.45
+    },
+    "t0": 118.67750000000004,
+    "t1": 123.14250000000004,
+    "speech0": 118.67750000000004,
+    "speech1": 122.69250000000004
+   },
+   {
+    "scene": "S08",
+    "beat": "band",
+    "i": 0,
+    "seg": {
+     "text": "G分染法で染めて並べたものが**核型**。",
+     "say": "ジー分染法で染めて並べたものがかくがた。",
+     "cue": "band",
+     "post": 0.15
+    },
+    "t0": 123.29250000000005,
+    "t1": 127.01800000000006,
+    "speech0": 123.29250000000005,
+    "speech1": 126.86800000000005
+   },
+   {
+    "scene": "S08",
+    "beat": "band",
+    "i": 1,
+    "seg": {
+     "text": "正常な男性は46,XYと書きます。",
+     "say": "正常な男性はよんじゅうろく、エックスワイと書きます。",
+     "cue": "xy",
+     "post": 0.25
+    },
+    "t0": 127.01800000000006,
+    "t1": 130.89810000000006,
+    "speech0": 127.01800000000006,
+    "speech1": 130.64810000000006
+   },
+   {
+    "scene": "S08",
+    "beat": "n",
+    "i": 0,
+    "seg": {
+     "text": "ヒトは**46本**。",
+     "say": "ヒトは46本。",
+     "cue": "n46",
+     "post": 0.1
+    },
+    "t0": 130.89810000000006,
+    "t1": 132.49710000000005,
+    "speech0": 130.89810000000006,
+    "speech1": 132.39710000000005
+   },
+   {
+    "scene": "S08",
+    "beat": "n",
+    "i": 1,
+    "seg": {
+     "text": "長い方から1番から22番、残りの2本が性染色体です。",
+     "say": "長い方から1番から22番、残りの2本が性染色体です。",
+     "cue": "order",
+     "post": 0.4
+    },
+    "t0": 132.49710000000005,
+    "t1": 138.26720000000006,
+    "speech0": 132.49710000000005,
+    "speech1": 137.86720000000005
+   },
+   {
+    "scene": "S09",
+    "beat": "x",
+    "i": 0,
+    "seg": {
+     "text": "分裂期の染色体は、こういうX字形です。",
+     "say": "分裂期の染色体は、こういうエックス字形です。",
+     "cue": "x",
+     "post": 0.15
+    },
+    "t0": 138.41720000000007,
+    "t1": 142.04900000000006,
+    "speech0": 138.41720000000007,
+    "speech1": 141.89900000000006
+   },
+   {
+    "scene": "S09",
+    "beat": "x",
+    "i": 1,
+    "seg": {
+     "text": "くびれたところが**セントロメア**。",
+     "say": "くびれたところがセントロメア。",
+     "cue": "cen",
+     "post": 0.1
+    },
+    "t0": 142.04900000000006,
+    "t1": 144.23720000000006,
+    "speech0": 142.04900000000006,
+    "speech1": 144.13720000000006
+   },
+   {
+    "scene": "S09",
+    "beat": "x",
+    "i": 2,
+    "seg": {
+     "text": "上の短い腕が**短腕p**、",
+     "say": "上の短い腕がたんわんピー、",
+     "cue": "p"
+    },
+    "t0": 144.23720000000006,
+    "t1": 146.31720000000007,
+    "speech0": 144.23720000000006,
+    "speech1": 146.31720000000007
+   },
+   {
+    "scene": "S09",
+    "beat": "x",
+    "i": 3,
+    "seg": {
+     "text": "下の長い腕が**長腕q**。",
+     "say": "下の長い腕がちょうわんキュー。",
+     "cue": "q",
+     "post": 0.1
+    },
+    "t0": 146.31720000000007,
+    "t1": 148.51630000000006,
+    "speech0": 146.31720000000007,
+    "speech1": 148.41630000000006
+   },
+   {
+    "scene": "S09",
+    "beat": "x",
+    "i": 4,
+    "seg": {
+     "text": "末端が**テロメア**です。",
+     "say": "末端がテロメアです。",
+     "cue": "tel",
+     "post": 0.3
+    },
+    "t0": 148.51630000000006,
+    "t1": 150.23000000000008,
+    "speech0": 148.51630000000006,
+    "speech1": 149.93000000000006
+   },
+   {
+    "scene": "S09",
+    "beat": "n",
+    "i": 0,
+    "seg": {
+     "text": "ヒトは46本。",
+     "say": "ヒトは46本。",
+     "cue": "n46",
+     "post": 0.1
+    },
+    "t0": 150.23000000000008,
+    "t1": 151.82900000000006,
+    "speech0": 150.23000000000008,
+    "speech1": 151.72900000000007
+   },
+   {
+    "scene": "S09",
+    "beat": "n",
+    "i": 1,
+    "seg": {
+     "text": "常染色体22対と、性染色体。",
+     "say": "常染色体22対と、性染色体。",
+     "cue": "auto",
+     "post": 0.1
+    },
+    "t0": 151.82900000000006,
+    "t1": 154.91190000000006,
+    "speech0": 151.82900000000006,
+    "speech1": 154.81190000000007
+   },
+   {
+    "scene": "S09",
+    "beat": "n",
+    "i": 2,
+    "seg": {
+     "text": "番号は長さの順です。",
+     "say": "番号は長さの順です。",
+     "cue": "len",
+     "post": 0.4
+    },
+    "t0": 154.91190000000006,
+    "t1": 156.98250000000007,
+    "speech0": 154.91190000000006,
+    "speech1": 156.58250000000007
+   },
+   {
+    "scene": "S10",
+    "beat": "class",
+    "i": 0,
+    "seg": {
+     "text": "セントロメアの位置で、形が分類されます。",
+     "say": "セントロメアの位置で、形が分類されます。",
+     "cue": "class",
+     "post": 0.2
+    },
+    "t0": 157.13250000000008,
+    "t1": 160.60550000000006,
+    "speech0": 157.13250000000008,
+    "speech1": 160.40550000000007
+   },
+   {
+    "scene": "S10",
+    "beat": "meta",
+    "i": 0,
+    "seg": {
+     "text": "セントロメアが真ん中にあるのが**メタセントリック**。",
+     "say": "セントロメアが真ん中にあるのがメタセントリック。",
+     "cue": "meta",
+     "post": 0.1
+    },
+    "t0": 160.60550000000006,
+    "t1": 164.28480000000005,
+    "speech0": 160.60550000000006,
+    "speech1": 164.18480000000005
+   },
+   {
+    "scene": "S10",
+    "beat": "meta",
+    "i": 1,
+    "seg": {
+     "text": "ヒトでは1、3、16、19、20番。",
+     "say": "ヒトでは1、3、16、19、20番。",
+     "cue": "metaN",
+     "post": 0.25
+    },
+    "t0": 164.28480000000005,
+    "t1": 167.61300000000006,
+    "speech0": 164.28480000000005,
+    "speech1": 167.36300000000006
+   },
+   {
+    "scene": "S10",
+    "beat": "acro",
+    "i": 0,
+    "seg": {
+     "text": "セントロメアが端に近いのが**アクロセントリック**。",
+     "say": "セントロメアが端に近いのがアクロセントリック。",
+     "cue": "acro",
+     "post": 0.1
+    },
+    "t0": 167.61300000000006,
+    "t1": 171.00320000000005,
+    "speech0": 167.61300000000006,
+    "speech1": 170.90320000000006
+   },
+   {
+    "scene": "S10",
+    "beat": "acro",
+    "i": 1,
+    "seg": {
+     "text": "13、14、15、21、22番とYの6本です。",
+     "say": "13、14、15、21、22番とワイの6本です。",
+     "cue": "acroN",
+     "post": 0.25
+    },
+    "t0": 171.00320000000005,
+    "t1": 175.74310000000006,
+    "speech0": 171.00320000000005,
+    "speech1": 175.49310000000006
+   },
+   {
+    "scene": "S10",
+    "beat": "telo",
+    "i": 0,
+    "seg": {
+     "text": "そして、完全に端にあるテロセントリック。",
+     "say": "そして、完全に端にあるテロセントリック。",
+     "cue": "telo",
+     "post": 0.1
+    },
+    "t0": 175.74310000000006,
+    "t1": 178.75170000000006,
+    "speech0": 175.74310000000006,
+    "speech1": 178.65170000000006
+   },
+   {
+    "scene": "S10",
+    "beat": "telo",
+    "i": 1,
+    "seg": {
+     "text": "これは**ヒトの染色体にはありません**。",
+     "say": "これはヒトの染色体にはありません。",
+     "cue": "none",
+     "post": 0.45
+    },
+    "t0": 178.75170000000006,
+    "t1": 181.94780000000006,
+    "speech0": 178.75170000000006,
+    "speech1": 181.49780000000007
+   },
+   {
+    "scene": "S11",
+    "beat": "w",
+    "i": 0,
+    "seg": {
+     "text": "黒板にも書きます。",
+     "say": "黒板にも書きます。",
+     "cue": "w",
+     "post": 0.1
+    },
+    "t0": 182.09780000000006,
+    "t1": 183.68230000000005,
+    "speech0": 182.09780000000006,
+    "speech1": 183.58230000000006
+   },
+   {
+    "scene": "S11",
+    "beat": "w",
+    "i": 1,
+    "seg": {
+     "text": "アクロセントリックは13、14、15、21、22、Y。",
+     "say": "アクロセントリックは13、14、15、21、22、ワイ。",
+     "cue": "acro",
+     "post": 0.15
+    },
+    "t0": 183.68230000000005,
+    "t1": 188.15990000000005,
+    "speech0": 183.68230000000005,
+    "speech1": 188.00990000000004
+   },
+   {
+    "scene": "S11",
+    "beat": "w",
+    "i": 2,
+    "seg": {
+     "text": "**テロセントリックはヒトにはない**。",
+     "say": "テロセントリックはヒトにはない。",
+     "cue": "none",
+     "post": 0.2
+    },
+    "t0": 188.15990000000005,
+    "t1": 190.43650000000005,
+    "speech0": 188.15990000000005,
+    "speech1": 190.23650000000006
+   },
+   {
+    "scene": "S11",
+    "beat": "often",
+    "i": 0,
+    "seg": {
+     "text": "ヒトにないもの、これも選択肢によく出ます。",
+     "say": "ヒトにないもの、これも選択肢によく出ます。",
+     "cue": "often",
+     "post": 0.4
+    },
+    "t0": 190.43650000000005,
+    "t1": 194.14760000000007,
+    "speech0": 190.43650000000005,
+    "speech1": 193.74760000000006
+   },
+   {
+    "scene": "S12",
+    "beat": "q",
+    "i": 0,
+    "seg": {
+     "text": "では、この46本の染色体が、どうやって次の世代に配られるのか。",
+     "say": "では、この46本の染色体が、どうやって次の世代に配られるのか。",
+     "cue": "q",
+     "post": 0.25
+    },
+    "t0": 194.29760000000007,
+    "t1": 200.68320000000008,
+    "speech0": 194.29760000000007,
+    "speech1": 200.43320000000008
+   },
+   {
+    "scene": "S12",
+    "beat": "dip",
+    "i": 0,
+    "seg": {
+     "text": "体細胞は46本。",
+     "say": "体細胞は46本。",
+     "cue": "soma",
+     "post": 0.1
+    },
+    "t0": 200.68320000000008,
+    "t1": 202.52680000000007,
+    "speech0": 200.68320000000008,
+    "speech1": 202.42680000000007
+   },
+   {
+    "scene": "S12",
+    "beat": "dip",
+    "i": 1,
+    "seg": {
+     "text": "一方は母親から、もう一方は父親から来ています。",
+     "say": "一方は母親から、もう一方は父親から来ています。",
+     "cue": "parents",
+     "post": 0.1
+    },
+    "t0": 202.52680000000007,
+    "t1": 206.56050000000005,
+    "speech0": 202.52680000000007,
+    "speech1": 206.46050000000005
+   },
+   {
+    "scene": "S12",
+    "beat": "dip",
+    "i": 2,
+    "seg": {
+     "text": "これが**二倍体**。",
+     "say": "これが二倍体。",
+     "cue": "dip",
+     "post": 0.25
+    },
+    "t0": 206.56050000000005,
+    "t1": 207.94720000000004,
+    "speech0": 206.56050000000005,
+    "speech1": 207.69720000000004
+   },
+   {
+    "scene": "S12",
+    "beat": "hap",
+    "i": 0,
+    "seg": {
+     "text": "精子と卵子は23本。",
+     "say": "精子と卵子は23本。",
+     "cue": "gam",
+     "post": 0.1
+    },
+    "t0": 207.94720000000004,
+    "t1": 209.87050000000002,
+    "speech0": 207.94720000000004,
+    "speech1": 209.77050000000003
+   },
+   {
+    "scene": "S12",
+    "beat": "hap",
+    "i": 1,
+    "seg": {
+     "text": "**一倍体**です。",
+     "say": "一倍体です。",
+     "cue": "hap",
+     "post": 0.25
+    },
+    "t0": 209.87050000000002,
+    "t1": 211.54030000000003,
+    "speech0": 209.87050000000002,
+    "speech1": 211.29030000000003
+   },
+   {
+    "scene": "S12",
+    "beat": "mei",
+    "i": 0,
+    "seg": {
+     "text": "生殖細胞の分裂を**減数分裂**と呼び、",
+     "say": "生殖細胞の分裂を減数分裂と呼び、",
+     "cue": "mei"
+    },
+    "t0": 211.54030000000003,
+    "t1": 215.33030000000002,
+    "speech0": 211.54030000000003,
+    "speech1": 215.33030000000002
+   },
+   {
+    "scene": "S12",
+    "beat": "mei",
+    "i": 1,
+    "seg": {
+     "text": "2回の分裂で、二倍体を一倍体に半減させます。",
+     "say": "2回の分裂で、二倍体を一倍体に半減させます。",
+     "cue": "half",
+     "post": 0.4
+    },
+    "t0": 215.33030000000002,
+    "t1": 220.50480000000002,
+    "speech0": 215.33030000000002,
+    "speech1": 220.1048
+   },
+   {
+    "scene": "S13",
+    "beat": "w",
+    "i": 0,
+    "seg": {
+     "text": "黒板に整理します。",
+     "say": "黒板に整理します。",
+     "cue": "w",
+     "post": 0.1
+    },
+    "t0": 220.65480000000002,
+    "t1": 222.36970000000002,
+    "speech0": 220.65480000000002,
+    "speech1": 222.26970000000003
+   },
+   {
+    "scene": "S13",
+    "beat": "w",
+    "i": 1,
+    "seg": {
+     "text": "2回の分裂で、46本が23本に。",
+     "say": "2回の分裂で、46本が23本に。",
+     "cue": "two",
+     "post": 0.15
+    },
+    "t0": 222.36970000000002,
+    "t1": 226.18640000000002,
+    "speech0": 222.36970000000002,
+    "speech1": 226.03640000000001
+   },
+   {
+    "scene": "S13",
+    "beat": "w",
+    "i": 2,
+    "seg": {
+     "text": "第1分裂では**相同染色体**が、",
+     "say": "第1分裂では相同染色体が、",
+     "cue": "m1"
+    },
+    "t0": 226.18640000000002,
+    "t1": 229.21640000000002,
+    "speech0": 226.18640000000002,
+    "speech1": 229.21640000000002
+   },
+   {
+    "scene": "S13",
+    "beat": "w",
+    "i": 3,
+    "seg": {
+     "text": "第2分裂では**姉妹染色分体**が分かれます。",
+     "say": "第2分裂ではしまいせんしょくぶんたいが分かれます。",
+     "cue": "m2",
+     "post": 0.4
+    },
+    "t0": 229.21640000000002,
+    "t1": 233.86140000000003,
+    "speech0": 229.21640000000002,
+    "speech1": 233.46140000000003
+   },
+   {
+    "scene": "S14",
+    "beat": "see",
+    "i": 0,
+    "seg": {
+     "text": "動きで確認しましょう。",
+     "say": "動きで確認しましょう。",
+     "cue": "see",
+     "post": 0.1
+    },
+    "t0": 234.01140000000004,
+    "t1": 235.83150000000003,
+    "speech0": 234.01140000000004,
+    "speech1": 235.73150000000004
+   },
+   {
+    "scene": "S14",
+    "beat": "see",
+    "i": 1,
+    "seg": {
+     "text": "ここでは1対、例えば21番だけを追います。",
+     "say": "ここでは1対、例えば21番だけを追います。",
+     "cue": "one",
+     "post": 0.1
+    },
+    "t0": 235.83150000000003,
+    "t1": 239.63050000000004,
+    "speech0": 235.83150000000003,
+    "speech1": 239.53050000000005
+   },
+   {
+    "scene": "S14",
+    "beat": "see",
+    "i": 2,
+    "seg": {
+     "text": "青が父親由来、赤が母親由来です。",
+     "say": "青が父親由来、赤が母親由来です。",
+     "cue": "col",
+     "post": 0.25
+    },
+    "t0": 239.63050000000004,
+    "t1": 243.00750000000005,
+    "speech0": 239.63050000000004,
+    "speech1": 242.75750000000005
+   },
+   {
+    "scene": "S14",
+    "beat": "rep",
+    "i": 0,
+    "seg": {
+     "text": "まずDNAが複製されて、それぞれの染色体が2本の**姉妹染色分体**になります。",
+     "say": "まずディーエヌエーが複製されて、それぞれの染色体が2本のしまいせんしょくぶんたいになります。",
+     "cue": "rep",
+     "post": 0.25
+    },
+    "t0": 243.00750000000005,
+    "t1": 250.37180000000006,
+    "speech0": 243.00750000000005,
+    "speech1": 250.12180000000006
+   },
+   {
+    "scene": "S14",
+    "beat": "pair",
+    "i": 0,
+    "seg": {
+     "text": "相同染色体どうしが並んで……",
+     "say": "相同染色体どうしが並んで",
+     "cue": "pair",
+     "post": 0.2
+    },
+    "t0": 250.37180000000006,
+    "t1": 253.28180000000006,
+    "speech0": 250.37180000000006,
+    "speech1": 253.08180000000007
+   },
+   {
+    "scene": "S14",
+    "beat": "m1",
+    "i": 0,
+    "seg": {
+     "text": "**第1分裂**。",
+     "say": "第1分裂。",
+     "cue": "m1",
+     "post": 0.1
+    },
+    "t0": 253.28180000000006,
+    "t1": 254.05750000000006,
+    "speech0": 253.28180000000006,
+    "speech1": 253.95750000000007
+   },
+   {
+    "scene": "S14",
+    "beat": "m1",
+    "i": 1,
+    "seg": {
+     "text": "相同染色体が、別々の細胞へ分かれます。",
+     "say": "相同染色体が、別々の細胞へ分かれます。",
+     "cue": "sep1",
+     "post": 0.25
+    },
+    "t0": 254.05750000000006,
+    "t1": 257.98190000000005,
+    "speech0": 254.05750000000006,
+    "speech1": 257.73190000000005
+   },
+   {
+    "scene": "S14",
+    "beat": "m2",
+    "i": 0,
+    "seg": {
+     "text": "**第2分裂**。今度は姉妹染色分体が分かれて……",
+     "say": "第2分裂。今度はしまいせんしょくぶんたいが分かれて",
+     "cue": "m2",
+     "post": 0.2
+    },
+    "t0": 257.98190000000005,
+    "t1": 262.44190000000003,
+    "speech0": 257.98190000000005,
+    "speech1": 262.24190000000004
+   },
+   {
+    "scene": "S14",
+    "beat": "four",
+    "i": 0,
+    "seg": {
+     "text": "4つの配偶子ができました。",
+     "say": "4つの配偶子ができました。",
+     "cue": "four",
+     "post": 0.1
+    },
+    "t0": 262.44190000000003,
+    "t1": 264.90770000000003,
+    "speech0": 262.44190000000003,
+    "speech1": 264.8077
+   },
+   {
+    "scene": "S14",
+    "beat": "four",
+    "i": 1,
+    "seg": {
+     "text": "どれも1本ずつです。",
+     "say": "どれも1本ずつです。",
+     "cue": "one1",
+     "post": 0.4
+    },
+    "t0": 264.90770000000003,
+    "t1": 266.9352,
+    "speech0": 264.90770000000003,
+    "speech1": 266.53520000000003
+   },
+   {
+    "scene": "S15",
+    "beat": "q",
+    "i": 0,
+    "seg": {
+     "text": "では、第1分裂で、相同染色体が**分かれなかったら**どうなるでしょう。",
+     "say": "では、第1分裂で、相同染色体が分かれなかったらどうなるでしょう。",
+     "cue": "q",
+     "post": 0.3
+    },
+    "t0": 267.0852,
+    "t1": 272.7896,
+    "speech0": 267.0852,
+    "speech1": 272.4896
+   },
+   {
+    "scene": "S15",
+    "beat": "g",
+    "i": 0,
+    "seg": {
+     "text": "2本持った配偶子と、1本も持たない配偶子ができます。",
+     "say": "2本持った配偶子と、1本も持たない配偶子ができます。",
+     "cue": "g",
+     "post": 0.15
+    },
+    "t0": 272.7896,
+    "t1": 277.45349999999996,
+    "speech0": 272.7896,
+    "speech1": 277.3035
+   },
+   {
+    "scene": "S15",
+    "beat": "g",
+    "i": 1,
+    "seg": {
+     "text": "これが受精すると、3本の**トリソミー**、1本の**モノソミー**になります。",
+     "say": "これが受精すると、3本のトリソミー、1本のモノソミーになります。",
+     "cue": "tri",
+     "post": 0.35
+    },
+    "t0": 277.45349999999996,
+    "t1": 283.0824,
+    "speech0": 277.45349999999996,
+    "speech1": 282.7324
+   },
+   {
+    "scene": "S15",
+    "beat": "m2",
+    "i": 0,
+    "seg": {
+     "text": "第2分裂で姉妹染色分体が分かれない場合も、同じように本数が狂います。",
+     "say": "第2分裂でしまいせんしょくぶんたいが分かれない場合も、同じように本数が狂います。",
+     "cue": "m2",
+     "post": 0.45
+    },
+    "t0": 283.0824,
+    "t1": 290.18739999999997,
+    "speech0": 283.0824,
+    "speech1": 289.7374
+   },
+   {
+    "scene": "S16",
+    "beat": "w",
+    "i": 0,
+    "seg": {
+     "text": "黒板に一行。",
+     "say": "黒板に一行。",
+     "cue": "w",
+     "post": 0.1
+    },
+    "t0": 290.33739999999995,
+    "t1": 291.69179999999994,
+    "speech0": 290.33739999999995,
+    "speech1": 291.5917999999999
+   },
+   {
+    "scene": "S16",
+    "beat": "w",
+    "i": 1,
+    "seg": {
+     "text": "不分離が起こると、1本多い配偶子ができて、受精すると**トリソミー**になります。",
+     "say": "不分離が起こると、1本多い配偶子ができて、受精するとトリソミーになります。",
+     "cue": "m4",
+     "post": 0.45
+    },
+    "t0": 291.69179999999994,
+    "t1": 298.4262999999999,
+    "speech0": 291.69179999999994,
+    "speech1": 297.9762999999999
+   },
+   {
+    "scene": "S17",
+    "beat": "why",
+    "i": 0,
+    "seg": {
+     "text": "では、なぜ不分離が起こるのか。",
+     "say": "では、なぜ不分離が起こるのか。",
+     "cue": "why",
+     "post": 0.25
+    },
+    "t0": 298.5762999999999,
+    "t1": 300.85559999999987,
+    "speech0": 298.5762999999999,
+    "speech1": 300.60559999999987
+   },
+   {
+    "scene": "S17",
+    "beat": "egg",
+    "i": 0,
+    "seg": {
+     "text": "卵子は、減数第1分裂の前期で長い間止まっています。",
+     "say": "卵子は、減数第1分裂の前期で長い間止まっています。",
+     "cue": "egg",
+     "post": 0.15
+    },
+    "t0": 300.85559999999987,
+    "t1": 305.72119999999984,
+    "speech0": 300.85559999999987,
+    "speech1": 305.57119999999986
+   },
+   {
+    "scene": "S17",
+    "beat": "egg",
+    "i": 1,
+    "seg": {
+     "text": "だから年齢が上がると**不分離**を起こしやすい。",
+     "say": "だから年齢が上がると不分離を起こしやすい。",
+     "cue": "age",
+     "post": 0.25
+    },
+    "t0": 305.72119999999984,
+    "t1": 309.2221999999998,
+    "speech0": 305.72119999999984,
+    "speech1": 308.9721999999998
+   },
+   {
+    "scene": "S17",
+    "beat": "sperm",
+    "i": 0,
+    "seg": {
+     "text": "精子は、年齢とともにDNA複製のエラーが増えて、",
+     "say": "精子は、年齢とともにディーエヌエー複製のエラーが増えて、",
+     "cue": "sperm"
+    },
+    "t0": 309.2221999999998,
+    "t1": 313.5921999999998,
+    "speech0": 309.2221999999998,
+    "speech1": 313.5921999999998
+   },
+   {
+    "scene": "S17",
+    "beat": "sperm",
+    "i": 1,
+    "seg": {
+     "text": "塩基レベルの**突然変異**を起こしやすくなります。",
+     "say": "塩基レベルの突然変異を起こしやすくなります。",
+     "cue": "mut",
+     "post": 0.25
+    },
+    "t0": 313.5921999999998,
+    "t1": 317.6461999999998,
+    "speech0": 313.5921999999998,
+    "speech1": 317.3961999999998
+   },
+   {
+    "scene": "S17",
+    "beat": "down",
+    "i": 0,
+    "seg": {
+     "text": "ダウン症候群は、",
+     "say": "ダウン症候群は、",
+     "cue": "down"
+    },
+    "t0": 317.6461999999998,
+    "t1": 319.2261999999998,
+    "speech0": 317.6461999999998,
+    "speech1": 319.2261999999998
+   },
+   {
+    "scene": "S17",
+    "beat": "down",
+    "i": 1,
+    "seg": {
+     "text": "母親が20歳で約1500人に1人、",
+     "say": "母親がはたちで約せんごひゃくにんにひとり、",
+     "cue": "a20"
+    },
+    "t0": 319.2261999999998,
+    "t1": 322.8461999999998,
+    "speech0": 319.2261999999998,
+    "speech1": 322.8461999999998
+   },
+   {
+    "scene": "S17",
+    "beat": "down",
+    "i": 2,
+    "seg": {
+     "text": "35歳で約350人に1人、",
+     "say": "さんじゅうごさいで約さんびゃくごじゅうにんにひとり、",
+     "cue": "a35"
+    },
+    "t0": 322.8461999999998,
+    "t1": 326.7061999999998,
+    "speech0": 322.8461999999998,
+    "speech1": 326.7061999999998
+   },
+   {
+    "scene": "S17",
+    "beat": "down",
+    "i": 3,
+    "seg": {
+     "text": "40歳で約100人に1人です。",
+     "say": "よんじゅっさいで約ひゃくにんにひとりです。",
+     "cue": "a40",
+     "post": 0.45
+    },
+    "t0": 326.7061999999998,
+    "t1": 330.35239999999976,
+    "speech0": 326.7061999999998,
+    "speech1": 329.9023999999998
+   },
+   {
+    "scene": "S18",
+    "beat": "cmp",
+    "i": 0,
+    "seg": {
+     "text": "母親の加齢は**不分離**、",
+     "say": "母親の加齢は不分離、",
+     "cue": "mom"
+    },
+    "t0": 330.50239999999974,
+    "t1": 332.44239999999974,
+    "speech0": 330.50239999999974,
+    "speech1": 332.44239999999974
+   },
+   {
+    "scene": "S18",
+    "beat": "cmp",
+    "i": 1,
+    "seg": {
+     "text": "父親の加齢は**塩基レベルの変異**。",
+     "say": "父親の加齢は塩基レベルの変異。",
+     "cue": "dad",
+     "post": 0.1
+    },
+    "t0": 332.44239999999974,
+    "t1": 335.2492999999998,
+    "speech0": 332.44239999999974,
+    "speech1": 335.14929999999976
+   },
+   {
+    "scene": "S18",
+    "beat": "cmp",
+    "i": 2,
+    "seg": {
+     "text": "この対比、よく問われます。",
+     "say": "この対比、よく問われます。",
+     "cue": "often",
+     "post": 0.25
+    },
+    "t0": 335.2492999999998,
+    "t1": 337.3753999999998,
+    "speech0": 335.2492999999998,
+    "speech1": 337.1253999999998
+   },
+   {
+    "scene": "S18",
+    "beat": "num",
+    "i": 0,
+    "seg": {
+     "text": "数字も一つだけ覚えるなら、",
+     "say": "数字も一つだけ覚えるなら、",
+     "cue": "one"
+    },
+    "t0": 337.3753999999998,
+    "t1": 339.8553999999998,
+    "speech0": 337.3753999999998,
+    "speech1": 339.8553999999998
+   },
+   {
+    "scene": "S18",
+    "beat": "num",
+    "i": 1,
+    "seg": {
+     "text": "35歳で約350人に1人です。",
+     "say": "さんじゅうごさいで約さんびゃくごじゅうにんにひとりです。",
+     "cue": "n350",
+     "post": 0.45
+    },
+    "t0": 339.8553999999998,
+    "t1": 344.3708999999998,
+    "speech0": 339.8553999999998,
+    "speech1": 343.9208999999998
+   },
+   {
+    "scene": "S19",
+    "beat": "n",
+    "i": 0,
+    "seg": {
+     "text": "1本なら**モノソミー**、",
+     "say": "1本ならモノソミー、",
+     "cue": "mono"
+    },
+    "t0": 344.52089999999976,
+    "t1": 346.1208999999998,
+    "speech0": 344.52089999999976,
+    "speech1": 346.1208999999998
+   },
+   {
+    "scene": "S19",
+    "beat": "n",
+    "i": 1,
+    "seg": {
+     "text": "3本なら**トリソミー**、",
+     "say": "3本ならトリソミー、",
+     "cue": "tri"
+    },
+    "t0": 346.1208999999998,
+    "t1": 347.7208999999998,
+    "speech0": 346.1208999999998,
+    "speech1": 347.7208999999998
+   },
+   {
+    "scene": "S19",
+    "beat": "n",
+    "i": 2,
+    "seg": {
+     "text": "4本なら**テトラソミー**。",
+     "say": "4本ならテトラソミー。",
+     "cue": "tetra",
+     "post": 0.25
+    },
+    "t0": 347.7208999999998,
+    "t1": 349.7196999999998,
+    "speech0": 347.7208999999998,
+    "speech1": 349.4696999999998
+   },
+   {
+    "scene": "S19",
+    "beat": "born",
+    "i": 0,
+    "seg": {
+     "text": "常染色体の完全トリソミーで生まれてくるのは、13番、18番、21番だけ。",
+     "say": "常染色体の完全トリソミーで生まれてくるのは、13番、18番、21番だけ。",
+     "cue": "born",
+     "post": 0.15
+    },
+    "t0": 349.7196999999998,
+    "t1": 357.0670999999998,
+    "speech0": 349.7196999999998,
+    "speech1": 356.91709999999983
+   },
+   {
+    "scene": "S19",
+    "beat": "born",
+    "i": 1,
+    "seg": {
+     "text": "多くのトリソミーは、早期に流産すると考えられています。",
+     "say": "多くのトリソミーは、早期に流産すると考えられています。",
+     "cue": "loss",
+     "post": 0.25
+    },
+    "t0": 357.0670999999998,
+    "t1": 361.6816999999998,
+    "speech0": 357.0670999999998,
+    "speech1": 361.4316999999998
+   },
+   {
+    "scene": "S19",
+    "beat": "sex",
+    "i": 0,
+    "seg": {
+     "text": "性染色体の過剰は不活性化されるため症状が軽く、",
+     "say": "性染色体の過剰は不活性化されるため症状が軽く、",
+     "cue": "sex"
+    },
+    "t0": 361.6816999999998,
+    "t1": 366.6216999999998,
+    "speech0": 361.6816999999998,
+    "speech1": 366.6216999999998
+   },
+   {
+    "scene": "S19",
+    "beat": "sex",
+    "i": 1,
+    "seg": {
+     "text": "性染色体のモノソミーは、**ターナー症候群**だけです。",
+     "say": "性染色体のモノソミーは、ターナー症候群だけです。",
+     "cue": "turner",
+     "post": 0.45
+    },
+    "t0": 366.6216999999998,
+    "t1": 371.4386999999998,
+    "speech0": 366.6216999999998,
+    "speech1": 370.9886999999998
+   },
+   {
+    "scene": "S20",
+    "beat": "t",
+    "i": 0,
+    "seg": {
+     "text": "右側に書きます。",
+     "say": "右側に書きます。",
+     "cue": "w",
+     "post": 0.1
+    },
+    "t0": 371.5886999999998,
+    "t1": 373.2237999999998,
+    "speech0": 371.5886999999998,
+    "speech1": 373.1237999999998
+   },
+   {
+    "scene": "S20",
+    "beat": "t",
+    "i": 1,
+    "seg": {
+     "text": "13番ペイトー、18番エドワーズ、21番ダウン。",
+     "say": "13番ペイトー、18番エドワーズ、21番ダウン。",
+     "cue": "t",
+     "post": 0.25
+    },
+    "t0": 373.2237999999998,
+    "t1": 377.2780999999998,
+    "speech0": 373.2237999999998,
+    "speech1": 377.0280999999998
+   },
+   {
+    "scene": "S20",
+    "beat": "sex",
+    "i": 0,
+    "seg": {
+     "text": "ターナーだけが性染色体のモノソミー。",
+     "say": "ターナーだけが性染色体のモノソミー。",
+     "cue": "turner",
+     "post": 0.1
+    },
+    "t0": 377.2780999999998,
+    "t1": 380.25599999999986,
+    "speech0": 377.2780999999998,
+    "speech1": 380.15599999999984
+   },
+   {
+    "scene": "S20",
+    "beat": "sex",
+    "i": 1,
+    "seg": {
+     "text": "性染色体の過剰は軽い。",
+     "say": "性染色体の過剰は軽い。",
+     "cue": "mild",
+     "post": 0.1
+    },
+    "t0": 380.25599999999986,
+    "t1": 382.31029999999987,
+    "speech0": 380.25599999999986,
+    "speech1": 382.21029999999985
+   },
+   {
+    "scene": "S20",
+    "beat": "sex",
+    "i": 2,
+    "seg": {
+     "text": "5p-は猫鳴き。",
+     "say": "ごピーマイナスはねこなき。",
+     "cue": "cat",
+     "post": 0.4
+    },
+    "t0": 382.31029999999987,
+    "t1": 384.4293999999999,
+    "speech0": 382.31029999999987,
+    "speech1": 384.0293999999999
+   },
+   {
+    "scene": "S21",
+    "beat": "why",
+    "i": 0,
+    "seg": {
+     "text": "では、なぜ13、18、21番だけが生まれてくるのか。",
+     "say": "では、なぜ13、18、21番だけが生まれてくるのか。",
+     "cue": "why",
+     "post": 0.25
+    },
+    "t0": 384.57939999999985,
+    "t1": 389.5749999999999,
+    "speech0": 384.57939999999985,
+    "speech1": 389.3249999999999
+   },
+   {
+    "scene": "S21",
+    "beat": "graph",
+    "i": 0,
+    "seg": {
+     "text": "右のグラフは、染色体ごとの遺伝子の数です。",
+     "say": "右のグラフは、染色体ごとの遺伝子の数です。",
+     "cue": "graph",
+     "post": 0.2
+    },
+    "t0": 389.5749999999999,
+    "t1": 393.6335999999999,
+    "speech0": 389.5749999999999,
+    "speech1": 393.4335999999999
+   },
+   {
+    "scene": "S21",
+    "beat": "three",
+    "i": 0,
+    "seg": {
+     "text": "13番、",
+     "say": "13番、",
+     "cue": "g13"
+    },
+    "t0": 393.6335999999999,
+    "t1": 394.54559999999987,
+    "speech0": 393.6335999999999,
+    "speech1": 394.54559999999987
+   },
+   {
+    "scene": "S21",
+    "beat": "three",
+    "i": 1,
+    "seg": {
+     "text": "18番、",
+     "say": "18番、",
+     "cue": "g18"
+    },
+    "t0": 394.54559999999987,
+    "t1": 395.47159999999985,
+    "speech0": 394.54559999999987,
+    "speech1": 395.47159999999985
+   },
+   {
+    "scene": "S21",
+    "beat": "three",
+    "i": 2,
+    "seg": {
+     "text": "そして21番。",
+     "say": "そして21番。",
+     "cue": "g21",
+     "post": 0.1
+    },
+    "t0": 395.47159999999985,
+    "t1": 396.9405999999999,
+    "speech0": 395.47159999999985,
+    "speech1": 396.8405999999999
+   },
+   {
+    "scene": "S21",
+    "beat": "three",
+    "i": 3,
+    "seg": {
+     "text": "この3本は、遺伝子の数が**特に少ない**んです。",
+     "say": "この3本は、遺伝子の数が特に少ないんです。",
+     "cue": "few",
+     "post": 0.25
+    },
+    "t0": 396.9405999999999,
+    "t1": 400.8875999999999,
+    "speech0": 396.9405999999999,
+    "speech1": 400.6375999999999
+   },
+   {
+    "scene": "S21",
+    "beat": "live",
+    "i": 0,
+    "seg": {
+     "text": "1本多くても、余分な遺伝子の量が比較的少ない。",
+     "say": "1本多くても、余分な遺伝子の量が比較てき少ない。",
+     "cue": "extra",
+     "post": 0.1
+    },
+    "t0": 400.8875999999999,
+    "t1": 405.5043999999999,
+    "speech0": 400.8875999999999,
+    "speech1": 405.4043999999999
+   },
+   {
+    "scene": "S21",
+    "beat": "live",
+    "i": 1,
+    "seg": {
+     "text": "だから、致死にならずに生まれてこられる。",
+     "say": "だから、致死にならずに生まれてこられる。",
+     "cue": "live",
+     "post": 0.45
+    },
+    "t0": 405.5043999999999,
+    "t1": 408.6432999999999,
+    "speech0": 405.5043999999999,
+    "speech1": 408.1932999999999
+   },
+   {
+    "scene": "S22",
+    "beat": "four",
+    "i": 0,
+    "seg": {
+     "text": "今日覚えてほしいのは、この4つです。",
+     "say": "今日覚えてほしいのは、この4つです。",
+     "cue": "four",
+     "post": 0.3
+    },
+    "t0": 408.7932999999999,
+    "t1": 411.71159999999986,
+    "speech0": 408.7932999999999,
+    "speech1": 411.41159999999985
+   },
+   {
+    "scene": "S22",
+    "beat": "p1",
+    "i": 0,
+    "seg": {
+     "text": "ひとつ目。",
+     "say": "ひとつ目。",
+     "cue": "p1",
+     "post": 0.1
+    },
+    "t0": 411.71159999999986,
+    "t1": 412.6674999999999,
+    "speech0": 411.71159999999986,
+    "speech1": 412.5674999999999
+   },
+   {
+    "scene": "S22",
+    "beat": "p1",
+    "i": 1,
+    "seg": {
+     "text": "DNAからヌクレオソーム、クロマチン、染色体へ。",
+     "say": "ディーエヌエーからヌクレオソーム、クロマチン、染色体へ。",
+     "cue": "p1b",
+     "post": 0.1
+    },
+    "t0": 412.6674999999999,
+    "t1": 416.3048999999999,
+    "speech0": 412.6674999999999,
+    "speech1": 416.2048999999999
+   },
+   {
+    "scene": "S22",
+    "beat": "p1",
+    "i": 2,
+    "seg": {
+     "text": "2、11、1400ナノメートル。",
+     "say": "に、じゅういち、せんよんひゃくナノメートル。",
+     "cue": "p1c",
+     "post": 0.3
+    },
+    "t0": 416.3048999999999,
+    "t1": 419.00479999999993,
+    "speech0": 416.3048999999999,
+    "speech1": 418.7047999999999
+   },
+   {
+    "scene": "S22",
+    "beat": "p2",
+    "i": 0,
+    "seg": {
+     "text": "ふたつ目。",
+     "say": "ふたつ目。",
+     "cue": "p2",
+     "post": 0.1
+    },
+    "t0": 419.00479999999993,
+    "t1": 419.98859999999996,
+    "speech0": 419.00479999999993,
+    "speech1": 419.88859999999994
+   },
+   {
+    "scene": "S22",
+    "beat": "p2",
+    "i": 1,
+    "seg": {
+     "text": "コアヒストンは4種類が2個ずつ。",
+     "say": "コアヒストンは4種類が2個ずつ。",
+     "cue": "p2b",
+     "post": 0.1
+    },
+    "t0": 419.98859999999996,
+    "t1": 422.4944,
+    "speech0": 419.98859999999996,
+    "speech1": 422.39439999999996
+   },
+   {
+    "scene": "S22",
+    "beat": "p2",
+    "i": 2,
+    "seg": {
+     "text": "H1はスペーサー。",
+     "say": "エイチワンはスペーサー。",
+     "cue": "p2c",
+     "post": 0.3
+    },
+    "t0": 422.4944,
+    "t1": 424.2171,
+    "speech0": 422.4944,
+    "speech1": 423.9171
+   },
+   {
+    "scene": "S22",
+    "beat": "p3",
+    "i": 0,
+    "seg": {
+     "text": "みっつ目。",
+     "say": "みっつ目。",
+     "cue": "p3",
+     "post": 0.1
+    },
+    "t0": 424.2171,
+    "t1": 425.15860000000004,
+    "speech0": 424.2171,
+    "speech1": 425.0586
+   },
+   {
+    "scene": "S22",
+    "beat": "p3",
+    "i": 1,
+    "seg": {
+     "text": "不分離でトリソミー。",
+     "say": "不分離でトリソミー。",
+     "cue": "p3b",
+     "post": 0.1
+    },
+    "t0": 425.15860000000004,
+    "t1": 426.72940000000006,
+    "speech0": 425.15860000000004,
+    "speech1": 426.62940000000003
+   },
+   {
+    "scene": "S22",
+    "beat": "p3",
+    "i": 2,
+    "seg": {
+     "text": "生まれてくるのは13、18、21番。",
+     "say": "生まれてくるのは13、18、21番。",
+     "cue": "p3c",
+     "post": 0.3
+    },
+    "t0": 426.72940000000006,
+    "t1": 430.16910000000007,
+    "speech0": 426.72940000000006,
+    "speech1": 429.86910000000006
+   },
+   {
+    "scene": "S22",
+    "beat": "p4",
+    "i": 0,
+    "seg": {
+     "text": "そして、母親の加齢は不分離、父親の加齢は**点変異**です。",
+     "say": "そして、母親の加齢は不分離、父親の加齢は点変異です。",
+     "cue": "p4",
+     "post": 0.45
+    },
+    "t0": 430.16910000000007,
+    "t1": 435.47730000000007,
+    "speech0": 430.16910000000007,
+    "speech1": 435.0273000000001
+   },
+   {
+    "scene": "S23",
+    "beat": "next",
+    "i": 0,
+    "seg": {
+     "text": "次の第4講では、",
+     "say": "次の第4講では、",
+     "cue": "next"
+    },
+    "t0": 435.62730000000005,
+    "t1": 437.24730000000005,
+    "speech0": 435.62730000000005,
+    "speech1": 437.24730000000005
+   },
+   {
+    "scene": "S23",
+    "beat": "next",
+    "i": 1,
+    "seg": {
+     "text": "この染色体の上にある「遺伝子」そのものの構造と、",
+     "say": "この染色体の上にある遺伝子そのものの構造と、",
+     "cue": "what"
+    },
+    "t0": 437.24730000000005,
+    "t1": 441.51730000000003,
+    "speech0": 437.24730000000005,
+    "speech1": 441.51730000000003
+   },
+   {
+    "scene": "S23",
+    "beat": "next",
+    "i": 2,
+    "seg": {
+     "text": "それが読まれる仕組みを見ていきます。",
+     "say": "それが読まれる仕組みを見ていきます。",
+     "cue": "read",
+     "post": 1
+    },
+    "t0": 441.51730000000003,
+    "t1": 445.63590000000005,
+    "speech0": 441.51730000000003,
+    "speech1": 444.63590000000005
+   }
+  ]
+ },
+ "edit": {
+  "plan": "genetics-basics:3:film|full|board|gekiga",
+  "voice": "genetics-basics-3-film_board",
+  "size": [
+   1280,
+   720
+  ],
+  "fps": 24,
+  "total": 445.786,
+  "frames": 10699,
+  "timing": "kokoro",
+  "layers": {
+   "plate": "layers/plate_%05d.jpg",
+   "overlay": "layers/overlay_%05d.png"
+  },
+  "note": "背景（Wan クリップ／無ければ MEDSTUDY アニマティック）→ 医学図レイヤーを重ねる → 白黒反転 → 字幕（ASS）→ 講師音声＋効果音（＋任意で BGM、声に合わせて自動で下げる）",
+  "scenes": [
+   {
+    "id": "S01",
+    "t0": 0,
+    "dur": 18.031,
+    "audio": "audio/S01.wav",
+    "shots": [
+     {
+      "id": "a",
+      "wan": "wan/S01_a.webm",
+      "mode": "feature",
+      "t0": 0,
+      "dur": 18.031,
+      "f0": 0,
+      "f1": 433,
+      "wanFrames": 121,
+      "wanFps": 24
+     }
+    ],
+    "sfx": [
+     {
+      "kind": "riser",
+      "t": 0,
+      "gain": 0.5
+     },
+     {
+      "kind": "boom",
+      "t": 0,
+      "gain": 1
+     }
+    ],
+    "invert": []
+   },
+   {
+    "id": "S02",
+    "t0": 18.031,
+    "dur": 9.95,
+    "audio": "audio/S02.wav",
+    "shots": [
+     {
+      "id": "a",
+      "wan": "wan/S02_a.webm",
+      "mode": "background",
+      "t0": 18.031,
+      "dur": 9.95,
+      "f0": 433,
+      "f1": 672,
+      "wanFrames": 121,
+      "wanFps": 24
+     }
+    ],
+    "sfx": [
+     {
+      "kind": "shimmer",
+      "t": 18.031,
+      "gain": 0.4
+     },
+     {
+      "kind": "whoosh",
+      "t": 18.982,
+      "gain": 0.5
+     },
+     {
+      "kind": "whoosh",
+      "t": 22.512,
+      "gain": 0.5
+     },
+     {
+      "kind": "impact",
+      "t": 24.642,
+      "gain": 1
+     }
+    ],
+    "invert": []
+   },
+   {
+    "id": "S03",
+    "t0": 27.981,
+    "dur": 14.419,
+    "audio": "audio/S03.wav",
+    "shots": [
+     {
+      "id": "a",
+      "wan": "wan/S03_a.webm",
+      "mode": "background",
+      "t0": 27.981,
+      "dur": 14.419,
+      "f0": 672,
+      "f1": 1018,
+      "wanFrames": 121,
+      "wanFps": 24
+     }
+    ],
+    "sfx": [
+     {
+      "kind": "chalk",
+      "t": 27.981,
+      "gain": 0.5
+     },
+     {
+      "kind": "chalk",
+      "t": 29.704,
+      "gain": 0.5
+     },
+     {
+      "kind": "chalk",
+      "t": 32.112,
+      "gain": 0.5
+     },
+     {
+      "kind": "impact",
+      "t": 33.512,
+      "gain": 0.5
+     }
+    ],
+    "invert": []
+   },
+   {
+    "id": "S04",
+    "t0": 42.401,
+    "dur": 42.237,
+    "audio": "audio/S04.wav",
+    "shots": [
+     {
+      "id": "a",
+      "wan": "wan/S04_a.webm",
+      "mode": "background",
+      "t0": 42.401,
+      "dur": 42.237,
+      "f0": 1018,
+      "f1": 2031,
+      "wanFrames": 121,
+      "wanFps": 24
+     }
+    ],
+    "sfx": [
+     {
+      "kind": "shimmer",
+      "t": 47.062,
+      "gain": 0.4
+     },
+     {
+      "kind": "whoosh",
+      "t": 51.447,
+      "gain": 0.5
+     },
+     {
+      "kind": "impact",
+      "t": 55.074,
+      "gain": 0.6
+     },
+     {
+      "kind": "tick",
+      "t": 62.729,
+      "gain": 1
+     },
+     {
+      "kind": "whoosh",
+      "t": 65.276,
+      "gain": 1
+     },
+     {
+      "kind": "boom",
+      "t": 70.013,
+      "gain": 0.7
+     }
+    ],
+    "invert": []
+   },
+   {
+    "id": "S05",
+    "t0": 84.637,
+    "dur": 17.353,
+    "audio": "audio/S05.wav",
+    "shots": [
+     {
+      "id": "a",
+      "wan": "wan/S05_a.webm",
+      "mode": "background",
+      "t0": 84.637,
+      "dur": 17.353,
+      "f0": 2031,
+      "f1": 2448,
+      "wanFrames": 121,
+      "wanFps": 24
+     }
+    ],
+    "sfx": [
+     {
+      "kind": "tick",
+      "t": 86.31,
+      "gain": 1
+     },
+     {
+      "kind": "tick",
+      "t": 86.81,
+      "gain": 1
+     },
+     {
+      "kind": "tick",
+      "t": 87.31,
+      "gain": 1
+     },
+     {
+      "kind": "tick",
+      "t": 87.81,
+      "gain": 1
+     },
+     {
+      "kind": "boom",
+      "t": 91.789,
+      "gain": 0.6
+     },
+     {
+      "kind": "whoosh",
+      "t": 93.811,
+      "gain": 0.5
+     }
+    ],
+    "invert": []
+   },
+   {
+    "id": "S06",
+    "t0": 101.99,
+    "dur": 5.817,
+    "audio": "audio/S06.wav",
+    "shots": [
+     {
+      "id": "a",
+      "wan": "wan/S06_a.webm",
+      "mode": "background",
+      "t0": 101.99,
+      "dur": 5.817,
+      "f0": 2448,
+      "f1": 2587,
+      "wanFrames": 121,
+      "wanFps": 24
+     }
+    ],
+    "sfx": [
+     {
+      "kind": "chalk",
+      "t": 101.99,
+      "gain": 0.7
+     },
+     {
+      "kind": "boom",
+      "t": 104.025,
+      "gain": 1
+     }
+    ],
+    "invert": []
+   },
+   {
+    "id": "S07",
+    "t0": 107.807,
+    "dur": 15.485,
+    "audio": "audio/S07.wav",
+    "shots": [
+     {
+      "id": "a",
+      "wan": "wan/S07_a.webm",
+      "mode": "background",
+      "t0": 107.807,
+      "dur": 15.485,
+      "f0": 2587,
+      "f1": 2959,
+      "wanFrames": 121,
+      "wanFps": 24
+     }
+    ],
+    "sfx": [
+     {
+      "kind": "tick",
+      "t": 107.807,
+      "gain": 1
+     },
+     {
+      "kind": "tick",
+      "t": 108.407,
+      "gain": 1
+     },
+     {
+      "kind": "tick",
+      "t": 109.007,
+      "gain": 1
+     },
+     {
+      "kind": "whoosh",
+      "t": 113.083,
+      "gain": 0.5
+     },
+     {
+      "kind": "shimmer",
+      "t": 118.678,
+      "gain": 1
+     }
+    ],
+    "invert": []
+   },
+   {
+    "id": "S08",
+    "t0": 123.293,
+    "dur": 15.125,
+    "audio": "audio/S08.wav",
+    "shots": [
+     {
+      "id": "a",
+      "wan": "wan/S08_a.webm",
+      "mode": "background",
+      "t0": 123.293,
+      "dur": 15.125,
+      "f0": 2959,
+      "f1": 3322,
+      "wanFrames": 121,
+      "wanFps": 24
+     }
+    ],
+    "sfx": [
+     {
+      "kind": "shimmer",
+      "t": 123.293,
+      "gain": 0.4
+     },
+     {
+      "kind": "impact",
+      "t": 127.018,
+      "gain": 1
+     },
+     {
+      "kind": "tick",
+      "t": 132.497,
+      "gain": 1
+     }
+    ],
+    "invert": []
+   },
+   {
+    "id": "S09",
+    "t0": 138.417,
+    "dur": 18.715,
+    "audio": "audio/S09.wav",
+    "shots": [
+     {
+      "id": "a",
+      "wan": "wan/S09_a.webm",
+      "mode": "background",
+      "t0": 138.417,
+      "dur": 18.715,
+      "f0": 3322,
+      "f1": 3771,
+      "wanFrames": 121,
+      "wanFps": 24
+     }
+    ],
+    "sfx": [
+     {
+      "kind": "chalk",
+      "t": 138.417,
+      "gain": 0.6
+     },
+     {
+      "kind": "tick",
+      "t": 142.049,
+      "gain": 1
+     },
+     {
+      "kind": "tick",
+      "t": 144.237,
+      "gain": 1
+     },
+     {
+      "kind": "tick",
+      "t": 146.317,
+      "gain": 1
+     },
+     {
+      "kind": "tick",
+      "t": 148.516,
+      "gain": 1
+     },
+     {
+      "kind": "chalk",
+      "t": 150.23,
+      "gain": 0.5
+     }
+    ],
+    "invert": []
+   },
+   {
+    "id": "S10",
+    "t0": 157.133,
+    "dur": 24.965,
+    "audio": "audio/S10.wav",
+    "shots": [
+     {
+      "id": "a",
+      "wan": "wan/S10_a.webm",
+      "mode": "background",
+      "t0": 157.133,
+      "dur": 24.965,
+      "f0": 3771,
+      "f1": 4370,
+      "wanFrames": 121,
+      "wanFps": 24
+     }
+    ],
+    "sfx": [
+     {
+      "kind": "tick",
+      "t": 160.606,
+      "gain": 1
+     },
+     {
+      "kind": "whoosh",
+      "t": 167.613,
+      "gain": 0.5
+     },
+     {
+      "kind": "whoosh",
+      "t": 175.743,
+      "gain": 0.5
+     },
+     {
+      "kind": "boom",
+      "t": 178.752,
+      "gain": 1
+     }
+    ],
+    "invert": []
+   },
+   {
+    "id": "S11",
+    "t0": 182.098,
+    "dur": 12.2,
+    "audio": "audio/S11.wav",
+    "shots": [
+     {
+      "id": "a",
+      "wan": "wan/S11_a.webm",
+      "mode": "background",
+      "t0": 182.098,
+      "dur": 12.2,
+      "f0": 4370,
+      "f1": 4663,
+      "wanFrames": 121,
+      "wanFps": 24
+     }
+    ],
+    "sfx": [
+     {
+      "kind": "chalk",
+      "t": 183.682,
+      "gain": 0.6
+     },
+     {
+      "kind": "chalk",
+      "t": 188.16,
+      "gain": 0.7
+     },
+     {
+      "kind": "impact",
+      "t": 188.96,
+      "gain": 0.5
+     }
+    ],
+    "invert": []
+   },
+   {
+    "id": "S12",
+    "t0": 194.298,
+    "dur": 26.357,
+    "audio": "audio/S12.wav",
+    "shots": [
+     {
+      "id": "a",
+      "wan": "wan/S12_a.webm",
+      "mode": "background",
+      "t0": 194.298,
+      "dur": 26.357,
+      "f0": 4663,
+      "f1": 5296,
+      "wanFrames": 121,
+      "wanFps": 24
+     }
+    ],
+    "sfx": [
+     {
+      "kind": "shimmer",
+      "t": 200.683,
+      "gain": 0.4
+     },
+     {
+      "kind": "impact",
+      "t": 206.561,
+      "gain": 0.6
+     },
+     {
+      "kind": "whoosh",
+      "t": 207.947,
+      "gain": 1
+     },
+     {
+      "kind": "impact",
+      "t": 215.33,
+      "gain": 0.6
+     }
+    ],
+    "invert": []
+   },
+   {
+    "id": "S13",
+    "t0": 220.655,
+    "dur": 13.357,
+    "audio": "audio/S13.wav",
+    "shots": [
+     {
+      "id": "a",
+      "wan": "wan/S13_a.webm",
+      "mode": "background",
+      "t0": 220.655,
+      "dur": 13.357,
+      "f0": 5296,
+      "f1": 5616,
+      "wanFrames": 121,
+      "wanFps": 24
+     }
+    ],
+    "sfx": [
+     {
+      "kind": "chalk",
+      "t": 222.37,
+      "gain": 0.6
+     },
+     {
+      "kind": "chalk",
+      "t": 226.186,
+      "gain": 0.6
+     },
+     {
+      "kind": "chalk",
+      "t": 229.216,
+      "gain": 0.6
+     }
+    ],
+    "invert": []
+   },
+   {
+    "id": "S14",
+    "t0": 234.011,
+    "dur": 33.074,
+    "audio": "audio/S14.wav",
+    "shots": [
+     {
+      "id": "a",
+      "wan": "wan/S14_a.webm",
+      "mode": "background",
+      "t0": 234.011,
+      "dur": 33.074,
+      "f0": 5616,
+      "f1": 6410,
+      "wanFrames": 121,
+      "wanFps": 24
+     }
+    ],
+    "sfx": [
+     {
+      "kind": "shimmer",
+      "t": 243.008,
+      "gain": 0.5
+     },
+     {
+      "kind": "tick",
+      "t": 250.372,
+      "gain": 1
+     },
+     {
+      "kind": "whoosh",
+      "t": 253.282,
+      "gain": 1
+     },
+     {
+      "kind": "whoosh",
+      "t": 257.982,
+      "gain": 1
+     },
+     {
+      "kind": "impact",
+      "t": 262.442,
+      "gain": 0.6
+     }
+    ],
+    "invert": []
+   },
+   {
+    "id": "S15",
+    "t0": 267.085,
+    "dur": 23.252,
+    "audio": "audio/S15.wav",
+    "shots": [
+     {
+      "id": "a",
+      "wan": "wan/S15_a.webm",
+      "mode": "background",
+      "t0": 267.085,
+      "dur": 23.252,
+      "f0": 6410,
+      "f1": 6968,
+      "wanFrames": 121,
+      "wanFps": 24
+     }
+    ],
+    "sfx": [
+     {
+      "kind": "riser",
+      "t": 267.085,
+      "gain": 0.4
+     },
+     {
+      "kind": "impact",
+      "t": 268.285,
+      "gain": 0.6
+     },
+     {
+      "kind": "whoosh",
+      "t": 272.79,
+      "gain": 1
+     },
+     {
+      "kind": "boom",
+      "t": 277.453,
+      "gain": 0.7
+     }
+    ],
+    "invert": []
+   },
+   {
+    "id": "S16",
+    "t0": 290.337,
+    "dur": 8.239,
+    "audio": "audio/S16.wav",
+    "shots": [
+     {
+      "id": "a",
+      "wan": "wan/S16_a.webm",
+      "mode": "background",
+      "t0": 290.337,
+      "dur": 8.239,
+      "f0": 6968,
+      "f1": 7166,
+      "wanFrames": 121,
+      "wanFps": 24
+     }
+    ],
+    "sfx": [
+     {
+      "kind": "chalk",
+      "t": 291.692,
+      "gain": 0.7
+     },
+     {
+      "kind": "impact",
+      "t": 294.192,
+      "gain": 0.5
+     }
+    ],
+    "invert": []
+   },
+   {
+    "id": "S17",
+    "t0": 298.576,
+    "dur": 31.926,
+    "audio": "audio/S17.wav",
+    "shots": [
+     {
+      "id": "a",
+      "wan": "wan/S17_a.webm",
+      "mode": "background",
+      "t0": 298.576,
+      "dur": 31.926,
+      "f0": 7166,
+      "f1": 7932,
+      "wanFrames": 121,
+      "wanFps": 24
+     }
+    ],
+    "sfx": [
+     {
+      "kind": "tick",
+      "t": 300.856,
+      "gain": 1
+     },
+     {
+      "kind": "tick",
+      "t": 301.356,
+      "gain": 1
+     },
+     {
+      "kind": "tick",
+      "t": 301.856,
+      "gain": 1
+     },
+     {
+      "kind": "impact",
+      "t": 305.721,
+      "gain": 0.6
+     },
+     {
+      "kind": "whoosh",
+      "t": 309.222,
+      "gain": 1
+     },
+     {
+      "kind": "tick",
+      "t": 319.226,
+      "gain": 1
+     },
+     {
+      "kind": "tick",
+      "t": 322.846,
+      "gain": 1
+     },
+     {
+      "kind": "boom",
+      "t": 326.706,
+      "gain": 0.6
+     }
+    ],
+    "invert": []
+   },
+   {
+    "id": "S18",
+    "t0": 330.502,
+    "dur": 14.019,
+    "audio": "audio/S18.wav",
+    "shots": [
+     {
+      "id": "a",
+      "wan": "wan/S18_a.webm",
+      "mode": "background",
+      "t0": 330.502,
+      "dur": 14.019,
+      "f0": 7932,
+      "f1": 8269,
+      "wanFrames": 121,
+      "wanFps": 24
+     }
+    ],
+    "sfx": [
+     {
+      "kind": "chalk",
+      "t": 330.502,
+      "gain": 0.6
+     },
+     {
+      "kind": "chalk",
+      "t": 332.442,
+      "gain": 0.6
+     },
+     {
+      "kind": "impact",
+      "t": 335.249,
+      "gain": 0.5
+     },
+     {
+      "kind": "chalk",
+      "t": 339.855,
+      "gain": 0.6
+     }
+    ],
+    "invert": []
+   },
+   {
+    "id": "S19",
+    "t0": 344.521,
+    "dur": 27.068,
+    "audio": "audio/S19.wav",
+    "shots": [
+     {
+      "id": "a",
+      "wan": "wan/S19_a.webm",
+      "mode": "background",
+      "t0": 344.521,
+      "dur": 27.068,
+      "f0": 8269,
+      "f1": 8918,
+      "wanFrames": 121,
+      "wanFps": 24
+     }
+    ],
+    "sfx": [
+     {
+      "kind": "tick",
+      "t": 344.521,
+      "gain": 1
+     },
+     {
+      "kind": "tick",
+      "t": 346.121,
+      "gain": 1
+     },
+     {
+      "kind": "tick",
+      "t": 347.721,
+      "gain": 1
+     },
+     {
+      "kind": "impact",
+      "t": 349.72,
+      "gain": 0.6
+     },
+     {
+      "kind": "boom",
+      "t": 366.622,
+      "gain": 0.6
+     }
+    ],
+    "invert": []
+   },
+   {
+    "id": "S20",
+    "t0": 371.589,
+    "dur": 12.991,
+    "audio": "audio/S20.wav",
+    "shots": [
+     {
+      "id": "a",
+      "wan": "wan/S20_a.webm",
+      "mode": "background",
+      "t0": 371.589,
+      "dur": 12.991,
+      "f0": 8918,
+      "f1": 9230,
+      "wanFrames": 121,
+      "wanFps": 24
+     }
+    ],
+    "sfx": [
+     {
+      "kind": "chalk",
+      "t": 373.224,
+      "gain": 0.6
+     },
+     {
+      "kind": "chalk",
+      "t": 377.278,
+      "gain": 0.6
+     },
+     {
+      "kind": "chalk",
+      "t": 380.256,
+      "gain": 0.5
+     },
+     {
+      "kind": "chalk",
+      "t": 382.31,
+      "gain": 0.5
+     }
+    ],
+    "invert": []
+   },
+   {
+    "id": "S21",
+    "t0": 384.579,
+    "dur": 24.214,
+    "audio": "audio/S21.wav",
+    "shots": [
+     {
+      "id": "a",
+      "wan": "wan/S21_a.webm",
+      "mode": "background",
+      "t0": 384.579,
+      "dur": 24.214,
+      "f0": 9230,
+      "f1": 9811,
+      "wanFrames": 121,
+      "wanFps": 24
+     }
+    ],
+    "sfx": [
+     {
+      "kind": "shimmer",
+      "t": 389.575,
+      "gain": 0.4
+     },
+     {
+      "kind": "tick",
+      "t": 393.634,
+      "gain": 1
+     },
+     {
+      "kind": "tick",
+      "t": 394.546,
+      "gain": 1
+     },
+     {
+      "kind": "tick",
+      "t": 395.472,
+      "gain": 1
+     },
+     {
+      "kind": "impact",
+      "t": 396.941,
+      "gain": 0.6
+     }
+    ],
+    "invert": []
+   },
+   {
+    "id": "S22",
+    "t0": 408.793,
+    "dur": 26.834,
+    "audio": "audio/S22.wav",
+    "shots": [
+     {
+      "id": "a",
+      "wan": "wan/S22_a.webm",
+      "mode": "background",
+      "t0": 408.793,
+      "dur": 26.834,
+      "f0": 9811,
+      "f1": 10455,
+      "wanFrames": 121,
+      "wanFps": 24
+     }
+    ],
+    "sfx": [
+     {
+      "kind": "chalk",
+      "t": 408.793,
+      "gain": 0.5
+     },
+     {
+      "kind": "chalk",
+      "t": 411.712,
+      "gain": 0.5
+     },
+     {
+      "kind": "chalk",
+      "t": 419.005,
+      "gain": 0.5
+     },
+     {
+      "kind": "chalk",
+      "t": 424.217,
+      "gain": 0.5
+     },
+     {
+      "kind": "chalk",
+      "t": 430.169,
+      "gain": 0.5
+     },
+     {
+      "kind": "impact",
+      "t": 433.769,
+      "gain": 0.6
+     }
+    ],
+    "invert": []
+   },
+   {
+    "id": "S23",
+    "t0": 435.627,
+    "dur": 10.159,
+    "audio": "audio/S23.wav",
+    "shots": [
+     {
+      "id": "a",
+      "wan": "wan/S23_a.webm",
+      "mode": "background",
+      "t0": 435.627,
+      "dur": 10.159,
+      "f0": 10455,
+      "f1": 10699,
+      "wanFrames": 121,
+      "wanFps": 24
+     }
+    ],
+    "sfx": [
+     {
+      "kind": "impact",
+      "t": 435.627,
+      "gain": 0.6
+     },
+     {
+      "kind": "shimmer",
+      "t": 441.517,
+      "gain": 0.5
+     }
+    ],
+    "invert": []
+   }
+  ],
+  "subtitles": "subtitles.ass",
+  "bgm": {
+   "file": null,
+   "gain": 0.18,
+   "duck": true
+  }
+ },
+ "scenes": [
+  {
+   "id": "S01",
+   "title": "タイトル：第3講 染色体 ―DNAの収納と数の異常",
+   "picture": "漆黒に墨が爆ぜ、二重らせんの影が回る。「染色体 ― DNAの収納と数の異常」の筆文字。",
+   "diagram": {
+    "id": "helix",
+    "title": "DNA二重らせん（影）",
+    "note": "右巻き・主溝/副溝の非対称を保った背景図。文字は MEDSTUDY が描く"
+   },
+   "lecturer": false,
+   "sources": [
+    {
+     "beat": "open",
+     "source": "第3講／台詞 c03-0001（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 3,
+      "section": "導入",
+      "cues": [
+       "c03-0001"
+      ],
+      "mode": "verbatim"
+     },
+     "lines": [
+      "第3講を始めます。",
+      "前回は、DNAが何でできているのかを見ました。"
+     ]
+    },
+    {
+     "beat": "today",
+     "source": "第3講／台詞 c03-0002（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 3,
+      "section": "導入",
+      "cues": [
+       "c03-0002"
+      ],
+      "mode": "verbatim"
+     },
+     "lines": [
+      "今日は、その長いDNAを、細胞がどうやって片付けているのか。",
+      "そして、片付け方や配り方を間違えると何が起こるのか。",
+      "染色体の話です。"
+     ]
+    }
+   ],
+   "cams": [
+    {
+     "at": "start",
+     "move": "set",
+     "x": 640,
+     "y": 360,
+     "z": 1.3,
+     "note": "墨の中から"
+    },
+    {
+     "at": "title",
+     "move": "crash",
+     "x": 640,
+     "y": 330,
+     "z": 1.12,
+     "dur": 0.22,
+     "hold": 0.3,
+     "note": "題名で急接近 → 静止"
+    },
+    {
+     "at": "title+1.5",
+     "move": "pull",
+     "x": 640,
+     "y": 360,
+     "z": 1,
+     "dur": 3,
+     "note": "ゆっくり引く"
+    }
+   ],
+   "fx": [
+    {
+     "at": "title",
+     "kind": "impact",
+     "dur": 0.5,
+     "min": "gekiga"
+    },
+    {
+     "at": "title",
+     "kind": "focus",
+     "dur": 1.4,
+     "min": "gekiga"
+    },
+    {
+     "at": "title",
+     "kind": "shake",
+     "dur": 0.3,
+     "min": "gekiga"
+    },
+    {
+     "at": "start",
+     "kind": "tone",
+     "dur": 999,
+     "min": "gekiga"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "start",
+     "kind": "riser",
+     "gain": 0.5
+    },
+    {
+     "at": "title",
+     "kind": "boom"
+    }
+   ]
+  },
+  {
+   "id": "S02",
+   "title": "DNA → ヌクレオソーム → クロマチン → 染色体",
+   "picture": "4つのコマが左から順に灯る：裸のDNA → ヒストンに巻き付いたヌクレオソーム（数珠）→ 折りたたまれたクロマチン → 分裂期の染色体。",
+   "diagram": {
+    "id": "pack-strip",
+    "title": "DNA → ヌクレオソーム → クロマチン → 染色体",
+    "note": "スライド25、c03-0010〜0013"
+   },
+   "lecturer": false,
+   "sources": [
+    {
+     "beat": "flow",
+     "source": "第3講／台詞 c03-0010・c03-0011・c03-0012・c03-0013／スライド25（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 3,
+      "section": "全体像",
+      "cues": [
+       "c03-0010",
+       "c03-0011",
+       "c03-0012",
+       "c03-0013"
+      ],
+      "mode": "verbatim",
+      "slide": 25
+     },
+     "lines": [
+      "DNAが、",
+      "ヒストンに巻き付いてヌクレオソームになり、",
+      "折りたたまれてクロマチン、",
+      "分裂のときには染色体になります。"
+     ]
+    }
+   ],
+   "cams": [
+    {
+     "at": "start",
+     "move": "set",
+     "x": 200,
+     "y": 340,
+     "z": 1.5,
+     "note": "DNAのコマ"
+    },
+    {
+     "at": "nuc",
+     "move": "whip",
+     "x": 480,
+     "y": 340,
+     "z": 1.4,
+     "dur": 0.3,
+     "note": "ヌクレオソームへ"
+    },
+    {
+     "at": "chrom",
+     "move": "whip",
+     "x": 800,
+     "y": 340,
+     "z": 1.4,
+     "dur": 0.3,
+     "note": "クロマチンへ"
+    },
+    {
+     "at": "chr",
+     "move": "pull",
+     "x": 640,
+     "y": 350,
+     "z": 1,
+     "dur": 0.45,
+     "note": "4つを並べる"
+    }
+   ],
+   "fx": [
+    {
+     "at": "nuc",
+     "kind": "speed",
+     "dur": 0.3,
+     "min": "gekiga"
+    },
+    {
+     "at": "chrom",
+     "kind": "speed",
+     "dur": 0.3,
+     "min": "gekiga"
+    },
+    {
+     "at": "chr",
+     "kind": "impact",
+     "dur": 0.45,
+     "min": "gekiga"
+    },
+    {
+     "at": "start",
+     "kind": "tone",
+     "dur": 999,
+     "min": "gekiga"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "dna",
+     "kind": "shimmer",
+     "gain": 0.4
+    },
+    {
+     "at": "nuc",
+     "kind": "whoosh",
+     "gain": 0.5
+    },
+    {
+     "at": "chrom",
+     "kind": "whoosh",
+     "gain": 0.5
+    },
+    {
+     "at": "chr",
+     "kind": "impact"
+    }
+   ]
+  },
+  {
+   "id": "S03",
+   "title": "収納の階層：2・11・1400 nm",
+   "picture": "黒板の左に「収納の階層」：DNA（2 nm）→ヌクレオソーム（11 nm）→クロマチン→染色体（1400 nm）。数字を言うたびにその行へ寄る。",
+   "diagram": {
+    "id": "board-l4",
+    "title": "板書：収納の階層：2・11・1400 nm",
+    "note": "第3講の黒板 l-h・l1〜l4（矢印は板書のとおり）、c03-0015・0016"
+   },
+   "lecturer": true,
+   "sources": [
+    {
+     "beat": "nums",
+     "source": "第3講／台詞 c03-0015／板書 l1・l2・l3・l4（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 3,
+      "section": "テーマ1　収納の階層",
+      "cues": [
+       "c03-0015"
+      ],
+      "mode": "verbatim",
+      "board": [
+       "l1",
+       "l2",
+       "l3",
+       "l4"
+      ]
+     },
+     "lines": [
+      "DNAは2ナノメートル。",
+      "ヌクレオソームで11ナノメートル。",
+      "そしてクロマチンを経て、分裂期の染色体は1400ナノメートル。"
+     ]
+    },
+    {
+     "beat": "memo",
+     "source": "第3講／台詞 c03-0016（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 3,
+      "section": "テーマ1　収納の階層",
+      "cues": [
+       "c03-0016"
+      ],
+      "mode": "verbatim"
+     },
+     "lines": [
+      "数字も一緒に覚えておくと、図の問題で迷いません。"
+     ]
+    }
+   ],
+   "cams": [
+    {
+     "at": "start",
+     "move": "set",
+     "x": 560,
+     "y": 300,
+     "z": 1,
+     "note": "黒板の左"
+    },
+    {
+     "at": "d2",
+     "move": "push",
+     "x": 440,
+     "y": 160,
+     "z": 1.6,
+     "dur": 0.5,
+     "note": "DNA 2 nm"
+    },
+    {
+     "at": "n11",
+     "move": "pan",
+     "x": 440,
+     "y": 245,
+     "z": 1.6,
+     "dur": 0.4,
+     "note": "11 nm"
+    },
+    {
+     "at": "c1400",
+     "move": "pan",
+     "x": 440,
+     "y": 380,
+     "z": 1.5,
+     "dur": 0.6,
+     "note": "1400 nm"
+    },
+    {
+     "at": "memo",
+     "move": "pull",
+     "x": 560,
+     "y": 300,
+     "z": 1,
+     "dur": 0.5,
+     "note": "全体"
+    }
+   ],
+   "fx": [
+    {
+     "at": "c1400+1.4",
+     "kind": "impact",
+     "dur": 0.35,
+     "min": "gekiga"
+    },
+    {
+     "at": "start",
+     "kind": "tone",
+     "dur": 999,
+     "min": "gekiga"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "d2",
+     "kind": "chalk",
+     "gain": 0.5
+    },
+    {
+     "at": "n11",
+     "kind": "chalk",
+     "gain": 0.5
+    },
+    {
+     "at": "c1400",
+     "kind": "chalk",
+     "gain": 0.5
+    },
+    {
+     "at": "c1400+1.4",
+     "kind": "impact",
+     "gain": 0.5
+    }
+   ]
+  },
+  {
+   "id": "S04",
+   "title": "収納の実際：2 nm → ヌクレオソーム → クロマチン → 1400 nm",
+   "picture": "裸のDNA（直径2 nm）が、ヒストンの塊（コア）に約1.7周巻き付いてヌクレオソームに。数珠のつなぎ（スペーサー）にH1が付く。数珠がさらに折りたたまれてクロマチン、分裂期には幅約1400 nmの染色体へ凝縮する。",
+   "diagram": {
+    "id": "packing",
+    "title": "収納の実際：2 nm → ヌクレオソーム → クロマチン → 1400 nm",
+    "note": "c03-0017〜0022。1つのコアに約140塩基対、スペーサーにH1"
+   },
+   "lecturer": false,
+   "sources": [
+    {
+     "beat": "naked",
+     "source": "第3講／台詞 c03-0017（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 3,
+      "section": "テーマ1　収納の階層",
+      "cues": [
+       "c03-0017"
+      ],
+      "mode": "verbatim"
+     },
+     "lines": [
+      "実際にどれくらい小さくたたまれているのか、見てみましょう。",
+      "まずは裸のDNA。",
+      "直径わずか2ナノメートルです。"
+     ]
+    },
+    {
+     "beat": "wrap",
+     "source": "第3講／台詞 c03-0018（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 3,
+      "section": "テーマ1　収納の階層",
+      "cues": [
+       "c03-0018"
+      ],
+      "mode": "verbatim"
+     },
+     "lines": [
+      "これが、ヒストンの塊に巻き付いていきます。"
+     ]
+    },
+    {
+     "beat": "nuc",
+     "source": "第3講／台詞 c03-0019（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 3,
+      "section": "テーマ1　収納の階層",
+      "cues": [
+       "c03-0019"
+      ],
+      "mode": "verbatim"
+     },
+     "lines": [
+      "一つのコアに約140塩基対が巻き付いて、ヌクレオソームになります。",
+      "つなぎの部分がスペーサー。",
+      "ここにH1が結合します。"
+     ]
+    },
+    {
+     "beat": "fold",
+     "source": "第3講／台詞 c03-0020（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 3,
+      "section": "テーマ1　収納の階層",
+      "cues": [
+       "c03-0020"
+      ],
+      "mode": "verbatim"
+     },
+     "lines": [
+      "ヌクレオソームの連なりが、さらに折りたたまれてクロマチンに。"
+     ]
+    },
+    {
+     "beat": "chr",
+     "source": "第3講／台詞 c03-0021（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 3,
+      "section": "テーマ1　収納の階層",
+      "cues": [
+       "c03-0021"
+      ],
+      "mode": "verbatim"
+     },
+     "lines": [
+      "分裂期には、ここまで凝縮して、幅約1400ナノメートルの染色体になります。"
+     ]
+    },
+    {
+     "beat": "end",
+     "source": "第3講／台詞 c03-0022（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 3,
+      "section": "テーマ1　収納の階層",
+      "cues": [
+       "c03-0022"
+      ],
+      "mode": "verbatim"
+     },
+     "lines": [
+      "細い糸が、何段階にも折りたたまれて、ようやく目に見える形になるわけです。"
+     ]
+    }
+   ],
+   "cams": [
+    {
+     "at": "start",
+     "move": "set",
+     "x": 640,
+     "y": 360,
+     "z": 1.3,
+     "note": "裸のDNAの大写し"
+    },
+    {
+     "at": "d2",
+     "move": "push",
+     "x": 640,
+     "y": 360,
+     "z": 1.5,
+     "dur": 0.6,
+     "note": "2 nm"
+    },
+    {
+     "at": "wrap",
+     "move": "pull",
+     "x": 640,
+     "y": 360,
+     "z": 1.1,
+     "dur": 0.6,
+     "note": "コアに巻き付く"
+    },
+    {
+     "at": "nuc",
+     "move": "pull",
+     "x": 640,
+     "y": 360,
+     "z": 1,
+     "dur": 0.5,
+     "note": "数珠"
+    },
+    {
+     "at": "h1",
+     "move": "push",
+     "x": 560,
+     "y": 380,
+     "z": 1.5,
+     "dur": 0.4,
+     "note": "H1へ"
+    },
+    {
+     "at": "fold",
+     "move": "pull",
+     "x": 640,
+     "y": 360,
+     "z": 1,
+     "dur": 0.5,
+     "note": "折りたたみ"
+    },
+    {
+     "at": "chr",
+     "move": "crash",
+     "x": 640,
+     "y": 360,
+     "z": 1.12,
+     "dur": 0.22,
+     "hold": 0.25,
+     "note": "染色体で急接近"
+    },
+    {
+     "at": "end",
+     "move": "pull",
+     "x": 640,
+     "y": 360,
+     "z": 1,
+     "dur": 1,
+     "note": "引く"
+    }
+   ],
+   "fx": [
+    {
+     "at": "wrap",
+     "kind": "speed",
+     "dur": 0.4,
+     "min": "ultra"
+    },
+    {
+     "at": "nuc",
+     "kind": "impact",
+     "dur": 0.35,
+     "min": "gekiga"
+    },
+    {
+     "at": "h1",
+     "kind": "focus",
+     "dur": 0.9,
+     "min": "gekiga"
+    },
+    {
+     "at": "chr",
+     "kind": "impact",
+     "dur": 0.5,
+     "min": "gekiga"
+    },
+    {
+     "at": "chr",
+     "kind": "onoma",
+     "text": "ギュッ",
+     "x": 1090,
+     "y": 160,
+     "dur": 0.9,
+     "min": "ultra"
+    },
+    {
+     "at": "start",
+     "kind": "tone",
+     "dur": 999,
+     "min": "gekiga"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "naked",
+     "kind": "shimmer",
+     "gain": 0.4
+    },
+    {
+     "at": "wrap",
+     "kind": "whoosh",
+     "gain": 0.5
+    },
+    {
+     "at": "nuc",
+     "kind": "impact",
+     "gain": 0.6
+    },
+    {
+     "at": "h1",
+     "kind": "tick"
+    },
+    {
+     "at": "fold",
+     "kind": "whoosh"
+    },
+    {
+     "at": "chr",
+     "kind": "boom",
+     "gain": 0.7
+    }
+   ]
+  },
+  {
+   "id": "S05",
+   "title": "コアヒストン八量体とH1",
+   "picture": "ヌクレオソームの大写し。コアは H2A・H2B・H3・H4 が2個ずつの8個の玉（八量体）で、DNAが外側を約1.7周。コアとコアのつなぎ（スペーサー）のDNAに、別の黄色い玉 H1 が付く。",
+   "diagram": {
+    "id": "octamer",
+    "title": "コアヒストン八量体とH1",
+    "note": "スライド39、c03-0023・0024。コアヒストン H2A・H2B・H3・H4 各2個、H1はスペーサーでDNAと結合"
+   },
+   "lecturer": false,
+   "sources": [
+    {
+     "beat": "core",
+     "source": "第3講／台詞 c03-0023／スライド39／板書 h1・h1b（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 3,
+      "section": "テーマ1　収納の階層",
+      "cues": [
+       "c03-0023"
+      ],
+      "mode": "verbatim",
+      "slide": 39,
+      "board": [
+       "h1",
+       "h1b"
+      ]
+     },
+     "lines": [
+      "ヒストンを整理します。",
+      "コアになるのは、H2A、H2B、H3、H4が2個ずつ。",
+      "合わせて八量体です。"
+     ]
+    },
+    {
+     "beat": "h1",
+     "source": "第3講／台詞 c03-0024／スライド39／板書 h2（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 3,
+      "section": "テーマ1　収納の階層",
+      "cues": [
+       "c03-0024"
+      ],
+      "mode": "verbatim",
+      "slide": 39,
+      "board": [
+       "h2"
+      ]
+     },
+     "lines": [
+      "H1だけは、コアではなく、ヌクレオソームの間のスペーサーのところでDNAと結合しています。"
+     ]
+    }
+   ],
+   "cams": [
+    {
+     "at": "start",
+     "move": "set",
+     "x": 560,
+     "y": 360,
+     "z": 1.1,
+     "note": "ヌクレオソーム"
+    },
+    {
+     "at": "core",
+     "move": "push",
+     "x": 560,
+     "y": 360,
+     "z": 1.3,
+     "dur": 2,
+     "note": "8個の玉"
+    },
+    {
+     "at": "oct",
+     "move": "crash",
+     "x": 560,
+     "y": 360,
+     "z": 1.4,
+     "dur": 0.22,
+     "hold": 0.25,
+     "note": "「八量体」"
+    },
+    {
+     "at": "h1",
+     "move": "pull",
+     "x": 640,
+     "y": 360,
+     "z": 1,
+     "dur": 0.6,
+     "note": "スペーサーとH1"
+    }
+   ],
+   "fx": [
+    {
+     "at": "oct",
+     "kind": "impact",
+     "dur": 0.45,
+     "min": "gekiga"
+    },
+    {
+     "at": "oct",
+     "kind": "focus",
+     "dur": 1,
+     "min": "gekiga"
+    },
+    {
+     "at": "h1+1.5",
+     "kind": "focus",
+     "dur": 1,
+     "min": "gekiga"
+    },
+    {
+     "at": "start",
+     "kind": "tone",
+     "dur": 999,
+     "min": "gekiga"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "core",
+     "kind": "tick"
+    },
+    {
+     "at": "core+0.5",
+     "kind": "tick"
+    },
+    {
+     "at": "core+1.0",
+     "kind": "tick"
+    },
+    {
+     "at": "core+1.5",
+     "kind": "tick"
+    },
+    {
+     "at": "oct",
+     "kind": "boom",
+     "gain": 0.6
+    },
+    {
+     "at": "h1",
+     "kind": "whoosh",
+     "gain": 0.5
+    }
+   ]
+  },
+  {
+   "id": "S06",
+   "title": "H1はコアではない",
+   "picture": "黒板の左下「ヒストン」：コア＝H2A・H2B・H3・H4 各2個 → 八量体（約140塩基対が巻き付く）、H1 … スペーサーでDNAと結合。H1の行に下線、「H1はコアではない」の筆文字。",
+   "diagram": {
+    "id": "board-h2",
+    "title": "板書：H1はコアではない",
+    "note": "第3講の黒板 h-h・h1・h1b・h2（下線）、c03-0025"
+   },
+   "lecturer": true,
+   "sources": [
+    {
+     "beat": "line",
+     "source": "第3講／台詞 c03-0025／板書 h2（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 3,
+      "section": "テーマ1　収納の階層",
+      "cues": [
+       "c03-0025"
+      ],
+      "mode": "verbatim",
+      "board": [
+       "h2"
+      ]
+     },
+     "lines": [
+      "ここに線を引いておきます。",
+      "H1はコアではない。",
+      "これがよく問われます。"
+     ]
+    }
+   ],
+   "cams": [
+    {
+     "at": "start",
+     "move": "set",
+     "x": 560,
+     "y": 260,
+     "z": 1.05,
+     "note": "ヒストンの板書"
+    },
+    {
+     "at": "line",
+     "move": "push",
+     "x": 480,
+     "y": 340,
+     "z": 1.4,
+     "dur": 0.6,
+     "note": "H1の行"
+    },
+    {
+     "at": "rule",
+     "move": "crash",
+     "x": 640,
+     "y": 380,
+     "z": 1.1,
+     "dur": 0.2,
+     "hold": 0.3,
+     "note": "「H1はコアではない」"
+    }
+   ],
+   "fx": [
+    {
+     "at": "rule",
+     "kind": "impact",
+     "dur": 0.5,
+     "min": "gekiga"
+    },
+    {
+     "at": "rule",
+     "kind": "shake",
+     "dur": 0.3,
+     "min": "gekiga"
+    },
+    {
+     "at": "rule",
+     "kind": "onoma",
+     "text": "ドンッ",
+     "x": 1080,
+     "y": 150,
+     "dur": 1,
+     "min": "gekiga"
+    },
+    {
+     "at": "start",
+     "kind": "tone",
+     "dur": 999,
+     "min": "gekiga"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "line",
+     "kind": "chalk",
+     "gain": 0.7
+    },
+    {
+     "at": "rule",
+     "kind": "boom"
+    }
+   ]
+  },
+  {
+   "id": "S07",
+   "title": "ヒストンの化学修飾 → 遺伝子発現の制御（第6講へ）",
+   "picture": "ヌクレオソームのヒストンから尾が伸び、そこに小さな印（化学修飾）が付く。印の付き方が違う2つの細胞で、同じ遺伝子のスイッチが点いたり消えたりする。最後に「第6講 エピゲノム」の札。",
+   "diagram": {
+    "id": "histmod",
+    "title": "ヒストンの化学修飾 → 遺伝子発現の制御（第6講へ）",
+    "note": "スライド39、c03-0027・0028"
+   },
+   "lecturer": false,
+   "sources": [
+    {
+     "beat": "mod",
+     "source": "第3講／台詞 c03-0027／スライド39（原文の一部）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 3,
+      "section": "テーマ1　収納の階層",
+      "cues": [
+       "c03-0027"
+      ],
+      "mode": "trimmed",
+      "slide": 39
+     },
+     "lines": [
+      "ヒストンは化学修飾を受けて、ヌクレオソームの性質を変えます。"
+     ]
+    },
+    {
+     "beat": "cell",
+     "source": "第3講／台詞 c03-0028／スライド39（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 3,
+      "section": "テーマ1　収納の階層",
+      "cues": [
+       "c03-0028"
+      ],
+      "mode": "verbatim",
+      "slide": 39
+     },
+     "lines": [
+      "この修飾が細胞ごとに違い、遺伝子発現の制御に関わる。",
+      "第6講のエピゲノムにつながる、大事な伏線です。"
+     ]
+    }
+   ],
+   "cams": [
+    {
+     "at": "start",
+     "move": "set",
+     "x": 640,
+     "y": 340,
+     "z": 1.2,
+     "note": "ヒストンの尾"
+    },
+    {
+     "at": "mod",
+     "move": "push",
+     "x": 640,
+     "y": 320,
+     "z": 1.35,
+     "dur": 2,
+     "note": "印が付く"
+    },
+    {
+     "at": "cell",
+     "move": "pull",
+     "x": 640,
+     "y": 360,
+     "z": 1,
+     "dur": 0.5,
+     "note": "2つの細胞"
+    },
+    {
+     "at": "epi",
+     "move": "crash",
+     "x": 640,
+     "y": 380,
+     "z": 1.1,
+     "dur": 0.22,
+     "hold": 0.25,
+     "note": "第6講へ"
+    }
+   ],
+   "fx": [
+    {
+     "at": "epi",
+     "kind": "flash",
+     "dur": 0.3,
+     "min": "gekiga"
+    },
+    {
+     "at": "epi",
+     "kind": "impact",
+     "dur": 0.4,
+     "min": "gekiga"
+    },
+    {
+     "at": "start",
+     "kind": "tone",
+     "dur": 999,
+     "min": "gekiga"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "mod",
+     "kind": "tick"
+    },
+    {
+     "at": "mod+0.6",
+     "kind": "tick"
+    },
+    {
+     "at": "mod+1.2",
+     "kind": "tick"
+    },
+    {
+     "at": "cell",
+     "kind": "whoosh",
+     "gain": 0.5
+    },
+    {
+     "at": "epi",
+     "kind": "shimmer"
+    }
+   ]
+  },
+  {
+   "id": "S08",
+   "title": "核型：46,XY",
+   "picture": "G分染法で縞模様に染まった染色体が、長い順に1〜22番、最後にXとYが並ぶ（正常男性の核型、模式図）。「46,XY」の判。",
+   "diagram": {
+    "id": "karyotype",
+    "title": "核型：46,XY",
+    "note": "スライド26、c03-0035・0036。相対的な長さとセントロメアの位置はおおよそ（模式図）"
+   },
+   "lecturer": false,
+   "sources": [
+    {
+     "beat": "band",
+     "source": "第3講／台詞 c03-0035／スライド26（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 3,
+      "section": "テーマ2　染色体の数と形",
+      "cues": [
+       "c03-0035"
+      ],
+      "mode": "verbatim",
+      "slide": 26
+     },
+     "lines": [
+      "G分染法で染めて並べたものが核型。",
+      "正常な男性は46,XYと書きます。"
+     ]
+    },
+    {
+     "beat": "n",
+     "source": "第3講／台詞 c03-0036／スライド26（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 3,
+      "section": "テーマ2　染色体の数と形",
+      "cues": [
+       "c03-0036"
+      ],
+      "mode": "verbatim",
+      "slide": 26
+     },
+     "lines": [
+      "ヒトは46本。",
+      "長い方から1番から22番、残りの2本が性染色体です。"
+     ]
+    }
+   ],
+   "cams": [
+    {
+     "at": "start",
+     "move": "set",
+     "x": 640,
+     "y": 330,
+     "z": 1,
+     "note": "核型の全景"
+    },
+    {
+     "at": "band",
+     "move": "push",
+     "x": 330,
+     "y": 160,
+     "z": 1.6,
+     "dur": 1.5,
+     "note": "縞模様"
+    },
+    {
+     "at": "xy",
+     "move": "pull",
+     "x": 640,
+     "y": 340,
+     "z": 1,
+     "dur": 0.5,
+     "note": "全体"
+    },
+    {
+     "at": "order",
+     "move": "push",
+     "x": 960,
+     "y": 520,
+     "z": 1.4,
+     "dur": 1.2,
+     "note": "性染色体"
+    }
+   ],
+   "fx": [
+    {
+     "at": "xy",
+     "kind": "impact",
+     "dur": 0.4,
+     "min": "gekiga"
+    },
+    {
+     "at": "n46",
+     "kind": "focus",
+     "dur": 1,
+     "min": "gekiga"
+    },
+    {
+     "at": "start",
+     "kind": "tone",
+     "dur": 999,
+     "min": "gekiga"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "band",
+     "kind": "shimmer",
+     "gain": 0.4
+    },
+    {
+     "at": "xy",
+     "kind": "impact"
+    },
+    {
+     "at": "order",
+     "kind": "tick"
+    }
+   ]
+  },
+  {
+   "id": "S09",
+   "title": "染色体の形：セントロメア・短腕p・長腕q・テロメア",
+   "picture": "黒板の真ん中に分裂期のX字形の染色体を描き、くびれ＝セントロメア、上の短腕p、下の長腕q、末端＝テロメアを書き込む。横に「46本／常染色体22対／＋XY・XX／長い順に1〜22番」。",
+   "diagram": {
+    "id": "board-c2",
+    "title": "板書：染色体の形：セントロメア・短腕p・長腕q・テロメア",
+    "note": "第3講の黒板 c-h・chr・c1〜c2、c03-0038・0039"
+   },
+   "lecturer": true,
+   "sources": [
+    {
+     "beat": "x",
+     "source": "第3講／台詞 c03-0038／板書 chr（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 3,
+      "section": "テーマ2　染色体の数と形",
+      "cues": [
+       "c03-0038"
+      ],
+      "mode": "verbatim",
+      "board": [
+       "chr"
+      ]
+     },
+     "lines": [
+      "分裂期の染色体は、こういうX字形です。",
+      "くびれたところがセントロメア。",
+      "上の短い腕が短腕p、",
+      "下の長い腕が長腕q。",
+      "末端がテロメアです。"
+     ]
+    },
+    {
+     "beat": "n",
+     "source": "第3講／台詞 c03-0039／板書 c1・c1b・c1c・c2（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 3,
+      "section": "テーマ2　染色体の数と形",
+      "cues": [
+       "c03-0039"
+      ],
+      "mode": "verbatim",
+      "board": [
+       "c1",
+       "c1b",
+       "c1c",
+       "c2"
+      ]
+     },
+     "lines": [
+      "ヒトは46本。",
+      "常染色体22対と、性染色体。",
+      "番号は長さの順です。"
+     ]
+    }
+   ],
+   "cams": [
+    {
+     "at": "start",
+     "move": "set",
+     "x": 560,
+     "y": 320,
+     "z": 1,
+     "note": "黒板の真ん中"
+    },
+    {
+     "at": "cen",
+     "move": "push",
+     "x": 400,
+     "y": 300,
+     "z": 1.5,
+     "dur": 0.5,
+     "note": "セントロメア"
+    },
+    {
+     "at": "p",
+     "move": "pan",
+     "x": 400,
+     "y": 240,
+     "z": 1.5,
+     "dur": 0.4,
+     "note": "短腕p"
+    },
+    {
+     "at": "q",
+     "move": "pan",
+     "x": 400,
+     "y": 380,
+     "z": 1.5,
+     "dur": 0.4,
+     "note": "長腕q"
+    },
+    {
+     "at": "tel",
+     "move": "pan",
+     "x": 400,
+     "y": 470,
+     "z": 1.5,
+     "dur": 0.4,
+     "note": "テロメア"
+    },
+    {
+     "at": "n46",
+     "move": "pull",
+     "x": 640,
+     "y": 320,
+     "z": 1,
+     "dur": 0.5,
+     "note": "46本"
+    }
+   ],
+   "fx": [
+    {
+     "at": "cen",
+     "kind": "focus",
+     "dur": 0.8,
+     "min": "gekiga"
+    },
+    {
+     "at": "n46",
+     "kind": "impact",
+     "dur": 0.35,
+     "min": "gekiga"
+    },
+    {
+     "at": "start",
+     "kind": "tone",
+     "dur": 999,
+     "min": "gekiga"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "x",
+     "kind": "chalk",
+     "gain": 0.6
+    },
+    {
+     "at": "cen",
+     "kind": "tick"
+    },
+    {
+     "at": "p",
+     "kind": "tick"
+    },
+    {
+     "at": "q",
+     "kind": "tick"
+    },
+    {
+     "at": "tel",
+     "kind": "tick"
+    },
+    {
+     "at": "n46",
+     "kind": "chalk",
+     "gain": 0.5
+    }
+   ]
+  },
+  {
+   "id": "S10",
+   "title": "メタ／アクロ／テロセントリック",
+   "picture": "3本の染色体が並ぶ。セントロメアが真ん中＝メタセントリック（1・3・16・19・20番）、端に近い＝アクロセントリック（13・14・15・21・22番・Y）、完全に端＝テロセントリック。最後のテロセントリックに赤い✕「ヒトにない」。",
+   "diagram": {
+    "id": "centromere",
+    "title": "メタ／アクロ／テロセントリック",
+    "note": "スライド28、c03-0040〜0043"
+   },
+   "lecturer": false,
+   "sources": [
+    {
+     "beat": "class",
+     "source": "第3講／台詞 c03-0040／スライド28（原文の一部）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 3,
+      "section": "テーマ2　染色体の数と形",
+      "cues": [
+       "c03-0040"
+      ],
+      "mode": "trimmed",
+      "slide": 28
+     },
+     "lines": [
+      "セントロメアの位置で、形が分類されます。"
+     ]
+    },
+    {
+     "beat": "meta",
+     "source": "第3講／台詞 c03-0041／スライド28（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 3,
+      "section": "テーマ2　染色体の数と形",
+      "cues": [
+       "c03-0041"
+      ],
+      "mode": "verbatim",
+      "slide": 28
+     },
+     "lines": [
+      "セントロメアが真ん中にあるのがメタセントリック。",
+      "ヒトでは1、3、16、19、20番。"
+     ]
+    },
+    {
+     "beat": "acro",
+     "source": "第3講／台詞 c03-0042／スライド28（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 3,
+      "section": "テーマ2　染色体の数と形",
+      "cues": [
+       "c03-0042"
+      ],
+      "mode": "verbatim",
+      "slide": 28
+     },
+     "lines": [
+      "セントロメアが端に近いのがアクロセントリック。",
+      "13、14、15、21、22番とYの6本です。"
+     ]
+    },
+    {
+     "beat": "telo",
+     "source": "第3講／台詞 c03-0043／スライド28（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 3,
+      "section": "テーマ2　染色体の数と形",
+      "cues": [
+       "c03-0043"
+      ],
+      "mode": "verbatim",
+      "slide": 28
+     },
+     "lines": [
+      "そして、完全に端にあるテロセントリック。",
+      "これはヒトの染色体にはありません。"
+     ]
+    }
+   ],
+   "cams": [
+    {
+     "at": "start",
+     "move": "set",
+     "x": 640,
+     "y": 340,
+     "z": 1,
+     "note": "3本"
+    },
+    {
+     "at": "meta",
+     "move": "push",
+     "x": 260,
+     "y": 330,
+     "z": 1.45,
+     "dur": 0.5,
+     "note": "メタ"
+    },
+    {
+     "at": "acro",
+     "move": "whip",
+     "x": 640,
+     "y": 330,
+     "z": 1.45,
+     "dur": 0.25,
+     "note": "アクロ"
+    },
+    {
+     "at": "telo",
+     "move": "whip",
+     "x": 1020,
+     "y": 330,
+     "z": 1.45,
+     "dur": 0.25,
+     "note": "テロ"
+    },
+    {
+     "at": "none",
+     "move": "crash",
+     "x": 1020,
+     "y": 330,
+     "z": 1.6,
+     "dur": 0.2,
+     "hold": 0.3,
+     "note": "「ヒトにない」"
+    }
+   ],
+   "fx": [
+    {
+     "at": "acro",
+     "kind": "speed",
+     "dur": 0.3,
+     "min": "gekiga"
+    },
+    {
+     "at": "telo",
+     "kind": "speed",
+     "dur": 0.3,
+     "min": "gekiga"
+    },
+    {
+     "at": "none",
+     "kind": "impact",
+     "dur": 0.5,
+     "min": "gekiga"
+    },
+    {
+     "at": "none",
+     "kind": "shake",
+     "dur": 0.3,
+     "min": "gekiga"
+    },
+    {
+     "at": "none",
+     "kind": "onoma",
+     "text": "バツッ",
+     "x": 1100,
+     "y": 600,
+     "dur": 0.9,
+     "min": "ultra"
+    },
+    {
+     "at": "start",
+     "kind": "tone",
+     "dur": 999,
+     "min": "gekiga"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "meta",
+     "kind": "tick"
+    },
+    {
+     "at": "acro",
+     "kind": "whoosh",
+     "gain": 0.5
+    },
+    {
+     "at": "telo",
+     "kind": "whoosh",
+     "gain": 0.5
+    },
+    {
+     "at": "none",
+     "kind": "boom"
+    }
+   ]
+  },
+  {
+   "id": "S11",
+   "title": "テロセントリックはヒトにない",
+   "picture": "染色体の形の下に「アクロ … 13・14・15・21・22・Y」「テロセントリックはヒトにない」。後者に赤い下線。",
+   "diagram": {
+    "id": "board-c4",
+    "title": "板書：テロセントリックはヒトにない",
+    "note": "第3講の黒板 c3・c4（下線）、c03-0044・0045"
+   },
+   "lecturer": true,
+   "sources": [
+    {
+     "beat": "w",
+     "source": "第3講／台詞 c03-0044／板書 c3・c4（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 3,
+      "section": "テーマ2　染色体の数と形",
+      "cues": [
+       "c03-0044"
+      ],
+      "mode": "verbatim",
+      "board": [
+       "c3",
+       "c4"
+      ]
+     },
+     "lines": [
+      "黒板にも書きます。",
+      "アクロセントリックは13、14、15、21、22、Y。",
+      "テロセントリックはヒトにはない。"
+     ]
+    },
+    {
+     "beat": "often",
+     "source": "第3講／台詞 c03-0045（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 3,
+      "section": "テーマ2　染色体の数と形",
+      "cues": [
+       "c03-0045"
+      ],
+      "mode": "verbatim"
+     },
+     "lines": [
+      "ヒトにないもの、これも選択肢によく出ます。"
+     ]
+    }
+   ],
+   "cams": [
+    {
+     "at": "start",
+     "move": "set",
+     "x": 560,
+     "y": 320,
+     "z": 1,
+     "note": "形の板書"
+    },
+    {
+     "at": "acro",
+     "move": "push",
+     "x": 520,
+     "y": 470,
+     "z": 1.45,
+     "dur": 0.5,
+     "note": "アクロ"
+    },
+    {
+     "at": "none",
+     "move": "crash",
+     "x": 520,
+     "y": 520,
+     "z": 1.6,
+     "dur": 0.2,
+     "hold": 0.25,
+     "note": "ヒトにない"
+    },
+    {
+     "at": "often",
+     "move": "pull",
+     "x": 560,
+     "y": 340,
+     "z": 1,
+     "dur": 0.5,
+     "note": "引く"
+    }
+   ],
+   "fx": [
+    {
+     "at": "none",
+     "kind": "impact",
+     "dur": 0.4,
+     "min": "gekiga"
+    },
+    {
+     "at": "start",
+     "kind": "tone",
+     "dur": 999,
+     "min": "gekiga"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "acro",
+     "kind": "chalk",
+     "gain": 0.6
+    },
+    {
+     "at": "none",
+     "kind": "chalk",
+     "gain": 0.7
+    },
+    {
+     "at": "none+0.8",
+     "kind": "impact",
+     "gain": 0.5
+    }
+   ]
+  },
+  {
+   "id": "S12",
+   "title": "二倍体（46）と一倍体（23）",
+   "picture": "左に体細胞：46本（父由来23本＝青、母由来23本＝赤）の二倍体。矢印「減数分裂（2回の分裂）」の先に、23本の一倍体の卵子と精子。",
+   "diagram": {
+    "id": "ploidy",
+    "title": "二倍体（46）と一倍体（23）",
+    "note": "スライド32、c03-0046〜0049"
+   },
+   "lecturer": false,
+   "sources": [
+    {
+     "beat": "q",
+     "source": "第3講／台詞 c03-0046（原文の一部）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 3,
+      "section": "テーマ3　減数分裂と不分離",
+      "cues": [
+       "c03-0046"
+      ],
+      "mode": "trimmed"
+     },
+     "lines": [
+      "では、この46本の染色体が、どうやって次の世代に配られるのか。"
+     ]
+    },
+    {
+     "beat": "dip",
+     "source": "第3講／台詞 c03-0047／スライド32（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 3,
+      "section": "テーマ3　減数分裂と不分離",
+      "cues": [
+       "c03-0047"
+      ],
+      "mode": "verbatim",
+      "slide": 32
+     },
+     "lines": [
+      "体細胞は46本。",
+      "一方は母親から、もう一方は父親から来ています。",
+      "これが二倍体。"
+     ]
+    },
+    {
+     "beat": "hap",
+     "source": "第3講／台詞 c03-0048／スライド32（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 3,
+      "section": "テーマ3　減数分裂と不分離",
+      "cues": [
+       "c03-0048"
+      ],
+      "mode": "verbatim",
+      "slide": 32
+     },
+     "lines": [
+      "精子と卵子は23本。",
+      "一倍体です。"
+     ]
+    },
+    {
+     "beat": "mei",
+     "source": "第3講／台詞 c03-0049／スライド32（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 3,
+      "section": "テーマ3　減数分裂と不分離",
+      "cues": [
+       "c03-0049"
+      ],
+      "mode": "verbatim",
+      "slide": 32
+     },
+     "lines": [
+      "生殖細胞の分裂を減数分裂と呼び、",
+      "2回の分裂で、二倍体を一倍体に半減させます。"
+     ]
+    }
+   ],
+   "cams": [
+    {
+     "at": "start",
+     "move": "set",
+     "x": 640,
+     "y": 350,
+     "z": 1,
+     "note": "全景"
+    },
+    {
+     "at": "soma",
+     "move": "push",
+     "x": 330,
+     "y": 340,
+     "z": 1.35,
+     "dur": 0.6,
+     "note": "体細胞"
+    },
+    {
+     "at": "gam",
+     "move": "whip",
+     "x": 950,
+     "y": 340,
+     "z": 1.3,
+     "dur": 0.25,
+     "note": "配偶子"
+    },
+    {
+     "at": "mei",
+     "move": "pull",
+     "x": 640,
+     "y": 350,
+     "z": 1,
+     "dur": 0.5,
+     "note": "減数分裂の矢印"
+    }
+   ],
+   "fx": [
+    {
+     "at": "dip",
+     "kind": "impact",
+     "dur": 0.35,
+     "min": "gekiga"
+    },
+    {
+     "at": "gam",
+     "kind": "speed",
+     "dur": 0.3,
+     "min": "gekiga"
+    },
+    {
+     "at": "half",
+     "kind": "focus",
+     "dur": 1,
+     "min": "gekiga"
+    },
+    {
+     "at": "start",
+     "kind": "tone",
+     "dur": 999,
+     "min": "gekiga"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "soma",
+     "kind": "shimmer",
+     "gain": 0.4
+    },
+    {
+     "at": "dip",
+     "kind": "impact",
+     "gain": 0.6
+    },
+    {
+     "at": "gam",
+     "kind": "whoosh"
+    },
+    {
+     "at": "half",
+     "kind": "impact",
+     "gain": 0.6
+    }
+   ]
+  },
+  {
+   "id": "S13",
+   "title": "減数分裂：第1分裂は相同染色体、第2分裂は姉妹染色分体",
+   "picture": "黒板の真ん中下「減数分裂」：2n（46）→n（23）：2回の分裂／第1分裂 … 相同染色体が分かれる／第2分裂 … 姉妹染色分体が分かれる。",
+   "diagram": {
+    "id": "board-m3",
+    "title": "板書：減数分裂：第1分裂は相同染色体、第2分裂は姉妹染色分体",
+    "note": "第3講の黒板 m-h・m1〜m3、c03-0050"
+   },
+   "lecturer": true,
+   "sources": [
+    {
+     "beat": "w",
+     "source": "第3講／台詞 c03-0050／板書 m-h・m1・m2・m3（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 3,
+      "section": "テーマ3　減数分裂と不分離",
+      "cues": [
+       "c03-0050"
+      ],
+      "mode": "verbatim",
+      "board": [
+       "m-h",
+       "m1",
+       "m2",
+       "m3"
+      ]
+     },
+     "lines": [
+      "黒板に整理します。",
+      "2回の分裂で、46本が23本に。",
+      "第1分裂では相同染色体が、",
+      "第2分裂では姉妹染色分体が分かれます。"
+     ]
+    }
+   ],
+   "cams": [
+    {
+     "at": "start",
+     "move": "set",
+     "x": 560,
+     "y": 260,
+     "z": 1,
+     "note": "減数分裂の板書"
+    },
+    {
+     "at": "m1",
+     "move": "push",
+     "x": 520,
+     "y": 270,
+     "z": 1.45,
+     "dur": 0.5,
+     "note": "第1分裂"
+    },
+    {
+     "at": "m2",
+     "move": "pan",
+     "x": 520,
+     "y": 335,
+     "z": 1.45,
+     "dur": 0.5,
+     "note": "第2分裂"
+    }
+   ],
+   "fx": [
+    {
+     "at": "m1",
+     "kind": "focus",
+     "dur": 0.8,
+     "min": "gekiga"
+    },
+    {
+     "at": "m2",
+     "kind": "focus",
+     "dur": 0.8,
+     "min": "gekiga"
+    },
+    {
+     "at": "start",
+     "kind": "tone",
+     "dur": 999,
+     "min": "gekiga"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "two",
+     "kind": "chalk",
+     "gain": 0.6
+    },
+    {
+     "at": "m1",
+     "kind": "chalk",
+     "gain": 0.6
+    },
+    {
+     "at": "m2",
+     "kind": "chalk",
+     "gain": 0.6
+    }
+   ]
+  },
+  {
+   "id": "S14",
+   "title": "減数分裂の動き（21番の1対）",
+   "picture": "細胞の中に21番の1対（父由来＝青、母由来＝赤）。DNA複製で姉妹染色分体になり、相同染色体が並び、第1分裂で青と赤が別々の細胞へ、第2分裂で姉妹染色分体が分かれ、1本ずつの配偶子が4つできる。",
+   "diagram": {
+    "id": "meiosis",
+    "title": "減数分裂の動き（21番の1対）",
+    "note": "c03-0051〜0056（講義のアニメーションと同じ流れ。交叉は省略）"
+   },
+   "lecturer": false,
+   "sources": [
+    {
+     "beat": "see",
+     "source": "第3講／台詞 c03-0051（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 3,
+      "section": "テーマ3　減数分裂と不分離",
+      "cues": [
+       "c03-0051"
+      ],
+      "mode": "verbatim"
+     },
+     "lines": [
+      "動きで確認しましょう。",
+      "ここでは1対、例えば21番だけを追います。",
+      "青が父親由来、赤が母親由来です。"
+     ]
+    },
+    {
+     "beat": "rep",
+     "source": "第3講／台詞 c03-0052（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 3,
+      "section": "テーマ3　減数分裂と不分離",
+      "cues": [
+       "c03-0052"
+      ],
+      "mode": "verbatim"
+     },
+     "lines": [
+      "まずDNAが複製されて、それぞれの染色体が2本の姉妹染色分体になります。"
+     ]
+    },
+    {
+     "beat": "pair",
+     "source": "第3講／台詞 c03-0053（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 3,
+      "section": "テーマ3　減数分裂と不分離",
+      "cues": [
+       "c03-0053"
+      ],
+      "mode": "verbatim"
+     },
+     "lines": [
+      "相同染色体どうしが並んで……"
+     ]
+    },
+    {
+     "beat": "m1",
+     "source": "第3講／台詞 c03-0054（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 3,
+      "section": "テーマ3　減数分裂と不分離",
+      "cues": [
+       "c03-0054"
+      ],
+      "mode": "verbatim"
+     },
+     "lines": [
+      "第1分裂。",
+      "相同染色体が、別々の細胞へ分かれます。"
+     ]
+    },
+    {
+     "beat": "m2",
+     "source": "第3講／台詞 c03-0055（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 3,
+      "section": "テーマ3　減数分裂と不分離",
+      "cues": [
+       "c03-0055"
+      ],
+      "mode": "verbatim"
+     },
+     "lines": [
+      "第2分裂。今度は姉妹染色分体が分かれて……"
+     ]
+    },
+    {
+     "beat": "four",
+     "source": "第3講／台詞 c03-0056（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 3,
+      "section": "テーマ3　減数分裂と不分離",
+      "cues": [
+       "c03-0056"
+      ],
+      "mode": "verbatim"
+     },
+     "lines": [
+      "4つの配偶子ができました。",
+      "どれも1本ずつです。"
+     ]
+    }
+   ],
+   "cams": [
+    {
+     "at": "start",
+     "move": "set",
+     "x": 640,
+     "y": 340,
+     "z": 1.25,
+     "note": "1つの細胞"
+    },
+    {
+     "at": "rep",
+     "move": "push",
+     "x": 640,
+     "y": 340,
+     "z": 1.45,
+     "dur": 1,
+     "note": "複製"
+    },
+    {
+     "at": "m1",
+     "move": "pull",
+     "x": 640,
+     "y": 340,
+     "z": 1,
+     "dur": 0.4,
+     "note": "第1分裂"
+    },
+    {
+     "at": "four",
+     "move": "push",
+     "x": 640,
+     "y": 350,
+     "z": 1.05,
+     "dur": 1,
+     "note": "4つの配偶子"
+    }
+   ],
+   "fx": [
+    {
+     "at": "m1",
+     "kind": "impact",
+     "dur": 0.4,
+     "min": "gekiga"
+    },
+    {
+     "at": "m2",
+     "kind": "impact",
+     "dur": 0.4,
+     "min": "gekiga"
+    },
+    {
+     "at": "four",
+     "kind": "flash",
+     "dur": 0.25,
+     "min": "gekiga"
+    },
+    {
+     "at": "start",
+     "kind": "tone",
+     "dur": 999,
+     "min": "gekiga"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "rep",
+     "kind": "shimmer",
+     "gain": 0.5
+    },
+    {
+     "at": "pair",
+     "kind": "tick"
+    },
+    {
+     "at": "m1",
+     "kind": "whoosh"
+    },
+    {
+     "at": "m2",
+     "kind": "whoosh"
+    },
+    {
+     "at": "four",
+     "kind": "impact",
+     "gain": 0.6
+    }
+   ]
+  },
+  {
+   "id": "S15",
+   "title": "第1分裂の不分離 → トリソミー／モノソミー",
+   "picture": "同じ1対が第1分裂で分かれず、両方が片方の細胞へ。第2分裂後、2本もつ配偶子が2つ、1本ももたない配偶子が2つ。正常な精子（1本）と受精すると、3本（トリソミー）と1本（モノソミー）。最後に第2分裂の不分離（1・1・2・0）も小さく示す。",
+   "diagram": {
+    "id": "nondisjunction",
+    "title": "第1分裂の不分離 → トリソミー／モノソミー",
+    "note": "c03-0057〜0059"
+   },
+   "lecturer": false,
+   "sources": [
+    {
+     "beat": "q",
+     "source": "第3講／台詞 c03-0057（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 3,
+      "section": "テーマ3　減数分裂と不分離",
+      "cues": [
+       "c03-0057"
+      ],
+      "mode": "verbatim"
+     },
+     "lines": [
+      "では、第1分裂で、相同染色体が分かれなかったらどうなるでしょう。"
+     ]
+    },
+    {
+     "beat": "g",
+     "source": "第3講／台詞 c03-0058（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 3,
+      "section": "テーマ3　減数分裂と不分離",
+      "cues": [
+       "c03-0058"
+      ],
+      "mode": "verbatim"
+     },
+     "lines": [
+      "2本持った配偶子と、1本も持たない配偶子ができます。",
+      "これが受精すると、3本のトリソミー、1本のモノソミーになります。"
+     ]
+    },
+    {
+     "beat": "m2",
+     "source": "第3講／台詞 c03-0059（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 3,
+      "section": "テーマ3　減数分裂と不分離",
+      "cues": [
+       "c03-0059"
+      ],
+      "mode": "verbatim"
+     },
+     "lines": [
+      "第2分裂で姉妹染色分体が分かれない場合も、同じように本数が狂います。"
+     ]
+    }
+   ],
+   "cams": [
+    {
+     "at": "start",
+     "move": "set",
+     "x": 640,
+     "y": 300,
+     "z": 1.15,
+     "note": "並んだ1対"
+    },
+    {
+     "at": "q",
+     "move": "push",
+     "x": 640,
+     "y": 300,
+     "z": 1.3,
+     "dur": 1.5,
+     "note": "分かれない"
+    },
+    {
+     "at": "g",
+     "move": "pull",
+     "x": 640,
+     "y": 340,
+     "z": 1,
+     "dur": 0.5,
+     "note": "配偶子"
+    },
+    {
+     "at": "tri",
+     "move": "push",
+     "x": 640,
+     "y": 420,
+     "z": 1.15,
+     "dur": 0.6,
+     "note": "受精"
+    },
+    {
+     "at": "m2",
+     "move": "pull",
+     "x": 640,
+     "y": 360,
+     "z": 1,
+     "dur": 0.5,
+     "note": "第2分裂の不分離"
+    }
+   ],
+   "fx": [
+    {
+     "at": "q+1.2",
+     "kind": "shake",
+     "dur": 0.3,
+     "min": "gekiga"
+    },
+    {
+     "at": "tri",
+     "kind": "impact",
+     "dur": 0.45,
+     "min": "gekiga"
+    },
+    {
+     "at": "tri",
+     "kind": "onoma",
+     "text": "ズレッ",
+     "x": 1080,
+     "y": 150,
+     "dur": 0.9,
+     "min": "ultra"
+    },
+    {
+     "at": "start",
+     "kind": "tone",
+     "dur": 999,
+     "min": "gekiga"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "q",
+     "kind": "riser",
+     "gain": 0.4
+    },
+    {
+     "at": "q+1.2",
+     "kind": "impact",
+     "gain": 0.6
+    },
+    {
+     "at": "g",
+     "kind": "whoosh"
+    },
+    {
+     "at": "tri",
+     "kind": "boom",
+     "gain": 0.7
+    }
+   ]
+  },
+  {
+   "id": "S16",
+   "title": "不分離 → n＋1 → 受精でトリソミー",
+   "picture": "減数分裂の板書の下に一行「不分離→n＋1→受精でトリソミー」。赤い丸で囲む。",
+   "diagram": {
+    "id": "board-m4",
+    "title": "板書：不分離 → n＋1 → 受精でトリソミー",
+    "note": "第3講の黒板 m4（赤丸）、c03-0061"
+   },
+   "lecturer": true,
+   "sources": [
+    {
+     "beat": "w",
+     "source": "第3講／台詞 c03-0061／板書 m4（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 3,
+      "section": "テーマ3　減数分裂と不分離",
+      "cues": [
+       "c03-0061"
+      ],
+      "mode": "verbatim",
+      "board": [
+       "m4"
+      ]
+     },
+     "lines": [
+      "黒板に一行。",
+      "不分離が起こると、1本多い配偶子ができて、受精するとトリソミーになります。"
+     ]
+    }
+   ],
+   "cams": [
+    {
+     "at": "start",
+     "move": "set",
+     "x": 560,
+     "y": 280,
+     "z": 1,
+     "note": "板書"
+    },
+    {
+     "at": "m4",
+     "move": "push",
+     "x": 520,
+     "y": 410,
+     "z": 1.45,
+     "dur": 0.6,
+     "note": "一行"
+    }
+   ],
+   "fx": [
+    {
+     "at": "m4+2.5",
+     "kind": "impact",
+     "dur": 0.35,
+     "min": "gekiga"
+    },
+    {
+     "at": "start",
+     "kind": "tone",
+     "dur": 999,
+     "min": "gekiga"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "m4",
+     "kind": "chalk",
+     "gain": 0.7
+    },
+    {
+     "at": "m4+2.5",
+     "kind": "impact",
+     "gain": 0.5
+    }
+   ]
+  },
+  {
+   "id": "S17",
+   "title": "母の加齢は不分離、父の加齢は塩基レベルの変異",
+   "picture": "左：卵子は減数第1分裂の前期で長い間止まっている（時計の針が進む）→年齢とともに不分離。右：精子はDNA複製を繰り返し、年齢とともに塩基の書き間違いが増える。下：ダウン症候群の頻度の棒（母20歳 約1/1500、35歳 約1/350、40歳 約1/100）。",
+   "diagram": {
+    "id": "maternal-age",
+    "title": "母の加齢は不分離、父の加齢は塩基レベルの変異",
+    "note": "スライド33、c03-0063〜0066"
+   },
+   "lecturer": false,
+   "sources": [
+    {
+     "beat": "why",
+     "source": "第3講／台詞 c03-0063／スライド33（原文の一部）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 3,
+      "section": "テーマ3　減数分裂と不分離",
+      "cues": [
+       "c03-0063"
+      ],
+      "mode": "trimmed",
+      "slide": 33
+     },
+     "lines": [
+      "では、なぜ不分離が起こるのか。"
+     ]
+    },
+    {
+     "beat": "egg",
+     "source": "第3講／台詞 c03-0064／スライド33（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 3,
+      "section": "テーマ3　減数分裂と不分離",
+      "cues": [
+       "c03-0064"
+      ],
+      "mode": "verbatim",
+      "slide": 33
+     },
+     "lines": [
+      "卵子は、減数第1分裂の前期で長い間止まっています。",
+      "だから年齢が上がると不分離を起こしやすい。"
+     ]
+    },
+    {
+     "beat": "sperm",
+     "source": "第3講／台詞 c03-0065／スライド33（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 3,
+      "section": "テーマ3　減数分裂と不分離",
+      "cues": [
+       "c03-0065"
+      ],
+      "mode": "verbatim",
+      "slide": 33
+     },
+     "lines": [
+      "精子は、年齢とともにDNA複製のエラーが増えて、",
+      "塩基レベルの突然変異を起こしやすくなります。"
+     ]
+    },
+    {
+     "beat": "down",
+     "source": "第3講／台詞 c03-0066／スライド33（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 3,
+      "section": "テーマ3　減数分裂と不分離",
+      "cues": [
+       "c03-0066"
+      ],
+      "mode": "verbatim",
+      "slide": 33
+     },
+     "lines": [
+      "ダウン症候群は、",
+      "母親が20歳で約1500人に1人、",
+      "35歳で約350人に1人、",
+      "40歳で約100人に1人です。"
+     ]
+    }
+   ],
+   "cams": [
+    {
+     "at": "start",
+     "move": "set",
+     "x": 640,
+     "y": 300,
+     "z": 1,
+     "note": "卵子と精子"
+    },
+    {
+     "at": "egg",
+     "move": "push",
+     "x": 330,
+     "y": 220,
+     "z": 1.4,
+     "dur": 0.6,
+     "note": "卵子"
+    },
+    {
+     "at": "sperm",
+     "move": "whip",
+     "x": 950,
+     "y": 220,
+     "z": 1.4,
+     "dur": 0.25,
+     "note": "精子"
+    },
+    {
+     "at": "down",
+     "move": "pull",
+     "x": 640,
+     "y": 400,
+     "z": 1.05,
+     "dur": 0.5,
+     "note": "頻度の棒"
+    },
+    {
+     "at": "a40",
+     "move": "crash",
+     "x": 900,
+     "y": 450,
+     "z": 1.3,
+     "dur": 0.2,
+     "hold": 0.25,
+     "note": "40歳"
+    }
+   ],
+   "fx": [
+    {
+     "at": "age",
+     "kind": "impact",
+     "dur": 0.4,
+     "min": "gekiga"
+    },
+    {
+     "at": "sperm",
+     "kind": "speed",
+     "dur": 0.3,
+     "min": "gekiga"
+    },
+    {
+     "at": "a40",
+     "kind": "impact",
+     "dur": 0.4,
+     "min": "gekiga"
+    },
+    {
+     "at": "start",
+     "kind": "tone",
+     "dur": 999,
+     "min": "gekiga"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "egg",
+     "kind": "tick"
+    },
+    {
+     "at": "egg+0.5",
+     "kind": "tick"
+    },
+    {
+     "at": "egg+1.0",
+     "kind": "tick"
+    },
+    {
+     "at": "age",
+     "kind": "impact",
+     "gain": 0.6
+    },
+    {
+     "at": "sperm",
+     "kind": "whoosh"
+    },
+    {
+     "at": "a20",
+     "kind": "tick"
+    },
+    {
+     "at": "a35",
+     "kind": "tick"
+    },
+    {
+     "at": "a40",
+     "kind": "boom",
+     "gain": 0.6
+    }
+   ]
+  },
+  {
+   "id": "S18",
+   "title": "試験ポイント：母の加齢＝不分離、父の加齢＝点変異",
+   "picture": "黒板の右「試験ポイント」：卵子は減数第1分裂前期で停止→母の加齢で不分離↑／精子は加齢でDNA複製エラー→父の加齢で点変異↑／ダウン：35歳 約1/350、40歳 約1/100。",
+   "diagram": {
+    "id": "board-r3",
+    "title": "板書：試験ポイント：母の加齢＝不分離、父の加齢＝点変異",
+    "note": "第3講の黒板 r-h・r1〜r3（r1bに赤の二重丸）、c03-0068・0069"
+   },
+   "lecturer": true,
+   "sources": [
+    {
+     "beat": "cmp",
+     "source": "第3講／台詞 c03-0068／板書 r1b・r2b（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 3,
+      "section": "テーマ3　減数分裂と不分離",
+      "cues": [
+       "c03-0068"
+      ],
+      "mode": "verbatim",
+      "board": [
+       "r1b",
+       "r2b"
+      ]
+     },
+     "lines": [
+      "母親の加齢は不分離、",
+      "父親の加齢は塩基レベルの変異。",
+      "この対比、よく問われます。"
+     ]
+    },
+    {
+     "beat": "num",
+     "source": "第3講／台詞 c03-0069／板書 r3（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 3,
+      "section": "テーマ3　減数分裂と不分離",
+      "cues": [
+       "c03-0069"
+      ],
+      "mode": "verbatim",
+      "board": [
+       "r3"
+      ]
+     },
+     "lines": [
+      "数字も一つだけ覚えるなら、",
+      "35歳で約350人に1人です。"
+     ]
+    }
+   ],
+   "cams": [
+    {
+     "at": "start",
+     "move": "set",
+     "x": 560,
+     "y": 260,
+     "z": 1,
+     "note": "試験ポイント"
+    },
+    {
+     "at": "mom",
+     "move": "push",
+     "x": 440,
+     "y": 160,
+     "z": 1.5,
+     "dur": 0.5,
+     "note": "母"
+    },
+    {
+     "at": "dad",
+     "move": "pan",
+     "x": 520,
+     "y": 270,
+     "z": 1.45,
+     "dur": 0.5,
+     "note": "父"
+    },
+    {
+     "at": "n350",
+     "move": "pan",
+     "x": 480,
+     "y": 380,
+     "z": 1.45,
+     "dur": 0.5,
+     "note": "35歳"
+    }
+   ],
+   "fx": [
+    {
+     "at": "often",
+     "kind": "impact",
+     "dur": 0.35,
+     "min": "gekiga"
+    },
+    {
+     "at": "start",
+     "kind": "tone",
+     "dur": 999,
+     "min": "gekiga"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "mom",
+     "kind": "chalk",
+     "gain": 0.6
+    },
+    {
+     "at": "dad",
+     "kind": "chalk",
+     "gain": 0.6
+    },
+    {
+     "at": "often",
+     "kind": "impact",
+     "gain": 0.5
+    },
+    {
+     "at": "n350",
+     "kind": "chalk",
+     "gain": 0.6
+    }
+   ]
+  },
+  {
+   "id": "S19",
+   "title": "モノソミー・トリソミー・テトラソミー",
+   "picture": "同じ番号の染色体が1本（モノソミー）、3本（トリソミー）、4本（テトラソミー）。常染色体の完全トリソミーで生まれてくるのは13・18・21番だけ（他は早期に流産）。性染色体の過剰（XXYなど）は軽く、性染色体のモノソミーはターナー（45,X）だけ。",
+   "diagram": {
+    "id": "aneuploid",
+    "title": "モノソミー・トリソミー・テトラソミー",
+    "note": "スライド31、c03-0080〜0083"
+   },
+   "lecturer": false,
+   "sources": [
+    {
+     "beat": "n",
+     "source": "第3講／台詞 c03-0080／スライド31（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 3,
+      "section": "テーマ4　数的異常と遺伝子数",
+      "cues": [
+       "c03-0080"
+      ],
+      "mode": "verbatim",
+      "slide": 31
+     },
+     "lines": [
+      "1本ならモノソミー、",
+      "3本ならトリソミー、",
+      "4本ならテトラソミー。"
+     ]
+    },
+    {
+     "beat": "born",
+     "source": "第3講／台詞 c03-0081／スライド31（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 3,
+      "section": "テーマ4　数的異常と遺伝子数",
+      "cues": [
+       "c03-0081"
+      ],
+      "mode": "verbatim",
+      "slide": 31
+     },
+     "lines": [
+      "常染色体の完全トリソミーで生まれてくるのは、13番、18番、21番だけ。",
+      "多くのトリソミーは、早期に流産すると考えられています。"
+     ]
+    },
+    {
+     "beat": "sex",
+     "source": "第3講／台詞 c03-0082・c03-0083／スライド31（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 3,
+      "section": "テーマ4　数的異常と遺伝子数",
+      "cues": [
+       "c03-0082",
+       "c03-0083"
+      ],
+      "mode": "verbatim",
+      "slide": 31
+     },
+     "lines": [
+      "性染色体の過剰は不活性化されるため症状が軽く、",
+      "性染色体のモノソミーは、ターナー症候群だけです。"
+     ]
+    }
+   ],
+   "cams": [
+    {
+     "at": "start",
+     "move": "set",
+     "x": 640,
+     "y": 300,
+     "z": 1,
+     "note": "本数"
+    },
+    {
+     "at": "born",
+     "move": "push",
+     "x": 640,
+     "y": 420,
+     "z": 1.25,
+     "dur": 0.6,
+     "note": "13・18・21"
+    },
+    {
+     "at": "sex",
+     "move": "pan",
+     "x": 640,
+     "y": 520,
+     "z": 1.2,
+     "dur": 0.6,
+     "note": "性染色体"
+    },
+    {
+     "at": "turner",
+     "move": "crash",
+     "x": 900,
+     "y": 520,
+     "z": 1.35,
+     "dur": 0.2,
+     "hold": 0.25,
+     "note": "ターナーのみ"
+    }
+   ],
+   "fx": [
+    {
+     "at": "tetra",
+     "kind": "impact",
+     "dur": 0.35,
+     "min": "gekiga"
+    },
+    {
+     "at": "born",
+     "kind": "focus",
+     "dur": 1,
+     "min": "gekiga"
+    },
+    {
+     "at": "turner",
+     "kind": "impact",
+     "dur": 0.4,
+     "min": "gekiga"
+    },
+    {
+     "at": "start",
+     "kind": "tone",
+     "dur": 999,
+     "min": "gekiga"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "mono",
+     "kind": "tick"
+    },
+    {
+     "at": "tri",
+     "kind": "tick"
+    },
+    {
+     "at": "tetra",
+     "kind": "tick"
+    },
+    {
+     "at": "born",
+     "kind": "impact",
+     "gain": 0.6
+    },
+    {
+     "at": "turner",
+     "kind": "boom",
+     "gain": 0.6
+    }
+   ]
+  },
+  {
+   "id": "S20",
+   "title": "生まれてくるトリソミー：13・18・21",
+   "picture": "黒板の右「生まれてくるトリソミー」：13 … ペイトー（パトウ）／18 … エドワーズ／21 … ダウン／性染色体モノソミー＝ターナーのみ／性染色体の過剰は軽い／5p- … 猫鳴き症候群。",
+   "diagram": {
+    "id": "board-t6",
+    "title": "板書：生まれてくるトリソミー：13・18・21",
+    "note": "第3講の黒板 t-h・t1〜t6、c03-0084・0085"
+   },
+   "lecturer": true,
+   "sources": [
+    {
+     "beat": "t",
+     "source": "第3講／台詞 c03-0084／板書 t-h・t1・t2・t3（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 3,
+      "section": "テーマ4　数的異常と遺伝子数",
+      "cues": [
+       "c03-0084"
+      ],
+      "mode": "verbatim",
+      "board": [
+       "t-h",
+       "t1",
+       "t2",
+       "t3"
+      ]
+     },
+     "lines": [
+      "右側に書きます。",
+      "13番ペイトー、18番エドワーズ、21番ダウン。"
+     ]
+    },
+    {
+     "beat": "sex",
+     "source": "第3講／台詞 c03-0085／板書 t4・t5・t6（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 3,
+      "section": "テーマ4　数的異常と遺伝子数",
+      "cues": [
+       "c03-0085"
+      ],
+      "mode": "verbatim",
+      "board": [
+       "t4",
+       "t5",
+       "t6"
+      ]
+     },
+     "lines": [
+      "ターナーだけが性染色体のモノソミー。",
+      "性染色体の過剰は軽い。",
+      "5p-は猫鳴き。"
+     ]
+    }
+   ],
+   "cams": [
+    {
+     "at": "start",
+     "move": "set",
+     "x": 560,
+     "y": 270,
+     "z": 1,
+     "note": "板書"
+    },
+    {
+     "at": "t",
+     "move": "push",
+     "x": 400,
+     "y": 200,
+     "z": 1.5,
+     "dur": 0.6,
+     "note": "13・18・21"
+    },
+    {
+     "at": "turner",
+     "move": "pan",
+     "x": 480,
+     "y": 330,
+     "z": 1.45,
+     "dur": 0.5,
+     "note": "ターナー"
+    },
+    {
+     "at": "cat",
+     "move": "pan",
+     "x": 400,
+     "y": 430,
+     "z": 1.45,
+     "dur": 0.5,
+     "note": "5p-"
+    }
+   ],
+   "fx": [
+    {
+     "at": "start",
+     "kind": "tone",
+     "dur": 999,
+     "min": "gekiga"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "t",
+     "kind": "chalk",
+     "gain": 0.6
+    },
+    {
+     "at": "turner",
+     "kind": "chalk",
+     "gain": 0.6
+    },
+    {
+     "at": "mild",
+     "kind": "chalk",
+     "gain": 0.5
+    },
+    {
+     "at": "cat",
+     "kind": "chalk",
+     "gain": 0.5
+    }
+   ]
+  },
+  {
+   "id": "S21",
+   "title": "13・18・21番は遺伝子が特に少ない",
+   "picture": "常染色体1〜22番の遺伝子数の棒グラフ（概数）。13番、18番、21番の棒が順に赤く灯り、ひときわ低い。「1本多くても余分な遺伝子が少ない → 生まれてこられる」。",
+   "diagram": {
+    "id": "genecount",
+    "title": "13・18・21番は遺伝子が特に少ない",
+    "note": "スライド30、c03-0086〜0091。棒の高さはおおよその遺伝子数（タンパク質をコードする遺伝子の概数）"
+   },
+   "lecturer": false,
+   "sources": [
+    {
+     "beat": "why",
+     "source": "第3講／台詞 c03-0086／スライド30（原文の一部）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 3,
+      "section": "テーマ4　数的異常と遺伝子数",
+      "cues": [
+       "c03-0086"
+      ],
+      "mode": "trimmed",
+      "slide": 30
+     },
+     "lines": [
+      "では、なぜ13、18、21番だけが生まれてくるのか。"
+     ]
+    },
+    {
+     "beat": "graph",
+     "source": "第3講／台詞 c03-0087／スライド30（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 3,
+      "section": "テーマ4　数的異常と遺伝子数",
+      "cues": [
+       "c03-0087"
+      ],
+      "mode": "verbatim",
+      "slide": 30
+     },
+     "lines": [
+      "右のグラフは、染色体ごとの遺伝子の数です。"
+     ]
+    },
+    {
+     "beat": "three",
+     "source": "第3講／台詞 c03-0088・c03-0089・c03-0090／スライド30（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 3,
+      "section": "テーマ4　数的異常と遺伝子数",
+      "cues": [
+       "c03-0088",
+       "c03-0089",
+       "c03-0090"
+      ],
+      "mode": "verbatim",
+      "slide": 30
+     },
+     "lines": [
+      "13番、",
+      "18番、",
+      "そして21番。",
+      "この3本は、遺伝子の数が特に少ないんです。"
+     ]
+    },
+    {
+     "beat": "live",
+     "source": "第3講／台詞 c03-0091／スライド30（原文の一部）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 3,
+      "section": "テーマ4　数的異常と遺伝子数",
+      "cues": [
+       "c03-0091"
+      ],
+      "mode": "trimmed",
+      "slide": 30
+     },
+     "lines": [
+      "1本多くても、余分な遺伝子の量が比較的少ない。",
+      "だから、致死にならずに生まれてこられる。"
+     ]
+    }
+   ],
+   "cams": [
+    {
+     "at": "start",
+     "move": "set",
+     "x": 640,
+     "y": 350,
+     "z": 1,
+     "note": "グラフ"
+    },
+    {
+     "at": "g13",
+     "move": "push",
+     "x": 700,
+     "y": 420,
+     "z": 1.3,
+     "dur": 0.5,
+     "note": "13番"
+    },
+    {
+     "at": "g21",
+     "move": "pan",
+     "x": 900,
+     "y": 420,
+     "z": 1.3,
+     "dur": 0.6,
+     "note": "21番"
+    },
+    {
+     "at": "few",
+     "move": "pull",
+     "x": 640,
+     "y": 350,
+     "z": 1,
+     "dur": 0.5,
+     "note": "全体"
+    }
+   ],
+   "fx": [
+    {
+     "at": "few",
+     "kind": "impact",
+     "dur": 0.4,
+     "min": "gekiga"
+    },
+    {
+     "at": "live",
+     "kind": "focus",
+     "dur": 1,
+     "min": "gekiga"
+    },
+    {
+     "at": "start",
+     "kind": "tone",
+     "dur": 999,
+     "min": "gekiga"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "graph",
+     "kind": "shimmer",
+     "gain": 0.4
+    },
+    {
+     "at": "g13",
+     "kind": "tick"
+    },
+    {
+     "at": "g18",
+     "kind": "tick"
+    },
+    {
+     "at": "g21",
+     "kind": "tick"
+    },
+    {
+     "at": "few",
+     "kind": "impact",
+     "gain": 0.6
+    }
+   ]
+  },
+  {
+   "id": "S22",
+   "title": "今日のまとめ：4つ",
+   "picture": "黒板の下段に「今日のまとめ」①〜④（板書 sum-h・s1〜s4）。読み上げに合わせて1行ずつ書かれ、言い終わるごとに下線。",
+   "diagram": {
+    "id": "board-s4",
+    "title": "板書：今日のまとめ：4つ",
+    "note": "第3講の黒板 sum-h・s1〜s4、c03-0104〜0108"
+   },
+   "lecturer": true,
+   "sources": [
+    {
+     "beat": "four",
+     "source": "第3講／台詞 c03-0104／板書 sum-h（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 3,
+      "section": "まとめ",
+      "cues": [
+       "c03-0104"
+      ],
+      "mode": "verbatim",
+      "board": [
+       "sum-h"
+      ]
+     },
+     "lines": [
+      "今日覚えてほしいのは、この4つです。"
+     ]
+    },
+    {
+     "beat": "p1",
+     "source": "第3講／台詞 c03-0105／板書 s1（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 3,
+      "section": "まとめ",
+      "cues": [
+       "c03-0105"
+      ],
+      "mode": "verbatim",
+      "board": [
+       "s1"
+      ]
+     },
+     "lines": [
+      "ひとつ目。",
+      "DNAからヌクレオソーム、クロマチン、染色体へ。",
+      "2、11、1400ナノメートル。"
+     ]
+    },
+    {
+     "beat": "p2",
+     "source": "第3講／台詞 c03-0106／板書 s2（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 3,
+      "section": "まとめ",
+      "cues": [
+       "c03-0106"
+      ],
+      "mode": "verbatim",
+      "board": [
+       "s2"
+      ]
+     },
+     "lines": [
+      "ふたつ目。",
+      "コアヒストンは4種類が2個ずつ。",
+      "H1はスペーサー。"
+     ]
+    },
+    {
+     "beat": "p3",
+     "source": "第3講／台詞 c03-0107／板書 s3（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 3,
+      "section": "まとめ",
+      "cues": [
+       "c03-0107"
+      ],
+      "mode": "verbatim",
+      "board": [
+       "s3"
+      ]
+     },
+     "lines": [
+      "みっつ目。",
+      "不分離でトリソミー。",
+      "生まれてくるのは13、18、21番。"
+     ]
+    },
+    {
+     "beat": "p4",
+     "source": "第3講／台詞 c03-0108／板書 s4（原文）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 3,
+      "section": "まとめ",
+      "cues": [
+       "c03-0108"
+      ],
+      "mode": "verbatim",
+      "board": [
+       "s4"
+      ]
+     },
+     "lines": [
+      "そして、母親の加齢は不分離、父親の加齢は点変異です。"
+     ]
+    }
+   ],
+   "cams": [
+    {
+     "at": "start",
+     "move": "set",
+     "x": 640,
+     "y": 330,
+     "z": 1,
+     "note": "まとめの板書"
+    },
+    {
+     "at": "p1",
+     "move": "push",
+     "x": 560,
+     "y": 190,
+     "z": 1.25,
+     "dur": 0.6,
+     "note": "①へ"
+    },
+    {
+     "at": "p2",
+     "move": "pan",
+     "x": 560,
+     "y": 285,
+     "z": 1.25,
+     "dur": 0.5,
+     "note": "②へ"
+    },
+    {
+     "at": "p3",
+     "move": "pan",
+     "x": 560,
+     "y": 380,
+     "z": 1.25,
+     "dur": 0.5,
+     "note": "③へ"
+    },
+    {
+     "at": "p4",
+     "move": "pan",
+     "x": 560,
+     "y": 475,
+     "z": 1.25,
+     "dur": 0.5,
+     "note": "④へ"
+    },
+    {
+     "at": "p4+3.6",
+     "move": "pull",
+     "x": 640,
+     "y": 330,
+     "z": 1,
+     "dur": 0.5,
+     "note": "4つを並べて引く"
+    }
+   ],
+   "fx": [
+    {
+     "at": "p4+3.6",
+     "kind": "focus",
+     "dur": 0.9,
+     "min": "gekiga"
+    },
+    {
+     "at": "start",
+     "kind": "tone",
+     "dur": 999,
+     "min": "gekiga"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "four",
+     "kind": "chalk",
+     "gain": 0.5
+    },
+    {
+     "at": "p1",
+     "kind": "chalk",
+     "gain": 0.5
+    },
+    {
+     "at": "p2",
+     "kind": "chalk",
+     "gain": 0.5
+    },
+    {
+     "at": "p3",
+     "kind": "chalk",
+     "gain": 0.5
+    },
+    {
+     "at": "p4",
+     "kind": "chalk",
+     "gain": 0.5
+    },
+    {
+     "at": "p4+3.6",
+     "kind": "impact",
+     "gain": 0.6
+    }
+   ]
+  },
+  {
+   "id": "S23",
+   "title": "次回：第4講",
+   "picture": "「次回 第4講」の判。染色体の上の遺伝子：エクソンとイントロンが並ぶ遺伝子の模式図。黒にフェードアウト。",
+   "diagram": {
+    "id": "end",
+    "title": "次回予告",
+    "note": "c03-0109"
+   },
+   "lecturer": false,
+   "sources": [
+    {
+     "beat": "next",
+     "source": "第3講／台詞 c03-0109（原文の一部）",
+     "ref": {
+      "course": "genetics-basics",
+      "lecture": 3,
+      "section": "まとめ",
+      "cues": [
+       "c03-0109"
+      ],
+      "mode": "trimmed"
+     },
+     "lines": [
+      "次の第4講では、",
+      "この染色体の上にある「遺伝子」そのものの構造と、",
+      "それが読まれる仕組みを見ていきます。"
+     ]
+    }
+   ],
+   "cams": [
+    {
+     "at": "start",
+     "move": "set",
+     "x": 640,
+     "y": 360,
+     "z": 1.15,
+     "note": "予告"
+    },
+    {
+     "at": "start",
+     "move": "pull",
+     "x": 640,
+     "y": 360,
+     "z": 1,
+     "dur": 6,
+     "note": "ゆっくり引いて終わる"
+    }
+   ],
+   "fx": [
+    {
+     "at": "next",
+     "kind": "impact",
+     "dur": 0.4,
+     "min": "gekiga"
+    },
+    {
+     "at": "start",
+     "kind": "tone",
+     "dur": 999,
+     "min": "gekiga"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "next",
+     "kind": "impact",
+     "gain": 0.6
+    },
+    {
+     "at": "read",
+     "kind": "shimmer",
+     "gain": 0.5
+    }
+   ]
+  }
+ ]
+}

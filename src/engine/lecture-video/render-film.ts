@@ -420,7 +420,7 @@ function diseaseFig(rc: RC) {
   label(p, '遺伝子1つの変異', 930, 630, 26, { align: 'center', fill: '#ffb0a6', a: rc.u('lmna+0.6', 0.3) });
 }
 
-interface EndData { no?: string; l1?: string; l1At?: string; l2?: string; l2At?: string; pic?: 'nucleotide' | 'chromosome' }
+interface EndData { no?: string; l1?: string; l1At?: string; l2?: string; l2At?: string; pic?: 'nucleotide' | 'chromosome' | 'gene' | 'helix' | 'mito' }
 function endCardFig(rc: RC) {
   const { p, g } = rc;
   const d = (rc.sc.data ?? {}) as EndData;
@@ -434,6 +434,22 @@ function endCardFig(rc: RC) {
     p.save(); p.alpha(a); p.translate(640, 540);
     for (const dx of [-22, 22]) { p.path(`M ${dx} -100 C ${dx * 1.6} -60 ${dx * 1.6} -20 ${dx * 0.4} -6 C ${dx * 1.6} 20 ${dx * 1.8} 80 ${dx} 110`, { stroke: INK, width: 40 }); p.path(`M ${dx} -100 C ${dx * 1.6} -60 ${dx * 1.6} -20 ${dx * 0.4} -6 C ${dx * 1.6} 20 ${dx * 1.8} 80 ${dx} 110`, { stroke: '#e7dccb', width: 32 }); }
     p.ellipse(0, -6, 16, 9, 0, { fill: INK });
+    p.restore();
+  } else if (a > 0 && d.pic === 'gene') {
+    // a gene: promoter arrow, exons (boxes) and introns (lines)
+    p.save(); p.alpha(a); p.translate(640, 530);
+    p.line([[-300, 0], [300, 0]], { stroke: '#cfcfcf', width: 5 });
+    p.line([[-280, 0], [-280, -46], [-220, -46]], { stroke: '#fff', width: 5 }); p.line([[-232, -56], [-218, -46], [-232, -36]], { stroke: '#fff', width: 5 });
+    [[-250, -170], [-110, -40], [20, 90], [160, 270]].forEach(([x0, x1]) => p.rect(x0, -26, x1 - x0, 52, { fill: '#5aa9ff', stroke: INK, width: 4 }, 6));
+    p.restore();
+  } else if (a > 0 && d.pic === 'helix') {
+    p.save(); p.alpha(a); helix(p, 380, 900, 530, 40, 180, rc.t * 2); p.restore();
+  } else if (a > 0 && d.pic === 'mito') {
+    // a mitochondrion with its circular genome
+    p.save(); p.alpha(a); p.translate(640, 530);
+    p.ellipse(0, 0, 220, 90, 0, { fill: 'rgba(255,170,120,0.25)', stroke: '#ffb88a', width: 6 });
+    p.path('M -170 20 C -140 -60 -110 60 -80 -20 S -20 60 10 -20 S 70 60 100 -20 S 150 50 170 0', { stroke: '#ffb88a', width: 4 });
+    p.circle(0, 0, 34, { stroke: '#ffd84a', width: 6 });
     p.restore();
   } else if (a > 0) {
     // a nucleotide sketch: phosphate – sugar (pentose) – base

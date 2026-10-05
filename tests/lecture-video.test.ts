@@ -163,6 +163,10 @@ describe('automatic draft (any theme)', () => {
 
 const FILM_SPEC: Record<number, { chapters: string[]; visuals: string[]; seconds: [number, number] }> = {
   1: { chapters: ['第1講', 'テーマ1　設計図の正体はDNA', 'テーマ2　セントラルドグマ', 'テーマ3　遺伝子の変化と疾患', 'まとめ'], visuals: ['title-open', 'zygote', 'strains', 'tubes', 'plates', 'transcription', 'translation', 'universal', 'hierarchy', 'disease', 'end-card'], seconds: [200, 300] },
+  3: { chapters: ['第3講', 'テーマ1　収納の階層', 'テーマ2　染色体の数と形', 'テーマ3　減数分裂と不分離', 'テーマ4　数的異常と遺伝子数', 'まとめ'], visuals: ['title-open', 'pack-strip', 'packing', 'octamer', 'histmod', 'karyotype', 'centromere', 'ploidy', 'meiosis', 'nondisjunction', 'maternal-age', 'aneuploid', 'genecount', 'end-card'], seconds: [300, 480] },
+  4: { chapters: ['第4講', 'テーマ1　遺伝子とは何か', 'テーマ2　遺伝子の構造', 'テーマ3　転写・スプライシング・翻訳', 'テーマ4　ゲノムの構成とncRNA', 'まとめ'], visuals: ['title-open', 'gene-flow', 'gene-def', 'genome-dir', 'gene-blank', 'tx-splice', 'translate4', 'regulation', 'genome-pie', 'ncrna', 'genome-history', 'end-card'], seconds: [300, 480] },
+  6: { chapters: ['第6講', 'テーマ1　遺伝型から表現型へ', 'テーマ2　スイッチのしくみ', 'テーマ3　ミトコンドリアゲノム', 'まとめ'], visuals: ['title-open', 'twins', 'twin-study', 'omics', 'chromatin', 'methylation', 'cpg', 'epi-switch', 'charge', 'exercise', 'mtdna', 'end-card'], seconds: [300, 520] },
+  5: { chapters: ['第5講', 'テーマ1　置換で何が起こるか', 'テーマ2　飲酒と遺伝子多型', 'テーマ3　動く遺伝子', 'まとめ'], visuals: ['title-open', 'mut-types', 'sub-outcomes', 'codon-change', 'frameshift', 'snp-count', 'alcohol', 'aldh2', 'transposon', 'cut-copy', 'pseudogene', 'retro', 'insertion', 'end-card'], seconds: [300, 480] },
   2: { chapters: ['第2講', 'テーマ1　ヌクレオチドの成り立ち', 'テーマ2　糖と塩基', 'テーマ3　二重らせん', 'テーマ4　核酸の代謝と臨床', 'まとめ'], visuals: ['title-open', 'monomers', 'nucleotide', 'sugar', 'bases', 'ntp', 'dna-helix', 'ladder', 'basepair', 'backbone', 'tug', 'digest', 'gout', 'end-card'], seconds: [260, 400] },
 };
 for (const F of FILMS) describe(`完成版：第${F.lecture}講まるごと`, () => {

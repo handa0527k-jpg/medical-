@@ -112,7 +112,13 @@ export type Visual =
   | 'title-open' | 'zygote' | 'board' | 'transcription' | 'translation' | 'contrast' | 'universal'
   | 'hierarchy' | 'hier-line' | 'disease' | 'end-card'
   /* 完成版（第2講まるごと） */
-  | 'monomers' | 'nucleotide' | 'sugar' | 'bases' | 'ntp' | 'dna-helix' | 'ladder' | 'basepair' | 'backbone' | 'tug' | 'digest' | 'gout';
+  | 'monomers' | 'nucleotide' | 'sugar' | 'bases' | 'ntp' | 'dna-helix' | 'ladder' | 'basepair' | 'backbone' | 'tug' | 'digest' | 'gout'
+  /* 第3講 */
+  | 'pack-strip' | 'packing' | 'octamer' | 'histmod' | 'karyotype' | 'centromere' | 'ploidy' | 'meiosis' | 'nondisjunction' | 'maternal-age' | 'aneuploid' | 'genecount'
+  /* 第4講 */
+  | 'gene-flow' | 'gene-def' | 'genome-dir' | 'gene-blank' | 'tx-splice' | 'translate4' | 'regulation' | 'genome-pie' | 'ncrna' | 'genome-history'
+  | 'mut-types' | 'sub-outcomes' | 'codon-change' | 'frameshift' | 'snp-count' | 'alcohol' | 'aldh2' | 'transposon' | 'cut-copy' | 'pseudogene' | 'retro' | 'insertion'
+  | 'twins' | 'twin-study' | 'omics' | 'chromatin' | 'methylation' | 'cpg' | 'epi-switch' | 'charge' | 'exercise' | 'mtdna';
 
 export interface SceneDef {
   id: string;
