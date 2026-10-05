@@ -450,9 +450,14 @@ def assemble_full(pkg: Path, e: dict, a) -> None:
     fd = str(fonts).replace("\\", "/").replace(":", "\\:")
     fc = [f"[0:v]trim=end_frame={frames},setpts=PTS-STARTPTS,setsar=1[v0]"]
     last = "v0"
+    if a.sub_band:
+        # the picture at 87.5 % on top, a black band below it for the subtitles: they never cover the figures' own lettering
+        fc.append(f"[{last}]scale=1120:630,pad=1280:720:80:0:black,setsar=1[vb]"); last = "vb"
     inv = [w for sc in e["scenes"] for w in sc.get("invert", [])]  # already inverted in the animatic frames
     sub = str(pkg / e["subtitles"]).replace("\\", "/").replace(":", "\\:")
-    if not a.no_subs:
+    if not a.no_subs and a.sub_band:
+        fc.append(f"[{last}]subtitles='{sub}':fontsdir='{fd}':force_style='MarginV=6,Fontsize=32'[v1]"); last = "v1"
+    elif not a.no_subs:
         fc.append(f"[{last}]ass='{sub}':fontsdir='{fd}'[v1]"); last = "v1"
     if not a.no_tag:
         shots = [s for sc in e["scenes"] for s in sc["shots"]]
@@ -507,6 +512,7 @@ def main() -> None:
     p.add_argument("--crf", default="18"); p.add_argument("--out"); p.add_argument("--no-subs", action="store_true")
     p.add_argument("--animatic", action="store_true", help="Wan クリップがあっても MEDSTUDY アニマティックで組む")
     p.add_argument("--no-tag", action="store_true", help="アニマティック部分の小さな表示を付けない")
+    p.add_argument("--sub-band", action="store_true", help="絵を 87.5%% に縮めて上に置き、下の黒い帯に字幕を出す（図の文字と字幕が重ならない）")
     a = p.parse_args()
     {"tts": cmd_tts, "sfx": cmd_sfx, "comfy": cmd_comfy, "assemble": cmd_assemble, "check": cmd_check, "all": cmd_all}[a.command](a.package.resolve(), a)
 
