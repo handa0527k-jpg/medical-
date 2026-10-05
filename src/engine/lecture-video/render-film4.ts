@@ -163,7 +163,7 @@ function geneBlankFig(rc: RC) {
   box(p, 1010, 1090, y, 24, '#e2a65a');
   // blanks: [label, x of the element, label box x, y, event]
   const blanks: [string, number, number, number, string][] = [
-    ['プロモーター', 140, 220, 440, 'pro'], ["5'UTR", 285, 300, 160, 'utr5'], ['開始コドン', 310, 440, 440, 'start'],
+    ['プロモーター', 140, 220, 440, 'pro'], ["5'UTR", 285, 300, 160, 'utr5'], ['開始コドン', 310, 440, 440, 'atg'],
     ['エクソン', 590, 590, 160, 'exon'], ['イントロン', 720, 720, 440, 'intron'], ['終止コドン', 900, 900, 160, 'stop'], ['ポリアデニル化シグナル', 1050, 1060, 440, 'polya'],
   ];
   blanks.forEach(([s, ex, bx, by, ev]) => {

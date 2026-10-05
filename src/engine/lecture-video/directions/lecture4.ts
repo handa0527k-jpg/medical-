@@ -145,7 +145,7 @@ const blank = () => fig('gene-blank', {
     beat('a', S(T2, 'verbatim', ['0031'], { slide: 51 }), [same('答えは**プロモーター**。', 'pro', { post: 0.3 })]),
     beat('rest', S(T2, 'verbatim', ['0032'], { slide: 51 }), [
       same('残りの枠も、', 'rest'),
-      seg('5ダッシュUTR、', '5ダッシュユーティーアール、', 'utr5'), same('開始コドン、', 'start'), same('エクソン、', 'exon'), same('イントロン、', 'intron'), same('終止コドン、', 'stop'), same('ポリアデニル化シグナル。', 'polya', { post: 0.15 }),
+      seg('5ダッシュUTR、', '5ダッシュユーティーアール、', 'utr5'), same('開始コドン、', 'atg'), same('エクソン、', 'exon'), same('イントロン、', 'intron'), same('終止コドン、', 'stop'), same('ポリアデニル化シグナル。', 'polya', { post: 0.15 }),
       same('全部言えたら、この図は大丈夫です。', 'ok', { post: 0.45 }),
     ]),
   ],
@@ -156,7 +156,7 @@ const blank = () => fig('gene-blank', {
     { at: 'rest', move: 'pull', x: 640, y: 340, z: 1.0, dur: 0.5, note: '残り' },
   ],
   fx: [{ at: 'pro', kind: 'impact', dur: 0.4, min: 'gekiga' }, { at: 'ok', kind: 'flash', dur: 0.3, min: 'gekiga' }],
-  sfx: [{ at: 'pro', kind: 'impact' }, { at: 'utr5', kind: 'tick' }, { at: 'start', kind: 'tick' }, { at: 'exon', kind: 'tick' }, { at: 'intron', kind: 'tick' }, { at: 'stop', kind: 'tick' }, { at: 'polya', kind: 'tick' }, { at: 'ok', kind: 'shimmer' }],
+  sfx: [{ at: 'pro', kind: 'impact' }, { at: 'utr5', kind: 'tick' }, { at: 'atg', kind: 'tick' }, { at: 'exon', kind: 'tick' }, { at: 'intron', kind: 'tick' }, { at: 'stop', kind: 'tick' }, { at: 'polya', kind: 'tick' }, { at: 'ok', kind: 'shimmer' }],
   shots: [DARK_BG()],
 });
 

@@ -195,6 +195,7 @@ for (const F of FILMS) describe(`完成版：第${F.lecture}講まるごと`, ()
       const src = cues.map((c) => strip(c.text)).join('');
       for (const x of b.segs) {
         expect(x.say, x.text).not.toMatch(/[A-Za-z]/);
+        expect(x.cue, `${sc.id}: a line may not be named after the scene's own start event`).not.toBe('start');
         if (b.src.mode !== 'condensed') expect(src, `${sc.id} ${b.id}`).toContain(strip(x.text));
       }
     }
