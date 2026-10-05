@@ -1,5 +1,7 @@
 # 授業動画（劇画アニメーション）
 
+遺伝医学「遺伝子の基礎」の全6講を、それぞれ講義まるごとの劇画授業映像（完成版）にしています。どの完成版も、字幕は絵の下の黒い帯に出し（`assemble --sub-band`）、図の文字と重なりません。文字の揺れを防ぐため、映像に使う日本語フォントは自前で配信しています（`tools/lecture-video/README.md` の 9・10）。
+
 ## 完成版：第1講「遺伝子とは何か」まるごと（約4分20秒）
 
 `genetics-basics-1-film/`（演出は `src/engine/lecture-video/directions/lecture1.ts`、絵は `render-film.ts`）
