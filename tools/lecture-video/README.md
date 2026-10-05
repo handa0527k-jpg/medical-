@@ -135,7 +135,7 @@ Wan のクリップを入れるときは、`--full` を付けずにもう一度�
 
 ## 8. 講義まるごとの完成版を作る
 
-完成版は講ごとに用意しています（第1講・第2講）。パッケージは次のように書き出します。
+完成版は講ごとに用意しています（第1講〜第6講）。演出は `src/engine/lecture-video/directions/lectureN.ts`、医学図は `render-film*.ts` にあり、`directions/films.ts` に登録すると授業動画の画面とテストに自動で加わります。パッケージは次のように書き出します。
 
 ```bat
 npx tsx scripts\lecture-video\export-package.ts --out C:\work\film2 --lecture 2 --section film
@@ -143,3 +143,16 @@ node scripts\lecture-video\render-layers.mjs C:\work\film2 --theme genetics-basi
 ```
 
 あとは 2. の流れ（`tts` → タイミングを読み込んで書き出し直す → `sfx` → `assemble`）と同じです。
+
+## 9. 文字の揺れを防ぐ（フォントの自前配信）
+
+レンダリングは複数のブラウザ（ワーカー）でフレームを分担します。Google Fonts の日本語フォントは文字の範囲ごとに遅れて読み込まれるため、ワーカーによって別の書体で描かれ、つなげると文字や図が1フレームごとに揺れて見えていました。
+
+- 映像で使う文字だけを集めたフォント（Zen Kaku Gothic New・Klee One、OFL）を `public/fonts/` に置き、描画の前に必ず読み込みます。作り直しは `python scripts/lecture-video/build-fonts.py`（台詞や図の文字を変えたら実行）。
+- `render-layers.mjs` は開始時に、全ワーカーで同じ3フレームを描いて比べます。1画素でも違えば止まります。
+
+## 10. 動画の置き場所
+
+公開しているサイト（claude.ai の Artifact）は1版あたり256 MiBまでです。教材本体だけで上限に近いため、完成版の動画（約8〜15 MB）と講師音声は、サイトの版の外にあるアセット保存領域（1ファイル20 MiBまで）に置きます。サイトの `lecture-video/index.json` には、その保存先のURL（`/_blob/…`）を書きます。アプリは `/` や `https:` で始まる場所をそのまま使い、それ以外はサイト内の相対パスとして読みます。
+
+リポジトリには、Web用に縮めた版（960×540、`out/lecture-web.mp4`）を `public/lecture-video/` に入れています。元の画質（1280×720、`out/lecture.mp4`）は Git に入れません。
