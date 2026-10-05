@@ -1,0 +1,427 @@
+{
+ "voice": "ja-JP-KeitaNeural",
+ "format": "audio-24khz-96kbitrate-mono-mp3",
+ "scenes": [
+  {
+   "id": "S01",
+   "beats": [
+    {
+     "beat": "open",
+     "rate": 0,
+     "fit": 0.964,
+     "late": 0.0
+    },
+    {
+     "beat": "today",
+     "rate": 7,
+     "fit": 0.964,
+     "late": 0.0
+    }
+   ]
+  },
+  {
+   "id": "S02",
+   "beats": [
+    {
+     "beat": "look",
+     "rate": 13,
+     "fit": 0.969,
+     "late": 0.0
+    },
+    {
+     "beat": "what",
+     "rate": 7,
+     "fit": 0.964,
+     "late": 0.0
+    },
+    {
+     "beat": "adult",
+     "rate": 0,
+     "fit": 0.864,
+     "late": 0.0
+    },
+    {
+     "beat": "env",
+     "rate": 18,
+     "fit": 0.976,
+     "late": 0.0
+    }
+   ]
+  },
+  {
+   "id": "S03",
+   "beats": [
+    {
+     "beat": "q",
+     "rate": 0,
+     "fit": 0.937,
+     "late": 0.0
+    },
+    {
+     "beat": "n",
+     "rate": 0,
+     "fit": 0.847,
+     "late": 0.0
+    },
+    {
+     "beat": "res",
+     "rate": -10,
+     "fit": 0.878,
+     "late": 0.0
+    }
+   ]
+  },
+  {
+   "id": "S04",
+   "beats": [
+    {
+     "beat": "q",
+     "rate": 0,
+     "fit": 0.886,
+     "late": 0.0
+    },
+    {
+     "beat": "g",
+     "rate": 6,
+     "fit": 0.964,
+     "late": 0.0
+    },
+    {
+     "beat": "e",
+     "rate": 0,
+     "fit": 0.834,
+     "late": 0.0
+    },
+    {
+     "beat": "p",
+     "rate": 0,
+     "fit": 0.926,
+     "late": 0.0
+    }
+   ]
+  },
+  {
+   "id": "S05",
+   "beats": [
+    {
+     "beat": "w",
+     "rate": 0,
+     "fit": 0.934,
+     "late": 0.0
+    },
+    {
+     "beat": "main",
+     "rate": 0,
+     "fit": 0.85,
+     "late": 0.0
+    },
+    {
+     "beat": "twin",
+     "rate": 0,
+     "fit": 0.888,
+     "late": 0.0
+    }
+   ]
+  },
+  {
+   "id": "S06",
+   "beats": [
+    {
+     "beat": "q",
+     "rate": 0,
+     "fit": 0.946,
+     "late": 0.0
+    },
+    {
+     "beat": "off",
+     "rate": 0,
+     "fit": 0.955,
+     "late": 0.0
+    },
+    {
+     "beat": "on",
+     "rate": 14,
+     "fit": 0.975,
+     "late": 0.0
+    },
+    {
+     "beat": "rem",
+     "rate": -10,
+     "fit": 0.847,
+     "late": 0.0
+    }
+   ]
+  },
+  {
+   "id": "S07",
+   "beats": [
+    {
+     "beat": "w",
+     "rate": 8,
+     "fit": 0.974,
+     "late": 0.0
+    },
+    {
+     "beat": "off",
+     "rate": 0,
+     "fit": 0.943,
+     "late": 0.0
+    },
+    {
+     "beat": "on",
+     "rate": 0,
+     "fit": 0.932,
+     "late": 0.0
+    }
+   ]
+  },
+  {
+   "id": "S08",
+   "beats": [
+    {
+     "beat": "hi",
+     "rate": 0,
+     "fit": 0.944,
+     "late": 0.0
+    },
+    {
+     "beat": "lo",
+     "rate": 0,
+     "fit": 0.935,
+     "late": 0.0
+    }
+   ]
+  },
+  {
+   "id": "S09",
+   "beats": [
+    {
+     "beat": "cpg",
+     "rate": 0,
+     "fit": 0.995,
+     "late": 0.0
+    },
+    {
+     "beat": "70",
+     "rate": 17,
+     "fit": 0.97,
+     "late": 0.0
+    },
+    {
+     "beat": "cx",
+     "rate": 0,
+     "fit": 0.845,
+     "late": 0.0
+    },
+    {
+     "beat": "epi",
+     "rate": 9,
+     "fit": 0.973,
+     "late": 0.0
+    }
+   ]
+  },
+  {
+   "id": "S10",
+   "beats": [
+    {
+     "beat": "row",
+     "rate": 0,
+     "fit": 0.844,
+     "late": 0.0
+    },
+    {
+     "beat": "me",
+     "rate": 0,
+     "fit": 0.882,
+     "late": 0.0
+    },
+    {
+     "beat": "pack",
+     "rate": 0,
+     "fit": 0.857,
+     "late": 0.0
+    },
+    {
+     "beat": "tf",
+     "rate": 0,
+     "fit": 0.883,
+     "late": 0.0
+    },
+    {
+     "beat": "open",
+     "rate": 0,
+     "fit": 0.913,
+     "late": 0.0
+    },
+    {
+     "beat": "hdac",
+     "rate": 0,
+     "fit": 0.854,
+     "late": 0.0
+    },
+    {
+     "beat": "sw",
+     "rate": 0,
+     "fit": 0.999,
+     "late": 0.0
+    }
+   ]
+  },
+  {
+   "id": "S11",
+   "beats": [
+    {
+     "beat": "elec",
+     "rate": 17,
+     "fit": 0.978,
+     "late": 0.0
+    }
+   ]
+  },
+  {
+   "id": "S12",
+   "beats": [
+    {
+     "beat": "q",
+     "rate": 0,
+     "fit": 0.933,
+     "late": 0.0
+    },
+    {
+     "beat": "meth",
+     "rate": 0,
+     "fit": 0.801,
+     "late": 0.0
+    },
+    {
+     "beat": "hdac",
+     "rate": -10,
+     "fit": 0.777,
+     "late": 0.0
+    }
+   ]
+  },
+  {
+   "id": "S13",
+   "beats": [
+    {
+     "beat": "w",
+     "rate": 0,
+     "fit": 0.923,
+     "late": 0.0
+    }
+   ]
+  },
+  {
+   "id": "S14",
+   "beats": [
+    {
+     "beat": "q",
+     "rate": 0,
+     "fit": 0.968,
+     "late": 0.0
+    },
+    {
+     "beat": "copy",
+     "rate": 0,
+     "fit": 0.866,
+     "late": 0.0
+    },
+    {
+     "beat": "g37",
+     "rate": 0,
+     "fit": 0.938,
+     "late": 0.0
+    },
+    {
+     "beat": "imp",
+     "rate": -10,
+     "fit": 0.882,
+     "late": 0.0
+    },
+    {
+     "beat": "mat",
+     "rate": 0,
+     "fit": 0.879,
+     "late": 0.0
+    }
+   ]
+  },
+  {
+   "id": "S15",
+   "beats": [
+    {
+     "beat": "w",
+     "rate": 0,
+     "fit": 0.965,
+     "late": 0.0
+    },
+    {
+     "beat": "r",
+     "rate": 0,
+     "fit": 0.976,
+     "late": 0.0
+    },
+    {
+     "beat": "m",
+     "rate": 18,
+     "fit": 0.97,
+     "late": 0.0
+    }
+   ]
+  },
+  {
+   "id": "S16",
+   "beats": [
+    {
+     "beat": "four",
+     "rate": 0,
+     "fit": 0.936,
+     "late": 0.0
+    },
+    {
+     "beat": "p1",
+     "rate": 0,
+     "fit": 0.899,
+     "late": 0.0
+    },
+    {
+     "beat": "p2",
+     "rate": -10,
+     "fit": 0.82,
+     "late": 0.0
+    },
+    {
+     "beat": "p3",
+     "rate": 0,
+     "fit": 0.858,
+     "late": 0.0
+    },
+    {
+     "beat": "p4",
+     "rate": 27,
+     "fit": 0.982,
+     "late": 0.0
+    }
+   ]
+  },
+  {
+   "id": "S17",
+   "beats": [
+    {
+     "beat": "next",
+     "rate": -10,
+     "fit": 0.846,
+     "late": 0.0
+    },
+    {
+     "beat": "bye",
+     "rate": -10,
+     "fit": 0.798,
+     "late": 0.0
+    }
+   ]
+  }
+ ]
+}

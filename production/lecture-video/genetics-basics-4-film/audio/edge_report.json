@@ -1,0 +1,447 @@
+{
+ "voice": "ja-JP-KeitaNeural",
+ "format": "audio-24khz-96kbitrate-mono-mp3",
+ "scenes": [
+  {
+   "id": "S01",
+   "beats": [
+    {
+     "beat": "open",
+     "rate": 0,
+     "fit": 0.902,
+     "late": 0.0
+    },
+    {
+     "beat": "today",
+     "rate": 0,
+     "fit": 0.988,
+     "late": 0.0
+    }
+   ]
+  },
+  {
+   "id": "S02",
+   "beats": [
+    {
+     "beat": "flow",
+     "rate": 0,
+     "fit": 0.894,
+     "late": 0.0
+    }
+   ]
+  },
+  {
+   "id": "S03",
+   "beats": [
+    {
+     "beat": "dna",
+     "rate": 0,
+     "fit": 0.88,
+     "late": 0.0
+    },
+    {
+     "beat": "what",
+     "rate": 8,
+     "fit": 0.972,
+     "late": 0.0
+    },
+    {
+     "beat": "def",
+     "rate": 0,
+     "fit": 0.99,
+     "late": 0.0
+    }
+   ]
+  },
+  {
+   "id": "S04",
+   "beats": [
+    {
+     "beat": "two",
+     "rate": 28,
+     "fit": 0.981,
+     "late": 0.0
+    },
+    {
+     "beat": "line",
+     "rate": 0,
+     "fit": 0.954,
+     "late": 0.0
+    }
+   ]
+  },
+  {
+   "id": "S05",
+   "beats": [
+    {
+     "beat": "g",
+     "rate": 0,
+     "fit": 0.816,
+     "late": 0.0
+    },
+    {
+     "beat": "dir",
+     "rate": -10,
+     "fit": 0.858,
+     "late": 0.0
+    }
+   ]
+  },
+  {
+   "id": "S06",
+   "beats": [
+    {
+     "beat": "mix",
+     "rate": 0,
+     "fit": 0.886,
+     "late": 0.0
+    }
+   ]
+  },
+  {
+   "id": "S07",
+   "beats": [
+    {
+     "beat": "draw",
+     "rate": 20,
+     "fit": 0.978,
+     "late": 0.0
+    },
+    {
+     "beat": "poly",
+     "rate": -10,
+     "fit": 0.841,
+     "late": 0.0
+    },
+    {
+     "beat": "utr",
+     "rate": 0,
+     "fit": 0.94,
+     "late": 0.0
+    }
+   ]
+  },
+  {
+   "id": "S08",
+   "beats": [
+    {
+     "beat": "q",
+     "rate": 0,
+     "fit": 0.834,
+     "late": 0.0
+    },
+    {
+     "beat": "a",
+     "rate": 0,
+     "fit": 0.843,
+     "late": 0.0
+    },
+    {
+     "beat": "rest",
+     "rate": 11,
+     "fit": 0.98,
+     "late": 0.0
+    }
+   ]
+  },
+  {
+   "id": "S09",
+   "beats": [
+    {
+     "beat": "f",
+     "rate": 4,
+     "fit": 0.969,
+     "late": 0.0
+    },
+    {
+     "beat": "tu",
+     "rate": 0,
+     "fit": 0.979,
+     "late": 0.0
+    }
+   ]
+  },
+  {
+   "id": "S10",
+   "beats": [
+    {
+     "beat": "see",
+     "rate": 0,
+     "fit": 0.936,
+     "late": 0.0
+    },
+    {
+     "beat": "bind",
+     "rate": 0,
+     "fit": 0.992,
+     "late": 0.0
+    },
+    {
+     "beat": "tx",
+     "rate": 0,
+     "fit": 0.865,
+     "late": 0.0
+    },
+    {
+     "beat": "spl",
+     "rate": 0,
+     "fit": 0.959,
+     "late": 0.0
+    },
+    {
+     "beat": "mrna",
+     "rate": -10,
+     "fit": 0.876,
+     "late": 0.0
+    }
+   ]
+  },
+  {
+   "id": "S11",
+   "beats": [
+    {
+     "beat": "out",
+     "rate": 0,
+     "fit": 0.935,
+     "late": 0.0
+    },
+    {
+     "beat": "trl",
+     "rate": 9,
+     "fit": 0.976,
+     "late": 0.0
+    },
+    {
+     "beat": "stop",
+     "rate": 28,
+     "fit": 0.985,
+     "late": 0.0
+    },
+    {
+     "beat": "three",
+     "rate": 40,
+     "fit": 1.195,
+     "late": 0.0
+    }
+   ]
+  },
+  {
+   "id": "S12",
+   "beats": [
+    {
+     "beat": "w",
+     "rate": 40,
+     "fit": 1.228,
+     "late": 0.523
+    },
+    {
+     "beat": "aa",
+     "rate": 40,
+     "fit": 1.18,
+     "late": 0.0
+    },
+    {
+     "beat": "rule",
+     "rate": 4,
+     "fit": 0.966,
+     "late": 0.0
+    }
+   ]
+  },
+  {
+   "id": "S13",
+   "beats": [
+    {
+     "beat": "q",
+     "rate": 0,
+     "fit": 0.85,
+     "late": 0.0
+    },
+    {
+     "beat": "far",
+     "rate": 0,
+     "fit": 0.856,
+     "late": 0.0
+    },
+    {
+     "beat": "near",
+     "rate": -10,
+     "fit": 0.88,
+     "late": 0.0
+    }
+   ]
+  },
+  {
+   "id": "S14",
+   "beats": [
+    {
+     "beat": "q",
+     "rate": 0,
+     "fit": 0.92,
+     "late": 0.0
+    },
+    {
+     "beat": "split",
+     "rate": 0,
+     "fit": 0.836,
+     "late": 0.0
+    },
+    {
+     "beat": "aa",
+     "rate": 0,
+     "fit": 0.903,
+     "late": 0.0
+    },
+    {
+     "beat": "rep",
+     "rate": 0,
+     "fit": 0.813,
+     "late": 0.0
+    }
+   ]
+  },
+  {
+   "id": "S15",
+   "beats": [
+    {
+     "beat": "w",
+     "rate": 12,
+     "fit": 0.974,
+     "late": 0.0
+    }
+   ]
+  },
+  {
+   "id": "S16",
+   "beats": [
+    {
+     "beat": "nc",
+     "rate": 0,
+     "fit": 0.87,
+     "late": 0.0
+    },
+    {
+     "beat": "num",
+     "rate": -10,
+     "fit": 0.858,
+     "late": 0.0
+    },
+    {
+     "beat": "kinds",
+     "rate": 0,
+     "fit": 0.905,
+     "late": 0.0
+    },
+    {
+     "beat": "mi",
+     "rate": 34,
+     "fit": 0.986,
+     "late": 0.0
+    },
+    {
+     "beat": "dz",
+     "rate": -10,
+     "fit": 0.884,
+     "late": 0.0
+    }
+   ]
+  },
+  {
+   "id": "S17",
+   "beats": [
+    {
+     "beat": "w",
+     "rate": 5,
+     "fit": 0.967,
+     "late": 0.0
+    }
+   ]
+  },
+  {
+   "id": "S18",
+   "beats": [
+    {
+     "beat": "y03",
+     "rate": 0,
+     "fit": 0.876,
+     "late": 0.0
+    },
+    {
+     "beat": "y22",
+     "rate": 0,
+     "fit": 0.863,
+     "late": 0.0
+    }
+   ]
+  },
+  {
+   "id": "S19",
+   "beats": [
+    {
+     "beat": "codon",
+     "rate": 40,
+     "fit": 1.033,
+     "late": 0.077
+    },
+    {
+     "beat": "rules",
+     "rate": 0,
+     "fit": 0.993,
+     "late": 0.0
+    },
+    {
+     "beat": "nums",
+     "rate": 11,
+     "fit": 0.974,
+     "late": 0.0
+    }
+   ]
+  },
+  {
+   "id": "S20",
+   "beats": [
+    {
+     "beat": "four",
+     "rate": 0,
+     "fit": 0.936,
+     "late": 0.0
+    },
+    {
+     "beat": "p1",
+     "rate": 7,
+     "fit": 0.971,
+     "late": 0.0
+    },
+    {
+     "beat": "p2",
+     "rate": 40,
+     "fit": 1.159,
+     "late": 0.0
+    },
+    {
+     "beat": "p3",
+     "rate": 0,
+     "fit": 0.889,
+     "late": 0.0
+    },
+    {
+     "beat": "p4",
+     "rate": 0,
+     "fit": 0.903,
+     "late": 0.0
+    }
+   ]
+  },
+  {
+   "id": "S21",
+   "beats": [
+    {
+     "beat": "next",
+     "rate": 5,
+     "fit": 0.958,
+     "late": 0.0
+    }
+   ]
+  }
+ ]
+}

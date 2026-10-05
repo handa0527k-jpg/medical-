@@ -469,7 +469,7 @@ def assemble_full(pkg: Path, e: dict, a) -> None:
     out = pkg / "out" / (a.out or "lecture.mp4")
     cmd = [ffmpeg_bin(a), "-y", "-v", "error", "-framerate", str(FPS), "-i", str(pkg / "layers" / "full_%05d.jpg"), "-i", str(pkg / "out" / "mix.wav"),
            "-filter_complex", ";".join(fc), "-map", f"[{last}]", "-map", "1:a", "-c:v", "libx264", "-preset", "medium", "-crf", str(a.crf),
-           "-pix_fmt", "yuv420p", "-r", str(FPS), "-c:a", "aac", "-b:a", "160k", "-movflags", "+faststart", "-t", f"{dur:.3f}", str(out)]
+           "-pix_fmt", "yuv420p", "-r", str(FPS), "-c:a", "aac", "-ar", "48000", "-b:a", a.audio_bitrate, "-movflags", "+faststart", "-t", f"{dur:.3f}", str(out)]
     (pkg / "out" / "ffmpeg_command.txt").write_text(" ".join(f'"{c}"' if " " in c or ";" in c else c for c in cmd), encoding="utf-8")
     subprocess.run(cmd, check=True)
     print(f"完成 → {out}（{dur:.2f} 秒・MEDSTUDY アニマティック（Wan 2.2 未生成）{'' if not inv else '・白黒反転は描画済み'}）")
@@ -512,6 +512,7 @@ def main() -> None:
     p.add_argument("--crf", default="18"); p.add_argument("--out"); p.add_argument("--no-subs", action="store_true")
     p.add_argument("--animatic", action="store_true", help="Wan クリップがあっても MEDSTUDY アニマティックで組む")
     p.add_argument("--no-tag", action="store_true", help="アニマティック部分の小さな表示を付けない")
+    p.add_argument("--audio-bitrate", default="192k", help="完成した MP4 の音声（AAC・48 kHz）のビットレート")
     p.add_argument("--sub-band", action="store_true", help="絵を 87.5%% に縮めて上に置き、下の黒い帯に字幕を出す（図の文字と字幕が重ならない）")
     a = p.parse_args()
     {"tts": cmd_tts, "sfx": cmd_sfx, "comfy": cmd_comfy, "assemble": cmd_assemble, "check": cmd_check, "all": cmd_all}[a.command](a.package.resolve(), a)

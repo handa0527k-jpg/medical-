@@ -166,3 +166,19 @@ node scripts\lecture-video\render-layers.mjs C:\work\film2 --theme genetics-basi
 版の外のアセット保存領域（1ファイル20 MiBまで）に動画を置く方法も試しましたが、この機能を使うとページが組織内限定になり、リンクやアプリから開けなくなる場合があったため、使っていません。アプリ側は `/` や `https:` で始まる場所もそのまま読めるので、外部に置く必要が出たときは `lecture-video/index.json` の `file` / `audio` をそのURLに書き換えるだけで切り替えられます。
 
 リポジトリには Web 用の版を `public/lecture-video/` に入れています。元の画質（1280×720、`out/lecture.mp4`）は Git に入れません。
+
+## 11. 講師の声を Microsoft の Neural 音声にする（`revoice_edge.py`）
+
+完成版は、絵をそのままに声だけを edge-tts（Microsoft Neural「ja-JP-KeitaNeural」、24 kHz・96 kbps、この窓口で選べる最高の形式）に差し替えられます。
+
+```bat
+python tools\lecture-video\revoice_edge.py production\lecture-video\genetics-basics-6-film
+python tools\lecture-video\medstudy_video.py assemble production\lecture-video\genetics-basics-6-film --sub-band --audio-bitrate 192k
+```
+
+- 1つの拍（ひと続きの台詞）を一息で読ませ、声の単語タイミングで台詞ごとに切り、Kokoro の台詞が始まっていた時刻にそれぞれ置きます。字幕・カメラ・図の動きはそのまま合います。
+- 枠に収まらない拍は少し速く（最大 +40%）、余裕のある拍は少し遅く（最大 −10%）読ませます。音を伸び縮みさせることはしません。
+- 元の Kokoro の声は `audio/kokoro_wav/` に残り、`--restore` で戻せます。結果は `audio/edge_report.json`。
+- 第6講の文字誤り率（Whisper small）は 6.9%（Kokoro 5.6%）。数字の読みの違いによるもので、聞きやすさは Neural 音声の方が上です。
+
+動画ページ（全6講・再生リスト・チャプター付き）の作り方は `production/lecture-video/films-page/`（`make_film.sh` で各講の MP4 を 1本 14.5 MB 以内・AAC 128 kbps に、`build.py` でページを生成）。
