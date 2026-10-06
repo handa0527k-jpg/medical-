@@ -68,7 +68,7 @@ def main():
         if args.what == 'sample' else ['-c:v', 'copy']
     run(['ffmpeg', '-y', '-v', 'error', '-i', vid, '-i', wav, '-i', sub, '-map', '0:v', '-map', '1:a', '-map', '2:s', *vcodec,
          *fade, '-c:a', 'aac', '-b:a', '192k', '-c:s', 'mov_text', '-metadata:s:s:0', 'language=jpn',
-         '-metadata', 'title=路地裏のゲノム', '-shortest', '-movflags', '+faststart', dst])
+         '-metadata', 'title=路地裏のゲノム', '-t', str(b - a), '-movflags', '+faststart', dst])
     print('done:', dst)
 
 
