@@ -33,3 +33,4 @@ production/lecture-video/*/wan/
 tools/lecture-video/models/
 
 production/lecture-video/youtube/*.mp4
+__pycache__/
