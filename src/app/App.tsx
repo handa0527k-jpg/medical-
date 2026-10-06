@@ -30,7 +30,9 @@ const AnimationPage = lazy(() => import('../features/animations/AnimationPage'))
 const StoryPage = lazy(() => import('../features/story/StoryPage'));
 const BoardViewerPage = lazy(() => import('../features/lecture/BoardViewerPage'));
 const QuickReviewPage = lazy(() => import('../features/review/QuickReviewPage'));
-const VideoStudioPage = lazy(() => import('../features/lecture-video/VideoStudioPage'));
+// VITE_NO_FILMS=1 builds the app without the 授業動画 studio and its films (the edition shared without videos)
+const FILMS = import.meta.env.VITE_NO_FILMS !== '1';
+const VideoStudioPage = FILMS ? lazy(() => import('../features/lecture-video/VideoStudioPage')) : null;
 
 function ScrollToTop() {
   const { pathname, search } = useLocation();
@@ -74,7 +76,7 @@ export function App({ course }: { course: Course }) {
               <Routes>
                 <Route path="/" element={<HomePage />} />
                 <Route path="/category/:id" element={<CategoryPage />} />
-                <Route path="/category/:id/video" element={<VideoStudioPage />} />
+                {VideoStudioPage && <Route path="/category/:id/video" element={<VideoStudioPage />} />}
                 <Route path="/open/:courseId/*" element={<OpenCourse />} />
                 <Route path="/course" element={<CourseHomePage />} />
                 <Route path="/book" element={<BookPage />} />

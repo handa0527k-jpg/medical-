@@ -47,7 +47,7 @@ export function CategoryPage() {
         )}
       </section>
 
-      {k.id === 'genetics' && list.length > 0 && (
+      {import.meta.env.VITE_NO_FILMS !== '1' && k.id === 'genetics' && list.length > 0 && (
         <Link to="/category/genetics/video" className="cat-film">
           <span className="cf-ic" aria-hidden="true">🎬</span>
           <span><b>授業動画（劇画アニメーション）</b>教材から台本・医学図・映像指示を作り、ComfyUI × Wan 2.2 × Kokoro × FFmpeg で授業映像にする制作スタジオ。まずは30秒プロトタイプ。</span>
