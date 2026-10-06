@@ -33,3 +33,7 @@ production/lecture-video/*/wan/
 tools/lecture-video/models/
 
 production/lecture-video/youtube/*.mp4
+
+# エピジェネティクス（ジョジョ風）: rendered media is reproducible
+production/lecture-video/epigenetics-jojo/out/
+production/lecture-video/epigenetics-jojo/__pycache__/

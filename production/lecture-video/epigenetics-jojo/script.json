@@ -1,0 +1,178 @@
+{
+  "title": "エピジェネティクス",
+  "subtitle": "遺伝医学 2026 ／ 黄金の授業",
+  "source": "講義資料「エピジェネティクス2026」（門松 毅、2026年10月5日 1限、56枚）",
+  "voices": {
+    "koichiro": { "name": "航一朗先生", "voice": "ja-JP-KeitaNeural", "rate": "+4%", "pitch": "-6Hz", "color": "#ffcf1f" },
+    "methyl":   { "name": "メチル",       "voice": "ja-JP-KeitaNeural", "rate": "+12%", "pitch": "+14Hz", "color": "#38c6ff" },
+    "acetyl":   { "name": "アセチル",     "voice": "ja-JP-NanamiNeural", "rate": "+8%", "pitch": "+6Hz", "color": "#ff8a1f" },
+    "histone":  { "name": "ヒストン八人衆", "voice": "ja-JP-KeitaNeural", "rate": "+6%", "pitch": "+4Hz", "color": "#ff5fae" },
+    "hdac":     { "name": "HDAC",        "voice": "ja-JP-KeitaNeural", "rate": "+0%", "pitch": "-2Hz", "color": "#3fd16b" },
+    "xist":     { "name": "Xist",        "voice": "ja-JP-NanamiNeural", "rate": "+6%", "pitch": "+12Hz", "color": "#ff3b5c" },
+    "aza":      { "name": "アザシチジン",  "voice": "ja-JP-NanamiNeural", "rate": "+10%", "pitch": "+20Hz", "color": "#9b6bff" },
+    "gokai":    { "name": "誤解（ゴカイ）", "voice": "ja-JP-KeitaNeural", "rate": "-6%", "pitch": "-22Hz", "color": "#b14dff" }
+  },
+  "yomi": {
+    "H2A": "エイチツーエー", "H2B": "エイチツービー", "H3": "エイチスリー", "H4": "エイチフォー",
+    "HDAC": "エイチダック", "HAT": "ハット", "HMT": "エイチエムティー", "HP1": "エイチピーワン",
+    "DNMT": "ディーエヌエムティー", "CpG": "シーピージー", "CH3": "シーエイチスリー",
+    "UPD": "ユーピーディー", "SNORD116": "スノードひゃくじゅうろく", "UBE3A": "ユービーイースリーエー",
+    "15q11": "じゅうごキューじゅういち", "q13": "キューじゅうさん",
+    "Xist": "エクシスト", "SAM": "サム", "B12": "ビーじゅうに", "iPS": "アイピーエス",
+    "Oct3/4": "オクトスリーフォー", "Sox2": "ソックスツー", "Klf4": "ケーエルエフフォー", "c-Myc": "シーミック",
+    "DOHaD": "ドーハッド", "父型": "ちちがた", "母型": "ははがた", "N末端": "エヌまったん", "5位": "ごい", "誤解": "ごかい",
+    "1826": "せんはっぴゃくにじゅうろく", "70%": "70パーセント", "25から30%": "25から30パーセント", "7%": "7パーセント",
+    "50歳": "ごじゅっさい", "3歳": "さんさい", "74歳": "ななじゅうよんさい", "80組": "はちじゅうくみ"
+  },
+  "scenes": [
+    {
+      "id": "S01", "chapter": "OPENING", "diagram": "none", "bg": "gold",
+      "lines": [
+        { "who": "koichiro", "text": "ゴゴゴゴゴ……。待たせたな、諸君。航一朗だ。", "say": "ゴゴゴゴゴ。……待たせたな、諸君。こういちろうだ。", "pose": "rise", "fx": ["gogo", "shine"], "onoma": "ゴゴゴゴゴ" },
+        { "who": "koichiro", "text": "今日の授業は……これだッ！", "pose": "jojo", "fx": ["don"], "title": true }
+      ]
+    },
+    {
+      "id": "S02", "chapter": "エピジェネティクスとは", "diagram": "definition", "bg": "sky",
+      "lines": [
+        { "who": "koichiro", "text": "エピジェネティクスとは、DNAの塩基配列を変えずに、遺伝子の発現を変える仕組みのことだ。", "pose": "point", "big": "配列は変えないッ！", "keys": ["塩基配列を変えずに"], "step": 1, "fx": ["don"] },
+        { "who": "koichiro", "text": "しかも体細胞では、その変化が細胞分裂を越えて受け継がれる。つまり、記憶されるッ！", "pose": "jojo", "big": "記憶ッ！", "keys": ["記憶"], "step": 2, "fx": ["don"] },
+        { "who": "koichiro", "text": "ゲノムのエピジェネティックな状態のすべてを、エピゲノムと呼ぶ。", "pose": "cross", "keys": ["エピゲノム"], "step": 3 },
+        { "who": "koichiro", "text": "その主役は四人！ 来いッ！", "pose": "summon", "fx": ["whoosh", "shine"], "step": 4, "onoma": "ドドドドド", "cast": ["methyl", "acetyl", "remodel", "ncrna"] },
+        { "who": "methyl", "text": "DNAメチル化担当、メチルだ！ 三つの水素がチャームポイント！", "step": 4, "cast": ["methyl", "acetyl", "remodel", "ncrna"], "bubble": "CH3参上！" },
+        { "who": "acetyl", "text": "ヒストン修飾のアセチルよ。DNAの巻き方を変えるのが得意なの。", "step": 4, "cast": ["methyl", "acetyl", "remodel", "ncrna"], "bubble": "ほどくわよ♪" },
+        { "who": "koichiro", "text": "さらに、ヌクレオソームを動かすクロマチンリモデリング因子。そして、タンパク質にならないノンコーディングRNAだ！", "pose": "point", "step": 4, "cast": ["methyl", "acetyl", "remodel", "ncrna"], "keys": ["クロマチンリモデリング因子", "ノンコーディングRNA"] }
+      ]
+    },
+    {
+      "id": "S03", "chapter": "ジェネティクス vs エピジェネティクス", "diagram": "dogma", "bg": "lime",
+      "lines": [
+        { "who": "koichiro", "text": "セントラルドグマを見ろ。DNAからRNA、RNAからタンパク質。エピジェネティクスは、この転写にスイッチを入れる。", "pose": "point", "step": 1, "keys": ["転写にスイッチ"] },
+        { "who": "koichiro", "text": "突然変異や遺伝子多型、つまりジェネティクスは、配列そのものが変わる。これは不可逆だ。", "pose": "cross", "step": 2, "big": "不可逆", "bigc": "#7a8cff", "keys": ["不可逆"] },
+        { "who": "koichiro", "text": "だがエピジェネティクスは配列を変えない。だから可塑的、そして可逆的ッ！", "pose": "jojo", "step": 3, "big": "可逆ッ！", "fx": ["don"], "keys": ["可塑的", "可逆的"] },
+        { "who": "koichiro", "text": "加齢、過食、運動不足。環境因子がこのスイッチを動かす。", "pose": "point", "step": 4, "keys": ["環境因子"] },
+        { "who": "koichiro", "text": "がんや生活習慣病は、遺伝因子と環境因子が絡み合う多因子疾患。エピゲノムを見なければ、病気は分子レベルで理解できないッ！", "pose": "fist", "step": 4, "big": "多因子疾患", "keys": ["多因子疾患"], "fx": ["don"] }
+      ]
+    },
+    {
+      "id": "S04", "chapter": "ヒストン修飾", "diagram": "histone", "bg": "pink",
+      "lines": [
+        { "who": "histone", "text": "オレたちはヒストン！ H2A、H2B、H3、H4が二つずつ、八人で一つの芯だ！", "step": 1, "cast": ["histone"], "big": "八量体", "keys": ["八人で一つの芯"], "fx": ["don"] },
+        { "who": "histone", "text": "DNAはオレたちに巻き付く。そしてN末端のしっぽ、ヒストンテールが外に飛び出している！", "step": 2, "cast": ["histone"], "keys": ["ヒストンテール"] },
+        { "who": "koichiro", "text": "このテールに、メチル化、リン酸化、アセチル化、ユビキチン化。様々な修飾がつく。これがヒストンコードだ。", "pose": "point", "step": 3, "big": "ヒストンコード", "keys": ["ヒストンコード"], "fx": ["don"] },
+        { "who": "acetyl", "text": "わたしの出番！ HATがアセチル基をつけると、クロマチンがゆるんでユークロマチン。転写オン！", "step": 4, "cast": ["acetyl"], "big": "ON！", "bigc": "#ff8a1f", "keys": ["ユークロマチン", "転写オン"], "fx": ["sparkle"] },
+        { "who": "hdac", "text": "逆にオレ、HDACがアセチル基を外し、HMTがヒストンをメチル化すれば……", "step": 5, "cast": ["hdac"], "keys": ["HDAC", "HMT"], "bubble": "外すぜ" },
+        { "who": "koichiro", "text": "HP1やポリコームタンパク質が集まり、ヘテロクロマチンが形成される。遺伝子はオフだッ！", "pose": "jojo", "step": 6, "cast": ["hdac"], "big": "OFF！", "bigc": "#3a7bff", "keys": ["ヘテロクロマチン"], "fx": ["don"] },
+        { "who": "koichiro", "text": "覚えておけ。ヒストンのアセチル化は活性化。メチル化は、場所によって抑制にも活性化にもなる。", "pose": "cross", "step": 6, "keys": ["アセチル化は活性化", "抑制にも活性化にも"] }
+      ]
+    },
+    {
+      "id": "S05", "chapter": "DNAメチル化", "diagram": "methylation", "bg": "cyan",
+      "lines": [
+        { "who": "methyl", "text": "さあ、オレの番だ！ メチル化されるのはシトシン。それも、次にグアニンが続くCpGのシトシンだ！", "step": 1, "cast": ["methyl"], "big": "CpG", "keys": ["CpGのシトシン"], "fx": ["don"] },
+        { "who": "koichiro", "text": "シトシンの5位の炭素に、DNAメチル基転移酵素、DNMTがメチル基をつける。", "pose": "point", "step": 2, "keys": ["5位の炭素", "DNMT"] },
+        { "who": "koichiro", "text": "哺乳類の体細胞では、全CpG部位のおよそ70%がメチル化されている。", "pose": "jojo", "step": 2, "big": "70%", "keys": ["70%"], "fx": ["don"] },
+        { "who": "koichiro", "text": "CpGが特に多い領域がCpGアイランド。プロモーターのCpGアイランドがメチル化されると、遺伝子は抑制される。", "pose": "point", "step": 3, "keys": ["CpGアイランド", "抑制"] },
+        { "who": "koichiro", "text": "メチル化DNAには結合タンパク質が集まり、HDACとHMTを呼ぶ。HP1が乗ってヘテロクロマチン。こうして沈黙する。", "pose": "cross", "step": 4, "keys": ["HDACとHMT", "ヘテロクロマチン"] },
+        { "who": "methyl", "text": "しかもオレの模様は、複製しても維持される！ 作る、維持する、必要なら消す。その総和がメチル化パターンだ！", "step": 5, "cast": ["methyl"], "keys": ["維持"], "bubble": "コピーOK！" },
+        { "who": "koichiro", "text": "消すときは、メチル化シトシンがヒドロキシル化などを受け、最後はDNA修復酵素で取り除かれると考えられている。", "pose": "point", "step": 6, "keys": ["ヒドロキシル化", "DNA修復酵素"] }
+      ]
+    },
+    {
+      "id": "S06", "chapter": "誤解、乱入", "diagram": "methylation", "bg": "dark", "enemy": true,
+      "lines": [
+        { "who": "gokai", "text": "ドドドドド……クックック。メチル化とはDNAの配列を書き換えること！ しかも全部のシトシンがメチル化されるのだァ！", "enemy": "enter", "fx": ["dododo"], "onoma": "ドドドドド", "step": 6, "bubble": "全部書き換えだァ！" },
+        { "who": "koichiro", "text": "出たな、誤解！", "pose": "point", "enemy": "idle", "fx": ["don"], "step": 6, "bubble": "出たな…！" },
+        { "who": "koichiro", "text": "メチル基はシトシンに乗るだけだ。A、T、G、C、配列は一文字も変わらないッ！", "pose": "fist", "enemy": "hit", "fx": ["hit"], "step": 6, "big": "配列不変！", "keys": ["一文字も変わらない"] },
+        { "who": "koichiro", "text": "そして狙われるのはCpGのシトシン。全部ではないッ！", "pose": "punch", "enemy": "defeat", "fx": ["boom"], "step": 6, "big": "撃破ッ！", "keys": ["CpGのシトシン"] },
+        { "who": "gokai", "text": "ぐわあああッ！ お、覚えていろォ……！", "enemy": "flee", "fx": ["whoosh"], "step": 6 }
+      ]
+    },
+    {
+      "id": "S07", "chapter": "発生・分化とiPS細胞", "diagram": "differentiation", "bg": "rainbow",
+      "lines": [
+        { "who": "koichiro", "text": "受精卵から始まって、DNAメチル化のレベルは発生と分化の中でダイナミックに変わる。", "pose": "point", "step": 1, "keys": ["ダイナミックに変わる"] },
+        { "who": "koichiro", "text": "ヒトの体には200種類以上の細胞がある。だが、どの細胞も遺伝情報は同じ。およそ2万5千の遺伝子だ。", "pose": "cross", "step": 2, "big": "200種類以上", "keys": ["遺伝情報は同じ"] },
+        { "who": "koichiro", "text": "違いを生むのは、細胞ごとのエピゲノム状態、エピジェノタイプ。それが記憶されている。", "pose": "jojo", "step": 2, "big": "エピジェノタイプ", "keys": ["エピジェノタイプ"], "fx": ["don"] },
+        { "who": "koichiro", "text": "その記憶を初期化したのがiPS細胞。Oct3/4、Sox2、Klf4、c-Myc。四つの因子でリプログラミング！", "pose": "summon", "step": 3, "big": "リプログラミング", "keys": ["iPS細胞", "リプログラミング"], "fx": ["sparkle"] },
+        { "who": "koichiro", "text": "ただし、ゲノムインプリンティングの記憶は消えずに残っている。ここは試験に出るぞ！", "pose": "point", "step": 4, "big": "試験に出る！", "bigc": "#ff3b5c", "keys": ["消えずに残っている"], "fx": ["don"] }
+      ]
+    },
+    {
+      "id": "S08", "chapter": "ゲノムインプリンティング", "diagram": "imprinting", "bg": "split",
+      "lines": [
+        { "who": "koichiro", "text": "ゲノムインプリンティング。父と母から同じ遺伝子を一つずつ受け継ぐが、一部の遺伝子は片方の親由来だけが働く。", "pose": "point", "step": 1, "big": "刷り込み", "keys": ["片方の親由来だけが働く"], "fx": ["don"] },
+        { "who": "koichiro", "text": "もう片方がDNAメチル化で選択的に不活性化されているからだ。親の印、インプリントは発生を経ても記憶される。", "pose": "cross", "step": 2, "keys": ["DNAメチル化", "インプリント"] },
+        { "who": "koichiro", "text": "インプリントは始原生殖細胞でリセットされ、精子では父型、卵では母型として刷り込み直される。", "pose": "point", "step": 3, "keys": ["リセット"] },
+        { "who": "koichiro", "text": "哺乳類に単為発生がないのは、インプリンティングが防いでいるからだと考えられている。", "pose": "jojo", "step": 3, "keys": ["単為発生"] },
+        { "who": "koichiro", "text": "染色体不分離で、一対の染色体が両方とも同じ親から来る。それが片親性ダイソミー、UPD。3番と19番以外のすべての染色体で報告がある。", "pose": "point", "step": 4, "big": "UPD", "keys": ["片親性ダイソミー", "3番と19番以外"], "fx": ["don"] }
+      ]
+    },
+    {
+      "id": "S09", "chapter": "プラダー・ウィリーとアンジェルマン", "diagram": "pwsas", "bg": "violet", "enemy": true,
+      "lines": [
+        { "who": "koichiro", "text": "15番染色体の長腕、15q11からq13。ここの欠失で起こるのが、プラダー・ウィリー症候群とアンジェルマン症候群だ。", "pose": "point", "step": 1, "keys": ["15q11からq13"] },
+        { "who": "gokai", "text": "ゴゴゴゴ……同じ場所の欠失なら、同じ病気になるはずだァ！", "enemy": "enter", "fx": ["gogo"], "onoma": "ゴゴゴゴ", "step": 1, "bubble": "同じ病気だァ！" },
+        { "who": "koichiro", "text": "甘いッ！ 違いを決めるのは、どちらの親から来た染色体かだ！", "pose": "jojo", "enemy": "hit", "fx": ["hit"], "step": 2, "big": "親由来！", "keys": ["どちらの親"] },
+        { "who": "koichiro", "text": "父由来の欠失、または母性UPDならプラダー・ウィリー。SNORD116などが働かず、過食と肥満、軽度の発達遅延が出る。", "pose": "point", "enemy": "idle", "step": 3, "keys": ["父由来の欠失", "母性UPD"] },
+        { "who": "koichiro", "text": "母由来の欠失、または父性UPDならアンジェルマン。UBE3Aが働かず、重度の発達遅延、運動失調、笑い発作が出る。", "pose": "point", "enemy": "idle", "step": 4, "keys": ["母由来の欠失", "父性UPD"] },
+        { "who": "koichiro", "text": "欠失はどちらも約70%。母性UPDはプラダー・ウィリーの25から30%、父性UPDはアンジェルマンの7%だ！", "pose": "punch", "enemy": "defeat", "fx": ["boom"], "step": 5, "big": "撃破ッ！", "keys": ["約70%"] },
+        { "who": "gokai", "text": "ぐぬぬぬ……親の印までは見ていなかったァ！", "enemy": "flee", "fx": ["whoosh"], "step": 5 }
+      ]
+    },
+    {
+      "id": "S10", "chapter": "X染色体不活性化", "diagram": "xinact", "bg": "orange",
+      "lines": [
+        { "who": "koichiro", "text": "メスはX染色体を二本持つ。だが働くのは一本だけ。遺伝子量をオスと揃える、遺伝子量補償だ。", "pose": "point", "step": 1, "big": "遺伝子量補償", "keys": ["遺伝子量補償"], "fx": ["don"] },
+        { "who": "koichiro", "text": "胚発生のとき、各細胞でランダムに一本が不活性化され、ほぼ全体がヘテロクロマチン化する。", "pose": "cross", "step": 2, "keys": ["ランダム"] },
+        { "who": "koichiro", "text": "その証拠が三毛猫！ 茶と黒の毛色の遺伝子がX染色体にあり、ランダムな不活性化でまだら模様になる。", "pose": "jojo", "step": 3, "big": "三毛猫！", "keys": ["三毛猫"], "fx": ["sparkle"] },
+        { "who": "xist", "text": "そしてわたし、Xist！ 不活性化されるX染色体で発現が上がって、X全体を包み込むノンコーディングRNAよ！", "step": 4, "cast": ["xist"], "keys": ["Xist", "ノンコーディングRNA"], "bubble": "包み込むわ！" },
+        { "who": "koichiro", "text": "Xistに覆われたXでは、DNAメチル化が誘導されてヘテロクロマチンとなり、沈黙する。", "pose": "point", "step": 5, "cast": ["xist"], "keys": ["沈黙"] }
+      ]
+    },
+    {
+      "id": "S11", "chapter": "個体差と老化", "diagram": "twins", "bg": "teal", "enemy": true,
+      "lines": [
+        { "who": "gokai", "text": "ドドドド……一卵性双生児はゲノムが同じ。だから一生、まったく同じだァ！", "enemy": "enter", "fx": ["dododo"], "onoma": "ドドドド", "step": 0, "bubble": "一生同じだァ！" },
+        { "who": "koichiro", "text": "違うッ！ 3歳から74歳までの一卵性双生児、80組を調べた研究がある。", "pose": "point", "enemy": "idle", "fx": ["don"], "step": 1, "keys": ["80組"] },
+        { "who": "koichiro", "text": "幼い双子では、エピゲノムの差はほとんどない。だが差は加齢とともに増え、50歳の双子では3歳の3倍以上だ。", "pose": "fist", "enemy": "hit", "fx": ["hit"], "step": 2, "big": "3倍以上！", "keys": ["3倍以上"] },
+        { "who": "koichiro", "text": "そして離れて育った双子ほど、差は大きかった。環境がエピゲノムを刻むのだッ！", "pose": "punch", "enemy": "defeat", "fx": ["boom"], "step": 3, "big": "撃破ッ！", "keys": ["環境がエピゲノムを刻む"] },
+        { "who": "gokai", "text": "ば、馬鹿なァァ……！", "enemy": "flee", "fx": ["whoosh"], "step": 3 },
+        { "who": "koichiro", "text": "暦年齢と生物学的年齢は違う。アカゲザルでは、カロリー制限が老化関連疾患の発症と死亡を遅らせた。", "pose": "cross", "step": 4, "keys": ["生物学的年齢", "カロリー制限"] },
+        { "who": "koichiro", "text": "DNAメチル化レベルを指標にしたエピジェネティッククロックで、生物学的年齢を測ることもできる。", "pose": "point", "step": 5, "big": "エピジェネティッククロック", "keys": ["エピジェネティッククロック"], "fx": ["sparkle"] }
+      ]
+    },
+    {
+      "id": "S12", "chapter": "がんとエピジェネティクス", "diagram": "cancer", "bg": "red",
+      "lines": [
+        { "who": "koichiro", "text": "がん細胞では、CpGアイランドの異常なメチル化で、がん抑制遺伝子が黙らされていることがある。", "pose": "point", "step": 1, "keys": ["がん抑制遺伝子"] },
+        { "who": "aza", "text": "そこでボク、DNA脱メチル化剤！ シトシンにそっくりな構造で、複製のときにDNAに入り込むんだ。", "step": 2, "cast": ["aza"], "keys": ["シトシンにそっくり"], "bubble": "変装完了！" },
+        { "who": "aza", "text": "そしてDNMTと非可逆的に結合！ 新しい鎖は、もうメチル化されない！", "step": 3, "cast": ["aza"], "big": "DNMT封印！", "keys": ["非可逆的に結合"], "fx": ["hit"] },
+        { "who": "koichiro", "text": "さらにHDAC阻害剤。二つの武器で、がん抑制遺伝子を再活性化させるッ！", "pose": "jojo", "step": 4, "big": "再活性化ッ！", "keys": ["HDAC阻害剤", "再活性化"], "fx": ["don"] }
+      ]
+    },
+    {
+      "id": "S13", "chapter": "栄養とエピゲノム編集", "diagram": "nutrition", "bg": "green",
+      "lines": [
+        { "who": "koichiro", "text": "栄養もエピゲノムを動かす。DOHaD仮説だ。", "pose": "point", "step": 1, "big": "DOHaD", "keys": ["DOHaD仮説"], "fx": ["don"] },
+        { "who": "koichiro", "text": "第二次大戦末期のオランダ飢餓。それを経験した母親から生まれた子は、成人後に肥満、耐糖能異常、高血圧を起こしやすかった。", "pose": "cross", "step": 1, "keys": ["オランダ飢餓"] },
+        { "who": "koichiro", "text": "メチル基の供給源はSAM、S-アデノシルメチオニン。妊娠期の葉酸やビタミンB12の不足は、胎児のエピゲノムに影響しうる。", "say": "メチル基の供給源はサム、エス・アデノシルメチオニン。妊娠期の葉酸やビタミンビーじゅうにの不足は、胎児のエピゲノムに影響しうる。", "pose": "point", "step": 2, "keys": ["SAM", "葉酸", "ビタミンB12"] },
+        { "who": "koichiro", "text": "そして今、エピゲノムは人為的に編集できる。配列を変えずに、狙った遺伝子のスイッチだけを入れたり切ったり。エピゲノム編集だ！", "pose": "jojo", "step": 3, "big": "エピゲノム編集", "keys": ["エピゲノム編集"], "fx": ["sparkle"] }
+      ]
+    },
+    {
+      "id": "S14", "chapter": "決着", "diagram": "summary", "bg": "gold", "enemy": true,
+      "lines": [
+        { "who": "gokai", "text": "ゴゴゴゴ……まだだ！ 混乱こそ我が力ァ！", "enemy": "enter", "fx": ["gogo"], "onoma": "ゴゴゴゴ", "step": 0, "bubble": "混乱ッ！" },
+        { "who": "koichiro", "text": "ならば、まとめて叩き込む！", "pose": "summon", "enemy": "idle", "fx": ["don"], "step": 0, "bubble": "まとめてやる！" },
+        { "who": "koichiro", "text": "一つ！ 配列を変えずに発現を変え、分裂を越えて記憶される！", "pose": "punch", "enemy": "hit", "fx": ["hit"], "step": 1 },
+        { "who": "koichiro", "text": "二つ！ アセチル化はオン。脱アセチル化と、CpGのメチル化はオフ！", "pose": "fist", "enemy": "hit", "fx": ["hit"], "step": 2 },
+        { "who": "koichiro", "text": "三つ！ インプリンティングとX染色体不活性化。親の印と、Xistだ！", "pose": "punch", "enemy": "hit", "fx": ["hit"], "step": 3 },
+        { "who": "koichiro", "text": "四つ！ 環境、加齢、がん。そして治療と編集へ！", "pose": "fist", "enemy": "defeat", "fx": ["boom"], "step": 4 },
+        { "who": "gokai", "text": "ぐわあああああッ！", "enemy": "explode", "fx": ["boom"], "step": 4 },
+        { "who": "koichiro", "text": "これで、エピジェネティクス……", "pose": "cross", "step": 4 },
+        { "who": "koichiro", "text": "理解ッ！", "say": "理解ッ！", "pose": "jojo", "finale": true, "fx": ["boom", "shine"], "step": 4 }
+      ]
+    }
+  ]
+}
