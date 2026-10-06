@@ -3,7 +3,7 @@
   "subtitle": "遺伝医学 2026 ／ 黄金の授業",
   "source": "講義資料「エピジェネティクス2026」（門松 毅、2026年10月5日 1限、56枚）",
   "voices": {
-    "koichiro": { "name": "航一朗先生", "voice": "ja-JP-KeitaNeural", "rate": "+4%", "pitch": "-6Hz", "color": "#ffcf1f" },
+    "koichiro": { "name": "KO先生", "voice": "ja-JP-KeitaNeural", "rate": "+4%", "pitch": "-6Hz", "color": "#ffcf1f" },
     "methyl":   { "name": "メチル",       "voice": "ja-JP-KeitaNeural", "rate": "+12%", "pitch": "+14Hz", "color": "#38c6ff" },
     "acetyl":   { "name": "アセチル",     "voice": "ja-JP-NanamiNeural", "rate": "+8%", "pitch": "+6Hz", "color": "#ff8a1f" },
     "histone":  { "name": "ヒストン八人衆", "voice": "ja-JP-KeitaNeural", "rate": "+6%", "pitch": "+4Hz", "color": "#ff5fae" },
@@ -28,7 +28,7 @@
     {
       "id": "S01", "chapter": "OPENING", "diagram": "none", "bg": "gold",
       "lines": [
-        { "who": "koichiro", "text": "ゴゴゴゴゴ……。待たせたな、諸君。航一朗だ。", "say": "ゴゴゴゴゴ。……待たせたな、諸君。こういちろうだ。", "pose": "rise", "fx": ["gogo", "shine"], "onoma": "ゴゴゴゴゴ" },
+        { "who": "koichiro", "text": "ゴゴゴゴゴ……。待たせたな、諸君。KO先生だ。", "say": "ゴゴゴゴゴ。……待たせたな、諸君。ケーオー先生だ。", "pose": "rise", "fx": ["gogo", "shine"], "onoma": "ゴゴゴゴゴ" },
         { "who": "koichiro", "text": "今日の授業は……これだッ！", "pose": "jojo", "fx": ["don"], "title": true }
       ]
     },

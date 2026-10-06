@@ -70,7 +70,7 @@ def text_w(ctx, s, name, size):
 def text(ctx, s, x, y, size, name="zen", fill=BLACK, stroke=None, sw=0.0, outer=None, ow=0.0,
          align="center", rot=0.0, alpha=1.0, scale=1.0, shadow=None):
     """outlined lettering; (x, y) is the visual centre (align=center) or left/right edge, middle height"""
-    if not s or scale <= 0.001 or alpha <= 0.001:
+    if not s or scale <= 0.001 or alpha <= 0.001 or size <= 0.5:
         return
     ctx.save()
     ctx.translate(x, y)
@@ -139,6 +139,7 @@ def label_box(ctx, s, x, y, size, fill, fg=BLACK, pad=12, lw=3.5, alpha=1.0, nam
 
 
 def circle(ctx, x, y, r, fill, lw=4, line=BLACK, alpha=1.0):
+    r = max(r, 0.0)
     ctx.arc(x, y, r, 0, 2 * math.pi)
     src(ctx, fill, alpha)
     ctx.fill_preserve()
@@ -152,6 +153,8 @@ def circle(ctx, x, y, r, fill, lw=4, line=BLACK, alpha=1.0):
 
 def ball(ctx, x, y, r, base, lw=4, alpha=1.0):
     """shaded sphere with a hard manga highlight"""
+    if r <= 0.5:
+        return
     g = cairo.RadialGradient(x - r * 0.35, y - r * 0.4, r * 0.1, x, y, r * 1.05)
     g.add_color_stop_rgba(0, *mix(base, WHITE, 0.55), alpha)
     g.add_color_stop_rgba(0.55, *base, alpha)

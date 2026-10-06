@@ -1,10 +1,10 @@
-"""The cast: 航一朗先生 (a rigged, muscular manga lecturer), the concept mascots and the villain 誤解（ゴカイ）."""
+"""The cast: KO先生 (a rigged, muscular manga lecturer), the concept mascots and the villain 誤解（ゴカイ）."""
 import math
 import random
 import cairo
 from gfx import (BLACK, WHITE, hexc, mix, src, text, ball, circle, clamp, ease_out, back_out, rrect)
 
-# ── 航一朗先生 ──────────────────────────────────────────────────────────────────────────────
+# ── KO先生 ──────────────────────────────────────────────────────────────────────────────
 SKIN, SKIN_S = hexc("#ffd3a6"), hexc("#e48f5e")
 HAIR, HAIR_H = hexc("#35208a"), hexc("#55e0ff")
 SHIRT, SHIRT_S = hexc("#14b8a6"), hexc("#0b6f7a")
@@ -328,7 +328,7 @@ def head(ctx, x, y, rot, t, talk, look=0.0, fierce=0.0):
 
 
 def professor(ctx, x, y, s, P, t, talk=0.0, glow=1.0, fierce=0.0):
-    """draw 航一朗先生 with his feet at (x, y)"""
+    """draw KO先生 with his feet at (x, y)"""
     ctx.save()
     ctx.translate(x, y + P.get("y", 0))
     ctx.scale(s, s)
@@ -472,7 +472,7 @@ def professor(ctx, x, y, s, P, t, talk=0.0, glow=1.0, fierce=0.0):
     ctx.stroke()
     bx, by = T(0, -9)
     circle(ctx, bx, by, 17, GOLD, lw=4)
-    text(ctx, "航", bx, by, 18, "dela", fill=BLACK)
+    text(ctx, "KO", bx, by, 15, "dela", fill=BLACK)
     # open coat panels with a high collar
     for sx in (-1, 1):
         ctx.new_path()
