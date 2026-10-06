@@ -43,6 +43,7 @@ python production/lecture-video/youtube/make_meta.py
 | ファイル | 中身 |
 |---|---|
 | `epigenetics.mp4` | 動画本体（1920×1080・24fps・H.264、音声 AAC 48 kHz、9分33秒）。字幕は絵の下の帯に焼き込み済み。Git には入れていない |
+| `epigenetics_1080p.mp4` | **アップロード用**。1920×1080 のまま 2パスで約91 MB に圧縮した版（映像 1.2 Mbps・音声 AAC 128 kbps）。GitHub に置いてあるのはこれ（YouTube はアップロード後に再圧縮するので見た目の差はほとんどない） |
 | `epigenetics_29MB.mp4` | 同じ動画を 29 MB 以内に収めた版（854×480、チャット受け渡し用） |
 | `epigenetics_title.txt` | タイトル（55字） |
 | `epigenetics_description.txt` | 説明文（概要・14のチャプター・登場キャラクター・この動画について） |
