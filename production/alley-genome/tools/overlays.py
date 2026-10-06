@@ -757,7 +757,7 @@ def ov_sanger(N, t, s):
         L_ = 3 + k * 2
         y = 600 + k * 22
         N.line((360, y), (360 + L_ * 40, y), (200, 210, 240), 0.8, 3)
-        N.circle((360 + L_ * 40, y), 7, BASECOL[seq[L_ - 1]], 1, -1)
+        N.circle((360 + L_ * 40, y), 7, BASECOL[seq[(L_ - 1) % len(seq)]], 1, -1)
 
 
 def ov_capillary(N, t, s):

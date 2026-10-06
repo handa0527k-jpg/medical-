@@ -97,6 +97,19 @@ def main():
     variants(only)
 
 
+_fp = {}
+def face_parts(base):
+    if base not in _fp:
+        from PIL import Image
+        from imgutils.detect import detect_faces, detect_eyes
+        im = Image.open(os.path.join(C, 'keyart', base + '.png')).convert('RGB')
+        f = [b for b, _, sc in detect_faces(im) if sc > 0.4]
+        e = [b for b, _, sc in detect_eyes(im) if sc > 0.3]
+        f.sort(key=lambda b: -(b[2] - b[0]) * (b[3] - b[1]))
+        _fp[base] = (f, e)
+    return _fp[base]
+
+
 def variants(only=()):
     """<id>_blink / <id>_talk: upscale, and a mask of where they differ from the key image inside the head area."""
     for p in sorted(glob.glob(os.path.join(C, 'keyart', '*_*.png'))):
@@ -110,20 +123,26 @@ def variants(only=()):
         mt = cv2.imread(os.path.join(C, 'matte', base + '.png'), cv2.IMREAD_GRAYSCALE)
         if a is None or mt is None:
             continue
+        # keep the variant's detail, take the key image's lighting (img2img drifts in colour/light)
+        af, bf = a.astype(np.float32), b.astype(np.float32)
+        b = np.clip(bf - cv2.GaussianBlur(bf, (0, 0), 10) + cv2.GaussianBlur(af, (0, 0), 10), 0, 255).astype(np.uint8)
         d = cv2.absdiff(cv2.GaussianBlur(a, (0, 0), 1.5), cv2.GaussianBlur(b, (0, 0), 1.5)).astype(np.float32).max(2) / 255
-        d = cv2.resize(d, (672, 384), interpolation=cv2.INTER_AREA)
-        m = cv2.resize(mt, (672, 384)).astype(np.float32) / 255
-        ys, xs = np.where(m > 0.5)
-        head = np.zeros_like(m)
-        if len(ys):
-            y0 = ys.min(); h = ys.max() - y0
-            cols = xs[ys < y0 + h * 0.15]
-            x0, x1 = (cols.min(), cols.max()) if len(cols) else (xs.min(), xs.max())
-            pad = (x1 - x0) * 0.6
-            head[y0:int(y0 + h * 0.5), max(0, int(x0 - pad)):int(x1 + pad)] = 1
-        mask = np.clip((d - 0.06) * 6, 0, 1) * head * m
-        mask = cv2.dilate(mask, np.ones((5, 5), np.uint8))
-        mask = cv2.GaussianBlur(mask, (0, 0), 3)
+        # where to look: eyes (blink) or mouth (talk), from an anime face / eye detector (deepghs imgutils)
+        region = np.zeros(a.shape[:2], np.float32)
+        faces, eyes = face_parts(base)
+        if faces:
+            x0, y0, x1, y1 = faces[0]; fw, fh = x1 - x0, y1 - y0
+            if v.endswith('blink'):
+                ee = [e for e in eyes if x0 - fw * 0.1 <= (e[0] + e[2]) / 2 <= x1 + fw * 0.1 and y0 <= (e[1] + e[3]) / 2 <= y1] or \
+                     [(x0 + fw * 0.15, y0 + fh * 0.38, x0 + fw * 0.45, y0 + fh * 0.6), (x0 + fw * 0.55, y0 + fh * 0.38, x0 + fw * 0.85, y0 + fh * 0.6)]
+                for ex0, ey0, ex1, ey1 in ee:
+                    cv2.ellipse(region, (int((ex0 + ex1) / 2), int((ey0 + ey1) / 2)), (int((ex1 - ex0) * 0.95), int((ey1 - ey0) * 1.3)), 0, 0, 360, 1.0, -1)
+            else:
+                cv2.ellipse(region, (int(x0 + fw * 0.5), int(y0 + fh * 0.8)), (int(fw * 0.22), int(fh * 0.13)), 0, 0, 360, 1.0, -1)
+        region = cv2.GaussianBlur(region, (0, 0), 6)
+        d = cv2.GaussianBlur(d, (0, 0), 2)
+        mask = region * np.clip(0.35 + d * 8, 0, 1)
+        mask = cv2.resize(mask, (672, 384), interpolation=cv2.INTER_AREA)
         cv2.imwrite(os.path.join(C, 'vmask', v + '.png'), (np.clip(mask, 0, 1) * 255).astype(np.uint8))
         cv2.imwrite(up + '.tmp.jpg', upscale(b), [cv2.IMWRITE_JPEG_QUALITY, 95]); os.replace(up + '.tmp.jpg', up)
         print('prepared variant', v, f'mask area {float((mask > 0.3).mean()) * 100:.2f}%', flush=True)

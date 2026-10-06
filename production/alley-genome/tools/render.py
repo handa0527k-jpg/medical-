@@ -37,10 +37,14 @@ def picture(a, b, out, jobs):
         pa, pb = a + k * step, (a + (k + 1) * step if k < jobs - 1 else b)
         pa, pb = round(pa * 24) / 24, round(pb * 24) / 24
         p = os.path.join(C, f'part{k}.mp4'); parts.append(p)
+        if os.path.exists(p + '.ok') and open(p + '.ok').read() == f'{pa}-{pb}':
+            continue  # finished in an earlier run
         procs.append(subprocess.Popen([sys.executable, 'tools/comp.py', '--from', str(pa), '--to', str(pb), '--out', p], cwd=PROD))
     for p in procs:
         if p.wait():
             raise SystemExit('a chunk failed')
+        out_ = p.args[p.args.index('--out') + 1]
+        open(out_ + '.ok', 'w').write(f"{p.args[p.args.index('--from') + 1]}-{p.args[p.args.index('--to') + 1]}")
     lst = os.path.join(C, 'parts.txt')
     open(lst, 'w').write(''.join(f"file '{p}'\n" for p in parts))
     run(['ffmpeg', '-y', '-v', 'error', '-f', 'concat', '-safe', '0', '-i', lst, '-c', 'copy', out])

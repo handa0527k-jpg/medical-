@@ -14,6 +14,29 @@
 | カゲ | Cas9 | 黒髪・橙の目・黒いパーカー | Keita（-16Hz・遅め） |
 | 猫 | 匿名 | 細身の灰色・琥珀色の目 | ― |
 
+## 成果物
+
+| ファイル | 内容 |
+|---|---|
+| `sample/sample_30s.mp4` | 30秒サンプル（冒頭） |
+| `chapters/00_rain.mp4` … `10_end.mp4` | 本編を章ごとに分けたもの（1920×1080・24fps・H.264／AAC、字幕は画面に焼き込み）。GitHub の 100 MB 制限のため章で分割 |
+| `rojiura_no_genome_full.mp4`（git 外） | 本編まるごと 11分30秒・約290 MB・日本語字幕トラック付き。`chapters/` をつないだもの |
+| `final.mp4`（git 外） | 書き出しの原版（約670 MB）。`tools/render.py full` で再生成 |
+
+| 章ファイル | 場面 | 長さ | 大きさ |
+|---|---|---|---|
+| `chapters/00_rain.mp4` | 雨の路地 | 0:35 | 23 MB |
+| `chapters/01_six.mp4` | 六人 | 1:19 | 49 MB |
+| `chapters/02_cut.mp4` | 制限酵素の精霊 | 1:15 | 32 MB |
+| `chapters/03_tie.mp4` | リガーゼの精霊 | 0:46 | 24 MB |
+| `chapters/04_planet.mp4` | プラスミド惑星 | 1:25 | 32 MB |
+| `chapters/05_copy.mp4` | 写し取る糸 | 0:37 | 10 MB |
+| `chapters/06_pcr.mp4` | 三色の空 | 1:12 | 27 MB |
+| `chapters/07_gel.mp4` | 電気泳動の影 | 0:41 | 17 MB |
+| `chapters/08_read.mp4` | 読まれる星 | 0:59 | 21 MB |
+| `chapters/09_shadow.mp4` | Cas9の影 | 1:45 | 38 MB |
+| `chapters/10_end.mp4` | 雨上がり | 0:50 | 16 MB |
+
 ## 構成（`timeline.json` の実測時刻）
 
 | 章 | 場面 | 内容 |

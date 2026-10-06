@@ -677,7 +677,8 @@
    "at": 7,
    "cam": "pull",
    "fx": [],
-   "p": "{CAT}, sitting on rooftop, from behind, looking at starry sky, night, city"
+   "p": "{CAT}, only one cat, single cat, sitting on rooftop edge, from behind, looking at starry sky, night, city below",
+   "seed": 5151
   },
   {
    "id": "e6",
