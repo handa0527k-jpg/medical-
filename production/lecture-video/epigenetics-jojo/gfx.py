@@ -5,6 +5,15 @@ import cairo
 W, H = 1280, 720
 PIC_H = 630            # picture area; the subtitle band sits below it
 
+class SafeContext(cairo.Context):
+    """a cairo context whose scale() never makes the matrix singular (animations start from scale 0)"""
+
+    def scale(self, sx, sy):
+        sx = sx if abs(sx) > 1e-4 else 1e-4
+        sy = sy if abs(sy) > 1e-4 else 1e-4
+        super().scale(sx, sy)
+
+
 FONTS = {
     "zen": ("Zen Kaku Gothic New", cairo.FONT_WEIGHT_BOLD),
     "dela": ("Dela Gothic One", cairo.FONT_WEIGHT_NORMAL),

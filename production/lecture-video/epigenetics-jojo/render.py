@@ -17,7 +17,7 @@ import numpy as np
 
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
-from gfx import (W, H, PIC_H, BLACK, WHITE, hexc, mix, src, text, text_w, font, clamp, ease_out, ease_io, back_out,
+from gfx import (SafeContext, W, H, PIC_H, BLACK, WHITE, hexc, mix, src, text, text_w, font, clamp, ease_out, ease_io, back_out,
                  pop, star_burst, rrect, box)
 from characters import POSES, lerp_pose, professor, mascot, gokai, MASCOT
 from diagrams import DIAGRAMS, CW, CH
@@ -464,7 +464,7 @@ class Film:
         t = fi / FPS
         S = state_at(self.T, t)
         surf = cairo.ImageSurface(cairo.FORMAT_RGB24, W, H)
-        ctx = cairo.Context(surf)
+        ctx = SafeContext(surf)
         ctx.set_line_join(cairo.LINE_JOIN_ROUND)
         L, lt = S.line, S.lt
         sc = S.scene

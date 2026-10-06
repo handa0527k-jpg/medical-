@@ -68,5 +68,5 @@ python3 audio.py && python3 audio.py mux                # 4. 音（声＋効果�
 | `diagrams.py` | 白いカードに描く医学図（12種、セリフごとの段階でアニメーション） |
 | `audio.py` | 声の配置、効果音の合成（ドーン・バシィッ・爆発・ゴゴゴ・ドドド・シュッ・キラキラ）、BGM（敵の場面は短調）、ダッキング、mux |
 
-完成版は `public/lecture-video/epigenetics-jojo/epigenetics_jojo.mp4` に置いています。
+完成版は `public/lecture-video/epigenetics-jojo/epigenetics_jojo.mp4`（960×540、9分33秒、約54 MB。GitHub の100 MB制限に収めるため2パスで圧縮）に置いています。1280×720 の高画質版は `out/epigenetics_jojo.mp4`（再生成できるため git には入れない）。
 フォント：Zen Kaku Gothic New（字幕）、Dela Gothic One（巨大文字）、Reggae One（擬音・吹き出し）、いずれも SIL Open Font License 1.1。
