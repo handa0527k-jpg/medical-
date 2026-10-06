@@ -7,6 +7,8 @@
 - 擬音（ゴゴゴゴ／ドドドド）は浮遊する文字、決め台詞はギザギザの吹き出し
 - 字幕は絵の下の帯に出し、重要語は黄色
 
+主人公「KO先生」の読みは「こうせんせい」です。
+
 音声は Kokoro を使わず、以前の授業動画と同じく Microsoft のニューラル音声（edge-tts、オープンソースのクライアント）です。絵は pycairo、効果音と BGM は numpy で合成（外部素材なし）、仕上げは FFmpeg です。
 
 ## キャラクター
@@ -70,3 +72,21 @@ python3 audio.py && python3 audio.py mux                # 4. 音（声＋効果�
 
 完成版は `public/lecture-video/epigenetics-jojo/epigenetics_jojo.mp4`（960×540、9分33秒、約54 MB。GitHub の100 MB制限に収めるため2パスで圧縮）に置いています。1280×720 の高画質版は `out/epigenetics_jojo.mp4`（再生成できるため git には入れない）。
 フォント：Zen Kaku Gothic New（字幕）、Dela Gothic One（巨大文字）、Reggae One（擬音・吹き出し）、いずれも SIL Open Font License 1.1。
+
+## Blender の3D素材（`blender/`）
+
+分子と敵、ロゴは Blender 4.5（Cycles・CPU）で描いた3Dクリップを2Dの絵に合成しています。光源を使わず、固定した光の向きと法線の内積から「影・地・ハイライト」の3段の色を決めるトゥーン調の発光マテリアルに、Freestyle の黒い輪郭線を重ねています。
+
+| クリップ | 内容 | 使う場面 |
+|---|---|---|
+| `logo_title` / `logo_rikai` | 金色の立体文字「エピジェネティクス」「理解ッ！」 | オープニング／決着 |
+| `dna_spin` / `dna_drop` | 回る二重らせん、CpG の C（両鎖）に CH3 が落ちてくる | 第4幕 |
+| `nuc_build` / `nuc_wrap` / `nuc_tags` | 八量体が集まる → DNA が約1.65回巻く → テールに修飾 | 第3幕 |
+| `fiber_open` / `fiber_close` | クロマチン線維がほどける（Ac）／詰まる（Me・HP1） | 第3幕・第4幕 |
+| `gokai` | 誤解（ゴカイ）の揺れるループ | 敵の登場場面 |
+
+```bash
+BL=/path/to/blender production/lecture-video/epigenetics-jojo/blender/render_all.sh   # 4並列で約17分 → out/blender/
+```
+
+クリップがないときは、従来の2Dの絵で描きます。

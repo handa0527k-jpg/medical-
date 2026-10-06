@@ -28,7 +28,7 @@
     {
       "id": "S01", "chapter": "OPENING", "diagram": "none", "bg": "gold",
       "lines": [
-        { "who": "koichiro", "text": "ゴゴゴゴゴ……。待たせたな、諸君。KO先生だ。", "say": "ゴゴゴゴゴ。……待たせたな、諸君。ケーオー先生だ。", "pose": "rise", "fx": ["gogo", "shine"], "onoma": "ゴゴゴゴゴ" },
+        { "who": "koichiro", "text": "ゴゴゴゴゴ……。待たせたな、諸君。KO先生だ。", "say": "ゴゴゴゴゴ。……待たせたな、諸君。こうせんせいだ。", "slot": 4.63, "pose": "rise", "fx": ["gogo", "shine"], "onoma": "ゴゴゴゴゴ" },
         { "who": "koichiro", "text": "今日の授業は……これだッ！", "pose": "jojo", "fx": ["don"], "title": true }
       ]
     },

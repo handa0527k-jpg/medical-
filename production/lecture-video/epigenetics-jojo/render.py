@@ -65,7 +65,7 @@ def build_timeline():
             r = rows[n]
             d = r["seconds"]
             L = dict(ln, idx=n, start=round(t, 3), dur=d, file=r["file"])
-            gap = GAP + (0.25 if ln.get("big") else 0) + (2.2 if ln.get("title") else 0) + (5.5 if ln.get("finale") else 0)
+            gap = GAP + max(0.0, ln.get("slot", 0) - d) + (0.25 if ln.get("big") else 0) + (2.2 if ln.get("title") else 0) + (5.5 if ln.get("finale") else 0)
             if ln["who"] == "gokai" and ln.get("enemy") in ("flee", "explode"):
                 gap += 0.4
             t += d + gap
