@@ -20,7 +20,7 @@ sys.path.insert(0, str(HERE))
 from gfx import (SafeContext, W, H, PIC_H, BLACK, WHITE, hexc, mix, src, text, text_w, font, clamp, ease_out, ease_io, back_out,
                  pop, star_burst, rrect, box)
 from characters import POSES, lerp_pose, professor, mascot, gokai, MASCOT
-from diagrams import DIAGRAMS, CW, CH
+from diagrams import DIAGRAMS, CW, CH, clip_surface, clip3d
 
 FPS = 24
 SR = 48000
@@ -267,6 +267,43 @@ def flames(ctx, x, y0, y1, w, t, col, alpha=1.0):
         ctx.close_path()
     src(ctx, col, 0.35 * alpha)
     ctx.fill()
+
+
+def gokai3d(ctx, ex, ey, es, t, talk=0.0, hurt=0.0, alpha=1.0, crack=0.0):
+    """the Blender worm (out/blender/gokai, 520×640, head centre at about (305, 168)); 2D hit flash and cracks on top"""
+    sf = clip_surface("gokai", t)
+    if sf is None:
+        return False
+    k = 0.75 * es
+    hx, hy = ex + 70 * es + math.sin(t * 60) * hurt * 10, ey - 60 * es
+    ctx.save()
+    ctx.translate(hx, hy)
+    ctx.scale(k * (1 - 0.03 * talk), k * (1 + 0.05 * talk))
+    ctx.translate(-305, -168)
+    ctx.push_group()
+    ctx.set_source_surface(sf, 0, 0)
+    ctx.paint()
+    if hurt > 0:
+        ctx.set_source_rgba(1, 1, 1, 0.85 * hurt)
+        ctx.mask_surface(sf, 0, 0)
+    ctx.pop_group_to_source()
+    ctx.paint_with_alpha(alpha)
+    ctx.restore()
+    if crack > 0 and alpha > 0:
+        rnd = random.Random(7)
+        ctx.set_line_width(4)
+        src(ctx, WHITE, alpha)
+        for i in range(int(3 + crack * 6)):
+            a = rnd.uniform(0, 2 * math.pi)
+            px, py = hx, hy
+            ctx.move_to(px, py)
+            for _ in range(4):
+                a += rnd.uniform(-0.6, 0.6)
+                px += math.cos(a) * 30 * es * crack
+                py += math.sin(a) * 30 * es * crack
+                ctx.line_to(px, py)
+            ctx.stroke()
+    return True
 
 
 # ── lettering effects ───────────────────────────────────────────────────────
@@ -606,7 +643,8 @@ class Film:
                 alpha = clamp(1 - el / 0.5)
             flames(ctx, ex + 30, 600, 120, 140, t, hexc("#b14dff"), alpha=alpha)
             if alpha > 0:
-                head_top = gokai(ctx, ex, ey, es, t, talk=self.talk(L, lt, "gokai"), hurt=hurt, alpha=alpha, crack=crack)
+                if not gokai3d(ctx, ex, ey, es, t, talk=self.talk(L, lt, "gokai"), hurt=hurt, alpha=alpha, crack=crack):
+                    gokai(ctx, ex, ey, es, t, talk=self.talk(L, lt, "gokai"), hurt=hurt, alpha=alpha, crack=crack)
             if st not in ("flee", "explode"):
                 onoma(ctx, "ゴ", t, el if st == "enter" else 2.0, 11, dark=True, area=(640, 60, 1240, 560), n=5)
             if st in ("defeat", "explode") and el >= (0.7 * line_d if st == "defeat" else 0):
@@ -712,12 +750,17 @@ class Film:
         g.add_color_stop_rgb(0, *hexc("#fff7a8"))
         g.add_color_stop_rgb(0.45, *hexc("#ffb300"))
         g.add_color_stop_rgb(1, *hexc("#ff5a00"))
-        ctx.save()
-        ctx.translate(780, 290)
-        ctx.rotate(-0.06)
-        ctx.scale(scale, scale)
-        text(ctx, self.title, 0, 0, 92, "dela", fill=g, stroke=BLACK, sw=12, outer=WHITE, ow=26, shadow=(10, 10, BLACK))
-        ctx.restore()
+        if clip_surface("logo_title", 0) is not None:
+            # the 3D gold logo (Blender), with a white sticker edge so it reads on any background
+            aura(ctx, lambda: clip3d(ctx, "logo_title", lt, 780, 285, scale=0.86, center=True), WHITE, 0,
+                 rings=((5, 1.0), (10, 1.0)))
+        else:
+            ctx.save()
+            ctx.translate(780, 290)
+            ctx.rotate(-0.06)
+            ctx.scale(scale, scale)
+            text(ctx, self.title, 0, 0, 92, "dela", fill=g, stroke=BLACK, sw=12, outer=WHITE, ow=26, shadow=(10, 10, BLACK))
+            ctx.restore()
         a = clamp((lt - 0.4) / 0.3)
         text(ctx, "Epigenetics", 800, 395, 46, "dela", fill=hexc("#ff2b6a"), stroke=BLACK, sw=7, outer=WHITE, ow=16,
              rot=-0.06, alpha=a)
@@ -755,12 +798,16 @@ class Film:
         g.add_color_stop_rgb(0, *hexc("#fffbd0"))
         g.add_color_stop_rgb(0.45, *hexc("#ffcf1f"))
         g.add_color_stop_rgb(1, *hexc("#ff4f00"))
-        ctx.save()
-        ctx.translate(cx, cy)
-        ctx.rotate(-0.1)
-        ctx.scale(scale, scale)
-        text(ctx, "理解ッ！", 0, 0, 170, "dela", fill=g, stroke=BLACK, sw=14, outer=WHITE, ow=30, shadow=(12, 12, BLACK))
-        ctx.restore()
+        if clip_surface("logo_rikai", 0) is not None:
+            aura(ctx, lambda: clip3d(ctx, "logo_rikai", q, cx, cy, scale=1.0 + 0.03 * math.sin(t * 8), center=True),
+                 WHITE, 0, rings=((6, 1.0), (12, 1.0)))
+        else:
+            ctx.save()
+            ctx.translate(cx, cy)
+            ctx.rotate(-0.1)
+            ctx.scale(scale, scale)
+            text(ctx, "理解ッ！", 0, 0, 170, "dela", fill=g, stroke=BLACK, sw=14, outer=WHITE, ow=30, shadow=(12, 12, BLACK))
+            ctx.restore()
         if q > 1.2:
             a = clamp((q - 1.2) / 0.5)
             text(ctx, "エピジェネティクス ― 完", cx, 520, 34, "zen", fill=WHITE, stroke=BLACK, sw=8, alpha=a)
