@@ -35,3 +35,31 @@ python tools/lecture-video/medstudy_video.py assemble production/lecture-video/g
 ffmpeg -i production/lecture-video/genetics-basics-N-film/out/youtube-720.mp4 -vf scale=1920:1080:flags=lanczos -c:v libx264 -preset slow -crf 18 -tune animation -pix_fmt yuv420p -c:a copy -movflags +faststart production/lecture-video/youtube/lectureN.mp4
 python production/lecture-video/youtube/make_meta.py
 ```
+
+---
+
+# YouTube 投稿用セット（エピジェネティクス｜KO先生の黄金の授業）
+
+| ファイル | 中身 |
+|---|---|
+| `epigenetics.mp4` | 動画本体（1920×1080・24fps・H.264、音声 AAC 48 kHz、9分33秒）。字幕は絵の下の帯に焼き込み済み。Git には入れていない |
+| `epigenetics_29MB.mp4` | 同じ動画を 29 MB 以内に収めた版（854×480、チャット受け渡し用） |
+| `epigenetics_title.txt` | タイトル（55字） |
+| `epigenetics_description.txt` | 説明文（概要・14のチャプター・登場キャラクター・この動画について） |
+| `epigenetics_ja.srt` | 日本語字幕（79セリフ、時刻は映像と同じ） |
+| `epigenetics_thumbnail.jpg` | サムネイル（1280×720） |
+| `epigenetics_tags.txt` | タグ |
+
+投稿の手順は上と同じです（タイトル・説明を貼る → サムネイル → 子ども向けではない → タグ・日本語・教育 → 改変コンテンツは「いいえ」）。
+
+- **字幕**：映像に字幕が入っているので、SRT のアップロードは任意です。上げると、字幕（CC）を入れた人には二重に見えますが、YouTube の自動翻訳と検索に使われます。
+- **講義資料の権利**：内容は門松 毅 先生の講義資料「エピジェネティクス2026」（熊本大学）に沿っています。一般公開する前に、資料をもとにした動画を公開してよいか確認してください。確認が取れるまでは「限定公開」がおすすめです。
+- **画風**：キャラクター・決め台詞はすべてオリジナルです。特定の作品名はタイトル・タグ・説明に入れていません（入れると権利者の申し立ての対象になりやすいため）。
+- **音声合成・フォント**：上と同じ（edge-tts 経由の Microsoft Neural 音声。フォントは Zen Kaku Gothic New・Dela Gothic One・Reggae One、いずれも SIL OFL）。
+
+作り直すとき：
+
+```bash
+ffmpeg -i production/lecture-video/epigenetics-jojo/out/epigenetics_jojo.mp4 -vf scale=1920:1080:flags=lanczos -c:v libx264 -preset slow -crf 18 -tune animation -pix_fmt yuv420p -c:a aac -b:a 192k -ar 48000 -movflags +faststart production/lecture-video/youtube/epigenetics.mp4
+python3 production/lecture-video/youtube/make_epigenetics.py
+```
