@@ -27,7 +27,7 @@ export default function LecturesPage() {
         <p>{course.lecture.label}（スライド{course.lecture.slideRange[0]}–{course.lecture.slideRange[1]}）を、講師が説明するように1本ずつ再生します。ナレーション・字幕・スライドのハイライト・図解・アニメーションが同期して進み、重要な場面では自動で止まります。</p>
         <ol className="lroute">
           <li><b>授業を受ける</b><small>講義を選ぶ</small></li>
-          <li><b>授業動画</b><small>10〜16分の講義</small></li>
+          <li><b>{import.meta.env.VITE_NO_FILMS === '1' ? '黒板授業' : '授業動画'}</b><small>10〜16分の講義</small></li>
           <li><b>5択確認問題</b><small>その講義の範囲から</small></li>
           <li><b>弱点を復習</b><small>該当スライドへ戻る</small></li>
         </ol>

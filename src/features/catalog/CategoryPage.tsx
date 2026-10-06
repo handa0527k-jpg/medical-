@@ -10,12 +10,15 @@ import { StatusChip } from './StatusChip';
 import { fmtMinutes } from '../home/HomePage';
 
 type Tab = 'lectures' | 'materials' | 'quiz' | 'review';
-const TABS: { id: Tab; label: string; en: string }[] = [
+const NO_FILMS = import.meta.env.VITE_NO_FILMS === '1';
+const ALL_TABS: { id: Tab; label: string; en: string }[] = [
   { id: 'lectures', label: '授業動画', en: 'LECTURES' },
   { id: 'materials', label: '講義資料', en: 'MATERIALS' },
   { id: 'quiz', label: '確認問題', en: 'QUESTIONS' },
   { id: 'review', label: '復習', en: 'REVIEW' },
 ];
+// the edition without videos has no 授業動画 entry in its menu
+const TABS = NO_FILMS ? ALL_TABS.filter((t) => t.id !== 'lectures') : ALL_TABS;
 
 /** One medical field: its courses, each with lectures / materials / questions / review. */
 export function CategoryPage() {
@@ -47,7 +50,7 @@ export function CategoryPage() {
         )}
       </section>
 
-      {import.meta.env.VITE_NO_FILMS !== '1' && k.id === 'genetics' && list.length > 0 && (
+      {!NO_FILMS && k.id === 'genetics' && list.length > 0 && (
         <Link to="/category/genetics/video" className="cat-film">
           <span className="cf-ic" aria-hidden="true">🎬</span>
           <span><b>授業動画（劇画アニメーション）</b>教材から台本・医学図・映像指示を作り、ComfyUI × Wan 2.2 × Kokoro × FFmpeg で授業映像にする制作スタジオ。まずは30秒プロトタイプ。</span>
@@ -60,7 +63,7 @@ export function CategoryPage() {
         <div className="card cat-empty">
           <span className="cc-ic lg"><CategoryIcon name={k.icon} size={34} /></span>
           <h2>{k.name}の教材は準備中です</h2>
-          <p>講義資料（PDF）を追加すると、この分野に授業動画・教科書・確認問題・復習がまとまって表示されます。</p>
+          <p>講義資料（PDF）を追加すると、この分野に{NO_FILMS ? '授業' : '授業動画'}・教科書・確認問題・復習がまとまって表示されます。</p>
           <div className="btnrow" style={{ justifyContent: 'center' }}>
             <Link className="btn" to="/">ほかの分野を見る</Link>
           </div>
@@ -80,7 +83,7 @@ export function CategoryPage() {
 }
 
 function CourseBlock({ c, here }: { c: CourseProgress; here: string }) {
-  const [tab, setTab] = useState<Tab>('lectures');
+  const [tab, setTab] = useState<Tab>(TABS[0].id);
   const { meta, stats, s } = c;
   const to = (p: string) => `/open/${meta.id}/${p}`;
   const elsewhere = meta.category !== here ? categoryById(meta.category) : null;
