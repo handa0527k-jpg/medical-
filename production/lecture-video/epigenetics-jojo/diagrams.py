@@ -269,7 +269,7 @@ def chain(ctx, x0, y, n, gap, r, col, t, tag_kind=None, tagk=1.0, wave=0.0):
 def histone(ctx, step, lt, t):
     if step <= 3:
         header(ctx, "ヒストン八量体（H2A・H2B・H3・H4 ×2）", hexc("#ff4fa3"))
-        if clip3d(ctx, ("nuc_build", "nuc_wrap", "nuc_tags")[max(1, step) - 1], lt, 0, 44):
+        if clip3d(ctx, ("nuc_build", "nuc_wrap", "nuc_tags")[max(1, step) - 1], lt, CW / 2 + 25, 235, scale=1.2, center=True):
             for i, (lab, col) in enumerate((("H2A", PINK), ("H2B", ORANGE), ("H3", CYAN), ("H4", hexc("#7ee05a")))):
                 tag(ctx, lab, 34, 90 + i * 46, 19, col, size=13)
             text(ctx, "×2", 34, 278, 20, "dela", fill=BLACK)
@@ -369,7 +369,7 @@ def strands(ctx, x0, y, step_w=40, meth_top=0.0, meth_bot=0.0, glow=False, alpha
 def methylation(ctx, step, lt, t):
     if step == 1:
         header(ctx, "メチル化されるのは CpG のシトシン", hexc("#00a8c6"))
-        if clip3d(ctx, "dna_spin", lt, 70, 46, scale=0.78):
+        if clip3d(ctx, "dna_spin", lt, CW / 2, 195, scale=1.0, center=True):
             strands(ctx, 150, 335, step_w=25, glow=True, t=t, scale=0.6)
             text(ctx, "5'-C-p-G-3'（シトシンの次がグアニン）", CW / 2, 408, 22, "zen", fill=BLACK)
             text(ctx, "※酵母など一部を除く真核生物", CW / 2, 442, 16, "zen", fill=hexc("#555577"))
@@ -379,7 +379,7 @@ def methylation(ctx, step, lt, t):
             text(ctx, "※酵母など一部を除く真核生物", CW / 2, 380, 18, "zen", fill=hexc("#555577"))
     elif step == 2:
         header(ctx, "DNMT がシトシンの5位の炭素をメチル化", hexc("#00a8c6"))
-        if not clip3d(ctx, "dna_drop", lt, 100, 48, scale=0.66):
+        if not clip3d(ctx, "dna_drop", lt, CW / 2, 175, scale=0.95, center=True):
             strands(ctx, 75, 165, meth_top=lt / 1.2, meth_bot=lt / 1.2 - 0.3)
         # cytosine, clockwise from the top: N3, C4(-NH2), C5, C6, N1(-sugar), C2(=O)
         pts = hexagon_ring(ctx, 150, 345, 52, ["N", "C", None, "C", "N", "C"], CYAN)
@@ -422,7 +422,7 @@ def methylation(ctx, step, lt, t):
         text(ctx, "がん細胞ではがん抑制遺伝子の発現抑制にも", CW / 2, 440, 18, "zen", fill=RED)
     elif step == 4:
         header(ctx, "メチル化DNA → HDAC・HMT → HP1 → ヘテロクロマチン", hexc("#00a8c6"))
-        if not clip3d(ctx, "fiber_close", lt, 25, 150, scale=0.9):
+        if not clip3d(ctx, "fiber_close", lt, CW / 2, 285, scale=1.05, center=True):
             k = ease_out(lt / 2.0)
             chain(ctx, 80 + 90 * k, 300, 6, 90 - 40 * k, 30, PINK, t, ("Me", CYAN), tagk=lt / 1.5)
             for i in range(5):

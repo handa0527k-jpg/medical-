@@ -274,8 +274,8 @@ def gokai3d(ctx, ex, ey, es, t, talk=0.0, hurt=0.0, alpha=1.0, crack=0.0):
     sf = clip_surface("gokai", t)
     if sf is None:
         return False
-    k = 0.75 * es
-    hx, hy = ex + 70 * es + math.sin(t * 60) * hurt * 10, ey - 60 * es
+    k = 0.95 * es
+    hx, hy = ex + 10 * es + math.sin(t * 60) * hurt * 10, ey - 40 * es
     ctx.save()
     ctx.translate(hx, hy)
     ctx.scale(k * (1 - 0.03 * talk), k * (1 + 0.05 * talk))
