@@ -1,0 +1,853 @@
+{
+ "note": "One key image per shot (Nova Anime XL LCM, OpenVINO, CPU). 'at' = line index in the scene where the shot cuts in (0 = scene start). 'img' lets shots share one image (different camera / overlay). 'cam' = camera move, 'fx' = composited effects, 'ov' = procedural science overlay.",
+ "chars": {
+  "KIRI": "1boy, solo, male focus, silver hair, messy hair, blue eyes, white jacket, black shirt, silver necklace",
+  "MUSUBI": "1boy, solo, male focus, blonde hair, messy hair, orange eyes, light grey hoodie, black shirt, choker",
+  "TSUMUGI": "1girl, solo, light green hair, long hair, hair ribbon, aqua eyes, white hoodie, glowing, sparkle",
+  "YOMI": "1boy, solo, male focus, light blue hair, short hair, blue eyes, black hoodie",
+  "HAKOBU": "1boy, solo, male focus, dark brown hair, messy hair, brown eyes, denim jacket, white shirt, necklace",
+  "KAGE": "1boy, solo, male focus, black hair, messy hair, orange eyes, black hoodie, chain necklace, earrings",
+  "CAT": "no humans, cat, solo, grey cat, slender, short fur, amber eyes"
+ },
+ "shots": [
+  {
+   "id": "r1",
+   "scene": "rain",
+   "at": 0,
+   "cam": "push",
+   "fx": [
+    "rain",
+    "neon"
+   ],
+   "p": "no humans, scenery, narrow back alley, tokyo, heavy rain, wet asphalt, puddle reflections, glowing shop signs, street lamp, power lines, utility pole, mist, wide shot"
+  },
+  {
+   "id": "r2",
+   "scene": "rain",
+   "at": 1,
+   "cam": "tiltD",
+   "fx": [
+    "rain",
+    "ripples"
+   ],
+   "p": "no humans, scenery, close-up, wet asphalt, puddle, reflection of street lamp, neon reflection, raindrops, ripples, low angle"
+  },
+  {
+   "id": "r3",
+   "scene": "rain",
+   "at": 2,
+   "cam": "panR",
+   "fx": [
+    "rain"
+   ],
+   "p": "{CAT}, walking, from side, full body, wet street, back alley, street lamp"
+  },
+  {
+   "id": "r4",
+   "scene": "rain",
+   "at": 3,
+   "cam": "push",
+   "fx": [
+    "rain",
+    "neon"
+   ],
+   "p": "{CAT}, from behind, sitting, under street lamp, back alley, silhouette, wide shot"
+  },
+  {
+   "id": "r5",
+   "scene": "rain",
+   "at": 4,
+   "cam": "pushSlow",
+   "fx": [
+    "rain",
+    "eyes"
+   ],
+   "p": "{CAT}, looking back, looking at viewer, close-up, face focus, glowing eyes, wet fur"
+  },
+  {
+   "id": "r6",
+   "scene": "rain",
+   "at": 5,
+   "cam": "push",
+   "fx": [
+    "rain",
+    "title"
+   ],
+   "p": "{CAT}, quadruped, on all fours, walking away, from behind, tail up, deep back alley, light at end of alley, long shot, small figure, low angle",
+   "seed": 4242
+  },
+  {
+   "id": "s1",
+   "scene": "six",
+   "at": 0,
+   "cam": "push",
+   "fx": [
+    "rain",
+    "neon"
+   ],
+   "p": "5boys, 1girl, group, multiple boys, standing, leaning against wall, squatting, back alley, wide shot, from distance, silhouette, glowing particles"
+  },
+  {
+   "id": "s2",
+   "scene": "six",
+   "at": 2,
+   "cam": "pushSlow",
+   "fx": [
+    "rain"
+   ],
+   "p": "{HAKOBU}, upper body, leaning against wall, smile, looking at viewer, hands in pockets"
+  },
+  {
+   "id": "s3",
+   "scene": "six",
+   "at": 4,
+   "cam": "pushSlow",
+   "fx": [
+    "rain",
+    "sparks"
+   ],
+   "p": "{KIRI}, upper body, holding glowing scissors, magic, light particles, serious, looking at viewer"
+  },
+  {
+   "id": "s4",
+   "scene": "six",
+   "at": 5,
+   "cam": "pushSlow",
+   "fx": [
+    "rain",
+    "gold"
+   ],
+   "p": "{MUSUBI}, squatting, holding glowing golden thread, gentle smile, looking at viewer"
+  },
+  {
+   "id": "s5",
+   "scene": "six",
+   "at": 6,
+   "cam": "pushSlow",
+   "fx": [
+    "rain",
+    "sparks"
+   ],
+   "p": "{TSUMUGI}, upper body, light particles, smile, looking at viewer, hands together"
+  },
+  {
+   "id": "s6",
+   "scene": "six",
+   "at": 7,
+   "cam": "tiltU",
+   "fx": [
+    "rain"
+   ],
+   "p": "{YOMI}, upper body, looking up, starry sky, holding small glowing planet, smile"
+  },
+  {
+   "id": "s7",
+   "scene": "six",
+   "at": 8,
+   "cam": "pushSlow",
+   "fx": [
+    "rain",
+    "eyes"
+   ],
+   "p": "{KAGE}, squatting, hand on own chin, glowing eyes, dark, shadow, looking at viewer, expressionless"
+  },
+  {
+   "id": "s8",
+   "scene": "six",
+   "at": 9,
+   "cam": "pull",
+   "fx": [
+    "rain"
+   ],
+   "p": "{HAKOBU}, cowboy shot, standing, hands in pockets, smirk, looking at viewer"
+  },
+  {
+   "id": "s9",
+   "scene": "six",
+   "at": 10,
+   "cam": "tiltU",
+   "fx": [
+    "rain"
+   ],
+   "ov": "helixYears",
+   "p": "no humans, scenery, night sky between buildings, power lines, from below, dark sky, rooftops"
+  },
+  {
+   "id": "s10",
+   "scene": "six",
+   "at": 12,
+   "cam": "push",
+   "fx": [
+    "rain",
+    "sparks"
+   ],
+   "ov": "verbs",
+   "p": "no humans, scenery, back alley, glowing particles, fireflies, magic, puddles, wide shot"
+  },
+  {
+   "id": "c1",
+   "scene": "cut",
+   "at": 0,
+   "cam": "push",
+   "fx": [
+    "rain"
+   ],
+   "ov": "gatcWall",
+   "p": "no humans, close-up, concrete wall, wet wall, pipes, graffiti, neon light, dark"
+  },
+  {
+   "id": "c2",
+   "scene": "cut",
+   "at": 1,
+   "cam": "pushSlow",
+   "fx": [
+    "rain",
+    "sparks"
+   ],
+   "p": "{KIRI}, half body, holding glowing wand, magic circle, light particles, looking at viewer"
+  },
+  {
+   "id": "c3",
+   "scene": "cut",
+   "at": 2,
+   "img": "bokehBlue",
+   "cam": "still",
+   "fx": [
+    "rainSoft"
+   ],
+   "ov": "bamhi"
+  },
+  {
+   "id": "c4",
+   "scene": "cut",
+   "at": 4,
+   "img": "bokehBlue",
+   "cam": "push",
+   "fx": [
+    "rainSoft"
+   ],
+   "ov": "bamhiCut"
+  },
+  {
+   "id": "c5",
+   "scene": "cut",
+   "at": 6,
+   "cam": "pushSlow",
+   "fx": [
+    "rain"
+   ],
+   "ov": "stickyMini",
+   "p": "{KIRI}, portrait, close-up, face focus, looking at viewer, serious"
+  },
+  {
+   "id": "c6",
+   "scene": "cut",
+   "at": 7,
+   "img": "bokehPink",
+   "cam": "still",
+   "fx": [
+    "rainSoft"
+   ],
+   "ov": "smai"
+  },
+  {
+   "id": "c7",
+   "scene": "cut",
+   "at": 8,
+   "cam": "push",
+   "fx": [
+    "particles"
+   ],
+   "ov": "phage",
+   "p": "no humans, abstract, dark, microscopic world, floating cells, bioluminescence, deep blue, glowing particles"
+  },
+  {
+   "id": "c8",
+   "scene": "cut",
+   "at": 10,
+   "cam": "pushSlow",
+   "fx": [
+    "rain"
+   ],
+   "p": "{KIRI}, upper body, from side, looking down, sad, wet hair"
+  },
+  {
+   "id": "c9",
+   "scene": "cut",
+   "at": 11,
+   "cam": "pull",
+   "fx": [
+    "rain"
+   ],
+   "p": "{CAT}, sitting under eaves, looking up, rain, back alley, wide shot"
+  },
+  {
+   "id": "t1",
+   "scene": "tie",
+   "at": 0,
+   "cam": "panR",
+   "fx": [
+    "rain"
+   ],
+   "ov": "wires",
+   "p": "no humans, scenery, power lines, electric wires, utility pole, from below, night sky, rain, rooftops"
+  },
+  {
+   "id": "t2",
+   "scene": "tie",
+   "at": 1,
+   "cam": "pushSlow",
+   "fx": [
+    "rain",
+    "gold"
+   ],
+   "p": "{MUSUBI}, upper body, holding glowing golden thread, smile, looking at viewer"
+  },
+  {
+   "id": "t3",
+   "scene": "tie",
+   "at": 2,
+   "img": "bokehGold",
+   "cam": "still",
+   "fx": [
+    "rainSoft"
+   ],
+   "ov": "bamBgl"
+  },
+  {
+   "id": "t4",
+   "scene": "tie",
+   "at": 4,
+   "cam": "pushSlow",
+   "fx": [
+    "gold"
+   ],
+   "ov": "ligate",
+   "p": "no humans, close-up, two hands, tying glowing golden thread, sparkle, dark background, light particles"
+  },
+  {
+   "id": "t5",
+   "scene": "tie",
+   "at": 5,
+   "cam": "pushSlow",
+   "fx": [
+    "rain"
+   ],
+   "p": "{MUSUBI}, portrait, close-up, gentle smile, eyes half closed, face focus"
+  },
+  {
+   "id": "t6",
+   "scene": "tie",
+   "at": 6,
+   "cam": "pull",
+   "fx": [
+    "rain",
+    "neon"
+   ],
+   "p": "no humans, scenery, back alley, two street lamps, crossroads, rain, puddle reflection, quiet"
+  },
+  {
+   "id": "p1",
+   "scene": "planet",
+   "at": 0,
+   "cam": "tiltU",
+   "fx": [
+    "rainSoft"
+   ],
+   "ov": "planets",
+   "p": "no humans, scenery, fantasy, night sky, planets with rings floating above rooftops, back alley, from below, stars"
+  },
+  {
+   "id": "p2",
+   "scene": "planet",
+   "at": 1,
+   "cam": "pushSlow",
+   "fx": [
+    "rain"
+   ],
+   "p": "{HAKOBU}, upper body, from below, looking up, hands in pockets, night sky"
+  },
+  {
+   "id": "p3",
+   "scene": "planet",
+   "at": 2,
+   "img": "skyStars",
+   "cam": "still",
+   "fx": [],
+   "ov": "plasmidMap"
+  },
+  {
+   "id": "p4",
+   "scene": "planet",
+   "at": 4,
+   "img": "skyStars",
+   "cam": "push",
+   "fx": [],
+   "ov": "plasmidInsert"
+  },
+  {
+   "id": "p5",
+   "scene": "planet",
+   "at": 5,
+   "cam": "pushSlow",
+   "fx": [],
+   "ov": "transform",
+   "p": "no humans, still life, erlenmeyer flask, glowing liquid, petri dish, laboratory desk, night, window, rain on window, dark room"
+  },
+  {
+   "id": "p6",
+   "scene": "planet",
+   "at": 8,
+   "cam": "pushSlow",
+   "fx": [
+    "sparks"
+   ],
+   "p": "{TSUMUGI}, upper body, glowing green light, smile, explaining, index finger raised"
+  },
+  {
+   "id": "p7",
+   "scene": "planet",
+   "at": 9,
+   "cam": "tiltU",
+   "fx": [
+    "rainSoft"
+   ],
+   "p": "no humans, scenery, glowing jellyfish floating in the air, bioluminescence, green glow, back alley, night sky, fantasy"
+  },
+  {
+   "id": "p8",
+   "scene": "planet",
+   "at": 10,
+   "cam": "pull",
+   "fx": [
+    "rain",
+    "windows"
+   ],
+   "p": "no humans, scenery, apartment building, many lit windows, green light, night, rain, from below"
+  },
+  {
+   "id": "p9",
+   "scene": "planet",
+   "at": 11,
+   "cam": "pushSlow",
+   "fx": [
+    "rain"
+   ],
+   "ov": "vectors",
+   "p": "{HAKOBU}, upper body, leaning against wall, smirk, looking at viewer, arms crossed"
+  },
+  {
+   "id": "k1",
+   "scene": "copy",
+   "at": 0,
+   "cam": "pushSlow",
+   "fx": [
+    "sparks"
+   ],
+   "p": "{TSUMUGI}, upper body, holding glowing blue thread, weaving, light particles, looking at viewer"
+  },
+  {
+   "id": "k2",
+   "scene": "copy",
+   "at": 1,
+   "img": "bokehTeal",
+   "cam": "still",
+   "fx": [
+    "rainSoft"
+   ],
+   "ov": "cdna"
+  },
+  {
+   "id": "k3",
+   "scene": "copy",
+   "at": 4,
+   "cam": "pushSlow",
+   "fx": [
+    "sparks"
+   ],
+   "p": "{TSUMUGI}, portrait, close-up, gentle smile, face focus"
+  },
+  {
+   "id": "q1",
+   "scene": "pcr",
+   "at": 0,
+   "cam": "tiltU",
+   "fx": [
+    "rain",
+    "heat"
+   ],
+   "p": "no humans, scenery, back alley, red sky, crimson light, heat haze, rooftops, dramatic"
+  },
+  {
+   "id": "q2",
+   "scene": "pcr",
+   "at": 1,
+   "img": "bokehRed",
+   "cam": "still",
+   "fx": [
+    "heat"
+   ],
+   "ov": "denature"
+  },
+  {
+   "id": "q3",
+   "scene": "pcr",
+   "at": 2,
+   "cam": "tiltU",
+   "fx": [
+    "rain"
+   ],
+   "p": "no humans, scenery, back alley, blue light, cold, mist, blue sky at night, rooftops"
+  },
+  {
+   "id": "q4",
+   "scene": "pcr",
+   "at": 3,
+   "img": "bokehBlue",
+   "cam": "still",
+   "fx": [
+    "rainSoft"
+   ],
+   "ov": "anneal"
+  },
+  {
+   "id": "q5",
+   "scene": "pcr",
+   "at": 4,
+   "cam": "tiltU",
+   "fx": [
+    "rainSoft"
+   ],
+   "p": "no humans, scenery, back alley, green aurora in night sky, green light, rooftops, magical"
+  },
+  {
+   "id": "q6",
+   "scene": "pcr",
+   "at": 5,
+   "img": "bokehGreen",
+   "cam": "still",
+   "fx": [
+    "rainSoft"
+   ],
+   "ov": "extend"
+  },
+  {
+   "id": "q7",
+   "scene": "pcr",
+   "at": 6,
+   "img": "r1",
+   "cam": "push",
+   "fx": [
+    "rain",
+    "cycle"
+   ],
+   "ov": "doubling"
+  },
+  {
+   "id": "q8",
+   "scene": "pcr",
+   "at": 7,
+   "cam": "pushSlow",
+   "fx": [
+    "rain"
+   ],
+   "p": "{YOMI}, upper body, holding glowing hologram, counting on fingers, smile"
+  },
+  {
+   "id": "q9",
+   "scene": "pcr",
+   "at": 8,
+   "cam": "pushSlow",
+   "fx": [
+    "sparks",
+    "heat"
+   ],
+   "p": "{TSUMUGI}, upper body, confident smile, steam, warm light, hand on hip"
+  },
+  {
+   "id": "q10",
+   "scene": "pcr",
+   "at": 9,
+   "cam": "panR",
+   "fx": [],
+   "p": "no humans, scenery, car driving on mountain road at night, headlights, winding road, stars, california"
+  },
+  {
+   "id": "q11",
+   "scene": "pcr",
+   "at": 10,
+   "img": "bokehGreen",
+   "cam": "still",
+   "fx": [
+    "rainSoft"
+   ],
+   "ov": "qpcr"
+  },
+  {
+   "id": "g1",
+   "scene": "gel",
+   "at": 0,
+   "cam": "tiltD",
+   "fx": [
+    "ripples"
+   ],
+   "p": "no humans, close-up, from above, puddle on dark ground, glowing purple light, wet asphalt"
+  },
+  {
+   "id": "g2",
+   "scene": "gel",
+   "at": 1,
+   "cam": "pushSlow",
+   "fx": [
+    "rain"
+   ],
+   "p": "{YOMI}, squatting, looking down, glowing ground, purple light, curious"
+  },
+  {
+   "id": "g3",
+   "scene": "gel",
+   "at": 2,
+   "img": "bokehPurple",
+   "cam": "still",
+   "fx": [],
+   "ov": "gel"
+  },
+  {
+   "id": "g4",
+   "scene": "gel",
+   "at": 3,
+   "cam": "panR",
+   "fx": [
+    "rain"
+   ],
+   "ov": "gelGround",
+   "p": "{CAT}, walking, from side, low angle, glowing lines on wet ground, purple light"
+  },
+  {
+   "id": "g5",
+   "scene": "gel",
+   "at": 5,
+   "img": "bokehPurple",
+   "cam": "still",
+   "fx": [],
+   "ov": "vntr"
+  },
+  {
+   "id": "e1",
+   "scene": "read",
+   "at": 0,
+   "cam": "pushSlow",
+   "fx": [
+    "rain"
+   ],
+   "p": "{YOMI}, upper body, looking at viewer, smile, starry sky, stars in eyes"
+  },
+  {
+   "id": "e2",
+   "scene": "read",
+   "at": 1,
+   "img": "bokehBlue",
+   "cam": "still",
+   "fx": [
+    "rainSoft"
+   ],
+   "ov": "sanger"
+  },
+  {
+   "id": "e3",
+   "scene": "read",
+   "at": 3,
+   "img": "bokehTeal",
+   "cam": "still",
+   "fx": [],
+   "ov": "capillary"
+  },
+  {
+   "id": "e4",
+   "scene": "read",
+   "at": 4,
+   "cam": "tiltU",
+   "fx": [],
+   "ov": "flowcell",
+   "p": "no humans, scenery, starry sky, countless stars, galaxy, from below, back alley, rooftops, power lines silhouette"
+  },
+  {
+   "id": "e5",
+   "scene": "read",
+   "at": 7,
+   "cam": "pull",
+   "fx": [],
+   "p": "{CAT}, sitting on rooftop, from behind, looking at starry sky, night, city"
+  },
+  {
+   "id": "e6",
+   "scene": "read",
+   "at": 8,
+   "cam": "pushSlow",
+   "fx": [
+    "rain"
+   ],
+   "p": "{YOMI}, portrait, close-up, gentle smile, face focus, looking up"
+  },
+  {
+   "id": "h1",
+   "scene": "shadow",
+   "at": 0,
+   "cam": "pushSlow",
+   "fx": [
+    "rain",
+    "flicker"
+   ],
+   "p": "no humans, giant shadow, silhouette, dark creature, glowing orange eyes, back alley, ominous, fog, street lamp"
+  },
+  {
+   "id": "h2",
+   "scene": "shadow",
+   "at": 1,
+   "cam": "pushSlow",
+   "fx": [
+    "rain",
+    "eyes"
+   ],
+   "p": "{KAGE}, upper body, glowing eyes, looking at viewer, dark, shadow over eyes, serious"
+  },
+  {
+   "id": "h3",
+   "scene": "shadow",
+   "at": 2,
+   "img": "bokehOrange",
+   "cam": "still",
+   "fx": [
+    "rainSoft"
+   ],
+   "ov": "zfnTalen"
+  },
+  {
+   "id": "h4",
+   "scene": "shadow",
+   "at": 4,
+   "img": "bokehOrange",
+   "cam": "push",
+   "fx": [
+    "rainSoft"
+   ],
+   "ov": "cas9"
+  },
+  {
+   "id": "h5",
+   "scene": "shadow",
+   "at": 6,
+   "cam": "pushSlow",
+   "fx": [
+    "rain",
+    "eyes"
+   ],
+   "p": "{KAGE}, portrait, extreme close-up, eyes focus, glowing orange eyes, wet hair"
+  },
+  {
+   "id": "h6",
+   "scene": "shadow",
+   "at": 7,
+   "img": "bokehBlue",
+   "cam": "still",
+   "fx": [
+    "rainSoft"
+   ],
+   "ov": "nhejHdr"
+  },
+  {
+   "id": "h7",
+   "scene": "shadow",
+   "at": 9,
+   "cam": "pushSlow",
+   "fx": [
+    "rain"
+   ],
+   "p": "{HAKOBU}, upper body, serious, looking to the side, rain, wet hair"
+  },
+  {
+   "id": "h8",
+   "scene": "shadow",
+   "at": 10,
+   "img": "bokehPurple",
+   "cam": "still",
+   "fx": [
+    "rainSoft"
+   ],
+   "ov": "epigenome"
+  },
+  {
+   "id": "h9",
+   "scene": "shadow",
+   "at": 11,
+   "cam": "pull",
+   "fx": [
+    "windowRain"
+   ],
+   "p": "no humans, scenery, rainy window, raindrops on glass, blurry city lights, night, lonely"
+  },
+  {
+   "id": "h10",
+   "scene": "shadow",
+   "at": 13,
+   "cam": "pull",
+   "fx": [
+    "rain"
+   ],
+   "p": "{KAGE}, from behind, walking away, back alley, rain, hands in pockets, full body"
+  },
+  {
+   "id": "n1",
+   "scene": "end",
+   "at": 0,
+   "cam": "push",
+   "fx": [
+    "rainLight",
+    "neon"
+   ],
+   "p": "no humans, scenery, back alley after rain, puddles, reflections, light rain, quiet, street lamp"
+  },
+  {
+   "id": "n2",
+   "scene": "end",
+   "at": 1,
+   "img": "s1",
+   "cam": "pull",
+   "fx": [
+    "rainLight",
+    "fadeOut"
+   ],
+   "ov": "verbsEnd"
+  },
+  {
+   "id": "n3",
+   "scene": "end",
+   "at": 3,
+   "img": "r6",
+   "cam": "pushSlow",
+   "fx": [
+    "rainLight"
+   ]
+  },
+  {
+   "id": "n4",
+   "scene": "end",
+   "at": 4,
+   "cam": "tiltU",
+   "fx": [],
+   "ov": "credits",
+   "p": "no humans, scenery, night sky, clouds parting, full moon, rooftops, power lines, after rain, peaceful"
+  }
+ ],
+ "bokeh": {
+  "bokehBlue": "#4fa8ff",
+  "bokehPink": "#ff5fa8",
+  "bokehGold": "#ffc45a",
+  "bokehTeal": "#3fe0d0",
+  "bokehRed": "#ff4a3a",
+  "bokehGreen": "#5dff8a",
+  "bokehPurple": "#b06bff",
+  "bokehOrange": "#ff8a2a",
+  "skyStars": "#8fb8ff"
+ }
+}
