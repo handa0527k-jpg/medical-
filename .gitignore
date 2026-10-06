@@ -34,3 +34,5 @@ tools/lecture-video/models/
 
 production/lecture-video/youtube/*.mp4
 __pycache__/
+production/alley-genome/final.mp4
+production/alley-genome/final.srt
