@@ -1,0 +1,724 @@
+{
+ "title": "GENE QUEST ―設計図の勇者―",
+ "voiceEnd": 484.676,
+ "duration": 491.2,
+ "blocks": [
+  {
+   "id": "b01",
+   "scene": "title",
+   "plan": 0,
+   "start": 0.0,
+   "end": 20.0
+  },
+  {
+   "id": "b02",
+   "scene": "history",
+   "plan": 20,
+   "start": 20.0,
+   "end": 40.04
+  },
+  {
+   "id": "b03",
+   "scene": "smith",
+   "plan": 40,
+   "start": 40.04,
+   "end": 65.04
+  },
+  {
+   "id": "b04",
+   "scene": "ligase",
+   "plan": 65,
+   "start": 65.04,
+   "end": 85.04
+  },
+  {
+   "id": "b05",
+   "scene": "puzzle",
+   "plan": 85,
+   "start": 85.04,
+   "end": 100.04
+  },
+  {
+   "id": "b06",
+   "scene": "rt",
+   "plan": 100,
+   "start": 100.04,
+   "end": 125.04
+  },
+  {
+   "id": "b07",
+   "scene": "market",
+   "plan": 125,
+   "start": 125.04,
+   "end": 150.04
+  },
+  {
+   "id": "b08",
+   "scene": "factory",
+   "plan": 150,
+   "start": 150.04,
+   "end": 175.04
+  },
+  {
+   "id": "b09",
+   "scene": "gfp",
+   "plan": 175,
+   "start": 175.04,
+   "end": 195.04
+  },
+  {
+   "id": "b10",
+   "scene": "harbor",
+   "plan": 195,
+   "start": 195.04,
+   "end": 220.04
+  },
+  {
+   "id": "b11",
+   "scene": "library",
+   "plan": 220,
+   "start": 220.04,
+   "end": 245.04
+  },
+  {
+   "id": "b12",
+   "scene": "pcr",
+   "plan": 245,
+   "start": 245.04,
+   "end": 270.04
+  },
+  {
+   "id": "b13",
+   "scene": "vntr",
+   "plan": 270,
+   "start": 270.04,
+   "end": 295.04
+  },
+  {
+   "id": "b14",
+   "scene": "gel",
+   "plan": 295,
+   "start": 295.04,
+   "end": 315.04
+  },
+  {
+   "id": "b15",
+   "scene": "qpcr",
+   "plan": 315,
+   "start": 315.04,
+   "end": 340.34
+  },
+  {
+   "id": "b16",
+   "scene": "sanger",
+   "plan": 340,
+   "start": 340.34,
+   "end": 360.34
+  },
+  {
+   "id": "b17",
+   "scene": "ngs",
+   "plan": 360,
+   "start": 360.34,
+   "end": 385.34
+  },
+  {
+   "id": "b18",
+   "scene": "seq",
+   "plan": 385,
+   "start": 385.34,
+   "end": 406.33
+  },
+  {
+   "id": "b19",
+   "scene": "crispr",
+   "plan": 405,
+   "start": 406.33,
+   "end": 427.656
+  },
+  {
+   "id": "b20",
+   "scene": "repair",
+   "plan": 425,
+   "start": 427.656,
+   "end": 447.523
+  },
+  {
+   "id": "b21",
+   "scene": "finale",
+   "plan": 440,
+   "start": 447.523,
+   "end": 468.774
+  },
+  {
+   "id": "b22",
+   "scene": "epilogue",
+   "plan": 460,
+   "start": 468.774,
+   "end": null
+  }
+ ],
+ "lines": [
+  {
+   "id": "b01-1",
+   "block": "b01",
+   "who": "N",
+   "text": "新たな冒険が、今ここに始まる。",
+   "start": 0.0,
+   "end": 3.672,
+   "dur": 3.672,
+   "file": ".audio-cache/gene-quest/291d1b93a219.mp3",
+   "rate": "+4%"
+  },
+  {
+   "id": "b01-2",
+   "block": "b01",
+   "who": "N",
+   "text": "これは、目に見えない設計図を読み、書き換え、活かす技術――遺伝子工学の物語だ。",
+   "start": 4.022,
+   "end": 12.518,
+   "dur": 8.496,
+   "file": ".audio-cache/gene-quest/714b26f0fb61.mp3",
+   "rate": "+4%"
+  },
+  {
+   "id": "b01-3",
+   "block": "b01",
+   "who": "師匠",
+   "text": "まずは道具を揃えよ。",
+   "start": 12.868,
+   "end": 15.484,
+   "dur": 2.616,
+   "file": ".audio-cache/gene-quest/ff22edae2ac6.mp3",
+   "rate": "-10%"
+  },
+  {
+   "id": "b02-1",
+   "block": "b02",
+   "who": "N",
+   "text": "過去の発見が一つずつ扉を開き、今の技術を可能にした。",
+   "start": 20.0,
+   "end": 25.616,
+   "dur": 5.616,
+   "file": ".audio-cache/gene-quest/fe180c87dd37.mp3",
+   "rate": "+4%"
+  },
+  {
+   "id": "b02-2",
+   "block": "b02",
+   "who": "N",
+   "text": "DNAの発見、二重らせんの解明、制限酵素、PCR、配列決定、そしてゲノムの解読――それぞれが次の一手を生んだのだ。",
+   "start": 26.0,
+   "end": 38.84,
+   "dur": 12.84,
+   "file": ".audio-cache/gene-quest/323ff62305ef.mp3",
+   "rate": "+4%"
+  },
+  {
+   "id": "b03-1",
+   "block": "b03",
+   "who": "N",
+   "text": "制限酵素は、特定の配列を見つけてDNAを切る“分子のハサミ”。",
+   "start": 40.04,
+   "end": 46.904,
+   "dur": 6.864,
+   "file": ".audio-cache/gene-quest/7745e1d63278.mp3",
+   "rate": "+4%"
+  },
+  {
+   "id": "b03-2",
+   "block": "b03",
+   "who": "N",
+   "text": "切り方には、相補的にくっつきやすい突出末端と、平らに切れる平滑末端がある。設計はここから始まる。",
+   "start": 48.04,
+   "end": 58.312,
+   "dur": 10.272,
+   "file": ".audio-cache/gene-quest/2096ba30542c.mp3",
+   "rate": "+4%"
+  },
+  {
+   "id": "b03-3",
+   "block": "b03",
+   "who": "師匠",
+   "text": "配列を見極めよ。",
+   "start": 58.662,
+   "end": 61.086,
+   "dur": 2.424,
+   "file": ".audio-cache/gene-quest/c6e5927a3dbd.mp3",
+   "rate": "-10%"
+  },
+  {
+   "id": "b04-1",
+   "block": "b04",
+   "who": "N",
+   "text": "切断した断片をつなぐのがDNAリガーゼだ。",
+   "start": 65.04,
+   "end": 69.624,
+   "dur": 4.584,
+   "file": ".audio-cache/gene-quest/df6ce4c6ac6d.mp3",
+   "rate": "+4%"
+  },
+  {
+   "id": "b04-2",
+   "block": "b04",
+   "who": "N",
+   "text": "5'のリン酸と3'のOHを結び、断片を一つにする。切って終わりではなく、つなぐことで初めて組換えが完成する。",
+   "start": 70.04,
+   "end": 82.016,
+   "dur": 11.976,
+   "file": ".audio-cache/gene-quest/85522be96bda.mp3",
+   "rate": "+4%"
+  },
+  {
+   "id": "b05-1",
+   "block": "b05",
+   "who": "N",
+   "text": "異なる酵素で切っても、切り口の形が合えば連結できる。",
+   "start": 85.04,
+   "end": 90.2,
+   "dur": 5.16,
+   "file": ".audio-cache/gene-quest/bcf058352946.mp3",
+   "rate": "+4%"
+  },
+  {
+   "id": "b05-2",
+   "block": "b05",
+   "who": "N",
+   "text": "これにより、設計の自由度が大きく広がるのだ。",
+   "start": 91.04,
+   "end": 95.48,
+   "dur": 4.44,
+   "file": ".audio-cache/gene-quest/3afe17a4bf3d.mp3",
+   "rate": "+4%"
+  },
+  {
+   "id": "b06-1",
+   "block": "b06",
+   "who": "N",
+   "text": "逆転写酵素は、mRNAの歌を本に写す魔法のような存在だ。",
+   "start": 100.04,
+   "end": 106.424,
+   "dur": 6.384,
+   "file": ".audio-cache/gene-quest/1e6497801fcf.mp3",
+   "rate": "+4%"
+  },
+  {
+   "id": "b06-2",
+   "block": "b06",
+   "who": "N",
+   "text": "mRNAのポリA尾にポリTプライマーを結び、cDNAを作ることで、発現情報を安定に保存できる。",
+   "start": 106.774,
+   "end": 116.422,
+   "dur": 9.648,
+   "file": ".audio-cache/gene-quest/ff6032ff5a74.mp3",
+   "rate": "+4%"
+  },
+  {
+   "id": "b06-3",
+   "block": "b06",
+   "who": "師匠",
+   "text": "発現の声を記録せよ。",
+   "start": 118.04,
+   "end": 120.896,
+   "dur": 2.856,
+   "file": ".audio-cache/gene-quest/be16ded77e77.mp3",
+   "rate": "-10%"
+  },
+  {
+   "id": "b07-1",
+   "block": "b07",
+   "who": "N",
+   "text": "ベクターはDNAを運ぶ乗り物だ。小さなプラスミドから巨大なYACまで、運べる荷物の大きさや用途に応じて使い分ける必要がある。",
+   "start": 125.04,
+   "end": 137.376,
+   "dur": 12.336,
+   "file": ".audio-cache/gene-quest/033fcee227a7.mp3",
+   "rate": "+4%"
+  },
+  {
+   "id": "b07-2",
+   "block": "b07",
+   "who": "N",
+   "text": "用途に合わせて最適な乗り物を選ぶことが、実験成功の第一歩だ。",
+   "start": 138.04,
+   "end": 144.304,
+   "dur": 6.264,
+   "file": ".audio-cache/gene-quest/01adbbf2d545.mp3",
+   "rate": "+4%"
+  },
+  {
+   "id": "b08-1",
+   "block": "b08",
+   "who": "N",
+   "text": "発現ベクターに強力なプロモーターと目的遺伝子を組み込めば、細胞は工場となりタンパク質を大量生産する。",
+   "start": 150.04,
+   "end": 159.712,
+   "dur": 9.672,
+   "file": ".audio-cache/gene-quest/9e4aa728e4e2.mp3",
+   "rate": "+4%"
+  },
+  {
+   "id": "b08-2",
+   "block": "b08",
+   "who": "N",
+   "text": "インスリンや成長ホルモン、ワクチンの抗原など、医薬品や研究用試料はこうして生まれるのだ。",
+   "start": 160.062,
+   "end": 167.934,
+   "dur": 7.872,
+   "file": ".audio-cache/gene-quest/1d6f48ddc602.mp3",
+   "rate": "+4%"
+  },
+  {
+   "id": "b09-1",
+   "block": "b09",
+   "who": "N",
+   "text": "GFPはタンパク質に光る宝石を付けるようなもの。どこにいるか、どう動くかを生きたまま可視化できる。",
+   "start": 175.04,
+   "end": 184.664,
+   "dur": 9.624,
+   "file": ".audio-cache/gene-quest/7a6b4484bdc9.mp3",
+   "rate": "+4%"
+  },
+  {
+   "id": "b09-2",
+   "block": "b09",
+   "who": "N",
+   "text": "観察の世界を一変させた発明だ。",
+   "start": 187.04,
+   "end": 190.64,
+   "dur": 3.6,
+   "file": ".audio-cache/gene-quest/25ea8c869d27.mp3",
+   "rate": "+4%"
+  },
+  {
+   "id": "b10-1",
+   "block": "b10",
+   "who": "N",
+   "text": "ウイルスベクターは遺伝子の宅配便だ。AAVは比較的安全で長期発現、アデノは強力だが一過性、レンチは組み込み型で長期発現をもたらす。",
+   "start": 195.04,
+   "end": 208.744,
+   "dur": 13.704,
+   "file": ".audio-cache/gene-quest/bd515f6a7c66.mp3",
+   "rate": "+4%"
+  },
+  {
+   "id": "b10-2",
+   "block": "b10",
+   "who": "師匠",
+   "text": "届け先を見誤るな。",
+   "start": 211.04,
+   "end": 213.656,
+   "dur": 2.616,
+   "file": ".audio-cache/gene-quest/c4577a8228fe.mp3",
+   "rate": "-10%"
+  },
+  {
+   "id": "b11-1",
+   "block": "b11",
+   "who": "N",
+   "text": "ライブラリーは遺伝子の図書館だ。ゲノム全体を保存する棚と、発現中の遺伝子だけを集めた棚がある。",
+   "start": 220.04,
+   "end": 229.544,
+   "dur": 9.504,
+   "file": ".audio-cache/gene-quest/698085d0d31a.mp3",
+   "rate": "+4%"
+  },
+  {
+   "id": "b11-2",
+   "block": "b11",
+   "who": "N",
+   "text": "プローブで当たりを見つけ出すスクリーニングが探索の要となる。",
+   "start": 231.04,
+   "end": 236.368,
+   "dur": 5.328,
+   "file": ".audio-cache/gene-quest/e3914b0380f9.mp3",
+   "rate": "+4%"
+  },
+  {
+   "id": "b12-1",
+   "block": "b12",
+   "who": "N",
+   "text": "PCRは熱サイクルを繰り返して特定領域を指数的に増やす術だ。",
+   "start": 245.04,
+   "end": 252.0,
+   "dur": 6.96,
+   "file": ".audio-cache/gene-quest/772065595586.mp3",
+   "rate": "+4%"
+  },
+  {
+   "id": "b12-2",
+   "block": "b12",
+   "who": "N",
+   "text": "変性、アニーリング、伸長の三段階を正確に制御することで、目的配列を短時間で大量に得られる。",
+   "start": 252.35,
+   "end": 261.854,
+   "dur": 9.504,
+   "file": ".audio-cache/gene-quest/7c50ad0f4510.mp3",
+   "rate": "+4%"
+  },
+  {
+   "id": "b12-3",
+   "block": "b12",
+   "who": "師匠",
+   "text": "プライマーを慎重に設計せよ。",
+   "start": 262.204,
+   "end": 265.42,
+   "dur": 3.216,
+   "file": ".audio-cache/gene-quest/edb8868b7207.mp3",
+   "rate": "-10%"
+  },
+  {
+   "id": "b13-1",
+   "block": "b13",
+   "who": "N",
+   "text": "PCRで増幅した断片をベクターに組み込み、細菌で増やせばクローンが得られる。",
+   "start": 270.04,
+   "end": 277.216,
+   "dur": 7.176,
+   "file": ".audio-cache/gene-quest/5445a3365058.mp3",
+   "rate": "+4%"
+  },
+  {
+   "id": "b13-2",
+   "block": "b13",
+   "who": "N",
+   "text": "VNTRのような反復配列は個体ごとに長さが異なり、DNA鑑定に利用される。",
+   "start": 278.04,
+   "end": 286.032,
+   "dur": 7.992,
+   "file": ".audio-cache/gene-quest/0f9abebf79c6.mp3",
+   "rate": "+4%"
+  },
+  {
+   "id": "b13-3",
+   "block": "b13",
+   "who": "N",
+   "text": "法医学や系統解析など、応用範囲は広い。",
+   "start": 288.04,
+   "end": 292.552,
+   "dur": 4.512,
+   "file": ".audio-cache/gene-quest/66bc3f94998c.mp3",
+   "rate": "+4%"
+  },
+  {
+   "id": "b14-1",
+   "block": "b14",
+   "who": "N",
+   "text": "電気泳動はDNA断片をサイズで分ける基本技術だ。小さな断片ほど速く移動する。",
+   "start": 295.04,
+   "end": 304.016,
+   "dur": 8.976,
+   "file": ".audio-cache/gene-quest/c307cd2e734d.mp3",
+   "rate": "+4%"
+  },
+  {
+   "id": "b14-2",
+   "block": "b14",
+   "who": "N",
+   "text": "EtBrなどの染料で可視化し、バンドを確認する。取り扱いには注意が必要だ。",
+   "start": 304.366,
+   "end": 312.862,
+   "dur": 8.496,
+   "file": ".audio-cache/gene-quest/347763f6dbd9.mp3",
+   "rate": "+4%"
+  },
+  {
+   "id": "b15-1",
+   "block": "b15",
+   "who": "N",
+   "text": "RT-PCRはmRNAをcDNAに変換して増幅し、発現の有無や相対量を比較する手法だ。",
+   "start": 315.04,
+   "end": 324.88,
+   "dur": 9.84,
+   "file": ".audio-cache/gene-quest/4f7be9948dc5.mp3",
+   "rate": "+4%"
+  },
+  {
+   "id": "b15-2",
+   "block": "b15",
+   "who": "N",
+   "text": "qPCRは増幅過程で蛍光を測り、Ct値を用いて定量する。検量線を作れば絶対量も推定できる。",
+   "start": 325.23,
+   "end": 336.51,
+   "dur": 11.28,
+   "file": ".audio-cache/gene-quest/7649f8fe3509.mp3",
+   "rate": "+4%"
+  },
+  {
+   "id": "b15-3",
+   "block": "b15",
+   "who": "師匠",
+   "text": "基準を忘れるな。",
+   "start": 336.86,
+   "end": 339.14,
+   "dur": 2.28,
+   "file": ".audio-cache/gene-quest/c500f6939c0e.mp3",
+   "rate": "-10%"
+  },
+  {
+   "id": "b16-1",
+   "block": "b16",
+   "who": "N",
+   "text": "Sanger法はddNTPによる伸長終結を利用した配列決定法だ。",
+   "start": 340.34,
+   "end": 347.42,
+   "dur": 7.08,
+   "file": ".audio-cache/gene-quest/6bd118a25122.mp3",
+   "rate": "+4%"
+  },
+  {
+   "id": "b16-2",
+   "block": "b16",
+   "who": "N",
+   "text": "蛍光標識とキャピラリー電気泳動で自動化され、小〜中規模の配列解析で高精度を発揮する。",
+   "start": 347.77,
+   "end": 356.89,
+   "dur": 9.12,
+   "file": ".audio-cache/gene-quest/7e40e47b1432.mp3",
+   "rate": "+4%"
+  },
+  {
+   "id": "b17-1",
+   "block": "b17",
+   "who": "N",
+   "text": "次世代シークエンサーは並列で膨大な断片を読み取る技術だ。",
+   "start": 360.34,
+   "end": 366.004,
+   "dur": 5.664,
+   "file": ".audio-cache/gene-quest/108499d9fde7.mp3",
+   "rate": "+4%"
+  },
+  {
+   "id": "b17-2",
+   "block": "b17",
+   "who": "N",
+   "text": "フローセル上でブリッジPCRによりクラスターを作り、各クラスターを個別にシーケンスすることで、短時間でゲノム全体を網羅できる。",
+   "start": 366.354,
+   "end": 377.322,
+   "dur": 10.968,
+   "file": ".audio-cache/gene-quest/2aaaa756ff23.mp3",
+   "rate": "+4%"
+  },
+  {
+   "id": "b18-1",
+   "block": "b18",
+   "who": "N",
+   "text": "RNA-seqは組織全体の発現を網羅し、シングルセルRNA-seqは個々の細胞の発現プロファイルを明らかにする。",
+   "start": 385.34,
+   "end": 395.876,
+   "dur": 10.536,
+   "file": ".audio-cache/gene-quest/bb4b29c54a0d.mp3",
+   "rate": "+4%"
+  },
+  {
+   "id": "b18-2",
+   "block": "b18",
+   "who": "N",
+   "text": "Spatial技術は位置情報を保持したまま発現を解析し、組織構造と機能の関連を解き明かす。",
+   "start": 396.226,
+   "end": 405.13,
+   "dur": 8.904,
+   "file": ".audio-cache/gene-quest/98e0a185bd97.mp3",
+   "rate": "+4%"
+  },
+  {
+   "id": "b19-1",
+   "block": "b19",
+   "who": "N",
+   "text": "ゲノム編集は任意の配列に二本鎖切断を導入し、細胞の修復機構を利用して改変を行う技術だ。",
+   "start": 406.33,
+   "end": 416.026,
+   "dur": 9.696,
+   "file": ".audio-cache/gene-quest/6d74f799d43f.mp3",
+   "rate": "+4%"
+  },
+  {
+   "id": "b19-2",
+   "block": "b19",
+   "who": "N",
+   "text": "CRISPR/Cas9はガイドRNAで標的を指定する簡便性から広く使われるが、オフターゲットのリスク管理が重要である。",
+   "start": 416.376,
+   "end": 426.456,
+   "dur": 10.08,
+   "file": ".audio-cache/gene-quest/e0925645b501.mp3",
+   "rate": "+4%"
+  },
+  {
+   "id": "b20-1",
+   "block": "b20",
+   "who": "N",
+   "text": "切断後の修復は主にNHEJとHDRに分かれる。",
+   "start": 427.656,
+   "end": 432.838,
+   "dur": 5.182,
+   "file": ".audio-cache/gene-quest/ec7aa6288f8b.mp3",
+   "rate": "+14%"
+  },
+  {
+   "id": "b20-2",
+   "block": "b20",
+   "who": "N",
+   "text": "NHEJは迅速だが不正確で欠失や挿入を生じやすく、HDRは正確だが細胞周期に依存する。目的に応じて戦略を選ぶことが成功の鍵だ。",
+   "start": 433.188,
+   "end": 446.323,
+   "dur": 13.135,
+   "file": ".audio-cache/gene-quest/ae7a60869d6f.mp3",
+   "rate": "+14%"
+  },
+  {
+   "id": "b21-1",
+   "block": "b21",
+   "who": "N",
+   "text": "遺伝子改変動物は病態解明や薬効評価のためのモデルである。",
+   "start": 447.523,
+   "end": 453.595,
+   "dur": 6.072,
+   "file": ".audio-cache/gene-quest/cab9fe418e1a.mp3",
+   "rate": "+10%"
+  },
+  {
+   "id": "b21-2",
+   "block": "b21",
+   "who": "N",
+   "text": "ここまでに得た道具を統合して、病の原因を解き、治療戦略を設計する。実験計画とデータ解釈が勝敗を分けるのだ。",
+   "start": 453.945,
+   "end": 464.392,
+   "dur": 10.447,
+   "file": ".audio-cache/gene-quest/0621727d7884.mp3",
+   "rate": "+10%"
+  },
+  {
+   "id": "b21-3",
+   "block": "b21",
+   "who": "師匠",
+   "text": "道具は使い方が肝心だ。",
+   "start": 464.742,
+   "end": 467.574,
+   "dur": 2.832,
+   "file": ".audio-cache/gene-quest/854c0477830e.mp3",
+   "rate": "-4%"
+  },
+  {
+   "id": "b22-1",
+   "block": "b22",
+   "who": "N",
+   "text": "技術の習得は始まりに過ぎない。安全性、倫理、社会的責任を常に意識し、知識を正しく使うことが、真の力となる。",
+   "start": 468.774,
+   "end": 481.062,
+   "dur": 12.288,
+   "file": ".audio-cache/gene-quest/f7704b53dc22.mp3",
+   "rate": "+4%"
+  },
+  {
+   "id": "b22-2",
+   "block": "b22",
+   "who": "N",
+   "text": "次の旅は、そこから始まる。",
+   "start": 481.412,
+   "end": 484.676,
+   "dur": 3.264,
+   "file": ".audio-cache/gene-quest/973ac18e06fe.mp3",
+   "rate": "+4%"
+  }
+ ]
+}

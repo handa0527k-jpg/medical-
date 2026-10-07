@@ -33,3 +33,6 @@ production/lecture-video/*/wan/
 tools/lecture-video/models/
 
 production/lecture-video/youtube/*.mp4
+production/gene-quest/out/
+production/gene-quest/out_render.log
+production/gene-quest/__pycache__/
