@@ -18,6 +18,8 @@
 
 | ファイル | 内容 |
 |---|---|
+| `youtube/` | **YouTube 投稿用セット**：動画本体 `rojiura_no_genome.mp4`（1080p・Git LFS）、タイトル・説明（チャプター付き）・タグ・字幕・サムネイル。手順は `youtube/README.md` |
+| `thumbnails/` | サムネイル3案（A 猫／B 六人／C カゲとCRISPR、投稿には C を採用） |
 | `sample/sample_30s.mp4` | 30秒サンプル（冒頭） |
 | `chapters/00_rain.mp4` … `10_end.mp4` | 本編を章ごとに分けたもの（1920×1080・24fps・H.264／AAC、字幕は画面に焼き込み）。GitHub の 100 MB 制限のため章で分割 |
 | `rojiura_no_genome_full.mp4`（git 外） | 本編まるごと 11分30秒・約290 MB・日本語字幕トラック付き。`chapters/` をつないだもの |
