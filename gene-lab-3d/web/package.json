@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc --noEmit && vite build",
-    "build:json-models": "tsc --noEmit && VITE_GLTF_JSON=1 vite build && python3 scripts/glb-to-json.py dist/models",
+    "build:hosted": "tsc --noEmit && VITE_MODELS_JSON=1 vite build && node scripts/hosted-models.mjs dist/models",
     "preview": "vite preview --port 4174",
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
@@ -18,8 +18,12 @@
     "three": "^0.186.1"
   },
   "devDependencies": {
+    "@gltf-transform/core": "^4.5.1",
+    "@gltf-transform/extensions": "^4.5.1",
+    "@gltf-transform/functions": "^4.5.1",
     "@playwright/test": "^1.56.1",
     "@types/three": "^0.186.0",
+    "draco3dgltf": "^1.5.7",
     "typescript": "^7.0.2",
     "vite": "^8.3.1",
     "vitest": "^5.0.2"

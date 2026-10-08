@@ -68,6 +68,8 @@ npm run dev          # 開発サーバ
 npm run build        # dist/（相対パスなのでどこに置いても動く。BASE_PATH=/sub/ も可）
 npm test             # ロジックの単体テスト
 npm run test:e2e     # 全ラボと3D図鑑の表示・モデル操作（Playwright）
+npm run build:hosted # 厳しいCSPのホスト向け（claude.aiのArtifactなど）：Draco/WebAssemblyを使わず、
+                     # 量子化したGLBをJSONに包んで同一オリジンのfetchだけで読み込む
 ```
 
 画質ボタンで影とアンビエントオクルージョン（GTAO）を切り替えられます（スマートフォンでは既定で軽量）。

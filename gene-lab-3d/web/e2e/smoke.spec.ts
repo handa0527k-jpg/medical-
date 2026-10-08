@@ -31,6 +31,13 @@ test('model viewer: switch model and grab-rotate it', async ({ page }) => {
   page.on('pageerror', (e) => errors.push(e.message));
   await page.goto('/#/models/1EMA');
   await expect(page.locator('.viewer-info h2')).toContainText('GFP', { timeout: 60_000 });
+  // the structure really arrived: a mesh with thousands of vertices is in the scene
+  const verts = await page.evaluate(() => {
+    let n = 0;
+    (window as any).__stage.world.traverse((o: any) => { if (o.isMesh && !o.isInstancedMesh) n += o.geometry.attributes.position.count; });
+    return n;
+  });
+  expect(verts).toBeGreaterThan(5000);
   await page.locator('.manip button', { hasText: '回転' }).click();
   const before = await page.evaluate(() => (window as any).__stage.world.children.at(-1).quaternion.toArray().join());
   const b = (await page.locator('.viewport').boundingBox())!;

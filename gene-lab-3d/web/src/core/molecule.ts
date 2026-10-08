@@ -26,13 +26,22 @@ const loader = new GLTFLoader().setDRACOLoader(draco);
 const glbCache = new Map<string, Promise<THREE.Group>>();
 const metaCache = new Map<string, Promise<MoleculeMeta>>();
 
-// VITE_GLTF_JSON=1: hosts that refuse .glb get the same models as .gltf.json (scripts/glb-to-json.py)
-const asJson = import.meta.env.VITE_GLTF_JSON === '1';
+// VITE_MODELS_JSON=1: for hosts with a strict CSP the models ship as quantized GLB
+// wrapped in JSON (scripts/hosted-models.mjs) and are parsed in memory: no Draco
+// WebAssembly and no data: URI fetches
+const asJson = import.meta.env.VITE_MODELS_JSON === '1';
+
+async function fetchGlb(file: string) {
+  if (!asJson) return loader.loadAsync(BASE + 'models/' + file);
+  const { glb } = await (await fetch(BASE + 'models/' + file + '.json')).json() as { glb: string };
+  const bin = Uint8Array.from(atob(glb), (c) => c.charCodeAt(0));
+  return loader.parseAsync(bin.buffer, '');
+}
 
 export function loadGlb(file: string) {
   let p = glbCache.get(file);
   if (!p) {
-    p = loader.loadAsync(BASE + 'models/' + (asJson ? file.replace(/\.glb$/, '.gltf.json') : file)).then((g) => {
+    p = fetchGlb(file).then((g) => {
       g.scene.traverse((o) => {
         const m = o as THREE.Mesh;
         if (m.isMesh) {
