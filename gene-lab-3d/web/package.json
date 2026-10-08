@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc --noEmit && vite build",
+    "build:json-models": "tsc --noEmit && VITE_GLTF_JSON=1 vite build && python3 scripts/glb-to-json.py dist/models",
     "preview": "vite preview --port 4174",
     "typecheck": "tsc --noEmit",
     "test": "vitest run",

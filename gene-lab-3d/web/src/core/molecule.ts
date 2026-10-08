@@ -26,10 +26,13 @@ const loader = new GLTFLoader().setDRACOLoader(draco);
 const glbCache = new Map<string, Promise<THREE.Group>>();
 const metaCache = new Map<string, Promise<MoleculeMeta>>();
 
+// VITE_GLTF_JSON=1: hosts that refuse .glb get the same models as .gltf.json (scripts/glb-to-json.py)
+const asJson = import.meta.env.VITE_GLTF_JSON === '1';
+
 export function loadGlb(file: string) {
   let p = glbCache.get(file);
   if (!p) {
-    p = loader.loadAsync(BASE + 'models/' + file).then((g) => {
+    p = loader.loadAsync(BASE + 'models/' + (asJson ? file.replace(/\.glb$/, '.gltf.json') : file)).then((g) => {
       g.scene.traverse((o) => {
         const m = o as THREE.Mesh;
         if (m.isMesh) {
