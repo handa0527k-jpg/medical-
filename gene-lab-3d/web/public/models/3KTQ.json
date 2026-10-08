@@ -1,0 +1,38 @@
+{
+ "id": "3KTQ",
+ "title": "Taq DNAポリメラーゼ（Klentaq）–DNA–ddCTP 三元複合体",
+ "cite": "Li Y, Korolev S, Waksman G. EMBO J 17:7514 (1998)",
+ "landmarks": {
+  "ddntp": [
+   -2.25,
+   -0.156,
+   0.512
+  ],
+  "fingers": [
+   -2.397,
+   -0.816,
+   -0.061
+  ]
+ },
+ "bounds": [
+  [
+   -4.35,
+   -3.02,
+   -2.74
+  ],
+  [
+   2.06,
+   3.19,
+   4.64
+  ]
+ ],
+ "enzyme": null,
+ "site": null,
+ "groovePhase": -2.5872942982472527,
+ "frame": "dna",
+ "parts": [
+  "protein",
+  "dna",
+  "ddntp"
+ ]
+}

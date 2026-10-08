@@ -1,0 +1,31 @@
+{
+ "id": "1EMA",
+ "title": "緑色蛍光タンパク質 GFP",
+ "cite": "Ormö M, et al. Science 273:1392 (1996)",
+ "landmarks": {
+  "chromophore": [
+   -0.165,
+   -0.109,
+   0.07
+  ]
+ },
+ "bounds": [
+  [
+   -1.75,
+   -2.33,
+   -2.59
+  ],
+  [
+   1.81,
+   1.85,
+   2.41
+  ]
+ ],
+ "enzyme": null,
+ "site": null,
+ "frame": "inertia",
+ "parts": [
+  "protein",
+  "chromophore"
+ ]
+}

@@ -1,0 +1,37 @@
+{
+ "id": "1BHM",
+ "title": "BamHI–DNA 複合体",
+ "cite": "Newman M, et al. Science 269:656 (1995)",
+ "landmarks": {
+  "activeA": [
+   -0.673,
+   -1.096,
+   1.26
+  ],
+  "activeB": [
+   0.952,
+   1.012,
+   1.299
+  ]
+ },
+ "bounds": [
+  [
+   -2.36,
+   -3.82,
+   -1.36
+  ],
+  [
+   2.95,
+   3.39,
+   3.68
+  ]
+ ],
+ "enzyme": "BamHI",
+ "site": "GGATCC",
+ "groovePhase": -1.6452114502633146,
+ "frame": "dna",
+ "parts": [
+  "protein",
+  "dna"
+ ]
+}

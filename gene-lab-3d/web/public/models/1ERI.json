@@ -1,0 +1,32 @@
+{
+ "id": "1ERI",
+ "title": "EcoRI–DNA 複合体",
+ "cite": "Kim Y, et al. Science 249:1307 (1990)",
+ "landmarks": {
+  "activeA": [
+   -0.668,
+   -1.174,
+   1.211
+  ]
+ },
+ "bounds": [
+  [
+   -2.91,
+   -3.64,
+   -1.7
+  ],
+  [
+   2.91,
+   3.64,
+   4.49
+  ]
+ ],
+ "enzyme": "EcoRI",
+ "site": "GAATTC",
+ "groovePhase": -1.5707963267671654,
+ "frame": "dna",
+ "parts": [
+  "protein",
+  "dna"
+ ]
+}

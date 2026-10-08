@@ -1,0 +1,26 @@
+{
+ "id": "2E52",
+ "title": "HindIII–DNA 複合体",
+ "cite": "Watanabe N, et al. Nucleic Acids Res 37:5197 (2009)",
+ "landmarks": {},
+ "bounds": [
+  [
+   -2.99,
+   -3.94,
+   -3.49
+  ],
+  [
+   2.99,
+   4.03,
+   3.35
+  ]
+ ],
+ "enzyme": "HindIII",
+ "site": "AAGCTT",
+ "groovePhase": -1.5817119665775483,
+ "frame": "dna",
+ "parts": [
+  "protein",
+  "dna"
+ ]
+}

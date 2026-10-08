@@ -1,0 +1,33 @@
+{
+ "id": "1X9N",
+ "title": "ヒトDNAリガーゼI–切れ目DNA 複合体",
+ "cite": "Pascal JM, et al. Nature 432:473 (2004)",
+ "landmarks": {
+  "amp": [
+   0.802,
+   -1.342,
+   1.038
+  ]
+ },
+ "bounds": [
+  [
+   -3.39,
+   -3.32,
+   -3.23
+  ],
+  [
+   3.93,
+   4.13,
+   3.9
+  ]
+ ],
+ "enzyme": null,
+ "site": null,
+ "groovePhase": 3.1240656679609855,
+ "frame": "dna",
+ "parts": [
+  "protein",
+  "dna",
+  "amp"
+ ]
+}

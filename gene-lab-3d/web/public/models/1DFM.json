@@ -1,0 +1,26 @@
+{
+ "id": "1DFM",
+ "title": "BglII–DNA 複合体",
+ "cite": "Lukacs CM, et al. Nat Struct Biol 7:134 (2000)",
+ "landmarks": {},
+ "bounds": [
+  [
+   -2.81,
+   -3.52,
+   -1.68
+  ],
+  [
+   3.16,
+   3.39,
+   3.45
+  ]
+ ],
+ "enzyme": "BglII",
+ "site": "AGATCT",
+ "groovePhase": -1.4724514702753126,
+ "frame": "dna",
+ "parts": [
+  "protein",
+  "dna"
+ ]
+}
