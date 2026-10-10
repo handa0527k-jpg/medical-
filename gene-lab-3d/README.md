@@ -15,7 +15,7 @@
 | 05 | CRISPR-Cas9 | sgRNAの20塩基をDNA上でドラッグ → PAM（NGG）がある所でだけCas9が結合（R-loopは結晶構造そのもの）→ HNH/RuvCで切断 → NHEJ（フレームシフト）かHDR（FLAGタグのノックイン）を選び、タンパク質配列で結果を確認 | Cas9–sgRNA–DNA 5F9R |
 | 06 | 実物大ギャラリー | DNA・GFP・AAV・アデノ・レトロウイルスを同じ縮尺で並べ、倍率スライダーで比較。GFPに波長を選んだ光を当てて光らせる | GFP 1EMA / AAV2 1LP3（60量体） |
 
-**授業動画**（`film.html?id=…`）：ラボと同じ実物の分子モデルで描いた、ナレーション・字幕つきの3Dアニメ5本。作り方は [film/README.md](film/README.md)。
+**授業動画（YouTube 用・アプリとは別）**：ラボと同じ実物の分子モデルで描いた、ナレーション・字幕つきの3Dアニメ5本を MP4 に書き出します。YouTube のタイトル・説明・チャプターは `film/youtube/<id>.txt`。作り方は [film/README.md](film/README.md)。
 
 | id | 動画 | 長さ | 使う実構造 |
 |---|---|---|---|

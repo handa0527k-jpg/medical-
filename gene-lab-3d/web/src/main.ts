@@ -18,13 +18,6 @@ export type LabModule = { mount(env: LabEnv): Promise<void> | void };
 
 const BASE = import.meta.env.BASE_URL;
 
-const FILMS = [
-  { id: 'restriction', img: '1BHM', len: '約4分', title: '制限酵素とDNAリガーゼ', text: '本物のBamHI（PDB 1BHM）が回文配列を見つけて切り、付着末端ができ、DNAリガーゼ（1X9N）がニックをふさぐまで。BamHI＋BglII のつなぎ替えも。' },
-  { id: 'cloning', img: 'plasmid', len: '約4分', title: 'プラスミドでクローニング', text: 'pUC18に遺伝子を入れ、大腸菌に形質転換し、アンピシリンと青白選択で選び、増やして取り出す。発現ベクターでGFPを作らせるまで。' },
-  { id: 'pcr', img: '3KTQ', len: '約4分', title: 'PCR：DNAを何十億倍にも増やす', text: '1サイクル目を原子レベルで（95℃・55℃・72℃、Taqポリメラーゼ）。3サイクル目に目的の長さが現れ、2ⁿ−2n で増えるしくみと、リアルタイムPCRのCt値。' },
-  { id: 'sanger', img: '3KTQ', len: '約7分', title: 'サンガー法：DNAの文字を一文字ずつ読む', text: '本物のddCTP（PDB 3KTQ）と原子レベルのDNAで、3′-OH がなぜ大事か、ddNTP でなぜ止まるのか、止まった長さからどう配列が読めるのか。' },
-  { id: 'crispr', img: '5F9R', len: '約5分', title: 'CRISPR-Cas9：狙った場所で切る', text: 'Cas9（PDB 5F9R）がPAMを探してDNAをほどき、R-loopをつくって切る。NHEJのフレームシフト、HDRのノックイン、dCas9のエピゲノム編集まで。' },
-];
 const loaders: Record<string, () => Promise<LabModule>> = {
   restriction: () => import('./labs/restriction'),
   cloning: () => import('./labs/cloning'),
@@ -92,15 +85,6 @@ function home() {
             h('a', { class: 'ghost big', href: '#/models' }, '3Dモデル図鑑'))),
         h('div', { class: 'hero-art' }, h('img', { src: `${BASE}renders/5F9R.jpg`, alt: 'Cas9–sgRNA–DNA複合体（PDB 5F9R）' }),
           h('span', {}, 'Cas9–sgRNA–DNA（PDB 5F9R）'))),
-      h('section', { class: 'films' },
-        h('h3', {}, '授業動画（ナレーションつき3Dアニメ）'),
-        h('div', { class: 'film-grid' }, ...FILMS.map((f) =>
-          h('a', { class: 'film-card', href: `${BASE}film.html?id=${f.id}` },
-            h('div', { class: 'art' }, h('img', { src: `${BASE}renders/${f.img}.jpg`, alt: '' }), h('span', { class: 'play' }, '▶')),
-            h('div', { class: 'meta' },
-              h('span', { class: 'no' }, `授業動画 ・ ${f.len}`),
-              h('h2', {}, f.title),
-              h('p', {}, f.text)))))),
       h('section', { class: 'grid' }, ...cards),
       h('section', { class: 'timeline' },
         h('h3', {}, '講義の年表から'),

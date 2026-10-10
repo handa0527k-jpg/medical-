@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc --noEmit && vite build",
-    "build:hosted": "tsc --noEmit && VITE_MODELS_JSON=1 vite build && node scripts/hosted-models.mjs dist/models dist/film/models",
+    "build:hosted": "tsc --noEmit && VITE_MODELS_JSON=1 vite build && node -e \"require('fs').rmSync('dist/film',{recursive:true,force:true})\" && node scripts/hosted-models.mjs dist/models",
     "preview": "vite preview --port 4174",
     "typecheck": "tsc --noEmit",
     "test": "vitest run",

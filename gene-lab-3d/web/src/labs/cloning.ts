@@ -318,7 +318,6 @@ export async function mount({ stage, hud, panel, mission }: LabEnv) {
   growSlider.addEventListener('input', () => grow(+growSlider.value));
   const purifyBtn = h('button', { class: 'primary', disabled: true, onclick: purify }, '菌を溶かしてプラスミドを取り出す');
   panel.append(
-    h('a', { class: 'quiz-btn', href: `${import.meta.env.BASE_URL}film.html?id=cloning`, style: 'text-align:center;text-decoration:none' }, '▶ 授業動画で流れを見る（約4分）'),
     h('h3', {}, '1. ベクターを開いて、遺伝子を入れる'),
     h('div', { class: 'tool-grid' }, bamCard, insertCard),
     ligateBtn,

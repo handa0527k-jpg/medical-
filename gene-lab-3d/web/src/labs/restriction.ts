@@ -260,7 +260,7 @@ export async function mount({ stage, hud, panel, mission }: LabEnv) {
   const tabs = h('div', { class: 'tabs' },
     h('button', { class: 'on', onclick: (ev: Event) => switchTab(ev, 'cut') }, '切る・つなぐ'),
     h('button', { onclick: (ev: Event) => switchTab(ev, 'swap') }, 'つなぎ替え実験'));
-  panel.append(h('a', { class: 'quiz-btn', href: `${import.meta.env.BASE_URL}film.html?id=restriction`, style: 'text-align:center;text-decoration:none' }, '▶ 授業動画で流れを見る（約4分）'), tabs, cutTab, swapTab);
+  panel.append(tabs, cutTab, swapTab);
 
   function switchTab(ev: Event, which: 'cut' | 'swap') {
     if (busy) return;

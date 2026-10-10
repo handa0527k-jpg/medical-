@@ -376,7 +376,6 @@ export async function mount({ stage, hud, panel, mission }: LabEnv) {
     return h('label', { class: 'switch' }, cb, { primer: 'プライマー', pol: 'Taq DNAポリメラーゼ', dntp: 'dNTP（材料）' }[k]);
   });
   panel.append(
-    h('a', { class: 'quiz-btn', href: `${import.meta.env.BASE_URL}film.html?id=pcr`, style: 'text-align:center;text-decoration:none' }, '▶ 授業動画で流れを見る（約4分）'),
     h('h3', {}, 'サーマルサイクラー（温度を動かす）'),
     h('div', { class: 'thermo' }, tempOut, slider),
     h('div', { class: 'tool-grid three' }, preset(95, '熱変性', 'hot'), preset(55, 'アニーリング', 'cool'), preset(72, '伸長', 'warm')),
