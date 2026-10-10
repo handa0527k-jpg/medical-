@@ -36,3 +36,4 @@ production/lecture-video/youtube/*.mp4
 
 # GENE LAB 3D films: rendered video is reproducible (film/README.md)
 gene-lab-3d/film/out/
+gene-lab-3d/sanger-sample-30s.mp4

@@ -2,8 +2,16 @@ import '../style.css';
 import './film.css';
 import { Stage } from '../core/stage';
 import { loadDnaTemplate } from '../core/dna';
-import { Clock, Overlays, type Timing } from './kit';
-import { buildSanger } from './sanger';
+import { Clock, Overlays, type Film, type Timing } from './kit';
+
+// one builder per film, loaded on demand
+const FILMS: Record<string, () => Promise<(...a: Parameters<Film>) => ReturnType<Film>>> = {
+  sanger: () => import('./sanger').then((m) => m.buildSanger),
+  pcr: () => import('./pcr').then((m) => m.buildPcr),
+  crispr: () => import('./crispr').then((m) => m.buildCrispr),
+  // restriction: () => import('./restriction').then((m) => m.buildRestriction),
+  // cloning: () => import('./cloning').then((m) => m.buildCloning),
+};
 
 /**
  * 授業動画の再生ページ（film.html）
@@ -43,7 +51,8 @@ async function boot() {
   stage.controls.enabled = false;
   const clock = new Clock(timing);
   const ov = new Overlays(ovHost);
-  const film = await buildSanger(stage, clock, ov);
+  const build = await (FILMS[id] ?? FILMS.sanger)();
+  const film = await build(stage, clock, ov);
   document.title = `${timing.title}｜授業動画 — GENE LAB 3D`;
 
   const draw = (t: number) => {

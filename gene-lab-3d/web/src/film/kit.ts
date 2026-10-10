@@ -1,5 +1,7 @@
 import * as THREE from 'three';
 import type { AtomicDNA, Nt } from '../core/dna';
+import type { Stage } from '../core/stage';
+import { loadMolecule, type Molecule } from '../core/molecule';
 
 // ---------------------------------------------------------------- time
 
@@ -187,4 +189,82 @@ export function setGlow(m: THREE.Mesh, a: number, r?: number) {
   (m.material as THREE.MeshBasicMaterial).opacity = clamp01(a);
   m.visible = a > 0.01;
   if (r !== undefined) m.scale.setScalar(Math.max(1e-4, r));
+}
+
+// ---------------------------------------------------------------- camera
+
+export type Cam = { pos: THREE.Vector3; target: THREE.Vector3; aperture?: number };
+export const V = (x: number, y: number, z: number) => new THREE.Vector3(x, y, z);
+
+/** camera through keyframes [time, camera] with eased moves between them */
+export function camPath(keys: [number, Cam][], t: number): Cam {
+  if (t <= keys[0][0]) return keys[0][1];
+  for (let i = 0; i < keys.length - 1; i++) {
+    const [t0, a] = keys[i], [t1, b] = keys[i + 1];
+    if (t < t1) {
+      const k = easeInOut((t - t0) / (t1 - t0));
+      return { pos: vmix(a.pos, b.pos, k), target: vmix(a.target, b.target, k), aperture: mix(a.aperture ?? 0.0006, b.aperture ?? 0.0006, k) };
+    }
+  }
+  return keys[keys.length - 1][1];
+}
+
+export function orbit(center: THREE.Vector3, r: number, ang: number, h: number): THREE.Vector3 {
+  return center.clone().add(V(Math.sin(ang) * r, h, Math.cos(ang) * r));
+}
+
+export async function loadFilmMolecule(id: string): Promise<Molecule> {
+  // film-quality surfaces live in film/models; fall back to the lab model
+  try {
+    return await loadMolecule(id, '../film/models/');
+  } catch {
+    return loadMolecule(id);
+  }
+}
+
+/** drifting water-sized specks that give depth to molecular shots */
+export function makeDust(n = 900, seed = 11) {
+  const g = new THREE.BufferGeometry();
+  const pos = new Float32Array(n * 3);
+  let s = seed;
+  const rnd = () => ((s = (s * 16807) % 2147483647) / 2147483647);
+  for (let i = 0; i < n; i++) { pos[i * 3] = (rnd() - 0.5) * 60; pos[i * 3 + 1] = (rnd() - 0.5) * 34; pos[i * 3 + 2] = (rnd() - 0.5) * 40 - 6; }
+  g.setAttribute('position', new THREE.BufferAttribute(pos, 3));
+  return new THREE.Points(g, new THREE.PointsMaterial({ color: '#6c8fc7', size: 0.06, transparent: true, opacity: 0.35, depthWrite: false }));
+}
+
+/** a film module: builds its sets once, then draws any time t on demand */
+export type Film = (stage: Stage, clock: Clock, ov: Overlays) => Promise<{ update(t: number): void }>;
+
+export function applyCam(stage: Stage, cam: Cam) {
+  stage.camera.position.copy(cam.pos);
+  stage.camera.lookAt(cam.target);
+  stage.controls.target.copy(cam.target);
+  stage.focusOn(cam.target, cam.aperture ?? 0.0006);
+}
+
+/** the scene that contains time t */
+export function sceneAt(clock: Clock, t: number) {
+  const sc = clock.timing.scenes;
+  return sc.find((s) => t >= s.start && t < s.end) ?? sc[sc.length - 1];
+}
+
+/** subtitle, chapter chip and title card — the same in every film */
+export function standardOverlays(ov: Overlays, clock: Clock, t: number, scene: string, kicker: string, slides: string) {
+  const cue = clock.cueAt(t);
+  const sc = clock.scene(scene);
+  if (scene !== 'title') {
+    if (cue) ov.set('sub', `<p>${cue.text}</p>`, 1, 'subtitle');
+    ov.set('chip', sc.label, window01(t, sc.start, sc.end, 0.4), 'chip');
+  } else {
+    const a = window01(t, 0.3, sc.end - 0.2, 0.8);
+    ov.set('title', `<p class="kicker">${kicker}</p><h1>${clock.timing.title}</h1><p class="lead">${clock.timing.subtitle}</p><p class="src">${slides}</p>`, a, 'title-card');
+  }
+}
+
+/** summary cards (numbered), heading and credit line */
+export function summaryOverlays(ov: Overlays, clock: Clock, t: number, head: string, cards: [string, string][], credit: string, creditCue: string) {
+  ov.set('sumh', `<h2>${head}</h2>`, ramp(t, clock.scene('summary').start + 0.2, 0.6), 'sum-head');
+  cards.forEach(([cue, html], i) => ov.set('s' + (i + 1), `<span class="n">${i + 1}</span><div>${html}</div>`, ramp(t, clock.at(cue) - 0.2, 0.6), `sum-card s${i + 1}`));
+  ov.set('credit', `<small>${credit}</small>`, ramp(t, clock.at(creditCue), 0.8), 'credit');
 }

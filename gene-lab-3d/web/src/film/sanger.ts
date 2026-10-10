@@ -10,34 +10,14 @@
 import * as THREE from 'three';
 import type { Stage } from '../core/stage';
 import { AtomicDNA, BASE_COLOR, type Nt } from '../core/dna';
-import { loadGlb, loadMolecule, yUp, type Molecule } from '../core/molecule';
+import { loadGlb, yUp } from '../core/molecule';
 import { place, seatOnDna } from '../core/interact';
-import { Clock, FreeNucleotide, Overlays, easeInOut, glowBall, mix, ramp, setGlow, smooth, vmix, wander, window01 } from './kit';
+import { Clock, FreeNucleotide, Overlays, V, camPath, glowBall, loadFilmMolecule, makeDust, mix, orbit, ramp, setGlow, smooth, wander, window01, type Cam } from './kit';
 import { DYE, NEW_STRAND, PRIMER, TEMPLATE_3to5, fragments } from '../content/sanger';
 
 const FULL = PRIMER + NEW_STRAND; // GCATATGTCAGTCCAG, strand 0 of the duplex
 const BASES = ['A', 'T', 'C', 'G'];
 const dd = (b: string) => `dd${b}TP`;
-
-type Cam = { pos: THREE.Vector3; target: THREE.Vector3; aperture?: number };
-const V = (x: number, y: number, z: number) => new THREE.Vector3(x, y, z);
-
-/** camera through keyframes [time, camera] with eased moves between them */
-function camPath(keys: [number, Cam][], t: number): Cam {
-  if (t <= keys[0][0]) return keys[0][1];
-  for (let i = 0; i < keys.length - 1; i++) {
-    const [t0, a] = keys[i], [t1, b] = keys[i + 1];
-    if (t < t1) {
-      const k = easeInOut((t - t0) / (t1 - t0));
-      return { pos: vmix(a.pos, b.pos, k), target: vmix(a.target, b.target, k), aperture: mix(a.aperture ?? 0.0006, b.aperture ?? 0.0006, k) };
-    }
-  }
-  return keys[keys.length - 1][1];
-}
-
-function orbit(center: THREE.Vector3, r: number, ang: number, h: number): THREE.Vector3 {
-  return center.clone().add(V(Math.sin(ang) * r, h, Math.cos(ang) * r));
-}
 
 export async function buildSanger(stage: Stage, clock: Clock, ov: Overlays) {
   const T = (id: string) => clock.at(id);
@@ -47,18 +27,7 @@ export async function buildSanger(stage: Stage, clock: Clock, ov: Overlays) {
   stage.scene.fog = new THREE.FogExp2('#04060c', 0.012);
   stage.setAoRadius(0.5);
 
-  // ambient: drifting water-sized specks give depth to the molecular shots
-  const dust = (() => {
-    const n = 900;
-    const g = new THREE.BufferGeometry();
-    const pos = new Float32Array(n * 3);
-    let s = 11;
-    const rnd = () => ((s = (s * 16807) % 2147483647) / 2147483647);
-    for (let i = 0; i < n; i++) { pos[i * 3] = (rnd() - 0.5) * 60; pos[i * 3 + 1] = (rnd() - 0.5) * 34; pos[i * 3 + 2] = (rnd() - 0.5) * 40 - 6; }
-    g.setAttribute('position', new THREE.BufferAttribute(pos, 3));
-    const pts = new THREE.Points(g, new THREE.PointsMaterial({ color: '#6c8fc7', size: 0.06, transparent: true, opacity: 0.35, depthWrite: false }));
-    return pts;
-  })();
+  const dust = makeDust();
   world.add(dust);
 
   // ================================================================ sets
@@ -825,13 +794,4 @@ export async function buildSanger(stage: Stage, clock: Clock, ov: Overlays) {
   }
 
   return { update };
-}
-
-async function loadFilmMolecule(id: string): Promise<Molecule> {
-  // film-quality surfaces live in film/models; fall back to the lab model
-  try {
-    return await loadMolecule(id, '../film/models/');
-  } catch {
-    return loadMolecule(id);
-  }
 }

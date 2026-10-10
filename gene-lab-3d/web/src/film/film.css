@@ -85,7 +85,7 @@
 .sum-head { left: 6cqw; top: 6cqw; }
 .sum-head h2 { margin: 0; font-size: 3cqw; }
 .sum-card { left: 6cqw; width: 52cqw; display: grid; grid-template-columns: 4cqw 1fr; gap: 1.2cqw; align-items: center; padding: 1.1cqw 1.4cqw; background: rgba(4, 8, 18, .82); border: 0.1cqw solid rgba(160, 190, 230, .25); border-radius: 1.2cqw; }
-.sum-card.s1 { top: 13cqw; } .sum-card.s2 { top: 20.5cqw; } .sum-card.s3 { top: 28cqw; }
+.sum-card.s1 { top: 13cqw; } .sum-card.s2 { top: 20.5cqw; } .sum-card.s3 { top: 28cqw; } .sum-card.s4 { top: 35.5cqw; }
 .sum-card .n { font-size: 3cqw; font-weight: 700; color: #59d8a1; text-align: center; }
 .sum-card b { display: block; font-size: 1.85cqw; }
 .sum-card small { font-size: 1.25cqw; color: #aab6cc; }
@@ -114,3 +114,45 @@
 .side-card.pos .seq i { font-style: normal; padding: 0 0.08cqw; }
 .side-card.pos .seq i.hit { color: #3ddc84; text-shadow: 0 0 0.6cqw #3ddc84; }
 .side-card.pos .seq sub { font-size: 0.7cqw; color: #8f9bb3; }
+
+/* PCR */
+.thermo { left: 2.2cqw; top: 5.4cqw; display: flex; gap: 0.8cqw; align-items: flex-end; padding: 0.8cqw 1cqw; background: rgba(6, 10, 20, .75); border-radius: 1cqw; border: 0.1cqw solid rgba(160, 190, 230, .25); }
+.thermo-bar { width: 1cqw; height: 9cqw; border-radius: 1cqw; background: #1b2336; position: relative; overflow: hidden; }
+.thermo-bar i { position: absolute; left: 0; right: 0; bottom: 0; border-radius: 1cqw; }
+.thermo b { display: block; font-size: 3.4cqw; line-height: 1; }
+.thermo span { font-size: 1.5cqw; color: #dce6f5; }
+.side-card.count { right: 2.5cqw; top: 6cqw; width: 26cqw; padding: 1cqw 1.2cqw; background: rgba(5, 9, 19, .9); border: 0.1cqw solid rgba(160, 190, 230, .25); border-radius: 1.2cqw; }
+.side-card.count table { width: 100%; border-collapse: collapse; font-size: 1.5cqw; text-align: center; font-variant-numeric: tabular-nums; }
+.side-card.count th { font-size: 1.15cqw; color: #aab6cc; font-weight: 400; padding-bottom: 0.4cqw; }
+.side-card.count td { padding: 0.25cqw 0; border-top: 0.1cqw solid rgba(160, 190, 230, .12); }
+.side-card.count td:last-child { color: #ffd43b; font-weight: 700; }
+.side-card.count tr.on td { background: rgba(89, 216, 161, .14); }
+.side-card.count tr.far td { color: #fff; font-weight: 700; border-top: 0.2cqw dashed rgba(160, 190, 230, .35); }
+.side-card.count .formula { margin: 0.8cqw 0 0; text-align: center; font-size: 1.6cqw; }
+.gel-card { left: 3cqw; top: 6cqw; width: 15cqw; }
+.side-card.chart { right: 2.5cqw; top: 5cqw; width: 50cqw; padding: 0.8cqw 1cqw; background: rgba(5, 9, 19, .92); border: 0.1cqw solid rgba(160, 190, 230, .25); border-radius: 1.2cqw; }
+.side-card.chart svg { display: block; font-family: 'Zen Kaku Gothic New', 'IPAGothic', sans-serif; }
+
+/* CRISPR */
+.top-card .mono { font: 700 1.7cqw ui-monospace, monospace; letter-spacing: .05em; }
+.top-card .mono i { font-style: normal; }
+.top-card .mono i.pam, .top-card .mono b.g { color: #59d8a1; text-shadow: 0 0 0.6cqw #59d8a1; }
+.top-card .mono b.n { color: #fff; }
+.top-card .mono .gap { color: #ff4d5e; font-weight: 700; padding: 0 0.2cqw; text-shadow: 0 0 0.6cqw #ff4d5e; }
+.top-card .dim, .bottom-card .dim { color: #9aa5b8; font-size: 1.25cqw; }
+.bottom-card b.sg { color: #8fb8ff; font-family: ui-monospace, monospace; letter-spacing: .04em; }
+.top-card.prot-card { width: 60cqw; }
+.film-frame .prot { font-size: 1.55cqw; letter-spacing: .1em; }
+.film-frame .aa { border-radius: 0.3cqw; }
+.film-frame .aa.flag { background: rgba(255, 209, 102, .3); color: #ffd166; }
+.top-card b.on { color: #59d8a1; font-size: 2cqw; text-shadow: 0 0 0.8cqw #59d8a1; }
+.top-card b.off { color: #8f9bb3; font-size: 2cqw; }
+.side-card.eth { right: 3cqw; top: 8cqw; width: 40cqw; padding: 1.4cqw 1.8cqw; background: rgba(5, 9, 19, .9); border: 0.1cqw solid rgba(160, 190, 230, .25); border-radius: 1.2cqw; }
+.side-card.eth .big2 { font-size: 2cqw; font-weight: 700; margin: 0 0 0.8cqw; }
+.side-card.eth ul { margin: 0 0 0.8cqw; padding-left: 1.6cqw; font-size: 1.55cqw; line-height: 1.7; }
+.side-card.eth .dim { color: #aab6cc; font-size: 1.3cqw; margin: 0; }
+.side-card.epi { right: 3cqw; top: 12cqw; width: 33cqw; padding: 1cqw 1.4cqw; text-align: center; background: rgba(5, 9, 19, .9); border: 0.1cqw solid rgba(160, 190, 230, .25); border-radius: 1.2cqw; }
+.side-card.epi p { margin: 0.3cqw 0; font-size: 1.5cqw; }
+.side-card.epi .dim { color: #9aa5b8; font-size: 1.2cqw; }
+.side-card.epi b.on { color: #59d8a1; font-size: 2.2cqw; text-shadow: 0 0 0.8cqw #59d8a1; }
+.side-card.epi b.off { color: #8f9bb3; font-size: 2.2cqw; }
