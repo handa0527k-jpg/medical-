@@ -10,7 +10,7 @@ const FILMS: Record<string, () => Promise<(...a: Parameters<Film>) => ReturnType
   pcr: () => import('./pcr').then((m) => m.buildPcr),
   crispr: () => import('./crispr').then((m) => m.buildCrispr),
   restriction: () => import('./restriction').then((m) => m.buildRestriction),
-  // cloning: () => import('./cloning').then((m) => m.buildCloning),
+  cloning: () => import('./cloning').then((m) => m.buildCloning),
 };
 
 /**

@@ -164,3 +164,9 @@
 .end-row { display: grid; gap: 0.3cqw; }
 .end-row b { font-size: 1.5cqw; }
 .end-row .mono { font: 700 1.5cqw ui-monospace, 'IPAGothic', monospace; letter-spacing: .08em; white-space: pre; }
+
+/* cloning */
+.top-card.bw b.w { color: #fff; } .top-card.bw b.b { color: #5d9bff; }
+.side-card.counter { right: 3cqw; top: 8cqw; width: 22cqw; display: grid; gap: 0.6cqw; padding: 1.2cqw; background: rgba(5, 9, 19, .9); border: 0.1cqw solid rgba(160, 190, 230, .25); border-radius: 1.2cqw; }
+.side-card.counter div { display: flex; justify-content: space-between; align-items: baseline; font-size: 1.4cqw; color: #aab6cc; }
+.side-card.counter b { font-size: 2.4cqw; color: #fff; font-variant-numeric: tabular-nums; }
