@@ -22,7 +22,7 @@ const fps = +opt('fps', 24), W = +opt('w', 1920), H = +opt('h', 1080);
 const chunk = +opt('chunk', 10);
 const worker = +opt('worker', 0), workers = +opt('workers', 1);
 const stills = opt('stills', null);
-const outDir = path.resolve(import.meta.dirname, '../../film/out', stills ? '' : id);
+const outDir = path.resolve(import.meta.dirname, '../../film/out', stills ? '' : H === 1080 ? id : `${id}-${H}p`);
 fs.mkdirSync(outDir, { recursive: true });
 
 const browser = await chromium.launch({

@@ -156,3 +156,11 @@
 .side-card.epi .dim { color: #9aa5b8; font-size: 1.2cqw; }
 .side-card.epi b.on { color: #59d8a1; font-size: 2.2cqw; text-shadow: 0 0 0.8cqw #59d8a1; }
 .side-card.epi b.off { color: #8f9bb3; font-size: 2.2cqw; }
+
+/* restriction */
+.top-card .mono i.hit { color: #fff4c2; text-shadow: 0 0 0.6cqw #ffd166; }
+.top-card b.g2 { color: #7dffc0; font-family: ui-monospace, monospace; }
+.side-card.ends { right: 2.5cqw; top: 7cqw; width: 22cqw; padding: 1cqw 1.2cqw; background: rgba(5, 9, 19, .9); border: 0.1cqw solid rgba(160, 190, 230, .25); border-radius: 1.2cqw; display: grid; gap: 1cqw; }
+.end-row { display: grid; gap: 0.3cqw; }
+.end-row b { font-size: 1.5cqw; }
+.end-row .mono { font: 700 1.5cqw ui-monospace, 'IPAGothic', monospace; letter-spacing: .08em; white-space: pre; }

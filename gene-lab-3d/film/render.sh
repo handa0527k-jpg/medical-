@@ -20,9 +20,9 @@ fi
 for id in "$@"; do
   pids=""
   for w in 0 1 2; do
-    node scripts/render-film.mjs "$id" --worker $w --workers 3 > "$here/out/$id-w$w.log" 2>&1 &
+    node scripts/render-film.mjs "$id" --worker $w --workers 3 --w ${W:-1920} --h ${H:-1080} > "$here/out/$id-w$w.log" 2>&1 &
     pids="$pids $!"
   done
   wait $pids
-  sh "$here/finish.sh" "$id"
+  H=${H:-1080} sh "$here/finish.sh" "$id"
 done
