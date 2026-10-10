@@ -41,6 +41,7 @@ def main(ids):
         for i, sc in enumerate(scenes):
             lines.append(f"{ts(0 if i == 0 else sc['start'])} {sc['label'].replace('  ', ' ')}")
         about, pdb = ABOUT[fid]
+        music = json.load(open(os.path.join(ROOT, 'film', 'music.json')))['films'][fid]
         text = f"""タイトル：
 {t['title']}｜{t['subtitle']}【3Dアニメ授業・組換えDNA技術】
 
@@ -54,6 +55,7 @@ def main(ids):
 分子構造：{pdb}
 DNA：B型DNA PDB 1BNA（Drew 1981）の原子座標から作成
 ナレーション：合成音声（Microsoft Nanami）
+音楽：{music['title']}（{music['en']}）／演奏 Musopen・パブリックドメイン
 制作：three.js・Blender・gemmi などのオープンソースソフトウェア
 
 タグ：

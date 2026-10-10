@@ -1,0 +1,11 @@
+{
+  "source": "Musopen Collection (Internet Archive: MusopenCollectionAsFlac) — performances donated to the public domain (Public Domain Mark 1.0)",
+  "base": "https://archive.org/download/MusopenCollectionAsFlac/",
+  "films": {
+    "restriction": { "file": "Mozart_MarriageOfFigaro/WolfgangAmadeusMozart-MarriageOfFigaro.mp3", "title": "モーツァルト：歌劇『フィガロの結婚』序曲", "en": "Mozart - The Marriage of Figaro, Overture" },
+    "cloning": { "file": "Greig_PeerGynt/EdvardGrieg-PeerGyntSuiteNo.1Op.46-01-Morning.mp3", "title": "グリーグ：『ペール・ギュント』第1組曲より「朝」", "en": "Grieg - Peer Gynt Suite No. 1, Morning Mood" },
+    "pcr": { "file": "Mendelssohn_ItalianSymphony/FelixMendelssohn-SymphonyNo.4InAMajorOp.90italian-01-AllegroVivace.mp3", "title": "メンデルスゾーン：交響曲第4番『イタリア』第1楽章", "en": "Mendelssohn - Symphony No. 4 'Italian', I. Allegro vivace" },
+    "sanger": { "file": "Mozart_MagicFluteOverture/WolfgangAmadeusMozart-MagicFluteOverture.mp3", "title": "モーツァルト：歌劇『魔笛』序曲", "en": "Mozart - The Magic Flute, Overture" },
+    "crispr": { "file": "Dvorak_StringQuartetNo.12inFMajorOp.96/AntonnDvorak-StringQuartetNo.12InFMajorOp.96American-04-Finale-VivaceMaNonTroppo.mp3", "title": "ドヴォルザーク：弦楽四重奏曲第12番『アメリカ』第4楽章", "en": "Dvorak - String Quartet No. 12 'American', IV. Finale" }
+  }
+}

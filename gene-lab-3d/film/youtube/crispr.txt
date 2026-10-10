@@ -19,6 +19,7 @@ Cas9 が PAM（NGG）を探してDNAをほどき、ガイドRNAと対合して�
 分子構造：SpCas9–sgRNA–標的DNA PDB 5F9R（Jiang 2016）
 DNA：B型DNA PDB 1BNA（Drew 1981）の原子座標から作成
 ナレーション：合成音声（Microsoft Nanami）
+音楽：ドヴォルザーク：弦楽四重奏曲第12番『アメリカ』第4楽章（Dvorak - String Quartet No. 12 'American', IV. Finale）／演奏 Musopen・パブリックドメイン
 制作：three.js・Blender・gemmi などのオープンソースソフトウェア
 
 タグ：

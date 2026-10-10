@@ -17,6 +17,7 @@ pUC18 に遺伝子を入れ、大腸菌に形質転換し、アンピシリン�
 分子構造：GFP PDB 1EMA（Ormö 1996）。プラスミド・大腸菌・培地は模式図
 DNA：B型DNA PDB 1BNA（Drew 1981）の原子座標から作成
 ナレーション：合成音声（Microsoft Nanami）
+音楽：グリーグ：『ペール・ギュント』第1組曲より「朝」（Grieg - Peer Gynt Suite No. 1, Morning Mood）／演奏 Musopen・パブリックドメイン
 制作：three.js・Blender・gemmi などのオープンソースソフトウェア
 
 タグ：

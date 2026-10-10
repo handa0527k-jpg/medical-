@@ -9,10 +9,10 @@ H=${H:-1080}
 src=$id; [ "$H" != 1080 ] && src=$id-${H}p
 ls "$out/$src"/chunk-*.mp4 | grep -v part | sort | sed "s|^|file '|; s|$|'|" > "$out/$id-list.txt"
 bgm=$here/../.cache/film-bgm/$id.wav
-[ -f "$bgm" ] || python3 "$here/bgm.py" "$id"
-# narration on top; the film's own BGM underneath, ducked while she speaks; YouTube loudness (-14 LUFS)
+[ -f "$bgm" ] || python3 "$here/music.py" "$id"
+# narration on top; a public-domain classical recording underneath (film/music.json), ducked while she speaks; YouTube loudness (-14 LUFS)
 ffmpeg -v error -y -f concat -safe 0 -i "$out/$id-list.txt" -i "$here/../web/public/film/$id/narration.mp3" -i "$bgm" \
-  -filter_complex "[1:a]aformat=sample_fmts=fltp:sample_rates=44100:channel_layouts=stereo,asplit=2[voice][key];[2:a]volume=0.3[bg];[bg][key]sidechaincompress=threshold=0.02:ratio=6:attack=30:release=700[duck];[voice][duck]amix=inputs=2:duration=first:normalize=0,loudnorm=I=-14:TP=-1.5:LRA=11[a]" \
+  -filter_complex "[1:a]aformat=sample_fmts=fltp:sample_rates=44100:channel_layouts=stereo,asplit=2[voice][key];[2:a]volume=1.0[bg];[bg][key]sidechaincompress=threshold=0.02:ratio=4:attack=40:release=800[duck];[voice][duck]amix=inputs=2:duration=first:normalize=0,loudnorm=I=-14:TP=-1.5:LRA=11[a]" \
   -map 0:v -map "[a]" -c:v copy -c:a aac -b:a 192k -ar 48000 -shortest -movflags +faststart "$out/$id-${H}p.mp4"
 if [ "$H" = 1080 ]; then
   # a lighter copy for sharing

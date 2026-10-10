@@ -18,6 +18,7 @@
 分子構造：Taq DNAポリメラーゼ・DNA・ddCTP PDB 3KTQ（Li, Korolev, Waksman 1998）
 DNA：B型DNA PDB 1BNA（Drew 1981）の原子座標から作成
 ナレーション：合成音声（Microsoft Nanami）
+音楽：モーツァルト：歌劇『魔笛』序曲（Mozart - The Magic Flute, Overture）／演奏 Musopen・パブリックドメイン
 制作：three.js・Blender・gemmi などのオープンソースソフトウェア
 
 タグ：

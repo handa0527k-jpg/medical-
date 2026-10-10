@@ -16,6 +16,7 @@ PCR の1サイクル（95℃・55℃・72℃）を原子レベルで、本物の
 分子構造：Taq DNAポリメラーゼ PDB 3KTQ（Li, Korolev, Waksman 1998）
 DNA：B型DNA PDB 1BNA（Drew 1981）の原子座標から作成
 ナレーション：合成音声（Microsoft Nanami）
+音楽：メンデルスゾーン：交響曲第4番『イタリア』第1楽章（Mendelssohn - Symphony No. 4 'Italian', I. Allegro vivace）／演奏 Musopen・パブリックドメイン
 制作：three.js・Blender・gemmi などのオープンソースソフトウェア
 
 タグ：

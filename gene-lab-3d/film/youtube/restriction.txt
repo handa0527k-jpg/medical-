@@ -18,6 +18,7 @@
 分子構造：BamHI PDB 1BHM（Newman 1995）／BglII PDB 1DFM（Lukacs 2000）／ヒトDNAリガーゼI PDB 1X9N（Pascal 2004）
 DNA：B型DNA PDB 1BNA（Drew 1981）の原子座標から作成
 ナレーション：合成音声（Microsoft Nanami）
+音楽：モーツァルト：歌劇『フィガロの結婚』序曲（Mozart - The Marriage of Figaro, Overture）／演奏 Musopen・パブリックドメイン
 制作：three.js・Blender・gemmi などのオープンソースソフトウェア
 
 タグ：
