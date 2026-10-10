@@ -5,13 +5,17 @@
 
 | 動画 | 長さ | 内容 |
 |---|---|---|
+| `restriction` 制限酵素とDNAリガーゼ | 約4分 | 細菌の防御（メチル化で自分は守る）→ 回文配列 GGATCC → 本物の BamHI（1BHM）が滑って探し、G↓GATCC で上下をずらして切る → 5′突出・3′突出（PstI）・平滑（SmaI）→ 付着末端が仮どめ → ニック → リガーゼ（1X9N）が ATP でふさぐ → BamHI＋BglII＝GGATCT はどちらでも切れない |
+| `cloning` プラスミドでクローニング | 約4分 | pUC18（ori・Amp^r・lacZ・MCS）→ BamHI で開いて遺伝子を入れ、リガーゼでつなぐ → 熱ショックで形質転換 → アンピシリン選択と青白選択 → 20分に1回分裂・10時間で約10億倍 → プラスミド精製 → 発現ベクターで GFP（1EMA） |
+| `pcr` PCR | 約4分 | なぜ増やすか → 材料 → 1サイクル目を原子レベルで（95℃でほどけ、55℃でプライマー、72℃で2つの Taq 3KTQ が伸ばす）→ 棒で5サイクル：3サイクル目に目的の長さ2本、2ⁿ−2n → 30サイクルで約10億倍 → リアルタイムPCR の Ct |
 | `sanger` サンガー法 | 約6分40秒 | 何が問題か → 材料（鋳型・プライマー・Taqポリメラーゼ・dNTP）→ 3′-OH がリン酸を攻撃して鎖が伸びる（原子レベル）→ ddNTP は 3′-O がないので止まる（本物の ddCTP：PDB 3KTQ）→ 偶然に止まる → あらゆる長さ → 電気泳動で下から読む → 4色蛍光＋キャピラリー → まとめ |
+| `crispr` CRISPR-Cas9 | 約5分 | 細菌の免疫 → Cas9 とガイドRNA（5F9R）→ PAM（NGG）を探してほどき R-loop → HNH・RuvC が PAM の3塩基手前を切る → NHEJ の1塩基欠失でフレームシフト（タンパク質で確認）→ HDR で FLAG タグをノックイン → dCas9＋DNMT3A/TET1 のエピゲノム編集 → 2015年のヒト三前核胚と倫理 |
 
-配列は講義スライド29と同じ（鋳型 3′-CGTATACAGTCAGGTC-5′、プライマー GCAT、読める配列 ATGTCAGTCCAG）。
+サンガー法の配列は講義スライド29と同じ（鋳型 3′-CGTATACAGTCAGGTC-5′、プライマー GCAT、読める配列 ATGTCAGTCCAG）。
 
 ## 見る
 
-- ブラウザ：`web/film.html?id=sanger`（アプリのホームの「授業動画」カード、サンガー法ラボのボタンからも開けます）。チャプターから好きな場面へ飛べます
+- ブラウザ：`web/film.html?id=<id>`（アプリのホームの「授業動画」カード、各ラボのボタンからも開けます）。チャプターから好きな場面へ飛べます
 - MP4：下の手順で `film/out/sanger-1080p.mp4`（と軽量版 `sanger-720p.mp4`）を書き出します
 
 ## 作り方
@@ -29,10 +33,9 @@ FILM=1 blender -b --factory-startup --python blender/molecules.py -- 3KTQ
 # 3. 静止画で確認 → 本番書き出し
 cd web && npm run build && npx vite preview --port 4176 &   # 書き出しは固定したビルドから（開発サーバーは編集で再読み込みされる）
 node scripts/render-film.mjs sanger --url http://localhost:4176 --stills 30,100,170
-node scripts/render-film.mjs sanger --url http://localhost:4176 --from 0 --to 134    # 区間ごとに並列で書き出せる
-node scripts/render-film.mjs sanger --url http://localhost:4176 --from 134 --to 268
-node scripts/render-film.mjs sanger --url http://localhost:4176 --from 268 --to 402
-sh ../film/finish.sh sanger    # 区間をつなぎ、ナレーションを重ねる
+cd .. && sh film/render.sh sanger pcr          # 3並列・10秒ずつのチャンクで書き出し、つないでナレーションを重ねる
+W=1280 H=720 sh film/render.sh crispr          # 720p（約2倍速）
+#   中断しても、もう一度実行すれば終わったチャンクの続きから再開する
 ```
 
 - 描画は three.js（ラボと同じエンジン）。書き出しはヘッドレス Chromium＋Mesa（llvmpipe, EGL）で、1080p・24fps・約1.1 fps（3並列で約1.4 fps）

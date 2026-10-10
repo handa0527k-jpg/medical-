@@ -15,7 +15,15 @@
 | 05 | CRISPR-Cas9 | sgRNAの20塩基をDNA上でドラッグ → PAM（NGG）がある所でだけCas9が結合（R-loopは結晶構造そのもの）→ HNH/RuvCで切断 → NHEJ（フレームシフト）かHDR（FLAGタグのノックイン）を選び、タンパク質配列で結果を確認 | Cas9–sgRNA–DNA 5F9R |
 | 06 | 実物大ギャラリー | DNA・GFP・AAV・アデノ・レトロウイルスを同じ縮尺で並べ、倍率スライダーで比較。GFPに波長を選んだ光を当てて光らせる | GFP 1EMA / AAV2 1LP3（60量体） |
 
-**授業動画**（`film.html?id=sanger`）：サンガー法を、本物のTaqポリメラーゼ・ddCTP（PDB 3KTQ）と原子レベルのDNAで説明するナレーションつき3Dアニメ（約7分）。作り方は [film/README.md](film/README.md)。
+**授業動画**（`film.html?id=…`）：ラボと同じ実物の分子モデルで描いた、ナレーション・字幕つきの3Dアニメ5本。作り方は [film/README.md](film/README.md)。
+
+| id | 動画 | 長さ | 使う実構造 |
+|---|---|---|---|
+| `restriction` | 制限酵素とDNAリガーゼ | 約4分 | BamHI 1BHM / BglII 1DFM / リガーゼI 1X9N |
+| `cloning` | プラスミドでクローニング | 約4分 | GFP 1EMA（プラスミド・大腸菌は模式図） |
+| `pcr` | PCR | 約4分 | Taqポリメラーゼ 3KTQ |
+| `sanger` | サンガー法 | 約7分 | Taqポリメラーゼ＋ddCTP 3KTQ |
+| `crispr` | CRISPR-Cas9 | 約5分 | Cas9–sgRNA–DNA 5F9R |
 
 **3Dモデル図鑑**（`#/models`）では、すべてのモデルを自由に回し、タンパク質・DNA・sgRNAなどを部分ごとに表示／半透明にできます。
 

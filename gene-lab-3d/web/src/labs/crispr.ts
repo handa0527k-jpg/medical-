@@ -290,6 +290,7 @@ export async function mount({ stage, hud, panel, mission }: LabEnv) {
   const protEl = h('div', {}, h('div', { class: 'prot', html: proteinHtml(GENE) }));
   const valid = targets(GENE);
   panel.append(
+    h('a', { class: 'quiz-btn', href: `${import.meta.env.BASE_URL}film.html?id=crispr`, style: 'text-align:center;text-decoration:none' }, '▶ 授業動画で流れを見る（約5分）'),
     h('p', { class: 'note', html: `標的の遺伝子（${GENE.length} bp）。sgRNAの20塩基（青い筒）を<b>DNAの上でドラッグ</b>するか、矢印で1塩基ずつ動かします。PAMの候補：${valid.length}か所。` }),
     h('div', { class: 'row' },
       h('button', { class: 'ghost small', onclick: () => moveWindow(start - 1) }, '◀ 1塩基'),
