@@ -6,6 +6,8 @@ import { RenderPass } from 'three/addons/postprocessing/RenderPass.js';
 import { GTAOPass } from 'three/addons/postprocessing/GTAOPass.js';
 import { UnrealBloomPass } from 'three/addons/postprocessing/UnrealBloomPass.js';
 import { OutputPass } from 'three/addons/postprocessing/OutputPass.js';
+import { BokehPass } from 'three/addons/postprocessing/BokehPass.js';
+import { ShaderPass } from 'three/addons/postprocessing/ShaderPass.js';
 import { CSS2DRenderer, CSS2DObject } from 'three/addons/renderers/CSS2DRenderer.js';
 
 export type Tick = (dt: number, t: number) => void;
@@ -41,9 +43,19 @@ export class Stage {
   private disposed = false;
   quality: 'high' | 'low';
   readonly raycaster = new THREE.Raycaster();
+  /** film mode only: depth of field and the vignette/grain pass */
+  dof: BokehPass | null = null;
+  private grade: ShaderPass | null = null;
+  private manual: boolean;
 
-  constructor(readonly host: HTMLElement) {
-    this.quality = defaultQuality();
+  /**
+   * opts.manual: no animation loop; the caller renders each frame with renderFrame()
+   * (films are rendered frame by frame from a clock). opts.film adds depth of field,
+   * a vignette and fine grain.
+   */
+  constructor(readonly host: HTMLElement, opts: { manual?: boolean; film?: boolean; pixelRatio?: number } = {}) {
+    this.manual = !!opts.manual;
+    this.quality = opts.film ? 'high' : defaultQuality();
     const r = new THREE.WebGLRenderer({ antialias: true, powerPreference: 'high-performance' });
     r.setPixelRatio(Math.min(devicePixelRatio, 2));
     r.toneMapping = THREE.AgXToneMapping;
@@ -95,10 +107,31 @@ export class Stage {
     this.gtao.updateGtaoMaterial({ radius: 0.5, distanceExponent: 1.5, thickness: 1.2, scale: 1.0, samples: 16 });
     this.gtao.blendIntensity = 0.85;
     this.composer.addPass(this.gtao);
+    if (opts.film) {
+      this.dof = new BokehPass(this.scene, this.camera, { focus: 20, aperture: 0.0006, maxblur: 0.006 });
+      this.composer.addPass(this.dof);
+    }
     this.bloom = new UnrealBloomPass(new THREE.Vector2(1, 1), 0.7, 0.4, 2.6);
     this.composer.addPass(this.bloom);
     this.composer.addPass(new OutputPass());
+    if (opts.film) {
+      this.grade = new ShaderPass({
+        uniforms: { tDiffuse: { value: null }, uTime: { value: 0 }, uVignette: { value: 0.32 }, uGrain: { value: 0.025 } },
+        vertexShader: 'varying vec2 vUv; void main(){ vUv = uv; gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0); }',
+        fragmentShader: `uniform sampler2D tDiffuse; uniform float uTime, uVignette, uGrain; varying vec2 vUv;
+          float h(vec2 p){ return fract(sin(dot(p, vec2(12.9898, 78.233)) + uTime * 7.31) * 43758.5453); }
+          void main(){
+            vec4 c = texture2D(tDiffuse, vUv);
+            float d = distance(vUv, vec2(0.5));
+            c.rgb *= 1.0 - uVignette * smoothstep(0.35, 0.85, d);
+            c.rgb += (h(vUv * 1000.0) - 0.5) * uGrain;
+            gl_FragColor = c;
+          }`,
+      });
+      this.composer.addPass(this.grade);
+    }
     this.setQuality(this.quality);
+    if (opts.pixelRatio) { this.renderer.setPixelRatio(opts.pixelRatio); this.resize(); }
 
     this.ro = new ResizeObserver(() => this.resize());
     this.ro.observe(host);
@@ -141,8 +174,25 @@ export class Stage {
     return () => this.ticks.delete(f);
   }
 
+  /** focus the depth of field on a point (film mode) */
+  focusOn(p: THREE.Vector3, aperture = 0.0006) {
+    if (!this.dof) return;
+    const u = this.dof.uniforms as unknown as Record<string, { value: number }>;
+    u.focus.value = this.camera.position.distanceTo(p);
+    u.aperture.value = aperture;
+  }
+
+  /** draw one frame now (manual mode); `t` drives the grain so stills differ frame to frame */
+  renderFrame(t = 0) {
+    if (this.grade) (this.grade.uniforms as unknown as Record<string, { value: number }>).uTime.value = t % 10;
+    this.camera.updateMatrixWorld();
+    this.composer.render();
+    this.labels.render(this.scene, this.camera);
+  }
+
   private loop = () => {
     if (this.disposed) return;
+    if (this.manual) return;
     this.raf = requestAnimationFrame(this.loop);
     this.timer.update();
     const dt = Math.min(this.timer.getDelta(), 0.25); // keep real time on slow devices

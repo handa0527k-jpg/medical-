@@ -64,8 +64,15 @@ export class AtomicDNA extends THREE.Group {
   private base: Float32Array; // template-space atom positions after the helical placement
   private radius: Float32Array;
   private bb: Uint8Array;
+  /** PDB atom name of every instance (O3', C1', P, ...) */
+  readonly names: string[] = [];
+  readonly elements: string[] = [];
+  /** per-atom size factor (1 = normal); lets a film remove one atom, e.g. the 3'-O of a ddNTP */
+  readonly atomScale: Float32Array;
   private letters: (CSS2DObject | null)[] = [];
   private letterY = 1.75;
+  /** which letters may show (in addition to their nucleotide being visible) */
+  letterFilter: ((nt: Nt) => boolean) | null = null;
   private colBase: THREE.Color[] = [];
   private colElem: THREE.Color[] = [];
   readonly atomNt: Int32Array;
@@ -85,19 +92,20 @@ export class AtomicDNA extends THREE.Group {
     this.bottom = complement(top);
     this.mode = opts.mode ?? 'base';
     const phase = opts.phase ?? 0;
-    const atoms: { p: THREE.Vector3; el: string; bb: boolean; nt: number }[] = [];
+    const atoms: { p: THREE.Vector3; el: string; bb: boolean; nt: number; name: string }[] = [];
     // build both strands nucleotide by nucleotide (strand 0 first, then strand 1)
-    const perStrand: { p: THREE.Vector3; el: string; bb: boolean }[][][] = [[], []];
+    const perStrand: { p: THREE.Vector3; el: string; bb: boolean; name: string }[][][] = [[], []];
     for (let k = 0; k < this.n; k++) {
       const key = top[k] + this.bottom[k];
       const pair = tpl.pairs[key] ?? tpl.pairs['AT'];
       const a = phase + k * this.twist;
       const c = Math.cos(a), s = Math.sin(a);
       for (const [si, list] of [[0, pair.s1], [1, pair.s2]] as const) {
-        perStrand[si][k] = list.map(([el, x, y, z, bb]) => ({
+        perStrand[si][k] = list.map(([el, x, y, z, bb, name]) => ({
           p: new THREE.Vector3(x + k * this.rise, y * c - z * s, y * s + z * c),
           el,
           bb: bb === 1,
+          name,
         }));
       }
     }
@@ -117,12 +125,15 @@ export class AtomicDNA extends THREE.Group {
     this.radius = new Float32Array(N);
     this.bb = new Uint8Array(N);
     this.atomNt = new Int32Array(N);
+    this.atomScale = new Float32Array(N).fill(1);
     const strandTone = [new THREE.Color('#eef1f6'), new THREE.Color('#c6d0dd')];
     atoms.forEach((a, i) => {
       a.p.toArray(this.base, i * 3);
       this.radius[i] = (VDW[a.el] ?? 0.17) * 0.92;
       this.bb[i] = a.bb ? 1 : 0;
       this.atomNt[i] = a.nt;
+      this.names.push(a.name);
+      this.elements.push(a.el);
       const nt = this.nts[a.nt];
       this.colBase.push(a.bb ? strandTone[nt.strand].clone()
         : new THREE.Color(BASE_COLOR[nt.base] ?? '#999').lerp(new THREE.Color('#ffffff'), a.el === 'C' ? 0 : 0.18));
@@ -164,6 +175,30 @@ export class AtomicDNA extends THREE.Group {
       l.element.style.color = color(nt);
       l.element.className = 'nt-letter ' + cls;
     });
+  }
+
+  /** instance index of a named atom in a nucleotide (-1 if absent) */
+  atomIndex(nt: Nt, name: string) {
+    for (let i = nt.start; i < nt.start + nt.count; i++) if (this.names[i] === name) return i;
+    return -1;
+  }
+
+  /** where an atom sits now (this group's space), following the nucleotide's offset and spin */
+  atomPos(i: number) {
+    const nt = this.nts[this.atomNt[i]];
+    const cs = Math.cos(nt.spin), sn = Math.sin(nt.spin);
+    const x = this.base[i * 3], y = this.base[i * 3 + 1], z = this.base[i * 3 + 2];
+    return new THREE.Vector3(x, y * cs - z * sn, y * sn + z * cs).add(nt.offset);
+  }
+
+  /** atoms of a nucleotide at their helical place (no offset): element, name, position, radius, colour */
+  atomsOf(nt: Nt) {
+    const out: { el: string; name: string; p: THREE.Vector3; r: number; color: THREE.Color }[] = [];
+    for (let i = nt.start; i < nt.start + nt.count; i++) {
+      out.push({ el: this.elements[i], name: this.names[i], p: new THREE.Vector3().fromArray(this.base, i * 3),
+        r: this.radius[i], color: (this.mode === 'base' ? this.colBase : this.colElem)[i].clone() });
+    }
+    return out;
   }
 
   /** centre of a nucleotide (its backbone atoms by default), in this group's space */
@@ -231,7 +266,7 @@ export class AtomicDNA extends THREE.Group {
       for (let i = nt.start; i < nt.start + nt.count; i++) {
         const x = b[i * 3], y = b[i * 3 + 1], z = b[i * 3 + 2];
         this.v.set(x + nt.offset.x, y * cs - z * sn + nt.offset.y, y * sn + z * cs + nt.offset.z);
-        const r = this.radius[i] * nt.scale + 1e-5;
+        const r = this.radius[i] * nt.scale * this.atomScale[i] + 1e-5;
         this.s.set(r, r, r);
         this.m4.compose(this.v, this.q, this.s);
         this.mesh.setMatrixAt(i, this.m4);
@@ -243,7 +278,7 @@ export class AtomicDNA extends THREE.Group {
       if (!l) return;
       const nt = this.nts[i];
       l.position.set(nt.k * this.rise + nt.offset.x, (nt.strand === 0 ? 1 : -1) * this.letterY + nt.offset.y, nt.offset.z);
-      l.visible = nt.scale > 0.5;
+      l.visible = nt.scale > 0.5 && (!this.letterFilter || this.letterFilter(nt));
     });
   }
 

@@ -27,6 +27,9 @@ from skimage.measure import marching_cubes
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CACHE = os.path.join(ROOT, '.cache')
 WEB_MODELS = os.path.join(ROOT, 'web', 'public', 'models')
+# FILM=1: finer surfaces for close-ups in the films (separate folder, lab models untouched)
+FILM = os.environ.get('FILM') == '1'
+MESH_DIR = os.path.join(CACHE, 'mesh-film' if FILM else 'mesh')
 
 VDW = {'C': 1.7, 'N': 1.55, 'O': 1.52, 'S': 1.8, 'P': 1.8, 'SE': 1.9, 'MG': 1.73, 'ZN': 1.39, 'CA': 1.97}
 NUC = {'DA', 'DT', 'DG', 'DC', 'A', 'U', 'G', 'C', 'GTP', 'DOC'}
@@ -370,7 +373,7 @@ def build(pid):
     cfg = MOLECULES[pid]
     recs = load_atoms(pid, cfg)
     meta = make_frame(pid, cfg, recs)
-    out = os.path.join(CACHE, 'mesh', pid)
+    out = os.path.join(MESH_DIR, pid)
     os.makedirs(out, exist_ok=True)
     parts = {}
     for name, (sel, colour) in cfg['parts'].items():
@@ -381,7 +384,7 @@ def build(pid):
         rad = np.array([VDW.get(a['element'], 1.7) for a in sub]) / 10.0
         if cfg.get('ca_only'):
             rad = rad * 1.25
-        grid = cfg['grid'] / 10.0
+        grid = cfg['grid'] / 10.0 * (0.6 if FILM else 1.0)
         if name in ('chromophore', 'ddntp', 'amp'):
             grid = 0.05
         verts, faces = gaussian_surface(pos, rad, grid, sigma_scale=0.72 * cfg.get('sigma_scale', 1.0)
@@ -398,6 +401,8 @@ def build(pid):
                 enzyme=cfg.get('enzyme'), site=cfg.get('site'), **meta)
     with open(os.path.join(out, 'meta.json'), 'w') as f:
         json.dump(info, f, ensure_ascii=False, indent=1)
+    if FILM:
+        return
     os.makedirs(WEB_MODELS, exist_ok=True)
     web = dict(info)
     web.pop('parts')

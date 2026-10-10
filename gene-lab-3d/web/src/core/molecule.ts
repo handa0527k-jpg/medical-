@@ -87,8 +87,8 @@ export interface Molecule {
  * A real structure from the PDB (surface built in the pipeline, AO baked in
  * Blender). Parts are named <ID>_<part>: protein, dna, sgrna, ddntp, ...
  */
-export async function loadMolecule(id: string): Promise<Molecule> {
-  const [scene, meta] = await Promise.all([loadGlb(id + '.glb'), loadMeta(id)]);
+export async function loadMolecule(id: string, dir = ''): Promise<Molecule> {
+  const [scene, meta] = await Promise.all([loadGlb(dir + id + '.glb'), loadMeta(id)]);
   const root = scene.clone(true);
   const parts = new Map<string, THREE.Mesh>();
   root.traverse((o) => {

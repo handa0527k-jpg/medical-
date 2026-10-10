@@ -6,13 +6,15 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc --noEmit && vite build",
-    "build:hosted": "tsc --noEmit && VITE_MODELS_JSON=1 vite build && node scripts/hosted-models.mjs dist/models",
+    "build:hosted": "tsc --noEmit && VITE_MODELS_JSON=1 vite build && node scripts/hosted-models.mjs dist/models dist/film/models",
     "preview": "vite preview --port 4174",
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
     "test:e2e": "playwright test",
     "kit": "blender -b --factory-startup --python ../blender/build.py -- public/models/kit.glb",
-    "renders": "blender -b --factory-startup --python ../blender/render.py -- public/renders"
+    "renders": "blender -b --factory-startup --python ../blender/render.py -- public/renders",
+    "film:stills": "node scripts/render-film.mjs sanger --stills",
+    "film:render": "node scripts/render-film.mjs sanger"
   },
   "dependencies": {
     "three": "^0.186.1"

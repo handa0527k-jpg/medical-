@@ -18,8 +18,10 @@ from mathutils import Vector
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
-MESH = os.path.join(ROOT, '.cache', 'mesh')
-OUT = os.path.join(ROOT, 'web', 'public', 'models')
+# FILM=1: the fine film surfaces (pipeline FILM=1), little decimation, into web/public/film/models
+FILM = os.environ.get('FILM') == '1'
+MESH = os.path.join(ROOT, '.cache', 'mesh-film' if FILM else 'mesh')
+OUT = os.path.join(ROOT, 'web', 'public', 'film', 'models') if FILM else os.path.join(ROOT, 'web', 'public', 'models')
 RENDERS = os.path.join(ROOT, 'web', 'public', 'renders')
 
 # triangle budget per part in the browser
@@ -64,7 +66,7 @@ def import_part(pid, part):
     ob.name = f'{pid}_{part}'
     ob.data.name = ob.name
     tris = len(ob.data.polygons)
-    target = BUDGET_OVERRIDE.get((pid, part), BUDGET.get(part, 30000))
+    target = BUDGET_OVERRIDE.get((pid, part), BUDGET.get(part, 30000)) * (4 if FILM else 1)
     if tris > target:
         mod = ob.modifiers.new('dec', 'DECIMATE')
         mod.ratio = target / tris

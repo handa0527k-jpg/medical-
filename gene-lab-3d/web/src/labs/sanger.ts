@@ -325,6 +325,7 @@ export async function mount({ stage, hud, panel, mission }: LabEnv) {
   const gelBtn = h('button', { class: 'primary', disabled: true, onclick: runGel }, '電気泳動');
   const capBtn = h('button', { class: 'primary', disabled: true, onclick: runCapillary }, '4色キャピラリーで読む');
   panel.append(
+    h('a', { class: 'quiz-btn', href: `${import.meta.env.BASE_URL}film.html?id=sanger`, style: 'text-align:center;text-decoration:none' }, '▶ 授業動画で流れを見る（約7分）'),
     h('h3', {}, '1. 本物のddNTPを見る'),
     h('div', { class: 'row' }, h('button', { class: 'ghost small', onclick: inspectDdntp }, 'ddCTPを拡大'),
       h('button', { class: 'ghost small', onclick: () => pol.setOpacity('protein', (pol.part('protein')!.material as THREE.Material).opacity > 0.9 ? 0.55 : 1) }, 'タンパク質の透明度')),
