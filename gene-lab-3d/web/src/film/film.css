@@ -170,3 +170,5 @@
 .side-card.counter { right: 3cqw; top: 8cqw; width: 22cqw; display: grid; gap: 0.6cqw; padding: 1.2cqw; background: rgba(5, 9, 19, .9); border: 0.1cqw solid rgba(160, 190, 230, .25); border-radius: 1.2cqw; }
 .side-card.counter div { display: flex; justify-content: space-between; align-items: baseline; font-size: 1.4cqw; color: #aab6cc; }
 .side-card.counter b { font-size: 2.4cqw; color: #fff; font-variant-numeric: tabular-nums; }
+
+#film.clean .film-ov, #film.clean .tag, #film.clean .nt-letter, #film.clean .film-letter { display: none !important; }

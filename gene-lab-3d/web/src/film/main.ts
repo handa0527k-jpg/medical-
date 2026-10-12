@@ -28,6 +28,8 @@ const W = +(q.get('w') ?? 1920), H = +(q.get('h') ?? 1080);
 
 const root = document.getElementById('film')!;
 root.classList.toggle('rendering', rendering);
+// clean=1: no subtitles, cards or labels (thumbnail backgrounds)
+root.classList.toggle('clean', q.get('clean') === '1');
 const frame = document.createElement('div');
 frame.className = 'film-frame';
 const view = document.createElement('div');

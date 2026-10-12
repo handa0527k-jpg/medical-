@@ -2,7 +2,7 @@
 //
 //   node scripts/render-film.mjs sanger --stills 5,40,90        # PNG/JPEG stills for review
 //   node scripts/render-film.mjs sanger --worker 0 --workers 3  # render chunks (resumable)
-//   options: --url http://localhost:4176  --fps 24  --w 1920 --h 1080  --chunk 10
+//   options: --url http://localhost:4176  --fps 24  --w 1920 --h 1080  --chunk 10  --clean (no subtitles/labels)
 //
 // The film is cut into fixed chunks (10 s); each finished chunk is written to
 // ../film/out/<id>/chunk-NNNN.mp4 and skipped on the next run, so a render that
@@ -32,7 +32,8 @@ const browser = await chromium.launch({
 const page = await browser.newPage({ viewport: { width: W, height: H } });
 page.on('pageerror', (e) => console.error('pageerror', e.message));
 page.on('console', (m) => { if (m.type() === 'error') console.error('console', m.text().slice(0, 200)); });
-await page.goto(`${url}/film.html?id=${id}&render=1&w=${W}&h=${H}`);
+const clean = process.argv.includes('--clean') ? '&clean=1' : '';
+await page.goto(`${url}/film.html?id=${id}&render=1&w=${W}&h=${H}${clean}`);
 await page.waitForFunction(() => document.body.dataset.ready === '1', null, { timeout: 300000 });
 const duration = await page.evaluate(() => window.__film.duration);
 const shoot = async (t) => {
