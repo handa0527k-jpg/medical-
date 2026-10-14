@@ -37,5 +37,4 @@ production/lecture-video/youtube/*.mp4
 .venv-sbv2/
 .sbv2/
 production/support-tissue/build/
-production/support-tissue/output/scenes/
 production/support-tissue/output/*_master.mp4
