@@ -1,0 +1,5 @@
+@font-face { font-family: 'MR'; src: url('../assets/fonts/MPLUSRounded1c-Regular.ttf'); font-weight: 400; }
+@font-face { font-family: 'MR'; src: url('../assets/fonts/MPLUSRounded1c-Bold.ttf'); font-weight: 700; }
+@font-face { font-family: 'MR'; src: url('../assets/fonts/MPLUSRounded1c-ExtraBold.ttf'); font-weight: 800; }
+html, body { margin: 0; background: #111; }
+canvas { display: block; max-width: 100vw; height: auto; }

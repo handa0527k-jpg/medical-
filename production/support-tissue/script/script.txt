@@ -1,0 +1,287 @@
+# 『人体は巨大な街だった！ 支持組織の秘密を探れ！』 台本
+#
+# 一次資料：2026 第6回 組織学総論「支持組織」（講義PDF）
+#
+# 書式
+#   @scene <id> | <シーン名> | <BGM>      シーンの開始
+#   @bgm <BGM>                            次のセリフからBGMを切り替える（クロスフェード）
+#   @think <秒>                           無音の考える時間（クイズ）
+#   @pause <秒>                           間
+#   <話者>.<表情>: <字幕テキスト>  ‖ key=value ...
+#     話者: shun 蒼井俊 / sapo サポちゃん / nar 先生（ナレーション）
+#           fibro 線維芽細胞 / macro マクロファージ / plasma 形質細胞 / mast 肥満細胞
+#           collagen 膠原線維 / reticular 細網線維 / elastic 弾性線維 / white 白色脂肪細胞 / brown 褐色脂肪細胞
+#     key:  label=絵のきっかけ名  sfx=効果音  pause=後ろの間(秒)  quiz=問題ID
+#   読み（音声合成用）は tools/readings.py の辞書で字幕テキストから自動変換する。
+
+@scene s01 | 人体シティへようこそ！ | adventure
+shun.surprised: うわっ！ ここはどこだ!?  ‖ label=arrive sfx=rumble
+shun.panic: 地面が揺れてる……わわっ、転ぶ！  ‖ label=stumble sfx=stumble
+sapo.happy: あぶなーい！ キャッチ！  ‖ label=sapo sfx=pop
+sapo.happy: ようこそ！ ここは人体シティ！ 人体の仕組みを学べる特別な街だよ！  ‖ label=welcome sfx=sparkle
+sapo.wink: わたしは案内役のサポちゃん。よろしくだよ！
+shun.normal: 蒼井 俊、医学部1年生です。……で、なんでぼく、人体の中に!?
+sapo.laugh: 細かいことは気にしない！ 今日は「支持組織」を見学するよ！  ‖ label=today
+shun.think: 支持組織って、骨のことだろ？ 体を支えるんだし。  ‖ label=bone
+sapo.wag: ぶぶー！ 半分だけ正解。骨もそうだけど、それだけじゃないよ！  ‖ sfx=buzzer
+shun.confused: 人体って、骨と筋肉があれば動くんじゃないの？
+sapo.normal: それだけじゃないよ！ 細胞と細胞の間にも、大切な仕組みがあるんだ！  ‖ label=between
+shun.confused: 細胞の間って、ただの空き地じゃないの？  ‖ label=akichi
+sapo.happy: そこが一番おもしろいところ！ ズームしてみよう！  ‖ label=zoom sfx=zoom
+nar.normal: 支持組織は、ドイツ語でシュトゥッツゲヴェーベ。広い意味の「結合組織」と同じ意味で使われます。  ‖ label=def
+nar.normal: 支持組織は、間葉という、細胞がまばらな胎児性の組織に由来します。  ‖ label=mesen
+nar.normal: 特徴は二つ。細胞はまばらで、極性がありません。そして、細胞と細胞の間を満たす「細胞間質」が豊富です。  ‖ label=feat
+shun.surprised: 上皮みたいに、細胞がぎっしり並んでいるわけじゃないんだ！  ‖ label=epi
+sapo.happy: そう！ それに、細胞間質の中には血管も通っているよ。  ‖ label=vessel
+sapo.normal: 実はね……細胞間質は、「線維」と「基質」でできているんだ。  ‖ label=fibgs
+nar.normal: 線維は、光学顕微鏡でも見えます。一方、基質は、光学顕微鏡では無構造に見えます。  ‖ label=lm
+nar.normal: しかし電子顕微鏡では、基質の多糖類であるグリコサミノグリカン、GAGが見えます。基質のもう一つの成分、組織液は、電子顕微鏡でも無構造です。  ‖ label=em
+sapo.point: 線維と基質がつくるこの世界を、最近は「細胞外マトリックス」と呼ぶよ！ 英語の頭文字でECMともいうんだ。  ‖ label=ecm sfx=ding
+nar.normal: 細胞外マトリックスには二つの意味があります。広い意味では、細胞間質と同じ、空間的な概念。狭い意味では、線維と基質の多糖類という、物質的な概念です。  ‖ label=ecm2
+shun.happy: 空き地じゃなくて、街を支えるインフラがぎっしり詰まってるってことか！  ‖ label=infra
+sapo.wink: その通り！ じゃあ、この街の建設会社を見に行こう！  ‖ label=go sfx=whoosh
+
+@scene s02 | 支持組織の街づくり会社 | pop
+shun.normal: 支持組織って、全部同じようなものなの？  ‖ label=q
+sapo.happy: 実は、得意な仕事がそれぞれ違うんだよ！ ここは「支持組織の街づくり会社」。部署ごとに見ていこう！  ‖ label=company sfx=pop
+nar.normal: 講義資料の分類では、支持組織は、結合組織、軟骨、骨、そして血液とリンパに分けられます。  ‖ label=big
+nar.normal: ここでいう結合組織は、「狭い意味」の結合組織です。  ‖ label=narrow
+sapo.point: 結合組織は、線維の詰まり方で二つに分かれるよ。線維がまばらな「疎性結合組織」と、線維が緻密な「密性結合組織」！  ‖ label=loosedense
+shun.surprised: まばらと、ぎっしり……並べると、見た目が全然違う！  ‖ label=compare
+nar.normal: 疎性結合組織には、通常の疎性結合組織、膠様組織、脂肪組織、細網組織が含まれます。  ‖ label=loosesub
+sapo.normal: 膠様組織は、寒天みたいな組織。へその緒、つまり臍帯に見られて、大人でも椎間板の髄核にあるんだ。  ‖ label=gel
+sapo.normal: 細網組織は、細い網で細胞を抱える組織。骨髄やリンパ系にあるよ。  ‖ label=retic
+nar.normal: 密性結合組織は、線維が多く、基質は少なく、細胞は主に線維芽細胞です。線維の並び方で、さらに二つに分けます。  ‖ label=densesub
+sapo.point: 膠原線維がいろんな方向に走るのが「密性不規則性結合組織」。真皮、角膜、強膜、筋膜、内臓の被膜がその例だよ！  ‖ label=irreg
+shun.think: いろんな方向から引っぱられても、破れにくいってこと？
+sapo.happy: そう！ 布を、向きを変えて何枚も重ねたイメージだね。  ‖ label=cloth
+sapo.point: そして、膠原線維が一方向にそろって並ぶのが「密性規則性結合組織」。代表は、腱と靭帯！  ‖ label=reg
+shun.happy: 一方向にそろったロープの束……だから、その方向の強い力に耐えられるのか！  ‖ label=rope
+nar.normal: 密性規則性結合組織には、膠原線維の多い膠原線維性のもの、例えば腱や靭帯と、弾性線維の多い弾性線維性のもの、例えば太い動脈の壁や、頸椎の項靭帯があります。  ‖ label=elasticreg
+nar.normal: 腱の横断面を見ると、多数の膠原細線維からなる膠原線維の間で、線維芽細胞の細胞質が押しつぶされています。この細胞を、翼細胞と呼びます。  ‖ label=winged
+shun.surprised: 翼細胞！ 名前がかっこいい！
+sapo.wink: ここ、試験にも出るポイントだよ！ 「規則性」と「不規則性」の例を、セットで覚えてね。  ‖ label=exam sfx=ding
+
+@scene s03 | 人体を支える4つの仕事 | support
+shun.normal: 支持組織って、結局どんな仕事をしているの？  ‖ label=q
+sapo.happy: 大きく分けて4つ！ 支える、交換する、守る、ためる。順番に見ていこう！  ‖ label=four sfx=pop
+nar.normal: 一つめは、支持作用。線維やGAGによって、体を支えます。  ‖ label=sup sfx=whoosh
+sapo.point: 骨、軟骨、靭帯、腱は、筋肉といっしょに「運動器」をつくるよ。  ‖ label=locomotor
+sapo.point: 皮膚の真皮、筋膜、臓器の被膜は、表面を補強する。  ‖ label=surface
+sapo.normal: そして、皮下や粘膜下、臓器や神経、血管のまわりでは、すき間を埋めているんだ。  ‖ label=gap
+shun.happy: 骨組みと、外壁と、すき間のクッション。街の建材みたいだな。
+@bgm exchange
+nar.normal: 二つめは、物質交換。組織液によって行われます。  ‖ label=ex sfx=whoosh
+sapo.point: 毛細血管から、酸素と栄養が組織へ。組織からは、二酸化炭素と老廃物が血管へ戻るよ！  ‖ label=arrows
+shun.happy: 組織液は、配送センターの通路みたいなものか！
+sapo.wink: いいたとえ！ 細胞は、組織液を通して、物を受け取ったり出したりしているんだ。
+@bgm defense
+nar.normal: 三つめは、生体防御。これは、細胞成分によるものです。  ‖ label=def sfx=alarm
+sapo.point: 自然免疫では、大食細胞、つまりマクロファージや、好中球が活躍！  ‖ label=innate
+macro.happy: 怪しい異物は、ぼくが食べて処理する！  ‖ label=eat sfx=chomp
+sapo.normal: 獲得免疫では、形質細胞、リンパ球、肥満細胞などが働くよ。  ‖ label=acquired
+@bgm storage
+nar.normal: 四つめは、貯蔵です。  ‖ label=sto sfx=whoosh
+sapo.point: 脂肪は、脂肪細胞の細胞質に。カルシウムは、骨や歯の基質にためられるよ。  ‖ label=fatca
+shun.happy: エネルギー倉庫と、カルシウムの金庫ってわけだ！  ‖ label=vault
+@bgm support
+nar.normal: まとめます。支持組織の機能は、支持作用、物質交換、生体防御、貯蔵の4つです。  ‖ label=sum sfx=ding
+sapo.wink: 担当は、「線維やGAG」「組織液」「細胞成分」「脂肪細胞と骨や歯の基質」。この対応もセットで覚えよう！  ‖ label=sum2
+
+@scene s04 | 不思議なゼリーの正体 | mystic
+shun.surprised: うわ、体がふわふわ浮いてる……ここ、どこ？  ‖ label=float sfx=bubble
+sapo.normal: 細胞間質の中、「基質」の世界だよ。光学顕微鏡では無構造に見える、透明なゼリーの世界！  ‖ label=jelly
+shun.confused: 何もない……ように見えるけど？
+sapo.normal: 実はね……ここには、長～いくさりが、いっぱい漂っているんだ。  ‖ label=chain sfx=sparkle
+nar.normal: 基質の主役は、グリコサミノグリカン、GAGです。ウロン酸とアミノ糖、つまりヘキソサミンからなる二糖が、繰り返しつながった長い多糖です。  ‖ label=disacch
+sapo.happy: AとBの二つのパーツが、何度も何度も繰り返す。ネックレスみたいでしょ？  ‖ label=necklace
+nar.normal: AとBの組み合わせによって、多くの種類のGAGができます。コンドロイチン硫酸、ヘパラン硫酸、ヘパリン、そしてヒアルロン酸です。  ‖ label=types
+nar.normal: 講義資料の整理では、コンドロイチン硫酸、ヘパラン硫酸、ヘパリンは、マイナスに荷電しています。一方、ヒアルロン酸は「荷電なし」とされています。  ‖ label=charge
+shun.think: マイナスどうしって……反発し合うよね？  ‖ label=repelq
+sapo.point: そう！ ここが大事なんだよ！  ‖ label=important sfx=ding
+nar.normal: マイナスに荷電したGAGは、互いに反発し合い、その間に水が入り込みます。こうして基質は、組織液を保持できるのです。  ‖ label=water sfx=water
+shun.happy: スポンジみたいに水を抱え込むんだ！ だから、ゼリーみたいにぷるぷるなのか。  ‖ label=sponge
+sapo.normal: 次は、このくさりがどうまとまるかを見てみよう。  ‖ label=pgintro
+nar.normal: プロテオグリカンは、単糖が80個以上の長さのGAG鎖が、コア蛋白質に、クシの歯のように結合したものです。  ‖ label=pg sfx=pop
+sapo.happy: ブラシみたい！ 芯がコア蛋白質で、毛がGAG鎖だね。  ‖ label=brush
+nar.normal: さらに、プロテオグリカンは、荷電を持たないGAGであるヒアルロン酸に結びついて、巨大な網状の構造をつくります。  ‖ label=aggregate
+nar.normal: そして、ヒアルロン酸は、膠原線維と結びつきます。  ‖ label=hacoll
+nar.normal: このような、多糖類と蛋白質による三次元構造を、「細胞外マトリックス」と呼びます。  ‖ label=ecm sfx=sparkle
+shun.happy: ブラシが長い棒にずらっと並んで、それがロープにくっついて……立体の巨大ジャングルジムだ！  ‖ label=gym
+sapo.wink: 試験にも出るポイントだよ！ 硫酸を含むGAGはマイナスに荷電。ヒアルロン酸は、プロテオグリカンをつなぐ土台。区別しておこうね！  ‖ label=exam
+
+@scene s05 | コラーゲン製造工場 | factory
+sapo.happy: さあ、お待ちかね！ ここが、コラーゲン製造工場だよ！  ‖ label=arrive sfx=clank
+fibro.happy: いらっしゃい！ 線維芽細胞の工場へようこそ。ここで膠原線維をつくっているんだ。  ‖ label=fibro sfx=hammer
+nar.normal: コラーゲンは、ヒトの全蛋白質の、25から30パーセントを占めます。  ‖ label=pct
+shun.surprised: 4分の1以上!? そんなにたくさん？  ‖ label=quarter
+nar.normal: コラーゲン分子は、3本のα鎖がらせん状に巻いた構造で、長さは約300ナノメートルです。  ‖ label=triple
+sapo.point: α鎖には特徴があるよ。アミノ酸3つごとに、グリシンが繰り返し出てくるの。  ‖ label=gly
+nar.normal: これを、Gly-X-Yの繰り返し構造と表します。XとYには、プロリンとリシンが多く含まれます。  ‖ label=gxy
+sapo.happy: じゃあ、製造ラインを、順番に見ていこう！  ‖ label=line sfx=whoosh
+nar.normal: 第1工程。粗面小胞体で、α鎖が合成されます。  ‖ label=st1 sfx=clank
+nar.normal: 第2工程。同じく粗面小胞体で、α鎖が修飾されます。水酸化、糖鎖の付加、ジスルフィド結合です。  ‖ label=st2 sfx=clank
+sapo.point: ここが大事なんだよ！ プロリンとリシンの水酸化には、ビタミンCが必要なの！  ‖ label=vitc sfx=ding
+nar.normal: ビタミンCが不足すると、この過程が障害されます。  ‖ label=vitc2 sfx=buzzer
+nar.normal: 水酸化されてできたヒドロキシプロリンは、3本の鎖を結合させます。ヒドロキシリシンには、糖がつきます。  ‖ label=hyp
+nar.normal: 第3工程。3本のα鎖がらせんを組み、プロコラーゲンができます。  ‖ label=st3 sfx=clank
+nar.normal: 第4工程。プロコラーゲンはゴルジ装置に送られ、小胞をつくります。  ‖ label=st4 sfx=clank
+nar.normal: 第5工程。小胞は、構造的分泌経路で細胞の外へ分泌されます。分泌されたあと、両端が切断されて、コラーゲン分子、トロポコラーゲンになります。  ‖ label=st5 sfx=snip
+shun.surprised: 外に出てから端っこを切るんだ！ 中で完成させるんじゃないのか。  ‖ label=snipq
+fibro.wink: そう、切るのは細胞の外。ここ、間違えやすいぞ！  ‖ label=outside
+nar.normal: 第6工程。コラーゲン分子が重合して、膠原細線維ができます。  ‖ label=st6 sfx=clank
+nar.normal: 第7工程。膠原細線維が束ねられて、膠原線維になります。主に、I型コラーゲンの重合によるものです。  ‖ label=st7 sfx=clank
+collagen.happy: 完成！ 張力への抵抗力は抜群。波打っていて、枝分かれはしないぜ！  ‖ label=done sfx=fanfare
+nar.normal: 膠原線維は、HE染色で赤く、AFMG染色で緑に染まります。  ‖ label=stain
+sapo.normal: コラーゲンには、α鎖の組み合わせによって、いくつかの型があるよ。  ‖ label=types
+nar.normal: I型は、通常の結合組織と骨。II型は軟骨。III型は細網線維。IV型は基底膜で、線維構造をつくりません。  ‖ label=types2
+shun.happy: 1、2、3、4……骨、軟骨、網、膜！ 覚えた！  ‖ label=mnemonic sfx=sparkle
+
+@scene s06 | 3種類の線維を見分けろ！ | rock
+sapo.happy: さあ、線維の三大選手、登場だよ！  ‖ label=intro sfx=drum
+collagen.happy: 膠原線維！ 太さは約10マイクロメートル。成分はコラーゲン。引っぱる力なら任せろ！  ‖ label=coll sfx=pop
+reticular.normal: 細網線維です。太さは1マイクロメートル未満。成分はコラーゲンで、主にIII型。網目状に枝分かれして、細胞を支えます。  ‖ label=ret sfx=pop
+elastic.happy: 弾性線維だよ！ 成分はエラスチン。太さは約1マイクロメートル。びよーんと伸びて、ぱっと戻る！  ‖ label=ela sfx=boing
+shun.surprised: ロープ、網、バネ……見た目も性格も、全然違う！  ‖ label=three
+nar.normal: 細網線維は、重合度の低い細い線維で、HE染色では見えません。鍍銀染色で、黒く染まります。  ‖ label=retstain
+nar.normal: 網目状に分岐し、線維芽細胞の一種である細網細胞に、まとわりつくように分布します。主な存在部位は、骨髄やリンパ系などの細網組織です。  ‖ label=retloc
+nar.normal: 弾性線維は、コイル状の1本鎖蛋白質であるエラスチンが架橋されてできた、直径約0.2から1マイクロメートルの線維です。  ‖ label=elastruct
+sapo.point: 引っぱると伸びて、離すと戻る。その秘密は、架橋されたエラスチンのコイルなんだ！  ‖ label=coil sfx=boing
+nar.normal: 弾性線維は直線的に走行し、分岐もあります。血管壁の弾性板、項靭帯、弾性軟骨にあり、通常の疎性結合組織でも、膠原線維に混じって存在します。  ‖ label=elaloc
+sapo.happy: では、ここで染色対決！ 3人を、3種類の染色液に通してみよう！  ‖ label=battle sfx=drum
+nar.normal: まずHE染色。膠原線維は赤。細網線維は染まりません。弾性線維は無色です。  ‖ label=he sfx=splash
+nar.normal: 次に、アルデヒドフクシン・マッソン・ゴールドナー染色、AFMG染色。膠原線維は緑。細網線維は染まりません。弾性線維は紫です。  ‖ label=afmg sfx=splash
+nar.normal: そして鍍銀染色。黒く染まるのは、細網線維だけです。  ‖ label=silver sfx=splash
+shun.surprised: 細網線維は、この3つの中では、鍍銀染色でしか見えないのか！  ‖ label=realize
+sapo.wink: そう！ この表は、試験に出るポイントだよ。「膠原はHEで赤、AFMGで緑」「細網は鍍銀で黒」「弾性はAFMGで紫」！  ‖ label=exam sfx=ding
+
+@scene s07 | 結合組織の住人たち | comic
+sapo.happy: 次は、結合組織に住む細胞たちを紹介するよ！  ‖ label=intro sfx=pop
+nar.normal: 支持組織の細胞は、由来によって二つの系統に分けられます。  ‖ label=origin
+nar.normal: 発生初期の間葉細胞から分化した未分化間葉細胞は、線維芽細胞、細網細胞、脂肪細胞などの「固定細胞」になります。骨細胞、軟骨細胞、血管の内皮細胞、周皮細胞も、こちらの系統です。  ‖ label=fixed
+nar.normal: 一方、骨髄の造血幹細胞から末梢の血球を経て、大食細胞、肥満細胞、形質細胞などの「自由細胞」が生まれます。  ‖ label=free
+shun.happy: ずっとそこに住む人と、外からやって来て動き回る人がいるんだな。  ‖ label=resident
+fibro.happy: まずは、おれ、線維芽細胞！ 線維と基質、つまり細胞外マトリックスの成分をつくる、建築職人だ！  ‖ label=fibro sfx=hammer
+nar.normal: 線維芽細胞は、未分化間葉細胞に由来し、増殖能をもちます。特殊化した線維芽細胞が、細網細胞や脂肪細胞です。  ‖ label=fibro2
+nar.normal: 若い線維芽細胞は多角形で、核が明るく、核小体が明瞭で、細胞質は塩基好性。増殖能と基質産生能が高い細胞です。老朽化すると、細長く核の暗い「線維細胞」になります。  ‖ label=fibro3
+macro.happy: 次はぼく、大食細胞、マクロファージ。異物を食べる警備員だよ！  ‖ label=macro sfx=chomp
+nar.normal: マクロファージは、やや不規則な卵形の細胞です。電子顕微鏡では、空豆形の核と、多数の細胞質突起が見られます。  ‖ label=macro2
+nar.normal: リソソームと食胞が発達しており、酸性フォスファターゼをもちます。細胞膜には、抗体と結合するFc受容体や、補体と結合するC3結合体があります。  ‖ label=macro3
+sapo.point: 仕事は、貪食による生体防御、つまり自然免疫。それから、食べた抗原を、組織適合抗原といっしょにT細胞に見せる「抗原提示」！  ‖ label=macro4
+nar.normal: さらに、抗原・抗体・補体の複合体を結合させて貪食し、T細胞増殖因子や補体もつくります。  ‖ label=macro5
+nar.normal: 組織に常在するマクロファージは卵黄嚢の造血幹細胞に、炎症時のマクロファージは骨髄の造血幹細胞に由来します。  ‖ label=macro6
+plasma.normal: わたしは形質細胞。抗体を生産する工場長です。  ‖ label=plasma sfx=clank
+nar.normal: 形質細胞は円形から楕円形で、核は偏心性。核の異染色質が放射状に分布する「車軸核」が特徴です。  ‖ label=plasma2
+nar.normal: 粗面小胞体が非常に発達しているため、細胞質は塩基好性で、ゴルジ野は明瞭に、明るく抜けて見えます。  ‖ label=plasma3
+nar.normal: リンパ組織のBリンパ球が、抗原の刺激を受けて形質細胞に変化し、抗体を産生します。これが液性免疫です。  ‖ label=plasma4
+shun.happy: 抗体の大量生産ラインだから、粗面小胞体がいっぱいなんだ！  ‖ label=rer
+mast.surprised: 緊急警報係、肥満細胞です！ 顆粒の中に、ヒスタミンやヘパリンを準備しています！  ‖ label=mast sfx=alarm
+shun.confused: 肥満って……太ってるってこと？  ‖ label=fat
+sapo.wag: ちがうちがう！ 名前に「肥満」とついているけど、脂肪をためる細胞じゃないよ。顆粒でいっぱいの細胞なんだ！  ‖ label=notfat
+nar.normal: 肥満細胞は、直径20から30マイクロメートルの大きな細胞です。円形の核が中央にあり、200から800ナノメートルの分泌顆粒を無数にもちます。AFMG染色で、紫色から赤紫に染まります。  ‖ label=mast2
+nar.normal: ヒスタミンは、血管平滑筋を弛緩させ、血管透過性を上げ、内臓平滑筋を収縮させます。ヘパリンは、血液凝固を阻害します。  ‖ label=mast3
+nar.normal: 細胞膜には、IgE受容体があります。抗原がIgEに結合し、それが肥満細胞のIgE受容体と結合すると、サイクリックAMPに始まる細胞内シグナル伝達によって、カルシウムイオンが放出されます。  ‖ label=mast4
+nar.normal: すると、調節的分泌経路で、分泌顆粒の中身が放出されます。ヒスタミンによって、血管平滑筋の弛緩、血管透過性の上昇、気道平滑筋の収縮が起こります。  ‖ label=mast5 sfx=burst
+nar.normal: これが、じんましんやアレルギー性鼻炎といった局所の反応や、全身性のアナフィラキシーなどの、即時型過敏症です。細胞膜の脂質からつくられるロイコトリエンも、ヒスタミンと同様の作用をもちます。  ‖ label=mast6
+sapo.wink: 肥満細胞は、骨髄の多能性幹細胞に由来して、血管から結合組織に出て増殖・分化するよ。結合組織型と粘膜型があるんだ。これで住人紹介は完了！  ‖ label=mast7 sfx=sparkle
+
+@scene s08 | 基底膜の秘密 | calm
+shun.surprised: ここは……上皮の街のすぐ下？ 薄いシートが敷いてある。  ‖ label=arrive
+sapo.normal: これが基底膜。上皮と結合組織の境界にある、細胞外マトリックスの層だよ。  ‖ label=bm sfx=sparkle
+nar.normal: 基底膜の機能は、上皮の支持、物質の選択的透過、そして上皮の増殖・移動・再生です。  ‖ label=func
+nar.normal: 基底膜は、上皮細胞以外にも、平滑筋や骨格筋の細胞、脂肪細胞、末梢神経のシュワン細胞などの周囲にあります。  ‖ label=where
+nar.normal: 光学顕微鏡では、基底膜はHE染色で無構造に見えます。PAS染色ではGAGによって陽性、鍍銀染色では細網線維によって陽性になります。  ‖ label=lm
+sapo.happy: もっとズーム！ 電子顕微鏡の世界へ！  ‖ label=zoom sfx=zoom
+nar.normal: 電子顕微鏡で見ると、上皮側から、透明板と緻密板があります。この二つを合わせて「基底板」といい、厚さは約100ナノメートルです。  ‖ label=bl
+nar.normal: 緻密板は、狭い意味の基底膜とも呼ばれます。そしてその下に、線維網状板があります。  ‖ label=lf
+shun.confused: 基底膜と基底板って、同じものじゃないの？  ‖ label=q
+sapo.point: いい質問！ 電子顕微鏡のレベルでいう基底膜は、基底板と、その下の線維網状板を合わせたものなんだよ。  ‖ label=ans sfx=ding
+nar.normal: 基底板は、主に上皮がつくります。成分は、IV型コラーゲン、ヘパラン硫酸などのGAGやプロテオグリカン、そして、ラミニンやフィブロネクチンなどの接着蛋白質です。  ‖ label=blcomp
+nar.normal: 線維網状板は、主に結合組織がつくり、I型とIII型コラーゲンの細網線維からなります。  ‖ label=lfcomp
+sapo.happy: 基底板の骨組み、IV型コラーゲンの組み立てを見てみよう！  ‖ label=build sfx=whoosh
+nar.normal: 3重らせんのIV型コラーゲン分子が、まず2量体、続いて4量体をつくり、網目状に配列します。線維構造はつくりません。  ‖ label=iv
+nar.normal: そこにプロテオグリカンや接着蛋白質が加わり、シート状の構造ができます。  ‖ label=sheet
+shun.happy: ロープの束じゃなくて、フェンスの金網みたいだ。  ‖ label=fence
+nar.normal: 上皮と基底板は、二つのしくみで接着します。ヘミデスモソームでは、細胞質の中間径フィラメントが、アンカーを介して細胞膜のインテグリンにつながり、基底板のラミニン、フィブロネクチン、IV型コラーゲンと結合します。  ‖ label=hd
+nar.normal: 焦点接着では、細胞質のアクチンフィラメントが、アンカーを介して細胞膜のインテグリンにつながり、基底板のフィブロネクチンと結合します。  ‖ label=fa
+nar.normal: 基底板と結合組織の間では、基底板のフィブロネクチンが、アンカーを介して、細網線維のIII型コラーゲンと結合します。  ‖ label=blct
+sapo.wink: 上皮、基底板、結合組織。三つがしっかり手をつないでいるんだね！  ‖ label=sum sfx=sparkle
+
+@scene s09 | 脂肪細胞のエネルギー倉庫 | acoustic
+shun.surprised: うわあ、大きなタンクがずらり！  ‖ label=arrive
+sapo.happy: ここは脂肪組織。人体シティのエネルギー倉庫だよ！ 疎性結合組織の一種なんだ。  ‖ label=intro sfx=pop
+nar.normal: 脂肪組織は、体重の、男性で10から20パーセント、女性で15から25パーセントを占めます。白色脂肪組織と褐色脂肪組織があります。  ‖ label=pct
+white.happy: こんにちは、白色脂肪細胞です。大きな脂肪の粒を、一つだけ抱えています。  ‖ label=white
+nar.normal: 白色脂肪細胞は、直径50から100マイクロメートル。単胞性脂肪滴を一つもち、色素はカロテンです。  ‖ label=white2
+nar.normal: 一種の細網細胞で、基底膜をもち、周囲の細胞間質には細網線維があります。  ‖ label=white3
+nar.normal: 脂肪滴は、通常の標本作製の途中で、有機溶媒に溶け出してしまいます。そのため、凍結切片の脂肪染色、オイルレッドやズダンブラックで検出します。  ‖ label=white4
+shun.surprised: だから普通の標本では、脂肪細胞が白く抜けて見えるのか！  ‖ label=hole
+sapo.point: 次は、燃料の出し入れ。ここは、ホルモンが鍵だよ！  ‖ label=metab
+nar.normal: 脂肪の蓄積は、インスリンで促進されます。  ‖ label=store sfx=ding
+nar.normal: 一つめは、腸と肝臓からのリポ蛋白質。毛細血管の内皮にあるリポ蛋白リパーゼで脂肪酸に分解され、拡散で取り込まれます。二つめは、血中の遊離脂肪酸で、拡散で取り込まれます。  ‖ label=store2
+nar.normal: 三つめは、血中のグルコース。輸送体で取り込まれ、細胞の中で脂肪酸に変換されます。  ‖ label=store3
+nar.normal: 一方、脂肪の動員は、グルカゴンとアドレナリンで促進され、インスリンで抑制されます。  ‖ label=mob sfx=ding
+nar.normal: 細胞内のリパーゼで分解され、一部はβ酸化を受けてATPと熱に。多くは遊離脂肪酸として血中に出て、栄養源になります。  ‖ label=mob2
+shun.happy: インスリンは「ためろ」、グルカゴンとアドレナリンは「出せ」の合図なんだ！  ‖ label=signal
+brown.happy: お待たせ！ 褐色脂肪細胞、人体シティのヒーターだ！  ‖ label=brown sfx=fire
+nar.normal: 褐色脂肪細胞は、直径20から30マイクロメートルほどと小さく、多胞性脂肪滴と、多数のミトコンドリアをもちます。色素は、リポクロムです。  ‖ label=brown2
+nar.normal: 交感神経の刺激を受けると、細胞内の貯蔵脂肪の代謝が急速に増加します。遊離脂肪酸は分泌されず、ミトコンドリアでβ酸化を受けます。  ‖ label=brown3
+nar.normal: そして、脱共役蛋白質UCP-1の作用によって、電子伝達系によるATP産生よりも、熱の産生が起こります。  ‖ label=ucp sfx=fire
+sapo.happy: 新生児の体温を保ったり、冬眠動物が目覚めるときに体温を上げたりするのに役立つよ！  ‖ label=role
+nar.normal: ヒトでは、胎児の初期に分化し、胎児期から新生児期に多く、成人ではごく少なく、心臓と大血管の周囲などに見られます。  ‖ label=brownloc
+sapo.point: 最後に、脂肪組織の発達。肥満とも関係するから大事なんだよ。  ‖ label=dev
+nar.normal: 胎児期に、未分化間葉細胞から脂肪前駆細胞が分化します。乳児期と思春期に前駆細胞が増殖して未熟脂肪細胞になり、そこに脂肪が蓄積して、成熟脂肪細胞になります。  ‖ label=dev2
+nar.normal: 脂肪の蓄積は可逆的で、栄養が減ると脂肪の量は減ります。しかし、乳児期と思春期の栄養過多で増えた細胞の数は、脂肪細胞の寿命が長いため、減りません。  ‖ label=dev3
+shun.surprised: 中身は減らせても、タンクの数は減らない……！  ‖ label=tank
+
+@scene s10 | 最終試験！ 支持組織の秘密を解き明かせ | climax
+sapo.happy: いよいよ最終試験！ 人体シティを冒険した成果を、見せてもらうよ！  ‖ label=start sfx=fanfare
+shun.happy: よーし、かかってこい！  ‖ label=ready
+sapo.normal: 第1問！ 膠原線維が一方向にそろって並ぶ「腱」は、どの組織に分類される？  ‖ label=q1 quiz=q1 sfx=ding
+@think 5
+shun.think: 線維がぎっしりで、向きがそろってるから……C、密性規則性結合組織！  ‖ label=a1
+sapo.happy: 正解！  ‖ label=c1 sfx=correct
+nar.normal: 腱と靭帯は、膠原線維が規則的に並ぶ密性規則性結合組織です。真皮や筋膜のように、線維が不規則に走るのは、密性不規則性結合組織です。  ‖ label=e1
+sapo.normal: 第2問！ 「狭い意味」の細胞外マトリックスに当てはまるのは、どれ？  ‖ label=q2 quiz=q2 sfx=ding
+@think 5
+shun.think: 広い意味が「空間」だったから、狭い意味は物質……B！  ‖ label=a2
+sapo.happy: 正解！  ‖ label=c2 sfx=correct
+nar.normal: 広い意味の細胞外マトリックスは、細胞間質と同じ空間的な概念。狭い意味は、線維と基質の多糖類という物質的な概念です。  ‖ label=e2
+sapo.normal: 第3問！ GAGが組織液を保持できるのは、なぜ？  ‖ label=q3 quiz=q3 sfx=ding
+@think 5
+shun.think: マイナスどうしが反発して、すき間に水が入るから……B！  ‖ label=a3
+sapo.happy: 正解！  ‖ label=c3 sfx=correct
+nar.normal: マイナスに荷電したGAGは、互いに反発し、その間に水が入り込みます。そのGAG鎖がコア蛋白質にクシの歯のように結合したものが、プロテオグリカンです。  ‖ label=e3
+sapo.normal: 第4問！ コラーゲンの合成で、ビタミンCが必要なのは、どの段階？  ‖ label=q4 quiz=q4 sfx=ding
+@think 5
+shun.think: 両端を切る……C、かな？  ‖ label=a4w
+sapo.wag: ぶぶー！ 残念！  ‖ label=w4 sfx=wrong
+shun.panic: しまった！ 水酸化だ……B！  ‖ label=a4
+sapo.happy: 今度は正解！  ‖ label=c4 sfx=correct
+nar.normal: ビタミンCが必要なのは、粗面小胞体で行われる、プロリンとリシンの水酸化です。両端の切断は、分泌されたあと、細胞の外で起こります。  ‖ label=e4
+sapo.normal: 第5問！ HE染色では見えず、鍍銀染色で黒く染まる線維は？  ‖ label=q5 quiz=q5 sfx=ding
+@think 5
+shun.think: 銀で黒……B、細網線維！  ‖ label=a5
+reticular.happy: 正解です。主にIII型コラーゲンを含む、網目状の線維です。  ‖ label=c5 sfx=correct
+nar.normal: 膠原線維はHEで赤、AFMGで緑。弾性線維はAFMGで紫。鍍銀染色で黒く染まるのは、細網線維です。  ‖ label=e5
+sapo.normal: 第6問！ 車軸核をもち、粗面小胞体が発達していて、抗体を産生する細胞は？  ‖ label=q6 quiz=q6 sfx=ding
+@think 5
+shun.happy: 抗体の工場長！ C、形質細胞！  ‖ label=a6
+plasma.happy: 正解です。Bリンパ球が抗原の刺激を受けて、わたしに変化するんですよ。  ‖ label=c6 sfx=correct
+nar.normal: 抗原提示を行うのはマクロファージ。ヒスタミンやヘパリンを含む顆粒をもつのは肥満細胞です。  ‖ label=e6
+sapo.normal: 第7問！ 基底板の中で網目状に配列し、線維構造をつくらないコラーゲンは？  ‖ label=q7 quiz=q7 sfx=ding
+@think 5
+shun.think: フェンスの金網……D、IV型コラーゲン！  ‖ label=a7
+sapo.happy: 正解！  ‖ label=c7 sfx=correct
+nar.normal: 基底板は主に上皮がつくり、IV型コラーゲン、プロテオグリカン、ラミニンやフィブロネクチンからなります。線維網状板の細網線維は、I型とIII型のコラーゲンです。  ‖ label=e7
+sapo.normal: ラスト、第8問！ 褐色脂肪細胞で、ATP産生よりも熱の産生を起こさせる蛋白質は？  ‖ label=q8 quiz=q8 sfx=drum
+@think 5
+shun.think: ヒーターの秘密……B、UCP-1！  ‖ label=a8
+brown.happy: 大正解！ 脱共役蛋白質UCP-1のおかげで、ぼくは熱をつくれるんだ！  ‖ label=c8 sfx=correct
+nar.normal: 褐色脂肪細胞は、多胞性脂肪滴と多数のミトコンドリアをもちます。白色脂肪細胞は、単胞性脂肪滴をもちます。  ‖ label=e8
+sapo.happy: 全問クリア！ おめでとう、俊くん！  ‖ label=clear sfx=fanfare
+shun.happy: 細胞の間は、空き地なんかじゃなかった。線維と基質がぎっしり詰まって、細胞たちが働いてる。  ‖ label=reflect
+shun.happy: 支えて、つないで、守って、ためる。支持組織は、体じゅうを支える最高のチームなんだ！  ‖ label=team
+nar.normal: 支持組織は、体を支え、つなぎ、守り、未来をつくる組織です。今日学んだ分類、細胞外マトリックス、線維、細胞、基底膜、脂肪組織を、講義資料でもう一度確かめておきましょう。  ‖ label=summary
+sapo.wink: 一緒に学ぼう、人体のすごさを！ またね！  ‖ label=bye sfx=sparkle
+@pause 6

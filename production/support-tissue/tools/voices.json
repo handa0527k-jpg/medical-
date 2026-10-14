@@ -1,0 +1,19 @@
+{
+  "_note": "Style-Bert-VITS2 (JP-Extra) JVNV models, litagin/style_bert_vits2_jvnv, CC BY-SA 4.0. length>1 = slower. style: emotion -> SBV2 style; weight: style strength.",
+  "styles": { "normal": "Neutral", "happy": "Happy", "laugh": "Happy", "wink": "Happy", "point": "Happy", "wag": "Happy",
+              "surprised": "Surprise", "panic": "Fear", "confused": "Neutral", "think": "Neutral", "sad": "Sad" },
+  "voices": {
+    "shun":      { "model": "jvnv-M2-jp", "length": 0.96, "pitch": 1.0,  "intonation": 1.15, "weight": 2.0 },
+    "sapo":      { "model": "jvnv-F1-jp", "length": 0.94, "pitch": 1.0,  "intonation": 1.2,  "weight": 2.5, "default_style": "Happy" },
+    "nar":       { "model": "jvnv-M1-jp", "length": 1.03, "pitch": 1.0,  "intonation": 1.0,  "weight": 1.0, "fixed_style": "Neutral" },
+    "fibro":     { "model": "jvnv-M1-jp", "length": 0.95, "pitch": 1.0,  "intonation": 1.2,  "weight": 3.0, "fixed_style": "Happy" },
+    "macro":     { "model": "jvnv-M2-jp", "length": 1.0,  "pitch": 1.0,  "intonation": 1.1,  "weight": 2.0, "fixed_style": "Angry" },
+    "plasma":    { "model": "jvnv-F2-jp", "length": 1.0,  "pitch": 1.0,  "intonation": 1.0,  "weight": 1.0, "fixed_style": "Neutral" },
+    "mast":      { "model": "jvnv-F2-jp", "length": 0.9,  "pitch": 1.0,  "intonation": 1.2,  "weight": 2.5, "fixed_style": "Surprise" },
+    "collagen":  { "model": "jvnv-M1-jp", "length": 0.98, "pitch": 1.0,  "intonation": 1.2,  "weight": 2.5, "fixed_style": "Angry" },
+    "reticular": { "model": "jvnv-F2-jp", "length": 1.02, "pitch": 1.0,  "intonation": 1.0,  "weight": 1.0, "fixed_style": "Neutral" },
+    "elastic":   { "model": "jvnv-F1-jp", "length": 0.9,  "pitch": 1.0,  "intonation": 1.3,  "weight": 3.0, "fixed_style": "Happy" },
+    "white":     { "model": "jvnv-F2-jp", "length": 1.05, "pitch": 1.0,  "intonation": 1.0,  "weight": 2.0, "fixed_style": "Happy" },
+    "brown":     { "model": "jvnv-M2-jp", "length": 0.92, "pitch": 1.0,  "intonation": 1.3,  "weight": 3.0, "fixed_style": "Happy" }
+  }
+}

@@ -33,3 +33,9 @@ production/lecture-video/*/wan/
 tools/lecture-video/models/
 
 production/lecture-video/youtube/*.mp4
+# 支持組織アニメ：Style-Bert-VITS2 の環境とモデル、中間ファイル、シーン別の書き出し・高画質マスター（tools/build.sh で再生成）
+.venv-sbv2/
+.sbv2/
+production/support-tissue/build/
+production/support-tissue/output/scenes/
+production/support-tissue/output/*_master.mp4
