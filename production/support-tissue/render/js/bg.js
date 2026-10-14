@@ -203,8 +203,8 @@ export function plaza(ctx, t, o = {}) {
     ctx.strokeStyle = i % 3 === 0 ? 'rgba(80,80,90,0.18)' : 'rgba(230,110,120,0.22)';
     ctx.lineWidth = i % 3 === 0 ? 4 : 16;
     ctx.beginPath();
-    const y0 = r() * H * 0.7;
-    for (let x = -50; x < W + 50; x += 20) { const y = y0 + Math.sin(x * 0.006 + i + t * 0.2) * 60 + (x - W / 2) * (r() - 0.5) * 0.4; x < -40 ? ctx.moveTo(x, y) : ctx.lineTo(x, y); }
+    const y0 = r() * H * 0.7, slope = (r() - 0.5) * 0.4;
+    for (let x = -50; x < W + 50; x += 20) { const y = y0 + Math.sin(x * 0.006 + i + t * 0.2) * 60 + (x - W / 2) * slope; x < -40 ? ctx.moveTo(x, y) : ctx.lineTo(x, y); }
     ctx.stroke();
   }
   ctx.fillStyle = '#f6dfc0'; ctx.fillRect(0, H - 200, W, 200);
