@@ -178,7 +178,7 @@
     for (const p of parts) fillPart(G, p);
   }
   // same-colour parts (hair): one outline pass, one clip for the shading
-  function drawUnified(G, parts, c, k, hk) {
+  function drawUnified(G, parts, c, k, hk, rimShape) {
     const ctx = G.ctx;
     ctx.lineWidth = G.lw * 2; ctx.strokeStyle = G.line;
     const U = new Path2D();
@@ -197,7 +197,7 @@
       ctx.fillStyle = c.h; ctx.fill(q, 'evenodd');
       ctx.fillStyle = c.b; ctx.fill(T);
     }
-    if (G.rim) { const q = new Path2D(U); q.addPath(U, new DOMMatrix([1, 0, 0, 1, -G.rim.dir * G.rim.w * G.facing, G.rim.w * 0.25])); ctx.globalAlpha *= G.rim.strength; ctx.fillStyle = G.rim.color; ctx.fill(q, 'evenodd'); }
+    if (G.rim && rimShape) crescentNoClip(ctx, rimShape, -G.rim.dir * G.rim.w * G.facing, G.rim.w * 0.25, G.rim.color, G.rim.strength);
     ctx.restore();
     return U;
   }
@@ -520,6 +520,10 @@
   }
 
   // a hair strand (bang / lock) on the head sphere
+  const NAPE_DEFAULT = [
+    { r: -1.95, t: -2.0, w: 0.3, ft: -0.32, rr: 0.18 }, { r: -2.5, t: -2.6, w: 0.34, ft: -0.5, rr: 0.0 }, { r: -2.95, t: -3.05, w: 0.3, ft: -0.6, rr: -0.15 },
+    { r: 1.95, t: 2.0, w: 0.3, ft: -0.32, rr: 0.18 }, { r: 2.5, t: 2.6, w: 0.34, ft: -0.5, rr: 0.0 }, { r: 2.95, t: 3.05, w: 0.3, ft: -0.6, rr: -0.15 },
+  ];
   function strandPts(sp, s, t, sway) {
     const rr = s.rr != null ? s.rr : 0.46;
     const lr = s.r, w = s.w, lt = s.t + sway, ft = s.ft;
@@ -650,14 +654,14 @@
     const I = { x: -0.44 * w, y: by + ex.ba * 0.32 * h + 0.04 * h };
     const O = { x: 0.6 * w, y: by + 0.06 * h - ex.ba * 0.06 * h };
     const C = { x: 0.1 * w, y: by - 0.14 * h * ex.arch - ex.ba * 0.05 * h };
-    const t0 = (E.browW || 0.12) * h, t1 = 0.03 * h;
+    const t0 = (E.browW || 0.15) * h, t1 = 0.035 * h;
     const p = new Path2D();
     p.moveTo(I.x, I.y - t0 * 0.5);
     p.quadraticCurveTo(C.x, C.y - t0 * 0.5, O.x, O.y);
     p.quadraticCurveTo(C.x, C.y + t0 * 0.6, I.x, I.y + t0 * 0.5);
     p.closePath();
     if (E.halo) {
-      ctx.lineWidth = t0 * 0.9; ctx.strokeStyle = rgba(E.halo, 0.55); ctx.stroke(p);
+      ctx.lineWidth = t0 * 0.7; ctx.strokeStyle = rgba(E.halo, 0.3); ctx.stroke(p);
     }
     ctx.fillStyle = E.brow; ctx.fill(p);
     ctx.lineWidth = t1; ctx.strokeStyle = E.brow; ctx.stroke(p);
@@ -1103,7 +1107,7 @@
       const m = spF(0.0, H.mouthPhi || -0.62, 1.0);
       const cz = max(cos(hy), 0);
       drawMouth(G, {
-        x: m.x + 0.06 * sin(hy), y: m.y + 0.02, w: H.mouthW || 0.26, fx: (0.32 + 0.68 * cz) * (sin(hy) < -0.01 ? -1 : 1),
+        x: m.x + (0.06 - 0.13 * Math.pow(ahy, 6)) * sin(hy), y: m.y + 0.02, w: H.mouthW || 0.26, fx: (0.32 + 0.68 * cz) * (sin(hy) < -0.01 ? -1 : 1),
         m: mouthV, base: ex.mouth, inner: pal.mouthIn, tongue: pal.tongue, vowel: o.vowel,
       });
     }
@@ -1119,6 +1123,10 @@
       const S = strandPts(sp, Object.assign({}, b, { ft: b.ft + 0.05 * speed, w: b.w * (0.55 + 0.45 * prof) }), t, swl);
       if (S.root.z > -0.25) strands.push(S);
     });
+    (hair.nape || NAPE_DEFAULT).forEach((b, i) => {
+      const S = strandPts(sp, b, t, 0.03 * sin(t * 1.7 + i) + 0.05 * speed * sin(TAU * 2 * ph - i));
+      if (S.root.z > 0.0 && S.tip.z > -0.1) strands.push(S);
+    });
     const strandPaths = strands.map((S) => smooth(S.pts, true));
     // shadow from hair on face
     ctx.save();
@@ -1131,7 +1139,8 @@
     ctx.globalAlpha *= 0.85;
     ctx.fill(shadowP);
     ctx.restore();
-    drawUnified(G, [cap].concat(strandPaths), hairC, 0.075, 0);
+    const rimC = new Path2D(); rimC.arc(0, 0, (hair.capR || 1.07) + 0.03, 0, TAU);
+    drawUnified(G, [cap].concat(strandPaths), hairC, 0.075, 0, rimC);
     // angel ring highlight
     {
       const ringPts = [], ringPts2 = [];
@@ -1548,7 +1557,7 @@
       collar(G, pal, env) {
         const { torsoSpec, rpt, extremes, nearArc, B } = env;
         const s0 = env.ring({ h: B.neckH - 4, W: B.neckR + 7, D: B.neckR + 6, f: B.neckF + 1 });
-        const s1 = env.ring({ h: B.neckH + 11, W: B.neckR + 8, D: B.neckR + 7, f: B.neckF + 2, disp: (lam) => [0, -8 * max(cos(lam), 0) * max(cos(lam), 0), 0] });
+        const s1 = env.ring({ h: B.neckH + 9, W: B.neckR + 10, D: B.neckR + 9, f: B.neckF + 1, disp: (lam) => [0, -9 * Math.pow(max(cos(lam), 0), 3), 0] });
         const e0 = extremes(s0), e1 = extremes(s1);
         const a0 = nearArc(s0, e0, 12), a1 = nearArc(s1, e1, 12);
         // open-front stand collar: split at front centre
@@ -1865,7 +1874,7 @@
     name: 'shirou', masc: true, seed: 1.7, exprDefault: 'calm',
     body: SHIROU_BODY, pal: SHIROU_PAL, outfit: squadOutfit({ nucleus: 'seg' }),
     head: {
-      R: 50, eyeLam: 0.39, eyePhi: -0.15, eyeW: 0.36, eyeH: 0.36, eyeStyle: 'sharp', browY: -0.86, browW: 0.16, mouthPhi: -0.64, mouthW: 0.24,
+      R: 50, eyeLam: 0.39, eyePhi: -0.15, eyeW: 0.36, eyeH: 0.36, eyeStyle: 'sharp', browY: -0.86, browW: 0.2, mouthPhi: -0.64, mouthW: 0.24,
       hair: SHIROU_HAIR, accessory: squadHeadset, backLayer: false, blush: 0.6, shape: { jaw: 1.1, wide: 0.97 },
     },
   };

@@ -87,7 +87,7 @@ if (cues) {
 }
 args.push('-map', '0:v'); if (audio) args.push('-map', '1:a'); if (srt) args.push('-map', `${audio ? 2 : 1}:s`);
 args.push('-c:v', 'copy'); if (audio) args.push('-c:a', 'aac', '-b:a', '256k', '-ar', '48000'); if (srt) args.push('-c:s', 'mov_text', '-metadata:s:s:0', 'language=jpn');
-args.push('-movflags', '+faststart', '-shortest', out);
+args.push('-movflags', '+faststart', out);
 await new Promise((r, j) => spawn('ffmpeg', args, { stdio: 'inherit' }).on('close', (c) => (c ? j(new Error('mux failed')) : r())));
 rmSync(vidOnly);
 console.log('wrote', out);

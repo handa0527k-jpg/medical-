@@ -10,7 +10,7 @@
 </style>
 </head>
 <body>
-<canvas id="c" width="1920" height="2160"></canvas>
+<canvas id="c" width="1920" height="2600"></canvas>
 <script src="characters.js"></script>
 <script>
 (async function () {
@@ -26,7 +26,7 @@
     const g = ctx.createLinearGradient(0, 0, 0, H);
     g.addColorStop(0, '#fbf3ee'); g.addColorStop(1, '#f1e6ef');
     ctx.fillStyle = g; ctx.fillRect(0, 0, W, H);
-    ctx.strokeStyle = 'rgba(120,80,100,0.08)'; ctx.lineWidth = 1;
+    ctx.strokeStyle = 'rgba(120,80,100,0.07)'; ctx.lineWidth = 1;
     for (let x = 0; x < W; x += 40) { ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, H); ctx.stroke(); }
     for (let y = 0; y < H; y += 40) { ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(W, y); ctx.stroke(); }
   }
@@ -38,122 +38,100 @@
     ctx.save();
     ctx.fillStyle = 'rgba(255,255,255,0.55)'; ctx.strokeStyle = col; ctx.lineWidth = 3;
     ctx.beginPath(); ctx.roundRect(x, y, w, h, 18); ctx.fill(); ctx.stroke();
-    ctx.fillStyle = col; ctx.beginPath(); ctx.roundRect(x, y, Math.max(160, title.length * 26 + 40), 40, [18, 0, 18, 0]); ctx.fill();
-    ctx.font = FONT(24); ctx.fillStyle = '#fff'; ctx.textBaseline = 'middle'; ctx.fillText(title, x + 20, y + 21);
+    ctx.fillStyle = col; ctx.beginPath(); ctx.roundRect(x, y, Math.max(160, title.length * 26 + 40), 42, [18, 0, 18, 0]); ctx.fill();
+    ctx.font = FONT(25); ctx.fillStyle = '#fff'; ctx.textBaseline = 'middle'; ctx.fillText(title, x + 20, y + 22);
     ctx.restore();
   }
+  const titles = [];
+  function rowTitle(t, x, y, col) { titles.push([t, x, y, col]); }
+  function flushTitles() {
+    for (const [t, x, y, col] of titles) {
+      ctx.save(); ctx.font = FONT(20); const w = ctx.measureText(t).width;
+      ctx.fillStyle = 'rgba(255,255,255,0.82)'; ctx.beginPath(); ctx.roundRect(x - 8, y - 22, w + 16, 30, 8); ctx.fill(); ctx.restore();
+      label(t, x, y, 20, col, 'left');
+    }
+  }
   function ground(x, y, w) { ctx.save(); ctx.fillStyle = 'rgba(80,40,60,0.13)'; ctx.beginPath(); ctx.ellipse(x, y, w, w * 0.16, 0, 0, Math.PI * 2); ctx.fill(); ctx.restore(); }
-  // close-up: draw the character big and clip to a frame around the face
-  function closeup(fn, who, opts, fx, fy, fw, fh, title) {
-    const sc = opts.scale;
+  function closeup(fn, who, opts, fx, fy, fw, fh, title, bgcol) {
     const o = Object.assign({ x: 0, y: 0 }, opts);
     const a = C.headAnchor(who, o);
-    o.x = fx + fw / 2 - a.x; o.y = fy + fh * 0.56 - a.y;
+    o.x = fx + fw / 2 - a.x; o.y = fy + fh * 0.54 - a.y;
     ctx.save();
     ctx.beginPath(); ctx.roundRect(fx, fy, fw, fh, 14); ctx.clip();
     const g = ctx.createRadialGradient(fx + fw / 2, fy + fh / 2, 10, fx + fw / 2, fy + fh / 2, fw);
-    g.addColorStop(0, '#ffffff'); g.addColorStop(1, '#efdfe6');
+    g.addColorStop(0, '#ffffff'); g.addColorStop(1, bgcol || '#efdfe6');
     ctx.fillStyle = g; ctx.fillRect(fx, fy, fw, fh);
     fn(ctx, o);
     ctx.restore();
     ctx.save(); ctx.strokeStyle = 'rgba(80,40,60,0.35)'; ctx.lineWidth = 2; ctx.beginPath(); ctx.roundRect(fx, fy, fw, fh, 14); ctx.stroke(); ctx.restore();
-    label(title, fx + fw / 2, fy + fh + 26, 20);
+    if (title) label(title, fx + fw / 2, fy + fh + 24, 18);
+  }
+  function fig(fn, op, x, y, txt, size) {
+    ground(x, y, 46 * (op.scale / 0.5));
+    fn(ctx, Object.assign({ x, y }, op));
+    if (txt) label(txt, x, y + 30, size || 18);
   }
 
   bg();
   label('BLOOD STORY ― 体内を駆ける細胞たち ―　キャラクター設定表', 40, 62, 40, '#3b1c26', 'left');
-  label('キャンバス2D・ボーンリグ／セル塗り3階調　scale 1 = 身長約600px　足元 (x,y) 基準', 40, 100, 20, '#7a5060', 'left');
+  label('Canvas 2D ボーンリグ／セル塗り3階調　scale 1 = 身長約600px（シロウ約640px）　(x,y) = 足元　view: front / threeq / side（任意の yaw も可）', 40, 100, 19, '#7a5060', 'left');
 
   // ===================== AKANE =====================
-  const AK = '#d72a40';
-  panel(30, 120, 1860, 1000, 'アカネ（赤血球）', AK);
-  // turnaround
-  const sTurn = 0.6;
-  const turnY = 560;
-  [['front', '正面'], ['threeq', '斜め'], ['side', '側面']].forEach(([v, jp], i) => {
-    const x = 100 + i * 150;
-    ground(x, turnY, 55);
-    C.drawAkane(ctx, { x, y: turnY, scale: sTurn, view: v, pose: 'stand', expr: 'happy', t: 0.4 });
-    label(jp, x, turnY + 34, 20);
-  });
-  // hold O2 / relieved / turn
-  [['hold', 'O₂を抱える', { view: 'threeq', pose: 'hold', holdO2: true, expr: 'happy' }],
-   ['relieved', 'ほっと一息', { view: 'threeq', pose: 'relieved', expr: 'relieved' }],
-   ['turn', '振り向き', { view: 'side', pose: 'turn', expr: 'surprised', mouth: 0.5 }],
-   ['squash', '毛細血管で身をすくめる', { view: 'front', pose: 'run', runPhase: 0.15, squash: 1, expr: 'determined' }],
-  ].forEach(([k, jp, op], i) => {
-    const x = 560 + i * 125;
-    ground(x, turnY, 50);
-    C.drawAkane(ctx, Object.assign({ x, y: turnY, scale: sTurn, t: 1.1 }, op));
-    label(jp, x, turnY + 34, 18);
-  });
-  // run cycle side
-  label('走り（側面）8コマ　runPhase 0〜7/8　接地＝0, 0.5', 60, 640, 20, '#7a3040', 'left');
-  for (let i = 0; i < 8; i++) {
-    const x = 120 + i * 140, y = 920;
-    ground(x, y, 50);
-    C.drawAkane(ctx, { x, y, scale: 0.46, view: 'side', pose: 'run', runPhase: i / 8, expr: 'determined', t: i * 0.05 });
-    label((i) + '/8', x, y + 28, 16);
-  }
-  // front run
-  label('走り（正面・斜め）', 1290, 640, 20, '#7a3040', 'left');
-  for (let i = 0; i < 4; i++) {
-    const x = 1310 + i * 140, y = 920;
-    ground(x, y, 50);
-    C.drawAkane(ctx, { x, y, scale: 0.46, view: i < 2 ? 'front' : 'threeq', pose: 'run', runPhase: (i % 2) * 0.25 + 0.0, expr: 'happy', t: i * 0.1, mouth: 0.4 });
-  }
-  // expressions close-ups
-  const exA = [['happy', 0, '元気（口閉）'], ['happy', 0.8, '元気（口開）'], ['determined', 0.35, '決意'], ['surprised', 0.7, '驚き'], ['relieved', 0.15, '安堵']];
-  exA.forEach(([e, m, jp], i) => {
-    closeup(C.drawAkane, 'akane', { scale: 1.45, view: 'threeq', pose: 'stand', expr: e, mouth: m, t: 0.2 }, 1010 + i * 172, 150, 160, 190, jp);
-  });
-  // big face
-  closeup(C.drawAkane, 'akane', { scale: 3.0, view: 'threeq', pose: 'stand', expr: 'happy', mouth: 0.5, t: 0.3 }, 1010, 380, 420, 230, '顔アップ scale 3');
-  closeup(C.drawAkane, 'akane', { scale: 2.2, view: 'side', pose: 'stand', expr: 'determined', mouth: 0, t: 0.3 }, 1450, 380, 210, 230, '横顔');
-  closeup(C.drawAkane, 'akane', { scale: 2.2, view: 'front', pose: 'stand', expr: 'happy', mouth: 0.3, blink: 1, t: 0.3 }, 1675, 380, 195, 230, 'まばたき');
+  const AK = '#d72a40', AKt = '#8a2236';
+  panel(30, 120, 1860, 1150, 'アカネ（赤血球）', AK);
+  label('明るく元気な運び屋。ベレー帽と胸の鞄に「両凹円盤」の紋章。赤〜珊瑚色のケープジャケット、ポニーテール。', 330, 148, 18, AKt, 'left');
+  const yA = 600, sA = 0.62;
+  [['front', '正面'], ['threeq', '斜め'], ['side', '側面']].forEach(([v, jp], i) => fig(C.drawAkane, { scale: sA, view: v, pose: 'stand', expr: 'happy', t: 0.4 }, 110 + i * 150, yA, jp, 20));
+  [['O₂を抱える', { view: 'threeq', pose: 'hold', holdO2: true, expr: 'happy' }],
+   ['ほっと一息', { view: 'threeq', pose: 'relieved', expr: 'relieved' }],
+   ['振り向き', { view: 'side', pose: 'turn', expr: 'surprised', mouth: 0.5 }],
+  ].forEach(([jp, op], i) => fig(C.drawAkane, Object.assign({ scale: sA, t: 1.1 }, op), 590 + i * 145, yA, jp));
+  // close-ups
+  [['happy', 0, '元気・口閉'], ['happy', 0.8, '元気・口開'], ['determined', 0.3, '決意'], ['surprised', 0.75, '驚き'], ['relieved', 0.12, '安堵']].forEach(([e, m, jp], i) =>
+    closeup(C.drawAkane, 'akane', { scale: 1.5, view: 'threeq', pose: 'stand', expr: e, mouth: m, t: 0.2 }, 1030 + i * 170, 175, 158, 180, jp));
+  closeup(C.drawAkane, 'akane', { scale: 3.2, view: 'threeq', pose: 'stand', expr: 'happy', mouth: 0.55, t: 0.3 }, 1030, 400, 440, 220, '顔アップ（scale 3.2）');
+  closeup(C.drawAkane, 'akane', { scale: 2.1, view: 'side', pose: 'stand', expr: 'determined', t: 0.3 }, 1490, 400, 190, 220, '横顔');
+  closeup(C.drawAkane, 'akane', { scale: 2.1, view: 'front', pose: 'stand', expr: 'happy', blink: 1, t: 0.3 }, 1695, 400, 185, 220, 'まばたき');
+  // run cycle
+  rowTitle('走り（側面）8コマ　runPhase k/8　（0 と 0.5 で接地＝足音）', 60, 690, AKt);
+  for (let i = 0; i < 8; i++) fig(C.drawAkane, { scale: 0.5, view: 'side', pose: 'run', runPhase: i / 8, expr: 'determined', t: i * 0.05 }, 110 + i * 128, 970, i + '/8', 16);
+  rowTitle('走り（正面・斜め）— カメラが前へ回り込むショット用', 1150, 690, AKt);
+  [['front', 0], ['front', 0.25], ['threeq', 0.5], ['threeq', 0.75]].forEach(([v, p], i) => fig(C.drawAkane, { scale: 0.5, view: v, pose: 'run', runPhase: p, expr: 'happy', mouth: 0.3, t: i * 0.1 }, 1210 + i * 170, 970, v + ' ' + p, 16));
+  // squash / tint / lipsync
+  rowTitle('毛細血管：squash 0 → 1', 60, 1020, AKt);
+  [[0, 'front'], [0.5, 'front'], [1, 'front'], [1, 'side']].forEach(([q, v], i) => fig(C.drawAkane, { scale: 0.38, view: v, pose: 'run', runPhase: 0.12, squash: q, expr: 'determined', t: 0.3 }, 90 + i * 100, 1245, 'sq ' + q + (v === 'side' ? ' 側' : ''), 14));
+  rowTitle('照明：rim / tint', 500, 1020, AKt);
+  fig(C.drawAkane, { scale: 0.38, view: 'threeq', pose: 'stand', expr: 'surprised', t: 0.3, rim: { color: '#ff4a4a', strength: 0.7, dir: 1 } }, 540, 1245, 'rim 赤', 14);
+  fig(C.drawAkane, { scale: 0.38, view: 'threeq', pose: 'stand', expr: 'surprised', t: 0.3, tint: { color: '#ff2030', amount: 0.35 } }, 650, 1245, 'tint 警報', 14);
+  rowTitle('リップシンク mouth 0 → 1', 760, 1020, AKt);
+  [0, 0.2, 0.4, 0.6, 0.8, 1.0].forEach((m, i) => closeup(C.drawAkane, 'akane', { scale: 1.6, view: 'front', pose: 'stand', expr: 'happy', mouth: m, t: 0.2 }, 760 + i * 188, 1040, 176, 168, 'mouth ' + m));
 
   // ===================== SHIROU =====================
-  const SH = '#7a64c0';
-  panel(30, 1140, 1860, 1000, 'シロウ（白血球・好中球）', SH);
-  const sY2 = 1600;
-  [['front', '正面'], ['threeq', '斜め'], ['side', '側面']].forEach(([v, jp], i) => {
-    const x = 100 + i * 150;
-    ground(x, sY2, 55);
-    C.drawShirou(ctx, { x, y: sY2, scale: 0.6, view: v, pose: 'stand', expr: 'calm', t: 0.4 });
-    label(jp, x, sY2 + 34, 20);
-  });
-  [['ready', '構え', { view: 'threeq', pose: 'ready', expr: 'serious' }],
-   ['turn', '察知・振り向き', { view: 'side', pose: 'turn', expr: 'alert' }],
-   ['shout', '号令', { view: 'front', pose: 'ready', expr: 'shout', mouth: 0.8 }],
-  ].forEach(([k, jp, op], i) => {
-    const x = 560 + i * 140;
-    ground(x, sY2, 55);
-    C.drawShirou(ctx, Object.assign({ x, y: sY2, scale: 0.58, t: 1.1 }, op));
-    label(jp, x, sY2 + 34, 18);
-  });
-  label('走り（側面）8コマ', 60, 1680, 20, '#4a3a80', 'left');
-  for (let i = 0; i < 8; i++) {
-    const x = 120 + i * 140, y = 1960;
-    ground(x, y, 50);
-    C.drawShirou(ctx, { x, y, scale: 0.44, view: 'side', pose: 'run', runPhase: i / 8, expr: 'serious', t: i * 0.05 });
-    label(i + '/8', x, y + 28, 16);
-  }
+  const SH = '#7a64c0', SHt = '#4a3a80';
+  panel(30, 1290, 1860, 1290, 'シロウ（白血球・好中球）', SH);
+  label('真面目で頼れる防衛隊員。白の戦術コート＋淡いライラック（染色色）。胸章は3分葉核。ヘッドセット。', 420, 1318, 18, SHt, 'left');
+  const yS = 1780, sS = 0.6;
+  [['front', '正面'], ['threeq', '斜め'], ['side', '側面']].forEach(([v, jp], i) => fig(C.drawShirou, { scale: sS, view: v, pose: 'stand', expr: 'calm', t: 0.4 }, 110 + i * 150, yS, jp, 20));
+  [['構え', { view: 'threeq', pose: 'ready', expr: 'serious' }],
+   ['察知・振り向き', { view: 'side', pose: 'turn', expr: 'alert' }],
+   ['号令', { view: 'front', pose: 'ready', expr: 'shout', mouth: 0.8 }],
+  ].forEach(([jp, op], i) => fig(C.drawShirou, Object.assign({ scale: sS, t: 1.1 }, op), 590 + i * 150, yS, jp));
+  [['calm', 0, '冷静'], ['alert', 0.1, '警戒'], ['serious', 0.0, '真剣'], ['shout', 0.9, '叫び']].forEach(([e, m, jp], i) =>
+    closeup(C.drawShirou, 'shirou', { scale: 1.5, view: 'threeq', pose: 'stand', expr: e, mouth: m, t: 0.2 }, 1030 + i * 213, 1345, 200, 180, jp, '#e6e2f2'));
+  closeup(C.drawShirou, 'shirou', { scale: 3.2, view: 'threeq', pose: 'stand', expr: 'serious', mouth: 0.35, t: 0.3 }, 1030, 1570, 440, 220, '顔アップ（scale 3.2）', '#e6e2f2');
+  closeup(C.drawShirou, 'shirou', { scale: 2.1, view: 'side', pose: 'stand', expr: 'alert', t: 0.3 }, 1490, 1570, 190, 220, '横顔', '#e6e2f2');
+  closeup(C.drawShirou, 'shirou', { scale: 2.1, view: 'front', pose: 'stand', expr: 'calm', t: 0.3 }, 1695, 1570, 185, 220, '正面', '#e6e2f2');
+  rowTitle('走り（側面）8コマ', 60, 1870, SHt);
+  for (let i = 0; i < 8; i++) fig(C.drawShirou, { scale: 0.48, view: 'side', pose: 'run', runPhase: i / 8, expr: 'serious', t: i * 0.05 }, 110 + i * 128, 2160, i + '/8', 16);
+  rowTitle('走り（正面・斜め）', 1150, 1870, SHt);
+  [['front', 0], ['front', 0.25], ['threeq', 0.5], ['threeq', 0.75]].forEach(([v, p], i) => fig(C.drawShirou, { scale: 0.48, view: v, pose: 'run', runPhase: p, expr: 'serious', t: i * 0.1 }, 1210 + i * 170, 2160, v + ' ' + p, 16));
   // allies
-  label('白血球の仲間（variant 0〜3）', 1250, 1680, 20, '#4a3a80', 'left');
-  C.ALLY_NAMES.forEach((nm, i) => {
-    const x = 1300 + i * 150, y = 1960;
-    ground(x, y, 50);
-    C.drawWBCAlly(ctx, { x, y, scale: 0.44, variant: i, view: 'threeq', pose: 'stand', t: 0.3 + i });
-    label(nm, x, y + 28, 15);
-  });
-  const exS = [['calm', 0, '冷静'], ['alert', 0.15, '警戒'], ['serious', 0.0, '真剣'], ['shout', 0.9, '叫び']];
-  exS.forEach(([e, m, jp], i) => {
-    closeup(C.drawShirou, 'shirou', { scale: 1.45, view: 'threeq', pose: 'stand', expr: e, mouth: m, t: 0.2 }, 1010 + i * 215, 1170, 200, 190, jp);
-  });
-  closeup(C.drawShirou, 'shirou', { scale: 3.0, view: 'threeq', pose: 'stand', expr: 'serious', mouth: 0.35, t: 0.3 }, 1010, 1400, 420, 230, '顔アップ scale 3');
-  closeup(C.drawShirou, 'shirou', { scale: 2.2, view: 'side', pose: 'stand', expr: 'alert', t: 0.3 }, 1450, 1400, 210, 230, '横顔');
-  closeup(C.drawShirou, 'shirou', { scale: 2.2, view: 'front', pose: 'stand', expr: 'calm', t: 0.3 }, 1675, 1400, 195, 230, '正面');
+  rowTitle('白血球の仲間　drawWBCAlly variant 0〜3（同じ隊の制服・色違い／体格違い）', 60, 2210, SHt);
+  C.ALLY_NAMES.forEach((nm, i) => fig(C.drawWBCAlly, { scale: 0.45, variant: i, view: 'threeq', pose: 'stand', t: 0.3 + i }, 110 + i * 130, 2530, nm, 14));
+  for (let i = 0; i < 4; i++) fig(C.drawWBCAlly, { scale: 0.42, variant: i, view: 'side', pose: 'run', runPhase: i * 0.22, t: 0.3 + i }, 660 + i * 120, 2530, '', 14);
+  C.ALLY_NAMES.forEach((nm, i) => closeup(C.drawWBCAlly, 'ally', { scale: 1.45, variant: i, view: 'threeq', pose: 'stand', t: 0.3 }, 1160 + i * 178, 2240, 166, 200, nm.split('（')[0], '#e6e2f2'));
 
+  flushTitles();
   window.__ready = true;
 })();
 </script>

@@ -97,10 +97,18 @@ BS.cuts = BS.cuts || {};
 
   // burned-in subtitles: speaker tag + text, bottom center, always inside the frame
   const SPK = { 'アカネ': '#ff6b6b', 'シロウ': '#9fd4ff', N: '#ffe9a8' };
+  // two balanced lines, broken after punctuation when possible (never leaves a 2–3 char orphan)
   function wrap(ctx, text, maxW) {
-    const out = []; let cur = '';
-    for (const ch of text) { if (ctx.measureText(cur + ch).width > maxW && cur) { out.push(cur); cur = ch; } else cur += ch; }
-    if (cur) out.push(cur); return out;
+    if (ctx.measureText(text).width <= maxW) return [text];
+    const chars = [...text]; let best = null;
+    for (let i = 2; i < chars.length - 2; i++) {
+      const a = chars.slice(0, i).join(''), b = chars.slice(i).join('');
+      const wmax = Math.max(ctx.measureText(a).width, ctx.measureText(b).width);
+      const punct = /[、。！？…]/.test(chars[i - 1]) ? 0.62 : 1;
+      const score = wmax * punct;
+      if (wmax <= maxW && (!best || score < best.score)) best = { score, rows: [a, b] };
+    }
+    return best ? best.rows : [text];
   }
   function drawSubtitles(ctx, t, E) {
     if (!E.lines.length) return;
@@ -110,7 +118,7 @@ BS.cuts = BS.cuts || {};
     ctx.save(); ctx.globalAlpha = alpha;
     const size = 50; ctx.font = `${size}px ZenKaku, IPAGothic, sans-serif`; ctx.textBaseline = 'alphabetic'; ctx.textAlign = 'center';
     const tag = l.who === 'N' ? '' : l.who; const text = l.text;
-    const rows = wrap(ctx, text, W - 2 * 220);
+    const rows = wrap(ctx, text, W - 2 * 140);
     const lh = size * 1.32; const baseY = H - 70 - (rows.length - 1) * lh;
     rows.forEach((row, i) => {
       const y = baseY + i * lh;
