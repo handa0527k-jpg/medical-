@@ -3,3 +3,4 @@ out/*.mp4
 out/*.srt
 out/frames/
 out/*.png
+out/strip/
