@@ -1,0 +1,49 @@
+{
+ "duration_s": 30.0,
+ "integrated_lufs": -16.01,
+ "true_peak_dbtp": -1.1,
+ "sample_peak_dbfs": -1.15,
+ "clipped_samples": 0,
+ "master_gain_db": 1.35,
+ "lines": [
+  [
+   "N1",
+   0.533,
+   6.283
+  ],
+  [
+   "A1",
+   6.433,
+   8.653
+  ],
+  [
+   "A2",
+   13.2,
+   18.05
+  ],
+  [
+   "A3",
+   21.0,
+   22.31
+  ],
+  [
+   "S1",
+   22.6,
+   23.52
+  ],
+  [
+   "S2",
+   24.0,
+   26.8
+  ],
+  [
+   "N2",
+   27.0,
+   29.66
+  ]
+ ],
+ "problems": [],
+ "voice_lufs": -16.66,
+ "bgm_lufs_ducked": -24.0,
+ "sfx_lufs": -20.66
+}
