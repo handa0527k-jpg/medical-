@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>BLOOD STORY – World / Effects Sheet</title>
+<style>
+  @font-face { font-family: ZenKaku; src: url(../fonts/ZenKakuGothicNew-Bold.ttf); }
+  @font-face { font-family: IPAGothic; src: url(../fonts/ipag.ttf); }
+  html, body { margin: 0; background: #0b0306; }
+  #sheet { display: block; width: 100%; height: auto; }
+</style>
+</head>
+<body>
+<canvas id="sheet" width="2880" height="2290"></canvas>
+<script src="world.js"></script>
+<script>
+(async function () {
+  const W = BS.world;
+  await W.ready();
+  const sheet = document.getElementById('sheet'), sx = sheet.getContext('2d');
+  const pw = 1920, ph = 1080, cols = 3, cellW = 960, cellH = 540, top = 130;
+  const panel = document.createElement('canvas'); panel.width = pw; panel.height = ph;
+  const ctx = panel.getContext('2d');
+  const F = (px) => px + 'px ZenKaku, IPAGothic, sans-serif';
+  function clear() { ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.clearRect(0, 0, pw, ph); }
+  function label(ctx2, text, x, y, size, color) {
+    ctx2.save(); ctx2.font = F(size || 30); ctx2.lineJoin = 'round'; ctx2.lineWidth = 6; ctx2.strokeStyle = 'rgba(0,0,0,0.85)';
+    ctx2.strokeText(text, x, y); ctx2.fillStyle = color || '#fff'; ctx2.fillText(text, x, y); ctx2.restore();
+  }
+  function plasmaBG(t) {
+    const g = ctx.createRadialGradient(960, 540, 50, 960, 540, 1100);
+    g.addColorStop(0, '#7a1420'); g.addColorStop(1, '#22030a'); ctx.fillStyle = g; ctx.fillRect(0, 0, pw, ph);
+    W.drawParticles(ctx, { t, seed: 9, count: 70, size: 3, alpha: 0.45 });
+  }
+  const tun = (t) => { const o = { t, z: t * 7 + 2, pulse: 0.6 }; W.drawVesselTunnel(ctx, o); return o; };
+  const panels = [
+    ['drawVesselTunnel + drawRBCField3D + drawSpeedLines', () => {
+      const o = tun(1.3); W.drawRBCField3D(ctx, { ...o, count: 95 }); W.drawParticles(ctx, { t: 1.3, count: 60, size: 2.5, alpha: 0.5 });
+      W.drawSpeedLines(ctx, { t: 1.3, intensity: 0.7 }); W.drawVignette(ctx, { strength: 0.75 });
+    }],
+    ['drawRBC – tilt 0°→90° / deform 0→1 / platelet', () => {
+      plasmaBG(0);
+      const tilts = [0, 0.5, 1.0, 1.3, Math.PI / 2];
+      tilts.forEach((tx, i) => { W.drawRBC(ctx, { x: 260 + i * 350, y: 300, r: 120, tiltX: tx });
+        label(ctx, 'tilt ' + Math.round(tx * 180 / Math.PI) + '°', 200 + i * 350, 470, 34); });
+      [0, 0.25, 0.5, 0.75, 1].forEach((d, i) => { W.drawRBC(ctx, { x: 260 + i * 350, y: 720, r: 110, tiltY: -Math.PI / 2, deform: d });
+        label(ctx, 'deform ' + d, 180 + i * 350, 880, 34); });
+      W.drawPlatelet(ctx, { x: 1750, y: 980, r: 26, rot: 0.3 }); label(ctx, 'platelet', 1600, 1050, 30);
+      W.drawRBC(ctx, { x: 900, y: 990, r: 60, tiltX: 0.7, blur: 120, blurAngle: 0 }); label(ctx, 'blur 120', 1000, 1000, 30);
+      label(ctx, '赤血球：両凹円盤（中央が薄い・核なし）', 60, 70, 44, '#ffd8d0');
+    }],
+    ['drawVesselSide (groundY marked) – layers:"all"', () => {
+      const L = W.drawVesselSide(ctx, { t: 1, scrollX: 650 }); W.drawVignette(ctx, { strength: 0.5 });
+      ctx.save(); ctx.setLineDash([24, 16]); ctx.strokeStyle = '#6cf'; ctx.lineWidth = 4; ctx.beginPath(); ctx.moveTo(0, L.groundY); ctx.lineTo(1920, L.groundY); ctx.stroke(); ctx.restore();
+      label(ctx, 'groundY = ' + Math.round(L.groundY), 40, L.groundY - 20, 40, '#9df');
+    }],
+    ['drawCapillary narrow=0.25', () => { W.drawCapillary(ctx, { t: 1, z: 3, narrow: 0.25 }); W.drawVignette(ctx, { strength: 0.6 }); }],
+    ['drawCapillary narrow=1 (single file, parachute RBCs)', () => { W.drawCapillary(ctx, { t: 2, z: 6, narrow: 1 }); W.drawVignette(ctx, { strength: 0.6 }); }],
+    ['drawCapillarySide narrow=0.85 + drawO2Transfer', () => {
+      const L = W.drawCapillarySide(ctx, { t: 1, scrollX: 300, narrow: 0.85, glow: 1, glowX: 1150 });
+      const tc = L.tissue.filter(c => !c.above).sort((a, b) => Math.abs(a.x - 1150) - Math.abs(b.x - 1150))[0];
+      if (tc) W.drawO2Transfer(ctx, { from: { x: 900, y: L.cy + 40 }, to: { x: tc.x, y: tc.y - tc.r * 0.3 }, p: 0.55, t: 1, size: 40 });
+      W.drawVignette(ctx, { strength: 0.5 });
+    }],
+    ['drawTissueCell (glow 0 / 1) + drawO2', () => {
+      plasmaBG(0.5);
+      W.drawTissueCell(ctx, { x: 480, y: 560, r: 300, t: 0.4, glow: 0, seed: 3 });
+      W.drawTissueCell(ctx, { x: 1300, y: 560, r: 300, t: 0.4, glow: 1, seed: 7 });
+      W.drawO2(ctx, { x: 1750, y: 200, size: 110, t: 0.2 }); W.drawO2(ctx, { x: 1620, y: 900, size: 70, t: 1 }); W.drawO2(ctx, { x: 1800, y: 640, size: 50, t: 2 });
+    }],
+    ['drawPathogenSilhouette reveal 0.15 / 0.5 / 0.95', () => {
+      tun(3); W.drawGrade(ctx, { color: '#200008', amount: 0.55, mode: 'multiply' });
+      [0.15, 0.5, 0.95].forEach((r, i) => W.drawPathogenSilhouette(ctx, { x: 340 + i * 620, y: 560, size: 300, t: 1 + i, reveal: r, seed: 1 + i }));
+      W.drawVignette(ctx, { strength: 0.8 });
+    }],
+    ['drawAlarm (label 警報 / 異物侵入)', () => { const o = tun(2); W.drawRBCField3D(ctx, { ...o, count: 60 }); W.drawAlarm(ctx, { t: 0.05, intensity: 1 }); }],
+    ['drawInfoCard (auto-fit)', () => {
+      const o = tun(4); W.drawRBCField3D(ctx, { ...o, count: 50 }); W.drawGrade(ctx, { color: '#000', amount: 0.25, mode: 'source-over' });
+      W.drawInfoCard(ctx, { x: 110, y: 140, w: 760, title: '赤血球（RBC）', lines: ['直径：約7.5 μm', '形態：両凹円盤状', '成熟赤血球：核を持たない', '役割：ヘモグロビンで酸素（O₂）を運ぶ'], t: 5 });
+      W.drawInfoCard(ctx, { x: 1060, y: 520, w: 700, title: '毛細血管', lines: ['直径：約5〜10 μm（赤血球1個分ほど）', '壁：内皮細胞1層', '赤血球は変形して一列で通過する'], t: 5, size: 36 });
+    }],
+    ['drawTelop style="next" / "impact" / "caption"', () => {
+      tun(5); W.drawGrade(ctx, { color: '#000', amount: 0.35, mode: 'source-over' });
+      W.drawTelop(ctx, { text: '次回：白血球、防御戦線！', y: 330, size: 120, style: 'next', t: 2, kicker: '次回予告' });
+      W.drawTelop(ctx, { text: '異物発見！', y: 640, size: 130, style: 'impact', t: 2 });
+      W.drawTelop(ctx, { text: 'ここは、私たちの体の中。', y: 930, size: 60, style: 'caption', t: 2 });
+    }],
+    ['drawTitleLogo', () => {
+      const g = ctx.createRadialGradient(960, 500, 50, 960, 540, 1200); g.addColorStop(0, '#3a0610'); g.addColorStop(1, '#050002');
+      ctx.fillStyle = g; ctx.fillRect(0, 0, pw, ph);
+      W.drawParticles(ctx, { t: 3, seed: 4, count: 90, size: 3, alpha: 0.5 });
+      W.drawLightRays(ctx, { x: 960, y: -100, t: 3, alpha: 0.18 });
+      W.drawTitleLogo(ctx, { t: 3, y: 460 });
+    }],
+  ];
+  sx.fillStyle = '#0b0306'; sx.fillRect(0, 0, sheet.width, sheet.height);
+  sx.font = F(64); sx.fillStyle = '#ff5a5a'; sx.fillText('BLOOD STORY ― 世界・エフェクト設定表 (world.js)', 40, 82);
+  sx.font = F(28); sx.fillStyle = '#d9b8b8'; sx.fillText('Agent B · 1920×1080 panels at 50% · all draws are pure functions of opts (t, z, scrollX…)', 40, 118);
+  const times = [];
+  for (let i = 0; i < panels.length; i++) {
+    clear(); const s = performance.now(); panels[i][1](); times.push(Math.round(performance.now() - s));
+    const x = (i % cols) * cellW, y = top + Math.floor(i / cols) * cellH;
+    sx.drawImage(panel, x, y, cellW, cellH);
+    sx.strokeStyle = '#0b0306'; sx.lineWidth = 6; sx.strokeRect(x, y, cellW, cellH);
+    label(sx, (i + 1) + '. ' + panels[i][0], x + 18, y + cellH - 18, 24, '#ffe');
+  }
+  window.SHEET_TIMES = times;
+  window.SHEET_DONE = true;
+})();
+</script>
+</body>
+</html>

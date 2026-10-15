@@ -21,6 +21,7 @@ canvas{display:block}
   for (const f of [`../audio/cues_${cut}.json`, '../audio/cues.json']) {
     try { const r = await fetch(f); if (r.ok) { cues = await r.json(); break; } } catch (e) {}
   }
+  if (BS.world && BS.world.ready) await BS.world.ready();
   const C = BS.cuts[cut];
   const canvas = document.getElementById('c'); const ctx = canvas.getContext('2d');
   const E = BS.common.makeEnv(cues, C);

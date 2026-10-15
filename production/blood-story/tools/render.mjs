@@ -34,7 +34,7 @@ const server = createServer((req, res) => {
 await new Promise((r) => server.listen(0, '127.0.0.1', r));
 const base = `http://127.0.0.1:${server.address().port}`;
 
-const browser = await chromium.launch({ executablePath: CHROME, args: ['--disable-gpu-vsync', '--force-color-profile=srgb'] });
+const browser = await chromium.launch({ executablePath: CHROME, headless: false, args: ['--headless=new', '--force-color-profile=srgb'] });
 async function openPage() {
   const page = await browser.newPage({ viewport: { width: 1920, height: 1080 }, deviceScaleFactor: 1 });
   page.on('pageerror', (e) => console.error('page error:', e.message));

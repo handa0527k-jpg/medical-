@@ -110,7 +110,7 @@
     if (rbcGeoCache[key]) return rbcGeoCache[key];
     var S = RBC_S, half = S / 2, ext = RBC_EXT, n = S * S;
     var dv = di / (RBC_DEF - 1);
-    var sc = 1 - 0.2 * dv, sc2 = sc * sc, thk = 1 + 0.7 * dv, k = 0.62 * dv;
+    var sc = 1 - 0.24 * dv, sc2 = sc * sc, thk = 1 + 0.45 * dv, k = 0.95 * dv;
     var th = (ti / (TILT_N - 1)) * Math.PI, cs = Math.cos(th), sn = Math.sin(th);
     var A = new Float32Array(n), NX = new Float32Array(n), NY = new Float32Array(n), NZ = new Float32Array(n), TH = new Float32Array(n);
     var s0 = 1.25, ds = 0.028, steps = Math.ceil((2 * s0) / ds);
@@ -215,6 +215,26 @@
     rbcMaskCache[key] = c; return c;
   }
 
+  var RBC_SMALL = 80, FOG_L = 8, rbcSmallCache = {}, rbcSoftCache = {};
+  /* small LOD sprite with depth-fog tint baked in */
+  function rbcSmall(di, ti, ri, fl, fogCol) {
+    var key = di + '_' + ti + '_' + ri + '_' + fl + '_' + fogCol.join(',');
+    if (rbcSmallCache[key]) return rbcSmallCache[key];
+    var c = mkCanvas(RBC_SMALL, RBC_SMALL), x = c.getContext('2d');
+    x.imageSmoothingQuality = 'high';
+    x.drawImage(rbcSprite(di, ti, ri), 0, 0, RBC_SMALL, RBC_SMALL);
+    if (fl > 0) { x.globalAlpha = fl / (FOG_L - 1); x.drawImage(rbcMask(di, ti, fogCol), 0, 0, RBC_SMALL, RBC_SMALL); }
+    rbcSmallCache[key] = c; return c;
+  }
+  /* pre-blurred sprite used for strong motion blur (copies blend smoothly) */
+  function rbcSoft(di, ti, ri) {
+    var key = di + '_' + ti + '_' + ri;
+    if (rbcSoftCache[key]) return rbcSoftCache[key];
+    var c = mkCanvas(RBC_S, RBC_S), x = c.getContext('2d');
+    x.filter = 'blur(6px)'; x.drawImage(rbcSprite(di, ti, ri), 0, 0); x.filter = 'none';
+    rbcSoftCache[key] = c; return c;
+  }
+
   /**
    * drawRBC(ctx, {x, y, r, tiltX, tiltY, rot, deform, alpha, blur, blurAngle, fog, fogColor})
    * r: on-screen radius (px) of the undeformed disc. tiltX/tiltY radians (0 = face-on; ±π/2 = edge-on).
@@ -231,21 +251,33 @@
     var di = Math.round(deform * (RBC_DEF - 1));
     if (di === 0 && nz < 0) { nx = -nx; ny = -ny; nz = -nz; }
     var th = Math.acos(clamp(nz, -1, 1));
+    // a perfectly edge-on disc projects as a plain bar (rim hides the dimples); keep ≥12° of tilt so the
+    // biconcave waist always reads
+    if (di === 0) th = Math.min(th, 1.36);
     var phi = nx * nx + ny * ny > 1e-8 ? Math.atan2(ny, nx) - Math.PI / 2 : 0;
     phi += o.rot || 0;
     var ti = Math.round((th / Math.PI) * (TILT_N - 1));
     var ri = mod(Math.round((phi / TAU) * RBC_ROTS), RBC_ROTS);
-    var spr = rbcSprite(di, ti, ri);
     var size = 2 * r * RBC_EXT, hs = size / 2;
-    var fog = clamp(o.fog || 0, 0, 1), mask = fog > 0.01 ? rbcMask(di, ti, parseColor(o.fogColor || '#c8402f')) : null;
+    var fog = clamp(o.fog || 0, 0, 1), fogCol = parseColor(o.fogColor || '#c8402f');
+    var small = size <= RBC_SMALL * 1.15, soft = !small && blur > 4;
+    var spr = small ? rbcSmall(di, ti, ri, Math.round(fog * (FOG_L - 1)), fogCol) : soft ? rbcSoft(di, ti, ri) : rbcSprite(di, ti, ri);
+    var mask = !small && fog > 0.04 ? rbcMask(di, ti, fogCol) : null;
     ctx.save();
     var n = 1, ba = o.blurAngle || 0, ca = Math.cos(ba), sa = Math.sin(ba);
-    if (blur > 1.5) n = clamp(Math.ceil(blur / Math.max(3, r * 0.08)) + 1, 2, 14);
+    if (blur > 1.5) n = clamp(Math.ceil(blur / Math.max(small ? 2 : 3, r * (soft ? 0.09 : 0.15))) + 1, 2, 9);
+    // strong blur on big cells: stretch the pre-blurred sprite along the motion and use few copies (cheap)
+    var stretch = 1, spread = blur;
+    if (soft) {
+      stretch = 1 + (0.6 * blur) / size; spread = blur * 0.4;
+      n = clamp(Math.ceil(spread / (r * 0.09)) + 1, 1, 4);
+    }
     var a1 = n === 1 ? alpha : 1 - Math.pow(1 - Math.min(alpha, 0.995), 1 / n);
     for (var i = 0; i < n; i++) {
-      var off = n === 1 ? 0 : (i / (n - 1) - 0.5) * blur;
+      var off = n === 1 ? 0 : (i / (n - 1) - 0.5) * spread;
       ctx.save();
-      ctx.translate(x + ca * off, y + sa * off); ctx.rotate(phi);
+      ctx.translate(x + ca * off, y + sa * off);
+      if (stretch !== 1) { ctx.rotate(ba); ctx.scale(stretch, 1); ctx.rotate(phi - ba); } else ctx.rotate(phi);
       ctx.globalAlpha = a1;
       ctx.drawImage(spr, -hs, -hs, size, size);
       if (mask) { ctx.globalAlpha = a1 * fog; ctx.drawImage(mask, -hs, -hs, size, size); }
@@ -284,12 +316,15 @@
   function drawPlatelet(ctx, o) {
     var spr = plateletSprite(o.variant || 0), r = o.r || 10, a = o.alpha == null ? 1 : o.alpha;
     if (a <= 0.004 || r < 0.5) return;
-    var blur = o.blur || 0, n = blur > 2 ? clamp(Math.ceil(blur / (r * 0.5 + 2)) + 1, 2, 6) : 1;
-    var ca = Math.cos(o.blurAngle || 0), sa = Math.sin(o.blurAngle || 0), a1 = n === 1 ? a : 1 - Math.pow(1 - Math.min(a, 0.99), 1 / n);
+    var blur = o.blur || 0, ba = o.blurAngle || 0, n = blur > 2 ? clamp(Math.ceil((blur * 0.35) / (r * 0.3 + 1)) + 1, 2, 5) : 1;
+    var stretch = blur > 2 ? 1 + (0.65 * blur) / (r * 3.2) : 1;
+    var ca = Math.cos(ba), sa = Math.sin(ba), a1 = n === 1 ? a : 1 - Math.pow(1 - Math.min(a, 0.99), 1 / n);
     ctx.save();
+    if (blur > 2) ctx.imageSmoothingQuality = 'high';
     for (var i = 0; i < n; i++) {
-      var off = n === 1 ? 0 : (i / (n - 1) - 0.5) * blur;
-      ctx.save(); ctx.translate(o.x + ca * off, o.y + sa * off); ctx.rotate(o.rot || 0);
+      var off = n === 1 ? 0 : (i / (n - 1) - 0.5) * blur * 0.35;
+      ctx.save(); ctx.translate(o.x + ca * off, o.y + sa * off);
+      if (stretch !== 1) { ctx.rotate(ba); ctx.scale(stretch, 1); ctx.rotate((o.rot || 0) - ba); } else ctx.rotate(o.rot || 0);
       ctx.globalAlpha = a1; ctx.drawImage(spr, -r * 1.6, -r * 1.6, r * 3.2, r * 3.2); ctx.restore();
     }
     ctx.restore();
@@ -307,7 +342,7 @@
     var t = o.t || 0, z = o.z || 0, R = o.radius == null ? 1 : o.radius;
     var cu = o.curve || 0, cvx = typeof cu === 'number' ? cu : cu.x || 0, cvy = typeof cu === 'number' ? 0 : cu.y || 0;
     var pulse = o.pulse == null ? heartbeat(t) : o.pulse;
-    var swayAmt = o.sway == null ? 1 : o.sway;
+    var swayAmt = o.sway == null ? 1 : o.sway, camX = o.camX || 0, camY = o.camY || 0;
     var f = H * 0.85, cx0 = W / 2 + (o.cx || 0), cy0 = H / 2 + (o.cy || 0);
     var swx = (0.03 * Math.sin(t * 0.9) + 0.012 * Math.sin(t * 2.3 + 0.5)) * swayAmt;
     var swy = (0.026 * Math.sin(t * 1.1 + 1) + 0.01 * Math.sin(t * 2.9)) * swayAmt;
@@ -318,8 +353,8 @@
     for (var k = 0; k < T_N; k++) {
       var d = T_NEAR * Math.pow(T_FAR / T_NEAR, k / (T_N - 1));
       var po = pathOff(z + d);
-      var ox = po[0] - p0[0] - d * slx + cvx * 0.014 * d * d - swx;
-      var oy = po[1] - p0[1] - d * sly + cvy * 0.014 * d * d - swy;
+      var ox = po[0] - p0[0] - d * slx + cvx * 0.014 * d * d - swx - camX;
+      var oy = po[1] - p0[1] - d * sly + cvy * 0.014 * d * d - swy - camY;
       var x = cx0 + (f * ox) / d, y = cy0 + (f * oy) / d;
       var Rd = R * radFn(d) * dil, r = (f * Rd) / d;
       if (k > 0) { // keep the cross-sections nested so painter's order stays valid
@@ -342,11 +377,11 @@
 
   var STYLE_ART = {
     wall: [104, 8, 22], wallHi: [172, 34, 44], dark: [46, 2, 10], fog: [196, 52, 44], fogDist: 13, fold: 2.4, foldAmp: 0.55,
-    K: 26, L: 0.6, nuc: [84, 10, 44], line: [40, 0, 8], glow: [255, 150, 92], spec: [255, 196, 168]
+    K: 20, L: 0.62, nuc: [84, 10, 44], line: [40, 0, 8], glow: [255, 150, 92], spec: [255, 196, 168]
   };
   var STYLE_CAP = {
-    wall: [178, 66, 76], wallHi: [222, 120, 116], dark: [96, 22, 36], fog: [232, 140, 112], fogDist: 7, fold: 1.5, foldAmp: 0.35,
-    K: 3, L: 1.2, nuc: [136, 52, 104], line: [96, 20, 40], glow: [255, 200, 150], spec: [255, 226, 210]
+    wall: [206, 92, 96], wallHi: [244, 150, 134], dark: [110, 26, 44], fog: [250, 184, 150], fogDist: 9, fold: 1.5, foldAmp: 0.18,
+    K: 3, L: 1.3, nuc: [150, 70, 130], line: [120, 36, 56], glow: [255, 222, 180], spec: [255, 236, 220]
   };
 
   function ringColor(st, d, w, pulse) {
@@ -405,10 +440,22 @@
       var th = ((k + (j & 1) * 0.5 + (h3(j, kk, seed) - 0.5) * 0.36) / K) * TAU + 0.21;
       var w = j * L + (h3(kk, j, seed + 5) - 0.5) * 0.32 * L;
       var d = w - z, p = G.at(Math.max(d, 0.05));
-      return { x: p.x + Math.cos(th) * p.r, y: p.y + Math.sin(th) * p.r, d: d, th: th, w: w, cx: p.x, cy: p.y, r: p.r };
+      return { x: p.x + Math.cos(th) * p.r, y: p.y + Math.sin(th) * p.r, d: d, th: th, w: w };
     }
     function band(d) { return clamp(Math.floor((Math.log(Math.max(d, dMin) / dMin) / lnR) * NB), 0, NB - 1); }
-    var prev = null;
+    var subTh = 0.14;
+    function edge(P, Q) {
+      var dd = Math.min(P.d, Q.d);
+      if (dd < dMin || Math.max(P.d, Q.d) > dMax + L) return;
+      var dth = Q.th - P.th; if (dth > Math.PI) dth -= TAU; if (dth < -Math.PI) dth += TAU;
+      var ns = Math.max(1, Math.ceil(Math.abs(dth) / subTh)), arr = edges[band(dd)];
+      arr.push(ns, P.x, P.y);
+      for (var i = 1; i <= ns; i++) {
+        if (i === ns) { arr.push(Q.x, Q.y); break; }
+        var u = i / ns, th = P.th + dth * u, dq = lerp(P.d, Q.d, u), p = G.at(Math.max(dq, 0.05));
+        arr.push(p.x + Math.cos(th) * p.r, p.y + Math.sin(th) * p.r);
+      }
+    }
     for (var j = j0; j <= j1; j++) {
       var row = [], nxt = [];
       for (var k = 0; k < K; k++) row.push(pt(j, k));
@@ -416,16 +463,13 @@
       for (k = 0; k < K; k++) {
         var P = row[k];
         var nA = nxt[k], nB = (j & 1) ? nxt[mod(k + 1, K)] : nxt[mod(k - 1, K)];
-        var dd = Math.min(P.d, nA.d);
-        if (dd >= dMin && Math.max(P.d, nA.d) <= dMax + L) edges[band(dd)].push(P.x, P.y, nA.x, nA.y);
-        dd = Math.min(P.d, nB.d);
-        if (dd >= dMin && Math.max(P.d, nB.d) <= dMax + L) edges[band(dd)].push(P.x, P.y, nB.x, nB.y);
+        edge(P, nA); edge(P, nB);
         // nucleus of the lozenge cell whose top vertex is P
         var wn = P.w + L * (0.95 + (h3(j, k, seed + 9) - 0.5) * 0.3), dn = wn - z;
         if (dn > dMin && dn < dMax) {
           var pn = G.at(dn), thn = P.th + (h3(k, j, seed + 3) - 0.5) * 0.2 * (TAU / K);
           var pa = G.at(Math.max(dn - L * 0.22, 0.05)), pb = G.at(dn + L * 0.22);
-          var len = Math.abs(pa.r - pb.r) * 0.5 + 0.5, wid = pn.r * (TAU / K) * 0.16;
+          var len = Math.abs(pa.r - pb.r) * 0.5 + 0.5, wid = pn.r * Math.min(TAU / K, 0.5) * 0.17;
           nucs[band(dn)].push(pn.x + Math.cos(thn) * pn.r * 0.995, pn.y + Math.sin(thn) * pn.r * 0.995, len, wid, thn, pn.r);
         }
       }
@@ -439,13 +483,11 @@
       var E = edges[b], lw = clamp((G.f * 0.007) / dmid, 0.5, 5);
       if (E.length) {
         ctx.beginPath();
-        for (var e = 0; e < E.length; e += 4) {
-          var mx = (E[e] + E[e + 2]) / 2, my = (E[e + 1] + E[e + 3]) / 2;
-          ctx.moveTo(E[e], E[e + 1]);
-          ctx.quadraticCurveTo(mx + (mx - G.cx0) * 0.035, my + (my - G.cy0) * 0.035, E[e + 2], E[e + 3]);
+        for (var e = 0; e < E.length;) {
+          var ns = E[e]; ctx.moveTo(E[e + 1], E[e + 2]); e += 3;
+          for (var q = 0; q < ns; q++, e += 2) ctx.lineTo(E[e], E[e + 1]);
         }
-        ctx.strokeStyle = rgba(st.line, 0.34 * fogA); ctx.lineWidth = lw * 1.8; ctx.stroke();
-        ctx.strokeStyle = rgba(st.wallHi, 0.16 * fogA); ctx.lineWidth = lw * 0.5; ctx.stroke();
+        ctx.strokeStyle = rgba(st.line, 0.26 * fogA); ctx.lineWidth = lw * 1.8; ctx.stroke();
       }
       var Nn = nucs[b];
       if (Nn.length) {
@@ -456,7 +498,8 @@
           ctx.ellipse(Nn[e], Nn[e + 1], Math.max(0.3, Nn[e + 2]), Math.max(0.3, Nn[e + 3]), Nn[e + 4], 0, TAU);
         }
         ctx.fillStyle = rgba(st.nuc, 0.36 * fogA); ctx.fill();
-        // wet highlight on the bulging nuclei
+        if (b > 2) continue;
+        // wet highlight on the bulging nuclei (near bands only)
         ctx.globalCompositeOperation = 'lighter';
         ctx.beginPath();
         for (e = 0; e < Nn.length; e += 6) {
@@ -472,6 +515,65 @@
     ctx.restore();
   }
 
+  /* capillary wall: only 2–3 long endothelial cells around the circumference (seams along the axis,
+     staggered cross junctions) with long flattened nuclei bulging into the lumen */
+  function drawCapWall(ctx, G, st, dMin, dMax, seed) {
+    var z = G.z, K = 3, L = 1.6;
+    dMin = Math.max(dMin, 0.3);
+    if (dMax <= dMin) return;
+    function P(th, d) { var p = G.at(d); return [p.x + Math.cos(th) * p.r, p.y + Math.sin(th) * p.r, p.r]; }
+    function seamTh(k, w) { return (k / K) * TAU + 0.5 + 0.18 * Math.sin(w * 0.7 + k * 2.1) + 0.08 * Math.sin(w * 1.9 + k); }
+    ctx.save(); ctx.lineCap = 'round'; ctx.lineJoin = 'round';
+    // nuclei first (under the seams)
+    for (var k = 0; k < K; k++) {
+      var off = h2(k, seed) * L, j0 = Math.floor((z + dMin - off) / L) - 1, j1 = Math.ceil((z + dMax - off) / L);
+      for (var j = j1; j >= j0; j--) {
+        var wm = j * L + off + L * 0.5, dm = wm - z;
+        if (dm < dMin + 0.1 || dm > dMax) continue;
+        var thm = (seamTh(k, wm) + seamTh(k + 1, wm) + (k === K - 1 ? TAU : 0)) / 2 + (h3(j, k, seed) - 0.5) * 0.5;
+        var fa = Math.exp(-dm / (st.fogDist * 0.9)) * smooth(0.7, 1.6, dm);
+        if (fa < 0.03) continue;
+        var pa = P(thm, Math.max(0.05, dm - 0.28)), pb = P(thm, dm + 0.28), pc = P(thm, dm);
+        var cx = pc[0], cy = pc[1], dx = pa[0] - pb[0], dy = pa[1] - pb[1];
+        var len = Math.max(1, Math.hypot(dx, dy) * 0.5), wid = Math.max(0.6, pc[2] * 0.22), ang = Math.atan2(dy, dx);
+        var g = ctx.createRadialGradient(cx - Math.cos(ang) * len * 0.3, cy - Math.sin(ang) * len * 0.3, 0, cx, cy, Math.max(len, wid));
+        g.addColorStop(0, rgba([214, 160, 220], 0.75 * fa)); g.addColorStop(0.6, rgba(st.nuc, 0.65 * fa)); g.addColorStop(1, rgba(st.nuc, 0));
+        ctx.fillStyle = g; ctx.beginPath(); ctx.ellipse(cx, cy, len, wid, ang, 0, TAU); ctx.fill();
+        ctx.globalCompositeOperation = 'lighter';
+        ctx.fillStyle = rgba(st.spec, 0.3 * fa);
+        ctx.beginPath(); ctx.ellipse(cx + Math.cos(ang) * len * 0.15, cy + Math.sin(ang) * len * 0.15, len * 0.5, wid * 0.22, ang, 0, TAU); ctx.fill();
+        ctx.globalCompositeOperation = 'source-over';
+      }
+    }
+    // seams along the axis + staggered cross junctions
+    var NB = 5, lnR = Math.log(dMax / dMin);
+    for (var b = 0; b < NB; b++) {
+      var da = dMin * Math.exp((b / NB) * lnR), db = dMin * Math.exp(((b + 1) / NB) * lnR), dmid = Math.sqrt(da * db);
+      var fa2 = Math.exp(-dmid / (st.fogDist * 0.8)) * (0.4 + 0.6 * smooth(0.3, 1.2, dmid));
+      ctx.beginPath();
+      for (k = 0; k < K; k++) {
+        var steps = Math.max(3, Math.ceil((db - da) / 0.12));
+        for (var i = 0; i <= steps; i++) {
+          var d = lerp(da, db, i / steps), q = P(seamTh(k, z + d), d);
+          if (i === 0) ctx.moveTo(q[0], q[1]); else ctx.lineTo(q[0], q[1]);
+        }
+        off = h2(k, seed) * L;
+        for (j = Math.floor((z + da - off) / L); j <= Math.ceil((z + db - off) / L); j++) {
+          var wj = j * L + off, dj = wj - z;
+          if (dj < da || dj > db) continue;
+          var t0 = seamTh(k, wj), t1 = seamTh(k + 1, wj) + (k === K - 1 ? TAU : 0);
+          for (i = 0; i <= 28; i++) {
+            var th = lerp(t0, t1, i / 28), qq = P(th, dj + Math.sin(i / 28 * Math.PI) * 0.12);
+            if (i === 0) ctx.moveTo(qq[0], qq[1]); else ctx.lineTo(qq[0], qq[1]);
+          }
+        }
+      }
+      ctx.strokeStyle = rgba(st.line, 0.16 * fa2); ctx.lineWidth = clamp((G.f * 0.03) / dmid, 2, 40); ctx.stroke();
+      ctx.strokeStyle = rgba(st.line, 0.3 * fa2); ctx.lineWidth = clamp((G.f * 0.008) / dmid, 0.8, 9); ctx.stroke();
+    }
+    ctx.restore();
+  }
+
   function drawFolds(ctx, G, st, dMin, dMax) {
     var z = G.z, sp = st.fold;
     var m0 = Math.ceil((z + Math.max(dMin, 0.32)) / sp), m1 = Math.floor((z + dMax) / sp);
@@ -483,51 +585,16 @@
       ctx.globalCompositeOperation = 'source-over';
       ctx.beginPath(); ctx.arc(p.x, p.y, p.r * 1.0, 0, TAU);
       ctx.strokeStyle = rgba(st.dark, 0.22 * fa); ctx.lineWidth = lw * 1.4; ctx.stroke();
-      ctx.globalCompositeOperation = 'lighter';
-      ctx.beginPath(); ctx.arc(p.x, p.y, Math.max(0, p.r * 0.985 - lw * 0.4), Math.PI * 0.85, Math.PI * 1.85);
-      ctx.strokeStyle = rgba(st.spec, 0.13 * fa); ctx.lineWidth = lw * 0.45; ctx.stroke();
-      ctx.beginPath(); ctx.arc(p.x, p.y, Math.max(0, p.r * 0.985 - lw * 0.4), Math.PI * 1.15, Math.PI * 1.5);
-      ctx.strokeStyle = rgba(st.spec, 0.16 * fa); ctx.lineWidth = lw * 0.18; ctx.stroke();
+
     }
     ctx.restore();
   }
 
-  function drawSpecStreaks(ctx, G, st, dMax, intensity) {
+  /* One low-res overlay (480x270, upscaled once): angular wall lighting, glow ahead, soft wet sheen streaks. */
+  function drawTubeOverlay(ctx, G, st, pulse, dMax, intensity) {
     var W = G.W, H = G.H, sw = 480, sh = 270, sx = sw / W, sy = sh / H;
-    var c = scratchCanvas('sheen', sw, sh), x = c.getContext('2d');
-    var z = G.z, segL = 0.45;
-    var streaks = [[-2.2, 0.09, 1.0], [-0.9, 0.06, 0.6], [2.5, 0.07, 0.4], [-1.55, 0.04, 0.45], [0.6, 0.05, 0.25]];
-    x.globalCompositeOperation = 'lighter';
-    var s0 = Math.floor((z + 0.3) / segL), s1 = Math.ceil((z + dMax) / segL);
-    for (var q = 0; q < streaks.length; q++) {
-      var th0 = streaks[q][0], wd = streaks[q][1], amp = streaks[q][2] * intensity;
-      for (var s = s0; s <= s1; s++) {
-        var da = s * segL - z, db = da + segL * (0.5 + 0.6 * h2(s, q + 50));
-        if (db < 0.3) continue; da = Math.max(da, 0.3);
-        var flick = Math.pow(h2(s, q * 31 + 3), 1.5);
-        var a = amp * flick * Math.exp(-da / st.fogDist) * 0.55 * (1 + G.pulse * 0.6);
-        if (a < 0.01) continue;
-        var th = th0 + (h2(q, s + 9) - 0.5) * 0.12;
-        var pa = G.at(da), pb = G.at(db), wj = wd * (0.5 + 0.9 * h2(q, s));
-        var c1 = Math.cos(th - wj), s1a = Math.sin(th - wj), c2 = Math.cos(th + wj), s2 = Math.sin(th + wj), cm = Math.cos(th), sm = Math.sin(th);
-        var rA = pa.r * 0.985, rB = pb.r * 0.985;
-        x.beginPath();
-        x.moveTo((pa.x + c1 * rA) * sx, (pa.y + s1a * rA) * sy);
-        x.quadraticCurveTo((pa.x + cm * rA * 0.97) * sx, (pa.y + sm * rA * 0.97) * sy, (pa.x + c2 * rA) * sx, (pa.y + s2 * rA) * sy);
-        x.lineTo((pb.x + c2 * rB) * sx, (pb.y + s2 * rB) * sy);
-        x.quadraticCurveTo((pb.x + cm * rB * 0.97) * sx, (pb.y + sm * rB * 0.97) * sy, (pb.x + c1 * rB) * sx, (pb.y + s1a * rB) * sy);
-        x.closePath();
-        x.fillStyle = rgba(st.spec, a); x.fill();
-      }
-    }
-    ctx.save(); ctx.globalCompositeOperation = 'lighter';
-    ctx.drawImage(c, 0, 0, W, H);
-    ctx.restore();
-  }
-
-  function drawTubeLighting(ctx, G, st, pulse) {
-    var W = G.W, H = G.H, sw = 240, sh = 135, c = scratchCanvas('tubeLight', sw, sh), x = c.getContext('2d');
-    var mid = G.at(5), sx = sw / W, sy = sh / H;
+    var c = scratchCanvas('tubeLight', sw, sh), x = c.getContext('2d');
+    var mid = G.at(5);
     var g = x.createConicGradient(-Math.PI / 2, mid.x * sx, mid.y * sy);
     g.addColorStop(0, 'rgba(255,170,130,0.16)');
     g.addColorStop(0.15, 'rgba(255,150,110,0.08)');
@@ -542,15 +609,45 @@
     var rg = x.createRadialGradient(mid.x * sx, mid.y * sy, inner * 0.5, mid.x * sx, mid.y * sy, Math.max(outer, inner + 1));
     rg.addColorStop(0, 'rgba(0,0,0,1)'); rg.addColorStop(1, 'rgba(0,0,0,0)');
     x.fillStyle = rg; x.fillRect(0, 0, sw, sh);
-    ctx.save(); ctx.imageSmoothingQuality = 'low';
-    ctx.drawImage(c, 0, 0, W, H);
-    // glow ahead (light at the end of the vessel) + pulse
-    ctx.globalCompositeOperation = 'lighter';
-    var far = G.at(14), rr = G.at(3).r;
-    var gg = ctx.createRadialGradient(far.x, far.y, 0, far.x, far.y, rr);
-    gg.addColorStop(0, rgba(st.glow, 0.55 + 0.3 * pulse)); gg.addColorStop(0.25, rgba(st.glow, 0.22 + 0.12 * pulse));
+    // glow ahead (light at the end of the vessel), flickers with the pulse
+    x.globalCompositeOperation = 'lighter';
+    var far = G.at(14), rr = G.at(3).r * sx, fx = far.x * sx, fy = far.y * sy;
+    var gg = x.createRadialGradient(fx, fy, 0, fx, fy, rr);
+    gg.addColorStop(0, rgba(st.glow, 0.5 + 0.3 * pulse)); gg.addColorStop(0.25, rgba(st.glow, 0.2 + 0.12 * pulse));
     gg.addColorStop(1, rgba(st.glow, 0));
-    ctx.fillStyle = gg; ctx.fillRect(0, 0, W, H);
+    x.fillStyle = gg; x.fillRect(fx - rr, fy - rr, rr * 2, rr * 2);
+    // wet sheen streaks (drawn on a second scratch, blurred in)
+    var c2 = scratchCanvas('sheen', sw, sh), y2 = c2.getContext('2d');
+    y2.globalCompositeOperation = 'lighter';
+    var z = G.z, segL = 0.35;
+    var streaks = [[-2.2, 0.08, 1.0], [-0.9, 0.05, 0.6], [2.5, 0.06, 0.4], [-1.55, 0.035, 0.45], [0.6, 0.045, 0.25]];
+    var s0 = Math.floor((z + 0.3) / segL), s1 = Math.ceil((z + dMax) / segL);
+    for (var q = 0; q < streaks.length; q++) {
+      var th0 = streaks[q][0], wd = streaks[q][1], amp = streaks[q][2] * intensity;
+      for (var s = s0; s <= s1; s++) {
+        var da = Math.max(s * segL - z, 0.3), db = (s + 1) * segL - z;
+        if (db <= 0.3) continue;
+        // smooth shimmer: value noise along the vessel
+        var u = (s * segL) / 1.7, i0 = Math.floor(u), fu = u - i0, fu2 = fu * fu * (3 - 2 * fu);
+        var nz = lerp(h2(i0, q * 31 + 3), h2(i0 + 1, q * 31 + 3), fu2);
+        var a = amp * Math.pow(nz, 1.6) * Math.exp(-da / st.fogDist) * 0.6 * (1 + pulse * 0.6) * smooth(0.3, 2.2, da);
+        if (a < 0.01) continue;
+        var th = th0 + Math.sin(s * segL * 0.4 + q) * 0.06;
+        var pa = G.at(da), pb = G.at(db), wj = wd * (0.7 + 0.6 * nz);
+        var c1 = Math.cos(th - wj), s1a = Math.sin(th - wj), c2c = Math.cos(th + wj), s2 = Math.sin(th + wj);
+        var rA = pa.r * 0.985, rB = pb.r * 0.985;
+        y2.beginPath();
+        y2.moveTo((pa.x + c1 * rA) * sx, (pa.y + s1a * rA) * sy);
+        y2.lineTo((pa.x + c2c * rA) * sx, (pa.y + s2 * rA) * sy);
+        y2.lineTo((pb.x + c2c * rB) * sx, (pb.y + s2 * rB) * sy);
+        y2.lineTo((pb.x + c1 * rB) * sx, (pb.y + s1a * rB) * sy);
+        y2.closePath();
+        y2.fillStyle = rgba(st.spec, a); y2.fill();
+      }
+    }
+    x.filter = 'blur(2.5px)'; x.drawImage(c2, 0, 0); x.filter = 'none';
+    ctx.save();
+    ctx.drawImage(c, 0, 0, W, H);
     ctx.restore();
   }
 
@@ -568,9 +665,8 @@
     var sw = styleWrap(st);
     drawTubeBase(ctx, G, function () { return sw; });
     drawFolds(ctx, G, st, 0.3, 26);
-    if (detail > 0) drawEndothelium(ctx, G, st, 0.3, 15, 1, 11);
-    drawTubeLighting(ctx, G, st, G.pulse);
-    drawSpecStreaks(ctx, G, st, 22, 1);
+    if (detail > 0) drawEndothelium(ctx, G, st, 0.3, 9.5, 1, 11);
+    drawTubeOverlay(ctx, G, st, G.pulse, 22, 1);
     if (o.tint) {
       ctx.globalCompositeOperation = 'soft-light';
       ctx.fillStyle = rgba(parseColor(o.tint), o.tintAmount == null ? 0.35 : o.tintAmount);
@@ -625,7 +721,7 @@
       var x = p.x + Math.cos(c.a) * c.rad * p.r, y = p.y + Math.sin(c.a) * c.rad * p.r, rs = p.r * c.sz;
       if (x + rs * 1.3 < 0 || x - rs * 1.3 > W || y + rs * 1.3 < 0 || y - rs * 1.3 > H) continue;
       var p2 = G.at(c.d + dv), x2 = p2.x + Math.cos(c.a) * c.rad * p2.r, y2 = p2.y + Math.sin(c.a) * c.rad * p2.r;
-      var blur = Math.hypot(x - x2, y - y2) * shutter, ang = Math.atan2(y - y2, x - x2);
+      var blur = Math.min(Math.hypot(x - x2, y - y2) * shutter, rs * 1.2), ang = Math.atan2(y - y2, x - x2);
       var fog = 1 - Math.exp(-c.d / 9), alpha = smooth(Lw, Lw - 5, c.d) * smooth(near, near + 0.12, c.d);
       if (c.k === 0) drawRBC(ctx, { x: x, y: y, r: rs, tiltX: c.tx, tiltY: c.ty, alpha: alpha, blur: blur, blurAngle: ang, fog: fog * 0.92, fogColor: '#c4402f' });
       else drawPlatelet(ctx, { x: x, y: y, r: rs, rot: c.rot, variant: c.v, alpha: alpha * (1 - fog * 0.8), blur: blur, blurAngle: ang });
@@ -633,24 +729,40 @@
     // plasma particles: short additive streaks
     if (o.plasma !== false) {
       ctx.globalCompositeOperation = 'lighter'; ctx.lineCap = 'round';
-      var np = Math.round(count * 1.6);
+      var np = Math.round(count * 1.6), bins = [];
+      for (i = 0; i < 9; i++) bins.push([]);
       for (i = 0; i < np; i++) {
         R = rng(seed * 15485863 + i * 31 + 2);
         var aa = R() * TAU, rr = Math.sqrt(R()) * 0.95, d1 = mod(R() * 18 + vflow * 1.3 * t - z, 18);
         if (d1 < 0.2) continue;
         var pa = G.at(d1), pb = G.at(d1 + dv * 1.5 + 0.02);
-        var xa = pa.x + Math.cos(aa) * rr * pa.r, ya = pa.y + Math.sin(aa) * rr * pa.r;
-        var xb = pb.x + Math.cos(aa) * rr * pb.r, yb = pb.y + Math.sin(aa) * rr * pb.r;
-        var al = Math.exp(-d1 / 6) * 0.5 * smooth(18, 15, d1);
+        bins[Math.min(8, Math.floor(d1 / 2))].push(pa.x + Math.cos(aa) * rr * pa.r, pa.y + Math.sin(aa) * rr * pa.r, pb.x + Math.cos(aa) * rr * pb.r, pb.y + Math.sin(aa) * rr * pb.r);
+      }
+      for (var bI = 0; bI < 9; bI++) {
+        var B = bins[bI]; if (!B.length) continue;
+        var dm = bI * 2 + 1, al = Math.exp(-dm / 6) * 0.5 * smooth(18, 15, dm);
         ctx.strokeStyle = 'rgba(255,200,150,' + al.toFixed(3) + ')';
-        ctx.lineWidth = clamp(pa.r * 0.006 * (0.5 + R()), 0.5, 7);
-        ctx.beginPath(); ctx.moveTo(xa, ya); ctx.lineTo(xb, yb); ctx.stroke();
+        ctx.lineWidth = clamp((G.f / dm) * 0.006, 0.5, 6);
+        ctx.beginPath();
+        for (var e = 0; e < B.length; e += 4) { ctx.moveTo(B[e], B[e + 1]); ctx.lineTo(B[e + 2], B[e + 3]); }
+        ctx.stroke();
       }
     }
     ctx.restore();
   }
 
   /* ============================================================ CAPILLARY 1P */
+  var tissueBlobC = null;
+  function tissueBlob() {
+    if (tissueBlobC) return tissueBlobC;
+    var c = mkCanvas(128, 128), x = c.getContext('2d');
+    var g = x.createRadialGradient(64, 64, 0, 64, 64, 64);
+    g.addColorStop(0, 'rgba(150,90,190,0.65)'); g.addColorStop(0.22, 'rgba(170,110,190,0.45)');
+    g.addColorStop(0.3, 'rgba(255,200,150,0.55)'); g.addColorStop(0.7, 'rgba(255,180,140,0.25)'); g.addColorStop(1, 'rgba(255,170,130,0)');
+    x.fillStyle = g; x.fillRect(0, 0, 128, 128);
+    tissueBlobC = c; return c;
+  }
+
   /**
    * drawCapillary(ctx, {t, z, narrow=0, curve, pulse, cells=true, seed=3, vz=3})
    * First-person narrowing into a capillary. narrow 0 → wide arteriole with the capillary mouth ahead;
@@ -664,6 +776,8 @@
     var oo = {}; for (var k in o) oo[k] = o[k];
     if (oo.sway == null) oo.sway = 0.5;
     if (oo.pulse == null) oo.pulse = heartbeat(o.t || 0) * 0.35; // pulsatility is damped in capillaries
+    if (oo.camY == null) oo.camY = -0.1 * smooth(0.3, 1, narrow); // slightly off-axis so the single file is visible
+    if (oo.camX == null) oo.camX = 0.05 * smooth(0.3, 1, narrow);
     var G = tubeGeom(ctx, oo, radFn), t = G.t, z = G.z;
     function capAmt(d) { return smooth(e - 1, e + 1.5, d); }
     var wA = styleWrap(STYLE_ART), cache = {};
@@ -684,22 +798,17 @@
           var w = j * sp + h3(j, q, 77) * sp, d = w - z;
           if (d < dStart || d > 16) continue;
           var th = ((q + h3(q, j, 78)) / 5) * TAU, p = G.at(d), fa = Math.exp(-d / 6) * 0.6 * smooth(dStart, dStart + 1, d);
-          var x = p.x + Math.cos(th) * p.r * 1.02, y = p.y + Math.sin(th) * p.r * 1.02, rr = p.r * 0.75;
-          var g = ctx.createRadialGradient(x, y, 0, x, y, rr);
-          g.addColorStop(0, 'rgba(120,60,150,' + (fa * 0.6).toFixed(3) + ')');
-          g.addColorStop(0.3, 'rgba(255,190,140,' + (fa * 0.5).toFixed(3) + ')');
-          g.addColorStop(1, 'rgba(255,170,130,0)');
-          ctx.fillStyle = g; ctx.beginPath(); ctx.arc(x, y, rr, 0, TAU); ctx.fill();
+          var x = p.x + Math.cos(th) * p.r * 1.05, y = p.y + Math.sin(th) * p.r * 1.05, rr = p.r * 0.95;
+          ctx.globalAlpha = Math.min(1, fa * 1.6); ctx.drawImage(tissueBlob(), x - rr, y - rr, rr * 2, rr * 2);
         }
       }
-      ctx.globalCompositeOperation = 'source-over';
+      ctx.globalCompositeOperation = 'source-over'; ctx.globalAlpha = 1;
     }
     // endothelium: arteriole part + capillary part (only 2–3 cells around the circumference)
-    if (e > 0.3) drawEndothelium(ctx, G, STYLE_ART, 0.3, Math.min(e + 0.5, 15), 1, 11);
-    drawEndothelium(ctx, G, STYLE_CAP, Math.max(0.3, e + 0.3), 16, 1.2, 23);
+    if (e - 2.2 > 0.35) drawEndothelium(ctx, G, STYLE_ART, 0.3, Math.min(e - 2.2, 9.5), 1, 11);
+    drawCapWall(ctx, G, STYLE_CAP, Math.max(0.3, e + 0.8), 14, 23);
     drawFolds(ctx, G, mixStyle(STYLE_ART, STYLE_CAP, 0.5), 0.3, Math.max(0.31, e));
-    drawTubeLighting(ctx, G, mixStyle(STYLE_ART, STYLE_CAP, narrow), G.pulse);
-    drawSpecStreaks(ctx, G, STYLE_CAP, 16, 0.9);
+    drawTubeOverlay(ctx, G, mixStyle(STYLE_ART, STYLE_CAP, narrow), G.pulse, 16, 0.9);
     // funnel mouth glow
     if (e > 0.5) {
       var pm = G.at(e + 0.5);
@@ -732,7 +841,7 @@
         var fog = 1 - Math.exp(-c.d / 7);
         var al = smooth(Lw, Lw - 4, c.d) * smooth(0.2, 0.35, c.d);
         var p2 = G.at(c.d + (vz - vflow) / 30);
-        var bl = Math.abs(pc.r - p2.r) * 0.6;
+        var bl = Math.min(Math.abs(pc.r - p2.r) * 0.35, size * 0.5);
         drawRBC(ctx, { x: cx, y: cy, r: size, tiltX: tx, tiltY: ty, deform: c.cap, alpha: al, fog: fog * 0.85, fogColor: '#e09078', blur: bl, blurAngle: Math.atan2(cy - G.cy0, cx - G.cx0) });
       }
     }
@@ -1428,9 +1537,7 @@
       var wd = (1 + R() * 3.5) * (0.4 + pr), al = Math.sin(pr * Math.PI) * 0.55 * I * (0.4 + R() * 0.6);
       var ca = Math.cos(a), sa = Math.sin(a), px = -sa, py = ca;
       var x1 = cx + ca * r0, y1 = cy + sa * r0, x2 = cx + ca * (r0 + len), y2 = cy + sa * (r0 + len);
-      var g = ctx.createLinearGradient(x1, y1, x2, y2);
-      g.addColorStop(0, 'rgba(' + col + ',0)'); g.addColorStop(0.7, 'rgba(' + col + ',' + al.toFixed(3) + ')'); g.addColorStop(1, 'rgba(' + col + ',0)');
-      ctx.fillStyle = g; ctx.beginPath();
+      ctx.fillStyle = 'rgba(' + col + ',' + al.toFixed(3) + ')'; ctx.beginPath();
       ctx.moveTo(x1, y1); ctx.lineTo(x2 + px * wd, y2 + py * wd); ctx.lineTo(x2 - px * wd, y2 - py * wd); ctx.closePath(); ctx.fill();
     }
     ctx.restore();
@@ -1515,6 +1622,10 @@
       else cur = tryS;
     }
     if (cur) out.push(cur);
+    if (out.length > 1 && Array.from(out[out.length - 1]).length <= 2) { // avoid orphans
+      var prev = Array.from(out[out.length - 2]), mv = prev.splice(prev.length - 2, 2).join('');
+      out[out.length - 2] = prev.join(''); out[out.length - 1] = mv + out[out.length - 1];
+    }
     return out;
   }
   /**
@@ -1539,7 +1650,7 @@
     for (var i = 0; i < lines.length; i++) {
       var fs = size; ctx.font = font(fs);
       var lw = ctx.measureText(lines[i]).width, avail = innerW - bullet;
-      if (lw > avail) { fs = Math.max(size * 0.78, (fs * avail) / lw); ctx.font = font(fs); }
+      if (lw > avail) { fs = Math.max(size * 0.7, (fs * avail) / lw); ctx.font = font(fs); }
       var parts = ctx.measureText(lines[i]).width > avail ? wrapText(ctx, lines[i], avail) : [lines[i]];
       lay.push({ fs: fs, parts: parts });
     }
@@ -1818,6 +1929,7 @@
     sideLayout: function (ctx, o) { return sideLayout(ctx, o || {}); },
     ready: ready,
     prewarm: prewarm,
-    FONT: FONT_FAMILY
+    FONT: FONT_FAMILY,
+    _internal: { tubeGeom: tubeGeom, drawTubeBase: drawTubeBase, drawEndothelium: drawEndothelium, drawFolds: drawFolds, drawTubeOverlay: drawTubeOverlay, styleWrap: styleWrap, STYLE_ART: STYLE_ART, STYLE_CAP: STYLE_CAP }
   };
 })();
