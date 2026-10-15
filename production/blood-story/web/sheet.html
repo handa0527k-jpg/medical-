@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>BLOOD STORY キャラクター設定表</title>
+<style>
+  @font-face { font-family: 'ZenKaku'; src: url('../fonts/ZenKakuGothicNew-Bold.ttf'); font-weight: 700; }
+  html, body { margin: 0; background: #1a1418; }
+  canvas { display: block; }
+</style>
+</head>
+<body>
+<canvas id="c" width="1920" height="2160"></canvas>
+<script src="characters.js"></script>
+<script>
+(async function () {
+  await document.fonts.load('700 40px ZenKaku');
+  await document.fonts.ready;
+  const cv = document.getElementById('c');
+  const ctx = cv.getContext('2d');
+  const C = BS.chars;
+  const W = cv.width, H = cv.height;
+  const FONT = (px) => `700 ${px}px ZenKaku, IPAGothic, sans-serif`;
+
+  function bg() {
+    const g = ctx.createLinearGradient(0, 0, 0, H);
+    g.addColorStop(0, '#fbf3ee'); g.addColorStop(1, '#f1e6ef');
+    ctx.fillStyle = g; ctx.fillRect(0, 0, W, H);
+    ctx.strokeStyle = 'rgba(120,80,100,0.08)'; ctx.lineWidth = 1;
+    for (let x = 0; x < W; x += 40) { ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, H); ctx.stroke(); }
+    for (let y = 0; y < H; y += 40) { ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(W, y); ctx.stroke(); }
+  }
+  function label(text, x, y, size, col, align) {
+    ctx.save(); ctx.font = FONT(size || 22); ctx.fillStyle = col || '#4a2a33'; ctx.textAlign = align || 'center'; ctx.textBaseline = 'alphabetic';
+    ctx.fillText(text, x, y); ctx.restore();
+  }
+  function panel(x, y, w, h, title, col) {
+    ctx.save();
+    ctx.fillStyle = 'rgba(255,255,255,0.55)'; ctx.strokeStyle = col; ctx.lineWidth = 3;
+    ctx.beginPath(); ctx.roundRect(x, y, w, h, 18); ctx.fill(); ctx.stroke();
+    ctx.fillStyle = col; ctx.beginPath(); ctx.roundRect(x, y, Math.max(160, title.length * 26 + 40), 40, [18, 0, 18, 0]); ctx.fill();
+    ctx.font = FONT(24); ctx.fillStyle = '#fff'; ctx.textBaseline = 'middle'; ctx.fillText(title, x + 20, y + 21);
+    ctx.restore();
+  }
+  function ground(x, y, w) { ctx.save(); ctx.fillStyle = 'rgba(80,40,60,0.13)'; ctx.beginPath(); ctx.ellipse(x, y, w, w * 0.16, 0, 0, Math.PI * 2); ctx.fill(); ctx.restore(); }
+  // close-up: draw the character big and clip to a frame around the face
+  function closeup(fn, who, opts, fx, fy, fw, fh, title) {
+    const sc = opts.scale;
+    const o = Object.assign({ x: 0, y: 0 }, opts);
+    const a = C.headAnchor(who, o);
+    o.x = fx + fw / 2 - a.x; o.y = fy + fh * 0.56 - a.y;
+    ctx.save();
+    ctx.beginPath(); ctx.roundRect(fx, fy, fw, fh, 14); ctx.clip();
+    const g = ctx.createRadialGradient(fx + fw / 2, fy + fh / 2, 10, fx + fw / 2, fy + fh / 2, fw);
+    g.addColorStop(0, '#ffffff'); g.addColorStop(1, '#efdfe6');
+    ctx.fillStyle = g; ctx.fillRect(fx, fy, fw, fh);
+    fn(ctx, o);
+    ctx.restore();
+    ctx.save(); ctx.strokeStyle = 'rgba(80,40,60,0.35)'; ctx.lineWidth = 2; ctx.beginPath(); ctx.roundRect(fx, fy, fw, fh, 14); ctx.stroke(); ctx.restore();
+    label(title, fx + fw / 2, fy + fh + 26, 20);
+  }
+
+  bg();
+  label('BLOOD STORY ― 体内を駆ける細胞たち ―　キャラクター設定表', 40, 62, 40, '#3b1c26', 'left');
+  label('キャンバス2D・ボーンリグ／セル塗り3階調　scale 1 = 身長約600px　足元 (x,y) 基準', 40, 100, 20, '#7a5060', 'left');
+
+  // ===================== AKANE =====================
+  const AK = '#d72a40';
+  panel(30, 120, 1860, 1000, 'アカネ（赤血球）', AK);
+  // turnaround
+  const sTurn = 0.6;
+  const turnY = 560;
+  [['front', '正面'], ['threeq', '斜め'], ['side', '側面']].forEach(([v, jp], i) => {
+    const x = 100 + i * 150;
+    ground(x, turnY, 55);
+    C.drawAkane(ctx, { x, y: turnY, scale: sTurn, view: v, pose: 'stand', expr: 'happy', t: 0.4 });
+    label(jp, x, turnY + 34, 20);
+  });
+  // hold O2 / relieved / turn
+  [['hold', 'O₂を抱える', { view: 'threeq', pose: 'hold', holdO2: true, expr: 'happy' }],
+   ['relieved', 'ほっと一息', { view: 'threeq', pose: 'relieved', expr: 'relieved' }],
+   ['turn', '振り向き', { view: 'side', pose: 'turn', expr: 'surprised', mouth: 0.5 }],
+   ['squash', '毛細血管で身をすくめる', { view: 'front', pose: 'run', runPhase: 0.15, squash: 1, expr: 'determined' }],
+  ].forEach(([k, jp, op], i) => {
+    const x = 560 + i * 125;
+    ground(x, turnY, 50);
+    C.drawAkane(ctx, Object.assign({ x, y: turnY, scale: sTurn, t: 1.1 }, op));
+    label(jp, x, turnY + 34, 18);
+  });
+  // run cycle side
+  label('走り（側面）8コマ　runPhase 0〜7/8　接地＝0, 0.5', 60, 640, 20, '#7a3040', 'left');
+  for (let i = 0; i < 8; i++) {
+    const x = 120 + i * 140, y = 920;
+    ground(x, y, 50);
+    C.drawAkane(ctx, { x, y, scale: 0.46, view: 'side', pose: 'run', runPhase: i / 8, expr: 'determined', t: i * 0.05 });
+    label((i) + '/8', x, y + 28, 16);
+  }
+  // front run
+  label('走り（正面・斜め）', 1290, 640, 20, '#7a3040', 'left');
+  for (let i = 0; i < 4; i++) {
+    const x = 1310 + i * 140, y = 920;
+    ground(x, y, 50);
+    C.drawAkane(ctx, { x, y, scale: 0.46, view: i < 2 ? 'front' : 'threeq', pose: 'run', runPhase: (i % 2) * 0.25 + 0.0, expr: 'happy', t: i * 0.1, mouth: 0.4 });
+  }
+  // expressions close-ups
+  const exA = [['happy', 0, '元気（口閉）'], ['happy', 0.8, '元気（口開）'], ['determined', 0.35, '決意'], ['surprised', 0.7, '驚き'], ['relieved', 0.15, '安堵']];
+  exA.forEach(([e, m, jp], i) => {
+    closeup(C.drawAkane, 'akane', { scale: 1.45, view: 'threeq', pose: 'stand', expr: e, mouth: m, t: 0.2 }, 1010 + i * 172, 150, 160, 190, jp);
+  });
+  // big face
+  closeup(C.drawAkane, 'akane', { scale: 3.0, view: 'threeq', pose: 'stand', expr: 'happy', mouth: 0.5, t: 0.3 }, 1010, 380, 420, 230, '顔アップ scale 3');
+  closeup(C.drawAkane, 'akane', { scale: 2.2, view: 'side', pose: 'stand', expr: 'determined', mouth: 0, t: 0.3 }, 1450, 380, 210, 230, '横顔');
+  closeup(C.drawAkane, 'akane', { scale: 2.2, view: 'front', pose: 'stand', expr: 'happy', mouth: 0.3, blink: 1, t: 0.3 }, 1675, 380, 195, 230, 'まばたき');
+
+  // ===================== SHIROU =====================
+  const SH = '#7a64c0';
+  panel(30, 1140, 1860, 1000, 'シロウ（白血球・好中球）', SH);
+  const sY2 = 1600;
+  [['front', '正面'], ['threeq', '斜め'], ['side', '側面']].forEach(([v, jp], i) => {
+    const x = 100 + i * 150;
+    ground(x, sY2, 55);
+    C.drawShirou(ctx, { x, y: sY2, scale: 0.6, view: v, pose: 'stand', expr: 'calm', t: 0.4 });
+    label(jp, x, sY2 + 34, 20);
+  });
+  [['ready', '構え', { view: 'threeq', pose: 'ready', expr: 'serious' }],
+   ['turn', '察知・振り向き', { view: 'side', pose: 'turn', expr: 'alert' }],
+   ['shout', '号令', { view: 'front', pose: 'ready', expr: 'shout', mouth: 0.8 }],
+  ].forEach(([k, jp, op], i) => {
+    const x = 560 + i * 140;
+    ground(x, sY2, 55);
+    C.drawShirou(ctx, Object.assign({ x, y: sY2, scale: 0.58, t: 1.1 }, op));
+    label(jp, x, sY2 + 34, 18);
+  });
+  label('走り（側面）8コマ', 60, 1680, 20, '#4a3a80', 'left');
+  for (let i = 0; i < 8; i++) {
+    const x = 120 + i * 140, y = 1960;
+    ground(x, y, 50);
+    C.drawShirou(ctx, { x, y, scale: 0.44, view: 'side', pose: 'run', runPhase: i / 8, expr: 'serious', t: i * 0.05 });
+    label(i + '/8', x, y + 28, 16);
+  }
+  // allies
+  label('白血球の仲間（variant 0〜3）', 1250, 1680, 20, '#4a3a80', 'left');
+  C.ALLY_NAMES.forEach((nm, i) => {
+    const x = 1300 + i * 150, y = 1960;
+    ground(x, y, 50);
+    C.drawWBCAlly(ctx, { x, y, scale: 0.44, variant: i, view: 'threeq', pose: 'stand', t: 0.3 + i });
+    label(nm, x, y + 28, 15);
+  });
+  const exS = [['calm', 0, '冷静'], ['alert', 0.15, '警戒'], ['serious', 0.0, '真剣'], ['shout', 0.9, '叫び']];
+  exS.forEach(([e, m, jp], i) => {
+    closeup(C.drawShirou, 'shirou', { scale: 1.45, view: 'threeq', pose: 'stand', expr: e, mouth: m, t: 0.2 }, 1010 + i * 215, 1170, 200, 190, jp);
+  });
+  closeup(C.drawShirou, 'shirou', { scale: 3.0, view: 'threeq', pose: 'stand', expr: 'serious', mouth: 0.35, t: 0.3 }, 1010, 1400, 420, 230, '顔アップ scale 3');
+  closeup(C.drawShirou, 'shirou', { scale: 2.2, view: 'side', pose: 'stand', expr: 'alert', t: 0.3 }, 1450, 1400, 210, 230, '横顔');
+  closeup(C.drawShirou, 'shirou', { scale: 2.2, view: 'front', pose: 'stand', expr: 'calm', t: 0.3 }, 1675, 1400, 195, 230, '正面');
+
+  window.__ready = true;
+})();
+</script>
+</body>
+</html>
