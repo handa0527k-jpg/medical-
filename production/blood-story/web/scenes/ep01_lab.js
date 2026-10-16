@@ -45,7 +45,7 @@
     // out-of-focus layer: drawn at 1/4 resolution, then upscaled with smoothing (cheap defocus, no canvas filter)
   let small = null;
   function blurred(ctx, px, alpha, fn) {
-    const k = 1 / Math.max(2, px * 0.6);
+    const k = 1 / Math.max(2, px * 1.4);
     if (!small) small = document.createElement('canvas');
     const sw = Math.ceil(W * k), sh = Math.ceil(H * k);
     if (small.width !== sw || small.height !== sh) { small.width = sw; small.height = sh; }
