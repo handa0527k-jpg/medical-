@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>BLOOD STORY キャラクター設定表 2（本編ポーズ）</title>
+<style>
+  @font-face { font-family: 'ZenKaku'; src: url('../fonts/ZenKakuGothicNew-Bold.ttf'); font-weight: 700; }
+  html, body { margin: 0; background: #1a1418; }
+  canvas { display: block; }
+</style>
+</head>
+<body>
+<canvas id="c" width="1920" height="2900"></canvas>
+<script src="characters.js"></script>
+<script>
+(async function () {
+  try { await document.fonts.load('700 40px ZenKaku'); await document.fonts.ready; } catch (e) {}
+  const cv = document.getElementById('c');
+  const ctx = cv.getContext('2d');
+  const C = BS.chars;
+  const W = cv.width, H = cv.height;
+  const FONT = (px) => `700 ${px}px ZenKaku, IPAGothic, sans-serif`;
+  function bg() {
+    const g = ctx.createLinearGradient(0, 0, 0, H);
+    g.addColorStop(0, '#fbf3ee'); g.addColorStop(1, '#f1e6ef');
+    ctx.fillStyle = g; ctx.fillRect(0, 0, W, H);
+    ctx.strokeStyle = 'rgba(120,80,100,0.07)'; ctx.lineWidth = 1;
+    for (let x = 0; x < W; x += 40) { ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, H); ctx.stroke(); }
+    for (let y = 0; y < H; y += 40) { ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(W, y); ctx.stroke(); }
+  }
+  function label(text, x, y, size, col, align) {
+    ctx.save(); ctx.font = FONT(size || 22); ctx.fillStyle = col || '#4a2a33'; ctx.textAlign = align || 'center'; ctx.fillText(text, x, y); ctx.restore();
+  }
+  function panel(x, y, w, h, title, col) {
+    ctx.save();
+    ctx.fillStyle = 'rgba(255,255,255,0.55)'; ctx.strokeStyle = col; ctx.lineWidth = 3;
+    ctx.beginPath(); ctx.roundRect(x, y, w, h, 18); ctx.fill(); ctx.stroke();
+    ctx.font = FONT(25); const tw = ctx.measureText(title).width;
+    ctx.fillStyle = col; ctx.beginPath(); ctx.roundRect(x, y, tw + 40, 42, [18, 0, 18, 0]); ctx.fill();
+    ctx.fillStyle = '#fff'; ctx.textBaseline = 'middle'; ctx.fillText(title, x + 20, y + 22);
+    ctx.restore();
+  }
+  function ground(x, y, w) { ctx.save(); ctx.fillStyle = 'rgba(80,40,60,0.13)'; ctx.beginPath(); ctx.ellipse(x, y, w, w * 0.16, 0, 0, Math.PI * 2); ctx.fill(); ctx.restore(); }
+  function fig(fn, op, x, y, txt, size) {
+    ground(x, y, 46 * (op.scale / 0.5));
+    fn(ctx, Object.assign({ x, y }, op));
+    if (txt) label(txt, x, y + 30, size || 17);
+  }
+  function closeup(fn, who, opts, fx, fy, fw, fh, title, bgcol) {
+    const o = Object.assign({ x: 0, y: 0 }, opts);
+    const a = C.headAnchor(who, o);
+    o.x = fx + fw / 2 - a.x; o.y = fy + fh * 0.54 - a.y;
+    if (o.pointAt) o.pointAt = { x: o.pointAt.x + o.x, y: o.pointAt.y + o.y };
+    ctx.save();
+    ctx.beginPath(); ctx.roundRect(fx, fy, fw, fh, 14); ctx.clip();
+    const g = ctx.createRadialGradient(fx + fw / 2, fy + fh / 2, 10, fx + fw / 2, fy + fh / 2, fw);
+    g.addColorStop(0, '#ffffff'); g.addColorStop(1, bgcol || '#efdfe6');
+    ctx.fillStyle = g; ctx.fillRect(fx, fy, fw, fh);
+    fn(ctx, o);
+    ctx.restore();
+    ctx.save(); ctx.strokeStyle = 'rgba(80,40,60,0.35)'; ctx.lineWidth = 2; ctx.beginPath(); ctx.roundRect(fx, fy, fw, fh, 14); ctx.stroke(); ctx.restore();
+    if (title) label(title, fx + fw / 2, fy + fh + 22, 17);
+  }
+  function holo(x, y, r) { // stand-in hologram marker (the real one is world/diag side)
+    ctx.save(); ctx.globalCompositeOperation = 'lighter';
+    const g = ctx.createRadialGradient(x, y, 0, x, y, r);
+    g.addColorStop(0, 'rgba(140,240,255,0.7)'); g.addColorStop(1, 'rgba(80,200,255,0)');
+    ctx.fillStyle = g; ctx.beginPath(); ctx.arc(x, y, r, 0, 7); ctx.fill();
+    ctx.strokeStyle = 'rgba(80,200,255,0.9)'; ctx.lineWidth = 2; ctx.strokeRect(x - r * 0.45, y - r * 0.45, r * 0.9, r * 0.9);
+    ctx.restore();
+  }
+  const POSES = [['point', '指さし'], ['present', 'ホロ提示'], ['cheer', 'ガッツ'], ['think', '考える'], ['wave', '手を振る'], ['walk', '歩き'], ['reach', '掴む(0.3)'], ['battle', '戦闘構え'], ['pose', '決めポーズ'], ['look_up', '見上げる']];
+
+  bg();
+  label('BLOOD STORY ― 体内を駆ける細胞たち ―　キャラクター設定表 2（本編 第1話 追加分）', 40, 62, 38, '#3b1c26', 'left');
+  label("pose: point / present / cheer / think / wave / walk / reach / battle / pose / look_up　expr: sad / proud / smile（+ shout）　背面 yaw 120–180　opts.pointAt・holo・walkPhase・reachAmt", 40, 98, 19, '#7a5060', 'left');
+
+  // ===== Akane poses
+  const AK = '#d72a40', AKt = '#8a2236';
+  panel(30, 118, 1860, 480, 'アカネ　新ポーズ（yaw 30）', AK);
+  POSES.forEach(([p, jp], i) => fig(C.drawAkane, { scale: 0.56, yaw: 30, pose: p, expr: p === 'look_up' ? 'surprised' : p === 'think' ? 'smile' : 'happy', mouth: p === 'cheer' ? 0.7 : 0, walkPhase: 0.2, reachAmt: 0.3, holo: p === 'present' || p === 'point', t: 0.35 }, 115 + i * 186, 545, jp));
+  // ===== Shirou poses
+  const SH = '#7a64c0', SHt = '#4a3a80';
+  panel(30, 615, 1860, 520, 'シロウ　新ポーズ（yaw -30）', SH);
+  POSES.forEach(([p, jp], i) => fig(C.drawShirou, { scale: 0.54, yaw: -30, pose: p, expr: p === 'cheer' ? 'shout' : p === 'pose' || p === 'battle' ? 'serious' : p === 'wave' ? 'smile' : 'calm', mouth: p === 'cheer' ? 0.8 : 0, walkPhase: 0.6, reachAmt: 0.3, t: 0.35 }, 115 + i * 186, 1080, jp));
+
+  // ===== reach + allies
+  panel(30, 1152, 1860, 520, '貪食（reach 0→1）／仲間の決めポーズ（variant 0〜3）', SH);
+  [0, 0.35, 0.7, 1].forEach((r, i) => fig(C.drawShirou, { scale: 0.5, yaw: 25, pose: 'reach', reachAmt: r, expr: 'shout', mouth: 0.5, t: 0.4 }, 110 + i * 175, 1620, 'reachAmt ' + r));
+  C.ALLY_NAMES.forEach((nm, i) => fig(C.drawWBCAlly, { scale: 0.52, variant: i, yaw: i === 1 ? 10 : 25, pose: 'pose', expr: ['proud', 'proud', 'calm', 'determined'][i], t: 0.4 }, 860 + i * 200, 1620, nm, 16));
+  fig(C.drawWBCAlly, { scale: 0.48, variant: 0, yaw: -35, pose: 'battle', expr: 'determined', t: 0.4 }, 1690, 1620, 'ユズ battle', 16);
+
+  // ===== expressions
+  panel(30, 1690, 1860, 330, '表情　sad（120日かあ……）／ proud ／ smile ／ shout ＋ 口パク（vowel）', AK);
+  [['sad', 0, 'sad'], ['proud', 0, 'proud'], ['smile', 0, 'smile'], ['shout', 0.8, 'shout'], ['smile', 0.6, 'smile+a'], ['sad', 0.4, "sad+'o'"]].forEach(([e, m, jp], i) =>
+    closeup(C.drawAkane, 'akane', { scale: 1.5, yaw: 25, pose: 'stand', expr: e, mouth: m, vowel: jp.includes("'o'") ? 'o' : 'a', t: 0.2 }, 50 + i * 150, 1745, 140, 190, jp));
+  [['sad', 0, 'sad'], ['proud', 0, 'proud'], ['smile', 0, 'smile']].forEach(([e, m, jp], i) =>
+    closeup(C.drawShirou, 'shirou', { scale: 1.5, yaw: -25, pose: 'stand', expr: e, mouth: m, t: 0.2 }, 975 + i * 150, 1745, 140, 190, jp, '#e6e2f2'));
+  [0, 1, 2, 3].forEach((v, i) => closeup(C.drawWBCAlly, 'ally', { scale: 1.45, variant: v, yaw: 20, pose: 'stand', expr: ['smile', 'proud', 'smile', 'sad'][i], t: 0.2 }, 1430 + i * 112, 1745, 104, 190, ['smile', 'proud', 'smile', 'sad'][i], '#e6e2f2'));
+
+  // ===== back views
+  panel(30, 2038, 1860, 470, '背面・回り込み（yaw 0 → 180）／別れのショット（歩き去る・振り返らずに手を振る）', SH);
+  [0, 60, 120, 150, 180].forEach((y, i) => fig(C.drawAkane, { scale: 0.5, yaw: y, pose: 'stand', expr: 'smile', t: 0.4 }, 100 + i * 120, 2450, 'yaw ' + y, 15));
+  [0, 60, 120, 150, 180].forEach((y, i) => fig(C.drawShirou, { scale: 0.48, yaw: -y, pose: 'stand', expr: 'calm', t: 0.4 }, 730 + i * 120, 2450, 'yaw ' + (-y), 15));
+  fig(C.drawAkane, { scale: 0.5, yaw: 160, pose: 'walk', walkPhase: 0.3, t: 0.4 }, 1390, 2450, '歩き去る 160', 15);
+  fig(C.drawShirou, { scale: 0.48, yaw: -165, pose: 'walk', walkPhase: 0.8, t: 0.4 }, 1530, 2450, '歩き去る -165', 15);
+  fig(C.drawAkane, { scale: 0.5, yaw: 150, pose: 'wave', t: 0.3 }, 1665, 2450, '背中で手を振る', 15);
+  fig(C.drawShirou, { scale: 0.48, yaw: -140, pose: 'cheer', t: 0.3 }, 1800, 2450, '背中 cheer', 15);
+
+  // ===== pointAt / holo
+  panel(30, 2525, 1860, 360, 'opts.pointAt（キャンバス座標で腕を向ける）＋ opts.holo（手首のホロバンドが発光）＋ handAnchor().holo', AK);
+  ctx.save(); ctx.beginPath(); ctx.roundRect(40, 2575, 1840, 300, 14); ctx.fillStyle = '#3a1020'; ctx.fill(); ctx.restore();
+  const tg = [{ x: 330, y: 2600 }, { x: 760, y: 2640 }, { x: 1180, y: 2700 }, { x: 1560, y: 2620 }];
+  const cfg = [
+    [C.drawAkane, 'akane', { yaw: 20, pose: 'point', expr: 'happy', mouth: 0.5, vowel: 'a', holo: true }, 160],
+    [C.drawAkane, 'akane', { yaw: 35, pose: 'present', arm: 'L', expr: 'smile', holo: true }, 600],
+    [C.drawShirou, 'shirou', { yaw: 75, pose: 'point', expr: 'serious' }, 1000],
+    [C.drawAkane, 'akane', { yaw: -30, pose: 'present', arm: 'L', expr: 'proud', holo: true }, 1420],
+  ];
+  cfg.forEach(([fn, who, op, x], i) => {
+    const o = Object.assign({ x, y: 2850, scale: 0.42, t: 0.3, pointAt: tg[i] }, op);
+    fn(ctx, o);
+    const a = C.handAnchor(who, o);
+    if (op.pose === 'present') holo(a.holo.x, a.holo.y, 40); else holo(tg[i].x, tg[i].y, 24);
+    ctx.fillStyle = '#ff3050'; ctx.beginPath(); ctx.arc(tg[i].x, tg[i].y, 6, 0, 7); ctx.fill();
+  });
+  label('赤い点 = pointAt。present では handAnchor(who, opts).holo にホログラムを置く', 1850, 2865, 16, '#ffd8e0', 'right');
+
+  window.__ready = true;
+})();
+</script>
+</body>
+</html>

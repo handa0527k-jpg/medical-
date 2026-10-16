@@ -327,5 +327,419 @@ def build():
         print(f"  se/{name:20s} {len(y) / SR:5.2f}s")
 
 
+# ============================================================================= episode 1 additions
+def holo(up=True, seed=61):
+    """hologram on/off: quick digital arpeggio blips (sine + soft square edge) + glassy shimmer sweep"""
+    d = 0.9
+    out = np.zeros((int(d * SR), 2))
+    seq = ["A5", "E6", "A6", "C#7", "E7"] if up else ["E7", "C#7", "A6", "E6", "A5"]
+    for k, nm in enumerate(seq):
+        f = mtof(note(nm))
+        t = t_axis(0.12)
+        b = (np.sin(2 * np.pi * f * t) + 0.25 * np.sign(np.sin(2 * np.pi * f * t))) * np.exp(-t / 0.035)
+        b = lp(b * np.clip(t / 0.002, 0, 1), 7000) * 0.35
+        i = int(k * 0.045 * SR)
+        out[i:i + len(b)] += pan(b, -0.5 + 0.25 * k if up else 0.5 - 0.25 * k)
+    t = t_axis(d)
+    sh = sweep_filter(white(d, seed), 2500 if up else 9000, 9000 if up else 2500, kind="bp", q=3.0)
+    sh *= np.sin(np.pi * np.clip(t / 0.6, 0, 1)) ** 2 * 0.25
+    out += widen(sh, 9, 0.6)
+    ir = make_ir(dur=0.9, damp_hz=9000, seed=63)
+    return fade(reverb(out, ir, wet=0.3)[: int(1.4 * SR)], 0.001, 0.3)
+
+
+def centrifuge(up=0.5, hold=1.0, down=1.0, seed=65):
+    """motor whir: spin-up (pitch rises), steady whine with rotor beating, spin-down (pitch falls, clunk)"""
+    d = up + hold + down
+    t = t_axis(d + 0.3)
+    rate = np.interp(t, [0, up, up + hold, d, d + 0.3], [3, 60, 62, 0.5, 0])   # rotations per second
+    ph = np.cumsum(rate) / SR
+    whine = sum(np.sin(2 * np.pi * ph * k * 8) / k for k in (1, 2, 3)) * (rate / 62) ** 0.8
+    motor = saw(np.maximum(rate * 2.0, 1.0)) * 0.2 * (rate / 62)
+    beat = 0.6 + 0.4 * np.sin(2 * np.pi * ph)                # rotor imbalance wobble
+    air = bp(pink(len(t) / SR, seed), 400, 3000) * (rate / 62) ** 1.5 * 0.5
+    y = (lp(whine, 4000) * 0.4 + lp(motor, 1200) + air) * beat
+    clunk = np.zeros_like(t)
+    tt = t_axis(0.25)
+    c = (sine(glide(160, 70, 0.25, 10)) * np.exp(-tt / 0.04) + bp(white(0.25, seed + 1), 600, 3000) * np.exp(-tt / 0.01) * 0.4)
+    i = int((d - 0.05) * SR); clunk[i:i + len(c)] += c[: len(t) - i]
+    y = y + clunk * 0.6
+    y = widen(y, 7, 0.35)
+    ir = make_ir(dur=0.6, damp_hz=5000, seed=67)
+    return fade(reverb(y, ir, wet=0.15)[: int((d + 0.6) * SR)], 0.01, 0.2)
+
+
+def ding(nm="A6", seed=0):
+    """layer label accent: soft glassy ding with a sparkle"""
+    b = bell(mtof(note(nm)), 1.6, 0.6, 0.8, seed=seed)
+    t = t_axis(1.6)
+    sp = hp(white(1.6, seed + 3), 7000) * np.exp(-t / 0.08) * 0.08
+    y = widen(b + sp, 8, 0.3)
+    ir = make_ir(dur=1.4, damp_hz=9000, seed=71)
+    return fade(reverb(y, ir, wet=0.3)[: int(2.2 * SR)], 0.001, 0.5)
+
+
+def squelch(dur=0.9, seed=73):
+    """clot / thickening: wet low squelch (resonant falling formant over gloopy noise + bubbles)"""
+    t = t_axis(dur)
+    u = t / dur
+    src = brown(dur, seed) * 0.6 + pink(dur, seed + 1) * 0.4
+    y = sweep_filter(src, lambda v: 900 - 650 * v ** 0.7, None, kind="bp", q=5)
+    y *= np.sin(np.pi * np.clip(u / 0.95, 0, 1)) ** 0.7
+    r = rng(seed)
+    for k in range(5):
+        tt = t_axis(0.08)
+        f0 = r.uniform(180, 420)
+        bl = sine(glide(f0, f0 * 1.8, 0.08, 3)) * np.exp(-tt / 0.02) * 0.4
+        i = int(r.uniform(0.05, dur - 0.1) * SR); y[i:i + len(bl)] += bl[: len(y) - i]
+    y = lp(sat(y * 1.5, 1.3), 2500)
+    ir = make_ir(dur=0.5, damp_hz=3000, seed=75)
+    return fade(reverb(stereo(y), ir, wet=0.15)[: int((dur + 0.3) * SR)], 0.005, 0.2)
+
+
+def soft_pop(f=520, seed=0):
+    """bubbly pop: short upward-gliding sine + tiny click"""
+    d = 0.35
+    t = t_axis(d)
+    y = sine(glide(f * 0.6, f * 1.5, d, 12)) * np.exp(-t / 0.05)
+    y += bp(white(d, seed), 1500, 6000) * np.exp(-t / 0.004) * 0.2
+    y = widen(y * np.clip(t / 0.001, 0, 1), 6, 0.2)
+    ir = make_ir(dur=0.7, damp_hz=7000, seed=77)
+    return fade(reverb(y, ir, wet=0.25)[: int(0.8 * SR)], 0.0005, 0.2)
+
+
+def rotate_whoosh(seed=79):
+    """slow model rotation: airy circular whoosh (pan sweeps L->R->L) with a faint shimmer"""
+    d = 1.6
+    t = t_axis(d)
+    u = t / d
+    env = np.sin(np.pi * u) ** 1.5
+    n = sweep_filter(pink(d, seed), lambda v: 600 + 2200 * np.sin(np.pi * v), None, kind="bp", q=1.6)
+    p = np.sin(2 * np.pi * u) * 0.7
+    a = (p + 1) * np.pi / 4
+    y = np.stack([n * env * np.cos(a), n * env * np.sin(a)], 1) * np.sqrt(2)
+    sh = hp(white(d, seed + 1), 8000) * env * 0.05
+    y += widen(sh, 11, 0.6)
+    ir = make_ir(dur=1.0, seed=81)
+    return fade(reverb(y, ir, wet=0.2)[: int(2.0 * SR)], 0.05, 0.3)
+
+
+def stretch_spring(seed=83):
+    """membrane stretch (rubbery rising creak, 0-0.9 s) then elastic spring-back 'boing' (0.9 s-)"""
+    d = 0.9
+    t = t_axis(d)
+    u = t / d
+    f = 90 + 160 * u ** 1.4
+    rub = eq(saw(f), [("lp", 1600, 0.7, 0), ("peak", 500 + 500 * 0.5, 4.0, 6)])
+    rub *= (0.3 + 0.7 * u) * 0.3
+    tube = sweep_filter(pink(d, seed), 250, 900, kind="bp", q=6) * (0.3 + 0.7 * u) * 0.6
+    st = rub + tube
+    d2 = 0.9
+    t2 = t_axis(d2)
+    boing = sine(260 * (1 + 0.5 * np.exp(-t2 / 0.05)) * (1 + 0.04 * np.sin(2 * np.pi * 14 * t2) * np.exp(-t2 / 0.3))) \
+        * np.exp(-t2 / 0.25) * 0.6
+    boing += sine(130 * np.ones_like(t2)) * np.exp(-t2 / 0.15) * 0.3
+    y = np.concatenate([st, boing])
+    y = widen(y, 8, 0.35)
+    ir = make_ir(dur=0.6, damp_hz=5000, seed=85)
+    return fade(reverb(y, ir, wet=0.15)[: int(2.1 * SR)], 0.02, 0.2)
+
+
+def o2_click(nm="D7", seed=0):
+    """O2 binding to heme iron: metallic click + small bright chime"""
+    d = 1.0
+    t = t_axis(d)
+    clk = bp(white(d, seed), 2000, 9000) * np.exp(-t / 0.003) * 0.8
+    clk += sine(glide(1800, 900, d, 40)) * np.exp(-t / 0.01) * 0.4
+    ch = bell(mtof(note(nm)), d, 0.35, 1.0, seed=seed)
+    y = widen(clk + ch, 7, 0.3)
+    ir = make_ir(dur=1.0, damp_hz=9000, seed=87)
+    return fade(reverb(y, ir, wet=0.22)[: int(1.4 * SR)], 0.0005, 0.3)
+
+
+def breath(seed=89):
+    """lung breath: inhale swell (1.3 s, rising) + exhale (1.5 s, falling), soft and airy, with an organic low swell"""
+    def part(d, f0, f1, s):
+        t = t_axis(d)
+        u = t / d
+        env = np.sin(np.pi * np.clip(u, 0, 1)) ** 1.3
+        n = sweep_filter(pink(d, s), f0, f1, kind="bp", q=0.9) * env
+        low = lp(brown(d, s + 1), 200) * env * 0.4
+        return n + low
+    y = np.concatenate([part(1.3, 500, 1800, seed), np.zeros(int(0.15 * SR)), part(1.5, 1600, 400, seed + 5)])
+    y = widen(y, 12, 0.6)
+    ir = make_ir(dur=1.2, damp_hz=4000, seed=91)
+    return fade(reverb(y, ir, wet=0.2)[: int(3.5 * SR)], 0.05, 0.4)
+
+
+def bubbles(dur=2.5, density=14, seed=93):
+    """CO2 bubbling: many small rising sine blips scattered in stereo over a soft fizz"""
+    out = np.zeros((int((dur + 0.3) * SR), 2))
+    r = rng(seed)
+    for k in range(int(dur * density)):
+        tt = r.uniform(0, dur)
+        d = r.uniform(0.04, 0.09)
+        t = t_axis(d)
+        f0 = r.uniform(400, 1300)
+        b = sine(glide(f0, f0 * 2.2, d, 2)) * np.sin(np.pi * t / d) * r.uniform(0.15, 0.35)
+        i = int(tt * SR)
+        out[i:i + len(b)] += pan(b, r.uniform(-0.7, 0.7))[: len(out) - i]
+    t = t_axis(dur + 0.3)
+    fz = hp(white(dur + 0.3, seed), 5000) * 0.03 * np.sin(np.pi * np.clip(t / (dur + 0.3), 0, 1))
+    out += widen(fz, 9, 0.6)
+    ir = make_ir(dur=0.8, damp_hz=6000, seed=95)
+    return fade(reverb(out, ir, wet=0.2)[: int((dur + 0.6) * SR)], 0.05, 0.3)
+
+
+def ion_plink(nm="E6", seed=0):
+    """ion 'plink': plucked high tone with a tiny pitch drop (water-drop like)"""
+    d = 0.6
+    t = t_axis(d)
+    f = mtof(note(nm))
+    y = (sine(f * (1 + 0.15 * np.exp(-t / 0.01))) + 0.3 * sine(f * 2.01 * np.ones_like(t))) * np.exp(-t / 0.09)
+    y = widen(y * np.clip(t / 0.001, 0, 1) * 0.6, 6, 0.3)
+    ir = make_ir(dur=0.9, damp_hz=8000, seed=97)
+    return fade(reverb(y, ir, wet=0.28)[: int(1.1 * SR)], 0.0005, 0.3)
+
+
+def marrow_pulse(n=4, period=0.85, seed=99):
+    """bone-marrow 'life' pulse: soft, warm, muffled heartbeat-ish swells"""
+    d = n * period + 0.6
+    out = np.zeros(int(d * SR))
+    for k in range(n):
+        t = t_axis(0.6)
+        y = sine(glide(70, 48, 0.6, 5)) * np.exp(-t / 0.16) * np.clip(t / 0.02, 0, 1)
+        y += lp(white(0.6, seed + k), 300) * np.exp(-t / 0.06) * 0.3
+        i = int(k * period * SR); out[i:i + len(y)] += y * (0.7 + 0.3 * k / max(1, n - 1))
+    y = stereo(lp(out, 900))
+    ir = make_ir(dur=0.8, damp_hz=1500, bright_end_hz=500, seed=101)
+    return fade(reverb(y, ir, wet=0.25)[: int((d + 0.4) * SR)], 0.005, 0.3)
+
+
+def enucleate_pop(seed=103):
+    """nucleus pushed out: squishy push (rising) then a round 'pop' with a sparkle"""
+    sq = squelch(0.45, seed)
+    p = soft_pop(380, seed + 1)
+    t = t_axis(1.0)
+    sp = hp(white(1.0, seed + 2), 6000) * np.exp(-t / 0.15) * 0.06
+    y = np.zeros((int(1.4 * SR), 2))
+    y[: len(sq)] += sq[: len(y)] * 0.7
+    i = int(0.4 * SR)
+    y[i:i + len(p)] += p[: len(y) - i] * 1.2
+    y[i:i + len(sp)] += widen(sp, 9, 0.6)[: len(y) - i]
+    return fade(y, 0.002, 0.2)
+
+
+def clock_tick(hi=True, seed=0):
+    d = 0.2
+    t = t_axis(d)
+    y = bp(white(d, seed), 2500 if hi else 1800, 7000) * np.exp(-t / 0.004)
+    y += sine((2400 if hi else 1900) * np.ones_like(t)) * np.exp(-t / 0.012) * 0.25
+    return fade(stereo(y), 0.0003, 0.05)
+
+
+def page_flip(seed=0):
+    """calendar page flip: short paper flutter (band-passed noise bursts) + soft whoosh"""
+    d = 0.35
+    t = t_axis(d)
+    r = rng(seed)
+    flutter = (0.5 + 0.5 * np.sign(np.sin(2 * np.pi * r.uniform(28, 40) * t))) * np.sin(np.pi * t / d)
+    y = bp(white(d, seed), 1500, 8000) * flutter * 0.5 + bp(pink(d, seed + 1), 300, 1500) * np.sin(np.pi * t / d) * 0.4
+    return fade(autopan(y, 0.3, -0.3), 0.002, 0.08)
+
+
+def bacteria_growl(dur=1.6, seed=105):
+    """pathogen growl: low wobbling gurgle through a moving formant + wet noise, menacing but not a voice"""
+    t = t_axis(dur)
+    u = t / dur
+    r = rng(seed)
+    f = 55 + 12 * np.sin(2 * np.pi * 3.1 * t) + 6 * lp(r.standard_normal(len(t)), 20) * 20
+    src = saw(np.clip(f, 30, 120)) * (0.8 + 0.2 * np.sin(2 * np.pi * 11 * t))
+    y = sweep_filter(src, lambda v: 350 + 300 * np.sin(np.pi * v * 3), None, kind="bp", q=3.5) * 1.5
+    y += sweep_filter(brown(dur, seed), 300, 600, kind="bp", q=2) * 0.4
+    y = sat(y * np.sin(np.pi * np.clip(u / 0.95, 0, 1)) ** 0.6, 2.0)
+    y = widen(lp(y, 2200), 10, 0.5)
+    ir = make_ir(dur=0.8, damp_hz=2500, seed=107)
+    return fade(reverb(y, ir, wet=0.2)[: int((dur + 0.4) * SR)], 0.05, 0.3)
+
+
+def engulf(seed=109):
+    """engulf 'whoomp': big wet swallow - low sweep down, membrane closing squelch, air suck"""
+    d = 1.2
+    t = t_axis(d)
+    suck = sweep_filter(pink(d, seed), 3000, 300, kind="bp", q=1.2) * np.exp(-t / 0.35) * np.clip(t / 0.08, 0, 1)
+    low = sine(glide(140, 40, d, 4)) * np.exp(-t / 0.3) * 0.9
+    y = stereo(sat(low + suck * 0.8, 1.4))
+    sq = squelch(0.6, seed + 1)
+    i = int(0.12 * SR)
+    y[i:i + len(sq)] += sq[: len(y) - i] * 0.7
+    y = widen(y.mean(1), 10, 0.5)
+    ir = make_ir(dur=1.0, damp_hz=3000, seed=111)
+    return fade(reverb(y, ir, wet=0.2)[: int(1.7 * SR)], 0.002, 0.3)
+
+
+def fizz(dur=2.0, seed=113):
+    """digestion fizz (reactive oxygen): crackling high noise + tiny effervescent pops, fading"""
+    t = t_axis(dur)
+    r = rng(seed)
+    cr = np.zeros(len(t))
+    idx = r.integers(0, len(t), int(dur * 900))
+    cr[idx] = r.uniform(-1, 1, len(idx))
+    cr = bp(cr, 2500, 12000) * 1.4
+    hiss = hp(white(dur, seed + 1), 4000) * 0.15
+    env = np.clip(t / 0.08, 0, 1) * np.exp(-t / (dur * 0.5))
+    y = widen((cr + hiss) * env, 9, 0.7)
+    y += bubbles(dur * 0.8, 20, seed + 2)[: len(y)] * 0.4
+    return fade(y, 0.01, 0.3)
+
+
+def stinger(variant=0, seed=115):
+    """character pose stinger: whoosh-in + short brass stab chord + glock sparkle; 4 colours"""
+    chords = [["E4", "G#4", "B4", "E5"],     # eosinophil (E major, bright)
+              ["F4", "A4", "C5", "F5"],      # basophil
+              ["G4", "B4", "D5", "G5"],      # monocyte
+              ["A4", "C#5", "E5", "A5"]]     # B cell (rising sequence)
+    ch = chords[variant % 4]
+    from bgm import brass, glock               # same instruments as the score
+    d = 1.4
+    out = np.zeros((int(d * SR), 2))
+    sw = turn_whip(seed + variant)
+    out[: len(sw)] += sw[: len(out)] * 0.5
+    i = int(0.16 * SR)
+    for k, nm in enumerate(ch):
+        b = brass(note(nm) - 12, 0.22, 0.9, att=0.008, rel=0.25, seed=seed + k)
+        out[i:i + len(b)] += pan(b, (k - 1.5) * 0.2)[: len(out) - i] * 0.6
+    for k, nm in enumerate(ch[1:]):
+        g = glock(note(nm) + 12, 0.35, seed=k)
+        j = i + int(k * 0.05 * SR)
+        out[j:j + len(g)] += pan(g, 0.4 - 0.4 * k)[: len(out) - j] * 0.5
+    ir = make_ir(dur=1.2, damp_hz=7000, seed=117)
+    return fade(reverb(out, ir, wet=0.22)[: int(1.9 * SR)], 0.002, 0.4)
+
+
+def wound_rip(seed=119):
+    """vessel wall tearing: low thump + granular tearing noise (crackle bursts) + wet gush"""
+    d = 1.1
+    t = t_axis(d)
+    r = rng(seed)
+    thump = sine(glide(110, 45, d, 8)) * np.exp(-t / 0.12)
+    grains = np.zeros(len(t))
+    for k in range(70):
+        tt = 0.02 + 0.35 * (k / 70) ** 0.8 + r.uniform(0, 0.01)
+        g = bp(white(0.02, seed + k), r.uniform(700, 2500), 7000) * np.hanning(int(0.02 * SR))
+        i = int(tt * SR); grains[i:i + len(g)] += g * r.uniform(0.3, 1.0)
+    gush = sweep_filter(pink(d, seed + 1), 2500, 500, kind="bp", q=1.0) * np.clip((t - 0.3) / 0.1, 0, 1) * np.exp(-np.maximum(t - 0.3, 0) / 0.4) * 0.6
+    y = sat(thump * 0.9 + grains * 0.8 + gush, 1.3)
+    y = widen(y, 8, 0.5)
+    ir = make_ir(dur=0.8, damp_hz=4000, seed=121)
+    return fade(reverb(y, ir, wet=0.15)[: int(1.5 * SR)], 0.001, 0.3)
+
+
+def platelet_clicks(n=10, span=1.2, seed=123):
+    """platelets sticking: a cluster of small sticky clicks, slightly pitched, accelerating"""
+    out = np.zeros((int((span + 0.5) * SR), 2))
+    r = rng(seed)
+    for k in range(n):
+        tt = span * (k / n) ** 0.7
+        d = 0.08
+        t = t_axis(d)
+        f = r.uniform(1400, 2600)
+        c = (sine(f * np.ones_like(t)) * np.exp(-t / 0.008) * 0.5 + bp(white(d, seed + k), 2000, 8000) * np.exp(-t / 0.003))
+        c += lp(white(d, seed + 50 + k), 900) * np.exp(-t / 0.015) * 0.3          # sticky 'tck'
+        i = int(tt * SR)
+        out[i:i + len(c)] += pan(c, r.uniform(-0.6, 0.6))[: len(out) - i] * r.uniform(0.5, 1.0)
+    ir = make_ir(dur=0.6, damp_hz=7000, seed=125)
+    return fade(reverb(out, ir, wet=0.18)[: int((span + 0.8) * SR)], 0.0005, 0.2)
+
+
+def mesh_tighten(dur=2.0, seed=127):
+    """fibrin mesh weaving and tightening: fibrous creaks + rising tension tone + final cinch"""
+    t = t_axis(dur)
+    u = t / dur
+    r = rng(seed)
+    tone = sum(sine(mtof(note(n)) * (1 + 0.25 * u ** 2)) for n in ("D4", "A4")) * u ** 1.5 * 0.12
+    creak = np.zeros(len(t))
+    for k in range(14):
+        tt = r.uniform(0.0, dur - 0.25)
+        d = r.uniform(0.08, 0.2)
+        tc = t_axis(d)
+        c = lp(saw(r.uniform(150, 400) * (1 + 0.4 * tc / d)), 2000) * np.sin(np.pi * tc / d) ** 2 * r.uniform(0.1, 0.25)
+        i = int(tt * SR); creak[i:i + len(c)] += c[: len(t) - i]
+    y = tone + creak
+    tc = t_axis(0.3)
+    cinch = (bp(white(0.3, seed), 800, 5000) * np.exp(-tc / 0.02) * 0.5 + sine(glide(300, 160, 0.3, 10)) * np.exp(-tc / 0.06) * 0.5)
+    y = np.concatenate([y, cinch])
+    y = widen(y, 9, 0.5)
+    ir = make_ir(dur=0.9, damp_hz=6000, seed=129)
+    return fade(reverb(y, ir, wet=0.2)[: int((dur + 0.8) * SR)], 0.02, 0.3)
+
+
+def ecg_blip(seed=131):
+    """monitor beep (two short pure blips like an ECG monitor, then a soft trailing echo)"""
+    d = 0.9
+    out = np.zeros(int(d * SR))
+    for tt, a in [(0.0, 1.0)]:
+        t = t_axis(0.13)
+        b = sine(1000 * np.ones_like(t)) * np.clip(t / 0.004, 0, 1) * np.clip((0.13 - t) / 0.01, 0, 1) * a
+        i = int(tt * SR); out[i:i + len(b)] += b
+    y = widen(out * 0.5, 13, 0.3)
+    ir = make_ir(dur=1.0, damp_hz=8000, seed=133)
+    return fade(reverb(y, ir, wet=0.3)[: int(1.5 * SR)], 0.001, 0.3)
+
+
+def step_walk(seed=0):
+    """soft walking step (epilogue)"""
+    return step_light(seed + 40) * 0.6
+
+
+EPISODE01_ITEMS = {
+    "ep_holo_on.wav": lambda: holo(True),
+    "ep_holo_off.wav": lambda: holo(False, 62),
+    "ep_centrifuge.wav": lambda: centrifuge(0.5, 1.0, 1.0),
+    "ep_ding_1.wav": lambda: ding("E6", 1),
+    "ep_ding_2.wav": lambda: ding("A6", 2),
+    "ep_ding_3.wav": lambda: ding("C#7", 3),
+    "ep_squelch.wav": lambda: squelch(0.9),
+    "ep_squelch_long.wav": lambda: squelch(1.6, 74),
+    **{f"ep_pop_{k}.wav": (lambda k=k: soft_pop([440, 554, 659, 880][k], k)) for k in range(4)},
+    "ep_rotate.wav": rotate_whoosh,
+    "ep_stretch.wav": stretch_spring,
+    **{f"ep_o2_click_{k}.wav": (lambda k=k: o2_click(["A6", "C#7", "E7", "A7"][k], k)) for k in range(4)},
+    "ep_breath.wav": breath,
+    "ep_bubbles.wav": lambda: bubbles(2.5),
+    **{f"ep_plink_{k}.wav": (lambda k=k: ion_plink(["E6", "G#6", "B6", "E7"][k], k)) for k in range(4)},
+    "ep_marrow_pulse.wav": lambda: marrow_pulse(5, 0.85),
+    "ep_enucleate.wav": enucleate_pop,
+    "ep_tick_hi.wav": lambda: clock_tick(True, 1),
+    "ep_tick_lo.wav": lambda: clock_tick(False, 2),
+    **{f"ep_page_{k}.wav": (lambda k=k: page_flip(k)) for k in range(3)},
+    "ep_growl.wav": lambda: bacteria_growl(1.6),
+    "ep_growl_long.wav": lambda: bacteria_growl(2.6, 106),
+    "ep_squish.wav": lambda: squelch(0.5, 141),
+    "ep_engulf.wav": engulf,
+    "ep_fizz.wav": lambda: fizz(2.0),
+    **{f"ep_stinger_{k}.wav": (lambda k=k: stinger(k)) for k in range(4)},
+    "ep_wound_rip.wav": wound_rip,
+    "ep_platelet_clicks.wav": lambda: platelet_clicks(10, 1.2),
+    "ep_mesh_tighten.wav": lambda: mesh_tighten(2.0),
+    "ep_ecg_blip.wav": ecg_blip,
+    **{f"ep_step_walk_{k}.wav": (lambda k=k: step_walk(k)) for k in range(4)},
+}
+
+
+def build_episode01():
+    os.makedirs(SE_DIR, exist_ok=True)
+    for name, fn in EPISODE01_ITEMS.items():
+        y = normalize_peak(stereo(fn()), -1.0)
+        write_wav(os.path.join(SE_DIR, name), y)
+        print(f"  se/{name:24s} {len(y) / SR:5.2f}s", flush=True)
+
+
 if __name__ == "__main__":
-    build()
+    import argparse
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--episode01", action="store_true", help="build only the episode-1 effects (se/ep_*.wav)")
+    if ap.parse_args().episode01:
+        build_episode01()
+    else:
+        build()

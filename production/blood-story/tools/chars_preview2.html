@@ -1,0 +1,36 @@
+<!doctype html><html><head><meta charset="utf-8"><title>poses preview</title>
+<style>@font-face { font-family: 'ZenKaku'; src: url('../fonts/ZenKakuGothicNew-Bold.ttf'); } html,body{margin:0;background:#000}</style></head>
+<body><canvas id="c" width="1920" height="1080"></canvas>
+<script src="../web/characters.js"></script>
+<script>
+const cv = document.getElementById('c'), ctx = cv.getContext('2d'), C = BS.chars;
+function bg() {
+  const g = ctx.createLinearGradient(0, 0, 0, 1080); g.addColorStop(0, '#5a1424'); g.addColorStop(1, '#22060e');
+  ctx.fillStyle = g; ctx.fillRect(0, 0, 1920, 1080);
+  ctx.fillStyle = 'rgba(0,0,0,0.25)'; ctx.fillRect(0, 930, 1920, 150);
+}
+function lab(t, x, y) { ctx.font = '700 26px ZenKaku, IPAGothic, sans-serif'; ctx.fillStyle = '#ffd8de'; ctx.textAlign = 'center'; ctx.fillText(t, x, y); }
+function shadow(x, y, w) { ctx.fillStyle = 'rgba(0,0,0,0.3)'; ctx.beginPath(); ctx.ellipse(x, y, w, w * 0.16, 0, 0, 7); ctx.fill(); }
+window.drawFrame = function (f) {
+  const t = f / 30;
+  bg();
+  // walk cycle (side) + walking away (back)
+  const wp = (t / 1.1) % 1;
+  shadow(200, 930, 70); C.drawAkane(ctx, { x: 200, y: 930, scale: 0.75, view: 'side', pose: 'walk', walkPhase: wp, expr: 'smile', t, blink: C.blinkAt(t, 1) });
+  shadow(470, 930, 70); C.drawShirou(ctx, { x: 470, y: 930, scale: 0.72, yaw: -160, pose: 'walk', walkPhase: (wp + 0.3) % 1, t });
+  lab('walk（側面／背面）', 335, 1000);
+  // wave with lip-sync
+  shadow(760, 930, 70); C.drawAkane(ctx, { x: 760, y: 930, scale: 0.75, yaw: 15, pose: 'wave', expr: 'smile', mouth: Math.max(0, Math.sin(t * 9)) * 0.7, vowel: ['a', 'i', 'u', 'e', 'o'][Math.floor(t * 3) % 5], t, blink: C.blinkAt(t, 2) });
+  lab('wave + 口パク', 760, 1000);
+  // reach closing
+  const ra = Math.min(1, Math.max(0, (t % 2) / 1.4));
+  shadow(1080, 930, 80); C.drawShirou(ctx, { x: 1080, y: 930, scale: 0.72, yaw: 30, pose: 'reach', reachAmt: ra, expr: 'shout', mouth: 0.4 + 0.3 * ra, t });
+  lab('reach ' + ra.toFixed(2), 1080, 1000);
+  // orbit 0 -> 180
+  const yaw = Math.min(180, t / 3.6 * 180);
+  shadow(1420, 930, 70); C.drawAkane(ctx, { x: 1420, y: 930, scale: 0.75, yaw, pose: 'stand', expr: 'happy', t });
+  shadow(1720, 930, 70); C.drawShirou(ctx, { x: 1720, y: 930, scale: 0.72, yaw: -yaw, pose: 'stand', expr: 'calm', t });
+  lab('orbit yaw ' + yaw.toFixed(0) + '°', 1570, 1000);
+};
+document.fonts.load('700 26px ZenKaku').finally(() => { window.__ready = true; });
+</script></body></html>

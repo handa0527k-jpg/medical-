@@ -651,12 +651,482 @@ def render_intro(stems=False):
     return out
 
 
+# ============================================================================ episode 1 (full) additions
+# extra instruments ---------------------------------------------------------------------------
+def piano(midi, vel=0.6, dur=3.0, seed=0):
+    """piano-like keys: slightly inharmonic additive partials, faster decay for upper partials, hammer noise"""
+    t = t_axis(dur)
+    f = mtof(midi)
+    B = 0.0004
+    y = np.zeros_like(t)
+    for k in range(1, 14):
+        fk = f * k * np.sqrt(1 + B * k * k)
+        if fk > 14000:
+            break
+        tau = (1.6 if midi < 60 else 1.1) / k ** 0.8
+        y += np.sin(2 * np.pi * fk * t + k) * np.exp(-t / tau) * (vel ** (0.4 + 0.15 * k)) / k ** 1.1
+    y += bp(white(dur, seed), 1000, 5000) * np.exp(-t / 0.006) * 0.08 * vel
+    y *= np.clip(t / 0.002, 0, 1) * np.clip((dur - t) / 0.05, 0, 1)
+    return y * vel
+
+
+def flute(midi, dur, vel=0.6, seed=0):
+    """soft flute: sine-heavy tone, breathy chiff, delayed vibrato"""
+    env = adsr(dur, a=0.07, d=0.2, s=0.85, r=0.18, curve=2)
+    t = np.arange(len(env)) / SR
+    f = mtof(midi) * (1 + 0.006 * np.sin(2 * np.pi * 5.2 * t) * np.clip((t - 0.25) / 0.3, 0, 1))
+    ph = phase_of(f)
+    y = np.sin(2 * np.pi * ph) + 0.18 * np.sin(4 * np.pi * ph) + 0.06 * np.sin(6 * np.pi * ph)
+    br = bp(white(len(t) / SR, seed), 1500, 6000) * (0.05 + 0.25 * np.exp(-t / 0.06))
+    return (y + br) * env * vel
+
+
+def holo_pluck(midi, vel=0.5, seed=0):
+    """'hologram' synth pluck: soft triangle-ish tone with a filter blip, short"""
+    d = 0.7
+    t = t_axis(d)
+    f = mtof(midi)
+    ph = (f * t) % 1.0
+    tri = 2 * np.abs(2 * ph - 1) - 1
+    y = sweep_filter(tri + 0.3 * np.sin(2 * np.pi * f * 2.0 * t), 6000, 900, kind="lp", q=2.0) * np.exp(-t / 0.16)
+    return y * np.clip(t / 0.002, 0, 1) * vel
+
+
+def pingpong(x, delay=0.3, fb=0.4, n=4):
+    """mono/stereo -> stereo ping-pong echo"""
+    xs = stereo(x)
+    L = int(delay * SR)
+    out = np.zeros((len(xs) + L * n, 2))
+    out[: len(xs)] += xs
+    for k in range(1, n + 1):
+        g = fb ** k
+        ch = k % 2
+        out[k * L: k * L + len(xs), ch] += xs[:, 0] * g if ch == 0 else xs[:, 1] * g
+    return out
+
+
+def chord_tones(c, octave):
+    return chord(c, octave)
+
+
+# sections -------------------------------------------------------------------------------------
+def sec_title_sting(sc: Score, t0: float, beats: dict):
+    """5.5 s title sting: heartbeat-synced low pulses, timpani roll + swell, tutti reveal at logo_reveal"""
+    rv = beats["logo_reveal"]
+    for hb in (beats["heartbeat_1"], beats["heartbeat_2"]):
+        sc.add("low", sub_boom(0.6, 60, 35, 1.2), hb, -10)
+    sc.add("low", string_pad([note("D2"), note("A2")], rv - t0 + 0.2, att=0.8, rel=0.3, bright=400, bright_end=1200,
+                             voices=4, swell=True, seed=401), t0, -9)
+    sc.add("strings", string_pad([note("A3"), note("D4"), note("E4"), note("A4")], rv - t0 - 0.4, att=0.9, rel=0.4, bright=1200,
+                                 bright_end=3500, swell=True, seed=402), t0 + 0.4, -9)
+    sc.add("perc", timp_roll(note("A2"), rv - (t0 + 0.9), 0.1, 0.9, seed=403), t0 + 0.9, -9)
+    sc.add("fx", riser(rv - t0 - 0.6, 200, 2500, seed=404), t0 + 0.6, -14)
+    sc.add("fx", reverse_cymbal(1.3, seed=405), rv - 1.3, -12)
+    # reveal: D major tutti (warm, not the battle hit)
+    ring = 3.4
+    for m in [note(x) for x in ("D3", "A3", "D4", "F#4", "A4")]:
+        sc.add("brass", brass(m - 12, 1.4, 0.85, att=0.03, rel=1.2, seed=m + 400), rv, -5)
+    sc.add("strings", string_pad(chord("Dadd9", 3) + [note("D5"), note("F#5"), note("A5")], ring, att=0.05, rel=1.4, bright=4500, seed=406), rv, -4)
+    sc.add("low", string_pad([note("D2"), note("D1") + 12], ring, att=0.03, rel=1.4, bright=700, seed=407), rv, -3)
+    sc.add("perc", timpani(note("D2"), 0.9, seed=408), rv, -2)
+    sc.add("perc", crash(0.7, 409, d=4.0), rv, -7)
+    sc.add("low", sub_boom(0.8, 70, 30, 2.5), rv, -5)
+    for i, nm in enumerate(["D6", "F#6", "A6", "D7", "F#7"]):
+        sc.add("keys", glock(note(nm), 0.4, seed=410 + i), rv + 0.08 + 0.09 * i, -10, -0.4 + 0.2 * i)
+    # title motif (horn) on the episode subtitle: D - A - D
+    for i, (nm, d) in enumerate([("A4", 0.35), ("D5", 0.35), ("A5", 1.2)]):
+        sc.add("brass", brass(note(nm) - 12, d, 0.6, seed=420 + i), beats["subtitle_ep"] + 0.38 * i, -8, 0.1)
+
+
+def sec_lab(sc: Score, t0: float, t1: float, prog=("Amaj7", "F#m7", "Dmaj7", "E"), bpm=88, seed=0, intro_light=True):
+    """calm, curious hologram bed: pads, pizz 8th pulse (soft), synth plucks with echo, glock accents. 1 chord / bar."""
+    g = Grid(t0, bpm)
+    bar = g.bpb * g.b
+    nb = int(np.ceil((t1 - t0) / bar))
+    for b in range(nb):
+        c = prog[b % len(prog)]
+        tb = g.bar(b)
+        d = min(bar, t1 - tb)
+        if d <= 0.05:
+            break
+        light = intro_light and b == 0
+        sc.add("strings", string_pad(chord(c, 3), d + 0.4, att=0.9, rel=1.0, bright=1600, voices=4, seed=seed + b), tb, -12)
+        sc.add("low", string_pad([root_of(c, 2)], d + 0.4, att=0.6, rel=1.0, bright=450, voices=3, seed=seed + 50 + b), tb, -11)
+        ch = chord(c, 4)
+        if not light:
+            for i in range(8):
+                if g.at(b, i * 0.5) >= t1 - 0.1:
+                    break
+                sc.add("strings", pizz(ch[[0, 2, 1, 2, 3 % len(ch), 2, 1, 2][i]] if len(ch) > 3 else ch[[0, 2, 1, 2][i % 4]],
+                                       0.35 if i % 2 else 0.5, seed=seed + b * 8 + i), g.at(b, i * 0.5), -14, 0.25 if i % 2 else -0.25)
+        # hologram synth: 4 plucks per bar, ping-pong echo
+        arp = chord(c, 5)
+        for i in range(4):
+            tt = g.at(b, i + 0.5)
+            if tt >= t1 - 0.2:
+                break
+            m = arp[(i + b) % len(arp)] + (12 if i == 3 else 0)
+            sc.add("keys", pingpong(holo_pluck(m, 0.45, seed + i), delay=g.b * 0.75, fb=0.35, n=3), tt, -15, 0.0)
+        if b % 2 == 0:
+            sc.add("keys", glock(arp[0] + 12, 0.25, seed=seed + b), tb, -17, 0.3)
+
+
+def sec_warm(sc: Score, t0: float, t1: float, bpm=96, seed=500):
+    """light warm theme in D: pizz bass, sustained strings, shaker, horn melody, glock doubling"""
+    g = Grid(t0, bpm)
+    prog = ["D", "A", "Bm", "G", "D", "A", "G", "A"]
+    bar = g.bpb * g.b
+    nb = int(np.ceil((t1 - t0) / bar))
+    for b in range(nb):
+        c = prog[b % len(prog)]
+        tb = g.bar(b)
+        d = min(bar, t1 - tb)
+        if d <= 0.05:
+            break
+        sc.add("strings", string_pad(chord(c, 3), d + 0.3, att=0.4, rel=0.8, bright=2000, voices=4, seed=seed + b), tb, -10)
+        for beat in (0, 2):
+            if g.at(b, beat) < t1 - 0.1:
+                sc.add("low", pizz(root_of(c, 2), 0.8, seed=seed + b * 4 + beat), g.at(b, beat), -5)
+        if g.at(b, 3) < t1 - 0.1:
+            sc.add("low", pizz(root_of(c, 2) + 7, 0.55, seed=seed + b * 4 + 3), g.at(b, 3), -9)
+        ch = chord(c, 4)
+        for i in range(4):
+            if g.at(b, i + 0.5) < t1 - 0.1:
+                sc.add("strings", pizz(ch[(i + 1) % 3] + 12 * (i == 3), 0.4, seed=seed + 200 + b * 4 + i), g.at(b, i + 0.5), -13,
+                       0.3 if i % 2 else -0.3)
+        if b >= 1:
+            for i in range(8):
+                if g.at(b, i * 0.5) < t1 - 0.1:
+                    sc.add("perc", shaker(0.3 if i % 2 else 0.2, seed + b * 8 + i), g.at(b, i * 0.5), -17, 0.3)
+    theme = [(0, 0, "F#5", 1.5), (0, 1.5, "E5", 0.5), (0, 2, "D5", 1), (0, 3, "E5", 1),
+             (1, 0, "E5", 2), (1, 2, "C#5", 1), (1, 3, "A4", 1),
+             (2, 0, "D5", 1.5), (2, 1.5, "E5", 0.5), (2, 2, "F#5", 1), (2, 3, "A5", 1),
+             (3, 0, "G5", 2), (3, 2, "B4", 2)]
+    for rep in range(0, max(1, nb - 2), 8):
+        b0 = rep + 2
+        notes = [n for n in theme if g.at(b0 + n[0], n[1] + n[3]) < t1 - 0.3]
+        melody(sc, g, b0, notes, vel=0.5, gain=-8, seed=seed + 300 + rep)
+        for bo, beat, nm, beats_ in notes[::2]:
+            sc.add("keys", glock(note(nm) + 12, 0.25, seed=seed + int(beat * 10)), g.at(b0 + bo, beat), -17, 0.2)
+
+
+def sec_journey(sc: Score, t0: float, t1: float, bpm=104, seed=600):
+    """flowing journey: running 8th arpeggios, soft pulse drums, flute melody (variant of the warm theme)"""
+    g = Grid(t0, bpm)
+    prog = ["G", "D", "Em", "C", "G", "D", "C", "D"]
+    bar = g.bpb * g.b
+    nb = int(np.ceil((t1 - t0) / bar))
+    for b in range(nb):
+        c = prog[b % len(prog)]
+        tb = g.bar(b)
+        d = min(bar, t1 - tb)
+        if d <= 0.05:
+            break
+        sc.add("strings", string_pad(chord(c, 3), d + 0.3, att=0.3, rel=0.7, bright=2200, voices=4, seed=seed + b), tb, -11)
+        sc.add("low", string_pad([root_of(c, 2)], d + 0.3, att=0.2, rel=0.6, bright=500, voices=3, seed=seed + 40 + b), tb, -8)
+        ch = chord(c, 4) + [chord(c, 5)[0]]
+        pat = [0, 1, 2, 3, 2, 1, 2, 3]
+        for i in range(8):
+            tt = g.at(b, i * 0.5)
+            if tt >= t1 - 0.1:
+                break
+            sc.add("strings", string_stacc(ch[pat[i]], 0.45 if i % 2 else 0.55, length=0.2, seed=seed + b * 8 + i), tt, -8,
+                   -0.3 + 0.6 * (i / 7))
+            if i % 4 == 0:
+                sc.add("perc", kick(0.45, seed + b), tt, -12)
+            sc.add("perc", hat(0.18, seed=seed + b * 8 + i), tt + g.b * 0.25, -20, 0.35)
+    mel = [(0, 0, "B5", 1.5), (0, 1.5, "A5", 0.5), (0, 2, "G5", 1), (0, 3, "A5", 1),
+           (1, 0, "F#5", 3), (1, 3, "D5", 1),
+           (2, 0, "E5", 1.5), (2, 1.5, "G5", 0.5), (2, 2, "B5", 2),
+           (3, 0, "C6", 1), (3, 1, "B5", 1), (3, 2, "A5", 2)]
+    for rep in range(1, nb, 8):
+        for i, (bo, beat, nm, beats_) in enumerate(mel):
+            tt = g.at(rep + bo, beat)
+            if tt + beats_ * g.b < t1 - 0.3:
+                sc.add("keys", flute(note(nm), beats_ * g.b * 0.95, 0.5, seed=seed + i), tt, -9, 0.15)
+
+
+def sec_life(sc: Score, t0: float, t1: float, t_lift: float, bpm=72, seed=700):
+    """gentle, bittersweet: piano arpeggios, string pad, solo horn; brighter major lift at t_lift"""
+    g = Grid(t0, bpm)
+    bar = g.bpb * g.b
+    nb = int(np.ceil((t1 - t0) / bar))
+    lift_bar = int(np.floor((t_lift - t0) / bar + 0.5))
+    for b in range(nb):
+        lifted = b >= lift_bar
+        c = (["D", "G", "A", "D"] if lifted else ["Bm", "G", "D", "A", "Bm", "Em", "G", "A"])[(b - lift_bar) % 4 if lifted else b % 8]
+        tb = g.bar(b)
+        d = min(bar, t1 - tb)
+        if d <= 0.05:
+            break
+        sc.add("strings", string_pad(chord(c, 3), d + 0.5, att=0.8, rel=1.2, bright=1700 if not lifted else 2400, voices=4,
+                                     seed=seed + b), tb, -12 if not lifted else -9)
+        sc.add("low", string_pad([root_of(c, 2)], d + 0.5, att=0.6, rel=1.2, bright=420, voices=3, seed=seed + 40 + b), tb, -10)
+        ch = chord(c, 4)
+        arp = [root_of(c, 3), ch[0], ch[1], ch[2], ch[0] + 12, ch[2], ch[1], ch[0]]
+        for i in range(8):
+            tt = g.at(b, i * 0.5)
+            if tt >= t1 - 0.1:
+                break
+            sc.add("keys", piano(arp[i], 0.45 if i % 4 else 0.6, dur=2.2, seed=seed + b * 8 + i), tt, -7, -0.2 + 0.05 * i)
+        if lifted:
+            sc.add("keys", glock(ch[2] + 12, 0.3, seed=seed + b), tb, -15, 0.3)
+    mel = [(1, 0, "F#5", 2), (1, 2, "E5", 1), (1, 3, "D5", 1), (2, 0, "C#5", 3), (2, 3, "B4", 1),
+           (3, 0, "D5", 2), (3, 2, "C#5", 2),
+           (5, 0, "F#5", 2), (5, 2, "G5", 1), (5, 3, "A5", 1), (6, 0, "B5", 2), (6, 2, "A5", 2), (7, 0, "E5", 4)]
+    for i, (bo, beat, nm, beats_) in enumerate(mel):
+        tt = g.at(bo, beat)
+        if tt + beats_ * g.b < min(t1, t_lift) - 0.2:
+            sc.add("brass", brass(note(nm) - 12, beats_ * g.b * 0.95, 0.45, seed=seed + 100 + i, section=1), tt, -10, 0.1)
+
+
+def hit(sc: Score, t: float, chord_midis, big=1.0, seed=0):
+    for m in chord_midis:
+        sc.add("brass", brass(m - 12, 0.5, 0.95, att=0.008, rel=0.6, seed=seed + m), t, -4)
+    sc.add("perc", taiko(1.0, 55, seed), t, -1)
+    sc.add("low", sub_boom(big, 75, 30, 2.0), t, -3)
+    sc.add("perc", crash(0.8 * big, seed + 1, d=3.0), t, -6)
+
+
+def sec_battle(sc: Score, t0: float, t_go: float, t1: float, light_spans=(), hits=(), roll_into=(), heroic_from=None,
+               bpm=152, seed=800):
+    """alarm tension (t0-t_go) then battle from t_go: 16th ostinato, drums, brass stabs.
+    light_spans: [(a, b)] under explanations - ostinato + kick only, brass off.
+    hits: tutti hit times; roll_into: [(a, b)] snare roll + riser from a into the hit at b.
+    heroic_from: switch to the heroic progression with a brass melody (allies)."""
+    # alarm part (short): hits + tremolo + riser
+    sc.add("perc", taiko(1.0, 55, seed), t0, 0)
+    sc.add("low", sub_boom(1.0, 75, 32), t0, -2)
+    for m in (note("D2"), note("A2"), note("D3"), note("Eb3")):
+        sc.add("brass", brass(m, 0.35, 0.95, att=0.012, seed=seed + m), t0, -4)
+    sc.add("strings", string_trem([note("D5"), note("Eb5"), note("A5")], t_go - t0 + 0.2, 0.6, seed=seed + 1), t0 + 0.1, -7)
+    gt = Grid(t0, bpm * 4)
+    D3 = note("D3")
+    pat = [0, 0, 12, 0, 1, 0, 12, 0, 3, 0, 12, 0, 1, 0, 12, 0]
+    i = 0
+    while gt.beat(i) < t_go - 0.05:
+        sc.add("strings", string_stacc(D3 + pat[i % 16], 0.7, length=0.08, seed=seed + i), gt.beat(i), -1, -0.2); i += 1
+    sc.add("perc", snare_roll(t_go - t0 - 0.3, 0.1, 0.9, seed=seed + 2), t0 + 0.3, -8)
+    sc.add("fx", riser(t_go - t0, 200, 2600, seed=seed + 3), t0, -12)
+    # battle
+    g = Grid(t_go, bpm)
+    bar = g.bpb * g.b
+
+    def light(t):
+        return any(a <= t < b for a, b in light_spans)
+    battle_prog = ["Dm", "Bb", "C", "A"]
+    hero_prog = ["Bb", "C", "Dm", "F", "Gm", "C", "Dm", "A"]
+    nb = int(np.ceil((t1 - t_go) / bar))
+    for b in range(nb):
+        tb = g.bar(b)
+        heroic = heroic_from is not None and tb >= heroic_from - 0.05
+        c = (hero_prog[b % 8] if heroic else battle_prog[b % 4])
+        for k in range(16):
+            tt = g.at(b, k * 0.25)
+            if tt >= t1 - 0.05:
+                break
+            lt = light(tt)
+            r_ = root_of(c, 3)
+            off = [0, 0, 12, 0, 7, 0, 12, 0][k % 8]
+            sc.add("strings", string_stacc(r_ + off, (0.45 if lt else 0.7) * (1 if k % 4 == 0 else 0.8), length=0.08,
+                                           seed=seed + b * 16 + k), tt, -2 if not lt else -5, -0.2)
+            if k % 2 == 0:
+                sc.add("low", string_stacc(root_of(c, 2), 0.8 if not lt else 0.6, length=0.09, bright=1200, seed=seed + 300 + k), tt,
+                       -3 if not lt else -6)
+        for beat in range(4):
+            tt = g.at(b, beat)
+            if tt >= t1 - 0.05:
+                break
+            lt = light(tt)
+            sc.add("perc", kick(0.9 if not lt else 0.6, seed + b), tt, -5 if not lt else -9)
+            if not lt and beat in (1, 3):
+                sc.add("perc", snare(0.8, seed + b * 4 + beat), tt, -9, 0.08)
+            if not lt:
+                sc.add("perc", hat(0.35, seed=seed + b * 4 + beat), g.at(b, beat + 0.5), -15, 0.35)
+                sc.add("perc", taiko(0.5, 95, seed + b * 4 + beat), g.at(b, beat + 0.5), -14, 0.25 if beat % 2 else -0.25)
+        if not light(tb):
+            sc.add("perc", taiko(0.9, 55, seed + 90 + b), tb, -7)
+            sc.add("brass", brass(root_of(c, 3), bar * 0.45, 0.8, seed=seed + 500 + b), tb, -6)
+            sc.add("brass", brass(chord(c, 3)[1], bar * 0.45, 0.7, seed=seed + 600 + b), tb, -9)
+            sc.add("strings", string_pad(chord(c, 4), bar, att=0.08, rel=0.3, bright=3200, voices=4, seed=seed + 700 + b), tb, -10)
+    if heroic_from is not None:
+        theme = [(0, 0, "D5", 1), (0, 1, "F5", 1), (0, 2, "G5", 1), (0, 3, "A5", 1),
+                 (1, 0, "C6", 1.5), (1, 1.5, "A5", 0.5), (1, 2, "G5", 2),
+                 (2, 0, "F5", 1), (2, 1, "A5", 1), (2, 2, "D6", 2),
+                 (3, 0, "C6", 1), (3, 1, "A5", 1), (3, 2, "C6", 2)]
+        b0 = int(round((heroic_from - t_go) / bar))
+        for rep in range(b0, nb, 4):
+            notes = [n for n in theme if g.at(rep + n[0], n[1] + n[3]) < t1 - 0.2]
+            melody(sc, g, rep, notes, vel=0.85, gain=-3, harmony=[-3, -4, -5, -3], harm_gain=-7, seed=seed + 900 + rep)
+    for a, bb in roll_into:
+        sc.add("perc", snare_roll(bb - a, 0.15, 1.0, seed=seed + int(a)), a, -6)
+        sc.add("fx", riser(bb - a, 200, 2600, seed=seed + int(a) + 1), a, -11)
+    for i, t in enumerate(hits):
+        hit(sc, t, [note(x) for x in ("D3", "A3", "D4", "F4")], 1.0, seed + 40 + i)
+    # end of battle: final chord on t1
+    hit(sc, t1, [note(x) for x in ("D3", "A3", "D4", "F#4")], 0.6, seed + 77)
+
+
+def sec_platelet(sc: Score, t0: float, t_relief: float, t1: float, bpm=132, seed=900):
+    """urgent from the wound (t0): tremolo cluster + low 8th pulse + heartbeat-like timpani; relieved major from t_relief"""
+    g = Grid(t0, bpm)
+    sc.add("strings", string_trem([note("D4"), note("F4"), note("Bb4")], t_relief - t0, 0.6, seed=seed), t0, -8)
+    sc.add("strings", string_trem([note("A4"), note("E5")], t_relief - t0 - 1.0, 0.5, rate=15, seed=seed + 1), t0 + 1.0, -11)
+    sc.add("low", sub_boom(0.9, 70, 30, 2.0), t0, -4)
+    k = 0
+    while g.beat(k * 0.5) < t_relief - 0.2:
+        tt = g.beat(k * 0.5)
+        sc.add("low", string_stacc(note("D2") + (0 if (k // 8) % 2 == 0 else 1), 0.7, length=0.1, bright=1100, seed=seed + k), tt, -4)
+        if k % 4 == 0:
+            sc.add("perc", timpani(note("D2"), 0.45, seed=seed + k), tt, -10)
+        k += 1
+    sc.add("fx", riser(1.6, 300, 2000, seed=seed + 2), t_relief - 1.6, -14)
+    # relief
+    d = t1 - t_relief
+    sc.add("strings", string_pad(chord("Dadd9", 3), d * 0.5 + 0.6, att=0.25, rel=1.0, bright=2600, seed=seed + 3), t_relief, -6)
+    sc.add("strings", string_pad(chord("Gmaj7", 3), d * 0.5 + 0.6, att=0.4, rel=1.2, bright=2400, seed=seed + 4), t_relief + d * 0.5, -7)
+    sc.add("low", string_pad([note("D2")], d * 0.5 + 0.6, att=0.25, rel=1.0, bright=500, seed=seed + 5), t_relief, -6)
+    sc.add("low", string_pad([note("G2")], d * 0.5 + 0.6, att=0.4, rel=1.2, bright=500, seed=seed + 6), t_relief + d * 0.5, -7)
+    sc.add("brass", brass(note("A4") - 12, d * 0.45, 0.5, seed=seed + 7), t_relief + 0.1, -9)
+    for i, nm in enumerate(["D6", "F#6", "A6", "E7"]):
+        sc.add("keys", glock(note(nm), 0.35, seed=seed + 10 + i), t_relief + 0.1 * i, -12)
+
+
+def sec_ending(sc: Score, t0: float, t_swell: float, t_riser: float, t_hit: float, t_end: float, bpm=80, seed=1000):
+    """warm heroic ending: D G Bm A | D G A D; horn theme; broad swell at t_swell; riser -> tutti hit at t_hit; ring to t_end"""
+    g = Grid(t0, bpm)
+    bar = g.bpb * g.b
+    prog = ["D", "G", "Bm", "A", "D", "G", "A", "D", "G", "A"]
+    b = 0
+    while g.bar(b) < t_riser - 0.1:
+        c = prog[b % len(prog)]
+        tb = g.bar(b)
+        d = min(bar, t_riser + 0.3 - tb)
+        big = tb >= t_swell - 0.1
+        sc.add("strings", string_pad(chord(c, 3) + ([chord(c, 4)[2]] if big else []), d + 0.5, att=0.5, rel=1.0,
+                                     bright=2600 if big else 1900, voices=5, seed=seed + b), tb, -8 if big else -10)
+        sc.add("low", string_pad([root_of(c, 2), root_of(c, 1) + 12], d + 0.5, att=0.4, rel=1.0, bright=500, voices=3, seed=seed + 40 + b), tb, -8)
+        for i in range(8):
+            tt = g.at(b, i * 0.5)
+            if tt >= t_riser:
+                break
+            sc.add("keys", piano(chord(c, 4)[i % 3] + (12 if i % 4 == 3 else 0), 0.35, 2.0, seed=seed + b * 8 + i), tt, -14, 0.2)
+        if big:
+            sc.add("perc", timpani(root_of(c, 2), 0.45, seed=seed + b), tb, -10)
+            sc.add("brass", brass(root_of(c, 3), bar * 0.9, 0.55, seed=seed + 300 + b), tb, -10)
+        b += 1
+    theme = [(0, 0, "F#5", 2), (0, 2, "A5", 2), (1, 0, "B5", 2), (1, 2, "D6", 1), (1, 3, "B5", 1),
+             (2, 0, "A5", 3), (2, 3, "F#5", 1), (3, 0, "E5", 4),
+             (4, 0, "F#5", 2), (4, 2, "A5", 2), (5, 0, "B5", 2), (5, 2, "D6", 2), (6, 0, "C#6", 2), (6, 2, "E6", 2), (7, 0, "D6", 4)]
+    notes = [n for n in theme if g.at(n[0], n[1] + n[3]) < t_riser]
+    melody(sc, g, 0, notes, vel=0.65, gain=-6, harmony=[-3, -5, -3, -4], harm_gain=-11, seed=seed + 500)
+    # riser into the impact
+    sc.add("perc", snare_roll(t_hit - t_riser, 0.1, 1.0, seed=seed + 7), t_riser, -7)
+    sc.add("perc", timp_roll(note("A2"), t_hit - t_riser, 0.2, 1.0, seed=seed + 8), t_riser, -6)
+    sc.add("fx", riser(t_hit - t_riser, 180, 2800, seed=seed + 9), t_riser, -10)
+    sc.add("fx", reverse_cymbal(min(1.4, t_hit - t_riser), seed=seed + 10), t_hit - min(1.4, t_hit - t_riser), -9)
+    sc.add("strings", string_pad([note("A3"), note("E4"), note("A4"), note("C#5")], t_hit - t_riser, att=0.3, rel=0.1, bright=2000,
+                                 bright_end=5000, swell=True, seed=seed + 11), t_riser, -6)
+    # tutti hit + long ring (D major), quiet low pulse afterwards
+    ring = t_end - t_hit
+    for m in [note(x) for x in ("D3", "A3", "D4", "F#4", "A4", "D5")]:
+        sc.add("brass", brass(m - 12, min(2.2, ring), 1.0, att=0.008, rel=1.5, seed=seed + m), t_hit, -3)
+    sc.add("strings", string_pad(chord("Dadd9", 3) + [note("D5"), note("F#5"), note("A5")], ring, att=0.01, rel=1.5, bright=4500, seed=seed + 12), t_hit, -3)
+    sc.add("low", string_pad([note("D2"), note("A2")], ring, att=0.01, rel=1.5, bright=800, seed=seed + 13), t_hit, -2)
+    sc.add("perc", timpani(note("D2"), 1.0, seed=seed + 14), t_hit, -1)
+    sc.add("perc", taiko(1.0, 50, seed + 15), t_hit, -1)
+    sc.add("low", sub_boom(1.0, 80, 30, 3.0), t_hit, -1)
+    sc.add("perc", crash(1.0, seed + 16, d=5.0), t_hit, -3)
+    for i, nm in enumerate(["D6", "F#6", "A6", "D7"]):
+        sc.add("keys", glock(note(nm), 0.4, seed=seed + 20 + i), t_hit + 0.6 + 0.12 * i, -12)
+
+
+# episode cue rendering ---------------------------------------------------------------------------
+class OffsetScore(Score):
+    """Score whose add() takes absolute episode times (origin = o)."""
+    def __init__(self, o: float, dur: float):
+        super().__init__(dur)
+        self.o = o
+
+    def add(self, bus, x, t, gain_db=0.0, pan_=0.0):
+        super().add(bus, x, t - self.o, gain_db, pan_)
+
+
+def render_episode01_cue(name: str):
+    """returns (origin, stereo array) for one cue of the episode (absolute time = origin + i / SR)"""
+    import episode01_timeline as T
+    sec = next(s for s in T.BGM_SECTIONS if s["cue"] == name)
+    a, b = sec["start"], sec["end"]
+    tail = 4.0
+    if name == "avant":
+        from intro_timeline import BPM
+        pre = Score(20.3 + 2.0)
+        sec_expectant(pre, 0.0, 5.0)
+        sec_bright_drive(pre, 5.0, 20.3, bpm=BPM)
+        A = pre.render()
+        post = Score(b + tail)
+        sec_tense(post, 20.3, 24.5, bpm=BPM, hits=(0.0, 2.0, 2.3))
+        sec_heroic(post, 24.5, 29.5, bpm=BPM)
+        sec_hit_ringout(post, 29.5, b - 0.6, bpm=BPM)           # hit = transition: low pulse continues under N2
+        post.add("perc", timp_roll(note("A2"), 1.1, 0.1, 0.7, seed=31), b - 1.15, -10)
+        post.add("fx", riser(1.4, 200, 2200, seed=32), b - 1.4, -14)
+        Bp = post.render()
+        out = Bp.copy()
+        g = np.ones(len(A))
+        c0 = int(20.25 * SR); c1 = int(20.36 * SR)
+        g[c0:c1] = np.linspace(1, 0.12, c1 - c0)
+        g[c1:] = 0.12 * np.exp(-(np.arange(len(A) - c1) / SR) / 0.25)
+        out[: len(A)] += A * g[:, None]
+        return 0.0, out
+    o = a - 0.5
+    sc = OffsetScore(o, b - o + tail)
+    if name == "title":
+        sec_title_sting(sc, a, T.sb("title"))
+    elif name == "lab":
+        P0 = next(s for s in T.SCENES if s["id"] == "plasma")["start"]
+        sec_lab(sc, a, P0, prog=("Amaj7", "F#m7", "Dmaj7", "E"), bpm=88, seed=0)
+        sec_lab(sc, P0, b, prog=("Dmaj7", "C#m7", "Bm7", "E"), bpm=88, seed=100, intro_light=False)
+    elif name == "warm":
+        sec_warm(sc, a, b)
+    elif name == "journey":
+        sec_journey(sc, a, b)
+    elif name == "life":
+        sec_life(sc, a, b, t_lift=T.L("E01-24") - 0.4)
+    elif name == "battle":
+        bt = T.sb("battle")
+        light = [(T.E("E01-25") + 0.4, T.E("E01-27")),            # 5 types / neutrophil explanation
+                 (T.L("E01-29") + 0.3, T.E("E01-29") + 0.1)]      # phagocytosis explanation
+        sec_battle(sc, a, T.L("E01-25"), b, light_spans=light, hits=(bt["engulf"],),
+                   roll_into=[(bt["grab_start"], bt["engulf"])], heroic_from=bt["allies_enter"])
+    elif name == "platelet":
+        sec_platelet(sc, T.sb("platelet")["wound"], T.sb("platelet")["mesh_tight"], b)
+    elif name == "ending":
+        nx = T.sb("next")
+        sec_ending(sc, a, T.L("E01-36") - 0.3, nx["riser"], nx["impact"], T.DURATION)
+    return o, sc.render()
+
+
+def render_episode01(stems=False):
+    import episode01_timeline as T
+    os.makedirs(os.path.join(BGM_DIR, "episode01"), exist_ok=True)
+    for s in T.BGM_SECTIONS:
+        o, y = render_episode01_cue(s["cue"])
+        path = os.path.join(BGM_DIR, "episode01", f"{s['cue']}.wav")
+        write_wav(path, y, subtype="FLOAT")
+        with open(path + ".json", "w") as f:
+            f.write('{"origin": %.6f}' % o)
+        print(f"  bgm/episode01/{s['cue']}.wav origin {o:.3f}  {len(y) / SR:.2f}s", flush=True)
+
+
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--cue", default="intro", choices=["intro", "calm", "mystery", "battle", "warm"])
+    ap.add_argument("--cue", default="intro", choices=["intro", "calm", "mystery", "battle", "warm", "episode01"])
     ap.add_argument("--stems", action="store_true", help="also write per-bus stems (bgm/stems_part1|2/<bus>.wav)")
     a = ap.parse_args()
     os.makedirs(BGM_DIR, exist_ok=True)
+    if a.cue == "episode01":
+        render_episode01()
+        return
     if a.cue == "intro":
         y = render_intro(a.stems)
         y = normalize_peak(y, -1.0)

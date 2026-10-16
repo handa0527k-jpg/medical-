@@ -425,7 +425,7 @@
     var TOT = TAU * 7, RR = 250, KK = 0.36, RCY = -10;
     var g = sSpin * sSpin * (3 - 2 * sSpin), th = Math.PI / 2 - TOT * (1 - g);
     var omega = 6 * sSpin * (1 - sSpin);
-    var rotorA = 1 - sFly;
+    var rotorA = 1 - eio(seg(p, 0.3, 0.345));
     function tubeAt(theta, contentsA, simple, empty) {
       var dx = Math.cos(theta), dy = Math.sin(theta) * KK, dl = Math.hypot(dx, dy);
       var cx = dx * RR, cy = RCY + dy * RR, rot = Math.atan2(-dx / dl, dy / dl);
@@ -820,7 +820,7 @@
     ctx.globalAlpha *= ca;
     var s3 = seg(p, 0.06, 0.36), a3 = (1 - seg(p, 0.36, 0.44)) * smooth(0.06, 0.1, p);
     if (a3 > 0) {
-      var tilt = 1.36 * eio(seg(s3, 0.25, 1)), rot = -0.5 + 0.9 * s3;
+      var tilt = 0.4 + 0.96 * eio(seg(s3, 0.25, 1)), rot = -0.5 + 0.9 * s3;
       glowDot(ctx, 0, 0, 330, [255, 80, 90], 0.25 * a3);
       rbc(ctx, { x: 0, y: 0, r: 230, tiltX: tilt, tiltY: 0.2 * Math.sin(s3 * Math.PI), rot: rot, alpha: a3 });
       // 3D orbit ring
@@ -874,7 +874,7 @@
         ctx.beginPath(); ctx.moveTo(CX - RBC_R, CY - 10); ctx.lineTo(CX - RBC_R, yD - 16); ctx.moveTo(CX + RBC_R, CY - 10); ctx.lineTo(CX + RBC_R, yD - 16);
         gline(ctx, C.cy, 1.5, 0.6 * smooth(0, 0.3, d1), [5, 6]);
         dimLineH(ctx, CX - RBC_R, CX + RBC_R, yD, d1, C.cy);
-        txt(ctx, '直径 約7.5 μm', CX, yD - 38, { size: 42, align: 'center', a: seg(d1, 0.3, 1) });
+        txt(ctx, '直径 約7.5μm', CX, yD - 38, { size: 42, align: 'center', a: seg(d1, 0.3, 1) });
       }
       // rim thickness
       var d2 = seg(p, 0.56, 0.64), rx = CX + RIM_X * RBC_R, rh = (rbcT(RIM_X) / 2) * RBC_K, xD = CX + RBC_R + 70;
@@ -883,7 +883,7 @@
         gline(ctx, C.cy, 1.5, 0.6 * smooth(0, 0.3, d2), [5, 6]);
         dimLineV(ctx, xD, CY - rh, CY + rh, d2, C.cy);
         txt(ctx, '縁の厚さ', xD + 26, CY - 22, { size: 36, a: seg(d2, 0.3, 1) });
-        txt(ctx, '約2.6 μm', xD + 26, CY + 24, { size: 40, a: seg(d2, 0.45, 1) });
+        txt(ctx, '約2.6μm', xD + 26, CY + 24, { size: 40, a: seg(d2, 0.45, 1) });
       }
       // centre thickness
       var d3 = seg(p, 0.64, 0.71), ch = (rbcT(0) / 2) * RBC_K;
@@ -892,7 +892,7 @@
         arrowPts(ctx, [[CX, CY - ch - 70], [CX, CY - ch - 2]], e3, C.cy, 2.5, { headSize: 14 });
         arrowPts(ctx, [[CX, CY + ch + 70], [CX, CY + ch + 2]], e3, C.cy, 2.5, { headSize: 14 });
         arrowPts(ctx, [[CX, CY + ch + 72], [CX + 30, CY + 160], [CX + 50, CY + 160]], seg(d3, 0.3, 0.8), C.cy, 1.5, { head: false });
-        txt(ctx, '中央 約0.75 μm', CX + 60, CY + 160, { size: 36, a: seg(d3, 0.4, 1) });
+        txt(ctx, '中央 約0.75μm', CX + 60, CY + 160, { size: 36, a: seg(d3, 0.4, 1) });
       }
       // no nucleus
       var nA = seg(p, 0.71, 0.8);
@@ -901,8 +901,8 @@
         ctx.beginPath(); ctx.arc(CX, CY, 70, 0, TAU); gline(ctx, [200, 170, 255], 2.5, gA, [8, 8], -t * 20);
         var sl = seg(nA, 0.3, 0.6);
         ctx.beginPath(); ctx.moveTo(CX - 50, CY + 50); ctx.lineTo(lerp(CX - 50, CX + 50, sl), lerp(CY + 50, CY - 50, sl)); gline(ctx, C.hot, 4, gA * smooth(0, 0.1, sl));
-        tag(ctx, '核なし', CX + RBC_R + 150, CY - 200, { size: 40, color: C.hot, a: seg(nA, 0.35, 1) });
-        arrowPts(ctx, [[CX + RBC_R + 82, CY - 200], [CX + 60, CY - 60]], seg(nA, 0.45, 0.9), C.hot, 1.5, { head: false, alpha: 0.7 });
+        arrowPts(ctx, [[CX - 130, CY - 104], [CX - 50, CY - 52]], seg(nA, 0.45, 0.9), C.hot, 2, { head: false, alpha: 0.8 });
+        tag(ctx, '核なし', CX - 170, CY - 126, { size: 34, color: C.hot, a: seg(nA, 0.35, 1) });
       }
       ctx.restore();
     }
@@ -1144,9 +1144,9 @@
     for (i = 0; i < 4; i++) {
       var sbt = HB_SUB[i], as = eout(seg(p, 0.06 + i * 0.04, 0.2 + i * 0.04));
       if (as <= 0) continue;
-      var fly = 1 - as, sx = CX + sbt[0] * (1 + 2.2 * fly), sy = CY + sbt[1] * (1 + 2.2 * fly);
+      var fly = 1 - as, sx = CX + sbt[0] * (1 + 0.9 * fly), sy = CY + sbt[1] * (1 + 0.9 * fly);
       globin(ctx, sx, sy, 118, sbt[2] ? COLB : COLA, sbt[3], t, smooth(0, 0.4, as));
-      txt(ctx, sbt[2] ? 'β' : 'α', sx + (sbt[0] < 0 ? -66 : 66), sy + (sbt[1] < 0 ? -62 : 62), { size: 44, align: 'center', color: mixC(sbt[2] ? COLB : COLA, WHITE, 0.6), glow: sbt[2] ? COLB : COLA, a: seg(p, 0.2 + i * 0.01, 0.28), type: false });
+      txt(ctx, sbt[2] ? 'β' : 'α', sx + (sbt[0] < 0 ? -84 : 84), sy + (sbt[1] < 0 ? 44 : -44), { size: 44, align: 'center', color: mixC(sbt[2] ? COLB : COLA, WHITE, 0.6), glow: sbt[2] ? COLB : COLA, a: seg(p, 0.2 + i * 0.01, 0.28), type: false });
     }
     // hemes
     var hA = seg(p, 0.3, 0.36);
@@ -1180,7 +1180,7 @@
       if (bA <= 0) continue;
       var hp = hpos[i], e = eio(bA);
       var ox = hp[0] + hp[2] * 52, oy = hp[1] + hp[3] * 52;
-      o2Glyph(ctx, lerp(hp[0] + hp[2] * 330, ox, e), lerp(hp[1] + hp[3] * 260 - 60, oy, e), 44, smooth(0, 0.25, bA), t);
+      o2Glyph(ctx, lerp(hp[0] + hp[2] * 190, ox, e), lerp(hp[1] + hp[3] * 150 - 40, oy, e), 44, smooth(0, 0.25, bA), t);
     }
     // legend
     var lx = 140;
@@ -1194,7 +1194,7 @@
     var cA = seg(p, 0.44, 0.5);
     if (cA > 0) {
       var nb = 0; for (i = 0; i < 4; i++) if (bound[i] >= 1) nb++;
-      var cy = 300, w0 = txt(ctx, '結合した O₂：', -440, cy, { size: 34, a: cA });
+      var cy = 282, w0 = txt(ctx, '結合した O₂：', -440, cy, { size: 34, a: cA });
       for (i = 0; i < 4; i++) {
         var cx = -440 + w0 + 30 + i * 52;
         ctx.save(); ctx.globalAlpha *= cA; ctx.beginPath(); ctx.arc(cx, cy, 17, 0, TAU); gline(ctx, C.cy, 2, 0.8);
@@ -1203,7 +1203,7 @@
       }
       txt(ctx, nb + ' / 4', -440 + w0 + 250, cy, { size: 36, a: cA, type: false, color: nb === 4 ? [255, 255, 255] : [200, 235, 250] });
     }
-    txt(ctx, '1分子で 最大4個の O₂ を運ぶ', 140, 300, { size: 36, color: [255, 255, 255], glow: C.cy, a: seg(p, 0.86, 0.94) });
+    txt(ctx, '1分子で 最大4個の O₂ を運ぶ', -440, 336, { size: 36, color: [255, 255, 255], glow: C.cy, a: seg(p, 0.86, 0.94) });
     ctx.restore();
   };
 
@@ -1268,8 +1268,8 @@
         arrowPts(ctx, [[m1[0] - 30, m1[1]], [m1[0] + 10, m1[1]]], 1, [255, 120, 130], 6, { headSize: 34 });
         arrowPts(ctx, [[m2[0] + 30, m2[1]], [m2[0] - 10, m2[1]]], 1, [150, 130, 255], 6, { headSize: 34 });
       }
-      txt(ctx, '動脈血（O₂が多い）', 0, EY - RY - 44, { size: 34, align: 'center', color: [255, 200, 205], glow: [255, 90, 105], a: seg(p, 0.3, 0.38) });
-      txt(ctx, '静脈血（CO₂が多い）', 0, EY + RY + 44, { size: 34, align: 'center', color: [215, 205, 255], glow: [140, 120, 255], a: seg(p, 0.62, 0.7) });
+      txt(ctx, '動脈血（O₂が多い）', 0, EY - RY - 72, { size: 34, align: 'center', color: [255, 200, 205], glow: [255, 90, 105], a: seg(p, 0.3, 0.38) });
+      txt(ctx, '静脈血（CO₂が多い）', 0, EY + RY + 70, { size: 34, align: 'center', color: [215, 205, 255], glow: [140, 120, 255], a: seg(p, 0.62, 0.7) });
     }
     txt(ctx, '肺（肺胞）', -470, 205, { size: 38, align: 'center', color: [255, 215, 225], glow: [255, 150, 180], a: seg(p, 0.1, 0.17) });
     txt(ctx, '組織', 470, 205, { size: 38, align: 'center', color: [255, 225, 210], glow: C.warm, a: seg(p, 0.12, 0.19) });
@@ -1321,8 +1321,8 @@
     // RBC
     if (rA > 0) {
       var dir = ph < TAU ? 1 : -1;
-      glowDot(ctx, R0[0], R0[1], 80, ox > 0.5 ? [255, 90, 100] : [150, 120, 255], 0.5 * rA);
-      rbc(ctx, { x: R0[0], y: R0[1], r: 38, tiltX: 0.85, rot: ph * 0.6 * dir, alpha: rA, fog: (1 - ox) * 0.5, fogColor: '#3c2a78' });
+      glowDot(ctx, R0[0], R0[1], 100, ox > 0.5 ? [255, 90, 100] : [150, 120, 255], 0.5 * rA);
+      rbc(ctx, { x: R0[0], y: R0[1], r: 48, tiltX: 0.85, rot: ph * 0.6 * dir, alpha: rA, fog: (1 - ox) * 0.5, fogColor: '#3c2a78' });
       for (i = 0; i < 2; i++) {
         var an = t * 2.2 + i * Math.PI;
         if (ox > 0.02) o2Glyph(ctx, R0[0] + Math.cos(an) * 52, R0[1] + Math.sin(an) * 30 - 6, 20, ox * rA, t);
@@ -1335,7 +1335,7 @@
   /* ============================================================ 8. CO₂ TRANSPORT */
   function molCO2(ctx, x, y, a, label) {
     if (a <= 0.004) return;
-    ctx.save(); ctx.globalAlpha *= a;
+    ctx.save(); ctx.globalAlpha *= a; ctx.translate(x, y); ctx.scale(1.45, 1.45); x = 0; y = 0;
     glowDot(ctx, x, y, 70, [255, 170, 90], 0.45);
     ball(ctx, x - 27, y, 15, [255, 80, 80]); ball(ctx, x + 27, y, 15, [255, 80, 80]); ball(ctx, x, y, 14, [120, 120, 130]);
     if (label !== false) txt(ctx, 'CO₂', x, y + 38, { size: 30, align: 'center', color: [255, 220, 190], glow: C.warm, type: false });
@@ -1343,7 +1343,7 @@
   }
   function molH2O(ctx, x, y, a) {
     if (a <= 0.004) return;
-    ctx.save(); ctx.globalAlpha *= a;
+    ctx.save(); ctx.globalAlpha *= a; ctx.translate(x, y); ctx.scale(1.45, 1.45); x = 0; y = 0;
     glowDot(ctx, x, y, 60, C.cy, 0.4);
     ball(ctx, x - 20, y + 14, 10, [240, 245, 255]); ball(ctx, x + 20, y + 14, 10, [240, 245, 255]); ball(ctx, x, y, 15, [255, 80, 80]);
     txt(ctx, 'H₂O', x, y + 46, { size: 30, align: 'center', color: [200, 240, 255], type: false });
@@ -1407,67 +1407,67 @@
     ctx.fillStyle = b3g; ctx.fill(); gline(ctx, C.violet, 2.5, pulse);
     ctx.beginPath(); ctx.moveTo(bpx - 36, BY3); ctx.lineTo(bpx + 36, BY3); ctx.strokeStyle = 'rgba(30,10,60,0.8)'; ctx.lineWidth = 14; ctx.lineCap = 'round'; ctx.stroke();
     ctx.restore();
-    txt(ctx, 'バンド3', bpx, BY3 + 92, { size: 34, align: 'center', color: [220, 205, 255], glow: C.violet, a: seg(p, 0.44, 0.52) });
+    txt(ctx, 'バンド3', bpx - 46, BY3 + 86, { size: 36, align: 'right', color: [220, 205, 255], glow: C.violet, a: seg(p, 0.44, 0.52) });
     // enzyme
     var EXx = -170, EYy = -10, eA = seg(p, 0.06, 0.14), act = smooth(0.2, 0.28, p) * (1 - smooth(0.34, 0.42, p));
     if (eA > 0) {
       ctx.save(); ctx.globalAlpha *= eA;
-      glowDot(ctx, EXx, EYy, 140, [120, 240, 200], 0.25 + 0.6 * act * (0.7 + 0.3 * Math.sin(t * 14)));
-      ctx.beginPath(); ctx.arc(EXx, EYy, 72, 0.5, TAU - 0.5); ctx.lineTo(EXx + 26, EYy); ctx.closePath();
-      var eg = ctx.createRadialGradient(EXx - 20, EYy - 20, 6, EXx, EYy, 76); eg.addColorStop(0, 'rgba(170,255,220,0.85)'); eg.addColorStop(1, 'rgba(40,150,120,0.75)');
+      glowDot(ctx, EXx, EYy, 180, [120, 240, 200], 0.25 + 0.6 * act * (0.7 + 0.3 * Math.sin(t * 14)));
+      ctx.beginPath(); ctx.arc(EXx, EYy, 96, 0.5, TAU - 0.5); ctx.lineTo(EXx + 34, EYy); ctx.closePath();
+      var eg = ctx.createRadialGradient(EXx - 26, EYy - 26, 6, EXx, EYy, 100); eg.addColorStop(0, 'rgba(170,255,220,0.85)'); eg.addColorStop(1, 'rgba(40,150,120,0.75)');
       ctx.fillStyle = eg; ctx.fill(); gline(ctx, [140, 255, 210], 2.5, 1);
       ctx.restore();
-      txt(ctx, '炭酸脱水酵素', EXx, EYy + 104, { size: 34, align: 'center', color: [200, 255, 230], glow: [120, 240, 200], a: seg(p, 0.18, 0.26) });
+      txt(ctx, '炭酸脱水酵素', EXx, EYy + 132, { size: 36, align: 'center', color: [200, 255, 230], glow: [120, 240, 200], a: seg(p, 0.18, 0.26) });
     }
-    var site = [EXx + 50, EYy];
+    var site = [EXx + 70, EYy];
     // CO₂
-    var cP = [[480, -110], [mx(-110) + 30, -110], [mx(-110) - 40, -100], [site[0] + 20, site[1] - 20]];
+    var cP = [[470, -50], [mx(-80) + 40, -80], [mx(-80) - 50, -70], [site[0] + 20, site[1] - 26]];
     var cS = eio(seg(p, 0.07, 0.22)), react = seg(p, 0.27, 0.31);
     var cpos = pathAt(cP, cS);
     molCO2(ctx, cpos[0], cpos[1], smooth(0.06, 0.09, p) * (1 - react));
-    txt(ctx, '組織からの CO₂', 480, -170, { size: 28, align: 'center', color: [255, 215, 180], a: seg(p, 0.08, 0.14) * (1 - seg(p, 0.4, 0.46)) });
+    txt(ctx, '組織からの CO₂', 470, -112, { size: 30, align: 'center', color: [255, 215, 180], a: seg(p, 0.08, 0.14) * (1 - seg(p, 0.4, 0.46)) });
     arrowPts(ctx, cP, seg(p, 0.07, 0.22), [255, 170, 90], 2, { alpha: 0.35 * (1 - seg(p, 0.4, 0.46)), dash: [6, 10] });
     // H₂O
-    var wpos = pathAt([[-480, 120], [site[0] - 10, site[1] + 26]], eio(seg(p, 0.1, 0.22)));
+    var wpos = pathAt([[-480, 110], [site[0] - 16, site[1] + 30]], eio(seg(p, 0.1, 0.22)));
     molH2O(ctx, wpos[0], wpos[1], smooth(0.08, 0.12, p) * (1 - react));
     // reaction flash + H₂CO₃
     var fl = p >= 0.3 ? Math.max(0, 1 - (p - 0.3) / 0.04) : 0;
     if (fl > 0) { glowDot(ctx, site[0], site[1], 160, WHITE, fl); ctx.beginPath(); ctx.arc(site[0], site[1], 30 + 110 * (1 - fl), 0, TAU); gline(ctx, WHITE, 3, fl); }
     var hA = seg(p, 0.29, 0.31) * (1 - seg(p, 0.33, 0.35));
-    token(ctx, 'H₂CO₃', site[0] + 20, site[1], [255, 230, 160], hA, 30);
+    token(ctx, 'H₂CO₃', site[0] + 30, site[1], [255, 230, 160], hA, 38);
     // H⁺ → Hb
-    var HBX = -430, HBY = 220;
+    var HBX = -420, HBY = 215;
     var hbA = seg(p, 0.06, 0.14);
     if (hbA > 0) {
       ctx.save(); ctx.globalAlpha *= hbA;
-      blobPath(ctx, HBX, HBY, 44, 77, 0.08, t * 0.5); ctx.fillStyle = 'rgba(220,50,70,0.75)'; ctx.fill(); gline(ctx, C.hot, 2, 0.9);
-      txt(ctx, 'Hb', HBX, HBY, { size: 30, align: 'center', type: false, color: WHITE });
+      blobPath(ctx, HBX, HBY, 60, 77, 0.08, t * 0.5); ctx.fillStyle = 'rgba(220,50,70,0.75)'; ctx.fill(); gline(ctx, C.hot, 2, 0.9);
+      txt(ctx, 'Hb', HBX, HBY, { size: 38, align: 'center', type: false, color: WHITE });
       ctx.restore();
     }
     var hs = eio(seg(p, 0.34, 0.46));
     if (p >= 0.34) {
-      var hp = qpt(site[0], site[1], -300, 60, HBX + 50, HBY - 40, hs);
-      token(ctx, 'H⁺', hp[0], hp[1], [255, 150, 200], 1, 30);
+      var hp = qpt(site[0], site[1], -300, 60, HBX + 62, HBY - 50, hs);
+      token(ctx, 'H⁺', hp[0], hp[1], [255, 150, 200], 1, 36);
     }
-    txt(ctx, 'H⁺はヘモグロビンが受けとめる', HBX - 140, HBY + 80, { size: 26, color: [255, 215, 230], a: seg(p, 0.42, 0.5) });
+    txt(ctx, 'H⁺はヘモグロビンが受けとめる', HBX - 140, HBY + 100, { size: 28, color: [255, 215, 230], a: seg(p, 0.42, 0.5) });
     // HCO₃⁻
-    var hcP = [[site[0], site[1]], [40, 70], [bpx - 70, BY3 + 14], [bpx - 34, BY3 + 14]];
-    var hcOut = [[bpx - 34, BY3 + 14], [bpx + 40, BY3 + 14]];
-    var hcPl = [[bpx + 40, BY3 + 14], [400, 190], [470, 200]];
+    var hcP = [[site[0], site[1]], [40, 90], [bpx - 90, BY3 + 30], [bpx - 40, BY3 + 30]];
+    var hcOut = [[bpx - 40, BY3 + 30], [bpx + 60, BY3 + 30]];
+    var hcPl = [[bpx + 60, BY3 + 30], [400, 190], [450, 200]];
     var hpos;
     if (p < 0.56) hpos = pathAt(hcP, eio(seg(p, 0.34, 0.56)));
     else if (p < 0.64) hpos = pathAt(hcOut, eio(seg(p, 0.56, 0.64)));
     else hpos = pathAt(hcPl, eio(seg(p, 0.64, 0.78)));
-    if (p >= 0.34) token(ctx, 'HCO₃⁻', hpos[0], hpos[1], [120, 230, 255], 1, 32);
-    txt(ctx, '血漿で運ばれる', 470, 252, { size: 28, align: 'center', color: [255, 236, 190], a: seg(p, 0.72, 0.8) });
+    if (p >= 0.34) token(ctx, 'HCO₃⁻', hpos[0], hpos[1], [120, 230, 255], 1, 38);
+    txt(ctx, '血漿で運ばれる', 450, 262, { size: 30, align: 'center', color: [255, 236, 190], a: seg(p, 0.72, 0.8) });
     // Cl⁻
-    var clP = [[480, 20], [bpx + 60, BY3 - 14], [bpx + 40, BY3 - 14]], clIn = [[bpx + 40, BY3 - 14], [bpx - 40, BY3 - 14]], clC = [[bpx - 40, BY3 - 14], [60, 200], [-20, 240]];
+    var clP = [[470, 40], [bpx + 80, BY3 - 30], [bpx + 50, BY3 - 30]], clIn = [[bpx + 50, BY3 - 30], [bpx - 50, BY3 - 30]], clC = [[bpx - 50, BY3 - 30], [60, 200], [-20, 250]];
     var cl;
     if (p < 0.56) cl = pathAt(clP, eio(seg(p, 0.46, 0.56)));
     else if (p < 0.64) cl = pathAt(clIn, eio(seg(p, 0.56, 0.64)));
     else cl = pathAt(clC, eio(seg(p, 0.64, 0.78)));
-    token(ctx, 'Cl⁻', cl[0], cl[1], [150, 255, 160], seg(p, 0.44, 0.48), 28);
-    txt(ctx, 'Cl⁻と交換', bpx + 60, BY3 - 90, { size: 28, color: [190, 255, 200], glow: C.green, a: seg(p, 0.6, 0.67) });
+    token(ctx, 'Cl⁻', cl[0], cl[1], [150, 255, 160], seg(p, 0.44, 0.48), 34);
+    txt(ctx, 'Cl⁻と交換', bpx + 66, BY3 - 92, { size: 32, color: [190, 255, 200], glow: C.green, a: seg(p, 0.6, 0.67) });
     if (p > 0.56) {
       var xa = seg(p, 0.56, 0.6) * (1 - seg(p, 0.7, 0.76));
       arrowPts(ctx, [[bpx - 60, BY3 + 40], [bpx + 60, BY3 + 40]], 1, [120, 230, 255], 2.5, { alpha: xa, headSize: 14 });
@@ -1485,7 +1485,7 @@
       var xx = x0;
       for (i = 0; i < parts.length; i++) {
         txt(ctx, parts[i][0], xx, ey + 2, { size: SZ, color: parts[i][1], glow: parts[i][1], a: seg(p, parts[i][2], parts[i][2] + 0.04), glowAmt: 0.3 });
-        if (i === 3) txt(ctx, '炭酸脱水酵素', xx + ws[i] / 2, ey - 54, { size: 22, align: 'center', color: [200, 255, 230], a: seg(p, 0.24, 0.3) });
+        if (i === 3) txt(ctx, '炭酸脱水酵素', xx + ws[i] / 2, ey - 52, { size: 24, align: 'center', color: [200, 255, 230], a: seg(p, 0.24, 0.3) });
         xx += ws[i] + gap;
       }
       ctx.restore();
@@ -1562,7 +1562,7 @@
       ctx.restore();
       txt(ctx, '腎臓', KX, KY + 76, { size: 28, align: 'center', color: [255, 210, 200], a: kA });
     }
-    var ePts = qpts(KX - 30, KY + 40, -700, -170, sx(0) - 10, CY - ERY[0][0] - 16, 24);
+    var ePts = qpts(KX - 30, KY + 40, -700, -170, sx(0) - 10, CY - ERY[0][0] * 1.2 - 16, 24);
     arrowPts(ctx, ePts, eout(arA), [255, 200, 120], 3, { headSize: 22 });
     if (arA >= 1) for (i = 0; i < 4; i++) { var pp = pathAt(ePts, mod(t * 0.45 + i / 4, 1)); glowDot(ctx, pp[0], pp[1], 16, [255, 210, 120], 0.9); }
     txt(ctx, 'エリスロポエチン（腎臓）', KX + 70, KY - 12, { size: 36, color: [255, 225, 170], glow: [255, 180, 90], a: seg(p, 0.06, 0.14) });
@@ -1577,27 +1577,27 @@
     for (i = 0; i < ERY.length; i++) {
       var E = ERY[i], ap = seg(p, E[6], E[6] + 0.06);
       if (ap <= 0) continue;
-      var sc = eback(ap), x = sx(i), Rr = E[0] * sc;
+      var sc = eback(ap) * 1.2, x = sx(i), Rr = E[0] * sc;
       if (i === 6) {
         glowDot(ctx, x, CY, 90, [255, 80, 90], 0.4 * ap);
-        rbc(ctx, { x: x, y: CY, r: E[0] * 1.08 * sc, tiltX: 0.35, rot: 0.3 + t * 0.2, alpha: smooth(0, 0.3, ap) });
+        rbc(ctx, { x: x, y: CY, r: E[0] * 1.05 * sc, tiltX: 0.35, rot: 0.3 + t * 0.2, alpha: smooth(0, 0.3, ap) });
       } else if (i === 4) {
         // enucleation
         var ex = seg(p, 0.53, 0.6), after = seg(p, 0.6, 0.72);
-        var dirx = 0.55, diry = 0.84, nd = lerp(E[0] * 0.2, E[0] * 0.95, eio(ex)) + after * 60;
+        var dirx = 0.55, diry = 0.84, nd = (lerp(E[0] * 0.2, E[0] * 0.95, eio(ex)) + after * 60) * 1.2;
         var nx = x + dirx * nd, ny = CY + diry * nd;
         var stretch = ex < 1 ? 1 + 0.12 * eio(ex) : 1 + 0.12 * Math.exp(-after * 8) * Math.cos(after * 20);
         eryBody(ctx, x, CY, Rr, E[1], smooth(0, 0.3, ap), 1 / Math.sqrt(stretch), stretch);
         var nA = 1 - smooth(0.4, 1, after);
         if (nA > 0) {
           ctx.save(); ctx.globalAlpha *= smooth(0, 0.3, ap) * nA;
-          ctx.beginPath(); ctx.arc(nx, ny, E[0] * 0.38 + 5, 0, TAU); gline(ctx, [255, 200, 220], 1.5, 0.7);
+          ctx.beginPath(); ctx.arc(nx, ny, E[0] * 0.38 * 1.2 + 5, 0, TAU); gline(ctx, [255, 200, 220], 1.5, 0.7);
           nucleus(ctx, nx, ny, E[0] * 0.34 * sc, E[3], 3, 400 + i, false);
           ctx.restore();
         }
         var pf = p >= 0.6 ? Math.max(0, 1 - (p - 0.6) / 0.05) : 0;
-        if (pf > 0) { ctx.beginPath(); ctx.arc(x + dirx * E[0], CY + diry * E[0], 10 + 70 * (1 - pf), 0, TAU); gline(ctx, WHITE, 3, pf); glowDot(ctx, x + dirx * E[0], CY + diry * E[0], 60, WHITE, pf); }
-        txt(ctx, '核を外へ出す', x + 60, CY + 112, { size: 24, color: [255, 220, 230], a: seg(p, 0.58, 0.64) * (1 - seg(p, 0.74, 0.8)) });
+        if (pf > 0) { ctx.beginPath(); ctx.arc(x + dirx * Rr, CY + diry * Rr, 10 + 70 * (1 - pf), 0, TAU); gline(ctx, WHITE, 3, pf); glowDot(ctx, x + dirx * Rr, CY + diry * Rr, 60, WHITE, pf); }
+        txt(ctx, '核を外へ出す', x + 64, CY + 128, { size: 24, color: [255, 220, 230], a: seg(p, 0.58, 0.64) * (1 - seg(p, 0.74, 0.8)) });
       } else {
         eryBody(ctx, x, CY, Rr, E[1], smooth(0, 0.3, ap));
         if (E[2] > 0) {
@@ -1616,10 +1616,10 @@
       }
       // labels
       var lA = seg(p, E[6] + 0.02, E[6] + 0.09);
-      for (var li = 0; li < E[5].length; li++) txt(ctx, E[5][li], x, 166 + li * 36, { size: 30, align: 'center', a: lA, color: i >= 5 ? [255, 210, 210] : C.ink, glow: i >= 5 ? C.hot : C.cy });
+      for (var li = 0; li < E[5].length; li++) txt(ctx, E[5][li], x, 182 + li * 36, { size: 30, align: 'center', a: lA, color: i >= 5 ? [255, 210, 210] : C.ink, glow: i >= 5 ? C.hot : C.cy });
     }
     // ---- brackets
-    var b1 = seg(p, 0.62, 0.7), b2 = seg(p, 0.7, 0.78), BYb = 262, DX = (sx(4) + sx(5)) / 2;
+    var b1 = seg(p, 0.62, 0.7), b2 = seg(p, 0.7, 0.78), BYb = 272, DX = (sx(4) + sx(5)) / 2;
     if (b1 > 0) {
       ctx.beginPath(); ctx.moveTo(sx(0) - 90, BYb - 14); ctx.lineTo(sx(0) - 90, BYb); ctx.lineTo(lerp(sx(0) - 90, DX - 12, eio(b1)), BYb); if (b1 >= 1) ctx.lineTo(DX - 12, BYb - 14);
       gline(ctx, [255, 225, 180], 2.5, 1);

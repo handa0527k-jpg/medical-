@@ -343,9 +343,9 @@
   /* ------------------------------------------------- episode poses (v2, additive) */
   // walk cycle (one leg; heel strike at 0, other leg at 0.5): strike, load, mid, terminal, toe-off, early swing, mid swing, reach
   const WALK = {
-    th: [24, 18, 6, -8, -18, -10, 10, 22],
-    kn: [4, 16, 8, 6, 34, 58, 40, 12],
-    ft: [12, 0, 0, -6, -28, -18, -4, 6],
+    th: [19, 14, 4, -7, -14, -8, 8, 17],
+    kn: [3, 12, 6, 5, 26, 46, 32, 8],
+    ft: [10, 0, 0, -6, -22, -14, -2, 5],
   };
   const EXT_POSES = { point: 1, present: 1, cheer: 1, think: 1, wave: 1, walk: 1, reach: 1, battle: 1, pose: 1, look_up: 1 };
   // arm specs, all in the body frame [forward, up, outward]:
@@ -369,9 +369,9 @@
     if (pose === 'point' || pose === 'present') {
       standLegs();
       const pt = pose === 'point';
-      S[main] = pt ? { off: [0.55, 0.5, 0.45], pole: [-0.3, -1, 0.4] } : { off: [0.62, 0.02, 0.4], pole: [-0.4, -1, 0.3] };
+      S[main] = pt ? { off: [0.55, 0.5, 0.45], pole: [-0.3, -1, 0.4] } : { u: [0.3, -0.75, 0.6], v: [0.5, 0.08, 0.85] };
       P.hand[main] = pt ? 'point' : 'flat';
-      P.aim = { reach: pt ? 0.97 : 0.74, pole: pt ? [-0.3, -1, 0.4] : [-0.4, -1, 0.3], hand: P.hand[main], main };
+      P.aim = { present: !pt, reach: pt ? 0.97 : 0.74, pole: pt ? [-0.3, -1, 0.4] : [-0.4, -1, 0.3], hand: P.hand[main], main };
       P.lean = (pt ? 2 : -2) * DEG; P.twist = (main === 'R' ? -8 : 8) * DEG;
       P.head.roll = fem ? 0.05 : 0;
     } else if (pose === 'cheer') {
@@ -382,7 +382,7 @@
       P.lean = -4 * DEG; P.head.pitch = -0.12; P.shrug = 2 + breath;
     } else if (pose === 'think') {
       standLegs();
-      S[main] = { head: [0.62, -1.42, 0.1], pole: [0, -1, 0.55] };
+      S[main] = { head: [0.66, def.masc ? -1.62 : -1.45, 0.1], pole: [0, -1, 0.55] };
       S[other] = { body: [24, B.waistH + 34, -B.shW * 0.25], pole: [-0.2, -1, 1] };
       P.hand[main] = 'fist'; P.hand[other] = 'flat';
       P.head.roll = 0.1 * (main === 'R' ? 1 : -1); P.head.pitch = 0.05; P.lookDefault = { x: 0.6, y: -0.6 };
@@ -419,8 +419,8 @@
       P.lean = lerp(8, 16, k) * DEG; P.crouch = 0.2; P.head.pitch = 0.02;
     } else if (pose === 'battle') {
       setLeg(L.R, 30, 40, 8, 13); setLeg(L.L, -26, 28, -8, 15);
-      S.R = { u: [0.55, -0.45, 0.4], v: [0.6, 0.78, -0.2] };
-      S.L = { u: [0.0, -0.85, 0.55], v: [0.9, 0.35, -0.35] };
+      S.R = { u: [0.65, -0.4, 0.42], v: [0.75, 0.65, -0.12] };
+      S.L = { u: [-0.3, -0.85, 0.42], v: [0.8, 0.3, 0.05] };
       P.hand.R = P.hand.L = 'fist';
       P.lean = 12 * DEG; P.twist = -22 * DEG; P.hipTwist = -10 * DEG; P.crouch = 0.3;
       P.head.pitch = 0.03; P.shrug = 2 + breath;
@@ -429,7 +429,7 @@
       S.R = { u: [-0.1, -1, 0.3], v: [0.05, -1, 0.32] };
       S.L = { u: [-0.08, -1, 0.3], v: [0.05, -1, 0.3] };
       P.hand.R = P.hand.L = 'flat';
-      P.lean = -5 * DEG; P.head.pitch = -0.42; P.lookDefault = { x: 0, y: -0.85 };
+      P.lean = -5 * DEG; P.head.pitch = -0.55; P.lookDefault = { x: 0, y: -0.85 };
     } else if (pose === 'pose') {
       if (name === 'akane') { // V-sign by the eye, hand on hip, heel kicked up
         setLeg(L.R, 2, 4, 0, 5); setLeg(L.L, -14, 70, -26, 4);
@@ -497,11 +497,17 @@
       const Sh = J['sh' + k], sp = scr(Sh);
       let ux = lx - sp.x, uy = ly - Sh[1];
       const ul = hypot(ux, uy) || 1; ux /= ul; uy /= ul;
-      const d = v3n([sY * ux + 0.32 * cY, uy, cY * ux - 0.32 * sY]);
       const sg = k === 'R' ? -1 : 1;
-      const pole = v3n(W3(P.aim.pole, sg));
-      const T = [Sh[0] + d[0] * Lr * P.aim.reach, Sh[1] + d[1] * Lr * P.aim.reach, Sh[2] + d[2] * Lr * P.aim.reach];
-      spec[k] = { T, pole };
+      if (P.aim.present) { // palm held out toward the target, around chest height (hologram floats at pointAt)
+        const uy2 = clamp(uy, -0.22, 0.12), n = hypot(ux, uy2) || 1;
+        const d = v3n([sY * ux / n + 0.4 * cY, uy2 / n, cY * ux / n - 0.4 * sY]);
+        spec[k] = { wu: v3n([d[0], d[1] + 0.9, d[2]]), wv: v3n([d[0], d[1] + 0.05, d[2]]) };
+      } else {
+        const d = v3n([sY * ux + 0.32 * cY, uy, cY * ux - 0.32 * sY]);
+        const pole = v3n(W3(P.aim.pole, sg));
+        const T = [Sh[0] + d[0] * Lr * P.aim.reach, Sh[1] + d[1] * Lr * P.aim.reach, Sh[2] + d[2] * Lr * P.aim.reach];
+        spec[k] = { T, pole };
+      }
       P.hand[k] = P.aim.hand; P.aimArm = k;
       if (o.headTurn == null) {
         const hf = sY * ux, hl = cY * ux;
@@ -514,8 +520,8 @@
       if (!sp) continue;
       const sg = k === 'R' ? -1 : 1, Sh = J['sh' + k];
       let E, Wr;
-      if (sp.u) {
-        const u = v3n(W3(sp.u, sg)), v = v3n(W3(sp.v, sg));
+      if (sp.u || sp.wu) {
+        const u = sp.wu || v3n(W3(sp.u, sg)), v = sp.wv || v3n(W3(sp.v, sg));
         E = [Sh[0] + u[0] * B.upper, Sh[1] + u[1] * B.upper, Sh[2] + u[2] * B.upper];
         Wr = [E[0] + v[0] * B.fore, E[1] + v[1] * B.fore, E[2] + v[2] * B.fore];
       } else {
@@ -611,9 +617,9 @@
     shout: { open: 0.98, tilt: 0.72, low: 0.06, pupil: 0.78, by: 0.05, ba: 0.62, arch: 0.4, mouth: 'shout', blush: 0, minM: 0.5 },
     worried: { open: 0.92, tilt: -0.3, low: 0.05, pupil: 0.9, by: -0.08, ba: -0.4, arch: 0.8, mouth: 'frown', blush: 0.2 },
     // v2 (episode 1)
-    sad: { open: 0.7, tilt: -0.28, low: 0.3, pupil: 1, by: -0.07, ba: -0.55, arch: 0.9, mouth: 'soft', blush: 0.35 },
-    proud: { open: 0.62, tilt: 0.22, low: 0.34, pupil: 0.95, by: 0.02, ba: 0.1, arch: 0.9, mouth: 'smirk', blush: 0.4 },
-    smile: { open: 0.68, tilt: -0.08, low: 0.48, pupil: 1, by: -0.03, ba: -0.22, arch: 1, mouth: 'smile', blush: 0.55 },
+    sad: { hlDown: 1, open: 0.6, tilt: -0.45, low: 0.18, pupil: 1.05, by: -0.12, ba: -0.75, arch: 1.1, mouth: 'soft', blush: 0.3 },
+    proud: { hlDown: 1, open: 0.5, tilt: 0.3, low: 0.4, pupil: 0.95, by: -0.04, ba: 0.25, arch: 1.2, mouth: 'smirk', blush: 0.45 },
+    smile: { hlDown: 1, open: 0.68, tilt: -0.08, low: 0.48, pupil: 1, by: -0.03, ba: -0.22, arch: 1, mouth: 'smile', blush: 0.55 },
   };
 
   /* ------------------------------------------------------------------ head */
@@ -837,7 +843,7 @@
     ctx.restore();
     // highlights (screen-consistent: light from upper-left)
     if (o > 0.3) {
-      const cx = E.x + (ix * E.side * E.fx) * cos(E.rot || 0), cy = E.y + iy;
+      const cx = E.x + (ix * E.side * E.fx) * cos(E.rot || 0), cy = E.y + iy + (E.hlDown ? max(0, 0.85 - o) * 0.45 * h : 0);
       const s = sstep((o - 0.3) / 0.4);
       ctx.fillStyle = 'rgba(255,255,255,' + (0.96 * s) + ')';
       ctx.beginPath(); ctx.ellipse(cx - 0.11 * w * E.fx * G.facing, cy - 0.17 * h, 0.12 * w * max(E.fx, 0.6), 0.1 * h, -0.5, 0, TAU); ctx.fill();
@@ -1309,7 +1315,7 @@
       eyes.push({
         x: c.x, y: c.y, w: H.eyeW, h: H.eyeH, side: sg, fx, open, tilt: ex.tilt, low: ex.low, pupil: ex.pupil,
         lookX: (look.x || 0) * sg + sin(hy) * 0.25 * sg, lookY: look.y || 0, iris: pal.iris, lash: pal.lash, sclera: pal.sclera,
-        shadow: pal.skin.s, brow: pal.brow, closedShape: ex.closedShape, style: H.eyeStyle, fem: !def.masc, sparkle: o.expr === 'happy',
+        shadow: pal.skin.s, brow: pal.brow, closedShape: ex.closedShape, hlDown: !!ex.hlDown, style: H.eyeStyle, fem: !def.masc, sparkle: o.expr === 'happy',
         rot: sg * (H.eyeRot || 0), browY: H.browY, browW: H.browW, halo: mix(pal.skin.b, pal.hair.b, 0.25), alpha: sstep((z - 0.08) / 0.15),
       });
     }
@@ -1480,6 +1486,29 @@
     addG(env.coverZ + 1.5 + 30 * abs(env.cY), () => o2Orb(G.ctx, x, y, 26, o.t || 0, G.facing));
   }
 
+  // hologram wristband (Akane's left forearm). glow = opts.holo
+  function holoBand(G, a, glow) {
+    const ctx = G.ctx, t = (a.o && a.o.t) || 0;
+    const b0 = lp2(a.el, a.wr, 0.6), b1 = lp2(a.el, a.wr, 0.76), r = a.B.armR[2] * 1.32;
+    const band = capsule(b0, b1, r, r * 0.98);
+    drawParts(G, [{ p: band, c: { b: '#2c2a48', s: '#1a1830', h: '#4a4870' }, k: 2 }]);
+    const m = lp2(b0, b1, 0.5);
+    const pulse = 0.75 + 0.25 * sin(t * 6);
+    if (glow) {
+      ctx.save();
+      ctx.globalCompositeOperation = 'lighter';
+      const g = ctx.createRadialGradient(m.x, m.y, 0, m.x, m.y, r * 5);
+      g.addColorStop(0, 'rgba(120,240,255,' + (0.75 * pulse).toFixed(3) + ')');
+      g.addColorStop(0.35, 'rgba(80,200,255,' + (0.3 * pulse).toFixed(3) + ')');
+      g.addColorStop(1, 'rgba(80,200,255,0)');
+      ctx.fillStyle = g; ctx.beginPath(); ctx.arc(m.x, m.y, r * 5, 0, TAU); ctx.fill();
+      ctx.restore();
+    }
+    ctx.fillStyle = glow ? '#c8fbff' : '#5fd6e8';
+    ctx.beginPath(); ctx.ellipse(m.x, m.y, r * 0.42, r * 0.42, 0, 0, TAU); ctx.fill();
+    ctx.lineWidth = G.lw * 0.5; ctx.strokeStyle = glow ? 'rgba(160,250,255,0.9)' : 'rgba(95,214,232,0.7)';
+    ctx.beginPath(); ctx.moveTo(b0.x, b0.y); ctx.lineTo(b1.x, b1.y); ctx.stroke();
+  }
   // ---- Akane outfit
   const AKANE_OUT = {
     legThigh: (p) => p.skin,
@@ -1518,6 +1547,7 @@
       crescent(ctx, sl, (a.sh.x - e.x) * 0.1, (a.sh.y - e.y) * 0.1, pal.piping);
       ctx.restore();
       ctx.lineWidth = G.lw * 0.8; ctx.strokeStyle = G.line; ctx.stroke(sl);
+      if (a.k === 'L' && !(a.o && a.o.band === false)) holoBand(G, a, a.o && a.o.holo);
     },
     armExtra(pal, a) {
       const w0 = a.lp2(a.el, a.wr, 0.84);
@@ -1546,13 +1576,14 @@
         right.push(T.rpt(s2, T.clampLam(e2, -ws[i]), 1));
       });
       const jp = new Path2D(p);
+      const frontVis = T.rnz(T.torsoSpec(T.B.jacketH + 20), 0) > -0.15;
       ctx.save();
       // jacket with opening cut out (evenodd)
       const cut = new Path2D();
       addSmooth(cut, right.concat(left.slice().reverse()), true);
       const jac = new Path2D();
       jac.addPath(jp);
-      jac.addPath(cut);
+      if (frontVis) jac.addPath(cut);
       ctx.clip(jac, 'evenodd');
       ctx.fillStyle = pal.jacket.b; ctx.fillRect(-BIG, -BIG, 2 * BIG, 2 * BIG);
       crescent(ctx, T.torsoPath, -0.5 * 14 * G.facing, -0.86 * 14, pal.jacket.s);
@@ -1561,12 +1592,12 @@
       ctx.restore();
       // piping / lapel edges
       ctx.lineWidth = 3.5; ctx.strokeStyle = pal.piping;
-      ctx.beginPath(); addSmoothCtx(ctx, right); ctx.stroke();
-      ctx.beginPath(); addSmoothCtx(ctx, left); ctx.stroke();
+      if (frontVis) { ctx.beginPath(); addSmoothCtx(ctx, right); ctx.stroke(); }
+      if (frontVis) { ctx.beginPath(); addSmoothCtx(ctx, left); ctx.stroke(); }
       ctx.beginPath(); addSmoothCtx(ctx, arc); ctx.stroke();
       ctx.lineWidth = G.lw * 0.7; ctx.strokeStyle = G.line;
-      ctx.beginPath(); addSmoothCtx(ctx, right); ctx.stroke();
-      ctx.beginPath(); addSmoothCtx(ctx, left); ctx.stroke();
+      if (frontVis) { ctx.beginPath(); addSmoothCtx(ctx, right); ctx.stroke(); }
+      if (frontVis) { ctx.beginPath(); addSmoothCtx(ctx, left); ctx.stroke(); }
       ctx.beginPath(); addSmoothCtx(ctx, arc.map((q) => ({ x: q.x, y: q.y + 2 }))); ctx.stroke();
       // satchel strap: left shoulder -> right hip, across the chest
       const N = 9, sp1 = [];
@@ -1617,8 +1648,8 @@
     extraGroups(env) {
       const { G, pal, J, P, pr, B, ring, rpt, extremes, nearArc, addG, sY, cY, o, Q } = env;
       const ctx = G.ctx, t = o.t || 0;
-      // --- cape (behind)
-      addG(-1000, () => {
+      // --- cape (behind; in front of the back when seen from behind)
+      addG(cY < -0.1 ? env.coverZ + 0.7 : -1000, () => {
         const top = [], bot = [], mid = [];
         const lams = [1.45, 2.1, 2.65, PI, -2.65, -2.1, -1.45];
         const sp = env.torsoSpec(B.shH + 6);
@@ -1647,7 +1678,7 @@
         let area = 0;
         for (let i = 0; i < outline.length; i++) { const a = outline[i], b = outline[(i + 1) % outline.length]; area += a.x * b.y - b.x * a.y; }
         const front = area * (sY >= 0 ? 1 : -1) < 0;
-        const col = front ? pal.cape : { b: pal.lining.b, s: pal.lining.s };
+        const col = front || cY < -0.1 ? pal.cape : { b: pal.lining.b, s: pal.lining.s };
         const allP = smooth(top.concat([mid[mid.length - 1]], hem.slice().reverse(), [mid[0]]), true);
         drawParts(G, [{ p: allP, c: col, k: 12, hk: 3 }]);
         // folds
@@ -1655,9 +1686,13 @@
         ctx.strokeStyle = rgba(pal.cape.s, 0.9); ctx.lineWidth = G.lw * 0.6;
         for (const j of [1, 3, 5]) { ctx.beginPath(); ctx.moveTo(top[j].x, top[j].y + 8); ctx.quadraticCurveTo(mid[j].x, mid[j].y, bot[j].x, bot[j].y - 4); ctx.stroke(); }
         ctx.restore();
+        if (cY < -0.3) { // back emblem
+          const e = lp2(top[3], mid[3], 0.75);
+          drawDiscEmblem(ctx, e.x, e.y, 15, -cY, { rim: pal.emblemRim, ring: pal.emblemRing, core: pal.emblemCore }, G.lw * 0.6, G.line);
+        }
       });
       // --- skirt (pleated), over the thighs
-      const zSk = env.coverZ;
+      const zSk = max(env.coverZ, 0.5); // skirt always over the torso's hip region
       addG(zSk, () => {
         const thR = P.legs.R.th, thL = P.legs.L.th;
         const top = ring({ h: B.waistH, W: env.torsoSpec(B.waistH).W + 1, D: env.torsoSpec(B.waistH).D + 1, f: env.torsoSpec(B.waistH).f, lk: 1 });
@@ -1694,7 +1729,7 @@
       // --- satchel on the right hip
       const bagC = J.body(-4, 2, -(B.hipW + 34), P.hipTwist, 0.3);
       const bp = pr(bagC);
-      addG(zSk + 0.5 + (bp.z < -5 ? -60 : 0), () => {
+      addG(zSk + (cY < -0.1 && bp.z > -5 ? 0.8 : 0.5) + (bp.z < -5 ? -60 : 0), () => {
         const sw = 4 * sin(TAU * P.phase * 2 - 1) * P.speed;
         const bx = bp.x - 8 * P.speed + sw * 0.3, by = bp.y + 10 + sw;
         const w = 30 * (0.42 + 0.58 * abs(cY)) + 8 * abs(sY) * 0.4, h = 36;
@@ -1706,7 +1741,7 @@
         addSmooth(flap, [P2(bx - w * 1.04, by - h * 0.55), P2(bx + w * 1.04, by - h * 0.55), P2(bx + w * 0.95, by + h * 0.05), P2(bx, by + h * 0.18), P2(bx - w * 0.95, by + h * 0.05)], true);
         ctx.save(); ctx.translate(bx, by); ctx.rotate(ang); ctx.translate(-bx, -by);
         drawParts(G, [{ p: body, c: pal.bag, k: 6, hk: 2 }, { p: flap, c: { b: pal.bag.h, s: pal.bag.b }, k: 4 }]);
-        drawDiscEmblem(ctx, bx, by - h * 0.12, 11, max(abs(cY), 0.35), { rim: pal.emblemRim, ring: pal.emblemRing, core: pal.emblemCore }, G.lw * 0.6, G.line);
+        if (cY > -0.3) drawDiscEmblem(ctx, bx, by - h * 0.12, 11, max(abs(cY), 0.35), { rim: pal.emblemRim, ring: pal.emblemRing, core: pal.emblemCore }, G.lw * 0.6, G.line);
         ctx.restore();
       });
       holdGroup(env);
@@ -1783,6 +1818,11 @@
           const c = T.rpt(es, lam, 2);
           drawNucleusEmblem(ctx, c.x, c.y, 15, nz, pal, G.lw * 0.6, G.line, opt.nucleus || 'seg');
         }
+        const nzb = T.rnz(es, PI);
+        if (nzb > 0.3) { // squad insignia on the back
+          const c = T.rpt(es, PI, 2);
+          drawNucleusEmblem(ctx, c.x, c.y + 6, 22, nzb, pal, G.lw * 0.6, G.line, opt.nucleus || 'seg');
+        }
       },
       collar(G, pal, env) {
         const { torsoSpec, rpt, extremes, nearArc, B } = env;
@@ -1816,7 +1856,8 @@
         };
         const hemS = () => ring({ h: B.coatH, W: B.coatW, D: B.coatD, f: -3, tw: P.hipTwist, lk: 0.3, disp: hemDisp });
         // back piece (lining visible in the front gap)
-        addG(env.legMinZ - 0.5, () => {
+        const backV = cY < -0.1;
+        addG(backV ? env.coverZ + 0.6 : env.legMinZ - 0.5, () => {
           const top = topS(), hem = hemS();
           const et = extremes(top), eh = extremes(hem);
           // full silhouette: hem far arc too
@@ -1832,10 +1873,19 @@
           const p2 = new Path2D();
           addSmooth(p2, hn, false);
           pth.addPath(p2);
-          drawParts(G, [{ p: pth, c: pal.lining, k: 8 }]);
+          drawParts(G, [{ p: pth, c: backV ? pal.coat : pal.lining, k: backV ? 10 : 8, hk: backV ? 2 : 0 }]);
+          if (backV) { // hem trim + centre vent seen from behind
+            ctx.save(); ctx.clip(pth);
+            ctx.lineWidth = 6; ctx.strokeStyle = pal.accent.b;
+            ctx.beginPath(); addSmoothCtx(ctx, hn.map((q) => ({ x: q.x, y: q.y - 2 }))); ctx.stroke();
+            const vb = rpt(hem, PI), vt = rpt(top, PI);
+            ctx.lineWidth = G.lw * 0.7; ctx.strokeStyle = G.line;
+            ctx.beginPath(); ctx.moveTo(vb.x, vb.y); ctx.lineTo(lerp(vb.x, vt.x, 0.45), lerp(vb.y, vt.y, 0.45)); ctx.stroke();
+            ctx.restore();
+          }
         });
         // front panels
-        addG(env.coverZ, () => {
+        addG(backV ? env.coverZ + 0.55 : max(env.coverZ, 0.5), () => {
           const top = topS(), hem = hemS();
           const et = extremes(top), eh = extremes(hem);
           for (const sg of [-1, 1]) {
@@ -2226,6 +2276,27 @@
       mouthY: o.y + (h.y + def.head.R * 0.62) * s,
     };
   }
+  // Hand / wrist positions in canvas px for the given opts (same maths as drawing): for placing holograms,
+  // props or the bacterium. palm = centre of the open hand; tip = fingertip end; holo = a point above the
+  // presenting / pointing hand (or the left wrist band) where a hologram can float.
+  function handAnchor(who, opts) {
+    const def = defOf(who, opts);
+    const F = computeFrame(def, opts);
+    const o = F.o, s = o.scale, facing = o.facing < 0 ? -1 : 1, sq = clamp(o.squash || 0, 0, 1);
+    const sY = sin(F.Y), cY = cos(F.Y);
+    const C = (p) => ({ x: o.x + (p[0] * sY + p[2] * cY) * s * facing * (1 - 0.12 * sq), y: o.y + p[1] * s * (1 - 0.04 * sq), z: p[0] * cY - p[2] * sY });
+    const res = {};
+    for (const k of ['R', 'L']) {
+      const e = C(F.J['elbow' + k]), w = C(F.J['wrist' + k]);
+      const dx = w.x - e.x, dy = w.y - e.y, L = hypot(dx, dy) || 1, hr = def.body.handR * s;
+      res[k] = { elbow: e, wrist: w, palm: { x: w.x + dx / L * hr * 1.1, y: w.y + dy / L * hr * 1.1 }, tip: { x: w.x + dx / L * hr * 3.0, y: w.y + dy / L * hr * 3.0 } };
+      const b0 = lp2(e, w, 0.68); res[k].band = { x: b0.x, y: b0.y };
+    }
+    const k = F.P.aimArm || 'L';
+    res.arm = k;
+    res.holo = { x: res[k].palm.x, y: res[k].palm.y - 70 * s };
+    return res;
+  }
   // natural blink: ~every 2.5–5 s, 0.16 s long, occasional double blink. Pure function of t.
   function hash(n) { const x = sin(n * 127.1 + 311.7) * 43758.5453; return x - floor(x); }
   function blinkAt(t, seed) {
@@ -2257,7 +2328,8 @@
 
   BS.chars = {
     drawAkane, drawShirou, drawWBCAlly,
-    headAnchor, blinkAt, runPhase, footsteps,
+    headAnchor, handAnchor, blinkAt, runPhase, footsteps,
+    POSES: ['stand', 'run', 'hold', 'relieved', 'turn', 'ready'].concat(Object.keys(EXT_POSES)),
     drawO2Orb: (ctx, o) => o2Orb(ctx, o.x, o.y, o.r || 26, o.t || 0, 1),
     ALLY_NAMES: ['ユズ（好酸球）', 'ゴウ（好塩基球）', 'ソウ（単球）', 'リン（リンパ球）'],
     VIEW_YAW, EXPR: Object.keys(EXPR),
