@@ -294,6 +294,8 @@
       setLeg(L.L, -4, 9, 0, 5);
       P.hold = true;
       P.shrug = 1.2 * breath;
+    } else if (EXT_POSES[pose]) {
+      solveExtPose(def, o, P, pose, breath);
     } else { // stand
       if (def.masc) {
         setLeg(L.R, 3, 4, 0, 5);
@@ -311,7 +313,7 @@
       P.head.roll = fem ? 0.04 : 0;
     }
     if (o.holdO2 || P.hold) {
-      P.hold = true;
+      P.hold = true; P.armSpec = null; P.aim = null;
       setArm(A.R, 14, 9, 112, -42);
       setArm(A.L, 14, 9, 112, -42);
       P.hand.R = P.hand.L = 'cup';
@@ -338,6 +340,196 @@
     return P;
   }
 
+  /* ------------------------------------------------- episode poses (v2, additive) */
+  // walk cycle (one leg; heel strike at 0, other leg at 0.5): strike, load, mid, terminal, toe-off, early swing, mid swing, reach
+  const WALK = {
+    th: [24, 18, 6, -8, -18, -10, 10, 22],
+    kn: [4, 16, 8, 6, 34, 58, 40, 12],
+    ft: [12, 0, 0, -6, -28, -18, -4, 6],
+  };
+  const EXT_POSES = { point: 1, present: 1, cheer: 1, think: 1, wave: 1, walk: 1, reach: 1, battle: 1, pose: 1, look_up: 1 };
+  // arm specs, all in the body frame [forward, up, outward]:
+  //   {u, v}            upper-arm / forearm directions
+  //   {off, pole}       wrist target relative to the shoulder in arm lengths (2-bone IK)
+  //   {body, pole}      wrist target in body px [f, h above hip, outward]
+  //   {head, pole}      wrist target relative to the head centre in head radii
+  const RELAX = { u: [0.02, -1, 0.17], v: [0.1, -1, 0.1] };
+  const HIP_HAND = (B) => ({ body: [-6, B.waistH + 10, B.shW * 0.88 + 14], pole: [-0.5, 0, 1] });
+  function solveExtPose(def, o, P, pose, breath) {
+    const L = P.legs, fem = !def.masc, B = def.body, name = def.name;
+    P.ext = true;
+    const S = (P.armSpec = { R: RELAX, L: RELAX });
+    const standLegs = () => {
+      if (fem) { setLeg(L.R, 3, 4, 0, 2); setLeg(L.L, -5, 10, 2, 6); } else { setLeg(L.R, 3, 4, 0, 5); setLeg(L.L, -3, 6, 0, 6); }
+    };
+    P.shrug = 1.3 * breath;
+    P.hand.R = P.hand.L = 'loose';
+    const t = o.t || 0;
+    const main = o.arm === 'L' ? 'L' : 'R', other = main === 'R' ? 'L' : 'R';
+    if (pose === 'point' || pose === 'present') {
+      standLegs();
+      const pt = pose === 'point';
+      S[main] = pt ? { off: [0.55, 0.5, 0.45], pole: [-0.3, -1, 0.4] } : { off: [0.62, 0.02, 0.4], pole: [-0.4, -1, 0.3] };
+      P.hand[main] = pt ? 'point' : 'flat';
+      P.aim = { reach: pt ? 0.97 : 0.74, pole: pt ? [-0.3, -1, 0.4] : [-0.4, -1, 0.3], hand: P.hand[main], main };
+      P.lean = (pt ? 2 : -2) * DEG; P.twist = (main === 'R' ? -8 : 8) * DEG;
+      P.head.roll = fem ? 0.05 : 0;
+    } else if (pose === 'cheer') {
+      setLeg(L.R, 6, 8, 0, 6); setLeg(L.L, -8, 16, 4, 9);
+      S[main] = { u: [0.18, 0.92, 0.3], v: [0.1, 1, 0.08] };
+      S[other] = { u: [0.1, -0.9, 0.45], v: [0.65, 0.75, -0.1] };
+      P.hand.R = P.hand.L = 'fist';
+      P.lean = -4 * DEG; P.head.pitch = -0.12; P.shrug = 2 + breath;
+    } else if (pose === 'think') {
+      standLegs();
+      S[main] = { head: [0.62, -1.42, 0.1], pole: [0, -1, 0.55] };
+      S[other] = { body: [24, B.waistH + 34, -B.shW * 0.25], pole: [-0.2, -1, 1] };
+      P.hand[main] = 'fist'; P.hand[other] = 'flat';
+      P.head.roll = 0.1 * (main === 'R' ? 1 : -1); P.head.pitch = 0.05; P.lookDefault = { x: 0.6, y: -0.6 };
+      P.lean = 1 * DEG;
+    } else if (pose === 'wave') {
+      standLegs();
+      const w = sin(t * TAU * 1.5);
+      S[main] = { off: [0.22, 0.42, 0.52 + 0.14 * w], pole: [0, -0.6, 1] };
+      P.hand[main] = 'flat';
+      P.head.roll = 0.06 * (main === 'R' ? -1 : 1) + 0.02 * w;
+      P.lean = -1 * DEG;
+    } else if (pose === 'walk') {
+      const ph = (((o.walkPhase != null ? o.walkPhase : o.runPhase || 0) % 1) + 1) % 1;
+      P.phase = ph; P.speed = 0.22;
+      setLeg(L.R, cyc(WALK.th, ph), cyc(WALK.kn, ph), cyc(WALK.ft, ph), 3);
+      setLeg(L.L, cyc(WALK.th, ph + 0.5), cyc(WALK.kn, ph + 0.5), cyc(WALK.ft, ph + 0.5), 3);
+      const c = cos(TAU * ph), sw = def.masc ? 22 : 20;
+      P.armSpec = null;
+      setArm(P.arms.R, -c * sw + 2, 9, 16 + 16 * (1 - c) / 2, 6);
+      setArm(P.arms.L, c * sw + 2, 9, 16 + 16 * (1 + c) / 2, 6);
+      P.lean = 3 * DEG; P.twist = -7 * c * DEG; P.hipTwist = 6 * c * DEG;
+      P.head.pitch = 0.01 * sin(2 * TAU * ph);
+      P.hand.R = P.hand.L = 'loose';
+    } else if (pose === 'reach') {
+      const k = sstep(clamp(o.reachAmt != null ? o.reachAmt : 0.5, 0, 1));
+      setLeg(L.R, 22, 26, 4, 10); setLeg(L.L, -18, 20, -2, 12);
+      for (const a of ['R', 'L']) {
+        S[a] = {
+          u: [lerp(0.5, 1, k), lerp(0.18, 0.02, k), lerp(0.85, 0.2, k)],
+          v: [lerp(0.55, 0.75, k), lerp(0.12, 0.02, k), lerp(0.85, -0.66, k)],
+        };
+      }
+      P.hand.R = P.hand.L = k > 0.75 ? 'cup' : 'flat';
+      P.lean = lerp(8, 16, k) * DEG; P.crouch = 0.2; P.head.pitch = 0.02;
+    } else if (pose === 'battle') {
+      setLeg(L.R, 30, 40, 8, 13); setLeg(L.L, -26, 28, -8, 15);
+      S.R = { u: [0.55, -0.45, 0.4], v: [0.6, 0.78, -0.2] };
+      S.L = { u: [0.0, -0.85, 0.55], v: [0.9, 0.35, -0.35] };
+      P.hand.R = P.hand.L = 'fist';
+      P.lean = 12 * DEG; P.twist = -22 * DEG; P.hipTwist = -10 * DEG; P.crouch = 0.3;
+      P.head.pitch = 0.03; P.shrug = 2 + breath;
+    } else if (pose === 'look_up') {
+      standLegs();
+      S.R = { u: [-0.1, -1, 0.3], v: [0.05, -1, 0.32] };
+      S.L = { u: [-0.08, -1, 0.3], v: [0.05, -1, 0.3] };
+      P.hand.R = P.hand.L = 'flat';
+      P.lean = -5 * DEG; P.head.pitch = -0.42; P.lookDefault = { x: 0, y: -0.85 };
+    } else if (pose === 'pose') {
+      if (name === 'akane') { // V-sign by the eye, hand on hip, heel kicked up
+        setLeg(L.R, 2, 4, 0, 5); setLeg(L.L, -14, 70, -26, 4);
+        S.R = { head: [0.55, 0.0, 1.55], pole: [0, -1, 0.7] }; S.L = HIP_HAND(B);
+        P.hand.R = 'vsign'; P.hand.L = 'fist';
+        P.lean = -2 * DEG; P.head.roll = 0.14; P.twist = -6 * DEG;
+      } else if (name === 'shirou') { // fist forward, other hand on the headset
+        setLeg(L.R, 20, 18, 4, 12); setLeg(L.L, -18, 14, -4, 14);
+        S.R = { u: [0.8, 0.12, 0.35], v: [1, 0.12, 0.05] }; S.L = { head: [0.0, -0.1, 1.45], pole: [-0.3, -0.4, 1] };
+        P.hand.R = 'fist'; P.hand.L = 'flat';
+        P.lean = 4 * DEG; P.twist = -14 * DEG; P.hipTwist = -6 * DEG; P.head.pitch = 0.02;
+      } else if (name === 'yuzu') { // fist pump + knee up
+        setLeg(L.R, 72, 96, 10, 6); setLeg(L.L, -4, 8, 0, 5);
+        S.R = { u: [0.2, 0.9, 0.35], v: [0.1, 1, 0.05] }; S.L = { u: [-0.35, -0.8, 0.4], v: [0.7, 0.7, -0.1] };
+        P.hand.R = P.hand.L = 'fist'; P.lean = -3 * DEG; P.head.pitch = -0.08;
+      } else if (name === 'gou') { // arms crossed, wide stance
+        setLeg(L.R, 6, 4, 0, 12); setLeg(L.L, -6, 4, 0, 12);
+        S.R = { body: [B.torso[5].D + 12, B.shH - 52, -B.shW * 0.62], pole: [0.1, -1, 0.5] };
+        S.L = { body: [B.torso[5].D + 4, B.shH - 40, -B.shW * 0.62], pole: [0.1, -1, 0.5] };
+        P.hand.R = P.hand.L = 'fist'; P.lean = -3 * DEG; P.head.pitch = -0.05;
+      } else if (name === 'sou') { // hand on hip, palm thrust forward
+        setLeg(L.R, 10, 6, 2, 6); setLeg(L.L, -8, 12, 0, 8);
+        S.R = { u: [0.65, 0.05, 0.55], v: [0.8, 0.45, 0.25] }; S.L = HIP_HAND(B);
+        P.hand.R = 'flat'; P.hand.L = 'fist'; P.twist = -12 * DEG; P.head.roll = -0.04;
+      } else { // rin: salute
+        setLeg(L.R, 2, 2, 0, 4); setLeg(L.L, -2, 2, 0, 4);
+        S.R = { head: [0.55, 0.25, 1.3], pole: [0.2, 0.1, 1] };
+        P.hand.R = 'flat'; P.head.pitch = -0.04; P.lean = -2 * DEG;
+      }
+    }
+  }
+  function v3n(a) { const l = hypot(a[0], a[1], a[2]) || 1; return [a[0] / l, a[1] / l, a[2] / l]; }
+  function ik2(S, T, a, b, pole) {
+    let d = [T[0] - S[0], T[1] - S[1], T[2] - S[2]];
+    let L = hypot(d[0], d[1], d[2]) || 1e-3;
+    const u = [d[0] / L, d[1] / L, d[2] / L];
+    L = clamp(L, abs(a - b) + 1, (a + b) * 0.999);
+    const x = (a * a - b * b + L * L) / (2 * L), h = sqrt(max(0, a * a - x * x));
+    const pd = pole[0] * u[0] + pole[1] * u[1] + pole[2] * u[2];
+    let v = [pole[0] - u[0] * pd, pole[1] - u[1] * pd, pole[2] - u[2] * pd];
+    if (hypot(v[0], v[1], v[2]) < 1e-4) v = [0, 1, 0];
+    v = v3n(v);
+    return [[S[0] + u[0] * x + v[0] * h, S[1] + u[1] * x + v[1] * h, S[2] + u[2] * x + v[2] * h], [S[0] + u[0] * L, S[1] + u[1] * L, S[2] + u[2] * L]];
+  }
+  // place arms given by P.armSpec / P.aim (after the rig is grounded). Pure.
+  function applyArms(def, P, J, o, Y) {
+    if (!P.armSpec) return;
+    const B = def.body, sY = sin(Y), cY = cos(Y), Lr = B.upper + B.fore;
+    const spec = { R: P.armSpec.R, L: P.armSpec.L };
+    const W3 = (v, sg) => J.bdir([v[0], -v[1], sg * v[2]], P.twist);
+    if (P.aim && o.pointAt) {
+      const s = o.scale || 1, fac = o.facing < 0 ? -1 : 1, sq = clamp(o.squash || 0, 0, 1);
+      const lx = (o.pointAt.x - (o.x || 0)) / (s * fac * (1 - 0.12 * sq)), ly = (o.pointAt.y - (o.y || 0)) / (s * (1 - 0.04 * sq));
+      const scr = (p) => ({ x: p[0] * sY + p[2] * cY, z: p[0] * cY - p[2] * sY });
+      let k = o.arm === 'L' || o.arm === 'R' ? o.arm : null;
+      if (!k) {
+        const a = scr(J.shR), b = scr(J.shL);
+        if (abs(a.x - b.x) > 12) k = (lx - (a.x + b.x) / 2) * (a.x - b.x) > 0 ? 'R' : 'L';
+        else k = a.z >= b.z ? 'R' : 'L';
+      }
+      if (k !== P.aim.main) { // swap the two arms' roles
+        const o2 = k === 'R' ? 'L' : 'R';
+        spec[o2] = spec[k]; const h = P.hand[o2]; P.hand[o2] = P.hand[k]; P.hand[k] = h;
+      }
+      const Sh = J['sh' + k], sp = scr(Sh);
+      let ux = lx - sp.x, uy = ly - Sh[1];
+      const ul = hypot(ux, uy) || 1; ux /= ul; uy /= ul;
+      const d = v3n([sY * ux + 0.32 * cY, uy, cY * ux - 0.32 * sY]);
+      const sg = k === 'R' ? -1 : 1;
+      const pole = v3n(W3(P.aim.pole, sg));
+      const T = [Sh[0] + d[0] * Lr * P.aim.reach, Sh[1] + d[1] * Lr * P.aim.reach, Sh[2] + d[2] * Lr * P.aim.reach];
+      spec[k] = { T, pole };
+      P.hand[k] = P.aim.hand; P.aimArm = k;
+      if (o.headTurn == null) {
+        const hf = sY * ux, hl = cY * ux;
+        P.head.turn = clamp(atan2(hl, hf), -1.0, 1.0) * min(1, abs(ux) * 1.5) * 0.7;
+      }
+      P.head.pitch += -0.22 * max(0, -uy);
+    } else if (P.aim) P.aimArm = P.aim.main;
+    for (const k of ['R', 'L']) {
+      const sp = spec[k];
+      if (!sp) continue;
+      const sg = k === 'R' ? -1 : 1, Sh = J['sh' + k];
+      let E, Wr;
+      if (sp.u) {
+        const u = v3n(W3(sp.u, sg)), v = v3n(W3(sp.v, sg));
+        E = [Sh[0] + u[0] * B.upper, Sh[1] + u[1] * B.upper, Sh[2] + u[2] * B.upper];
+        Wr = [E[0] + v[0] * B.fore, E[1] + v[1] * B.fore, E[2] + v[2] * B.fore];
+      } else {
+        let T = sp.T;
+        if (!T && sp.off) { const d = W3(sp.off, sg); T = [Sh[0] + d[0] * Lr, Sh[1] + d[1] * Lr, Sh[2] + d[2] * Lr]; }
+        if (!T && sp.body) T = J.body(sp.body[0], sp.body[1], sg * sp.body[2]);
+        if (!T && sp.head) { const R = def.head.R, d = W3(sp.head, sg); T = [J.head[0] + d[0] * R, J.head[1] + d[1] * R, J.head[2] + d[2] * R]; }
+        const pole = sp.pole && sp.pole.length === 3 && !sp.T ? v3n(W3(sp.pole, sg)) : sp.pole;
+        [E, Wr] = ik2(Sh, T, B.upper, B.fore, pole || [0, 1, 0]);
+      }
+      J['elbow' + k] = E; J['wrist' + k] = Wr;
+    }
+  }
+
   /* ------------------------------------------------------------------ rig */
   function buildRig(def, P, rootY) {
     const B = def.body;
@@ -357,7 +549,7 @@
       return [r[0] * c + h * s, -(h * c - r[0] * s), r[1]];
     }
     const add = (p, d, k) => [p[0] + d[0] * k, p[1] + d[1] * k, p[2] + d[2] * k];
-    const J = { body, twAt, py };
+    const J = { body, twAt, py, bdir };
     for (const k of ['R', 'L']) {
       const sg = k === 'R' ? -1 : 1, g = P.legs[k];
       const hr = rot(0, sg * B.hipW, P.hipTwist);
@@ -418,6 +610,10 @@
     serious: { open: 0.76, tilt: 0.62, low: 0.12, pupil: 0.9, by: 0.07, ba: 0.52, arch: 0.4, mouth: 'frown', blush: 0 },
     shout: { open: 0.98, tilt: 0.72, low: 0.06, pupil: 0.78, by: 0.05, ba: 0.62, arch: 0.4, mouth: 'shout', blush: 0, minM: 0.5 },
     worried: { open: 0.92, tilt: -0.3, low: 0.05, pupil: 0.9, by: -0.08, ba: -0.4, arch: 0.8, mouth: 'frown', blush: 0.2 },
+    // v2 (episode 1)
+    sad: { open: 0.7, tilt: -0.28, low: 0.3, pupil: 1, by: -0.07, ba: -0.55, arch: 0.9, mouth: 'soft', blush: 0.35 },
+    proud: { open: 0.62, tilt: 0.22, low: 0.34, pupil: 0.95, by: 0.02, ba: 0.1, arch: 0.9, mouth: 'smirk', blush: 0.4 },
+    smile: { open: 0.68, tilt: -0.08, low: 0.48, pupil: 1, by: -0.03, ba: -0.22, arch: 1, mouth: 'smile', blush: 0.55 },
   };
 
   /* ------------------------------------------------------------------ head */
@@ -437,6 +633,7 @@
       else { const k = (au - 0.74) / 0.26; x = lerp(FACE_Q[i][0], FACE_S[i][0], k); y = lerp(FACE_Q[i][1], FACE_S[i][1], k); }
       if (y > 0.3) { y = 0.3 + (y - 0.3) * j; }
       if (shape && shape.wide && y > -0.2) x *= shape.wide;
+      if (shape && shape.narrow && y > 0.2) x *= 1 - 0.5 * shape.narrow * clamp((y - 0.2) / 0.5, 0, 1);
       pts.push({ x: x * sg, y, c: CORNER_S[i] && au > 0.93 ? 1 : 0 });
     }
     return pts;
@@ -523,6 +720,10 @@
   const NAPE_DEFAULT = [
     { r: -1.95, t: -2.0, w: 0.3, ft: -0.32, rr: 0.18 }, { r: -2.5, t: -2.6, w: 0.34, ft: -0.5, rr: 0.0 }, { r: -2.95, t: -3.05, w: 0.3, ft: -0.6, rr: -0.15 },
     { r: 1.95, t: 2.0, w: 0.3, ft: -0.32, rr: 0.18 }, { r: 2.5, t: 2.6, w: 0.34, ft: -0.5, rr: 0.0 }, { r: 2.95, t: 3.05, w: 0.3, ft: -0.6, rr: -0.15 },
+  ];
+  const NAPE_BACK = [
+    { r: PI - 1.0, t: PI - 1.08, w: 0.3, dft: 0.06 }, { r: PI - 0.5, t: PI - 0.55, w: 0.3, dft: -0.02 }, { r: PI, t: PI + 0.04, w: 0.3, dft: -0.05 },
+    { r: PI + 0.5, t: PI + 0.56, w: 0.3, dft: -0.02 }, { r: PI + 1.0, t: PI + 1.08, w: 0.3, dft: 0.06 },
   ];
   function strandPts(sp, s, t, sway) {
     const rr = s.rr != null ? s.rr : 0.46;
@@ -673,13 +874,17 @@
     ctx.translate(M.x, M.y);
     ctx.scale(M.fx, 1);
     const w = M.w, m = M.m, base = M.base;
-    const smile = base === 'smile' ? 1 : base === 'firm' ? 0.3 : base === 'frown' ? -0.6 : base === 'o' ? 0 : 0;
+    const smile = base === 'smile' ? 1 : base === 'soft' ? 0.6 : base === 'smirk' ? 0.85 : base === 'firm' ? 0.3 : base === 'frown' ? -0.6 : base === 'o' ? 0 : 0;
     ctx.strokeStyle = G.line; ctx.lineJoin = 'round'; ctx.lineCap = 'round';
     if (m < 0.06 && base !== 'shout') {
       const p = new Path2D();
       if (base === 'o') { ctx.beginPath(); ctx.ellipse(0, 0.01, 0.045, 0.035, 0, 0, TAU); ctx.fillStyle = M.inner; ctx.fill(); ctx.lineWidth = G.lw * 0.7; ctx.stroke(); ctx.restore(); return; }
+      if (base === 'smirk') { p.moveTo(-w * 0.45, -0.012); p.quadraticCurveTo(0.02, 0.04, w / 2, -0.07); }
+      else if (base === 'soft') { p.moveTo(-w * 0.4, -smile * 0.03); p.quadraticCurveTo(0, smile * 0.04 + 0.004, w * 0.4, -smile * 0.03); }
+      else {
       p.moveTo(-w / 2, -smile * 0.04);
       p.quadraticCurveTo(0, smile * 0.055 + 0.005, w / 2, -smile * 0.04);
+      }
       ctx.lineWidth = G.lw * 0.85; ctx.stroke(p);
       if (smile > 0.5) { // small dimple ticks
         ctx.lineWidth = G.lw * 0.5;
@@ -743,6 +948,7 @@
     const Y = yawDeg * DEG;
     const P = solvePose(def, o);
     const J = rigGrounded(def, P);
+    if (P.armSpec) applyArms(def, P, J, o, Y);
     return { o, Y, P, J };
   }
 
@@ -907,6 +1113,11 @@
       let z = (sh.z + el.z * 1.5 + wr.z * 1.5) / 4;
       if (z > 4 || P.hold) z = max(z, coverZ + 1);
       if (P.hold) z = coverZ + 1 + 30 * abs(cY) + (sh.z > 1 ? 1 : 0);
+      if (cY < -0.1 && !P.hold && z > -8) z = max(z, coverZ + 1.2);
+      if (P.ext && cY > -0.1) {
+        const hd = Q.head;
+        if (wr.z > hd.z + 4 && hypot(wr.x - hd.x, wr.y - hd.y) < def.head.R * 1.8) z = 1e4 + 1 + (k === 'R' ? 0.1 : 0);
+      }
       addG(z, () => drawArm(k, sh, el, wr));
     }
     function drawHand(k, wr, dir, kind) {
@@ -916,6 +1127,12 @@
       const p = new Path2D();
       if (kind === 'fist') {
         p.ellipse(hc.x, hc.y, hr * 1.08, hr * 0.98, ang, 0, TAU);
+      } else if (kind === 'point' || kind === 'vsign') {
+        p.ellipse(hc.x, hc.y, hr * 1.0, hr * 0.92, ang, 0, TAU);
+        for (const da of kind === 'point' ? [0.05] : [-0.24, 0.2]) {
+          const a2 = ang + da, c2 = cos(a2), s2 = sin(a2);
+          p.addPath(capsule({ x: hc.x + c2 * hr * 0.4, y: hc.y + s2 * hr * 0.4 }, { x: hc.x + c2 * hr * 2.35, y: hc.y + s2 * hr * 2.35 }, hr * 0.32, hr * 0.27));
+        }
       } else {
         const L = kind === 'cup' ? hr * 1.5 : hr * 1.75;
         const c = { x: wr.x + dir.x * L * 0.62, y: wr.y + dir.y * L * 0.62 };
@@ -939,7 +1156,7 @@
       if (out.armExtra) for (const e of out.armExtra(pal, { sh, el, wr, lp2, capsule, B })) { e.z = (el.z + wr.z) / 2; e.ord = 2; parts.push(e); }
       parts.sort((a, b) => (a.z - b.z) || (a.ord - b.ord));
       drawParts(G, parts);
-      if (out.armDetail) out.armDetail(G, pal, { sh, el, wr, k, dir, hand, lp2, capsule, B, P });
+      if (out.armDetail) out.armDetail(G, pal, { sh, el, wr, k, dir, hand, lp2, capsule, B, P, o });
       if (P.hand[k] === 'fist') {
         ctx.lineWidth = lw * 0.5; ctx.strokeStyle = G.line;
         const nx = -dir.y, ny = dir.x;
@@ -1008,7 +1225,7 @@
     const speed = P.speed, ph = P.phase;
 
     if (stage === 'back') {
-      if (hair.pony) drawPonytail(G, def, sp, hy, t, speed, ph);
+      if (hair.pony && !(cos(hy) < -0.05)) drawPonytail(G, def, sp, hy, t, speed, ph);
       if (H.backLayerExtra) H.backLayerExtra(G, pal, { sp, hy, t, speed, ph });
       ctx.restore();
       return;
@@ -1046,9 +1263,13 @@
     };
     for (const E of ears) if (E.e.z < 0.45) drawEar(E);
     // ---- face
-    const fpts = faceOutline(hy, H.shape);
+    const cbk = cos(hy), kb = clamp(-cbk * 3, 0, 1), nb = clamp((-cbk - 0.55) / 0.35, 0, 1);
+    const jawK = 1 + clamp(HS.pitch + 0.08, -0.5, 0) * 0.9;
+    const fshape = nb > 0 || jawK < 1 ? Object.assign({}, H.shape, { narrow: nb, jaw: ((H.shape && H.shape.jaw) || 1) * jawK }) : H.shape;
+    const fpts = faceOutline(hy, fshape);
     const faceP = smooth(fpts, true);
-    drawParts(G, [{ p: faceP, c: { b: pal.skin.b, s: mix(pal.skin.b, pal.skin.s, 0.55) }, k: 0.06 }]);
+    const skinB = kb > 0 ? mix(pal.skin.b, pal.skin.s, 0.3 * kb) : pal.skin.b;
+    drawParts(G, [{ p: faceP, c: { b: skinB, s: mix(pal.skin.b, pal.skin.s, 0.55) }, k: 0.06 }]);
     for (const E of ears) if (E.e.z >= 0.45) drawEar(E);
 
     // ---- features
@@ -1058,11 +1279,11 @@
     if (o.eyeOpen != null) open = o.eyeOpen;
     const mouthV = max(clamp(o.mouth || 0, 0, 1), ex.minM || 0);
     const ahy = abs(sin(hy));
-    const hyF = hy * (0.52 + 0.48 * ahy * ahy * ahy * ahy);
+    const hyF = cbk < 0 ? hy : hy * (0.52 + 0.48 * ahy * ahy * ahy * ahy);
     const spF = makeSphere(hyF, HS.pitch);
     // blush
     const blushA = (o.blush != null ? o.blush : ex.blush) * (H.blush != null ? H.blush : 1);
-    if (blushA > 0) {
+    if (blushA > 0 && cbk > -0.05) {
       for (const sg of [-1, 1]) {
         const b = spF(sg * 0.66, -0.4, 1);
         if (b.z < 0.15) continue;
@@ -1076,7 +1297,7 @@
     }
     // eyes
     const eyes = [];
-    const look = o.look || { x: 0, y: 0 };
+    const look = o.look || P.lookDefault || { x: 0, y: 0 };
     for (const sg of [-1, 1]) {
       const near = sg * sin(hy) < 0;
       const eyeL = H.eyeLam + (near ? 0.22 : -0.08) * ahy;
@@ -1106,14 +1327,15 @@
     {
       const m = spF(0.0, H.mouthPhi || -0.62, 1.0);
       const cz = max(cos(hy), 0);
-      drawMouth(G, {
+      if (!(cbk < 0 && m.z < -0.02)) drawMouth(G, {
         x: m.x + (0.06 - 0.13 * Math.pow(ahy, 6)) * sin(hy), y: m.y + 0.02, w: H.mouthW || 0.26, fx: (0.32 + 0.68 * cz) * (sin(hy) < -0.01 ? -1 : 1),
         m: mouthV, base: ex.mouth, inner: pal.mouthIn, tongue: pal.tongue, vowel: o.vowel,
       });
     }
     // ---- front hair: cap + bangs + locks (with soft shadow on skin)
     const hairC = { b: pal.hair.b, s: pal.hair.s, h: pal.hair.h };
-    const cap = capPath(sp, hair);
+    const hairB = kb > 0 ? Object.assign({}, hair, { bound: [(hair.bound || [0.42, 0.05, -0.55])[0], (hair.bound || [0.42, 0.05, -0.55])[1], (hair.bound || [0.42, 0.05, -0.55])[2] - 0.38 * kb] }) : hair;
+    const cap = capPath(sp, hairB);
     const strands = [];
     const sw = (i) => 0.025 * sin(t * 1.8 + i * 1.3) + 0.04 * speed * sin(TAU * 2 * ph - i * 0.7) - 0.05 * speed * sin(hy);
     (hair.bangs || []).forEach((b, i) => { const S = strandPts(sp, b, t, sw(i)); if (S.root.z > -0.12 && S.tip.z > -0.2) strands.push(S); });
@@ -1127,6 +1349,13 @@
       const S = strandPts(sp, b, t, 0.03 * sin(t * 1.7 + i) + 0.05 * speed * sin(TAU * 2 * ph - i));
       if (S.root.z > 0.0 && S.tip.z > -0.1) strands.push(S);
     });
+    if (kb > 0) {
+      const nbk = (hair.bound || [0, 0, -0.55])[2] - 0.38 * kb;
+      NAPE_BACK.forEach((b, i) => {
+        const S = strandPts(sp, Object.assign({}, b, { rr: nbk + 0.3, ft: nbk - 0.16 * kb + (b.dft || 0) }), t, 0.03 * sin(t * 1.5 + i * 1.7) + 0.05 * speed * sin(TAU * 2 * ph - i));
+        if (S.root.z > 0.05) strands.push(S);
+      });
+    }
     const strandPaths = strands.map((S) => smooth(S.pts, true));
     // shadow from hair on face
     ctx.save();
@@ -1167,6 +1396,7 @@
       const a = sp(lam0 - hy * 0, 0.95, 1.07), b = sp(lam0 + 0.15, 0.6, 1.07);
       if (a.z > 0 && b.z > 0.1) { ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.quadraticCurveTo((a.x + b.x) / 2 + 0.03, (a.y + b.y) / 2, b.x, b.y); ctx.stroke(); }
     }
+    if (hair.pony && cbk < -0.05) drawPonytail(G, def, sp, hy, t, speed, ph);
     // brows over hair (anime convention)
     for (const E of eyes) { ctx.save(); ctx.globalAlpha *= E.alpha * 0.95; drawBrow(G, E, ex); ctx.restore(); }
     // accessories

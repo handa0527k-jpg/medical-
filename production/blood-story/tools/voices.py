@@ -80,6 +80,10 @@ LINES = [
          speech="運ぶ赤血球。そして、からだを守る白血球。血液の中では、今日も戦いが続いている。", rate=6),
 ]
 
+# Episode 1 (script #2-#36): ids "E01-xx". Build them with  --only-prefix E01-  (intro files untouched).
+from episode01_lines import EPISODE01_LINES  # noqa: E402
+LINES += EPISODE01_LINES
+
 
 # ----------------------------------------------------------------------------- engine
 def edge_module():
@@ -224,10 +228,10 @@ def settings(line):
                 comma_cap=line.get("comma_cap", ch["comma_cap"]))
 
 
-async def build(only=None, force=False):
+async def build(only=None, force=False, prefix=""):
     os.makedirs(RAW_DIR, exist_ok=True)
     M = edge_module()
-    todo = [l for l in LINES if not only or l["id"] in only]
+    todo = [l for l in LINES if (not only or l["id"] in only) and (not prefix or l["id"].startswith(prefix))]
 
     async def one(l):
         s = settings(l)
@@ -268,5 +272,6 @@ if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument("--only", default="")
     ap.add_argument("--force", action="store_true")
+    ap.add_argument("--only-prefix", default="", help="e.g. E01- : only the episode-1 lines")
     a = ap.parse_args()
-    asyncio.run(build([s for s in a.only.split(",") if s], a.force))
+    asyncio.run(build([s for s in a.only.split(",") if s], a.force, a.only_prefix))
