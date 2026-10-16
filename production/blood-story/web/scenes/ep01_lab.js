@@ -42,10 +42,17 @@
     ctx.restore();
   }
   const band = (o) => c().handAnchor('akane', o).L.band;
-  // transparent offscreen (for blurred / out-of-focus holograms)
-  const offs = {};
-  function layer(name) { let cv = offs[name]; if (!cv) { cv = offs[name] = document.createElement('canvas'); cv.width = W; cv.height = H; } const g = cv.getContext('2d'); g.setTransform(1, 0, 0, 1, 0, 0); g.globalAlpha = 1; g.globalCompositeOperation = 'source-over'; g.filter = 'none'; g.clearRect(0, 0, W, H); return [cv, g]; }
-  function blurred(ctx, px, alpha, fn) { const [cv, g] = layer('blur'); fn(g); ctx.save(); ctx.globalAlpha = alpha; ctx.filter = `blur(${px}px)`; ctx.drawImage(cv, 0, 0); ctx.restore(); }
+    // out-of-focus layer: drawn at 1/4 resolution, then upscaled with smoothing (cheap defocus, no canvas filter)
+  let small = null;
+  function blurred(ctx, px, alpha, fn) {
+    const k = 1 / Math.max(2, px * 0.6);
+    if (!small) small = document.createElement('canvas');
+    const sw = Math.ceil(W * k), sh = Math.ceil(H * k);
+    if (small.width !== sw || small.height !== sh) { small.width = sw; small.height = sh; }
+    const g = small.getContext('2d'); g.setTransform(1, 0, 0, 1, 0, 0); g.globalAlpha = 1; g.globalCompositeOperation = 'source-over'; g.filter = 'none'; g.clearRect(0, 0, sw, sh);
+    g.setTransform(k, 0, 0, k, 0, 0); fn(g);
+    ctx.save(); ctx.globalAlpha = alpha; ctx.imageSmoothingEnabled = true; ctx.imageSmoothingQuality = 'high'; ctx.drawImage(small, 0, 0, W, H); ctx.restore();
+  }
   function dim(ctx, a, col = '10,0,4') { if (a <= 0) return; ctx.fillStyle = `rgba(${col},${a})`; ctx.fillRect(-W, -H, W * 3, H * 3); }
   function screen(ctx, fn) { ctx.save(); ctx.setTransform(1, 0, 0, 1, 0, 0); fn(); ctx.restore(); }
   function glowSpot(ctx, x, y, r, col, a) { if (a <= 0) return; ctx.save(); ctx.globalCompositeOperation = 'lighter'; const g = ctx.createRadialGradient(x, y, 0, x, y, r); g.addColorStop(0, `rgba(${col},${a})`); g.addColorStop(1, `rgba(${col},0)`); ctx.fillStyle = g; ctx.fillRect(x - r, y - r, 2 * r, 2 * r); ctx.restore(); }
