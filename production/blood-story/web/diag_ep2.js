@@ -1731,7 +1731,7 @@
       ctx.restore();
       ctx.restore();
       txt(ctx, 'パーフォリン：膜に輪状の通り道', IX, IY + IR + 34, { size: 25, align: 'center', a: ins, color: [255, 236, 150], glow: [255, 200, 90] });
-      txt(ctx, 'グランザイム：通り道から入る', IX, IY + IR + 72, { size: 25, align: 'center', a: win(p, 0.5, 0.58) * ins / Math.max(ins, 1e-3), color: [150, 255, 180], glow: [90, 220, 130] });
+      txt(ctx, 'グランザイム：通り道から入る', IX, IY + IR + 72, { size: 25, align: 'center', a: Math.min(win(p, 0.5, 0.58), ins), color: [150, 255, 180], glow: [90, 220, 130] });
     }
     // labels
     tagW(ctx, 'NK細胞', -700, -330, { size: 40, accent: [255, 120, 160], grow: win(p, 0.09, 0.16), tx: nkx - nkR * 0.4, ty: ty - nkR * 0.6, sub: '大型顆粒リンパ球（LGL）', subSize: 22 });
