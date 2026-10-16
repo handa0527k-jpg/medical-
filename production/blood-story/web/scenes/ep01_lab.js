@@ -540,7 +540,7 @@
           w().drawVignette(g, { strength: 0.65 });
         } },
       { // 10. she lifts her face: determined, then a smile — light from ahead
-        a: b.akane_faces_forward - 0.05, b: L24.end - 0.05, tin: { type: 'dissolve', dur: 0.3 }, draw: (g, lt, tt) => {
+        a: b.akane_faces_forward - 0.05, b: L24.end - 0.05, draw: (g, lt, tt) => {
           const sm = tt > L24.start + (L24.end - L24.start) * 0.8;
           const o = placeHead(AK(tt, { scale: 3.3, yaw: 20, pose: 'stand', expr: sm ? 'smile' : 'determined', look: { x: 0.15, y: -0.15 }, rim: { color: '#ffc08a', strength: 0.7 } }), 900, 420);
           BS.common.camera(g, { x: 960, y: 540, zoom: lerp(1.04, 1.16, prog(tt, b.akane_faces_forward, L24.end)) }, () => {

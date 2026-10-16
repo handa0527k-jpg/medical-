@@ -5,7 +5,7 @@
 (() => {
   const { W, H, clamp, lerp, ease, prog } = BS.common;
   BS.ep01 = BS.ep01 || {};
-  const DEPS = ['intro.js', 'ep01_lab.js', 'ep01_rbc.js', 'ep01_life.js', 'ep01_battle.js', 'ep01_end.js'];
+  const DEPS = ['intro.js', 'ep01_lab.js', 'ep01_rbc.js', 'ep01_battle.js', 'ep01_end.js'];
   const XF = 0.5;
   const load = (src) => new Promise((r) => { const s = document.createElement('script'); s.src = `scenes/${src}`; s.onload = r; s.onerror = () => { console.error('missing ' + src); r(); }; document.body.appendChild(s); });
 
