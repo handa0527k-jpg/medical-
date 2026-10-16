@@ -2067,7 +2067,7 @@
     // dye swirls
     ctx.globalCompositeOperation = 'source-over'; ctx.lineCap = 'round';
     for (i = 0; i < 26; i++) { R = rng(12100 + i); var sx = fr - R() * W * 1.2, sy = R() * H, rr = 40 + R() * 120, a0 = R() * TAU + t * (0.5 + R());
-      ctx.strokeStyle = rgba(P.col, 0.25 * (1 - calm)); ctx.lineWidth = 6 + R() * 10; ctx.beginPath(); ctx.arc(sx, sy, rr, a0, a0 + 2.2); ctx.stroke(); }
+      ctx.strokeStyle = rgba(P.col, 0.12 * (1 - calm)); ctx.lineWidth = 6 + R() * 10; ctx.beginPath(); ctx.arc(sx, sy, rr, a0, a0 + 2.2); ctx.stroke(); }
     ctx.restore();
     // crest (foam) + bubbles
     if (calm < 1) {
