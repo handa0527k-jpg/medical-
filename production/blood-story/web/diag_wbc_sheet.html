@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>BLOOD STORY – diag_wbc sheet (D2)</title>
+<style>
+  @font-face { font-family: ZenKaku; src: url(../fonts/ZenKakuGothicNew-Bold.ttf); }
+  @font-face { font-family: IPAGothic; src: url(../fonts/ipag.ttf); }
+  html, body { margin: 0; background: #0b0306; }
+  canvas { display: block; width: 100%; height: auto; }
+</style>
+</head>
+<body>
+<canvas id="c" width="1920" height="1080"></canvas>
+<script src="world.js"></script>
+<script src="characters.js"></script>
+<script src="diag_wbc.js"></script>
+<script>
+/* Modes:
+ *   diag_wbc_sheet.html               contact sheet of all functions (window.sheetURL = PNG data URL when done)
+ *   diag_wbc_sheet.html?anim=<name>   single 1920x1080 preview: window.cutDuration, window.renderFrame(t) -> JPEG
+ *   &t=<s> draws one frame.  window.timing(name, n) -> ms/frame of the draw call only.
+ */
+(async function () {
+  const W = BS.world, D = BS.diag, C = BS.chars;
+  await W.ready(); await D.readyWBC(); await document.fonts.ready;
+  const q = new URLSearchParams(location.search);
+  const cv = document.getElementById('c'), ctx = cv.getContext('2d');
+  const F = (px) => px + 'px ZenKaku, IPAGothic, sans-serif';
+  const clamp = (x, a = 0, b = 1) => Math.max(a, Math.min(b, x));
+  const ramp = (t, a, b) => clamp((t - a) / (b - a));
+  function reset(c) { c.setTransform(1, 0, 0, 1, 0, 0); c.globalAlpha = 1; c.globalCompositeOperation = 'source-over'; c.clearRect(0, 0, 1920, 1080); }
+  function vessel(c, t) { W.drawVesselSide(c, { t, scrollX: t * 120, layers: 'back' }); }
+  const GROUND = 891;
+
+  // ---- scenes: draw(ctx, t) ; dur seconds
+  const S = {
+    bacterium: { dur: 5, draw(c, t) {
+      D.wbcBackdrop(c, { t });
+      const st = t < 1.8 ? 'idle' : t < 3.2 ? 'caught' : 'digested';
+      D.bacterium(c, { x: 760, y: 540, size: 520, t, state: st, p: ramp(t, 3.2, 4.8) });
+      D.bacterium(c, { x: 1560, y: 330, size: 240, t: t + 1, kind: 'cocci', state: st, p: ramp(t, 3.2, 4.8), seed: 2 });
+      D.wbcChip(c, 'state: ' + st, 960, 960, { size: 32 });
+    } },
+    phagocytosis: { dur: 6, draw(c, t) { D.phagocytosis(c, { x: 900, y: 500, p: ramp(t, 0.2, 5.6), t, bg: true, title: '貪食のしくみ' }); } },
+    engulf: { dur: 4, draw(c, t) {
+      vessel(c, t);
+      const hand = { x: 700, y: 560 };
+      D.bacterium(c, { x: 1180, y: 560, size: 300, t, state: t < 1.2 ? 'idle' : 'caught', flip: true, flagella: 1 - 0.75 * ramp(t, 1.6, 2.6) });
+      C.drawShirou(c, { x: 520, y: GROUND, scale: 0.95, facing: 1, view: 'side', pose: 'ready', expr: 'shout', t });
+      D.engulfFX(c, { centerX: 1180, centerY: 560, radius: 230, p: ramp(t, 0.3, 3.2), t, originX: hand.x, originY: hand.y });
+      W.drawFlowCells(c, { t, scrollX: t * 120, layer: 'front' });
+    } },
+    lineup: { dur: 5, draw(c, t) { D.wbcBackdrop(c, { t }); D.wbcLineup(c, { x: 960, y: 560, p: ramp(t, 0.1, 3.6), t, highlight: t > 3.8 ? 0 : -1, highlightAmt: ramp(t, 3.8, 4.3) }); } },
+    neutrophil: { dur: 5, draw(c, t) { D.wbcBackdrop(c, { t }); D.neutrophilCard(c, { x: 960, y: 540, p: ramp(t, 0.1, 4.4), t }); } },
+    allies: { dur: 6, draw(c, t) {
+      vessel(c, t * 0.3);
+      const v = Math.min(3, Math.floor(t / 1.5)), lt = t - v * 1.5;
+      C.drawWBCAlly(c, { x: 1350, y: GROUND, scale: 0.95, facing: -1, view: 'threeq', pose: 'ready', variant: v, t });
+      D.allyCards(c, { variant: v, x: 110, y: 330, p: ramp(lt, 0, 0.9), t, exit: v < 3 ? ramp(lt, 1.25, 1.5) : 0 });
+    } },
+    clot: { dur: 6, draw(c, t) { D.woundAndClot(c, { p: ramp(t, 0.2, 5.7), t }); } },
+    pullback: { dur: 6, draw(c, t) { D.bodyPullback(c, { p: ramp(t, 0.2, 5.4), t }); } },
+    victory: { dur: 3, draw(c, t) {
+      vessel(c, t);
+      D.victoryFX(c, { x: 960, y: 520, p: ramp(t, 0.1, 2.9), t });
+      C.drawShirou(c, { x: 960, y: GROUND, scale: 0.95, facing: 1, view: 'front', pose: 'stand', expr: 'calm', t });
+    } },
+  };
+
+  const anim = q.get('anim');
+  window.timing = (name, n = 20) => {
+    const s = S[name]; const ts = []; for (let i = 0; i < n; i++) { const t = (i / n) * s.dur; reset(ctx); const t0 = performance.now(); s.draw(ctx, t); ts.push(performance.now() - t0); }
+    ts.sort((a, b) => a - b); return { median: ts[n >> 1], max: ts[n - 1] };
+  };
+  if (anim) {
+    const s = S[anim];
+    window.cutDuration = s.dur;
+    window.drawAt = (t) => { reset(ctx); ctx.fillStyle = '#000'; ctx.fillRect(0, 0, 1920, 1080); s.draw(ctx, t); };
+    window.renderFrame = (t) => { window.drawAt(t); return cv.toDataURL('image/jpeg', 0.93); };
+    if (q.get('t') !== null) window.drawAt(+q.get('t'));
+    window.ready = true; return;
+  }
+
+  // ---- contact sheet
+  const panels = [
+    ['1. bacterium idle / caught / digested p=.45 / cocci', (c) => {
+      D.wbcBackdrop(c, { t: 1 });
+      D.bacterium(c, { x: 330, y: 330, size: 380, t: 0.7, state: 'idle' });
+      D.bacterium(c, { x: 1050, y: 330, size: 380, t: 1.33, state: 'caught' });
+      D.bacterium(c, { x: 1600, y: 330, size: 330, t: 1, state: 'digested', p: 0.45 });
+      D.bacterium(c, { x: 600, y: 800, size: 300, t: 1, kind: 'cocci' });
+      D.bacterium(c, { x: 1350, y: 800, size: 300, t: 1, state: 'digested', p: 0.8 });
+    }],
+    ['2. phagocytosis p=0.24 (pseudopods)', (c) => D.phagocytosis(c, { x: 900, y: 500, p: 0.24, t: 1, bg: true })],
+    ['3. phagocytosis p=0.52 (lysosome fusion)', (c) => D.phagocytosis(c, { x: 900, y: 500, p: 0.52, t: 1, bg: true })],
+    ['4. phagocytosis p=0.74 (phagolysosome / ROS)', (c) => D.phagocytosis(c, { x: 900, y: 500, p: 0.74, t: 1, bg: true })],
+    ['5. phagocytosis p=0.97 (residual body)', (c) => D.phagocytosis(c, { x: 900, y: 500, p: 0.97, t: 1, bg: true })],
+    ['6. engulfFX p=0.45 over bacterium + Shirou ready', (c) => S.engulf.draw(c, 0.3 + 0.45 * 2.9)],
+    ['7. engulfFX p=0.92 (sealed)', (c) => S.engulf.draw(c, 0.3 + 0.92 * 2.9)],
+    ['8. wbcLineup p=1 highlight=0', (c) => { D.wbcBackdrop(c, { t: 1 }); D.wbcLineup(c, { x: 960, y: 560, p: 1, t: 1, highlight: 0 }); }],
+    ['9. neutrophilCard p=1', (c) => { D.wbcBackdrop(c, { t: 1 }); D.neutrophilCard(c, { p: 1, t: 1 }); }],
+    ['10. allyCards 0–3', (c) => { D.wbcBackdrop(c, { t: 1 }); for (let v = 0; v < 4; v++) D.allyCards(c, { variant: v, x: 60 + (v % 2) * 930, y: 120 + (v >> 1) * 440, p: 1, t: 1, scale: 1.08 }); }],
+    ['11. woundAndClot p=0.3 (adhesion)', (c) => D.woundAndClot(c, { p: 0.3, t: 1 })],
+    ['12. woundAndClot p=0.62 (aggregation)', (c) => D.woundAndClot(c, { p: 0.62, t: 1 })],
+    ['13. woundAndClot p=1 (fibrin mesh)', (c) => D.woundAndClot(c, { p: 1, t: 1 })],
+    ['14. woundAndClot labels:false (bg plate) + chars', (c) => {
+      const L = D.woundAndClot(c, { p: 0.45, t: 1, labels: false, wallY: 860 });
+      C.drawShirou(c, { x: 560, y: L.groundY, scale: 0.8, facing: 1, view: 'threeq', pose: 'stand', expr: 'serious', t: 1 });
+      C.drawAkane(c, { x: 1400, y: L.groundY, scale: 0.75, facing: -1, view: 'threeq', pose: 'stand', expr: 'surprised', t: 1 });
+    }],
+    ['15. bodyPullback p=0', (c) => D.bodyPullback(c, { p: 0, t: 1 })],
+    ['16. bodyPullback p=0.35', (c) => D.bodyPullback(c, { p: 0.35, t: 1 })],
+    ['17. bodyPullback p=0.6', (c) => D.bodyPullback(c, { p: 0.6, t: 1 })],
+    ['18. bodyPullback p=1', (c) => D.bodyPullback(c, { p: 1, t: 1 })],
+    ['19. victoryFX p=0.2 + Shirou', (c) => S.victory.draw(c, 0.1 + 0.2 * 2.8)],
+    ['20. victoryFX p=0.7', (c) => S.victory.draw(c, 0.1 + 0.7 * 2.8)],
+    ['21. wbcCell types (sil 0 → 1)', (c) => {
+      D.wbcBackdrop(c, { t: 1 });
+      D.WBC_TYPES.forEach((ty, i) => { D.wbcCell(c, { type: ty, x: 220 + i * 370, y: 330, r: 130, t: 1, seed: i + 1 }); D.wbcCell(c, { type: ty, x: 220 + i * 370, y: 760, r: 110, t: 1, sil: 0.3, seed: i + 1 }); });
+      c.font = F(36); c.fillStyle = '#fff'; c.fillText('sil = 0.3（シルエット→着色）', 60, 980);
+    }],
+  ];
+  const cols = 3, cw = 960, ch = 540, top = 120, rows = Math.ceil(panels.length / cols);
+  const sheet = document.createElement('canvas'); sheet.width = cols * cw; sheet.height = top + rows * ch;
+  const sx = sheet.getContext('2d');
+  sx.fillStyle = '#0b0306'; sx.fillRect(0, 0, sheet.width, sheet.height);
+  sx.font = F(58); sx.fillStyle = '#ff6a6a'; sx.fillText('BLOOD STORY ― 白血球・貪食・凝固・全景 設定表 (diag_wbc.js)', 30, 70);
+  sx.font = F(26); sx.fillStyle = '#d8c8d8'; sx.fillText('Agent D2 · 1920×1080 panels at 50% · BS.diag.*(ctx,{x,y,scale,p,t,...}) — μ ₂ ⁻ フォールバック確認: 12〜15 μm / H₂O₂ / O₂⁻', 30, 106);
+  for (let i = 0; i < panels.length; i++) {
+    reset(ctx); ctx.fillStyle = '#000'; ctx.fillRect(0, 0, 1920, 1080);
+    panels[i][1](ctx);
+    reset2();
+    const x = (i % cols) * cw, y = top + Math.floor(i / cols) * ch;
+    sx.drawImage(cv, x, y, cw, ch);
+    sx.font = F(26); sx.lineWidth = 6; sx.strokeStyle = 'rgba(0,0,0,0.85)'; sx.lineJoin = 'round';
+    sx.strokeText(panels[i][0], x + 14, y + ch - 16); sx.fillStyle = '#fff'; sx.fillText(panels[i][0], x + 14, y + ch - 16);
+    sx.strokeStyle = '#000'; sx.lineWidth = 4; sx.strokeRect(x, y, cw, ch);
+  }
+  function reset2() { ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.globalAlpha = 1; ctx.globalCompositeOperation = 'source-over'; }
+  cv.width = sheet.width; cv.height = sheet.height; ctx.drawImage(sheet, 0, 0);
+  window.sheetURL = sheet.toDataURL('image/png');
+  window.ready = true;
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+{
+ "duration_s": 294.1667,
+ "integrated_lufs": -16.0,
+ "true_peak_dbtp": -1.1,
+ "sample_peak_dbfs": -1.11,
+ "clipped_samples": 0,
+ "master_gain_db": 1.88,
+ "voice_lufs": -16.16,
+ "bgm_lufs_ducked": -25.78,
+ "sfx_lufs": -21.91,
+ "min_gap_episode": 0.35,
+ "scenes": [
+  [
+   "avant",
+   0.0,
+   35.7
+  ],
+  [
+   "title",
+   35.7,
+   41.2
+  ],
+  [
+   "comp",
+   41.2,
+   70.6667
+  ],
+  [
+   "plasma",
+   70.6667,
+   94.9667
+  ],
+  [
+   "shape",
+   94.9667,
+   125.8333
+  ],
+  [
+   "hb",
+   125.8333,
+   140.7667
+  ],
+  [
+   "co2",
+   140.7667,
+   168.1
+  ],
+  [
+   "life",
+   168.1,
+   201.7333
+  ],
+  [
+   "battle",
+   201.7333,
+   251.9667
+  ],
+  [
+   "platelet",
+   251.9667,
+   270.1333
+  ],
+  [
+   "epilogue",
+   270.1333,
+   288.1667
+  ],
+  [
+   "next",
+   288.1667,
+   294.1667
+  ]
+ ],
+ "problems": [],
+ "scene_lufs": {
+  "avant": -15.6,
+  "title": -16.4,
+  "comp": -16.0,
+  "plasma": -16.2,
+  "shape": -16.1,
+  "hb": -16.0,
+  "co2": -16.1,
+  "life": -16.1,
+  "battle": -15.8,
+  "platelet": -15.9,
+  "epilogue": -16.3,
+  "next": -16.5
+ }
+}

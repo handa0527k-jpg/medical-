@@ -355,8 +355,9 @@ SFX += [
 ]
 SFX += [("step_shirou", t, f"step_shirou_{i % 4}.wav", -14.0, (-0.12 if i % 2 == 0 else 0.12)) for i, t in enumerate(STEPS["squad"])]
 SFX += [("step_squad", t + 0.07, f"step_shirou_{(i + 2) % 4}.wav", -18.0, (0.3 if i % 2 == 0 else -0.3)) for i, t in enumerate(STEPS["squad"])]
+_n_intro = len(INTRO.SFX)
+SFX = SFX[:_n_intro] + [(n, snap(t), f, g, p) for n, t, f, g, p in SFX[_n_intro:]]   # intro times kept exactly
 SFX.sort(key=lambda s: s[1])
-SFX = [(n, snap(t), f, g, p) for n, t, f, g, p in SFX]
 BED_SFX = {"flow_bed", "siren", "squeeze", "centrifuge", "bubbles", "breath", "marrow_pulse", "bacteria_growl", "mesh_tighten"}
 
 # ----------------------------------------------------------------------------- music
