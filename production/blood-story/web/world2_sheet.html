@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>BLOOD STORY – World 2 Sheet (Ep2–4)</title>
+<style>
+  @font-face { font-family: ZenKaku; src: url(../fonts/ZenKakuGothicNew-Bold.ttf); }
+  @font-face { font-family: IPAGothic; src: url(../fonts/ipag.ttf); }
+  html, body { margin: 0; background: #0b0306; }
+  #sheet { display: block; width: 100%; height: auto; }
+</style>
+</head>
+<body>
+<canvas id="sheet" width="2880" height="3370"></canvas>
+<script src="characters.js"></script>
+<script src="world.js"></script>
+<script src="world2.js"></script>
+<script>
+(async function () {
+  const W = BS.world, C = BS.chars;
+  await W.ready();
+  await Promise.all([document.fonts.load('48px ZenKaku'), document.fonts.load('48px IPAGothic')]);
+  const sheet = document.getElementById('sheet'), sx = sheet.getContext('2d');
+  const pw = 1920, ph = 1080, cols = 3, cellW = 960, cellH = 540, top = 130;
+  const panel = document.createElement('canvas'); panel.width = pw; panel.height = ph;
+  const ctx = panel.getContext('2d');
+  const F = (px) => px + 'px ZenKaku, IPAGothic, sans-serif';
+  function clear() { ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.globalAlpha = 1; ctx.globalCompositeOperation = 'source-over'; ctx.filter = 'none'; ctx.clearRect(0, 0, pw, ph); }
+  function label(c2, text, x, y, size, color) {
+    c2.save(); c2.font = F(size || 30); c2.lineJoin = 'round'; c2.lineWidth = 6; c2.strokeStyle = 'rgba(0,0,0,0.85)';
+    c2.strokeText(text, x, y); c2.fillStyle = color || '#fff'; c2.fillText(text, x, y); c2.restore();
+  }
+  function ground(y, txt) {
+    ctx.save(); ctx.setLineDash([24, 16]); ctx.strokeStyle = '#6cf'; ctx.lineWidth = 4; ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(1920, y); ctx.stroke(); ctx.restore();
+    label(ctx, txt || ('groundY = ' + Math.round(y)), 40, y - 16, 36, '#9df');
+  }
+  const ak = (x, y, s, extra) => C && C.drawAkane && C.drawAkane(ctx, Object.assign({ x, y, scale: s, yaw: 30, pose: 'stand', expr: 'surprised', t: 1 }, extra || {}));
+  const panels = [
+    ['drawSkinWound view:"outside" (p=0.3)', () => { W.drawSkinWound(ctx, { t: 1, p: 0.3 }); }],
+    ['drawSkinWound p=0.53 (iris into the section)', () => { W.drawSkinWound(ctx, { t: 1, p: 0.53 }); }],
+    ['drawSkinWound view:"section" invade=0.8', () => { const L = W.drawSkinWound(ctx, { t: 2, view: 'section', invade: 0.8 }); label(ctx, '角質層', 1500, 300, 30); label(ctx, '有棘層', 1500, 395, 30); label(ctx, '真皮', 1500, 720, 30); }],
+    ['drawVenuleWall gap=0.85 squeeze=0.5 (+ Shirou in the gap)', () => {
+      const L = W.drawVenuleWall(ctx, { t: 1, gap: 0.85, squeeze: 0.5, layer: 'back' });
+      if (C && C.drawShirou) C.drawShirou(ctx, { x: L.gapX, y: L.wallBottom + 120, scale: 0.42, yaw: 20, pose: 'reach', expr: 'determined', squash: 0.7, t: 1 });
+      ak(420, L.lumenGroundY, 0.45, { pose: 'wave', expr: 'happy' });
+      W.drawVenuleWall(ctx, { t: 1, gap: 0.85, squeeze: 0.5, layer: 'front' });
+      ground(L.lumenGroundY, 'lumenGroundY = ' + L.lumenGroundY); ground(L.tissueGroundY, 'tissueGroundY = ' + L.tissueGroundY);
+    }],
+    ['drawTissueField inflame=0.7 debris=0.6', () => { const L = W.drawTissueField(ctx, { t: 1, inflame: 0.7, debris: 0.6, layer: 'back' });
+      if (C && C.drawShirou) C.drawShirou(ctx, { x: 900, y: L.groundY, scale: 0.9, yaw: 30, pose: 'battle', expr: 'determined', t: 1 });
+      W.drawTissueField(ctx, { t: 1, layer: 'front' }); ground(L.groundY); }],
+    ['drawVesselTear view:"inside" p=0.9 pull=1', () => { const L = W.drawVesselTear(ctx, { t: 1, p: 0.9, layer: 'back' });
+      ak(560, L.groundY, 0.85, { pose: 'reach', expr: 'surprised', yaw: 60 }); W.drawVesselTear(ctx, { t: 1, p: 0.9, layer: 'front' }); ground(L.groundY); }],
+    ['drawVesselTear view:"outside" (引きのカット)', () => { W.drawVesselTear(ctx, { t: 1, p: 0.95, view: 'outside' }); }],
+    ['drawCollagenBed exposure=0.65 vwf=0.9', () => { const L = W.drawCollagenBed(ctx, { t: 1, exposure: 0.65, vwf: 0.9, flow: 0.3 }); ground(L.groundY); }],
+    ['drawFibrinNet p=1 (+ Akane caught, front strands)', () => { const L = W.drawFibrinNet(ctx, { t: 1, p: 1, layer: 'back' });
+      ak(960, 980, 0.95, { pose: 'reach', expr: 'surprised' }); W.drawFibrinNet(ctx, { t: 1, p: 1, layer: 'front' }); }],
+    ['drawFibrinNet p=0.45 (polymerising)', () => { W.drawFibrinNet(ctx, { t: 1, p: 0.45 }); }],
+    ['drawMarrowSinusoid mega:"site" sprout=1 stem=1', () => { const L = W.drawMarrowSinusoid(ctx, { t: 2, sprout: 1, stem: 1 });
+      label(ctx, '洞様毛細血管', 1400, 205, 32); label(ctx, '巨核球の場所', L.mega.x - 110, L.mega.y + 10, 32); label(ctx, '造血幹細胞', L.stem.x - 90, L.stem.y - 60, 30); }],
+    ['drawMarrowSinusoid mega:"cell" + drawFlashback', () => { W.drawMarrowSinusoid(ctx, { t: 2, mega: 'cell', sprout: 0.7 }); W.drawFlashback(ctx, { t: 2, amount: 1 }); }],
+    ['drawSimGrid boot=1 label', () => { const L = W.drawSimGrid(ctx, { t: 1, label: 'SIMULATION 01', speed: 0.5 }); ground(L.groundY); }],
+    ['drawSimGrid reset=0.2 (glitch)', () => { W.drawSimGrid(ctx, { t: 1.3, reset: 0.22 }); }],
+    ['drawSimGrid reset=0.4 (砂嵐 / REWIND)', () => { W.drawSimGrid(ctx, { t: 1, reset: 0.4 }); }],
+    ['drawSlideWorld persp p=0.1 (drop on the spreader)', () => { W.drawSlideWorld(ctx, { t: 1, p: 0.1 }); }],
+    ['drawSlideWorld persp p=0.6 (pushing, 30°)', () => { W.drawSlideWorld(ctx, { t: 1, p: 0.6 }); }],
+    ['drawSlideWorld persp p=1 good (羽根状)', () => { const L = W.drawSlideWorld(ctx, { t: 1, p: 1 }); ground(L.groundY); }],
+    ['drawSlideWorld top: good', () => { W.drawSlideWorld(ctx, { t: 1, p: 1, view: 'top', quality: 'good' }); }],
+    ['top: thick（短く厚い）', () => { W.drawSlideWorld(ctx, { t: 1, p: 1, view: 'top', quality: 'thick' }); }],
+    ['top: long（引き終わりがない）', () => { W.drawSlideWorld(ctx, { t: 1, p: 1, view: 'top', quality: 'long' }); }],
+    ['top: stopped / short（途中で止めた）', () => { W.drawSlideWorld(ctx, { t: 1, p: 1, view: 'top', quality: 'stopped' }); }],
+    ['top: streaks（縞）', () => { W.drawSlideWorld(ctx, { t: 1, p: 1, view: 'top', quality: 'streaks' }); }],
+    ['drawMicroscopeField cells:"body" + WBCs', () => { W.drawMicroscopeField(ctx, { t: 1, pointer: true, wbcs: [{ type: 'neutrophil', x: -2, y: 0 }, { type: 'eosinophil', x: -30, y: -14 }, { type: 'lymphocyte', x: 26, y: 14, seed: 2 }, { type: 'monocyte', x: 28, y: -22 }, { type: 'basophil', x: -22, y: 28 }] }); }],
+    ['drawMicroscopeField cells:"thick" / "feather"', () => { W.drawMicroscopeField(ctx, { t: 1, cells: 'thick', cx: 500, radius: 430 }); 
+      const c2 = document.createElement('canvas'); c2.width = 1920; c2.height = 1080; const x2 = c2.getContext('2d');
+      W.drawMicroscopeField(x2, { t: 1, cells: 'feather', cx: 1420, radius: 430, wbcs: [{ type: 'band', x: 6, y: 4 }] });
+      ctx.save(); ctx.beginPath(); ctx.rect(960, 0, 960, 1080); ctx.clip(); ctx.drawImage(c2, 0, 0); ctx.restore(); }],
+    ['drawStainedCell lineup (focus 1 / 0.5)', () => {
+      ctx.fillStyle = '#f2e6e8'; ctx.fillRect(0, 0, 1920, 1080);
+      const ty = ['rbc', 'platelet', 'neutrophil', 'band', 'eosinophil', 'basophil', 'lymphocyte', 'lgl', 'monocyte'];
+      ty.forEach((k, i) => { const r = W.CELL_UM[k] * 9; W.drawStainedCell(ctx, { type: k, x: 120 + i * 210, y: 330, r: r }); W.drawStainedCell(ctx, { type: k, x: 120 + i * 210, y: 690, r: r, focus: 0.45 });
+        ctx.save(); ctx.font = F(28); ctx.fillStyle = '#402030'; ctx.textAlign = 'center'; ctx.fillText(k, 120 + i * 210, 480); ctx.restore(); });
+    }],
+    ['drawStainWash methylene p=0.35', () => { W.drawSimGrid(ctx, { t: 1, boot: 1, panels: false }); W.drawMicroscopeField(ctx, { t: 1, zoom: 1.4 }); W.drawStainWash(ctx, { t: 1, p: 0.35, color: 'methylene' }); }],
+    ['drawStainWash eosin p=0.45', () => { W.drawMicroscopeField(ctx, { t: 1, zoom: 1.4 }); W.drawStainWash(ctx, { t: 1, p: 0.45, color: 'eosin' }); }],
+    ['drawEndCard (next)', () => { W.drawEndCard(ctx, { t: 3, episode: 2, title: '白血球、防御戦線！', next: '第3話『ふさぐもの、生まれるところ』' }); }],
+    ['drawEndCard (teaser, season finale)', () => { W.drawEndCard(ctx, { t: 3, episode: 4, title: '検査室の大冒険', teaser: 'BLOOD STORY 新シーズン\n―『はじまりの細胞』―\n準備中' }); }],
+    ['drawRecapFrame (content = drawVesselSide)', () => { W.drawRecapFrame(ctx, { t: 2, episode: 1, content: (c) => W.drawVesselSide(c, { t: 1, scrollX: 400 }) }); }],
+  ];
+  const rows = Math.ceil(panels.length / cols);
+  sheet.height = top + rows * cellH + 20;
+  sx.fillStyle = '#0b0306'; sx.fillRect(0, 0, sheet.width, sheet.height);
+  sx.font = F(64); sx.fillStyle = '#ff5a5a'; sx.fillText('BLOOD STORY ― 世界・エフェクト設定表 2 (world2.js：第2〜4話)', 40, 82);
+  sx.font = F(28); sx.fillStyle = '#d9b8b8'; sx.fillText('Agent B · 1920×1080 panels at 50% · pure functions of opts (t, p, …) · blue dashed = groundY (feet)', 40, 118);
+  const times = [];
+  for (let i = 0; i < panels.length; i++) {
+    clear(); const s = performance.now(); try { panels[i][1](); } catch (e) { console.error(panels[i][0], e); } ctx.getImageData(0, 0, 1, 1); times.push(Math.round(performance.now() - s));
+    const x = (i % cols) * cellW, y = top + Math.floor(i / cols) * cellH;
+    sx.drawImage(panel, x, y, cellW, cellH);
+    sx.strokeStyle = '#0b0306'; sx.lineWidth = 6; sx.strokeRect(x, y, cellW, cellH);
+    label(sx, (i + 1) + '. ' + panels[i][0], x + 18, y + cellH - 18, 24, '#ffe');
+  }
+  window.SHEET_TIMES = times;
+  window.SHEET_DONE = true;
+})();
+</script>
+</body>
+</html>

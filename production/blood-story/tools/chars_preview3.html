@@ -1,0 +1,48 @@
+<!doctype html><html><head><meta charset="utf-8"><title>chars3 preview</title>
+<style>@font-face { font-family: 'ZenKaku'; src: url('../fonts/ZenKakuGothicNew-Bold.ttf'); } html,body{margin:0;background:#000}</style></head>
+<body><canvas id="c" width="1920" height="1080"></canvas>
+<script src="../web/characters.js"></script>
+<script src="../web/characters2.js"></script>
+<script>
+const cv = document.getElementById('c'), ctx = cv.getContext('2d'), C = BS.chars;
+const sm = (t) => { t = Math.max(0, Math.min(1, t)); return t * t * (3 - 2 * t); };
+function lab(t, x, y) { ctx.font = '700 24px ZenKaku, IPAGothic, sans-serif'; ctx.fillStyle = '#ffe0ea'; ctx.textAlign = 'center'; ctx.fillText(t, x, y); }
+function shadow(x, y, w) { ctx.fillStyle = 'rgba(0,0,0,0.3)'; ctx.beginPath(); ctx.ellipse(x, y, w, w * 0.16, 0, 0, 7); ctx.fill(); }
+window.drawFrame = function (f) {
+  const t = f / 30, T = 8;
+  const g = ctx.createLinearGradient(0, 0, 0, 1080); g.addColorStop(0, '#4a1430'); g.addColorStop(1, '#1c0612');
+  ctx.fillStyle = g; ctx.fillRect(0, 0, 1920, 1080);
+  ctx.fillStyle = 'rgba(0,0,0,0.25)'; ctx.fillRect(0, 500, 1920, 30); ctx.fillRect(0, 1000, 1920, 80);
+  // row 1
+  const act = sm((t % T) / 3 - 0.3) * (1 - sm((t % T - 6.5) / 1));
+  shadow(150, 500, 50); C.drawPeta(ctx, { x: 150, y: 500, scale: 0.7, yaw: 25, t, activated: act, pose: act > 0.5 ? 'cheer' : 'stand', expr: act > 0.5 ? 'determined' : 'happy', mouth: Math.max(0, Math.sin(t * 11)) * 0.6 * (act < 0.2), blink: C.blinkAt(t, 3) });
+  lab('ペタ activated + 口パク', 150, 540);
+  shadow(380, 500, 50); C.drawPeta(ctx, { x: 380, y: 500, scale: 0.7, view: 'side', pose: 'run', runPhase: C.runPhase(t, 0.17), t, variant: 3 });
+  lab('血小板隊 run', 380, 540);
+  shadow(700, 500, 90); C.drawKyoko(ctx, { x: 640, y: 500, scale: 0.42, yaw: 30, pose: 'sit', t, shed: 1, sleeveTo: { x: 920, y: 160 }, sleeve: sm((t % T) / 2.5), mouth: Math.max(0, Math.sin(t * 7)) * 0.5 * (t % T > 4), blink: C.blinkAt(t, 5) });
+  lab('キョウコ shed + 細胞質突起', 720, 540);
+  const m = sm(((t % T) - 1) / 4);
+  shadow(1150, 500, 70); C.drawWBCAlly(ctx, { x: 1150, y: 500, scale: 0.5, variant: 2, morph: m, yaw: 20 + 10 * Math.sin(t), t, pose: m >= 1 ? 'present' : 'stand', mhc: sm((t % T - 5.5) / 0.8), expr: 'calm', blink: C.blinkAt(t, 6) });
+  lab('ソウ morph ' + m.toFixed(2), 1150, 540);
+  shadow(1400, 500, 40); C.drawShirou(ctx, { x: 1400, y: 500, scale: 0.7, young: true, view: 'side', pose: 'run', runPhase: C.runPhase(t, 0.16), t, expr: 'happy' });
+  lab('幼いシロウ', 1400, 540);
+  C.drawStemCell(ctx, { x: 1700, y: 500, scale: 0.6, t });
+  lab('造血幹細胞', 1700, 540);
+  // row 2
+  ['T4', 'T8', 'B', 'NK', 'plasma'].forEach((k, i) => { const x = 90 + i * 110; shadow(x, 1000, 34); C.drawLymphoMob(ctx, { x, y: 1000, scale: 0.42, kind: k, seed: i, view: 'side', pose: 'walk', walkPhase: (t / 1.1 + i * 0.13) % 1, t }); });
+  lab('リンパ球部隊 walk', 310, 1040);
+  const ap = sm((t % T - 3) / 4);
+  C.drawInfectedCell(ctx, { x: 700, y: 1000, scale: 0.6, t, sick: 1, expr: (t % T) < 2 ? 'sick' : 'scared', pores: sm((t % T - 1.5) / 1.5), apoptosis: ap, blink: C.blinkAt(t, 2) });
+  lab('感染細胞 pores→apoptosis', 720, 1040);
+  const k = (t % 2.4) / 2.4, px = 1260 - 260 * sm(k);
+  ctx.fillStyle = 'rgba(200,235,255,0.35)'; ctx.fillRect(880, 940, 520, 11); ctx.strokeStyle = '#6eb2d6'; ctx.lineWidth = 2; ctx.strokeRect(880, 940, 520, 11);
+  ctx.fillStyle = 'rgba(210,56,72,0.55)'; ctx.fillRect(px + 4, 936, 1260 - px, 4);
+  C.drawGiantHand(ctx, { x: px, y: 940, scale: 0.42, pose: 'push_spreader', base: false, t });
+  lab('push_spreader', 1150, 1040);
+  C.drawGiantHand(ctx, { x: 1460, y: 780, scale: 0.45, pose: 'thumb', rot: 8 * Math.sin(t), t });
+  const fl = sm((t % T - 2) / 3) * 0.7;
+  shadow(1760, 1000, 50); C.drawShirou(ctx, { x: 1760, y: 1000, scale: 0.55, yaw: 15, t, stain: (t % T) > 1 ? 'giemsa' : null, flat: fl, expr: 'calm', blink: C.blinkAt(t, 1) });
+  lab('giemsa + flat', 1760, 1040);
+};
+window.__ready = true;
+</script></body></html>

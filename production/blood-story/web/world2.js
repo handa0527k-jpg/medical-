@@ -1528,15 +1528,15 @@
     ctx.save(); ctx.setTransform(1, 0, 0, 1, 0, 0);
     if (a > 0.01) {
       var c = scratchCanvas('glitch', W, H), x = c.getContext('2d'); x.drawImage(ctx.canvas, 0, 0);
-      var fr = Math.floor(t * 20), n = Math.round(4 + a * 16);
+      var fr = Math.floor(t * 20), n = Math.round(6 + a * 22);
       for (var i = 0; i < n; i++) {
-        var y = hash(fr * 31 + i * 7 + seed) * H, h = 6 + hash(fr * 17 + i) * 70 * a, off = (hash(fr * 13 + i * 3) - 0.5) * 260 * a;
+        var y = hash(fr * 31 + i * 7 + seed) * H, h = 8 + hash(fr * 17 + i) * 110 * a, off = (hash(fr * 13 + i * 3) - 0.5) * 420 * a;
         ctx.drawImage(c, 0, y, W, h, off, y, W, h);
       }
       // RGB split: offset copies in additive red / blue
-      ctx.globalCompositeOperation = 'lighter'; ctx.globalAlpha = 0.35 * a;
+      ctx.globalCompositeOperation = 'lighter'; ctx.globalAlpha = 0.5 * a;
       x.globalCompositeOperation = 'multiply'; x.fillStyle = '#ff0000'; x.fillRect(0, 0, W, H);
-      ctx.drawImage(c, 14 * a, 0);
+      ctx.drawImage(c, 22 * a, 0); ctx.drawImage(c, -10 * a, 0);
       ctx.globalCompositeOperation = 'source-over'; ctx.globalAlpha = 1;
     }
     if (nz > 0.01) {
@@ -1691,7 +1691,7 @@
     return ret;
   }
   function slidePersp(ctx, W, H, t, p, q, push, contact, desc, lift, o) {
-    var hY = Math.round(H * 0.34), f = 900, camH = 1, vx = W / 2;
+    var hY = Math.round(H * 0.30), f = 900, camH = 1.25, vx = W / 2;
     function P(X, Z, Y) { return [vx + f * X / Z, hY + f * (camH - (Y || 0)) / Z]; }
     var Z0 = 1.3, Z1 = 14, slideHalf = 2.2; // slide spans Z0..Z1 (pos s=0..1 maps to Z = Zd..Zend)
     var Zd = 2.1, Zspan = 10.5;
@@ -1732,6 +1732,16 @@
         ctx.beginPath(); ctx.moveTo(p1[0], p1[1]); ctx.lineTo(p2[0] + 0.5, p2[1]); ctx.lineTo(p3[0] + 0.5, p3[1] - 0.5); ctx.lineTo(p4[0], p4[1] - 0.5); ctx.fill();
       }
     }
+    // cells in the film (speckle, sparser toward the feathered end)
+    if (contact > 0) {
+      for (i = 0; i < 520; i++) {
+        R = rng(11300 + i); var ss = R() * 1.05, lt = R() * 2 - 1, thc = filmAt(q, ss, lt, push) * contact;
+        if (thc <= 0.05 || R() > clamp(thc, 0.15, 1)) continue;
+        var pp = P(lt * slideHalf * 0.86, Zs(ss)), rr0 = 30 / Zs(ss);
+        ctx.fillStyle = rgba([200, 40, 60], 0.5); ctx.beginPath(); ctx.ellipse(pp[0], pp[1], rr0, rr0 * 0.45 * (1.4 * camH / Zs(ss) + 0.3), 0, 0, TAU); ctx.fill();
+        ctx.fillStyle = 'rgba(255,200,200,0.5)'; ctx.beginPath(); ctx.ellipse(pp[0], pp[1], rr0 * 0.4, rr0 * 0.15, 0, 0, TAU); ctx.fill();
+      }
+    }
     // blood line along the spreader's contact edge (before/while pushing)
     var Zc = Zs(eCur);
     if (contact > 0 && lift < 1) {
@@ -1747,20 +1757,20 @@
     ctx.strokeStyle = 'rgba(120,200,220,0.5)'; ctx.lineWidth = 12; ctx.stroke();
     // the spreader glass: tilted 30°, leaning back over the blood (toward the camera)
     if (o.spreader !== false && lift < 1) {
-      var ang = Math.PI / 6, Lg = 6, hov = (1 - desc) * 2.2 + lift * 2.5;
+      var ang = Math.PI / 6, Lg = 6, hov = (1 - desc) * 0.9 + lift * 1.6;
       var ZcS = desc < 1 ? Zs(0) : Zc;
       var e1 = P(-slideHalf * 1.05, ZcS, hov), e2 = P(slideHalf * 1.05, ZcS, hov);
-      var Ztop = ZcS - Lg * Math.cos(ang), Ytop = hov + Lg * Math.sin(ang);
-      var Zt = Math.max(Ztop, 0.25);
-      var tt1 = P(-slideHalf * 1.05, Zt, Ytop * (Zt - ZcS) / (Ztop - ZcS) + hov * 0), tt2 = P(slideHalf * 1.05, Zt, Ytop * (Zt - ZcS) / (Ztop - ZcS));
+      var Zt = Math.max(0.45, ZcS - Lg * Math.cos(ang)), Yt = hov + (ZcS - Zt) * Math.tan(ang);
+      var tt1 = P(-slideHalf * 1.05, Zt, Yt), tt2 = P(slideHalf * 1.05, Zt, Yt);
       ctx.save(); ctx.globalAlpha = 1 - lift;
       ctx.beginPath(); ctx.moveTo(e1[0], e1[1]); ctx.lineTo(e2[0], e2[1]); ctx.lineTo(tt2[0], tt2[1]); ctx.lineTo(tt1[0], tt1[1]); ctx.closePath();
-      var gs = ctx.createLinearGradient(0, e1[1], 0, Math.min(tt1[1], 0)); gs.addColorStop(0, 'rgba(210,240,250,0.55)'); gs.addColorStop(1, 'rgba(160,210,230,0.18)');
+      var gs = ctx.createLinearGradient(0, e1[1], 0, Math.min(tt1[1], 0)); gs.addColorStop(0, 'rgba(210,240,250,0.45)'); gs.addColorStop(1, 'rgba(160,210,230,0.10)');
       ctx.fillStyle = gs; ctx.fill(); ctx.strokeStyle = 'rgba(255,255,255,0.85)'; ctx.lineWidth = 3; ctx.stroke();
       ctx.strokeStyle = 'rgba(255,255,255,0.95)'; ctx.lineWidth = 6; ctx.beginPath(); ctx.moveTo(e1[0], e1[1]); ctx.lineTo(e2[0], e2[1]); ctx.stroke();
-      // glare streak
-      ctx.globalCompositeOperation = 'lighter'; ctx.strokeStyle = 'rgba(255,255,255,0.25)'; ctx.lineWidth = 40;
-      ctx.beginPath(); ctx.moveTo(lerp(e1[0], e2[0], 0.3), e1[1]); ctx.lineTo(lerp(tt1[0], tt2[0], 0.2), tt1[1]); ctx.stroke();
+      // thickness of the glass edge (double highlight) + soft reflection band
+      ctx.strokeStyle = 'rgba(120,200,225,0.8)'; ctx.lineWidth = 3; ctx.beginPath(); ctx.moveTo(e1[0], e1[1] - 10); ctx.lineTo(e2[0], e2[1] - 10); ctx.stroke();
+      ctx.globalCompositeOperation = 'lighter'; ctx.fillStyle = 'rgba(255,255,255,0.10)';
+      ctx.beginPath(); ctx.moveTo(lerp(e1[0], e2[0], 0.55), e1[1]); ctx.lineTo(lerp(e1[0], e2[0], 0.7), e1[1]); ctx.lineTo(lerp(tt1[0], tt2[0], 0.75), tt1[1]); ctx.lineTo(lerp(tt1[0], tt2[0], 0.6), tt1[1]); ctx.fill();
       ctx.restore();
       // hanging drop (before contact) at the centre of the edge
       if (contact < 1) {
@@ -1788,6 +1798,7 @@
     for (var yy = sy; yy < sy + sh; yy += 128) for (var xx = sx + sw - fw; xx < sx + sw; xx += 128) ctx.drawImage(nt, xx, yy);
     ctx.restore();
     // smear: from the drop line next to the frosted end toward the left
+    ctx.save(); roundRect(ctx, sx, sy, sw, sh, 10); ctx.clip();
     var x0 = sx + sw - fw - sw * 0.04, len = (sw - fw) * 0.98, cyy = sy + sh / 2, hh = sh * 0.42 * (0.4 + 0.6 * contact);
     var N = 160, M = 24;
     for (var i = 0; i < N; i++) {
@@ -1806,6 +1817,7 @@
       gd.addColorStop(0, '#ff8a90'); gd.addColorStop(0.5, '#d02236'); gd.addColorStop(1, '#7a0a18');
       ctx.fillStyle = gd; ctx.beginPath(); ctx.ellipse(x0, cyy, dr * (1 - contact * 0.7), dr * (1 + contact * 3), 0, 0, TAU); ctx.fill();
     }
+    ctx.restore();
     // spreader (seen from above: a glass bar across the slide at the contact line)
     var cx = x0 - q.end * push * len;
     if (p < 0.97) {
@@ -1842,7 +1854,7 @@
         case 'rbc': {
           x.beginPath(); x.arc(0, 0, r, 0, TAU);
           var g = x.createRadialGradient(0, 0, r * 0.05, 0, 0, r);
-          g.addColorStop(0, '#f8ded8'); g.addColorStop(0.32, '#f3c2bc'); g.addColorStop(0.62, '#e99a98'); g.addColorStop(0.92, '#dc8486'); g.addColorStop(1, '#c8707a');
+          g.addColorStop(0, '#fbe6e2'); g.addColorStop(0.3, '#f6d0ca'); g.addColorStop(0.55, '#ea9e9c'); g.addColorStop(0.85, '#de8486'); g.addColorStop(1, '#c8707a');
           x.fillStyle = g; x.fill(); x.strokeStyle = 'rgba(170,80,100,0.5)'; x.lineWidth = 2; x.stroke();
           break;
         }
@@ -1852,7 +1864,7 @@
           break;
         }
         case 'neutrophil': case 'band': {
-          body('#f6e4e6', '#e8c6d0', 0.04);
+          body('#f4dde6', '#e2bccc', 0.04);
           x.fillStyle = 'rgba(200,130,170,0.45)'; for (i = 0; i < 160; i++) { a = R() * TAU; dd = Math.sqrt(R()) * r * 0.9; x.fillRect(Math.cos(a) * dd, Math.sin(a) * dd, 1.6, 1.6); }
           x.strokeStyle = NUC; x.lineCap = 'round';
           if (type === 'band') { x.lineWidth = r * 0.24; x.beginPath(); x.arc(0, r * 0.08, r * 0.45, 0.7, 0.7 + 4.3); x.stroke(); x.strokeStyle = NUC2; x.lineWidth = r * 0.08; x.stroke(); }
@@ -1860,7 +1872,7 @@
             var lobes = 3 + Math.floor(R() * 2), pts = [];
             for (i = 0; i < lobes; i++) { a = Math.PI * 0.9 + i / (lobes - 1) * Math.PI * 1.25 + (R() - 0.5) * 0.3; pts.push([Math.cos(a) * r * 0.42, Math.sin(a) * r * 0.42]); }
             x.lineWidth = 2.5; x.beginPath(); pts.forEach(function (q, k) { x[k ? 'lineTo' : 'moveTo'](q[0], q[1]); }); x.stroke();
-            pts.forEach(function (q) { lobe(q[0], q[1], r * 0.21, r * 0.17, R() * 3, NUC); });
+            x.lineWidth = r * 0.07; x.stroke(); pts.forEach(function (q) { lobe(q[0], q[1], r * 0.26, r * 0.2, R() * 3, NUC); });
             chromatin(0, NUC2, 0);
           }
           break;
@@ -1961,7 +1973,7 @@
     ctx.fillStyle = gbg; ctx.fillRect(cx - Rf, cy - Rf, Rf * 2, Rf * 2);
     // cells
     var cellsPx = 30 * sc, um0x = px - (Rf + 40) / sc, um1x = px + (Rf + 40) / sc, um0y = py - (Rf + 40) / sc, um1y = py + (Rf + 40) / sc;
-    var cs = 9.0; // lattice spacing (µm) for RBCs
+    var cs = mode === 'body' ? 8.0 : 9.0; // lattice spacing (µm) for RBCs
     var wb = (o.wbcs || []).map(function (w) { return { type: w.type, x: w.x || 0, y: w.y || 0, seed: w.seed == null ? 1 : w.seed, rot: w.rot || 0, r: (CELL_UM[w.type] || 12) / 2 }; });
     var dens = mode === 'thick' ? 1.9 : mode === 'feather' ? 0.35 : 1.0, rScale = mode === 'feather' ? 1.12 : 1.0;
     var gx0 = Math.floor(um0x / cs) - 1, gx1 = Math.ceil(um1x / cs) + 1, gy0 = Math.floor(um0y / cs) - 1, gy1 = Math.ceil(um1y / cs) + 1;
@@ -1972,8 +1984,8 @@
         var hh = hash(base + k * 17);
         if (hh > dens - (k ? 0.95 : 0) && mode !== 'thick') continue;
         if (mode === 'thick' && k === 1 && hh > 0.85) continue;
-        var ux = (gx + 0.5) * cs + (hash(base + k * 31 + 1) - 0.5) * cs * (mode === 'body' ? 0.55 : 0.9) + (gy % 2) * cs * 0.5;
-        var uy = (gy + 0.5) * cs * 0.88 + (hash(base + k * 31 + 2) - 0.5) * cs * (mode === 'body' ? 0.55 : 0.9);
+        var ux = (gx + 0.5) * cs + (hash(base + k * 31 + 1) - 0.5) * cs * (mode === 'body' ? 0.35 : 0.9) + (gy % 2) * cs * 0.5;
+        var uy = (gy + 0.5) * cs * 0.88 + (hash(base + k * 31 + 2) - 0.5) * cs * (mode === 'body' ? 0.35 : 0.9);
         var sx = cx + (ux - px) * sc, sy = cy + (uy - py) * sc;
         if (Math.hypot(sx - cx, sy - cy) > Rf + 50) continue;
         var skip = false; for (var w = 0; w < wb.length; w++) if (Math.hypot(ux - wb[w].x, uy - wb[w].y) < wb[w].r + 2.5) skip = true;

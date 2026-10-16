@@ -18,7 +18,30 @@ from audio_lib import AUDIO, voice_meta, voice_dir  # noqa: E402
 PUNCT = re.compile(r"[\s、。！？!?…・「」『』（）()ー〜~,.\-]")
 
 
+_DIG = ["", "いち", "に", "さん", "よん", "ご", "ろく", "なな", "はち", "きゅう"]
+
+
+def _num_kana(n: int) -> str:
+    """0 <= n < 10000 -> hiragana reading (simple, sound changes ignored except the common ones)"""
+    if n == 0:
+        return "ぜろ"
+    out = ""
+    for val, name, special in ((1000, "せん", {3: "さんぜん", 8: "はっせん"}), (100, "ひゃく", {3: "さんびゃく", 6: "ろっぴゃく", 8: "はっぴゃく"}),
+                               (10, "じゅう", {})):
+        d, n = divmod(n, val)
+        if d:
+            out += special.get(d, ("" if d == 1 else _DIG[d]) + name)
+    return out + _DIG[n]
+
+
+def _numbers(s: str) -> str:
+    s = s.replace("%", "パーセント").replace("％", "パーセント")
+    s = re.sub(r"(\d+)\.(\d+)", lambda m: _numbers(m.group(1)) + "てん" + "".join(_DIG[int(c)] or "ぜろ" for c in m.group(2)), s)
+    return re.sub(r"\d+", lambda m: _num_kana(int(m.group())) if len(m.group()) <= 4 else m.group(), s)
+
+
 def to_kana(s: str) -> str:
+    s = _numbers(s.translate(str.maketrans("０１２３４５６７８９", "0123456789")))
     try:
         import pykakasi
         k = pykakasi.kakasi()

@@ -51,12 +51,12 @@
   };
   const anim = q.get('anim');
   window.timing = (name, n = 20) => {
-    const s = S[name]; const ts = []; for (let i = 0; i < n; i++) { const t = (i / n) * s.dur; reset(ctx); const t0 = performance.now(); s.draw(ctx, t); ts.push(performance.now() - t0); }
+    const s = S[name]; const ts = []; for (let i = 0; i < n; i++) { const t = (i / n) * s.dur; reset(ctx); const t0 = performance.now(); s.draw(ctx, t); ctx.getImageData(0, 0, 1, 1); ts.push(performance.now() - t0); }
     ts.sort((a, b) => a - b); return { median: +ts[n >> 1].toFixed(1), max: +ts[n - 1].toFixed(1) };
   };
   window.timingBare = (name, n = 20) => { // draw call only, no backdrop
     const ts = []; const dur = S[name].dur;
-    for (let i = 0; i < n; i++) { const t = (i / n) * dur; reset(ctx); const t0 = performance.now(); if (name === 'bacteriaDivide') D[name](ctx, { p: i / n, t }); else D[name](ctx, { scale: 0.95, p: i / n, t }); ts.push(performance.now() - t0); }
+    for (let i = 0; i < n; i++) { const t = (i / n) * dur; reset(ctx); const t0 = performance.now(); if (name === 'bacteriaDivide') D[name](ctx, { p: i / n, t }); else D[name](ctx, { scale: 0.95, p: i / n, t }); ctx.getImageData(0, 0, 1, 1); ts.push(performance.now() - t0); }
     ts.sort((a, b) => a - b); return { median: +ts[n >> 1].toFixed(1), max: +ts[n - 1].toFixed(1) };
   };
   window.names = Object.keys(S);

@@ -133,10 +133,10 @@
   // ===== giant hands
   panel(810, 2506, 1080, 440, 'ミナトの手（drawGiantHand）　顔は出さない／赤点 = (x,y) 作用点', MI);
   [['thumb', {}], ['pinch', {}], ['hold_slide', {}], ['push_spreader', {}], ['thumb', { glove: true }]].forEach(([p, op], i) => {
-    const pos = [[930, 2720], [1100, 2690], [1330, 2760], [1530, 2890], [1810, 2720]][i];
-    const r = C.drawGiantHand(ctx, Object.assign({ x: pos[0], y: pos[1], scale: [0.42, 0.4, 0.32, 0.36, 0.36][i], pose: p, rot: p === 'hold_slide' ? -8 : 0, t: 0.5 }, op));
+    const pos = [[930, 2720], [1100, 2690], [1310, 2760], [1460, 2900], [1820, 2720]][i];
+    const r = C.drawGiantHand(ctx, Object.assign({ x: pos[0], y: pos[1], scale: [0.42, 0.4, 0.32, 0.3, 0.34][i], pose: p, rot: p === 'hold_slide' ? -8 : 0, t: 0.5 }, op));
     ctx.fillStyle = '#ff3050'; ctx.beginPath(); ctx.arc(r.action.x, r.action.y, 5, 0, 7); ctx.fill();
-    lab(p + (op.glove ? '+glove' : ''), [930, 1100, 1330, 1530, 1810][i], 2935, 14);
+    lab(p + (op.glove ? '+glove' : ''), [930, 1100, 1310, 1520, 1820][i], 2935, 14);
   });
 
   // ===== Giemsa

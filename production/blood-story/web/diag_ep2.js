@@ -230,7 +230,7 @@
       antibodyY(ctx, x + s * 0.05, y, r0, s * 0.5, { col: col, glow: 0.3 });
       ctx.beginPath(); ctx.arc(x, y, s * 0.06, 0, TAU); ctx.fillStyle = rgba(mixC(col, WHITE, 0.5), 1); ctx.fill();
     } else {
-      antibodyY(ctx, x, y + s * 0.3, -Math.PI / 2 + r0, s * (cls === 'IgE' ? 0.66 : 0.6), { col: col });
+      antibodyY(ctx, x, y + s * 0.42, -Math.PI / 2 + r0, s * (cls === 'IgE' ? 0.9 : 0.84), { col: col });
     }
     ctx.restore();
   }
@@ -428,7 +428,7 @@
       var bleb = smooth(0.15, 0.5, apo);
       for (i = 0; i <= 80; i++) {
         var an = (i / 80) * TAU, rr = R * sh * (1 + 0.03 * Math.sin(an * 4 + seed) + 0.015 * Math.sin(an * 7 + t));
-        rr += R * 0.12 * bleb * Math.pow(Math.max(0, Math.sin(an * 7 + 0.5)), 6);
+        var bq = Math.max(0, Math.cos(an * 6 + 0.5)); rr += R * 0.09 * bleb * Math.sqrt(bq) * bq;
         if (i === 0) ctx.moveTo(Math.cos(an) * rr, Math.sin(an) * rr); else ctx.lineTo(Math.cos(an) * rr, Math.sin(an) * rr);
       }
       ctx.closePath();
@@ -441,11 +441,14 @@
       else for (i = 0; i < 5; i++) { var fa = i * 1.3 + 0.4, fd = nr * 0.9 * frag; ctx.beginPath(); ctx.arc(R * 0.08 + Math.cos(fa) * fd, Math.sin(fa) * fd, nr * lerp(0.6, 0.38, frag), 0, TAU); ctx.fillStyle = rgba(ncol, 1); ctx.fill(); }
       if (kind !== 'plain') for (i = 0; i < 7; i++) { var va = Rr() * TAU, vd = R * (0.45 + Rr() * 0.35) * sh; virusP(ctx, Math.cos(va) * vd, Math.sin(va) * vd, R * 0.045, 1 - smooth(0.2, 0.6, apo), va + t); }
     } else {
-      for (i = 0; i < 6; i++) {
-        var ba = (i / 6) * TAU + 0.3, bd = R * 0.55 * split, br = R * lerp(0.4, 0.22, split) * (0.85 + 0.3 * Rr());
-        ctx.beginPath(); ctx.arc(Math.cos(ba) * bd, Math.sin(ba) * bd, br, 0, TAU);
-        ctx.fillStyle = rgba(mixC(base, WHITE, 0.2), 0.95); ctx.fill(); ctx.lineWidth = 2; ctx.strokeStyle = 'rgba(90,80,100,1)'; ctx.stroke();
-        ctx.beginPath(); ctx.arc(Math.cos(ba) * bd + br * 0.15, Math.sin(ba) * bd, br * 0.35, 0, TAU); ctx.fillStyle = 'rgba(70,40,100,0.9)'; ctx.fill();
+      ctx.beginPath(); ctx.arc(0, 0, R * 0.8, 0, TAU); ctx.setLineDash([8, 10]); ctx.lineWidth = 2; ctx.strokeStyle = rgba([170, 200, 160], 0.45 * (1 - split * 0.5)); ctx.stroke(); ctx.setLineDash([]);
+      var BOD = [[0.3, 0.1, 0.3, 1], [2.0, 0.35, 0.22, 0], [3.3, 0.25, 0.26, 2], [4.4, 0.45, 0.16, 0], [5.4, 0.3, 0.2, 1], [1.2, 0.55, 0.13, 0], [2.8, 0.62, 0.11, 0]];
+      for (i = 0; i < BOD.length; i++) {
+        var B0 = BOD[i], ba = B0[0], bd = R * B0[1] * (0.6 + 0.9 * split), br = R * B0[2] * lerp(1.15, 1, split);
+        var bxx = Math.cos(ba) * bd, byy = Math.sin(ba) * bd * 0.85;
+        ctx.beginPath(); ctx.arc(bxx, byy, br, 0, TAU);
+        ctx.fillStyle = rgba(mixC(base, WHITE, 0.15), 0.95); ctx.fill(); ctx.lineWidth = 2; ctx.strokeStyle = 'rgba(90,80,100,1)'; ctx.stroke();
+        for (var nf = 0; nf < B0[3]; nf++) { ctx.beginPath(); ctx.arc(bxx + (nf ? br * 0.3 : -br * 0.15), byy + (nf ? br * 0.2 : -br * 0.1), br * 0.3, 0, TAU); ctx.fillStyle = 'rgba(60,30,90,0.95)'; ctx.fill(); }
       }
     }
     ctx.restore();
@@ -1271,11 +1274,13 @@
     if (vA > 0) {
       ctx.save(); ctx.globalAlpha *= vA;
       var vg = ctx.createLinearGradient(-PW / 2, 0, WX, 0); vg.addColorStop(0, 'rgba(120,10,30,0.55)'); vg.addColorStop(1, 'rgba(170,30,50,0.4)');
-      ctx.fillStyle = vg; ctx.fillRect(-PW / 2, -PH / 2, WX + PW / 2, PH);
+      var YT = -PH / 2 + 88; ctx.fillStyle = vg; ctx.fillRect(-PW / 2, YT, WX + PW / 2, PH / 2 - YT);
+      ctx.save(); ctx.beginPath(); ctx.rect(-PW / 2, YT, PW, PH); ctx.clip();
       for (i = 0; i < 9; i++) { var ry = -PH / 2 + mod(i * 110 + t * 50, PH + 100) - 50, rx = -700 + (i % 3) * 110; if (W_() && W_().drawRBC) W_().drawRBC(ctx, { x: rx, y: ry, r: 34, t: t, rot: i, alpha: 0.6 }); }
       for (var yy = -PH / 2; yy < PH / 2; yy += 70) { rrect(ctx, WX - 16, yy + 4, 32, 62, 14); ctx.fillStyle = 'rgba(240,150,160,0.85)'; ctx.fill(); ctx.lineWidth = 2; ctx.strokeStyle = 'rgba(120,30,50,0.9)'; ctx.stroke(); }
-      txt(ctx, '血管の中', -700, -360, { size: 26, color: [255, 190, 200] });
-      txt(ctx, '組織（血管の外）', WX + 40, -360, { size: 26, color: [190, 255, 240] });
+      ctx.restore();
+      txt(ctx, '血管の中', -740, -320, { size: 26, color: [255, 190, 200] });
+      txt(ctx, '組織（血管の外）', WX + 40, -320, { size: 26, color: [190, 255, 240] });
       ctx.restore();
     }
     var squeeze = win(p, 0.28, 0.44), grow = eio(win(p, 0.42, 0.56));
@@ -1298,7 +1303,7 @@
     ];
     var tgA = smooth(0.56, 0.6, p);
     for (i = 0; i < T.length; i++) {
-      var Tg = T[i], e = eio(win(p, Tg.st, Tg.st + 0.07)), tx = lerp(Tg.x, -40 + (i - 1.5) * 50, e), ty = lerp(Tg.y, -10 + (i % 2 ? 40 : -40), e), sc = 1 - 0.55 * e;
+      var Tg = T[i], e = eio(win(p, Tg.st, Tg.st + 0.07)), fxp = [40, 120, 70, 140][i], fyp = [-90, -20, 70, 120][i], tx = lerp(Tg.x, fxp, e), ty = lerp(Tg.y, fyp, e), sc = 1 - 0.55 * e;
       if (tgA <= 0) break;
       ctx.save(); ctx.globalAlpha *= tgA * (1 - 0.4 * smooth(0.9, 1, e));
       ctx.translate(tx, ty); ctx.scale(sc, sc);
@@ -1307,6 +1312,7 @@
       else if (i === 2) targetCell(ctx, 0, 0, 55, t, 1, 0.25, 4, 'plain');
       else { ctx.beginPath(); ctx.moveTo(-40, -10); ctx.lineTo(-10, -45); ctx.lineTo(35, -25); ctx.lineTo(45, 20); ctx.lineTo(0, 42); ctx.lineTo(-38, 25); ctx.closePath(); ctx.fillStyle = '#9aa4b0'; ctx.fill(); ctx.lineWidth = 3; ctx.strokeStyle = '#3a4048'; ctx.stroke(); ctx.beginPath(); ctx.moveTo(-10, -45); ctx.lineTo(0, 0); ctx.lineTo(45, 20); ctx.moveTo(0, 0); ctx.lineTo(-38, 25); ctx.strokeStyle = 'rgba(255,255,255,0.5)'; ctx.lineWidth = 2; ctx.stroke(); }
       ctx.restore();
+      if (e > 0.7) { ctx.beginPath(); ctx.arc(tx, ty, 46, 0, TAU); ctx.lineWidth = 3; ctx.strokeStyle = rgba([150, 80, 170], smooth(0.7, 1, e)); ctx.stroke(); }
       var la = tgA * (1 - smooth(0.4, 0.8, e));
       if (la > 0) chipW(ctx, Tg.name, Tg.x, Tg.y + (i === 1 ? 60 : 85), { size: 26, accent: acc, alpha: la });
       if (e > 0.6) sparkle(ctx, tx, ty, 30 * bell(e, 0.6, 0.85, 0.9, 1), [140, 255, 230], 1, t);
@@ -1394,7 +1400,7 @@
       }
     }
     // T cell
-    var te = eio(win(p, 0.52, 0.66)), tcx = lerp(700, tips[1][0] + 190, te), tcy = tips[1][1];
+    var te = eio(win(p, 0.52, 0.66)), tcx = lerp(700, tips[1][0] + 172, te), tcy = tips[1][1];
     if (te > 0) {
       ctx.save(); ctx.globalAlpha *= smooth(0, 0.2, te);
       cell(ctx, 'lymphocyte', tcx, tcy, 115, t, { seed: 2, glow: 0.6 });
@@ -1419,8 +1425,8 @@
     var ap = win(p, 0.5, 0.58);
     if (ap > 0) { ctx.save(); ctx.translate(430, -330); var s2 = eback(ap); ctx.scale(s2, s2); chipW(ctx, '抗原提示', 0, 0, { size: 44, accent: acc, fill: 'solid' }); ctx.restore(); }
     if (cyt > 0) {
-      chipW(ctx, 'IL-1', mx + 140, my - 300, { size: 28, accent: [255, 200, 110], alpha: win(p, 0.72, 0.78), fill: 'solid' });
-      chipW(ctx, 'TNF-α', mx + 330, my - 250, { size: 28, accent: [255, 120, 160], alpha: win(p, 0.75, 0.81), fill: 'solid' });
+      chipW(ctx, 'IL-1', 470, 110, { size: 28, accent: [255, 200, 110], alpha: win(p, 0.72, 0.78), fill: 'solid' });
+      chipW(ctx, 'TNF-α', 600, 175, { size: 28, accent: [255, 120, 160], alpha: win(p, 0.75, 0.81), fill: 'solid' });
       txt(ctx, 'サイトカイン：免疫を助ける', 300, 260, { size: 28, align: 'center', a: win(p, 0.76, 0.84), color: [255, 230, 200], glow: [255, 160, 120] });
     }
     var fin = win(p, 0.9, 0.97);
@@ -1488,8 +1494,8 @@
     var q = win(p, 0.3, 0.36) * (1 - smooth(0.42, 0.48, p));
     if (q > 0) { txt(ctx, '？', (cxs[0] + cxs[1]) / 2, cy, { size: 80, align: 'center', a: q, color: [255, 240, 160], glow: [255, 200, 90] }); txt(ctx, '見た目では同じ', (cxs[0] + cxs[1]) / 2, cy + 130, { size: 26, align: 'center', a: q, color: [255, 240, 200] }); }
     if (lab > 0) {
-      chipW(ctx, 'T細胞', cxs[0], cy - 140, { size: 32, accent: [255, 226, 138], fill: 'solid', alpha: lab });
-      chipW(ctx, 'B細胞', cxs[1], cy - 140, { size: 32, accent: [120, 240, 200], fill: 'solid', alpha: lab });
+      chipW(ctx, 'T細胞', cxs[0], cy - 172, { size: 32, accent: [255, 226, 138], fill: 'solid', alpha: lab });
+      chipW(ctx, 'B細胞', cxs[1], cy - 172, { size: 32, accent: [120, 240, 200], fill: 'solid', alpha: lab });
       txt(ctx, 'T細胞受容体（TCR）', cxs[0], cy + 122, { size: 24, align: 'center', a: lab, color: [255, 236, 170] });
       txt(ctx, '膜を貫通', cxs[0], cy + 156, { size: 20, align: 'center', a: lab, color: [220, 230, 240] });
       txt(ctx, '表面免疫グロブリン', cxs[1], cy + 122, { size: 24, align: 'center', a: lab, color: [170, 255, 225] });
@@ -1500,7 +1506,7 @@
     var nk = win(p, 0.64, 0.72);
     if (nk > 0) {
       lglCell(ctx, cxs[2], cy, cr * 1.12 * eback(nk), t, smooth(0, 0.3, nk), 3);
-      chipW(ctx, 'NK細胞', cxs[2], cy - 140, { size: 32, accent: [255, 120, 160], fill: 'solid', alpha: win(p, 0.68, 0.74) });
+      chipW(ctx, 'NK細胞', cxs[2], cy - 172, { size: 32, accent: [255, 120, 160], fill: 'solid', alpha: win(p, 0.68, 0.74) });
       txt(ctx, '大型顆粒リンパ球（LGL）', cxs[2], cy + 122, { size: 24, align: 'center', a: win(p, 0.7, 0.76), color: [255, 190, 210] });
       txt(ctx, 'TでもBでもない', cxs[2], cy + 156, { size: 20, align: 'center', a: win(p, 0.72, 0.78), color: [220, 230, 240] });
     }
@@ -1540,7 +1546,7 @@
         antibodyIcon(ctx, c, ix, Y - 12, 80, a2, t * 0.2);
         txt(ctx, c, ix, Y + 52, { size: 24, align: 'center', a: a2, color: mixC(IGCOL[c], WHITE, 0.4) });
       });
-      txt(ctx, '（液性免疫）', 760, Y + 50, { size: 20, align: 'right', a: win(p, 0.9, 0.95), color: [200, 220, 240] });
+      txt(ctx, '（液性免疫）', 40, Y + 50, { size: 20, align: 'center', a: win(p, 0.9, 0.95), color: [200, 220, 240] });
       ctx.restore();
     }
     ctx.restore();
@@ -1570,7 +1576,7 @@
     // row headers
     txt(ctx, '体液性免疫（抗体が主体）', -770, Y1 - 190, { size: 26, a: win(p, 0.07, 0.14), color: [170, 255, 225] });
     txt(ctx, '細胞性免疫（細胞が主体）', -770, Y2 - 150, { size: 26, a: win(p, 0.66, 0.72), color: [255, 200, 220] });
-    var sep = win(p, 0.64, 0.7); if (sep > 0) { ctx.beginPath(); ctx.moveTo(-760, (Y1 + Y2) / 2 + 40); ctx.lineTo(-760 + 1520 * sep, (Y1 + Y2) / 2 + 40); gline(ctx, TEAL, 1.2, 0.4, [6, 8]); }
+    var sep = win(p, 0.64, 0.7); if (sep > 0) { ctx.beginPath(); ctx.moveTo(-760, 62); ctx.lineTo(-760 + 1520 * sep, 62); gline(ctx, TEAL, 1.2, 0.4, [6, 8]); }
     // CD4
     var n1 = eback(win(p, 0.07, 0.14));
     if (n1 > 0) {
@@ -1622,7 +1628,8 @@
       targetCell(ctx, -60, Y2, 95, t, smooth(0.66, 0.72, p), kill, 5);
       cell(ctx, 'lymphocyte', kx, Y2, 82 * n8, t, { seed: 5, glow: 0.6 });
       badge('CD8', kx + 52, Y2 - 62, [255, 140, 170], win(p, 0.68, 0.74));
-      txt(ctx, 'CD8陽性 キラーT細胞', X[0], Y2 + 112, { size: 26, align: 'center', a: win(p, 0.68, 0.76), color: [255, 190, 210] });
+      txt(ctx, 'CD8陽性 キラーT細胞', kx, Y2 + 112, { size: 26, align: 'center', a: win(p, 0.68, 0.76), color: [255, 190, 210] });
+      txt(ctx, 'ウイルスに感染した細胞を破壊', kx, Y2 + 148, { size: 21, align: 'center', a: win(p, 0.72, 0.8), color: [230, 236, 245] });
       txt(ctx, 'ウイルス感染細胞', -60, Y2 - 130, { size: 22, align: 'center', a: win(p, 0.7, 0.76), color: [210, 240, 200] });
       if (hit > 0.95) sparkle(ctx, -170, Y2, 40 * bell(p, 0.81, 0.83, 0.86, 0.9), [255, 160, 180], 1, t);
       var dz = win(p, 0.84, 0.92);
@@ -1673,18 +1680,18 @@
     if (pf > 0 && apo < 0.3) {
       for (i = 0; i < 9; i++) {
         var k = PO[i % 3], e = eout(win(pf, (i / 9) * 0.5, (i / 9) * 0.5 + 0.5));
-        var sx = nkx + nkR * 0.8, ex = cleftX + 16, yy = ty + k + ((i / 3) | 0) * 8 - 8;
+        var sx = nkx + nkR * 0.8, ex = tx - Math.sqrt(tR * tR - k * k) - 2, yy = ty + k + ((i / 3) | 0) * 8 - 8;
         ctx.save(); ctx.translate(lerp(sx, ex, e), lerp(ty + (i - 4) * 10, yy, e)); ctx.rotate(e * Math.PI / 2 + (1 - e) * t * 3);
         ctx.fillStyle = rgba([255, 230, 120], 1 - smooth(0.9, 1, e) * 0.6); ctx.fillRect(-11, -3, 22, 6); ctx.restore();
       }
     }
-    if (poreA > 0) PO.forEach(function (k) { var px = cleftX + 18, py = ty + k; ctx.beginPath(); ctx.ellipse(px, py, 8, 16, 0, 0, TAU); ctx.fillStyle = 'rgba(20,10,20,0.9)'; ctx.fill(); ctx.lineWidth = 5; ctx.strokeStyle = rgba([255, 230, 120], poreA); ctx.stroke(); glow(ctx, px, py, 26, [255, 230, 120], 0.6 * poreA); });
+    if (poreA > 0) PO.forEach(function (k) { var px = tx - Math.sqrt(tR * tR - k * k) * 0.99, py = ty + k; ctx.beginPath(); ctx.ellipse(px, py, 8, 16, 0, 0, TAU); ctx.fillStyle = 'rgba(20,10,20,0.9)'; ctx.fill(); ctx.lineWidth = 5; ctx.strokeStyle = rgba([255, 230, 120], poreA); ctx.stroke(); glow(ctx, px, py, 26, [255, 230, 120], 0.6 * poreA); });
     // granzyme
     var gz = win(p, 0.48, 0.66);
     if (gz > 0 && apo < 0.4) {
       for (i = 0; i < 12; i++) {
         var kk = PO[i % 3], st = (i / 12) * 0.6, e2 = win(gz, st, st + 0.4); if (e2 <= 0) continue;
-        var gx2 = e2 < 0.5 ? lerp(nkx + nkR * 0.7, cleftX + 18, e2 * 2) : lerp(cleftX + 18, tx + 10 + (i % 4 - 1.5) * 30, (e2 - 0.5) * 2);
+        var gx2 = e2 < 0.5 ? lerp(nkx + nkR * 0.7, (tx - Math.sqrt(tR * tR - kk * kk)), e2 * 2) : lerp((tx - Math.sqrt(tR * tR - kk * kk)), tx + 10 + (i % 4 - 1.5) * 30, (e2 - 0.5) * 2);
         var gy2 = e2 < 0.5 ? lerp(ty + (i % 5 - 2) * 25, ty + kk, e2 * 2) : lerp(ty + kk, ty + (i % 3 - 1) * 40, (e2 - 0.5) * 2);
         ctx.save(); ctx.translate(gx2, gy2); ctx.rotate(Math.PI / 4 + t); ctx.fillStyle = rgba([110, 255, 150], 1 - smooth(0.85, 1, e2)); ctx.fillRect(-6, -6, 12, 12); ctx.restore();
         glow(ctx, gx2, gy2, 16, [110, 255, 150], 0.6 * (1 - e2));
@@ -1717,10 +1724,11 @@
       ctx.restore();
       ctx.beginPath(); ctx.arc(IX, IY, r2, 0, TAU); gline(ctx, TEAL, 3, 0.95);
       // top view ring
-      var RX = IX + IR + 10, RY = IY + IR - 20;
-      for (var j = 0; j < 12; j++) { var aa = (j / 12) * TAU; ctx.beginPath(); ctx.arc(RX + Math.cos(aa) * 26, RY + Math.sin(aa) * 26, 7, 0, TAU); ctx.fillStyle = '#ffe478'; ctx.fill(); }
-      ctx.beginPath(); ctx.arc(RX, RY, 16, 0, TAU); ctx.fillStyle = '#10141e'; ctx.fill();
-      txt(ctx, '上から見ると輪', RX, RY + 54, { size: 18, align: 'center', color: [255, 236, 170] });
+      var RX = IX + 70, RY = IY + 98;
+      ctx.save(); ctx.beginPath(); ctx.arc(IX, IY, r2 - 3, 0, TAU); ctx.clip();
+      for (var j = 0; j < 12; j++) { var aa = (j / 12) * TAU; ctx.beginPath(); ctx.arc(RX + Math.cos(aa) * 20, RY + Math.sin(aa) * 20, 5.5, 0, TAU); ctx.fillStyle = '#ffe478'; ctx.fill(); }
+      txt(ctx, '上から見ると輪', RX - 40, RY + 2, { size: 17, align: 'right', color: [255, 236, 170] });
+      ctx.restore();
       ctx.restore();
       txt(ctx, 'パーフォリン：膜に輪状の通り道', IX, IY + IR + 34, { size: 25, align: 'center', a: ins, color: [255, 236, 150], glow: [255, 200, 90] });
       txt(ctx, 'グランザイム：通り道から入る', IX, IY + IR + 72, { size: 25, align: 'center', a: win(p, 0.5, 0.58) * ins / Math.max(ins, 1e-3), color: [150, 255, 180], glow: [90, 220, 130] });
@@ -1808,7 +1816,15 @@
         ps.push(document.fonts.load('40px ZenKaku', '白血球好中球顆粒抗体受容体').catch(function () {}));
         ps.push(document.fonts.load('40px IPAGothic', 'μ₂⁻³α').catch(function () {}));
       }
-      return Promise.all(ps).then(function () { plGeom(); macroGeom(1); macroGeom(2); macroGeom(4); });
+      return Promise.all(ps).then(function () {
+        plGeom(); macroGeom(1); macroGeom(2); macroGeom(4);
+        if (D.wbcCell) { // pre-build the wbcCell sprites these diagrams use (first big sprite costs ~0.5 s otherwise)
+          var c = mkCanvas(8, 8).getContext('2d');
+          [['neutrophil', 3, 240], ['eosinophil', 2, 205], ['basophil', 2, 175], ['monocyte', 3, 115], ['lymphocyte', 1, 92], ['lymphocyte', 2, 115],
+            ['lymphocyte', 4, 82], ['lymphocyte', 5, 82], ['neutrophil', 1, 62], ['eosinophil', 2, 67], ['basophil', 3, 61], ['lymphocyte', 4, 43], ['monocyte', 5, 81], ['lymphocyte', 2, 48]
+          ].forEach(function (q) { D.wbcCell(c, { type: q[0], seed: q[1], r: q[2], x: 0, y: 0 }); });
+        }
+      });
     }
   };
   for (var key in api) D[key] = api[key];

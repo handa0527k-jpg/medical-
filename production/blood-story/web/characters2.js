@@ -7,7 +7,7 @@
  *   drawPeta(ctx, o)        ペタ (platelet kid). Native size ≈ Akane's chest (use the SAME scale as Akane).
  *                           o.activated 0..1 (ribbon pseudopods, beret rounds up), o.hue (deg) or o.variant 0..5 for the platelet squad.
  *   drawKyoko(ctx, o)       キョウコ (megakaryocyte). Native size ≈ 1.5× Akane. o.shed 0..1 (platelet discs bud & fall from the hem),
- *                           o.lobes 5|6 (crown), o.sleeveTo {x,y} + o.sleeve 0..1 (cytoplasmic process from the right sleeve into a vessel,
+ *                           o.lobes 5|6 (crown), o.sleeveTo {x,y} + o.sleeve 0..1 (+o.sleeveArm 'R'|'L', default = nearer wrist): cytoplasmic process into a vessel,
  *                           buds platelets at its tip), pose 'sit' (seated, robe pooled).
  *   drawShirou(ctx, {young:true})       幼いシロウ (≈0.68× height, band-nucleus badge, bigger eyes).
  *   drawWBCAlly(ctx, {variant:2, form:'macrophage' | morph:0..1})  ソウ: monocyte → macrophage (bigger, frilled cloak, lysosome orbs,
@@ -16,7 +16,7 @@
  *   drawLymphoMob(ctx, {kind:'T4'|'T8'|'B'|'NK'|'plasma'|'band'|'neut', seed})  background squad (Rin-style uniform, badge differs).
  *   drawStemCell(ctx, {x,y,scale,t,form:'figure'|'orb',pulse,alpha,pose,yaw})   glowing platinum silhouette, no linework.
  *   drawInfectedCell(ctx, {x,y,scale,t,sick,expr:'sick'|'scared'|'calm'|'relieved',mhcFlag,pores,apoptosis,mouth,blink,alpha,tint})
- *   drawGiantHand(ctx, {x,y,scale,rot,pose:'thumb'|'pinch'|'hold_slide'|'push_spreader',flip,glove,prop,blood,alpha,tint,rim,t})
+ *   drawGiantHand(ctx, {x,y,scale,rot(deg),pose:'thumb'|'pinch'|'hold_slide'|'push_spreader',flip,glove,prop,base,blood,alpha,tint,rim,t})
  *                           (x,y) = the ACTION point (thumb pad / pinch point / slide centre / spreader contact edge). Returns anchors.
  * Variants for every main character (Akane, Shirou, allies, Peta, Kyoko, mobs):
  *   o.stain:'giemsa'  Giemsa-like palette (Ep.4).   o.flat 0..1  spread flat between glass (anchored at the feet).
@@ -918,7 +918,8 @@
     const T = { x: (o.sleeveTo.x - o.x) / (s * facing * (1 - 0.12 * sq)), y: (o.sleeveTo.y - o.y) / (s * (1 - 0.04 * sq)) };
     const k = clamp(o.sleeve, 0, 1), t = o.t || 0, shed = clamp(o.shed != null ? o.shed : 0.6, 0, 1);
     addG(1e4 - 0.5, () => {
-      const ctx = G.ctx, W = Q.wristR;
+      const ctx = G.ctx;
+      const W = o.sleeveArm === 'L' ? Q.wristL : o.sleeveArm === 'R' ? Q.wristR : (hypot(T.x - Q.wristL.x, T.y - Q.wristL.y) < hypot(T.x - Q.wristR.x, T.y - Q.wristR.y) ? Q.wristL : Q.wristR);
       const dx = T.x - W.x, dy = T.y - W.y, L = hypot(dx, dy) || 1, nx = -dy / L, ny = dx / L;
       const N = 24, pts = [];
       for (let i = 0; i <= N; i++) {
@@ -1374,7 +1375,7 @@
     const base = ctx.getTransform();
     const setM = (m) => ctx.setTransform(base.multiply(m));
     const res = { pose, action: TP(M, { x: 0, y: 0 }) };
-    if (pose === 'push_spreader' && prop) { // base slide in the action frame (horizontal, contact at origin)
+    if (pose === 'push_spreader' && prop && o.base !== false) { // base slide in the action frame (horizontal, contact at origin)
       setM(M);
       glassRect(ctx, G, pal, -760, 0, 1300, 26, null);
       if (o.blood !== false) { // blood bead along the contact line

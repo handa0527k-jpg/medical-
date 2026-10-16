@@ -88,7 +88,7 @@ def _char_times(lid: str) -> tuple[str, list[float]]:
         raise RuntimeError(f"no word timestamps for {lid}: run tools/word_times.py --ids {lid}")
     hyp, ht = "", []
     for w in words:                      # spread each word's span evenly over its kana
-        k = w["kana"]
+        k = _kana(w["w"])             # (re-read: to_kana spells digits in kana)
         for i in range(len(k)):
             ht.append(w["start"] + (w["end"] - w["start"]) * i / max(1, len(k)))
         hyp += k
@@ -229,7 +229,7 @@ after("E01-19", GAP_REACT, "E01-20")
 scene("co2", K0, "#17 lungs <-> tissue loop; #18 CO2 + H2O -> H+ + HCO3- (carbonic anhydrase); #19 HCO3- out through band 3; #20 Akane",
       lung_breath=K0 + 0.1, o2_pickup_lung=K("E01-17", "さんそを"), o2_release_tissue=K("E01-17", "そしき"),
       co2_enters=K("E01-18", "にさんか"), enzyme=K("E01-18", "たんさんだっすい", -0.03),
-      reaction=K("E01-18", "にさんかたんそと", -0.04), hco3_formed=K("E01-18", "たんさんすいそ", -0.02),
+      reaction=K("E01-18", "にさんかたんそと", -0.04), hco3_formed=K("E01-18", "炭酸水素", -0.02),
       band3_open=K("E01-19", "ばんど", -0.03), hco3_out=K("E01-19", "とおって", -0.14),
       hco3_in_plasma=K("E01-19", "けっしょうへ", -0.03))
 
