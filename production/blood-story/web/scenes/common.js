@@ -117,8 +117,19 @@ BS.cuts = BS.cuts || {};
     const alpha = Math.min(fadeIn, fadeOut);
     ctx.save(); ctx.globalAlpha = alpha;
     const size = 50; ctx.font = `${size}px ZenKaku, IPAGothic, sans-serif`; ctx.textBaseline = 'alphabetic'; ctx.textAlign = 'center';
-    const tag = l.who === 'N' ? '' : l.who; const text = l.text;
-    const rows = wrap(ctx, text, W - 2 * 140);
+    const tag = l.who === 'N' ? '' : l.who;
+    // a line too long for two rows is shown sentence by sentence, timed by character count
+    let text = l.text; const maxW = W - 2 * 140;
+    let rows = wrap(ctx, text, maxW);
+    if (rows.length === 1 && ctx.measureText(text).width > maxW) {
+      const segs = text.match(/[^。！？]+[。！？]*/g) || [text];
+      const groups = []; let cur = '';
+      for (const sg of segs) { const cand = cur + sg; if (cur && wrap(ctx, cand, maxW).length === 1 && ctx.measureText(cand).width > maxW) { groups.push(cur); cur = sg; } else cur = cand; }
+      if (cur) groups.push(cur);
+      const total = groups.reduce((a, g) => a + g.length, 0); const span = l.end - l.start; let acc = 0, pick = groups[groups.length - 1];
+      for (const g of groups) { acc += g.length; if (t < l.start + span * acc / total) { pick = g; break; } }
+      text = pick; rows = wrap(ctx, text, maxW);
+    }
     const lh = size * 1.32; const baseY = H - 70 - (rows.length - 1) * lh;
     rows.forEach((row, i) => {
       const y = baseY + i * lh;
