@@ -290,7 +290,7 @@
       blink: BS.chars.blinkAt(t, 14) });
     w().drawSpeedLines(ctx, { t, intensity: lerp(0.4, 1.0, prog(t, 28.5, 29.6)) });
     w().drawVignette(ctx, { strength: 0.5 });
-    if (t >= 28.95) w().drawTelop(ctx, { text: '次回：白血球、防御戦線！', style: 'next', kicker: '次回予告', t: t - 28.95, y: H * 0.2, size: 104 });
+    if (t >= 28.95 && !BS.episodeMode) w().drawTelop(ctx, { text: '次回：白血球、防御戦線！', style: 'next', kicker: '次回予告', t: t - 28.95, y: H * 0.2, size: 104 });
     if (t >= 29.5) { // impact: flash + shake, no fade to black
       const k = 1 - prog(t, 29.5, 29.85, ease.out);
       ctx.save(); ctx.globalCompositeOperation = 'lighter'; ctx.fillStyle = `rgba(255,230,210,${0.55 * k})`; ctx.fillRect(0, 0, W, H); ctx.restore();
@@ -321,6 +321,7 @@
   BS.cuts.intro = {
     duration: 30,
     prepare(E) { BS.E = E; },
+    caption: (ctx, t) => hbCaption(ctx, t),
     render(ctx, t, E) {
       BS.E = E;
       BS.common.playShots(ctx, t, shots, E);

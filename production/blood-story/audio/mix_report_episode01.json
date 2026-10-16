@@ -5,9 +5,9 @@
  "sample_peak_dbfs": -1.11,
  "clipped_samples": 0,
  "master_gain_db": 1.88,
- "voice_lufs": -16.16,
- "bgm_lufs_ducked": -25.78,
- "sfx_lufs": -21.91,
+ "voice_lufs": -16.15,
+ "bgm_lufs_ducked": -25.77,
+ "sfx_lufs": -21.96,
  "min_gap_episode": 0.35,
  "scenes": [
   [
@@ -81,7 +81,7 @@
   "hb": -16.0,
   "co2": -16.1,
   "life": -16.1,
-  "battle": -15.8,
+  "battle": -15.9,
   "platelet": -15.9,
   "epilogue": -16.3,
   "next": -16.5

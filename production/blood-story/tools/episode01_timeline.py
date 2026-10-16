@@ -198,8 +198,9 @@ scene("battle", B0, "#25 alarm again, Shirou's squad charges the bacteria; #26-2
       engulf=ENGULF, engulf_closed=ENGULF + 0.8,
       phagosome=L("E01-29", 2.7), lysosome_fusion=L("E01-29", 4.3), phagolysosome=L("E01-29", 5.15), digest=L("E01-29", 5.9),
       allies_enter=E("E01-30") + 0.5,
-      pose_eosinophil=L("E01-31", 0.0), pose_basophil=L("E01-31", 3.0), pose_monocyte=L("E01-31", 6.85),
-      pose_b_cell=L("E01-31", 9.95), plasma_cell=L("E01-31", 11.1))
+      # pose hits land in the pause just BEFORE each name is spoken (stinger must not mask the word)
+      pose_eosinophil=L("E01-31", -0.4), pose_basophil=L("E01-31", 2.68), pose_monocyte=L("E01-31", 6.45),
+      pose_b_cell=L("E01-31", 9.6), plasma_cell=L("E01-31", 11.1))
 
 # --- platelet: 血小板と凝固 #32-33
 W0 = E("E01-31") + TRANS
@@ -333,10 +334,10 @@ SFX += [
     ("phagosome", _b["phagosome"], "ep_squelch.wav", -16.0, 0.0),
     ("lysosome_fusion", _b["lysosome_fusion"], "ep_pop_2.wav", -14.0, 0.0),
     ("digest_fizz", _b["digest"], "ep_fizz.wav", -12.0, 0.0),
-    ("pose_eosinophil", _b["pose_eosinophil"] - 0.16, "ep_stinger_0.wav", -10.0, -0.35),
-    ("pose_basophil", _b["pose_basophil"] - 0.16, "ep_stinger_1.wav", -10.0, -0.1),
-    ("pose_monocyte", _b["pose_monocyte"] - 0.16, "ep_stinger_2.wav", -10.0, 0.15),
-    ("pose_b_cell", _b["pose_b_cell"] - 0.16, "ep_stinger_3.wav", -10.0, 0.35),
+    ("pose_eosinophil", _b["pose_eosinophil"] - 0.16, "ep_stinger_0.wav", -12.0, -0.35),
+    ("pose_basophil", _b["pose_basophil"] - 0.16, "ep_stinger_1.wav", -12.0, -0.1),
+    ("pose_monocyte", _b["pose_monocyte"] - 0.16, "ep_stinger_2.wav", -12.0, 0.15),
+    ("pose_b_cell", _b["pose_b_cell"] - 0.16, "ep_stinger_3.wav", -12.0, 0.35),
     # platelet
     ("wound_rip", _w["wound"], "ep_wound_rip.wav", -6.0, 0.0),
     ("bleeding", _w["bleeding"], "ep_squelch_long.wav", -14.0, 0.0),

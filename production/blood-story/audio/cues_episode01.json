@@ -8076,10 +8076,10 @@
     "phagolysosome": 231.4667,
     "digest": 232.2333,
     "allies_enter": 236.9,
-    "pose_eosinophil": 237.6333,
-    "pose_basophil": 240.6333,
-    "pose_monocyte": 244.4667,
-    "pose_b_cell": 247.5667,
+    "pose_eosinophil": 237.2333,
+    "pose_basophil": 240.3,
+    "pose_monocyte": 244.0667,
+    "pose_b_cell": 247.2333,
     "plasma_cell": 248.7333
    }
   },
@@ -9611,35 +9611,35 @@
   },
   {
    "name": "pose_eosinophil",
-   "start": 237.467,
-   "frame": 7124,
-   "end": 239.367,
+   "start": 237.067,
+   "frame": 7112,
+   "end": 238.967,
    "file": "se/ep_stinger_0.wav",
-   "gain_db": -10.0
+   "gain_db": -12.0
   },
   {
    "name": "pose_basophil",
-   "start": 240.467,
-   "frame": 7214,
-   "end": 242.367,
+   "start": 240.133,
+   "frame": 7204,
+   "end": 242.033,
    "file": "se/ep_stinger_1.wav",
-   "gain_db": -10.0
+   "gain_db": -12.0
   },
   {
    "name": "pose_monocyte",
-   "start": 244.3,
-   "frame": 7329,
-   "end": 246.2,
+   "start": 243.9,
+   "frame": 7317,
+   "end": 245.8,
    "file": "se/ep_stinger_2.wav",
-   "gain_db": -10.0
+   "gain_db": -12.0
   },
   {
    "name": "pose_b_cell",
-   "start": 247.4,
-   "frame": 7422,
-   "end": 249.3,
+   "start": 247.067,
+   "frame": 7412,
+   "end": 248.967,
    "file": "se/ep_stinger_3.wav",
-   "gain_db": -10.0
+   "gain_db": -12.0
   },
   {
    "name": "wound_rip",
