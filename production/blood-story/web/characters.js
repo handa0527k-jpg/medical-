@@ -347,7 +347,7 @@
     kn: [3, 12, 6, 5, 26, 46, 32, 8],
     ft: [10, 0, 0, -6, -22, -14, -2, 5],
   };
-  const EXT_POSES = { point: 1, present: 1, cheer: 1, think: 1, wave: 1, walk: 1, reach: 1, battle: 1, pose: 1, look_up: 1 };
+  const EXT_POSES = { point: 1, present: 1, cheer: 1, think: 1, wave: 1, walk: 1, reach: 1, battle: 1, pose: 1, look_up: 1, surprised: 1, sit: 1 };
   // arm specs, all in the body frame [forward, up, outward]:
   //   {u, v}            upper-arm / forearm directions
   //   {off, pole}       wrist target relative to the shoulder in arm lengths (2-bone IK)
@@ -430,8 +430,28 @@
       S.L = { u: [-0.08, -1, 0.3], v: [0.05, -1, 0.3] };
       P.hand.R = P.hand.L = 'flat';
       P.lean = -5 * DEG; P.head.pitch = -0.55; P.lookDefault = { x: 0, y: -0.85 };
+    } else if (pose === 'surprised') { // (v3) flinch back, open palms up by the chest
+      const k = o.surpriseAmt != null ? sstep(clamp(o.surpriseAmt, 0, 1)) : 1;
+      setLeg(L.R, lerp(3, 8, k), lerp(4, 10, k), 0, lerp(2, 6, k)); setLeg(L.L, lerp(-5, -16, k), lerp(10, 16, k), lerp(2, -4, k), lerp(6, 9, k));
+      for (const a of ['R', 'L']) S[a] = { u: [lerp(0.02, 0.28, k), lerp(-1, -0.78, k), lerp(0.17, 0.5, k)], v: [lerp(0.1, 0.4, k), lerp(-1, 0.88, k), lerp(0.1, 0.12, k)] };
+      P.hand.R = P.hand.L = 'flat';
+      P.lean = -7 * k * DEG; P.shrug = 5 * k + breath; P.head.pitch = -0.06 * k; P.head.roll = (fem ? 0.04 : 0) * (1 - k);
+    } else if (pose === 'sit') { // (v3) seated on a low (unseen) stool: knees forward, hands on the lap
+      setLeg(L.R, 84, 86, 2, 7); setLeg(L.L, 80, 84, 2, 8);
+      S.R = { body: [B.thigh * 0.62, 18, B.hipW + 4], pole: [0.2, 0, 1] };
+      S.L = { body: [B.thigh * 0.58, 20, B.hipW + 2], pole: [0.2, 0, 1] };
+      P.hand.R = P.hand.L = 'flat'; P.sit = true;
+      P.lean = 3 * DEG; P.head.pitch = 0.04;
     } else if (pose === 'pose') {
-      if (name === 'akane') { // V-sign by the eye, hand on hip, heel kicked up
+      if (name === 'peta') { // (v3) both fists up, heel kicked
+        setLeg(L.R, 2, 4, 0, 6); setLeg(L.L, -12, 64, -24, 5);
+        S.R = { u: [0.18, 0.9, 0.38], v: [0.1, 1, 0.12] }; S.L = { u: [0.1, 0.85, 0.45], v: [0.05, 1, 0.2] };
+        P.hand.R = P.hand.L = 'fist'; P.lean = -3 * DEG; P.head.pitch = -0.1; P.head.roll = 0.08;
+      } else if (name === 'kyoko') { // (v3) open, welcoming palms
+        standLegs();
+        S.R = { u: [0.22, -0.82, 0.55], v: [0.62, 0.18, 0.75] }; S.L = { u: [0.22, -0.82, 0.55], v: [0.62, 0.18, 0.75] };
+        P.hand.R = P.hand.L = 'flat'; P.head.roll = 0.08; P.head.pitch = 0.05; P.lean = -1 * DEG;
+      } else if (name === 'akane') { // V-sign by the eye, hand on hip, heel kicked up
         setLeg(L.R, 2, 4, 0, 5); setLeg(L.L, -14, 70, -26, 4);
         S.R = { head: [0.55, 0.0, 1.55], pole: [0, -1, 0.7] }; S.L = HIP_HAND(B);
         P.hand.R = 'vsign'; P.hand.L = 'fist';
@@ -1447,6 +1467,13 @@
     ctx.restore();
     if (def.head.hair.tie) def.head.hair.tie(G, pal, pts[0], pts[1]);
   }
+  function addSmoothCtxClosed(ctx, pts) { // (v3) closed quadratic loop through midpoints
+    const n = pts.length;
+    const m0 = lp2(pts[n - 1], pts[0], 0.5);
+    ctx.moveTo(m0.x, m0.y);
+    for (let i = 0; i < n; i++) { const m = lp2(pts[i], pts[(i + 1) % n], 0.5); ctx.quadraticCurveTo(pts[i].x, pts[i].y, m.x, m.y); }
+    ctx.closePath();
+  }
   function addSmoothCtx(ctx, pts) {
     ctx.moveTo(pts[0].x, pts[0].y);
     for (let i = 1; i < pts.length - 1; i++) { const m = lp2(pts[i], pts[i + 1], 0.5); ctx.quadraticCurveTo(pts[i].x, pts[i].y, m.x, m.y); }
@@ -1948,6 +1975,26 @@
     } else if (kind === 'kidney') { // monocyte
       ctx.beginPath(); ctx.ellipse(0, 0, r * 0.62, r * 0.46, 0, 0, TAU); ctx.fill();
       ctx.fillStyle = pal.emblemBg; ctx.beginPath(); ctx.ellipse(0, -r * 0.5, r * 0.26, r * 0.22, 0, 0, TAU); ctx.fill();
+    } else if (kind === 'band') { // (v3) young neutrophil: one curved, unconstricted rod
+      ctx.lineCap = 'round'; ctx.lineWidth = r * 0.3;
+      ctx.beginPath(); ctx.moveTo(-0.5 * r, 0.22 * r); ctx.bezierCurveTo(-0.3 * r, -0.55 * r, 0.3 * r, -0.55 * r, 0.5 * r, 0.22 * r); ctx.stroke();
+    } else if (kind === 'irregular') { // (v3) macrophage: irregular nucleus + lysosome dots
+      ctx.beginPath();
+      addSmoothCtxClosed(ctx, [[-0.52, -0.08], [-0.3, -0.42], [0.06, -0.3], [0.32, -0.48], [0.56, -0.12], [0.36, 0.1], [0.44, 0.4], [0.02, 0.3], [-0.3, 0.46], [-0.44, 0.2]].map(([a, b]) => ({ x: a * r, y: b * r })));
+      ctx.fill();
+      ctx.fillStyle = pal.accent.b;
+      for (const [a, b] of [[-0.62, -0.55], [0.66, 0.48], [0.1, 0.66], [-0.66, 0.52]]) { ctx.beginPath(); ctx.arc(a * r, b * r, r * 0.1, 0, TAU); ctx.fill(); }
+    } else if (kind === 'eccentric') { // (v3) plasma cell: off-centre "clock-face" nucleus
+      ctx.beginPath(); ctx.arc(-0.24 * r, 0.1 * r, r * 0.5, 0, TAU); ctx.fill();
+      ctx.fillStyle = pal.emblemBg;
+      for (let i = 0; i < 6; i++) { const a = i * TAU / 6; ctx.beginPath(); ctx.arc(-0.24 * r + cos(a) * r * 0.3, 0.1 * r + sin(a) * r * 0.3, r * 0.07, 0, TAU); ctx.fill(); }
+      ctx.beginPath(); ctx.arc(0.42 * r, -0.36 * r, r * 0.14, 0, TAU); ctx.globalAlpha *= 0.7; ctx.fill(); ctx.globalAlpha /= 0.7;
+    } else if (kind === 'lgl') { // (v3) NK / large granular lymphocyte: round nucleus + coarse red granules
+      ctx.beginPath(); ctx.arc(-0.12 * r, 0, r * 0.52, 0, TAU); ctx.fill();
+      ctx.fillStyle = '#e0303a';
+      for (const [a, b] of [[0.55, -0.35], [0.6, 0.25], [0.2, 0.62], [0.32, -0.62]]) { ctx.beginPath(); ctx.arc(a * r, b * r, r * 0.12, 0, TAU); ctx.fill(); }
+    } else if (kind === 'none') { // (v3) platelet: no nucleus — an empty ring
+      ctx.lineWidth = r * 0.14; ctx.beginPath(); ctx.arc(0, 0, r * 0.5, 0, TAU); ctx.stroke();
     } else { // lymphocyte: large round nucleus
       ctx.beginPath(); ctx.arc(0, 0, r * 0.66, 0, TAU); ctx.fill();
     }
@@ -2263,8 +2310,8 @@
     return DEFS[who] || AKANE;
   }
   // Head centre & radius in canvas px for the given opts (same maths as drawing). For close-up framing.
-  function headAnchor(who, opts) {
-    const def = defOf(who, opts);
+  function headAnchor(who, opts) { return headAnchorDef(defOf(who, opts), opts); }
+  function headAnchorDef(def, opts) {
     const F = computeFrame(def, opts);
     const h = headScreen(def, F);
     const o = F.o, s = o.scale, facing = o.facing < 0 ? -1 : 1, sq = clamp(o.squash || 0, 0, 1);
@@ -2279,8 +2326,8 @@
   // Hand / wrist positions in canvas px for the given opts (same maths as drawing): for placing holograms,
   // props or the bacterium. palm = centre of the open hand; tip = fingertip end; holo = a point above the
   // presenting / pointing hand (or the left wrist band) where a hologram can float.
-  function handAnchor(who, opts) {
-    const def = defOf(who, opts);
+  function handAnchor(who, opts) { return handAnchorDef(defOf(who, opts), opts); }
+  function handAnchorDef(def, opts) {
     const F = computeFrame(def, opts);
     const o = F.o, s = o.scale, facing = o.facing < 0 ? -1 : 1, sq = clamp(o.squash || 0, 0, 1);
     const sY = sin(F.Y), cY = cos(F.Y);
@@ -2334,5 +2381,13 @@
     ALLY_NAMES: ['ユズ（好酸球）', 'ゴウ（好塩基球）', 'ソウ（単球）', 'リン（リンパ球）'],
     VIEW_YAW, EXPR: Object.keys(EXPR),
     _defs: DEFS,
+    // (v3) internals for characters2.js (new cast / variants). Not a stable public API.
+    _k: {
+      drawFigure, computeFrame, headScreen, headAnchorDef, handAnchorDef, defOf, squadOutfit, holdGroup, holoBand,
+      drawParts, fillPart, drawUnified, strokeLine, capsule, smooth, addSmooth, addSmoothCtx, addSmoothCtxClosed, poly, hull, crescent, crescentNoClip,
+      parse, mix, rgba, mapCols, tintPal, lp2, P2, clamp, lerp, sstep, drawNucleusEmblem, drawDiscEmblem, drawEye, drawMouth, scaleBody, prepSpikes,
+      squadHeadset, akaneBeret, discTie, AKANE, SHIROU, ALLIES, ALLY_SPECS, ALLY_HAIR, SHIROU_HAIR, AKANE_HAIR, AKANE_BODY, SHIROU_BODY,
+      SHIROU_PAL, AKANE_PAL, AKANE_OUT, EXPR, EXT_POSES, DEFAULTS,
+    },
   };
 })();

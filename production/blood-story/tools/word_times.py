@@ -3,9 +3,10 @@
 Word timestamps of voice files (faster-whisper, word_timestamps=True), stored with a kana reading
 so keywords can be found regardless of the transcript's kanji (homophones).
 
-    python3 tools/word_times.py [--prefix E01-] [--model medium]  -> audio/voice/words_episode01.json
+    python3 tools/word_times.py [--prefix E01-] [--model medium]  -> audio/voice_sbv2/words_episode01.json
+    (audio/voice/words_episode01.json with BS_VOICE_ENGINE=edge)
 
-Used by episode01_timeline.py: kw(line_id, "けっしょう") -> seconds from the start of the voice file.
+Used by episode01_timeline.py: K(line_id, "けっしょう") -> time the keyword is spoken (aligned on the kana reading).
 """
 from __future__ import annotations
 
@@ -14,10 +15,10 @@ import numpy as np
 from scipy import signal
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from audio_lib import AUDIO, read_wav  # noqa: E402
+from audio_lib import AUDIO, read_wav, voice_meta, voice_dir  # noqa: E402
 from verify_voices import to_kana  # noqa: E402
 
-OUT = os.path.join(AUDIO, "voice", "words_episode01.json")
+OUT = os.path.join(voice_dir(), "words_episode01.json")       # per voice engine
 
 
 def main():
@@ -28,7 +29,7 @@ def main():
     a = ap.parse_args()
     from faster_whisper import WhisperModel
     model = WhisperModel(a.model, device="cpu", compute_type="int8")
-    meta = json.load(open(os.path.join(AUDIO, "voice", "voices.json"), encoding="utf-8"))
+    meta = voice_meta()
     ids = [s for s in a.ids.split(",") if s] or [k for k in meta if k.startswith(a.prefix)]
     res = json.load(open(OUT, encoding="utf-8")) if os.path.exists(OUT) else {}
     for lid in ids:

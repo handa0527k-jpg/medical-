@@ -4,7 +4,8 @@ BLOOD STORY intro mix.
 
     python3 tools/voices.py && python3 tools/sfx.py && python3 tools/bgm.py && python3 tools/mix.py
 
-Reads  audio/voice/voices.json + *.wav, audio/se/*.wav, audio/bgm/intro_bgm.wav and tools/intro_timeline.py.
+Reads  the voice takes via audio_lib.voice_meta() (audio/voice_sbv2/ = Style-Bert-VITS2, default;
+       BS_VOICE_ENGINE=edge -> audio/voice/ edge-tts), audio/se/*.wav, audio/bgm/intro_bgm.wav and tools/intro_timeline.py.
 Writes audio/mix_intro.wav     30.000 s, 48 kHz stereo, 24-bit, ~-16 LUFS integrated, <= -1 dBTP
        audio/stems/voice.wav, bgm.wav, sfx.wav   (float32, same gain as in the mix, pre-limiter:
                                                  voice + bgm + sfx ~= mix before the master limiter)
@@ -18,7 +19,7 @@ import numpy as np
 from scipy import signal
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from audio_lib import SR, AUDIO, read_wav, write_wav, pan, stereo, compress, limiter, true_peak, eq  # noqa: E402
+from audio_lib import SR, AUDIO, read_wav, write_wav, pan, stereo, compress, limiter, true_peak, eq, voice_meta, VOICE_ENGINE  # noqa: E402
 import intro_timeline as TL  # noqa: E402
 
 TARGET_LUFS = -16.0
@@ -64,7 +65,7 @@ def activity_env(v, att=0.05, rel=0.40, look=0.06, thr_db=-42):
 
 def main():
     N = int(round(TL.DURATION * SR))
-    meta = json.load(open(os.path.join(AUDIO, "voice", "voices.json"), encoding="utf-8"))
+    meta = voice_meta()
 
     # ------------------------------------------------------------------ voices
     voice = np.zeros((N, 2))
@@ -141,7 +142,7 @@ def main():
 
     # ------------------------------------------------------------------ cues
     cues = dict(
-        duration=TL.DURATION, fps=TL.FPS,
+        duration=TL.DURATION, fps=TL.FPS, voice_engine=VOICE_ENGINE,
         note="line start = time the voice file starts (on the frame grid); mouth[k] = frame start_frame + k "
              "(0..1, 30 fps) until end. speech_start = first audible sound.",
         lines=lines_out,
@@ -163,7 +164,7 @@ def main():
                true_peak_dbtp=round(20 * np.log10(true_peak(mix)), 2),
                sample_peak_dbfs=round(20 * np.log10(np.max(np.abs(mix))), 2),
                clipped_samples=int(np.sum(np.abs(mix) >= 0.9999)),
-               master_gain_db=round(gain_db, 2),
+               master_gain_db=round(gain_db, 2), voice_engine=VOICE_ENGINE,
                lines=[(l["id"], l["start"], l["end"]) for l in lines_out], problems=problems)
     # short-term loudness of the stems at the dialogue (voice vs ducked music)
     rep["voice_lufs"] = round(meter.integrated_loudness(voice * G), 2)

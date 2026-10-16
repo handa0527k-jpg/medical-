@@ -2,22 +2,30 @@
 Episode 1 timeline (single source of truth for bgm.py --cue episode01, mix_episode.py and cues_episode01.json).
 
 Times in seconds, every event snapped to the 30 fps frame grid.
-Line placement is computed from the measured speech bounds in audio/voice/voices.json:
+Line placement is computed from the measured speech bounds of the selected voice engine
+(audio_lib.voice_meta(): audio/voice_sbv2/voices.json = Style-Bert-VITS2 by default, BS_VOICE_ENGINE=edge -> edge-tts):
     next voice file start = previous speech end + gap - speech_on(next)
-Beats inside a line are given as offsets from that line's file start; the offsets come from the
-whisper word timestamps (audio/voice/words_episode01.json), so labels land on the spoken keyword.
+Beats inside a line are anchored on spoken keywords: K(line, "けっしょう", lead) = the time the keyword starts in the
+take (whisper word timestamps, tools/word_times.py -> <voice dir>/words_episode01.json, aligned character by
+character on the kana reading of `speech`), plus `lead` seconds (negative = just before the word).
+So a new recording (other engine / speed) moves every label with the word it belongs to.
 
 0-27 s is the intro mix unchanged (intro_timeline.py); N2 is replaced by the full sentence (N2_full).
+The avant keeps its picture timing: the title starts at AVANT_END (35.7 s) as long as N2_full ends >= 0.6 s before it.
 """
 from __future__ import annotations
 
-import json, os
+import difflib, json, os, sys
 
 import intro_timeline as INTRO
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from audio_lib import voice_meta, voice_dir  # noqa: E402
 
 FPS = 30
 _HERE = os.path.dirname(os.path.abspath(__file__))
-_META = json.load(open(os.path.join(os.path.dirname(_HERE), "audio", "voice", "voices.json"), encoding="utf-8"))
+_META = voice_meta()
+_WORDS_PATH = os.path.join(voice_dir(), "words_episode01.json")
+_WORDS = json.load(open(_WORDS_PATH, encoding="utf-8")) if os.path.exists(_WORDS_PATH) else {}
 
 GAP_LINE = 0.35        # narration -> narration inside a chapter
 GAP_REACT = 0.45       # before a character reacts / answers
@@ -62,6 +70,59 @@ def E(lid: str) -> float:
     return _end[lid]
 
 
+_CHAR_T: dict[str, tuple[str, list[float]]] = {}
+
+
+def _kana(s: str) -> str:
+    from verify_voices import to_kana
+    return to_kana(s)
+
+
+def _char_times(lid: str) -> tuple[str, list[float]]:
+    """kana reading of the line + the time (s from the file start) each kana starts, from whisper word stamps"""
+    if lid in _CHAR_T:
+        return _CHAR_T[lid]
+    ref = _kana(_META[lid]["speech"])
+    words = _WORDS.get(lid)
+    if not words:
+        raise RuntimeError(f"no word timestamps for {lid}: run tools/word_times.py --ids {lid}")
+    hyp, ht = "", []
+    for w in words:                      # spread each word's span evenly over its kana
+        k = w["kana"]
+        for i in range(len(k)):
+            ht.append(w["start"] + (w["end"] - w["start"]) * i / max(1, len(k)))
+        hyp += k
+    t = [None] * len(ref)
+    for a, b, n in difflib.SequenceMatcher(None, ref, hyp, autojunk=False).get_matching_blocks():
+        for i in range(n):
+            t[a + i] = ht[b + i]
+    known = [i for i, v in enumerate(t) if v is not None]
+    for i in range(len(ref)):            # unmatched kana (homophones, digits): interpolate between neighbours
+        if t[i] is None:
+            lo = max([j for j in known if j < i], default=None)
+            hi = min([j for j in known if j > i], default=None)
+            if lo is None:
+                t[i] = t[hi]
+            elif hi is None:
+                t[i] = t[lo] + 0.08 * (i - lo)
+            else:
+                t[i] = t[lo] + (t[hi] - t[lo]) * (i - lo) / (hi - lo)
+    _CHAR_T[lid] = (ref, t)
+    return ref, t
+
+
+def K(lid: str, word: str, lead: float = 0.0, n: int = 0) -> float:
+    """time the keyword `word` (kana, n-th occurrence) is spoken in line lid, + lead seconds (absolute, snapped)"""
+    ref, t = _char_times(lid)
+    key = _kana(word)
+    i = -1
+    for _ in range(n + 1):
+        i = ref.find(key, i + 1)
+        if i < 0:
+            raise KeyError(f"{word!r} not in {lid}: {ref}")
+    return snap(_start[lid] + t[i] + lead)
+
+
 SCENES: list[dict] = []
 
 
@@ -91,8 +152,11 @@ scene("avant", 0.0, "intro S1-S5 (as mix_intro.wav); 29.5 hit is a transition, m
       vessel_dive=0.0, akane_o2=6.0, akane_run=8.5, capillary=13.0, alarm=20.3, shirou_run=24.5,
       hit=29.5, n2_end=E("N2_full"))
 
-# --- #1 title (5.5 s, starts 1.0 s after N2 ends)
-T0 = snap_up(E("N2_full") + 1.0)
+# --- #1 title (5.5 s). The avant picture is cut to 35.7 s: keep that as long as N2 ends >= 0.6 s before it
+AVANT_END = 35.7
+T0 = max(AVANT_END, snap_up(E("N2_full") + 0.6))
+if T0 > AVANT_END:
+    print(f"WARNING: N2_full ends {E('N2_full'):.2f} -> title pushed to {T0:.2f} (avant timing changes)", file=sys.stderr)
 TITLE_LEN = 5.5
 scene("title", T0, "#1 title: light from the vessel depth, heartbeat, ECG blip, orchestral swell, logo",
       light_from_depth=T0, heartbeat_1=T0 + 0.30, heartbeat_2=T0 + 1.15, ecg_blip=T0 + 1.25,
@@ -105,15 +169,15 @@ after("E01-02", GAP_REACT, "E01-03")      # a little extra: layers settle
 after("E01-03", GAP_LINE, "E01-04")
 after("E01-04", GAP_LINE, "E01-05")
 after("E01-05", GAP_REACT, "E01-06")
-SPIN = L("E01-02", 2.10)                   # 「遠心分離」
+SPIN = K("E01-02", "えんしんぶんり", -0.05)   # 「遠心分離」
 scene("comp", C0, "#2-6 test-tube hologram, centrifuge, 3 layers with labels, Akane points at herself",
       holo_on=C0 + 0.25, tube_appears=C0 + 0.5,
       centrifuge_spin_start=SPIN, centrifuge_full_speed=SPIN + 0.5, centrifuge_spin_down=SPIN + 1.5,
       centrifuge_stop=SPIN + 2.5, layers_visible=SPIN + 2.5,
-      label_plasma=L("E01-03", 1.75), pct_55=L("E01-03", 4.25),
-      label_buffy=L("E01-04", 2.15), pct_1=L("E01-04", 4.05),
-      label_rbc=L("E01-05", 2.0), pct_45=L("E01-05", 3.95),
-      akane_points_self=L("E01-05", 5.3), akane_line=L("E01-06"))
+      label_plasma=K("E01-03", "けっしょう", -0.03), pct_55=K("E01-03", "ごじゅうご", -0.05),
+      label_buffy=K("E01-04", "はっけっきゅう", -0.05), pct_1=K("E01-04", "いちぱーせんと", -0.03),
+      label_rbc=K("E01-05", "せっけっきゅう", -0.04), pct_45=K("E01-05", "よんじゅうご", -0.05),
+      akane_points_self=K("E01-05", "しめて", -0.1), akane_line=L("E01-06"))
 
 # --- plasma: 血清と血餅 #7-8, 血漿タンパク #9
 P0 = E("E01-06") + TRANS
@@ -121,11 +185,14 @@ _place("E01-07", P0 + 0.95)
 after("E01-07", GAP_LINE, "E01-08")
 after("E01-08", GAP_CHAPTER, "E01-09")
 scene("plasma", P0, "#7-8 second tube clots (fibrin net -> 血餅 / 血清), formula; #9 plasma proteins + electrophoresis peaks",
-      holo_swap=P0 + 0.2, clot_start=L("E01-07", 0.7), fibrin_net=L("E01-07", 1.65), clot_formed=L("E01-07", 3.7),
-      label_serum=L("E01-07", 6.45), formula=L("E01-08", 0.7), formula_minus_fibrinogen=L("E01-08", 2.75),
+      holo_swap=P0 + 0.2, clot_start=K("E01-07", "かたまる", -0.02), fibrin_net=K("E01-07", "ふぃぶりん", -0.01),
+      clot_formed=K("E01-07", "けっぺい", -0.04),
+      label_serum=K("E01-07", "けっせいだ", -0.01), formula=K("E01-08", "けっせい"),
+      formula_minus_fibrinogen=K("E01-08", "ふぃぶりのげん", -0.03),
       proteins_float=E("E01-08") + 0.5,
-      peak_albumin=L("E01-09", 0.95), peak_globulin=L("E01-09", 2.1), peak_fibrinogen=L("E01-09", 2.9),
-      peak_gamma_antibody=L("E01-09", 6.95), holo_off=E("E01-09") + 0.25)
+      peak_albumin=K("E01-09", "あるぶみん", -0.01), peak_globulin=K("E01-09", "ぐろぶりん", -0.02),
+      peak_fibrinogen=K("E01-09", "ふぃぶりのげん"),
+      peak_gamma_antibody=K("E01-09", "がんま", -0.01), holo_off=E("E01-09") + 0.25)
 
 # --- shape: 赤血球の形 #10-12, 膜骨格 #13-14
 S0 = E("E01-09") + TRANS
@@ -136,21 +203,22 @@ after("E01-12", GAP_CHAPTER, "E01-13")
 after("E01-13", GAP_REACT, "E01-14")
 beat("plasma")
 scene("shape", S0, "#10-12 Akane spins the RBC model, cross-section + 7.5 um, no nucleus, Hb fills; #13 membrane skeleton stretches; #14 capillary squeeze (intro reuse)",
-      model_appears=S0 + 0.3, model_rotate=L("E01-10", 0.9), cross_section=L("E01-10", 3.45),
-      dim_7_5um=L("E01-11", 1.7), no_nucleus=L("E01-11", 5.55), hb_fill_start=L("E01-12", 1.05), hb_fill_full=L("E01-12", 3.0),
-      mesh_appears=E("E01-12") + 0.5, membrane_stretch=L("E01-13", 5.75), membrane_spring_back=L("E01-13", 5.75) + 0.9,
+      model_appears=S0 + 0.3, model_rotate=K("E01-10", "がほんとう", -0.1), cross_section=K("E01-10", "まんなか", -0.03),
+      dim_7_5um=K("E01-11", "ななてんご", -0.02), no_nucleus=K("E01-11", "かくがない", -0.05),
+      hb_fill_start=K("E01-12", "へもぐろびん", -0.05), hb_fill_full=K("E01-12", "るんだ"),
+      mesh_appears=E("E01-12") + 0.5, membrane_stretch=K("E01-13", "しなやか", -0.05), membrane_spring_back=K("E01-13", "しなやか", -0.05) + 0.9,
       capillary_cut=L("E01-14") - 0.3)
 
 # --- hb: ヘモグロビン #15-16
 H0 = E("E01-14") + TRANS
 _place("E01-15", H0 + 1.0)
 after("E01-15", GAP_LINE, "E01-16")
-O2 = L("E01-16", 3.45)
+O2 = K("E01-16", "さんそがけつごう", 0.0)
 scene("hb", H0, "#15-16 α2β2 tetramer, 4 hemes, O2 binds to each heme iron (4 clicks)",
-      tetramer_appears=H0 + 0.3, alpha_chains=L("E01-15", 1.3), beta_chains=L("E01-15", 2.65),
-      hemes_glow=L("E01-16", 0.75), heme_iron=L("E01-16", 2.8),
+      tetramer_appears=H0 + 0.3, alpha_chains=K("E01-15", "あるふぁ", -0.04), beta_chains=K("E01-15", "べーた", -0.03),
+      hemes_glow=K("E01-16", "へむが", -0.03), heme_iron=K("E01-16", "てつに", -0.02),
       o2_bind_1=O2, o2_bind_2=O2 + 0.35, o2_bind_3=O2 + 0.7, o2_bind_4=O2 + 1.05,
-      max_four=L("E01-16", 6.85))
+      max_four=K("E01-16", "よっつ", -0.07))
 
 # --- co2: 肺と組織 #17, 二酸化炭素 #18-20
 K0 = E("E01-16") + TRANS
@@ -159,9 +227,11 @@ after("E01-17", GAP_CHAPTER, "E01-18")
 after("E01-18", GAP_LINE, "E01-19")
 after("E01-19", GAP_REACT, "E01-20")
 scene("co2", K0, "#17 lungs <-> tissue loop; #18 CO2 + H2O -> H+ + HCO3- (carbonic anhydrase); #19 HCO3- out through band 3; #20 Akane",
-      lung_breath=K0 + 0.1, o2_pickup_lung=L("E01-17", 0.45), o2_release_tissue=L("E01-17", 1.7),
-      co2_enters=L("E01-18", 1.1), enzyme=L("E01-18", 4.75), reaction=L("E01-18", 6.5), hco3_formed=L("E01-18", 8.3),
-      band3_open=L("E01-19", 2.25), hco3_out=L("E01-19", 3.0), hco3_in_plasma=L("E01-19", 3.75))
+      lung_breath=K0 + 0.1, o2_pickup_lung=K("E01-17", "さんそを"), o2_release_tissue=K("E01-17", "そしき"),
+      co2_enters=K("E01-18", "にさんか"), enzyme=K("E01-18", "たんさんだっすい", -0.03),
+      reaction=K("E01-18", "にさんかたんそと", -0.04), hco3_formed=K("E01-18", "たんさんすいそ", -0.02),
+      band3_open=K("E01-19", "ばんど", -0.03), hco3_out=K("E01-19", "とおって", -0.14),
+      hco3_in_plasma=K("E01-19", "けっしょうへ", -0.03))
 
 # --- life: 赤血球の一生 #21-24
 F0 = E("E01-20") + TRANS
@@ -170,11 +240,14 @@ after("E01-21", GAP_LINE, "E01-22")
 after("E01-22", GAP_LINE, "E01-23")
 after("E01-23", GAP_REACT + 0.1, "E01-24")
 scene("life", F0, "#21 bone marrow -> EPO -> erythroblasts -> enucleation -> reticulocyte; #22 120-day calendar, spleen macrophage; #23 iron recycled, heme -> bilirubin -> bile; #24 Akane looks forward",
-      marrow=F0 + 0.2, epo_signal=L("E01-21", 3.8), erythroblasts_multiply=L("E01-21", 5.8),
-      enucleation_pop=L("E01-21", 7.55), reticulocyte_exit=L("E01-21", 8.6), into_blood=L("E01-21", 10.65),
-      calendar_start=L("E01-22", 0.6), calendar_120=L("E01-22", 1.65), macrophage=L("E01-22", 4.2), macrophage_eats=L("E01-22", 6.3),
-      iron_recycle=L("E01-23", 0.45), bilirubin=L("E01-23", 4.95), bile=L("E01-23", 6.45),
-      akane_faces_forward=L("E01-24", 1.7))
+      marrow=F0 + 0.2, epo_signal=K("E01-21", "えりすろ", -0.02), erythroblasts_multiply=K("E01-21", "せきがきゅう"),
+      enucleation_pop=K("E01-21", "そとへ", -0.15), reticulocyte_exit=K("E01-21", "もうじょう", -0.02),
+      into_blood=K("E01-21", "けつえきちゅう", -0.03),
+      calendar_start=K("E01-22", "およそ", -0.36), calendar_120=K("E01-22", "ひゃくにじゅう", -0.01),
+      macrophage=K("E01-22", "ひぞう", -0.04), macrophage_eats=K("E01-22", "たべ"),
+      iron_recycle=K("E01-23", "かいしゅう", -0.03), bilirubin=K("E01-23", "びりるびん", -0.01),
+      bile=K("E01-23", "たんじゅう", -0.03),
+      akane_faces_forward=K("E01-24", "だったら", -0.04))
 
 # --- battle: 防御戦線 #25, 白血球の種類 #26-27, 貪食 #28-30, 仲間たち #31
 B0 = E("E01-24") + TRANS
@@ -191,16 +264,21 @@ after("E01-30", GAP_CHAPTER, "E01-31")
 scene("battle", B0, "#25 alarm again, Shirou's squad charges the bacteria; #26-27 five WBC types + ratio bar, neutrophil detail; #28 grab, engulf; #29 phagosome -> phagolysosome; #30; #31 allies pose one by one",
       alarm=B0, squad_run=B0 + 0.4, bacteria_reveal=B0 + 0.9, shirou_shout=L("E01-25"),
       wbc_types=E("E01-25") + 0.6,
-      type_neutrophil=L("E01-26", 1.2), type_eosinophil=L("E01-26", 2.5), type_basophil=L("E01-26", 3.65),
-      type_lymphocyte=L("E01-26", 4.8), type_monocyte=L("E01-26", 5.7), ratio_bar=L("E01-26", 6.4),
-      neutrophil_focus=L("E01-27", 1.35), pct_60_70=L("E01-27", 3.85), lobed_nucleus=L("E01-27", 6.2), granules=L("E01-27", 7.95),
+      type_neutrophil=K("E01-26", "こうちゅうきゅう"), type_eosinophil=K("E01-26", "こうさんきゅう", -0.04),
+      type_basophil=K("E01-26", "こうえんき", -0.01),
+      type_lymphocyte=K("E01-26", "りんぱ", -0.04), type_monocyte=K("E01-26", "たんきゅう", -0.02),
+      ratio_bar=K("E01-26", "ごしゅるい"),
+      neutrophil_focus=K("E01-27", "こうちゅうきゅう", -0.03), pct_60_70=K("E01-27", "ろくわり", -0.03),
+      lobed_nucleus=K("E01-27", "かくは", -0.02), granules=K("E01-27", "こまか", -0.01),
       bacteria_growl=E("E01-27") + 0.2, grab_start=GRAB0, grab_lunge=GRAB0 + 0.7, grab_catch=GRAB0 + 1.1,
       engulf=ENGULF, engulf_closed=ENGULF + 0.8,
-      phagosome=L("E01-29", 2.7), lysosome_fusion=L("E01-29", 4.3), phagolysosome=L("E01-29", 5.15), digest=L("E01-29", 5.9),
+      phagosome=K("E01-29", "ふぁごそーむ", -0.02), lysosome_fusion=K("E01-29", "りそそーむ", -0.02),
+      phagolysosome=K("E01-29", "ごうさせ", -0.03), digest=K("E01-29", "かっせい", -0.02),
       allies_enter=E("E01-30") + 0.5,
       # pose hits land in the pause just BEFORE each name is spoken (stinger must not mask the word)
-      pose_eosinophil=L("E01-31", -0.4), pose_basophil=L("E01-31", 2.68), pose_monocyte=L("E01-31", 6.45),
-      pose_b_cell=L("E01-31", 9.6), plasma_cell=L("E01-31", 11.1))
+      pose_eosinophil=L("E01-31", -0.4), pose_basophil=K("E01-31", "こうえんき", -0.36),
+      pose_monocyte=K("E01-31", "たんきゅうは", -0.4),
+      pose_b_cell=K("E01-31", "びーさいぼう", -0.38), plasma_cell=K("E01-31", "けいしつ", -0.04))
 
 # --- platelet: 血小板と凝固 #32-33
 W0 = E("E01-31") + TRANS
@@ -208,9 +286,11 @@ WOUND = W0 + 0.35
 _place("E01-32", WOUND + 1.25)                 # wound / bleeding beat before the narration
 after("E01-32", GAP_LINE, "E01-33")
 scene("platelet", W0, "#32 vessel wall tears, bleeding, platelets adhere + aggregate (plug), megakaryocyte fragments; #33 fibrinogen -> fibrin mesh traps cells",
-      wound=WOUND, bleeding=WOUND + 0.25, platelets_arrive=L("E01-32", 1.55), plug=L("E01-32", 3.25), plug_sealed=L("E01-32", 3.95),
-      megakaryocyte=L("E01-32", 5.7), fragments=L("E01-32", 7.4),
-      fibrinogen_to_fibrin=L("E01-33", 0.8), mesh_weave=L("E01-33", 1.7), mesh_traps_cells=L("E01-33", 3.15), mesh_tight=L("E01-33", 3.7))
+      wound=WOUND, bleeding=WOUND + 0.25, platelets_arrive=K("E01-32", "けっしょうばんが", -0.05), plug=K("E01-32", "あなを", -0.01),
+      plug_sealed=K("E01-32", "ぐけっしょう"),
+      megakaryocyte=K("E01-32", "きょかくきゅう", -0.04), fragments=K("E01-32", "ちぎれ", -0.02),
+      fibrinogen_to_fibrin=K("E01-33", "ふぃぶりのげん", -0.04), mesh_weave=K("E01-33", "ふぃぶりんに", -0.02),
+      mesh_traps_cells=K("E01-33", "あみと", -0.01), mesh_tight=K("E01-33", "ってけっきゅう", 0.04))
 
 # --- epilogue #34-36
 EP0 = E("E01-33") + TRANS
@@ -219,8 +299,9 @@ after("E01-34", GAP_REACT + 0.1, "E01-35")
 after("E01-35", 0.7, "E01-36")
 scene("epilogue", EP0, "#34-35 battle over, Akane and Shirou pass each other; #36 they part into the flow, camera pulls back to the whole body",
       calm_after_battle=EP0, pass_each_other=L("E01-34") - 0.6, shirou_reply=L("E01-35"),
-      part_ways=L("E01-36") - 0.3, carry=L("E01-36", 0.0), protect=L("E01-36", 1.0), plug_word=L("E01-36", 2.35),
-      camera_pull_back=L("E01-36", 3.0), whole_body=L("E01-36", 6.3))
+      part_ways=L("E01-36") - 0.3, carry=L("E01-36", 0.0), protect=K("E01-36", "まもる", -0.04),
+      plug_word=K("E01-36", "ふさぐ", -0.01),
+      camera_pull_back=K("E01-36", "ものけつえき", 0.08), whole_body=K("E01-36", "さいぼう", -0.01))
 
 # --- next: 次回予告 telop + final impact (4.5 s) + 1.5 s music tail
 N0 = snap(E("E01-36") + 0.2)

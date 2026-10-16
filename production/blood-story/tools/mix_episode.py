@@ -2,7 +2,8 @@
 """
 BLOOD STORY episode 1 mix.
 
-    python3 tools/voices.py --only-prefix E01-      # episode lines (intro lines already exist)
+    $SBV2_HOME/venv/bin/python tools/voices_sbv2.py   # voices (Style-Bert-VITS2; edge-tts: tools/voices.py + BS_VOICE_ENGINE=edge)
+    python3 tools/word_times.py --prefix E01-       # word timestamps -> beats in episode01_timeline.py
     python3 tools/sfx.py --episode01                # se/ep_*.wav (intro effects reused)
     python3 tools/bgm.py --cue episode01            # bgm/episode01/<cue>.wav
     python3 tools/mix_episode.py
@@ -20,7 +21,7 @@ import json, os, sys
 import numpy as np
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from audio_lib import SR, AUDIO, read_wav, write_wav, pan, stereo, compress, limiter, true_peak  # noqa: E402
+from audio_lib import SR, AUDIO, read_wav, write_wav, pan, stereo, compress, limiter, true_peak, voice_meta, VOICE_ENGINE  # noqa: E402
 from mix import lufs, activity_env, TARGET_LUFS, CEILING_DBTP, VOICE_LINE_LUFS, DUCK_DB, SFX_BED_DUCK_DB  # noqa: E402
 import episode01_timeline as TL  # noqa: E402
 
@@ -85,7 +86,7 @@ def build_bgm(N):
 
 def main():
     N = int(round(TL.DURATION * SR))
-    meta = json.load(open(os.path.join(AUDIO, "voice", "voices.json"), encoding="utf-8"))
+    meta = voice_meta()
     problems = []
 
     # ------------------------------------------------------------------ voices
@@ -166,7 +167,7 @@ def main():
             if not (s["start"] - 1e-6 <= v <= s["end"] + 1e-6):
                 problems.append(f"beat {s['id']}.{k_}={v} outside scene {s['start']}-{s['end']}")
     cues = dict(
-        duration=TL.DURATION, fps=TL.FPS, frames=int(round(TL.DURATION * TL.FPS)),
+        duration=TL.DURATION, fps=TL.FPS, frames=int(round(TL.DURATION * TL.FPS)), voice_engine=VOICE_ENGINE,
         note="times in seconds on the 30 fps grid. line start = voice file start; speech_start = first audible sound; "
              "end = speech end; mouth[k] belongs to frame start_frame + k (0..1). beats = visual action times "
              "(absolute seconds). 0-30 s = intro (mix_intro.wav) except N2 = full sentence; the 29.5 hit is a transition.",
@@ -192,7 +193,7 @@ def main():
     rep = dict(duration_s=round(len(mix) / SR, 4), integrated_lufs=round(meter.integrated_loudness(mix), 2),
                true_peak_dbtp=round(20 * np.log10(true_peak(mix)), 2),
                sample_peak_dbfs=round(20 * np.log10(np.max(np.abs(mix))), 2),
-               clipped_samples=int(np.sum(np.abs(mix) >= 0.9999)), master_gain_db=round(gain_db, 2),
+               clipped_samples=int(np.sum(np.abs(mix) >= 0.9999)), master_gain_db=round(gain_db, 2), voice_engine=VOICE_ENGINE,
                voice_lufs=round(meter.integrated_loudness(voice * G), 2),
                bgm_lufs_ducked=round(meter.integrated_loudness(bgm_d * G), 2),
                sfx_lufs=round(meter.integrated_loudness(sfx * G), 2),

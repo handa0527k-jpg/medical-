@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>BLOOD STORY – diag_ep2 sheet</title>
+<style>
+  @font-face { font-family: ZenKaku; src: url(../fonts/ZenKakuGothicNew-Bold.ttf); }
+  @font-face { font-family: IPAGothic; src: url(../fonts/ipag.ttf); }
+  html, body { margin: 0; background: #0b0306; }
+  canvas { display: block; width: 100%; height: auto; }
+</style>
+</head>
+<body>
+<canvas id="c" width="1920" height="1080"></canvas>
+<script src="world.js"></script>
+<script src="characters.js"></script>
+<script src="diag_rbc.js"></script>
+<script src="diag_wbc.js"></script>
+<script src="diag_ep2.js"></script>
+<script>
+/* Modes:
+ *   diag_ep2_sheet.html               contact sheet (window.sheetURL = PNG data URL when done)
+ *   diag_ep2_sheet.html?anim=<name>   single 1920x1080 preview: window.cutDuration, window.renderFrame(t) -> JPEG
+ *   &t=<s> draws one frame.  window.timing(name, n) -> ms/frame of the draw call (incl. backdrop).
+ */
+(async function () {
+  const W = BS.world, D = BS.diag;
+  await W.ready(); await D.readyWBC(); await D.readyEP2(); await document.fonts.ready;
+  const q = new URLSearchParams(location.search);
+  const cv = document.getElementById('c'), ctx = cv.getContext('2d');
+  const F = (px) => px + 'px ZenKaku, IPAGothic, sans-serif';
+  const clamp = (x, a = 0, b = 1) => Math.max(a, Math.min(b, x));
+  const ramp = (t, a, b) => clamp((t - a) / (b - a));
+  function reset(c) { c.setTransform(1, 0, 0, 1, 0, 0); c.globalAlpha = 1; c.globalCompositeOperation = 'source-over'; c.clearRect(0, 0, 1920, 1080); }
+  const bg = (c, t) => D.wbcBackdrop(c, { t });
+  // diagram previews: panel centred a bit high (subtitle band y>900 stays clear), scale fits 1920 wide
+  const mk = (name, dur, sc = 0.95, extra = {}) => ({ dur, draw(c, t) { bg(c, t); D[name](c, Object.assign({ x: 960, y: 470, scale: sc, p: ramp(t, 0.2, dur - 0.8), t }, extra)); } });
+  const S = {
+    wbcClassify: mk('wbcClassify', 9),
+    neutrophilDetail: mk('neutrophilDetail', 10),
+    receptorsOpsonin: mk('receptorsOpsonin', 11, 0.92),
+    phagolysosome: mk('phagolysosome', 9),
+    eosinophilCard: mk('eosinophilCard', 10),
+    basophilHistamine: mk('basophilHistamine', 10, 0.92),
+    macrophageCard: mk('macrophageCard', 9),
+    antigenPresentation: mk('antigenPresentation', 9),
+    lymphocyteCard: mk('lymphocyteCard', 10, 0.92),
+    tbChart: mk('tbChart', 10, 0.92),
+    nkAttack: mk('nkAttack', 9),
+    bacteriaDivide: { dur: 7, draw(c, t) { bg(c, t); D.bacteriaDivide(c, { x: 960, y: 520, p: ramp(t, 0.3, 6.6), t }); } },
+  };
+  const anim = q.get('anim');
+  window.timing = (name, n = 20) => {
+    const s = S[name]; const ts = []; for (let i = 0; i < n; i++) { const t = (i / n) * s.dur; reset(ctx); const t0 = performance.now(); s.draw(ctx, t); ts.push(performance.now() - t0); }
+    ts.sort((a, b) => a - b); return { median: +ts[n >> 1].toFixed(1), max: +ts[n - 1].toFixed(1) };
+  };
+  window.timingBare = (name, n = 20) => { // draw call only, no backdrop
+    const ts = []; const dur = S[name].dur;
+    for (let i = 0; i < n; i++) { const t = (i / n) * dur; reset(ctx); const t0 = performance.now(); if (name === 'bacteriaDivide') D[name](ctx, { p: i / n, t }); else D[name](ctx, { scale: 0.95, p: i / n, t }); ts.push(performance.now() - t0); }
+    ts.sort((a, b) => a - b); return { median: +ts[n >> 1].toFixed(1), max: +ts[n - 1].toFixed(1) };
+  };
+  window.names = Object.keys(S);
+  if (anim) {
+    const s = S[anim];
+    window.cutDuration = s.dur;
+    window.drawAt = (t) => { reset(ctx); ctx.fillStyle = '#000'; ctx.fillRect(0, 0, 1920, 1080); s.draw(ctx, t); };
+    window.renderFrame = (t) => { window.drawAt(t); return cv.toDataURL('image/jpeg', 0.92); };
+    if (q.get('t') !== null) window.drawAt(+q.get('t'));
+    window.ready = true; return;
+  }
+  // ---- contact sheet
+  const P = (name, p, extra = {}) => (c) => { bg(c, 1); D[name](c, Object.assign({ x: 960, y: 480, scale: name === 'receptorsOpsonin' || name === 'basophilHistamine' || name === 'lymphocyteCard' || name === 'tbChart' ? 0.92 : 0.96, p, t: 1.3 }, extra)); };
+  const panels = [
+    ['1. wbcClassify p=0.5', P('wbcClassify', 0.5)],
+    ['2. wbcClassify p=1', P('wbcClassify', 1)],
+    ['3. neutrophilDetail p=0.5 (smear note)', P('neutrophilDetail', 0.5)],
+    ['4. neutrophilDetail p=1', P('neutrophilDetail', 1)],
+    ['5. receptorsOpsonin p=0.42 (① TLR)', P('receptorsOpsonin', 0.42)],
+    ['6. receptorsOpsonin p=0.6 (opsonised)', P('receptorsOpsonin', 0.6)],
+    ['7. receptorsOpsonin p=0.95 (② Fc/C3 lock)', P('receptorsOpsonin', 0.95)],
+    ['8. phagolysosome p=0.4 (fusion)', P('phagolysosome', 0.4)],
+    ['9. phagolysosome p=0.8 (ROS)', P('phagolysosome', 0.8)],
+    ['10. eosinophilCard p=0.6', P('eosinophilCard', 0.6)],
+    ['11. eosinophilCard p=1', P('eosinophilCard', 1)],
+    ['12. basophilHistamine p=0.5 (IgE/trigger)', P('basophilHistamine', 0.5)],
+    ['13. basophilHistamine p=1', P('basophilHistamine', 1)],
+    ['14. macrophageCard p=0.36 (遊走)', P('macrophageCard', 0.36)],
+    ['15. macrophageCard p=1', P('macrophageCard', 1)],
+    ['16. antigenPresentation p=0.5', P('antigenPresentation', 0.5)],
+    ['17. antigenPresentation p=0.95', P('antigenPresentation', 0.95)],
+    ['18. lymphocyteCard p=0.36 (?)', P('lymphocyteCard', 0.36)],
+    ['19. lymphocyteCard p=1', P('lymphocyteCard', 1)],
+    ['20. tbChart p=0.6', P('tbChart', 0.6)],
+    ['21. tbChart p=1', P('tbChart', 1)],
+    ['22. nkAttack p=0.5 (perforin/granzyme)', P('nkAttack', 0.5)],
+    ['23. nkAttack p=0.8 (apoptosis)', P('nkAttack', 0.8)],
+    ['24. nkAttack p=1 adcc:true', P('nkAttack', 1, { adcc: true })],
+    ['25. bacteriaDivide p=0.5 / 0.95', (c) => { bg(c, 1); D.bacteriaDivide(c, { x: 520, y: 600, p: 0.5, t: 1, size: 120 }); D.bacteriaDivide(c, { x: 1400, y: 600, p: 0.95, t: 1, size: 120 }); }],
+    ['26. helpers: macrophageCell / plasmaCell / lglCell / antibodyIcon', (c) => {
+      bg(c, 1); D.macrophageCell(c, { x: 330, y: 420, r: 230, t: 1 }); D.plasmaCell(c, 780, 420, 120, 1, 1); D.lglCell(c, 1150, 420, 130, 1, 1, 3);
+      ['IgM', 'IgG', 'IgA', 'IgE'].forEach((k, i) => { D.antibodyIcon(c, k, 1450 + (i % 2) * 260, 300 + (i >> 1) * 300, 160, 1, 0); c.font = F(34); c.fillStyle = '#fff'; c.fillText(k, 1420 + (i % 2) * 260, 420 + (i >> 1) * 300); });
+    }],
+    ['27. wbcClassify p=1 group:"gran"', P('wbcClassify', 1, { group: 'gran' })],
+  ];
+  const cols = 3, cw = 960, ch = 540, top = 120, rows = Math.ceil(panels.length / cols);
+  const sheet = document.createElement('canvas'); sheet.width = cols * cw; sheet.height = top + rows * ch;
+  const sx = sheet.getContext('2d');
+  sx.fillStyle = '#0b0306'; sx.fillRect(0, 0, sheet.width, sheet.height);
+  sx.font = F(58); sx.fillStyle = '#ff6a6a'; sx.fillText('BLOOD STORY ― 第2話 白血球の模式図 設定表 (diag_ep2.js)', 30, 70);
+  sx.font = F(26); sx.fillStyle = '#d8c8d8'; sx.fillText('1920×1080 panels at 50% · BS.diag.*(ctx,{x,y,scale,p,t,...}) · slides 13–25 / 47–48 · μ ₂ ⁻ ³ fallback: 0.5〜0.7 μm / H₂O₂ / O₂⁻ / mm³', 30, 106);
+  for (let i = 0; i < panels.length; i++) {
+    reset(ctx); ctx.fillStyle = '#000'; ctx.fillRect(0, 0, 1920, 1080);
+    panels[i][1](ctx);
+    ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.globalAlpha = 1; ctx.globalCompositeOperation = 'source-over';
+    const x = (i % cols) * cw, y = top + Math.floor(i / cols) * ch;
+    sx.drawImage(cv, x, y, cw, ch);
+    sx.font = F(26); sx.lineWidth = 6; sx.strokeStyle = 'rgba(0,0,0,0.85)'; sx.lineJoin = 'round';
+    sx.strokeText(panels[i][0], x + 14, y + ch - 16); sx.fillStyle = '#fff'; sx.fillText(panels[i][0], x + 14, y + ch - 16);
+    sx.strokeStyle = '#000'; sx.lineWidth = 4; sx.strokeRect(x, y, cw, ch);
+  }
+  cv.width = sheet.width; cv.height = sheet.height; ctx.drawImage(sheet, 0, 0);
+  window.sheetURL = sheet.toDataURL('image/png');
+  window.ready = true;
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>BLOOD STORY キャラクター設定表 3（第2〜4話）</title>
+<style>
+  @font-face { font-family: 'ZenKaku'; src: url('../fonts/ZenKakuGothicNew-Bold.ttf'); font-weight: 700; }
+  html, body { margin: 0; background: #1a1418; }
+  canvas { display: block; }
+</style>
+</head>
+<body>
+<canvas id="c" width="1920" height="3700"></canvas>
+<script src="characters.js"></script>
+<script src="characters2.js"></script>
+<script>
+(async function () {
+  try { await document.fonts.load('700 40px ZenKaku'); await document.fonts.ready; } catch (e) {}
+  const cv = document.getElementById('c');
+  const ctx = cv.getContext('2d');
+  const C = BS.chars;
+  const W = cv.width, H = cv.height;
+  const FONT = (px) => `700 ${px}px ZenKaku, IPAGothic, sans-serif`;
+  function bg() {
+    const g = ctx.createLinearGradient(0, 0, 0, H);
+    g.addColorStop(0, '#fbf3ee'); g.addColorStop(1, '#f1e6ef');
+    ctx.fillStyle = g; ctx.fillRect(0, 0, W, H);
+    ctx.strokeStyle = 'rgba(120,80,100,0.07)'; ctx.lineWidth = 1;
+    for (let x = 0; x < W; x += 40) { ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, H); ctx.stroke(); }
+    for (let y = 0; y < H; y += 40) { ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(W, y); ctx.stroke(); }
+  }
+  function label(text, x, y, size, col, align) {
+    ctx.save(); ctx.font = FONT(size || 22); ctx.fillStyle = col || '#4a2a33'; ctx.textAlign = align || 'center'; ctx.fillText(text, x, y); ctx.restore();
+  }
+  function panel(x, y, w, h, title, col) {
+    ctx.save();
+    ctx.fillStyle = 'rgba(255,255,255,0.55)'; ctx.strokeStyle = col; ctx.lineWidth = 3;
+    ctx.beginPath(); ctx.roundRect(x, y, w, h, 18); ctx.fill(); ctx.stroke();
+    ctx.font = FONT(25); const tw = ctx.measureText(title).width;
+    ctx.fillStyle = col; ctx.beginPath(); ctx.roundRect(x, y, tw + 40, 42, [18, 0, 18, 0]); ctx.fill();
+    ctx.fillStyle = '#fff'; ctx.textBaseline = 'middle'; ctx.fillText(title, x + 20, y + 22);
+    ctx.restore();
+  }
+  function ground(x, y, w) { ctx.save(); ctx.fillStyle = 'rgba(80,40,60,0.13)'; ctx.beginPath(); ctx.ellipse(x, y, w, w * 0.16, 0, 0, Math.PI * 2); ctx.fill(); ctx.restore(); }
+  function fig(fn, op, x, y, txt, size) {
+    ground(x, y, 46 * (op.scale / 0.5));
+    fn(ctx, Object.assign({ x, y }, op));
+    if (txt) label(txt, x, y + 30, size || 17);
+  }
+  function closeup(fn, who, opts, fx, fy, fw, fh, title, bgcol) {
+    const o = Object.assign({ x: 0, y: 0 }, opts);
+    const a = C.headAnchor(who, o);
+    o.x = fx + fw / 2 - a.x; o.y = fy + fh * 0.54 - a.y;
+    if (o.pointAt) o.pointAt = { x: o.pointAt.x + o.x, y: o.pointAt.y + o.y };
+    ctx.save();
+    ctx.beginPath(); ctx.roundRect(fx, fy, fw, fh, 14); ctx.clip();
+    const g = ctx.createRadialGradient(fx + fw / 2, fy + fh / 2, 10, fx + fw / 2, fy + fh / 2, fw);
+    g.addColorStop(0, '#ffffff'); g.addColorStop(1, bgcol || '#efdfe6');
+    ctx.fillStyle = g; ctx.fillRect(fx, fy, fw, fh);
+    fn(ctx, o);
+    ctx.restore();
+    ctx.save(); ctx.strokeStyle = 'rgba(80,40,60,0.35)'; ctx.lineWidth = 2; ctx.beginPath(); ctx.roundRect(fx, fy, fw, fh, 14); ctx.stroke(); ctx.restore();
+    if (title) label(title, fx + fw / 2, fy + fh + 22, 17);
+  }
+  function holo(x, y, r) { // stand-in hologram marker (the real one is world/diag side)
+    ctx.save(); ctx.globalCompositeOperation = 'lighter';
+    const g = ctx.createRadialGradient(x, y, 0, x, y, r);
+    g.addColorStop(0, 'rgba(140,240,255,0.7)'); g.addColorStop(1, 'rgba(80,200,255,0)');
+    ctx.fillStyle = g; ctx.beginPath(); ctx.arc(x, y, r, 0, 7); ctx.fill();
+    ctx.strokeStyle = 'rgba(80,200,255,0.9)'; ctx.lineWidth = 2; ctx.strokeRect(x - r * 0.45, y - r * 0.45, r * 0.9, r * 0.9);
+    ctx.restore();
+  }
+
+  function dark(x, y, w, h, col) { ctx.save(); ctx.beginPath(); ctx.roundRect(x, y, w, h, 14); ctx.fillStyle = col || '#2a1020'; ctx.fill(); ctx.restore(); }
+  function lab(t, x, y, s, c) { label(t, x, y, s || 15, c); }
+  bg();
+  label('BLOOD STORY ― 体内を駆ける細胞たち ―　キャラクター設定表 3（第2〜4話 新キャラ・差分）', 40, 62, 38, '#3b1c26', 'left');
+  label('characters2.js：drawPeta / drawKyoko / drawShirou{young} / drawWBCAlly{variant:2, morph|form} / drawLymphoMob / drawStemCell / drawInfectedCell / drawGiantHand ／ 全員 opts.stain:"giemsa"・opts.flat', 40, 98, 18, '#7a5060', 'left');
+  const PE = '#8a62d8', KY = '#5c3290', SO = '#4a78dc', SH = '#7a64c0', LY = '#2c8cc2', MI = '#c08a6a', ST = '#b0507a';
+
+  // ===== Peta
+  panel(30, 118, 1860, 560, 'ペタ（血小板）　ベレー＝硝子部（透明なふち）＋顆粒部（紫の粒）＋微小管のパイピング／胸章は空っぽの丸（核なし）', PE);
+  [0, 45, 90, 180].forEach((y, i) => fig(C.drawPeta, { scale: 0.62, yaw: y, expr: 'happy', t: 0.4 }, 95 + i * 115, 420, ['正面', '斜め', '側面', '背面'][i]));
+  [['run', '走り'], ['walk', '歩き'], ['point', '指さし'], ['present', '提示'], ['cheer', 'ガッツ'], ['wave', '手を振る'], ['surprised', '驚き'], ['pose', '決め']].forEach(([p, jp], i) =>
+    fig(C.drawPeta, { scale: 0.62, yaw: 30, pose: p, runPhase: 0.3, walkPhase: 0.2, expr: p === 'surprised' ? 'surprised' : p === 'pose' ? 'proud' : 'happy', mouth: p === 'cheer' ? 0.6 : 0, t: 0.4 }, 560 + i * 108, 420, jp, 15));
+  [0, 0.5, 1].forEach((a, i) => fig(C.drawPeta, { scale: 0.62, yaw: 20, activated: a, pose: a === 1 ? 'cheer' : 'stand', expr: a ? 'determined' : 'happy', t: 0.6 }, 1480 + i * 140, 420, 'activated ' + a, 15));
+  for (let v = 0; v < 6; v++) fig(C.drawPeta, { scale: 0.36, variant: v, yaw: 25 - v * 8, pose: v % 2 ? 'run' : 'stand', runPhase: v * 0.17, t: 0.3 + v }, 100 + v * 85, 640, 'v' + v, 13);
+  [['happy', 0, 'happy'], ['happy', 0.7, 'mouth .7'], ['surprised', 0.3, 'surprised'], ['determined', 0, 'determined'], ['worried', 0, 'worried'], ['smile', 0, 'smile']].forEach(([e, m, jp], i) =>
+    closeup(C.drawPeta, 'peta', { scale: 1.15, yaw: 25, expr: e, mouth: m, t: 0.2 }, 640 + i * 205, 470, 190, 150, jp, '#ece4fb'));
+
+  // ===== Kyoko
+  panel(30, 695, 1860, 720, 'キョウコ（巨核球）　王冠＝多分葉核（5〜6房）／ローブの裾＝分離帯の区画から血小板がこぼれる（shed）／袖＝細胞質突起（sleeveTo）', KY);
+  [[15, 'stand', '正面', 0], [55, 'stand', '斜め', 0.4], [90, 'walk', '側面・歩き', 0.4], [180, 'stand', '背面', 0]].forEach(([y, p, jp, sh], i) =>
+    fig(C.drawKyoko, { scale: 0.62, yaw: y, pose: p, walkPhase: 0.3, shed: sh, t: 0.5 }, 100 + i * 160, 1340, jp));
+  fig(C.drawKyoko, { scale: 0.62, yaw: 20, pose: 'sit', shed: 0.6, t: 0.5 }, 750, 1340, '座る（sit）');
+  fig(C.drawKyoko, { scale: 0.62, yaw: 70, pose: 'sit', shed: 0.6, t: 0.5 }, 950, 1340, 'sit 横');
+  dark(1180, 750, 690, 640, '#3a1426');
+  ctx.save(); ctx.strokeStyle = 'rgba(255,120,140,0.5)'; ctx.lineWidth = 46; ctx.beginPath(); ctx.moveTo(1640, 760); ctx.quadraticCurveTo(1700, 1050, 1820, 1380); ctx.stroke(); ctx.restore();
+  fig(C.drawKyoko, { scale: 0.58, yaw: 40, pose: 'sit', shed: 1, sleeveTo: { x: 1700, y: 1000 }, sleeve: 1, expr: 'smile', t: 0.9 }, 1300, 1340, '');
+  lab('sleeveTo + sleeve 1 → 先端から血小板がちぎれる', 1520, 1385, 15, '#ffd8e8');
+  closeup(C.drawKyoko, 'kyoko', { scale: 1.2, yaw: 25, expr: 'smile', mouth: 0.3, t: 0.2 }, 1180, 760, 210, 190, '', '#e8dcf6');
+  closeup(C.drawKyoko, 'kyoko', { scale: 1.2, yaw: 140, expr: 'calm', t: 0.2 }, 1400, 760, 210, 190, '', '#e8dcf6');
+
+  // ===== Sou morph
+  panel(30, 1432, 1860, 520, 'ソウ　単球 → マクロファージ（morph 0→1：大型化・外套のふちが偽足のように波打つ・リソソームの光球・胸章が不正形に）／MHC の台（mhc）', SO);
+  [0, 0.25, 0.5, 0.75, 1].forEach((m, i) => fig(C.drawWBCAlly, { variant: 2, morph: m, scale: 0.55, yaw: 20, expr: 'calm', t: 0.6 }, 110 + i * 175, 1890, 'morph ' + m, 15));
+  fig(C.drawWBCAlly, { variant: 2, form: 'macrophage', scale: 0.55, yaw: 35, pose: 'present', mhc: 1, expr: 'calm', t: 0.6, pointAt: { x: 1100, y: 1640 } }, 1000, 1890, 'present + mhc', 15);
+  fig(C.drawWBCAlly, { variant: 2, form: 'macrophage', scale: 0.55, yaw: -50, pose: 'point', expr: 'serious', t: 0.6, pointAt: { x: 1180, y: 1600 } }, 1300, 1890, 'point', 15);
+  fig(C.drawWBCAlly, { variant: 2, form: 'macrophage', scale: 0.55, yaw: 160, pose: 'walk', walkPhase: 0.4, t: 0.6 }, 1480, 1890, '背面', 15);
+  closeup(C.drawWBCAlly, 'ally', { variant: 2, form: 'macrophage', scale: 1.3, yaw: 25, expr: 'calm', t: 0.2 }, 1600, 1500, 260, 380, 'face', '#dde4f6');
+
+  // ===== young Shirou + mobs
+  panel(30, 1969, 930, 520, '幼いシロウ（回想）　杆状核の胸章・小柄・大きな目', SH);
+  fig(C.drawShirou, { scale: 0.5, yaw: 20, expr: 'calm', t: 0.3 }, 110, 2430, '今のシロウ', 15);
+  [['stand', 'happy'], ['run', 'happy'], ['cheer', 'shout'], ['pose', 'proud']].forEach(([p, e], i) => fig(C.drawShirou, { young: true, scale: 0.5, yaw: 25, pose: p, runPhase: 0.3, expr: e, mouth: p === 'cheer' ? 0.7 : 0, t: 0.3 }, 250 + i * 120, 2430, p, 14));
+  fig(C.drawShirou, { young: true, scale: 0.5, yaw: 25, pose: 'stand', expr: 'happy', t: 0.3, tint: { color: '#c89a60', amount: 0.45 } }, 740, 2430, 'セピア(tint)', 14);
+  closeup(C.drawShirou, 'shirou', { young: true, scale: 1.6, yaw: 20, expr: 'happy', mouth: 0.4, t: 0.2 }, 800, 2020, 140, 170, '', '#e6e2f2');
+  panel(980, 1969, 910, 520, 'リンパ球部隊（drawLymphoMob）　胸章 CD4 / CD8 / B ／ NK＝赤い粗大顆粒 ／ 形質細胞＝Y字の抗体', LY);
+  ['T4', 'T8', 'B', 'NK', 'plasma', 'band'].forEach((k, i) => fig(C.drawLymphoMob, { kind: k, seed: i, scale: 0.5, yaw: 15, pose: ['stand', 'point', 'stand', 'battle', 'present', 'stand'][i], expr: 'calm', t: 0.3, pointAt: { x: 1200 + i * 140, y: 2150 } }, 1060 + i * 140, 2430, ['T(CD4)', 'T(CD8)', 'B', 'NK', '形質細胞', '杆状核球'][i], 14));
+  [['T4', 0], ['NK', 3], ['plasma', 4]].forEach(([k, sd], i) => closeup(C.drawLymphoMob, 'mob', { kind: k, seed: sd, scale: 1.25, yaw: 15, t: 0.2 }, 1480 + i * 135, 2020, 125, 130, '', '#e2eef8'));
+
+  // ===== stem cell + infected cell
+  panel(30, 2506, 760, 440, '造血幹細胞（線なし・白金色の光）／ 感染細胞', ST);
+  dark(45, 2560, 330, 370, '#1e0c18');
+  C.drawStemCell(ctx, { x: 150, y: 2900, scale: 0.6, t: 0.4 });
+  C.drawStemCell(ctx, { x: 290, y: 2860, scale: 0.36, form: 'orb', t: 1.2 });
+  [[{ sick: 0, expr: 'calm' }, '健康'], [{ sick: 1 }, 'sick'], [{ sick: 0.8, expr: 'scared', mhcFlag: 1 }, 'MHC旗'], [{ sick: 1, pores: 1, expr: 'scared' }, 'パーフォリン孔'], [{ sick: 1, apoptosis: 0.45 }, 'アポトーシス'], [{ sick: 1, apoptosis: 0.8 }, '0.8']].forEach(([op, jp], i) => {
+    const x = 450 + (i % 3) * 120, y = 2700 + floor(i / 3) * 215;
+    C.drawInfectedCell(ctx, Object.assign({ x, y, scale: 0.42, t: 0.7 }, op)); lab(jp, x, y + 24, 14);
+  });
+  function floor(v) { return Math.floor(v); }
+
+  // ===== giant hands
+  panel(810, 2506, 1080, 440, 'ミナトの手（drawGiantHand）　顔は出さない／赤点 = (x,y) 作用点', MI);
+  [['thumb', {}], ['pinch', {}], ['hold_slide', {}], ['push_spreader', {}], ['thumb', { glove: true }]].forEach(([p, op], i) => {
+    const pos = [[930, 2720], [1100, 2690], [1330, 2760], [1530, 2890], [1810, 2720]][i];
+    const r = C.drawGiantHand(ctx, Object.assign({ x: pos[0], y: pos[1], scale: [0.42, 0.4, 0.32, 0.36, 0.36][i], pose: p, rot: p === 'hold_slide' ? -8 : 0, t: 0.5 }, op));
+    ctx.fillStyle = '#ff3050'; ctx.beginPath(); ctx.arc(r.action.x, r.action.y, 5, 0, 7); ctx.fill();
+    lab(p + (op.glove ? '+glove' : ''), [930, 1100, 1330, 1530, 1810][i], 2935, 14);
+  });
+
+  // ===== Giemsa
+  panel(30, 2963, 1860, 720, '第4話「染色後」 opts.stain:"giemsa"（核モチーフ＝青紫、細胞質＝桃/空色/灰青、顆粒：ユズ橙赤・ゴウ黒紫＋空胞）／ opts.flat（スライドガラスで平たく）', ST);
+  const GF = [[C.drawAkane, {}, 'アカネ'], [C.drawShirou, {}, 'シロウ'], [C.drawWBCAlly, { variant: 0 }, 'ユズ'], [C.drawWBCAlly, { variant: 1 }, 'ゴウ'], [C.drawWBCAlly, { variant: 2 }, 'ソウ'], [C.drawWBCAlly, { variant: 3 }, 'リン'], [C.drawPeta, {}, 'ペタ'], [C.drawLymphoMob, { kind: 'NK', seed: 2 }, 'LGL'], [C.drawLymphoMob, { kind: 'band', seed: 1 }, '杆状核球']];
+  GF.forEach(([fn, op, jp], i) => {
+    fig(fn, Object.assign({ scale: 0.46, yaw: 20, t: 0.4, stain: 'giemsa' }, op), 100 + i * 120, 3330, jp, 14);
+  });
+  [0, 0.33, 0.66, 1].forEach((f, i) => fig(C.drawShirou, { scale: 0.42, yaw: 15, t: 0.4, stain: 'giemsa', flat: f, expr: 'calm' }, 120 + i * 150, 3620, 'flat ' + f, 14));
+  [0, 1].forEach((f, i) => fig(C.drawWBCAlly, { variant: 1, scale: 0.42, yaw: 15, t: 0.4, stain: f ? 'giemsa' : null, expr: 'serious' }, 760 + i * 150, 3620, f ? 'ゴウ 染色後' : 'ゴウ 通常', 14));
+  dark(1130, 3015, 750, 650, '#f6f0f8');
+  // microscope field: flattened + stained
+  ctx.save(); ctx.beginPath(); ctx.arc(1505, 3340, 300, 0, 7); ctx.fillStyle = '#fbf2ee'; ctx.fill(); ctx.clip();
+  [[C.drawWBCAlly, { variant: 1 }, 1505, 3420, 0.7], [C.drawShirou, {}, 1330, 3300, 0.45], [C.drawWBCAlly, { variant: 3 }, 1680, 3300, 0.45], [C.drawAkane, {}, 1380, 3560, 0.4], [C.drawPeta, {}, 1650, 3560, 0.4]].forEach(([fn, op, x, y, s]) => fn(ctx, Object.assign({ x, y, scale: s, yaw: 10, flat: 0.6, stain: 'giemsa', expr: 'happy', t: 0.5 }, op)));
+  ctx.restore();
+  ctx.save(); ctx.strokeStyle = '#3a2a3a'; ctx.lineWidth = 6; ctx.beginPath(); ctx.arc(1505, 3340, 300, 0, 7); ctx.stroke(); ctx.restore();
+  lab('stain + flat 0.6（視野の中）', 1505, 3660, 15);
+
+  window.__ready = true;
+})();
+</script>
+</body>
+</html>

@@ -2,7 +2,8 @@
 """
 Transcribe voice files with faster-whisper and compare to the intended text.
 
-    python3 tools/verify_voices.py [--prefix E01-] [--model small] [--out audio/voice/verify_episode01.json]
+    python3 tools/verify_voices.py [--prefix E01-] [--model small] [--out audio/voice_sbv2/verify_episode01.json]
+    (voices of the engine selected by BS_VOICE_ENGINE, default sbv2; --prefix '' = every line)
 
 Comparison is done on kana readings (pykakasi if available, otherwise raw text) so that
 kanji/kana spelling differences in the transcript do not count as errors.
@@ -12,7 +13,7 @@ from __future__ import annotations
 import argparse, difflib, json, os, re, sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from audio_lib import AUDIO  # noqa: E402
+from audio_lib import AUDIO, voice_meta, voice_dir  # noqa: E402
 
 PUNCT = re.compile(r"[\s、。！？!?…・「」『』（）()ー〜~,.\-]")
 
@@ -32,11 +33,11 @@ def main():
     ap.add_argument("--prefix", default="E01-")
     ap.add_argument("--ids", default="")
     ap.add_argument("--model", default="small")
-    ap.add_argument("--out", default=os.path.join(AUDIO, "voice", "verify_episode01.json"))
+    ap.add_argument("--out", default=os.path.join(voice_dir(), "verify_episode01.json"))
     a = ap.parse_args()
     from faster_whisper import WhisperModel
     model = WhisperModel(a.model, device="cpu", compute_type="int8")
-    meta = json.load(open(os.path.join(AUDIO, "voice", "voices.json"), encoding="utf-8"))
+    meta = voice_meta()
     ids = [s for s in a.ids.split(",") if s] or [k for k in meta if k.startswith(a.prefix)]
     res = json.load(open(a.out, encoding="utf-8")) if os.path.exists(a.out) else {}
     for lid in ids:

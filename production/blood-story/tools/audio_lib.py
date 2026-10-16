@@ -14,6 +14,29 @@ SR = 48000
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))   # production/blood-story
 AUDIO = os.path.join(ROOT, "audio")
 
+# ----------------------------------------------------------------------------- voice engine switch
+# "sbv2" (Style-Bert-VITS2 takes, audio/voice_sbv2/, tools/voices_sbv2.py) or "edge" (edge-tts takes, audio/voice/,
+# tools/voices.py). The mix / timeline / verify tools read the voices through voice_meta(); a line that has no
+# SBV2 take yet falls back to its edge-tts take.  Switch back:  BS_VOICE_ENGINE=edge python3 tools/mix.py
+VOICE_ENGINE = os.environ.get("BS_VOICE_ENGINE", "sbv2")
+VOICE_DIRS = {"sbv2": "voice_sbv2", "edge": "voice"}
+
+
+def voice_dir(engine: str | None = None) -> str:
+    return os.path.join(AUDIO, VOICE_DIRS[engine or VOICE_ENGINE])
+
+
+def voice_meta(engine: str | None = None) -> dict:
+    """line id -> metadata (file relative to audio/, speech_on/off, mouth ...) for the selected engine."""
+    import json
+    engine = engine or VOICE_ENGINE
+    meta = json.load(open(os.path.join(AUDIO, "voice", "voices.json"), encoding="utf-8"))
+    if engine != "edge":
+        p = os.path.join(voice_dir(engine), "voices.json")
+        if os.path.exists(p):
+            meta.update(json.load(open(p, encoding="utf-8")))
+    return meta
+
 
 # ----------------------------------------------------------------------------- io
 def write_wav(path: str, x: np.ndarray, subtype: str = "PCM_24") -> None:
