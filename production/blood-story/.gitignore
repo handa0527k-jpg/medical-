@@ -4,3 +4,4 @@ out/*.srt
 out/frames/
 out/*.png
 out/strip/
+out/*.log
