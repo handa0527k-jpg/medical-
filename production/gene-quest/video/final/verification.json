@@ -1,9 +1,9 @@
 {
  "file": "video/final/gene_quest_full.mp4",
- "size_mb": 214.1,
- "duration_s": 1832.87,
- "duration_expected_s": 1832.87,
- "duration_diff_s": -0.0,
+ "size_mb": 259.9,
+ "duration_s": 2294.53,
+ "duration_expected_s": 2294.53,
+ "duration_diff_s": 0.0,
  "width": 1920,
  "height": 1080,
  "fps": 30.0,
@@ -21,8 +21,8 @@
   "decodes_without_error": true
  },
  "decode_errors": "",
- "decode_seconds": 64.2,
+ "decode_seconds": 77.1,
  "black_segments": [
-  "@ 0x7f4bb80020c0] black_start:0 black_end:1.43333 black_duration:1.43333"
+  "@ 0x7f5818001ac0] black_start:0 black_end:1.43333 black_duration:1.43333"
  ]
 }
