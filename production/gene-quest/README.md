@@ -1,7 +1,14 @@
 # GENE QUEST — 遺伝情報を読み解け！
 
-講義資料「転写（機構と疾患）」（2026年度 遺伝医学、2026.09.28）をもとにした、約30分の日本語医学教育アニメーションと、その制作システム一式です。
+講義資料「転写（機構と疾患）」（2026年度 遺伝医学、2026.09.28）をもとにした、約38分（38分14.5秒）の日本語医学教育アニメーションと、その制作システム一式です。
 医学部1年生が、アカリ（医学部生）と案内役ヌクの会話を通して、転写・転写調節・RNAプロセシング・非コードRNA・遺伝子発現と疾患を学びます。
+
+学び方の軸は **必然性 × ファインマン法** です。
+
+- **必然性**：仕組みごとに「なぜ、そうでなければならないのか」を問い、講義資料の記載から答える（19か所。画面左上に「なぜ ○○？」の札）
+- **ファインマン法**：各章の終わりの「ファインマン・チェック」（7シーン）で、アカリが難しい言葉を使わずに説明し、よくある誤解をヌクが指摘し、アカリが言い直す。最終章では全体を自分の言葉で説明する
+
+制作指示の「約30分」に対し、この取り込みで約38分になりました（v2 は30分32.9秒。内訳は `reports/production_report.md` の 2a.）。
 
 | 成果物 | 場所 |
 |---|---|
@@ -56,7 +63,7 @@ bash scripts/download_music.sh    # BGM 12曲（incompetech.com）
 .venv/bin/python scripts/make_subtitles.py         # SRT / ASS / captions.json
 .venv/bin/python scripts/make_sfx.py               # 効果音（合成）
 .venv/bin/python scripts/mix_audio.py              # セリフ＋BGM（ダッキング）＋効果音 → −16 LUFS
-.venv/bin/python scripts/generate_scene.py         # 52シーンを描画（4並列で約16分）
+.venv/bin/python scripts/generate_scene.py         # 57シーンを描画（4並列で約20分）
 .venv/bin/python scripts/assemble_video.py         # 連結・字幕焼き込み・書き出し・検証
 .venv/bin/python scripts/export_docs.py            # 脚本・確認表などの資料を更新
 .venv/bin/python scripts/progress.py               # 進捗（成果物から判定）
@@ -68,6 +75,8 @@ bash scripts/download_music.sh    # BGM 12曲（incompetech.com）
 
 - 原稿 `script/source_script.md` を直し、`build_script.py` → `generate_audio.py` を実行すると、**読み・声の設定・感情が変わった行だけ**が作り直される（行ごとのハッシュ）
 - 読み違いは、`config/pronunciation_dictionary.yaml` に追加するか、原稿の行に `{say=よみ}` を付ける。字幕は正式な表記のまま
+- 必然性の問いは、原稿の行に `{why=問い}` を付ける（？で終わる行は、次の行＝答えの終わりまで札を出す）
+- ファインマン・チェックのシーンは `- visual: feynman_check` とし、板書を `- card_title / card_try / card_wrong / card_gap / card_fix` で書く。セリフに `cue=try`, `cue=gap`, `cue=fix` を付けると、板書がそのセリフに合わせて現れる
 - 1行だけ作り直す：`generate_audio.py --line SC0302-03 --force`
 - 声の割り当ては `config/voice_config.yaml`（キャラクターごとにモデル・話速・高さ・抑揚）
 - 発音の確認：`.venv-tts/bin/python scripts/check_pronunciation.py`（Whisper で書き起こし、かな換算の誤り率を出す）

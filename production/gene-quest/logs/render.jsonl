@@ -78,3 +78,5 @@
 {"time": "2026-10-22 02:18:09", "task": "render", "scene": "SC0802", "scale": 1.0, "frames": 1233, "seconds": 16.5, "output": "/home/user/medical-/production/gene-quest/video/scenes/SC0802.mp4", "status": "ok"}
 {"time": "2026-10-22 02:18:20", "task": "render", "scene": "SC0803", "scale": 1.0, "frames": 999, "seconds": 10.9, "output": "/home/user/medical-/production/gene-quest/video/scenes/SC0803.mp4", "status": "ok"}
 {"time": "2026-10-22 02:18:32", "task": "render", "scene": "SC0804", "scale": 1.0, "frames": 1100, "seconds": 12.1, "output": "/home/user/medical-/production/gene-quest/video/scenes/SC0804.mp4", "status": "ok"}
+{"time": "2026-10-22 06:36:53", "task": "render", "scene": "SC0101", "scale": 1.0, "frames": 728, "seconds": 13.7, "output": "/home/user/medical-/production/gene-quest/video/scenes/SC0101.mp4", "status": "ok"}
+{"time": "2026-10-22 06:37:00", "task": "render", "scene": "SC0102", "scale": 1.0, "frames": 255, "seconds": 6.5, "output": "/home/user/medical-/production/gene-quest/video/scenes/SC0102.mp4", "status": "ok"}

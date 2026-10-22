@@ -201,7 +201,7 @@ def synthesis_direction(c, t, S):
             text(c, "材料：ATP・UTP・CTP・GTP", px + 250, py + ph - 40, 32, PAL["text"], "bold", "center",
                  ease(prog(t, S.L(5), 0.6)))
     cast(c, t, S, akari_s=0.5, nuku_x=1820, nuku_y=860, nuku_s=0.5)
-    hud(c, t, S)
+    hud(c, t, S, why_x=700)  # 左上は RNA の 5' の表示と重なるので、問いの札は上の中央へ
     scene_fade(c, t, S)
 
 

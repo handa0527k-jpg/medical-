@@ -409,18 +409,20 @@
   "clipped_runs": 0,
   "trim_head": 0.0,
   "trim_tail": 0.0,
-  "lufs_in": -16.0,
-  "peak_in_db": 0.0,
-  "noise_floor_db": -84.7,
-  "presence_db": -1.8,
-  "crest_db": 16.1,
+  "lufs_in": -17.5,
+  "peak_in_db": -0.0,
+  "noise_floor_db": -77.7,
+  "presence_db": -13.5,
+  "crest_db": 17.3,
   "applied": [
-   "hpf70"
+   "hpf70",
+   "presence+2dB",
+   "comp2:1"
   ],
-  "duration": 2.37,
+  "duration": 9.543,
   "lufs_out": -20.0,
-  "hash": "3f46d23eb409680f",
-  "character_id": "akari"
+  "hash": "00f5b803c2be1e33",
+  "character_id": "nuku"
  },
  "SC0201-01": {
   "source_sr": 24000,
@@ -876,18 +878,18 @@
   "clipped_runs": 0,
   "trim_head": 0.0,
   "trim_tail": 0.0,
-  "lufs_in": -18.4,
-  "peak_in_db": 0.0,
-  "noise_floor_db": -72.7,
-  "presence_db": -11.0,
-  "crest_db": 17.9,
+  "lufs_in": -18.0,
+  "peak_in_db": -0.1,
+  "noise_floor_db": -68.8,
+  "presence_db": -10.3,
+  "crest_db": 18.2,
   "applied": [
    "hpf70",
    "comp2:1"
   ],
-  "duration": 6.188,
+  "duration": 6.142,
   "lufs_out": -20.0,
-  "hash": "493f18855a64738a",
+  "hash": "a69946a49735d1df",
   "character_id": "nuku"
  },
  "SC0205-02": {
@@ -896,18 +898,18 @@
   "clipped_runs": 0,
   "trim_head": 0.0,
   "trim_tail": 0.0,
-  "lufs_in": -18.3,
-  "peak_in_db": -0.0,
-  "noise_floor_db": -74.8,
-  "presence_db": -8.4,
+  "lufs_in": -18.2,
+  "peak_in_db": 0.0,
+  "noise_floor_db": -80.6,
+  "presence_db": -9.7,
   "crest_db": 18.0,
   "applied": [
    "hpf70",
    "comp2:1"
   ],
-  "duration": 3.58,
+  "duration": 6.575,
   "lufs_out": -20.0,
-  "hash": "62259839684f2800",
+  "hash": "561ec4fe7c08105c",
   "character_id": "akari"
  },
  "SC0205-03": {
@@ -916,19 +918,20 @@
   "clipped_runs": 0,
   "trim_head": 0.0,
   "trim_tail": 0.0,
-  "lufs_in": -15.1,
-  "peak_in_db": -0.0,
-  "noise_floor_db": -59.4,
-  "presence_db": -2.8,
-  "crest_db": 15.1,
+  "lufs_in": -18.2,
+  "peak_in_db": 0.0,
+  "noise_floor_db": -70.5,
+  "presence_db": -13.0,
+  "crest_db": 18.5,
   "applied": [
-   "denoise_needed(flagged)",
-   "hpf70"
+   "hpf70",
+   "presence+2dB",
+   "comp2:1"
   ],
-  "duration": 2.315,
+  "duration": 12.016,
   "lufs_out": -20.0,
-  "hash": "cbd0eb029b3951a1",
-  "character_id": "akari"
+  "hash": "332f330c2d8360e7",
+  "character_id": "nuku"
  },
  "SC0205-04": {
   "source_sr": 44100,
@@ -936,18 +939,19 @@
   "clipped_runs": 0,
   "trim_head": 0.0,
   "trim_tail": 0.0,
-  "lufs_in": -16.6,
-  "peak_in_db": 0.1,
-  "noise_floor_db": -74.4,
-  "presence_db": -11.6,
-  "crest_db": 16.3,
+  "lufs_in": -19.1,
+  "peak_in_db": 0.0,
+  "noise_floor_db": -87.8,
+  "presence_db": -6.4,
+  "crest_db": 19.0,
   "applied": [
-   "hpf70"
+   "hpf70",
+   "comp2:1"
   ],
-  "duration": 5.538,
+  "duration": 10.345,
   "lufs_out": -20.0,
-  "hash": "739a9234cbf3ee21",
-  "character_id": "nuku"
+  "hash": "26b2f479404a257c",
+  "character_id": "akari"
  },
  "SC0301-01": {
   "source_sr": 24000,
@@ -1547,18 +1551,19 @@
   "clipped_runs": 0,
   "trim_head": 0.0,
   "trim_tail": 0.0,
-  "lufs_in": -14.7,
+  "lufs_in": -20.6,
   "peak_in_db": 0.0,
-  "noise_floor_db": null,
-  "presence_db": -13.1,
-  "crest_db": 14.8,
+  "noise_floor_db": -73.2,
+  "presence_db": -14.0,
+  "crest_db": 20.8,
   "applied": [
    "hpf70",
-   "presence+2dB"
+   "presence+2dB",
+   "comp2:1"
   ],
-  "duration": 0.848,
+  "duration": 8.417,
   "lufs_out": -20.0,
-  "hash": "48b315b98baecac9",
+  "hash": "1c3dc989fe290501",
   "character_id": "nuku"
  },
  "SC0307-01": {
@@ -1830,19 +1835,19 @@
   "clipped_runs": 0,
   "trim_head": 0.0,
   "trim_tail": 0.0,
-  "lufs_in": -17.8,
+  "lufs_in": -19.7,
   "peak_in_db": 0.0,
-  "noise_floor_db": -65.3,
-  "presence_db": -12.1,
-  "crest_db": 17.5,
+  "noise_floor_db": -73.7,
+  "presence_db": -12.4,
+  "crest_db": 19.4,
   "applied": [
    "hpf70",
    "presence+2dB",
    "comp2:1"
   ],
-  "duration": 11.656,
+  "duration": 15.813,
   "lufs_out": -20.0,
-  "hash": "028d9bd7e837f278",
+  "hash": "4fefe54f7a3f4e7f",
   "character_id": "nuku"
  },
  "SC0402-04": {
@@ -1988,23 +1993,23 @@
  },
  "SC0403-03": {
   "source_sr": 44100,
-  "full_scale_samples": 3,
+  "full_scale_samples": 1,
   "clipped_runs": 0,
   "trim_head": 0.0,
   "trim_tail": 0.0,
-  "lufs_in": -17.8,
+  "lufs_in": -19.0,
   "peak_in_db": 0.0,
-  "noise_floor_db": -71.0,
-  "presence_db": -14.3,
-  "crest_db": 17.7,
+  "noise_floor_db": -70.8,
+  "presence_db": -13.6,
+  "crest_db": 18.9,
   "applied": [
    "hpf70",
    "presence+2dB",
    "comp2:1"
   ],
-  "duration": 6.339,
+  "duration": 10.031,
   "lufs_out": -20.0,
-  "hash": "4304caa8ad5bd05c",
+  "hash": "2bd21cd128a5f18a",
   "character_id": "nuku"
  },
  "SC0403-04": {
@@ -2115,19 +2120,18 @@
   "clipped_runs": 0,
   "trim_head": 0.0,
   "trim_tail": 0.0,
-  "lufs_in": -18.5,
-  "peak_in_db": 0.0,
-  "noise_floor_db": -71.9,
-  "presence_db": -12.2,
-  "crest_db": 18.7,
+  "lufs_in": -17.8,
+  "peak_in_db": -0.0,
+  "noise_floor_db": -68.8,
+  "presence_db": -11.4,
+  "crest_db": 17.2,
   "applied": [
    "hpf70",
-   "presence+2dB",
    "comp2:1"
   ],
-  "duration": 5.747,
+  "duration": 4.598,
   "lufs_out": -20.0,
-  "hash": "6605f4227dc8f075",
+  "hash": "5af86274d7f47789",
   "character_id": "nuku"
  },
  "SC0405-02": {
@@ -2138,16 +2142,16 @@
   "trim_tail": 0.0,
   "lufs_in": -17.8,
   "peak_in_db": 0.0,
-  "noise_floor_db": -80.1,
-  "presence_db": -10.2,
-  "crest_db": 17.4,
+  "noise_floor_db": -75.4,
+  "presence_db": -9.7,
+  "crest_db": 18.0,
   "applied": [
    "hpf70",
    "comp2:1"
   ],
-  "duration": 2.88,
+  "duration": 5.89,
   "lufs_out": -20.0,
-  "hash": "ec7276ccd78bd2bd",
+  "hash": "4ed532234842c46d",
   "character_id": "akari"
  },
  "SC0405-03": {
@@ -2156,19 +2160,19 @@
   "clipped_runs": 0,
   "trim_head": 0.0,
   "trim_tail": 0.0,
-  "lufs_in": -18.9,
+  "lufs_in": -18.5,
   "peak_in_db": 0.0,
-  "noise_floor_db": -79.7,
-  "presence_db": -1.9,
-  "crest_db": 18.6,
+  "noise_floor_db": -71.7,
+  "presence_db": -11.6,
+  "crest_db": 18.7,
   "applied": [
    "hpf70",
    "comp2:1"
   ],
-  "duration": 4.44,
+  "duration": 10.925,
   "lufs_out": -20.0,
-  "hash": "4f18ebae6e1e87ba",
-  "character_id": "akari"
+  "hash": "008e728f05964c67",
+  "character_id": "nuku"
  },
  "SC0405-04": {
   "source_sr": 44100,
@@ -2176,19 +2180,19 @@
   "clipped_runs": 0,
   "trim_head": 0.0,
   "trim_tail": 0.0,
-  "lufs_in": -15.4,
-  "peak_in_db": -0.0,
-  "noise_floor_db": -58.1,
-  "presence_db": -6.2,
-  "crest_db": 14.7,
+  "lufs_in": -19.6,
+  "peak_in_db": 0.0,
+  "noise_floor_db": -84.5,
+  "presence_db": -3.2,
+  "crest_db": 19.3,
   "applied": [
-   "denoise_needed(flagged)",
-   "hpf70"
+   "hpf70",
+   "comp2:1"
   ],
-  "duration": 0.894,
+  "duration": 11.32,
   "lufs_out": -20.0,
-  "hash": "effbb927611bece2",
-  "character_id": "nuku"
+  "hash": "f8ea7c6d98aa3144",
+  "character_id": "akari"
  },
  "SC0501-01": {
   "source_sr": 24000,
@@ -2255,19 +2259,19 @@
   "clipped_runs": 0,
   "trim_head": 0.0,
   "trim_tail": 0.0,
-  "lufs_in": -18.4,
-  "peak_in_db": 0.0,
-  "noise_floor_db": -68.6,
-  "presence_db": -12.7,
-  "crest_db": 18.0,
+  "lufs_in": -17.4,
+  "peak_in_db": -0.1,
+  "noise_floor_db": -69.1,
+  "presence_db": -14.0,
+  "crest_db": 17.0,
   "applied": [
    "hpf70",
    "presence+2dB",
    "comp2:1"
   ],
-  "duration": 9.056,
+  "duration": 11.923,
   "lufs_out": -20.0,
-  "hash": "ab27b69e52b9323c",
+  "hash": "8464b0af31b44355",
   "character_id": "nuku"
  },
  "SC0501-05": {
@@ -2315,19 +2319,19 @@
   "clipped_runs": 0,
   "trim_head": 0.0,
   "trim_tail": 0.0,
-  "lufs_in": -18.9,
-  "peak_in_db": 0.0,
-  "noise_floor_db": -67.8,
-  "presence_db": -13.2,
-  "crest_db": 18.8,
+  "lufs_in": -18.1,
+  "peak_in_db": -0.0,
+  "noise_floor_db": -73.1,
+  "presence_db": -14.3,
+  "crest_db": 18.2,
   "applied": [
    "hpf70",
    "presence+2dB",
    "comp2:1"
   ],
-  "duration": 7.593,
+  "duration": 12.144,
   "lufs_out": -20.0,
-  "hash": "f7de4535731a8b3f",
+  "hash": "0d36b7e5b0cb2a7b",
   "character_id": "nuku"
  },
  "SC0502-01": {
@@ -2501,19 +2505,18 @@
   "clipped_runs": 0,
   "trim_head": 0.0,
   "trim_tail": 0.0,
-  "lufs_in": -17.7,
-  "peak_in_db": -0.0,
-  "noise_floor_db": -71.0,
-  "presence_db": -13.3,
-  "crest_db": 17.1,
+  "lufs_in": -17.6,
+  "peak_in_db": 0.0,
+  "noise_floor_db": -70.0,
+  "presence_db": -13.1,
+  "crest_db": 16.8,
   "applied": [
    "hpf70",
-   "presence+2dB",
-   "comp2:1"
+   "presence+2dB"
   ],
-  "duration": 7.79,
+  "duration": 10.31,
   "lufs_out": -20.0,
-  "hash": "b43702d79b8971ab",
+  "hash": "0439820cbdc2f697",
   "character_id": "nuku"
  },
  "SC0504-03": {
@@ -2563,19 +2566,19 @@
   "clipped_runs": 0,
   "trim_head": 0.0,
   "trim_tail": 0.0,
-  "lufs_in": -17.4,
+  "lufs_in": -18.5,
   "peak_in_db": 0.0,
-  "noise_floor_db": -64.1,
-  "presence_db": -13.8,
-  "crest_db": 17.1,
+  "noise_floor_db": -71.5,
+  "presence_db": -12.9,
+  "crest_db": 18.5,
   "applied": [
    "hpf70",
    "presence+2dB",
    "comp2:1"
   ],
-  "duration": 7.233,
+  "duration": 2.972,
   "lufs_out": -20.0,
-  "hash": "1de75c150e6ba49a",
+  "hash": "a1bd27d65689463d",
   "character_id": "nuku"
  },
  "SC0505-02": {
@@ -2584,20 +2587,19 @@
   "clipped_runs": 0,
   "trim_head": 0.0,
   "trim_tail": 0.0,
-  "lufs_in": -17.5,
+  "lufs_in": -17.6,
   "peak_in_db": 0.0,
-  "noise_floor_db": -63.2,
-  "presence_db": -13.7,
-  "crest_db": 17.3,
+  "noise_floor_db": -88.1,
+  "presence_db": -6.3,
+  "crest_db": 17.2,
   "applied": [
    "hpf70",
-   "presence+2dB",
    "comp2:1"
   ],
-  "duration": 8.835,
+  "duration": 4.02,
   "lufs_out": -20.0,
-  "hash": "907fc820c6562f17",
-  "character_id": "nuku"
+  "hash": "5f3a8d444d0fdb6e",
+  "character_id": "akari"
  },
  "SC0505-03": {
   "source_sr": 44100,
@@ -2605,18 +2607,20 @@
   "clipped_runs": 0,
   "trim_head": 0.0,
   "trim_tail": 0.0,
-  "lufs_in": -13.6,
-  "peak_in_db": -0.0,
+  "lufs_in": -18.1,
+  "peak_in_db": 0.0,
   "noise_floor_db": -71.2,
-  "presence_db": -10.8,
-  "crest_db": 13.6,
+  "presence_db": -13.5,
+  "crest_db": 17.7,
   "applied": [
-   "hpf70"
+   "hpf70",
+   "presence+2dB",
+   "comp2:1"
   ],
-  "duration": 2.055,
+  "duration": 8.707,
   "lufs_out": -20.0,
-  "hash": "befb1784180ea128",
-  "character_id": "akari"
+  "hash": "e3ed60701fc28d97",
+  "character_id": "nuku"
  },
  "SC0505-04": {
   "source_sr": 44100,
@@ -2624,19 +2628,19 @@
   "clipped_runs": 0,
   "trim_head": 0.0,
   "trim_tail": 0.0,
-  "lufs_in": -16.2,
+  "lufs_in": -19.6,
   "peak_in_db": 0.0,
-  "noise_floor_db": -69.4,
-  "presence_db": -12.3,
-  "crest_db": 16.5,
+  "noise_floor_db": -86.0,
+  "presence_db": -4.4,
+  "crest_db": 19.3,
   "applied": [
    "hpf70",
-   "presence+2dB"
+   "comp2:1"
   ],
-  "duration": 3.402,
+  "duration": 10.23,
   "lufs_out": -20.0,
-  "hash": "12b66a4cc2b266b9",
-  "character_id": "nuku"
+  "hash": "73af9db6d87a72cf",
+  "character_id": "akari"
  },
  "SC0601-01": {
   "source_sr": 24000,
@@ -2851,20 +2855,18 @@
   "clipped_runs": 0,
   "trim_head": 0.0,
   "trim_tail": 0.0,
-  "lufs_in": -18.4,
+  "lufs_in": -16.7,
   "peak_in_db": -0.0,
-  "noise_floor_db": -69.3,
-  "presence_db": -13.8,
-  "crest_db": 18.1,
+  "noise_floor_db": -67.3,
+  "presence_db": -11.8,
+  "crest_db": 16.9,
   "applied": [
-   "hpf70",
-   "presence+2dB",
-   "comp2:1"
+   "hpf70"
   ],
-  "duration": 11.285,
+  "duration": 3.265,
   "lufs_out": -20.0,
-  "hash": "107157c6848db123",
-  "character_id": "nuku"
+  "hash": "2348623848c9775f",
+  "character_id": "akari"
  },
  "SC0604-01": {
   "source_sr": 44100,
@@ -3240,19 +3242,19 @@
   "clipped_runs": 0,
   "trim_head": 0.0,
   "trim_tail": 0.0,
-  "lufs_in": -19.2,
-  "peak_in_db": -0.0,
-  "noise_floor_db": -67.1,
-  "presence_db": -12.7,
-  "crest_db": 19.1,
+  "lufs_in": -18.7,
+  "peak_in_db": 0.0,
+  "noise_floor_db": -66.5,
+  "presence_db": -12.6,
+  "crest_db": 18.4,
   "applied": [
    "hpf70",
    "presence+2dB",
    "comp2:1"
   ],
-  "duration": 5.909,
+  "duration": 12.098,
   "lufs_out": -20.0,
-  "hash": "866a31b3df2c1539",
+  "hash": "a089710140163d31",
   "character_id": "nuku"
  },
  "SC0606-05": {
@@ -3282,18 +3284,17 @@
   "clipped_runs": 0,
   "trim_head": 0.0,
   "trim_tail": 0.0,
-  "lufs_in": -18.7,
+  "lufs_in": -16.8,
   "peak_in_db": 0.0,
-  "noise_floor_db": -72.2,
-  "presence_db": -11.7,
-  "crest_db": 18.4,
+  "noise_floor_db": -62.1,
+  "presence_db": -11.3,
+  "crest_db": 16.4,
   "applied": [
-   "hpf70",
-   "comp2:1"
+   "hpf70"
   ],
-  "duration": 12.307,
+  "duration": 2.914,
   "lufs_out": -20.0,
-  "hash": "1672321803f01ab2",
+  "hash": "30fd5c5df762b7bc",
   "character_id": "nuku"
  },
  "SC0607-02": {
@@ -3302,19 +3303,19 @@
   "clipped_runs": 0,
   "trim_head": 0.0,
   "trim_tail": 0.0,
-  "lufs_in": -17.5,
+  "lufs_in": -18.0,
   "peak_in_db": -0.0,
-  "noise_floor_db": -66.8,
-  "presence_db": -11.9,
-  "crest_db": 17.3,
+  "noise_floor_db": -76.0,
+  "presence_db": -4.9,
+  "crest_db": 18.2,
   "applied": [
    "hpf70",
    "comp2:1"
   ],
-  "duration": 10.612,
+  "duration": 2.44,
   "lufs_out": -20.0,
-  "hash": "35eac37a930a51d9",
-  "character_id": "nuku"
+  "hash": "9abe069806ede128",
+  "character_id": "akari"
  },
  "SC0607-03": {
   "source_sr": 44100,
@@ -3322,19 +3323,21 @@
   "clipped_runs": 0,
   "trim_head": 0.0,
   "trim_tail": 0.0,
-  "lufs_in": -19.5,
-  "peak_in_db": -0.0,
-  "noise_floor_db": -82.5,
-  "presence_db": -6.6,
-  "crest_db": 19.6,
+  "lufs_in": -19.7,
+  "peak_in_db": 0.0,
+  "noise_floor_db": -77.8,
+  "presence_db": -12.6,
+  "crest_db": 20.2,
   "applied": [
    "hpf70",
-   "comp2:1"
+   "presence+2dB",
+   "comp2:1",
+   "peak_limit"
   ],
-  "duration": 5.6,
-  "lufs_out": -20.0,
-  "hash": "d8f4190c1568c11e",
-  "character_id": "akari"
+  "duration": 8.8,
+  "lufs_out": -20.1,
+  "hash": "7de1be1bfb8fe7c9",
+  "character_id": "nuku"
  },
  "SC0701-01": {
   "source_sr": 24000,
@@ -3465,18 +3468,18 @@
   "clipped_runs": 0,
   "trim_head": 0.0,
   "trim_tail": 0.0,
-  "lufs_in": -15.8,
-  "peak_in_db": 0.0,
-  "noise_floor_db": -61.5,
-  "presence_db": -13.5,
-  "crest_db": 15.2,
+  "lufs_in": -16.7,
+  "peak_in_db": -0.1,
+  "noise_floor_db": -62.5,
+  "presence_db": -13.6,
+  "crest_db": 15.9,
   "applied": [
    "hpf70",
    "presence+2dB"
   ],
-  "duration": 4.412,
+  "duration": 8.58,
   "lufs_out": -20.0,
-  "hash": "5f97146911c6b1f0",
+  "hash": "169183d5d4042a6a",
   "character_id": "nuku"
  },
  "SC0702-03": {
@@ -3993,18 +3996,18 @@
   "clipped_runs": 0,
   "trim_head": 0.0,
   "trim_tail": 0.0,
-  "lufs_in": -19.4,
+  "lufs_in": -18.0,
   "peak_in_db": 0.0,
-  "noise_floor_db": -80.3,
-  "presence_db": -7.8,
-  "crest_db": 19.0,
+  "noise_floor_db": -86.3,
+  "presence_db": -8.2,
+  "crest_db": 17.7,
   "applied": [
    "hpf70",
    "comp2:1"
   ],
-  "duration": 3.755,
+  "duration": 6.47,
   "lufs_out": -20.0,
-  "hash": "8593515408247e72",
+  "hash": "304ebe4040ae5358",
   "character_id": "akari"
  },
  "SC0801-06": {
@@ -4013,19 +4016,19 @@
   "clipped_runs": 0,
   "trim_head": 0.0,
   "trim_tail": 0.0,
-  "lufs_in": -19.6,
-  "peak_in_db": -0.0,
-  "noise_floor_db": -73.9,
-  "presence_db": -15.1,
-  "crest_db": 19.3,
+  "lufs_in": -19.3,
+  "peak_in_db": 0.0,
+  "noise_floor_db": -66.6,
+  "presence_db": -13.8,
+  "crest_db": 19.2,
   "applied": [
    "hpf70",
    "presence+2dB",
    "comp2:1"
   ],
-  "duration": 13.293,
+  "duration": 8.278,
   "lufs_out": -20.0,
-  "hash": "e3ed19b9a81dbe0d",
+  "hash": "04f6613bd0b147f2",
   "character_id": "nuku"
  },
  "SC0801-07": {
@@ -4034,19 +4037,19 @@
   "clipped_runs": 0,
   "trim_head": 0.0,
   "trim_tail": 0.0,
-  "lufs_in": -20.0,
-  "peak_in_db": -0.0,
-  "noise_floor_db": -74.0,
-  "presence_db": -14.1,
-  "crest_db": 21.0,
+  "lufs_in": -20.4,
+  "peak_in_db": 0.0,
+  "noise_floor_db": -70.5,
+  "presence_db": -15.0,
+  "crest_db": 20.1,
   "applied": [
    "hpf70",
    "presence+2dB",
    "comp2:1"
   ],
-  "duration": 9.741,
+  "duration": 13.166,
   "lufs_out": -20.0,
-  "hash": "d1dfd59cd97f1ecf",
+  "hash": "e3ed19b9a81dbe0d",
   "character_id": "nuku"
  },
  "SC0802-01": {
@@ -4076,19 +4079,19 @@
   "clipped_runs": 0,
   "trim_head": 0.0,
   "trim_tail": 0.0,
-  "lufs_in": -16.4,
-  "peak_in_db": 0.0,
-  "noise_floor_db": -69.2,
-  "presence_db": -13.2,
-  "crest_db": 16.2,
+  "lufs_in": -14.8,
+  "peak_in_db": -0.0,
+  "noise_floor_db": -67.9,
+  "presence_db": -13.0,
+  "crest_db": 15.0,
   "applied": [
    "hpf70",
    "presence+2dB"
   ],
-  "duration": 7.779,
+  "duration": 1.955,
   "lufs_out": -20.0,
-  "hash": "377fdbc46fc52845",
-  "character_id": "nuku"
+  "hash": "1fcf9d1fef9b78c0",
+  "character_id": "akari"
  },
  "SC0802-03": {
   "source_sr": 44100,
@@ -4096,19 +4099,18 @@
   "clipped_runs": 0,
   "trim_head": 0.0,
   "trim_tail": 0.0,
-  "lufs_in": -19.6,
-  "peak_in_db": 0.1,
-  "noise_floor_db": -72.5,
-  "presence_db": -12.4,
-  "crest_db": 20.0,
+  "lufs_in": -17.3,
+  "peak_in_db": 0.0,
+  "noise_floor_db": -70.8,
+  "presence_db": -14.4,
+  "crest_db": 16.9,
   "applied": [
    "hpf70",
-   "presence+2dB",
-   "comp2:1"
+   "presence+2dB"
   ],
-  "duration": 7.616,
+  "duration": 9.416,
   "lufs_out": -20.0,
-  "hash": "91f4644913d6e05f",
+  "hash": "22c6a5d34d281146",
   "character_id": "nuku"
  },
  "SC0802-04": {
@@ -4117,19 +4119,19 @@
   "clipped_runs": 0,
   "trim_head": 0.0,
   "trim_tail": 0.0,
-  "lufs_in": -17.9,
+  "lufs_in": -17.5,
   "peak_in_db": 0.0,
-  "noise_floor_db": -71.7,
-  "presence_db": -13.0,
-  "crest_db": 17.5,
+  "noise_floor_db": -64.5,
+  "presence_db": -12.6,
+  "crest_db": 17.1,
   "applied": [
    "hpf70",
    "presence+2dB",
    "comp2:1"
   ],
-  "duration": 8.824,
+  "duration": 7.628,
   "lufs_out": -20.0,
-  "hash": "c666a2eaee822915",
+  "hash": "377fdbc46fc52845",
   "character_id": "nuku"
  },
  "SC0802-05": {
@@ -4138,38 +4140,39 @@
   "clipped_runs": 0,
   "trim_head": 0.0,
   "trim_tail": 0.0,
-  "lufs_in": -18.4,
+  "lufs_in": -19.4,
   "peak_in_db": 0.0,
-  "noise_floor_db": -87.6,
-  "presence_db": -2.0,
+  "noise_floor_db": -71.5,
+  "presence_db": -12.0,
+  "crest_db": 19.7,
+  "applied": [
+   "hpf70",
+   "presence+2dB",
+   "comp2:1"
+  ],
+  "duration": 7.546,
+  "lufs_out": -20.0,
+  "hash": "91f4644913d6e05f",
+  "character_id": "nuku"
+ },
+ "SC0803-01": {
+  "source_sr": 44100,
+  "full_scale_samples": 1,
+  "clipped_runs": 0,
+  "trim_head": 0.0,
+  "trim_tail": 0.0,
+  "lufs_in": -18.2,
+  "peak_in_db": 0.0,
+  "noise_floor_db": -74.0,
+  "presence_db": -9.3,
   "crest_db": 18.2,
   "applied": [
    "hpf70",
    "comp2:1"
   ],
-  "duration": 3.135,
+  "duration": 3.889,
   "lufs_out": -20.0,
-  "hash": "7554440a8b76ab2e",
-  "character_id": "akari"
- },
- "SC0803-01": {
-  "source_sr": 44100,
-  "full_scale_samples": 2,
-  "clipped_runs": 0,
-  "trim_head": 0.0,
-  "trim_tail": 0.0,
-  "lufs_in": -17.2,
-  "peak_in_db": 0.0,
-  "noise_floor_db": -71.7,
-  "presence_db": -13.0,
-  "crest_db": 16.8,
-  "applied": [
-   "hpf70",
-   "presence+2dB"
-  ],
-  "duration": 9.172,
-  "lufs_out": -20.0,
-  "hash": "2781466241a6ff5c",
+  "hash": "84cf7eefc76a291f",
   "character_id": "nuku"
  },
  "SC0803-02": {
@@ -4178,20 +4181,19 @@
   "clipped_runs": 0,
   "trim_head": 0.0,
   "trim_tail": 0.0,
-  "lufs_in": -19.1,
-  "peak_in_db": 0.0,
-  "noise_floor_db": -73.0,
-  "presence_db": -13.5,
-  "crest_db": 18.3,
+  "lufs_in": -19.2,
+  "peak_in_db": -0.0,
+  "noise_floor_db": -87.5,
+  "presence_db": -7.2,
+  "crest_db": 19.1,
   "applied": [
    "hpf70",
-   "presence+2dB",
    "comp2:1"
   ],
-  "duration": 15.766,
+  "duration": 4.345,
   "lufs_out": -20.0,
-  "hash": "c24aa7efe25e6d25",
-  "character_id": "nuku"
+  "hash": "5ec06ffb1345e21c",
+  "character_id": "akari"
  },
  "SC0803-03": {
   "source_sr": 44100,
@@ -4199,19 +4201,19 @@
   "clipped_runs": 0,
   "trim_head": 0.0,
   "trim_tail": 0.0,
-  "lufs_in": -18.6,
-  "peak_in_db": -0.0,
-  "noise_floor_db": -69.0,
-  "presence_db": -13.1,
-  "crest_db": 18.8,
+  "lufs_in": -19.7,
+  "peak_in_db": 0.0,
+  "noise_floor_db": -73.0,
+  "presence_db": -13.5,
+  "crest_db": 19.7,
   "applied": [
    "hpf70",
    "presence+2dB",
    "comp2:1"
   ],
-  "duration": 6.432,
+  "duration": 8.092,
   "lufs_out": -20.0,
-  "hash": "516bcc905bb334cf",
+  "hash": "327e30f8445aa99a",
   "character_id": "nuku"
  },
  "SC0804-01": {
@@ -4220,18 +4222,19 @@
   "clipped_runs": 0,
   "trim_head": 0.0,
   "trim_tail": 0.0,
-  "lufs_in": -16.5,
+  "lufs_in": -16.2,
   "peak_in_db": 0.0,
-  "noise_floor_db": -78.1,
-  "presence_db": -11.5,
-  "crest_db": 16.4,
+  "noise_floor_db": -64.7,
+  "presence_db": -13.1,
+  "crest_db": 16.1,
   "applied": [
-   "hpf70"
+   "hpf70",
+   "presence+2dB"
   ],
-  "duration": 4.68,
+  "duration": 9.323,
   "lufs_out": -20.0,
-  "hash": "5d55006b2a9cc996",
-  "character_id": "akari"
+  "hash": "2781466241a6ff5c",
+  "character_id": "nuku"
  },
  "SC0804-02": {
   "source_sr": 44100,
@@ -4239,81 +4242,40 @@
   "clipped_runs": 0,
   "trim_head": 0.0,
   "trim_tail": 0.0,
-  "lufs_in": -19.0,
+  "lufs_in": -18.1,
   "peak_in_db": -0.0,
-  "noise_floor_db": -69.9,
-  "presence_db": -12.9,
-  "crest_db": 18.4,
+  "noise_floor_db": -68.3,
+  "presence_db": -13.4,
+  "crest_db": 17.6,
   "applied": [
    "hpf70",
    "presence+2dB",
    "comp2:1"
   ],
-  "duration": 9.799,
+  "duration": 15.79,
   "lufs_out": -20.0,
-  "hash": "e0e71151ea1e059e",
+  "hash": "c24aa7efe25e6d25",
   "character_id": "nuku"
  },
  "SC0804-03": {
   "source_sr": 44100,
-  "full_scale_samples": 1,
+  "full_scale_samples": 2,
   "clipped_runs": 0,
   "trim_head": 0.0,
   "trim_tail": 0.0,
-  "lufs_in": -17.2,
+  "lufs_in": -16.8,
   "peak_in_db": 0.0,
-  "noise_floor_db": -68.6,
-  "presence_db": -12.7,
-  "crest_db": 17.1,
+  "noise_floor_db": -66.3,
+  "presence_db": -12.9,
+  "crest_db": 16.4,
   "applied": [
    "hpf70",
-   "presence+2dB",
-   "comp2:1"
+   "presence+2dB"
   ],
-  "duration": 7.837,
+  "duration": 6.455,
   "lufs_out": -20.0,
-  "hash": "aab9454a7c8796b2",
+  "hash": "516bcc905bb334cf",
   "character_id": "nuku"
- },
- "SC0804-04": {
-  "source_sr": 44100,
-  "full_scale_samples": 1,
-  "clipped_runs": 0,
-  "trim_head": 0.0,
-  "trim_tail": 0.0,
-  "lufs_in": -17.7,
-  "peak_in_db": 0.0,
-  "noise_floor_db": -73.1,
-  "presence_db": -12.0,
-  "crest_db": 17.3,
-  "applied": [
-   "hpf70",
-   "presence+2dB",
-   "comp2:1"
-  ],
-  "duration": 7.674,
-  "lufs_out": -20.0,
-  "hash": "ebeb40f63740345f",
-  "character_id": "nuku"
- },
- "SC0804-05": {
-  "source_sr": 44100,
-  "full_scale_samples": 1,
-  "clipped_runs": 0,
-  "trim_head": 0.0,
-  "trim_tail": 0.0,
-  "lufs_in": -15.0,
-  "peak_in_db": 0.0,
-  "noise_floor_db": -75.8,
-  "presence_db": -10.2,
-  "crest_db": 14.9,
-  "applied": [
-   "hpf70"
-  ],
-  "duration": 3.255,
-  "lufs_out": -20.0,
-  "hash": "f6b941b04ee765de",
-  "character_id": "akari"
  },
  "SC0901-01": {
   "source_sr": 24000,
@@ -4341,19 +4303,18 @@
   "clipped_runs": 0,
   "trim_head": 0.0,
   "trim_tail": 0.0,
-  "lufs_in": -18.3,
+  "lufs_in": -18.2,
   "peak_in_db": 0.0,
-  "noise_floor_db": -74.3,
-  "presence_db": -13.5,
-  "crest_db": 18.0,
+  "noise_floor_db": -69.1,
+  "presence_db": -11.0,
+  "crest_db": 18.8,
   "applied": [
    "hpf70",
-   "presence+2dB",
    "comp2:1"
   ],
-  "duration": 6.931,
+  "duration": 6.966,
   "lufs_out": -20.0,
-  "hash": "a2bb42a6c44846b9",
+  "hash": "631f646ebac624c1",
   "character_id": "nuku"
  },
  "SC0901-03": {
@@ -4362,18 +4323,18 @@
   "clipped_runs": 0,
   "trim_head": 0.0,
   "trim_tail": 0.0,
-  "lufs_in": -18.9,
+  "lufs_in": -21.4,
   "peak_in_db": 0.0,
-  "noise_floor_db": -82.0,
-  "presence_db": -7.8,
-  "crest_db": 18.9,
+  "noise_floor_db": -85.4,
+  "presence_db": -10.2,
+  "crest_db": 21.1,
   "applied": [
    "hpf70",
    "comp2:1"
   ],
-  "duration": 7.585,
+  "duration": 11.835,
   "lufs_out": -20.0,
-  "hash": "fe83023b61c8bbc6",
+  "hash": "ab9f8b46ac27b68f",
   "character_id": "akari"
  },
  "SC0901-04": {
@@ -4382,19 +4343,19 @@
   "clipped_runs": 0,
   "trim_head": 0.0,
   "trim_tail": 0.0,
-  "lufs_in": -17.1,
+  "lufs_in": -19.9,
   "peak_in_db": -0.0,
-  "noise_floor_db": -74.0,
-  "presence_db": -12.5,
-  "crest_db": 16.5,
+  "noise_floor_db": -82.8,
+  "presence_db": -9.5,
+  "crest_db": 19.6,
   "applied": [
    "hpf70",
-   "presence+2dB"
+   "comp2:1"
   ],
-  "duration": 4.83,
+  "duration": 7.99,
   "lufs_out": -20.0,
-  "hash": "b46d1495e6617ca7",
-  "character_id": "nuku"
+  "hash": "73c6f86b7f03a4f6",
+  "character_id": "akari"
  },
  "SC0901-05": {
   "source_sr": 44100,
@@ -4402,37 +4363,37 @@
   "clipped_runs": 0,
   "trim_head": 0.0,
   "trim_tail": 0.0,
-  "lufs_in": -22.2,
-  "peak_in_db": 0.0,
-  "noise_floor_db": -84.5,
-  "presence_db": -10.5,
-  "crest_db": 22.4,
+  "lufs_in": -18.1,
+  "peak_in_db": -0.0,
+  "noise_floor_db": -85.4,
+  "presence_db": -9.6,
+  "crest_db": 17.7,
   "applied": [
    "hpf70",
    "comp2:1"
   ],
-  "duration": 7.49,
+  "duration": 9.13,
   "lufs_out": -20.0,
-  "hash": "e080c420c36f3d6d",
+  "hash": "cf4a49d055e993ff",
   "character_id": "akari"
  },
  "SC0901-06": {
   "source_sr": 44100,
-  "full_scale_samples": 1,
+  "full_scale_samples": 2,
   "clipped_runs": 0,
   "trim_head": 0.0,
   "trim_tail": 0.0,
-  "lufs_in": -15.2,
+  "lufs_in": -16.3,
   "peak_in_db": 0.0,
-  "noise_floor_db": -65.2,
-  "presence_db": -11.3,
-  "crest_db": 15.4,
+  "noise_floor_db": -63.7,
+  "presence_db": -11.9,
+  "crest_db": 16.0,
   "applied": [
    "hpf70"
   ],
-  "duration": 2.531,
+  "duration": 5.817,
   "lufs_out": -20.0,
-  "hash": "a857b22b5c560ed5",
+  "hash": "2864cfb323bdf30d",
   "character_id": "nuku"
  },
  "SC0902-01": {
@@ -5003,5 +4964,1041 @@
   "lufs_out": -20.0,
   "hash": "7f9bd021173525ad",
   "character_id": "narr"
+ },
+ "SC0104-07": {
+  "source_sr": 44100,
+  "full_scale_samples": 1,
+  "clipped_runs": 0,
+  "trim_head": 0.0,
+  "trim_tail": 0.0,
+  "lufs_in": -18.7,
+  "peak_in_db": 0.0,
+  "noise_floor_db": -77.8,
+  "presence_db": -6.9,
+  "crest_db": 18.7,
+  "applied": [
+   "hpf70",
+   "comp2:1"
+  ],
+  "duration": 5.655,
+  "lufs_out": -20.0,
+  "hash": "64c97f4b572c0c37",
+  "character_id": "akari"
+ },
+ "SC0104-08": {
+  "source_sr": 44100,
+  "full_scale_samples": 1,
+  "clipped_runs": 0,
+  "trim_head": 0.0,
+  "trim_tail": 0.0,
+  "lufs_in": -20.0,
+  "peak_in_db": -0.0,
+  "noise_floor_db": -72.9,
+  "presence_db": -12.3,
+  "crest_db": 19.3,
+  "applied": [
+   "hpf70",
+   "presence+2dB",
+   "comp2:1"
+  ],
+  "duration": 12.887,
+  "lufs_out": -20.0,
+  "hash": "7a1e749af345041c",
+  "character_id": "nuku"
+ },
+ "SC0105-04": {
+  "source_sr": 44100,
+  "full_scale_samples": 1,
+  "clipped_runs": 0,
+  "trim_head": 0.0,
+  "trim_tail": 0.0,
+  "lufs_in": -18.4,
+  "peak_in_db": 0.0,
+  "noise_floor_db": -68.8,
+  "presence_db": -13.8,
+  "crest_db": 18.3,
+  "applied": [
+   "hpf70",
+   "presence+2dB",
+   "comp2:1"
+  ],
+  "duration": 12.643,
+  "lufs_out": -20.0,
+  "hash": "fbd323bdd534bf43",
+  "character_id": "nuku"
+ },
+ "SC0105-05": {
+  "source_sr": 44100,
+  "full_scale_samples": 1,
+  "clipped_runs": 0,
+  "trim_head": 0.0,
+  "trim_tail": 0.0,
+  "lufs_in": -18.1,
+  "peak_in_db": -0.0,
+  "noise_floor_db": -68.0,
+  "presence_db": -15.6,
+  "crest_db": 18.4,
+  "applied": [
+   "hpf70",
+   "presence+2dB",
+   "comp2:1"
+  ],
+  "duration": 6.362,
+  "lufs_out": -20.0,
+  "hash": "ba1cafe19a702cd7",
+  "character_id": "nuku"
+ },
+ "SC0105-06": {
+  "source_sr": 44100,
+  "full_scale_samples": 1,
+  "clipped_runs": 0,
+  "trim_head": 0.0,
+  "trim_tail": 0.0,
+  "lufs_in": -18.6,
+  "peak_in_db": 0.0,
+  "noise_floor_db": -89.8,
+  "presence_db": -3.5,
+  "crest_db": 18.7,
+  "applied": [
+   "hpf70",
+   "comp2:1"
+  ],
+  "duration": 5.865,
+  "lufs_out": -20.0,
+  "hash": "7917a7e22a506b48",
+  "character_id": "akari"
+ },
+ "SC0202-08": {
+  "source_sr": 44100,
+  "full_scale_samples": 1,
+  "clipped_runs": 0,
+  "trim_head": 0.0,
+  "trim_tail": 0.0,
+  "lufs_in": -16.9,
+  "peak_in_db": 0.0,
+  "noise_floor_db": -67.2,
+  "presence_db": -12.4,
+  "crest_db": 16.6,
+  "applied": [
+   "hpf70",
+   "presence+2dB"
+  ],
+  "duration": 9.776,
+  "lufs_out": -20.0,
+  "hash": "a590928ff60c0fd3",
+  "character_id": "nuku"
+ },
+ "SC0203-06": {
+  "source_sr": 44100,
+  "full_scale_samples": 1,
+  "clipped_runs": 0,
+  "trim_head": 0.0,
+  "trim_tail": 0.0,
+  "lufs_in": -14.3,
+  "peak_in_db": -0.0,
+  "noise_floor_db": -74.7,
+  "presence_db": -12.8,
+  "crest_db": 14.6,
+  "applied": [
+   "hpf70",
+   "presence+2dB"
+  ],
+  "duration": 2.8,
+  "lufs_out": -20.0,
+  "hash": "0549459f2ea54896",
+  "character_id": "akari"
+ },
+ "SC0203-07": {
+  "source_sr": 44100,
+  "full_scale_samples": 2,
+  "clipped_runs": 0,
+  "trim_head": 0.0,
+  "trim_tail": 0.0,
+  "lufs_in": -17.9,
+  "peak_in_db": 0.1,
+  "noise_floor_db": -67.9,
+  "presence_db": -13.7,
+  "crest_db": 17.8,
+  "applied": [
+   "hpf70",
+   "presence+2dB",
+   "comp2:1"
+  ],
+  "duration": 13.526,
+  "lufs_out": -20.0,
+  "hash": "79cdfb4cdb266687",
+  "character_id": "nuku"
+ },
+ "SC0204-06": {
+  "source_sr": 44100,
+  "full_scale_samples": 1,
+  "clipped_runs": 0,
+  "trim_head": 0.0,
+  "trim_tail": 0.0,
+  "lufs_in": -16.7,
+  "peak_in_db": 0.0,
+  "noise_floor_db": -71.0,
+  "presence_db": -14.7,
+  "crest_db": 16.7,
+  "applied": [
+   "hpf70",
+   "presence+2dB"
+  ],
+  "duration": 2.465,
+  "lufs_out": -20.0,
+  "hash": "10ed81e290ce67cd",
+  "character_id": "akari"
+ },
+ "SC0204-07": {
+  "source_sr": 44100,
+  "full_scale_samples": 1,
+  "clipped_runs": 0,
+  "trim_head": 0.0,
+  "trim_tail": 0.0,
+  "lufs_in": -17.5,
+  "peak_in_db": 0.0,
+  "noise_floor_db": -67.4,
+  "presence_db": -13.4,
+  "crest_db": 17.2,
+  "applied": [
+   "hpf70",
+   "presence+2dB",
+   "comp2:1"
+  ],
+  "duration": 11.598,
+  "lufs_out": -20.0,
+  "hash": "1654f9e4a22f8e25",
+  "character_id": "nuku"
+ },
+ "SC0205-05": {
+  "source_sr": 44100,
+  "full_scale_samples": 1,
+  "clipped_runs": 0,
+  "trim_head": 0.0,
+  "trim_tail": 0.0,
+  "lufs_in": -17.7,
+  "peak_in_db": 0.1,
+  "noise_floor_db": -70.6,
+  "presence_db": -14.4,
+  "crest_db": 17.7,
+  "applied": [
+   "hpf70",
+   "presence+2dB",
+   "comp2:1"
+  ],
+  "duration": 4.481,
+  "lufs_out": -20.0,
+  "hash": "17e10b9758ffe2ac",
+  "character_id": "nuku"
+ },
+ "SC0304-05": {
+  "source_sr": 44100,
+  "full_scale_samples": 1,
+  "clipped_runs": 0,
+  "trim_head": 0.0,
+  "trim_tail": 0.0,
+  "lufs_in": -16.7,
+  "peak_in_db": -0.0,
+  "noise_floor_db": -70.8,
+  "presence_db": -10.4,
+  "crest_db": 16.6,
+  "applied": [
+   "hpf70"
+  ],
+  "duration": 3.82,
+  "lufs_out": -20.0,
+  "hash": "0d3758b221e8d0f2",
+  "character_id": "akari"
+ },
+ "SC0304-06": {
+  "source_sr": 44100,
+  "full_scale_samples": 1,
+  "clipped_runs": 0,
+  "trim_head": 0.0,
+  "trim_tail": 0.0,
+  "lufs_in": -17.0,
+  "peak_in_db": -0.0,
+  "noise_floor_db": -62.4,
+  "presence_db": -14.4,
+  "crest_db": 16.5,
+  "applied": [
+   "hpf70",
+   "presence+2dB"
+  ],
+  "duration": 10.449,
+  "lufs_out": -20.0,
+  "hash": "70301313983de8ba",
+  "character_id": "nuku"
+ },
+ "SC0305-05": {
+  "source_sr": 44100,
+  "full_scale_samples": 1,
+  "clipped_runs": 0,
+  "trim_head": 0.0,
+  "trim_tail": 0.0,
+  "lufs_in": -18.7,
+  "peak_in_db": -0.1,
+  "noise_floor_db": -70.1,
+  "presence_db": -13.5,
+  "crest_db": 18.9,
+  "applied": [
+   "hpf70",
+   "presence+2dB",
+   "comp2:1"
+  ],
+  "duration": 10.774,
+  "lufs_out": -20.0,
+  "hash": "6daa70fec1d094d6",
+  "character_id": "nuku"
+ },
+ "SC0308-01": {
+  "source_sr": 44100,
+  "full_scale_samples": 1,
+  "clipped_runs": 0,
+  "trim_head": 0.0,
+  "trim_tail": 0.0,
+  "lufs_in": -19.3,
+  "peak_in_db": 0.0,
+  "noise_floor_db": -67.2,
+  "presence_db": -13.6,
+  "crest_db": 18.7,
+  "applied": [
+   "hpf70",
+   "presence+2dB",
+   "comp2:1"
+  ],
+  "duration": 4.377,
+  "lufs_out": -20.0,
+  "hash": "8b6ca73c42fe61cb",
+  "character_id": "nuku"
+ },
+ "SC0308-02": {
+  "source_sr": 44100,
+  "full_scale_samples": 1,
+  "clipped_runs": 0,
+  "trim_head": 0.0,
+  "trim_tail": 0.0,
+  "lufs_in": -19.5,
+  "peak_in_db": -0.0,
+  "noise_floor_db": -79.9,
+  "presence_db": -6.2,
+  "crest_db": 19.4,
+  "applied": [
+   "hpf70",
+   "comp2:1"
+  ],
+  "duration": 5.155,
+  "lufs_out": -20.0,
+  "hash": "5a219817cca796a9",
+  "character_id": "akari"
+ },
+ "SC0308-03": {
+  "source_sr": 44100,
+  "full_scale_samples": 1,
+  "clipped_runs": 0,
+  "trim_head": 0.0,
+  "trim_tail": 0.0,
+  "lufs_in": -18.2,
+  "peak_in_db": 0.0,
+  "noise_floor_db": -66.9,
+  "presence_db": -13.2,
+  "crest_db": 17.7,
+  "applied": [
+   "hpf70",
+   "presence+2dB",
+   "comp2:1"
+  ],
+  "duration": 9.578,
+  "lufs_out": -20.0,
+  "hash": "fae016ca81077c30",
+  "character_id": "nuku"
+ },
+ "SC0308-04": {
+  "source_sr": 44100,
+  "full_scale_samples": 1,
+  "clipped_runs": 0,
+  "trim_head": 0.0,
+  "trim_tail": 0.0,
+  "lufs_in": -19.4,
+  "peak_in_db": 0.0,
+  "noise_floor_db": -86.9,
+  "presence_db": -4.8,
+  "crest_db": 19.3,
+  "applied": [
+   "hpf70",
+   "comp2:1"
+  ],
+  "duration": 8.175,
+  "lufs_out": -20.0,
+  "hash": "a3d4a9773eb4fd6c",
+  "character_id": "akari"
+ },
+ "SC0308-05": {
+  "source_sr": 44100,
+  "full_scale_samples": 1,
+  "clipped_runs": 0,
+  "trim_head": 0.0,
+  "trim_tail": 0.0,
+  "lufs_in": -16.1,
+  "peak_in_db": 0.0,
+  "noise_floor_db": -64.9,
+  "presence_db": -13.8,
+  "crest_db": 16.4,
+  "applied": [
+   "hpf70",
+   "presence+2dB"
+  ],
+  "duration": 4.528,
+  "lufs_out": -20.0,
+  "hash": "932bfe0f82d745ad",
+  "character_id": "nuku"
+ },
+ "SC0401-08": {
+  "source_sr": 44100,
+  "full_scale_samples": 1,
+  "clipped_runs": 0,
+  "trim_head": 0.0,
+  "trim_tail": 0.0,
+  "lufs_in": -18.5,
+  "peak_in_db": 0.0,
+  "noise_floor_db": -81.2,
+  "presence_db": -12.8,
+  "crest_db": 18.5,
+  "applied": [
+   "hpf70",
+   "presence+2dB",
+   "comp2:1"
+  ],
+  "duration": 5.55,
+  "lufs_out": -20.0,
+  "hash": "d34115d4f1725df7",
+  "character_id": "akari"
+ },
+ "SC0401-09": {
+  "source_sr": 44100,
+  "full_scale_samples": 1,
+  "clipped_runs": 0,
+  "trim_head": 0.0,
+  "trim_tail": 0.0,
+  "lufs_in": -19.4,
+  "peak_in_db": -0.0,
+  "noise_floor_db": -68.2,
+  "presence_db": -12.4,
+  "crest_db": 18.9,
+  "applied": [
+   "hpf70",
+   "presence+2dB",
+   "comp2:1"
+  ],
+  "duration": 13.259,
+  "lufs_out": -20.0,
+  "hash": "52495d7af223733a",
+  "character_id": "nuku"
+ },
+ "SC0405-05": {
+  "source_sr": 44100,
+  "full_scale_samples": 1,
+  "clipped_runs": 0,
+  "trim_head": 0.0,
+  "trim_tail": 0.0,
+  "lufs_in": -19.8,
+  "peak_in_db": -0.0,
+  "noise_floor_db": -67.5,
+  "presence_db": -9.7,
+  "crest_db": 19.5,
+  "applied": [
+   "hpf70",
+   "comp2:1"
+  ],
+  "duration": 6.838,
+  "lufs_out": -20.0,
+  "hash": "d6a0a29f4dcdc597",
+  "character_id": "nuku"
+ },
+ "SC0505-05": {
+  "source_sr": 44100,
+  "full_scale_samples": 1,
+  "clipped_runs": 0,
+  "trim_head": 0.0,
+  "trim_tail": 0.0,
+  "lufs_in": -17.0,
+  "peak_in_db": -0.1,
+  "noise_floor_db": -65.1,
+  "presence_db": -11.9,
+  "crest_db": 16.7,
+  "applied": [
+   "hpf70"
+  ],
+  "duration": 5.074,
+  "lufs_out": -20.0,
+  "hash": "192a8111f13d385e",
+  "character_id": "nuku"
+ },
+ "SC0506-01": {
+  "source_sr": 44100,
+  "full_scale_samples": 1,
+  "clipped_runs": 0,
+  "trim_head": 0.0,
+  "trim_tail": 0.0,
+  "lufs_in": -18.7,
+  "peak_in_db": 0.0,
+  "noise_floor_db": -68.5,
+  "presence_db": -13.3,
+  "crest_db": 18.4,
+  "applied": [
+   "hpf70",
+   "presence+2dB",
+   "comp2:1"
+  ],
+  "duration": 7.163,
+  "lufs_out": -20.0,
+  "hash": "1de75c150e6ba49a",
+  "character_id": "nuku"
+ },
+ "SC0506-02": {
+  "source_sr": 44100,
+  "full_scale_samples": 1,
+  "clipped_runs": 0,
+  "trim_head": 0.0,
+  "trim_tail": 0.0,
+  "lufs_in": -17.8,
+  "peak_in_db": 0.0,
+  "noise_floor_db": -69.8,
+  "presence_db": -14.3,
+  "crest_db": 17.8,
+  "applied": [
+   "hpf70",
+   "presence+2dB",
+   "comp2:1"
+  ],
+  "duration": 13.897,
+  "lufs_out": -20.0,
+  "hash": "ce5cff59dea4f995",
+  "character_id": "nuku"
+ },
+ "SC0506-03": {
+  "source_sr": 44100,
+  "full_scale_samples": 1,
+  "clipped_runs": 0,
+  "trim_head": 0.0,
+  "trim_tail": 0.0,
+  "lufs_in": -13.3,
+  "peak_in_db": -0.0,
+  "noise_floor_db": -71.0,
+  "presence_db": -11.6,
+  "crest_db": 13.4,
+  "applied": [
+   "hpf70"
+  ],
+  "duration": 2.08,
+  "lufs_out": -20.0,
+  "hash": "befb1784180ea128",
+  "character_id": "akari"
+ },
+ "SC0506-04": {
+  "source_sr": 44100,
+  "full_scale_samples": 1,
+  "clipped_runs": 0,
+  "trim_head": 0.0,
+  "trim_tail": 0.0,
+  "lufs_in": -18.5,
+  "peak_in_db": 0.0,
+  "noise_floor_db": -72.8,
+  "presence_db": -11.9,
+  "crest_db": 17.9,
+  "applied": [
+   "hpf70",
+   "comp2:1"
+  ],
+  "duration": 3.379,
+  "lufs_out": -20.0,
+  "hash": "12b66a4cc2b266b9",
+  "character_id": "nuku"
+ },
+ "SC0603-05": {
+  "source_sr": 44100,
+  "full_scale_samples": 1,
+  "clipped_runs": 0,
+  "trim_head": 0.0,
+  "trim_tail": 0.0,
+  "lufs_in": -19.4,
+  "peak_in_db": 0.0,
+  "noise_floor_db": -67.2,
+  "presence_db": -13.5,
+  "crest_db": 19.1,
+  "applied": [
+   "hpf70",
+   "presence+2dB",
+   "comp2:1"
+  ],
+  "duration": 14.652,
+  "lufs_out": -20.0,
+  "hash": "7ca34000e4c99a68",
+  "character_id": "nuku"
+ },
+ "SC0604-06": {
+  "source_sr": 44100,
+  "full_scale_samples": 1,
+  "clipped_runs": 0,
+  "trim_head": 0.0,
+  "trim_tail": 0.0,
+  "lufs_in": -16.4,
+  "peak_in_db": 0.0,
+  "noise_floor_db": -55.6,
+  "presence_db": -11.4,
+  "crest_db": 16.7,
+  "applied": [
+   "denoise_needed(flagged)",
+   "hpf70"
+  ],
+  "duration": 3.1,
+  "lufs_out": -20.0,
+  "hash": "b6190bc03a786849",
+  "character_id": "akari"
+ },
+ "SC0604-07": {
+  "source_sr": 44100,
+  "full_scale_samples": 1,
+  "clipped_runs": 0,
+  "trim_head": 0.0,
+  "trim_tail": 0.0,
+  "lufs_in": -19.9,
+  "peak_in_db": -0.1,
+  "noise_floor_db": -72.2,
+  "presence_db": -13.7,
+  "crest_db": 20.0,
+  "applied": [
+   "hpf70",
+   "presence+2dB",
+   "comp2:1",
+   "peak_limit"
+  ],
+  "duration": 11.947,
+  "lufs_out": -20.2,
+  "hash": "b1fe1eff350efc77",
+  "character_id": "nuku"
+ },
+ "SC0607-04": {
+  "source_sr": 44100,
+  "full_scale_samples": 1,
+  "clipped_runs": 0,
+  "trim_head": 0.0,
+  "trim_tail": 0.0,
+  "lufs_in": -17.9,
+  "peak_in_db": 0.0,
+  "noise_floor_db": -82.1,
+  "presence_db": -4.0,
+  "crest_db": 17.9,
+  "applied": [
+   "hpf70",
+   "comp2:1"
+  ],
+  "duration": 7.525,
+  "lufs_out": -20.0,
+  "hash": "87e09baadb53c72e",
+  "character_id": "akari"
+ },
+ "SC0607-05": {
+  "source_sr": 44100,
+  "full_scale_samples": 1,
+  "clipped_runs": 0,
+  "trim_head": 0.0,
+  "trim_tail": 0.0,
+  "lufs_in": -20.0,
+  "peak_in_db": -0.0,
+  "noise_floor_db": -73.2,
+  "presence_db": -11.3,
+  "crest_db": 19.7,
+  "applied": [
+   "hpf70",
+   "comp2:1"
+  ],
+  "duration": 4.331,
+  "lufs_out": -20.0,
+  "hash": "b211a7d727886e55",
+  "character_id": "nuku"
+ },
+ "SC0608-01": {
+  "source_sr": 44100,
+  "full_scale_samples": 1,
+  "clipped_runs": 0,
+  "trim_head": 0.0,
+  "trim_tail": 0.0,
+  "lufs_in": -18.3,
+  "peak_in_db": -0.0,
+  "noise_floor_db": -75.4,
+  "presence_db": -11.8,
+  "crest_db": 17.9,
+  "applied": [
+   "hpf70",
+   "comp2:1"
+  ],
+  "duration": 12.318,
+  "lufs_out": -20.0,
+  "hash": "1672321803f01ab2",
+  "character_id": "nuku"
+ },
+ "SC0608-02": {
+  "source_sr": 44100,
+  "full_scale_samples": 1,
+  "clipped_runs": 0,
+  "trim_head": 0.0,
+  "trim_tail": 0.0,
+  "lufs_in": -18.4,
+  "peak_in_db": -0.0,
+  "noise_floor_db": -67.8,
+  "presence_db": -12.2,
+  "crest_db": 18.7,
+  "applied": [
+   "hpf70",
+   "presence+2dB",
+   "comp2:1"
+  ],
+  "duration": 10.902,
+  "lufs_out": -20.0,
+  "hash": "35eac37a930a51d9",
+  "character_id": "nuku"
+ },
+ "SC0608-03": {
+  "source_sr": 44100,
+  "full_scale_samples": 1,
+  "clipped_runs": 0,
+  "trim_head": 0.0,
+  "trim_tail": 0.0,
+  "lufs_in": -18.3,
+  "peak_in_db": 0.1,
+  "noise_floor_db": -82.7,
+  "presence_db": -6.5,
+  "crest_db": 18.3,
+  "applied": [
+   "hpf70",
+   "comp2:1"
+  ],
+  "duration": 5.6,
+  "lufs_out": -20.0,
+  "hash": "d8f4190c1568c11e",
+  "character_id": "akari"
+ },
+ "SC0708-01": {
+  "source_sr": 44100,
+  "full_scale_samples": 1,
+  "clipped_runs": 0,
+  "trim_head": 0.0,
+  "trim_tail": 0.0,
+  "lufs_in": -17.0,
+  "peak_in_db": 0.0,
+  "noise_floor_db": -68.3,
+  "presence_db": -11.2,
+  "crest_db": 17.1,
+  "applied": [
+   "hpf70",
+   "comp2:1"
+  ],
+  "duration": 3.762,
+  "lufs_out": -20.0,
+  "hash": "331745daa5f76953",
+  "character_id": "nuku"
+ },
+ "SC0708-02": {
+  "source_sr": 44100,
+  "full_scale_samples": 1,
+  "clipped_runs": 0,
+  "trim_head": 0.0,
+  "trim_tail": 0.0,
+  "lufs_in": -17.5,
+  "peak_in_db": 0.0,
+  "noise_floor_db": -81.1,
+  "presence_db": -10.6,
+  "crest_db": 17.3,
+  "applied": [
+   "hpf70",
+   "comp2:1"
+  ],
+  "duration": 4.23,
+  "lufs_out": -20.0,
+  "hash": "e687a8101292b012",
+  "character_id": "akari"
+ },
+ "SC0708-03": {
+  "source_sr": 44100,
+  "full_scale_samples": 1,
+  "clipped_runs": 0,
+  "trim_head": 0.0,
+  "trim_tail": 0.0,
+  "lufs_in": -17.9,
+  "peak_in_db": -0.0,
+  "noise_floor_db": -67.5,
+  "presence_db": -15.5,
+  "crest_db": 17.5,
+  "applied": [
+   "hpf70",
+   "presence+2dB",
+   "comp2:1"
+  ],
+  "duration": 11.982,
+  "lufs_out": -20.0,
+  "hash": "1da51c6d411e31a8",
+  "character_id": "nuku"
+ },
+ "SC0708-04": {
+  "source_sr": 44100,
+  "full_scale_samples": 1,
+  "clipped_runs": 0,
+  "trim_head": 0.0,
+  "trim_tail": 0.0,
+  "lufs_in": -19.4,
+  "peak_in_db": -0.0,
+  "noise_floor_db": -86.9,
+  "presence_db": -5.3,
+  "crest_db": 19.3,
+  "applied": [
+   "hpf70",
+   "comp2:1"
+  ],
+  "duration": 10.8,
+  "lufs_out": -20.0,
+  "hash": "ee9228e1d79e6296",
+  "character_id": "akari"
+ },
+ "SC0708-05": {
+  "source_sr": 44100,
+  "full_scale_samples": 1,
+  "clipped_runs": 0,
+  "trim_head": 0.0,
+  "trim_tail": 0.0,
+  "lufs_in": -13.9,
+  "peak_in_db": -0.0,
+  "noise_floor_db": null,
+  "presence_db": -15.3,
+  "crest_db": 12.9,
+  "applied": [
+   "hpf70",
+   "presence+2dB"
+  ],
+  "duration": 0.848,
+  "lufs_out": -20.0,
+  "hash": "191c4e9a94651824",
+  "character_id": "nuku"
+ },
+ "SC0801-08": {
+  "source_sr": 44100,
+  "full_scale_samples": 1,
+  "clipped_runs": 0,
+  "trim_head": 0.0,
+  "trim_tail": 0.0,
+  "lufs_in": -20.1,
+  "peak_in_db": 0.0,
+  "noise_floor_db": -74.7,
+  "presence_db": -13.9,
+  "crest_db": 19.8,
+  "applied": [
+   "hpf70",
+   "presence+2dB",
+   "comp2:1"
+  ],
+  "duration": 9.787,
+  "lufs_out": -20.0,
+  "hash": "d1dfd59cd97f1ecf",
+  "character_id": "nuku"
+ },
+ "SC0802-06": {
+  "source_sr": 44100,
+  "full_scale_samples": 1,
+  "clipped_runs": 0,
+  "trim_head": 0.0,
+  "trim_tail": 0.0,
+  "lufs_in": -17.2,
+  "peak_in_db": 0.0,
+  "noise_floor_db": -70.6,
+  "presence_db": -12.9,
+  "crest_db": 16.6,
+  "applied": [
+   "hpf70",
+   "presence+2dB"
+  ],
+  "duration": 8.719,
+  "lufs_out": -20.0,
+  "hash": "c666a2eaee822915",
+  "character_id": "nuku"
+ },
+ "SC0802-07": {
+  "source_sr": 44100,
+  "full_scale_samples": 1,
+  "clipped_runs": 0,
+  "trim_head": 0.0,
+  "trim_tail": 0.0,
+  "lufs_in": -17.9,
+  "peak_in_db": 0.0,
+  "noise_floor_db": -80.8,
+  "presence_db": -2.9,
+  "crest_db": 18.0,
+  "applied": [
+   "hpf70",
+   "comp2:1"
+  ],
+  "duration": 3.17,
+  "lufs_out": -20.0,
+  "hash": "7554440a8b76ab2e",
+  "character_id": "akari"
+ },
+ "SC0802-08": {
+  "source_sr": 44100,
+  "full_scale_samples": 1,
+  "clipped_runs": 0,
+  "trim_head": 0.0,
+  "trim_tail": 0.0,
+  "lufs_in": -17.9,
+  "peak_in_db": -0.0,
+  "noise_floor_db": -71.9,
+  "presence_db": -13.5,
+  "crest_db": 18.1,
+  "applied": [
+   "hpf70",
+   "presence+2dB",
+   "comp2:1"
+  ],
+  "duration": 9.451,
+  "lufs_out": -20.0,
+  "hash": "043998e788c3aa98",
+  "character_id": "nuku"
+ },
+ "SC0803-04": {
+  "source_sr": 44100,
+  "full_scale_samples": 1,
+  "clipped_runs": 0,
+  "trim_head": 0.0,
+  "trim_tail": 0.0,
+  "lufs_in": -19.4,
+  "peak_in_db": 0.0,
+  "noise_floor_db": -85.0,
+  "presence_db": -4.0,
+  "crest_db": 19.0,
+  "applied": [
+   "hpf70",
+   "comp2:1"
+  ],
+  "duration": 10.81,
+  "lufs_out": -20.0,
+  "hash": "4a1a738500b0a3e1",
+  "character_id": "akari"
+ },
+ "SC0803-05": {
+  "source_sr": 44100,
+  "full_scale_samples": 1,
+  "clipped_runs": 0,
+  "trim_head": 0.0,
+  "trim_tail": 0.0,
+  "lufs_in": -16.9,
+  "peak_in_db": 0.0,
+  "noise_floor_db": null,
+  "presence_db": -12.4,
+  "crest_db": 16.6,
+  "applied": [
+   "hpf70",
+   "presence+2dB"
+  ],
+  "duration": 1.091,
+  "lufs_out": -20.0,
+  "hash": "7a6b08a6aedcb7f4",
+  "character_id": "nuku"
+ },
+ "SC0805-01": {
+  "source_sr": 44100,
+  "full_scale_samples": 1,
+  "clipped_runs": 0,
+  "trim_head": 0.0,
+  "trim_tail": 0.0,
+  "lufs_in": -16.0,
+  "peak_in_db": 0.0,
+  "noise_floor_db": -77.8,
+  "presence_db": -10.2,
+  "crest_db": 16.0,
+  "applied": [
+   "hpf70"
+  ],
+  "duration": 4.645,
+  "lufs_out": -20.0,
+  "hash": "5d55006b2a9cc996",
+  "character_id": "akari"
+ },
+ "SC0805-02": {
+  "source_sr": 44100,
+  "full_scale_samples": 1,
+  "clipped_runs": 0,
+  "trim_head": 0.0,
+  "trim_tail": 0.0,
+  "lufs_in": -18.2,
+  "peak_in_db": -0.0,
+  "noise_floor_db": -67.3,
+  "presence_db": -13.8,
+  "crest_db": 17.9,
+  "applied": [
+   "hpf70",
+   "presence+2dB",
+   "comp2:1"
+  ],
+  "duration": 9.961,
+  "lufs_out": -20.0,
+  "hash": "e0e71151ea1e059e",
+  "character_id": "nuku"
+ },
+ "SC0805-03": {
+  "source_sr": 44100,
+  "full_scale_samples": 1,
+  "clipped_runs": 0,
+  "trim_head": 0.0,
+  "trim_tail": 0.0,
+  "lufs_in": -18.1,
+  "peak_in_db": 0.0,
+  "noise_floor_db": -65.9,
+  "presence_db": -12.3,
+  "crest_db": 18.3,
+  "applied": [
+   "hpf70",
+   "presence+2dB",
+   "comp2:1"
+  ],
+  "duration": 7.93,
+  "lufs_out": -20.0,
+  "hash": "aab9454a7c8796b2",
+  "character_id": "nuku"
+ },
+ "SC0805-04": {
+  "source_sr": 44100,
+  "full_scale_samples": 1,
+  "clipped_runs": 0,
+  "trim_head": 0.0,
+  "trim_tail": 0.0,
+  "lufs_in": -17.2,
+  "peak_in_db": 0.1,
+  "noise_floor_db": -67.0,
+  "presence_db": -11.5,
+  "crest_db": 16.9,
+  "applied": [
+   "hpf70"
+  ],
+  "duration": 7.605,
+  "lufs_out": -20.0,
+  "hash": "ebeb40f63740345f",
+  "character_id": "nuku"
+ },
+ "SC0805-05": {
+  "source_sr": 44100,
+  "full_scale_samples": 1,
+  "clipped_runs": 0,
+  "trim_head": 0.0,
+  "trim_tail": 0.0,
+  "lufs_in": -15.5,
+  "peak_in_db": 0.1,
+  "noise_floor_db": -72.4,
+  "presence_db": -8.6,
+  "crest_db": 15.8,
+  "applied": [
+   "hpf70"
+  ],
+  "duration": 3.3,
+  "lufs_out": -20.0,
+  "hash": "f6b941b04ee765de",
+  "character_id": "akari"
  }
 }

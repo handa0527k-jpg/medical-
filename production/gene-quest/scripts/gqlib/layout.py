@@ -39,7 +39,7 @@ def cast(c, t, S, akari=True, nuku=True, akari_x=250, akari_y=1085, akari_s=0.62
             ch.nuku(c, nuku_x + (1 - k) * 380, nuku_y, nuku_s, e, t, alpha=nuku_alpha * k, point=nuku_point)
 
 
-def hud(c, t, S, show_chapter=True, show_pages=True, alpha=1.0):
+def hud(c, t, S, show_chapter=True, show_pages=True, alpha=1.0, why_x=48):
     """左上に章、右上に出典ページ、補足の行は「補足（資料外）」の札。"""
     if S is None:
         return
@@ -69,10 +69,10 @@ def hud(c, t, S, show_chapter=True, show_pages=True, alpha=1.0):
         y = 146 if note else 92
         q = why if why.endswith(("？", "?")) else why + "？"
         w = text_width("なぜ", 28, "heavy") + text_width(q, 26, "bold") + 64
-        rrect(c, 48, y, w, 46, 23, 0xFF3A0F24, kw * 0.92)
-        rrect(c, 48, y, w, 46, 23, PAL["red"], kw, stroke=2.5)
-        text(c, "なぜ", 68, y + 32, 28, PAL["red"], "heavy", alpha=kw)
-        text(c, q, 68 + text_width("なぜ", 28, "heavy") + 14, y + 32, 26, PAL["white"], "bold", alpha=kw)
+        rrect(c, why_x, y, w, 46, 23, 0xFF3A0F24, kw * 0.92)
+        rrect(c, why_x, y, w, 46, 23, PAL["red"], kw, stroke=2.5)
+        text(c, "なぜ", why_x + 20, y + 32, 28, PAL["red"], "heavy", alpha=kw)
+        text(c, q, why_x + 20 + text_width("なぜ", 28, "heavy") + 14, y + 32, 26, PAL["white"], "bold", alpha=kw)
 
 
 def fade_line(t, ln, fin=0.25, fout=0.3):

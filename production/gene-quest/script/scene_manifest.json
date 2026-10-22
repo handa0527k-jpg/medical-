@@ -30,7 +30,13 @@
     "DNA",
     "二重らせん"
    ],
-   "accuracy": "確認済み（research/accuracy_checklist.md）"
+   "accuracy": "確認済み（research/accuracy_checklist.md）",
+   "start": 0.0,
+   "end": 24.267,
+   "duration": 24.267,
+   "video": "video/scenes/SC0101.mp4",
+   "audio": "audio/dialogue/scenes/SC0101.wav",
+   "accuracy_check": ""
   },
   {
    "scene_id": "SC0102",
@@ -51,7 +57,13 @@
    "pages": [],
    "purpose": "タイトル提示",
    "terms": [],
-   "accuracy": "対象外（タイトル）"
+   "accuracy": "対象外（タイトル）",
+   "start": 24.267,
+   "end": 32.767,
+   "duration": 8.5,
+   "video": "video/scenes/SC0102.mp4",
+   "audio": "audio/dialogue/scenes/SC0102.wav",
+   "accuracy_check": ""
   },
   {
    "scene_id": "SC0103",
@@ -87,7 +99,13 @@
     "細胞",
     "核"
    ],
-   "accuracy": "確認済み（research/accuracy_checklist.md）"
+   "accuracy": "確認済み（research/accuracy_checklist.md）",
+   "start": 32.767,
+   "end": 65.567,
+   "duration": 32.8,
+   "video": "video/scenes/SC0103.mp4",
+   "audio": "audio/dialogue/scenes/SC0103.wav",
+   "accuracy_check": ""
   },
   {
    "scene_id": "SC0104",
@@ -127,7 +145,13 @@
     "転写",
     "翻訳"
    ],
-   "accuracy": "確認済み（research/accuracy_checklist.md）"
+   "accuracy": "確認済み（research/accuracy_checklist.md）",
+   "start": 65.567,
+   "end": 118.733,
+   "duration": 53.167,
+   "video": "video/scenes/SC0104.mp4",
+   "audio": "audio/dialogue/scenes/SC0104.wav",
+   "accuracy_check": "DNA→RNA（転写）→タンパク質（翻訳）。DNA→DNA は複製・修復・組換え（p.3）。RNAに写す必然性：mRNA は核で作られ細胞質へ運ばれてから翻訳に使われる（p.4, 71）"
   },
   {
    "scene_id": "SC0105",
@@ -164,7 +188,13 @@
     "ポリアデニル化",
     "核外輸送"
    ],
-   "accuracy": "確認済み（research/accuracy_checklist.md）"
+   "accuracy": "確認済み（research/accuracy_checklist.md）",
+   "start": 118.733,
+   "end": 176.933,
+   "duration": 58.2,
+   "video": "video/scenes/SC0105.mp4",
+   "audio": "audio/dialogue/scenes/SC0105.wav",
+   "accuracy_check": "核内の工程の順序は p.4 の図どおり"
   },
   {
    "scene_id": "SC0201",
@@ -200,7 +230,13 @@
     "活性部位",
     "リボヌクレオシド三リン酸"
    ],
-   "accuracy": "確認済み（research/accuracy_checklist.md）"
+   "accuracy": "確認済み（research/accuracy_checklist.md）",
+   "start": 176.933,
+   "end": 216.1,
+   "duration": 39.167,
+   "video": "video/scenes/SC0201.mp4",
+   "audio": "audio/dialogue/scenes/SC0201.wav",
+   "accuracy_check": "ポリメラーゼの部位名（活性部位・NTPの入り口・RNAの出口・DNA/RNAらせん）は p.5 の図"
   },
   {
    "scene_id": "SC0202",
@@ -239,7 +275,13 @@
     "相補的",
     "ウラシル"
    ],
-   "accuracy": "確認済み（research/accuracy_checklist.md）"
+   "accuracy": "確認済み（research/accuracy_checklist.md）",
+   "start": 216.1,
+   "end": 263.967,
+   "duration": 47.867,
+   "video": "video/scenes/SC0202.mp4",
+   "audio": "audio/dialogue/scenes/SC0202.wav",
+   "accuracy_check": "鋳型鎖 3'-TACTTTACGAT-5' → RNA 5'-AUGAAAUGCUA-3'＝非鋳型鎖の T を U に（p.7）"
   },
   {
    "scene_id": "SC0203",
@@ -279,7 +321,13 @@
     "リン酸ジエステル結合",
     "ピロリン酸"
    ],
-   "accuracy": "確認済み（research/accuracy_checklist.md）"
+   "accuracy": "確認済み（research/accuracy_checklist.md）",
+   "start": 263.967,
+   "end": 327.067,
+   "duration": 63.1,
+   "video": "video/scenes/SC0203.mp4",
+   "audio": "audio/dialogue/scenes/SC0203.wav",
+   "accuracy_check": "鋳型 3'-TAGCCTATC-5' → RNA 5'-AUCGGAUAG-3'（p.10）。3'OH に 5'三リン酸、ピロリン酸が外れる（p.8）"
   },
   {
    "scene_id": "SC0204",
@@ -317,7 +365,13 @@
     "転写開始点",
     "ターミネーター"
    ],
-   "accuracy": "確認済み（research/accuracy_checklist.md）"
+   "accuracy": "確認済み（research/accuracy_checklist.md）",
+   "start": 327.067,
+   "end": 376.633,
+   "duration": 49.567,
+   "video": "video/scenes/SC0204.mp4",
+   "audio": "audio/dialogue/scenes/SC0204.wav",
+   "accuracy_check": "遺伝子 c, d が逆向き（p.11）。プロモーターの役割は p.71 の文言"
   },
   {
    "scene_id": "SC0205",
@@ -360,7 +414,13 @@
    "card_wrong": "それと同じ並び",
    "card_gap": "読んだ鎖（鋳型鎖）とは「相補的」。同じ並びになるのは反対側の非鋳型鎖で、TがUになるだけ",
    "card_fix": "読む鎖の向かい側の塩基を、5'から3'へ並べる。だからRNAは、反対側の鎖とそっくりになる",
-   "accuracy": "確認済み（research/accuracy_checklist.md）"
+   "accuracy": "確認済み（research/accuracy_checklist.md）",
+   "start": 376.633,
+   "end": 419.467,
+   "duration": 42.833,
+   "video": "video/scenes/SC0205.mp4",
+   "audio": "audio/dialogue/scenes/SC0205.wav",
+   "accuracy_check": "ファインマン・チェック。誤解「鋳型鎖と同じ配列」を、鋳型鎖とは相補的・非鋳型鎖と同じ（T→U）に訂正（p.7, 10）"
   },
   {
    "scene_id": "SC0301",
@@ -400,7 +460,13 @@
     "コア酵素",
     "ホロ酵素"
    ],
-   "accuracy": "確認済み（research/accuracy_checklist.md）"
+   "accuracy": "確認済み（research/accuracy_checklist.md）",
+   "start": 419.467,
+   "end": 448.033,
+   "duration": 28.567,
+   "video": "video/scenes/SC0301.mp4",
+   "audio": "audio/dialogue/scenes/SC0301.wav",
+   "accuracy_check": "ホロ酵素＝コア酵素＋σ因子（p.14）。細菌に核がないことは補足として表示"
   },
   {
    "scene_id": "SC0302",
@@ -441,7 +507,13 @@
     "−10ボックス",
     "転写開始点（+1）"
    ],
-   "accuracy": "確認済み（research/accuracy_checklist.md）"
+   "accuracy": "確認済み（research/accuracy_checklist.md）",
+   "start": 448.033,
+   "end": 490.5,
+   "duration": 42.467,
+   "video": "video/scenes/SC0302.mp4",
+   "audio": "audio/dialogue/scenes/SC0302.wav",
+   "accuracy_check": "−35 TTGACA、−10 TATAAT（非鋳型鎖 5'→3'）、+1/+2 の最初の結合、約10ヌクレオチドで σ 解離（p.16, 18）"
   },
   {
    "scene_id": "SC0303",
@@ -483,7 +555,13 @@
     "パリンドローム配列",
     "ρタンパク質"
    ],
-   "accuracy": "確認済み（research/accuracy_checklist.md）"
+   "accuracy": "確認済み（research/accuracy_checklist.md）",
+   "start": 490.5,
+   "end": 535.6,
+   "duration": 45.1,
+   "video": "video/scenes/SC0303.mp4",
+   "audio": "audio/dialogue/scenes/SC0303.wav",
+   "accuracy_check": "ステムループの配列は p.21、ρ と A–U 塩基対は p.20"
   },
   {
    "scene_id": "SC0304",
@@ -520,7 +598,13 @@
     "構成的発現",
     "調節的発現"
    ],
-   "accuracy": "確認済み（research/accuracy_checklist.md）"
+   "accuracy": "確認済み（research/accuracy_checklist.md）",
+   "start": 535.6,
+   "end": 577.267,
+   "duration": 41.667,
+   "video": "video/scenes/SC0304.mp4",
+   "audio": "audio/dialogue/scenes/SC0304.wav",
+   "accuracy_check": "遺伝子1〜3 の活性化／抑制の入れ替わりは p.23 の図どおり"
   },
   {
    "scene_id": "SC0305",
@@ -559,7 +643,13 @@
     "lacA",
     "lacI"
    ],
-   "accuracy": "確認済み（research/accuracy_checklist.md）"
+   "accuracy": "確認済み（research/accuracy_checklist.md）",
+   "start": 577.267,
+   "end": 620.533,
+   "duration": 43.267,
+   "video": "video/scenes/SC0305.mp4",
+   "audio": "audio/dialogue/scenes/SC0305.wav",
+   "accuracy_check": "lacZYA と転写単位、lacI（p.25）。各遺伝子と酵素の対応は資料に図示がないため示さない"
   },
   {
    "scene_id": "SC0306",
@@ -599,7 +689,13 @@
     "オペレーター",
     "リプレッサー"
    ],
-   "accuracy": "確認済み（research/accuracy_checklist.md）"
+   "accuracy": "確認済み（research/accuracy_checklist.md）",
+   "start": 620.533,
+   "end": 677.267,
+   "duration": 56.733,
+   "video": "video/scenes/SC0306.mp4",
+   "audio": "audio/dialogue/scenes/SC0306.wav",
+   "accuracy_check": "CRP 結合領域・オペレーターはプロモーター内（p.22 注、p.24）。ラクトース由来物質による解除は補足と表示"
   },
   {
    "scene_id": "SC0307",
@@ -633,7 +729,13 @@
     "熱ショックレギュロン",
     "SOSレギュロン"
    ],
-   "accuracy": "確認済み（research/accuracy_checklist.md）"
+   "accuracy": "確認済み（research/accuracy_checklist.md）",
+   "start": 677.267,
+   "end": 702.833,
+   "duration": 25.567,
+   "video": "video/scenes/SC0307.mp4",
+   "audio": "audio/dialogue/scenes/SC0307.wav",
+   "accuracy_check": ""
   },
   {
    "scene_id": "SC0308",
@@ -674,7 +776,13 @@
    "card_wrong": "ラクトースが来たら",
    "card_gap": "条件が一つ足りない。グルコースがあると、ラクトースがあってもβ-galは作られない",
    "card_fix": "ラクトースがあり、グルコースがない。二つの条件がそろって、はじめてβ-galが作られる",
-   "accuracy": "確認済み（research/accuracy_checklist.md）"
+   "accuracy": "確認済み（research/accuracy_checklist.md）",
+   "start": 702.833,
+   "end": 737.9,
+   "duration": 35.067,
+   "video": "video/scenes/SC0308.mp4",
+   "audio": "audio/dialogue/scenes/SC0308.wav",
+   "accuracy_check": "ファインマン・チェック。誤解「ラクトースだけで発現」を、グルコース（−）かつラクトース（＋）の二条件に訂正（p.24）"
   },
   {
    "scene_id": "SC0401",
@@ -720,7 +828,13 @@
     "転写基本因子",
     "ヌクレオソーム"
    ],
-   "accuracy": "確認済み（research/accuracy_checklist.md）"
+   "accuracy": "確認済み（research/accuracy_checklist.md）",
+   "start": 737.9,
+   "end": 813.8,
+   "duration": 75.9,
+   "video": "video/scenes/SC0401.mp4",
+   "audio": "audio/dialogue/scenes/SC0401.wav",
+   "accuracy_check": "Pol I/II/III の担当は p.28 の表（p.59 の表とも整合）。多数の転写基本因子が必要な理由：ヌクレオソーム・クロマチン（p.28, 34）と巨大なゲノム（p.32）"
   },
   {
    "scene_id": "SC0402",
@@ -770,7 +884,13 @@
     "TFIIH",
     "転写開始前複合体"
    ],
-   "accuracy": "確認済み（research/accuracy_checklist.md）"
+   "accuracy": "確認済み（research/accuracy_checklist.md）",
+   "start": 813.8,
+   "end": 875.4,
+   "duration": 61.6,
+   "video": "video/scenes/SC0402.mp4",
+   "audio": "audio/dialogue/scenes/SC0402.wav",
+   "accuracy_check": "TATA は約25塩基上流、TFIID→TFIIB→Pol II/TFIIF→TFIIE/TFIIH（p.30 の図）。各因子の役割は p.32 の表。ゆがみが巨大なゲノムの中の物理的目印（p.32 の文言）"
   },
   {
    "scene_id": "SC0403",
@@ -812,7 +932,13 @@
     "リン酸化",
     "転写伸長期"
    ],
-   "accuracy": "確認済み（research/accuracy_checklist.md）"
+   "accuracy": "確認済み（research/accuracy_checklist.md）",
+   "start": 875.4,
+   "end": 917.967,
+   "duration": 42.567,
+   "video": "video/scenes/SC0403.mp4",
+   "audio": "audio/dialogue/scenes/SC0403.wav",
+   "accuracy_check": "TFIIH が ATP で DNA をほどき CTD の Ser5 をリン酸化（p.30, 32）。図(E)で TFIID は TATA に残る"
   },
   {
    "scene_id": "SC0404",
@@ -847,7 +973,13 @@
     "CAATボックス",
     "GCボックス"
    ],
-   "accuracy": "確認済み（research/accuracy_checklist.md）"
+   "accuracy": "確認済み（research/accuracy_checklist.md）",
+   "start": 917.967,
+   "end": 955.733,
+   "duration": 37.767,
+   "video": "video/scenes/SC0404.mp4",
+   "audio": "audio/dialogue/scenes/SC0404.wav",
+   "accuracy_check": "CAAT 5'-CCAAT-3'、GC 5'-GGGCGG-3'（p.33）"
   },
   {
    "scene_id": "SC0405",
@@ -890,7 +1022,13 @@
    "card_wrong": "直接くっついて",
    "card_gap": "直接ではない。先にTFIIDのTBPがTATAボックスに結合し、TFIIBがポリメラーゼを正しい位置に置く",
    "card_fix": "TBPが目印を見つけ、因子が集まる。TFIIHがDNAをほどき、CTDをリン酸化すると、ポリメラーゼが出発する",
-   "accuracy": "確認済み（research/accuracy_checklist.md）"
+   "accuracy": "確認済み（research/accuracy_checklist.md）",
+   "start": 955.733,
+   "end": 998.567,
+   "duration": 42.833,
+   "video": "video/scenes/SC0405.mp4",
+   "audio": "audio/dialogue/scenes/SC0405.wav",
+   "accuracy_check": "ファインマン・チェック。誤解「Pol II が TATA に直接結合」を、TBP→TFIIB→Pol II の順に訂正（p.30, 32）"
   },
   {
    "scene_id": "SC0501",
@@ -932,7 +1070,13 @@
     "クロマチン再構成複合体",
     "ヒストン修飾酵素"
    ],
-   "accuracy": "確認済み（research/accuracy_checklist.md）"
+   "accuracy": "確認済み（research/accuracy_checklist.md）",
+   "start": 998.567,
+   "end": 1052.633,
+   "duration": 54.067,
+   "video": "video/scenes/SC0501.mp4",
+   "audio": "audio/dialogue/scenes/SC0501.wav",
+   "accuracy_check": "活性化因子・介在因子・クロマチン再構成複合体・ヒストン修飾酵素は p.34 の図の配置"
   },
   {
    "scene_id": "SC0502",
@@ -965,7 +1109,13 @@
     "調節的発現",
     "応答配列"
    ],
-   "accuracy": "確認済み（research/accuracy_checklist.md）"
+   "accuracy": "確認済み（research/accuracy_checklist.md）",
+   "start": 1052.633,
+   "end": 1073.567,
+   "duration": 20.933,
+   "video": "video/scenes/SC0502.mp4",
+   "audio": "audio/dialogue/scenes/SC0502.wav",
+   "accuracy_check": "遠位／近位調節要素・プロモーター・基礎的／調節的発現は p.35 の図"
   },
   {
    "scene_id": "SC0503",
@@ -1005,7 +1155,13 @@
     "ヘテロクロマチン",
     "クロマチンリモデリング"
    ],
-   "accuracy": "確認済み（research/accuracy_checklist.md）"
+   "accuracy": "確認済み（research/accuracy_checklist.md）",
+   "start": 1073.567,
+   "end": 1110.367,
+   "duration": 36.8,
+   "video": "video/scenes/SC0503.mp4",
+   "audio": "audio/dialogue/scenes/SC0503.wav",
+   "accuracy_check": "ユークロマチン＝発現しうる、ヘテロクロマチン＝発現しない（p.70）。エピジェネティック制御は語句一覧のみ → 補足"
   },
   {
    "scene_id": "SC0504",
@@ -1042,7 +1198,13 @@
     "β-グロビン遺伝子",
     "コミットメント"
    ],
-   "accuracy": "確認済み（research/accuracy_checklist.md）"
+   "accuracy": "確認済み（research/accuracy_checklist.md）",
+   "start": 1110.367,
+   "end": 1149.5,
+   "duration": 39.133,
+   "video": "video/scenes/SC0504.mp4",
+   "audio": "audio/dialogue/scenes/SC0504.wav",
+   "accuracy_check": "p.36 のオン/オフの並びをそのまま使用。p.37 の図に疾患名はないので付けない"
   },
   {
    "scene_id": "SC0505",
@@ -1084,7 +1246,13 @@
    "card_wrong": "遺伝子のすぐ前にある",
    "card_gap": "すぐ前とは限らない。数百〜数千塩基対も離れた上流にも下流にもある。だからDNAのループが要る",
    "card_fix": "遠くのエンハンサーに活性化因子がつき、DNAがループして、介在因子を通じてポリメラーゼを助ける",
-   "accuracy": "確認済み（research/accuracy_checklist.md）"
+   "accuracy": "確認済み（research/accuracy_checklist.md）",
+   "start": 1149.5,
+   "end": 1183.767,
+   "duration": 34.267,
+   "video": "video/scenes/SC0505.mp4",
+   "audio": "audio/dialogue/scenes/SC0505.wav",
+   "accuracy_check": "ファインマン・チェック。誤解「エンハンサーは遺伝子のすぐ前」を、数百〜数千bp離れた上流・下流、DNAループ、介在因子に訂正（p.34, 35）"
   },
   {
    "scene_id": "SC0506",
@@ -1117,7 +1285,13 @@
     "転写調節",
     "転写後調節"
    ],
-   "accuracy": "確認済み（research/accuracy_checklist.md）"
+   "accuracy": "確認済み（research/accuracy_checklist.md）",
+   "start": 1183.767,
+   "end": 1212.967,
+   "duration": 29.2,
+   "video": "video/scenes/SC0506.mp4",
+   "audio": "audio/dialogue/scenes/SC0506.wav",
+   "accuracy_check": "原核＝転写調節、真核＝＋転写後調節（p.70）。転写は核・翻訳は細胞質（p.4）"
   },
   {
    "scene_id": "SC0601",
@@ -1154,7 +1328,13 @@
     "キャッピング酵素",
     "ポリ(A)ポリメラーゼ"
    ],
-   "accuracy": "確認済み（research/accuracy_checklist.md）"
+   "accuracy": "確認済み（research/accuracy_checklist.md）",
+   "start": 1212.967,
+   "end": 1241.933,
+   "duration": 28.967,
+   "video": "video/scenes/SC0601.mp4",
+   "audio": "audio/dialogue/scenes/SC0601.wav",
+   "accuracy_check": ""
   },
   {
    "scene_id": "SC0602",
@@ -1187,7 +1367,13 @@
     "m7G",
     "メチル化"
    ],
-   "accuracy": "確認済み（research/accuracy_checklist.md）"
+   "accuracy": "確認済み（research/accuracy_checklist.md）",
+   "start": 1241.933,
+   "end": 1258.933,
+   "duration": 17.0,
+   "video": "video/scenes/SC0602.mp4",
+   "audio": "audio/dialogue/scenes/SC0602.wav",
+   "accuracy_check": "5'ppp に G 付加 → 7位の N をメチル化（p.47）"
   },
   {
    "scene_id": "SC0603",
@@ -1225,7 +1411,13 @@
     "ポリ(A)ポリメラーゼ",
     "エキソヌクレアーゼ"
    ],
-   "accuracy": "確認済み（research/accuracy_checklist.md）"
+   "accuracy": "確認済み（research/accuracy_checklist.md）",
+   "start": 1258.933,
+   "end": 1298.0,
+   "duration": 39.067,
+   "video": "video/scenes/SC0603.mp4",
+   "audio": "audio/dialogue/scenes/SC0603.wav",
+   "accuracy_check": "AAUAAA と GU に富む配列の間を切断、250個まで（20〜250個）の A（p.47）。キャップとポリAがエキソヌクレアーゼから守る（p.47）"
   },
   {
    "scene_id": "SC0604",
@@ -1266,7 +1458,13 @@
     "GT-AG則",
     "ブランチ部位"
    ],
-   "accuracy": "確認済み（research/accuracy_checklist.md）"
+   "accuracy": "確認済み（research/accuracy_checklist.md）",
+   "start": 1298.0,
+   "end": 1348.8,
+   "duration": 50.8,
+   "video": "video/scenes/SC0604.mp4",
+   "audio": "audio/dialogue/scenes/SC0604.wav",
+   "accuracy_check": "GT-AG 則、ブランチ部位 A、ジストロフィン 2400 kb・99%（p.48, 50）。読み枠のずれの説明は補足と表示（3塩基＝1アミノ酸は p.71）"
   },
   {
    "scene_id": "SC0605",
@@ -1321,7 +1519,13 @@
     "U6",
     "投げ縄構造（ラリアット）"
    ],
-   "accuracy": "確認済み（research/accuracy_checklist.md）"
+   "accuracy": "確認済み（research/accuracy_checklist.md）",
+   "start": 1348.8,
+   "end": 1429.367,
+   "duration": 80.567,
+   "video": "video/scenes/SC0605.mp4",
+   "audio": "audio/dialogue/scenes/SC0605.wav",
+   "accuracy_check": "U1→U2AF/U2→U5・U4・U6→U1放出→U4放出・U6がU2へ→GUの5'側で切断・GとAが結合（投げ縄）→U5がエクソン保持（p.51, 52）"
   },
   {
    "scene_id": "SC0606",
@@ -1358,7 +1562,13 @@
     "グルコキナーゼ",
     "選択的プロモーター利用"
    ],
-   "accuracy": "確認済み（research/accuracy_checklist.md）"
+   "accuracy": "確認済み（research/accuracy_checklist.md）",
+   "start": 1429.367,
+   "end": 1474.0,
+   "duration": 44.633,
+   "video": "video/scenes/SC0606.mp4",
+   "audio": "audio/dialogue/scenes/SC0606.wav",
+   "accuracy_check": "A: E1-E3-E4、B: E1-E2-E4。グルコキナーゼ：肝臓 1L、膵B細胞/下垂体 1B（p.49）"
   },
   {
    "scene_id": "SC0607",
@@ -1403,7 +1613,13 @@
    "card_wrong": "エクソンを切り取って、捨てる",
    "card_gap": "逆。捨てられるのはイントロン。エクソンは残ってつながる。投げ縄になって外れるのもイントロン",
    "card_fix": "GUとAGを目印に、イントロンを投げ縄の形で外し、エクソンどうしをつなぐ",
-   "accuracy": "確認済み（research/accuracy_checklist.md）"
+   "accuracy": "確認済み（research/accuracy_checklist.md）",
+   "start": 1474.0,
+   "end": 1503.267,
+   "duration": 29.267,
+   "video": "video/scenes/SC0607.mp4",
+   "audio": "audio/dialogue/scenes/SC0607.wav",
+   "accuracy_check": "ファインマン・チェック。取り違え「エクソンを捨てる」を、イントロンが投げ縄で外れエクソンがつながる、に訂正（p.48, 50–52）"
   },
   {
    "scene_id": "SC0608",
@@ -1438,7 +1654,13 @@
     "終止コドン",
     "ポリアデニル化シグナル"
    ],
-   "accuracy": "確認済み（research/accuracy_checklist.md）"
+   "accuracy": "確認済み（research/accuracy_checklist.md）",
+   "start": 1503.267,
+   "end": 1534.4,
+   "duration": 31.133,
+   "video": "video/scenes/SC0608.mp4",
+   "audio": "audio/dialogue/scenes/SC0608.wav",
+   "accuracy_check": "遺伝子の構造は p.53（開始 ATG、終止 TGA、ポリアデニル化シグナル）"
   },
   {
    "scene_id": "SC0701",
@@ -1475,7 +1697,13 @@
     "アミノ酸指定配列",
     "ノンコーディングRNA（ncRNA）"
    ],
-   "accuracy": "確認済み（research/accuracy_checklist.md）"
+   "accuracy": "確認済み（research/accuracy_checklist.md）",
+   "start": 1534.4,
+   "end": 1573.333,
+   "duration": 38.933,
+   "video": "video/scenes/SC0701.mp4",
+   "audio": "audio/dialogue/scenes/SC0701.wav",
+   "accuracy_check": "ゲノムの割合は p.54、転写物の数は p.55（3項目の和は 59,893 で総数 60,483 と一致しない：資料の値をそのまま表示）"
   },
   {
    "scene_id": "SC0702",
@@ -1514,7 +1742,13 @@
     "40S",
     "45S rRNA前駆体"
    ],
-   "accuracy": "確認済み（research/accuracy_checklist.md）"
+   "accuracy": "確認済み（research/accuracy_checklist.md）",
+   "start": 1573.333,
+   "end": 1608.067,
+   "duration": 34.733,
+   "video": "video/scenes/SC0702.mp4",
+   "audio": "audio/dialogue/scenes/SC0702.wav",
+   "accuracy_check": "80S＝60S（5S・28S・5.8S）＋40S（18S）、45S 前駆体（p.62, 63）"
   },
   {
    "scene_id": "SC0703",
@@ -1550,7 +1784,13 @@
     "コドン",
     "内部制御領域"
    ],
-   "accuracy": "確認済み（research/accuracy_checklist.md）"
+   "accuracy": "確認済み（research/accuracy_checklist.md）",
+   "start": 1608.067,
+   "end": 1636.533,
+   "duration": 28.467,
+   "video": "video/scenes/SC0703.mp4",
+   "audio": "audio/dialogue/scenes/SC0703.wav",
+   "accuracy_check": "Pol III のプロモーターは遺伝子内部（約50 bp、p.60）"
   },
   {
    "scene_id": "SC0704",
@@ -1595,7 +1835,13 @@
     "Dicer",
     "RISC"
    ],
-   "accuracy": "確認済み（research/accuracy_checklist.md）"
+   "accuracy": "確認済み（research/accuracy_checklist.md）",
+   "start": 1636.533,
+   "end": 1681.633,
+   "duration": 45.1,
+   "video": "video/scenes/SC0704.mp4",
+   "audio": "audio/dialogue/scenes/SC0704.wav",
+   "accuracy_check": "pri → Drosha（60〜70 nt）→ Exportin 5 → Dicer（21〜23 nt）→ RISC（p.67）"
   },
   {
    "scene_id": "SC0705",
@@ -1630,7 +1876,13 @@
     "標的mRNA",
     "翻訳抑制"
    ],
-   "accuracy": "確認済み（research/accuracy_checklist.md）"
+   "accuracy": "確認済み（research/accuracy_checklist.md）",
+   "start": 1681.633,
+   "end": 1713.533,
+   "duration": 31.9,
+   "video": "video/scenes/SC0705.mp4",
+   "audio": "audio/dialogue/scenes/SC0705.wav",
+   "accuracy_check": "結合した mRNA は分解（p.67 の図）、1000以上・30%以上（p.56）"
   },
   {
    "scene_id": "SC0706",
@@ -1666,7 +1918,13 @@
     "ORF",
     "snoRNA"
    ],
-   "accuracy": "確認済み（research/accuracy_checklist.md）"
+   "accuracy": "確認済み（research/accuracy_checklist.md）",
+   "start": 1713.533,
+   "end": 1739.6,
+   "duration": 26.067,
+   "video": "video/scenes/SC0706.mp4",
+   "audio": "audio/dialogue/scenes/SC0706.wav",
+   "accuracy_check": "200塩基以上・ORF 100アミノ酸残基以下、キャップ・ポリA・スプライシングあり、翻訳なし（p.68）"
   },
   {
    "scene_id": "SC0707",
@@ -1699,7 +1957,13 @@
     "Prader-Willi症候群",
     "欠失"
    ],
-   "accuracy": "確認済み（research/accuracy_checklist.md）"
+   "accuracy": "確認済み（research/accuracy_checklist.md）",
+   "start": 1739.6,
+   "end": 1769.8,
+   "duration": 30.2,
+   "video": "video/scenes/SC0707.mp4",
+   "audio": "audio/dialogue/scenes/SC0707.wav",
+   "accuracy_check": "疾患名と特徴は p.56 の記載のみ。欠失の位置は模式と明記"
   },
   {
    "scene_id": "SC0708",
@@ -1744,7 +2008,13 @@
    "card_wrong": "おまけのようなもの",
    "card_gap": "rRNAとtRNAは翻訳そのものを担い、miRNAは遺伝子発現を抑える。欠失で病気になるものもある（p.56）",
    "card_fix": "タンパク質にならず、RNAのまま働く。翻訳や発現の調節を担い、失われると病気につながる",
-   "accuracy": "確認済み（research/accuracy_checklist.md）"
+   "accuracy": "確認済み（research/accuracy_checklist.md）",
+   "start": 1769.8,
+   "end": 1804.7,
+   "duration": 34.9,
+   "video": "video/scenes/SC0708.mp4",
+   "audio": "audio/dialogue/scenes/SC0708.wav",
+   "accuracy_check": "ファインマン・チェック。誤解「非コードRNAはおまけ」を、rRNA・tRNA（翻訳）、miRNA（抑制）、欠失と疾患（p.56, 59, 67）に訂正"
   },
   {
    "scene_id": "SC0801",
@@ -1784,7 +2054,13 @@
     "カドミウム",
     "応答配列"
    ],
-   "accuracy": "確認済み（research/accuracy_checklist.md）"
+   "accuracy": "確認済み（research/accuracy_checklist.md）",
+   "start": 1804.7,
+   "end": 1874.4,
+   "duration": 69.7,
+   "video": "video/scenes/SC0801.mp4",
+   "audio": "audio/dialogue/scenes/SC0801.wav",
+   "accuracy_check": "MRE と負のフィードバックは p.39 の図、毒性と摂取量は p.39 のテキスト層"
   },
   {
    "scene_id": "SC0802",
@@ -1831,7 +2107,13 @@
     "RORα",
     "RRE"
    ],
-   "accuracy": "確認済み（research/accuracy_checklist.md）"
+   "accuracy": "確認済み（research/accuracy_checklist.md）",
+   "start": 1874.4,
+   "end": 1937.1,
+   "duration": 62.7,
+   "video": "video/scenes/SC0802.mp4",
+   "audio": "audio/dialogue/scenes/SC0802.wav",
+   "accuracy_check": "BMAL1/CLOCK→E-box→Per, Cry, Rev-erbα, RORα、PER/CRY が抑制、Rev-erbα⊣RRE、RORα→RRE（p.41）。時計が必要な理由は p.42 の文言（太陽エネルギーを効率よく安全に利用するため）"
   },
   {
    "scene_id": "SC0803",
@@ -1875,7 +2157,13 @@
    "card_wrong": "それで終わり",
    "card_gap": "できたPERとCRYが、BMAL1とCLOCKのはたらきを抑える。ここがループの要",
    "card_fix": "作られたPERとCRYが、自分を作る転写を止める。減るとまた作られる。このくり返しが約24時間のリズム",
-   "accuracy": "確認済み（research/accuracy_checklist.md）"
+   "accuracy": "確認済み（research/accuracy_checklist.md）",
+   "start": 1937.1,
+   "end": 1968.6,
+   "duration": 31.5,
+   "video": "video/scenes/SC0803.mp4",
+   "audio": "audio/dialogue/scenes/SC0803.wav",
+   "accuracy_check": "ファインマン・チェック。誤解「Per/Cry を作って終わり」を、PER/CRY が BMAL1/CLOCK を抑えるループに訂正（p.40, 41）"
   },
   {
    "scene_id": "SC0804",
@@ -1907,7 +2195,13 @@
     "概日時計",
     "時計遺伝子欠損マウス"
    ],
-   "accuracy": "確認済み（research/accuracy_checklist.md）"
+   "accuracy": "確認済み（research/accuracy_checklist.md）",
+   "start": 1968.6,
+   "end": 2002.1,
+   "duration": 33.5,
+   "video": "video/scenes/SC0804.mp4",
+   "audio": "audio/dialogue/scenes/SC0804.wav",
+   "accuracy_check": "マウスの表現型は p.42、疾患は p.43 の図（関連のみと明示）"
   },
   {
    "scene_id": "SC0805",
@@ -1942,7 +2236,13 @@
     "ミトコンドリア特異的RNAポリメラーゼ",
     "環状ゲノム"
    ],
-   "accuracy": "確認済み（research/accuracy_checklist.md）"
+   "accuracy": "確認済み（research/accuracy_checklist.md）",
+   "start": 2002.1,
+   "end": 2038.967,
+   "duration": 36.867,
+   "video": "video/scenes/SC0805.mp4",
+   "audio": "audio/dialogue/scenes/SC0805.wav",
+   "accuracy_check": "37 遺伝子、約16 kb（図 16,569 bp）、核にコードされたミトコンドリア特異的 RNA ポリメラーゼ、各鎖の全体を転写（p.72）"
   },
   {
    "scene_id": "SC0901",
@@ -1982,7 +2282,13 @@
     "選択的スプライシング",
     "非翻訳RNA"
    ],
-   "accuracy": "確認済み（research/accuracy_checklist.md）"
+   "accuracy": "確認済み（research/accuracy_checklist.md）",
+   "start": 2038.967,
+   "end": 2087.033,
+   "duration": 48.067,
+   "video": "video/scenes/SC0901.mp4",
+   "audio": "audio/dialogue/scenes/SC0901.wav",
+   "accuracy_check": ""
   },
   {
    "scene_id": "SC0902",
@@ -2018,7 +2324,13 @@
     "5'→3'"
    ],
    "quiz": "Q1",
-   "accuracy": "確認済み（research/accuracy_checklist.md）"
+   "accuracy": "確認済み（research/accuracy_checklist.md）",
+   "start": 2087.033,
+   "end": 2119.033,
+   "duration": 32.0,
+   "video": "video/scenes/SC0902.mp4",
+   "audio": "audio/dialogue/scenes/SC0902.wav",
+   "accuracy_check": ""
   },
   {
    "scene_id": "SC0903",
@@ -2056,7 +2368,13 @@
     "TATAボックス"
    ],
    "quiz": "Q2",
-   "accuracy": "確認済み（research/accuracy_checklist.md）"
+   "accuracy": "確認済み（research/accuracy_checklist.md）",
+   "start": 2119.033,
+   "end": 2147.267,
+   "duration": 28.233,
+   "video": "video/scenes/SC0903.mp4",
+   "audio": "audio/dialogue/scenes/SC0903.wav",
+   "accuracy_check": ""
   },
   {
    "scene_id": "SC0904",
@@ -2094,7 +2412,13 @@
     "CTD"
    ],
    "quiz": "Q3",
-   "accuracy": "確認済み（research/accuracy_checklist.md）"
+   "accuracy": "確認済み（research/accuracy_checklist.md）",
+   "start": 2147.267,
+   "end": 2176.167,
+   "duration": 28.9,
+   "video": "video/scenes/SC0904.mp4",
+   "audio": "audio/dialogue/scenes/SC0904.wav",
+   "accuracy_check": ""
   },
   {
    "scene_id": "SC0905",
@@ -2132,7 +2456,13 @@
     "投げ縄構造"
    ],
    "quiz": "Q4",
-   "accuracy": "確認済み（research/accuracy_checklist.md）"
+   "accuracy": "確認済み（research/accuracy_checklist.md）",
+   "start": 2176.167,
+   "end": 2205.8,
+   "duration": 29.633,
+   "video": "video/scenes/SC0905.mp4",
+   "audio": "audio/dialogue/scenes/SC0905.wav",
+   "accuracy_check": ""
   },
   {
    "scene_id": "SC0906",
@@ -2168,7 +2498,13 @@
     "RISC"
    ],
    "quiz": "Q5",
-   "accuracy": "確認済み（research/accuracy_checklist.md）"
+   "accuracy": "確認済み（research/accuracy_checklist.md）",
+   "start": 2205.8,
+   "end": 2234.733,
+   "duration": 28.933,
+   "video": "video/scenes/SC0906.mp4",
+   "audio": "audio/dialogue/scenes/SC0906.wav",
+   "accuracy_check": ""
   },
   {
    "scene_id": "SC0907",
@@ -2206,7 +2542,13 @@
     "RNAプロセシング",
     "非コードRNA"
    ],
-   "accuracy": "確認済み（research/accuracy_checklist.md）"
+   "accuracy": "確認済み（research/accuracy_checklist.md）",
+   "start": 2234.733,
+   "end": 2294.533,
+   "duration": 59.8,
+   "video": "video/scenes/SC0907.mp4",
+   "audio": "audio/dialogue/scenes/SC0907.wav",
+   "accuracy_check": ""
   }
  ]
 }

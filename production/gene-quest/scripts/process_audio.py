@@ -32,7 +32,7 @@ import soundfile as sf
 from scipy import signal
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from gqlib.paths import AUDIO  # noqa: E402
+from gqlib.paths import AUDIO, SCRIPT  # noqa: E402
 
 SR = 48000
 TARGET_LUFS = -20.0
@@ -178,11 +178,14 @@ def main() -> None:
     if args.stages:
         stages_dir.mkdir(exist_ok=True)
     manifest = json.loads((raw / "manifest.json").read_text(encoding="utf-8"))
+    current_ids = {ln["line_id"] for ln in json.loads((SCRIPT / "dialogue.json").read_text(encoding="utf-8"))["lines"]}
     rep_path = out / "report.json"
     report = json.loads(rep_path.read_text(encoding="utf-8")) if rep_path.exists() else {}
     seen_chars: dict[str, int] = {}
     n = 0
     for lid, m in sorted(manifest.items()):
+        if lid not in current_ids:
+            continue
         if args.scene and m["scene_id"] not in args.scene:
             continue
         src = raw / f"{lid}.wav"
@@ -199,6 +202,9 @@ def main() -> None:
         info["character_id"] = ch
         report[lid] = info
         n += 1
+    # 原稿から消えた行（シーン番号の振り直しなど）の記録は残さない（集計がずれるため）
+    current = {ln["line_id"] for ln in json.loads((SCRIPT / "dialogue.json").read_text(encoding="utf-8"))["lines"]}
+    report = {k: v for k, v in report.items() if k in current}
     rep_path.write_text(json.dumps(report, ensure_ascii=False, indent=1), encoding="utf-8")
     vals = list(report.values())
     print(f"処理 {n} 行 / 全 {len(vals)} 行")
