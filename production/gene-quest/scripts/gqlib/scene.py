@@ -76,6 +76,21 @@ class Scene:
         e.mouth_open = self.mouth(char, t)
         return e
 
+    def why_active(self, t: float) -> tuple[str, float]:
+        """「なぜ？」の問い（原稿の {why=…}）と表示の濃さ。問いの行（？で終わる）は答えの次の行の終わりまで、
+        答えを兼ねる行はその行の終わりまで表示する。"""
+        for i, ln in enumerate(self.lines):
+            if not ln.get("why"):
+                continue
+            end_ln = ln
+            if ln["text"].rstrip().endswith(("？", "?")) and i + 1 < len(self.lines):
+                end_ln = self.lines[i + 1]
+            t0, t1 = ln["rel_start"], end_ln["rel_end"]
+            if t0 - 0.1 <= t <= t1 + 0.4:
+                k = min(1.0, (t - t0 + 0.1) / 0.3, (t1 + 0.4 - t) / 0.4)
+                return ln["why"], max(0.0, k)
+        return "", 0.0
+
     def note_active(self, t: float) -> str:
         ln = self.line_at(t)
         return ln["note"] if ln else ""

@@ -63,6 +63,16 @@ def hud(c, t, S, show_chapter=True, show_pages=True, alpha=1.0):
         rrect(c, 48, 92, w, 44, 22, 0xFF4A3A10, k * 0.92)
         rrect(c, 48, 92, w, 44, 22, PAL["yellow"], k, stroke=2.5)
         text(c, s, 66, 122, 24, PAL["yellow"], "heavy", alpha=k)
+    why, kw = S.why_active(t)
+    if why and kw > 0:
+        # 必然性の問い：「なぜ？」の札（補足の札が出ているときはその下）
+        y = 146 if note else 92
+        q = why if why.endswith(("？", "?")) else why + "？"
+        w = text_width("なぜ", 28, "heavy") + text_width(q, 26, "bold") + 64
+        rrect(c, 48, y, w, 46, 23, 0xFF3A0F24, kw * 0.92)
+        rrect(c, 48, y, w, 46, 23, PAL["red"], kw, stroke=2.5)
+        text(c, "なぜ", 68, y + 32, 28, PAL["red"], "heavy", alpha=kw)
+        text(c, q, 68 + text_width("なぜ", 28, "heavy") + 14, y + 32, 26, PAL["white"], "bold", alpha=kw)
 
 
 def fade_line(t, ln, fin=0.25, fout=0.3):

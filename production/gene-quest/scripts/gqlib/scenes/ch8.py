@@ -64,7 +64,7 @@ def metallothionein(c, t, S):
         caption_box(c, ["カドミウムは、酵素のチオール基・カルボキシル基・アミノ基と", "相互作用して酵素活性を阻害し、",
                         "肝臓障害、骨軟化症、高血圧などを引き起こす（p.39）"], 300, 420, 34, kx, border=PAL["red"],
                     title="資料の記載")
-        ki = ease(prog(t, S.L(7), 0.6))
+        ki = ease(prog(t, S.cue("smoke", S.L(7)), 0.6))
         if ki > 0:
             caption_box(c, ["食物から 75〜100 μg を摂取", "喫煙でも余分に摂取（タバコ1本に約2 μg）"], 300, 700, 32, ki,
                         border=PAL["yellow"])

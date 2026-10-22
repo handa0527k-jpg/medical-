@@ -84,7 +84,7 @@ def main() -> None:
             dur = len(a) / SR
             tl_lines.append({
                 "line_id": lid, "character_id": ln["character_id"], "text": ln["text"], "emotion": ln["emotion"],
-                "cue": ln["cue"], "note": ln["note"], "rel_start": round(rel, 3), "rel_end": round(rel + dur, 3),
+                "cue": ln["cue"], "note": ln["note"], "why": ln.get("why", ""), "rel_start": round(rel, 3), "rel_end": round(rel + dur, 3),
                 "start": round(start + rel, 3), "end": round(start + rel + dur, 3), "env": envelope(a, SR),
             })
             chunks.append(a)
@@ -108,6 +108,8 @@ def main() -> None:
             "visual": sc.get("visual"), "bgm": sc.get("bgm"), "pages": sc["pages"], "sfx": sc["sfx"],
             "start": round(start, 3), "end": round(start + dur, 3), "duration": round(dur, 3), "frames": nframes,
             "lines": tl_lines, "cues": cues,
+            # ファインマン・チェックの板書（原稿の card_* 見出し）
+            "cards": {k[5:]: v for k, v in sc.items() if k.startswith("card_")},
         })
         t = start + dur
     sf.write(AUDIO / "dialogue" / "dialogue_full.wav", np.concatenate(full), SR, subtype="PCM_16")

@@ -97,6 +97,7 @@ def parse(path: Path) -> tuple[list[dict], list[dict]]:
             "pause_after": float(opts.get("after", 0.35)),
             "cue": opts.get("cue", ""),
             "note": opts.get("note", ""),
+            "why": opts.get("why", ""),
         }
         cur["lines"].append(line["line_id"])
         lines.append(line)

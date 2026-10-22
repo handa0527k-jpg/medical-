@@ -295,8 +295,19 @@ def quest_map(c, t, S):
         for j, s in enumerate(lines):
             text(c, s, p[0], p[1] + 88 + j * 36, 30, PAL["white"], "heavy", "center", kk, stroke=5)
         label(c, chap, p[0], p[1] - 76, 24, 0xFF120A30, col, kk)
+    # 冒険のルール（必然性 × ファインマン法）
+    for i, (cue, head, body) in enumerate([("rule1", "ルール1　必然性", "なぜ、そうでなければならないのか？を考える"),
+                                           ("rule2", "ルール2　ファインマン法", "難しい言葉を使わずに、自分の言葉で説明する")]):
+        if cue not in S.cues:
+            continue
+        kr = ease(prog(t, S.cue(cue) - 0.1, 0.5))
+        y = 690 + i * 78
+        rrect(c, 440, y, 1080, 64, 32, 0xFF120F35, kr * 0.9)
+        rrect(c, 440, y, 1080, 64, 32, PAL["yellow"] if i == 0 else PAL["green"], kr, stroke=3)
+        text(c, head, 470, y + 43, 30, PAL["yellow"] if i == 0 else PAL["green"], "heavy", alpha=kr)
+        text(c, body, 860, y + 43, 30, PAL["white"], "bold", alpha=kr)
     # START スタンプ
-    t_go = S.L(3)
+    t_go = S.cue("go", S.L(3))
     kk = ease_back(prog(t, t_go + 0.3, 0.4))
     if kk > 0:
         c.save()

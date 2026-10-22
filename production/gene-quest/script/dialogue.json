@@ -12,7 +12,8 @@
    "pause_before": 2.5,
    "pause_after": 0.6,
    "cue": "",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0101",
@@ -26,7 +27,8 @@
    "pause_before": 0.0,
    "pause_after": 0.6,
    "cue": "",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0101",
@@ -40,7 +42,8 @@
    "pause_before": 0.0,
    "pause_after": 0.8,
    "cue": "helix",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0101",
@@ -54,7 +57,8 @@
    "pause_before": 0.0,
    "pause_after": 1.2,
    "cue": "",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0102",
@@ -68,7 +72,8 @@
    "pause_before": 1.2,
    "pause_after": 2.6,
    "cue": "",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0103",
@@ -82,7 +87,8 @@
    "pause_before": 0.6,
    "pause_after": 0.35,
    "cue": "",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0103",
@@ -96,7 +102,8 @@
    "pause_before": 0.0,
    "pause_after": 0.5,
    "cue": "",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0103",
@@ -110,7 +117,8 @@
    "pause_before": 0.0,
    "pause_after": 0.8,
    "cue": "dive",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0103",
@@ -124,7 +132,8 @@
    "pause_before": 0.0,
    "pause_after": 1.2,
    "cue": "",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0103",
@@ -138,7 +147,8 @@
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "nuku_in",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0103",
@@ -152,7 +162,8 @@
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0103",
@@ -166,7 +177,8 @@
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0104",
@@ -180,7 +192,8 @@
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "map",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0104",
@@ -194,7 +207,8 @@
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "transcription",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0104",
@@ -208,7 +222,8 @@
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "translation",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0104",
@@ -222,7 +237,8 @@
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0104",
@@ -236,7 +252,8 @@
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "dogma",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0104",
@@ -248,9 +265,40 @@
    "emotion": "Neutral",
    "emotion_strength": 1.0,
    "pause_before": 0.0,
+   "pause_after": 0.35,
+   "cue": "",
+   "note": "",
+   "why": ""
+  },
+  {
+   "scene_id": "SC0104",
+   "line_id": "SC0104-07",
+   "character_id": "akari",
+   "text": "でも、なぜわざわざRNAに写すの？ DNAを直接読めばいいのに。",
+   "reading": "でも、なぜわざわざアールエヌエーに写すの? ディーエヌエーを直接読めばいいのに。",
+   "reading_source": "dictionary",
+   "emotion": "Neutral",
+   "emotion_strength": 1.0,
+   "pause_before": 0.0,
+   "pause_after": 0.35,
+   "cue": "",
+   "note": "",
+   "why": "DNAを直接使わず、RNAに写すのか"
+  },
+  {
+   "scene_id": "SC0104",
+   "line_id": "SC0104-08",
+   "character_id": "nuku",
+   "text": "設計図のDNAは核の中にある。タンパク質を作るのは、核の外の細胞質だ。だから、核の外へ持ち出せる写しが要る。それがmRNAなんだ。",
+   "reading": "設計図のディーエヌエーは核の中にある。タンパク質を作るのは、核の外の細胞質だ。だから、核の外へ持ち出せる写しが要る。それがエムアールエヌエーなんだ。",
+   "reading_source": "dictionary",
+   "emotion": "Neutral",
+   "emotion_strength": 1.0,
+   "pause_before": 0.0,
    "pause_after": 0.5,
    "cue": "",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0105",
@@ -264,7 +312,8 @@
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "stages",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0105",
@@ -278,21 +327,68 @@
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0105",
    "line_id": "SC0105-03",
+   "character_id": "nuku",
+   "text": "旅のルールは二つ。一つ目は、仕組みを見たら、なぜ、そうでなければならないのかを考えること。暗記より、必然性だ。",
+   "reading": "旅のルールは二つ。一つ目は、仕組みを見たら、なぜ、そうでなければならないのかを考えること。暗記より、必然性だ。",
+   "reading_source": "dictionary",
+   "emotion": "Neutral",
+   "emotion_strength": 1.0,
+   "pause_before": 0.0,
+   "pause_after": 0.35,
+   "cue": "rule1",
+   "note": "",
+   "why": ""
+  },
+  {
+   "scene_id": "SC0105",
+   "line_id": "SC0105-04",
+   "character_id": "nuku",
+   "text": "二つ目は、分かったと思ったら、難しい言葉を使わずに、自分の言葉で説明してみること。物理学者ファインマンの名前から、ファインマン・テクニックと呼ばれる学び方だ。",
+   "reading": "二つ目は、分かったと思ったら、難しい言葉を使わずに、自分の言葉で説明してみること。物理学者ファインマンの名前から、ファインマン・テクニックと呼ばれる学び方だ。",
+   "reading_source": "dictionary",
+   "emotion": "Neutral",
+   "emotion_strength": 1.0,
+   "pause_before": 0.0,
+   "pause_after": 0.35,
+   "cue": "rule2",
+   "note": "",
+   "why": ""
+  },
+  {
+   "scene_id": "SC0105",
+   "line_id": "SC0105-05",
+   "character_id": "nuku",
+   "text": "説明に詰まったところが、まだ分かっていないところ。そこを埋めれば、本当に分かる。",
+   "reading": "説明に詰まったところが、まだ分かっていないところ。そこを埋めれば、本当に分かる。",
+   "reading_source": "dictionary",
+   "emotion": "Neutral",
+   "emotion_strength": 1.0,
+   "pause_before": 0.0,
+   "pause_after": 0.35,
+   "cue": "",
+   "note": "",
+   "why": ""
+  },
+  {
+   "scene_id": "SC0105",
+   "line_id": "SC0105-06",
    "character_id": "akari",
-   "text": "よし、ジーン・クエスト、出発！",
-   "reading": "よし、ジーンクエスト、しゅっぱつ！",
+   "text": "なぜかを考えて、自分の言葉で説明する。よし、ジーン・クエスト、出発！",
+   "reading": "なぜかをかんがえて、じぶんのことばでせつめいする。よし、ジーンクエスト、しゅっぱつ！",
    "reading_source": "manual",
    "emotion": "Happy",
    "emotion_strength": 2.0,
    "pause_before": 0.0,
    "pause_after": 1.0,
-   "cue": "",
-   "note": ""
+   "cue": "go",
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0201",
@@ -306,7 +402,8 @@
    "pause_before": 0.6,
    "pause_after": 0.4,
    "cue": "",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0201",
@@ -320,7 +417,8 @@
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "pol_appear",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0201",
@@ -334,7 +432,8 @@
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "pol_talk",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0201",
@@ -348,7 +447,8 @@
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "cutaway",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0201",
@@ -362,7 +462,8 @@
    "pause_before": 0.0,
    "pause_after": 0.5,
    "cue": "labels",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0202",
@@ -376,7 +477,8 @@
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0202",
@@ -390,7 +492,8 @@
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "strands",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0202",
@@ -404,7 +507,8 @@
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "pairing",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0202",
@@ -418,7 +522,8 @@
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0202",
@@ -432,7 +537,8 @@
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "compare",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0202",
@@ -446,7 +552,8 @@
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "same",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0202",
@@ -458,9 +565,25 @@
    "emotion": "Happy",
    "emotion_strength": 1.5,
    "pause_before": 0.0,
+   "pause_after": 0.35,
+   "cue": "",
+   "note": "",
+   "why": ""
+  },
+  {
+   "scene_id": "SC0202",
+   "line_id": "SC0202-08",
+   "character_id": "nuku",
+   "text": "なぜ相補的に写すのか。向かい合う相手が一つに決まっているから、鋳型さえあれば、同じRNAを何度でも正確に作れるんだ。",
+   "reading": "なぜ相補的に写すのか。向かい合う相手が一つに決まっているから、いがたさえあれば、同じアールエヌエーを何度でも正確に作れるんだ。",
+   "reading_source": "dictionary",
+   "emotion": "Neutral",
+   "emotion_strength": 1.0,
+   "pause_before": 0.0,
    "pause_after": 0.5,
    "cue": "",
-   "note": ""
+   "note": "",
+   "why": "RNAは鋳型鎖に相補的に作られるのか"
   },
   {
    "scene_id": "SC0203",
@@ -474,7 +597,8 @@
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "direction",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0203",
@@ -488,7 +612,8 @@
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "ntp",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0203",
@@ -502,7 +627,8 @@
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "bond",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0203",
@@ -516,7 +642,8 @@
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "ppi",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0203",
@@ -528,9 +655,40 @@
    "emotion": "Neutral",
    "emotion_strength": 1.0,
    "pause_before": 0.0,
+   "pause_after": 0.35,
+   "cue": "",
+   "note": "",
+   "why": ""
+  },
+  {
+   "scene_id": "SC0203",
+   "line_id": "SC0203-06",
+   "character_id": "akari",
+   "text": "でも、なぜ一方向にしか伸びないの？",
+   "reading": "でも、なぜ一方向にしか伸びないの?",
+   "reading_source": "dictionary",
+   "emotion": "Neutral",
+   "emotion_strength": 1.0,
+   "pause_before": 0.0,
+   "pause_after": 0.35,
+   "cue": "",
+   "note": "",
+   "why": "RNAは5'から3'へしか伸びないのか"
+  },
+  {
+   "scene_id": "SC0203",
+   "line_id": "SC0203-07",
+   "character_id": "nuku",
+   "text": "つなぐための三リン酸は、新しく来るヌクレオチドの5'側についている。受け取るのは、伸びている鎖の3'のOHだけ。だから鎖は、3'の側にしか伸ばせないんだ。",
+   "reading": "つなぐための三リン酸は、新しく来るヌクレオチドのゴダッシュ側についている。受け取るのは、伸びている鎖のサンダッシュのオーエイチだけ。だから鎖は、サンダッシュの側にしか伸ばせないんだ。",
+   "reading_source": "dictionary",
+   "emotion": "Neutral",
+   "emotion_strength": 1.0,
+   "pause_before": 0.0,
    "pause_after": 0.5,
    "cue": "",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0204",
@@ -544,7 +702,8 @@
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0204",
@@ -558,7 +717,8 @@
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "promoter",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0204",
@@ -572,7 +732,8 @@
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "reverse",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0204",
@@ -586,7 +747,8 @@
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "role",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0204",
@@ -598,65 +760,115 @@
    "emotion": "Neutral",
    "emotion_strength": 1.0,
    "pause_before": 0.0,
-   "pause_after": 0.5,
+   "pause_after": 0.35,
    "cue": "terminator",
-   "note": ""
+   "note": "",
+   "why": ""
+  },
+  {
+   "scene_id": "SC0204",
+   "line_id": "SC0204-06",
+   "character_id": "akari",
+   "text": "もし、その目印がなかったら？",
+   "reading": "もし、その目印がなかったら?",
+   "reading_source": "dictionary",
+   "emotion": "Neutral",
+   "emotion_strength": 1.0,
+   "pause_before": 0.0,
+   "pause_after": 0.35,
+   "cue": "",
+   "note": "",
+   "why": "プロモーターという目印が要るのか"
+  },
+  {
+   "scene_id": "SC0204",
+   "line_id": "SC0204-07",
+   "character_id": "nuku",
+   "text": "どこから、どちら向きに写すかが決まらない。だから、開始点と鋳型にする鎖を、DNAの配列そのものに書いておく必要がある。それがプロモーターだ。",
+   "reading": "どこから、どちら向きに写すかが決まらない。だから、開始点といがたにする鎖を、ディーエヌエーの配列そのものに書いておく必要がある。それがプロモーターだ。",
+   "reading_source": "dictionary",
+   "emotion": "Neutral",
+   "emotion_strength": 1.0,
+   "pause_before": 0.0,
+   "pause_after": 0.5,
+   "cue": "",
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0205",
    "line_id": "SC0205-01",
    "character_id": "nuku",
-   "text": "チェックポイント。鋳型鎖が3'-TAC-5'のとき、できるRNAは？",
-   "reading": "チェックポイント。いがたさが、サンダッシュ、ティーエーシー、ゴダッシュのとき、できるアールエヌエーは？",
-   "reading_source": "manual",
+   "text": "ファインマン・チェック。ここまでの転写を、難しい言葉を使わずに説明してみて。",
+   "reading": "ファインマン・チェック。ここまでの転写を、難しい言葉を使わずに説明してみて。",
+   "reading_source": "dictionary",
    "emotion": "Happy",
    "emotion_strength": 1.5,
    "pause_before": 0.0,
    "pause_after": 0.35,
-   "cue": "question",
-   "note": ""
+   "cue": "start",
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0205",
    "line_id": "SC0205-02",
    "character_id": "akari",
-   "text": "Tの向かいはA、AにはU、CにはG。",
-   "reading": "ティーの向かいはエー、エーにはユー、シーにはジー。",
+   "text": "えっと、ポリメラーゼが片方の鎖を読んで、それと同じ並びのRNAを作る。",
+   "reading": "えっと、ポリメラーゼが片方の鎖を読んで、それと同じ並びのアールエヌエーを作る。",
    "reading_source": "dictionary",
    "emotion": "Neutral",
    "emotion_strength": 1.0,
    "pause_before": 0.0,
-   "pause_after": 1.0,
-   "cue": "think",
-   "note": ""
+   "pause_after": 0.6,
+   "cue": "try",
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0205",
    "line_id": "SC0205-03",
-   "character_id": "akari",
-   "text": "5'-AUG-3'！",
-   "reading": "ゴダッシュ、エーユージー、サンダッシュ！",
-   "reading_source": "manual",
-   "emotion": "Happy",
-   "emotion_strength": 2.0,
+   "character_id": "nuku",
+   "text": "惜しい。読んだ鎖と同じにはならない。向かい合う相手を並べるから、鋳型鎖とは相補的。同じ並びになるのは反対側の非鋳型鎖で、TがUになるだけだ。",
+   "reading": "惜しい。読んだ鎖と同じにはならない。向かい合う相手を並べるから、いがたさとは相補的。同じ並びになるのは反対側のひいがたさで、ティーがユーになるだけだ。",
+   "reading_source": "dictionary",
+   "emotion": "Neutral",
+   "emotion_strength": 1.0,
    "pause_before": 0.0,
    "pause_after": 0.35,
-   "cue": "answer",
-   "note": ""
+   "cue": "gap",
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0205",
    "line_id": "SC0205-04",
+   "character_id": "akari",
+   "text": "言い直すね。読む鎖の向かい側の文字を、5'から3'へ並べる。だから、できたRNAは、反対側の鎖とそっくりになる！",
+   "reading": "言い直すね。読む鎖の向かい側の文字を、ゴダッシュからサンダッシュへ並べる。だから、できたアールエヌエーは、反対側の鎖とそっくりになる!",
+   "reading_source": "dictionary",
+   "emotion": "Happy",
+   "emotion_strength": 2.0,
+   "pause_before": 0.0,
+   "pause_after": 0.35,
+   "cue": "fix",
+   "note": "",
+   "why": ""
+  },
+  {
+   "scene_id": "SC0205",
+   "line_id": "SC0205-05",
    "character_id": "nuku",
-   "text": "正解。RNAは鋳型鎖と逆向きに、5'から3'へ並ぶ。",
-   "reading": "正解。アールエヌエーはいがたさと逆向きに、ゴダッシュからサンダッシュへ並ぶ。",
+   "text": "その通り。詰まったところが分かると、理解が一段深くなる。",
+   "reading": "その通り。詰まったところが分かると、理解が一段深くなる。",
    "reading_source": "dictionary",
    "emotion": "Happy",
    "emotion_strength": 1.5,
    "pause_before": 0.0,
    "pause_after": 0.8,
    "cue": "",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0301",
@@ -670,7 +882,8 @@
    "pause_before": 0.6,
    "pause_after": 0.4,
    "cue": "",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0301",
@@ -684,7 +897,8 @@
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "ecoli",
-   "note": "補足"
+   "note": "補足",
+   "why": ""
   },
   {
    "scene_id": "SC0301",
@@ -698,7 +912,8 @@
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "sigma",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0301",
@@ -712,7 +927,8 @@
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "holo",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0301",
@@ -726,7 +942,8 @@
    "pause_before": 0.0,
    "pause_after": 0.4,
    "cue": "dock",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0302",
@@ -740,7 +957,8 @@
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "positions",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0302",
@@ -754,7 +972,8 @@
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "box35",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0302",
@@ -768,7 +987,8 @@
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "box10",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0302",
@@ -782,7 +1002,8 @@
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "open",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0302",
@@ -796,7 +1017,8 @@
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "sigma_leave",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0302",
@@ -810,7 +1032,8 @@
    "pause_before": 0.0,
    "pause_after": 0.4,
    "cue": "",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0303",
@@ -824,7 +1047,8 @@
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "steps",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0303",
@@ -838,7 +1062,8 @@
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "terminator",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0303",
@@ -852,7 +1077,8 @@
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "stemloop",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0303",
@@ -866,7 +1092,8 @@
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "rho",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0303",
@@ -880,7 +1107,8 @@
    "pause_before": 0.0,
    "pause_after": 0.5,
    "cue": "cycle",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0304",
@@ -894,7 +1122,8 @@
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "regulate",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0304",
@@ -908,7 +1137,8 @@
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "gene1",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0304",
@@ -922,7 +1152,8 @@
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "switch",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0304",
@@ -934,9 +1165,40 @@
    "emotion": "Neutral",
    "emotion_strength": 1.0,
    "pause_before": 0.0,
-   "pause_after": 0.4,
+   "pause_after": 0.35,
    "cue": "types",
-   "note": ""
+   "note": "",
+   "why": ""
+  },
+  {
+   "scene_id": "SC0304",
+   "line_id": "SC0304-05",
+   "character_id": "akari",
+   "text": "でも、なぜ全部の遺伝子を、いつも転写しないの？",
+   "reading": "でも、なぜ全部の遺伝子を、いつも転写しないの?",
+   "reading_source": "dictionary",
+   "emotion": "Neutral",
+   "emotion_strength": 1.0,
+   "pause_before": 0.0,
+   "pause_after": 0.35,
+   "cue": "",
+   "note": "",
+   "why": "転写を調節しなければならないのか"
+  },
+  {
+   "scene_id": "SC0304",
+   "line_id": "SC0304-06",
+   "character_id": "nuku",
+   "text": "ラクトースがないのに、ラクトースを分解する酵素を作っても役に立たない。だから、必要なときに、必要なRNAだけを作る仕組みが要るんだ。",
+   "reading": "ラクトースがないのに、ラクトースを分解する酵素を作っても役に立たない。だから、必要なときに、必要なアールエヌエーだけを作る仕組みが要るんだ。",
+   "reading_source": "dictionary",
+   "emotion": "Neutral",
+   "emotion_strength": 1.0,
+   "pause_before": 0.0,
+   "pause_after": 0.4,
+   "cue": "",
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0305",
@@ -950,7 +1212,8 @@
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "lactose",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0305",
@@ -964,7 +1227,8 @@
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "genes",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0305",
@@ -978,7 +1242,8 @@
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "operon",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0305",
@@ -990,9 +1255,25 @@
    "emotion": "Neutral",
    "emotion_strength": 1.0,
    "pause_before": 0.0,
-   "pause_after": 0.4,
+   "pause_after": 0.35,
    "cue": "laci",
-   "note": ""
+   "note": "",
+   "why": ""
+  },
+  {
+   "scene_id": "SC0305",
+   "line_id": "SC0305-05",
+   "character_id": "nuku",
+   "text": "なぜ、まとめるのか。この三つは、ラクトースを使うときに一緒に必要になる。だから一つのスイッチで、まとめて転写できるようになっているんだ。",
+   "reading": "なぜ、まとめるのか。この三つは、ラクトースを使うときに一緒に必要になる。だから一つのスイッチで、まとめて転写できるようになっているんだ。",
+   "reading_source": "dictionary",
+   "emotion": "Neutral",
+   "emotion_strength": 1.0,
+   "pause_before": 0.0,
+   "pause_after": 0.4,
+   "cue": "",
+   "note": "",
+   "why": "遺伝子をオペロンにまとめるのか"
   },
   {
    "scene_id": "SC0306",
@@ -1006,7 +1287,8 @@
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "crp",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0306",
@@ -1020,7 +1302,8 @@
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "lowcamp",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0306",
@@ -1034,7 +1317,8 @@
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "repressor",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0306",
@@ -1048,7 +1332,8 @@
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "release",
-   "note": "補足"
+   "note": "補足",
+   "why": ""
   },
   {
    "scene_id": "SC0306",
@@ -1062,21 +1347,23 @@
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "table",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0306",
    "line_id": "SC0306-06",
    "character_id": "nuku",
-   "text": "その通り！",
-   "reading": "その通り!",
+   "text": "その通り！ スイッチが二つあるのは、条件が二つあるからだ。ラクトースがあること、そしてグルコースがないこと。",
+   "reading": "その通り! スイッチが二つあるのは、条件が二つあるからだ。ラクトースがあること、そしてグルコースがないこと。",
    "reading_source": "dictionary",
    "emotion": "Happy",
    "emotion_strength": 1.5,
    "pause_before": 0.0,
    "pause_after": 0.6,
    "cue": "",
-   "note": ""
+   "note": "",
+   "why": "スイッチが二つ要るのか"
   },
   {
    "scene_id": "SC0307",
@@ -1090,7 +1377,8 @@
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0307",
@@ -1104,7 +1392,8 @@
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "operon",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0307",
@@ -1118,7 +1407,8 @@
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "regulon",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0307",
@@ -1132,7 +1422,83 @@
    "pause_before": 0.0,
    "pause_after": 0.8,
    "cue": "",
-   "note": ""
+   "note": "",
+   "why": ""
+  },
+  {
+   "scene_id": "SC0308",
+   "line_id": "SC0308-01",
+   "character_id": "nuku",
+   "text": "ファインマン・チェック。ラクトースオペロンを、たとえを使って説明してみて。",
+   "reading": "ファインマン・チェック。ラクトースオペロンを、たとえを使って説明してみて。",
+   "reading_source": "dictionary",
+   "emotion": "Happy",
+   "emotion_strength": 1.5,
+   "pause_before": 0.0,
+   "pause_after": 0.35,
+   "cue": "start",
+   "note": "",
+   "why": ""
+  },
+  {
+   "scene_id": "SC0308",
+   "line_id": "SC0308-02",
+   "character_id": "akari",
+   "text": "ラクトースが来たら、ブレーキが外れて、β-galが作られる！",
+   "reading": "ラクトースがきたら、ブレーキがはずれて、ベータガラクトシダーゼがつくられる！",
+   "reading_source": "manual",
+   "emotion": "Neutral",
+   "emotion_strength": 1.0,
+   "pause_before": 0.0,
+   "pause_after": 0.6,
+   "cue": "try",
+   "note": "",
+   "why": ""
+  },
+  {
+   "scene_id": "SC0308",
+   "line_id": "SC0308-03",
+   "character_id": "nuku",
+   "text": "半分正解。グルコースがあると、ラクトースがあっても作られない。アクセルのcAMP-CRPも働く必要があるんだ。",
+   "reading": "半分正解。グルコースがあると、ラクトースがあっても作られない。アクセルのサイクリックエーエムピー、シーアールピーも働く必要があるんだ。",
+   "reading_source": "dictionary",
+   "emotion": "Neutral",
+   "emotion_strength": 1.0,
+   "pause_before": 0.0,
+   "pause_after": 0.35,
+   "cue": "gap",
+   "note": "",
+   "why": ""
+  },
+  {
+   "scene_id": "SC0308",
+   "line_id": "SC0308-04",
+   "character_id": "akari",
+   "text": "言い直すね。ラクトースがあって、グルコースがない。二つの条件がそろって、はじめてβ-galが作られる！",
+   "reading": "いいなおすね。ラクトースがあって、グルコースがない。ふたつのじょうけんがそろって、はじめてベータガラクトシダーゼがつくられる！",
+   "reading_source": "manual",
+   "emotion": "Happy",
+   "emotion_strength": 2.0,
+   "pause_before": 0.0,
+   "pause_after": 0.35,
+   "cue": "fix",
+   "note": "",
+   "why": ""
+  },
+  {
+   "scene_id": "SC0308",
+   "line_id": "SC0308-05",
+   "character_id": "nuku",
+   "text": "そう。必然性が分かれば、条件を丸暗記しなくていい。",
+   "reading": "そう。必然性が分かれば、条件を丸暗記しなくていい。",
+   "reading_source": "dictionary",
+   "emotion": "Happy",
+   "emotion_strength": 1.5,
+   "pause_before": 0.0,
+   "pause_after": 0.8,
+   "cue": "",
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0401",
@@ -1146,7 +1512,8 @@
    "pause_before": 0.6,
    "pause_after": 0.4,
    "cue": "",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0401",
@@ -1160,7 +1527,8 @@
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0401",
@@ -1174,7 +1542,8 @@
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "chromatin",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0401",
@@ -1188,7 +1557,8 @@
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "pol1",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0401",
@@ -1202,7 +1572,8 @@
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "pol2",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0401",
@@ -1216,7 +1587,8 @@
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "pol3",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0401",
@@ -1228,9 +1600,40 @@
    "emotion": "Neutral",
    "emotion_strength": 1.0,
    "pause_before": 0.0,
-   "pause_after": 0.4,
+   "pause_after": 0.35,
    "cue": "gtfs",
-   "note": ""
+   "note": "",
+   "why": ""
+  },
+  {
+   "scene_id": "SC0401",
+   "line_id": "SC0401-08",
+   "character_id": "akari",
+   "text": "細菌はσ因子だけだったのに、なぜ真核生物はそんなに必要なの？",
+   "reading": "細菌はシグマいんしだけだったのに、なぜ真核生物はそんなに必要なの?",
+   "reading_source": "dictionary",
+   "emotion": "Neutral",
+   "emotion_strength": 1.0,
+   "pause_before": 0.0,
+   "pause_after": 0.35,
+   "cue": "",
+   "note": "",
+   "why": "真核生物は多数の転写基本因子を必要とするのか"
+  },
+  {
+   "scene_id": "SC0401",
+   "line_id": "SC0401-09",
+   "character_id": "nuku",
+   "text": "真核生物のDNAは、ヌクレオソームや凝集したクロマチンに包まれ、ゲノムも巨大だ。その中から正しい開始点を見つけて開くには、多くのタンパク質の助けがいるんだ。",
+   "reading": "真核生物のディーエヌエーは、ヌクレオソームや凝集したクロマチンに包まれ、ゲノムも巨大だ。その中から正しい開始点を見つけて開くには、多くのタンパク質の助けがいるんだ。",
+   "reading_source": "dictionary",
+   "emotion": "Neutral",
+   "emotion_strength": 1.0,
+   "pause_before": 0.0,
+   "pause_after": 0.4,
+   "cue": "",
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0402",
@@ -1244,7 +1647,8 @@
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "tata",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0402",
@@ -1258,21 +1662,23 @@
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "tfiid",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0402",
    "line_id": "SC0402-03",
    "character_id": "nuku",
-   "text": "TFIIDは、TBPと約11個のTAFからなる複合体。結合でDNAが大きくゆがみ、活性なプロモーターの目印になると考えられている。",
-   "reading": "ティーエフツーディーは、ティービーピーと約11個のティーエーエフからなる複合体。結合でディーエヌエーが大きくゆがみ、活性なプロモーターの目印になると考えられている。",
+   "text": "TFIIDは、TBPと約11個のTAFからなる複合体。結合でDNAが大きくゆがむ。巨大なゲノムの中で、ここが活性なプロモーターだと示す、物理的な目印になると考えられている。",
+   "reading": "ティーエフツーディーは、ティービーピーと約11個のティーエーエフからなる複合体。結合でディーエヌエーが大きくゆがむ。巨大なゲノムの中で、ここが活性なプロモーターだと示す、物理的な目印になると考えられている。",
    "reading_source": "dictionary",
    "emotion": "Neutral",
    "emotion_strength": 1.0,
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "bend",
-   "note": ""
+   "note": "",
+   "why": "DNAをゆがめるのか"
   },
   {
    "scene_id": "SC0402",
@@ -1286,7 +1692,8 @@
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "tfiib",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0402",
@@ -1300,7 +1707,8 @@
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "pol2",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0402",
@@ -1314,7 +1722,8 @@
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "tfiie",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0402",
@@ -1328,7 +1737,8 @@
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0402",
@@ -1342,7 +1752,8 @@
    "pause_before": 0.0,
    "pause_after": 0.4,
    "cue": "pic",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0403",
@@ -1356,7 +1767,8 @@
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "unwind",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0403",
@@ -1370,21 +1782,23 @@
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "ctd",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0403",
    "line_id": "SC0403-03",
    "character_id": "nuku",
-   "text": "リン酸化で立体構造が変わり、ポリメラーゼは転写基本因子から離れて、伸長期に入る。",
-   "reading": "リン酸化で立体構造が変わり、ポリメラーゼは転写基本因子から離れて、伸長期に入る。",
+   "text": "開始の足場につかまったままでは、前へ進めない。リン酸化で立体構造が変わり、ポリメラーゼは転写基本因子から離れて、伸長期に入る。",
+   "reading": "開始の足場につかまったままでは、前へ進めない。リン酸化で立体構造が変わり、ポリメラーゼは転写基本因子から離れて、伸長期に入る。",
    "reading_source": "dictionary",
    "emotion": "Neutral",
    "emotion_strength": 1.0,
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "escape",
-   "note": ""
+   "note": "",
+   "why": "CTDをリン酸化するのか"
   },
   {
    "scene_id": "SC0403",
@@ -1398,7 +1812,8 @@
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "go",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0403",
@@ -1412,7 +1827,8 @@
    "pause_before": 0.0,
    "pause_after": 0.4,
    "cue": "recycle",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0404",
@@ -1426,7 +1842,8 @@
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "boxes",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0404",
@@ -1440,7 +1857,8 @@
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "compare",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0404",
@@ -1454,63 +1872,83 @@
    "pause_before": 0.0,
    "pause_after": 0.5,
    "cue": "",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0405",
    "line_id": "SC0405-01",
    "character_id": "nuku",
-   "text": "チェックポイント。TATAボックスに結合するのは？ CTDをリン酸化するのは？",
-   "reading": "チェックポイント。タタボックスに結合するのは? シーティーディーをリン酸化するのは?",
+   "text": "ファインマン・チェック。真核生物の転写開始を、説明してみて。",
+   "reading": "ファインマン・チェック。真核生物の転写開始を、説明してみて。",
    "reading_source": "dictionary",
    "emotion": "Happy",
    "emotion_strength": 1.5,
    "pause_before": 0.0,
    "pause_after": 0.35,
-   "cue": "question",
-   "note": ""
+   "cue": "start",
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0405",
    "line_id": "SC0405-02",
    "character_id": "akari",
-   "text": "TATAボックスは、TFIIDの中の……。",
-   "reading": "タタボックスは、ティーエフツーディーの中の、。",
-   "reading_source": "dictionary",
+   "text": "えっと、ポリメラーゼIIが、TATAボックスに直接くっついて、転写を始める。",
+   "reading": "えっと、ポリメラーゼツーが、タタボックスにちょくせつくっついて、てんしゃをはじめる。",
+   "reading_source": "manual",
    "emotion": "Neutral",
    "emotion_strength": 1.0,
    "pause_before": 0.0,
-   "pause_after": 1.0,
-   "cue": "think",
-   "note": ""
+   "pause_after": 0.6,
+   "cue": "try",
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0405",
    "line_id": "SC0405-03",
+   "character_id": "nuku",
+   "text": "そこが落とし穴。先にTFIIDの中のTBPがTATAボックスに結合し、TFIIBがポリメラーゼを正しい位置に置く。ポリメラーゼは後から来るんだ。",
+   "reading": "そこが落とし穴。先にティーエフツーディーの中のティービーピーがタタボックスに結合し、ティーエフツービーがポリメラーゼを正しい位置に置く。ポリメラーゼは後から来るんだ。",
+   "reading_source": "dictionary",
+   "emotion": "Neutral",
+   "emotion_strength": 1.0,
+   "pause_before": 0.0,
+   "pause_after": 0.35,
+   "cue": "gap",
+   "note": "",
+   "why": ""
+  },
+  {
+   "scene_id": "SC0405",
+   "line_id": "SC0405-04",
    "character_id": "akari",
-   "text": "TBP！ CTDをリン酸化するのは、TFIIH！",
-   "reading": "ティービーピー! シーティーディーをリン酸化するのは、ティーエフツーエイチ!",
+   "text": "言い直すね。目印を見つけるのはTBP。因子が集まり、TFIIHがDNAをほどいてCTDをリン酸化すると、ポリメラーゼが出発する！",
+   "reading": "言い直すね。目印を見つけるのはティービーピー。因子が集まり、ティーエフツーエイチがディーエヌエーをほどいてシーティーディーをリン酸化すると、ポリメラーゼが出発する!",
    "reading_source": "dictionary",
    "emotion": "Happy",
    "emotion_strength": 2.0,
    "pause_before": 0.0,
    "pause_after": 0.35,
-   "cue": "answer",
-   "note": ""
+   "cue": "fix",
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0405",
-   "line_id": "SC0405-04",
+   "line_id": "SC0405-05",
    "character_id": "nuku",
-   "text": "大正解。",
-   "reading": "大正解。",
+   "text": "完璧だ。TATAボックスにつくのはTBP、CTDをリン酸化するのはTFIIH。",
+   "reading": "完璧だ。タタボックスにつくのはティービーピー、シーティーディーをリン酸化するのはティーエフツーエイチ。",
    "reading_source": "dictionary",
    "emotion": "Happy",
    "emotion_strength": 1.5,
    "pause_before": 0.0,
    "pause_after": 0.8,
    "cue": "",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0501",
@@ -1524,7 +1962,8 @@
    "pause_before": 0.6,
    "pause_after": 0.4,
    "cue": "",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0501",
@@ -1538,7 +1977,8 @@
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "activator",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0501",
@@ -1552,21 +1992,23 @@
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "",
-   "note": ""
+   "note": "",
+   "why": "DNAがループをつくるのか"
   },
   {
    "scene_id": "SC0501",
    "line_id": "SC0501-04",
    "character_id": "nuku",
-   "text": "エンハンサーは、遺伝子から数百から数千塩基対も離れた上流、または下流にある。DNAがループをつくって近づくんだ。",
-   "reading": "エンハンサーは、遺伝子から数百から数千えんきついも離れたじょうりゅう、またはかりゅうにある。ディーエヌエーがループをつくって近づくんだ。",
+   "text": "エンハンサーは、遺伝子から数百から数千塩基対も離れた上流、または下流にある。離れたところから働きかけるには、DNAがループをつくって近づくしかないんだ。",
+   "reading": "エンハンサーは、遺伝子から数百から数千えんきついも離れたじょうりゅう、またはかりゅうにある。離れたところから働きかけるには、ディーエヌエーがループをつくって近づくしかないんだ。",
    "reading_source": "dictionary",
    "emotion": "Neutral",
    "emotion_strength": 1.0,
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "loop",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0501",
@@ -1580,7 +2022,8 @@
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "silencer",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0501",
@@ -1594,21 +2037,23 @@
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "mediator",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0501",
    "line_id": "SC0501-07",
    "character_id": "nuku",
-   "text": "クロマチンのDNAを反応しやすくする、クロマチン再構成複合体やヒストン修飾酵素も集まってくる。",
-   "reading": "クロマチンのディーエヌエーを反応しやすくする、クロマチン再構成複合体やヒストン修飾酵素も集まってくる。",
+   "text": "さらに、クロマチン再構成複合体やヒストン修飾酵素も集まってくる。クロマチンの中のDNAはそのままでは反応しにくいので、反応しやすい状態にする必要があるんだ。",
+   "reading": "さらに、クロマチン再構成複合体やヒストン修飾酵素も集まってくる。クロマチンの中のディーエヌエーはそのままでは反応しにくいので、反応しやすい状態にする必要があるんだ。",
    "reading_source": "dictionary",
    "emotion": "Neutral",
    "emotion_strength": 1.0,
    "pause_before": 0.0,
    "pause_after": 0.4,
    "cue": "remodel",
-   "note": ""
+   "note": "",
+   "why": "クロマチン修飾酵素が必要なのか"
   },
   {
    "scene_id": "SC0502",
@@ -1622,7 +2067,8 @@
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "proximal",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0502",
@@ -1636,7 +2082,8 @@
    "pause_before": 0.0,
    "pause_after": 0.4,
    "cue": "distal",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0503",
@@ -1650,7 +2097,8 @@
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "nucleosome",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0503",
@@ -1664,7 +2112,8 @@
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "eu",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0503",
@@ -1678,7 +2127,8 @@
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0503",
@@ -1692,7 +2142,8 @@
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "remodel",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0503",
@@ -1706,7 +2157,8 @@
    "pause_before": 0.0,
    "pause_after": 0.4,
    "cue": "epi",
-   "note": "補足"
+   "note": "補足",
+   "why": ""
   },
   {
    "scene_id": "SC0504",
@@ -1720,21 +2172,23 @@
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "",
-   "note": ""
+   "note": "",
+   "why": "同じDNAから違う細胞ができるのか"
   },
   {
    "scene_id": "SC0504",
    "line_id": "SC0504-02",
    "character_id": "nuku",
-   "text": "どの遺伝子をオンにし、どれをオフにするかが違うんだ。分化した細胞は、異なる遺伝子を発現する。",
-   "reading": "どの遺伝子をオンにし、どれをオフにするかが違うんだ。分化した細胞は、異なる遺伝子を発現する。",
+   "text": "DNAが同じなら、違いはDNAの中身ではなく、どの遺伝子を使うかにあるはずだ。分化した細胞は、異なる遺伝子を発現する。",
+   "reading": "ディーエヌエーが同じなら、違いはディーエヌエーの中身ではなく、どの遺伝子を使うかにあるはずだ。分化した細胞は、異なる遺伝子を発現する。",
    "reading_source": "dictionary",
    "emotion": "Neutral",
    "emotion_strength": 1.0,
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "diff",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0504",
@@ -1748,7 +2202,8 @@
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "hormone",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0504",
@@ -1762,11 +2217,87 @@
    "pause_before": 0.0,
    "pause_after": 0.4,
    "cue": "commit",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0505",
    "line_id": "SC0505-01",
+   "character_id": "nuku",
+   "text": "ファインマン・チェック。エンハンサーを説明してみて。",
+   "reading": "ファインマン・チェック。エンハンサーを説明してみて。",
+   "reading_source": "dictionary",
+   "emotion": "Happy",
+   "emotion_strength": 1.5,
+   "pause_before": 0.0,
+   "pause_after": 0.35,
+   "cue": "start",
+   "note": "",
+   "why": ""
+  },
+  {
+   "scene_id": "SC0505",
+   "line_id": "SC0505-02",
+   "character_id": "akari",
+   "text": "エンハンサーは、遺伝子のすぐ前にある、オンのスイッチ！",
+   "reading": "エンハンサーは、遺伝子のすぐ前にある、オンのスイッチ!",
+   "reading_source": "dictionary",
+   "emotion": "Neutral",
+   "emotion_strength": 1.0,
+   "pause_before": 0.0,
+   "pause_after": 0.6,
+   "cue": "try",
+   "note": "",
+   "why": ""
+  },
+  {
+   "scene_id": "SC0505",
+   "line_id": "SC0505-03",
+   "character_id": "nuku",
+   "text": "すぐ前とは限らない。数百から数千塩基対も離れた、上流にも下流にもある。だからループが必要だったんだ。",
+   "reading": "すぐ前とは限らない。数百から数千えんきついも離れた、じょうりゅうにもかりゅうにもある。だからループが必要だったんだ。",
+   "reading_source": "dictionary",
+   "emotion": "Neutral",
+   "emotion_strength": 1.0,
+   "pause_before": 0.0,
+   "pause_after": 0.35,
+   "cue": "gap",
+   "note": "",
+   "why": ""
+  },
+  {
+   "scene_id": "SC0505",
+   "line_id": "SC0505-04",
+   "character_id": "akari",
+   "text": "言い直すね。遠くのエンハンサーに活性化因子がつき、DNAがループして、介在因子を通じてポリメラーゼを助ける。だから遠くても効く！",
+   "reading": "言い直すね。遠くのエンハンサーに活性化因子がつき、ディーエヌエーがループして、かいざいいんしを通じてポリメラーゼを助ける。だから遠くても効く!",
+   "reading_source": "dictionary",
+   "emotion": "Happy",
+   "emotion_strength": 2.0,
+   "pause_before": 0.0,
+   "pause_after": 0.35,
+   "cue": "fix",
+   "note": "",
+   "why": ""
+  },
+  {
+   "scene_id": "SC0505",
+   "line_id": "SC0505-05",
+   "character_id": "nuku",
+   "text": "いいね。「すぐ前」と思い込むと、ループの必然性が見えなくなる。",
+   "reading": "いいね。「すぐ前」と思い込むと、ループの必然性が見えなくなる。",
+   "reading_source": "dictionary",
+   "emotion": "Happy",
+   "emotion_strength": 1.5,
+   "pause_before": 0.0,
+   "pause_after": 0.8,
+   "cue": "",
+   "note": "",
+   "why": ""
+  },
+  {
+   "scene_id": "SC0506",
+   "line_id": "SC0506-01",
    "character_id": "nuku",
    "text": "原核生物の遺伝子発現は、mRNAを合成するかどうか、つまり転写調節で制御される。",
    "reading": "原核生物の遺伝子発現は、エムアールエヌエーを合成するかどうか、つまり転写調節で制御される。",
@@ -1776,25 +2307,27 @@
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "prok",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
-   "scene_id": "SC0505",
-   "line_id": "SC0505-02",
+   "scene_id": "SC0506",
+   "line_id": "SC0506-02",
    "character_id": "nuku",
-   "text": "真核生物では、それに加えて、mRNAの修飾や、核から細胞質への輸送などの転写後調節でも制御される。",
-   "reading": "真核生物では、それに加えて、エムアールエヌエーの修飾や、核から細胞質への輸送などの転写後調節でも制御される。",
+   "text": "真核生物では、転写は核、翻訳は細胞質と、場所が分かれている。その間の、mRNAの修飾や、核から細胞質への輸送などの転写後調節でも制御される。",
+   "reading": "真核生物では、転写は核、翻訳は細胞質と、場所が分かれている。その間の、エムアールエヌエーの修飾や、核から細胞質への輸送などの転写後調節でも制御される。",
    "reading_source": "dictionary",
    "emotion": "Neutral",
    "emotion_strength": 1.0,
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "euk",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
-   "scene_id": "SC0505",
-   "line_id": "SC0505-03",
+   "scene_id": "SC0506",
+   "line_id": "SC0506-03",
    "character_id": "akari",
    "text": "mRNAの修飾って？",
    "reading": "エムアールエヌエーの修飾って?",
@@ -1804,11 +2337,12 @@
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
-   "scene_id": "SC0505",
-   "line_id": "SC0505-04",
+   "scene_id": "SC0506",
+   "line_id": "SC0506-04",
    "character_id": "nuku",
    "text": "それが次のステージ、RNA編集工房だ！",
    "reading": "それが次のステージ、アールエヌエー編集工房だ!",
@@ -1818,7 +2352,8 @@
    "pause_before": 0.0,
    "pause_after": 0.8,
    "cue": "",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0601",
@@ -1832,7 +2367,8 @@
    "pause_before": 0.6,
    "pause_after": 0.4,
    "cue": "",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0601",
@@ -1846,7 +2382,8 @@
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "premrna",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0601",
@@ -1860,7 +2397,8 @@
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "steps",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0601",
@@ -1874,7 +2412,8 @@
    "pause_before": 0.0,
    "pause_after": 0.4,
    "cue": "",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0602",
@@ -1888,7 +2427,8 @@
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "addG",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0602",
@@ -1902,7 +2442,8 @@
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "methyl",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0602",
@@ -1916,7 +2457,8 @@
    "pause_before": 0.0,
    "pause_after": 0.4,
    "cue": "",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0603",
@@ -1930,7 +2472,8 @@
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "signal",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0603",
@@ -1944,7 +2487,8 @@
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "cut",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0603",
@@ -1958,21 +2502,38 @@
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "tail",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0603",
    "line_id": "SC0603-04",
+   "character_id": "akari",
+   "text": "でも、なぜ両端に、わざわざ飾りをつけるの？",
+   "reading": "でも、なぜ両端に、わざわざ飾りをつけるの?",
+   "reading_source": "dictionary",
+   "emotion": "Neutral",
+   "emotion_strength": 1.0,
+   "pause_before": 0.0,
+   "pause_after": 0.35,
+   "cue": "protect",
+   "note": "",
+   "why": "5'キャップとポリAが必要なのか"
+  },
+  {
+   "scene_id": "SC0603",
+   "line_id": "SC0603-05",
    "character_id": "nuku",
-   "text": "5'キャップとポリAは、mRNAをエキソヌクレアーゼの攻撃から守る。長く必要なタンパク質のmRNAほど、安定性が高いんだ。",
-   "reading": "ゴダッシュキャップとポリエーは、エムアールエヌエーをエキソヌクレアーゼの攻撃から守る。長く必要なタンパク質のエムアールエヌエーほど、安定性が高いんだ。",
+   "text": "端がむき出しだと、エキソヌクレアーゼに端から分解されてしまう。5'キャップとポリAは、その攻撃からmRNAを守る。長く必要なタンパク質のmRNAほど、安定性が高いんだ。",
+   "reading": "端がむき出しだと、エキソヌクレアーゼに端から分解されてしまう。ゴダッシュキャップとポリエーは、その攻撃からエムアールエヌエーを守る。長く必要なタンパク質のエムアールエヌエーほど、安定性が高いんだ。",
    "reading_source": "dictionary",
    "emotion": "Neutral",
    "emotion_strength": 1.0,
    "pause_before": 0.0,
    "pause_after": 0.4,
-   "cue": "protect",
-   "note": ""
+   "cue": "",
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0604",
@@ -1986,7 +2547,8 @@
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "split",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0604",
@@ -2000,7 +2562,8 @@
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "splicing",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0604",
@@ -2014,7 +2577,8 @@
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "gtag",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0604",
@@ -2028,7 +2592,8 @@
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "branch",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0604",
@@ -2040,9 +2605,40 @@
    "emotion": "Neutral",
    "emotion_strength": 1.0,
    "pause_before": 0.0,
-   "pause_after": 0.4,
+   "pause_after": 0.35,
    "cue": "table",
-   "note": ""
+   "note": "",
+   "why": ""
+  },
+  {
+   "scene_id": "SC0604",
+   "line_id": "SC0604-06",
+   "character_id": "akari",
+   "text": "なぜ、境目の目印がそんなに大事なの？",
+   "reading": "なぜ、境目の目印がそんなに大事なの?",
+   "reading_source": "dictionary",
+   "emotion": "Neutral",
+   "emotion_strength": 1.0,
+   "pause_before": 0.0,
+   "pause_after": 0.35,
+   "cue": "",
+   "note": "",
+   "why": "GT-AGという境目の目印が必要なのか"
+  },
+  {
+   "scene_id": "SC0604",
+   "line_id": "SC0604-07",
+   "character_id": "nuku",
+   "text": "3つの塩基で1つのアミノ酸。切る位置が1塩基でもずれると、読み枠がずれて、まったく別のアミノ酸が並んでしまう。だから境目には、決まった目印が要るんだ。",
+   "reading": "3つの塩基で1つのアミノ酸。切る位置が1塩基でもずれると、読み枠がずれて、まったく別のアミノ酸が並んでしまう。だから境目には、決まった目印が要るんだ。",
+   "reading_source": "dictionary",
+   "emotion": "Neutral",
+   "emotion_strength": 1.0,
+   "pause_before": 0.0,
+   "pause_after": 0.4,
+   "cue": "",
+   "note": "補足",
+   "why": ""
   },
   {
    "scene_id": "SC0605",
@@ -2056,7 +2652,8 @@
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "splice",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0605",
@@ -2070,7 +2667,8 @@
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "snrnp",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0605",
@@ -2084,7 +2682,8 @@
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "u1",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0605",
@@ -2098,7 +2697,8 @@
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "u2",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0605",
@@ -2112,7 +2712,8 @@
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "u456",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0605",
@@ -2126,7 +2727,8 @@
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "release",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0605",
@@ -2140,7 +2742,8 @@
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0605",
@@ -2154,7 +2757,8 @@
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "lariat",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0605",
@@ -2168,7 +2772,8 @@
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "u5",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0605",
@@ -2182,7 +2787,8 @@
    "pause_before": 0.0,
    "pause_after": 0.4,
    "cue": "joined",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0606",
@@ -2196,7 +2802,8 @@
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "caseA",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0606",
@@ -2210,7 +2817,8 @@
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "caseB",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0606",
@@ -2224,21 +2832,23 @@
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0606",
    "line_id": "SC0606-04",
    "character_id": "nuku",
-   "text": "これが選択的スプライシング。だから遺伝子の数よりも多くのタンパク質が作られる。",
-   "reading": "これが選択的スプライシング。だから遺伝子の数よりも多くのタンパク質が作られる。",
+   "text": "これが選択的スプライシング。つなぎ方を変えれば、1つの遺伝子から何種類ものmRNAができる。だから遺伝子の数よりも多くのタンパク質が作られる。",
+   "reading": "これが選択的スプライシング。つなぎ方を変えれば、1つの遺伝子から何種類ものエムアールエヌエーができる。だから遺伝子の数よりも多くのタンパク質が作られる。",
    "reading_source": "dictionary",
    "emotion": "Neutral",
    "emotion_strength": 1.0,
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "more",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0606",
@@ -2252,11 +2862,87 @@
    "pause_before": 0.0,
    "pause_after": 0.4,
    "cue": "gk",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0607",
    "line_id": "SC0607-01",
+   "character_id": "nuku",
+   "text": "ファインマン・チェック。スプライシングを、ひとことで。",
+   "reading": "ファインマン・チェック。スプライシングを、ひとことで。",
+   "reading_source": "dictionary",
+   "emotion": "Happy",
+   "emotion_strength": 1.5,
+   "pause_before": 0.0,
+   "pause_after": 0.35,
+   "cue": "start",
+   "note": "",
+   "why": ""
+  },
+  {
+   "scene_id": "SC0607",
+   "line_id": "SC0607-02",
+   "character_id": "akari",
+   "text": "エクソンを切り取って、捨てる作業！",
+   "reading": "エクソンを切り取って、捨てる作業!",
+   "reading_source": "dictionary",
+   "emotion": "Neutral",
+   "emotion_strength": 1.0,
+   "pause_before": 0.0,
+   "pause_after": 0.6,
+   "cue": "try",
+   "note": "",
+   "why": ""
+  },
+  {
+   "scene_id": "SC0607",
+   "line_id": "SC0607-03",
+   "character_id": "nuku",
+   "text": "逆だよ。捨てられるのはイントロン。エクソンは残って、つながる。投げ縄になって外れるのも、イントロンだ。",
+   "reading": "逆だよ。捨てられるのはイントロン。エクソンは残って、つながる。なげなわになって外れるのも、イントロンだ。",
+   "reading_source": "dictionary",
+   "emotion": "Neutral",
+   "emotion_strength": 1.0,
+   "pause_before": 0.0,
+   "pause_after": 0.35,
+   "cue": "gap",
+   "note": "",
+   "why": ""
+  },
+  {
+   "scene_id": "SC0607",
+   "line_id": "SC0607-04",
+   "character_id": "akari",
+   "text": "言い直すね。GUとAGを目印に、イントロンを投げ縄の形で外して、エクソンどうしをつなぐ！",
+   "reading": "言い直すね。ジーユーとエージーを目印に、イントロンをなげなわの形で外して、エクソンどうしをつなぐ!",
+   "reading_source": "dictionary",
+   "emotion": "Happy",
+   "emotion_strength": 2.0,
+   "pause_before": 0.0,
+   "pause_after": 0.35,
+   "cue": "fix",
+   "note": "",
+   "why": ""
+  },
+  {
+   "scene_id": "SC0607",
+   "line_id": "SC0607-05",
+   "character_id": "nuku",
+   "text": "そう。声に出して説明すると、取り違えに気づける。",
+   "reading": "そう。声に出して説明すると、取り違えに気づける。",
+   "reading_source": "dictionary",
+   "emotion": "Happy",
+   "emotion_strength": 1.5,
+   "pause_before": 0.0,
+   "pause_after": 0.8,
+   "cue": "",
+   "note": "",
+   "why": ""
+  },
+  {
+   "scene_id": "SC0608",
+   "line_id": "SC0608-01",
    "character_id": "nuku",
    "text": "ヒトの遺伝子をまとめよう。プロモーター、5'非翻訳領域、開始コドンATG、エクソンとイントロン、終止コドン、3'非翻訳領域、ポリアデニル化シグナル。",
    "reading": "ヒトのいでんしをまとめよう。プロモーター、ゴダッシュひほんやくりょういき、かいしコドン、エーティージー、エクソンとイントロン、しゅうしコドン、サンダッシュひほんやくりょういき、ポリアデニルかシグナル。",
@@ -2266,11 +2952,12 @@
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "structure",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
-   "scene_id": "SC0607",
-   "line_id": "SC0607-02",
+   "scene_id": "SC0608",
+   "line_id": "SC0608-02",
    "character_id": "nuku",
    "text": "転写でTはUになり、スプライシングでエクソンだけがつながる。翻訳では、AUGから、3つの塩基が1つのアミノ酸に対応する。",
    "reading": "てんしゃでティーはユーになり、スプライシングでエクソンだけがつながる。ほんやくでは、エーユージーから、みっつのえんきが、ひとつのアミノさんにたいおうする。",
@@ -2280,11 +2967,12 @@
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "codon",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
-   "scene_id": "SC0607",
-   "line_id": "SC0607-03",
+   "scene_id": "SC0608",
+   "line_id": "SC0608-03",
    "character_id": "akari",
    "text": "帽子としっぽをつけて、イントロンを切ったmRNAが、核の外へ出発！",
    "reading": "帽子としっぽをつけて、イントロンを切ったエムアールエヌエーが、核の外へ出発!",
@@ -2294,7 +2982,8 @@
    "pause_before": 0.0,
    "pause_after": 0.8,
    "cue": "export",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0701",
@@ -2308,7 +2997,8 @@
    "pause_before": 0.6,
    "pause_after": 0.4,
    "cue": "",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0701",
@@ -2322,7 +3012,8 @@
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "pie",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0701",
@@ -2336,7 +3027,8 @@
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0701",
@@ -2350,7 +3042,8 @@
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "counts",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0701",
@@ -2364,7 +3057,8 @@
    "pause_before": 0.0,
    "pause_after": 0.4,
    "cue": "ncrna",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0702",
@@ -2378,21 +3072,23 @@
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "subunits",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0702",
    "line_id": "SC0702-02",
    "character_id": "nuku",
-   "text": "rRNAは常に大量に必要なので、遺伝子は多コピーある。",
-   "reading": "アールアールエヌエーは常に大量に必要なので、遺伝子は多コピーある。",
+   "text": "rRNAは、翻訳のたびに使われるリボソームの材料で、常に大量に必要だ。だから遺伝子が多コピーある。",
+   "reading": "アールアールエヌエーは、翻訳のたびに使われるリボソームの材料で、常に大量に必要だ。だから遺伝子が多コピーある。",
    "reading_source": "dictionary",
    "emotion": "Neutral",
    "emotion_strength": 1.0,
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "copies",
-   "note": ""
+   "note": "",
+   "why": "rRNAの遺伝子は多コピーなのか"
   },
   {
    "scene_id": "SC0702",
@@ -2406,7 +3102,8 @@
    "pause_before": 0.0,
    "pause_after": 0.4,
    "cue": "45s",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0703",
@@ -2420,7 +3117,8 @@
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "trna",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0703",
@@ -2434,7 +3132,8 @@
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0703",
@@ -2448,7 +3147,8 @@
    "pause_before": 0.0,
    "pause_after": 0.4,
    "cue": "internal",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0704",
@@ -2462,7 +3162,8 @@
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "mina",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0704",
@@ -2476,7 +3177,8 @@
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "pri",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0704",
@@ -2490,7 +3192,8 @@
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "drosha",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0704",
@@ -2504,7 +3207,8 @@
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "exportin",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0704",
@@ -2518,7 +3222,8 @@
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "dicer",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0704",
@@ -2532,7 +3237,8 @@
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "risc",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0704",
@@ -2546,7 +3252,8 @@
    "pause_before": 0.0,
    "pause_after": 0.4,
    "cue": "",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0705",
@@ -2560,7 +3267,8 @@
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "bind",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0705",
@@ -2574,7 +3282,8 @@
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "degrade",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0705",
@@ -2588,7 +3297,8 @@
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0705",
@@ -2602,7 +3312,8 @@
    "pause_before": 0.0,
    "pause_after": 0.4,
    "cue": "",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0706",
@@ -2616,7 +3327,8 @@
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "lnc",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0706",
@@ -2630,7 +3342,8 @@
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "notranslate",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0706",
@@ -2644,7 +3357,8 @@
    "pause_before": 0.0,
    "pause_after": 0.4,
    "cue": "sno",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0707",
@@ -2658,7 +3372,8 @@
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "feingold",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0707",
@@ -2672,7 +3387,8 @@
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "pws",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0707",
@@ -2686,7 +3402,83 @@
    "pause_before": 0.0,
    "pause_after": 0.8,
    "cue": "",
-   "note": ""
+   "note": "",
+   "why": ""
+  },
+  {
+   "scene_id": "SC0708",
+   "line_id": "SC0708-01",
+   "character_id": "nuku",
+   "text": "ファインマン・チェック。非コードRNAを説明してみて。",
+   "reading": "ファインマン・チェック。非コードアールエヌエーを説明してみて。",
+   "reading_source": "dictionary",
+   "emotion": "Happy",
+   "emotion_strength": 1.5,
+   "pause_before": 0.0,
+   "pause_after": 0.35,
+   "cue": "start",
+   "note": "",
+   "why": ""
+  },
+  {
+   "scene_id": "SC0708",
+   "line_id": "SC0708-02",
+   "character_id": "akari",
+   "text": "タンパク質を作らないRNAだから、おまけみたいなもの？",
+   "reading": "タンパク質を作らないアールエヌエーだから、おまけみたいなもの?",
+   "reading_source": "dictionary",
+   "emotion": "Neutral",
+   "emotion_strength": 1.0,
+   "pause_before": 0.0,
+   "pause_after": 0.6,
+   "cue": "try",
+   "note": "",
+   "why": ""
+  },
+  {
+   "scene_id": "SC0708",
+   "line_id": "SC0708-03",
+   "character_id": "nuku",
+   "text": "そこが詰まりどころ。rRNAとtRNAは翻訳そのものを担い、miRNAは遺伝子発現を抑える。欠失で病気になるものもあったよね。",
+   "reading": "そこが詰まりどころ。アールアールエヌエーとティーアールエヌエーは翻訳そのものを担い、マイクロアールエヌエーは遺伝子発現を抑える。欠失で病気になるものもあったよね。",
+   "reading_source": "dictionary",
+   "emotion": "Neutral",
+   "emotion_strength": 1.0,
+   "pause_before": 0.0,
+   "pause_after": 0.35,
+   "cue": "gap",
+   "note": "",
+   "why": ""
+  },
+  {
+   "scene_id": "SC0708",
+   "line_id": "SC0708-04",
+   "character_id": "akari",
+   "text": "言い直すね。非コードRNAは、タンパク質にならず、RNAのまま働く。翻訳や発現の調節を担い、失われると病気につながる！",
+   "reading": "言い直すね。非コードアールエヌエーは、タンパク質にならず、アールエヌエーのまま働く。翻訳や発現の調節を担い、失われると病気につながる!",
+   "reading_source": "dictionary",
+   "emotion": "Happy",
+   "emotion_strength": 2.0,
+   "pause_before": 0.0,
+   "pause_after": 0.35,
+   "cue": "fix",
+   "note": "",
+   "why": ""
+  },
+  {
+   "scene_id": "SC0708",
+   "line_id": "SC0708-05",
+   "character_id": "nuku",
+   "text": "その通り。",
+   "reading": "その通り。",
+   "reading_source": "dictionary",
+   "emotion": "Happy",
+   "emotion_strength": 1.5,
+   "pause_before": 0.0,
+   "pause_after": 0.8,
+   "cue": "",
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0801",
@@ -2700,7 +3492,8 @@
    "pause_before": 0.6,
    "pause_after": 0.4,
    "cue": "",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0801",
@@ -2714,7 +3507,8 @@
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "map",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0801",
@@ -2728,7 +3522,8 @@
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "activate",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0801",
@@ -2742,25 +3537,42 @@
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "stop",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0801",
    "line_id": "SC0801-05",
    "character_id": "akari",
-   "text": "必要なときだけ作って、終わったら止まる仕組みだね。",
-   "reading": "必要なときだけ作って、終わったら止まる仕組みだね。",
+   "text": "必要なときだけ作って、終わったら止まる仕組みだね。でも、なぜ止める必要があるの？",
+   "reading": "必要なときだけ作って、終わったら止まる仕組みだね。でも、なぜ止める必要があるの?",
    "reading_source": "dictionary",
    "emotion": "Happy",
    "emotion_strength": 2.0,
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "",
-   "note": ""
+   "note": "",
+   "why": "発現を止める仕組みが要るのか"
   },
   {
    "scene_id": "SC0801",
    "line_id": "SC0801-06",
+   "character_id": "nuku",
+   "text": "カドミウムが減っても作り続けたら、無駄になる。結果が原因を打ち消すと発現が止まる、負のフィードバックだ。",
+   "reading": "カドミウムが減っても作り続けたら、無駄になる。結果が原因を打ち消すと発現が止まる、負のフィードバックだ。",
+   "reading_source": "dictionary",
+   "emotion": "Neutral",
+   "emotion_strength": 1.0,
+   "pause_before": 0.0,
+   "pause_after": 0.35,
+   "cue": "",
+   "note": "",
+   "why": ""
+  },
+  {
+   "scene_id": "SC0801",
+   "line_id": "SC0801-07",
    "character_id": "nuku",
    "text": "資料によると、カドミウムは酵素のチオール基、カルボキシル基、アミノ基と相互作用して酵素活性を阻害し、肝臓障害、骨軟化症、高血圧などを引き起こす。",
    "reading": "資料によると、カドミウムは酵素のチオール基、カルボキシル基、アミノ基と相互作用して酵素活性を阻害し、肝臓障害、骨軟化症、高血圧などを引き起こす。",
@@ -2770,11 +3582,12 @@
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "toxic",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0801",
-   "line_id": "SC0801-07",
+   "line_id": "SC0801-08",
    "character_id": "nuku",
    "text": "ヒトは食物から75から100マイクログラムをとり、喫煙でも余分にとっている。タバコ1本に約2マイクログラムだ。",
    "reading": "ヒトはしょくもつから、ななじゅうごから、ひゃくマイクログラムをとり、きつえんでもよぶんにとっている。タバコいっぽんに、やくにマイクログラムだ。",
@@ -2783,8 +3596,9 @@
    "emotion_strength": 1.0,
    "pause_before": 0.0,
    "pause_after": 0.4,
-   "cue": "",
-   "note": ""
+   "cue": "smoke",
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0802",
@@ -2798,11 +3612,42 @@
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "clock",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0802",
    "line_id": "SC0802-02",
+   "character_id": "akari",
+   "text": "なぜ体に、時計が要るの？",
+   "reading": "なぜ体に、時計が要るの?",
+   "reading_source": "dictionary",
+   "emotion": "Neutral",
+   "emotion_strength": 1.0,
+   "pause_before": 0.0,
+   "pause_after": 0.35,
+   "cue": "",
+   "note": "",
+   "why": "体に時計が要るのか"
+  },
+  {
+   "scene_id": "SC0802",
+   "line_id": "SC0802-03",
+   "character_id": "nuku",
+   "text": "資料では、太陽のエネルギーを効率よく、安全に利用するためと説明されている。時計遺伝子は、ほとんどの生物に見られるんだ。",
+   "reading": "資料では、太陽のエネルギーを効率よく、安全に利用するためと説明されている。時計遺伝子は、ほとんどの生物に見られるんだ。",
+   "reading_source": "dictionary",
+   "emotion": "Neutral",
+   "emotion_strength": 1.0,
+   "pause_before": 0.0,
+   "pause_after": 0.35,
+   "cue": "",
+   "note": "",
+   "why": ""
+  },
+  {
+   "scene_id": "SC0802",
+   "line_id": "SC0802-04",
    "character_id": "nuku",
    "text": "BMAL1とCLOCKが、E-boxに結合して、PerやCry、Rev-erbα、RORαの転写を活性化する。",
    "reading": "ビーマルワンとクロックが、イーボックスにけつごうして、パーや、クライ、レバーブアルファ、ロアアルファの、てんしゃをかっせいかする。",
@@ -2812,11 +3657,12 @@
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "activate",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0802",
-   "line_id": "SC0802-03",
+   "line_id": "SC0802-05",
    "character_id": "nuku",
    "text": "できたPERとCRYは、BMAL1とCLOCKのはたらきを抑える。自分を作る転写を、自分で止めるんだ。",
    "reading": "できたパーとクライは、ビーマルワンとクロックのはたらきをおさえる。じぶんをつくるてんしゃを、じぶんでとめるんだ。",
@@ -2826,11 +3672,12 @@
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "inhibit",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0802",
-   "line_id": "SC0802-04",
+   "line_id": "SC0802-06",
    "character_id": "nuku",
    "text": "Rev-erbαはRREを介してBMAL1の転写を抑え、RORαは活性化する。このフィードバックループがリズムを生む。",
    "reading": "レバーブアルファは、アールアールイーをかいして、ビーマルワンのてんしゃをおさえ、ロアアルファはかっせいかする。このフィードバックループがリズムをうむ。",
@@ -2840,11 +3687,12 @@
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "rre",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0802",
-   "line_id": "SC0802-05",
+   "line_id": "SC0802-07",
    "character_id": "akari",
    "text": "転写のオンとオフが、時計の針になってるんだ！",
    "reading": "転写のオンとオフが、時計の針になってるんだ!",
@@ -2852,13 +3700,104 @@
    "emotion": "Happy",
    "emotion_strength": 2.0,
    "pause_before": 0.0,
+   "pause_after": 0.35,
+   "cue": "",
+   "note": "",
+   "why": ""
+  },
+  {
+   "scene_id": "SC0802",
+   "line_id": "SC0802-08",
+   "character_id": "nuku",
+   "text": "作られたものが、自分を作る転写を止める。止まれば減り、減ればまた作られる。だから、くり返しのリズムが生まれるんだ。",
+   "reading": "作られたものが、自分を作る転写を止める。止まれば減り、減ればまた作られる。だから、くり返しのリズムが生まれるんだ。",
+   "reading_source": "dictionary",
+   "emotion": "Neutral",
+   "emotion_strength": 1.0,
+   "pause_before": 0.0,
    "pause_after": 0.4,
    "cue": "",
-   "note": ""
+   "note": "",
+   "why": "フィードバックループからリズムが生まれるのか"
   },
   {
    "scene_id": "SC0803",
    "line_id": "SC0803-01",
+   "character_id": "nuku",
+   "text": "ファインマン・チェック。体内時計の仕組みを説明してみて。",
+   "reading": "ファインマン・チェック。体内時計の仕組みを説明してみて。",
+   "reading_source": "dictionary",
+   "emotion": "Happy",
+   "emotion_strength": 1.5,
+   "pause_before": 0.0,
+   "pause_after": 0.35,
+   "cue": "start",
+   "note": "",
+   "why": ""
+  },
+  {
+   "scene_id": "SC0803",
+   "line_id": "SC0803-02",
+   "character_id": "akari",
+   "text": "BMAL1とCLOCKが、PerとCryを作る。それで終わり！",
+   "reading": "ビーマルワンとクロックが、パーとクライをつくる。それでおわり！",
+   "reading_source": "manual",
+   "emotion": "Neutral",
+   "emotion_strength": 1.0,
+   "pause_before": 0.0,
+   "pause_after": 0.6,
+   "cue": "try",
+   "note": "",
+   "why": ""
+  },
+  {
+   "scene_id": "SC0803",
+   "line_id": "SC0803-03",
+   "character_id": "nuku",
+   "text": "終わりじゃないんだ。できたPERとCRYが、BMAL1とCLOCKのはたらきを抑える。そこがループの要だよ。",
+   "reading": "おわりじゃないんだ。できたパーとクライが、ビーマルワンとクロックのはたらきをおさえる。そこがループのかなめだよ。",
+   "reading_source": "manual",
+   "emotion": "Neutral",
+   "emotion_strength": 1.0,
+   "pause_before": 0.0,
+   "pause_after": 0.35,
+   "cue": "gap",
+   "note": "",
+   "why": ""
+  },
+  {
+   "scene_id": "SC0803",
+   "line_id": "SC0803-04",
+   "character_id": "akari",
+   "text": "言い直すね。作られたPERとCRYが、自分を作る転写を止める。減ると、また作られる。このくり返しが、約24時間のリズムになる！",
+   "reading": "いいなおすね。つくられたパーとクライが、じぶんをつくるてんしゃをとめる。へると、また、つくられる。このくりかえしが、やくにじゅうよじかんのリズムになる！",
+   "reading_source": "manual",
+   "emotion": "Happy",
+   "emotion_strength": 2.0,
+   "pause_before": 0.0,
+   "pause_after": 0.35,
+   "cue": "fix",
+   "note": "",
+   "why": ""
+  },
+  {
+   "scene_id": "SC0803",
+   "line_id": "SC0803-05",
+   "character_id": "nuku",
+   "text": "よくできました。",
+   "reading": "よくできました。",
+   "reading_source": "dictionary",
+   "emotion": "Happy",
+   "emotion_strength": 1.5,
+   "pause_before": 0.0,
+   "pause_after": 0.8,
+   "cue": "",
+   "note": "",
+   "why": ""
+  },
+  {
+   "scene_id": "SC0804",
+   "line_id": "SC0804-01",
    "character_id": "nuku",
    "text": "時計遺伝子に異常のあるマウスでは、高脂血症、高血糖、耐糖能異常、肥満、食塩感受性高血圧などがみられる。",
    "reading": "時計遺伝子に異常のあるマウスでは、高脂血症、高血糖、耐糖能異常、肥満、食塩感受性高血圧などがみられる。",
@@ -2868,11 +3807,12 @@
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "mice",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
-   "scene_id": "SC0803",
-   "line_id": "SC0803-02",
+   "scene_id": "SC0804",
+   "line_id": "SC0804-02",
    "character_id": "nuku",
    "text": "資料の図では、遺伝的な要因、交代勤務や睡眠不足などの環境要因、加齢による概日時計の破綻が、睡眠障害、がん、気分障害、メタボリックシンドローム、炎症と結びつけて示されている。",
    "reading": "資料の図では、遺伝的な要因、交代勤務や睡眠不足などの環境要因、加齢による概日時計の破綻が、睡眠障害、がん、気分障害、メタボリックシンドローム、炎症と結びつけて示されている。",
@@ -2882,11 +3822,12 @@
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "human",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
-   "scene_id": "SC0803",
-   "line_id": "SC0803-03",
+   "scene_id": "SC0804",
+   "line_id": "SC0804-03",
    "character_id": "nuku",
    "text": "図が示すのは関連で、詳しいしくみまでは書かれていない。関連として覚えておこう。",
    "reading": "図が示すのは関連で、詳しいしくみまでは書かれていない。関連として覚えておこう。",
@@ -2896,11 +3837,12 @@
    "pause_before": 0.0,
    "pause_after": 0.4,
    "cue": "",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
-   "scene_id": "SC0804",
-   "line_id": "SC0804-01",
+   "scene_id": "SC0805",
+   "line_id": "SC0805-01",
    "character_id": "akari",
    "text": "ここは核の外？ 袋の中に、輪っかのDNAがある！",
    "reading": "ここは核の外? 袋の中に、輪っかのディーエヌエーがある!",
@@ -2910,11 +3852,12 @@
    "pause_before": 0.4,
    "pause_after": 0.35,
    "cue": "",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
-   "scene_id": "SC0804",
-   "line_id": "SC0804-02",
+   "scene_id": "SC0805",
+   "line_id": "SC0805-02",
    "character_id": "nuku",
    "text": "ミトコンドリアの、約16kbの環状ゲノムだ。遺伝子は37個で、呼吸鎖やミトコンドリアの翻訳系などに使われる。",
    "reading": "ミトコンドリアの、やくじゅうろくキロベースの、かんじょうゲノムだ。いでんしはさんじゅうななこで、こきゅうさや、ミトコンドリアのほんやくけいなどにつかわれる。",
@@ -2924,11 +3867,12 @@
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "genome",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
-   "scene_id": "SC0804",
-   "line_id": "SC0804-03",
+   "scene_id": "SC0805",
+   "line_id": "SC0805-03",
    "character_id": "nuku",
    "text": "核ゲノムとは異なる転写系をもち、核ゲノムにコードされたミトコンドリア特異的RNAポリメラーゼが転写する。",
    "reading": "核ゲノムとは異なる転写系をもち、核ゲノムにコードされたミトコンドリア特異的アールエヌエーポリメラーゼが転写する。",
@@ -2938,11 +3882,12 @@
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "polymerase",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
-   "scene_id": "SC0804",
-   "line_id": "SC0804-04",
+   "scene_id": "SC0805",
+   "line_id": "SC0805-04",
    "character_id": "nuku",
    "text": "各鎖は全体が転写され、それがプロセッシングされて、mRNA、tRNA、rRNAになる。",
    "reading": "各鎖は全体が転写され、それがプロセッシングされて、エムアールエヌエー、ティーアールエヌエー、アールアールエヌエーになる。",
@@ -2952,11 +3897,12 @@
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "whole",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
-   "scene_id": "SC0804",
-   "line_id": "SC0804-05",
+   "scene_id": "SC0805",
+   "line_id": "SC0805-05",
    "character_id": "akari",
    "text": "鎖まるごと写して、あとで切り分けるんだね。",
    "reading": "鎖まるごと写して、あとで切り分けるんだね。",
@@ -2966,7 +3912,8 @@
    "pause_before": 0.0,
    "pause_after": 0.8,
    "cue": "",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0901",
@@ -2980,77 +3927,83 @@
    "pause_before": 0.6,
    "pause_after": 0.4,
    "cue": "",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0901",
    "line_id": "SC0901-02",
    "character_id": "nuku",
-   "text": "ふりかえろう。遺伝子の発現とは、遺伝情報をもとにRNAが合成されること。",
-   "reading": "ふりかえろう。遺伝子の発現とは、遺伝情報をもとにアールエヌエーが合成されること。",
+   "text": "最後のファインマン・チェック。今日の冒険を、難しい言葉なしで、ひと続きに説明してみて。",
+   "reading": "最後のファインマン・チェック。今日の冒険を、難しい言葉なしで、ひと続きに説明してみて。",
    "reading_source": "dictionary",
    "emotion": "Neutral",
    "emotion_strength": 1.0,
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "c1",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0901",
    "line_id": "SC0901-03",
    "character_id": "akari",
-   "text": "RNAポリメラーゼが、二本鎖DNAの1本を鋳型に、相補的なRNAを合成する。",
-   "reading": "アールエヌエーポリメラーゼが、二本鎖ディーエヌエーの1本をいがたに、相補的なアールエヌエーを合成する。",
+   "text": "設計図のDNAは核の中。タンパク質を作るのは核の外。だから、必要な部分だけを、向かい合う文字を並べてRNAに写し、持ち出す。",
+   "reading": "設計図のディーエヌエーは核の中。タンパク質を作るのは核の外。だから、必要な部分だけを、向かい合う文字を並べてアールエヌエーに写し、持ち出す。",
    "reading_source": "dictionary",
    "emotion": "Neutral",
    "emotion_strength": 1.0,
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "c2",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0901",
    "line_id": "SC0901-04",
-   "character_id": "nuku",
-   "text": "プロモーターは、転写の開始点と、鋳型に使う鎖を決める。",
-   "reading": "プロモーターは、転写の開始点と、いがたに使う鎖を決める。",
+   "character_id": "akari",
+   "text": "どこから写すかはプロモーターが決める。いつ、どれだけ写すかは、転写因子やエンハンサー、クロマチンが決める。",
+   "reading": "どこから写すかはプロモーターが決める。いつ、どれだけ写すかは、転写因子やエンハンサー、クロマチンが決める。",
    "reading_source": "dictionary",
    "emotion": "Neutral",
    "emotion_strength": 1.0,
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "c3",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0901",
    "line_id": "SC0901-05",
    "character_id": "akari",
-   "text": "mRNAは前駆体として転写され、キャップ、ポリA、スプライシングを経て、細胞質へ運ばれる。",
-   "reading": "エムアールエヌエーはぜんくたいとして転写され、キャップ、ポリエー、スプライシングを経て、細胞質へ運ばれる。",
+   "text": "写したRNAは、帽子としっぽで守られ、イントロンを外してから、核の外へ。RNAのまま働くものもある。",
+   "reading": "写したアールエヌエーは、帽子としっぽで守られ、イントロンを外してから、核の外へ。アールエヌエーのまま働くものもある。",
    "reading_source": "dictionary",
    "emotion": "Neutral",
    "emotion_strength": 1.0,
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "c4",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0901",
    "line_id": "SC0901-06",
    "character_id": "nuku",
-   "text": "では、最終試験を始めよう！",
-   "reading": "では、最終試験を始めよう!",
+   "text": "見事だ。一つ一つに「なぜ」があったね。では、最終試験を始めよう！",
+   "reading": "見事だ。一つ一つに「なぜ」があったね。では、最終試験を始めよう!",
    "reading_source": "dictionary",
    "emotion": "Happy",
    "emotion_strength": 1.5,
    "pause_before": 0.0,
    "pause_after": 0.6,
    "cue": "",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0902",
@@ -3064,7 +4017,8 @@
    "pause_before": 0.0,
    "pause_after": 1.5,
    "cue": "question",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0902",
@@ -3078,7 +4032,8 @@
    "pause_before": 0.0,
    "pause_after": 5.0,
    "cue": "think",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0902",
@@ -3092,7 +4047,8 @@
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "answer",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0902",
@@ -3106,7 +4062,8 @@
    "pause_before": 0.0,
    "pause_after": 0.6,
    "cue": "explain",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0903",
@@ -3120,7 +4077,8 @@
    "pause_before": 0.0,
    "pause_after": 1.5,
    "cue": "question",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0903",
@@ -3134,7 +4092,8 @@
    "pause_before": 0.0,
    "pause_after": 5.0,
    "cue": "think",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0903",
@@ -3148,7 +4107,8 @@
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "answer",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0903",
@@ -3162,7 +4122,8 @@
    "pause_before": 0.0,
    "pause_after": 0.6,
    "cue": "explain",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0904",
@@ -3176,7 +4137,8 @@
    "pause_before": 0.0,
    "pause_after": 1.5,
    "cue": "question",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0904",
@@ -3190,7 +4152,8 @@
    "pause_before": 0.0,
    "pause_after": 5.0,
    "cue": "think",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0904",
@@ -3204,7 +4167,8 @@
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "answer",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0904",
@@ -3218,7 +4182,8 @@
    "pause_before": 0.0,
    "pause_after": 0.6,
    "cue": "explain",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0905",
@@ -3232,7 +4197,8 @@
    "pause_before": 0.0,
    "pause_after": 1.5,
    "cue": "question",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0905",
@@ -3246,7 +4212,8 @@
    "pause_before": 0.0,
    "pause_after": 5.0,
    "cue": "think",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0905",
@@ -3260,7 +4227,8 @@
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "answer",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0905",
@@ -3274,7 +4242,8 @@
    "pause_before": 0.0,
    "pause_after": 0.6,
    "cue": "explain",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0906",
@@ -3288,7 +4257,8 @@
    "pause_before": 0.0,
    "pause_after": 1.5,
    "cue": "question",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0906",
@@ -3302,7 +4272,8 @@
    "pause_before": 0.0,
    "pause_after": 5.0,
    "cue": "think",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0906",
@@ -3316,7 +4287,8 @@
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "answer",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0906",
@@ -3330,7 +4302,8 @@
    "pause_before": 0.0,
    "pause_after": 0.6,
    "cue": "explain",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0907",
@@ -3344,7 +4317,8 @@
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "summary",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0907",
@@ -3358,7 +4332,8 @@
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "t1",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0907",
@@ -3372,7 +4347,8 @@
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "t2",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0907",
@@ -3386,7 +4362,8 @@
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "t3",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0907",
@@ -3400,7 +4377,8 @@
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "t4",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0907",
@@ -3414,7 +4392,8 @@
    "pause_before": 0.0,
    "pause_after": 0.35,
    "cue": "akari_end",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0907",
@@ -3428,7 +4407,8 @@
    "pause_before": 0.0,
    "pause_after": 1.0,
    "cue": "bye",
-   "note": ""
+   "note": "",
+   "why": ""
   },
   {
    "scene_id": "SC0907",
@@ -3442,7 +4422,8 @@
    "pause_before": 0.0,
    "pause_after": 10.0,
    "cue": "credits",
-   "note": ""
+   "note": "",
+   "why": ""
   }
  ]
 }
