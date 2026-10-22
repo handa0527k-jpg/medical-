@@ -12,7 +12,7 @@
 
 | 成果物 | 場所 |
 |---|---|
-| 完成動画（1920×1080・30fps・H.264/AAC・字幕焼き込み＋字幕トラック） | `video/final/gene_quest_full.mp4`（容量の都合で git には入れない。再生成は下記）／配布用の軽量版 `video/final/gene_quest_full_720p.mp4` |
+| 完成動画（1920×1080・30fps・H.264/AAC・字幕焼き込み＋字幕トラック） | `video/final/gene_quest_full.mp4`（1080p・約260 MB。容量の都合で git には入れない。再生成は下記）／配布用の軽量版 `video/final/gene_quest_full_720p.mp4`（1280×720・76 MB・字幕焼き込み＋字幕トラック。git に入っている） |
 | 30秒の試作 | `video/previews/prototype_30s.mp4` |
 | 日本語字幕 | `subtitles/gene_quest.srt`（焼き込み用 `gene_quest.ass`、対応表 `captions.json`） |
 | 全編の脚本 | `script/master_script.md`（原稿の一次情報は `script/source_script.md`） |
@@ -65,6 +65,7 @@ bash scripts/download_music.sh    # BGM 12曲（incompetech.com）
 .venv/bin/python scripts/mix_audio.py              # セリフ＋BGM（ダッキング）＋効果音 → −16 LUFS
 .venv/bin/python scripts/generate_scene.py         # 57シーンを描画（4並列で約20分）
 .venv/bin/python scripts/assemble_video.py         # 連結・字幕焼き込み・書き出し・検証
+ffmpeg -i video/final/gene_quest_full.mp4 -map 0 -vf scale=1280:720:flags=lanczos -c:v libx264 -preset slow -crf 29 -tune animation -c:a aac -b:a 112k -c:s copy -movflags +faststart video/final/gene_quest_full_720p.mp4   # 配布用の軽量版
 .venv/bin/python scripts/export_docs.py            # 脚本・確認表などの資料を更新
 .venv/bin/python scripts/progress.py               # 進捗（成果物から判定）
 ```
