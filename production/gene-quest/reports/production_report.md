@@ -107,7 +107,7 @@ v2 の完成後、「必然性 × Feynman 法をふんだんに取り込んで�
 | Notebook | 内容 | 確認 |
 |---|---|---|
 | `notebooks/environment_check.ipynb` | Python・GPU・FFmpeg・ディスク・モデルの有無を表示 | ローカル（CPU）で全セルを実行し成功。GPU のない環境で `nvidia-smi` がなくて止まる不具合を、実行して見つけて直した |
-| `notebooks/audio_comparison.ipynb` | 音声合成モデルの比較を再実行 | ローカルで実行（結果は下記） |
+| `notebooks/audio_comparison.ipynb` | 音声合成モデルの比較を再実行 | ローカル（CPU）で全セルを実行し成功（11声×8文を実際に合成・書き起こし）。Kokoro の CER は前回と同じ値、Style-Bert-VITS2 は合成に乱数を使うため最大 0.03 程度ずれた（例：jvnv-F2 の医学用語文 0.130 → 0.157）。「医学用語文は Kokoro jf_alpha、会話文は jvnv-M2 が最も低い」という選定の根拠は変わらない。edge-tts はこの環境から接続できず、前回と同じく比較に含まれない。**Kaggle 上では未実行** |
 | `notebooks/kaggle_audio_generation.ipynb` | Kaggle で音声を生成（GPU がなければ CPU）、再開可能、zip で出力 | ローカル（CPU）で全セルを実行し成功。pip のない環境でパッケージの導入に失敗する不具合を、実行して見つけて直した（足りないものだけを pip または uv で入れる）。この実行では全行が合成済みだったため、確かめたのは「導入・モデル確認・合成済みの行を飛ばす再開・音声処理・タイムライン」までで、ノートブック内での新規の合成は行っていない（合成の処理自体は本制作で使った `generate_audio.py` と同じ）。**Kaggle 上では未実行** |
 
 ノートブックの実行は、成果物を上書きしないように作業用の複製（scratchpad）で行った。
