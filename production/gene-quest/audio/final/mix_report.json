@@ -1,0 +1,86 @@
+{
+ "integrated_lufs_before": -17.12,
+ "integrated_lufs_after": -16.0,
+ "peak_dbfs": -1.559999942779541,
+ "bgm_vs_dialogue_during_speech_db": -18.700000762939453,
+ "bgm_level_without_speech_db": -33.1,
+ "sfx_count": 118,
+ "bgm_segments": [
+  [
+   "mystery",
+   0.0,
+   32.767
+  ],
+  [
+   "wonder",
+   32.767,
+   124.6
+  ],
+  [
+   "curious",
+   124.6,
+   282.4
+  ],
+  [
+   "quiz",
+   282.4,
+   303.333
+  ],
+  [
+   "action",
+   303.333,
+   419.467
+  ],
+  [
+   "thoughtful",
+   419.467,
+   553.033
+  ],
+  [
+   "tension",
+   553.033,
+   743.533
+  ],
+  [
+   "quiz",
+   743.533,
+   760.8
+  ],
+  [
+   "hopeful",
+   760.8,
+   926.0
+  ],
+  [
+   "workshop",
+   926.0,
+   1188.933
+  ],
+  [
+   "discovery",
+   1188.933,
+   1389.967
+  ],
+  [
+   "somber",
+   1389.967,
+   1589.667
+  ],
+  [
+   "hopeful",
+   1589.667,
+   1625.367
+  ],
+  [
+   "quiz",
+   1625.367,
+   1773.067
+  ],
+  [
+   "ending",
+   1773.067,
+   1832.867
+  ]
+ ],
+ "duration": 1832.87
+}

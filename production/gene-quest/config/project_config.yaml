@@ -1,0 +1,39 @@
+# GENE QUEST 制作設定
+title: "GENE QUEST — 遺伝情報を読み解け！"
+source_pdf: source/lecture_materials/transcription_lecture_2026-09-28.pdf
+video:
+  width: 1920
+  height: 1080
+  fps: 30
+  codec: libx264
+  crf: 20            # 最終書き出しの画質（小さいほど高画質・大容量）
+  preset: medium
+  preview_scale: 0.5 # 試作・確認用は 960×540
+audio:
+  sample_rate: 48000
+  codec: aac
+  bitrate: 192k
+  target_lufs: -16.0   # 配信向けの統合ラウドネス
+  true_peak_db: -1.5
+  dialogue_lufs: -20.0 # セリフ1行ごとの正規化の目標
+  bgm_gain_db: -10.0   # セリフのないところでの BGM（セリフに対して）
+  bgm_duck_db: -9.0    # セリフ中にさらに下げる量
+  sfx_gain_db: -9.0
+subtitles:
+  burn_in: true
+  font: "M PLUS Rounded 1c"
+  fonts_dir: assets/fonts
+# BGM（Kevin MacLeod, incompetech.com, CC BY 4.0）。キーは原稿の bgm: の値
+bgm:
+  mystery:    {file: "Lightless Dawn.mp3", gain_db: 0}
+  wonder:     {file: "Floating Cities.mp3", gain_db: 0}
+  curious:    {file: "Investigations.mp3", gain_db: -1}
+  action:     {file: "Hyperfun.mp3", gain_db: -4}
+  thoughtful: {file: "Deliberate Thought.mp3", gain_db: 0}
+  tension:    {file: "Movement Proposition.mp3", gain_db: -2}
+  hopeful:    {file: "Inspired.mp3", gain_db: -1}
+  workshop:   {file: "Life of Riley.mp3", gain_db: -3}
+  discovery:  {file: "Dreams Become Real.mp3", gain_db: 0}
+  somber:     {file: "Clean Soul.mp3", gain_db: 0}
+  quiz:       {file: "Thinking Music.mp3", gain_db: -2}
+  ending:     {file: "Wholesome.mp3", gain_db: 0}

@@ -1,0 +1,70 @@
+{
+ "note": "最終試験（CHAPTER 9）の問題。誤答は学生が混同しやすい用語・仕組みから作った。pages は講義資料のPDFページ番号。",
+ "questions": [
+  {
+   "id": "Q1", "scene_id": "SC0902",
+   "question": "RNAポリメラーゼについて、正しいものはどれ？",
+   "options": {
+    "A": "鋳型鎖を5'→3'に読み、RNAを3'→5'に合成する",
+    "B": "鋳型鎖を3'→5'に読み、RNAを5'→3'に合成する",
+    "C": "非鋳型鎖を鋳型にしてRNAを合成する",
+    "D": "材料としてdNTPを使う"
+   },
+   "answer": "B",
+   "why_wrong": {"A": "向きが逆", "C": "鋳型になるのは鋳型鎖（非鋳型鎖とRNAは同じ配列）", "D": "材料はATP・UTP・CTP・GTP（リボヌクレオチド）"},
+   "pages": [7, 8, 10]
+  },
+  {
+   "id": "Q2", "scene_id": "SC0903",
+   "question": "大腸菌のプロモーターで、RNAポリメラーゼが結合する目印は？",
+   "options": {
+    "A": "TATAボックス（約25塩基上流）",
+    "B": "−10ボックスと−35ボックス",
+    "C": "GCボックス",
+    "D": "エンハンサー"
+   },
+   "answer": "B",
+   "why_wrong": {"A": "真核生物（RNAポリメラーゼII）のプロモーター", "C": "真核生物の上流プロモーター要素", "D": "真核生物の遠位調節要素"},
+   "pages": [18, 30, 33, 34]
+  },
+  {
+   "id": "Q3", "scene_id": "SC0904",
+   "question": "TFIIHのはたらきとして、正しいものはどれ？",
+   "options": {
+    "A": "TATAボックスを識別して結合する",
+    "B": "プロモーターのBRE配列を識別する",
+    "C": "DNAをほどき、CTDのSer5をリン酸化する",
+    "D": "mRNA前駆体に5'キャップを付加する"
+   },
+   "answer": "C",
+   "why_wrong": {"A": "TFIIDのTBPの役割", "B": "TFIIBの役割", "D": "キャッピング酵素の仕事（転写基本因子ではない）"},
+   "pages": [30, 32, 46]
+  },
+  {
+   "id": "Q4", "scene_id": "SC0905",
+   "question": "スプライシングについて、正しいものはどれ？",
+   "options": {
+    "A": "イントロンはAGで始まりGTで終わる",
+    "B": "最初にU1 snRNPがイントロン5'末端のGUに結合する",
+    "C": "切り出されたエクソンが投げ縄構造をつくる",
+    "D": "スプライシングは細胞質で行われる"
+   },
+   "answer": "B",
+   "why_wrong": {"A": "GTで始まりAGで終わる（GT-AG則）", "C": "投げ縄になるのはイントロン", "D": "核内で行われ、完成したmRNAが細胞質へ出る"},
+   "pages": [46, 48, 50, 51, 52]
+  },
+  {
+   "id": "Q5", "scene_id": "SC0906",
+   "question": "miRNAが成熟して働くまでの順番として、正しいものは？",
+   "options": {
+    "A": "Dicer → Exportin 5 → Drosha → RISC",
+    "B": "Drosha → Exportin 5 → Dicer → RISC",
+    "C": "Exportin 5 → Drosha → RISC → Dicer",
+    "D": "Drosha → Dicer → Exportin 5 → RISC"
+   },
+   "answer": "B",
+   "why_wrong": {"A": "Droshaは核内で最初に働く", "C": "Droshaより先に核外へは出ない", "D": "Dicerは細胞質で働くので、Exportin 5の後"},
+   "pages": [67]
+  }
+ ]
+}

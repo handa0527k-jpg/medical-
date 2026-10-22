@@ -1,0 +1,99 @@
+# キャラクター別の音声設定（Style-Bert-VITS2 JP-Extra）
+# 選定の根拠は reports/audio_quality_report.md と reports/audio_comparison.md（同じ文章での比較結果）。
+# ナレーションだけは、医学用語文の書き起こし誤り率が最も低かった Kokoro（jf_alpha）を使う。
+#   engine: sbv2 | kokoro
+#   model : models/sbv2/<model>/ のフォルダ名（kokoro は voice 名）
+#   style : 既定のスタイル。原稿の [感情] があればそちらを使う（そのモデルにあるスタイルだけ）
+#   length: 話速（1.0 が標準、大きいほどゆっくり）
+#   pitch : 声の高さ（pitch_scale。1.0 が元の声）
+#   intonation: 抑揚の強さ（intonation_scale）
+# 感情スタイルの強さ（style_weight）は「感情あり」の行だけ、emotion_weight を使う。
+characters:
+  narr:
+    name: ナレーション
+    engine: kokoro
+    model: jf_alpha
+    style: Neutral
+    style_weight: 1.0
+    emotion_weight: 1.0
+    length: 1.06
+    pitch: 1.0
+    intonation: 1.0
+    color: "#E8E4FF"
+  akari:
+    name: アカリ
+    engine: sbv2
+    model: jvnv-F2-jp
+    style: Neutral
+    style_weight: 1.0
+    emotion_weight: 2.0
+    length: 1.0
+    pitch: 1.0
+    intonation: 1.1
+    color: "#FFB8C8"
+  nuku:
+    name: ヌク
+    engine: sbv2
+    model: jvnv-M2-jp
+    style: Neutral
+    style_weight: 1.0
+    emotion_weight: 1.5
+    length: 1.04
+    pitch: 1.0
+    intonation: 1.0
+    color: "#9FF5DA"
+  pol:
+    name: ポル（RNAポリメラーゼ）
+    engine: sbv2
+    model: jvnv-M1-jp
+    style: Neutral
+    style_weight: 1.0
+    emotion_weight: 1.5
+    length: 1.08
+    pitch: 0.94
+    intonation: 0.9
+    color: "#8EC5FF"
+  sigma:
+    name: シグマ（σ因子）
+    engine: sbv2
+    model: koharune-ami
+    style: Neutral
+    style_weight: 1.0
+    emotion_weight: 1.0
+    length: 0.98
+    pitch: 1.0
+    intonation: 1.1
+    color: "#FF9C7A"
+  tfiid:
+    name: TFIID
+    engine: sbv2
+    model: jvnv-F1-jp
+    style: Neutral
+    style_weight: 1.0
+    emotion_weight: 1.0
+    length: 1.06
+    pitch: 0.93
+    intonation: 0.95
+    color: "#9BE3A8"
+  splice:
+    name: スプラ（スプライソソーム）
+    engine: sbv2
+    model: jvnv-F1-jp
+    style: Neutral
+    style_weight: 1.0
+    emotion_weight: 1.0
+    length: 0.98
+    pitch: 1.06
+    intonation: 1.0
+    color: "#E7A6FF"
+  mina:
+    name: ミーナ（miRNA）
+    engine: sbv2
+    model: koharune-ami
+    style: Neutral
+    style_weight: 1.0
+    emotion_weight: 1.0
+    length: 1.0
+    pitch: 1.06
+    intonation: 1.05
+    color: "#7FE7F5"

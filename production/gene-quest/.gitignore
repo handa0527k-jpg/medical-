@@ -1,0 +1,22 @@
+# 再生成できる大きなファイル・環境はコミットしない
+.venv/
+.venv-tts/
+models/
+__pycache__/
+assets/music/src/
+audio/raw/*.wav
+audio/processed/*.wav
+audio/processed/stages/
+audio/dialogue/
+audio/final/*.wav
+audio/final/stems/
+audio/comparison/
+video/scenes/
+video/previews/proto_parts/
+video/previews/stills/
+video/previews/*.mp4
+!video/previews/prototype_30s.mp4
+video/final/.work/
+video/final/gene_quest_full.mp4
+logs_*.txt
+source/lecture_materials/*.pdf

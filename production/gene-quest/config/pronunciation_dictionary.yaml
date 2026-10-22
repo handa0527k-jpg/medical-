@@ -1,0 +1,158 @@
+# 医学用語の読み方辞書
+# display: 字幕・画面に出す正式表記（講義資料の表記に合わせる）
+# reading: 音声合成に渡す読み（カタカナ／ひらがな）
+# source: 資料中の初出ページ（PDFページ番号）
+# checked: 実際に使用する音声モデル（Style-Bert-VITS2）で合成し、Whisper の書き起こしで確認したか
+#          （scripts/check_pronunciation.py が audio/pronunciation_check/ に結果を出す）
+#
+# 変換は長い表記から順に置換する（例：RNAポリメラーゼIII を RNAポリメラーゼII より先に）。
+# 1行ごとの例外は原稿の {say=...} で指定する。
+terms:
+  # --- 核酸・基本 ---
+  - {display: "RNAポリメラーゼIII", reading: "アールエヌエーポリメラーゼスリー", source: 28}
+  - {display: "RNAポリメラーゼII", reading: "アールエヌエーポリメラーゼツー", source: 2}
+  - {display: "RNAポリメラーゼI", reading: "アールエヌエーポリメラーゼワン", source: 28}
+  - {display: "RNAポリメラーゼ", reading: "アールエヌエーポリメラーゼ", source: 5}
+  - {display: "ポリメラーゼIII", reading: "ポリメラーゼスリー", source: 28}
+  - {display: "ポリメラーゼII", reading: "ポリメラーゼツー", source: 30}
+  - {display: "ポリメラーゼI", reading: "ポリメラーゼワン", source: 28}
+  - {display: "ポリ(A)ポリメラーゼ", reading: "ポリエーポリメラーゼ", source: 46}
+  - {display: "Pol II", reading: "ポルツー", source: 69}
+  - {display: "Pol I", reading: "ポルワン", source: 60}
+  - {display: "Pol III", reading: "ポルスリー", source: 60}
+  - {display: "pre-miRNA", reading: "プレマイクロアールエヌエー", source: 67}
+  - {display: "pri-miRNA", reading: "プライマイクロアールエヌエー", source: 67}
+  - {display: "pre-mRNA", reading: "プレエムアールエヌエー", source: 50}
+  - {display: "プレmRNA", reading: "プレエムアールエヌエー", source: 50}
+  - {display: "lincRNA", reading: "リンクアールエヌエー", source: 68}
+  - {display: "lncRNA", reading: "エルエヌシーアールエヌエー", source: 68}
+  - {display: "snoRNA", reading: "スノーアールエヌエー", source: 56}
+  - {display: "snRNP", reading: "スナープ", source: 50}
+  - {display: "snRNA", reading: "エスエヌアールエヌエー", source: 50}
+  - {display: "siRNA", reading: "エスアイアールエヌエー", source: 28}
+  - {display: "miRNA", reading: "マイクロアールエヌエー", source: 56}
+  - {display: "ncRNA", reading: "エヌシーアールエヌエー", source: 56}
+  - {display: "mRNA", reading: "エムアールエヌエー", source: 2}
+  - {display: "rRNA", reading: "アールアールエヌエー", source: 2}
+  - {display: "tRNA", reading: "ティーアールエヌエー", source: 2}
+  - {display: "hnRNA", reading: "エイチエヌアールエヌエー", source: 46}
+  - {display: "RNA", reading: "アールエヌエー", source: 2}
+  - {display: "DNA", reading: "ディーエヌエー", source: 2}
+  - {display: "ATP", reading: "エーティーピー", source: 8}
+  - {display: "UTP", reading: "ユーティーピー", source: 8}
+  - {display: "CTP", reading: "シーティーピー", source: 8}
+  - {display: "GTP", reading: "ジーティーピー", source: 8}
+  - {display: "dNTP", reading: "ディーエヌティーピー", source: 9}
+  - {display: "NTP", reading: "エヌティーピー", source: 9}
+  - {display: "OH", reading: "オーエイチ", source: 8}
+  - {display: "ORF", reading: "オーアールエフ", source: 68}
+  # --- 方向・位置 ---
+  - {display: "5'-", reading: "ゴダッシュ、", source: 18}
+  - {display: "-3'", reading: "、サンダッシュ", source: 18}
+  - {display: "5'", reading: "ゴダッシュ", source: 2}
+  - {display: "3'", reading: "サンダッシュ", source: 8}
+  - {display: "−35", reading: "マイナスさんじゅうご", source: 18}
+  - {display: "−10", reading: "マイナスじゅう", source: 18}
+  - {display: "+1", reading: "プラスいち", source: 18}
+  - {display: "+2", reading: "プラスに", source: 18}
+  # --- 原核 ---
+  - {display: "σ因子", reading: "シグマいんし", source: 13}
+  - {display: "ρタンパク質", reading: "ローたんぱくしつ", source: 20}
+  - {display: "cAMP-CRP", reading: "サイクリックエーエムピー、シーアールピー", source: 24}
+  - {display: "cAMP", reading: "サイクリックエーエムピー", source: 24}
+  - {display: "CRP", reading: "シーアールピー", source: 24}
+  - {display: "β-gal", reading: "ベータガラクトシダーゼ", source: 24}
+  - {display: "β-ガラクトシダーゼ", reading: "ベータガラクトシダーゼ", source: 25}
+  - {display: "lacZYA", reading: "ラックゼットワイエー", source: 25}
+  - {display: "lacZ", reading: "ラックゼット", source: 25}
+  - {display: "lacY", reading: "ラックワイ", source: 25}
+  - {display: "lacA", reading: "ラックエー", source: 25}
+  - {display: "lacI", reading: "ラックアイ", source: 25}
+  - {display: "lacオペロン", reading: "ラックオペロン", source: 25}
+  - {display: "SOS", reading: "エスオーエス", source: 25}
+  # --- 真核の開始 ---
+  - {display: "TATAボックス", reading: "タタボックス", source: 30}
+  - {display: "CAATボックス", reading: "キャットボックス", source: 33}
+  - {display: "GCボックス", reading: "ジーシーボックス", source: 33}
+  - {display: "TFIID", reading: "ティーエフツーディー", source: 30}
+  - {display: "TFIIB", reading: "ティーエフツービー", source: 30}
+  - {display: "TFIIE", reading: "ティーエフツーイー", source: 31}
+  - {display: "TFIIF", reading: "ティーエフツーエフ", source: 31}
+  - {display: "TFIIH", reading: "ティーエフツーエイチ", source: 30}
+  - {display: "TBP", reading: "ティービーピー", source: 30}
+  - {display: "TAF", reading: "ティーエーエフ", source: 32}
+  - {display: "BRE", reading: "ビーアールイー", source: 32}
+  - {display: "CTD", reading: "シーティーディー", source: 30}
+  - {display: "CTF", reading: "シーティーエフ", source: 33}
+  - {display: "Ser5", reading: "セリンファイブ", source: 32}
+  # --- スプライシング ---
+  - {display: "U2AF", reading: "ユーツーエーエフ", source: 51}
+  - {display: "U1", reading: "ユーワン", source: 50}
+  - {display: "U2", reading: "ユーツー", source: 50}
+  - {display: "U4", reading: "ユーフォー", source: 50}
+  - {display: "U5", reading: "ユーファイブ", source: 50}
+  - {display: "U6", reading: "ユーシックス", source: 50}
+  - {display: "GT-AG則", reading: "ジーティーエージーそく", source: 48}
+  - {display: "GT-AG", reading: "ジーティーエージー", source: 50}
+  - {display: "AAUAAA", reading: "エーエーユーエーエーエー", source: 47}
+  - {display: "m7G", reading: "エムセブンジー", source: 47}
+  - {display: "スプライソソーム", reading: "スプライソソーム", source: 46, note: "資料表記はスプライセオソーム"}
+  # --- ncRNA ---
+  - {display: "Drosha", reading: "ドローシャ", source: 67}
+  - {display: "Exportin 5", reading: "エクスポーチンファイブ", source: 67}
+  - {display: "Dicer", reading: "ダイサー", source: 67}
+  - {display: "RISC", reading: "リスク", source: 67}
+  - {display: "45S", reading: "よんじゅうごエス", source: 63}
+  - {display: "28S", reading: "にじゅうはちエス", source: 28}
+  - {display: "18S", reading: "じゅうはちエス", source: 28}
+  - {display: "5.8S", reading: "ごてんはちエス", source: 28}
+  - {display: "80S", reading: "はちじゅうエス", source: 62}
+  - {display: "60S", reading: "ろくじゅうエス", source: 62}
+  - {display: "40S", reading: "よんじゅうエス", source: 62}
+  - {display: "5S", reading: "ごエス", source: 28}
+  - {display: "Feingold症候群", reading: "ファインゴールドしょうこうぐん", source: 56}
+  - {display: "Prader-Willi症候群", reading: "プラダーウィリーしょうこうぐん", source: 56}
+  # --- 時計遺伝子・その他 ---
+  - {display: "BMAL1", reading: "ビーマルワン", source: 41}
+  - {display: "Bmal1", reading: "ビーマルワン", source: 42}
+  - {display: "CLOCK", reading: "クロック", source: 41}
+  - {display: "Clock", reading: "クロック", source: 41}
+  - {display: "PER", reading: "パー", source: 41}
+  - {display: "Per2", reading: "パーツー", source: 42}
+  - {display: "Per", reading: "パー", source: 41}
+  - {display: "CRY", reading: "クライ", source: 41}
+  - {display: "Cry1", reading: "クライワン", source: 42}
+  - {display: "Cry2", reading: "クライツー", source: 42}
+  - {display: "Cry", reading: "クライ", source: 41}
+  - {display: "Rev-erbα", reading: "レバーブアルファ", source: 41}
+  - {display: "RORα", reading: "ロアアルファ", source: 41}
+  - {display: "E-box", reading: "イーボックス", source: 41}
+  - {display: "RRE", reading: "アールアールイー", source: 41}
+  - {display: "MRE", reading: "エムアールイー", source: 39}
+  - {display: "GRE", reading: "ジーアールイー", source: 39}
+  - {display: "Cd²⁺", reading: "カドミウムイオン", source: 39}
+  - {display: "kb", reading: "キロベース", source: 72}
+  # --- 記号 ---
+  - {display: "σ", reading: "シグマ", source: 13}
+  - {display: "ρ", reading: "ロー", source: 20}
+  - {display: "β", reading: "ベータ", source: 24}
+  - {display: "α", reading: "アルファ", source: 41}
+  - {display: "→", reading: "から", source: 2}
+  - {display: "–", reading: "", source: 20}
+# 漢字の読み（pyopenjtalk の既定の読みが資料の用語と異なる可能性があるもの）。
+# 合成後の書き起こしで誤読が見つかったものだけを追加する。
+kanji:
+  - {display: "鋳型鎖", reading: "いがたさ"}
+  - {display: "非鋳型鎖", reading: "ひいがたさ"}
+  - {display: "鋳型", reading: "いがた"}
+  - {display: "前駆体", reading: "ぜんくたい"}
+  - {display: "塩基対", reading: "えんきつい"}
+  - {display: "介在因子", reading: "かいざいいんし"}
+  - {display: "核小体", reading: "かくしょうたい"}
+  - {display: "投げ縄", reading: "なげなわ"}
+  - {display: "手指", reading: "しゅし"}
+  - {display: "写字", reading: "しゃじ"}
+  - {display: "転写産物", reading: "てんしゃさんぶつ"}
+  - {display: "一丁", reading: "いっちょう"}
+  - {display: "上流", reading: "じょうりゅう"}
+  - {display: "下流", reading: "かりゅう"}

@@ -1,0 +1,2260 @@
+{
+ "scenes": [
+  {
+   "scene_id": "SC0101",
+   "title": "プロローグ：闇に浮かぶらせん",
+   "chapter": 1,
+   "chapter_title": "細胞の中の冒険",
+   "lines": [
+    "SC0101-01",
+    "SC0101-02",
+    "SC0101-03",
+    "SC0101-04"
+   ],
+   "visual": "prologue_helix",
+   "bgm": "mystery",
+   "bg": "深い紺と紫の空間。遠くに光の粒",
+   "camera": "暗闇からDNA二重らせんへ前進し、らせんに沿って横移動",
+   "chars": [
+    "narr"
+   ],
+   "sfx": [
+    "shimmer@0",
+    "whoosh@SC0101-03"
+   ],
+   "pages": [
+    3
+   ],
+   "purpose": "作品世界への導入。DNAが遺伝情報の設計図であることを示す",
+   "terms": [
+    "DNA",
+    "二重らせん"
+   ],
+   "accuracy": "確認済み（research/accuracy_checklist.md）",
+   "start": 0.0,
+   "end": 24.267,
+   "duration": 24.267,
+   "video": "video/scenes/SC0101.mp4",
+   "audio": "audio/dialogue/scenes/SC0101.wav",
+   "accuracy_check": ""
+  },
+  {
+   "scene_id": "SC0102",
+   "title": "タイトル",
+   "chapter": 1,
+   "chapter_title": "細胞の中の冒険",
+   "lines": [
+    "SC0102-01"
+   ],
+   "visual": "title_card",
+   "bgm": "mystery",
+   "bg": "らせんの光がタイトルロゴに集まる",
+   "camera": "固定。ロゴがゆっくり近づく",
+   "chars": [],
+   "sfx": [
+    "impact@0"
+   ],
+   "pages": [],
+   "purpose": "タイトル提示",
+   "terms": [],
+   "accuracy": "対象外（タイトル）",
+   "start": 24.267,
+   "end": 32.767,
+   "duration": 8.5,
+   "video": "video/scenes/SC0102.mp4",
+   "audio": "audio/dialogue/scenes/SC0102.wav",
+   "accuracy_check": ""
+  },
+  {
+   "scene_id": "SC0103",
+   "title": "アカリ、細胞の世界へ",
+   "chapter": 1,
+   "chapter_title": "細胞の中の冒険",
+   "lines": [
+    "SC0103-01",
+    "SC0103-02",
+    "SC0103-03",
+    "SC0103-04",
+    "SC0103-05",
+    "SC0103-06",
+    "SC0103-07"
+   ],
+   "visual": "akari_dive",
+   "bgm": "wonder",
+   "bg": "夜の研究室（顕微鏡）→ 細胞 → 核 → 核の中へズームイン",
+   "camera": "顕微鏡の視野へ吸い込まれ、細胞から核へズームイン",
+   "chars": [
+    "akari",
+    "nuku"
+   ],
+   "sfx": [
+    "whoosh@SC0103-03",
+    "sparkle@SC0103-05"
+   ],
+   "pages": [
+    3
+   ],
+   "purpose": "主人公の登場と、遺伝情報の流れへの疑問",
+   "terms": [
+    "細胞",
+    "核"
+   ],
+   "accuracy": "確認済み（research/accuracy_checklist.md）",
+   "start": 32.767,
+   "end": 65.567,
+   "duration": 32.8,
+   "video": "video/scenes/SC0103.mp4",
+   "audio": "audio/dialogue/scenes/SC0103.wav",
+   "accuracy_check": ""
+  },
+  {
+   "scene_id": "SC0104",
+   "title": "セントラルドグマ",
+   "chapter": 1,
+   "chapter_title": "細胞の中の冒険",
+   "lines": [
+    "SC0104-01",
+    "SC0104-02",
+    "SC0104-03",
+    "SC0104-04",
+    "SC0104-05",
+    "SC0104-06"
+   ],
+   "visual": "central_dogma",
+   "bgm": "wonder",
+   "bg": "核の中。図がホログラムのように浮かぶ",
+   "camera": "図の上から下へ、DNA→RNA→タンパク質の順にパン",
+   "chars": [
+    "akari",
+    "nuku"
+   ],
+   "sfx": [
+    "chime@SC0104-02",
+    "chime@SC0104-03"
+   ],
+   "pages": [
+    3
+   ],
+   "purpose": "DNA→RNA→タンパク質の流れ（セントラルドグマ）を示し、転写の位置づけを明確にする",
+   "terms": [
+    "セントラルドグマ",
+    "転写",
+    "翻訳"
+   ],
+   "accuracy": "確認済み（research/accuracy_checklist.md）",
+   "start": 65.567,
+   "end": 99.5,
+   "duration": 33.933,
+   "video": "video/scenes/SC0104.mp4",
+   "audio": "audio/dialogue/scenes/SC0104.wav",
+   "accuracy_check": "DNA→RNA（転写）→タンパク質（翻訳）。DNA→DNA は複製・修復・組換え（p.3）"
+  },
+  {
+   "scene_id": "SC0105",
+   "title": "冒険の地図",
+   "chapter": 1,
+   "chapter_title": "細胞の中の冒険",
+   "lines": [
+    "SC0105-01",
+    "SC0105-02",
+    "SC0105-03"
+   ],
+   "visual": "quest_map",
+   "bgm": "wonder",
+   "bg": "核から細胞質までを描いた冒険マップ",
+   "camera": "マップ全体からステージ1へズーム",
+   "chars": [
+    "akari",
+    "nuku"
+   ],
+   "sfx": [
+    "stamp@SC0105-03"
+   ],
+   "pages": [
+    4
+   ],
+   "purpose": "転写から翻訳までの段階を俯瞰し、作品全体の目標を示す",
+   "terms": [
+    "転写開始",
+    "キャップ形成",
+    "スプライシング",
+    "ポリアデニル化",
+    "核外輸送"
+   ],
+   "accuracy": "確認済み（research/accuracy_checklist.md）",
+   "start": 99.5,
+   "end": 124.6,
+   "duration": 25.1,
+   "video": "video/scenes/SC0105.mp4",
+   "audio": "audio/dialogue/scenes/SC0105.wav",
+   "accuracy_check": "核内の工程の順序は p.4 の図どおり"
+  },
+  {
+   "scene_id": "SC0201",
+   "title": "RNAポリメラーゼとの出会い",
+   "chapter": 2,
+   "chapter_title": "RNAを作る職人",
+   "lines": [
+    "SC0201-01",
+    "SC0201-02",
+    "SC0201-03",
+    "SC0201-04",
+    "SC0201-05"
+   ],
+   "visual": "meet_polymerase",
+   "bgm": "curious",
+   "bg": "核の中。DNA二重らせんの上を巨大な青い酵素が進む",
+   "camera": "酵素の正面から回り込み、内部の断面図へ",
+   "chars": [
+    "akari",
+    "nuku",
+    "pol"
+   ],
+   "sfx": [
+    "rumble@SC0201-01",
+    "pop@SC0201-04"
+   ],
+   "pages": [
+    5
+   ],
+   "purpose": "RNAポリメラーゼの構造と、転写の方向を示す",
+   "terms": [
+    "RNAポリメラーゼ",
+    "活性部位",
+    "リボヌクレオシド三リン酸"
+   ],
+   "accuracy": "確認済み（research/accuracy_checklist.md）",
+   "start": 124.6,
+   "end": 163.767,
+   "duration": 39.167,
+   "video": "video/scenes/SC0201.mp4",
+   "audio": "audio/dialogue/scenes/SC0201.wav",
+   "accuracy_check": "ポリメラーゼの部位名（活性部位・NTPの入り口・RNAの出口・DNA/RNAらせん）は p.5 の図"
+  },
+  {
+   "scene_id": "SC0202",
+   "title": "鋳型鎖と相補的塩基対",
+   "chapter": 2,
+   "chapter_title": "RNAを作る職人",
+   "lines": [
+    "SC0202-01",
+    "SC0202-02",
+    "SC0202-03",
+    "SC0202-04",
+    "SC0202-05",
+    "SC0202-06",
+    "SC0202-07"
+   ],
+   "visual": "template_strand",
+   "bgm": "curious",
+   "bg": "塩基配列を拡大したホログラム",
+   "camera": "二本鎖を上下に開き、鋳型鎖を強調",
+   "chars": [
+    "akari",
+    "nuku"
+   ],
+   "sfx": [
+    "click@SC0202-03",
+    "chime@SC0202-06"
+   ],
+   "pages": [
+    7
+   ],
+   "purpose": "鋳型鎖・非鋳型鎖・相補性（TがUに）を正確に示す",
+   "terms": [
+    "鋳型鎖",
+    "非鋳型鎖",
+    "相補的",
+    "ウラシル"
+   ],
+   "accuracy": "確認済み（research/accuracy_checklist.md）",
+   "start": 163.767,
+   "end": 201.5,
+   "duration": 37.733,
+   "video": "video/scenes/SC0202.mp4",
+   "audio": "audio/dialogue/scenes/SC0202.wav",
+   "accuracy_check": "鋳型鎖 3'-TACTTTACGAT-5' → RNA 5'-AUGAAAUGCUA-3'＝非鋳型鎖の T を U に（p.7）"
+  },
+  {
+   "scene_id": "SC0203",
+   "title": "5'から3'へ",
+   "chapter": 2,
+   "chapter_title": "RNAを作る職人",
+   "lines": [
+    "SC0203-01",
+    "SC0203-02",
+    "SC0203-03",
+    "SC0203-04",
+    "SC0203-05"
+   ],
+   "visual": "synthesis_direction",
+   "bgm": "curious",
+   "bg": "縦に伸びる鋳型DNAと、1個ずつ入ってくるヌクレオチド",
+   "camera": "鋳型鎖に沿って上から下へ移動",
+   "chars": [
+    "akari",
+    "nuku",
+    "pol"
+   ],
+   "sfx": [
+    "click@SC0203-02",
+    "pop@SC0203-04"
+   ],
+   "pages": [
+    8,
+    9,
+    10
+   ],
+   "purpose": "鋳型鎖を3'→5'に読み、RNAを5'→3'に合成すること、リン酸ジエステル結合の形成を示す",
+   "terms": [
+    "5'→3'",
+    "リン酸ジエステル結合",
+    "ピロリン酸"
+   ],
+   "accuracy": "確認済み（research/accuracy_checklist.md）",
+   "start": 201.5,
+   "end": 247.6,
+   "duration": 46.1,
+   "video": "video/scenes/SC0203.mp4",
+   "audio": "audio/dialogue/scenes/SC0203.wav",
+   "accuracy_check": "鋳型 3'-TAGCCTATC-5' → RNA 5'-AUCGGAUAG-3'（p.10）。3'OH に 5'三リン酸、ピロリン酸が外れる（p.8）"
+  },
+  {
+   "scene_id": "SC0204",
+   "title": "プロモーター：どこから書き写す？",
+   "chapter": 2,
+   "chapter_title": "RNAを作る職人",
+   "lines": [
+    "SC0204-01",
+    "SC0204-02",
+    "SC0204-03",
+    "SC0204-04",
+    "SC0204-05"
+   ],
+   "visual": "promoter_map",
+   "bgm": "curious",
+   "bg": "長いDNAの上に、プロモーターと遺伝子a〜eが並ぶ地図",
+   "camera": "左から右へ地図をなめ、プロモーターに寄る",
+   "chars": [
+    "akari",
+    "nuku"
+   ],
+   "sfx": [
+    "ping@SC0204-02"
+   ],
+   "pages": [
+    6,
+    11,
+    71
+   ],
+   "purpose": "プロモーターが開始点と鋳型鎖（転写の向き）を決めること、ターミネーターで終わることを示す",
+   "terms": [
+    "プロモーター",
+    "転写開始点",
+    "ターミネーター"
+   ],
+   "accuracy": "確認済み（research/accuracy_checklist.md）",
+   "start": 247.6,
+   "end": 282.4,
+   "duration": 34.8,
+   "video": "video/scenes/SC0204.mp4",
+   "audio": "audio/dialogue/scenes/SC0204.wav",
+   "accuracy_check": "遺伝子 c, d が逆向き（p.11）。プロモーターの役割は p.71 の文言"
+  },
+  {
+   "scene_id": "SC0205",
+   "title": "チェックポイント①",
+   "chapter": 2,
+   "chapter_title": "RNAを作る職人",
+   "lines": [
+    "SC0205-01",
+    "SC0205-02",
+    "SC0205-03",
+    "SC0205-04"
+   ],
+   "visual": "checkpoint",
+   "bgm": "quiz",
+   "bg": "クエストのチェックポイント画面",
+   "camera": "固定",
+   "chars": [
+    "akari",
+    "nuku"
+   ],
+   "sfx": [
+    "tick@SC0205-02",
+    "correct@SC0205-03"
+   ],
+   "pages": [
+    7,
+    10
+   ],
+   "purpose": "確認問題で理解を確かめる",
+   "terms": [
+    "鋳型鎖",
+    "5'→3'"
+   ],
+   "accuracy": "確認済み（research/accuracy_checklist.md）",
+   "start": 282.4,
+   "end": 303.333,
+   "duration": 20.933,
+   "video": "video/scenes/SC0205.mp4",
+   "audio": "audio/dialogue/scenes/SC0205.wav",
+   "accuracy_check": "3'-TAC-5' → 5'-AUG-3'"
+  },
+  {
+   "scene_id": "SC0301",
+   "title": "細菌の世界とσ因子",
+   "chapter": 3,
+   "chapter_title": "細菌の転写作戦",
+   "lines": [
+    "SC0301-01",
+    "SC0301-02",
+    "SC0301-03",
+    "SC0301-04",
+    "SC0301-05"
+   ],
+   "visual": "bacteria_holoenzyme",
+   "bgm": "action",
+   "bg": "大腸菌の細胞内。核膜はなく、DNAが細胞質に広がる",
+   "camera": "大腸菌の外観から内部へ。σ因子がコア酵素に合体するところをクローズアップ",
+   "chars": [
+    "akari",
+    "nuku",
+    "pol",
+    "sigma"
+   ],
+   "sfx": [
+    "whoosh@SC0301-01",
+    "clamp@SC0301-05"
+   ],
+   "pages": [
+    13,
+    14,
+    28
+   ],
+   "purpose": "原核生物のRNAポリメラーゼとσ因子、ホロ酵素を示す",
+   "terms": [
+    "原核生物",
+    "σ因子",
+    "コア酵素",
+    "ホロ酵素"
+   ],
+   "accuracy": "確認済み（research/accuracy_checklist.md）",
+   "start": 303.333,
+   "end": 331.9,
+   "duration": 28.567,
+   "video": "video/scenes/SC0301.mp4",
+   "audio": "audio/dialogue/scenes/SC0301.wav",
+   "accuracy_check": "ホロ酵素＝コア酵素＋σ因子（p.14）。細菌に核がないことは補足として表示"
+  },
+  {
+   "scene_id": "SC0302",
+   "title": "−35と−10：プロモーターの目印",
+   "chapter": 3,
+   "chapter_title": "細菌の転写作戦",
+   "lines": [
+    "SC0302-01",
+    "SC0302-02",
+    "SC0302-03",
+    "SC0302-04",
+    "SC0302-05",
+    "SC0302-06"
+   ],
+   "visual": "prok_promoter",
+   "bgm": "action",
+   "bg": "大腸菌のプロモーター領域の拡大図",
+   "camera": "−35ボックス、−10ボックス、+1の順に寄る",
+   "chars": [
+    "akari",
+    "nuku",
+    "sigma"
+   ],
+   "sfx": [
+    "ping@SC0302-02",
+    "ping@SC0302-03",
+    "unzip@SC0302-04",
+    "pop@SC0302-06"
+   ],
+   "pages": [
+    15,
+    16,
+    18
+   ],
+   "purpose": "−35/−10ボックスの配列と位置、二重らせんがほどけて転写が始まり、σ因子が離れる過程を示す",
+   "terms": [
+    "−35ボックス",
+    "−10ボックス",
+    "転写開始点（+1）"
+   ],
+   "accuracy": "確認済み（research/accuracy_checklist.md）",
+   "start": 331.9,
+   "end": 374.367,
+   "duration": 42.467,
+   "video": "video/scenes/SC0302.mp4",
+   "audio": "audio/dialogue/scenes/SC0302.wav",
+   "accuracy_check": "−35 TTGACA、−10 TATAAT（非鋳型鎖 5'→3'）、+1/+2 の最初の結合、約10ヌクレオチドで σ 解離（p.16, 18）"
+  },
+  {
+   "scene_id": "SC0303",
+   "title": "伸長と終結",
+   "chapter": 3,
+   "chapter_title": "細菌の転写作戦",
+   "lines": [
+    "SC0303-01",
+    "SC0303-02",
+    "SC0303-03",
+    "SC0303-04",
+    "SC0303-05"
+   ],
+   "visual": "prok_elong_term",
+   "bgm": "action",
+   "bg": "DNAに沿って進むコア酵素。後半はステムループとρタンパク質",
+   "camera": "酵素と並走し、終結点で止まる",
+   "chars": [
+    "akari",
+    "nuku",
+    "pol"
+   ],
+   "sfx": [
+    "click@SC0303-01",
+    "twist@SC0303-03",
+    "pop@SC0303-05"
+   ],
+   "pages": [
+    17,
+    19,
+    20,
+    21
+   ],
+   "purpose": "伸長の3ステップと、ターミネーターによる終結（ステムループ、ρ、A–U塩基対）を示す",
+   "terms": [
+    "伸長",
+    "ターミネーター",
+    "ステムループ構造",
+    "パリンドローム配列",
+    "ρタンパク質"
+   ],
+   "accuracy": "確認済み（research/accuracy_checklist.md）",
+   "start": 374.367,
+   "end": 419.467,
+   "duration": 45.1,
+   "video": "video/scenes/SC0303.mp4",
+   "audio": "audio/dialogue/scenes/SC0303.wav",
+   "accuracy_check": "ステムループの配列は p.21、ρ と A–U 塩基対は p.20"
+  },
+  {
+   "scene_id": "SC0304",
+   "title": "必要なRNAだけを作る",
+   "chapter": 3,
+   "chapter_title": "細菌の転写作戦",
+   "lines": [
+    "SC0304-01",
+    "SC0304-02",
+    "SC0304-03",
+    "SC0304-04"
+   ],
+   "visual": "housekeeping",
+   "bgm": "thoughtful",
+   "bg": "大腸菌と糖分子。環境が変わると遺伝子のスイッチが入れ替わる",
+   "camera": "上段（グルコース）から下段（ラクトース）へ",
+   "chars": [
+    "akari",
+    "nuku"
+   ],
+   "sfx": [
+    "switch@SC0304-03"
+   ],
+   "pages": [
+    23,
+    26
+   ],
+   "purpose": "転写調節で必要なRNAだけを作ること、ハウスキーピング遺伝子と調節的発現遺伝子の違いを示す",
+   "terms": [
+    "転写調節",
+    "ハウスキーピング遺伝子",
+    "構成的発現",
+    "調節的発現"
+   ],
+   "accuracy": "確認済み（research/accuracy_checklist.md）",
+   "start": 419.467,
+   "end": 446.167,
+   "duration": 26.7,
+   "video": "video/scenes/SC0304.mp4",
+   "audio": "audio/dialogue/scenes/SC0304.wav",
+   "accuracy_check": "遺伝子1〜3 の活性化／抑制の入れ替わりは p.23 の図どおり"
+  },
+  {
+   "scene_id": "SC0305",
+   "title": "ラクトースオペロン",
+   "chapter": 3,
+   "chapter_title": "細菌の転写作戦",
+   "lines": [
+    "SC0305-01",
+    "SC0305-02",
+    "SC0305-03",
+    "SC0305-04"
+   ],
+   "visual": "lac_operon",
+   "bgm": "thoughtful",
+   "bg": "lacオペロンの遺伝子地図",
+   "camera": "P → O → lacZ → lacY → lacA → T と移動",
+   "chars": [
+    "akari",
+    "nuku"
+   ],
+   "sfx": [
+    "ping@SC0305-02",
+    "chime@SC0305-03"
+   ],
+   "pages": [
+    24,
+    25
+   ],
+   "purpose": "lacオペロンの構造（1つのmRNAに複数の遺伝子）と、各遺伝子産物の役割を示す",
+   "terms": [
+    "ラクトースオペロン",
+    "オペロン",
+    "lacZ",
+    "lacY",
+    "lacA",
+    "lacI"
+   ],
+   "accuracy": "確認済み（research/accuracy_checklist.md）",
+   "start": 446.167,
+   "end": 478.3,
+   "duration": 32.133,
+   "video": "video/scenes/SC0305.mp4",
+   "audio": "audio/dialogue/scenes/SC0305.wav",
+   "accuracy_check": "lacZYA と転写単位、lacI（p.25）。各遺伝子と酵素の対応は資料に図示がないため示さない"
+  },
+  {
+   "scene_id": "SC0306",
+   "title": "二つのスイッチ：cAMP-CRPとリプレッサー",
+   "chapter": 3,
+   "chapter_title": "細菌の転写作戦",
+   "lines": [
+    "SC0306-01",
+    "SC0306-02",
+    "SC0306-03",
+    "SC0306-04",
+    "SC0306-05",
+    "SC0306-06"
+   ],
+   "visual": "lac_switches",
+   "bgm": "thoughtful",
+   "bg": "2つのパネル。左にCRP–cAMP（正の調節）、右にリプレッサー（負の調節）",
+   "camera": "左パネル → 右パネル → 条件比較表",
+   "chars": [
+    "akari",
+    "nuku"
+   ],
+   "sfx": [
+    "switch@SC0306-01",
+    "switch@SC0306-03",
+    "chime@SC0306-06"
+   ],
+   "pages": [
+    22,
+    24
+   ],
+   "purpose": "cAMP-CRPによる正の調節と、リプレッサーによる負の調節を条件別に比較する",
+   "terms": [
+    "cAMP-CRP",
+    "正の調節",
+    "負の調節",
+    "オペレーター",
+    "リプレッサー"
+   ],
+   "accuracy": "確認済み（research/accuracy_checklist.md）",
+   "start": 478.3,
+   "end": 527.467,
+   "duration": 49.167,
+   "video": "video/scenes/SC0306.mp4",
+   "audio": "audio/dialogue/scenes/SC0306.wav",
+   "accuracy_check": "CRP 結合領域・オペレーターはプロモーター内（p.22 注、p.24）。ラクトース由来物質による解除は補足と表示"
+  },
+  {
+   "scene_id": "SC0307",
+   "title": "オペロンとレギュロン",
+   "chapter": 3,
+   "chapter_title": "細菌の転写作戦",
+   "lines": [
+    "SC0307-01",
+    "SC0307-02",
+    "SC0307-03",
+    "SC0307-04"
+   ],
+   "visual": "operon_regulon",
+   "bgm": "thoughtful",
+   "bg": "上段にオペロン（1つのプロモーター）、下段にレギュロン（散らばった遺伝子）",
+   "camera": "上下の比較",
+   "chars": [
+    "akari",
+    "nuku"
+   ],
+   "sfx": [
+    "ping@SC0307-02"
+   ],
+   "pages": [
+    25
+   ],
+   "purpose": "オペロンとレギュロンの違いを図で比較する",
+   "terms": [
+    "オペロン",
+    "レギュロン",
+    "熱ショックレギュロン",
+    "SOSレギュロン"
+   ],
+   "accuracy": "確認済み（research/accuracy_checklist.md）",
+   "start": 527.467,
+   "end": 553.033,
+   "duration": 25.567,
+   "video": "video/scenes/SC0307.mp4",
+   "audio": "audio/dialogue/scenes/SC0307.wav",
+   "accuracy_check": ""
+  },
+  {
+   "scene_id": "SC0401",
+   "title": "核の中の三つのポリメラーゼ",
+   "chapter": 4,
+   "chapter_title": "真核生物の転写開始",
+   "lines": [
+    "SC0401-01",
+    "SC0401-02",
+    "SC0401-03",
+    "SC0401-04",
+    "SC0401-05",
+    "SC0401-06",
+    "SC0401-07"
+   ],
+   "visual": "three_polymerases",
+   "bgm": "tension",
+   "bg": "真核細胞の核内。ヌクレオソームに巻きついたDNA",
+   "camera": "核膜を抜けて核内へ。3体のポリメラーゼが並ぶ",
+   "chars": [
+    "akari",
+    "nuku"
+   ],
+   "sfx": [
+    "whoosh@SC0401-01",
+    "ping@SC0401-04",
+    "ping@SC0401-05",
+    "ping@SC0401-06"
+   ],
+   "pages": [
+    28,
+    29,
+    59
+   ],
+   "purpose": "真核生物の3種のRNAポリメラーゼと、その担当を示す",
+   "terms": [
+    "RNAポリメラーゼI",
+    "RNAポリメラーゼII",
+    "RNAポリメラーゼIII",
+    "転写基本因子",
+    "ヌクレオソーム"
+   ],
+   "accuracy": "確認済み（research/accuracy_checklist.md）",
+   "start": 553.033,
+   "end": 609.433,
+   "duration": 56.4,
+   "video": "video/scenes/SC0401.mp4",
+   "audio": "audio/dialogue/scenes/SC0401.wav",
+   "accuracy_check": "Pol I/II/III の担当は p.28 の表（p.59 の表とも整合）"
+  },
+  {
+   "scene_id": "SC0402",
+   "title": "転写開始前複合体の組み立て",
+   "chapter": 4,
+   "chapter_title": "真核生物の転写開始",
+   "lines": [
+    "SC0402-01",
+    "SC0402-02",
+    "SC0402-03",
+    "SC0402-04",
+    "SC0402-05",
+    "SC0402-06",
+    "SC0402-07",
+    "SC0402-08"
+   ],
+   "visual": "pic_assembly",
+   "bgm": "tension",
+   "bg": "プロモーター領域の拡大。TATAボックスと転写開始点",
+   "camera": "TATAボックスに寄り、因子が1つずつ集まるたびに少し引く",
+   "chars": [
+    "akari",
+    "nuku",
+    "tfiid"
+   ],
+   "sfx": [
+    "ping@SC0402-01",
+    "bend@SC0402-03",
+    "clamp@SC0402-05",
+    "clamp@SC0402-06",
+    "clamp@SC0402-07"
+   ],
+   "pages": [
+    30,
+    31,
+    32
+   ],
+   "purpose": "TATAボックス→TFIID（TBP）→TFIIB→Pol II・TFIIF→TFIIE・TFIIHの順に転写開始前複合体ができることを示す",
+   "terms": [
+    "TATAボックス",
+    "TFIID",
+    "TBP",
+    "TAF",
+    "TFIIB",
+    "TFIIF",
+    "TFIIE",
+    "TFIIH",
+    "転写開始前複合体"
+   ],
+   "accuracy": "確認済み（research/accuracy_checklist.md）",
+   "start": 609.433,
+   "end": 666.867,
+   "duration": 57.433,
+   "video": "video/scenes/SC0402.mp4",
+   "audio": "audio/dialogue/scenes/SC0402.wav",
+   "accuracy_check": "TATA は約25塩基上流、TFIID→TFIIB→Pol II/TFIIF→TFIIE/TFIIH（p.30 の図）。各因子の役割は p.32 の表"
+  },
+  {
+   "scene_id": "SC0403",
+   "title": "TFIIHとCTDのリン酸化",
+   "chapter": 4,
+   "chapter_title": "真核生物の転写開始",
+   "lines": [
+    "SC0403-01",
+    "SC0403-02",
+    "SC0403-03",
+    "SC0403-04",
+    "SC0403-05"
+   ],
+   "visual": "tfiih_ctd",
+   "bgm": "tension",
+   "bg": "転写開始前複合体のクローズアップ。ポリメラーゼから伸びる長い尾（CTD）",
+   "camera": "TFIIHに寄り、CTDのリン酸化で光る。ポリメラーゼが右へ発進",
+   "chars": [
+    "akari",
+    "nuku",
+    "pol"
+   ],
+   "sfx": [
+    "charge@SC0403-01",
+    "spark@SC0403-02",
+    "whoosh@SC0403-04"
+   ],
+   "pages": [
+    30,
+    31,
+    32
+   ],
+   "purpose": "TFIIHがATPを使ってDNAをほどき、CTDのSer5をリン酸化して伸長期へ移ることを示す",
+   "terms": [
+    "TFIIH",
+    "ATP",
+    "CTD",
+    "C末端領域",
+    "リン酸化",
+    "転写伸長期"
+   ],
+   "accuracy": "確認済み（research/accuracy_checklist.md）",
+   "start": 666.867,
+   "end": 705.767,
+   "duration": 38.9,
+   "video": "video/scenes/SC0403.mp4",
+   "audio": "audio/dialogue/scenes/SC0403.wav",
+   "accuracy_check": "TFIIH が ATP で DNA をほどき CTD の Ser5 をリン酸化（p.30, 32）。図(E)で TFIID は TATA に残る"
+  },
+  {
+   "scene_id": "SC0404",
+   "title": "上流プロモーター要素と、原核との比較",
+   "chapter": 4,
+   "chapter_title": "真核生物の転写開始",
+   "lines": [
+    "SC0404-01",
+    "SC0404-02",
+    "SC0404-03"
+   ],
+   "visual": "upstream_compare",
+   "bgm": "tension",
+   "bg": "上段に真核のプロモーター（CAAT・GC・TATA）、下段に原核のプロモーター（−35・−10）",
+   "camera": "上段から下段へ",
+   "chars": [
+    "akari",
+    "nuku"
+   ],
+   "sfx": [
+    "ping@SC0404-01",
+    "chime@SC0404-03"
+   ],
+   "pages": [
+    18,
+    28,
+    33
+   ],
+   "purpose": "CAAT/GCボックスの配列と働き、原核と真核のプロモーターと開始因子の違いを比較する",
+   "terms": [
+    "上流プロモーター要素",
+    "CAATボックス",
+    "GCボックス"
+   ],
+   "accuracy": "確認済み（research/accuracy_checklist.md）",
+   "start": 705.767,
+   "end": 743.533,
+   "duration": 37.767,
+   "video": "video/scenes/SC0404.mp4",
+   "audio": "audio/dialogue/scenes/SC0404.wav",
+   "accuracy_check": "CAAT 5'-CCAAT-3'、GC 5'-GGGCGG-3'（p.33）"
+  },
+  {
+   "scene_id": "SC0405",
+   "title": "チェックポイント②",
+   "chapter": 4,
+   "chapter_title": "真核生物の転写開始",
+   "lines": [
+    "SC0405-01",
+    "SC0405-02",
+    "SC0405-03",
+    "SC0405-04"
+   ],
+   "visual": "checkpoint",
+   "bgm": "quiz",
+   "bg": "クエストのチェックポイント画面",
+   "camera": "固定",
+   "chars": [
+    "akari",
+    "nuku"
+   ],
+   "sfx": [
+    "tick@SC0405-02",
+    "correct@SC0405-03"
+   ],
+   "pages": [
+    32
+   ],
+   "purpose": "TBPとTFIIHの役割の確認",
+   "terms": [
+    "TBP",
+    "TFIIH"
+   ],
+   "accuracy": "確認済み（research/accuracy_checklist.md）",
+   "start": 743.533,
+   "end": 760.8,
+   "duration": 17.267,
+   "video": "video/scenes/SC0405.mp4",
+   "audio": "audio/dialogue/scenes/SC0405.wav",
+   "accuracy_check": ""
+  },
+  {
+   "scene_id": "SC0501",
+   "title": "遠くからのスイッチ：エンハンサー",
+   "chapter": 5,
+   "chapter_title": "遺伝子発現のスイッチ",
+   "lines": [
+    "SC0501-01",
+    "SC0501-02",
+    "SC0501-03",
+    "SC0501-04",
+    "SC0501-05",
+    "SC0501-06",
+    "SC0501-07"
+   ],
+   "visual": "enhancer_loop",
+   "bgm": "hopeful",
+   "bg": "長いDNA。遠く離れたエンハンサーに活性化因子が結合し、DNAがループする",
+   "camera": "エンハンサーからプロモーターへ長くパン、ループ形成で全体を見せる",
+   "chars": [
+    "akari",
+    "nuku"
+   ],
+   "sfx": [
+    "ping@SC0501-02",
+    "bend@SC0501-04",
+    "glow@SC0501-05"
+   ],
+   "pages": [
+    34,
+    35
+   ],
+   "purpose": "転写活性化因子、エンハンサー/サイレンサー、メディエーター、クロマチン修飾酵素の役割を示す",
+   "terms": [
+    "転写活性化因子",
+    "エンハンサー",
+    "サイレンサー",
+    "メディエーター（介在因子）",
+    "クロマチン再構成複合体",
+    "ヒストン修飾酵素"
+   ],
+   "accuracy": "確認済み（research/accuracy_checklist.md）",
+   "start": 760.8,
+   "end": 807.467,
+   "duration": 46.667,
+   "video": "video/scenes/SC0501.mp4",
+   "audio": "audio/dialogue/scenes/SC0501.wav",
+   "accuracy_check": "活性化因子・介在因子・クロマチン再構成複合体・ヒストン修飾酵素は p.34 の図の配置"
+  },
+  {
+   "scene_id": "SC0502",
+   "title": "調節配列の地図",
+   "chapter": 5,
+   "chapter_title": "遺伝子発現のスイッチ",
+   "lines": [
+    "SC0502-01",
+    "SC0502-02"
+   ],
+   "visual": "regulatory_map",
+   "bgm": "hopeful",
+   "bg": "調節配列の地図（遠位調節要素、近位調節要素、プロモーター）",
+   "camera": "右（遺伝子）から左（遠位）へパン",
+   "chars": [
+    "akari",
+    "nuku"
+   ],
+   "sfx": [
+    "ping@SC0502-01"
+   ],
+   "pages": [
+    35
+   ],
+   "purpose": "遠位・近位調節要素とプロモーター、基礎的発現と調節的発現の関係を整理する",
+   "terms": [
+    "遠位調節要素",
+    "近位調節要素",
+    "基礎的発現",
+    "調節的発現",
+    "応答配列"
+   ],
+   "accuracy": "確認済み（research/accuracy_checklist.md）",
+   "start": 807.467,
+   "end": 828.4,
+   "duration": 20.933,
+   "video": "video/scenes/SC0502.mp4",
+   "audio": "audio/dialogue/scenes/SC0502.wav",
+   "accuracy_check": "遠位／近位調節要素・プロモーター・基礎的／調節的発現は p.35 の図"
+  },
+  {
+   "scene_id": "SC0503",
+   "title": "ほどけたクロマチン、凝集したクロマチン",
+   "chapter": 5,
+   "chapter_title": "遺伝子発現のスイッチ",
+   "lines": [
+    "SC0503-01",
+    "SC0503-02",
+    "SC0503-03",
+    "SC0503-04",
+    "SC0503-05"
+   ],
+   "visual": "chromatin_states",
+   "bgm": "hopeful",
+   "bg": "左にほどけたクロマチン（暖色の光）、右に凝集したクロマチン（寒色）",
+   "camera": "左右の比較から、クロマチンがほどける瞬間に寄る",
+   "chars": [
+    "akari",
+    "nuku"
+   ],
+   "sfx": [
+    "unzip@SC0503-04",
+    "glow@SC0503-05"
+   ],
+   "pages": [
+    2,
+    34,
+    70
+   ],
+   "purpose": "ユークロマチンとヘテロクロマチン、クロマチンリモデリングと発現の関係を示す",
+   "terms": [
+    "ヒストン",
+    "ヌクレオソーム",
+    "クロマチン",
+    "ユークロマチン",
+    "ヘテロクロマチン",
+    "クロマチンリモデリング"
+   ],
+   "accuracy": "確認済み（research/accuracy_checklist.md）",
+   "start": 828.4,
+   "end": 865.2,
+   "duration": 36.8,
+   "video": "video/scenes/SC0503.mp4",
+   "audio": "audio/dialogue/scenes/SC0503.wav",
+   "accuracy_check": "ユークロマチン＝発現しうる、ヘテロクロマチン＝発現しない（p.70）。エピジェネティック制御は語句一覧のみ → 補足"
+  },
+  {
+   "scene_id": "SC0504",
+   "title": "同じゲノム、違う細胞",
+   "chapter": 5,
+   "chapter_title": "遺伝子発現のスイッチ",
+   "lines": [
+    "SC0504-01",
+    "SC0504-02",
+    "SC0504-03",
+    "SC0504-04"
+   ],
+   "visual": "same_genome",
+   "bgm": "hopeful",
+   "bg": "形の違う2つの細胞。同じ遺伝子の列に、異なるオン/オフのパターン",
+   "camera": "2つの細胞から遺伝子の列へズーム",
+   "chars": [
+    "akari",
+    "nuku"
+   ],
+   "sfx": [
+    "switch@SC0504-02",
+    "switch@SC0504-03"
+   ],
+   "pages": [
+    26,
+    36,
+    37
+   ],
+   "purpose": "ホルモン、発生段階、分化による遺伝子発現の違いと、細胞のコミットメントを示す",
+   "terms": [
+    "分化",
+    "ホルモン応答性遺伝子",
+    "β-グロビン遺伝子",
+    "コミットメント"
+   ],
+   "accuracy": "確認済み（research/accuracy_checklist.md）",
+   "start": 865.2,
+   "end": 901.8,
+   "duration": 36.6,
+   "video": "video/scenes/SC0504.mp4",
+   "audio": "audio/dialogue/scenes/SC0504.wav",
+   "accuracy_check": "p.36 のオン/オフの並びをそのまま使用。p.37 の図に疾患名はないので付けない"
+  },
+  {
+   "scene_id": "SC0505",
+   "title": "原核と真核、調節の違い",
+   "chapter": 5,
+   "chapter_title": "遺伝子発現のスイッチ",
+   "lines": [
+    "SC0505-01",
+    "SC0505-02",
+    "SC0505-03",
+    "SC0505-04"
+   ],
+   "visual": "regulation_compare",
+   "bgm": "hopeful",
+   "bg": "左に原核（転写の有無だけ）、右に真核（転写＋転写後）",
+   "camera": "左右の比較",
+   "chars": [
+    "akari",
+    "nuku"
+   ],
+   "sfx": [
+    "chime@SC0505-02"
+   ],
+   "pages": [
+    70
+   ],
+   "purpose": "原核は転写調節、真核は転写調節に加えて転写後調節もあることを示す",
+   "terms": [
+    "転写調節",
+    "転写後調節"
+   ],
+   "accuracy": "確認済み（research/accuracy_checklist.md）",
+   "start": 901.8,
+   "end": 926.0,
+   "duration": 24.2,
+   "video": "video/scenes/SC0505.mp4",
+   "audio": "audio/dialogue/scenes/SC0505.wav",
+   "accuracy_check": "原核＝転写調節、真核＝＋転写後調節（p.70）"
+  },
+  {
+   "scene_id": "SC0601",
+   "title": "プレmRNAの加工",
+   "chapter": 6,
+   "chapter_title": "RNA編集工房",
+   "lines": [
+    "SC0601-01",
+    "SC0601-02",
+    "SC0601-03",
+    "SC0601-04"
+   ],
+   "visual": "processing_overview",
+   "bgm": "workshop",
+   "bg": "核の中の工房。ベルトコンベアの上をRNAが流れる",
+   "camera": "転写中のポリメラーゼから、伸びるRNAを追う",
+   "chars": [
+    "akari",
+    "nuku"
+   ],
+   "sfx": [
+    "whoosh@SC0601-01",
+    "ping@SC0601-03"
+   ],
+   "pages": [
+    4,
+    46
+   ],
+   "purpose": "mRNA前駆体が4段階の過程を経て成熟mRNAになることを示す",
+   "terms": [
+    "mRNA前駆体",
+    "pre-mRNA",
+    "hnRNA",
+    "キャッピング酵素",
+    "ポリ(A)ポリメラーゼ"
+   ],
+   "accuracy": "確認済み（research/accuracy_checklist.md）",
+   "start": 926.0,
+   "end": 954.967,
+   "duration": 28.967,
+   "video": "video/scenes/SC0601.mp4",
+   "audio": "audio/dialogue/scenes/SC0601.wav",
+   "accuracy_check": ""
+  },
+  {
+   "scene_id": "SC0602",
+   "title": "5'キャップ",
+   "chapter": 6,
+   "chapter_title": "RNA編集工房",
+   "lines": [
+    "SC0602-01",
+    "SC0602-02",
+    "SC0602-03"
+   ],
+   "visual": "cap_formation",
+   "bgm": "workshop",
+   "bg": "RNAの5'末端の拡大",
+   "camera": "5'末端に寄り、メチル基が付く瞬間をクローズアップ",
+   "chars": [
+    "akari",
+    "nuku"
+   ],
+   "sfx": [
+    "pop@SC0602-01",
+    "sparkle@SC0602-02"
+   ],
+   "pages": [
+    47
+   ],
+   "purpose": "5'末端へのGの付加と7位の窒素のメチル化（m7G）を示す",
+   "terms": [
+    "5'キャップ",
+    "m7G",
+    "メチル化"
+   ],
+   "accuracy": "確認済み（research/accuracy_checklist.md）",
+   "start": 954.967,
+   "end": 971.967,
+   "duration": 17.0,
+   "video": "video/scenes/SC0602.mp4",
+   "audio": "audio/dialogue/scenes/SC0602.wav",
+   "accuracy_check": "5'ppp に G 付加 → 7位の N をメチル化（p.47）"
+  },
+  {
+   "scene_id": "SC0603",
+   "title": "ポリAテール",
+   "chapter": 6,
+   "chapter_title": "RNA編集工房",
+   "lines": [
+    "SC0603-01",
+    "SC0603-02",
+    "SC0603-03",
+    "SC0603-04"
+   ],
+   "visual": "polya",
+   "bgm": "workshop",
+   "bg": "RNAの3'側。シグナル配列とハサミのような酵素",
+   "camera": "AAUAAAに寄る→切断→Aが連なっていく",
+   "chars": [
+    "akari",
+    "nuku"
+   ],
+   "sfx": [
+    "ping@SC0603-01",
+    "snip@SC0603-02",
+    "pop@SC0603-03"
+   ],
+   "pages": [
+    47
+   ],
+   "purpose": "ポリアデニル化シグナル、切断、ポリ(A)ポリメラーゼによるA付加と、キャップ・ポリAの役割を示す",
+   "terms": [
+    "ポリアデニル化シグナル",
+    "AAUAAA",
+    "エンドヌクレアーゼ",
+    "ポリ(A)ポリメラーゼ",
+    "エキソヌクレアーゼ"
+   ],
+   "accuracy": "確認済み（research/accuracy_checklist.md）",
+   "start": 971.967,
+   "end": 1004.033,
+   "duration": 32.067,
+   "video": "video/scenes/SC0603.mp4",
+   "audio": "audio/dialogue/scenes/SC0603.wav",
+   "accuracy_check": "AAUAAA と GU に富む配列の間を切断、250個まで（20〜250個）の A（p.47）"
+  },
+  {
+   "scene_id": "SC0604",
+   "title": "エクソンとイントロン：GT-AG則",
+   "chapter": 6,
+   "chapter_title": "RNA編集工房",
+   "lines": [
+    "SC0604-01",
+    "SC0604-02",
+    "SC0604-03",
+    "SC0604-04",
+    "SC0604-05"
+   ],
+   "visual": "exon_intron",
+   "bgm": "workshop",
+   "bg": "遺伝子のDNAと前駆体RNA。エクソンは色つき、イントロンは灰色",
+   "camera": "エクソン→イントロンの境界に寄る",
+   "chars": [
+    "akari",
+    "nuku"
+   ],
+   "sfx": [
+    "ping@SC0604-03",
+    "ping@SC0604-04"
+   ],
+   "pages": [
+    48,
+    50
+   ],
+   "purpose": "不連続遺伝子、エクソン/イントロン、GT-AG則とブランチ部位を示す",
+   "terms": [
+    "不連続遺伝子",
+    "エクソン",
+    "イントロン",
+    "GT-AG則",
+    "ブランチ部位"
+   ],
+   "accuracy": "確認済み（research/accuracy_checklist.md）",
+   "start": 1004.033,
+   "end": 1039.1,
+   "duration": 35.067,
+   "video": "video/scenes/SC0604.mp4",
+   "audio": "audio/dialogue/scenes/SC0604.wav",
+   "accuracy_check": "GT-AG 則、ブランチ部位 A、ジストロフィン 2400 kb・99%（p.48, 50）"
+  },
+  {
+   "scene_id": "SC0605",
+   "title": "スプライソソームの手順",
+   "chapter": 6,
+   "chapter_title": "RNA編集工房",
+   "lines": [
+    "SC0605-01",
+    "SC0605-02",
+    "SC0605-03",
+    "SC0605-04",
+    "SC0605-05",
+    "SC0605-06",
+    "SC0605-07",
+    "SC0605-08",
+    "SC0605-09",
+    "SC0605-10"
+   ],
+   "visual": "spliceosome",
+   "bgm": "workshop",
+   "bg": "イントロンを中心にした模式図。snRNPが色つきの粒として集まる",
+   "camera": "段階ごとに少しずつ寄り、投げ縄構造の形成をクローズアップ",
+   "chars": [
+    "akari",
+    "nuku",
+    "splice"
+   ],
+   "sfx": [
+    "pop@SC0605-03",
+    "pop@SC0605-04",
+    "pop@SC0605-05",
+    "pop@SC0605-06",
+    "snip@SC0605-08",
+    "twist@SC0605-08",
+    "clamp@SC0605-09"
+   ],
+   "pages": [
+    50,
+    51,
+    52
+   ],
+   "purpose": "U1→U2（U2AF）→U4・U5・U6→U1放出→U4放出→切断・投げ縄→エクソン連結の順序を正確に示す",
+   "terms": [
+    "snRNA",
+    "snRNP",
+    "スプライソソーム",
+    "U1",
+    "U2",
+    "U2AF",
+    "U4",
+    "U5",
+    "U6",
+    "投げ縄構造（ラリアット）"
+   ],
+   "accuracy": "確認済み（research/accuracy_checklist.md）",
+   "start": 1039.1,
+   "end": 1119.667,
+   "duration": 80.567,
+   "video": "video/scenes/SC0605.mp4",
+   "audio": "audio/dialogue/scenes/SC0605.wav",
+   "accuracy_check": "U1→U2AF/U2→U5・U4・U6→U1放出→U4放出・U6がU2へ→GUの5'側で切断・GとAが結合（投げ縄）→U5がエクソン保持（p.51, 52）"
+  },
+  {
+   "scene_id": "SC0606",
+   "title": "選択的スプライシング",
+   "chapter": 6,
+   "chapter_title": "RNA編集工房",
+   "lines": [
+    "SC0606-01",
+    "SC0606-02",
+    "SC0606-03",
+    "SC0606-04",
+    "SC0606-05"
+   ],
+   "visual": "alt_splicing",
+   "bgm": "workshop",
+   "bg": "1本のmRNA前駆体から、2種類の成熟mRNAが分岐する",
+   "camera": "前駆体から2つの結果を並べて比較。後半はグルコキナーゼ遺伝子の地図",
+   "chars": [
+    "akari",
+    "nuku"
+   ],
+   "sfx": [
+    "ping@SC0606-01",
+    "ping@SC0606-02",
+    "chime@SC0606-04"
+   ],
+   "pages": [
+    49,
+    71
+   ],
+   "purpose": "選択的スプライシングで1つの前駆体から複数のmRNAができること、選択的プロモーター利用の例を示す",
+   "terms": [
+    "選択的スプライシング",
+    "グルコキナーゼ",
+    "選択的プロモーター利用"
+   ],
+   "accuracy": "確認済み（research/accuracy_checklist.md）",
+   "start": 1119.667,
+   "end": 1158.1,
+   "duration": 38.433,
+   "video": "video/scenes/SC0606.mp4",
+   "audio": "audio/dialogue/scenes/SC0606.wav",
+   "accuracy_check": "A: E1-E3-E4、B: E1-E2-E4。グルコキナーゼ：肝臓 1L、膵B細胞/下垂体 1B（p.49）"
+  },
+  {
+   "scene_id": "SC0607",
+   "title": "完成したmRNA、核の外へ",
+   "chapter": 6,
+   "chapter_title": "RNA編集工房",
+   "lines": [
+    "SC0607-01",
+    "SC0607-02",
+    "SC0607-03"
+   ],
+   "visual": "gene_to_protein",
+   "bgm": "workshop",
+   "bg": "ヒト遺伝子の構造 → 転写 → スプライシング → 核膜孔をくぐるmRNA",
+   "camera": "遺伝子の構造図から、核外へ出ていくmRNAを追う",
+   "chars": [
+    "akari",
+    "nuku"
+   ],
+   "sfx": [
+    "whoosh@SC0607-03"
+   ],
+   "pages": [
+    46,
+    53
+   ],
+   "purpose": "ヒト遺伝子の構造（UTR、開始・終止コドン、ポリAシグナル）と、成熟mRNAが核外へ運ばれる流れをまとめる",
+   "terms": [
+    "5'非翻訳領域",
+    "3'非翻訳領域",
+    "開始コドン",
+    "終止コドン",
+    "ポリアデニル化シグナル"
+   ],
+   "accuracy": "確認済み（research/accuracy_checklist.md）",
+   "start": 1158.1,
+   "end": 1188.933,
+   "duration": 30.833,
+   "video": "video/scenes/SC0607.mp4",
+   "audio": "audio/dialogue/scenes/SC0607.wav",
+   "accuracy_check": "遺伝子の構造は p.53（開始 ATG、終止 TGA、ポリアデニル化シグナル）"
+  },
+  {
+   "scene_id": "SC0701",
+   "title": "ゲノムの中のRNA遺伝子",
+   "chapter": 7,
+   "chapter_title": "小さなRNAの大きな役割",
+   "lines": [
+    "SC0701-01",
+    "SC0701-02",
+    "SC0701-03",
+    "SC0701-04",
+    "SC0701-05"
+   ],
+   "visual": "genome_pie",
+   "bgm": "discovery",
+   "bg": "ゲノムの構成を示す円グラフと、転写物の内訳",
+   "camera": "円グラフから、アミノ酸指定配列 約1.3%の細い扇形へズーム",
+   "chars": [
+    "akari",
+    "nuku"
+   ],
+   "sfx": [
+    "ping@SC0701-02",
+    "chime@SC0701-04"
+   ],
+   "pages": [
+    54,
+    55,
+    56
+   ],
+   "purpose": "ゲノムの構成、転写物の内訳、非コードRNA遺伝子の定義を示す",
+   "terms": [
+    "ゲノム",
+    "アミノ酸指定配列",
+    "ノンコーディングRNA（ncRNA）"
+   ],
+   "accuracy": "確認済み（research/accuracy_checklist.md）",
+   "start": 1188.933,
+   "end": 1227.867,
+   "duration": 38.933,
+   "video": "video/scenes/SC0701.mp4",
+   "audio": "audio/dialogue/scenes/SC0701.wav",
+   "accuracy_check": "ゲノムの割合は p.54、転写物の数は p.55（3項目の和は 59,893 で総数 60,483 と一致しない：資料の値をそのまま表示）"
+  },
+  {
+   "scene_id": "SC0702",
+   "title": "rRNA：リボソームをつくるRNA",
+   "chapter": 7,
+   "chapter_title": "小さなRNAの大きな役割",
+   "lines": [
+    "SC0702-01",
+    "SC0702-02",
+    "SC0702-03"
+   ],
+   "visual": "rrna_ribosome",
+   "bgm": "discovery",
+   "bg": "真核生物のリボソーム（80S＝60S＋40S）と、45S前駆体のプロセシング",
+   "camera": "リボソームを分解して4種のrRNAを並べ、45S前駆体へ",
+   "chars": [
+    "akari",
+    "nuku"
+   ],
+   "sfx": [
+    "pop@SC0702-01",
+    "snip@SC0702-03"
+   ],
+   "pages": [
+    59,
+    60,
+    62,
+    63
+   ],
+   "purpose": "リボソームの構成、rRNAの多コピー性、45S前駆体のプロセシング、Pol Iのプロモーターを示す",
+   "terms": [
+    "rRNA",
+    "リボソーム",
+    "80S",
+    "60S",
+    "40S",
+    "45S rRNA前駆体"
+   ],
+   "accuracy": "確認済み（research/accuracy_checklist.md）",
+   "start": 1227.867,
+   "end": 1258.433,
+   "duration": 30.567,
+   "video": "video/scenes/SC0702.mp4",
+   "audio": "audio/dialogue/scenes/SC0702.wav",
+   "accuracy_check": "80S＝60S（5S・28S・5.8S）＋40S（18S）、45S 前駆体（p.62, 63）"
+  },
+  {
+   "scene_id": "SC0703",
+   "title": "tRNA：アミノ酸の運び屋",
+   "chapter": 7,
+   "chapter_title": "小さなRNAの大きな役割",
+   "lines": [
+    "SC0703-01",
+    "SC0703-02",
+    "SC0703-03"
+   ],
+   "visual": "trna",
+   "bgm": "discovery",
+   "bg": "tRNAのクローバー葉構造",
+   "camera": "クローバー葉構造からアンチコドンループへ寄る",
+   "chars": [
+    "akari",
+    "nuku"
+   ],
+   "sfx": [
+    "ping@SC0703-01",
+    "pop@SC0703-03"
+   ],
+   "pages": [
+    59,
+    60,
+    64
+   ],
+   "purpose": "tRNAの役割と構造、修飾、Pol IIIの遺伝子内部プロモーターを示す",
+   "terms": [
+    "tRNA",
+    "アンチコドン",
+    "コドン",
+    "内部制御領域"
+   ],
+   "accuracy": "確認済み（research/accuracy_checklist.md）",
+   "start": 1258.433,
+   "end": 1286.9,
+   "duration": 28.467,
+   "video": "video/scenes/SC0703.mp4",
+   "audio": "audio/dialogue/scenes/SC0703.wav",
+   "accuracy_check": "Pol III のプロモーターは遺伝子内部（約50 bp、p.60）"
+  },
+  {
+   "scene_id": "SC0704",
+   "title": "miRNAの誕生",
+   "chapter": 7,
+   "chapter_title": "小さなRNAの大きな役割",
+   "lines": [
+    "SC0704-01",
+    "SC0704-02",
+    "SC0704-03",
+    "SC0704-04",
+    "SC0704-05",
+    "SC0704-06",
+    "SC0704-07"
+   ],
+   "visual": "mirna_pathway",
+   "bgm": "discovery",
+   "bg": "核と細胞質をまたぐmiRNAの生成経路",
+   "camera": "核内のpri-miRNAから、核膜を越えて細胞質のRISCへ",
+   "chars": [
+    "akari",
+    "nuku",
+    "mina"
+   ],
+   "sfx": [
+    "snip@SC0704-03",
+    "whoosh@SC0704-04",
+    "snip@SC0704-05",
+    "clamp@SC0704-06"
+   ],
+   "pages": [
+    56,
+    67
+   ],
+   "purpose": "pri-miRNA→Drosha→pre-miRNA→Exportin 5→Dicer→成熟miRNA→RISCの流れを示す",
+   "terms": [
+    "miRNA",
+    "pri-miRNA",
+    "Drosha",
+    "pre-miRNA",
+    "Exportin 5",
+    "Dicer",
+    "RISC"
+   ],
+   "accuracy": "確認済み（research/accuracy_checklist.md）",
+   "start": 1286.9,
+   "end": 1332.0,
+   "duration": 45.1,
+   "video": "video/scenes/SC0704.mp4",
+   "audio": "audio/dialogue/scenes/SC0704.wav",
+   "accuracy_check": "pri → Drosha（60〜70 nt）→ Exportin 5 → Dicer（21〜23 nt）→ RISC（p.67）"
+  },
+  {
+   "scene_id": "SC0705",
+   "title": "miRNAのはたらき",
+   "chapter": 7,
+   "chapter_title": "小さなRNAの大きな役割",
+   "lines": [
+    "SC0705-01",
+    "SC0705-02",
+    "SC0705-03",
+    "SC0705-04"
+   ],
+   "visual": "mirna_action",
+   "bgm": "discovery",
+   "bg": "細胞質。mRNAにmiRNAが結合し、タンパク質合成が抑えられる",
+   "camera": "2本のmRNAを並べ、片方だけにmiRNAが結合する",
+   "chars": [
+    "akari",
+    "nuku",
+    "mina"
+   ],
+   "sfx": [
+    "clamp@SC0705-01",
+    "crumble@SC0705-02"
+   ],
+   "pages": [
+    56,
+    67
+   ],
+   "purpose": "miRNAが標的mRNAに結合して翻訳を抑制すること、その規模を示す",
+   "terms": [
+    "標的mRNA",
+    "翻訳抑制"
+   ],
+   "accuracy": "確認済み（research/accuracy_checklist.md）",
+   "start": 1332.0,
+   "end": 1363.9,
+   "duration": 31.9,
+   "video": "video/scenes/SC0705.mp4",
+   "audio": "audio/dialogue/scenes/SC0705.wav",
+   "accuracy_check": "結合した mRNA は分解（p.67 の図）、1000以上・30%以上（p.56）"
+  },
+  {
+   "scene_id": "SC0706",
+   "title": "lncRNAとsnoRNA",
+   "chapter": 7,
+   "chapter_title": "小さなRNAの大きな役割",
+   "lines": [
+    "SC0706-01",
+    "SC0706-02",
+    "SC0706-03"
+   ],
+   "visual": "lncrna",
+   "bgm": "discovery",
+   "bg": "mRNAとlncRNAの比較図（どちらもキャップとポリA。lncRNAは翻訳されない）",
+   "camera": "上下の比較",
+   "chars": [
+    "akari",
+    "nuku"
+   ],
+   "sfx": [
+    "ping@SC0706-01",
+    "buzz@SC0706-02"
+   ],
+   "pages": [
+    56,
+    66,
+    68,
+    69
+   ],
+   "purpose": "lncRNAの定義と、mRNAとの共通点・相違点、snoRNAの役割を示す",
+   "terms": [
+    "lncRNA",
+    "ORF",
+    "snoRNA"
+   ],
+   "accuracy": "確認済み（research/accuracy_checklist.md）",
+   "start": 1363.9,
+   "end": 1389.967,
+   "duration": 26.067,
+   "video": "video/scenes/SC0706.mp4",
+   "audio": "audio/dialogue/scenes/SC0706.wav",
+   "accuracy_check": "200塩基以上・ORF 100アミノ酸残基以下、キャップ・ポリA・スプライシングあり、翻訳なし（p.68）"
+  },
+  {
+   "scene_id": "SC0707",
+   "title": "ncRNAと疾患",
+   "chapter": 7,
+   "chapter_title": "小さなRNAの大きな役割",
+   "lines": [
+    "SC0707-01",
+    "SC0707-02",
+    "SC0707-03"
+   ],
+   "visual": "ncrna_disease",
+   "bgm": "somber",
+   "bg": "13番染色体と15番染色体の模式図。欠失部分が点滅",
+   "camera": "13番 → 15番へパン",
+   "chars": [
+    "akari",
+    "nuku"
+   ],
+   "sfx": [
+    "soft@SC0707-01",
+    "soft@SC0707-02"
+   ],
+   "pages": [
+    56
+   ],
+   "purpose": "ncRNA遺伝子群の欠失と疾患（Feingold症候群、Prader-Willi症候群）を資料の記載どおりに示す",
+   "terms": [
+    "Feingold症候群",
+    "Prader-Willi症候群",
+    "欠失"
+   ],
+   "accuracy": "確認済み（research/accuracy_checklist.md）",
+   "start": 1389.967,
+   "end": 1420.167,
+   "duration": 30.2,
+   "video": "video/scenes/SC0707.mp4",
+   "audio": "audio/dialogue/scenes/SC0707.wav",
+   "accuracy_check": "疾患名と特徴は p.56 の記載のみ。欠失の位置は模式と明記"
+  },
+  {
+   "scene_id": "SC0801",
+   "title": "カドミウムとメタロチオネイン",
+   "chapter": 8,
+   "chapter_title": "遺伝子発現と疾患",
+   "lines": [
+    "SC0801-01",
+    "SC0801-02",
+    "SC0801-03",
+    "SC0801-04",
+    "SC0801-05",
+    "SC0801-06",
+    "SC0801-07"
+   ],
+   "visual": "metallothionein",
+   "bgm": "somber",
+   "bg": "メタロチオネイン遺伝子の上流領域（GRE、エンハンサー、MRE、GC、TATA）と、細胞に入ってくるCd²⁺",
+   "camera": "上流領域の地図から、MREに転写因子が結合する場面へ",
+   "chars": [
+    "akari",
+    "nuku"
+   ],
+   "sfx": [
+    "ping@SC0801-02",
+    "glow@SC0801-03",
+    "soft@SC0801-05"
+   ],
+   "pages": [
+    39
+   ],
+   "purpose": "応答配列（MRE）による転写調節と負のフィードバック、カドミウムの毒性に関する資料の記載を示す",
+   "terms": [
+    "メタロチオネイン",
+    "MRE（金属応答配列）",
+    "カドミウム",
+    "応答配列"
+   ],
+   "accuracy": "確認済み（research/accuracy_checklist.md）",
+   "start": 1420.167,
+   "end": 1478.6,
+   "duration": 58.433,
+   "video": "video/scenes/SC0801.mp4",
+   "audio": "audio/dialogue/scenes/SC0801.wav",
+   "accuracy_check": "MRE と負のフィードバックは p.39 の図、毒性と摂取量は p.39 のテキスト層"
+  },
+  {
+   "scene_id": "SC0802",
+   "title": "時計遺伝子のループ",
+   "chapter": 8,
+   "chapter_title": "遺伝子発現と疾患",
+   "lines": [
+    "SC0802-01",
+    "SC0802-02",
+    "SC0802-03",
+    "SC0802-04",
+    "SC0802-05"
+   ],
+   "visual": "clock_loop",
+   "bgm": "somber",
+   "bg": "昼と夜が回る背景。BMAL1/CLOCK → E-box → Per, Cry → 抑制 のループ",
+   "camera": "ループを一周するようにカメラが回る",
+   "chars": [
+    "akari",
+    "nuku"
+   ],
+   "sfx": [
+    "tick@SC0802-01",
+    "ping@SC0802-02",
+    "ping@SC0802-03"
+   ],
+   "pages": [
+    40,
+    41
+   ],
+   "purpose": "時計遺伝子による転写のフィードバックループ（BMAL1/CLOCK、PER/CRY、Rev-erbα/RORα）を示す",
+   "terms": [
+    "時計遺伝子",
+    "BMAL1",
+    "CLOCK",
+    "PER",
+    "CRY",
+    "E-box",
+    "Rev-erbα",
+    "RORα",
+    "RRE"
+   ],
+   "accuracy": "確認済み（research/accuracy_checklist.md）",
+   "start": 1478.6,
+   "end": 1519.7,
+   "duration": 41.1,
+   "video": "video/scenes/SC0802.mp4",
+   "audio": "audio/dialogue/scenes/SC0802.wav",
+   "accuracy_check": "BMAL1/CLOCK→E-box→Per, Cry, Rev-erbα, RORα、PER/CRY が抑制、Rev-erbα⊣RRE、RORα→RRE（p.41）"
+  },
+  {
+   "scene_id": "SC0803",
+   "title": "時計の乱れと病気",
+   "chapter": 8,
+   "chapter_title": "遺伝子発現と疾患",
+   "lines": [
+    "SC0803-01",
+    "SC0803-02",
+    "SC0803-03"
+   ],
+   "visual": "clock_disease",
+   "bgm": "somber",
+   "bg": "ひびの入った時計と、疾患名の矢印。下段に遺伝子欠損マウスの表",
+   "camera": "時計から各矢印へ",
+   "chars": [
+    "akari",
+    "nuku"
+   ],
+   "sfx": [
+    "crack@SC0803-02"
+   ],
+   "pages": [
+    42,
+    43
+   ],
+   "purpose": "時計遺伝子の異常・欠損マウスの表現型と、概日時計の破綻に関連する疾患を資料の範囲で示す",
+   "terms": [
+    "概日時計",
+    "時計遺伝子欠損マウス"
+   ],
+   "accuracy": "確認済み（research/accuracy_checklist.md）",
+   "start": 1519.7,
+   "end": 1553.0,
+   "duration": 33.3,
+   "video": "video/scenes/SC0803.mp4",
+   "audio": "audio/dialogue/scenes/SC0803.wav",
+   "accuracy_check": "マウスの表現型は p.42、疾患は p.43 の図（関連のみと明示）"
+  },
+  {
+   "scene_id": "SC0804",
+   "title": "ミトコンドリアゲノムの転写",
+   "chapter": 8,
+   "chapter_title": "遺伝子発現と疾患",
+   "lines": [
+    "SC0804-01",
+    "SC0804-02",
+    "SC0804-03",
+    "SC0804-04",
+    "SC0804-05"
+   ],
+   "visual": "mito",
+   "bgm": "somber",
+   "bg": "細胞質のミトコンドリア。中の環状ゲノム（16,569 bp）",
+   "camera": "ミトコンドリアに飛び込み、環状ゲノムの周りを一周",
+   "chars": [
+    "akari",
+    "nuku"
+   ],
+   "sfx": [
+    "whoosh@SC0804-01",
+    "ping@SC0804-03"
+   ],
+   "pages": [
+    72
+   ],
+   "purpose": "ミトコンドリアゲノムの転写の特徴を、核の転写と比較して示す",
+   "terms": [
+    "ミトコンドリアゲノム",
+    "ミトコンドリア特異的RNAポリメラーゼ",
+    "環状ゲノム"
+   ],
+   "accuracy": "確認済み（research/accuracy_checklist.md）",
+   "start": 1553.0,
+   "end": 1589.667,
+   "duration": 36.667,
+   "video": "video/scenes/SC0804.mp4",
+   "audio": "audio/dialogue/scenes/SC0804.wav",
+   "accuracy_check": "37 遺伝子、約16 kb（図 16,569 bp）、核にコードされたミトコンドリア特異的 RNA ポリメラーゼ、各鎖の全体を転写（p.72）"
+  },
+  {
+   "scene_id": "SC0901",
+   "title": "冒険のふりかえり",
+   "chapter": 9,
+   "chapter_title": "最終試験",
+   "lines": [
+    "SC0901-01",
+    "SC0901-02",
+    "SC0901-03",
+    "SC0901-04",
+    "SC0901-05",
+    "SC0901-06"
+   ],
+   "visual": "review",
+   "bgm": "hopeful",
+   "bg": "これまでのステージがカードとして並ぶ",
+   "camera": "カードを1枚ずつめくる",
+   "chars": [
+    "akari",
+    "nuku"
+   ],
+   "sfx": [
+    "card@SC0901-02",
+    "card@SC0901-03",
+    "card@SC0901-04",
+    "card@SC0901-05"
+   ],
+   "pages": [
+    71
+   ],
+   "purpose": "講義のまとめを確認する",
+   "terms": [
+    "遺伝子の発現",
+    "鋳型鎖",
+    "プロモーター",
+    "選択的スプライシング",
+    "非翻訳RNA"
+   ],
+   "accuracy": "確認済み（research/accuracy_checklist.md）",
+   "start": 1589.667,
+   "end": 1625.367,
+   "duration": 35.7,
+   "video": "video/scenes/SC0901.mp4",
+   "audio": "audio/dialogue/scenes/SC0901.wav",
+   "accuracy_check": ""
+  },
+  {
+   "scene_id": "SC0902",
+   "title": "第1問",
+   "chapter": 9,
+   "chapter_title": "最終試験",
+   "lines": [
+    "SC0902-01",
+    "SC0902-02",
+    "SC0902-03",
+    "SC0902-04"
+   ],
+   "visual": "quiz",
+   "bgm": "quiz",
+   "bg": "クイズ画面",
+   "camera": "固定",
+   "chars": [
+    "akari",
+    "nuku"
+   ],
+   "sfx": [
+    "tick@SC0902-02",
+    "correct@SC0902-03"
+   ],
+   "pages": [
+    7,
+    8,
+    10
+   ],
+   "purpose": "RNA合成の方向と鋳型の確認",
+   "terms": [
+    "鋳型鎖",
+    "5'→3'"
+   ],
+   "quiz": "Q1",
+   "accuracy": "確認済み（research/accuracy_checklist.md）",
+   "start": 1625.367,
+   "end": 1657.367,
+   "duration": 32.0,
+   "video": "video/scenes/SC0902.mp4",
+   "audio": "audio/dialogue/scenes/SC0902.wav",
+   "accuracy_check": ""
+  },
+  {
+   "scene_id": "SC0903",
+   "title": "第2問",
+   "chapter": 9,
+   "chapter_title": "最終試験",
+   "lines": [
+    "SC0903-01",
+    "SC0903-02",
+    "SC0903-03",
+    "SC0903-04"
+   ],
+   "visual": "quiz",
+   "bgm": "quiz",
+   "bg": "クイズ画面",
+   "camera": "固定",
+   "chars": [
+    "akari",
+    "nuku"
+   ],
+   "sfx": [
+    "tick@SC0903-02",
+    "correct@SC0903-03"
+   ],
+   "pages": [
+    18,
+    30,
+    33,
+    34
+   ],
+   "purpose": "原核と真核のプロモーターの区別",
+   "terms": [
+    "−10ボックス",
+    "−35ボックス",
+    "TATAボックス"
+   ],
+   "quiz": "Q2",
+   "accuracy": "確認済み（research/accuracy_checklist.md）",
+   "start": 1657.367,
+   "end": 1685.6,
+   "duration": 28.233,
+   "video": "video/scenes/SC0903.mp4",
+   "audio": "audio/dialogue/scenes/SC0903.wav",
+   "accuracy_check": ""
+  },
+  {
+   "scene_id": "SC0904",
+   "title": "第3問",
+   "chapter": 9,
+   "chapter_title": "最終試験",
+   "lines": [
+    "SC0904-01",
+    "SC0904-02",
+    "SC0904-03",
+    "SC0904-04"
+   ],
+   "visual": "quiz",
+   "bgm": "quiz",
+   "bg": "クイズ画面",
+   "camera": "固定",
+   "chars": [
+    "akari",
+    "nuku"
+   ],
+   "sfx": [
+    "tick@SC0904-02",
+    "correct@SC0904-03"
+   ],
+   "pages": [
+    30,
+    32,
+    46
+   ],
+   "purpose": "転写基本因子の役割の区別",
+   "terms": [
+    "TFIIH",
+    "TBP",
+    "TFIIB",
+    "CTD"
+   ],
+   "quiz": "Q3",
+   "accuracy": "確認済み（research/accuracy_checklist.md）",
+   "start": 1685.6,
+   "end": 1714.5,
+   "duration": 28.9,
+   "video": "video/scenes/SC0904.mp4",
+   "audio": "audio/dialogue/scenes/SC0904.wav",
+   "accuracy_check": ""
+  },
+  {
+   "scene_id": "SC0905",
+   "title": "第4問",
+   "chapter": 9,
+   "chapter_title": "最終試験",
+   "lines": [
+    "SC0905-01",
+    "SC0905-02",
+    "SC0905-03",
+    "SC0905-04"
+   ],
+   "visual": "quiz",
+   "bgm": "quiz",
+   "bg": "クイズ画面",
+   "camera": "固定",
+   "chars": [
+    "akari",
+    "nuku"
+   ],
+   "sfx": [
+    "tick@SC0905-02",
+    "correct@SC0905-03"
+   ],
+   "pages": [
+    46,
+    50,
+    51,
+    52
+   ],
+   "purpose": "スプライシングの基本と順序の確認",
+   "terms": [
+    "GT-AG則",
+    "U1 snRNP",
+    "投げ縄構造"
+   ],
+   "quiz": "Q4",
+   "accuracy": "確認済み（research/accuracy_checklist.md）",
+   "start": 1714.5,
+   "end": 1744.133,
+   "duration": 29.633,
+   "video": "video/scenes/SC0905.mp4",
+   "audio": "audio/dialogue/scenes/SC0905.wav",
+   "accuracy_check": ""
+  },
+  {
+   "scene_id": "SC0906",
+   "title": "第5問",
+   "chapter": 9,
+   "chapter_title": "最終試験",
+   "lines": [
+    "SC0906-01",
+    "SC0906-02",
+    "SC0906-03",
+    "SC0906-04"
+   ],
+   "visual": "quiz",
+   "bgm": "quiz",
+   "bg": "クイズ画面",
+   "camera": "固定",
+   "chars": [
+    "akari",
+    "nuku"
+   ],
+   "sfx": [
+    "tick@SC0906-02",
+    "correct@SC0906-03"
+   ],
+   "pages": [
+    67
+   ],
+   "purpose": "miRNAの成熟経路の順序の確認",
+   "terms": [
+    "Drosha",
+    "Exportin 5",
+    "Dicer",
+    "RISC"
+   ],
+   "quiz": "Q5",
+   "accuracy": "確認済み（research/accuracy_checklist.md）",
+   "start": 1744.133,
+   "end": 1773.067,
+   "duration": 28.933,
+   "video": "video/scenes/SC0906.mp4",
+   "audio": "audio/dialogue/scenes/SC0906.wav",
+   "accuracy_check": ""
+  },
+  {
+   "scene_id": "SC0907",
+   "title": "エンディング",
+   "chapter": 9,
+   "chapter_title": "最終試験",
+   "lines": [
+    "SC0907-01",
+    "SC0907-02",
+    "SC0907-03",
+    "SC0907-04",
+    "SC0907-05",
+    "SC0907-06",
+    "SC0907-07",
+    "SC0907-08"
+   ],
+   "visual": "ending",
+   "bgm": "ending",
+   "bg": "夜明けの研究室。窓の外に光る二重らせん",
+   "camera": "アカリの横顔から窓の外へ、そしてクレジット",
+   "chars": [
+    "akari",
+    "nuku"
+   ],
+   "sfx": [
+    "sparkle@SC0907-01"
+   ],
+   "pages": [
+    71
+   ],
+   "purpose": "4つの主要テーマ（転写・転写調節・RNAプロセシング・非コードRNA）をまとめて終える",
+   "terms": [
+    "転写",
+    "転写調節",
+    "RNAプロセシング",
+    "非コードRNA"
+   ],
+   "accuracy": "確認済み（research/accuracy_checklist.md）",
+   "start": 1773.067,
+   "end": 1832.867,
+   "duration": 59.8,
+   "video": "video/scenes/SC0907.mp4",
+   "audio": "audio/dialogue/scenes/SC0907.wav",
+   "accuracy_check": ""
+  }
+ ]
+}
