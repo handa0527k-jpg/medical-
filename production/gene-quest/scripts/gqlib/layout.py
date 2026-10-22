@@ -39,7 +39,7 @@ def cast(c, t, S, akari=True, nuku=True, akari_x=250, akari_y=1085, akari_s=0.62
             ch.nuku(c, nuku_x + (1 - k) * 380, nuku_y, nuku_s, e, t, alpha=nuku_alpha * k, point=nuku_point)
 
 
-def hud(c, t, S, show_chapter=True, show_pages=True, alpha=1.0, why_x=48):
+def hud(c, t, S, show_chapter=True, show_pages=True, alpha=1.0, why_x=48, why_y=None):
     """左上に章、右上に出典ページ、補足の行は「補足（資料外）」の札。"""
     if S is None:
         return
@@ -66,7 +66,7 @@ def hud(c, t, S, show_chapter=True, show_pages=True, alpha=1.0, why_x=48):
     why, kw = S.why_active(t)
     if why and kw > 0:
         # 必然性の問い：「なぜ？」の札（補足の札が出ているときはその下）
-        y = 146 if note else 92
+        y = why_y if why_y is not None else (146 if note else 92)
         q = why if why.endswith(("？", "?")) else why + "？"
         w = text_width("なぜ", 28, "heavy") + text_width(q, 26, "bold") + 64
         rrect(c, why_x, y, w, 46, 23, 0xFF3A0F24, kw * 0.92)

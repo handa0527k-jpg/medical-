@@ -267,7 +267,7 @@ def same_genome(c, t, S):
         arrow(c, 1160, 680, 1360, 760, 0xFF4FD0D0, 7, kc * ease(prog(t, t_c + 2.5, 0.6)))
         text(c, "✕", 1360, 620, 44, PAL["red"], "heavy", "center", kc * ease(prog(t, t_c + 2.0, 0.4)))
     cast(c, t, S, akari_s=0.42, akari_x=150, nuku_x=1820, nuku_y=850, nuku_s=0.4)
-    hud(c, t, S)
+    hud(c, t, S, why_x=700, why_y=832)  # 上は見出しの文
     scene_fade(c, t, S)
 
 

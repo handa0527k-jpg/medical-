@@ -260,7 +260,7 @@ def housekeeping(c, t, S):
         caption_box(c, ["常に発現　　　→ 構成的発現遺伝子", "必要に応じて変化 → 調節的発現遺伝子"], 1000, 40, 32, kt,
                     border=PAL["yellow"])
     cast(c, t, S, akari=False, nuku_x=1790, nuku_y=880, nuku_s=0.45)
-    hud(c, t, S, show_pages=True)
+    hud(c, t, S, show_pages=True, why_x=430)  # 左上の「グルコースなど」を避ける
     scene_fade(c, t, S)
 
 
@@ -268,11 +268,11 @@ def housekeeping(c, t, S):
 def operon_map(c, x, y, k, s=1.0, show_i=True, op_k=0.0):
     """lacI と lacZYA の地図。オペレーター（O）はプロモーターの中（p.22 の注）。"""
     if show_i:
+        line(c, x - 30, y, x + 300 * s, y, PAL["muted"], 5, k)  # DNA の線は箱の下に描く
         rrect(c, x, y - 20, 60 * s, 40, 8, PAL["mediator"], k)
         text_center(c, "P", x + 30 * s, y, 26, 0xFF101030, "heavy", "center", k)
         rrect(c, x + 60 * s, y - 24, 140 * s, 48, 8, 0xFFB0A8D8, k)
         text_center(c, "lacI", x + 130 * s, y, 30, 0xFF101030, "heavy", "center", k)
-        line(c, x - 30, y, x + 300 * s, y, PAL["muted"], 5, k)
         x += 300 * s
     rrect(c, x, y - 20, 150 * s, 40, 8, PAL["mediator"], k)
     text_center(c, "P", x + 40 * s, y, 26, 0xFF101030, "heavy", "center", k)

@@ -63,7 +63,7 @@ def three_polymerases(c, t, S):
         term_card(c, t, t_gt + 0.6, "転写基本因子", "真核の開始には多数のタンパク質が必要（細菌は σ因子だけ）", W / 2, 140,
                   end=S.duration, color=PAL["tfiid"], size=56)
     cast(c, t, S, akari_s=0.48, nuku_x=1810, nuku_y=830, nuku_s=0.45)
-    hud(c, t, S)
+    hud(c, t, S, why_x=480, why_y=830)  # 上は「転写基本因子」の札とヌクレオソームの列なので、下へ
     chapter_intro(c, t, S)
     scene_fade(c, t, S)
 
@@ -178,7 +178,7 @@ def pic_assembly(c, t, S):
               color=PAL["yellow"], size=56)
     speaker_tag(c, t, S, NAMES, x=X_TATA, y=300)
     cast(c, t, S, akari_s=0.45, nuku_x=1820, nuku_y=200, nuku_s=0.42)
-    hud(c, t, S, show_chapter=False)
+    hud(c, t, S, show_chapter=False, why_x=1250)  # 左上は因子の凡例
     scene_fade(c, t, S)
 
 

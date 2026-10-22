@@ -4,6 +4,8 @@
 """
 from __future__ import annotations
 
+import re
+
 from ..bg import background
 from ..draw import PAL, W, ease, ease_back, line, panel, prog, rrect, text, text_center, text_width
 from ..layout import cast, hud, scene_fade
@@ -14,13 +16,13 @@ SIZE = 34
 
 
 def wrap_width(s: str, size: float, width: float) -> list[str]:
-    """幅に収まるように1文字ずつ折り返す（行頭に句読点を置かない）。"""
+    """幅に収まるように折り返す（英字の語は分けず、行頭に句読点を置かない）。"""
     rows, cur = [], ""
-    for ch in s:
-        if cur and text_width(cur + ch, size, "bold") > width and ch not in "、。）」！？":
+    for tok in re.findall(r"[A-Za-z0-9α-ωβ'’\-]+|.", s):  # 英字の語（β-gal, TFIIB など）は途中で折らない
+        if cur and text_width(cur + tok, size, "bold") > width and tok not in "、。）」！？":
             rows.append(cur)
             cur = ""
-        cur += ch
+        cur += tok
     if cur:
         rows.append(cur)
     return rows
