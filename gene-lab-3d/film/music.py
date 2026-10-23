@@ -23,13 +23,27 @@ def main(ids):
     os.makedirs(out_dir, exist_ok=True)
     for fid in ids or list(m['films']):
         f = m['films'][fid]
-        src = os.path.join(src_dir, f'{fid}.mp3')
-        if not os.path.exists(src):
-            subprocess.run(['curl', '-sSL', '--max-time', '600', '-o', src, m['base'] + f['file']], check=True)
+        files = f.get('files') or [f['file']]
+        parts = []
+        for i, name in enumerate(files):
+            part = os.path.join(src_dir, f'{fid}.mp3' if len(files) == 1 else f'{fid}-{i}.mp3')
+            if not os.path.exists(part):
+                subprocess.run(['curl', '-sSL', '--max-time', '600', '-o', part, m['base'] + name], check=True)
+            parts.append(part)
+        src = parts[0]
+        if len(parts) > 1:
+            # several movements, joined with a short crossfade (and repeated if the film is longer)
+            src = os.path.join(src_dir, f'{fid}-joined.wav')
+            if not os.path.exists(src):
+                ins = sum([['-i', p] for p in parts], [])
+                n = len(parts)
+                chain = ''.join(f'[{i}:a]' for i in range(n))
+                fc = '[0:a][1:a]acrossfade=d=3[x1]' + ''.join(f';[x{i}][{i + 1}:a]acrossfade=d=3[x{i + 1}]' for i in range(1, n - 1))
+                subprocess.run(['ffmpeg', '-v', 'error', '-y', *ins, '-filter_complex', fc, '-map', f'[x{n - 1}]', src], check=True)
         dur = json.load(open(os.path.join(ROOT, 'web', 'public', 'film', fid, 'timing.json')))['duration'] + 1.0
         out = os.path.join(out_dir, f'{fid}.wav')
         af = f'apad,atrim=0:{dur:.2f},afade=t=in:d=1.5,afade=t=out:st={dur - 4:.2f}:d=4,loudnorm=I=-27:TP=-3:LRA=11'
-        subprocess.run(['ffmpeg', '-v', 'error', '-y', '-i', src, '-af', af, '-ar', '44100', '-ac', '2', out], check=True)
+        subprocess.run(['ffmpeg', '-v', 'error', '-y', '-stream_loop', '1', '-i', src, '-af', af, '-ar', '44100', '-ac', '2', out], check=True)
         print(out, f['title'])
 
 

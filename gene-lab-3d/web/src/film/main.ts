@@ -12,6 +12,11 @@ const FILMS: Record<string, () => Promise<(...a: Parameters<Film>) => ReturnType
   restriction: () => import('./restriction').then((m) => m.buildRestriction),
   cloning: () => import('./cloning').then((m) => m.buildCloning),
 };
+// 2D anime films (no 3D stage)
+type Anime = (host: HTMLElement, clock: Clock, ov: Overlays) => Promise<{ update(t: number): void }>;
+const ANIME: Record<string, () => Promise<Anime>> = {
+  transcription: () => import('../anime/transcription').then((m) => m.buildTranscription),
+};
 
 /**
  * 授業動画の再生ページ（film.html）
@@ -49,18 +54,24 @@ async function boot() {
     loadDnaTemplate(BASE),
     document.fonts.ready,
   ]);
-  const stage = new Stage(view, { manual: true, film: true, pixelRatio: rendering ? 1 : Math.min(devicePixelRatio, 1.5) });
-  stage.controls.enabled = false;
   const clock = new Clock(timing);
   const ov = new Overlays(ovHost);
-  const build = await (FILMS[id] ?? FILMS.sanger)();
-  const film = await build(stage, clock, ov);
+  let draw: (t: number) => void;
+  if (ANIME[id]) {
+    // 2D anime: HTML/SVG only, no WebGL stage
+    const film = await (await ANIME[id]())(view, clock, ov);
+    draw = (t) => film.update(t);
+  } else {
+    const stage = new Stage(view, { manual: true, film: true, pixelRatio: rendering ? 1 : Math.min(devicePixelRatio, 1.5) });
+    stage.controls.enabled = false;
+    const build = await (FILMS[id] ?? FILMS.sanger)();
+    const film = await build(stage, clock, ov);
+    draw = (t) => {
+      film.update(t);
+      stage.renderFrame(t);
+    };
+  }
   document.title = `${timing.title}｜授業動画 — GENE LAB 3D`;
-
-  const draw = (t: number) => {
-    film.update(t);
-    stage.renderFrame(t);
-  };
 
   if (rendering) {
     (window as unknown as { __film: unknown }).__film = {

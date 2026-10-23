@@ -52,13 +52,15 @@ def main(fid):
     cues, pieces = [], []
     for c in script['cues']:
         speech = c.get('speech', c['text'])
-        key = hashlib.sha1(f'{voice}|{rate}|{speech}'.encode()).hexdigest()[:16]
+        cv = c.get('voice', voice)  # a cue may be spoken by a character in another voice
+        cr = c.get('rate', rate)
+        key = hashlib.sha1(f'{cv}|{cr}|{speech}'.encode()).hexdigest()[:16]
         mp3 = os.path.join(cache, key + '.mp3')
         wav = os.path.join(cache, key + '.wav')
-        if not os.path.exists(mp3):
-            asyncio.run(synth(speech, voice, rate, mp3))
+        if not os.path.exists(mp3) or os.path.getsize(mp3) == 0:
+            asyncio.run(synth(speech, cv, cr, mp3))
         dur = to_wav(mp3, wav)
-        cues.append({'id': c['id'], 'scene': c['scene'], 'text': c['text'], 'start': round(t, 3), 'dur': round(dur, 3)})
+        cues.append({'id': c['id'], 'scene': c['scene'], 'text': c['text'], 'who': c.get('who', ''), 'start': round(t, 3), 'dur': round(dur, 3)})
         pieces.append((t, wav))
         t += dur + c.get('pause', DEFAULT_PAUSE)
         print(f"{c['id']} {dur:5.2f}s  {c['text'][:30]}")
